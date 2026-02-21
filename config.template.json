@@ -1,0 +1,88 @@
+{
+  "_comment": "Copy to ~/.xhelio/config.json and edit. All fields are optional — defaults shown.",
+
+  "_comment_data_dir": "Base directory for all agent state (logs, sessions, memory, caches). Override with XHELIO_DIR env var (highest priority) or this key. Default: ~/.xhelio",
+  "data_dir": null,
+
+  "_comment_llm_provider": "LLM provider: 'gemini', 'openai', or 'anthropic'. Flip this to switch — model names are stored per-provider in the 'providers' section below.",
+  "llm_provider": "gemini",
+  "_comment_api_keys": "API key is ALWAYS read from .env (never from this file). Set LLM_API_KEY in .env — works for all providers. For web search with non-Gemini providers, also set TAVILY_API_KEY in .env.",
+
+  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, inline_model, planner_model, fallback_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility.",
+  "providers": {
+    "gemini": {
+      "base_url": null,
+      "model": "gemini-3-flash-preview",
+      "sub_agent_model": "gemini-2.5-flash",
+      "inline_model": "gemini-2.5-flash-lite",
+      "planner_model": "gemini-3-flash-preview",
+      "fallback_model": "gemini-2.5-flash",
+      "thinking_model": "high",
+      "thinking_sub_agent": "low"
+    },
+    "openai": {
+      "_comment": "Use 'openai' provider for any OpenAI-compatible API: OpenRouter, DeepSeek, Ollama, etc.",
+      "base_url": "https://openrouter.ai/api/v1",
+      "model": "minimax/minimax-m2.5",
+      "sub_agent_model": "minimax/minimax-m2.5",
+      "inline_model": "minimax/minimax-m2.5",
+      "planner_model": "minimax/minimax-m2.5",
+      "fallback_model": "minimax/minimax-m2.5"
+    },
+    "anthropic": {
+      "base_url": null,
+      "model": "claude-sonnet-4-5-20250514",
+      "sub_agent_model": "claude-haiku-4-5-20251001",
+      "inline_model": "claude-haiku-4-5-20251001",
+      "planner_model": "claude-sonnet-4-5-20250514",
+      "fallback_model": "claude-haiku-4-5-20251001"
+    }
+  },
+
+  "_comment_data_backend": "Data backend. Only 'cdf' (CDAWeb REST + cdflib) is supported.",
+  "data_backend": "cdf",
+
+  "_comment_catalog_search_method": "Options: 'semantic' (fastembed cosine similarity, default) or 'substring' (case-insensitive multi-word match). Falls back to substring if fastembed is not installed.",
+  "catalog_search_method": "semantic",
+
+  "_comment_parallel_fetch": "Enable parallel data fetching. When true, multiple CDF file downloads, tool calls, and plan tasks run concurrently via thread pools. parallel_max_workers controls the max thread count per pool.",
+  "parallel_fetch": true,
+  "parallel_max_workers": 4,
+
+  "_comment_max_plot_points": "Maximum data points per trace before stride-decimation kicks in. Traces with more points than this are plotted as every Nth point. Higher values give more detail but slower rendering and larger figure JSON. Datasets over 100K original points also switch to WebGL (scattergl).",
+  "max_plot_points": 10000,
+
+  "_comment_memory_limits": "memory_token_budget is the global token cap for all memory injection. The budget controls how many entries are included — no per-type caps.",
+  "memory_token_budget": 10000,
+
+  "_comment_memory": "Memory extraction: a MemoryAgent sees full session context (conversation, ops, events) and outputs add/edit/drop actions on scoped memories. memory_extraction_interval: trigger every N user turns (0 to disable). Runs async on a daemon thread using inline_model.",
+  "memory_extraction_interval": 2,
+
+  "_comment_discovery": "Discovery Memory: scientific knowledge learned from browsing NASA datasets. Extracted async during sessions, searchable via search_discoveries tool. discovery_extraction_interval: trigger extraction every N user turns (0 to disable). discovery_token_budget: cross-session consolidation threshold.",
+  "discovery_extraction_interval": 2,
+  "discovery_token_budget": 100000,
+
+  "_comment_ops_library": "Max saved operations in the custom_ops_library. Least-used entries are evicted when full.",
+  "ops_library_max_entries": 50,
+
+  "_comment_history_budgets": "Token budgets for session history injected into agent prompts. Sub-agents (mission, viz, dataops) get shorter history; orchestrator and planner get more. Over-budget history is compacted by LLM.",
+  "history_budget_sub_agent": 10000,
+  "history_budget_orchestrator": 20000,
+
+  "_comment_console_format": "Options: 'simple' (bare messages for DEBUG/INFO, [LEVEL] prefix for WARNING+, default), 'full' (timestamp + level + name + session_id + message), 'gui' (curated tagged records only — mirrors web UI live-log sidebar), 'clean' (no console output at all, file logging still active).",
+  "console_format": "simple",
+
+  "_comment_reasoning": "Agent reasoning features. observation_summaries: inject human-readable summaries into tool results for better LLM reasoning. self_reflection: add reflection hints on errors to steer LLM toward alternatives. show_thinking: display LLM thinking tokens in the UI (always logged to file).",
+  "reasoning": {
+    "observation_summaries": true,
+    "self_reflection": true,
+    "show_thinking": false
+  },
+
+  "_comment_spice": "SPICE ephemeris settings. kernel_dir: override kernel cache location (default: {data_dir}/spice_kernels). auto_download: fetch kernels from NAIF on first use. max_cache_gb: soft limit on kernel cache size.",
+  "spice": {
+    "kernel_dir": null,
+    "auto_download": true,
+    "max_cache_gb": 5.0
+  }
+}
