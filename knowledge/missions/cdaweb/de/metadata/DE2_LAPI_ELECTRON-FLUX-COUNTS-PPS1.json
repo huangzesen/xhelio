@@ -1,0 +1,900 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LAPI__e__0_pos_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__0_pos_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__0_pos_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__0_pos_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__0_pos_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 0  (0 pos deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__0_pos_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 0 pos deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__180_neg_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__180_neg_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__180_neg_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__180_neg_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__180_neg_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__180_neg_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 180 neg deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__30_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__30_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__30_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__30_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__30_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__30_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 30 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__172_5_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__172_5_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__172_5_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__172_5_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 6, 172.5, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__172_5_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 6, 172.5, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__172_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 172.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__7_5_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 8, 7.5, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__7_5_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__7_5_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__7_5_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__7_5_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__7_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 7.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__45_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__45_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__45_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__45_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__45_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__45_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 45 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__112_5_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 12, 112.5 deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__112_5_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 12, 112.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__112_5_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 12, 112.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__112_5_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 12, 112.5, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__112_5_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 12, 112.5, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__112_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 112.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__e__97_5_deg_1_Telemetry_Index",
+      "type": "double",
+      "units": "Index",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, Index",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__97_5_deg_2_counts_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 14, 97.5, deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__97_5_deg_3_dNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__97_5_deg_4_dEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI__e__97_5_deg_5_DF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI__e__97_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+ e-, 97.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__0_pos_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__0_pos_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__0_pos_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__0_pos_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 0, 0 pos deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__0_pos_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 0 pos deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__180_neg_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__180_neg_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__180_neg_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__180_neg_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 2, 180 neg deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__180_neg_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 180 neg deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__30_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__30_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__30_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__30_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 4, 30 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__30_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 30 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__172_5_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__172_5_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__172_5_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__172_5_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 6, 172.5 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__172_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 172.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__7_5_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__7_5_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__7_5_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__7_5_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 8, 7.5 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__7_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 7.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__45_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__45_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__45_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__45_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 10, 45 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__45_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 45 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__112_5_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 12, 112.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__112_5_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 12, 112.5, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__112_5_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 12, 112.5, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__112_5_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 12, 112.5 deg, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__112_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 112.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI_T_e__97_5_deg_1_Tc_acc_c_acc",
+      "type": "double",
+      "units": "c/acc",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, c/acc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__97_5_deg_2_TdNF_cnts_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "cnts/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, cnts/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__97_5_deg_3_TdEF_ergs_cm__2_sr_s_eV",
+      "type": "double",
+      "units": "ergs/(cm^2-sr-s-eV)",
+      "description": "LAPI+ Electron Sensor 14, 97.5 deg, ergs/(cm^2-sr-s-eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "LAPI_T_e__97_5_deg_4_TDF_sec__3_m__6",
+      "type": "double",
+      "units": "sec^3/m^6",
+      "description": "LAPI+ Electron Sensor 14, 97.5, sec^3/m^6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "Data_Quality_LAPI_T_e__97_5_deg",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Data Quality Indicator for LAPI+T e-, 97.5 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE0_LAPI__PPS_1_Start_Step",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Mode 0, Status Indicator PPS+ 1 Start Step",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE1_LAPI__PPS_1_Stop_Step",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Mode 1, Status Indicator PPS+ 1 Stop Step",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE2_LAPI__PPS_1_Skip_Step",
+      "type": "double",
+      "units": "Unitless",
+      "description": "Mode 2, Status Indicator PPS+ 1 Skip Step",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE3_LAPI__PPS_1_Step_Rate",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Mode 3, Status Indicator PPS+ 1 Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE4_SPDF_Status_Flag",
+      "type": "double",
+      "units": "unitless",
+      "description": "Mode 4, Status Indicator SPDF Status",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE5_SPDF_Bad_Sensor_ID",
+      "type": "double",
+      "units": "unitless",
+      "description": "Mode 5, Status Indicator SPDF Bad Sensor ID",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE6_SPDF_Previous_Sensors_Differs",
+      "type": "double",
+      "units": "unitless",
+      "description": "Mode 6, Status Indicator SPDF Previous Sensors Differs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE7_SPDF_Time_Gap",
+      "type": "double",
+      "units": "unitless",
+      "description": "Mode 7, Status Indicator SPDF Time Gap",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T13:09:02.000Z",
+  "stopDate": "1983-02-18T16:42:23.000Z"
+}

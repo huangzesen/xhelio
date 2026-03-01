@@ -1,0 +1,232 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Mid Time",
+      "type": "double",
+      "units": "DAY",
+      "description": "Describes the time periods over which        \n                                 the data was integrated in DOY format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End Time",
+      "type": "double",
+      "units": "DAY",
+      "description": "Describes the time periods over which        \n                                 the data was integrated in DOY format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "dMin",
+      "type": "double",
+      "units": "MINUTE",
+      "description": "Duration of integration period in minutes.",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "Orbit",
+      "type": "double",
+      "units": "",
+      "description": "Jupiter orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Observation-id",
+      "type": "double",
+      "units": "",
+      "description": "Galileo MWG observation id.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SLETB",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "SLETB - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate SLETB",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DLETB",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "DLETB - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate DLETB",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TLETB",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "TLETB - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate TLETB",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DUBL",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "DUBL - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate DUBL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TRPL",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "TRPL - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate TRPL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WDSTP",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "WDSTP - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate WDSTP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WSPL1",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "WSPL1 - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate WSPL1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WDPEN",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "WDPEN - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate WDPEN",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WPNL1",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux (/cm**2-sec-sr)",
+      "size": [
+        1
+      ],
+      "fill": "-99.00"
+    },
+    {
+      "name": "WPNL1 - count",
+      "type": "double",
+      "units": "",
+      "description": "Number of events used to caculate WPNL1",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

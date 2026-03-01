@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "counts",
+      "type": "double",
+      "units": "",
+      "description": "Raw instrument counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "counts_time",
+      "type": "double",
+      "units": "",
+      "description": "---> Raw instrument counts (as separate time series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated differential energy flux (as spectrogram)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "variance",
+      "type": "double",
+      "units": "(eV/[eV cm^2 sr s])^2",
+      "description": "Variance of differential energy flux (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "secondary",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Secondary electron contamination (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_stack",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Calibrated differential energy flux (as overlaid time series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    }
+  ],
+  "startDate": "2014-03-19T14:15:52.000Z",
+  "stopDate": "2025-10-31T23:59:56.000Z"
+}

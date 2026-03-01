@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_north",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field in the north direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_up",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field in the up direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_west",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field in the west direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_IGRF_north",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF Magnetic field in the north direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_IGRF_up",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF Magnetic field in the up direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_IGRF_west",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF Magnetic field in the west direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dB_zon",
+      "type": "double",
+      "units": "nT",
+      "description": "delta B in the zonal direction.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dB_mer",
+      "type": "double",
+      "units": "nT",
+      "description": "delta B in the meridional direction.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dB_par",
+      "type": "double",
+      "units": "nT",
+      "description": "delta B in the parallel direction.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2008-05-09T00:00:00.000Z",
+  "stopDate": "2015-09-28T23:43:18.000Z"
+}

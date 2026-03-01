@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (56-78 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P2",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (78-130 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P3",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (130-214 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P4",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (214-337 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P5",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (337-594 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P6",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (594-1073 keV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P7",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (1.073-1.802 MeV).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P8",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "Column contains ion count data from the HISCALE Low-Energy Foil Spectrometer (1.802-5.0 MeV).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

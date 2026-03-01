@@ -1,0 +1,56 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Distribution",
+      "type": "double",
+      "units": "cnts",
+      "description": "SWEA 3D counts by 16 energies and 80 angles x=angles, y=energies [DO NOT USE energies below 45 eV]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        80
+      ]
+    },
+    {
+      "name": "Distribution2",
+      "type": "double",
+      "units": "cnts",
+      "description": "SWEA 3D counts by 16 energies and 80 angles x=energies, y=angles [DO NOT USE energies below 45 eV]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        80
+      ]
+    },
+    {
+      "name": "Energy_spectrogram",
+      "type": "double",
+      "units": "cnts",
+      "description": "SWEA 3D counts by energy at select angles [DO NOT USE energies below 45 eV]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        80
+      ]
+    },
+    {
+      "name": "Angle_spectrogram",
+      "type": "double",
+      "units": "cnts",
+      "description": "SWEA 3D counts by angle at select energies [DO NOT USE energies below 45 ev]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        80
+      ]
+    }
+  ],
+  "startDate": "2006-10-28T15:35:39.000Z",
+  "stopDate": "2025-11-30T22:28:56.000Z"
+}

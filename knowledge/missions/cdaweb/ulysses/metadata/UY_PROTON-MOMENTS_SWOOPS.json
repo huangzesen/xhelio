@@ -1,0 +1,103 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Heliographic latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BR in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BT in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BN in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_MAG",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton speed in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component VR in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component VT in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component VN in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tpar",
+      "type": "double",
+      "units": "K",
+      "description": "Proton temperature parallel to the magnetic field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tper",
+      "type": "double",
+      "units": "K",
+      "description": "Proton temperature perpendicular to the magnetic field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dens",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Number density of protons",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1990-11-18T02:52:56.000Z",
+  "stopDate": "2009-06-30T15:54:11.000Z"
+}

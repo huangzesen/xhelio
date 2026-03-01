@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "B-field magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BGSEc",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Vector in GSE Cartesian coordinates (1 hr)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in GSM coordinates (1 hr)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in GSE coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in GSM coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1997-09-02T00:00:00.000Z",
+  "stopDate": "2026-01-27T23:00:00.000Z"
+}

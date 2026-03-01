@@ -1,0 +1,53 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "XYZ_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "ACE X/Y/Z GSE coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSEO",
+      "type": "double",
+      "units": "km",
+      "description": "ACE orbit plot in GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "ACE GSE latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "ACE GSE longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RADIUS",
+      "type": "double",
+      "units": "KM",
+      "description": "ACE distance from Earth (km)",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1997-08-25T17:48:00.000Z",
+  "stopDate": "2026-03-22T23:49:00.000Z"
+}

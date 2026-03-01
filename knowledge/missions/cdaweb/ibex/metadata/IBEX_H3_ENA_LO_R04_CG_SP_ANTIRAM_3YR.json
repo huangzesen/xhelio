@@ -1,0 +1,1251 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number for six-month maps",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Ener1",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 1 ~0.015 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener1_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux1",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 1 ~0.015 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux1_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr1",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 1 ~0.015 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr1_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar1",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 1 ~0.015 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar1_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts1",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel 1, ~0.015 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts1_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp1",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 1 ~0.015 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp1_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb1",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 1 ~0.015 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb1_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener2",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener2_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux2",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux2_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr2",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr2_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar2",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar2_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts2",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel 2 ~0.029 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts2_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp2",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp2_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb2",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 2 ~0.029 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb2_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener3",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener3_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux3",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux3_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr3",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr3_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar3",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar3_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts3",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts3_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb3",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 3 ~0.055 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb3_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener4",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener4_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux4",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux4_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr4",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr4_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar4",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar4_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts4",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts4_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb4",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 4 ~0.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb4_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener5",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener5_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux5",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux5_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr5",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr5_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar5",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar5_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts5",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel  5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts5_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb5",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb5_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener6",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener6_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr6",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr6_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar6",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar6_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts6",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel  6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts6_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb6",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb6_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener7",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener7_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux7",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux7_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr7",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr7_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar7",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar7_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts7",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel  7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts7_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp7",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp7_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb7",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb7_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener8",
+      "type": "double",
+      "units": "keV",
+      "description": "Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener8_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux8",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux8_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr8",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, IBEX-Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr8_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar8",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar8_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts8",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Lo Energy Channel  8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts8_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp8",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp8_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb8",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb8_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2008-12-25T00:00:00.000Z"
+}

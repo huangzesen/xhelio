@@ -1,0 +1,1143 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ted_ele_flux_stackt0",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Electron differential flux, TED, 0 degree telescope, 189-7980 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "ted_ele_flux_stackt30",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "ted_ele_flux_t_stacke1",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Electron differential flux, TED, 0 and 30 degree telescopes, 189 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_ele_flux_t_stacke2",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 844 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_ele_flux_t_stacke3",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 2595 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_ele_flux_t_stacke4",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 7980 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_pro_flux_stackt0",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Proton differential flux, TED, 0 degree telescope, 189-7980 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "ted_pro_flux_stackt30",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "ted_pro_flux_t_stacke1",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Proton differential flux, TED, 0 and 30 degree telescopes, 189 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_pro_flux_t_stacke2",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 844 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_pro_flux_t_stacke3",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 2595 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_pro_flux_t_stacke4",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 7980 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ted_ele_tel0_low_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Electron integral energy flux, TED, 0 degree telescope, low energy (50-1000 eV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel30_low_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel0_low_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel30_low_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel0_hi_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Electron integral energy flux, TED, 0 degree telescope, high energy (1-20 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel30_hi_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel0_hi_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_tel30_hi_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel0_low_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Proton integral energy flux, TED, 0 degree telescope, low energy (50-1000 eV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel30_low_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel0_low_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel30_low_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel0_hi_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Proton integral energy flux, TED, 0 degree telescope, high energy (1-20 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel30_hi_eflux",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel0_hi_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_tel30_hi_eflux_error",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_low",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Electron atmospheric integral energy flux, TED, low energy (50-1000 eV), at 120 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_hi",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "---> high energy (1-20 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_low_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_hi_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_total",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Electron total atmospheric integral energy flux, TED, at 120 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_atmo_total_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_low",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Proton atmospheric integral energy flux, TED, low energy (50-1000 eV), at 120 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_hi",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "---> high energy (1-20 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_low_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_hi_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_total",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Proton total atmospheric integral energy flux, TED, at 120 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_atmo_total_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_total_eflux_atmo",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Electron and Proton total atmospheric integral energy flux, TED, at 120 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_total_eflux_atmo_err",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "---> % error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_energy_tel0",
+      "type": "integer",
+      "units": "energy channel",
+      "description": "Electron characteristic energy channel, TED, 0 degree telescope",
+      "fill": "255.0"
+    },
+    {
+      "name": "ted_ele_energy_tel30",
+      "type": "integer",
+      "units": "energy channel",
+      "description": "---> 30 degree telescope",
+      "fill": "255.0"
+    },
+    {
+      "name": "ted_pro_energy_tel0",
+      "type": "integer",
+      "units": "energy channel",
+      "description": "Proton characteristic energy channel, TED, 0 degree telescope",
+      "fill": "255.0"
+    },
+    {
+      "name": "ted_pro_energy_tel30",
+      "type": "integer",
+      "units": "energy channel",
+      "description": "---> 30 degree telescope",
+      "fill": "255.0"
+    },
+    {
+      "name": "ted_ele_max_flux_tel0",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Electron maximum differential flux, TED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_max_flux_tel30",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_max_flux_tel0",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "Proton maximum differential flux, TED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_max_flux_tel30",
+      "type": "double",
+      "units": "#/cm2-s-str-eV",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel0_low",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Electron background integral energy flux, TED, 0 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel30_low",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel0_hi",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 0 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel30_hi",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel0_low",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "Proton background integral energy flux, TED, 0 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel30_low",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel0_hi",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 0 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel30_hi",
+      "type": "double",
+      "units": "mW/m2-str",
+      "description": "---> 30 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel0_low_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "Electron background counts, TED, 0 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel30_low_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 30 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel0_hi_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 0 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ele_eflux_bg_tel30_hi_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 30 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel0_low_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "Proton background counts, TED, 0 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel30_low_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 30 degree telescope, low energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel0_hi_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 0 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_pro_eflux_bg_tel30_hi_cps",
+      "type": "double",
+      "units": "counts",
+      "description": "---> 30 degree telescope, high energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_alpha_0_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle (satellite), TED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_alpha_30_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_alpha_0_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle (foot of field line), TED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_alpha_30_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 30 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ted_ifc_on",
+      "type": "integer",
+      "units": "(1=On)",
+      "description": "IFC flag (0=off, 1=on), TED",
+      "fill": "255.0"
+    },
+    {
+      "name": "mep_ele_flux_stackt0",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "Electron integral flux, MEPED, 0 degree telescope, >40 to >612 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mep_ele_flux_err_stackt0",
+      "type": "double",
+      "units": "",
+      "description": "---> % Error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mep_ele_flux_stackt90",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "Electron integral flux, MEPED, 90 degree telescope, >40 to >612 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mep_ele_flux_err_stackt90",
+      "type": "double",
+      "units": "",
+      "description": "---> % Error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mep_ele_flux_t_stacke1",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "Electron integral flux, MEPED, 0 and 90 degree telescopes, >40 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_ele_flux_t_stacke2",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "---> >130 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_ele_flux_t_stacke3",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "---> >287 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_ele_flux_t_stacke4",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "---> >612 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_stackt0",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "Proton differential flux, MEPED, 0 degree telescope, 39-2723 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "mep_pro_flux_err_stackt0",
+      "type": "double",
+      "units": "",
+      "description": "---> % Error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "mep_pro_flux_stackt90",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "Proton differential flux, MEPED, 90 degree telescope, 39-2723 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "mep_pro_flux_err_stackt90",
+      "type": "double",
+      "units": "",
+      "description": "---> % Error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "mep_pro_flux_t_stacke1",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "Proton differential flux, MEPED, 0 and 90 degree telescopes, 39 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_t_stacke2",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "---> 115 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_t_stacke3",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "---> 332 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_t_stacke4",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "---> 1105 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_t_stacke5",
+      "type": "double",
+      "units": "#/cm2-s-str-keV",
+      "description": "---> 2723 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_p6",
+      "type": "double",
+      "units": "#/cm2-s-str",
+      "description": "Proton integral flux, MEPED, 0 and 90 degree telescopes, >6174 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_pro_flux_p6_err",
+      "type": "double",
+      "units": "",
+      "description": "---> % Error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mep_omni_flux_stack",
+      "type": "double",
+      "units": "#/cm2-s-str-MeV",
+      "description": "Proton differential flux, MEPED Omni telescope, at center energies 25, 50, and 100 MeV,",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mep_omni_flux_flag_fit",
+      "type": "integer",
+      "units": "",
+      "description": "---> Fit flag",
+      "fill": "255.0"
+    },
+    {
+      "name": "mep_omni_gamma_stack",
+      "type": "double",
+      "units": "",
+      "description": "---> Gamma",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mep_omni_gamma",
+      "type": "double",
+      "units": "",
+      "description": "---> As spectrograms in energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "meped_alpha_0_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle (satellite), MEPED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "meped_alpha_90_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 90 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "meped_alpha_0_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle (foot of field line), MEPED, 0 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "meped_alpha_90_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 90 degree telescope",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mep_ifc_on",
+      "type": "integer",
+      "units": "(1=On)",
+      "description": "IFC flag (0=off, 1=on), MEPED",
+      "fill": "255.0"
+    },
+    {
+      "name": "satid",
+      "type": "double",
+      "units": "ID",
+      "description": "Satellite Designation ID",
+      "fill": "-2147480064.0"
+    },
+    {
+      "name": "sat_direction",
+      "type": "double",
+      "units": "",
+      "description": "---> Satellite direction 0-North/ 1-South",
+      "fill": "-2147480064.0"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic latitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic longitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lat_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic latitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lon_sat",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Magnetic longitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "l_igrf",
+      "type": "double",
+      "units": "",
+      "description": "L value of the satellite from IGRF field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (hours)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "geod_lat_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "geod_lon_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "aacgm_lat_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "AACGM latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "aacgm_lon_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> AACGM longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lat_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lon_foot",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Magnetic longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "br_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "B-radial IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bt_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-theta IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bp_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-phi IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "btot_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-total IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "br_foot",
+      "type": "double",
+      "units": "nT",
+      "description": "B-radial IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bt_foot",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-theta IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bp_foot",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-phi IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "btot_foot",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-total IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bx_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx IGRF satellite coordinates (towards Earth)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "by_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "---> By IGRF satellite coordinates (opposite velocity direction)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bz_sat",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Bz IGRF satellite coordinates (XxY direction)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alt_text",
+      "type": "double",
+      "units": "km",
+      "description": "[TEXT LABEL] Altitude of the satellite",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic latitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lon_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic longitude (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "l_igrf_text",
+      "type": "double",
+      "units": "",
+      "description": "---> L value of the satellite from IGRF field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt_text",
+      "type": "double",
+      "units": "hours",
+      "description": "---> Magnetic local time (hours)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "geod_lat_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "geod_lon_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Geodetic longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "aacgm_lat_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> AACGM latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "aacgm_lon_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> AACGM longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lat_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Magnetic latitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_lon_foot_text",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Magnetic longitude (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "br_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "[TEXT LABEL] B-radial IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bt_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-theta IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bp_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-phi IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "btot_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-total IGRF (satellite)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "br_foot_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-radial IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bt_foot_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-theta IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bp_foot_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-phi IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "btot_foot_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-total IGRF (foot of field line)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bx_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Bx IGRF satellite coordinates (towards Earth)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "by_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> By IGRF satellite coordinates (opposite velocity direction)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bz_sat_text",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Bz IGRF satellite coordinates (XxY direction)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2019-01-01T00:00:01.000Z",
+  "stopDate": "2026-02-17T11:57:44.000Z"
+}

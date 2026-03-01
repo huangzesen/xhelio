@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DCR_H_PLUS",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "Ion (mainly H+) flux (from DC rate) at 25 energies 1-200 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "H_PLUS",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "H+ Flux (usually)at 19 energies 5-200 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "HE_PLUS",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "He+ flux (usually) at 14 energies 20-200 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "HE_PLUS2",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "He+2 flux (usually) at 24 energies 1-200 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "O_LT_PLUS3",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "O<+3 flux (usually) at 12 energies 35-200 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "O_GT_PLUS2",
+      "type": "double",
+      "units": "/(cm^2-s-sr-keV)",
+      "description": "O>+2 flux (usually) at 19 energies 1.5-100 keV/Q, 32-spin/3-minute averages",
+      "fill": "-999.0",
+      "size": [
+        31
+      ]
+    }
+  ],
+  "startDate": "1996-03-18T00:02:46.000Z",
+  "stopDate": "2000-03-16T23:57:56.000Z"
+}

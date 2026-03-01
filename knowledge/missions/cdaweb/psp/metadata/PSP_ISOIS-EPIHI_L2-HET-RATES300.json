@@ -1,0 +1,278 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HET_B_R17_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle HETB R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HCI_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HET_B_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle HETB",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        25
+      ]
+    },
+    {
+      "name": "HET_A_R17_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle HETA R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HET_A_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction HETA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HET_A_R17_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction HETA R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "HET_B_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction HETB",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "A_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HCI_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HET_B_R17_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle HETB R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HET_A_R17_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle HETA R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HGC_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HET_A_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction HETA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HGC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HET_B_R17_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction HETB R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "HCI_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        25
+      ]
+    },
+    {
+      "name": "B_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HET_B_R17_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction HETB R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "HET_B_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction HETB",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HET_B_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle HETB",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HET_A_R17_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction HETA R17 SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "HET_A_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle HETA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HET_A_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle HETA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Data-quality flag",
+      "fill": "-128.0",
+      "size": [
+        10
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

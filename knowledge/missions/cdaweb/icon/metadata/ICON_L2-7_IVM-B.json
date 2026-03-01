@@ -1,0 +1,768 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L27_A_Activity",
+      "type": "double",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the Activity Category of IVM-A",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_A_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the View Status of IVM-A",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "WGS84 Altitude of spacecraft position (geodetic)",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Apex_Height",
+      "type": "double",
+      "units": "km",
+      "description": "Modified APEX heights of S/C position",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Attitude_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Slew or off-point Status Code",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_B_Activity",
+      "type": "double",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the Activity Category of IVM-B",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_B_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the View Status of IVM-B",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_DM_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for DM quality",
+      "fill": "-9.223372036854776e+18"
+    },
+    {
+      "name": "ICON_L27_Equator_Ion_Velocity_Meridional",
+      "type": "double",
+      "units": "m/s",
+      "description": "Equatorial meridional ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Equator_Ion_Velocity_Zonal",
+      "type": "double",
+      "units": "m/s",
+      "description": "Equatorial zonal ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Altitude_North",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of Northern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Altitude_South",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of Southern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_East_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "north_footpoint_east_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_East_Ion_Velocity_South",
+      "type": "double",
+      "units": "m/s",
+      "description": "south_footpoint_east_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_X_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of field aligned drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_X_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of field aligned drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Y_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of field aligned drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Y_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of field aligned drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Z_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of field aligned drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Field_Aligned_Vector_ECEF_Z_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of field aligned drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Latitude_North",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude of Northern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Latitude_South",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude of Southern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Longitude_North",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude of Northern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Longitude_South",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude of Southern Magnetic Footpoint in WGS from IGRF",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Magnetic_Latitude_North",
+      "type": "double",
+      "units": "degrees",
+      "description": "Quasi-dipole latitude of northern footpoint",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Magnetic_Latitude_South",
+      "type": "double",
+      "units": "degrees",
+      "description": "Quesi dipole latitude of southern footpoint",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Magnetic_Longitude_North",
+      "type": "double",
+      "units": "degrees",
+      "description": "Quesi dipole longitude of northern footpoint",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Magnetic_Longitude_South",
+      "type": "double",
+      "units": "degrees",
+      "description": "Quesi dipole longitude of southern footpoint",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "Northern meridional ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Ion_Velocity_South",
+      "type": "double",
+      "units": "m/s",
+      "description": "Southern meridional ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_X_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of meridional drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_X_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of meridional drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_Y_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of meridional drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_Y_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of meridional drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_Z_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of meridional drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Meridional_Vector_ECEF_Z_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of meridional drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_North_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "north_footpoint_north_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_North_Ion_Velocity_South",
+      "type": "double",
+      "units": "m/s",
+      "description": "south_footpoint_north_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Up_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "north_footpoint_up_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Up_Ion_Velocity_South",
+      "type": "double",
+      "units": "m/s",
+      "description": "south_footpoint_up_drift",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "Northern zonal ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Ion_Velocity_South",
+      "type": "double",
+      "units": "m/s",
+      "description": "Southern zonal ion velocity",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_X_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of Zonal drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_X_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF X-Component of Zonal drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_Y_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of Zonal drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_Y_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Y-Component of Zonal drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_Z_North",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of Zonal drift at Northern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Footpoint_Zonal_Vector_ECEF_Z_South",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "ECEF Z-Component of Zonal drift at Southern Footpoint",
+      "fill": "-999.9"
+    },
+    {
+      "name": "ICON_L27_Fractional_Ion_Density_H",
+      "type": "double",
+      "units": "",
+      "description": "H+ fractional ion composition",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Fractional_Ion_Density_O",
+      "type": "double",
+      "units": "",
+      "description": "O+ fractional ion composition",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_GPS_Epoch",
+      "type": "integer",
+      "units": "milliseconds",
+      "description": "Milliseconds since 1980-01-06 00:00:00 TAI (coincident with UTC) at middle of reading.",
+      "fill": "-999999999999999.0"
+    },
+    {
+      "name": "ICON_L27_IVM_Aperture_Potential",
+      "type": "double",
+      "units": "V",
+      "description": "Aperture plane potential",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Density",
+      "type": "double",
+      "units": "N/cc",
+      "description": "Ion density",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Ion temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_East",
+      "type": "double",
+      "units": "m/s",
+      "description": "iv_east",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Field_Aligned",
+      "type": "double",
+      "units": "m/s",
+      "description": "Field-Aligned ion velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Meridional",
+      "type": "double",
+      "units": "m/s",
+      "description": "Meridional ion velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_North",
+      "type": "double",
+      "units": "m/s",
+      "description": "iv_north",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Up",
+      "type": "double",
+      "units": "m/s",
+      "description": "iv_up",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_X",
+      "type": "double",
+      "units": "m/s",
+      "description": "Ion velocity along IVM-x",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Y",
+      "type": "double",
+      "units": "m/s",
+      "description": "Ion velocity along IVM-y",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Z",
+      "type": "double",
+      "units": "m/s",
+      "description": "Ion velocity along IVM-z",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Ion_Velocity_Zonal",
+      "type": "double",
+      "units": "m/s",
+      "description": "Zonal ion velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "WGS84 Latitude of spacecraft position (geodetic)",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "WGS84 Longitude of spacecraft position (geodetic)",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_MTB_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Flag for Magnetic Torquer Bars Acitve [1=ON 0=OFF]",
+      "fill": "255.0"
+    },
+    {
+      "name": "ICON_L27_Magnetic_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "Magnetic Latitude",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Magnetic_Local_Time",
+      "type": "double",
+      "units": "hour",
+      "description": "Magnetic Local Time at s/c",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Magnetic_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "Magnetic Longitude of s/c position",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Corotation_X",
+      "type": "double",
+      "units": "m/s",
+      "description": "ECI Earth Corotation Velocity Components in IVM Coordinates",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Corotation_Y",
+      "type": "double",
+      "units": "m/s",
+      "description": "ECI Earth Corotation Velocity Components in IVM Coordinates",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Corotation_Z",
+      "type": "double",
+      "units": "m/s",
+      "description": "ECI Earth Corotation Velocity Components in IVM Coordinates",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Magnetic_Field_X",
+      "type": "double",
+      "units": "nT",
+      "description": "X Component of the Magnetic Field",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Magnetic_Field_Y",
+      "type": "double",
+      "units": "nT",
+      "description": "Y Component of the Magentic Field",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Magnetic_Field_Z",
+      "type": "double",
+      "units": "nT",
+      "description": "Z Component of the Magnetic Field",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Velocity_X",
+      "type": "double",
+      "units": "m/s",
+      "description": "Earth Centered Inertial Spacecraft Velocity",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Velocity_Y",
+      "type": "double",
+      "units": "m/s",
+      "description": "Earth Centered Inertial Spacecraft Velocity",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Observatory_Velocity_Z",
+      "type": "double",
+      "units": "m/s",
+      "description": "Earth Centered Inertial Spacecraft Velocity",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Orbit_Number",
+      "type": "double",
+      "units": "integer",
+      "description": "Orbit Number",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_RPA_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for RPA quality",
+      "fill": "-9.223372036854776e+18"
+    },
+    {
+      "name": "ICON_L27_Raw_Ion_Velocity_X",
+      "type": "double",
+      "units": "m/s",
+      "description": "Total ion velocity IVM-x",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Raw_Ion_Velocity_Y",
+      "type": "double",
+      "units": "m/s",
+      "description": "Total ion velocity along IVM-y",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Raw_Ion_Velocity_Z",
+      "type": "double",
+      "units": "m/s",
+      "description": "Total ion velocity along IVM-z",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Slew_Status",
+      "type": "double",
+      "units": "",
+      "description": "slew_status",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Solar_Local_Time",
+      "type": "double",
+      "units": "hour",
+      "description": "Local Solar Time",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Solar_Zenith_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar Zenith Angle",
+      "fill": "-999.9000244140625"
+    },
+    {
+      "name": "ICON_L27_Space_Environment_Region_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing Space Environment Region of Space Craft",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_Sun_Status",
+      "type": "double",
+      "units": "binary",
+      "description": "Spacecraft Sun/Shadow Status Code",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L27_Time_UTC_Start",
+      "type": "integer",
+      "units": "milliseconds",
+      "description": "Milliseconds since 1970-01-01 00:00:00 UTC at start of reading.",
+      "fill": "-999999999999999.0"
+    },
+    {
+      "name": "ICON_L27_Time_UTC_Stop",
+      "type": "integer",
+      "units": "milliseconds",
+      "description": "Milliseconds since 1970-01-01 00:00:00 UTC at end of reading.",
+      "fill": "-999999999999999.0"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Field_Aligned_X",
+      "type": "double",
+      "units": "",
+      "description": "Field-aligned direction along IVM-x",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Field_Aligned_Y",
+      "type": "double",
+      "units": "",
+      "description": "Field-aligned direction along IVM-y",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Field_Aligned_Z",
+      "type": "double",
+      "units": "",
+      "description": "Field-aligned direction along IVM-z",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Meridional_X",
+      "type": "double",
+      "units": "",
+      "description": "Meridional direction along IVM-x",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Meridional_Y",
+      "type": "double",
+      "units": "",
+      "description": "Meridional direction along IVM-y",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Meridional_Z",
+      "type": "double",
+      "units": "",
+      "description": "Meridional direction along IVM-z",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_X_East",
+      "type": "double",
+      "units": "",
+      "description": "unit_x_east",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_X_North",
+      "type": "double",
+      "units": "",
+      "description": "unit_x_north",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_X_Up",
+      "type": "double",
+      "units": "",
+      "description": "unit_x_up",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Y_East",
+      "type": "double",
+      "units": "",
+      "description": "unit_y_east",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Y_North",
+      "type": "double",
+      "units": "",
+      "description": "unit_y_north",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Y_Up",
+      "type": "double",
+      "units": "",
+      "description": "unit_y_up",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Z_East",
+      "type": "double",
+      "units": "",
+      "description": "unit_z_east",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Z_North",
+      "type": "double",
+      "units": "",
+      "description": "unit_z_north",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Z_Up",
+      "type": "double",
+      "units": "",
+      "description": "unit_z_up",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Zonal_X",
+      "type": "double",
+      "units": "",
+      "description": "Zonal direction along IVM-x",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Zonal_Y",
+      "type": "double",
+      "units": "",
+      "description": "Zonal direction along IVM-y",
+      "fill": "nan"
+    },
+    {
+      "name": "ICON_L27_Unit_Vector_Zonal_Z",
+      "type": "double",
+      "units": "",
+      "description": "Zonal direction along IVM-z",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2021-06-14T15:35:59.000Z",
+  "stopDate": "2021-06-27T23:59:56.000Z"
+}

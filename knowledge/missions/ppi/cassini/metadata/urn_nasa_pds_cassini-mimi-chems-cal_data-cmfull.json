@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Dist_RS",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "radial distance from Cassini to Saturn in Saturn radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Offset_DipoleL",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini L shell location using offset dipole.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Latitude_degrees",
+      "type": "double",
+      "units": "degrees",
+      "description": "Cassini SZS latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_LocalTime_hours",
+      "type": "double",
+      "units": "hours",
+      "description": "Cassini SZS localtime in hours.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_CHEMS_T1",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle for CHEMS telescope 1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_CHEMS_T2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle for CHEMS telescope 2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_CHEMS_T3",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle for CHEMS telescope 3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_CHEMS_TALL",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angle for CHEMS data summed over all telescopes.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,332 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FESA",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "FESA: Spin-Averaged Differential Electron Flux ~20-4000 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_T",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "---> FESA as stacked time series",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_ERROR",
+      "type": "integer",
+      "units": "%",
+      "description": "---> % Error in FESA",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_Quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> FESA Quality flag",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_CORR",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "FESA_CORR: Background-corrected Spin-Averaged Differential Electron Flux ~20-4000 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_CORR_T",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "---> FESA corrected as stacked time series",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FESA_CORR_ERROR",
+      "type": "integer",
+      "units": "%",
+      "description": "---> % error in FESA corrected",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "FPSA",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "FPSA: Spin-Averaged Differential Proton Flux ~50-1500 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "FPSA_T",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "---> FPSA as stacked time series",
+      "fill": "-1e+31",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "FPSA_ERROR",
+      "type": "integer",
+      "units": "%",
+      "description": "---> % error in FPSA",
+      "fill": "-32768.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "FPSA_Quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> FPSA Quality flag",
+      "fill": "-32768.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "FPDU: Unidirectional Differential Proton Flux ~50-1500 keV, in up to 31 energy and 64 sector bins (energy-sector displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_E",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "---> Spectrograms by sector at sample energies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_A",
+      "type": "double",
+      "units": "cm!U-2!N s!U-1!N sr!U-1!N keV!U-1!N",
+      "description": "---> Spectrograms by energy at sample sectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_ERROR",
+      "type": "integer",
+      "units": "%",
+      "description": "---> [NO PLOTS] % error in FPDU",
+      "fill": "-32768.0",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_Quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> [NO PLOTS] FPDU Quality flag",
+      "fill": "-32768.0",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_Quality_FULL",
+      "type": "integer",
+      "units": "none",
+      "description": "---> [NO PLOTS] FPDU Quality flag (Full bitmap)",
+      "fill": "-32768.0",
+      "size": [
+        64,
+        31
+      ]
+    },
+    {
+      "name": "COINCIDENCE_MODE",
+      "type": "integer",
+      "units": "0=disabled;1=enabled",
+      "description": "Flag to indicate whether or not the electron coincidence is enabled (0=disabled; 1=enabled).",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "INSTRUMENT_MODE",
+      "type": "integer",
+      "units": "0=MAINT;1=SCI;2=HIGHRATE",
+      "description": "---> Flag to indicate mode of the MagEIS instruments (0=maintenance; 1=science; 2=high rate).",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "BIAS_MODE",
+      "type": "integer",
+      "units": "0=low-bias;1=normal-bias",
+      "description": "---> Flag to indicate whether or not the electron detectors are in the normal-bias or low-bias state (0=low bias; 1=normal bias)",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "BKG_TO_MAIN_RATIO_SPINAVG",
+      "type": "integer",
+      "units": "%",
+      "description": "---> Ratio of the background estimate divided by the main rate rate, for the spin-averaged data.",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "[Time-series] Position of the satellite in geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-09-07T02:26:42.000Z",
+  "stopDate": "2018-05-15T10:26:43.000Z"
+}

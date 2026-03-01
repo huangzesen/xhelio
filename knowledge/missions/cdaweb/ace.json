@@ -1,0 +1,370 @@
+{
+  "id": "ACE",
+  "name": "ACE",
+  "keywords": [
+    "ac_at",
+    "ac_h",
+    "ac_k",
+    "ac_or",
+    "ace"
+  ],
+  "profile": {
+    "description": "ACE spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "AC_K0_SIS": {
+          "description": "K0 - ACE SIS 1-Hour Key Parameters - E. C. Stone (California Institute of Technology)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/1fgf-zm82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K0_SIS"
+        },
+        "AC_H2_ULE": {
+          "description": "ACE/ULEIS Solar Suprathermal and Energetic Particle Intensities 1-Hour Level 2 Data - G. Mason (University of Maryland)",
+          "start_date": "1998-02-20T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:00:00.000Z",
+          "pi_name": "G. Mason",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/agmq-ex61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_ULE"
+        },
+        "AC_H1_SIS": {
+          "description": "ACE/SIS Solar Isotope Spectrometer 256-sec Level 2 Data - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-29T00:00:26.000Z",
+          "stop_date": "2026-01-27T23:56:45.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/9kmb-8280",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H1_SIS"
+        },
+        "AC_K1_EPM": {
+          "description": "K1 - ACE EPAM 1-Hour Key Parameters - R. Gold (JHU Applied Physics Laboratory)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:00:00.000Z",
+          "pi_name": "R. Gold",
+          "pi_affiliation": "JHU Applied Physics Laboratory",
+          "doi": "10.48322/qgh8-2q85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K1_EPM"
+        },
+        "AC_H3_EPM": {
+          "description": "ACE/EPAM Solar Energetic Particle 12-second Level 2 Data - R. Gold (JHU/APL)",
+          "start_date": "1997-08-31T00:00:08.000Z",
+          "stop_date": "2025-12-05T23:59:50.000Z",
+          "pi_name": "R. Gold",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/jqj0-vn49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H3_EPM"
+        },
+        "AC_H1_EPM": {
+          "description": "ACE/EPAM Solar Energetic Particle 5-Minute Level 2 Data - R. Gold (JHU/APL)",
+          "start_date": "1997-08-30T17:01:00.000Z",
+          "stop_date": "2025-12-30T23:55:00.000Z",
+          "pi_name": "R. Gold",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/w4wv-rj18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H1_EPM"
+        },
+        "AC_H3_CRIS": {
+          "description": "ACE/CRIS Cosmic Ray Isotope Spectrometer Daily-averaged Level 2 Data - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-27T00:00:00.000Z",
+          "stop_date": "2026-01-27T00:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/wbmv-4z80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H3_CRIS"
+        },
+        "AC_H2_SIS": {
+          "description": "ACE/SIS Solar Isotope Spectrometer 1-Hour Level 2 Data - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-29T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/eq1k-gs80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_SIS"
+        },
+        "AC_H2_SEP": {
+          "description": "ACE/SEPICA Solar Energetic Particle 1-Hour Level 2 Data - Eberhard Moebius (University of New Hampshire)",
+          "start_date": "1997-10-08T00:00:00.000Z",
+          "stop_date": "2005-02-04T23:00:00.000Z",
+          "pi_name": "Eberhard Moebius",
+          "pi_affiliation": "University of New Hampshire",
+          "doi": "10.48322/3086-yq22",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_SEP"
+        },
+        "AC_K0_EPM": {
+          "description": "K0 - ACE EPAM 5-Minute Key Parameters - R. Gold (JHU Applied Physics Laboratory)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:55:00.000Z",
+          "pi_name": "R. Gold",
+          "pi_affiliation": "JHU Applied Physics Laboratory",
+          "doi": "10.48322/ghbm-qj24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K0_EPM"
+        },
+        "AC_H2_CRIS": {
+          "description": "ACE/CRIS Cosmic Ray Isotope Spectrometer 1-Hour Level 2 Data - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-27T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/g72t-0814",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_CRIS"
+        },
+        "AC_H2_EPM": {
+          "description": "ACE/EPAM Solar Energetic Particle 1-Hour Level 2 Data - R. Gold (JHU/APL)",
+          "start_date": "1997-08-30T17:00:00.000Z",
+          "stop_date": "2025-12-30T23:00:00.000Z",
+          "pi_name": "R. Gold",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/pn1t-zx03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_EPM"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "AC_K0_GIFWALK": {
+          "description": "Links to ACE KP pre-generated survey and other plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-09T00:00:00.000Z",
+          "stop_date": "2004-08-09T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K0_GIFWALK"
+        },
+        "AC_OR_DEF": {
+          "description": "ACE Daily GSE and J2000 GCI Position Data - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-26T00:00:00.000Z",
+          "stop_date": "2026-02-16T00:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/mh1w-x115",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_OR_DEF"
+        },
+        "AC_AT_DEF": {
+          "description": "ACE Hourly RTN, GSE and J2000 GCI Attitude direction cosines - E. C. Stone (California Institute of Technology)",
+          "start_date": "1997-08-26T00:00:00.000Z",
+          "stop_date": "2026-02-16T16:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/f2a8-nm36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_AT_DEF"
+        },
+        "AC_H2_MFI": {
+          "description": "H2 - ACE Magnetic Field 1-Hour Level 2 Data - N. Ness (Bartol Research Institute)",
+          "start_date": "1997-09-02T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:00:00.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/fh85-fj47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_MFI"
+        },
+        "AC_K1_MFI": {
+          "description": "ACE Magnetic Field 16-Second Key Parameters [PRELIM] - N. Ness (Bartol Research Institute)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:59:57.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/av87-m833",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K1_MFI"
+        },
+        "AC_H1_MFI": {
+          "description": "H1 - ACE Magnetic Field 4-Minute Level 2 Data - N. Ness (Bartol Research Institute)",
+          "start_date": "1997-09-02T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:56:00.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/brf1-g493",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H1_MFI"
+        },
+        "AC_K2_MFI": {
+          "description": "K2 - ACE Magnetic Field 1-Hour Key Parameters [PRELIM] - N. Ness (Bartol Research Institute)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:00:00.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/pf44-ys65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K2_MFI"
+        },
+        "AC_K0_MFI": {
+          "description": "ACE Magnetic Field 5-Minute Key Parameters [PRELIM] - N. Ness (Bartol Research Institute)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:55:00.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/cs7n-7c62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K0_MFI"
+        },
+        "AC_H3_MFI": {
+          "description": "H3 - ACE Magnetic Field 1-Second Level 2 Data - N. Ness (Bartol Research Institute)",
+          "start_date": "1998-01-01T00:00:00.000Z",
+          "stop_date": "2026-01-27T23:59:59.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/7xyh-4z44",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H3_MFI"
+        },
+        "AC_H0_MFI": {
+          "description": "H0 - ACE Magnetic Field 16-Second Level 2 Data - N. Ness (Bartol Research Institute)",
+          "start_date": "1997-09-02T00:00:12.000Z",
+          "stop_date": "2026-01-27T23:59:46.000Z",
+          "pi_name": "N. Ness",
+          "pi_affiliation": "Bartol Research Institute",
+          "doi": "10.48322/e0dc-0h53",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H0_MFI"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "AC_H5_SWI": {
+          "description": "ACE/SWICS 1.1 Solar Wind 2-Hour Level 2 Q-state distributions - G. Gloeckler (University of Maryland)",
+          "start_date": "1998-02-04T00:09:16.000Z",
+          "stop_date": "2011-08-21T21:40:53.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/2c38-0s43",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H5_SWI"
+        },
+        "AC_K0_SWE": {
+          "description": "K0 - ACE Solar Wind Experiment 5-Minute Key Parameters [PRELIM] - D. J. McComas (Southwest Research Institute)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:55:00.000Z",
+          "pi_name": "D. J. McComas",
+          "pi_affiliation": "Southwest Research Institute",
+          "doi": "10.48322/pfr6-fg57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K0_SWE"
+        },
+        "AC_H3_SW2": {
+          "description": "ACE/SWICS 2.0 Solar Wind 2-Hour Level 2 Data - G. Gloeckler (University of Maryland)",
+          "start_date": "2012-06-01T00:40:44.000Z",
+          "stop_date": "2025-03-16T22:40:10.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/xcsn-8w62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H3_SW2"
+        },
+        "AC_H3_SWI": {
+          "description": "ACE/SWICS 1.1 Solar Wind 2-Hour Level 2 Data - G. Gloeckler (University of Maryland)",
+          "start_date": "1998-02-04T00:09:16.000Z",
+          "stop_date": "2011-08-21T21:40:53.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/mvcn-0276",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H3_SWI"
+        },
+        "AC_H2_SWE": {
+          "description": "ACE/SWEPAM Solar Wind Experiment 1-Hour Level 2 Data - D. J. McComas (SWRI)",
+          "start_date": "1998-02-04T00:00:00.000Z",
+          "stop_date": "2024-07-09T23:00:00.000Z",
+          "pi_name": "D. J. McComas",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/9w01-2555",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_SWE"
+        },
+        "AC_H2_SWI": {
+          "description": "ACE/SWICS 1.1 Solar Wind 1-Hour Level 2 Data - G. Gloeckler (University of Maryland)",
+          "start_date": "1998-02-04T00:09:16.000Z",
+          "stop_date": "2011-08-21T22:40:54.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/p7gt-yh33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H2_SWI"
+        },
+        "AC_H0_SWE": {
+          "description": "ACE/SWEPAM Solar Wind Experiment 64-Second Level 2 Data - D. J. McComas (SWRI)",
+          "start_date": "1998-02-04T00:00:31.000Z",
+          "stop_date": "2024-07-09T23:59:13.000Z",
+          "pi_name": "D. J. McComas",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/tsfn-6v47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H0_SWE"
+        },
+        "AC_H6_SWI": {
+          "description": "ACE/SWICS Solar Wind Protons 12-min Level 2 Data - G. Gloeckler (University of Maryland)",
+          "start_date": "1998-01-29T00:07:03.000Z",
+          "stop_date": "2024-12-31T23:58:24.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/mfxn-cw77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H6_SWI"
+        },
+        "AC_K1_SWE": {
+          "description": "K1 - ACE Solar Wind Experiment 1-Hour Key Parameters [PRELIM] - D. J. McComas (Southwest Research Institute)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-12T23:00:00.000Z",
+          "pi_name": "D. J. McComas",
+          "pi_affiliation": "Southwest Research Institute",
+          "doi": "10.48322/0n2v-es49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_K1_SWE"
+        },
+        "AC_H4_SWI": {
+          "description": "ACE/SWICS 1.1 Solar Wind 1-Day Level 2 Data - G. Gloeckler (University of Maryland)",
+          "start_date": "1998-02-04T00:09:16.000Z",
+          "stop_date": "2011-08-21T02:28:39.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "University of Maryland",
+          "doi": "10.48322/vpnc-ym91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_H4_SWI"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "AC_OR_SSC": {
+          "description": "ACE GSE Positions @ 12 min resolution  - SSC/SSCWeb ( NASA's GSFC)",
+          "start_date": "1997-08-25T17:48:00.000Z",
+          "stop_date": "2026-03-22T23:49:00.000Z",
+          "pi_name": "SSC/SSCWeb",
+          "pi_affiliation": "NASA's GSFC",
+          "doi": "10.48322/by5e-zs07",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#AC_OR_SSC"
+        }
+      }
+    }
+  },
+  "observatory_group": "ACE",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

@@ -1,0 +1,364 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "XYZ_GEO",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in GEO coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GEOO",
+      "type": "double",
+      "units": "Re",
+      "description": "---> XYZ in GEO coordinates (orbit plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GM",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in GM coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GMO",
+      "type": "double",
+      "units": "Re",
+      "description": "---> XYZ in GM coordinates (orbit plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSE",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in GSE coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSEO",
+      "type": "double",
+      "units": "Re",
+      "description": "---> XYZ in GSE coordinates (orbit plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSM",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in GSM coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSMO",
+      "type": "double",
+      "units": "Re",
+      "description": "---> XYZ in GSM coordinates (orbit plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_SM",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in SM coordinates (time-series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_SMO",
+      "type": "double",
+      "units": "Re",
+      "description": "---> XYZ in SM coordinates (orbit plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Latitude in GEO coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Longitude in GEO coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEO_LCT_T",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Spacecraft Local Time in GEO coordinate system",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Latitude in GM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Longitude in GM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GM_LCT_T",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Spacecraft local time in GM coordinate system",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSE_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Latitude in GSE Coordinate System",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Longitude in GSE coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LCT_T",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Spacecraft Local Time in GSE coordinates",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Latitude in GSM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Longitude in GSM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Latitude in SM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Longitude in SM coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LCT_T",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Spacecraft Local Time in SM coordinate system",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "NorthBtrace_GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Field line trace to the North Geographic Footprint - Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the North Geographic Footprint - Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GEO_ARCLEN",
+      "type": "double",
+      "units": "Re",
+      "description": "---> The arc length of the line from the spacecraft to the north geographic magnetic field footprint",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SouthBtrace_GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the South Geographic Footprint - Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the South Geographic Footprint - Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GEO_ARCLEN",
+      "type": "double",
+      "units": "Re",
+      "description": "---> The arc length of the line from the spacecraft to the south geographic magnetic field footprint",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "NorthBtrace_GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Field line trace to the North Geomagnetic Footprint - Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the North Geomagnetic Footprint - Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GM_ARCLEN",
+      "type": "double",
+      "units": "Re",
+      "description": "---> The arc length of the line from the spacecraft to the north geomagnetic footprint",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SouthBtrace_GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the South Geomagnetic Footprint - Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "---> Field line trace to the South Geomagnetic Footprint - Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GM_ARCLEN",
+      "type": "double",
+      "units": "Re",
+      "description": "---> The arc length of the line from the spacecraft to the south geomagnetic field footprint",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "RADIUS",
+      "type": "double",
+      "units": "Re",
+      "description": "Radial distance from the spacecraft to Earth.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "DNEUTS",
+      "type": "double",
+      "units": "Re",
+      "description": "Distance to the Tsyganenko 1995 model Neutral Sheet",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "BOW_SHOCK",
+      "type": "double",
+      "units": "Re",
+      "description": "---> Distance from the P93 Bow Shock",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MAG_PAUSE",
+      "type": "double",
+      "units": "Re",
+      "description": "---> Distance from the RS93 Magnetopause",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L_VALUE",
+      "type": "double",
+      "units": "",
+      "description": "Dipole L value",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "INVAR_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "Dipole Invariant Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_STRTH",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Strength",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MAG_X",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field X_GSE component",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MAG_Y",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Magnetic Field Y_GSE component",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MAG_Z",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Magnetic Field Z_GSE component",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2000-05-17T00:00:00.000Z",
+  "stopDate": "2016-01-01T00:00:00.000Z"
+}

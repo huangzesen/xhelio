@@ -1,0 +1,204 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ],
+      "fill": "99999"
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ],
+      "fill": "99"
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ],
+      "fill": "9"
+    },
+    {
+      "name": "MAG_ID",
+      "type": "double",
+      "units": "",
+      "description": "MAGNETOMETER ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ],
+      "fill": "9"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Radial component of the magnetic field, positive in the direction of    \n                        Jupiter to spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "North/South (System III) component of the magnetic field, positive      \n                        southward.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Azimuthal (System III) component of the magnetic field, positive        \n                        eastward.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Column contains the magnitude of the averaged magnetic field              \n                        component vectors in units of nanoTesla.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Average of the magnetic field magnitudes.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "Degree",
+      "description": "DELTA = ARCSIN(BTHETA/BMAG)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "Degree",
+      "description": "LAMBDA = 180. - ATAN(BPHI/-BR)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS BR",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS BT",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BP",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS BP",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RADII",
+      "description": "Jupiter to spacecraft range in units of jovian (Rj=71942 km) radii.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft jovicentric latitude (positive northward) in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft jovicentric east (system III) longitude in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "Point",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ],
+      "fill": "9"
+    },
+    {
+      "name": "Data Flag",
+      "type": "double",
+      "units": "",
+      "description": "DATA FLAG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

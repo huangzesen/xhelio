@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Frequency",
+      "type": "double",
+      "units": "Hz",
+      "description": "Predicted downlink frequency at Time",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "d20",
+      "type": "double",
+      "units": "",
+      "description": "Everett polynomial coefficient d20",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "d21",
+      "type": "double",
+      "units": "",
+      "description": "Everett polynomial coefficient d21",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "d40",
+      "type": "double",
+      "units": "",
+      "description": "Everett polynomial coefficient d40",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "d41",
+      "type": "double",
+      "units": "",
+      "description": "Everett polynomial coefficient d41",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

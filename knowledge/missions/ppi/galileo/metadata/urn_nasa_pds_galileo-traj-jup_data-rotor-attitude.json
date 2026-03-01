@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT CLOCK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock value of the sample time in the form:                  \n      partition/rim:mod91:mod10:mod8 where partition is the number of times   \n      the clock modulo counters have rolled over plus one, rim is the major   \n      frame counter (~60 2/3 sec), mod91 is the minor frame counter           \n      (~2/3 sec, valid = 0-90), mod10 is the real-time interupt (RTI) counter \n      (valid = 0-9), and mod8 is the sub-interupt counter (valid = 0-7).      \n      SCLK strings can be converted to UTC by using the SPICE spacecraft      \n      clock and leapseconds kernels.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR RIGHT ASCENSION",
+      "type": "double",
+      "units": "Radian",
+      "description": "Rotor right ascension, EME-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR DECLINATION",
+      "type": "double",
+      "units": "Radian",
+      "description": "Rotor declination, EME-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR TWIST",
+      "type": "double",
+      "units": "Radian",
+      "description": "Rotor twist (spin phase) angle, EME-50       \n                                 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR SPIN",
+      "type": "double",
+      "units": "Radian",
+      "description": "Rotor spin phase angle, ECL-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A11",
+      "type": "double",
+      "units": "",
+      "description": "Row 1, column 1 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A12",
+      "type": "double",
+      "units": "",
+      "description": "Row 1, column 2 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A13",
+      "type": "double",
+      "units": "",
+      "description": "Row 1, column 3 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A21",
+      "type": "double",
+      "units": "",
+      "description": "Row 2, column 1 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A22",
+      "type": "double",
+      "units": "",
+      "description": "Row 2, column 2 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A23",
+      "type": "double",
+      "units": "",
+      "description": "Row 2, column 3 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A31",
+      "type": "double",
+      "units": "",
+      "description": "Row 3, column 1 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A32",
+      "type": "double",
+      "units": "",
+      "description": "Row 3, column 2 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A33",
+      "type": "double",
+      "units": "",
+      "description": "Row 3, column 3 value of the EME50->System   \n                                 III rotation matrix.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

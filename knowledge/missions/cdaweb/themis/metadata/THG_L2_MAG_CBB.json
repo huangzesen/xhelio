@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thg_mag_cbb",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field B in DHZ vector components",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thg_magh_cbb",
+      "type": "double",
+      "units": "nT",
+      "description": "---> H component of B",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "thg_magd_cbb",
+      "type": "double",
+      "units": "nT",
+      "description": "---> E component of B",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "thg_magz_cbb",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Z component of B",
+      "fill": "-1.0000000150474662e+30"
+    }
+  ],
+  "startDate": "2007-01-01T00:00:00.000Z",
+  "stopDate": "2007-01-04T00:00:00.000Z"
+}

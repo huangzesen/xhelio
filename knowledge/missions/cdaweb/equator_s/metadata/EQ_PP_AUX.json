@@ -1,0 +1,67 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "sc_r_xyz_gse%eq_pp_aux",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position, vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_v_xyz_gse%eq_pp_aux",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity, vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_at_lat%eq_pp_aux",
+      "type": "double",
+      "units": "deg",
+      "description": "GSE latitude of spacecraft axis, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at_long%eq_pp_aux",
+      "type": "double",
+      "units": "degrees",
+      "description": "GSE longitude of spacecraft axis, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "tm_rate%eq_pp_aux",
+      "type": "double",
+      "units": "",
+      "description": "Low rate or high rate telemetry, scalar",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "gse_gsm%eq_pp_aux",
+      "type": "double",
+      "units": "degrees",
+      "description": "Rotation angle GSE to GSM, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dipole_tilt%eq_pp_aux",
+      "type": "double",
+      "units": "degrees",
+      "description": "Dipole Tilt in GSM z-x Plane, scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1997-12-16T11:25:00.000Z",
+  "stopDate": "1998-04-30T01:52:44.000Z"
+}

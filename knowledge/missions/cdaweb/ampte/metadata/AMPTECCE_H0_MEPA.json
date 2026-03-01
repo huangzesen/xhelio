@@ -1,0 +1,604 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SpinPeriod",
+      "type": "double",
+      "units": "seconds",
+      "description": "SpinPeriod",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Sector",
+      "type": "double",
+      "units": "sector",
+      "description": "SECTOR",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain",
+      "type": "double",
+      "units": "unitless",
+      "description": "Gain",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ION_protons_COUNTS",
+      "type": "double",
+      "units": "counts",
+      "description": "ION_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_CPS",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> ION_protons: counts per second per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_INTEN",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> ION_protons: differential intensity per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "ION_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> ION_protons: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> ION_protons: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_protons_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual ION_protons channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ION_helium_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "ION_helium:  counts per sector (stack_plot) with each sector being a sum from 4 spins; ION records only; the time given is the SECTOR midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ION_helium_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> ION_helium: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ION_helium_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> ION_helium: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "ION_helium_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual ION_helium channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "SpinPeriod_1",
+      "type": "double",
+      "units": "seconds",
+      "description": "SpinPeriod_1",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Sector_1",
+      "type": "double",
+      "units": "sector",
+      "description": "SECTOR_1",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain_1",
+      "type": "double",
+      "units": "unitless",
+      "description": "Gain_1",
+      "fill": "-1.0"
+    },
+    {
+      "name": "MCP1",
+      "type": "double",
+      "units": "counts",
+      "description": "Micro-channel plate 1:  count rate from counts summed over 4 spins",
+      "fill": "-9.999999680285692e+37"
+    },
+    {
+      "name": "MCP2",
+      "type": "double",
+      "units": "counts",
+      "description": "---> Micro-channel plate 2",
+      "fill": "-9.999999680285692e+37"
+    },
+    {
+      "name": "MCP3",
+      "type": "double",
+      "units": "counts",
+      "description": "---> Micro-channel plate 3",
+      "fill": "-9.999999680285692e+37"
+    },
+    {
+      "name": "SSD",
+      "type": "double",
+      "units": "counts",
+      "description": "---> Solid state detector",
+      "fill": "-9.999999680285692e+37"
+    },
+    {
+      "name": "TOF_protons_COUNTS",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_protons: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_CPS",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_protons: counts per second per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_INTEN",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_protons: differential intensity per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_protons: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_protons: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_protons: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_protons_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual TOF_protons channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TOF_helium_COUNTS",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_helium: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_CPS",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_helium: counts per second per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_INTEN",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_helium: differential intensity per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_helium: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_helium: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_helium: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_helium_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual TOF_helium channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_COUNTS",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_oxygen: counts per sector (spectrogram) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_CPS",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_oxygen: counts per second per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_INTEN",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_oxygen: differential intensity per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_oxygen: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_oxygen: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_oxygen: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_oxygen_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual TOF_oxygen channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "TOF_iron_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_iron: counts per sector (stack_plot) with each sector being a sum from 4 spins; either ION or TOF records; the time given is the SECTOR_1 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "TOF_iron_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_iron: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "TOF_iron_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_iron: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "TOF_iron_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual TOF_iron channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "SpinPeriod_2",
+      "type": "double",
+      "units": "seconds",
+      "description": "SpinPeriod_2",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Sector_2",
+      "type": "double",
+      "units": "sector",
+      "description": "SECTOR_2",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain_2",
+      "type": "double",
+      "units": "unitless",
+      "description": "Gain_2",
+      "fill": "-1.0"
+    },
+    {
+      "name": "TOF_all_ions_COUNTS",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_all_ions: counts per sector (spectrogram) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TOF_all_ions_CPS",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_all_ions: counts per second per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TOF_all_ions_INTEN",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_all_ions: differential intensity per sector (spectrogram)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TOF_all_ions_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "TOF_all_ions: counts per sector (stack_plot) with each sector being a sum from 4 spins; TOF records only; the time given is the SECTOR_2 midpoint in spin 2 out of 0,1,2,3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TOF_all_ions_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> TOF_all_ions: counts per second per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TOF_all_ions_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> TOF_all_ions: differential intensity per sector (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "SpinPeriod_3",
+      "type": "double",
+      "units": "seconds",
+      "description": "SpinPeriod_3",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Sector_3",
+      "type": "double",
+      "units": "sector",
+      "description": "SECTOR_3",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain_3",
+      "type": "double",
+      "units": "unitless",
+      "description": "Gain_3",
+      "fill": "-1.0"
+    },
+    {
+      "name": "HIRES_ION_protons_COUNTS_stack",
+      "type": "double",
+      "units": "counts",
+      "description": "HIRES_ION_protons: counts for every sector in every spin (stack_plot); ION records only; the time given is the midpoint of SECTOR_3",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HIRES_ION_protons_CPS_stack",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> HIRES_ION_protons: counts per second for every sector in every spin (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HIRES_ION_protons_INTEN_stack",
+      "type": "double",
+      "units": "1/(sec ster cm^2 keV)",
+      "description": "---> HIRES_ION_protons: differential intensity for every sector in every spin (stack_plot)",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HIRES_ION_protons_Edrift",
+      "type": "double",
+      "units": "keV",
+      "description": "Actual HIRES_ION_protons channel midpoint energies at the middle of this day",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "spin_axis_dirn_in_GSE",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft spin axis as a unit vector in GSE evaluated once per record",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG data in GSE interpolated to sector midpoints",
+      "fill": "-9.999999680285692e+37",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1984-08-29T22:50:32.000Z",
+  "stopDate": "1989-01-11T00:00:09.000Z"
+}

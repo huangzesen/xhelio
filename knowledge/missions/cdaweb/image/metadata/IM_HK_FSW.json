@@ -1,0 +1,341 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BF_Timeout10Hz",
+      "type": "integer",
+      "units": "n/a",
+      "description": "10 Hz task timeout counter",
+      "fill": "21845.0"
+    },
+    {
+      "name": "BF_Timeout1Hz",
+      "type": "integer",
+      "units": "n/a",
+      "description": "1 Hz task timeout counter",
+      "fill": "21845.0"
+    },
+    {
+      "name": "BF_1HzCounter",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Schedulers 1 Hz counter",
+      "fill": "1431655765.0"
+    },
+    {
+      "name": "BM_CurrentRead",
+      "type": "integer",
+      "units": "n/a",
+      "description": "MMM Read Pointer",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "BM_CurrentWrite",
+      "type": "integer",
+      "units": "n/a",
+      "description": "MMM Write Pointer",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "BM_readFailCtr",
+      "type": "double",
+      "units": "n/a",
+      "description": "MMM Read Failure counter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BM_writeFailCtr",
+      "type": "double",
+      "units": "n/a",
+      "description": "MMM Write Failure counter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_DramMbeCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "DRAM multibit error counter",
+      "fill": "2008337474.0"
+    },
+    {
+      "name": "BF_DramSbeCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "DRAM singlebit error counter",
+      "fill": "4108458872.0"
+    },
+    {
+      "name": "BF_CmmMbeCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "CMM multibit error counter",
+      "fill": "2025114690.0"
+    },
+    {
+      "name": "BF_CmmSbeCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "CMM singlebit error counter",
+      "fill": "3426877612.0"
+    },
+    {
+      "name": "BF_EepromErrCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "EEPROM error counter",
+      "fill": "30363.0"
+    },
+    {
+      "name": "BE_1553FailCnt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "1553 interface failure counter",
+      "fill": "30400.0"
+    },
+    {
+      "name": "BF_InvalidChks",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Flags indicating Frame Validation check failures flag.",
+      "fill": "17100.0"
+    },
+    {
+      "name": "BF_ValidDiscard",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Number of invalid frames discarded.",
+      "fill": "66.0"
+    },
+    {
+      "name": "BD_AdaEx1_10HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Flight s/w ada exception 10 hz counter.",
+      "fill": "16522.0"
+    },
+    {
+      "name": "BD_AdaEx1_1HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Flight s/w ada exception 1 hz counter.",
+      "fill": "26288.0"
+    },
+    {
+      "name": "BD_AdaEx2_10HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Flight s/w ada exception 10 hz counter.",
+      "fill": "38006.0"
+    },
+    {
+      "name": "BD_AdaEx2_1HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Flight s/w ada exception 1 hz counter.",
+      "fill": "47870.0"
+    },
+    {
+      "name": "BD_ASTAlvns1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of AST aliveness 1",
+      "fill": "35840.0"
+    },
+    {
+      "name": "BD_ASTAlvns2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of AST aliveness 2",
+      "fill": "52404.0"
+    },
+    {
+      "name": "BD_ASTRnsF1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of AST aliveness 1",
+      "fill": "46200.0"
+    },
+    {
+      "name": "BD_ASTRnsF2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of AST aliveness 2",
+      "fill": "30830.0"
+    },
+    {
+      "name": "BD_ASTRnsF3Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of AST aliveness 3",
+      "fill": "37998.0"
+    },
+    {
+      "name": "BD_BatHt1Rsb1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 1",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatHt1Rsb2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 1",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatHt2Rsb1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 2",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatHt2Rsb2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 2",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatHt3Rsb1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 3",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatHt3Rsb2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery Heater 3",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatSOCLmt1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery SOC Limit 1",
+      "fill": "0.0"
+    },
+    {
+      "name": "BD_BatSOCLmt2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery SOC Limit 2",
+      "fill": "47857.0"
+    },
+    {
+      "name": "BD_BatSOCLmt3Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Battery SOC Limit 3",
+      "fill": "50396.0"
+    },
+    {
+      "name": "BD_CIDPAlvnsEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of CIDP Aliveness check",
+      "fill": "45348.0"
+    },
+    {
+      "name": "BD_GenSPCErrEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of SPC Events",
+      "fill": "46244.0"
+    },
+    {
+      "name": "BD_SPCListExEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures SPC list exhaustion",
+      "fill": "16447.0"
+    },
+    {
+      "name": "BD_SMSPCErrEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "SPC Safe Macro Error Event Counter",
+      "fill": "54217.0"
+    },
+    {
+      "name": "BD_NoGndCmdEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Watchdog timer",
+      "fill": "2910.0"
+    },
+    {
+      "name": "BD_GndTstHldEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Ground Test failures",
+      "fill": "58688.0"
+    },
+    {
+      "name": "BD_PDUAlvnsEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of PDU Aliveness",
+      "fill": "60478.0"
+    },
+    {
+      "name": "BD_SSHtrRsb1Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Sun Sensor Htr 1",
+      "fill": "16392.0"
+    },
+    {
+      "name": "BD_SSHtrRsb2Evt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures of Sun Sensor Htr 2",
+      "fill": "54848.0"
+    },
+    {
+      "name": "BD_SCU_EDACFEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures SCU EDAC",
+      "fill": "18893.0"
+    },
+    {
+      "name": "BD_RTmo1_T10HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures Count",
+      "fill": "37676.0"
+    },
+    {
+      "name": "BD_RTmo1_T1HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures Count",
+      "fill": "21556.0"
+    },
+    {
+      "name": "BD_RTmo2_T10HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures Count",
+      "fill": "47082.0"
+    },
+    {
+      "name": "BD_RTmo2_T1HEvt",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Consecutive failures Count",
+      "fill": "51108.0"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

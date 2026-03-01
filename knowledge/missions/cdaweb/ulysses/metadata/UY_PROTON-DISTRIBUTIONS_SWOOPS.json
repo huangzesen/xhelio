@@ -1,0 +1,92 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Heliographic latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BR in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BT in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BN in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_MAG",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton speed in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Matrix",
+      "type": "double",
+      "units": "s^3/(km^3-cm^3)",
+      "description": "Log10 of the proton distribution function",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        50,
+        25
+      ]
+    },
+    {
+      "name": "v_par",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_par",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "v_per",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_per",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    }
+  ],
+  "startDate": "1990-11-18T02:52:56.000Z",
+  "stopDate": "2009-06-30T15:54:11.000Z"
+}

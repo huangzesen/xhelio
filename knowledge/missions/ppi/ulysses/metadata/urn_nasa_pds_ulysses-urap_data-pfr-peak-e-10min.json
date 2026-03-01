@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Mode",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates PFR scan mode:                                           \n      1: Fast mode.                                                           \n      2: Slow mode.                                                           \n      3: Fixed frequency mode.  This value should not occur as                \n         fixed frequency data is removed from the UDS data.                   \n      4: The mode switched from fast to slow or slow to fast                  \n         during the averaging interval.                                       \n      5: Unknown mode.  This value occurs if there was no valid               \n         data during the averaging interval.  This could be due               \n         to a data gap or bad data.  Data acquired while the PFR              \n         is in fixed tune mode is ignored so this value for the               \n         MODE will also occur if the PFR was in fixed tune mode               \n         during the entire averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates telemetry bit rate:                                      \n      1: 128 bps.                                                             \n      2: 256 bps.                                                             \n      3: 512 bps.                                                             \n      4: 1024 bps.                                                            \n      5: Bit rate changed during averaging period.                            \n      6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

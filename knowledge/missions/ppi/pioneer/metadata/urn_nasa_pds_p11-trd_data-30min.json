@@ -1,0 +1,348 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SAT",
+      "type": "double",
+      "units": "",
+      "description": "This parameter is used to identify the spacecraft which\n                        carried the instrument which acquired the data in this archive.  The\n                        spacecraft are named according to a convention in which the literal\n                        name indicates that the spacecraft belongs to a series of\n                        interplanetary and planetary probes built under the aegis of the NASA\n                        Ames Research Center in Mountain View, California, and the number\n                        indicates the chronological position of the spacecraft in that series.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UCSD",
+      "type": "double",
+      "units": "",
+      "description": "This parameter identifies the University of California,\n                        San Diego as the institution which designed, built, and carried out\n                        the primary data analysis for this instrument.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HMI",
+      "type": "double",
+      "units": "",
+      "description": "Identifies whether the statistical information in the\n                        summary record is homogeneous or inhomogeneous.\n                        H Sum or I Sum.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELT",
+      "type": "double",
+      "units": "sec",
+      "description": "Exactly 1800 for the half hour summaries in the UCSD cruise data\n                        archive. Other values of DELT are in use by UCSD in other data \n                        sets. Indicates the nominal width of the averaging intervals.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTIME",
+      "type": "double",
+      "units": "",
+      "description": "Time of first reading within the summary averaging\n                        interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ETIME",
+      "type": "double",
+      "units": "",
+      "description": "Time of last reading within the summary averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EDRTAP",
+      "type": "double",
+      "units": "",
+      "description": "The identifier given to the source EDR in the internal\n                        UCSD tape filing system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TDF",
+      "type": "double",
+      "units": "",
+      "description": "Identifier of the data format in use by the spacecraft\n                        telemetry system during the data transmission. This parameter affects\n                        the operating mode of the instrument.\n                         \"A\", \"A/D\", \"B\" or \"B/D\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TBR",
+      "type": "double",
+      "units": "",
+      "description": "Identifier of the data bit rate in use by the spacecraft\n                        telemetry system during the data transmission.  This parameter affects\n                        the operating mode of the instrument.  The bit rate, in bits per\n                        second, is given by the formula 2**(3+TBR), and covers the range from\n                        16 bps through 2048 bps in eight binary steps.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BRTLT",
+      "type": "double",
+      "units": "ms",
+      "description": "Round trip light travel time from earth to the spacecraft\n                        and back at the beginning time of the summary.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERTLT",
+      "type": "double",
+      "units": "ms",
+      "description": "Round trip light travel time from earth to the spacecraft\n                        and back at the ending time of the summary.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PMIN Pulse E",
+      "type": "double",
+      "units": "deg F",
+      "description": "The housekeeping parameter is Pulse-Electronics Temperature (deg F). \n                        Minimum value transmitted during the averaging interval for \n                        housekeeping parameters",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PMIN HVRC",
+      "type": "double",
+      "units": "deg F",
+      "description": "The housekeeping parameter is High-Voltage Regulator Current (micro-A). \n                        Minimum value transmitted during the averaging interval\n                        for housekeeping parameters",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PMIN Detector C",
+      "type": "double",
+      "units": "deg F",
+      "description": "The housekeeping parameter is Detector C Temperature (deg F). \n                        Minimum value transmitted during the averaging interval\n                        for housekeeping parameters",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NFMOD",
+      "type": "double",
+      "units": "",
+      "description": "Specifies one of several modes for running the data\n                        reduction program. Only the one mode was used in generating the\n                        Pioneer 10 TRD Cruise Data Archive, but other modes were used in\n                        generating other data sets.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BATCCLT",
+      "type": "double",
+      "units": "deg",
+      "description": "The ecliptic colatitude is measured southward from the\n                        ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BATCLNG",
+      "type": "double",
+      "units": "deg",
+      "description": "The ecliptic longitude is measured in the ecliptic plane\n                        eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BRADPS",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BCLTPSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BALGPSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BRADES",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BCLTESC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BALGESC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BRADJS",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BCLTJSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BALGJSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox..",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EATCCLT",
+      "type": "double",
+      "units": "deg",
+      "description": "The ecliptic colatitude is measured southward from the\n                        ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EATCLNG",
+      "type": "double",
+      "units": "deg",
+      "description": "The ecliptic longitude is measured in the ecliptic plane\n                        eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERADPS",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ECLTPSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EALGPSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the spacecraft position coordinates given\n                        in spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERADES",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ECLTESC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EALGESC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of the earth's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERADJS",
+      "type": "double",
+      "units": "Astronomical units (AU)",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ECLTJSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic colatitude is measured\n                        southward from the ecliptic zenith.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EALGJSC",
+      "type": "double",
+      "units": "deg",
+      "description": "One component of Jupiter's position coordinates given in\n                        spherical polar coordinates referenced to the ecliptic plane, with\n                        point of origin at the sun. The ecliptic longitude is measured in the\n                        ecliptic plane eastward from the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "km",
+      "description": "X COMP OF GASE TRAJECTORY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "km",
+      "description": "Y COMP OF GASE TRAJECTORY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "km",
+      "description": "Z COMP OF GASE TRAJECTORY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "AU",
+      "description": "RANGE FROM SUN",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "SOLAR LATITUDE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "SOLAR EAST LONGITUDE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

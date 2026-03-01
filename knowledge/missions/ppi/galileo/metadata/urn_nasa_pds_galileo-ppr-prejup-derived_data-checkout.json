@@ -1,0 +1,210 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_YYDOY",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time year minus 1900\n                    and day-of-year (DOY) expressed as a\n                    single integer formed by adding DOY\n                    to 1000*(year-1900).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_HOURS",
+      "type": "double",
+      "units": "hour",
+      "description": "Spacecraft event time hours within\n                    the current DOY.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_SEC",
+      "type": "double",
+      "units": "second",
+      "description": "Spacecraft event time seconds within\n                    the current hour.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_MSEC",
+      "type": "double",
+      "units": "millisecond",
+      "description": "Spacecraft event time milliseconds\n                    within the current second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RIM",
+      "type": "double",
+      "units": "",
+      "description": "Count of the corrected spacecraft\n                    clock RIM counter, which increments by\n                    one (1) every 60 and 2/3 seconds,\n                    or 91 minor frames.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD91",
+      "type": "double",
+      "units": "",
+      "description": "Count of the corrected spacecraft\n                    clock MOD91 counter, which increments\n                    by one (1) every 2/3 second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RIGHT_ASCENSION",
+      "type": "double",
+      "units": "degree",
+      "description": "Right ascension of the instrument\n                    boresight direction for the scan \n                    platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DECLINATION",
+      "type": "double",
+      "units": "degree",
+      "description": "Declination of the instrument\n                    boresight direction for the scan \n                    platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CONE_ANGLE",
+      "type": "double",
+      "units": "degree",
+      "description": "Cone angle of the instrument boresight\n                    direction for the scan platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CROSS_CONE_ANGLE",
+      "type": "double",
+      "units": "degree",
+      "description": "Cross-cone, or clock, angle of the\n                    instrument boresight direction for the\n                    scan platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OPERATION_MODE",
+      "type": "double",
+      "units": "",
+      "description": "Mode of operation of the PPR\n                    instrument;\n                    0 - transition mode,\n                    1 - cycle mode,\n                    2 - PhotoPolarimetry and Photometry\n                        (PP/PH) mode,\n                    3 - photometry mode,\n                    4 - radiometry mode,\n                    5 - position select mode.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FILTER_POSITION",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the filter/retarder wheel\n                    position at which the data sample pair\n                    SAMPLE_A_DATA and SAMPLE_B_DATA are\n                    acquired.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CAL_LAMP_BOOM_SEQUENCE_TAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicator used both to indicate that\n                    either internal or external\n                    calibration lamp is on and to serve as\n                    a marker that separates data taken on\n                    successive s/c spins if boom sequence\n                    operation is active.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_A_DATA",
+      "type": "double",
+      "units": "",
+      "description": "Is the first PP/PH science data sample\n                    of the simultaneously obtained pair\n                    corresponding to the orthogonal\n                    polarization components separated by \n                    the PPR Wollaston prism or a\n                    radiometry scene sample.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_B_DATA",
+      "type": "double",
+      "units": "",
+      "description": "Is the second of the pair of PP/PH\n                    science data samples or a science\n                    temperature data sample if\n                    SAMPLE_A_DATA is radiometry data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIOMETRY_RADIANCE",
+      "type": "double",
+      "units": "",
+      "description": "The radiometry scene radiance in net\n                    data number, specifically, the\n                    original detector output in DN,\n                    corrected for the contributions to\n                    the signal by internal instrument\n                    elements and minus the dark level\n                    offset.  Should in general be\n                    positive, but at low signal levels\n                    may be negative owing to instrument\n                    noise.  This field is left blank for\n                    non-radiometry data samples.\n                    The value 1E35 is a flag value\n                    indicating that there is no data.",
+      "size": [
+        1
+      ],
+      "fill": "1E35"
+    },
+    {
+      "name": "BRIGHTNESS_TEMPERATURE",
+      "type": "double",
+      "units": "kelvin",
+      "description": "The radiometry scene brightness\n                    temperature in kelvins (K) converted\n                    from the radiometry scene radiance in\n                    DN.  If the radiance DN value is\n                    negative, the brightness temperature\n                    displayed is zero.  Because of the\n                    dynamic range of the instrument for\n                    radiometry measurements, conversions\n                    for temperatures greater than 330 K\n                    are not possible, so in such instances\n                    the brightness temperature displayed\n                    is zero.  This field is left blank\n                    for non-radiometry data samples.\n                    The value 1E35 is a flag value\n                    indicating that there is no data.",
+      "size": [
+        1
+      ],
+      "fill": "1E35"
+    },
+    {
+      "name": "INTENSITY",
+      "type": "double",
+      "units": "",
+      "description": "Polarimetry or photometry scene\n                    spectral radiance, or intensity,\n                    specifically, the total intensity,\n                    or sum of the two orthogonal\n                    components minus offsets in data\n                    number form without adjustment for\n                    instrument gain setting.  This field\n                    is left blank for radiometry data\n                    samples. The value 1E35 is a flag value\n                    indicating that there is no data.",
+      "size": [
+        1
+      ],
+      "fill": "1E35"
+    },
+    {
+      "name": "ABSOLUTE_INTENSITY",
+      "type": "double",
+      "units": "watts/(cm**2 sr nm)",
+      "description": "Polarimetry or photometry scene\n                    spectral radiance, or intensity,\n                    specifically, the total intensity in\n                    absolute units of watts per square\n                    centimeter per steradian per\n                    nanometer. This field is left blank\n                    for radiometry data samples.\n                    The value 1E35 is a flag value\n                    indicating that there is no data.",
+      "size": [
+        1
+      ],
+      "fill": "1E+35"
+    },
+    {
+      "name": "LINEAR_POLARIZATION",
+      "type": "double",
+      "units": "",
+      "description": "Linear polarization degree in percent.\n                    This field is left blank except for\n                    data samples acquired at the third\n                    filter wheel position of the set of\n                    three retarder orientations for a\n                    given polarimetry band, i.e., filter\n                    wheel positions 5, 11, and 17.\n                    The value 1E35 is a flag value\n                    indicating that there is no data.",
+      "size": [
+        1
+      ],
+      "fill": "1E+35"
+    },
+    {
+      "name": "POLARIZATION_DIRECTION",
+      "type": "double",
+      "units": "degrees",
+      "description": "Linear polarization direction angle in\n                    degrees measured relative to the\n                    instrument baseplate.  This field is\n                    always filled to ensure fixed length\n                    records for this data file.  Zero is\n                    displayed for records corresponding to\n                    filter wheel positions other than 5,\n                    11, and 17.",
+      "size": [
+        1
+      ],
+      "fill": "1E+35"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

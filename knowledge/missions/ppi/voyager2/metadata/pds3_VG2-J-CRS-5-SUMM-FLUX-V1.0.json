@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BS2E RATE1",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Column contains average BS2E particle flux with guard counters placed in anticoincidence with primary detectors to reduce the background from high-energy particles penetrating through the sides of the telescope.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Standard Deviation in BS2E RATE1",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Column contains the statistical error associated with the BS2E RATE with guard counters in anticoincidence with primary detectors.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BS2E RATE2",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Column contains average BS2E particle flux with guard counters turned off.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Standard Deviation in BS2E RATE2",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Column contains the statistical error associated with the BS2E RATE with guard counters turned off.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

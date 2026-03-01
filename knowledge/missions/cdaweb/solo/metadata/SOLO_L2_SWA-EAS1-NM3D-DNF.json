@@ -1,0 +1,48 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS1_NM3D_DNF_Data",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS1 3D electron distribution - Differential Number Flux [varying with energy, azimuth and elevation angles, CDAWeb plots not supported.]",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_NM3D_DNF_Data_reorder",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS1 3D electron distribution - Differential Number Flux [varying with energy, azimuth and elevation angles, energy and elevation angle reordered; CDAWeb plots not supported.]",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_Data_spec",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> Spectrograms around zero elevation and at selected azimuth bin #1, 5, 10, 15, 20, 25, 30.",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T14:48:38.000Z",
+  "stopDate": "2025-10-31T23:59:47.000Z"
+}

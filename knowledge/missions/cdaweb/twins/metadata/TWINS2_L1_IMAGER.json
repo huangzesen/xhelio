@@ -1,0 +1,1105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "satellite",
+      "type": "integer",
+      "units": "",
+      "description": "satellite ID number (1=twins1 or 2:twins2)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "smooth_image",
+      "type": "double",
+      "units": "Flux (cm^2 sr s)^-1",
+      "description": "TWINS smooth Image for all energies",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Mimage_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Image Movie @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "pixel_sweep_count",
+      "type": "double",
+      "units": "",
+      "description": "Per-pixel sweep count",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_image_val",
+      "type": "double",
+      "units": "",
+      "description": "Target counts value used in the smoothing algorithm.",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "smooth_image_energy_kev",
+      "type": "double",
+      "units": "keV",
+      "description": "Image energy values",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "lonmin_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude (deg) at the middle of the  first pixel.  For 4 deg pixel_size this is nominally -88 degrees.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lonmax_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude (deg) at the middle of the  last pixel.  For 4 deg pixel_size this is nominally -92 degrees.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "latmin_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude (deg) at the middle of the  first pixel.  For 4 deg pixel_size this is nominally 4 degrees.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "latmax_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude (deg) at the middle of the  last pixel.  For 4 deg pixel_size this is nominally 88 degrees.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lat_pixelsize_deg",
+      "type": "integer",
+      "units": "deg",
+      "description": "The pixel size in the imaging (polar) direction.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "lon_pixelsize_deg",
+      "type": "integer",
+      "units": "deg",
+      "description": "The pixel size in the scan (longitudinal) direction.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "smooth_error_image",
+      "type": "double",
+      "units": "Flux (cm^2 sr s)^-1",
+      "description": "TWINS smooth Error_Image for all energies",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_error_image_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error_Image @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "smooth_Merror_image_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Smooth Error Image Movie @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "data quality flag, 0=good",
+      "fill": "-1.0"
+    },
+    {
+      "name": "no_orbit_data",
+      "type": "integer",
+      "units": "",
+      "description": "Attitude/Ephemeris flag; 0=data, 1=data are not available",
+      "fill": "-1.0"
+    },
+    {
+      "name": "attitude_delta_deg",
+      "type": "double",
+      "units": "attitude change in degrees",
+      "description": "Attitude Variation (degrees) during the time interval of each image.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_posv_re_eci",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Average spacecraft position vector in ECI coordinates (time series)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "spin_axis_eci",
+      "type": "double",
+      "units": "",
+      "description": "Average polar attitude unit vector in ECI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "prime_meridian_eci",
+      "type": "double",
+      "units": "",
+      "description": "Average azimuth attitude unit vector in ECI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sun_posv_eci",
+      "type": "double",
+      "units": "",
+      "description": "Average sun position unit vector in ECIcoordinates.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mag_eci",
+      "type": "double",
+      "units": "",
+      "description": "Average geomagnetic dipole unit vector in ECI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_posv_re_sm",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Average spacecraft position vector in SM coordinates.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "spin_axis_sm",
+      "type": "double",
+      "units": "",
+      "description": "Average polar attitude unit vector in SM coordinates.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "prime_meridian_sm",
+      "type": "double",
+      "units": "",
+      "description": "Average azimuth attitude unit vector in SM coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sun_posv_sm",
+      "type": "double",
+      "units": "",
+      "description": "Average sun position unit vector in SM coordinates.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mag_sm",
+      "type": "double",
+      "units": "",
+      "description": "Average magnetic dipole unit vector in SM coordinates.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "radial_distance_re",
+      "type": "double",
+      "units": "earth radii",
+      "description": "Radial Location of satellite in Earth radii",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "latitude_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude in SM coordinates",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lshell_dip",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft McIlwain L Shell assuming a dipole magnetic field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hh:mm",
+      "description": "Spacecraft Magnetic local time in SM coordinates.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "energy_kev",
+      "type": "double",
+      "units": "keV",
+      "description": "Raw images energy values",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "all_energies",
+      "type": "integer",
+      "units": "",
+      "description": "0 for a Differential Energy Flux image. 1 for an All Energies image",
+      "fill": "-1.0"
+    },
+    {
+      "name": "saveset_version",
+      "type": "integer",
+      "units": "",
+      "description": "saveset_version",
+      "fill": "-1.0"
+    },
+    {
+      "name": "twins_image",
+      "type": "double",
+      "units": "Flux (cm^2 sr s)^-1",
+      "description": "TWINS Raw Image for all energies",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_image_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e1",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 1 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e2",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 4 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e3",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 8 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e4",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 12 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e5",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 16 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e6",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 20 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e7",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 25 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e8",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 30 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "twins_Mimage_e9",
+      "type": "double",
+      "units": "Flux Per Energy (cm^2 sr s eV)^-1",
+      "description": "TWINS Raw Image Movie @ 50 keV (cm^2 sr s eV)^-1",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e1",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 1 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e2",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 4 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e3",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 8 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e4",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 12 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e5",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 16 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e6",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 20 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e7",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 25 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e8",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 30 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_image_e9",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Raw Error Image @ 50 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e1",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 1 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e2",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 4 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e3",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 8 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e4",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 12 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e5",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 16 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e6",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 20 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e7",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 25 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e8",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 30 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    },
+    {
+      "name": "error_Mimage_e9",
+      "type": "double",
+      "units": "Fractional Error",
+      "description": "Movie of Raw Error Images @ 50 keV",
+      "fill": "-1e+31",
+      "size": [
+        90,
+        22
+      ]
+    }
+  ],
+  "startDate": "2008-05-02T04:45:27.000Z",
+  "stopDate": "2016-10-26T03:45:47.000Z"
+}

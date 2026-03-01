@@ -1,0 +1,844 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number 1 - 6 for six-month maps from IBEX Data Release 4",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Ener2",
+      "type": "double",
+      "units": "keV",
+      "description": "Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener2_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux2",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux2_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux2_movie",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr2",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr2_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar2",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar2_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts2",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts2_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp2",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp2_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb2",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "Samples per pixel, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb2_plasma",
+      "type": "double",
+      "units": "#/pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener3",
+      "type": "double",
+      "units": "keV",
+      "description": "Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener3_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux3",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux3_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux3_movie",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr3",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr3_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar3",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar3_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts3",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts3_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb3",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "Samples per pixel, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb3_plasma",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener4",
+      "type": "double",
+      "units": "keV",
+      "description": "Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener4_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux4",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux4_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux4_movie",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr4",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr4_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar4",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar4_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts4",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts4_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb4",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "Samples per pixel, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb4_plasma",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener5",
+      "type": "double",
+      "units": "keV",
+      "description": "Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener5_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux5",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux5_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux5_movie",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr5",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr5_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar5",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar5_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts5",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts5_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb5",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "Samples per pixel, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb5_plasma",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener6",
+      "type": "double",
+      "units": "keV",
+      "description": "Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Ener6_plasma",
+      "type": "double",
+      "units": "keV",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6_plasma",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6_movie",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr6",
+      "type": "double",
+      "units": "",
+      "description": "Signal/Noise Ratio, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fsnr6_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar6",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "Flux Variance, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fvar6_plasma",
+      "type": "double",
+      "units": "(/cm2-s-sr-keV)^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts6",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cnts6_plasma",
+      "type": "double",
+      "units": "#",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb6",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "Samples per pixel, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Numb6_plasma",
+      "type": "double",
+      "units": "# / pixel",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2011-06-25T00:00:00.000Z"
+}

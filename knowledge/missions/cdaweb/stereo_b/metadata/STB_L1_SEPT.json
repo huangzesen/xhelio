@@ -1,0 +1,140 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Single_Counter_Rate_NS",
+      "type": "double",
+      "units": "cnts/sec",
+      "description": "NS Single Counter Rate",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Single_Counter_Rate_E",
+      "type": "double",
+      "units": "cnts/sec",
+      "description": "E Single Counter Rate",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Temperature_NS",
+      "type": "integer",
+      "units": "Celsius",
+      "description": "Temperatures for the NS Sensors",
+      "fill": "-2147483648.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Temperature_E",
+      "type": "integer",
+      "units": "Celsius",
+      "description": "Temperatures for the E Sensors",
+      "fill": "-2147483648.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Heater_NS",
+      "type": "integer",
+      "units": "",
+      "description": "NS Heater duty cycle in units of 10%",
+      "fill": "255.0"
+    },
+    {
+      "name": "Heater_E",
+      "type": "integer",
+      "units": "",
+      "description": "E Heater duty cycle in units of 10%",
+      "fill": "255.0"
+    },
+    {
+      "name": "Spec_2_NS",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Electron spectra in the ecliptic north field of view",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_0_NS",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Electron spectra in the ecliptic south field of view",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_1_NS",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Ion spectra in the ecliptic north field of view",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_3_NS",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Ion spectra in the ecliptic south field of view",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_0_E",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Electron spectra in the sunward direction",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_2_E",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Electron spectra in the anti-sunward direction",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_3_E",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Ion spectra in the sunward direction",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "Spec_1_E",
+      "type": "double",
+      "units": "cnts/sec/sr/cm^2/MeV",
+      "description": "Ion spectra in the anti-sunward direction",
+      "fill": "-1e+31",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "2006-11-13T20:00:26.000Z",
+  "stopDate": "2014-09-27T16:28:26.000Z"
+}

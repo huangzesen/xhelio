@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Intensity",
+      "type": "double",
+      "units": "1.0e-15Tesla/Hz**0.5",
+      "description": "WFA Average magnetic field intensity in 22 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    }
+  ],
+  "startDate": "1990-10-29T00:00:00.000Z",
+  "stopDate": "2004-12-31T00:00:00.000Z"
+}

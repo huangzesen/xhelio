@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E100HZMX",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Maximum wave amplitude per root Hertz per 24 \n  second interval, measured at 100 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E100HZAV",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Average wave amplitude per root Hertz per 24 \n  second interval, measured at 100 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E100HZMN",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Minimum wave amplitude per root Hertz per 24 \n  second interval, measured at 100 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E730HZMX",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Maximum wave amplitude per root Hertz per 24 \n  second interval, measured at 730 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E730HZAV",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Average wave amplitude per root Hertz per 24 \n  second interval, measured at 730 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E730HZMN",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Minimum wave amplitude per root Hertz per 24 \n  second interval, measured at 730 Hz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E5.4KHZMX",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Maximum wave amplitude per root Hertz per 24 \n  second interval, measured at 5.4 kHz.  At a particular frequency the wave   \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E5.4KHZAV",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Average wave amplitude per root Hertz per 24 \n  second interval, measured at 5.4 kHz.  At a particular frequency the wave   \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E5.4KHZMN",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Minimum wave amplitude per root Hertz per 24 \n  second interval, measured at 5.4 kHz.  At a particular frequency the wave   \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E30KHZMX",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Maximum wave amplitude per root Hertz per 24 \n  second interval, measured at 30 kHz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E30KHZAV",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Average wave amplitude per root Hertz per 24 \n  second interval, measured at 30 kHz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E30KHZMN",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Minimum wave amplitude per root Hertz per 24 \n  second interval, measured at 30 kHz.  At a particular frequency the wave    \n  electric field amplitude (V/M) is measured over the bandwidth of the filter \n  (30% for OEFD).  The square root of the bandwidth is incorporated in order  \n  to compare measurements made with this instrument with other wave           \n  measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

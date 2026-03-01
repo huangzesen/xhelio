@@ -1,0 +1,509 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_aeb1_TELEM_FLAG",
+      "type": "integer",
+      "units": "None",
+      "description": "Flag indicating source of AEB1 data.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_TELEM_FLAG",
+      "type": "integer",
+      "units": "None",
+      "description": "Flag indicating source of AEB2 data.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_AEB1_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the AEB1 circuit board.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_PA1_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the V1 preamplifier.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_PA2_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the V2 preamplifier.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_PA5_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the V5 preamplifier.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_RBIAS",
+      "type": "integer",
+      "units": "None",
+      "description": "Index of selected bias resistor for V1 bias current.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_SHIELD_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V1 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_SHIELD_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V1 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_SHIELD_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V1 shield.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_STUB_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V1 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_STUB_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V1 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_STUB_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V1 stub.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_WHIP_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V1 whip, derived from measured bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_WHIP_CURR_DAC",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V1 whip, derived from commanded bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_WHIP_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V1 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_WHIP_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V1 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V1_WHIP_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V1 whip.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_RBIAS",
+      "type": "integer",
+      "units": "None",
+      "description": "Index of selected bias resistor for V2 bias current.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_SHIELD_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V2 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_SHIELD_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V2 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_SHIELD_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V2 shield.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_STUB_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V2 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_STUB_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V2 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_STUB_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V2 stub.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_WHIP_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V2 whip, derived from measured bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_WHIP_CURR_DAC",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V2 whip, derived from commanded bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_WHIP_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V2 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_WHIP_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V2 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V2_WHIP_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V2 whip.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_BOX_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V5 box.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_BOX_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V5 box.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_BOX_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V5 box.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_SENSOR_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V5 sensor, derived from measured bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_SENSOR_CURR_DAC",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V5 sensor, derived from commanded bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_SENSOR_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V5 sensor.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_SENSOR_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V5 sensor.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_V5_SENSOR_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V5 sensor.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_XFL_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Current draw of the floating power supply for the V1 and V2 antennas.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_XFL_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the floating power supply for the V1 and V2 antennas.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_ZFL_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Current draw of the floating power supply for the V5 sensor.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb1_ZFL_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the floating power supply for the V5 sensor.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_AEB2_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the AEB2 circuit board.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_PA3_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the V3 preamplifier.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_PA4_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the V4 preamplifier.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_RBIAS",
+      "type": "integer",
+      "units": "None",
+      "description": "Index of selected bias resistor for V3 bias current.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_SHIELD_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V3 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_SHIELD_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V3 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_SHIELD_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V3 shield.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_STUB_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V3 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_STUB_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V3 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_STUB_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V3 stub.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_WHIP_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V3 whip, derived from measured bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_WHIP_CURR_DAC",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V3 whip, derived from commanded bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_WHIP_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V3 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_WHIP_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V3 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V3_WHIP_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V3 whip.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_RBIAS",
+      "type": "integer",
+      "units": "None",
+      "description": "Index of selected bias resistor for V4 bias current.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_SHIELD_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V4 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_SHIELD_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V4 shield.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_SHIELD_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V4 shield.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_STUB_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V4 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_STUB_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V4 stub.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_STUB_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V4 stub.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_WHIP_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V4 whip, derived from measured bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_WHIP_CURR_DAC",
+      "type": "double",
+      "units": "uA",
+      "description": "Bias current applied to the V4 whip, derived from commanded bias voltage.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_WHIP_VOLT",
+      "type": "double",
+      "units": "V",
+      "description": "Measured bias voltage applied to the V4 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_WHIP_VOLT_DAC",
+      "type": "double",
+      "units": "V",
+      "description": "Commanded bias voltage applied to the V4 whip.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_V4_WHIP_VOLT_DAC_counts",
+      "type": "integer",
+      "units": "None",
+      "description": "Commanded raw bias voltage (in DAC counts) applied to the V4 whip.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_XFL_CURR",
+      "type": "double",
+      "units": "uA",
+      "description": "Current draw of the floating power supply for the V3 and V4 antennas.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_aeb2_XFL_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Measured temperature of the floating power supply for the V3 and V4 antennas.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

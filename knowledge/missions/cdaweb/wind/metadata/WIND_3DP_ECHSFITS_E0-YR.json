@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "N_e_dens_wi_3dp",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Total electron density moment in units of /cm^3",
+      "fill": "nan"
+    },
+    {
+      "name": "T_e_par_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Parallel total electron temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "T_e_perp_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Perpendicular total electron temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "Q_e_par_wi_3dp",
+      "type": "double",
+      "units": "uW/m^2",
+      "description": "Parallel electron heat flux moment in units of uW/m^2",
+      "fill": "nan"
+    },
+    {
+      "name": "V_e_xyz_gse_wi_3dp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron velocity vector moment in GSE coordinates in units of km/s",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "N_c_dens_wi_3dp",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Electron Core density moment in units of /cm^3",
+      "fill": "nan"
+    },
+    {
+      "name": "T_c_par_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Parallel Electron Core temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "T_c_perp_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Perpendicular electron core temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "Vd_c_par_wi_3dp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Parallel electron core drift velocity in the ion frame in units of km/s",
+      "fill": "nan"
+    },
+    {
+      "name": "N_h_dens_wi_3dp",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Electron halo density moment in units of /cm^3",
+      "fill": "nan"
+    },
+    {
+      "name": "T_h_par_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Parallel Electron Core temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "T_h_perp_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Perpendicular electron halo temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "Vd_h_par_wi_3dp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Parallel electron halo drift velocity in the ion frame in units of km/s",
+      "fill": "nan"
+    },
+    {
+      "name": "N_s_dens_wi_3dp",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Electron strahl density moment in units of /cm^3",
+      "fill": "nan"
+    },
+    {
+      "name": "T_s_par_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Parallel Electron strahl temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "T_s_perp_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Perpendicular electron strahl temperature moment in units of eV",
+      "fill": "nan"
+    },
+    {
+      "name": "Vd_s_par_wi_3dp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Parallel electron strahl drift velocity in the ion frame in units of km/s",
+      "fill": "nan"
+    },
+    {
+      "name": "Quality_wi_3dp",
+      "type": "double",
+      "units": "10=best quality",
+      "description": "Q, Quality parameter for electron data. It is calculated from the properties of the input data and goodness-of-fit statistics from the nonlinear fitting process.  It varies between 0 and 10. Higher values of Q represent more confidence in the resulting electron parameters",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1995-01-01T00:03:15.000Z",
+  "stopDate": "1998-12-31T19:41:26.000Z"
+}

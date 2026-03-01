@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Alpha_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "Average alpha velocity, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_vel_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "Average alpha velocity, scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C/O_ratio",
+      "type": "double",
+      "units": "",
+      "description": "Carbon/Oxygen abundance ratio, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C/O_ratio_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "Carbon/Oxygen abundance ratio, scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_ion_temp",
+      "type": "double",
+      "units": "MK",
+      "description": "Carbon ionization temperature from C+6 & C+5, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_ion_temp_errorbars",
+      "type": "double",
+      "units": "MK",
+      "description": "Carbon ionization temperature from C+6 & C+5, scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_ion_temp",
+      "type": "double",
+      "units": "MK",
+      "description": "Oxygen ionization temperature from O+7 & O+6, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_ion_temp_errorbars",
+      "type": "double",
+      "units": "MK",
+      "description": "Oxygen ionization temperature from O+7 & O+6, scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Delta",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainity (+/-30%) in speed of solar wind, scalar",
+      "fill": "-100.0"
+    },
+    {
+      "name": "C/O_Delta",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty (+/-30%) in C/O abundance ratio, scalar",
+      "fill": "-100.0"
+    },
+    {
+      "name": "C_Delta",
+      "type": "double",
+      "units": "MK",
+      "description": "Uncertainty (+/- 10%) in C ionization temp from C+6 & C+5",
+      "fill": "-100.0"
+    },
+    {
+      "name": "O_Delta",
+      "type": "double",
+      "units": "MK",
+      "description": "Uncertainity (+/- 10%) in O ionization temp O+7 & O+6",
+      "fill": "-100.0"
+    }
+  ],
+  "startDate": "1994-12-12T16:32:00.000Z",
+  "stopDate": "2000-05-27T04:02:00.000Z"
+}

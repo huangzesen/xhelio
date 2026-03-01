@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Velocity_South",
+      "type": "integer",
+      "units": "m/s",
+      "description": "South horizontal velocity from line-of-sight velocity at 30 degrees elevation",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Velocity_East ",
+      "type": "integer",
+      "units": "m/s",
+      "description": "East horizontal velocity from line-of-sight velocity at 30 degrees elevation",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Wavelength",
+      "type": "integer",
+      "units": "nm",
+      "description": "Refers to the wavelength of the OI (558 or 630nm) emission line used",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1992-07-22T00:00:00.000Z",
+  "stopDate": "1995-09-13T01:30:00.000Z"
+}

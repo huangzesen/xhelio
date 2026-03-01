@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MODE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates PFR scan mode: 1: Fast mode. 2: Slow mode. 3: Fixed frequency mode.  This value should not occur as fixed frequency data is removed from the UDS data. 4: The mode switched from fast to slow or slow to fast during the averaging interval. 5: Unknown mode.  This value occurs if there was no valid data during the averaging interval.  This could be due to a data gap or bad data.  Data acquired while the PFR is in fixed tune mode is ignored so this value for the MODE will also occur if the PFR was in fixed tune mode during the entire averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates telemetry bit rate: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during averaging period. 6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PFR PEAK E-FIELD",
+      "type": "double",
+      "units": "microVolt/Hz^0.5",
+      "description": "This column consists of 16 Plasma Frequency Receiver (PFR) electric field intensities from the 16 PFR frequency channels. These values represent the highest intensities measured over the sampling interval. The center frequency for each channel is given below: F(1): 0.61 kHz F(2): 0.80 kHz F(3): 1.04 kHz F(4): 1.35 kHz F(5): 1.77 kHz F(6): 2.30 kHz F(7): 3.01 kHz F(8): 3.92 kHz F(9): 5.11 kHz F(10):  6.67 kHz F(11):  8.70 kHz F(12):  11.34 kHz F(13):  14.79 kHz F(14):  19.30 kHz F(15):  25.16 kHz F(16):  32.82 kHz",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

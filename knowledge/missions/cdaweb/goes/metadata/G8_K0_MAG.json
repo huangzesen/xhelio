@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_GSE_c",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field, GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_GSM_c",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field (GSM)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_lcl_c",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field, local s/c coord",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_ll",
+      "type": "double",
+      "units": "",
+      "description": "GOES-8 position, Geographic",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_eo",
+      "type": "double",
+      "units": "km",
+      "description": "GOES-8 position, GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_se",
+      "type": "double",
+      "units": "km",
+      "description": "GOES-8 position, GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_sm",
+      "type": "double",
+      "units": "km",
+      "description": "GOES-8 position, GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MGF_stat",
+      "type": "integer",
+      "units": "Integer Table",
+      "description": "MGF Instrument Status:  0=OK, 1=minor problems, 2=major problems, 3=missing data",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "1995-12-01T00:00:30.000Z",
+  "stopDate": "2003-04-08T23:59:30.000Z"
+}

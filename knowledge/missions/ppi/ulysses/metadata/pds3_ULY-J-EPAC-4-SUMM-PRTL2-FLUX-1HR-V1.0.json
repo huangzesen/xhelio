@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PRTL2 SECTOR DATA",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains proton flux data recorded by the EPAC Proton-Rate Sectored Telescope 2 (PRTL2). This column is repeated 8 times, once for each of 8 sectors. PRTL2 measures ~500-1000 keV protons. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MAG ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Magnetometer ID (1=LFM, 2=HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial component of the magnetic field, positive in the direction of Sun to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Azimuthal component of the magnetic field, positive in the direction of planetary orbital motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bn",
+      "type": "double",
+      "units": "nT",
+      "description": "North/South component of the magnetic field, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude (sqrt of sum of squares) of the field component averages.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Average Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the field magnitude over the averaging interval (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft centered heliographic magnetic field latitude: Delta = asin(Bn/Bmag).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft centered heliographic magnetic field longitude: Lambda = atan(Bt/Br).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Br over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Bt over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Bn",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Bn over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "POINT",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

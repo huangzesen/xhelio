@@ -1,0 +1,852 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_S1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "H, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_S2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "H, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_S3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "H, (0.640-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_S4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "H, (1.280-2.560 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_S5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "H, (2.560-7.240 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_H_S1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "H, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_H_S2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "H, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_H_S3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "H, (0.640-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_H_S4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "H, (1.280-2.560 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_H_S5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "H, (2.560-7.240 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_S1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (0.072-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_S2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (0.640-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (1.280-3.620 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (3.620-7.240 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He3, (7.240-10.20 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_S1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (0.072-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_S2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (0.640-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (1.280-3.620 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (3.620-7.240 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He3_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He3, (7.240-10.20 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_S1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.063-0.080 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_S2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.080-0.113 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_S3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.113-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.175-0.226 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.226-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.320-0.453 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.453-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.640-0.905 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (0.905-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (1.280-1.810 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L8",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (1.810-2.560 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L9",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (2.560-3.620 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L10",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (3.620-5.120 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L11",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (5.120-7.240 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He4_L12",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "He4, (7.240-8.670 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_S1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.063-0.080 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_S2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.080-0.113 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_S3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.113-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.175-0.226 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.226-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.320-0.453 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.453-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.640-0.905 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (0.905-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (1.280-1.810 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L8",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (1.810-2.560 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L9",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (2.560-3.620 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L10",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (3.620-5.120 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L11",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (5.120-7.240 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_He4_L12",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "He4, (7.240-8.670 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_S1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (0.041-0.111 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (0.111-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (0.640-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (1.280-2.560 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (2.560-5.120 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (5.120-10.20 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_L8",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "C, (10.20-14.00 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_S1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (0.041-0.111 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (0.111-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (0.640-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (1.280-2.560 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (2.560-5.120 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (5.120-10.20 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_C_L8",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "C, (10.20-14.00 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_S1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (0.040-0.090 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (0.090-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (0.640-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (1.280-2.560 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (2.560-5.120 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_L7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "O, (5.120-10.40 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_S1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (0.040-0.090 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (0.090-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (0.640-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (1.280-2.560 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (2.560-5.120 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_O_L7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "O, (5.120-10.40 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (0.061-0.080 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (0.080-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (0.640-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (1.280-2.560 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_S_L7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Ne_S, (2.560-7.040 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (0.061-0.080 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (0.080-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (0.640-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (1.280-2.560 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Ne_S_L7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Ne_S, (2.560-7.040 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.035-0.040 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.040-0.080 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.080-0.160 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.160-0.320 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.320-0.640 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.640-0.905 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (0.905-1.280 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L8",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (1.280-1.810 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe_L9",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nucleon)",
+      "description": "Fe, (1.810-3.070 MeV/nucleon)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.035-0.040 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.040-0.080 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.080-0.160 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.160-0.320 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.320-0.640 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.640-0.905 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (0.905-1.280 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L8",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (1.280-1.810 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Fe_L9",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Fe, (1.810-3.070 MeV/nucleon) uncertainty",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1998-02-20T00:00:00.000Z",
+  "stopDate": "2026-01-27T23:00:00.000Z"
+}

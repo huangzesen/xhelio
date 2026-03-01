@@ -1,0 +1,285 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCID",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft ID\n                        SCID = 'P10x' for Pioneer 10 where 'x' is an\n                        identifier that specifies the processing scheme",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YRDAY",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing year (19YY) and the day of\n                        year (DDD) in the form (YYDDD.0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NHR",
+      "type": "double",
+      "units": "hr",
+      "description": "Real hour number from 0.0 to 23.0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAD",
+      "type": "double",
+      "units": "km",
+      "description": "Heliocentric distance in kilometers.\n                        Accurate to approximately 1.0E+05 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HLONG",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic longitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic latitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NBREC",
+      "type": "double",
+      "units": "",
+      "description": "Number of records in the magnetic field average, \n                        if any.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NSWREC",
+      "type": "double",
+      "units": "",
+      "description": "Number of records in the solar wind average, \n                        if any.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BSCA",
+      "type": "double",
+      "units": "gamma",
+      "description": "Average of the absolute value of the \n                        interplanetary magnetic field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "gamma",
+      "description": "Magnitude of the average interplanetary magnetic \n                        field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the azimuthal (E/W) angle of the \n                        average interplanetary magnetic field.  Zero \n                        points TOWARDS the sun (?) and positive values \n                        point towards the EAST (?). Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPOL",
+      "type": "double",
+      "units": "",
+      "description": "Space to hold the polar (N/S) angle of the \n                        average interplanetary magnetic field.  Zero \n                        points TOWARDS the sun (?) and positive values \n                        point towards the NORTH (?).  Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAVGBM",
+      "type": "double",
+      "units": "gamma",
+      "description": "RMS dispersion in average of magnitude of B.\n                        Space to hold the RMS dispersion in average of \n                        magnitude of B. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RBMAG",
+      "type": "double",
+      "units": "gamma",
+      "description": "Space to hold the RMS dispersion in magnitude of \n                        magnitude of B. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RBAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the RMS dispersion in azimuthal \n                        (E/W) angle of the average interplanetary magnetic\n                        field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RBPOL",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the RMS dispersion in polar (N/S)\n                        angle of the average interplanetary magnetic\n                        field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEM",
+      "type": "double",
+      "units": "deg",
+      "description": "Should be accurate to 20% when T > 10,000 K.\n                        Should be accurate to 40% when 10,000 K > T > \n                        5,000 K. Unreliable when T < 5,000 K.\n                        Average solar wind proton temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "Should be accurate to 20% at Pioneer 10 prior to 1992.\n                        Should be accurate to 50% at Pioneer 10 after \n                        1992 (Detector A Total Flux Measurements).\n                        Solar wind proton number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL",
+      "type": "double",
+      "units": "km/s",
+      "description": "Should be accurate to 2-5 km / sec\n                        approximately 200.0 to 1500.0.\n                        Average solar wind speed",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AZM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Azimuthal (E/W) angle of the solar wind bulk \n                        velocity in the RTN system. Zero points AWAY\n                        from the sun and positive values point towards \n                        the EAST (in the direction of planetary \n                        rotation).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "POL",
+      "type": "double",
+      "units": "deg",
+      "description": "Unknown, but may be approximately 3 degrees at\n                        Pioneer 10 prior to 1983. Polar (N/S) angle of \n                        the solar wind bulk velocity in the RTN system. \n                        Zero points AWAY from the sun and positive \n                        values point towards the NORTH.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTEM",
+      "type": "double",
+      "units": "deg",
+      "description": "RMS dispersion of proton temperature (K).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RDEN",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "RMS dispersion of density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RVEL",
+      "type": "double",
+      "units": "km/s",
+      "description": "RMS dispersion of bulk speed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "RMS dispersion of azimuthal flow angle (degrees).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RPOL",
+      "type": "double",
+      "units": "deg",
+      "description": "RMS dispersion of polar flow angle (degrees).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "Average solar wind proton number flux < N V>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRES",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "Average solar wind thermal pressure < N k T>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PCONV",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "Average solar wind dynamic pressure \n                        < N Mp V**2>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PCONV",
+      "type": "double",
+      "units": "num/cm-3",
+      "description": "Average solar wind kinetic energy flux \n                        <1/2 N Mp V**3>",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

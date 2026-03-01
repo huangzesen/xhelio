@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ions_Cup1",
+      "type": "double",
+      "units": "femto-amp",
+      "description": "M-mode Ion current from A cup for H+ energies 10 - 5950 eV",
+      "fill": "-1e+31",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "Ions_Cup2",
+      "type": "double",
+      "units": "femto-amp",
+      "description": "M-mode Ion current from B cup for H+ energies 10 - 5950 eV",
+      "fill": "-1e+31",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "Ions_Cup3",
+      "type": "double",
+      "units": "femto-amp",
+      "description": "M-Mode Ion current from C cup for H+ energies 10 - 5950 eV",
+      "fill": "-1e+31",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "Ions_Cup4",
+      "type": "double",
+      "units": "femto-amp",
+      "description": "M-Mode Ion current from D cup for H+ energies 10 - 5950 eV",
+      "fill": "-1e+31",
+      "size": [
+        128
+      ]
+    }
+  ],
+  "startDate": "1979-02-28T14:01:35.000Z",
+  "stopDate": "1979-03-22T13:02:31.000Z"
+}

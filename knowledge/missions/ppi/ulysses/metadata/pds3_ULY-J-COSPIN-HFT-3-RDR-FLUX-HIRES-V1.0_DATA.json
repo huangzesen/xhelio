@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "INTERVAL TIME",
+      "type": "integer",
+      "units": "MILLISECOND",
+      "description": "Length of the accumulation interval (LOI) in milliseconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEAD TIME FACTOR",
+      "type": "integer",
+      "units": "COUNTS/SECOND",
+      "description": "The dead time factor (DTF) is either 1 (non-sectored data) or 32 (sectored data).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COUNTS",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "Flux can be computed from the counts according to the formula: Flux = 1000*DTF*COUNTS/LOI/0.0322 (counts/cm^2/s/sr) where DTF is the dead time factor and LOI is the interval time.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

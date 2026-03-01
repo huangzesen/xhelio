@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT_NUMBER",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEPS",
+      "type": "integer",
+      "units": "",
+      "description": "Number of sweeps.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PERIAPSIS",
+      "type": "double",
+      "units": "",
+      "description": "Time of periapsis for the orbit given in ms of day.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FILE_RECORDS",
+      "type": "double",
+      "units": "",
+      "description": "Number of records (lines) in file.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SEDR_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Set to 1 if any of the SEDR values of the sweep are zero, 0 otherwise.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

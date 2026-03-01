@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PL02",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 53 to 85 keV/nuc. ions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL07",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 1 to 2 MeV/nuc. ions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CH1",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 0.57 to 1.8 MeV/nuc. protons.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CH38",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 120 to 240 keV/nuc. Z>=6 ions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CH33",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 200 to 510 keV/nuc. Z=2 ions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EB02",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 37 to 70 keV electrons.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EB05",
+      "type": "double",
+      "units": "COUNT/SEC",
+      "description": "Counting rate for energy channel 200 to 500 keV electrons.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

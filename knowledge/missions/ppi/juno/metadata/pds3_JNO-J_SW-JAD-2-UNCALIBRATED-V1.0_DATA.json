@@ -1,0 +1,231 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SYNC",
+      "type": "integer",
+      "units": "",
+      "description": "JADE Sync Pattern for IDP packets. Hex value = 0xFAF33403, Decimal = 4210242563",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DPID_COUNT",
+      "type": "integer",
+      "units": "",
+      "description": "DPID Count (Source Sequence Count) Count of the number of times this product has been generated since the startup (or reset) of the generating application (Boot Program or Science Program).  This count resets to 0 upon entry to the modes of BOOT, LVENG, HVENG, LOW_RATE_SCI, MCP_CAL_SCI, HI_RATE_SCI, LOW_RATE_SCI2, MCP_CAL_SCI2, HI_RATE_SCI2. Note: starts with 0, increments by 1, eventually rolls over at 255.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COMPRESSION",
+      "type": "integer",
+      "units": "",
+      "description": "Lossless Compression Status. Indicates whether the data (non-header) segment of the IDP packet (IDP Data) was lossless compressed. 0 = Not Compressed (This packet is never compressed.)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IDPLENGTH",
+      "type": "integer",
+      "units": "",
+      "description": "IDP Length, Byte Length of the IDP packet. Uncompressed size for this product should be 224.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PACKETID",
+      "type": "integer",
+      "units": "",
+      "description": "Packet ID (DPID), Data Product Identifier High Voltage Engineering - Electron Histogram All Sensors in each packet: E060, E180 & E300. PACKETID =  30 /* 0x1E */",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FLIGHT_OR_STL",
+      "type": "integer",
+      "units": "",
+      "description": "In Flight data, or STL (ground EM tests): 0 = In flight, from JADE on Juno (via FEI) 1 = On ground, from STL tests (via FEI) 2 = On ground, from SwRI tests (not FEI) 255 = Unknown",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PACKET_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "Packet Mode, describes type of data telemetry. -2 = HSK / Housekeeping Engineering -1 = HVE / High Voltage Engineering 0 = CAL / MCP Calibration Science 1 = LRS / Low Rate Science 2 = HRS / High Rate Science 127 = Unknown 254 = Wrong - but HSK, see below. 255 = Wrong - but HVE, see below. (Note, this could also be calculated via PACKETID.) If you have 254 or 255 then your code is incorrect, check you read a signed byte, rather than unsigned.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PACKET_SPECIES",
+      "type": "integer",
+      "units": "",
+      "description": "Packet Species, describes type of plasma data. -1 = electrons 0 = ion species 0, SP0 1 = ion species 1, SP1 2 = ion species 2, SP2 3 = ion species 3, SP3 4 = ion species 4, SP4 5 = ion species 5, SP5 6 = ion species 6, SP6 7 = ion species 7, SP7 8 = Not Used 9 = All ions 127 = Unknown 255 = Wrong - but electrons, see below. If you have 255 then your code is incorrect, check you read a signed byte, rather than unsigned.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIMESTAMP_WHOLE",
+      "type": "integer",
+      "units": "",
+      "description": "Timestamp (Whole Second). Timestamp (whole second) of the data for this packet when collection began. This is sometimes referred to as Mission Elapsed Time (MET) and is Referenced from 2000-001T12:00:00.000 UTC, but 1 tick is not exactly 1 S.I. second. See UTC object for corrected converted time. Note: Spacecraft Clock = TIMESTAMP_WHOLE:TIMESTAMP_SUB",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIMESTAMP_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "Timestamp (Subsecond). Timestamp subsecond of the data for this packet when collection began. Unit: Microseconds scaled to 16 bits. Note: Spacecraft Clock = TIMESTAMP_WHOLE:TIMESTAMP_SUB",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACCUMULATION_TIME",
+      "type": "integer",
+      "units": "SECONDS",
+      "description": "Accumulation Time. Number of seconds over which the data in this product was collected (Science Program).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TABLES_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "Look Up Tables (LUT) version used onboard. All tables are combined (compression, sweeping, macros, etc.) onboard in to a large image. This is the image number, or table version. [This value is not returned in HSK packets (PACKETID 0x1F excepted), so is given as MISSING_CONSTANT.] Number should be to 2 decimal places.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FSW_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "Flight Software version used. [This value is not returned in HSK packets (PACKETID 0x1F excepted), so is given as MISSING_CONSTANT.] Number should be to 2 decimal places.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACCUM_TRUNCATION",
+      "type": "integer",
+      "units": "",
+      "description": "Accumulation Truncation, Whether commanded accumulation time ended early. 0 = Nominal 1 = Early 255 = Unknown Note: this product's packet did not have a truncation bit value, therefore this is either 255 or was calculated on the ground.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_UNITS",
+      "type": "integer",
+      "units": "",
+      "description": "Science Data could be total counts (per accumulation) or a rate, normalized to counts per view. 0 = All counts in the accumulation period (int) 1 = All counts divided by number of views (float) 2 = Counts per second (float) 255 = Not appropriate for this dataset, or Unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COMPRESSION_RATIO",
+      "type": "double",
+      "units": "",
+      "description": "Data compression ratio of data blob when it was transmitted to Earth: Ratio = {Uncompressed size}/{Compressed size} This is the compression due to the lossless scheme, and does not include any lossy compression which may have occurred prior to it, such as the 32-bit to 8-bit or 16-bit to 8-bit look up tables that are often used prior to the lossy compression. A value of 1 means there was no lossless data compression, i.e. it was turned off, and object COMPRESSION should equal 1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LEAP_SECOND_VERSION",
+      "type": "integer",
+      "units": "",
+      "description": "The NAIF SPICE kernel for lsk used to generate UTC. The lsk (leap second kernels) files are used in time conversions and have filenames naifnnnn.tls, where is the lsk version number (with leading zeros).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLKSCET_VERSION",
+      "type": "integer",
+      "units": "",
+      "description": "The NAIF SPICE kernel for sclk used to generate UTC. The JUNO sclk files are used to convert the spacecraft clock timestamps to UTC time, and all have filenames JNO_SCLKSCET.nnnnn.tsc, where nnnnn is the SCLKSCET version number (with leading zeros and positive). Each kernel has a reconstructed and predicted part for it's values, typically any time after the last row of the SCLK01_COEFFICIENTS_61999 table is predicted. If TIMESTAMP_WHOLE:TIMESTAMP_SUB is in the predicted part then SCLKSCET_VERSION will be negative, the absolute value would be the version number.  If a later SCLKSCET kernel version is used the UTC time will likely be different. If TIMESTAMP_WHOLE:TIMESTAMP_SUB is in the reconstructed region the number will be positive (equal to the version number) and will not vary with later kernels. e.g. If SCLKSCET_VERSION = -17 then kernel JNO_SCLKSCET.00017.tsc was used to convert to UTC, but it's a predicted UTC time. If SCLKSCET_VERSION = 18 then kernel JNO_SCLKSCET.00018.tsc was used to convert to UTC, and it's a reconstructed UTC time that will not change with later SCLKSCET kernel versions. Within the PDS archive this value should always be positive.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ISSUES",
+      "type": "integer",
+      "units": "",
+      "description": "Issues or potential issues in this data record. These are issues that can be identified within the JADE packet of data itself without any external information. e.g. timing issues due to the MAG time stutter, or any voltage pulsing, would not be included as there are no indicators to them within this JADE packet. [For a more comprehensive list of potential issues from internal and external sources please see the Level 3 data.] Level 2 issues of this JADE packet are flagged by individual bits, and several may be hit.  If no issues are flagged then this 4-byte unsigned integer is zero. A value of 4294967295 is the MISSING_CONSTANT and means that the issue status is currently unknown. All bits at 0 implies all is okay as seen by this packet.  If a bit is set to 1 then that bit is flagged, otherwise it is set to zero and unflagged. The bits are set as followed, grouped in to seriousness: Not very serious issues for doing science: Bit  0 = UTC time is predicted, yet to be finalized. Bit  1 = Position/Orientation values predicted, yet to be finalized.  Level 3 (and above) data only. Bit  2 = TABLES_VERSION object was altered on the ground to accurately reflect a 'commanded parameter update' outside the initial per-orbit commands JADE is returning. [If changed, the original downlinked TABLES_VERSION value can be found by cross- referencing the PARAM_TABLE_VER object in the JAD_L20_HSK_ALL_SHK files.  Note here the PARAM_TABLE_VER value is given as a unsigned integer of Hex Major-Middle-Minor, such that a value of 770 decimal is in hex 0x302, meaning Table Version 3.02 ] Bit  3 = FSW_VERSION 4.00 LRS/CAL Ion Species bug fixed on the ground by adjusting TIMESTAMP_WHOLE, TIMESTAMP_SUB, and ACCUMULATION_TIME based on cross-referencing JADE commanding. Bit  4 = LRS/CAL Ion Species record with unobserved look directions (views) populated using views from neighboring record. See Bit 12 for uncorrected/unpopulated description. (Only possible if ACCUMULATION_TIME = 30.) Bit  5 = TIMESTAMP_WHOLE/SUB adjusted on the ground to mitigate any Juno time stutter affects. [Other TIMESTAMPs are susceptible to the onboard time stutter too, but only the JADE packet TIMESTAMP_WHOLE/SUB is tracked here.] Bit  6 =       Currently unused. Bit  7 = Warning, a leap second occurs during the accumulation period. Data slightly different than expected, but can be used for science with a little extra coding: Bit  8 = ACCUM_TRUNCATION object flagged. Bit  9 = Electron (HRS/LRS/CAL) MAG objects are not tracked, are either zeros or MISSING_CONSTANT. [LRS and CAL did not have MAG objects prior to FSW_VERSION 4.10, therefore those MAG objects here are set to MISSING_CONSTANT when FSW_VERSION < 4.10.] Bit 10 = TIMESTAMP_WHOLE/SUB affected by a Juno onboard time stutter, JADE reported timestamp is likely 1 whole tick too large. [Other TIMESTAMPs are susceptible to the onboard time stutter too, but only the JADE packet TIMESTAMP_WHOLE/SUB is tracked here.] Bit 11 =       Currently unused. Bit 12 = LRS/CAL Ion Species record potentially has unobserved look directions (spin phase sectors or views) present in the data, meaning the record may not contain data for a full 4pi steradians field-of-view. Unobserved look directions have zero counts per view (or counts per second) in the data, although an observed look direction may also have zero counts if no ions were measured. Therefore there is a potential confusion over zero measured counts or simply unmeasured. e.g. if the spin period is 30.7 seconds, then not all of the 78 spin phase sectors will be sampled in 30 seconds. (Unobserved views are only possible if ACCUMULATION_TIME = 30.) See the JADE SIS for more information. Bit 13 = At least one anode is blanked. See SIS document for further information. Bit 14 = FSW_VERSION 4.00 LRS/CAL Ion Species bug warning: Not fixed as yet - when fixed it will become bit 3 of ISSUES instead. Level 2 data only when FSW_VERSION = 4.00, ACCUMULTION_TIME object is MISSING_CONSTANT. Also, TIMESTAMP_WHOLE:TIMESTAMP_SUB is the end of the packet rather than the usual start, see TIMESTAMP_WHOLE object for more details. [Only affects data from 2015-089 to 2015-115.] Bit 15 = Electron Anodes Reversed. Level 2 data only when FSW_VERSION < 4.10 and only electron packets. Electron anodes are reversed in order and need to be remapped, however electron Spin Phase data (LRS data) cannot be remapped. See the SIS document for more information about this. [Affects all electron data 2011 to 2015-115.] Data very different than expected, may not be suitable for science - use with extreme caution. Bit 16 = Data is not from flight instrument on Juno, see FLIGHT_OR_STL object. Bit 17 = MCP_NOT_AT_COMMANDED object flagged. Electron HRS/CAL/HVE packets use all three electron sensors and therefore have three MCP_NOT_AT_COMMANDED values per packet. Setting this flag means at least one of those three mcps is not at its commanded value. Bit 18 = Data includes some JADE-E300 sensor data. (Only flagged for HRS, LRS, CAL and HVE data.) E300 has a high voltage power supply issue and reported energy steps may be incorrect. If E300 is off but still reported in the data product, it may be zeros of fill values. Bit 19 = Ion packet abruptly truncated. This packet should not be used.  It had an ACCUMULATION_TIME = 1, ACCUM_TRUNCATION = 1 and the DATA object is all zeros, with a timestamp that matches an earlier valid packet that was not truncated and has non-zero DATA. e.g. TOF and LOG example in level 2 data at TIMESTAMP_WHOLE of 495879710 (UTC 2015-261). Bit 20 =       Currently unused. Bit 21 =       Currently unused. Bit 22 =       Currently unused. Bit 23 =       Currently unused. Bit 24 =       Currently unused. Bit 25 =       Currently unused. Bit 26 =       Currently unused. Bit 27 =       Currently unused. Bit 28 =       Currently unused. Bit 29 =       Currently unused. Bit 30 =       Currently unused. Bit 31 = Reserved for MISSING_CONSTANT use. Each bit has a decimal value of 2^{bit number}, and the Issues flag is the sum of 2^{flagged bit numbers}. For instance, if this ISSUES flag = 131329, then in binary that value is 00000000000000100000000100000001 showing bits 17, 8 and 0 are flagged. [If a currently unused bit is set, please check the latest LBL file for this product that you can find to see if it now has a definition.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MIN_SUBTRACTED_VALUE",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "Minimum Subtracted Value. Minimum value subtracted from every element in the array data blob for transmission to Earth. (This has already been added back to the DATA.) Note: this product's packet did not have a minimum value removed, therefore we have set this to zero to be consistent with the other JADE packet formats.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MCP_NOT_AT_COMMANDED",
+      "type": "integer",
+      "units": "",
+      "description": "MCP not at Commanded flag.  This denotes whether the MCP voltage was reduced during the data collection. (The three values are for the MCPs of E060, E180 and E300 respectively.) 0 = Nominal 1 = Reduced 255 = Unknown This product is always three Unknowns as the value was not returned from JADE, but its inclusion here keeps JADE PDS science files consistent in format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP_TABLE",
+      "type": "integer",
+      "units": "",
+      "description": "Which sweep table do the electron sensors have, 0-2. (The three values are for the MCPs of E060, E180 and E300 respectively.) This data product did not transmit them from JADE, so they are all set to MISSING_CONSTANT.  However this keeps JADE PDS science files consistent in format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MCP_COMMANDED_VALUE",
+      "type": "integer",
+      "units": "",
+      "description": "Electron MCPs Commanded raw DAC value. (The three values are for the MCPs of E060, E180 and E300 respectively.) This data product did not transmit them from JADE, so they are all set to MISSING_CONSTANT.  However this keeps JADE PDS science files consistent in format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "DATA: Electron Counts 1 Energy x 51 Bins The 51 Bins are: 0 - 15 : E060 Look Directions 0-15 16 - 31 : E180 Look Directions 0-15 32 - 47 : E300 Look Directions 0-15 48   : E060 Background Anode 49   : E180 Background Anode 50   : E300 Background Anode (See SIS document for a figure.) 16-bit counter at 1 energy step over ACCUMULATION_TIME. Theoretical range (with max Accumulation of 1800s) is 0 to 7549632000, greater than a 4-byte unsigned int. It is extremely unlikely to fill 4-bytes, but if it does it will simply roll over to zero and keep going.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

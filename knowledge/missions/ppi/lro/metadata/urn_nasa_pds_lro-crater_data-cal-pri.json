@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SECONDS",
+      "type": "double",
+      "units": "s",
+      "description": "Spacecraft Time (elapsed seconds from epoch \n                       2001-01-01T00:00:00.000 UTC). Derived from spacecraft \n                       clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FRACT",
+      "type": "double",
+      "units": "10**-2 s",
+      "description": "Spacecraft Time (fractional seconds in units of 1/100 second).\n                       Derived from spacecraft clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INDEX",
+      "type": "double",
+      "units": "",
+      "description": "Event index within current second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D1",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D1 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D2",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D2 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D3",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D3 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D4",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D4 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D5",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D5 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL D6",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D6 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D1",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D1 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D2",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D2 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D3",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D3 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D4",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D4 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D5",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D5 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY D6",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D6 for single event.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

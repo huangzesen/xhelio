@@ -1,0 +1,63 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "VDC",
+      "type": "double",
+      "units": "V",
+      "description": "Probe to spacecraft potential (probes 1,2,3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EDC",
+      "type": "double",
+      "units": "V",
+      "description": "Probe to probe voltages (probes V1-V2, V1-V3, V2-V3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EAC",
+      "type": "double",
+      "units": "V",
+      "description": "AC probe to probe voltages (probes V1-V2, V1-V3, V2-V3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IBIAS1",
+      "type": "double",
+      "units": "nA",
+      "description": "Calibrated bias current on probe 1.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IBIAS2",
+      "type": "double",
+      "units": "nA",
+      "description": "Calibrated bias current on probe 2.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IBIAS3",
+      "type": "double",
+      "units": "nA",
+      "description": "Calibrated bias current on probe 3.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:13.000Z",
+  "stopDate": "2023-11-13T00:02:58.000Z"
+}

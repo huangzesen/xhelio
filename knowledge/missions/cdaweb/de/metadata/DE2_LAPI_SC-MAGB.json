@@ -1,0 +1,390 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MAGB__SC_Bx_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured Bx in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bx_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Measured Bx in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bx_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Measured Bx in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_By_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured By in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_By_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Measured By in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_By_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Measured By in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bz_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured Bz in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bz_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Measured Bz in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bz_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Measured Bz in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bxy_1_Projection_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured Bxy in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bxy_2_Projection_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Measured Bxy in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Bxy_3_Projection_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Measured Bxy in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_B_1_Magnitude_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured B in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_B_2_Magnitude_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Measured B in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_B_3_Magnitude_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Measured B in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Theta_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Measured Theta B in Spacecraft Coordinates, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Theta_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Theta B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Phi_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Measured Phi B in Spacecraft Coordinates, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Phi_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Phi B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bx_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled Bx in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bx_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled Bx in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bx_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled Bx in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_By_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled By in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_By_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled By in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_By_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled By in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bz_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled Bz in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bz_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled Bz in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bz_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled Bz in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bxy_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled Bxy in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bxy_2_Projection_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled Bxy in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Bxy_3_Projection_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled Bxy in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_B_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled B in Spacecraft Coordinates, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_B_2_Magnitude_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled B in Spacecraft Coordinates, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_B_3_Magnitude_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled B in Spacecraft Coordinates, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Theta_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Modeled Theta B in Spacecraft Coordinates, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Theta_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Theta B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Phi_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Modeled Phi B in Spacecraft Coordinates, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Phi_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Phi B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Magnetic_1_Pressure_nPa",
+      "type": "double",
+      "units": "nPa",
+      "description": "Measured Magnetic Pressure in Spacecraft Coordinates, nPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__SC_Magnetic_2_Pressure_Pa",
+      "type": "double",
+      "units": "Pa",
+      "description": "Measured Magnetic Pressure in Spacecraft Coordinates, Pa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__SC_Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ SC Magnetic",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Magnetic_1_Pressure_nPa",
+      "type": "double",
+      "units": "nPa",
+      "description": "Modeled Magnetic Pressure in Spacecraft Coordinates, nPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__SC_Magnetic_2_Pressure_Pa",
+      "type": "double",
+      "units": "Pa",
+      "description": "Modeled Magnetic Pressure in Spacecraft Coordinates, Pa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__SC_Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ SC Magnetic",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T03:44:46.000Z",
+  "stopDate": "1983-02-16T13:04:25.000Z"
+}

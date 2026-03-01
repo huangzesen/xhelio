@@ -1,0 +1,178 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "dens_lop",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density of low energy ions (1-130 eV/e)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vel_lop",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Velocity, 3 comp. in s/c coord., of low energy ions (1-130 eV/e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "temp_lop",
+      "type": "double",
+      "units": "ev",
+      "description": "Temperatures, parallel & perp. for low energy ions (1-130 eV/e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "tratio_lop",
+      "type": "double",
+      "units": "",
+      "description": "Ratio Tperp/Tmid for low energy ions (1-130 eV/e)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dens_hip",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density of high energy ions (.13-45 keV/e)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vel_hip",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Velocity, 3 comp. in s/c coord., of high energy ions (.13-45 keV/e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "temp_hip",
+      "type": "double",
+      "units": "ev",
+      "description": "Temperatures, parallel & perp. for high energy ions (.13-45 keV/e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "theta_phi_hip",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton symmetry axis: polar ang. relative to Earth direction, azim. ang. from north",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "tratio_hip",
+      "type": "double",
+      "units": "",
+      "description": "Ratio Tperp/Tmid for high energy ions, (.13-45 keV/e)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dens_e",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density of electrons (.03-45 keV/q)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_e",
+      "type": "double",
+      "units": "ev",
+      "description": "Temperatures, parallel & perp. for electrons (.03-45 keV/q)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "theta_phi_e",
+      "type": "double",
+      "units": "deg",
+      "description": "Electron symmetry axis: polar ang. relative to Earth direction azim. ang. from north",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "tratio_e",
+      "type": "double",
+      "units": "",
+      "description": "Ratio Tperp/Tmid for electrons (.03-45 keV/q)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_pot",
+      "type": "double",
+      "units": "volts",
+      "description": "Spacecraft potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bkgd",
+      "type": "double",
+      "units": "cts/9ms",
+      "description": "Background count rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_pos_geo",
+      "type": "double",
+      "units": "",
+      "description": "S/C position, Geographic coordinates (radius,lat,long)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_pos_mag",
+      "type": "double",
+      "units": "",
+      "description": "S/C position, Magnetic coordinates (radius,mlat,mlt)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_pos_syngci",
+      "type": "double",
+      "units": "",
+      "description": "[SPECIALIZED USE ONLY] [Computed 3-min vector] S/C position, GCI coordinates (X, Y, Z)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_pos_syngeo",
+      "type": "double",
+      "units": "",
+      "description": "[SPECIALIZED USE ONLY] [Computed 3-min vector] S/C position, GEO coordinates (Radius, Lat, Lon)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1997-07-04T23:00:13.000Z",
+  "stopDate": "2008-01-03T18:21:15.000Z"
+}

@@ -1,0 +1,217 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "radiance_oi_1356",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "O I 135.6 nm brightness used in retrieval",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "radiance_oi_1356_full_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of above",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "radiance_oi_1356_north_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of just Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "radiance_oi_1356_south_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of just Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "oi_1356_unc_ran",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "O I 135.6 nm Brightness Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "oi_1356_unc_sys",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "O I 135.6 nm Brightness Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "counts_oi_1356",
+      "type": "double",
+      "units": "counts",
+      "description": "O I 135.6 nm total counts used in retrieval",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "dqi",
+      "type": "integer",
+      "units": "",
+      "description": "File-level Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+      "fill": "-999999999.0"
+    },
+    {
+      "name": "nmax_dqi",
+      "type": "integer",
+      "units": "0=good quality",
+      "description": "NMAX Pixel-level Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+      "fill": "-999999999.0",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "NMAX Peak electron density (mapped - image smoothed)",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_nosmooth",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "---> above not smoothed",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_movie",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "---> Movie (smoothed) of above",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_movie_n",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "---> Movie of just Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_movie_s",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "---> Movie of just Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_unc_ran",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "NMAX Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_unc_mod",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "[NO PLOT] NMAX Model Uncertainty",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "nmax_unc_sys",
+      "type": "double",
+      "units": "electrons/cm^3",
+      "description": "NMAX Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "solar_zenith_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar Zenith Angle",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    },
+    {
+      "name": "emission_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Emission Angle",
+      "fill": "nan",
+      "size": [
+        100,
+        92
+      ]
+    }
+  ],
+  "startDate": "2018-10-05T20:10:48.000Z",
+  "stopDate": "2026-02-02T00:39:04.000Z"
+}

@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "The radial component (R) points from the Sun to the spacecraft, positive away from the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN tangetial (T) component of the magnetic field in nT. T is parallel to the Solar Equatorial plane (Omega[Sun] x R).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN normal (N) component of the magnetic field in nT. N completes the right handed set, and is roughly normal to the Solar Equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the magnetic field magnitudes in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RANGE",
+      "type": "double",
+      "units": "AU",
+      "description": "Sun to spacecraft range in units of AU (1 AU = 149674000 km).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LATITUDE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar heliocentric latitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LONGITUDE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar longitude of the spacecraft measured in degrees East of the Sun-Aries line.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "Inertial Heliographic Cartesian X component (along the Sun-Aries line, positive towards Aries) of the spacecraft position in AU.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "Inertial Heliographic Cartesian Y component (completes the right handed set, Z x X) of the spacecraft position in AU.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "Inertial Heliographic Cartesian Z component (Omega[Sun], positive in direction of angular momentum) of the spacecraft position in AU.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "N/A",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

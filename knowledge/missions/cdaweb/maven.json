@@ -1,0 +1,251 @@
+{
+  "id": "MAVEN",
+  "name": "MAVEN",
+  "keywords": [
+    "maven",
+    "mvn",
+    "urn:nasa:pds:maven."
+  ],
+  "profile": {
+    "description": "MAVEN spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "MVN_SWE_L2_SVY3D": {
+          "description": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Survey 3D Distributions - David L. Mitchell (mitchell@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-03-19T14:13:00.000Z",
+          "stop_date": "2025-10-31T23:59:28.000Z",
+          "pi_name": "David L. Mitchell (mitchell@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414252",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_SVY3D"
+        },
+        "MVN_SWI_L2_COARSEARC3D": {
+          "description": "MAVEN SWIA (Solar Wind Ion Analyzer) Level 2 Coarse 3D Distributions Archive Telemetry  - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-20T04:28:59.000Z",
+          "stop_date": "2025-11-14T23:59:59.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414229",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_COARSEARC3D"
+        },
+        "MVN_SWE_L2_ARCPAD": {
+          "description": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Archive Pitch Angle Distribution - David L. Mitchell (mitchell@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-10-18T11:07:36.000Z",
+          "stop_date": "2025-10-31T22:13:24.000Z",
+          "pi_name": "David L. Mitchell (mitchell@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414222",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_ARCPAD"
+        },
+        "MVN_SWI_L2_ONBOARDSVYSPEC": {
+          "description": "DERIVED FROM: MAVEN SWIA (Solar Wind Ion Analyzer) Onboard Survey Energy Spectra - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-19T14:20:43.000Z",
+          "stop_date": "2025-11-15T00:00:51.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414248",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_ONBOARDSVYSPEC"
+        },
+        "MVN_SWI_L2_ONBOARDSVYMOM": {
+          "description": "DERIVED FROM: MAVEN SWIA (Solar Wind Ion Analyzer) Onboard Moment Survey Telemetry - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-19T14:19:43.000Z",
+          "stop_date": "2025-11-15T00:00:55.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414246",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_ONBOARDSVYMOM"
+        },
+        "MVN_SWI_L2_COARSESVY3D": {
+          "description": "MAVEN SWIA (Solar Wind Ion Analyzer) Level 2 Coarse 3D Distributions Survey Telemetry  - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-19T14:20:27.000Z",
+          "stop_date": "2025-11-14T23:59:59.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414231",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_COARSESVY3D"
+        },
+        "MVN_SWE_L2_ARC3D": {
+          "description": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Archive 3D Distributions  - David L. Mitchell (mitchell@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-03-20T04:29:08.000Z",
+          "stop_date": "2025-10-31T23:59:52.000Z",
+          "pi_name": "David L. Mitchell (mitchell@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414221",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_ARC3D"
+        },
+        "MVN_SWI_L2_FINEARC3D": {
+          "description": "DERIVED FROM: MAVEN SWIA (Solar Wind Ion Analyzer) Level 2 Fine 3D Distributions Archive Telemetry - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-20T04:29:07.000Z",
+          "stop_date": "2025-11-14T23:59:59.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414240",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_FINEARC3D"
+        },
+        "MVN_SWE_L2_SVYPAD": {
+          "description": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Survey Pitch Angle Distribution  - David L. Mitchell (mitchell@ssl.berkeley.edu) (UCB/SSL)",
+          "start_date": "2014-10-10T00:00:01.000Z",
+          "stop_date": "2025-10-31T23:59:56.000Z",
+          "pi_name": "David L. Mitchell (mitchell@ssl.berkeley.edu)",
+          "pi_affiliation": "UCB/SSL",
+          "doi": "10.17189/1414253",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_SVYPAD"
+        },
+        "MVN_SWI_L2_FINESVY3D": {
+          "description": "DERIVED FROM: MAVEN SWIA (Solar Wind Ion Analyzer) Level 2 Fine 3D Distributions Survey Telemetry - J.S. Halekas (U Iowa)",
+          "start_date": "2014-03-19T14:19:47.000Z",
+          "stop_date": "2025-11-14T23:59:59.000Z",
+          "pi_name": "J.S. Halekas",
+          "pi_affiliation": "U Iowa",
+          "doi": "10.17189/1414241",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWI_L2_FINESVY3D"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "MVN_SWE_L2_SVYSPEC": {
+          "description": "DERIVED FROM: MAVEN SWEA (Solar Wind Electron Analyzer) Energy Spectra Survey - David L. Mitchell (mitchell@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-03-19T14:15:52.000Z",
+          "stop_date": "2025-10-31T23:59:56.000Z",
+          "pi_name": "David L. Mitchell (mitchell@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414254",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SWE_L2_SVYSPEC"
+        },
+        "MVN_SEP_L2_S2-CAL-SVY-FULL": {
+          "description": "DERIVED FROM: MAVEN SEP (Solar Energetic Particle) Instrument Sensor 2 Fully Calibrated Spectra Survey - D. Larson (davin@ssl.berkeley.edu) (U.C. Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-09-22T19:34:31.000Z",
+          "stop_date": "2022-02-22T15:18:21.000Z",
+          "pi_name": "D. Larson (davin@ssl.berkeley.edu)",
+          "pi_affiliation": "U.C. Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414228",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SEP_L2_S2-CAL-SVY-FULL"
+        },
+        "MVN_STA_L2_DA-1R64E": {
+          "description": "MAVEN STATIC (Supra-Thermal And Thermal Ion Composition) Particle Distributions 1 Selected Event Rate 64 Energy - J. P. McFadden (U.C. Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-10-13T00:00:52.000Z",
+          "stop_date": "2025-11-15T00:00:37.000Z",
+          "pi_name": "J. P. McFadden",
+          "pi_affiliation": "U.C. Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1517760",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_STA_L2_DA-1R64E"
+        },
+        "MVN_STA_L2_D8-12R1E": {
+          "description": "MAVEN STATIC (Supra-Thermal And Thermal Ion Composition) Particle Distributions 12 Event Rates Summed Over Energy - J. P. McFadden (U.C. Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-10-13T00:00:56.000Z",
+          "stop_date": "2025-11-15T00:00:41.000Z",
+          "pi_name": "J. P. McFadden",
+          "pi_affiliation": "U.C. Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1517758",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_STA_L2_D8-12R1E"
+        },
+        "MVN_STA_L2_D9-12R64E": {
+          "description": "MAVEN STATIC (Supra-Thermal And Thermal Ion Composition) Particle Distributions 12 Event Rates 64 Energy - J. P. McFadden (U.C. Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-10-13T00:02:34.000Z",
+          "stop_date": "2025-11-15T00:00:55.000Z",
+          "pi_name": "J. P. McFadden",
+          "pi_affiliation": "U.C. Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1517759",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_STA_L2_D9-12R64E"
+        },
+        "MVN_SEP_L2_S1-CAL-SVY-FULL": {
+          "description": "DERIVED FROM: MAVEN SEP (Solar Energetic Particle) Instrument Sensor 1 Fully Calibrated Spectra Survey - D. Larson (davin@ssl.berkeley.edu) (U.C. Berkeley Space Sciences Laboratory)",
+          "start_date": "2014-09-22T19:34:31.000Z",
+          "stop_date": "2025-11-15T00:00:02.000Z",
+          "pi_name": "D. Larson (davin@ssl.berkeley.edu)",
+          "pi_affiliation": "U.C. Berkeley Space Sciences Laboratory",
+          "doi": "10.17189/1414228",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_SEP_L2_S1-CAL-SVY-FULL"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "MVN_MAG_L2-SUNSTATE-1SEC": {
+          "description": "MAVEN Magnetometer Sun-State 1 Second Magnetic Field  - J. Connerney (NASA GSFC)",
+          "start_date": "2014-10-10T00:00:00.000Z",
+          "stop_date": "2025-11-15T00:00:00.000Z",
+          "pi_name": "J. Connerney",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/b9da-ph25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_MAG_L2-SUNSTATE-1SEC"
+        },
+        "MVN_INSITU_KP-4SEC": {
+          "description": "MAVEN In-situ Key Parameters - B.M. Jakosky (LASP/U. Colorado)",
+          "start_date": "2014-03-18T00:00:00.000Z",
+          "stop_date": "2025-08-14T23:59:52.000Z",
+          "pi_name": "B.M. Jakosky",
+          "pi_affiliation": "LASP/U. Colorado",
+          "doi": "10.48322/p7yg-g215",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MVN_INSITU_KP-4SEC"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "MAVEN_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2013-11-19T00:00:00.000Z",
+          "stop_date": "2030-12-31T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "doi": "10.48322/90ar-hx32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MAVEN_HELIO1DAY_POSITION"
+        },
+        "MAVEN_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2013-11-19T00:00:00.000Z",
+          "stop_date": "2025-01-12T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MAVEN_HELIO1HR_POSITION"
+        }
+      }
+    }
+  },
+  "observatory_group": "MAVEN",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

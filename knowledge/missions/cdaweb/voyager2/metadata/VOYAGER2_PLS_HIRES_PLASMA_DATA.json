@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "proton bulk velocity",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "dens",
+      "type": "double",
+      "units": "1/c",
+      "description": "proton number density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_thermal",
+      "type": "double",
+      "units": "km/s",
+      "description": "proton thermal velocity",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_rtn",
+      "type": "double",
+      "units": "km/s",
+      "description": "proton velocity vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1977-08-21T03:55:17.000Z",
+  "stopDate": "2007-08-30T23:33:11.000Z"
+}

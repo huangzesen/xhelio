@@ -1,0 +1,208 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "RADIAL_DIST",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The distance of the spacecraft from Mercury.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSO_LOCAL_TIME",
+      "type": "double",
+      "units": "Fractional Hours",
+      "description": "The Mercury longitude of the spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSO_LATITUDE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "The Mercury latitude of the spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_X",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The X position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_Y",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The Y position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_Z",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The Z position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "RAW_ENERGY",
+      "type": "double",
+      "units": "",
+      "description": "The Energy of the particle event. (Peak -  Baseline)",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "keV",
+      "description": "The calibrated energy of the particle.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ENERGY_PEAK",
+      "type": "double",
+      "units": "",
+      "description": "PHA value corresponding to the particle energy.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ENERGY_BASELINE",
+      "type": "double",
+      "units": "",
+      "description": "Baseline against which the particle energy is\n measured.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ION_E_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Identifies event as either electron or ion. 0 -\n electron; 1 - ion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EPHEMERIS_TIME",
+      "type": "double",
+      "units": "TDB",
+      "description": "Solar System Barycentric event time in the J2000\n system.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "FRACTIONAL_YEAR",
+      "type": "double",
+      "units": "TDB",
+      "description": "Solar System Barycentric event time in the J2000\n system.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "DAY_OF_YEAR",
+      "type": "double",
+      "units": "TDB",
+      "description": "Solar System Barycentric event time in the J2000\n system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INTEGRATION_TIME",
+      "type": "double",
+      "units": "Unavailable, =0, before FSW6",
+      "description": "Integration/Accumulation time in seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY_BIN",
+      "type": "double",
+      "units": "",
+      "description": "High resolution energy bin number computed by the flight\n software. \n   (0-35); Unavailable, =99, before FSW6",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MULTIPLE_HITS",
+      "type": "double",
+      "units": "",
+      "description": "Flag indicating if more than one detector received a\n hit. (0 - 1, 99 for Low Energy Ion PHA)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHANNEL_NUM",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the high energy ion or electron channel.\n (99 for Low Energy Ion PHA)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRIORITY_GROUP",
+      "type": "double",
+      "units": "",
+      "description": "Priority group of the event. (1-7) Only relevant prior\n to FSW6.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RATE_WEIGHT",
+      "type": "double",
+      "units": "",
+      "description": "Weight to normalize PHA events to rate channels. \n   (Only relevant prior to FSW6, after FSW6, = 99)",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

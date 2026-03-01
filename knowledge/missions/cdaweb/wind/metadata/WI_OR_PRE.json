@@ -1,0 +1,184 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "J2000 GCI Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSE Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "GSE Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSE Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSM Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "GSM Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSM Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SUN_VECTOR",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Sun Position Vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_POS",
+      "type": "double",
+      "units": "km",
+      "description": "HEC Cartesian Position (orbit display, available after 1995/05/10)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "HEC Cartesian Position (time-series display, available after 1995/05/10)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "HEC Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CRN_EARTH",
+      "type": "integer",
+      "units": "",
+      "description": "Carrington Rotation Number (available from 1995/05/10 - 1996/03/19 and 1996/11/20 on)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LONG_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of Earth (available from 1995/05/10)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of Earth (available from 1995/05/10)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "CRN_SPACE",
+      "type": "integer",
+      "units": "",
+      "description": "CRN",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LONG_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of Craft (available from 1995/05/10)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of Craft (available from 1995/05/10)",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1994-08-07T00:00:00.000Z",
+  "stopDate": "2026-04-25T23:50:00.000Z"
+}

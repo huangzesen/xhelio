@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ex_Spectra_Reorder",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "Spin Plane E-Field (SFC Ex) Spectra, 200 meter antenna, 104 Hz to 409 kHz [data monotonically sorted based on dependencies]",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Ex_Spectra",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] Spin Plane E-Field (SFC Ex) Spectra, 200 meter antenna, 104 Hz to 409 kHz",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Ez_Spectra_Reorder",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "Spin Axis E-Field (SFC Ez) Spectra, 8 meter antenna, 104 Hz to 409 kHz [data monotonically sorted based on dependencies]",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Ez_Spectra",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] Spin Axis E-Field (SFC Ez) Spectra, 8 meter antenna, 104 Hz to 409 kHz",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Es_Spectra_Reorder",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "Spin Plane E-Field (SFC Es) Spectra, 0.6 meter antenna, 104 Hz to 100 kHz [data monotonically sorted based on dependencies]",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Es_Spectra",
+      "type": "double",
+      "units": "V**2 m**-2 Hz**-1",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] Spin Plane E-Field (SFC Es) Spectra, 0.6 meter antenna, 104 Hz to 100 kHz",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "B_Spectra_Reorder",
+      "type": "double",
+      "units": "nT**2 Hz**-1",
+      "description": "Spin Plane B-Field (SFC B) Spectra, 1.0 m**2 loop antenna, 104 to 409 kHz [data monotonically sorted based on dependencies]",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "B_Spectra",
+      "type": "double",
+      "units": "nT**2 Hz**-1",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] Spin Plane B-Field (SFC B) Spectra, 1.0 m**2 loop antenna, 104 to 409 kHz",
+      "fill": "-1.0",
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "SubSweepTime",
+      "type": "double",
+      "units": "s",
+      "description": "---> [CDAWEB PLOTS NOT SUPPORTED] Time offsets (fixed) from the Epoch time for each spectra measurement in a sweep",
+      "fill": null,
+      "size": [
+        512
+      ]
+    },
+    {
+      "name": "Ex_Receivers",
+      "type": "integer",
+      "units": "",
+      "description": "The SFR Receivers used to measure the Ex Antenna output (1=A,2=B,3=both)",
+      "fill": "0.0"
+    },
+    {
+      "name": "Ez_Receivers",
+      "type": "integer",
+      "units": "",
+      "description": "---> The SFR Receivers used to measure the Ez Antenna output",
+      "fill": "0.0"
+    },
+    {
+      "name": "Es_Receivers",
+      "type": "integer",
+      "units": "",
+      "description": "---> The SFR Receivers used to measure the Es Antenna output",
+      "fill": "0.0"
+    },
+    {
+      "name": "B_Receivers",
+      "type": "integer",
+      "units": "",
+      "description": "---> The SFR Receivers used to measure the B Antenna output",
+      "fill": "0.0"
+    },
+    {
+      "name": "WBR_xmit",
+      "type": "integer",
+      "units": "(1=possible)",
+      "description": "---> Wideband (waveform) data availability status",
+      "fill": "0.0"
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Integer combining all data quality flags (0 = no issues detected)",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1981-09-16T05:21:48.000Z",
+  "stopDate": "1984-06-28T20:35:55.000Z"
+}

@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "CTIME",
+      "type": "double",
+      "units": "SECONDS",
+      "description": "Time column.  This field contains time in seconds elapsed since Jan 1, 1966 00:00:00.000Z without accounting for leap seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "NONE",
+      "description": "FDS_LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "S/C MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "S/C MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "S/C MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "TOTAL MAG",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BX",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BY",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BZ",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS MAG COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "NONE",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

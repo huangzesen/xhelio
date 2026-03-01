@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PSTL4 SECTOR DATA",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains 1 channel of proton flux data recorded by the EPAC Proton Spectral Telescope 4 (PRTL4). This column is repeated 8 times, once for each of 8 sectors. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

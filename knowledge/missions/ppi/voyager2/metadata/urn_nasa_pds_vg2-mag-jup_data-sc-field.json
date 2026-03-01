@@ -1,0 +1,122 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "double",
+      "units": "",
+      "description": "MAGNETOMETER ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Offset of X component in S/C coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Offset of Y component in S/C coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Offset of Z component in S/C coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Magnitude of the offset components.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "RMS_BX",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS of the X component of the magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "RMS_BY",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS of the Y component of the magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "RMS_BZ",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS of the Z component of the magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "Point",
+      "description": "Number of data points in the averaging        \n                        interval.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

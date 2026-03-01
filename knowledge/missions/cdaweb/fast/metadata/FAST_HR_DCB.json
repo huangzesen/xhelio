@@ -1,0 +1,327 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DeltaB_DSC",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Despun Spacecraft Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DeltaB_GEI",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DeltaB_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Solar Magnetic Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DeltaB_FAC",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Field-Aligned Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DeltaB_FAC_V",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Field-Aligned Spacecraft Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DeltaB_FAC_SP",
+      "type": "double",
+      "units": "nT",
+      "description": "DeltaB in Field-Aligned/Spin Plane Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_GEI",
+      "type": "double",
+      "units": "nT",
+      "description": "Full Magnetic Field in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DEL_MAG_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Magnetometer Deleted Data Flag",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Torquer",
+      "type": "double",
+      "units": "pseudo-nT",
+      "description": "Torquer Coil Field",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Tweaker",
+      "type": "double",
+      "units": "",
+      "description": "Time-Varying Tweaker Matrix",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MAG_QUAL_FLAG",
+      "type": "integer",
+      "units": "OK<2048",
+      "description": "Magnetometer Data Quality Flag",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "B_DSC",
+      "type": "double",
+      "units": "nT",
+      "description": "Full Magnetic Field in Despun Spacecraft Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_SSC",
+      "type": "double",
+      "units": "nT",
+      "description": "Full Magnetic Field in Spinning Spacecraft Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Bharmonic_DSC",
+      "type": "double",
+      "units": "nT",
+      "description": "Removed Magnetic Field Spin-Tone Harmonic in Despun Spacecraft Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Spin_Freq",
+      "type": "double",
+      "units": "deg/s",
+      "description": "Spin Frequency",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spin_Phase",
+      "type": "double",
+      "units": "deg",
+      "description": "Spin Phase",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Orbit",
+      "type": "double",
+      "units": "",
+      "description": "FAST Orbit Number",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pos_gei",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vel_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft Velocity in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_model_gei",
+      "type": "double",
+      "units": "nT",
+      "description": "Model Magnetic Field in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "FAST Altitude Relative to 6378.14 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Geographic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lng",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Geographic Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Invariant Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilng",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Invariant Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hour",
+      "description": "FAST Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flat",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Magnetic Footprint Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flng",
+      "type": "double",
+      "units": "deg",
+      "description": "FAST Magnetic Footprint Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_foot_gei",
+      "type": "double",
+      "units": "nT",
+      "description": "Footprint Magnetic Field in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sun_dir_gei",
+      "type": "double",
+      "units": "",
+      "description": "Sun Direction in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "dip_orient_gei",
+      "type": "double",
+      "units": "",
+      "description": "Dipole Orientation in Geocentric Equatorial Inertial Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Orbit_Value",
+      "type": "double",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Coupling_Matrix",
+      "type": "double",
+      "units": "",
+      "description": "Coupling Matrix",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "Offsets",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetometer Offsets",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Spin_Axis",
+      "type": "double",
+      "units": "deg",
+      "description": "Spin Axis Right Ascension and Declination",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Spin_Phase_Delta",
+      "type": "double",
+      "units": "deg",
+      "description": "Spin Phase Delta",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-09-28T00:45:21.000Z",
+  "stopDate": "1998-10-31T23:22:32.000Z"
+}

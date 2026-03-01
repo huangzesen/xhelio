@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC year associated with the magnetic field\n      samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY_OF_YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC day of year associated with the magnetic\n      field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "double",
+      "units": "",
+      "description": "UTC hour associated with the magnetic field\n      samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MINUTE",
+      "type": "double",
+      "units": "",
+      "description": "UTC minute associated with the magnetic \n     field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "double",
+      "units": "",
+      "description": "UTC second associated with the magnetic \n      field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated \n      with the r,t,n sample in each record. The derived value is created by  \n      the following formula:                                                 \n           MET + 0.05 * delta_ts + (dt_sample)*(I-1) - latency.              \n           MET is the mission elapsed time for the entire science packet.    \n           delta_ts is the delta time in seconds between the MET and         \n           the first sample in the downloaded science packet.                \n           dt_sample is the time between samples in seconds and given by     \n           dt_sample = 1/sample_rate where sample_rate is the reported       \n           sample rate in samples per second.                                \n           I is the incremental counter for each data sample in the          \n           science packet. I=1 is the first sample in the packet.            \n           Latency is the sample rate-dependent delay of the time stamp \n           recording relative to the actual time of observation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RDIST",
+      "type": "double",
+      "units": "",
+      "description": "Radial distance of the MESSENGER spacecraft\n      from the Sun in units of kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LATITUDE_ECLIP",
+      "type": "double",
+      "units": "",
+      "description": "Northward latitude of the MESSENGER        \n      spacecraft above instantaneous ecliptic plane in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AZIMUTH_ECLIP",
+      "type": "double",
+      "units": "",
+      "description": "Azimuth angle of the MESSENGER spacecraft  \n      in the instantaneous ecliptic plane with respect to the Earth-Sun line \n      in units of degrees, positive in direction of the Earth's orbital      \n      motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field value in units of nano-Tesla\n      in Sun-to-spacecraft direction.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field value in units of nano-Tesla\n      in the tangential direction given by the cross product of the Sun spin \n      axis and the Sun-to-spacecraft vector.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field value in units of nano-Tesla\n      in direction of the cross product of the Sun-to-spacecraft vector and  \n      the tangential direction.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

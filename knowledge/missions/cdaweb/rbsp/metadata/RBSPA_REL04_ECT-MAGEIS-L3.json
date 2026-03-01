@@ -1,0 +1,348 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU_plasmagram",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "FEDU: Unidirectional Differential Electron Flux, ~20-4000 keV in 23 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_plasmagram_movie",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "[Movie] FEDU: Unidirectional Differential Electron Flux, ~20-4000 keV in 23 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_ERROR",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> FEDU_ERROR - sqrt of Unidirectional Differential Electron Counts",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_CORR_plasmagram",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "FEDU_CORR - Background-Corrected Unidirectional Differential Electron Flux",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_CORR_plasmagram_movie",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "[Movie] FEDU_CORR - Background-Corrected Unidirectional Differential Electron Flux",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_CORR_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_CORR_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FEDU_CORR_ERROR",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> FEDU_CORR_ERROR - Estimate of the percent error in the corrected electron flux.",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        25
+      ]
+    },
+    {
+      "name": "FPDU_plasmagram",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "FPDU: Unidirectional Differential Proton Flux, ~60-1300 keV in 21 energy and 32 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_plasmagram_movie",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "[Movie] FPDU: Unidirectional Differential Proton Flux, ~60-1300 keV in 21 energy and 32 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_pix1",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "FDPU_pix1 - Unidirectional Differential Proton Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_pix1_movie",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> [Movie] FDPU_pix1 - Unidirectional Differential Proton Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_pix2",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "FDPU_pix2 - Unidirectional Differential Proton Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "FPDU_pix2_movie",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nkeV!e-1!n",
+      "description": "---> [Movie] FDPU_pix2 - Unidirectional Differential Proton Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        31
+      ]
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "",
+      "description": "Lstar - Roederer's generalized L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "---> L - McIlwain's L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "R!dE!n",
+      "description": "---> I - Integral invariant. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Calc - Magnitude of computed model field at the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Eq - Magnitude of computed model field at the Minimum-|B| point along the field line threading the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "---> MLT - Eccentric Dipole Magnetic Local Time. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> MLAT - Eccentric Dipole Magnetic Latitude. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position - Geocentric Geocentric position in Re.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LstarVsAlpha",
+      "type": "double",
+      "units": "",
+      "description": "---> LstarVsAlpha - Roederer's generalized L-shell parameter. Pitch angle depenedent (pitch angles are local pitch angles). Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "LstarVsAlpha_Alpha",
+      "type": "double",
+      "units": "Deg.",
+      "description": "---> Alpha values for LstarVsAlpha variable. I.e., they are the local pitch angles that L* is computed for in LstarVsAlpha. Units are degrees.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "L_star_TT",
+      "type": "double",
+      "units": "",
+      "description": "[Labels on plots] Lstar - Roederer's generalized L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "",
+      "description": "---> L - McIlwain's L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": "R!dE!n",
+      "description": "---> I - Integral invariant. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Calc_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Calc - Magnitude of computed model field at the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Eq - Magnitude of computed model field at the Minimum-|B| point along the field line threading the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "hours",
+      "description": "--->  MLT - Eccentric Dipole Magnetic Local Time. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLAT_TT",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> MLAT - Eccentric Dipole Magnetic Latitude. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "Re",
+      "description": "--->  Position - Geocentric Geocentric position in Re.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2012-09-07T02:29:48.000Z",
+  "stopDate": "2019-10-14T13:53:17.000Z"
+}

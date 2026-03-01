@@ -1,0 +1,267 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L26_Activity",
+      "type": "integer",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the Activity Category of EUV",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_EUV_Solar_scatter",
+      "type": "double",
+      "units": "counts",
+      "description": "EUV Solar Scattering Counts",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Flag",
+      "type": "integer",
+      "units": "0=good Q, 2=bad",
+      "description": "Retrieval Quality Flag",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_HmF2",
+      "type": "double",
+      "units": "km",
+      "description": "Height of F2 Layer from Retrieval",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Input_Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Input Altitude",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Input_Covariance_617",
+      "type": "double",
+      "units": "Rayleighs^2",
+      "description": "Input Covariance 61.7 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Input_Covariance_834",
+      "type": "double",
+      "units": "Rayleighs^2",
+      "description": "Input Covariance 83.4 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Input_Radiance_617",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Input Radiance 61.7 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Input_Radiance_834",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Input Radiance 83.4 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Change",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Change",
+      "fill": "-999.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Covariance",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Covariance",
+      "fill": "-999.0",
+      "size": [
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Lower_Limit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Lower Limit",
+      "fill": "-999.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Parameters",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Parameters",
+      "fill": "-999.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Parameters_Initial",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Parameters Initial",
+      "fill": "-999.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_Model_Upper_Limit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Model Upper Limit",
+      "fill": "-999.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "ICON_L26_NmF2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Density of F2 Layer from Retrieval",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Oplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved O+ Density Profile - stacked time_series",
+      "fill": "-999.0",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "ICON_L26_Oplus_t",
+      "type": "double",
+      "units": "cm-3",
+      "description": "---> (same as above, but individual time_series)",
+      "fill": "-999.0",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "ICON_L26_Radiance_617",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Radiance 61.7 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_Radiance_834",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Radiance 83.4 nm",
+      "fill": "-999.0",
+      "size": [
+        97
+      ]
+    },
+    {
+      "name": "ICON_L26_SC_Slew_Status",
+      "type": "integer",
+      "units": "binary",
+      "description": "Slew or off-point Status Code",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Sigma_HmF2",
+      "type": "double",
+      "units": "km",
+      "description": "1-Sigma in Height of F2 Layer from Retrieval",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Sigma_NmF2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "1-Sigma in Density of F2 Layer from Retrieval",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Sigma_Oplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "1-Sigma in O+ Density Profile from Retrieval - stacked time_series",
+      "fill": "-999.0",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "ICON_L26_Sigma_Oplus_t",
+      "type": "double",
+      "units": "cm-3",
+      "description": "---> same as above (but individual time_series) Retrieval",
+      "fill": "-999.0",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "ICON_L26_Space_Environment_Region_Status",
+      "type": "integer",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing Space Environment Region of Space Craft",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Status",
+      "type": "integer",
+      "units": "binary",
+      "description": "Binary Coded Integer Describing the View Status of EUV",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Sun_Status",
+      "type": "integer",
+      "units": "binary",
+      "description": "Spacecraft Sun/Shadow Status Code",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L26_Unreduced_Chi2",
+      "type": "double",
+      "units": "unitless",
+      "description": "Unreduced Chi Squared value from the retrieval",
+      "fill": "-999.0"
+    }
+  ],
+  "startDate": "2019-11-12T23:59:58.000Z",
+  "stopDate": "2022-11-25T14:46:07.000Z"
+}

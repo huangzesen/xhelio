@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "RAD_AU",
+      "type": "double",
+      "units": "AU",
+      "description": "Distance from Sun to object",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SE_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in Solar Ecliptic Coordinate System (SE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SE_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in Solar Ecliptic Coordinate System (SE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HG_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in heliographic Rotating Coordinate System (HG)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HG_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in Heliographic Rotating Coordinate System (HG)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGI_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in heliographic Inertial Coordinate System (HGI)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGI_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in heliographic Inertial Coordinate System (HGI)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2006-10-27T00:00:00.000Z",
+  "stopDate": "2029-06-16T00:00:00.000Z"
+}

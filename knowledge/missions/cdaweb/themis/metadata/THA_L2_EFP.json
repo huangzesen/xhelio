@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tha_efp_gse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFP (Particle Burst, 1/128 to 1/512 sec time resolution) electric field vector in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_efp_gsm",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFP (Particle Burst, 1/128 to 1/512 sec time resolution) electric field vector in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_efp_dsl",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFP (Particle Burst, 1/128 to 1/512 sec time resolution) electric field vector in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2008-01-14T00:00:00.000Z",
+  "stopDate": "2025-01-06T00:00:00.000Z"
+}

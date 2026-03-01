@@ -1,0 +1,90 @@
+{
+  "id": "OMNI",
+  "name": "OMNI",
+  "keywords": [
+    "omni",
+    "omni2",
+    "omni_hro"
+  ],
+  "profile": {
+    "description": "OMNI spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Combined": {
+      "name": "Combined",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "OMNI_HRO2_1MIN": {
+          "description": "OMNI Combined, Definitive 1-minute IMF and Definitive Plasma Data Time-Shifted to the Nose of the Earth's Bow Shock, plus Magnetic Indices - J.H. King, N. Papatashvilli (AdnetSystems, NASA GSFC)",
+          "start_date": "1995-01-01T00:00:00.000Z",
+          "stop_date": "2026-01-31T23:59:00.000Z",
+          "pi_name": "J.H. King, N. Papatashvilli",
+          "pi_affiliation": "AdnetSystems, NASA GSFC",
+          "doi": "10.48322/mj0k-fq60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI_HRO2_1MIN"
+        },
+        "OMNI_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "OMNI Combined merged hourly magnetic field, plasma and ephermis data - J.H. King, N. Papatashvilli (AdnetSystems, NASA GSFC)",
+          "start_date": "1963-01-01T00:00:00.000Z",
+          "stop_date": "2026-02-02T00:00:00.000Z",
+          "pi_name": "J.H. King, N. Papatashvilli",
+          "pi_affiliation": "AdnetSystems, NASA GSFC",
+          "doi": "10.48322/6ffx-3441",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI_COHO1HR_MERGED_MAG_PLASMA"
+        },
+        "OMNI_HRO2_5MIN": {
+          "description": "OMNI Combined, Definitive 5-minute IMF and Definitive Plasma, and Energetic Proton Fluxes, Time-Shifted to the Nose  of the Earth's Bow Shock, plus Magnetic Indices - J.H. King, N. Papatashvilli (AdnetSystems, NASA GSFC)",
+          "start_date": "1995-01-01T00:00:00.000Z",
+          "stop_date": "2026-01-31T23:55:00.000Z",
+          "pi_name": "J.H. King, N. Papatashvilli",
+          "pi_affiliation": "AdnetSystems, NASA GSFC",
+          "doi": "10.48322/hkaw-ff03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI_HRO2_5MIN"
+        },
+        "OMNI2_H0_MRG1HR": {
+          "description": "OMNI Combined, Definitive, Hourly IMF and Plasma Data, and Energetic Proton Fluxes, Time-Shifted to the Nose of the Earth's Bow Shock, plus Solar and Magnetic Indices - J.H. King, N. Papitashvili (ADNET, NASA GSFC)",
+          "start_date": "1963-01-01T00:00:00.000Z",
+          "stop_date": "2026-02-03T23:00:00.000Z",
+          "pi_name": "J.H. King, N. Papitashvili",
+          "pi_affiliation": "ADNET, NASA GSFC",
+          "doi": "10.48322/1shr-ht18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI2_H0_MRG1HR"
+        },
+        "OMNI_HRO_1MIN": {
+          "description": "OMNI Combined, Definitive, 1-minute IMF and Plasma Data Time-Shifted to the Nose of the Earth's Bow Shock, plus Magnetic Indices - J.H. King, N. Papatashvilli (AdnetSystems, NASA GSFC)",
+          "start_date": "1981-01-01T00:00:00.000Z",
+          "stop_date": "2026-01-31T23:59:00.000Z",
+          "pi_name": "J.H. King, N. Papatashvilli",
+          "pi_affiliation": "AdnetSystems, NASA GSFC",
+          "doi": "10.48322/45bb-8792",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI_HRO_1MIN"
+        },
+        "OMNI_HRO_5MIN": {
+          "description": "OMNI Combined, Definitive, 5-minute IMF and Plasma, and Energetic Proton Fluxes, Time-Shifted to the Nose  of the Earth's Bow Shock, plus Magnetic Indices - J.H. King, N. Papatashvilli (AdnetSystems, NASA GSFC)",
+          "start_date": "1981-01-01T00:00:00.000Z",
+          "stop_date": "2026-01-31T23:55:00.000Z",
+          "pi_name": "J.H. King, N. Papatashvilli",
+          "pi_affiliation": "AdnetSystems, NASA GSFC",
+          "doi": "10.48322/gbpg-5r77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesO.html#OMNI_HRO_5MIN"
+        }
+      }
+    }
+  },
+  "observatory_group": "OMNI (Combined 1AU IP Data; Magnetic and Solar Indices)",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

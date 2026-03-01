@@ -1,0 +1,152 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "IMAGE",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "EUV ion (He+) images of earth and surrounding plasmasphere (no grid, small format, linear scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGE_LT",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGE_MV",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGE_LOG",
+      "type": "double",
+      "units": "log10(cnts/cm^2/sr)",
+      "description": "---> EUV ion images, as above (log10 scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGE_LT_LOG",
+      "type": "double",
+      "units": "log10(cnts/cm^2/sr)",
+      "description": "---> EUV ion images, as above (large format, log10 scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGE_MV_LOG",
+      "type": "double",
+      "units": "log10(cnts/cm^2/sr)",
+      "description": "---> EUV ion images, as above (movie, log10 scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGEMAP_LT",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGEMAP_LT_LOG",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (mapped, large format, log10 scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGEMAP_MV",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "IMAGEMAP_MV_LOG",
+      "type": "double",
+      "units": "cnts/cm^2/sr",
+      "description": "---> EUV ion images, as above (mapped, movie, log10 scale)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        140,
+        140
+      ]
+    },
+    {
+      "name": "gci_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE Position in GCI coordinates, 3 components",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "geo_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE Position in GEO (geographic) coordinates, 3 components",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "gsm_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE Position in GSM coordinates, 3 components",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-03-28T09:56:32.000Z",
+  "stopDate": "2005-12-18T02:49:43.000Z"
+}

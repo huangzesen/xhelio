@@ -1,0 +1,191 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BFIELDRTN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in RTN coordinates from the IMPACT/MAG instrument.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Total magnetic field from the IMPACT/MAG instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "HAE",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft position in Heliocentric Aries Ecliptic (HAE) coordinates.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEE",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft position in Heliocentric Earth Ecliptic (HEE) coordinates.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEEQ",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft position in Heliocentric Earth Equatorial (HEEQ) coordinates.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CARR",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft position in Carrington Heliographic coordinates.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HCI",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Inertial",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "AU",
+      "description": "Distance of STEREO from the Sun.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Solar wind proton number density",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Speed from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Tp",
+      "type": "double",
+      "units": "deg_K",
+      "description": "Proton Temperature from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vth",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Thermal Speed from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vr_Over_V_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Direction cosine of radial velocity from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vt_Over_V_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Direction cosine of tangential velocity from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vn_Over_V_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Direction cosine of normal velocity from the PLASTIC instrument.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Vp_RTN",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Solar Wind Proton Speed",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Entropy",
+      "type": "double",
+      "units": "",
+      "description": "Entropy",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Beta",
+      "type": "double",
+      "units": "",
+      "description": "Beta",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Total_Pressure",
+      "type": "double",
+      "units": "pPa",
+      "description": "Total Pressure",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Cone_Angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Cone Angle of magnetic field with respect to R direction (0 for anti-sunward, 180 for sunward)",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Clock_Angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Clock Angle of B-field in the T-N plane (atan2(BT,BN)). 0 along T. 90 along N.",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Magnetic_Pressure",
+      "type": "double",
+      "units": "pPa",
+      "description": "Magnetic Pressure",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "Dynamic_Pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "Dynamic Pressure",
+      "fill": "-1.0000000150474662e+30"
+    }
+  ],
+  "startDate": "2006-11-07T00:00:00.000Z",
+  "stopDate": "2025-11-01T00:00:00.000Z"
+}

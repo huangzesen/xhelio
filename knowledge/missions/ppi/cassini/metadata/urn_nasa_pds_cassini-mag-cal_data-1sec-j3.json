@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 X component of the magnetic-field in nT.                             \n      X is in the Jovian equatorial plane along the line through the          \n      System 3 (1997), positive away from Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 Y component of the magnetic-field in nT.                             \n      Y completes the right handed set (Z x X).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 Z component of the magnetic-field in nT.                             \n      Z is parallel to Jovian spin axis, Omega, positive north of             \n      the equator.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the full-resolution magnetic-field magnitudes          \n      calculated over the averaging interval in nT. Note that this value      \n      may differ slightly from the square root of the sum of the squares      \n      of the averaged field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

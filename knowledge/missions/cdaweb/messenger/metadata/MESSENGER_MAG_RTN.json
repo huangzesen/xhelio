@@ -1,0 +1,131 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "radialDistance",
+      "type": "double",
+      "units": "km",
+      "description": "Radial distance of MESSENGER from the Sun",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "latitude_ecliptic",
+      "type": "double",
+      "units": "deg",
+      "description": "----> North latitude from the ecliptic plane",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "azimuth_ecliptic",
+      "type": "double",
+      "units": "deg",
+      "description": "----> Azimuthal angle from Earth-Sun line in ecliptic plane, positive in the direction of Earth's motion",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "radialDistance_200",
+      "type": "double",
+      "units": "km (>200)",
+      "description": "Radial distance of MESSENGER from the Sun (0.5 sec cadence)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "latitude_ecliptic_200",
+      "type": "double",
+      "units": "deg (>200)",
+      "description": "----> North latitude from the ecliptic plane (0.5 sec cadence)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "azimuth_ecliptic_200",
+      "type": "double",
+      "units": "deg (>200)",
+      "description": "----> Azimuthal angle from Earth-Sun line in ecliptic plane, positive in the direction of Earth's motion (0.5 sec cadence)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_radial_q",
+      "type": "double",
+      "units": "nT",
+      "description": "(Good values only) B radial (Br) in RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_tangential_q",
+      "type": "double",
+      "units": "nT",
+      "description": "----> (Good values only) B tangential (Bt)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_normal_q",
+      "type": "double",
+      "units": "nT",
+      "description": "----> (Good values only) B normal (Bn)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_radial_200",
+      "type": "double",
+      "units": "nT (>200)",
+      "description": "(Good values at 0.5 sec cadence only) B radial (Br) in RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_tangential_200",
+      "type": "double",
+      "units": "nT (>200)",
+      "description": "----> (Good values at 0.5 sec cadence only) B tangential (Bt)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_normal_200",
+      "type": "double",
+      "units": "nT (>200)",
+      "description": "----> (Good values at 0.5 sec cadence only) B normal (Bn)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_radial",
+      "type": "double",
+      "units": "nT",
+      "description": "(All qualities) B radial (Br) in RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_tangential",
+      "type": "double",
+      "units": "nT",
+      "description": "----> (All qualities) B tangential (Bt)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_normal",
+      "type": "double",
+      "units": "nT",
+      "description": "----> (All qualities) B normal (Bn)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "(222/223=good)",
+      "description": "3-digit daily quality flag (222 or 223 = good = boom deployed, sensor in shadow, any heater contamination corrected)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Epoch_cadence",
+      "type": "double",
+      "units": "milliseconds",
+      "description": "Data Cadence",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2004-08-12T17:44:08.000Z",
+  "stopDate": "2015-04-30T15:08:14.000Z"
+}

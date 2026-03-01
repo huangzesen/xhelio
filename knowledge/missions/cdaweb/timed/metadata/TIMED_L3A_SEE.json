@@ -1,0 +1,162 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX_SP_30",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Solar irradiance at 30.5 nm, He II",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_33",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Solar irradiance at 33.5 nm, Fe XVI",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_36",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Solar irradiance at 36.5 nm, Mg IX",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_121",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Solar irradiance at 121.5 nm, H I",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_133",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Solar irradiance at 133.5 nm, C II",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_SUM6",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Integrated solar irradiance from 0 to 7 nm (soft X-rays)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_SUM44",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Integrated solar irradiance from 0 to 45 nm (QEUV1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_SUM5_44",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Integrated solar irradiance from 5 to 45 nm (QEUV2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP_SUM104",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "Integrated solar irradiance from 0 to 105 nm (E10.7)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WAVE_LINE",
+      "type": "double",
+      "units": "nm",
+      "description": "[NOT FOR PLOTTING] Wavelength of the 38 emission lines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        38
+      ]
+    },
+    {
+      "name": "FLUX_LINE",
+      "type": "double",
+      "units": "W / m^2 / nm",
+      "description": "[NOT FOR PLOTTING] Solar irradiance at 38 emission lines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        38
+      ]
+    },
+    {
+      "name": "ERR_TOT_LINE",
+      "type": "double",
+      "units": "Fractional",
+      "description": "[NOT FOR PLOTTING] Accuracy of solar irradiance at 38 wavelengths",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        38
+      ]
+    },
+    {
+      "name": "ERR_MEAS_LINE",
+      "type": "double",
+      "units": "Fractional",
+      "description": "[NOT FOR PLOTTING] Measurement precision for solar irradiance",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        38
+      ]
+    },
+    {
+      "name": "LOGT_LINE",
+      "type": "double",
+      "units": "",
+      "description": "[NOT FOR PLOTTING] Logarithm of Temperature for spectral line",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        38
+      ]
+    },
+    {
+      "name": "COR_1AU",
+      "type": "double",
+      "units": "1 / (AU * AU)",
+      "description": "AU correction factor for date",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FLUX_SP",
+      "type": "double",
+      "units": "W / m^2 / nm",
+      "description": "[NOT FOR PLOTTING] Solar irradiance 0 to 195 nm (1nm res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        195
+      ]
+    },
+    {
+      "name": "ERR_TOT_SP",
+      "type": "double",
+      "units": "Fractional",
+      "description": "[NOT FOR PLOTTING] Accuracy of solar irradiance",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        195
+      ]
+    },
+    {
+      "name": "ERR_MEAS_SP",
+      "type": "double",
+      "units": "Fractional",
+      "description": "[NOT FOR PLOTTING] Measurement precision",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        195
+      ]
+    }
+  ],
+  "startDate": "2002-01-22T05:10:36.000Z",
+  "stopDate": "2026-02-15T22:26:20.000Z"
+}

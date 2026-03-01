@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) at which the particle counting begins.       \n      Time is given in the format of `yyyy-mm-dd hh:mm:ss.sss'.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STEP",
+      "type": "double",
+      "units": "",
+      "description": "LECP stepping platform position (0-7).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOTOR_MOVEMENT",
+      "type": "double",
+      "units": "",
+      "description": "LECP motor movement flag (0 = no movement; 1 = movement during          \n      accumulation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL01_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counts per accumulation measured in energy channel PL01                 \n      (24-48 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACC_TIME_PL01",
+      "type": "double",
+      "units": "Counts",
+      "description": "Accumulation time of channel PL01.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL02_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counts per accumulation measured in energy channel PL02                 \n      (48-80 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACC_TIME_PL02",
+      "type": "double",
+      "units": "Counts",
+      "description": "Accumulation time of channel PL02.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL03_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counts per accumulation measured in energy channel PL03                 \n      (80-137 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACC_TIME_PL03",
+      "type": "double",
+      "units": "Counts",
+      "description": "Accumulation time of channel PL03.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EB04_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counts per accumulation measured in energy channel EB04                 \n      (112-183 keV/nuc. electrons).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACC_TIME_EB04",
+      "type": "double",
+      "units": "Counts",
+      "description": "Accumulation time of channel EB04.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EBP04_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counts per accumulation measured in energy channel EBP04                \n      (112-183 keV/nuc. electrons).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACC_TIME_EBP04",
+      "type": "double",
+      "units": "Counts",
+      "description": "Accumulation time of channel EBP04.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

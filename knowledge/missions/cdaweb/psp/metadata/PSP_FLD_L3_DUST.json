@@ -1,0 +1,129 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_raw",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "V2 dust impact rate (raw)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_ucc",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "V2 dust impact rate (corrected for wave dead time and under-counting)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_wav",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "V2 dust impact rate (corrected for wave dead time)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_ej2000_x",
+      "type": "double",
+      "units": "Rs",
+      "description": "PSP EJ2000 X coordinate, in solar radii (Rs)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_ej2000_y",
+      "type": "double",
+      "units": "Rs",
+      "description": "PSP EJ2000 Y coordinate, in solar radii (Rs)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_ej2000_z",
+      "type": "double",
+      "units": "Rs",
+      "description": "PSP EJ2000 Z coordinate, in solar radii (Rs)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_encounter",
+      "type": "integer",
+      "units": "",
+      "description": "PSP encounter number",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_inoutbound",
+      "type": "integer",
+      "units": "",
+      "description": "PSP inbound (-1) / outbound (+1) indicator",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_rate_dist_Rs",
+      "type": "double",
+      "units": "Rs",
+      "description": "PSP Distance from the Sun, in solar radii (Rs)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_event_peak_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "Peak value for TDS 100bps V2 data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_V2_event_rms_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "RMS value for TDS 100bps V2 data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_dust_ej2000_pointing_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SC velocity in EJ2000 coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_dust_ej2000_pointing_sc_x_vector",
+      "type": "double",
+      "units": "",
+      "description": "SC X vector in EJ2000 coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_dust_ej2000_pointing_sc_y_vector",
+      "type": "double",
+      "units": "",
+      "description": "SC Y vector in EJ2000 coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_dust_ej2000_pointing_sc_z_vector",
+      "type": "double",
+      "units": "",
+      "description": "SC Z vector in EJ2000 coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

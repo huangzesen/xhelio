@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tha_scf_btotal",
+      "type": "double",
+      "units": "nT",
+      "description": "SCF (fast-survey, 1/8 sec time resolution) SCM magnetic field B magnitude",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_scf_gse",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "SCF (fast-survey, 1/8 sec time resolution) SCM magnetic field B in XYZ GSE Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scf_gsm",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "SCF (fast-survey, 1/8 sec time resolution) SCM magnetic field B in XYZ GSM Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scf_dsl",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "SCF (fast-survey, 1/8 sec time resolution) SCM magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scp_btotal",
+      "type": "double",
+      "units": "nT",
+      "description": "SCP (particle burst, 1/128 second time resolution) SCM magnetic field B magnitude",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_scp_gse",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "SCP (particle burst, 1/128 second time resolution) SCM magnetic field B in XYZ GSE Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scp_gsm",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "SCP (particle burst, 1/128 second time resolution) SCM magnetic field B in XYZ GSM Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scp_dsl",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "SCP (particle burst, 1/128 second time resolution) SCM magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scw_btotal",
+      "type": "double",
+      "units": "nT",
+      "description": "SCW (wave burst, 1/8192 second time resolution) SCM magnetic field B magnitude",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_scw_gse",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "SCW (wave burst, 1/8192 second time resolution) SCM magnetic field B in XYZ GSE Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scw_gsm",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "SCW (wave burst, 1/8192 second time resolution) SCM magnetic field B in XYZ GSM Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_scw_dsl",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "SCW (wave burst, 1/8192 second time resolution) SCM magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2007-02-24T00:00:00.000Z",
+  "stopDate": "2025-01-05T23:59:59.000Z"
+}

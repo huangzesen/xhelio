@@ -1,0 +1,137 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GCI Cartesian Position",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GCI Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSE Cartesian Position",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSE Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSM Cartesian Position",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSM Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SUN_VECTOR",
+      "type": "double",
+      "units": "km",
+      "description": "GCI Sun Position Vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_POS",
+      "type": "double",
+      "units": "km",
+      "description": "HEC Cartesian Position",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "HEC Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CRN_EARTH",
+      "type": "integer",
+      "units": "",
+      "description": "Carrington Rotation Number (after 3/96)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LONG_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of the Earth",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of the Earth",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LONG_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of Craft",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of the Craft",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1995-12-02T00:00:00.000Z",
+  "stopDate": "1997-09-09T23:50:00.000Z"
+}

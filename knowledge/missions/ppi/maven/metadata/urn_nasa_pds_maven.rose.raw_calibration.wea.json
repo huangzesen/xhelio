@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "",
+      "description": "Two-digit year of observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Month",
+      "type": "double",
+      "units": "",
+      "description": "Two-digit month of observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Day",
+      "type": "double",
+      "units": "",
+      "description": "Two-digit day of observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Three-digit day-of-year of observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DSCC",
+      "type": "double",
+      "units": "",
+      "description": "Deep Space Communications Complex identifier",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

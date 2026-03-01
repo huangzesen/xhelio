@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "Electron differential number flux 100 eV - 30 keV, as a function of energy [spectrogram]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_STACKED",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "---> As stacked plot",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_SIMPLE",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "---> As time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Time-varying electron energies for 15 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec",
+      "description": "UNIX Time (secs since 1 Jan 1970)",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1994-12-20T15:10:03.000Z",
+  "stopDate": "2025-09-22T21:26:58.000Z"
+}

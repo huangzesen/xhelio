@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDO_SSD",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "Omni-directional flux of XEP SSD",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "FEDO_SSD_T",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "---> Omni-directional flux of XEP SSD (overlaid time series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "FEDO_GSO",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "Omni-directional flux of XEP GSO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "2017-03-19T00:00:02.000Z",
+  "stopDate": "2024-12-31T23:59:36.000Z"
+}

@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ions",
+      "type": "double",
+      "units": "/s",
+      "description": "Ion counts in 8 channels, P1' to P8' (61 keV to 4.752 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    }
+  ],
+  "startDate": "1990-11-14T19:00:00.000Z",
+  "stopDate": "2008-12-31T23:00:00.000Z"
+}

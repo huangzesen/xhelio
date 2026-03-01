@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mag_8sec_dsi",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution B in DSI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mag_8sec_gse",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution B in GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mag_8sec_gsm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution B in GSM coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mag_8sec_sm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution B in SM coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "magt_8sec",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution total B",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "rmsd_8sec_dsi",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution RMSD for DSI",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "rmsd_8sec_gse",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution RMSD for GSE",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "rmsd_8sec_gsm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution RMSD for GSM",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "rmsd_8sec_sm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution RMSD for SM",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "rmsd_8sec",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution Bt RMSD",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "n_rmsd_8sec",
+      "type": "integer",
+      "units": "",
+      "description": "The number of data points for RMSD",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "dyn_rng_8sec",
+      "type": "integer",
+      "units": "",
+      "description": "Dynamic Range",
+      "fill": "-128.0"
+    },
+    {
+      "name": "quality_8sec",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Flag",
+      "fill": "-128.0",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "quality_8sec_gc",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Flag for Geophysical Coordinates",
+      "fill": "-128.0"
+    },
+    {
+      "name": "igrf_8sec_dsi",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution IGRF B in DSI",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "igrf_8sec_gse",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution IGRF B in GSE",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "igrf_8sec_gsm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution IGRF B in GSM",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "igrf_8sec_sm",
+      "type": "double",
+      "units": "nT",
+      "description": "8 sec resolution IGRF B in SM",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2017-03-13T12:01:18.000Z",
+  "stopDate": "2024-12-31T23:59:44.000Z"
+}

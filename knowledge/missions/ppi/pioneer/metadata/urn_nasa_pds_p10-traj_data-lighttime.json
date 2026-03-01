@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "year",
+      "description": "Spacecraft event year given in PDS time format (yy).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Day",
+      "type": "double",
+      "units": "day",
+      "description": "Spacecraft day of year starting from 1972 (ddd).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "hour",
+      "description": "Spacecraft hour of day in format (hh).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Minute",
+      "type": "double",
+      "units": "minute",
+      "description": "Spacecraft minute of hour in format (mm).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC",
+      "type": "double",
+      "units": "sec",
+      "description": "Spacecraft second of minute in format (ss).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delay",
+      "type": "double",
+      "units": "sec",
+      "description": "One-way time delay at daily intervals for radio signal to travel \n                    between the Earth and Pioneer 10 measured in seconds.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

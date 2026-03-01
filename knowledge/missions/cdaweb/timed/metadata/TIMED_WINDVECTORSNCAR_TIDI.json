@@ -1,0 +1,900 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ZonalWindP9_SampleProfilecold_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "Zonal wind at 75, 80, 85, 90, 95, and 100 km, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ZonalWindP9_SampleProfilewarm_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ZonalWindP9_SampleProfilecold_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ZonalWindP9_SampleProfilewarm_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MeridionalWindP9_SampleProfilecold_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "Meridional wind at 75, 80, 85, 90, 95, and 100 km, Ascending orbit phase, Cold Side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MeridionalWindP9_SampleProfilewarm_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MeridionalWindP9_SampleProfilecold_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MeridionalWindP9_SampleProfilewarm_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Ucold_P9_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "Zonal wind profiles (velocity as function of time and altitude), Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Uwarm_P9_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Ucold_P9_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Uwarm_P9_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Ucold_P9_ascend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- -> Zonal wind variance profiles,  Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Uwarm_P9_ascend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Ucold_P9_descend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Uwarm_P9_descend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Vcold_P9_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "Meridional wind profiles, (velocity as a function of time and altitude), Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Vwarm_P9_ascend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Vcold_P9_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Vwarm_P9_descend",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Vcold_P9_ascend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- -> Meridional wind variance profiles Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Vwarm_P9_ascend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Vcold_P9_descend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "VAR_Vwarm_P9_descend",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "Wind vector map, 80 km, Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_des_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_des_transv_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_des_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_des_transv_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_mov_080",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "Wind vector map, 90 km, Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_transv_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_transv_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_mov_090",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "Wind vector map, 100 km, Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_transv_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Cylindrical projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_asc_transv_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- -> MOVIE: Transverse Mercator projection, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_asc_transv_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_cold_desc_transv_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Windplot_warm_desc_transv_mov_100",
+      "type": "double",
+      "units": "m/s",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "LATcold_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "Geodetic latitude, Ascending orbit phase, Cold Side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LATwarm_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LATcold_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LATwarm_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LONcold_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- -> Geodetic East Longitude, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LONwarm_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LONcold_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LONwarm_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZAcold_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- -> Solar Zenith Angle (SZA), Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZAwarm_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZAcold_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZAwarm_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LSTcold_ascend",
+      "type": "double",
+      "units": "hour",
+      "description": "- -> Local Solar Time (LST)Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LSTwarm_ascend",
+      "type": "double",
+      "units": "hour",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LSTcold_descend",
+      "type": "double",
+      "units": "hour",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LSTwarm_descend",
+      "type": "double",
+      "units": "hour",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLATcold_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- -> Magnetic Latitude, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLATwarm_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLATcold_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLATwarm_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLONcold_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- -> Magnetic Longitude, Ascending orbit phase, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLONwarm_ascend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Ascending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLONcold_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Cold side",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLONwarm_descend",
+      "type": "double",
+      "units": "deg",
+      "description": "- - - - - -> Descending, Warm side",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2002-02-20T00:06:55.000Z",
+  "stopDate": "2020-12-31T23:52:46.000Z"
+}

@@ -1,0 +1,269 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "POS_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "POLAR position, 3 comp. in cartesian GSE (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POS_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "POLAR position, 3 comp. in cartesian GSM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POS_SM",
+      "type": "double",
+      "units": "RE",
+      "description": "POLAR position, 3 comp. in cartesian SM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Rad_Dist",
+      "type": "double",
+      "units": "RE",
+      "description": "POLAR orbit radial distance (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TILT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Dipole tilt angle (deg) using dipole moment of data, scalar (IGRF with secular correction (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed total magnetic field, scalar (6 sec res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BSC",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed vector magnetic field in cartesian S/C coord. (6 sec res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "COMP_DELTA",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed compressional standard dev. of magnetic field (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TRANS_DELTA",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed transverse delta of magnetic field (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BTAV",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed total magnetic field, scalar (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed vector magnetic field in cartesian GSE (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed vector magnetic field in cartesian GSM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "Observed vector magnetic field in cartesian SM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBTIGRF",
+      "type": "double",
+      "units": "nT",
+      "description": "Total IGRF95 magnetic field, scalar (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MBCIGRF_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95 vector magnetic field in cartesian GSE (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBCIGRF_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95 vector magnetic field in cartesian GSM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBCIGRF_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95 vector magnetic field in cartesian SM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBTSY",
+      "type": "double",
+      "units": "nT",
+      "description": "Total IGRF95&T95 magnetic field, scalar (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MBCTSYGSE",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95&T95 vector magnetic field in cartesian GSE (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBCTSYGSM",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95&T95 vector magnetic field in cartesian GSM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MBCTSYSM",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF95&T95 vector magnetic field in cartesian SM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "N_FOOT_PRINT",
+      "type": "double",
+      "units": "degrees",
+      "description": "North magnetic footprint, latitude and longitude in cartesian GEO (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "S_FOOT_PRINT",
+      "type": "double",
+      "units": "degrees",
+      "description": "South magnetic footprint, latitude and longitude in cartesian GEO (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "dt_var",
+      "type": "integer",
+      "units": "microsec",
+      "description": "Vector sampling interval deviation : dt-120000 (microsec)(0.92 min res.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "POS_GSEV",
+      "type": "double",
+      "units": "RE",
+      "description": "Time axis label: POLAR position, 3 comp. in cartesian GSE (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POS_GSMV",
+      "type": "double",
+      "units": "RE",
+      "description": "Time axis label: POLAR position, 3 comp. in cartesian GSM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POS_SMV",
+      "type": "double",
+      "units": "RE",
+      "description": "Time axis label: POLAR position, 3 comp. in cartesian SM (0.92 min res.)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Rad_DistV",
+      "type": "double",
+      "units": "RE",
+      "description": "Time axis label: POLAR orbit radial distance (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TILTV",
+      "type": "double",
+      "units": "degrees",
+      "description": "Time axis label: Dipole tilt angle (deg) using dipole moment of data, scalar (IGRF with secular correction (0.92 min res.)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-16T00:00:55.000Z",
+  "stopDate": "2006-05-31T23:59:48.000Z"
+}

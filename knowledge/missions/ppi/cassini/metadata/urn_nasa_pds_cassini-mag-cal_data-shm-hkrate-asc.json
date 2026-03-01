@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAI",
+      "type": "double",
+      "units": "Second",
+      "description": "Time is represented as SCET in seconds since the epoch Jan 1 2000     \n        12:00:00 TAI (= 11:59:28 UTC) .",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "B_SHM",
+      "type": "double",
+      "units": "nT",
+      "description": "Corrected field strength (scalar) in nT.",
+      "size": [
+        1
+      ],
+      "fill": "-99999999.999999"
+    },
+    {
+      "name": "X_IAU_S",
+      "type": "double",
+      "units": "km",
+      "description": "Cassini position on the x axis relative to Saturn in IAU_SATURN       \n        coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_IAU_S",
+      "type": "double",
+      "units": "km",
+      "description": "Cassini position on the y axis relative to Saturn in IAU_SATURN       \n        coordinate system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_IAU_S",
+      "type": "double",
+      "units": "km",
+      "description": "Cassini position on the x axis relative to Saturn in IAU_SATURN       \n        coordinate system",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

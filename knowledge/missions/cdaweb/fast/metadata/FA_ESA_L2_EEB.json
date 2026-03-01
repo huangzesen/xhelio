@@ -1,0 +1,242 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "valid",
+      "type": "integer",
+      "units": "None",
+      "description": "Validity flag codes valid data (bit 0), non-zero values are not necessarily valid (NUM_DISTS elements)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "data_quality",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Quality flag (NUM_DISTS elements)",
+      "fill": "255.0"
+    },
+    {
+      "name": "nbins",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Number of angluar bins (NUM_DISTS elements)",
+      "fill": "255.0"
+    },
+    {
+      "name": "nenergy",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> Number of energies (NUM_DISTS elements)",
+      "fill": "255.0"
+    },
+    {
+      "name": "geom_factor",
+      "type": "double",
+      "units": "None",
+      "description": "---> GEOM_FACTOR, Geometrical factor used in calibration (NUM_DISTS elements)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "gf_ind",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Index for the value of the Geometrical factor for data (NUM_DISTS elements)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "mode_ind",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Index for the data mode (0-2 for survey data, 0-1 for burst data) (NUM_DISTS elements)",
+      "fill": "255.0"
+    },
+    {
+      "name": "theta_shift",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Angular shift (NUM_DISTS elements)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "theta_max",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Angular maximum (NUM_DISTS elements)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "theta_min",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Angular minimum (NUM_DISTS elements)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bkg",
+      "type": "double",
+      "units": "None",
+      "description": "Background counts array with dimensions (NUM_DISTS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_pot",
+      "type": "double",
+      "units": "volts",
+      "description": "Spacecraft potential (NUM_DISTS elements)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "data",
+      "type": "integer",
+      "units": "Counts",
+      "description": "Burst Electron Raw Counts data with dimensions (96, 64, NUM_DISTS)",
+      "fill": "255.0",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "eflux",
+      "type": "double",
+      "units": "eV/sr/sec",
+      "description": "Differential burst-mode electron energy flux array with dimensions (96, 64, NUM_DISTS) (as plasmagrams)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "eflux_movie",
+      "type": "double",
+      "units": "eV/sr/sec",
+      "description": "---> Plasmagram movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "eflux_byE_atA",
+      "type": "double",
+      "units": "eV/sr/sec",
+      "description": "---> Spectrograms by energy at sample pitch angle bin nos (of varying pitch angle)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "eflux_byA_atE",
+      "type": "double",
+      "units": "eV/sr/sec",
+      "description": "---> Spectrograms by pitch angle bin nos (of varying pitch angles) at sample energies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "pitch_angle_median",
+      "type": "double",
+      "units": "degrees",
+      "description": "median pitch angle",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "energy_median",
+      "type": "double",
+      "units": "eV",
+      "description": "---> median energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96
+      ]
+    },
+    {
+      "name": "energy_full",
+      "type": "double",
+      "units": "eV",
+      "description": "Energy values for each distribution (96, 64, NUM_DISTS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "denergy_full",
+      "type": "double",
+      "units": "eV",
+      "description": "Energy bin size for each distribution (96, 64, NUM_DISTS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "pitch_angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Pitch Angle values for each distribution (96, 64, NUM_DISTS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "domega",
+      "type": "double",
+      "units": "ster",
+      "description": "---> Solid angle (DOmega) for each distribution (96, 64, NUM_DISTS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        96
+      ]
+    },
+    {
+      "name": "orbit_number",
+      "type": "integer",
+      "units": "None",
+      "description": "Orbit number for this file, does not change, so only 2 entries per file",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "compno_96",
+      "type": "integer",
+      "units": "",
+      "description": "Energy Bin No",
+      "fill": "0.0",
+      "size": [
+        96
+      ]
+    },
+    {
+      "name": "compno_64",
+      "type": "integer",
+      "units": "",
+      "description": "PA Bin No",
+      "fill": "0.0",
+      "size": [
+        64
+      ]
+    }
+  ],
+  "startDate": "1996-09-16T22:43:56.000Z",
+  "stopDate": "2009-04-30T08:16:03.000Z"
+}

@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AOBT",
+      "type": "double",
+      "units": "",
+      "description": "APSS onboard time (AOBT) value of sample. This is the spacecraft\n                        clock time used by the APSS instruments.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MLST",
+      "type": "double",
+      "units": "",
+      "description": "Mars local solar time (hh:mm:ss) converts Sun angle \n                       to 24 hour clock.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "freq",
+      "type": "double",
+      "units": "Hz",
+      "description": "IFG sample frequency (Hz)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "conf",
+      "type": "double",
+      "units": "",
+      "description": "Configuration table number used to define onboard\n                       processing including IFG down-sampling rate and the\n                       computation of the estimated parameters.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "off",
+      "type": "double",
+      "units": "",
+      "description": "Sample offset within the downlink packet (samples 0 - 1023).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG1_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 1 value in data numbers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG2_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 2 value in data numbers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG3_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 3 value in data numbers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFGT_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG sensor temperature value in data numbers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PAE_T",
+      "type": "double",
+      "units": "Degree",
+      "description": "PAE temperature (T-0014) in deg C used to estimate electronics \n                       temperature. This temperature is measured on the electronics \n                       box that houses the IFG components but is not the value from\n                       the thermister on the board that is required for the temperature\n                       calibrations (sensor gains and zero levels).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

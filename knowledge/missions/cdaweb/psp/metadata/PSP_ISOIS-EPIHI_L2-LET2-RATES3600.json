@@ -1,0 +1,907 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "R1C_He_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R1C He Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        5,
+        16
+      ]
+    },
+    {
+      "name": "R1C_Ne_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R1C Ne Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "R2C_He_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R2C He Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        7,
+        16
+      ]
+    },
+    {
+      "name": "R2C_Ne_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R2C Ne Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "R3C_He_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R3C He Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        5,
+        16
+      ]
+    },
+    {
+      "name": "R3C_Ne_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R3C Ne Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        6,
+        8
+      ]
+    },
+    {
+      "name": "R45C_He_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R45C He Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        5,
+        16
+      ]
+    },
+    {
+      "name": "R45C_Ne_BIN",
+      "type": "integer",
+      "units": "counts",
+      "description": "R45C Ne Rates",
+      "fill": "-2147483648.0",
+      "size": [
+        6,
+        8
+      ]
+    },
+    {
+      "name": "C_Al",
+      "type": "integer",
+      "units": "counts",
+      "description": "Al counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ar",
+      "type": "integer",
+      "units": "counts",
+      "description": "Ar counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_C",
+      "type": "integer",
+      "units": "counts",
+      "description": "C counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Ca",
+      "type": "integer",
+      "units": "counts",
+      "description": "Ca counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "C_Cr",
+      "type": "integer",
+      "units": "counts",
+      "description": "Cr counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_Fe",
+      "type": "integer",
+      "units": "counts",
+      "description": "Fe counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_H",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "C_He",
+      "type": "integer",
+      "units": "counts",
+      "description": "He counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Mg",
+      "type": "integer",
+      "units": "counts",
+      "description": "Mg counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_N",
+      "type": "integer",
+      "units": "counts",
+      "description": "N counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Na",
+      "type": "integer",
+      "units": "counts",
+      "description": "Na counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ne",
+      "type": "integer",
+      "units": "counts",
+      "description": "Ne counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ni",
+      "type": "integer",
+      "units": "counts",
+      "description": "Ni counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "C_O",
+      "type": "integer",
+      "units": "counts",
+      "description": "O counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "C_S",
+      "type": "integer",
+      "units": "counts",
+      "description": "S counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Si",
+      "type": "integer",
+      "units": "counts",
+      "description": "Si counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Electrons",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electrons counts side C",
+      "fill": "-2147483648.0",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "HCI_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2C",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2C",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R25_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "LET2_C_R25_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "LET2_C_R25_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R25_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "R1C_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_H_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_H_SECT_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NMeV!E-1!N",
+      "description": "H sectored flux R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_He_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "He sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_He_SECT_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "He sectored flux R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R25C_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_H_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_H_SECT_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NMeV!E-1!N",
+      "description": "H sectored flux R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_He_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "He sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_He_SECT_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "He sectored flux R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "C_Al_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Al count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Al_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Al flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ar_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Ar count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Ar_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Ar flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_C_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "C count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_C_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "C flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Ca_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Ca count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "C_Ca_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Ca flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "C_Cr_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Cr count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_Cr_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Cr flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_Fe_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Fe count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_Fe_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Fe flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "C_H_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "C_H_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NMeV!E-1!N",
+      "description": "H flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "C_He_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "He count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_He_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "He flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Mg_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Mg count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Mg_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Mg flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_N_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "N count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_N_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "N flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "C_Na_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Na count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Na_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Na flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ne_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Ne count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ne_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Ne flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "C_Ni_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Ni count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "C_Ni_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Ni flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "C_O_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "O count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "C_O_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "O flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "C_S_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "S count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_S_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "S flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Si_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Si count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Si_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "Si flux side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "C_Electrons_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Electrons count rate side C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

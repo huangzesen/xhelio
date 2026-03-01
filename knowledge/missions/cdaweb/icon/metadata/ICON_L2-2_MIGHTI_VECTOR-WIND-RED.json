@@ -1,0 +1,242 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L22_Fringe_Amplitude",
+      "type": "double",
+      "units": "arb",
+      "description": "Fringe Amplitude",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Fringe_Amplitude_Error",
+      "type": "double",
+      "units": "arb",
+      "description": "Error in the fringe amplitude estimate",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Magnetic_Field_Aligned_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Magnetic field-aligned component of the wind",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Magnetic_Meridional_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Magnetic meridional component of the wind",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Magnetic_Zonal_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Magnetic zonal component of the wind",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Meridional component of the horizontal wind. Positive Northward.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind_Accuracy",
+      "type": "double",
+      "units": "m/s",
+      "description": "Accuracy of the meridional wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind_Error",
+      "type": "double",
+      "units": "m/s",
+      "description": "Error in the meridional wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind_Precision_1_Day",
+      "type": "double",
+      "units": "m/s",
+      "description": "1-day precision in the meridional wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind_Precision_1_Sample",
+      "type": "double",
+      "units": "m/s",
+      "description": "1-sample precision in the meridional wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Meridional_Wind_Precision_Low_Signal_Effect",
+      "type": "double",
+      "units": "m/s",
+      "description": "Low-signal precision in the meridional wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Orbit_Node",
+      "type": "double",
+      "units": "",
+      "description": "ICON orbit ascending/descending flag",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Orbit_Number",
+      "type": "double",
+      "units": "",
+      "description": "ICON orbit number",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Relative_VER",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Relative volume emission rate",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Relative_VER_Error",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Error in VER estimate (statistical)",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_VER_Quality",
+      "type": "double",
+      "units": "1=good",
+      "description": "A quantification of the VER data quality, from 0 (Bad) to 1 (Good)",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Wind_Quality",
+      "type": "double",
+      "units": "1=good",
+      "description": "A quantification of the wind data quality, from 0 (Bad) to 1 (Good)",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Zonal component of the horizontal wind. Positive Eastward.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind_Accuracy",
+      "type": "double",
+      "units": "m/s",
+      "description": "Accuracy of the zonal wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind_Error",
+      "type": "double",
+      "units": "m/s",
+      "description": "Error in the zonal wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind_Precision_1_Day",
+      "type": "double",
+      "units": "m/s",
+      "description": "1-day precision in the zonal wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind_Precision_1_Sample",
+      "type": "double",
+      "units": "m/s",
+      "description": "1-sample precision in the zonal wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ICON_L22_Zonal_Wind_Precision_Low_Signal_Effect",
+      "type": "double",
+      "units": "m/s",
+      "description": "Low-signal precision in the zonal wind estimate.",
+      "fill": "9.96921e+36",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2019-12-06T00:00:00.000Z",
+  "stopDate": "2022-11-25T00:00:00.000Z"
+}

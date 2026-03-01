@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AOBT",
+      "type": "double",
+      "units": "",
+      "description": "APSS onboard time (AOBT) value of sample. This is the spacecraft\n                        clock time useds by the APSS instruments.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG_1",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 1 data in nT with estimated offset of -4468 nT subtracted",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG_2",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 3 data in nT with estimated offset of -139 nT subtracted",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG_3",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 3 data in nT with estimated offset of -139 nT subtracted",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft coordinate system Bx component in nT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "By_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft coordinate system By component in nT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bz_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft coordinate system Bz component in nT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "|B|",
+      "type": "double",
+      "units": "nT",
+      "description": "Field magnitude equals sqrt(Bx^2 + By^2 + Bz^2)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SenTemp",
+      "type": "double",
+      "units": "Degree",
+      "description": "Measured sensor temperature in deg C",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "estElcTmp",
+      "type": "double",
+      "units": "Degree",
+      "description": "Estimated electronics temperature in deg C",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

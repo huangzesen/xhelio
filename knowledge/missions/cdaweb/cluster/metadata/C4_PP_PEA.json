@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C4_PP_PEA",
+      "type": "integer",
+      "units": "",
+      "description": "PEACE status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "N_e_den__C4_PP_PEA",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Electron Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_e_xyz_gse__C4_PP_PEA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron velocity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T_e_par__C4_PP_PEA",
+      "type": "double",
+      "units": "MK",
+      "description": "Parallel electron temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_e_perp__C4_PP_PEA",
+      "type": "double",
+      "units": "MK",
+      "description": "Perp electron temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Q_e_par__C4_PP_PEA",
+      "type": "double",
+      "units": "uJ m^-2 s^-1",
+      "description": "Parallel electron heat flux",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-11-01T00:00:00.000Z",
+  "stopDate": "2023-12-31T23:56:17.000Z"
+}

@@ -1,0 +1,124 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BR_RCV_LPSTRS",
+      "type": "double",
+      "units": "kHz",
+      "description": "Receiver Loop Stress (Carrier Freq Offset kHz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR_RCV_P20V",
+      "type": "double",
+      "units": "Volts",
+      "description": "Receiver 20volt supply monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR_RCV_RCSL",
+      "type": "double",
+      "units": "dBm",
+      "description": "Receiver Signal Level (dBm)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR_XMT_P12V",
+      "type": "double",
+      "units": "Volts",
+      "description": "Transponder 12volt supply monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR_XMT_P20V",
+      "type": "double",
+      "units": "Volts",
+      "description": "Transponder 20volt supply monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR_XMT_RFPWR",
+      "type": "double",
+      "units": "Watts",
+      "description": "Transponder RF Output Power",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XMTRRADTMP",
+      "type": "double",
+      "units": "c",
+      "description": "Transponder Radial Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XPNINT1TMP",
+      "type": "double",
+      "units": "c",
+      "description": "Receiver Thermistor Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XPNINT2TMP",
+      "type": "double",
+      "units": "c",
+      "description": "Transponder Thermistor Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BP_FiltSpRate",
+      "type": "double",
+      "units": "rpm",
+      "description": "Filtered Spin Rate given to CIDP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BP_AstQuatValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Quarternion valid flag given to CIDP (0=not valid,1=valid)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BP_FltSpRtValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Filtered Spinrate valid flag given to CIDP (0=not valid,1=valid)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BP_NxtSunXValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Sun Crossing valid flag given to CIDP (0=not valid,1=valid)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BP_SpnAxisValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Spin Axis valid flag given to CIDP (0=not valid,1=valid)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BP_SpnPhasValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Spin Phase valid flag given to CIDP (0=not valid,1=valid)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BP_SC_AttCntrl",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Attitude Control Mode (1=active control,0=no control)",
+      "fill": "65535.0"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

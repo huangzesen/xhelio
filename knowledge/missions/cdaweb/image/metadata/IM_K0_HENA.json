@@ -1,0 +1,382 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Image0_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 50-60 keV (no grid, small format, linear scale) - Image0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image0_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 50-60 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image0_V_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 50-60 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image0_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 50-60 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image0_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 50-60 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image1_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 39-50 keV (no grid, small format, linear scale) - Image1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image1_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 39-50 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image1_V_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 39-50 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image1_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 39-50 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image1_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 39-50 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image2_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 27-39 kev (no grid, small format, linear scale) - Image2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image2_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 27-39 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image2_V_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 27-39 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image2_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 27-39 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image2_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 27-39 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image3_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 16-27 keV (no grid, small format, linear scale) - Image3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image3_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 16-27 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image3_VMOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 16-27 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image3_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 16-27 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image3_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 16-27 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image4_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 10-16 keV (no grid, small format, linear scale) - Image4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image4_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 10-16 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image4_VMOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 10-16 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image4_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 10-16 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image4_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ 10-16 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image5_V",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ <10 keV (no grid, small format, linear scale) - Image5",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image5_VL",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ <10 keV, as above (large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image5_VMOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ <10 keV, as above (movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image5_MAP",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ <10 keV, as above (mapped, large format)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "Image5_MAP_MOV",
+      "type": "double",
+      "units": "counts",
+      "description": "ENA H Images @ <10 keV, as above (mapped, movie)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        20
+      ]
+    },
+    {
+      "name": "gci_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE position (GCI)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "gsm_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE position (GSM)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "gse_pos",
+      "type": "double",
+      "units": "km",
+      "description": "IMAGE position (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "gci_spinaxis",
+      "type": "double",
+      "units": "rads",
+      "description": "Spin Axis (GCI) at time image was taken.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-04-21T01:50:04.000Z",
+  "stopDate": "2005-12-18T07:28:01.000Z"
+}

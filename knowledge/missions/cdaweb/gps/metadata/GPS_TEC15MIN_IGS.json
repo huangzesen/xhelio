@@ -1,0 +1,103 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tecUQRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC Global Map, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUQRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), Movie of mapped cylindrical image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsUQRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, RMS(TECr-15min) Global Maps, RMS error of TEC in TECU (10^16 m-2) - (Rapid product,15min res., 24 hrs latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUQRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC N Pol Proj, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), North Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUQRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC N Pol Proj. Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), Movie of North Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUQRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC S Pol Proj., Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), South Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUQRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC S Pol Proj. Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 15 min res., 24 hr latency), Movie of South Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "UQRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "UPC, Num. Stations Rapid-15min, Number of Ground Stations Used, (Rapid product, 15 min res., 24 hr latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UQRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "UPC, Num satellites Rapid-15min, Number of GPS satellites used, (Rapid product, 15 min res., 24 hrs latency)",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1995-05-16T00:00:00.000Z",
+  "stopDate": "2026-02-15T23:45:00.000Z"
+}

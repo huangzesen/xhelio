@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDO",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "FEDO: Omni-directional Electron Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FEDO_T",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "---> FEDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2017-03-23T00:31:13.000Z",
+  "stopDate": "2025-01-31T22:21:56.000Z"
+}

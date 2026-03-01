@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "V_ed_xyz_gse__C1_CP_EDI_MP",
+      "type": "double",
+      "units": "km s-1",
+      "description": "Cluster C1, Electron Drift Velocity, best resolution in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_xyz_gse__C1_CP_EDI_MP",
+      "type": "double",
+      "units": "mV m-1",
+      "description": "Cluster C1, EDI Electric Field, best resolution in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2001-02-02T07:52:09.000Z",
+  "stopDate": "2010-01-24T03:19:18.000Z"
+}

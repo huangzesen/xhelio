@@ -1,0 +1,3187 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DF_tc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_hplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_hplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence H+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_hplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_hplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_hplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence H+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_hplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_hplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_hplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence H+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_heplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_heplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_heplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_heplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_heplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence He+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_heplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_heplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_heplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_he2plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He2+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_he2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_he2plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence He2+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_he2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_he2plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He2+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_oplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_oplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_oplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_oplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_oplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence O+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_oplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_oplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_oplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o6plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O6+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o6plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence O6+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_o6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o6plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O6+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_c5plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_c5plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C5+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_c5plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C5+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_c5plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C5+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_c5plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_c5plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_c5plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence C5+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_c5plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence C5+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_c5plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence C5+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_c5plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_c5plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_c5plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C5+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_c5plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C5+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_c5plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C5+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_c5plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe10plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe10plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe10+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe10plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe10+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_fe10plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe10+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_fe10plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe10plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe10plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence Fe10+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe10plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for triple coincidence Fe10+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_tc_fe10plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for triple coincidence Fe10+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_fe10plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe10plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe10plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe10+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe10plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe10+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_fe10plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe10+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_fe10plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_cplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_cplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_nplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_nplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence N+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_nplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_nplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_nplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_nplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_nplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence N+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_nplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_o2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_o2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_o2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_o2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_o2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o7plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_o7plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O7+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_o7plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o7plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_o7plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o7plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_o7plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O7+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_o7plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_o8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_o8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence O8+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_o8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_o8plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_o8plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_o8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_o8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence O8+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_o8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_c4plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_c4plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C4+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_c4plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_c4plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_c4plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_c4plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_c4plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C4+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_c4plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_c6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_c6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence C6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_c6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_c6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_c6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_c6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_c6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence C6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_c6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_fe8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe8+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_fe8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe8plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_fe8plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_fe8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe8+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_fe8plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe9plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_fe9plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe9+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_fe9plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe9plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_fe9plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe9plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_fe9plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe9+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_fe9plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_tc_fe16plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_tc_fe16plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value triple coincidence Fe16+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_tc_fe16plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_tc_fe16plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_tc_fe16plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_tc_fe16plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_tc_fe16plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE triple coincidence Fe16+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_tc_fe16plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_hplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_hplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence H+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_hplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_hplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_hplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence H+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_dc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for double coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_hplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_hplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence H+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_hplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence H+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence H+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_hplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_heplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_heplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_heplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_heplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_heplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence He+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_dc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for double coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_heplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_heplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_heplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_heplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_he2plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He2+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_he2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_he2plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence He2+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_dc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for double coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_he2plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_he2plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He2+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_he2plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He2+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence He2+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_he2plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_oplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_oplus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_oplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_oplus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_oplus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence O+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_dc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for double coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_oplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_oplus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_oplus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_oplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_o6plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O6+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_o6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_o6plus_sum",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "",
+      "description": "Counts for double coincidence O6+ - summed over telescope & eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_T2_dc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Counts for double coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_o6plus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_o6plus_sum",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O6+ - summed over telescope and sector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_o6plus_sum1_sort",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O6+ - summed over telescope and eoq (sorted sector)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence O6+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_o6plus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_dc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Full 3-D VDF in phase space density for double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "DF_T2_dc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Phase space density value double coincidence C+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "DF_error_dc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "[no plot] Error in velocity distribution function value double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_dc_cplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Full 3-D VDF in counts for double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "counts_error_dc_cplus",
+      "type": "double",
+      "units": "",
+      "description": "[no plot] Error in counts estimated assuming Poisson statistics double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_dc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Full 3-D VDF differential flux, dJ/dE double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "dJ_T2_dc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "Differential flux, dJ/dE double coincidence C+ (Telescope 2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "dJ_error_dc_cplus",
+      "type": "double",
+      "units": "(cm**2 s sr eV/eV)**-1",
+      "description": "[no plot] Error in the differential flux value double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        3,
+        32
+      ]
+    },
+    {
+      "name": "eoq",
+      "type": "double",
+      "units": "keV/e",
+      "description": "Energy per charge",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "delT",
+      "type": "double",
+      "units": "",
+      "description": "delta time",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-08-01T00:05:19.000Z",
+  "stopDate": "2004-04-28T23:55:32.000Z"
+}

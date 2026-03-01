@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing year (19YY).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Day of year (DDD).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOD",
+      "type": "double",
+      "units": "",
+      "description": "Time of day (h.hhhh).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "km/s",
+      "description": "Cartesian coords points towards the vernal equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "km/s",
+      "description": "Cartesian coords points perpendicular to the \n                        ecliptic plane, positive towards the north ecliptic pole.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "km/s",
+      "description": "Completes the right-handed coordinate \n                     system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Vx",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity of s/c (km, km/sec).\n                     Represents the spacecraft's velocity along the x-axis, \n                     which points towards the Vernal Equinox.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Vy",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity of s/c (km, km/sec).\n                     Spacecraft's velocity along the y-axis, which lies \n                     in the ecliptic plane and is 90 degrees to the east \n                     (counter-clockwise) from the x-axis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Vz",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity of s/c (km, km/sec).\n                     Spacecraft's velocity along the z-axis, which points \n                     towards the North Ecliptic Pole, perpendicular to the \n                     ecliptic plane.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

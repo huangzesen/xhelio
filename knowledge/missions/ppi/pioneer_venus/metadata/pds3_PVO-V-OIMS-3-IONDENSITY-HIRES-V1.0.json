@@ -1,0 +1,249 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DWELL",
+      "type": "integer",
+      "units": "MSEC",
+      "description": "Dwell time (time interval between samples, msec).  DWELL = (TIME - UT)*1000/(n-1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BITS",
+      "type": "integer",
+      "units": "BIT/SEC",
+      "description": "Bit Rate (bits/sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEG",
+      "description": "Venusian Latitude (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEG",
+      "description": "Venusian Longitude (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALT",
+      "type": "double",
+      "units": "KM",
+      "description": "Altitude (Km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Zenith Angle (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SHA",
+      "type": "double",
+      "units": "HOUR",
+      "description": "Solar Hour Angle (hr)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS1",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 1 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 1 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS2",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 2 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 2 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS3",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 3 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN3",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 3 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS4",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 4 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN4",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 4 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS5",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 5 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN5",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 5 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS6",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 6 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN6",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 6 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS7",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 7 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN7",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 7 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS8",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 8 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN8",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 8 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS9",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 9 (AMU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN9",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Number density of Sample 9 <ions/cm^3>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS10",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Mass of Sample 10 (AMU)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

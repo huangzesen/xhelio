@@ -1,0 +1,474 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "REALTIME_TELEMETRY_FORMAT_ID",
+      "type": "double",
+      "units": "",
+      "description": "Identification code that indicates\n                    the realtime downlink rate and\n                     format from the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RECORDER_FORMAT_ID",
+      "type": "double",
+      "units": "",
+      "description": "Identification code that indicates\n                     rate and format of data being\n                     placed onto the spacecraft's  \n                     tape recorder.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RIM_CORRECTED_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the status of the     \n                     spacecraft clock (SCLK) RIM count;\n                     set to 0 if RIM was not corrected\n                     and 1 if correction was applied.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD91_CORRECTED_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the status of the SCLK\n                     MOD91 count; set to 0 if MOD91 was\n                     not corrected and 1 if correction\n                     was applied.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the status of the     \n                     specification of the spacecraft\n                     event time (SCET); set to 0 if\n                     SCET was input from the Data Base\n                     or set at 1 if SCET was calculated\n                     by the raw generation program.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PLAYBACK_TELEMETRY_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the realtime or playback\n                     status of the raw data in the\n                     present major frame record; set to\n                     0 for realtime data, 1 for\n                     playback data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLK_VALID_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether the spacecraft\n                     clock (SCLK) value is valid for\n                     the present major frame record;\n                     set to 0 if the corrected SCLK is\n                     valid; set to 1 if the corrected\n                     SCLK is invalid for the current\n                     major frame format or if it \n                     deviates from the established\n                     SCLK sync.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLK_REFERENCE_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates status as to whether\n                     SCLK reference has been\n                     established; set to 0 if two or\n                     more successive frames with\n                     compatible SCLK values have been\n                     encountered; set to 1 if no\n                     successive frames with compatible\n                     SCLK values have been\n                     encountered.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLK_CORRECTED_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates status as to whether  \n                     SCLK has been corrected based on\n                     extraction from higher order\n                     module; set to 0 if parent frame\n                     SCLK was not corrected; set to 1\n                     if parent frame SCLK is corrected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLK_COMPUTED_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates status as to whether the\n                     SCLK value has been computed; set\n                     to 0 if SCLK was processed as is\n                     from S/C telemetry; set to 1 if\n                     SCLK has been computed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT_PRISM_TEMP",
+      "type": "double",
+      "units": "degrees Celsius",
+      "description": "Converted thermistor reading from\n                     science related engineering data\n                     for thermistor located in the   \n                     prism-detector assembly region of\n                     the PPR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT_ELECTRONICS_TEMP",
+      "type": "double",
+      "units": "degrees Celsius",
+      "description": "Converted thermistor reading from\n                     science related engineering data\n                     for thermistor located in the   \n                     main electronics of the PPR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_YYDOY",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time year minus\n                     1900 and day-of-year (DOY)\n                     expressed as a single integer\n                     formed by adding DOY to\n                     1000*(year-1900).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_HOURS",
+      "type": "double",
+      "units": "hour",
+      "description": "Spacecraft event time hours     \n                     within the current DOY.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_SEC",
+      "type": "double",
+      "units": "second",
+      "description": "Spacecraft event time seconds   \n                     within the current hour.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_EVENT_TIME_MSEC",
+      "type": "double",
+      "units": "millisecond",
+      "description": "Spacecraft event time           \n                     milliseconds within the current\n                     second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RIM",
+      "type": "double",
+      "units": "",
+      "description": "Count of the corrected spacecraft\n                     clock RIM counter, which\n                     increments by one (1) every 60 and\n                     2/3 seconds, or 91 minor frames.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD91",
+      "type": "double",
+      "units": "",
+      "description": "Count of the corrected spacecraft\n                     clock MOD91 counter, which\n                     increments by one (1) every 2/3 \n                     second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RIGHT_ASCENSION",
+      "type": "double",
+      "units": "degrees",
+      "description": "Right ascension of the instrument\n                     boresight direction for the scan\n                     platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DECLINATION",
+      "type": "double",
+      "units": "degrees",
+      "description": "Declination of the instrument\n                     boresight direction for the scan\n                     platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CONE_ANGLE",
+      "type": "double",
+      "units": "degrees",
+      "description": "Cone angle of the instrument    \n                     boresight direction for the scan\n                     platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CROSS_CONE_ANGLE",
+      "type": "double",
+      "units": "degrees",
+      "description": "Cross-cone, or clock, angle of  \n                     the instrument boresight direction\n                     for the scan platform.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MEMORY_BUFFER_ID",
+      "type": "double",
+      "units": "",
+      "description": "Indicates which of the two PPR  \n                     buffers is the source of the\n                     presented data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COMMAND_PARITY",
+      "type": "double",
+      "units": "",
+      "description": "Indicates command parity status;\n                     set to 1 when a parity error is\n                     detected in a PPR control command\n                     or when the operation code is\n                     unidentified; otherwise is set  \n                     to 0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TELEMETRY_PARITY",
+      "type": "double",
+      "units": "",
+      "description": "Indicates PPR telemetry data\n                     parity status; set to 1 when a\n                     parity error was detected in a\n                     telemetry prepare or pickup; is\n                     set to 0 if no parity error was\n                     detected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VALID_RECEIVED_COMMANDS",
+      "type": "double",
+      "units": "",
+      "description": "The value of a counter that is  \n                     incremented by one (1), modulo 4,\n                     each time a PPR configuration\n                     command without parity error is\n                     received by the instrument.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OPERATION_MODE",
+      "type": "double",
+      "units": "",
+      "description": "Mode of operation of the PPR    \n                     instrument;\n                     0 - transition mode,\n                     1 - cycle mode,\n                     2 - PhotoPolarimetry and\n                         Photometry (PP/PH) mode,\n                     3 - photometry mode,\n                     4 - radiometry mode,\n                     5 - position select mode.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "POLARIMETRY_PHOT_GAIN_STEP",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the commanded gain step\n                     used with the two photopolarimetry\n                     -photometry silicon photodiode \n                     detectors; each step corresponds\n                     to a gain factor of about 1.4.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIOMETRY_GAIN_STEP",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the commanded gain step\n                     used with the lithium tantalate\n                     pyroelectric detector employed for\n                     radiometry; each step corresponds\n                     to a gain factor of about 2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLES",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the commanded number of\n                     consecutive samples, either 1, 4,\n                     16, or 256, of PPR data to be    \n                     accumulated at each active\n                     filter/retarder wheel position\n                     (FRP) unless: 1) boom sequence\n                     operation is commanded, or\n                     2) position select mode is\n                     operating with DC-restore on, in\n                     which case the number of samples\n                     is then interpreted as the number\n                     of position select cycles to be\n                     completed between successive times\n                     during which the DC-restore\n                     sequence is performed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLES_FACTOR",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the factor, either 1  \n                     or 4, that multiplies the\n                     commanded number of samples to set\n                     the actual number of samples to be\n                     accumulated at the radiometry\n                     positions of the PPR\n                     filter/retarder wheel; also, if\n                     the external calibration lamp is\n                     activated, the on period for the\n                     lamp is six samples if\n                     SAMPLES_FACTOR is 1 or the total\n                     number of samples for the s/c spin\n                     period if it is 4.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ADDITIONAL_FILTER_POSITIONS",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the number of additional\n                     positions of the filter/retarder\n                     wheel beyond the programmed FRP \n                     which are used in the operating\n                     sequence when position select mode\n                     is commanded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALIBRATION_LAMP_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the commanded status of\n                     internal calibration lamp during\n                     the chopper stopping period, on   \n                     for 1, off for 0; also sets the\n                     external calibration lamp to on\n                     state if set at 1 and if boom\n                     sequence operation is in effect, \n                     while inhibiting external lamp\n                     operation if set at 0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DC_RESTORE_INITIATE_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether a special     \n                     sequence to perform DC-restore\n                     operation is to occur\n                     periodically between the cycles of\n                     active filter/retarder wheel\n                     positions when position select\n                     mode is commanded; set to 1 to\n                     enable DC-restore sequences, set\n                     to 0 to inhibit them.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BOOM_SEQ_OPERATION_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether the stepping  \n                     between active filter/retarder\n                     wheel positions is controlled by\n                     the commanded number of samples\n                     (flag set at 0) or is timed with\n                     respect to the s/c spin period\n                     (flag set at 1); also affects\n                     operation of the external \n                     calibration lamp, which is powered\n                     on only if boom sequence operation\n                     is commanded on (flag set at 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPARE_A_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Spare bit in PPR data buffer \n                                            always set at 0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "REPEAT_BUFFER_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether the current PPR\n                     data buffer contents have been\n                     read out and placed into the\n                     telemetry stream previously by the\n                     s/c (flag set at 1) or not.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROGRAMMED_FILTER_POSITION",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the commanded starting\n                     FRP to be used if position select\n                     mode is commanded; for other\n                     modes, the\n                     PROGRAMMED_FILTER_POSITION value\n                     is ignored.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMPERATURE_RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the range used (low for\n                     0, high for 1) for the PPR science\n                     temperature data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPARE_B_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Spare bit in PPR data buffer\n                     always set at 0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUSEKEEPING_STATUS_PARITY",
+      "type": "double",
+      "units": "",
+      "description": "Parity indicator (odd) for the  \n                     housekeeping status portion of the\n                     PPR data buffer, bytes #1-6 of the\n                     18 bytes for the complete buffer.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMPERATURE_DATA",
+      "type": "double",
+      "units": "",
+      "description": "Science temperature data \n                     unconverted from the 12-bit\n                     thermistor readout; temperature\n                     data for ten thermistors within\n                     the PPR instrument and three\n                     positions on the radiometric\n                     calibration target are\n                     sequentially generated, with the\n                     respective position identified by\n                     TEMPERATURE_ID.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMPERATURE_ID",
+      "type": "double",
+      "units": "",
+      "description": "Identifies the element whose    \n                     temperature data is presented as\n                     the preceding TEMPERATURE_DATA.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_PRESENT_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicates status of PPR data for\n                     the current minor frame; set to 0\n                     if data is present; set to 1 if \n                     all or part of the minor frame\n                     data is missing in the telemetry\n                     stream.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIOMETRY_DATA_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Identifies data sample pair as  \n                     photopolarimetry/photometry scene\n                     science samples for flag set to 0\n                     and as a radiometry scene sample\n                     plus a science temperature data\n                     sample when the flag is 1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FILTER_POSITION",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the filter/retarder\n                     wheel position at which the data\n                     sample pair SAMPLE_A_DATA and\n                     SAMPLE_B_DATA are acquired.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CAL_LAMP_BOOM_SEQUENCE_TAG",
+      "type": "double",
+      "units": "",
+      "description": "Indicator used both to indicate \n                     that either internal or external\n                     calibration lamp is on and to\n                     serve as a marker that separates\n                     data taken on successive s/c spins\n                     if boom sequence operation is\n                     active.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_PARITY",
+      "type": "double",
+      "units": "",
+      "description": "Parity indicator (odd) for science\n                     data sample pair SAMPLE_A_DATA and\n                     SAMPLE_B_DATA.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_A_DATA",
+      "type": "double",
+      "units": "",
+      "description": "Is the first PP/PH science data \n                     sample of the simultaneously\n                     obtained pair corresponding to the\n                     orthogonal polarization components\n                     separated by the PPR Wollaston\n                     prism or a radiometry scene sample\n                     if RADIOMETRY_DATA_FLAG is 1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_B_DATA",
+      "type": "double",
+      "units": "",
+      "description": "Is the second of the pair of PP/PH\n                     science data samples or a science\n                     temperature data sample if    \n                     RADIOMETRY_DATA_FLAG is 1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_PAIR_NUMBER",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the time-ordered number\n                     of the sample pair SAMPLE_A_DATA\n                     and SAMPLE_B_DATA from the three\n                     pairs contained in the PPR minor\n                     frame buffer.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

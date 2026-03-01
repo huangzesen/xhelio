@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "nT",
+      "description": "P1: The first P-sensor sample of the magnetic\nfield in Magnetometer Sensor Coordinates (PVO_PTG). This is the               \ncomponent that lies nominally along the spacecraft spin axis direction. This  \nis the first of 3 samples of this sensor and is the sample associated with    \nthe time stamp.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "P2",
+      "type": "double",
+      "units": "nT",
+      "description": "P2: The second P-sensor sample of the        \nmagnetic field in Magnetometer Sensor Coordinates (PVO_PTG). This is the      \ncomponent that lies nominally along the spacecraft spin axis direction. This  \nis the second of 3 samples of this sensor and is taken 0.000038 seconds after \nthe time stamp.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "P3",
+      "type": "double",
+      "units": "nT",
+      "description": "P3: The third P-sensor sample of the magnetic\nfield in Magnetometer Sensor Coordinates (PVO_PTG). This is the               \ncomponent that lies nominally along the spacecraft spin axis direction. This  \nis the third of 3 samples of this sensor and is taken 0.000076 seconds after  \nthe time stamp.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "BZ SC: The Z-component of the magnetic field \nin the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). The Z axis is    \ndefined to be anti-parallel to the spacecraft spin axis during orbital        \noperations.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

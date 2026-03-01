@@ -1,0 +1,78 @@
+{
+  "id": "GPS",
+  "name": "GPS",
+  "keywords": [
+    "gps"
+  ],
+  "profile": {
+    "description": "GPS spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "GPS_TEC2HR_IGS": {
+          "description": "GPS-deduced 2-hour Total Electron Content (TEC) maps and movies, IGS= Average of 4 methods, incl. CODE= U Bern Switzerland, ESA= ESOC Darmstadt Germany, JPL= Jet Propulsion Lab. Pasadena USA, UPC= U Politec. Catalonia Barcelona Spain - International Global Navigation Satellite Systems (GNSS) Service Ionosphere Working Group",
+          "start_date": "1998-06-01T01:00:00.000Z",
+          "stop_date": "2026-02-15T22:00:00.000Z",
+          "pi_name": "International Global Navigation Satellite Systems (GNSS) Service Ionosphere Working Group",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GPS_TEC2HR_IGS"
+        },
+        "GPS_RF_LANL-VTEC-1HR": {
+          "description": "LANL Gridded Vertical Total Electron Content (VTEC)",
+          "start_date": "2018-01-01T00:30:18.000Z",
+          "stop_date": "2018-12-31T22:30:18.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GPS_RF_LANL-VTEC-1HR"
+        },
+        "GPS_TEC15MIN_IGS": {
+          "description": "GPS-deduced 15-minute Total Electron Content (TEC) global maps and movies, UPC= U Politec. Catalonia Barcelona Spain - International Global Navigation Satellite Systems (GNSS) Service Iono Working Group",
+          "start_date": "1995-05-16T00:00:00.000Z",
+          "stop_date": "2026-02-15T23:45:00.000Z",
+          "pi_name": "International Global Navigation Satellite Systems (GNSS) Service Iono Working Group",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GPS_TEC15MIN_IGS"
+        },
+        "GPS_TEC1HR_IGS": {
+          "description": "GPS-deduced 1-hour Total Electron Content (TEC) global maps and movies, UPC= U Politec. Catalonia Barcelona Spain, ESA= ESOC Darmstadt Germany (starting 20 Feb 2011)  - International Global Navigation Satellite Systems (GNSS) Service Ionosphere Working Group",
+          "start_date": "1995-05-16T00:00:00.000Z",
+          "stop_date": "2026-02-15T23:00:00.000Z",
+          "pi_name": "International Global Navigation Satellite Systems (GNSS) Service Ionosphere Working Group",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GPS_TEC1HR_IGS"
+        }
+      }
+    },
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "GPS_ROTI15MIN_JPL": {
+          "description": "GPS-deduced ROTI index: standard deviation of rate of change of Total Electron Content (TEC) in a 5 min interval every 15 min; world maps and movies - Xiaoqing Pi (Jet Propulsion Laboratory)",
+          "start_date": "2012-11-29T00:00:00.000Z",
+          "stop_date": "2014-03-11T23:45:00.000Z",
+          "pi_name": "Xiaoqing Pi",
+          "pi_affiliation": "Jet Propulsion Laboratory",
+          "doi": "10.48322/v9pw-wd37",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesG.html#GPS_ROTI15MIN_JPL"
+        }
+      }
+    }
+  },
+  "observatory_group": "GPS",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

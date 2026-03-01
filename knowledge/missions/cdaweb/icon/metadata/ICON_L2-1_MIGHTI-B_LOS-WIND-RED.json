@@ -1,0 +1,142 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L21_Fringe_Amplitude",
+      "type": "double",
+      "units": "arb",
+      "description": "Fringe amplitude profile",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Fringe_Amplitude_Error",
+      "type": "double",
+      "units": "arb",
+      "description": "Fringe amplitude error profile",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight horizontal wind profile. A positive wind is towards MIGHTI.",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind_Accuracy",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight wind accuracy",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind_Error",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight horizontal wind error profile",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind_Precision_1_Day",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight wind precision (1 day)",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind_Precision_1_Sample",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight wind precision (1 sample)",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Line_of_Sight_Wind_Precision_Low_Signal_Effect",
+      "type": "double",
+      "units": "m/s",
+      "description": "Line-of-sight wind precision (from low signal effect)",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Relative_VER",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Relative volume emission rate profile",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Relative_VER_DC",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Relative volume emission rate profile derived from DC value",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Relative_VER_Error",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Relative volume emission rate error profile",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_VER_Quality",
+      "type": "double",
+      "units": "1=Good",
+      "description": "A quantification of the volume emission rate (VER) quality, from 0 (Bad) to 1 (Good)",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ICON_L21_Wind_Quality",
+      "type": "double",
+      "units": "1=Good",
+      "description": "A quantification of the wind quality, from 0 (Bad) to 1 (Good)",
+      "fill": "9.96921e+36",
+      "size": [
+        15
+      ]
+    }
+  ],
+  "startDate": "2019-12-06T00:00:29.000Z",
+  "stopDate": "2022-11-24T23:58:43.000Z"
+}

@@ -1,0 +1,210 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SC_POT",
+      "type": "double",
+      "units": "eV",
+      "description": "[SC_POT] Spacecraft potential estimated from electron ONLY measurements",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SC_CURRENT",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "---> [SC_CURRENT?] Current contribution to the spacecraft from thermal electrons",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGF",
+      "type": "double",
+      "units": "nT",
+      "description": "---> [MAGF] magnetic field vector interpolated (linearly) to the time of the EESA Low distribution, in GSE cartesian components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "#/cm3",
+      "description": "---> [DENSITY] Electron number density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "AVGTEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [AVGTEMP] Average electron temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VTHERMAL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "---> [VTHERMAL] electron most probable speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VELOCITY",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> [VELOCITY] electron Flow Velocity, GSE cartesian",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "---> [FLUX] electron total number flux - cartesian GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "[PTENS] electron Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MFTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "---> [MFTENS] electron Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "EFLUX",
+      "type": "double",
+      "units": "",
+      "description": "---> [EFLUX] eflux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T3",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [T3] electron Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SYMM",
+      "type": "double",
+      "units": "",
+      "description": "[SYMM] ZZ-component of the eigenvectors associated with the eigen values from the diagonalized .T3 (i.e., the eigenvector associated with the Z eigen value from .T3 or .T3[2])",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SYMM_THETA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [SYMM_THETA] Spherical coordinate latitude of .SYMM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SYMM_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [SYMM_PHI] Spherical coordinate longitude of .SYMM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SYMM_ANG",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [SYMM_ANG] angle between the ZZ-component of the eigenvectors associated with the eigen values from the diagonalized .T3 and the magnetic field vector (i.e., .MAGF vector)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGT3",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [MAGT3] electron temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ERANGE",
+      "type": "double",
+      "units": "eV",
+      "description": "[P.ERANGE] electron energy range used to compute the moments",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "MASS",
+      "type": "double",
+      "units": "eV/c^2",
+      "description": "---> [MASS] electron mass of species",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VALID",
+      "type": "integer",
+      "units": "(1=OK)",
+      "description": "---> [VALID] electron Validity flag; 1=OK",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "VEL_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "[VEL_MAG] electron bulk flow speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VEL_TH",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [VEL_TH] electron bulk flow velocity; latitude/theta",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VEL_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [VELPHI] electron bulk flow velocity; longitude/phi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec since 1-1-70",
+      "description": "UNIX time; seconds since January 1, 1970",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1994-11-15T12:54:33.000Z",
+  "stopDate": "2026-01-19T23:55:42.000Z"
+}

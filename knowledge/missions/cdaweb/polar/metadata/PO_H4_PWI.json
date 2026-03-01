@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "integer",
+      "units": "",
+      "description": "DATA_QUALITY 0 = OK, 1 = poor",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "HFWR_Ex2K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 2 kHz Elec Field Antenna Ex (perp and outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Ey2K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 2 kHz Elec Field Antenna Ey (perp and eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Ez2K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 2 kHz Elec Field Antenna Ez (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Bx2K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 2 kHz Mag Field Antenna Bx (perp and outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_By2K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 2 kHz Mag Field Antenna By (perp and eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Bz2K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 2 kHz Mag Field Antenna Bz (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Gain1",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 1 Gain (HFWR 2 kHz, ~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Gain2",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 2 Gain (HFWR 2 kHz, ~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Gain3",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 3 Gain (HFWR 2 kHz, ~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "MGain",
+      "type": "integer",
+      "units": "",
+      "description": "M Gain (HFWR 2 kHz, ~2 sec res)",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-03-26T23:02:19.000Z",
+  "stopDate": "1997-09-16T15:57:03.000Z"
+}

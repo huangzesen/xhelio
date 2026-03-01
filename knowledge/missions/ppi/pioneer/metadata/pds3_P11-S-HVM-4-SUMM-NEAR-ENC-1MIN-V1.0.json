@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DELTA_T",
+      "type": "double",
+      "units": "MILLISECOND",
+      "description": "Length of data averaging window in millisecond.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BX>",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the X component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BY>",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the Y component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BZ>",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the Z component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BX^2>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the square of the X component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BXBY>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the cross product of BX and BY in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BXBZ>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the cross product of BX and BZ in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BY^2>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the square of the Y component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BYBZ>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the cross product of BY and BZ in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BZ^2>",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the square of the Z component of the magnetic field in PE coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BX/|B|>",
+      "type": "double",
+      "units": "N/A",
+      "description": "Magnetic field vector directional cosine in X.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BY/|B|>",
+      "type": "double",
+      "units": "N/A",
+      "description": "Magnetic field vector directional cosine in Y.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "<BZ/|B|>",
+      "type": "double",
+      "units": "N/A",
+      "description": "Magnetic field vector directional cosine in Z.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "|B|",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the total magnetic field, evaluated as < SQRT(BX^2 + BY^2 + BZ^2) >.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "|B^2|",
+      "type": "double",
+      "units": "NANOTESLA**2",
+      "description": "Average of the square of the total field magnitude, evaluated as < BX^2 + BY^2 + BZ^2 >.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,274 @@
+{
+  "id": "MGS",
+  "name": "Mars Global Surveyor",
+  "keywords": [
+    "global",
+    "mars",
+    "mgs",
+    "pds",
+    "ppi",
+    "surveyor"
+  ],
+  "profile": {
+    "description": "Mars Global Surveyor data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Electron Reflectometer": {
+      "name": "Electron Reflectometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:MGS-M-ER-3-PREMAP/OMNIDIR-FLUX-V1.0": {
+          "description": "MARS GLOBAL SURVEYOR PREMAPPING ER LEVEL 1 DATA",
+          "start_date": "1997-09-12",
+          "stop_date": "1999-03-08",
+          "slot": "/data/MGS-M-ER-3-PREMAP_OMNIDIR-FLUX-V1.0",
+          "archive_type": 3
+        },
+        "pds3:MGS-M-ER-5-FIELD-MAP-V1.0": {
+          "description": "MGS Mars Electron Reflectometry Map",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/MGS-M-ER-5-FIELD-MAP-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:mgs-mager:data-omni-flux-premap": {
+          "description": "MGS ER Cal Omnidirectional Flux Pre-Mapping Data Collection",
+          "start_date": "1997-09-14",
+          "stop_date": "1999-03-08",
+          "slot": "/data/mgs-mager/data-omni-flux-premap",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-ER-3-MAP1/OMNIDIR-FLUX-V1.0": {
+          "description": "MARS GLOBAL SURVEYOR MAPPING ER LEVEL 1 DATA",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/MGS-M-ER-3-MAP1_OMNIDIR-FLUX-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:mgs-mager:data-highres-premap": {
+          "description": "MGS MAG Calibrated High Time Resolution Pre-Mapping Data Collection",
+          "start_date": "1997-09-14",
+          "stop_date": "1999-03-08",
+          "slot": "/data/mgs-mager/data-highres-premap",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-omni-flux-map": {
+          "description": "MGS ER Cal Omnidirectional Flux Mapping Data Collection",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/mgs-mager/data-omni-flux-map",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-full-premap-phobos-pc": {
+          "description": "MGS MAG Cal Low Resolution Pre-Mapping Phobos (Planetocentric) Data Collection",
+          "start_date": "1998-05-27",
+          "stop_date": "1998-09-17",
+          "slot": "/data/mgs-mager/data-full-premap-phobos-pc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-full-map-pc": {
+          "description": "MGS MAG Cal Low Resolution Mapping (Planetocentric) Data Collection",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/mgs-mager/data-full-map-pc",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-MAG-3-MAP1/FULLWORD-RES-MAG-V1.0:DATA": {
+          "description": "MARS GLOBAL SURVEYOR MAPPING MAG LEVEL 1 DATA : DATA",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/MGS-M-MAG-3-MAP1_FULLWORD-RES-MAG-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:mgs-mager:data-full-premap-mars-ss": {
+          "description": "MGS MAG Cal Low Resolution Pre-Mapping Mars (Sunstate) Data Collection",
+          "start_date": "1997-09-14",
+          "stop_date": "1999-03-29",
+          "slot": "/data/mgs-mager/data-full-premap-mars-ss",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-fieldmap-derived": {
+          "description": "MGS MAG/ER Derived Map of Mars Data Collection",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/mgs-mager/data-fieldmap-derived",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-highres-map": {
+          "description": "MGS MAG Calibrated High Time Resolution Mapping Data Collection",
+          "start_date": "1999-04-02",
+          "stop_date": "2006-11-02",
+          "slot": "/data/mgs-mager/data-highres-map",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-full-premap-mars-pc": {
+          "description": "MGS MAG Cal Low Resolution Pre-Mapping Mars (Planetocentric) Data Collection",
+          "start_date": "1997-09-14",
+          "stop_date": "1999-03-29",
+          "slot": "/data/mgs-mager/data-full-premap-mars-pc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-full-premap-phobos-ss": {
+          "description": "MGS MAG Cal Low Resolution Pre-Mapping Phobos (Sunstate) Data Collection",
+          "start_date": "1998-05-27",
+          "stop_date": "1998-09-17",
+          "slot": "/data/mgs-mager/data-full-premap-phobos-ss",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-MAG-3-MAP1/FULLWORD-RES-MAG-V1.0": {
+          "description": "MARS GLOBAL SURVEYOR MAPPING MAG LEVEL 1 DATA",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/MGS-M-MAG-3-MAP1_FULLWORD-RES-MAG-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:mgs-mager:data-full-map-ss": {
+          "description": "MGS MAG Cal Low Resolution Mapping (Sunstate) Data Collection",
+          "start_date": "1999-03-08",
+          "stop_date": "2006-11-02",
+          "slot": "/data/mgs-mager/data-full-map-ss",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-mager:data-angular-flux-map": {
+          "description": "MGS ER Cal Angular Flux Mapping Data Collection",
+          "start_date": "1999-04-02",
+          "stop_date": "2006-11-02",
+          "slot": "/data/mgs-mager/data-angular-flux-map",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-MAG-3-PREMAPPING-HIGHRES-V1.0": {
+          "description": "MARS GLOBAL SURVEYOR PREMAP HIGH-RES MAG DATA",
+          "start_date": "1997-09-12",
+          "stop_date": "1999-03-08",
+          "slot": "/data/MGS-M-MAG-3-PREMAPPING-HIGHRES-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "RADIO SCIENCE SUBSYSTEM": {
+      "name": "RADIO SCIENCE SUBSYSTEM",
+      "keywords": [],
+      "datasets": {
+        "pds3:MGS-SUN-RSS-1-ROCC-V1.0": {
+          "description": "MGS SOLAR CONJUNCTION RAW DATA SET - ROCC V1.0",
+          "start_date": "2000-06-28",
+          "stop_date": "2000-07-05",
+          "slot": "/data/MGS-SUN-RSS-1-ROCC-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Radio Science Subsystem": {
+      "name": "Radio Science Subsystem",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:mgs-rss:data-srt": {
+          "description": "MGS Surface Reflection Tabular Data Collection",
+          "start_date": "1999-03-09",
+          "stop_date": "2001-03-31",
+          "slot": "/data/mgs-rss/data-srt",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-sha": {
+          "description": "MGS Derived Spherical Harmonic Model ASCII Data Collection",
+          "start_date": "1997-09-12",
+          "stop_date": "2004-12-05",
+          "slot": "/data/mgs-rss/data-sha",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-srg": {
+          "description": "MGS Surface Reflection Geometry Data Collection",
+          "start_date": "1999-03-09",
+          "stop_date": "2001-03-31",
+          "slot": "/data/mgs-rss/data-srg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-los": {
+          "description": "MGS Derived Line of Sight Acceleration Profiles Data Collection",
+          "start_date": "1998-03-28",
+          "stop_date": "1998-09-23",
+          "slot": "/data/mgs-rss/data-los",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-sra": {
+          "description": "MGS Derived High Gain Antenna Pointing Data Collection",
+          "start_date": "1999-05-07",
+          "stop_date": "2001-03-31",
+          "slot": "/data/mgs-rss/data-sra",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-RSS-5-EDS-V1.0": {
+          "description": "MGS_RSS_EDS",
+          "start_date": "1998-12-24",
+          "stop_date": "2005-06-09",
+          "slot": "/data/MGS-M-RSS-5-EDS-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:mgs-rss:data-eds": {
+          "description": "MGS Derived Electron Density Profiles Data Collection",
+          "start_date": "1998-12-24",
+          "stop_date": "2005-06-09",
+          "slot": "/data/mgs-rss/data-eds",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-sri": {
+          "description": "MGS Derived Surface Reflection Image Data Collection",
+          "start_date": "1999-03-09",
+          "stop_date": "2001-03-31",
+          "slot": "/data/mgs-rss/data-sri",
+          "archive_type": 4
+        },
+        "pds3:MGS-M-RSS-5-SDP-V1.0": {
+          "description": "MGS SOLAR CONJUNCTION RAW DATA SET - ROCC V1.0",
+          "start_date": "1997-09-12",
+          "stop_date": "2006-09-20",
+          "slot": "/data/MGS-M-RSS-5-SDP-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:mgs-rss:data-anc": {
+          "description": "MGS Derived Radio Science Ancilary Data Collection",
+          "start_date": "1998-01-24",
+          "stop_date": "2003-11-06",
+          "slot": "/data/mgs-rss/data-anc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-maps": {
+          "description": "MGS Derived Digital Map of the Gravity Anomaly Data Collection",
+          "start_date": "1997-09-12",
+          "stop_date": "2002-05-27",
+          "slot": "/data/mgs-rss/data-maps",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:mgs-rss:data-shb": {
+          "description": "MGS Derived Spherical Harmonics Gravity Binary Data Collection",
+          "start_date": "1997-09-12",
+          "stop_date": "2001-08-14",
+          "slot": "/data/mgs-rss/data-shb",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

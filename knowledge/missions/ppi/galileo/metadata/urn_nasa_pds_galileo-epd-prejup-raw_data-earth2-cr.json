@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START_TIME",
+      "type": "double",
+      "units": "",
+      "description": "Start time of each spin sector.  \n \tThe time string is of the form yyyy-dddThh:mm:ss.sZ.\n\tThe representation of Jan 01, 2000, 00:00:00.0 would be\n\t2000-001T00:00:00.0Z.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PITCH",
+      "type": "double",
+      "units": "rad",
+      "description": "Pitch angle of energetic particles",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHASE",
+      "type": "double",
+      "units": "rad",
+      "description": "Phase angle of energetic particles",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RATE_A0",
+      "type": "double",
+      "units": "1/s",
+      "description": "Channel A0 count rate (counts/sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RATE_A1",
+      "type": "double",
+      "units": "1/s",
+      "description": "Channel A1 count rate (counts/sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RATE_A2",
+      "type": "double",
+      "units": "1/s",
+      "description": "Channel A2 count rate (counts/sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RATE_A3",
+      "type": "double",
+      "units": "1/s",
+      "description": "Channel A3 count rate (counts/sec)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

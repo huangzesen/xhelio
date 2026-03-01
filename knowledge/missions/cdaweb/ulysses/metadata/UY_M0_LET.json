@@ -1,0 +1,124 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LowE_protons",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Proton flux (0.9-3.8 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LowE_proton_sectors",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Proton flux (0.9-3.8 MeV) in 8 sectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "MidE_protons",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Proton flux (3.8-8.0 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MidE_proton_sectors",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Proton flux (3.8-8.0 MeV) in 8 sectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "HiE_protons",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Proton flux (8.0-19.0 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alphas",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "Alpha flux (1.0-19.0 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Li_Be_B",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "Li,Be,B flux (1.9-26.0 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "C_N_O",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "C,N,O flux (2.6-39.0 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Z_ge_10",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "Z >= 10 flux (3.0-9.0 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "10_Z_20",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "10<=Z<=20 flux (9.0-50.0 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_ge_20",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV/n",
+      "description": "Z >= 20 flux (12.0-75.0 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electrons",
+      "type": "double",
+      "units": "/cm2/s/sr/MeV",
+      "description": "Electron flux (0.3-1.0 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Single_detector_rates",
+      "type": "double",
+      "units": "/s",
+      "description": "Single detector counting rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    }
+  ],
+  "startDate": "1990-10-23T00:00:00.000Z",
+  "stopDate": "2009-06-30T23:50:00.000Z"
+}

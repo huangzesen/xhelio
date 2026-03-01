@@ -1,0 +1,313 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LAPI__Invariant",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Invariant",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Invariant, sensor 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Invariant_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Invariant, sensor 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Magnetic",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time, hr",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Magnetic",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Magnetic_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Magnetic, sensor 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "LAPI+ Altitude, km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Altitude",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Altitude_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Altitude, sensor 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Polar",
+      "type": "double",
+      "units": "deg",
+      "description": "LAPI+ Polar Latitude, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Polar",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Polar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Polar_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Polar, sensor 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Azimuth",
+      "type": "double",
+      "units": "deg",
+      "description": "LAPI+ Azimuth, Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Azimuth",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Azimuth_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Azimuth, sensor 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Local",
+      "type": "double",
+      "units": "hr",
+      "description": "LAPI+ Local Solar Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Local",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Local",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Local_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Local, sensor 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__L_Shell",
+      "type": "double",
+      "units": "unitless",
+      "description": "L-Shell",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__L_Shell",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ L-Shell",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__L_Shell_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ L-Shell, sensor 6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Orbit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Orbit Number",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Orbit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Orbit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Orbit_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Orbit, sensor 7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Satellite_GEI",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Satellite Speed (GEI)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Satellite_GEI",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Satellite (GEI), sensor 8",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Satellite_GEI_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Satellite (GEI), sensor 8",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Solar_1_SZA_rad",
+      "type": "double",
+      "units": "rad",
+      "description": "Solar Zenith Angle, rad",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Solar_2_SZA_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar Zenith Angle, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Solar",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Solar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Solar_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Solar, sensor 9",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__Light_Dark",
+      "type": "double",
+      "units": "unitless",
+      "description": "LAPI+ Light/Dark Indicator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__Light_Dark",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ Light/Dark, sensor 10",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fraction_of_a_Year_LAPI__Light_Dark_CAL",
+      "type": "double",
+      "units": "yr",
+      "description": "Fraction of a Year for LAPI+ Light/Dark, sensor 10",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE0_SPDF_StatusFlag___All",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE1_SPDF_StatusFlag___Bit_7",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE2_SPDF_StatusFlag___Bit_6",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE3_SPDF_StatusFlag___Bit_5",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE4_SPDF_StatusFlag___Bit_4",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE5_SPDF_StatusFlag___Bit_3",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE6_SPDF_StatusFlag___Bit_2",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE7_SPDF_StatusFlag___Bit_1",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE8_SPDF_StatusFlag___Bit_0",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator StatusFlag - Bit 0",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T13:09:02.000Z",
+  "stopDate": "1983-02-18T16:42:12.000Z"
+}

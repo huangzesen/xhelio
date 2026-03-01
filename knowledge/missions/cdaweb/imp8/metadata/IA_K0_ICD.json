@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "D6_H",
+      "type": "integer",
+      "units": "cnts",
+      "description": "H+ counts, 2 min sum from TRICS2 D6 antisunward detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D8_H",
+      "type": "integer",
+      "units": "cnts",
+      "description": "H+ counts, 2 min sum from TRICS2 D8 (GSE YZ plane) detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D10_H",
+      "type": "integer",
+      "units": "cnts",
+      "description": "H+ counts, 2 min sum from TRICS2 D10 sunward detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D6_O",
+      "type": "integer",
+      "units": "cnts",
+      "description": "O+ counts, 2 min sum from TRICS2 D6 antisunward detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D8_O",
+      "type": "integer",
+      "units": "cnts",
+      "description": "O+ counts, 2 min sum from TRICS2 D8 (GSE YZ plane) detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D10_O",
+      "type": "integer",
+      "units": "cnts",
+      "description": "O+ counts, 2 min sum from TRICS2 D10 sunward detector",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-09-18T09:23:36.000Z",
+  "stopDate": "1998-05-01T09:28:02.000Z"
+}

@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "EB01_fav",
+      "type": "double",
+      "units": "electrons/cm^2-s-sr-MeV",
+      "description": "flux, electrons 22-35 keV",
+      "fill": "-99.0"
+    },
+    {
+      "name": "EB01_favu",
+      "type": "double",
+      "units": "electrons/cm^2-s-sr-MeV",
+      "description": "stat. unc. of EB01_fav",
+      "fill": "-99.0"
+    },
+    {
+      "name": "EB02_fav",
+      "type": "double",
+      "units": "electrons/cm^2-s-sr-MeV",
+      "description": "flux, electrons 35-61 keV",
+      "fill": "-99.0"
+    },
+    {
+      "name": "EB02_favu",
+      "type": "double",
+      "units": "electrons/cm^2-s-sr-MeV",
+      "description": "stat. unc. of EB02_fav",
+      "fill": "-99.0"
+    }
+  ],
+  "startDate": "2006-01-01T00:00:00.000Z",
+  "stopDate": "2018-10-31T00:00:00.000Z"
+}

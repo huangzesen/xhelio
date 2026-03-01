@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "/cm3",
+      "description": "Electron total, core & halo number density",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "deg-K",
+      "description": "Total, core & halo electron temperatures",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1990-11-18T00:55:16.000Z",
+  "stopDate": "2004-12-31T00:00:00.000Z"
+}

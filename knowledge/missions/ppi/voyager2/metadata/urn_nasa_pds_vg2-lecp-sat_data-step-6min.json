@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) at which the particle counting begins.       \n      Time is given in the format of `yyyy-mm-dd hh:mm:ss.sss'.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) at which the particle counting ends.         \n      Time is given in the format of `yyyy-mm-dd hh:mm:ss.sss'.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECTOR",
+      "type": "double",
+      "units": "",
+      "description": "LECP stepping platform position (1-8). Unknown if 9.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCAN_DIR",
+      "type": "double",
+      "units": "",
+      "description": "LECP scan direction of the sector                                       \n      (1 = for increasing; -1 = for decreasing.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL01_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counting rate measured in energy channel PL01                           \n      (24-48 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL01_RATE_UNCERTAINTY",
+      "type": "double",
+      "units": "Counts",
+      "description": "Rate uncertainty for channel PL01.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL02_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counting rate measured in energy channel PL02                           \n      (48-80 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL02_RATE_UNCERTAINTY",
+      "type": "double",
+      "units": "Counts",
+      "description": "Rate uncertainty for channel PL02.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL03_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counting rate measured in energy channel PL03                           \n      (80-137 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL03_RATE_UNCERTAINTY",
+      "type": "double",
+      "units": "Counts",
+      "description": "Rate uncertainty for channel PL03.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL04_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counting rate measured in energy channel PL04                           \n      (137-215 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL04_RATE_UNCERTAINTY",
+      "type": "double",
+      "units": "Counts",
+      "description": "Rate uncertainty for channel PL04.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL05_RATE",
+      "type": "double",
+      "units": "Counts",
+      "description": "Counting rate measured in energy channel PL05                           \n      (215-540 keV/nuc. protons and ions).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL05_RATE_UNCERTAINTY",
+      "type": "double",
+      "units": "Counts",
+      "description": "Rate uncertainty for channel PL05.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

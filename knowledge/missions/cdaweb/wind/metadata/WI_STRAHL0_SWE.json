@@ -1,0 +1,137 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "f_strahl",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "f_strahl intensities versus Phi and Theta angles in sweep energy order (log scaled animated gifs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_strahl_lin",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "---> f_strahl (linear scaled)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_antistrahl",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "f_antistrahl intensities versus Phi and Theta angles in sweep energy order (log scaled animated gifs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_antistrahl_lin",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "---> f_antistrahl (linear scaled)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_strahl_counts",
+      "type": "double",
+      "units": "",
+      "description": "f_strahl_counts intensities versus Phi and Theta angles in sweep energy order (log scaled animated gifs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_strahl_counts_lin",
+      "type": "double",
+      "units": "",
+      "description": "---> f_strahl_counts (linear scaled)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_antistrahl_counts",
+      "type": "double",
+      "units": "",
+      "description": "f_antistrahl_counts intensities versus Phi and Theta angles in sweep energy order (log scaled animated gifs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "f_antistrahl_counts_lin",
+      "type": "double",
+      "units": "",
+      "description": "---> f_antistrahl_counts (linear scaled)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14,
+        12
+      ]
+    },
+    {
+      "name": "phi_strahl",
+      "type": "double",
+      "units": "degrees",
+      "description": "Phi (GSE) associated with unit vector pointing in electron velocity direction, for the strahl distribution.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "phi_antistrahl",
+      "type": "double",
+      "units": "degrees",
+      "description": "Phi (GSE) associated with unit vector pointing in electron velocity direction, for the antistrahl distribution.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "theta",
+      "type": "double",
+      "units": "degrees",
+      "description": "Theta (GSE) associated with unit vector pointing in electron velocity direction",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "energy",
+      "type": "double",
+      "units": "eV",
+      "description": "energy (in eV) of the sampled electrons used to construct the f_strahl and f_antistrahl distributions",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-01-01T00:00:05.000Z",
+  "stopDate": "2001-05-30T23:59:22.000Z"
+}

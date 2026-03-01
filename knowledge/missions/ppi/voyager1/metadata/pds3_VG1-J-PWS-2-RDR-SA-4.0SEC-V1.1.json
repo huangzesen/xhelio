@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "integer",
+      "units": "YEARS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "integer",
+      "units": "HOURS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "integer",
+      "units": "SECONDS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MILLI",
+      "type": "integer",
+      "units": "MILLISECONDS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS MOD16",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS MOD60",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS LINES",
+      "type": "integer",
+      "units": "COUNTS",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT MODE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHANNEL",
+      "type": "integer",
+      "units": "N/A",
+      "description": "",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

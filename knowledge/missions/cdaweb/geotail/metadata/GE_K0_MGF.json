@@ -1,0 +1,49 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "IB",
+      "type": "integer",
+      "units": "0.1nT",
+      "description": "Magnetic Field Magnitude",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "IB_vector",
+      "type": "integer",
+      "units": "0.1nT",
+      "description": "Magnetic field, Cartesian GSE coordinates",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IS_vector",
+      "type": "integer",
+      "units": "0.01nT",
+      "description": "Standard deviation of sin fitting for magnetic field, in sensor coordinates",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POS",
+      "type": "double",
+      "units": "km",
+      "description": "Satellite position GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1992-09-04T19:14:06.000Z",
+  "stopDate": "2022-06-27T12:23:54.000Z"
+}

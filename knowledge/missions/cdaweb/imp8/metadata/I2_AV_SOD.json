@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "freq_mark",
+      "type": "double",
+      "units": "MHz",
+      "description": "frequency markers for sounder",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ampl",
+      "type": "integer",
+      "units": "",
+      "description": "Sounder amplitude at 223 virtual heights for fixed & swept frequency",
+      "fill": "-128.0",
+      "size": [
+        223
+      ]
+    },
+    {
+      "name": "freq",
+      "type": "double",
+      "units": "MHz",
+      "description": "interpolated fixed & sweep frequencies",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1977-12-11T21:47:50.000Z",
+  "stopDate": "1978-09-13T21:01:48.000Z"
+}

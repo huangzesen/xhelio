@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Rs",
+      "description": "Saturn to spacecraft range (positive away from Saturn) in the unit      \n                        of Saturn's radius.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99999"
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Kronocentric latitude (positive northward), in degree.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Kronocentric east longitude, completing the left handed, orthogonal set,\n                        in degree.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "LOCTIME",
+      "type": "double",
+      "units": "HOUR",
+      "description": "Column contains spacecraft local time in decimal hours.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

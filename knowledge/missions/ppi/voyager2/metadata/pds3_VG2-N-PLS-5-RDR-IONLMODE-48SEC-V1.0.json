@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "RANGE",
+      "type": "double",
+      "units": "RN",
+      "description": "DISTANCE FROM NEPTUNE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_DEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "MOMENT DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_VR",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MOMENT RADIAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_VT",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MOMENT TANGENTIAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_VN",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MOMENT NORMAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_VEL",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MAGNITUDE OF THE MOMENT VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MTHRM_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MOMENT PROTON THERMAL SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FIT_DEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "MODEL FIT DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FIT_VR",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MODEL FIT RADIAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FIT_VT",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MODEL FIT TANGENTIAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FIT_VN",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MODEL FIT NORMAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FIT_VEL",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MAGNITUDE OF THE MODEL FIT VELOC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FTHRM_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "MODEL FIT PROTON THERMAL SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOM_TEMP",
+      "type": "double",
+      "units": "EV",
+      "description": "MOMENT TEMPERATURE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

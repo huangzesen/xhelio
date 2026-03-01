@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated with the\n           x,y,z sample in each record. The derived value is created by the \n           following formula:\n           MET + 0.05 * delta_ts + (dt_sample)*(I-1). \n           MET is the mission elapsed time for the entire science packet.\n           delta_ts is the delta time in seconds between the MET and\n           the first sample in the downloaded science packet.\n           dt_sample is the time between samples in seconds and given by \n           dt_sample = 1/sample_rate where sample_rate is the reported \n           sample rate in samples per second.\n           I is the incremental counter for each data sample in the\n           science packet. I=1 is the first sample in the packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA_TS",
+      "type": "double",
+      "units": "",
+      "description": "The delta time in 50 millisecond steps between the MET  \n       value for the packet and the first sample in the science packet,       \n       provides a 50 millisecond resolution to the time tag for the first data\n       value.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUM_SAMPLES",
+      "type": "double",
+      "units": "",
+      "description": "The number of MAG samples (0-200) in the science        \n                      packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUM_LOGAC",
+      "type": "double",
+      "units": "",
+      "description": "The number of logAC samples (0-200) in the              \n                      science packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANALOG_CAL",
+      "type": "double",
+      "units": "",
+      "description": "Analog calibration flag. =0 off, =1 on.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A_D_CAL",
+      "type": "double",
+      "units": "",
+      "description": "A/D calibration flag. =0 off, =1 on.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COMPRESS_ON",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether science packet was compressed or      \n                      uncompressed. =0 uncompressed, =1 compressed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RANGE_MODE",
+      "type": "double",
+      "units": "",
+      "description": "Range control mode used. =0 manual, =1 automatic",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FILTERS_ON",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether filters were on or off.               \n                      =0 off, =1 on",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MANUAL_RANGE_CMD",
+      "type": "double",
+      "units": "",
+      "description": "Commanded manual range setting.                         \n                      =0 1530 nT, =1 51300 nT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACTUAL_RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Actual range used by MAG. =0 1530 nT, =1 51300 nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AC_AXIS",
+      "type": "double",
+      "units": "",
+      "description": "AC axis selected.                                       \n                      =0 X, =1 Y, =2 Z",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_RATE",
+      "type": "double",
+      "units": "",
+      "description": "MAG sample rate. =0 0.01/s, =1 0.02/s,                  \n                      =2 0.05/s, =3 0.1/s, =4 0.2/s, =5 0.5/s,                \n                      =6 1/s, =7 2/s, =8 5/s, =9 10/s, =10 20/s",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "APP_ID",
+      "type": "double",
+      "units": "",
+      "description": "The Application Process ID of the science packet from   \n    which data was extracted. Values for PROBE_TEMPERATURE are N/A when this  \n    value is 721, which is the AppID of the old packet format. An AppID of 725\n    identifies the new packet format which contains valid values for          \n    PROBE_TEMPERATURE.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X_SAMPLES_COMPRESSION_BITS",
+      "type": "double",
+      "units": "",
+      "description": "Number of bits needed to store each compressed X axis   \n    sample.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_SAMPLES_COMPRESSION_BITS",
+      "type": "double",
+      "units": "",
+      "description": "Number of bits needed to store each compressed Y axis   \n    sample.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_SAMPLES_COMPRESSION_BITS",
+      "type": "double",
+      "units": "",
+      "description": "Number of bits needed to store each compressed Z axis   \n    sample.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROBE_TEMPERATURE",
+      "type": "double",
+      "units": "",
+      "description": "Raw telemetry counts of the High temperature resolution \n    probe temperature.This is set to an N/A value of 65535 when APP_ID is 721.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

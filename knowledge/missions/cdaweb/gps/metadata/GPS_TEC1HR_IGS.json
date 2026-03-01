@@ -1,0 +1,376 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tecUHRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC Global Maps, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC, University Bern, Switzerland [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUHRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), Movie of Mapped Cylindrical Images",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsUHRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, RMS(TECr-1h) Global Maps, RMS error of TEC in TECU (10^16 m-2) - (Rapid product,1 hr res., 24 hrs latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsEHRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsCODM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsCORM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUHRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC N Pol Proj., Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), North Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUHRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC N Pol Proj. Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), Movie of North Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUHRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC S Pol Proj., Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), South Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUHRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "UPC, Rapid-TEC S Pol Proj. Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 1 hr res., 24 hrs latency), Movie of South Polar Projection Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecEHRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA Rapid-TEC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE TEC [ Available starting at 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE Rapid-TEC [ Available starting at 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "UHRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "UPC, Num. Stations Rapid-1h, Number of ground stations used, (Rapid product, 1 hr res., 24 hrs latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "EHRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA Rapid",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CODnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available starting at 10/19/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CORnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE Rapid [ Available starting at 11/01/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UHRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "UPC, Num satellites Rapid-1h, Number of GPS satellites used, (Rapid product, 1 hr, 24 hrs latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "EHRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA Rapid",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CODnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available starting at 10/19/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CORnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE Rapid [ Available starting at 11/01/2014 ]",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1995-05-16T00:00:00.000Z",
+  "stopDate": "2026-02-15T23:00:00.000Z"
+}

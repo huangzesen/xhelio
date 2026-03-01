@@ -1,0 +1,628 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P1 LEMS30 (Low Energy Magnetic Spectrometer; 0.047-0.065 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P2 LEMS30 (Low Energy Magnetic Spectrometer; 0.065-0.112 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P3 LEMS30 (Low Energy Magnetic Spectrometer; 0.112-0.187 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P4 LEMS30 (Low Energy Magnetic Spectrometer; 0.187-0.310 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P5 LEMS30 (Low Energy Magnetic Spectrometer; 0.310-0.580 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P6 LEMS30 (Low Energy Magnetic Spectrometer; 0.580-1.06 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P7 LEMS30 (Low Energy Magnetic Spectrometer; 1.06-1.91 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P8",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P8 LEMS30 (Low Energy Magnetic Spectrometer; 1.91-4.75 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P1 LEMS30 (Low Energy Magnetic Spectrometer; 0.047-0.065 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P2 LEMS30 (Low Energy Magnetic Spectrometer; 0.065-0.112 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P3 LEMS30 (Low Energy Magnetic Spectrometer; 0.112-0.187 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P4 LEMS30 (Low Energy Magnetic Spectrometer; 0.187-0.310 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P5 LEMS30 (Low Energy Magnetic Spectrometer; 0.310-0.580 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P6 LEMS30 (Low Energy Magnetic Spectrometer; 0.580-1.06 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P7 LEMS30 (Low Energy Magnetic Spectrometer; 1.06-1.91 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P8",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P8 LEMS30 (Low Energy Magnetic Spectrometer; 1.91-4.75 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DE1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "DE1 DE (Deflected Electrons; 0.038-0.053 MeV Electrons), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DE2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "DE2 DE (Deflected Electrons; 0.053-0.103 MeV Electrons), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DE3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "DE3 DE (Deflected Electrons; 0.103-0.175 MeV Electrons), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DE4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "DE4 DE (Deflected Electrons; 0.175-0.315 MeV Electrons), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_DE1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "DE1 DE (Deflected Electrons; 0.038-0.053 MeV Electrons), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_DE2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "DE2 DE (Deflected Electrons; 0.053-0.103 MeV Electrons), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_DE3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "DE3 DE (Deflected Electrons; 0.103-0.175 MeV Electrons), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_DE4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "DE4 DE (Deflected Electrons; 0.175-0.315 MeV Electrons), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W3 CA60 (Composition Aperture; 0.389-1.28 MeV/nuc. He), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W4 CA60 (Composition Aperture; 1.28-6.98 MeV/nuc. He), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W5 CA60 (Composition Aperture; 0.465-1.71 MeV/nuc. CNO), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W6 CA60 (Composition Aperture; 1.71-19.1 MeV/nuc. CNO), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W7 CA60 (Composition Aperture; 0.239-0.840 MeV/nuc. Fe (9<Z<29)), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W8",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV/nuc.)",
+      "description": "W8 CA60 (Composition Aperture; 0.840-92.7 MeV/nuc. Fe (9<Z<29)), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W3 CA60 (Composition Aperture; 0.389-1.28 MeV/nuc. He), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W4 CA60 (Composition Aperture; 1.28-6.98 MeV/nuc. He), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W5 CA60 (Composition Aperture; 0.465-1.71 MeV/nuc. CNO), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W6 CA60 (Composition Aperture; 1.71-19.1 MeV/nuc. CNO), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W7 CA60 (Composition Aperture; 0.239-0.840 MeV/nuc. Fe (9<Z<29)), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_W8",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "W8 CA60 (Composition Aperture; 0.840-92.7 MeV/nuc. Fe (9<Z<29)), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E1p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E1p LEFS60 (Low Energy Foil Spectrometer; 0.045-0.062 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E2p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E2p LEFS60 (Low Energy Foil Spectrometer; 0.062-0.103 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E3p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E3p LEFS60 (Low Energy Foil Spectrometer; 0.103-0.175 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E4p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E4p LEFS60 (Low Energy Foil Spectrometer; 0.175-0.312 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP5p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP5p LEFS60 (Low Energy Foil Spectrometer; 0.546-0.761 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP6p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP6p LEFS60 (Low Energy Foil Spectrometer; 0.761-1.22 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP7p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP7p LEFS60 (Low Energy Foil Spectrometer; 1.22-4.97 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E1p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E1p LEFS60 (Low Energy Foil Spectrometer; 0.045-0.062 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E2p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E2p LEFS60 (Low Energy Foil Spectrometer; 0.062-0.103 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E3p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E3p LEFS60 (Low Energy Foil Spectrometer; 0.103-0.175 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E4p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E4p LEFS60 (Low Energy Foil Spectrometer; 0.175-0.312 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP5p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP5p LEFS60 (Low Energy Foil Spectrometer; 0.546-0.761 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP6p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP6p LEFS60 (Low Energy Foil Spectrometer; 0.761-1.22 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP7p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP7p LEFS60 (Low Energy Foil Spectrometer; 1.22-4.97 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr)",
+      "description": "Z2 WARTD, (Z>1, E>0.7 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z2A",
+      "type": "double",
+      "units": "1/(cm**2-s-sr)",
+      "description": "Z2A WARTD, (Z>7, E>7.5 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr)",
+      "description": "Z3 WARTD, (Z>5, E>2.5 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr)",
+      "description": "Z4 WARTD, (Z>10, E>9.0 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Z2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Z2 WARTD, (Z>1, E>0.7 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Z2A",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Z2A WARTD, (Z>7, E>7.5 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Z3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Z3 WARTD, (Z>5, E>2.5 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_Z4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "Z4 WARTD, (Z>10, E>9.0 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P1p LEMS120 (Low Energy Magnetic Spectrometer; 0.047-0.066 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P2p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P2p LEMS120 (Low Energy Magnetic Spectrometer; 0.066-0.114 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P3p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P3p LEMS120 (Low Energy Magnetic Spectrometer; 0.114-0.190 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P4p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P4p LEMS120 (Low Energy Magnetic Spectrometer; 0.190-0.310 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P5p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P5p LEMS120 (Low Energy Magnetic Spectrometer; 0.310-0.580 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P6p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P6p LEMS120 (Low Energy Magnetic Spectrometer; 0.580-1.05 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P7p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P7p LEMS120 (Low Energy Magnetic Spectrometer; 1.05-1.89 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P8p",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "P8p LEMS120 (Low Energy Magnetic Spectrometer; 1.89-4.75 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P1p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P1p LEMS120 (Low Energy Magnetic Spectrometer; 0.047-0.066 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P2p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P2p LEMS120 (Low Energy Magnetic Spectrometer; 0.066-0.114 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P3p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P3p LEMS120 (Low Energy Magnetic Spectrometer; 0.114-0.190 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P4p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P4p LEMS120 (Low Energy Magnetic Spectrometer; 0.190-0.310 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P5p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P5p LEMS120 (Low Energy Magnetic Spectrometer; 0.310-0.580 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P6p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P6p LEMS120 (Low Energy Magnetic Spectrometer; 0.580-1.05 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P7p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P7p LEMS120 (Low Energy Magnetic Spectrometer; 1.05-1.89 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_P8p",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "P8p LEMS120 (Low Energy Magnetic Spectrometer; 1.89-4.75 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E1",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E1 LEFS150 (Low Energy Foil Spectrometer; 0.045-0.062 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E2",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E2 LEFS150 (Low Energy Foil Spectrometer; 0.062-0.102 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E3",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E3 LEFS150 (Low Energy Foil Spectrometer; 0.102-0.175 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E4",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "E4 LEFS150 (Low Energy Foil Spectrometer; 0.175-0.312 MeV Electrons (+Ions) ), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP5",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP5  LEFS150 (Low Energy Foil Spectrometer; 0.540-0.765 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP6",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP6 LEFS150 (Low Energy Foil Spectrometer; 0.765-1.22 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FP7",
+      "type": "double",
+      "units": "1/(cm**2-s-sr-MeV)",
+      "description": "FP7 LEFS150 (Low Energy Foil Spectrometer; 1.22-4.94 MeV Ions), Sector Avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E1",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E1 LEFS150 (Low Energy Foil Spectrometer; 0.045-0.062 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E2",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E2 LEFS150 (Low Energy Foil Spectrometer; 0.062-0.102 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E3",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E3 LEFS150 (Low Energy Foil Spectrometer; 0.102-0.175 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_E4",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "E4 LEFS150 (Low Energy Foil Spectrometer; 0.175-0.312 MeV Electrons (+Ions) ), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP5",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP5 LEFS150 (Low Energy Foil Spectrometer; 0.540-0.765 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP6",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP6 LEFS150 (Low Energy Foil Spectrometer; 0.765-1.22 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "unc_FP7",
+      "type": "double",
+      "units": "[fraction]",
+      "description": "FP7 LEFS150 (Low Energy Foil Spectrometer; 1.22-4.94 MeV Ions), Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1997-08-30T17:01:00.000Z",
+  "stopDate": "2025-12-30T23:55:00.000Z"
+}

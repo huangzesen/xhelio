@@ -1,0 +1,68 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DISTANCE",
+      "type": "double",
+      "units": "AU",
+      "description": "Distance from Sun in AU",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Pickup Ion Density in cm**-3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TEMPERATURE",
+      "type": "double",
+      "units": "K",
+      "description": "Temperature in K",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THERMAL_PRESSURE",
+      "type": "double",
+      "units": "pPa",
+      "description": "Thermal Pressure in pPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IONIZATION_RATE",
+      "type": "double",
+      "units": "s^-1",
+      "description": "Ionization Rate in s^-1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FIT_COOLING_INDEX",
+      "type": "double",
+      "units": "index",
+      "description": "An index that characterizes non-adiabatic cooling of interstellar pickup ions",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FIT_INJECTION_SPEED",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "Pickup ion injection speed into the solar wind",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BACKGROUND_RATE",
+      "type": "double",
+      "units": "Hz",
+      "description": "Noise background rate subtracted from distribution",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2008-11-09T06:08:01.000Z",
+  "stopDate": "2024-09-13T17:44:04.000Z"
+}

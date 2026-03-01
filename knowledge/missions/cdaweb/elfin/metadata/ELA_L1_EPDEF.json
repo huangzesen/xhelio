@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ela_pef",
+      "type": "double",
+      "units": "raw counts",
+      "description": "[ADC UNITS ONLY] L1 EPD Electron counts, Fast Mode - all 16 energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pef_8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just bottom eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pef_top8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just top eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pef_sectnum",
+      "type": "integer",
+      "units": "num sector",
+      "description": "Sector Number",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pef_nspinsinsum",
+      "type": "integer",
+      "units": "num spins in sum",
+      "description": "number spins in sum",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pef_nsectors",
+      "type": "integer",
+      "units": "num sectors",
+      "description": "Number of Sectors",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pef_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "spinperiod",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2018-12-14T20:31:00.000Z",
+  "stopDate": "2022-09-11T23:42:45.000Z"
+}

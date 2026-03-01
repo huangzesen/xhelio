@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "efield_mgse",
+      "type": "double",
+      "units": "",
+      "description": "Despun E-field in MGSE (32 S/s, VxB subtracted, near GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "efw_qual",
+      "type": "integer",
+      "units": "",
+      "description": "---> EFW quality array (global estimate of EFW data quality, plus 13 underlying observatory and instrument-level data quality factors)",
+      "fill": "-32768.0",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "orbit_num",
+      "type": "double",
+      "units": "#",
+      "description": "orbit_num",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "angle_Ey_Ez_Bo",
+      "type": "double",
+      "units": "deg",
+      "description": "angle_Ey_Ez_Bo",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hours",
+      "description": "MLT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Mlat",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lshell",
+      "type": "double",
+      "units": "",
+      "description": "---> Lshell (simple dipole, from ECT predicted Ephermis)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pos_gse",
+      "type": "double",
+      "units": "",
+      "description": "---> GSE position",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vel_gse",
+      "type": "double",
+      "units": "",
+      "description": "---> GSE velocity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "spinaxis_gse",
+      "type": "double",
+      "units": "",
+      "description": "L_vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "bias_current",
+      "type": "double",
+      "units": "nA",
+      "description": "bias_current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "diagEx1",
+      "type": "double",
+      "units": "mV/m",
+      "description": "diagEx1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "diagEx2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "diagEx2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "diagBratio",
+      "type": "double",
+      "units": "",
+      "description": "diagBratio",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "flags_charging_bias_eclipse",
+      "type": "double",
+      "units": "",
+      "description": "flags_charging_bias_eclipse",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "2012-09-05T00:00:00.000Z",
+  "stopDate": "2019-07-17T00:00:00.000Z"
+}

@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial (along the Jupiter to spacecraft line) magnetic field component, positive away from Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "nT",
+      "description": "Southward field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "nT",
+      "description": "Corotational field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "B-field Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic field latitude: Labmda = asin(Btheta/|B|).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic field longitude: Delta = atan(Bphi/Br).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Range",
+      "type": "double",
+      "units": "planetary radii",
+      "description": "Range of the spacecraft from the Jupiter center of mass in units of Jupiter radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Planetographic latitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Planetographic east longitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Local Time",
+      "type": "double",
+      "units": "hours",
+      "description": "Planetographic west longitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

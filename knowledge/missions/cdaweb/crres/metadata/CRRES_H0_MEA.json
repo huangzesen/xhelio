@@ -1,0 +1,154 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Doy",
+      "type": "double",
+      "units": "Day (since 1990)",
+      "description": "Day since 1990",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "Deg E",
+      "description": "Longitude",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "Deg N",
+      "description": "Latitude",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "RE",
+      "description": "L value",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Local_Time",
+      "type": "double",
+      "units": "Hour",
+      "description": "Local Time",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B field",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "Hour",
+      "description": "MLT",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Inv_Lat",
+      "type": "double",
+      "units": "Deg N",
+      "description": "Invariant Latitude",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "Bmin",
+      "type": "double",
+      "units": "nT",
+      "description": "Mimimum B on field line",
+      "fill": "-1000000000.0"
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "MEA FLux (all 17 channels)",
+      "fill": "-1000000000.0",
+      "size": [
+        19,
+        17
+      ]
+    },
+    {
+      "name": "FLUX_SEL_ENER_SPEC",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "MEA FLux (only odd channels)",
+      "fill": "-1000000000.0",
+      "size": [
+        19,
+        17
+      ]
+    },
+    {
+      "name": "J_ave",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "Average MEA flux",
+      "fill": "-1000000000.0",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "",
+      "description": "N",
+      "fill": "-1000000000.0",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "delta_N",
+      "type": "double",
+      "units": "",
+      "description": "delta_N",
+      "fill": "-1000000000.0",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "Jper",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "90 deg MEA flux",
+      "fill": "-1000000000.0",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "delta_Jper",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "Variance of Jper",
+      "fill": "-1000000000.0",
+      "size": [
+        17
+      ]
+    }
+  ],
+  "startDate": "1990-07-28T06:58:00.000Z",
+  "stopDate": "1991-10-12T00:35:00.000Z"
+}

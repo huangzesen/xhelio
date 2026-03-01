@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SAMPLE TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time at which the spacecraft sampled the magnetometer  \n      instrument memory in order to generate the packetized data. Time is     \n      given in PDS format: yyyy-mm-ddThh:mm:ss.sss. The individual elements   \n      of the time field can be read using the format (i4,4(1x,i2),1x,f6.3)    \n      yr, mon, day, hr, min, sec.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT CLOCK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock counter in the form RIM:mod91:mod10:mod8.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx field component in the despun spacecraft coordinate system (roughly  \n      anti-Earthward).",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "BY_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "By field component in the despun spacecraft coordinate system           \n      (southward).",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz field component in the despun spacecraft coordinate system           \n      (dawnward).",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "B-FIELD MAGNITUDE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "ROTOR RIGHT ASCENSION",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor right ascension, EME-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "9.99999"
+    },
+    {
+      "name": "ROTOR DECLINATION",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor declination, EME-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "ROTOR TWIST",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor twist (spin phase) angle, EME-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "9.99999"
+    },
+    {
+      "name": "ROTOR SPIN",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor spin phase angle, ECL-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "9.99999"
+    },
+    {
+      "name": "SAMPLE RATE",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Sample rate of the data.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

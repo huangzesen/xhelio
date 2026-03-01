@@ -1,0 +1,138 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PHA_EOQ_STEP",
+      "type": "integer",
+      "units": "",
+      "description": "E/q index of each PHA",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_EOQ",
+      "type": "double",
+      "units": "keV/e",
+      "description": "E/q of each PHA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_AZIMUTH_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "Azimuth bin for each PHA",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_AZIMUTH",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Azimuth for each PHA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_ELEVATION_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "Elevation angle bin for each PHA",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_ELEVATION",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Elevation angle for each PHA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_TOF_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "TOF bin for each PHA",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_TOF",
+      "type": "double",
+      "units": "ns",
+      "description": "TOF for each PHA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_SSD_ENERGY_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "SSD energy bin for each PHA",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_SSD_ENERGY",
+      "type": "double",
+      "units": "keV",
+      "description": "SSD energy for each PHA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_DETECTOR_ID",
+      "type": "integer",
+      "units": "",
+      "description": "SSD ID",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_DETECTOR_ANGLE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "SSD angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_DECIMATION_CLASSIFICATION",
+      "type": "integer",
+      "units": "",
+      "description": "Decimation classification",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_PRIORITIZATION_RANGE",
+      "type": "integer",
+      "units": "",
+      "description": "Prioritization range",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_MULTI_SSD",
+      "type": "integer",
+      "units": "",
+      "description": "Multi-SSD flag",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PHA_PRIORITY_WEIGHT",
+      "type": "double",
+      "units": "",
+      "description": "PHA priority weight",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHA_PRIORITY_WEIGHT_DELTA",
+      "type": "double",
+      "units": "",
+      "description": "PHA priority weight delta",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PA_HVPS_SET_POINT",
+      "type": "double",
+      "units": "kV",
+      "description": "PA HVPS set point",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2022-01-01T00:00:27.000Z",
+  "stopDate": "2023-04-27T14:12:45.000Z"
+}

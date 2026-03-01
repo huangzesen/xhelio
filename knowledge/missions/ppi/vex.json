@@ -1,0 +1,72 @@
+{
+  "id": "VEX",
+  "name": "Venus Express",
+  "keywords": [
+    "express",
+    "pds",
+    "ppi",
+    "venus",
+    "vex"
+  ],
+  "profile": {
+    "description": "Venus Express data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "ASPERA4-ELS": {
+      "name": "ASPERA4-ELS",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:vex-aspera4-els-pad:data_pad": {
+          "description": "VEx ASPERA-4 ELS Pitch Angle Distribution Data Collection",
+          "start_date": "2005-12-09",
+          "stop_date": "2014-11-27",
+          "slot": "/data/vex-aspera4-els-pad/data_pad",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:vex-aspera4-els:data_raw": {
+          "description": "VEx ASPERA-4 ELS Background Raw Data Collection",
+          "start_date": "2005-12-09",
+          "stop_date": "2014-11-27",
+          "slot": "/data/vex-aspera4-els/data_raw",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:vex-aspera4-els:data_derived": {
+          "description": "VEx ASPERA-4 ELS Background Derived Data Collection",
+          "start_date": "2005-12-09",
+          "stop_date": "2014-11-27",
+          "slot": "/data/vex-aspera4-els/data_derived",
+          "archive_type": 4
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:vex-mag-high-res-cleaned:data": {
+          "description": "Venus Express Cleaned High-Resolution 128 Hz Magnetic Field Data Collection",
+          "start_date": "2006-05-14",
+          "stop_date": "2006-05-14",
+          "slot": "/data/vex-cleaned-high-res-mag/data",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

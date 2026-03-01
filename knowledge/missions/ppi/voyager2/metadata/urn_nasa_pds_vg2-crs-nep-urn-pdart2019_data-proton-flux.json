@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Vol 0",
+      "type": "double",
+      "units": "",
+      "description": "Index number of the first of two 96-second telemetry volumes in the data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Vol 1",
+      "type": "double",
+      "units": "",
+      "description": "Index number of the second of two 96-second telemetry volumes in the data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Time start",
+      "type": "double",
+      "units": "",
+      "description": "Beginning of the 192-second data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Time stop",
+      "type": "double",
+      "units": "",
+      "description": "End of the 192-second data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "Hour",
+      "description": "Midpoint of the 192-second data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour start",
+      "type": "double",
+      "units": "Hour",
+      "description": "Beginning of the 192-second data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour stop",
+      "type": "double",
+      "units": "Hour",
+      "description": "End of the 192-second data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Counts",
+      "type": "double",
+      "units": "",
+      "description": "Number of protons counted by the LET telescope in this energy channel during the data accumulation interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "One-count flux",
+      "type": "double",
+      "units": "1/(cm**2*sr*s*MeV)",
+      "description": "log10 of flux represented by one proton count during the data accumuation interval, accounting for geometry factor, accumulation time, energy channel width, and deadtime correction",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Log flux",
+      "type": "double",
+      "units": "1/(cm**2*sr*s*MeV)",
+      "description": "Flux measurement for the data accumulation interval - if N is the number of counts and F is the one-count flux from the previous two entries, then this measurement is F * N",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Log flux low",
+      "type": "double",
+      "units": "1/(cm**2*sr*s*MeV)",
+      "description": "1-sigma lower limit to flux measurement for the data accumuation interval - if N > 0 this is F * (N - sqrt(N - 0.25))",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Log flux high",
+      "type": "double",
+      "units": "1/(cm**2*sr*s*MeV)",
+      "description": "1-sigma upper limit to flux measurement for the data accumuation interval - F * (N + 1 + sqrt(N + 0.75))",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S/C L",
+      "type": "double",
+      "units": "",
+      "description": "L value for particles mirroring at the spacecraft location at the midpoint of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S/C L start",
+      "type": "double",
+      "units": "",
+      "description": "L value for particles mirroring at the spacecraft location at the beginning of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S/C L stop",
+      "type": "double",
+      "units": "",
+      "description": "L value for particles mirroring at the spacecraft location at the end of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "G/C L",
+      "type": "double",
+      "units": "",
+      "description": "L value for guiding center of protons at the midpoint energy of this channel coming down the sensor's boresight at the midpoint of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "G/C L start",
+      "type": "double",
+      "units": "",
+      "description": "L value for guiding center of protons at the midpoint energy of this channel coming down the sensor's boresight at the beginning of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "G/C L stop",
+      "type": "double",
+      "units": "",
+      "description": "L value for guiding center of protons at the midpoint energy of this channel coming down the sensor's boresight at the end of the data accumulatin interval",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

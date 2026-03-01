@@ -1,0 +1,612 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Sector0_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector0_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 0, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector1_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 1 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector1_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 1, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector2_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector2_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 2, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector3_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 3 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector3_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 3, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector4_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 4 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector4_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 4, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector5_H",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 H+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector5_H_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 5, H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Sector0_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 He+ Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector0_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector0_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 0, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector0_He_U_Slow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 0, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector1_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 1 He+ Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector1_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 1 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector1_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 1, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector1_He_U_SLow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 1, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector2_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 He+ Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector2_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector2_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 2, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector2_He_U_Slow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 2, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector3_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 3 He+ Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector3_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 3 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector3_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 3, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector3_He_U_Slow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 3, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector4_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 4 He+Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector4_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 4 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector4_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 4, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector4_He_U_Slow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 4, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector5_He_Fast",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 He+ Fast Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector5_He_Slow",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 He+ Slow Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector5_He_U_Fast",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 5, He+ Fast",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector5_He_U_Slow",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 5, He+ Slow",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sector0_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector0_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 0, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector1_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 1 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector1_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 1, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector2_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector2_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 2, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector3_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 3 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector3_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 3, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector4_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 4 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector4_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 4, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector5_O",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 O+ Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector5_O_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 5, O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector0_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector0_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 0, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector1_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 1 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector1_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 1, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector2_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector2_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 2, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector3_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 3 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector3_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 3, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector4_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 4 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector4_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 4, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector5_N22",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 N2_2 Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector5_N22_U",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, Sector 5, N2_2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2014-07-03T00:30:00.000Z",
+  "stopDate": "2025-07-30T23:30:00.000Z"
+}

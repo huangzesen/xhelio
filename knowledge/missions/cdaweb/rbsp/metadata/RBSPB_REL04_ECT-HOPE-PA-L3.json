@@ -1,0 +1,550 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDO",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FEDO: Omnidirectional differential electron flux ~15-50,000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FEDO_T",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> (stacked time series; perigee mode excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FEDU: Unidirectional Differential Electron Flux ~15-50,000 eV, in 72 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_byE_atA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by energy at sample pitch angles (perigee mode excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_byA_atE",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by pitch angle at sample energies (perigee mode excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FPDO",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FPDO: Omnidirectional differential Proton flux ~1-50,000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FPDO_T",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> (stacked time series; perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FPDU: Unidirectional Differential Proton Flux ~1-50,000 eV, in 72 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_byE_atA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_byA_atE",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by pitch angle at sample energies (perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FODO",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FODO: Omnidirectional differential Oxygen flux ~1-50,000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FODO_T",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> (stacked time series; perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FODU",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FODU: Unidirectional Differential Oxygen Flux ~1-50,000 eV, in 72 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FODU_byE_atA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FODU_byA_atE",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by pitch angle at sample energies (perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FHEDO",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FHEDO: Omnidirectional differential Helium flux ~1-50,000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FHEDO_T",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> (stacked time series; perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FHEDU",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "FHEDU: Unidirectional Differential Helium Flux ~1-50,000 keV, in 72 energy and 11 pitch angle bins (energy-angle displays)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_byE_atA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_byA_atE",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> Spectrograms by pitch angle at sample energies (perigees excluded)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "Flags_Ele",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Flags on electron data",
+      "fill": "255.0",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Flags_Ion",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Flags on ion data",
+      "fill": "255.0",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Mode_Ele",
+      "type": "integer",
+      "units": "(0=apogee)",
+      "description": "Mode of electron data",
+      "fill": "255.0"
+    },
+    {
+      "name": "Mode_Ion",
+      "type": "integer",
+      "units": "(0=apogee)",
+      "description": "---> Mode of ion data",
+      "fill": "255.0"
+    },
+    {
+      "name": "Counts_E_Omni",
+      "type": "double",
+      "units": "#",
+      "description": "HOPE electron counts OMNI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "Counts_E",
+      "type": "double",
+      "units": "#",
+      "description": "---> [No Plots] HOPE electron counts directional",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "Counts_P_Omni",
+      "type": "double",
+      "units": "#",
+      "description": "HOPE proton counts OMNI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "Counts_P",
+      "type": "double",
+      "units": "#",
+      "description": "---> [No Plots] HOPE proton counts directional",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "Counts_He_Omni",
+      "type": "double",
+      "units": "#",
+      "description": "HOPE helium counts OMNI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "Counts_He",
+      "type": "double",
+      "units": "#",
+      "description": "---> [No Plots] HOPE helium counts directional",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "Counts_O_Omni",
+      "type": "double",
+      "units": "#",
+      "description": "HOPE Oxygen counts OMNI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "Counts_O",
+      "type": "double",
+      "units": "#",
+      "description": "---> [No Plots] HOPE Oxygen counts directional",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        72
+      ]
+    },
+    {
+      "name": "B_Calc_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength at magnetic equator (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength at magnetic equator (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele",
+      "type": "double",
+      "units": ".",
+      "description": "Adiabatic invariant (bounce) (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion",
+      "type": "double",
+      "units": ".",
+      "description": "---> Adiabatic invariant (bounce) (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele",
+      "type": "double",
+      "units": ".",
+      "description": "Calculated McIlwains L parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion",
+      "type": "double",
+      "units": ".",
+      "description": "---> Calculated McIlwains L parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele",
+      "type": "double",
+      "units": ".",
+      "description": "Calculated Roederers L* parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion",
+      "type": "double",
+      "units": ".",
+      "description": "---> Calculated Roederers L* parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele",
+      "type": "double",
+      "units": "h",
+      "description": "Calculated Magnetic Local Time (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ele",
+      "type": "double",
+      "units": "km",
+      "description": "Position of the satellite in geographic coordinates (electron timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Ion",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position of the satellite in geographic coordinates (ion timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Ele_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates (ele)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ion_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates (ion)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator(ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ion)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-10-26T00:00:20.000Z",
+  "stopDate": "2019-07-16T16:37:53.000Z"
+}

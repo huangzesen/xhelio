@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Mode_hi",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates mode of the high receiver:                               \n      1: Receiver in summed mode (X and Z antenna combined).                  \n      2: Receiver in separate mode(only X antenna).                           \n      3: Receiver switched mode during averaging period.                      \n      4: Receiver mode unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MODE_LO",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates mode of the low receiver:                                \n      1: Receiver in summed mode (X and Z antenna combined).                  \n      2: Receiver in separate mode (only X antenna).                          \n      3: Receiver switched mode during averaging period.                      \n      4: Receiver mode unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates telemetry bit rate:                                      \n      1: 128 bps.                                                             \n      2: 256 bps.                                                             \n      3: 512 bps.                                                             \n      4: 1024 bps.                                                            \n      5: Bit rate changed during averaging period.                            \n      6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

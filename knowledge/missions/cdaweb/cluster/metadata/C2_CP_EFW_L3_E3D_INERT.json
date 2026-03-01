@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_Vec_xyz_ISR2__C2_CP_EFW_L3_E3D_INERT",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric Field",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "delta_Ez_ISR2__C2_CP_EFW_L3_E3D_INERT",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Error of electric field (ISR2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_sigma__C2_CP_EFW_L3_E3D_INERT",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field standard deviation",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-02T14:03:02.000Z",
+  "stopDate": "2022-08-23T13:29:58.000Z"
+}

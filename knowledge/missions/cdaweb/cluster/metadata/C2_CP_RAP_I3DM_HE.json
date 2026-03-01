@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Helium_Dif_flux_3DM__C2_CP_RAP_I3DM_He",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Helium Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        16,
+        12
+      ]
+    },
+    {
+      "name": "Helium_Dif_flux_3DM_SD__C2_CP_RAP_I3DM_He",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of Helium Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        16,
+        12
+      ]
+    }
+  ],
+  "startDate": "2000-12-07T07:09:40.000Z",
+  "stopDate": "2024-02-01T03:55:52.000Z"
+}

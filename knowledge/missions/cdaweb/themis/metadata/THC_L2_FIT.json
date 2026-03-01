@@ -1,0 +1,166 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thc_fgs_sigma",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard Deviation of onboard FGS magnetic field spin-fit",
+      "fill": "nan"
+    },
+    {
+      "name": "thc_fgs_dsl",
+      "type": "double",
+      "units": "nT",
+      "description": "FGS (spin-fit) magnetic field vector in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_fgs_gse",
+      "type": "double",
+      "units": "nT",
+      "description": "FGS (spin-fit) magnetic field vector in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_fgs_gsm",
+      "type": "double",
+      "units": "nT",
+      "description": "FGS (spin-fit) magnetic field vector in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_sigma",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Standard Deviation of onboard EFS (spin-fit) electric field spin-fit",
+      "fill": "nan"
+    },
+    {
+      "name": "thc_efs_dsl",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS (spin-fit) electric field vector in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_0_dsl",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_0 (spin-fit, using E_z=0) electric field E in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_dot0_dsl",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_DOT0 (spin-fit, using E dot B=0) electric field vector in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_gse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS (spin-fit) electric field vector in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_0_gse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_0 (spin-fit, using E_z=0) electric field E in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_dot0_gse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_DOT0 (spin-fit, using E dot B=0) electric field vector in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_gsm",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS (spin-fit) electric field vector in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_0_gsm",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_0 (spin-fit, using E_z=0) electric field E in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_efs_dot0_gsm",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFS_DOT0 (spin-fit, using E dot B=0) electric field vector in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thc_fit_bfit",
+      "type": "double",
+      "units": "nT",
+      "description": "FIT_BFIT spin-fit calibrated data A, B, C, sigma, avg. (DSL)",
+      "fill": "nan",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "thc_fit_efit",
+      "type": "double",
+      "units": "mV/m",
+      "description": "FIT_EFIT spin-fit calibrated data A, B, C, sigma, avg. (DSL)",
+      "fill": "nan",
+      "size": [
+        5
+      ]
+    }
+  ],
+  "startDate": "2007-02-26T00:00:00.000Z",
+  "stopDate": "2026-02-17T00:00:00.000Z"
+}

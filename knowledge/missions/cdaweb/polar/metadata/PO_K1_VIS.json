@@ -1,0 +1,284 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "AltF",
+      "type": "double",
+      "units": "Kilometers",
+      "description": "Presumed altitude of emissions (also quickly shows times when images are available)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Image_Counts",
+      "type": "integer",
+      "units": "Counts",
+      "description": "Earth Camera UV Images (quasi-log cnts), small format display with click-expand (~4 min. res.)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Image_CountsF",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> Larger format display with click-expand, no geographic registration",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageO",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) With geographic grid overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_Image",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> [DO NOT USE: UNDER-DEVELOPMENT] Test Display",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageP",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageM",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Movie_Image",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie display of images, no geographic registration",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieO",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieP",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieM",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "IImage_Counts",
+      "type": "double",
+      "units": "KiloRayleighs",
+      "description": "Earth Camera UV Images (kRay), small format display with click-expand (~4 min. res.)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "IImage_CountsF",
+      "type": "double",
+      "units": "KiloRayleighs",
+      "description": "--> Larger format display with click-expand, no geographic registration",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IImageO",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) With geographic grid overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IImageP",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IImageM",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Movie_IImage",
+      "type": "double",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Movie display of images, no geographic registration",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IMovieO",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IMovieP",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_IMovieM",
+      "type": "integer",
+      "units": "KiloRayleighs",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Sensor",
+      "type": "integer",
+      "units": "Number",
+      "description": "Sensor number: 0=Earth Camera,1=Low Resolution Camera,2=Medium Resolution Camera",
+      "fill": "255.0"
+    },
+    {
+      "name": "PPitch",
+      "type": "integer",
+      "units": "Degrees*10",
+      "description": "Platform pointing angle from nadir",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SC_Pos_GCI",
+      "type": "double",
+      "units": "Kilometers",
+      "description": "GCI position vector of Polar spacecraft in kilometers.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Vel_GCI",
+      "type": "double",
+      "units": "Kilometers/second",
+      "description": "GCI velocity vector of Polar spacecraft in km/sec.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_SpinV_GCI",
+      "type": "double",
+      "units": "1",
+      "description": "GCI spin axis unit vector of Polar spacecraft.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Headers",
+      "type": "integer",
+      "units": "",
+      "description": "Image header bytes",
+      "fill": "255.0",
+      "size": [
+        64,
+        16,
+        5
+      ]
+    }
+  ],
+  "startDate": "1996-04-30T00:00:26.000Z",
+  "stopDate": "2008-04-28T00:00:00.000Z"
+}

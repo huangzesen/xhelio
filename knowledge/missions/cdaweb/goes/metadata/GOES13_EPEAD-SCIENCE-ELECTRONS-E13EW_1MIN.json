@@ -1,0 +1,131 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ORIENTATION_FLAG",
+      "type": "integer",
+      "units": "(0=A East & B West)",
+      "description": "EPEAD orientation flag. 0: A/W faces East and B/E faces West. 1: A/W faces West and B/E faces East. 2: yaw-flip in progress.",
+      "fill": "-99.0"
+    },
+    {
+      "name": "E1W_DTC_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "A/W Detector: Electron integral flux E1 >0.8 MeV (dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1E_DTC_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2W_DTC_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "A/W Detector: Electron integral flux E2 >2 MeV (dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2E_DTC_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1W_COR_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "A/W Detector: Electron integral flux E1 >0.8 MeV (background, contamination and dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1E_COR_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2W_COR_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "A/W Detector: Electron integral flux E2 >2 MeV (background, contamination and dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2E_COR_FLUX",
+      "type": "double",
+      "units": "e/(cm^2 s sr)",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1W_COR_ERR",
+      "type": "double",
+      "units": "fractional",
+      "description": "A/W Detector: Standard deviation, electron integral flux E1 >0.8 MeV (background, contamination and dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1E_COR_ERR",
+      "type": "double",
+      "units": "fractional",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2W_COR_ERR",
+      "type": "double",
+      "units": "fractional",
+      "description": "A/W Detector: Standard deviation, electron integral flux E2 >2 MeV (background, contamination and dead time corrected)",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E2E_COR_ERR",
+      "type": "double",
+      "units": "fraction",
+      "description": "---> B/E Detector",
+      "fill": "-99999.0"
+    },
+    {
+      "name": "E1W_DQF",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "A/W Detector: Data quality flag pertaining to solar proton contamination for fluxes with energy E1 >.8 MeV (0 if contamination is sufficiently small that the correction and electron fluxes are valid; 1 if contamination is too large and the electron fluxes are not valid.)",
+      "fill": "-99.0"
+    },
+    {
+      "name": "E1E_DQF",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> B/E Detector",
+      "fill": "-99.0"
+    },
+    {
+      "name": "E2W_DQF",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "A/W Detector: Data quality flag pertaining to solar proton contamination for fluxes with energy E2 >2 MeV",
+      "fill": "-99.0"
+    },
+    {
+      "name": "E2E_DQF",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> B/E Detector:",
+      "fill": "-99.0"
+    }
+  ],
+  "startDate": "2010-05-01T00:00:00.000Z",
+  "stopDate": "2017-12-14T23:59:00.000Z"
+}

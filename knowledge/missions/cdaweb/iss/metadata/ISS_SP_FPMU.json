@@ -1,0 +1,82 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_e",
+      "type": "double",
+      "units": "K",
+      "description": "Electron Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_i",
+      "type": "double",
+      "units": "m-3",
+      "description": "Total Ion Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Oxygen_Ion_Percent",
+      "type": "double",
+      "units": "%",
+      "description": "Ratio of O+/Total Ion Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spacecraft_Potential",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft Potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spacecraft_Potential_Uncertainty",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft Potential Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sunlight",
+      "type": "double",
+      "units": "%",
+      "description": "Sunlight Illuminiation",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TCC",
+      "type": "integer",
+      "units": "",
+      "description": "Time Code Flag",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2006-08-03T16:08:07.000Z",
+  "stopDate": "2020-09-14T18:00:58.000Z"
+}

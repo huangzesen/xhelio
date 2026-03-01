@@ -1,0 +1,111 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "IYR",
+      "type": "double",
+      "units": "",
+      "description": "Year (4 digits).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IDY",
+      "type": "double",
+      "units": "DAY",
+      "description": "Day of year.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IHR",
+      "type": "double",
+      "units": "Hour",
+      "description": "Hour of Day.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TBR",
+      "type": "double",
+      "units": "bits/second",
+      "description": "Code for Telemetry Bit Rate \n                        [bits/second = 2**(3+TBR)].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TDF",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Telemetry Data Format (A, A/D, B, B/D).",
+      "size": [
+        1
+      ],
+      "fill": "999"
+    },
+    {
+      "name": "M3L",
+      "type": "double",
+      "units": "counts/second",
+      "description": "80-300 MeV Protons (50%)and >80 MeV/n Z>1 \n                        Ions  [counts/second].",
+      "size": [
+        1
+      ],
+      "fill": "1.00E+031"
+    },
+    {
+      "name": "M1L",
+      "type": "double",
+      "units": "counts/second",
+      "description": ">80 MeV/n Protons (90%) \n                        and Z>1 Ions [counts/second].",
+      "size": [
+        1
+      ],
+      "fill": "1.00E+031"
+    },
+    {
+      "name": "C1",
+      "type": "double",
+      "units": "counts/second",
+      "description": ">480 MeV/n Protons (80%)and Z>1 \n                        Ions [counts/second].",
+      "size": [
+        1
+      ],
+      "fill": "1.00E+031"
+    },
+    {
+      "name": "C3",
+      "type": "double",
+      "units": "counts/second",
+      "description": ">650 MeV/n Protons and Z>1 \n                        Ions (70%)[counts/second].",
+      "size": [
+        1
+      ],
+      "fill": "1.00E+031"
+    },
+    {
+      "name": "RAD",
+      "type": "double",
+      "units": "AU",
+      "description": "Radial distance of spacecraft \n                        from Sun [AU].",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

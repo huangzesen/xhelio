@@ -1,0 +1,599 @@
+{
+  "mission_id": "MESSENGER_PPI",
+  "dataset_count": 74,
+  "generated_at": "2026-02-19T10:20:14Z",
+  "datasets": [
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-3-EPS-CDR-V1.0",
+      "description": "MESSENGER EPPS EPS CDR DATA ARCHIVE",
+      "start_date": "2004-08-16",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "ENERGETIC PARTICLE AND PLASMA SPECTROMETER"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-med-spec",
+      "description": "MESSENGER EPPS EPS Calibrated Medium Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 15,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-lores-spec",
+      "description": "MESSENGER EPPS EPS Calibrated Low Resolution Spectra Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-pulse-height",
+      "description": "MESSENGER EPPS EPS Calibrated Pulse Height Data Collection",
+      "start_date": "2004-09-09",
+      "stop_date": "2015-04-30",
+      "parameter_count": 20,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-hi-spectra",
+      "description": "MESSENGER EPPS EPS Raw High Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-lores-spectra",
+      "description": "MESSENGER EPPS EPS Raw Low Resolution Spectra Data Collection",
+      "start_date": "2008-08-18",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-pulse-height",
+      "description": "MESSENGER EPPS EPS Raw Pulse Height Data Collection",
+      "start_date": "2004-09-09",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-med-spectra",
+      "description": "MESSENGER EPPS EPS Raw Medium Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-scan-rates",
+      "description": "MESSENGER EPPS EPS Raw Scan Rates Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2008-08-20",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-summary-spectra",
+      "description": "MESSENGER EPPS EPS Raw Summary Spectra Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-hires-spectra",
+      "description": "MESSENGER EPPS EPS Raw High Resolution Spectra Data Collection",
+      "start_date": "2008-08-18",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-sum-spec",
+      "description": "MESSENGER EPPS EPS Calibrated Summary Spectra Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-2-EPS-RAWDATA-V2.0",
+      "description": "MESSENGER EPPS EPS UNCALIBRATED DATA ARCHIVE",
+      "start_date": "2004-09-13",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-derived:data-pasd-numeric",
+      "description": "MESSENGER EPPS EPS Derived Daily Pitch Angle Spectrograms Data Collection",
+      "start_date": "2011-03-23",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-raw:data-status",
+      "description": "MESSENGER EPPS Engineering and Status Information Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2007-08-25",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-raw:data-long-status",
+      "description": "MESSENGER EPPS Engineering and Long Status Information Data Collection",
+      "start_date": "2007-09-06",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-raw:data-hi-housekeeping",
+      "description": "MESSENGER EPPS EPS High Priority Housekeeping Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 34,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-3-EPS-DDR-V1.0",
+      "description": "MESSENGER EPPS EPS DERIVED DATA ARCHIVE",
+      "start_date": "2004-09-13",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-scan-spec",
+      "description": "MESSENGER EPPS EPS Calibrate Scan Rate Data Collection",
+      "start_date": "2008-08-28",
+      "stop_date": "2015-04-01",
+      "parameter_count": 7,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-hi-spec",
+      "description": "MESSENGER EPPS EPS Calibrated High Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 15,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-eps-calibrated:data-hires-spec",
+      "description": "MESSENGER EPPS EPS Calibrated High Resolution Spectra Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 7,
+      "instrument": "EPPS Energetic Particle Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-calibrated:data-hi-spectra",
+      "description": "MESSENGER EPPS FIPS Calibrated High Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2009-07-07",
+      "parameter_count": 3,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-espec",
+      "description": "MESSENGER EPPS FIPS Derived Energy Spectra Data Collection",
+      "start_date": "2011-03-23",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-calibrated:data-hires-p-v",
+      "description": "MESSENGER EPPS FIPS Calibrated High Priority Spectra Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2008-08-20",
+      "parameter_count": 7,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-calibrated:data-scan",
+      "description": "MESSENGER EPPS FIPS Calibrated Scan Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 3,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-pitchang",
+      "description": "MESSENGER EPPS FIPS Derived Pitch Angle Distributions Data Collection",
+      "start_date": "2011-03-23",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-fluxmap",
+      "description": "MESSENGER EPPS FIPS Angular Flux Map Data Collection",
+      "start_date": "2011-03-26",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-pulse-height",
+      "description": "MESSENGER EPPS FIPS Raw Pulse Height Data Collection",
+      "start_date": "2004-09-08",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-hires-proton-v",
+      "description": "MESSENGER EPPS FIPS Raw High Resolution Proton Velocity Distributions Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2009-07-07",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-med-spectra",
+      "description": "MESSENGER EPPS FIPS Raw Medium Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-rotmso",
+      "description": "MESSENGER EPPS FIPS Derived Viewing Normalization Data Collection",
+      "start_date": "2008-01-14",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-calibrated:data-med-spec",
+      "description": "MESSENGER EPPS FIPS Calibrated Medium Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2008-08-18",
+      "parameter_count": 3,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-nobs",
+      "description": "MESSENGER EPPS FIPS Derived Observed Density Data Collection",
+      "start_date": "2011-03-23",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-3-FIPS-CDR-V1.0",
+      "description": "MESSENGER EPPS FIPS CDR DATA",
+      "start_date": "2004-08-16",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-ntp",
+      "description": "MESSENGER EPPS FIPS Derived Kinetic Properties Data Collection",
+      "start_date": "2011-03-26",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-hi-housekeeping",
+      "description": "MESSENGER EPPS FIPS High Priority Housekeeping Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2007-08-25",
+      "parameter_count": 32,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-hi-spectra",
+      "description": "MESSENGER EPPS FIPS Raw High Priority Spectra Data Collection",
+      "start_date": "2004-08-16",
+      "stop_date": "2009-07-07",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-2-FIPS-RAWDATA-V2.0",
+      "description": "MESSENGER EPPS FIPS UNCALIBRATED DATA ARCHIVE",
+      "start_date": "2004-09-13",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-derived:data-erpchang",
+      "description": "MESSENGER EPPS FIPS Derived Energy-Resolved Pitch Angle Distributions Data Collection",
+      "start_date": "2011-03-26",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-calibrated:data-pha",
+      "description": "MESSENGER EPPS FIPS Calibrated Pulse Height Data Collection",
+      "start_date": "2004-09-08",
+      "stop_date": "2015-04-30",
+      "parameter_count": 17,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-epps-fips-raw:data-scan",
+      "description": "MESSENGER EPPS FIPS Raw Scan Data Collection",
+      "start_date": "2008-08-20",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-EPPS-3-FIPS-DDR-V2.0",
+      "description": "MESSENGER EPPS FIPS DERIVED DATA ARCHIVE",
+      "start_date": "2004-09-13",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "EPPS Fast Imaging Plasma Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-shd",
+      "description": "MESSENGER MAG Raw Science Header Information Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 18,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-sta",
+      "description": "MESSENGER MAG Status Information Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 18,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-mbf",
+      "description": "MESSENGER MAG Calibrated MBF Coordiantes Science Data Collection",
+      "start_date": "2008-01-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-kt17-model-residuals:data-sci-mso",
+      "description": "MESSENGER Magnetometer KT17 Model Mercury Solar Orbital (MSO) Residual Data",
+      "start_date": "2011-03-24",
+      "stop_date": "2015-04-30",
+      "parameter_count": 20,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-j2k",
+      "description": "MESSENGER MAG Calibrated J2000 Coordinates Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-crustal-field-map:data",
+      "description": "MESSENGER Magnetic Crustal Field Map Data Collection",
+      "start_date": "",
+      "stop_date": "",
+      "parameter_count": 7,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-field-map:data",
+      "description": "MESSENGER Magnetic Field Map Data Collection",
+      "start_date": "",
+      "stop_date": "",
+      "parameter_count": 0,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-bstlog",
+      "description": "MESSENGER MAG Burst Science Log Data Collection",
+      "start_date": "2005-06-27",
+      "stop_date": "2012-03-18",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-rtn",
+      "description": "MESSENGER MAG Calibrated RTN Coordinates Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-cal-lac",
+      "description": "MESSENGER MAG Calibrated Alternating Current Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 8,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-vso",
+      "description": "MESSENGER MAG Calibrated VSO Coordinates Science Data Collection",
+      "start_date": "2007-06-03",
+      "stop_date": "2007-06-08",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-MAG-2-EDR-RAWDATA-V1.0",
+      "description": "MESSENGER MAG UNCALIBRATED DATA ARCHIVE",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-lhk",
+      "description": "MESSENGER MAG Low-Rate Housekeeping Information Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 6,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-j2k-avg",
+      "description": "MESSENGER MAG Time-Averaged Calibrated J2000 Coordinates Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-mbf-avg",
+      "description": "MESSENGER MAG Time-Averaged Calibrated MBF Coordinates Science Data Collection",
+      "start_date": "2006-02-24",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-bst",
+      "description": "MESSENGER MAG Raw Burst Science Data Collection",
+      "start_date": "2005-06-27",
+      "stop_date": "2012-03-18",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-kt17-model-residuals:data-sci-mbf",
+      "description": "MESSENGER Magnetometer KT17 Model Mercury Body Fixed (MBF) Residual Data",
+      "start_date": "2011-03-24",
+      "stop_date": "2015-04-30",
+      "parameter_count": 20,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-vso-avg",
+      "description": "MESSENGER MAG Time-Averaged Calibrated VSO Coordinates Science Data Collection",
+      "start_date": "2007-06-03",
+      "stop_date": "2007-06-08",
+      "parameter_count": 16,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-lac",
+      "description": "MESSENGER MAG Alternating Current Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 6,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-MAG-4-SUMM-CALIBRATED-V1.0",
+      "description": "MESSENGER MAG REDUCED DATA ARCHIVE",
+      "start_date": "2004-09-13",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:MESS-E/V/H/SW-MAG-3-CDR-CALIBRATED-V1.0",
+      "description": "MESSENGER MAG CALIBRATED DATA ARCHIVE",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-lhd",
+      "description": "MESSENGER MAG Low-Rate Header Information Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 10,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-mso",
+      "description": "MESSENGER MAG Calibrated MSO Coordinates Science Data Collection",
+      "start_date": "2008-01-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-sc-avg",
+      "description": "MESSENGER MAG Time-Averaged Calibrated Spacecraft Coordinates Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 19,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-sc",
+      "description": "MESSENGER MAG Calibrated Spacecraft Coordinates Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 14,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-raw:data-sci",
+      "description": "MESSENGER MAG Raw Science Data Collection",
+      "start_date": "2004-08-12",
+      "stop_date": "2015-04-30",
+      "parameter_count": 5,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-mag-calibrated:data-mso-avg",
+      "description": "MESSENGER MAG Time-Averaged Calibrated MSO Coordinates Science Data Collection",
+      "start_date": "2006-02-24",
+      "stop_date": "2015-04-30",
+      "parameter_count": 16,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:mess-rs-raw:data-rsr",
+      "description": "MESSENGER Radio Science RSR Data Products Collection",
+      "start_date": "2006-10-18",
+      "stop_date": "2015-04-29",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "urn:nasa:pds:mess-rs-raw:data-odf",
+      "description": "MESSENGER Radio Science Orbit Data File (ODF) Product Collection",
+      "start_date": "2007-06-04",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "urn:nasa:pds:mess-rs-raw:data-ddor",
+      "description": "MESSENGER Radio Science Delta Differential One-way Ranging (DDOR) Data Products Collection",
+      "start_date": "2007-12-15",
+      "stop_date": "2015-04-26",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "urn:nasa:pds:mess-rs-raw:data-tnf",
+      "description": "MESSENGER Radio Science Tracking and Navigation (TNF) Data Products Collection",
+      "start_date": "2007-06-04",
+      "stop_date": "2015-04-30",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "urn:nasa:pds:mess-rs-raw:calib",
+      "description": "MESSENGER Radio Science Calibration Data Products Collection",
+      "start_date": "2006-01-10",
+      "stop_date": "2015-05-10",
+      "parameter_count": 8,
+      "instrument": "Radio Science Subsystem"
+    }
+  ]
+}

@@ -1,0 +1,289 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Z256_D1",
+      "type": "integer",
+      "units": "(none)",
+      "description": "Z256 WIC Axis D1",
+      "fill": null,
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Z256",
+      "type": "integer",
+      "units": "(none)",
+      "description": "Z256 WIC Axis D2",
+      "fill": null,
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS",
+      "type": "integer",
+      "units": "counts",
+      "description": "FUV/WIC LBH Auroral Images (raw cnts/14 bits, no grid, small format, linear scale)",
+      "fill": "-32768.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_LARGE",
+      "type": "integer",
+      "units": "counts",
+      "description": "---> FUV/WIC LBH Auroral Images, as above (large format)",
+      "fill": "-32768.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_M",
+      "type": "integer",
+      "units": "counts",
+      "description": "---> as above (movie format)",
+      "fill": "-32768.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_LOG",
+      "type": "double",
+      "units": "Log10(Cnts)",
+      "description": "---> FUV/WIC LBH Auroral Images, as above (small format, log10 scaling)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_L_LOG",
+      "type": "double",
+      "units": "Log10(Cnts)",
+      "description": "---> FUV/WIC LBH Auroral Images, as above (large format, log10 scaling)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_M_LOG",
+      "type": "double",
+      "units": "Log10(Cnts)",
+      "description": "---> as above (movie format log10 scaling)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_V",
+      "type": "integer",
+      "units": "counts",
+      "description": "[DO NOT USE] FUV/WIC LBH Auroral Mapped Images (raw cnts/14 bits, large format, linear scale)",
+      "fill": "-32768.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_MOVIE",
+      "type": "integer",
+      "units": "counts",
+      "description": "---> [DO NOT USE] FUV/WIC LBH Auroral Mapped images, as above (movie format)",
+      "fill": "-32768.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_MAP_LOG",
+      "type": "double",
+      "units": "Log10(Cnts)",
+      "description": "---> [DO NOT USE] FUV/WIC LBH Auroral Mapped Images, as above (log10 scaling)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "WIC_PIXELS_MOV_LOG",
+      "type": "double",
+      "units": "Log10(Cnts)",
+      "description": "---> [DO NOT USE] FUV/WIC LBH Auroral Mapped Images, as above (movie format, log10 scaling)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "SPIN",
+      "type": "integer",
+      "units": "",
+      "description": "WIC spin number (time_equivalent)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DATA_QUAL",
+      "type": "integer",
+      "units": "(1=Good, 2=Bad)",
+      "description": "WIC Quality parameter (1=Good, 2=Bad)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "RADIUS",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "IMAGE Geocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HV_PHOS",
+      "type": "double",
+      "units": "volts",
+      "description": "HV setting for WIC Phosphor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HV_MCP",
+      "type": "double",
+      "units": "volts",
+      "description": "HV setting for WIC MCP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FOVSCALE",
+      "type": "integer",
+      "units": "",
+      "description": "expansion factor for FOV",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SPINPHASE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "spin phase angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SV_X",
+      "type": "double",
+      "units": "",
+      "description": "orientation direction cosine X (direction of true spin axis at WIC Snapshot Time)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SV_Y",
+      "type": "double",
+      "units": "",
+      "description": "oriention direction cosine Y (direction of true spin axis at WIC Snapshot Time)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SV_Z",
+      "type": "double",
+      "units": "",
+      "description": "oriention direction cosine Z",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ORB_X",
+      "type": "double",
+      "units": "Km",
+      "description": "IMAGE GCI  position X",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ORB_Y",
+      "type": "double",
+      "units": "Km",
+      "description": "IMAGE GCI position Y",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ORB_Z",
+      "type": "double",
+      "units": "Km",
+      "description": "IMAGE GCI position Z",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "HFOV",
+      "type": "double",
+      "units": "degrees",
+      "description": "WIC horizontal field of view",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "VFOV",
+      "type": "double",
+      "units": "degrees",
+      "description": "WIC vertical field of view",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "INST_AZIMUTH",
+      "type": "double",
+      "units": "degrees",
+      "description": "WIC azimuthal offset",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "INST_CO_ELEVATION",
+      "type": "double",
+      "units": "degrees",
+      "description": "WIC vertical angular offset",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "INST_ROLL",
+      "type": "double",
+      "units": "degrees",
+      "description": "WIC third Euler angle",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SCSV_X",
+      "type": "double",
+      "units": "",
+      "description": "WIC spin axis orientation direction cosine X-direction, s/c frame",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SCSV_Y",
+      "type": "double",
+      "units": "",
+      "description": "WIC spin axis orientation direction cosine Y-direction, s/c frame",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SCSV_Z",
+      "type": "double",
+      "units": "",
+      "description": "WIC spin axis orientation direction cosine Z-direction, s/c frame",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2000-04-25T07:44:03.000Z",
+  "stopDate": "2005-12-18T07:35:41.000Z"
+}

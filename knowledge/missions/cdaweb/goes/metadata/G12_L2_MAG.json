@@ -1,0 +1,134 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "g12_longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Satellite geographic west longitude at noon UTC",
+      "fill": "nan"
+    },
+    {
+      "name": "g12_mlt",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time at satellite position",
+      "fill": "nan"
+    },
+    {
+      "name": "g12_pos_gei",
+      "type": "double",
+      "units": "",
+      "description": "Satellite position (GEI)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_pos_gsm",
+      "type": "double",
+      "units": "",
+      "description": "Satellite position (GSM)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_vel_gei",
+      "type": "double",
+      "units": "",
+      "description": "Satellite velocity (GEI)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_vel_gsm",
+      "type": "double",
+      "units": "",
+      "description": "Satellite velocity (GSM)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_perp",
+      "type": "double",
+      "units": "",
+      "description": "Unit vector in GEI perp to orbital plane (parallel to Earth's spin axis for 0 inclination orbit)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_b_enp",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field in LH-ENP (P=northward Perp to orbital plane, E=Earthward perp to P and Earth center, N=eastward/LH Normal to P and E)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_b_gei",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field in GEI",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_b_gsm",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "g12_b_tot",
+      "type": "double",
+      "units": "nT",
+      "description": "Total magnetic field strength",
+      "fill": "nan"
+    },
+    {
+      "name": "g12_t1_counts",
+      "type": "double",
+      "units": "cnts",
+      "description": "T1 magnetotorquer filtered counts",
+      "fill": "nan"
+    },
+    {
+      "name": "g12_t2_counts",
+      "type": "double",
+      "units": "cnts",
+      "description": "T2 magnetotorquer filtered counts",
+      "fill": "nan"
+    },
+    {
+      "name": "g12_dataqual",
+      "type": "integer",
+      "units": "(7=good)",
+      "description": "Data quality flag (7=good)",
+      "fill": "4294967295.0"
+    }
+  ],
+  "startDate": "2007-01-01T00:00:00.000Z",
+  "stopDate": "2008-12-31T23:59:59.000Z"
+}

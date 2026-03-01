@@ -1,0 +1,59 @@
+{
+  "id": "ST5",
+  "name": "ST5",
+  "keywords": [
+    "st5",
+    "st5-"
+  ],
+  "profile": {
+    "description": "ST5 spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "ST5-094_1SEC_MAG": {
+          "description": "3 component magnetic field from miniature tri-axial magnetometer on ST5/spacecraft 094 (middle position in string-of-pearls constellation) - Delores Knipp (University of Colorado, Boulder)",
+          "start_date": "2006-03-26T19:45:50.000Z",
+          "stop_date": "2006-06-25T02:52:18.000Z",
+          "pi_name": "Delores Knipp",
+          "pi_affiliation": "University of Colorado, Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#ST5-094_1SEC_MAG"
+        },
+        "ST5-224_1SEC_MAG": {
+          "description": "3 component magnetic field from miniature tri-axial magnetometer on ST5/spacecraft 224 (trailing position in string-of-pearls constellation) - Delores Knipp (University of Colorado, Boulder)",
+          "start_date": "2006-03-26T20:37:22.000Z",
+          "stop_date": "2006-06-21T01:04:29.000Z",
+          "pi_name": "Delores Knipp",
+          "pi_affiliation": "University of Colorado, Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#ST5-224_1SEC_MAG"
+        },
+        "ST5-155_1SEC_MAG": {
+          "description": "3 component magnetic field from miniature tri-axial magnetometer on ST5/spacecraft 155 (leading position in string-of-pearls constellation) - Delores Knipp (University of Colorado, Boulder)",
+          "start_date": "2006-03-25T00:00:27.000Z",
+          "stop_date": "2006-06-26T14:17:46.000Z",
+          "pi_name": "Delores Knipp",
+          "pi_affiliation": "University of Colorado, Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#ST5-155_1SEC_MAG"
+        }
+      }
+    }
+  },
+  "observatory_group": "ST5",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

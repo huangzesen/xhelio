@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "integer",
+      "units": "year",
+      "description": "Year (1990)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY-OF-YEAR",
+      "type": "integer",
+      "units": "day",
+      "description": "Day of year (40 or 41)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SEC-OF-DAY",
+      "type": "double",
+      "units": "second",
+      "description": "Universal Time second of day.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in the VSO coordinate system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "By-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in the VSO coordinate system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bz-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in the VSO coordinate system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "avgBmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the magnitude of the magnetic field.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "std_Bx",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bx",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "std_By",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of By",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "std_Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bz",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "std_Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bmag",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Number of data points in the average",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DQF",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Data Quality Flag (0 = good data)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

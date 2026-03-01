@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "FSPC1",
+      "type": "integer",
+      "units": "cnts/50ms",
+      "description": "Fast spectra (50ms) ch. 1",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "FSPC2",
+      "type": "integer",
+      "units": "cnts/50ms",
+      "description": "Fast spectra (50ms) ch. 2",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "FSPC3",
+      "type": "integer",
+      "units": "cnts/50ms",
+      "description": "Fast spectra (50ms) ch. 3",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "FSPC4",
+      "type": "integer",
+      "units": "cnts/50ms",
+      "description": "Fast spectra (50ms) ch. 4",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "2013-01-24T16:43:50.000Z",
+  "stopDate": "2013-02-15T20:10:55.000Z"
+}

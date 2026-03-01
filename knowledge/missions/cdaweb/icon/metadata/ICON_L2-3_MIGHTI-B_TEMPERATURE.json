@@ -1,0 +1,238 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Derived A-Band Temperatures",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Temperature_Bias_Uncertainty",
+      "type": "double",
+      "units": "K",
+      "description": "Bias (systematic) uncertainties in derived temperatures by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Temperature_Statistical_Uncertainty",
+      "type": "double",
+      "units": "K",
+      "description": "Statistical (1-sigma) uncertainties in derived temperature by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Temperature_Total_Uncertainty",
+      "type": "double",
+      "units": "K",
+      "description": "Total uncertainties in derived temperatures by altitude",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_ABand_Intensity_Scaled",
+      "type": "double",
+      "units": "",
+      "description": "Derived scaling of O2 A Band to Radiances by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_ABand_Intensity_Scaled_Uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in Scaling of O2 A Band to Radiances by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Background_Signal",
+      "type": "double",
+      "units": "Electrons",
+      "description": "Background Signal by filter by altitude and filter. This has been corrected for flatfield effects across the detector.",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Background_Signal_M",
+      "type": "double",
+      "units": "Electrons",
+      "description": "---> Movie of above",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Background_Slope",
+      "type": "double",
+      "units": "/nm",
+      "description": "Derived Slope of Subtracted Background.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Filter_Wavenumber_Shift",
+      "type": "double",
+      "units": "cm^-1",
+      "description": "Common shift of all filter center wavenumbers due to temperature by altitude",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Filter_Wavenumber_Shift_Uncertainty",
+      "type": "double",
+      "units": "cm^-1",
+      "description": "Uncertainty (1-sigma) in the shift of all filter center wavenumbers by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Relative_Radiance",
+      "type": "double",
+      "units": "Electrons",
+      "description": "Relative radiance by filter by altitude",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Relative_Radiance_M",
+      "type": "double",
+      "units": "Electrons",
+      "description": "---> movie of above",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Relative_Radiance_Uncertainty",
+      "type": "double",
+      "units": "Electrons",
+      "description": "Uncertainty in relative radiance by filter and altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Relative_Radiance_Uncertainty_M",
+      "type": "double",
+      "units": "Electrons",
+      "description": "---> movie of above",
+      "fill": "-1e+31",
+      "size": [
+        18,
+        5
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Tangent point altitude",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "Tangent point latitudes by altitude",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Local_Solar_Time",
+      "type": "double",
+      "units": "hour",
+      "description": "Local solar time at tangent point",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "Tangent point longitudes by altitude",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Magnetic_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "Tangent point magnetic latitudes by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Magnetic_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "Tangent point magnetic longitudes (0-360) by altitude.",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "ICON_L23_MIGHTI_B_Tangent_Solar_Zenith_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar zenith angle at tangent point",
+      "fill": "-1e+31",
+      "size": [
+        18
+      ]
+    }
+  ],
+  "startDate": "2019-12-06T00:01:15.000Z",
+  "stopDate": "2022-11-24T23:59:13.000Z"
+}

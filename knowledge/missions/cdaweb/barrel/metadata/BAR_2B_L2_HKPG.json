@@ -1,0 +1,320 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "V0_VoltAtLoad",
+      "type": "double",
+      "units": "V",
+      "description": "Voltage at load",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V1_Battery",
+      "type": "double",
+      "units": "V",
+      "description": "Battery Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V2_Solar1",
+      "type": "double",
+      "units": "V",
+      "description": "Solar Panel One Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V3_POS_DPU",
+      "type": "double",
+      "units": "V",
+      "description": "DPU Voltage (Positive)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V4_POS_XRayDet",
+      "type": "double",
+      "units": "V",
+      "description": "X-ray Detector Voltage (Positive)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V5_Modem",
+      "type": "double",
+      "units": "V",
+      "description": "Modem Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V6_NEG_XRayDet",
+      "type": "double",
+      "units": "V",
+      "description": "X-ray Detector Voltage (Negative)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V7_NEG_DPU",
+      "type": "double",
+      "units": "V",
+      "description": "DPU Voltage (Negative)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V8_Mag",
+      "type": "double",
+      "units": "V",
+      "description": "Magnetometer Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V9_Solar2",
+      "type": "double",
+      "units": "V",
+      "description": "Solar Panel Two Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V10_Solar3",
+      "type": "double",
+      "units": "V",
+      "description": "Solar Panel Three Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V11_Solar4",
+      "type": "double",
+      "units": "V",
+      "description": "Solar Panel Four Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I0_TotalLoad",
+      "type": "double",
+      "units": "mA",
+      "description": "Total Load Current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I1_TotalSolar",
+      "type": "double",
+      "units": "mA",
+      "description": "Total Solar Current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I2_Solar1",
+      "type": "double",
+      "units": "mA",
+      "description": "Solar Panel One Current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I3_POS_DPU",
+      "type": "double",
+      "units": "mA",
+      "description": "DPU Current (Positive)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I4_POS_XRayDet",
+      "type": "double",
+      "units": "mA",
+      "description": "X-ray Detector Current (Positive)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I5_Modem",
+      "type": "double",
+      "units": "mA",
+      "description": "Modem Current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I6_NEG_XRayDet",
+      "type": "double",
+      "units": "mA",
+      "description": "X-ray Detector Current (Negative)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I7_NEG_DPU",
+      "type": "double",
+      "units": "mA",
+      "description": "DPU Current (Negative)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T0_Scint",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Scintillator Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T1_Mag",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Magnetometer Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T2_ChargeCont",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Charge Controller Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T3_Battery",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Battery Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T4_PowerConv",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Power Converter Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T5_DPU",
+      "type": "double",
+      "units": "deg. C",
+      "description": "DPU Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T6_Modem",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Modem Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T7_Structure",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Structure Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T8_Solar1",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Solar Panel One Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T9_Solar2",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Solar Panel Two Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T10_Solar3",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Solar Panel Three Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T11_Solar4",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Solar Panel Four Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T12_TermTemp",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Terminate Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T13_TermBatt",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Terminate Battery",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T14_TermCap",
+      "type": "double",
+      "units": "deg. C",
+      "description": "Terminate Capacitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T15_CCStat",
+      "type": "double",
+      "units": "deg. C",
+      "description": "CC Status",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "numOfSats",
+      "type": "integer",
+      "units": "sats",
+      "description": "Number of GPS Satellites",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "timeOffset",
+      "type": "integer",
+      "units": "sec",
+      "description": "Leap Seconcs",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "termStatus",
+      "type": "integer",
+      "units": "",
+      "description": "Terminate Status",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "cmdCounter",
+      "type": "integer",
+      "units": "commands",
+      "description": "Command Counter",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "modemCounter",
+      "type": "integer",
+      "units": "resets",
+      "description": "Modem Reset Counter",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "dcdCounter",
+      "type": "integer",
+      "units": "calls",
+      "description": "Number of times the DCD has been de-asserted",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "weeks",
+      "type": "integer",
+      "units": "Weeks",
+      "description": "Weeks since 6 Jan 1980",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "2014-01-17T16:42:40.000Z",
+  "stopDate": "2014-02-08T08:58:17.000Z"
+}

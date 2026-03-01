@@ -1,0 +1,198 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field X component GSE or GSM coordinate",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field Y component GSE coordinates",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field Z component GSE coordinates",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BY_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field Y component GSM coordinates",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BZ_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field Z component GSM coordinates",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "|B| Magnitude of B",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "STD_DEV_BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the BX component       \n      in the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STD_DEV_BY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the BY GSE             \n      component in the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STD_DEV_BZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the BZ GSE             \n      component in the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STD_DEV_BY_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the BY GSM             \n      component in the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STD_DEV_BZ_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the BZ GSM             \n      component in the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STD_DEV_BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the B-field            \n      magnitude in the averaging window.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of data points in the average.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DQF",
+      "type": "double",
+      "units": "",
+      "description": "Data quality flag. 0 indicates good          \n      data with no warnings. Each bit in the integer value print              \n      indicates a particular type of data corruption. Correctable errors      \n      have DQF values less than 32768. Larger values should be avoided.       \n      This DQF column gives the largest value in the average.",
+      "size": [
+        1
+      ],
+      "fill": "99999"
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "Distance from the Earth along the            \n      Earth-Sun line, positive towards the Sun, in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_GSE",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "Distance from the Earth along the            \n      dawn-dusk meridian, positive towards dusk, in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_GSE",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "Distance from the Earth above or below       \n      the ecliptic plane (positive 'northwards') in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_GSM",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "Distance from the Earth along the GSM        \n      Y-direction in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_GSM",
+      "type": "double",
+      "units": "Earth radii",
+      "description": "Distance from the Earth along the GSM        \n      Z-direction in units of Re.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

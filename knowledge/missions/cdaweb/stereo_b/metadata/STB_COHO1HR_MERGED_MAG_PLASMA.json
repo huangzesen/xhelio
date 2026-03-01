@@ -1,0 +1,250 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "radialDistance",
+      "type": "double",
+      "units": "AU",
+      "description": "Radial Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) latitude of the spacecraft position at the start of data interval",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLongitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) longitude of the spacecraft position at the start of data interval",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "IMF BR in RTN (Radial-Tangential-Normal) coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "IMF BT in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "IMF BN in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B Field Magnitude (average of fine scale magnitudes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "plasmaSpeed",
+      "type": "double",
+      "units": "km/s",
+      "description": "SW plasma speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "deg",
+      "description": "SW lat angle in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lon",
+      "type": "double",
+      "units": "deg",
+      "description": "SW lon angle in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "plasmaDensity",
+      "type": "double",
+      "units": "N/cm3",
+      "description": "SW plasma density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "plasmaTemp",
+      "type": "double",
+      "units": "deg K",
+      "description": "SW plasma Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_LET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 1.8 - 3.6, MeV, LET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_LET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 4.0 - 6.0, MeV, LET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_LET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 6.0 - 10.0, MeV, LET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_LET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 10.0 - 12.0, MeV, LET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 13.6 - 15.1, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 14.9 - 17.1, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 17.0 - 19.3, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 20.8 - 23.8, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux5_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 23.8 - 26.4, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux6_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 26.3 - 29.7, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux7_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 29.5 - 33.4, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux8_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 33.4 - 35.8, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux9_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 35.5 - 40.5, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux10_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 40.0 - 60.0, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux11_HET",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 60.0 - 100.0, MeV, HET",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 0.320 - 0.452, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 0.452 - 0.64, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 0.640 - 0.905, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 0.905 - 1.280, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux5_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 1.280 - 1.81, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux6_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 1.810 - 2.56, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux7_SIT",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 2.560 - 3.62, MeV, SIT",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2007-01-01T00:00:00.000Z",
+  "stopDate": "2014-09-27T16:00:00.000Z"
+}

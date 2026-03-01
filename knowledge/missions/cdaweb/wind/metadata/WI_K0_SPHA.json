@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SPIN_PHASE",
+      "type": "double",
+      "units": "rad",
+      "description": "Spin phase angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "AVG_SPIN_RATE",
+      "type": "double",
+      "units": "rad/sec",
+      "description": "Average spin rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STNDEV_SPIN_RATE",
+      "type": "double",
+      "units": "rad/sec",
+      "description": "Std dev of spin rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FAULT",
+      "type": "integer",
+      "units": "",
+      "description": "Fault level status indicator",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1994-11-01T09:06:02.000Z",
+  "stopDate": "2026-02-16T23:59:16.000Z"
+}

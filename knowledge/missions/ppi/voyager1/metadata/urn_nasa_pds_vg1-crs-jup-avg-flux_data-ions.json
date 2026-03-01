@@ -1,0 +1,35 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ION_FLUX",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1",
+      "description": "ION_FLUX = (LD1-(U) / 4.529E 00) where LD1 = L1                      \n                      A value of -9.99999e+10 is a missing data value.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "STD_DEVIATION_A",
+      "type": "double",
+      "units": "",
+      "description": "Column contains the statistical error in the associated with         \n                      ION_FLUX.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,407 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ERPA_tc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_hplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence H+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_heplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence He+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_he2plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence He2+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_oplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence O+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_o6plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence O6+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_c5plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence C5+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_c5plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence C5+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_fe10plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence Fe10+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_fe10plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions triple coincidence Fe10+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_nplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence N+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_o2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence O2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_o7plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence O7+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_o8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence O8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_c4plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence C4+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_c6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence C6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_fe8plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence Fe8+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_fe9plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence Fe9+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_tc_fe16plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions triple coincidence Fe16+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_hplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence H+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_hplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions double coincidence H+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_heplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence He+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_heplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions double coincidence He+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_he2plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence He2+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_he2plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions double coincidence He2+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_oplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence O+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_oplus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions double coincidence O+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_o6plus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence O6+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_o6plus_sum",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch-angle distributions double coincidence O6+ - summed over energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "ERPA_dc_cplus",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Energy-resolved pitch-angle distributions double coincidence C+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "eoq",
+      "type": "double",
+      "units": "keV/e",
+      "description": "Energy per charge",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "1995-08-01T00:05:19.000Z",
+  "stopDate": "2004-04-28T23:37:06.000Z"
+}

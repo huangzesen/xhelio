@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS1_TM3D_PSD_DATA",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "EAS1 3D electron distribution - Phase Space Density (No Plot)",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_TM3D_PSD_DATA_reorder",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "EAS1 3D electron distribution - Phase Space Density [varying with reordered elevation and energy (No Plot)]",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_TM3D_PSD_DATA_spec1",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> EAS1 3D electron distribution - Spectrograms around -20^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_TM3D_PSD_DATA_spec2",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> EAS1 3D electron distribution - Spectrograms around 0^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_TM3D_PSD_DATA_spec3",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> EAS1 3D electron distribution - Spectrograms around 20^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    }
+  ],
+  "startDate": "2023-01-04T07:29:41.000Z",
+  "stopDate": "2025-10-18T04:44:58.000Z"
+}

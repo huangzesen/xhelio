@@ -1,0 +1,168 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UTCTIME3550",
+      "type": "double",
+      "units": "",
+      "description": "UTC at Mars when downlink ray has closest approach distance of 3550 km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AREOCENTRICLAT3550",
+      "type": "double",
+      "units": "degree",
+      "description": "Areocentric north latitude of closest approach point of downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AREOCENTRICLON3550",
+      "type": "double",
+      "units": "degree",
+      "description": "Areocentric east longitude of closest approach point of downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA3550",
+      "type": "double",
+      "units": "degree",
+      "description": "Solar zenith angle of closest approach point of downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LTST3550",
+      "type": "double",
+      "units": "hour",
+      "description": "Local true solar time of closest approach point of downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LS3550",
+      "type": "double",
+      "units": "degree",
+      "description": "Areocentric east longitude of the Sun (Ls) at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NXFLAG",
+      "type": "double",
+      "units": "",
+      "description": "Occultation direction flag: 0 if ingress occultation, 1 if egress occultation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BSPFILENAME",
+      "type": "double",
+      "units": "",
+      "description": "The name of the SPK file used in processing",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UPLINKBAND",
+      "type": "double",
+      "units": "",
+      "description": "The Band identifier for uplink:  X denotes X-Band.  0 indicates no uplink.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UPLINKANTENNA",
+      "type": "double",
+      "units": "",
+      "description": "Identifier for the DSN antenna used for uplink;  00  if there was no uplink",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOWNLINKBAND",
+      "type": "double",
+      "units": "",
+      "description": "The Band identifier for downlink: X denotes X-Band",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOWNLINKANTENNA",
+      "type": "double",
+      "units": "",
+      "description": "Identifier for the DSN antenna used for downlink",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSOX3550",
+      "type": "double",
+      "units": "km",
+      "description": "X-coordinate in the MSO reference frame of the closest approach point of the downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSOY3550",
+      "type": "double",
+      "units": "km",
+      "description": "Y-coordinate in the MSO reference frame of the closest approach point of the downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSOZ3550",
+      "type": "double",
+      "units": "km",
+      "description": "Z-coordinate in the MSO reference frame of the closest approach point of the downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSOLAT3550",
+      "type": "double",
+      "units": "degree",
+      "description": "North latitude in the MSO reference frame of the closest approach point of the downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSOLON3550",
+      "type": "double",
+      "units": "degree",
+      "description": "East longitude in the MSO reference frame of the closest approach point of the downlink ray at time UTCTIME3550",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,35 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ELE_DEN",
+      "type": "double",
+      "units": "COUNTS/CM^3",
+      "description": "Column contains total electron moment density in counts/cm^3",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "ELE_TEMP",
+      "type": "double",
+      "units": "EV",
+      "description": "Column contains total electron moment temperature in units of\n                        electron volts",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

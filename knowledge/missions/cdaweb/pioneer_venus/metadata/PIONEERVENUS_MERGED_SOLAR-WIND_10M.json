@@ -1,0 +1,81 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "solar_wind_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar wind speed",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "proton_number_density",
+      "type": "double",
+      "units": "/cm^(-3)",
+      "description": "Proton number density",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "proton_temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Proton temperature",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "mag_field_vso",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in VSO coordinates",
+      "fill": "1.0000000331813535e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "Total magnetic field magnitude",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "RSUN",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance of PVO",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "xyz_vso",
+      "type": "double",
+      "units": "Rv",
+      "description": "PVO location in VSO coordinates",
+      "fill": "1.0000000331813535e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude of PVO in Solar Ecliptic (SE) coordinates",
+      "fill": "1.0000000331813535e+32"
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude of PVO in SE coordinates",
+      "fill": "1.0000000331813535e+32"
+    }
+  ],
+  "startDate": "1978-12-06T00:00:00.000Z",
+  "stopDate": "1988-08-07T10:50:00.000Z"
+}

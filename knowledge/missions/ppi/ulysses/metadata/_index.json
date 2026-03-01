@@ -1,0 +1,759 @@
+{
+  "mission_id": "ULYSSES_PPI",
+  "dataset_count": 94,
+  "generated_at": "2026-02-19T10:20:14Z",
+  "datasets": [
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-at",
+      "description": "Ulysses Jupiter Encounter Cospin Anisotropy Telescope (AT) Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 16,
+      "instrument": "COSPIN-ANISOTROPY TELESCOPE"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-het",
+      "description": "Ulysses Jupiter Encounter Cospin High Energy Telescope (HET) Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 10,
+      "instrument": "COSPIN-HIGH ENERGY TELESCOPE"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-hft",
+      "description": "Ulysses Jupiter Encounter Cospin High Flux Telescope (HFT) Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-18",
+      "parameter_count": 4,
+      "instrument": "COSPIN-HIGH FLUX TELESCOPE"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-ket-intensity",
+      "description": "Ulysses Jupiter Encounter Cospin Kiel Electron Telescope (KET) Intensity Data Collection",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "COSPIN-KIEL ELECTRON TELESCOPE"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-ket-raw",
+      "description": "Ulysses Jupiter Encounter Cospin Kiel Electron Telescope (KET) Raw Data Collection",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "COSPIN-KIEL ELECTRON TELESCOPE"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-cospin:data-let",
+      "description": "Ulysses Jupiter Encounter Cospin Low Energy Telescope (LET) Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 38,
+      "instrument": "COSPIN-LOW ENERGY TELESCOPE"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-HFT-3-RDR-FLUX-HIRES-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-18",
+      "parameter_count": 3,
+      "instrument": "Cospin-high Flux Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-HFT-3-RDR-FLUX-HIRES-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-18",
+      "parameter_count": 3,
+      "instrument": "Cospin-high Flux Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-KET-3-RDR-RAW-HIRES-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "Cospin-kiel Electron Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-KET-3-RDR-INTENS-HIRES-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "Cospin-kiel Electron Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-KET-3-RDR-INTENS-HIRES-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "Cospin-kiel Electron Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-COSPIN-KET-3-RDR-RAW-HIRES-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-24",
+      "stop_date": "1992-02-17",
+      "parameter_count": 31,
+      "instrument": "Cospin-kiel Electron Telescope"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL4-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL3-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-pha",
+      "description": "Ulysses Jupiter Encounter EPAC Pulse Height 24HR Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-29",
+      "parameter_count": 6,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-prtl",
+      "description": "Ulysses EPAC PRTL 2-3 Proton Rate Telescope Sectored Proton Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 0,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-pstl",
+      "description": "Ulysses EPAC Proton Spectral Telescopes 1-4 Sectored Proton Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 0,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-OMNI-PRO-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 4,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-omni-proton-flux",
+      "description": "Ulysses EPAC Omni-Directional Proton Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 0,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PRTL3-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-ALL-CHAN-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 14,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-OMNI-ELE-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 11,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-OMNI-PRO-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 4,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PRTL2-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PRTL3-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL2-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL3-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL4-FLUX-1HR-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-ALL-CHAN-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 14,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-omni-electron-flux",
+      "description": "Ulysses EPAC Omni-Directional Electron Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 11,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PRTL2-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-epac:data-all-channel",
+      "description": "Ulysses EPAC All Channels Flux Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 11,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-OMNI-ELE-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 11,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPAC-4-SUMM-PSTL2-FLUX-1HR-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-28",
+      "parameter_count": 1,
+      "instrument": "Energetic Particle Composition Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-grb:data",
+      "description": "Ulysses Gamma Ray Burst Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-01-25",
+      "parameter_count": 5,
+      "instrument": "Gamma-Ray Burst Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-GRB-2-RDR-RAW-COUNT-RATE-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 5,
+      "instrument": "Gamma-ray Burst Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-GRB-2-RDR-RAW-COUNT-RATE-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 5,
+      "instrument": "Gamma-ray Burst Instrument"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-gas:data",
+      "description": "Ulysses Interstellar Neutral Gas Experiment Sky Maps Data Collection",
+      "start_date": "1991-07-22",
+      "stop_date": "1991-07-22",
+      "parameter_count": 4,
+      "instrument": "Gas Instrument"
+    },
+    {
+      "id": "pds3:ULY-J-EPHEM-6-SUMM-SYS3/ECL50-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 4,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:ULY-J-EPHEM-6-SUMM-SYS3/ECL50-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 4,
+      "instrument": "General"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-traj:data",
+      "description": "Ulysses Trajectory Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-01-25",
+      "parameter_count": 4,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:ULY-J-GWE-8-NULL-RESULTS-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "",
+      "stop_date": "",
+      "parameter_count": 0,
+      "instrument": "Gravitational Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-hiscale:data-lems-counts",
+      "description": "Ulysses HISCALE Low-Energy Magnetic Spectrometer (LEMS) Counts Data Collection",
+      "start_date": "1991-12-31",
+      "stop_date": "1991-12-31",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-Spectra, Composition, Anisotropy at Low Energy"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-hiscale:data-aperature-counts",
+      "description": "Ulysses HISCALE Composition Aperature Counts Data Collection",
+      "start_date": "1991-12-31",
+      "stop_date": "1991-12-31",
+      "parameter_count": 4,
+      "instrument": "Heliospheric Inst-Spectra, Composition, Anisotropy at Low Energy"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-hiscale:data-w-counts",
+      "description": "Ulysses HISCALE W Ion Counts Data Collection",
+      "start_date": "1991-12-31",
+      "stop_date": "1991-12-31",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-Spectra, Composition, Anisotropy at Low Energy"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-hiscale:data-lefs-counts",
+      "description": "Ulysses HISCALE Low-Energy Foil Spectrometer (LEFS) Counts Data Collection",
+      "start_date": "1991-12-31",
+      "stop_date": "1991-12-31",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-Spectra, Composition, Anisotropy at Low Energy"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-hiscale:data-deflected-counts",
+      "description": "Ulysses HISCALE Deflected Electron Counts Data Collection",
+      "start_date": "1991-12-31",
+      "stop_date": "1991-12-31",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-Spectra, Composition, Anisotropy at Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEMS120-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 8,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEFS60-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEMS30-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 8,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-DE-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 4,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEFS60-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 0,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEMS120-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 8,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-LEMS30-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 8,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "pds3:ULY-J-HISCALE-4-SUMM-DE-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-12-31",
+      "stop_date": "1992-02-16",
+      "parameter_count": 4,
+      "instrument": "Heliospheric Inst-spectra, Composition, Anisotropy At Low Energy"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-mag:data",
+      "description": "Ulysses Vector Helium/Fluxgate Magnetometer Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-02-17",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:ULY-J-VHM/FGM-4-SUMM-JGCOORDS-60S-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-02-05",
+      "stop_date": "1992-02-11",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:ULY-J-VHM/FGM-4-SUMM-JGCOORDS-60S-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-02-05",
+      "stop_date": "1992-02-11",
+      "parameter_count": 4,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:ULY-J-SCE-1-ROCC-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-02-03",
+      "stop_date": "1992-02-09",
+      "parameter_count": 0,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-SCE-1-ROCC-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-02-03",
+      "stop_date": "1992-02-09",
+      "parameter_count": 0,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-SCE-3-RDR-DOPPLER-HIRES-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-02-08",
+      "stop_date": "1992-02-08",
+      "parameter_count": 3,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-sce-derived:data-rdr-doppler",
+      "description": "Ulysses Solar Corona Experiment Doppler High Resolution Data Collection",
+      "start_date": "1992-02-08",
+      "stop_date": "1992-02-08",
+      "parameter_count": 3,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-SCE-3-RDR-DOPPLER-HIRES-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-02-08",
+      "stop_date": "1992-02-08",
+      "parameter_count": 3,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-sce-derived:data-all-range",
+      "description": "Ulysses Solar Corona Experiment 10 Minute Average Ranging Data Collection",
+      "start_date": "1992-02-05",
+      "stop_date": "1992-02-09",
+      "parameter_count": 5,
+      "instrument": "Solar Corona Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-SWICS-8-NO-DATA-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "",
+      "stop_date": "",
+      "parameter_count": 0,
+      "instrument": "Solar Wind Ion Composition Spectrometer"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-swoops:data",
+      "description": "Ulysses SWOOPS Plasma Data Collection",
+      "start_date": "1992-01-25",
+      "stop_date": "1992-01-25",
+      "parameter_count": 13,
+      "instrument": "Solar Wind Observations Over the Poles of the Sun"
+    },
+    {
+      "id": "pds3:ULY-D-UDDS-5-DUST-V3.1",
+      "description": "ULYSSES AT JUPITER - FIELDS AND PARTICLES",
+      "start_date": "1990-01-01",
+      "stop_date": "2007-12-31",
+      "parameter_count": 2,
+      "instrument": "Ulysses Dust Detection System"
+    },
+    {
+      "id": "pds3:ULY-D-UDDS-5-DUST-V3.1:DATA",
+      "description": "ULYSSES AT JUPITER - FIELDS AND PARTICLES : DATA",
+      "start_date": "1990-01-01",
+      "stop_date": "2007-12-31",
+      "parameter_count": 2,
+      "instrument": "Ulysses Dust Detection System"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-PFR-PEAK-E-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1991-12-31",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-RAR-AVG-E-144S-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1992-01-01",
+      "stop_date": "1992-04-30",
+      "parameter_count": 6,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-PEAK-E-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-PEAK-B-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-AVG-E-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-PFR-AVG-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-PFR-PEAK-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1991-12-31",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-RAR-AVG-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-RAR-AVG-E-144S-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1992-01-01",
+      "stop_date": "1992-04-30",
+      "parameter_count": 6,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-RAR-PEAK-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-10-27",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-AVG-B-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-AVG-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-PEAK-B-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-PEAK-E-10MIN-V1.0:DATA",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11) : DATA",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-RAR-PEAK-E-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-10-27",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-PFR-AVG-E-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "pds3:ULY-J-URAP-4-SUMM-WFA-AVG-B-10MIN-V1.0",
+      "description": "Ulysses Jupiter Encounter (1992-01-25 to 1992-02-11)",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 4,
+      "instrument": "Unified Radio And Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-wfa-avg-e-10min",
+      "description": "Ulysses URAP WFA Averaged Electric Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 2,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-rar-avg-e-144sec",
+      "description": "Ulysses URAP RAR Averaged E-Field 144 Second Data Collection",
+      "start_date": "1992-01-01",
+      "stop_date": "1992-04-30",
+      "parameter_count": 5,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-rar-peak-e-10min",
+      "description": "Ulysses URAP RAR Peak E-Field 10 Minute Data Collection",
+      "start_date": "1991-10-27",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-pfr-avg-e-10min",
+      "description": "Ulysses URAP PRF Averaged E-Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 2,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-wfa-peak-b-10min",
+      "description": "Ulysses URAP WFA Peak Magnetic Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-rar-avg-e-10min",
+      "description": "Ulysses URAP RAR Averaged E-Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-wfa-avg-b-10min",
+      "description": "Ulysses URAP WFA Averaged Magnetic Field Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 3,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-pfr-peak-e-10min",
+      "description": "Ulysses URAP PRF Peak E-Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 2,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:ulysses-urap:data-wfa-peak-e-10min",
+      "description": "Ulysses URAP WFA Peak Electric Field 10 Minute Data Collection",
+      "start_date": "1991-11-26",
+      "stop_date": "1992-06-07",
+      "parameter_count": 2,
+      "instrument": "Unified Radio and Plasma Wave Experiment"
+    }
+  ]
+}

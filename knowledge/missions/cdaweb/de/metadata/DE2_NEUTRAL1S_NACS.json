@@ -1,0 +1,145 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "O_density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "O Density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "O_density_error_rate",
+      "type": "double",
+      "units": "%",
+      "description": "O Density error in %",
+      "fill": "-999.0"
+    },
+    {
+      "name": "N2_density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "N2 Density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "N2_density_error_rate",
+      "type": "double",
+      "units": "cm-3",
+      "description": "N2 Density error in %",
+      "fill": "-999.0"
+    },
+    {
+      "name": "He_density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "He Density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "He_density_error_rate",
+      "type": "double",
+      "units": "cm-3",
+      "description": "He Density error in %",
+      "fill": "-999.0"
+    },
+    {
+      "name": "N_density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "N Density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "N_density_error_rate",
+      "type": "double",
+      "units": "cm-3",
+      "description": "N Density error in %",
+      "fill": "-999.0"
+    },
+    {
+      "name": "Ar_density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ar Density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "Ar_density_error_rate",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ar Density error in %",
+      "fill": "-999.0"
+    },
+    {
+      "name": "OrbitNumber",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "-9.0"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-999.0"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "lst",
+      "type": "double",
+      "units": "hr",
+      "description": "Local Solar Time in hours",
+      "fill": "-999.0"
+    },
+    {
+      "name": "lmt",
+      "type": "double",
+      "units": "hr",
+      "description": "Local Magnetic Time in hours",
+      "fill": "-999.0"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "McIllwain L value",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant latitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar Zenith Angle in degrees",
+      "fill": "-999.0"
+    }
+  ],
+  "startDate": "1981-08-08T13:40:02.000Z",
+  "stopDate": "1983-02-15T16:24:32.000Z"
+}

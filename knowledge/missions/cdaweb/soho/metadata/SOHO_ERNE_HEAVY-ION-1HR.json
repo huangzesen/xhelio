@@ -1,0 +1,206 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "accum_time",
+      "type": "integer",
+      "units": "ms",
+      "description": "Accumulation time",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "status",
+      "type": "integer",
+      "units": "(0=OK, 1=unreliable)",
+      "description": "Status flag (0=OK, 1=unreliable data)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "C_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "C intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "N_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "N intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "O_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "O intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Ne_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "Ne intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Mg_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "Mg intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Si_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "Si intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "CNO_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "C, N, O intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "SiAr_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "Si-Ar intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "FeCoNi_intensity",
+      "type": "double",
+      "units": "(cm^2*sr*s*MeV/n)^-1",
+      "description": "Fe, Co, Ni intensity in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "C_count",
+      "type": "integer",
+      "units": "",
+      "description": "C counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "N_count",
+      "type": "integer",
+      "units": "",
+      "description": "N counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "O_count",
+      "type": "integer",
+      "units": "",
+      "description": "O counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Ne_count",
+      "type": "integer",
+      "units": "",
+      "description": "Ne counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Mg_count",
+      "type": "integer",
+      "units": "",
+      "description": "Mg counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "Si_count",
+      "type": "integer",
+      "units": "",
+      "description": "Si counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "CNO_count",
+      "type": "integer",
+      "units": "",
+      "description": "C, N, O counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "SiAr_count",
+      "type": "integer",
+      "units": "",
+      "description": "Si-Ar counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "FeCoNi_count",
+      "type": "integer",
+      "units": "",
+      "description": "Fe, Co, Ni counts per accumulation period in 10 energy ranges (2.7-200 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    }
+  ],
+  "startDate": "1996-01-01T00:00:00.000Z",
+  "stopDate": "2023-02-28T23:00:00.000Z"
+}

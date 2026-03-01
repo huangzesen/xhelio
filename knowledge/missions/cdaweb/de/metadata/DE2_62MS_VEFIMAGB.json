@@ -1,0 +1,103 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ex",
+      "type": "double",
+      "units": "micro volts per meter",
+      "description": "X-Component of the VEFI electric field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "ey",
+      "type": "double",
+      "units": "micro volts per meter",
+      "description": "Y-Component of the VEFI electric field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "bx",
+      "type": "double",
+      "units": "nT",
+      "description": "X-Component of the MAGB magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "by",
+      "type": "double",
+      "units": "nT",
+      "description": "Y-Component of the MAGB magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "bz",
+      "type": "double",
+      "units": "nT",
+      "description": "Z-Component of the MAGB magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "bxm",
+      "type": "double",
+      "units": "nT",
+      "description": "X-Component of the model magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "bym",
+      "type": "double",
+      "units": "nT",
+      "description": "Y-Component of the model magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "bzm",
+      "type": "double",
+      "units": "nT",
+      "description": "Z-Component of the model magnetic field in SPC coordinates",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude in degrees",
+      "fill": "-0.0"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude in degrees",
+      "fill": "-0.0"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude in degrees",
+      "fill": "-0.0"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time",
+      "fill": "-0.0"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-0.0"
+    }
+  ],
+  "startDate": "1981-08-15T03:44:46.000Z",
+  "stopDate": "1983-02-16T13:04:25.000Z"
+}

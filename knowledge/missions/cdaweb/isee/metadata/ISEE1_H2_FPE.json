@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DEN",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Proton number density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Flow Speed (s/c coordinates). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tmin",
+      "type": "double",
+      "units": "Kelvin",
+      "description": "Minimum proton temperature (Kelvin). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Azimuth",
+      "type": "double",
+      "units": "deg",
+      "description": "Azimuth. SEE VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Flow Latitude (>0: flow towards south)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tmax",
+      "type": "double",
+      "units": "Kelvin",
+      "description": "Maximum proton temperature (Kelvin). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_P",
+      "type": "double",
+      "units": "",
+      "description": "Alpha/Proton Ratio  (0.00 = no determination)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1977-10-30T03:55:57.000Z",
+  "stopDate": "1984-01-30T23:59:44.000Z"
+}

@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "",
+      "description": "Energy for row.  Value is not used",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ESA_DAC",
+      "type": "integer",
+      "units": "",
+      "description": "ESA DAC for row; used to select contiguous rows for linear interpolation, and for the calculation of the interpolation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RPA_DAC",
+      "type": "integer",
+      "units": "",
+      "description": "RSA DAC for row; if the RSA_DAC value for one of a pair of rows being used for interpolation is zero, use the background for the other member of the pair.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PCEM_BACK",
+      "type": "integer",
+      "units": "",
+      "description": "Backgound count rate for row for PCEM background subtraction - Units are counts * R(Sun,AU)**2 / sample",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCEM_BACK",
+      "type": "integer",
+      "units": "",
+      "description": "Backgound count rate for row for SCEM background subtraction - Units are counts * R(Sun,AU)**2 / sample",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COIN_BACK",
+      "type": "integer",
+      "units": "VOLT",
+      "description": "Backgound count rate for row for COIN background subtraction - Units are counts * R(Sun,AU)**2 / sample",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

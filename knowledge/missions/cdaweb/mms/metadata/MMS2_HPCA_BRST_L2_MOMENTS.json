@@ -1,0 +1,486 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_hpca_hplus_number_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Number Density Hydrogen+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_hplus_ion_bulk_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Ion Bulk Velocity Hydrogen+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_scalar_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Scalar Temperature Hydrogen+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_hplus_ion_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "---> (no CDAWeb plots) Ion Pressure Tensor Hydrogen+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_temperature_tensor",
+      "type": "double",
+      "units": "eV",
+      "description": "---> (no CDAWeb plots) Ion Temp. Tensor Hydrogen+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_number_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Number Density Helium+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplus_ion_bulk_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Ion Bulk Velocity Helium+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_scalar_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Scalar Temperature Helium+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplus_ion_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "---> (no CDAWeb plots) Ion Pressure Tensor Helium+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_temperature_tensor",
+      "type": "double",
+      "units": "eV",
+      "description": "---> (no CDAWeb plots) Ion Temp. Tensor Helium+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_number_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Number Density Helium++ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplusplus_ion_bulk_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Ion Bulk Velocity Helium++ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_scalar_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Scalar Temperature Helium++ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplusplus_ion_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "---> (no CDAWeb plots) Ion Pressure Tensor Helium++ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_temperature_tensor",
+      "type": "double",
+      "units": "eV",
+      "description": "---> (no CDAWeb plots) Ion Temp. Tensor Helium++ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_number_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Number Density Oxygen+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_oplus_ion_bulk_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Ion Bulk Velocity Oxygen+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_scalar_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Scalar Temperature Oxygen+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_oplus_ion_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "---> (no CDAWeb plots) Ion Pressure Tensor Oxygen+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_temperature_tensor",
+      "type": "double",
+      "units": "eV",
+      "description": "---> (no CDAWeb plots) Ion Temp. Tensor Oxygen+ for each HPCA half-spin (xx,yx,zx,xy,yy,zy,xz,yz,zz)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_B_GSE_spin_avg",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in DMPA plus Btotal (8 or 16 S/s) for each HPCA half-spin (x, y, z, total)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_B_GSM_spin_avg",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Magnetic field vector in GSM plus Btotal (8 or 16 S/s) for each HPCA half-spin (x, y, z, total)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_ion_bulk_velocity_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Velocity in GSM for H+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_tperp",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tperp H+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_hplus_tparallel",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tparallel H+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_hplus_vperp",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude for H+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_vparallel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude for H+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_vperp_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude in GSM for H+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_vparallel_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude in GSM for H+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_ion_bulk_velocity_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Velocity in GSM for He+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_tperp",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tperp He+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplus_tparallel",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tparallel He+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplus_vperp",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude for He+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_vparallel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude for He+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_vperp_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude in GSM for He+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_vparallel_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude in GSM for He+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_ion_bulk_velocity_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Velocity in GSM for He++ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_tperp",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tperp He++ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplusplus_tparallel",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tparallel He++ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_heplusplus_vperp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vperp vector plus Magnitude for He++ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_vparallel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude for He++ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_vperp_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vperp vector plus Magnitude in GSM for He++ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_vparallel_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vparallel vector plus Magnitude in GSM for He++ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_ion_bulk_velocity_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Velocity in GSM for O+ for each HPCA half-spin (x, y, z)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_tperp",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tperp O+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_oplus_tparallel",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Tparallel O+ for each HPCA half-spin",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms2_hpca_oplus_vperp",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude for O+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_vparallel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vparallel vector plus Magnitude for O+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_vperp_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Vperp vector plus Magnitude in GSM for O+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_vparallel_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "--->Vparallel vector plus Magnitude in GSM for O+ for each HPCA half-spin (x, y, z, total)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_MCP_VMON_MIN_converted",
+      "type": "double",
+      "units": "",
+      "description": "LIMITS - MCP_VMON_MIN_converted",
+      "fill": "1e+31"
+    },
+    {
+      "name": "mms2_hpca_TOF_VMON_MIN_converted",
+      "type": "double",
+      "units": "",
+      "description": "LIMITS - TOF_VMON_MIN_converted",
+      "fill": "1e+31"
+    }
+  ],
+  "startDate": "2015-09-01T00:00:00.000Z",
+  "stopDate": "2025-12-31T23:24:36.000Z"
+}

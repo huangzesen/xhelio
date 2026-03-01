@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "elb_pif",
+      "type": "double",
+      "units": "raw counts",
+      "description": "[ADC UNITS ONLY] L1 EPD Ion counts, Fast Mode",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "elb_pif_8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just bottom eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "elb_pif_top8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just top eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "elb_pif_sectnum",
+      "type": "integer",
+      "units": "num sector",
+      "description": "Sector Number",
+      "fill": "0.0"
+    },
+    {
+      "name": "elb_pif_nspinsinsum",
+      "type": "integer",
+      "units": "",
+      "description": "number spins in sum",
+      "fill": "0.0"
+    },
+    {
+      "name": "elb_pif_nsectors",
+      "type": "integer",
+      "units": "",
+      "description": "Number of Sectors",
+      "fill": "0.0"
+    },
+    {
+      "name": "elb_pif_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "Spin Period",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2019-05-22T04:42:13.000Z",
+  "stopDate": "2022-09-19T20:24:15.000Z"
+}

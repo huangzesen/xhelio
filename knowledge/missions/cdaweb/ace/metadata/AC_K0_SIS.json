@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Proton Flux (E>10 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_hi",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Proton Flux (E>30 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV/n)",
+      "description": "CNO Flux (7-10 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_hi",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV/n)",
+      "description": "CNO Flux (10-15 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_ge_10",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV/n)",
+      "description": "Z>=10 flux (9-21 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2017-07-01T00:00:00.000Z",
+  "stopDate": "2026-02-12T23:00:00.000Z"
+}

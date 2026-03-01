@@ -1,0 +1,35 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "D1",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Counting rate from detector D1.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "D2",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Counting rate from detector D2.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

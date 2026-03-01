@@ -1,0 +1,125 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ELTL1",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons High (E > 180           \n                            keV) Spin Averages Telescope 1. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "EHTL1",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons High (E > 180           \n                            keV) Spin Averages Telescope 1. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ELTL2",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons Low (100-308            \n                            keV) Spin Averages Telescope 2. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "EHTL2",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons High (E > 180           \n                            keV) Spin Averages Telescope 2. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ELTL3",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons Low (100-308            \n                            keV) Spin Averages Telescope 3. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "EHTL3",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons High (E > 180           \n                            keV) Spin Averages Telescope 3. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ELTL4",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons Low (100-308            \n                            keV) Spin Averages Telescope 4. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "EHTL4",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from Electrons High (E > 180           \n                            keV) Spin Averages Telescope 4. Flux units are                            \n                            electrons/(s cm^2 sr).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ERL",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from the Event-Rate Low Omni-          \n                            directional Channel.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ERM",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from the Event-Rate Medium             \n                            Omni-directional Channel.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ERH",
+      "type": "double",
+      "units": "electrons/(s cm**2 sr)",
+      "description": "This column contains electron flux from the Event-Rate High               \n                            Omni-directional Channel.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

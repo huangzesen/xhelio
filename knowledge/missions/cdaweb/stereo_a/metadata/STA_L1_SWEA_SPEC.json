@@ -1,0 +1,137 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWEASpectra",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "48-energy SWEA spectrum",
+      "fill": "-1e+31",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "SWEASpectra_stack",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "---> as stacked time-series",
+      "fill": "-1e+31",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "IAutoLUT",
+      "type": "integer",
+      "units": "",
+      "description": "SWEA LUT mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAMCPDACSet",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA MCP Setting",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAMCPHeater",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA MCP Heater Setting. 0=off, 10=100%",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEADistInterval",
+      "type": "integer",
+      "units": "s",
+      "description": "---> SWEA 3D distribution time interval in sec",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEABurstInterval",
+      "type": "integer",
+      "units": "s",
+      "description": "---> SWEA burst 3D distribution time interval in sec",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAPADInterval",
+      "type": "integer",
+      "units": "s",
+      "description": "---> SWEA PAD distribution time interval in sec",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEARot",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA anode rotation to spacecraft coordinates",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAModeID",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA mode ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAManualV0",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA V0 setting when SWEAV0 is manual and SWEALUT is auto",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEASweepMax",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA Sweep Generator Max",
+      "fill": "65535.0"
+    },
+    {
+      "name": "SWEASweepRate",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA Sweep Generator Rate",
+      "fill": "65535.0"
+    },
+    {
+      "name": "SWEASweepOffset",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA Sweep Generator Offset",
+      "fill": "65535.0"
+    },
+    {
+      "name": "SWEASweepDeflStep",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA Sweep Generator Deflector Step",
+      "fill": "65535.0"
+    },
+    {
+      "name": "SWEAMomInterval",
+      "type": "integer",
+      "units": "s",
+      "description": "---> SWEA moments time interval in sec",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEASpecInterval",
+      "type": "integer",
+      "units": "s",
+      "description": "---> SWEA spectra time interval in sec",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2012-12-01T00:00:24.000Z",
+  "stopDate": "2013-12-31T23:59:34.000Z"
+}

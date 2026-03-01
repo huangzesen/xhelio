@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Electron_L_Dif_flux_3D__C4_CP_RAP_L3DD",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Electron Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        16,
+        9
+      ]
+    },
+    {
+      "name": "Electron_L_Dif_flux_3D_SD__C4_CP_RAP_L3DD",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of Electron Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        16,
+        9
+      ]
+    }
+  ],
+  "startDate": "2004-05-03T11:19:19.000Z",
+  "stopDate": "2024-09-30T23:58:43.000Z"
+}

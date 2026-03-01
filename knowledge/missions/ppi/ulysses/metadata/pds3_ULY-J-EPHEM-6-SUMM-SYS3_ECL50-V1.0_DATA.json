@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "RADII",
+      "description": "SPACECRAFT DISTANCE TO JUPITER IN JOVIAN RADII.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "SPACECRAFT LATITUDE (JG SYSTEM III 1965) IN DEGREES.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "SPACECRAFT W. LONGITUDE (JG SYSTEM III 1965) IN DEGREES.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCTIME",
+      "type": "double",
+      "units": "HOURS",
+      "description": "SPACECRAFT LOCAL TIME IN DECIMAL HOURS.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,239 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number 1 - 10 for six-month maps from IBEX Data Release 10",
+      "fill": "65535.0"
+    },
+    {
+      "name": "GDFPressure",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "Distributed Flux Line-of-Sight Int.Pressure - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFPressure_plasma",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFPressure_movie",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "---> Mapped Movie",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSN",
+      "type": "double",
+      "units": "Ratio",
+      "description": "Signal/Noise Ratio of Flux Line-of-Sight Pressure - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSN_plasma",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSN_movie",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Mapped Movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlope",
+      "type": "double",
+      "units": "Slope",
+      "description": "GDF Differential Flux Power-Law Slope - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlope_plasma",
+      "type": "double",
+      "units": "Slope",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlope_movie",
+      "type": "double",
+      "units": "Slope",
+      "description": "---> Mapped Movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlopeSN",
+      "type": "double",
+      "units": "Ratio",
+      "description": "Signal/Noise Ratio power-law flux Slope - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlopeSN_plasma",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "GDFSlopeSN_movie",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Mapped Movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "RibbonPressure",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "Ribbon Line-of-Sight Integrated Pressure - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "RibbonPressure_plasma",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "RibbonSN",
+      "type": "double",
+      "units": "Ratio",
+      "description": "Ribbon Signal/Noise Ratio - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "RibbonSN_plasma",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "TotalPressure",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "Total Pressure in ENA maps including both the GDF and Ribbon. Line-of-Sight Integrated Pressure in pdyne-au/cm^2 - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "TotalPressure_plasma",
+      "type": "double",
+      "units": "pdyne-au/cm^2",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "TotalSN",
+      "type": "double",
+      "units": "Ratio",
+      "description": "Total Pressure Signal-to-Noise Ratio - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "TotalSN_plasma",
+      "type": "double",
+      "units": "Ratio",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2014-12-24T00:00:00.000Z"
+}

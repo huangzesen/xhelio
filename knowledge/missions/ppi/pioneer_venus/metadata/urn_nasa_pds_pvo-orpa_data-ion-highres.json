@@ -1,0 +1,369 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "ORBIT NUMBER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PERIAPSIS TIME",
+      "type": "double",
+      "units": "ms",
+      "description": "PERIAPSIS TIME (UT)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY",
+      "type": "double",
+      "units": "",
+      "description": "PERIAPSIS DAY OF YEAR",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP",
+      "type": "double",
+      "units": "",
+      "description": "UNIQUE SWEEP NUMBER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP TIME",
+      "type": "double",
+      "units": "ms",
+      "description": "UNIQUE TIME OF MEASUREMENT FOR SWEEP UNCERTAINTY = +/- 100 MS\n                        This value contains the time of day effectively formatted as \n                        hhmm.ssmmm in a floating point number where hhmm is hours and \n                        minutes, and ssmmm is seconds and milliseconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALTITUDE",
+      "type": "double",
+      "units": "km",
+      "description": "ALTITUDE OF SWEEP.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "SOLAR ZENITH ANGLE OF SWEEP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOTAL ION DENSITY",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "TOTAL ION DENSITY RANGE = 10 - 10**6 1/CM^3\n                        NOISE LEVEL =  10 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "H+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "HYDROGEN ION DENSITY \n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "He+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "HELIUM ION DENSITY\n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "O+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "OXYGEN ION DENSITY\n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "M29+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "SUM DENS OF CO+, NO+, N2+ IONS\n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "O2+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "O2+ ION DENSITY\n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "CO2+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "CARBON DIOXIDE ION DENSITY\\\n                        RANGE = 50 - 10**6 1/CM^3\n                        NOISE LEVEL =  50 1/CM^3\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "Bulk Velocity",
+      "type": "double",
+      "units": "m/s",
+      "description": "ION BULK VELOCITY COMPONENT IN DIRECTION OF RPA\n                        OUTWARD DIRECTED AXIS\n                        RANGE = 0 - +/-7000 M/S\n                        NOISE LEVEL =  70 M/S\n                        UNCERTAINTY =  70 M/S",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "Ion Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "ION TEMPERATURE\n                        RANGE = 150 - 20,000 K\n                        UNCERTAINTY = +/-10%",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "PHII",
+      "type": "double",
+      "units": "V",
+      "description": "SPACECRAFT GROUND POTENTIAL\n                        RANGE = -5 - +3 V\n                        UNCERTAINTY = +/-0.1V",
+      "size": [
+        1
+      ],
+      "fill": "9.99999"
+    },
+    {
+      "name": "CSQ",
+      "type": "double",
+      "units": "",
+      "description": "CHI SQUARE, GOODNESS OF CURVE FIT",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "Saturation Current",
+      "type": "double",
+      "units": "A",
+      "description": "SATURATION ION CURRENT\n                        RANGE = 0 - 1.3X10**-4 A\n                        NOISE LEVEL =  1X10**-12 A\n                        UNCERTAINTY =  +/-1%",
+      "size": [
+        1
+      ],
+      "fill": "9.9999999"
+    },
+    {
+      "name": "Background Current",
+      "type": "double",
+      "units": "A",
+      "description": "BACKGROUND ION CURRENT\n                        RANGE = 0 - 1.3X10**-4 A\n                        NOISE LEVEL =  1X10**-12 A\n                        UNCERTAINTY =  +/-1%",
+      "size": [
+        1
+      ],
+      "fill": "9.9999999"
+    },
+    {
+      "name": "Roll Angle",
+      "type": "double",
+      "units": "Degree",
+      "description": "ROLL ANGLE (NON ROTATING SPIN COORDINATE SYSTEM - RAMROLL)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin Period",
+      "type": "double",
+      "units": "s",
+      "description": "SPIN PERIOD",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Spin Axis",
+      "type": "double",
+      "units": "Degree",
+      "description": "ATTITUDE OF SPIN AXIS X COMPONENT\n                        (NON ROTATING SPIN COORDINATE SYSTEM - ATTX)",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "Y Spin Axis",
+      "type": "double",
+      "units": "",
+      "description": "ATTITUDE OF SPIN AXIS Y COMPONENT \n                        (NON ROTATING SPIN COORDINATE SYSTEM - ATTY)",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "Z Spin Axis",
+      "type": "double",
+      "units": "",
+      "description": "ATTITUDE OF SPIN AXIS Z COMPONENT\n                        (NON ROTATING SPIN COORDINATE SYSTEM - ATTZ)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT,\n                        X COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - XP1SFF)",
+      "size": [
+        1
+      ],
+      "fill": "999999.9"
+    },
+    {
+      "name": "Y Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT, Y COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - YP1SFF)",
+      "size": [
+        1
+      ],
+      "fill": "999999.9"
+    },
+    {
+      "name": "Z Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT, \n                        Z COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - ZP1SFF)",
+      "size": [
+        1
+      ],
+      "fill": "999999.9"
+    },
+    {
+      "name": "X PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY X COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - DXP1SF)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Y PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY Y COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - DYP1SF)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Z PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY Z COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - DZP1SF)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "X Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT, \n                        X COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - XPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT, \n                        Y COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - YPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT, \n                        Z COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM - ECLIPTIC - ZPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, X COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, Y COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, Z COMPONENT \n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

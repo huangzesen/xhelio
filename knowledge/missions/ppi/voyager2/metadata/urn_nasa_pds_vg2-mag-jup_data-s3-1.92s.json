@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "S/C Clock",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock counter (mod65536:mod60:fds_line).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "double",
+      "units": "",
+      "description": "Magnetometer ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ],
+      "fill": "99"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Radial component of the magnetic field, positive in the direction of    \n                        Jupiter to spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "North/South (System III) component of the magnetic field, positive      \n                        southward.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Azimuthal (System III) component of the magnetic field, positive        \n                        eastward.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Magnitude (sqrt of sum of squares) of the    \n                        field component averages (nT).",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "AVG_Bmag",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Average of the field magnitude over the      \n                        averaging window (nT).",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "Degree",
+      "description": "ARCSIN(Bz/Bmag) = Delta",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "Degree",
+      "description": "180. - ATAN(By,-Bx) = Lambda",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Root-mean-square of BR",
+      "size": [
+        1
+      ],
+      "fill": "9.9999"
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Root-mean-square of BTHETA",
+      "size": [
+        1
+      ],
+      "fill": "9.9999"
+    },
+    {
+      "name": "RMS_BP",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Root-mean-square of BPHI",
+      "size": [
+        1
+      ],
+      "fill": "9.9999"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of data points in averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

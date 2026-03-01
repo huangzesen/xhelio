@@ -1,0 +1,62 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "avg_intens_ahead",
+      "type": "double",
+      "units": "dB>bgnd",
+      "description": "Ahead:  Electric field avg intensity (dB above bgnd, 367 freqs 2.6 kHz - 16.025 MHz, inverted frequency order)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        367
+      ]
+    },
+    {
+      "name": "avg_intens_ahead_noninvert",
+      "type": "double",
+      "units": "dB>bgnd",
+      "description": "---> Ahead:  Electric field avg intensity (normal frequency order)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        367
+      ]
+    },
+    {
+      "name": "background_ahead",
+      "type": "double",
+      "units": "dB",
+      "description": "---> Ahead:  Background Intensity (normal frequency order)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        367
+      ]
+    },
+    {
+      "name": "avg_intens_behind",
+      "type": "double",
+      "units": "dB>bgnd",
+      "description": "Behind:  Electric field avg intensity (dB above bgnd, 367 log-spaced freqs 2.6 kHz - 16.025 MHz, normal frequency order)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        367
+      ]
+    },
+    {
+      "name": "background_behind",
+      "type": "double",
+      "units": "dB",
+      "description": "---> Behind:  Background Intensity (normal frequency order)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        367
+      ]
+    }
+  ],
+  "startDate": "2006-10-27T00:00:30.000Z",
+  "stopDate": "2026-02-12T23:59:30.000Z"
+}

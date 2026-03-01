@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "quality_index_0",
+      "type": "integer",
+      "units": "",
+      "description": "B field INSIDE(0) or OUTSIDE(1) instrument field-of-view",
+      "fill": "255.0"
+    },
+    {
+      "name": "quality_index_1",
+      "type": "integer",
+      "units": "",
+      "description": "PA distributions corrected(0) or NOT corrected(1) for ion bulk",
+      "fill": "255.0"
+    },
+    {
+      "name": "Energy",
+      "type": "double",
+      "units": "eV",
+      "description": "Energy bins (plotted with error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "pad",
+      "type": "double",
+      "units": "s^3/km^6",
+      "description": "Pitch angle distribution in Phase Space Density (@ energies 1-10)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        16
+      ]
+    }
+  ],
+  "startDate": "2006-10-31T00:00:39.000Z",
+  "stopDate": "2025-10-31T23:59:51.000Z"
+}

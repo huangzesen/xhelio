@@ -1,0 +1,1403 @@
+{
+  "id": "RBSP",
+  "name": "Van Allen Probes",
+  "keywords": [
+    "allen",
+    "probes",
+    "rbsp",
+    "rbsp-a",
+    "rbsp-a-rbspice",
+    "rbsp-b",
+    "rbsp-b-rbspice",
+    "rbspa",
+    "rbspb",
+    "van"
+  ],
+  "profile": {
+    "description": "Van Allen Probes spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEION": {
+          "description": "TOF x Energy High Energy Low Time resolution ion intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:15.000Z",
+          "stop_date": "2019-07-15T23:59:35.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/ke3e-5s15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEION"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:21.000Z",
+          "stop_date": "2014-10-02T20:59:13.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/1393-6m93",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHHLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3_TOFXENONH": {
+          "description": "TOF x E non Hydrogen (Helium and Oxygen) Rates ~0.02-1.0 MeV measured at high energy and low time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:44.000Z",
+          "stop_date": "2019-07-15T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/w7nq-kz93",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_TOFXENONH"
+        },
+        "RBSP-B-RBSPICE_LEV-2_TOFXENONH": {
+          "description": "TOF x E non Hydrogen (Helium and Oxygen) Rates ~0.02-1.0 MeV measured at high energy and low time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:44.000Z",
+          "stop_date": "2019-07-16T16:40:07.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/v4tx-ej55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_TOFXENONH"
+        },
+        "RBSP-B-RBSPICE_LEV-2_TOFXEION": {
+          "description": "TOF x Energy Ion Fluxes 0.02-1 MeV measured at high energy resolution and low time resolution  (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-16T16:39:50.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/jt55-m188",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_TOFXEION"
+        },
+        "RBSP-B-RBSPICE_LEV-3_ISRHELT": {
+          "description": "Diagnostic Data Use only - DO NOT USE FOR SCIENTIFIC PURPOSES. High-energy low-time resolution RBSPICE Ion Energy mode measurement with pitch angles of all particle fluxes (electron/ion)  ~0.05-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-15T21:15:02.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/1t5a-gm85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_ISRHELT"
+        },
+        "RBSPB_REL04_ECT-HOPE-SCI-L2": {
+          "description": "Spin resolved ECT-HOPE science data. Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:09.000Z",
+          "stop_date": "2019-07-16T16:37:53.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/1xw2-1868",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL04_ECT-HOPE-SCI-L2"
+        },
+        "RBSP_ECT-REPT-SCI-L3-SELESNICK-MODEL": {
+          "description": "RBSP/ECT REPT Monthly Intensities as a function of Energy, Pitch Angle and L-shell from the Selesnick model - D. Baker (University of Colorado at Boulder)",
+          "start_date": "2013-10-15T00:00:00.000Z",
+          "stop_date": "2018-05-15T00:00:00.000Z",
+          "pi_name": "D. Baker",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/0qyz-h276",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP_ECT-REPT-SCI-L3-SELESNICK-MODEL"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEHE-0": {
+          "description": "TOF x Energy High Energy Low Time resolution Helium intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:50.000Z",
+          "stop_date": "2015-01-14T23:59:47.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/dkyf-gz14",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEHE-0"
+        },
+        "RBSP-A-RBSPICE_LEV-3_ISRHELT": {
+          "description": "Diagnostic Data Use only - DO NOT USE FOR SCIENTIFIC PURPOSES. High-energy low-time resolution RBSPICE Ion Energy mode measurement with pitch angles of all particle fluxes (electron/ion)  ~0.05-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:17.000Z",
+          "stop_date": "2019-10-13T19:05:16.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/daqq-gk90",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_ISRHELT"
+        },
+        "RBSP-B-RBSPICE_LEV-3_TOFXPHHHELT": {
+          "description": "High-energy low-time resolution proton and oxygen fluxes from TOF x PH Hydrogen Rates (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-15T23:59:56.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/6wj8-zz20",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_TOFXPHHHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_TOFXPHHHELT": {
+          "description": "High-energy low-time resolution proton and oxygen fluxes from TOF x PH Hydrogen Rates (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-28T00:00:04.000Z",
+          "stop_date": "2019-10-14T14:25:08.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/5sqy-kb23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_TOFXPHHHELT"
+        },
+        "RBSPB_REL04_ECT-HOPE-PA-L3": {
+          "description": "Pitch angle resolved ECT-HOPE science data.  Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-26T00:00:20.000Z",
+          "stop_date": "2019-07-16T16:37:53.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/4671-8e02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL04_ECT-HOPE-PA-L3"
+        },
+        "RBSP-B-RBSPICE_LEV-2_ESRLEHT": {
+          "description": "Low-energy high-time resolution electron fluxes ~0.02-1.0 MeV (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:11:43.000Z",
+          "stop_date": "2014-11-12T13:44:51.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/btrq-0a49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_ESRLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEO-0": {
+          "description": "TOF x Energy High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:50.000Z",
+          "stop_date": "2015-01-14T23:59:47.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/2c4e-dk29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEO-0"
+        },
+        "RBSP-A-RBSPICE_LEV-2_TOFXEH": {
+          "description": "TOF x Energy Hydrogen Rates (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2019-10-14T14:25:09.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/ydv2-ch72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_TOFXEH"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHHHELT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:02:12.000Z",
+          "stop_date": "2019-10-13T23:59:52.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/9j1k-re84",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHHHELT"
+        },
+        "RBSPA_L2_PSBR-RPS": {
+          "description": "Van Allen Probes/RPS Level 2 Data - J. Mazur (The Aerospace Corporation)",
+          "start_date": "2012-09-02T00:00:00.000Z",
+          "stop_date": "2019-10-14T23:59:59.000Z",
+          "pi_name": "J. Mazur",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/a587-0r70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_L2_PSBR-RPS"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEHE": {
+          "description": "TOF x Energy High Energy Low Time resolution Helium intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2015-01-15T00:00:03.000Z",
+          "stop_date": "2019-10-13T23:59:43.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/knbt-qb86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEHE"
+        },
+        "RBSP-A-RBSPICE_LEV-3_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Hydrogen and Oxygen Fluxes ~0.01-0.2 MeV measured at low energy resolution and high time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2014-10-02T20:59:30.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/jstq-z957",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_TOFXPHHLEHT"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEO-0": {
+          "description": "TOF x Energy High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:21.000Z",
+          "stop_date": "2015-01-14T23:59:50.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/nw9y-vj72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEO-0"
+        },
+        "RBSP-B-RBSPICE_LEV-3_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Hydrogen and Oxygen Fluxes ~0.01-0.2 MeV measured at low energy resolution and high time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T02:11:56.000Z",
+          "stop_date": "2014-10-03T16:51:58.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/9f4c-2b63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_TOFXPHHLEHT"
+        },
+        "RBSP-A-RBSPICE_LEV-3_TOFXPHHHELT": {
+          "description": "High-energy low-time resolution proton and oxygen fluxes from TOF x PH Hydrogen Rates (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:17.000Z",
+          "stop_date": "2019-10-13T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/nj27-cf05",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_TOFXPHHHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Hydrogen and Oxygen Fluxes ~0.01-0.2 MeV measured at low energy resolution and high time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2014-10-02T20:59:30.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/qkk5-r037",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_TOFXPHHLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T02:12:01.000Z",
+          "stop_date": "2014-10-03T16:51:42.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/njhg-7j22",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHHLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3_TOFXEH": {
+          "description": "TOF x Energy Hydrogen Rates (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:44.000Z",
+          "stop_date": "2019-07-15T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/6crc-aj02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_TOFXEH"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEO": {
+          "description": "TOF x Energy High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2015-01-15T00:00:03.000Z",
+          "stop_date": "2019-10-13T23:59:43.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/gg52-1338",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEO"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEH": {
+          "description": "TOF x Energy High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:21.000Z",
+          "stop_date": "2019-10-13T23:59:43.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/t323-cd86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEH"
+        },
+        "RBSP-A-RBSPICE_LEV-2_TOFXEION": {
+          "description": "TOF x Energy Ion Fluxes 0.02-1 MeV measured at high energy resolution and low time resolution  (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-28T00:00:04.000Z",
+          "stop_date": "2019-10-14T14:25:09.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/p4m2-9k90",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_TOFXEION"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHHHELT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:15.000Z",
+          "stop_date": "2019-07-15T23:59:35.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/7dg0-7h47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHHHELT"
+        },
+        "RBSPB_L2-1MIN_PSBR-RPS": {
+          "description": "Van Allen Probes/RPS Level 2 1-Minute Data - J. Mazur (The Aerospace Corporation)",
+          "start_date": "2012-09-01T00:00:30.000Z",
+          "stop_date": "2019-07-16T23:59:30.000Z",
+          "pi_name": "J. Mazur",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/r0b5-m046",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_L2-1MIN_PSBR-RPS"
+        },
+        "RBSP-B-RBSPICE_LEV-3_TOFXEION": {
+          "description": "TOF x Energy Ion Fluxes 0.02-1 MeV measured at high energy resolution and low time resolution  (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-15T23:59:56.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/1qnv-8c11",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_TOFXEION"
+        },
+        "RBSP-A-RBSPICE_LEV-3_TOFXEH": {
+          "description": "TOF x Energy Hydrogen Rates (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2019-10-13T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/e889-c285",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_TOFXEH"
+        },
+        "RBSP-B-RBSPICE_LEV-3_ESRHELT": {
+          "description": "High-energy low-time resolution electron fluxes ~0.02-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:11:43.000Z",
+          "stop_date": "2019-07-15T23:59:56.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/vn20-5g44",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_ESRHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_ISRHELT": {
+          "description": "Diagnostic Data Use only - DO NOT USE FOR SCIENTIFIC PURPOSES. High-energy low-time resolution RBSPICE Ion Energy mode measurement of all particle fluxes (electron/ion)  ~0.05-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-28T00:00:04.000Z",
+          "stop_date": "2019-10-14T12:38:14.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/0ak3-z198",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_ISRHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_TOFXENONH": {
+          "description": "TOF x E non Hydrogen (Helium and Oxygen) Rates ~0.02-1.0 MeV measured at high energy and low time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2019-10-14T14:25:09.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/w5ye-vm77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_TOFXENONH"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHOLEHT": {
+          "description": "TOF x Pulse Height Energies Low Energy High Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T02:12:01.000Z",
+          "stop_date": "2014-10-03T16:51:42.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/bwm7-5m36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHOLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3_ESRLEHT": {
+          "description": "Low-energy high-time resolution electron fluxes ~0.02-1.0 MeV (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:11:43.000Z",
+          "stop_date": "2014-11-12T13:44:51.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/nxsw-2k50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3_ESRLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-2_TOFXEH": {
+          "description": "TOF x Energy Hydrogen Rates (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:44.000Z",
+          "stop_date": "2019-07-16T16:40:07.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/49dp-jw39",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_TOFXEH"
+        },
+        "RBSP-A-RBSPICE_LEV-3_ESRHELT": {
+          "description": "High-energy low-time resolution electron fluxes ~0.02-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:06:46.000Z",
+          "stop_date": "2019-10-13T23:59:58.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/zcrq-hj26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_ESRHELT"
+        },
+        "RBSPB_L2_PSBR-RPS": {
+          "description": "Van Allen Probes/RPS Level 2 Data - J. Mazur (The Aerospace Corporation)",
+          "start_date": "2012-09-01T00:00:00.000Z",
+          "stop_date": "2019-07-16T23:59:59.000Z",
+          "pi_name": "J. Mazur",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/b5me-tj22",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_L2_PSBR-RPS"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEION": {
+          "description": "TOF x Energy High Energy Low Time resolution ion intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:02:12.000Z",
+          "stop_date": "2019-10-13T23:59:52.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/3wy7-bv28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEION"
+        },
+        "RBSP-B-RBSPICE_LEV-2_ISRHELT": {
+          "description": "Diagnostic Data Use only - DO NOT USE FOR SCIENTIFIC PURPOSES. High-energy low-time resolution RBSPICE Ion Energy mode measurement of all particle fluxes (electron/ion)  ~0.05-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-16T14:58:18.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/gd0d-6e49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_ISRHELT"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHOHELT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:15.000Z",
+          "stop_date": "2019-07-15T23:59:35.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/hrv9-ec37",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXPHOHELT"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEHE": {
+          "description": "TOF x Energy High Energy Low Time resolution Helium intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-15T00:00:00.000Z",
+          "stop_date": "2019-07-15T23:59:51.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/0nfn-gt73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEHE"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_ESRHELT": {
+          "description": "High Energy Low Time resolution electron intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:12:38.000Z",
+          "stop_date": "2019-07-15T23:59:35.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/yean-0a44",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_ESRHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-3_ESRLEHT": {
+          "description": "Low-energy high-time resolution electron fluxes ~0.02-1.0 MeV (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:06:46.000Z",
+          "stop_date": "2014-10-03T09:14:00.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/n221-vw77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_ESRLEHT"
+        },
+        "RBSPA_REL03_ECT-MAGEIS-L2": {
+          "description": "Electron fluxes ~20-4000 keV and proton fluxes ~50-1500 keV from ECT/MAGEIS - J. Bernard Blake / JBernard.Blake@aero.org (The Aerospace Corporation)",
+          "start_date": "2012-09-07T02:26:42.000Z",
+          "stop_date": "2018-05-15T10:26:43.000Z",
+          "pi_name": "J. Bernard Blake / JBernard.Blake@aero.org",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/dhj8-f337",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL03_ECT-MAGEIS-L2"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEH": {
+          "description": "TOF x Energy High Energy Low Time resolution proton intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-14T16:59:50.000Z",
+          "stop_date": "2019-07-15T23:59:51.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/6n22-6807",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEH"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_ESRLEHT": {
+          "description": "Low Energy High Time resolution electron intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:11:48.000Z",
+          "stop_date": "2014-11-12T13:44:35.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/yq1a-4q76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_ESRLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-3-PAP_TOFXEO": {
+          "description": "TOF x Energy High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2015-01-15T00:00:02.000Z",
+          "stop_date": "2019-07-15T23:59:51.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/7bnw-z839",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-3-PAP_TOFXEO"
+        },
+        "RBSP-A-RBSPICE_LEV-3_TOFXENONH": {
+          "description": "TOF x E non Hydrogen (Helium and Oxygen) Rates ~0.02-1.0 MeV measured at high energy and low time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:16.000Z",
+          "stop_date": "2019-10-13T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/qghx-dt80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_TOFXENONH"
+        },
+        "RBSP-A-RBSPICE_LEV-3_TOFXEION": {
+          "description": "TOF x Energy Ion Fluxes 0.02-1 MeV measured at high energy resolution and low time resolution  (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:01:17.000Z",
+          "stop_date": "2019-10-13T23:59:59.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/ee6n-x567",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3_TOFXEION"
+        },
+        "RBSPB_REL04_ECT-HOPE-SCI-L2SA": {
+          "description": "Spin averaged ECT-HOPE science data. Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:09.000Z",
+          "stop_date": "2019-07-16T16:37:53.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/68w5-kh78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL04_ECT-HOPE-SCI-L2SA"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_ESRLEHT": {
+          "description": "Low Energy High Time resolution electron intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:06:52.000Z",
+          "stop_date": "2014-10-03T09:13:44.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/ezsz-e525",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_ESRLEHT"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHOHELT": {
+          "description": "TOF x Pulse Height Energies High Energy Low Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:02:12.000Z",
+          "stop_date": "2019-10-13T23:59:52.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/wsp2-ds36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHOHELT"
+        },
+        "RBSPA_REL04_ECT-HOPE-SCI-L2": {
+          "description": "Spin resolved ECT-HOPE science data. Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:11.000Z",
+          "stop_date": "2019-10-14T13:53:22.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/34q8-8q26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL04_ECT-HOPE-SCI-L2"
+        },
+        "RBSPB_REL03_ECT-MAGEIS-L2": {
+          "description": "Electron fluxes ~20-4000 keV and proton fluxes ~50-1500 keV from ECT/MAGEIS - J. Bernard Blake / JBernard.Blake@aero.org (The Aerospace Corporation)",
+          "start_date": "2012-09-07T00:00:10.000Z",
+          "stop_date": "2018-05-15T12:20:35.000Z",
+          "pi_name": "J. Bernard Blake / JBernard.Blake@aero.org",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/mfa4-z841",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL03_ECT-MAGEIS-L2"
+        },
+        "RBSPB_REL04_ECT-MAGEIS-L3": {
+          "description": "Electron fluxes ~20-4000keV and proton fluxes ~60-1500 keV from ECT/MagEIS - J. Bernard Blake (JBernard.Blake@aero.org) (The Aerospace Corporation)",
+          "start_date": "2012-09-06T19:56:14.000Z",
+          "stop_date": "2019-07-16T16:37:56.000Z",
+          "pi_name": "J. Bernard Blake (JBernard.Blake@aero.org)",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/6qrc-aq80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL04_ECT-MAGEIS-L3"
+        },
+        "RBSPA_REL03_ECT-REPT-SCI-L2": {
+          "description": "Electron fluxes 2-20 MeV and proton fluxes 20-120 MeV from ECT/REPT - D. Baker (University of Colorado at Boulder)",
+          "start_date": "2012-09-01T11:38:18.000Z",
+          "stop_date": "2019-10-14T13:53:29.000Z",
+          "pi_name": "D. Baker",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/hpp2-yy26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL03_ECT-REPT-SCI-L2"
+        },
+        "RBSPA_REL03_ECT-REPT-SCI-L3": {
+          "description": "RBSP/ECT REPT Pitch Angle Resolved Electron and Proton Fluxes. Electron energies: 2 - 59.45 MeV. Proton energies: 21.25 - 0 MeV - D. Baker (University of Colorado at Boulder)",
+          "start_date": "2012-09-01T11:38:18.000Z",
+          "stop_date": "2019-10-14T13:53:29.000Z",
+          "pi_name": "D. Baker",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/4x5t-th95",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL03_ECT-REPT-SCI-L3"
+        },
+        "RBSP-B-RBSPICE_LEV-2_ESRHELT": {
+          "description": "High-energy low-time resolution electron fluxes ~0.02-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T00:11:43.000Z",
+          "stop_date": "2019-07-16T16:39:50.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/2zcv-0b61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_ESRHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHOLEHT": {
+          "description": "TOF x Pulse Height Energies Low Energy High Time resolution Oxygen intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:21.000Z",
+          "stop_date": "2014-10-02T20:59:13.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/q87a-tn74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXPHOLEHT"
+        },
+        "RBSP-B-RBSPICE_LEV-2_TOFXPHHHELT": {
+          "description": "High-energy low-time resolution proton and oxygen fluxes from TOF x PH Hydrogen Rates (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-10-29T00:00:20.000Z",
+          "stop_date": "2019-07-16T16:39:50.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/4qe2-5145",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_TOFXPHHHELT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_ESRHELT": {
+          "description": "High-energy low-time resolution electron fluxes ~0.02-1.0 MeV (with multi-spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:06:46.000Z",
+          "stop_date": "2019-10-14T14:25:09.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/50xk-gg39",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_ESRHELT"
+        },
+        "RBSPA_REL04_ECT-HOPE-PA-L3": {
+          "description": "Pitch angle resolved ECT-HOPE science data.  Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:23.000Z",
+          "stop_date": "2019-10-14T13:53:22.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/17p9-rf75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL04_ECT-HOPE-PA-L3"
+        },
+        "RBSPB_REL03_ECT-REPT-SCI-L2": {
+          "description": "Electron fluxes 2-20 MeV and proton fluxes 20-120 MeV from ECT/REPT - D. Baker (University of Colorado at Boulder)",
+          "start_date": "2012-09-02T14:17:46.000Z",
+          "stop_date": "2019-07-16T16:37:58.000Z",
+          "pi_name": "D. Baker",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/nzhx-1t77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL03_ECT-REPT-SCI-L2"
+        },
+        "RBSPB_REL03_ECT-REPT-SCI-L3": {
+          "description": "RBSP/ECT REPT Pitch Angle Resolved Electron and Proton Fluxes. Electron energies: 2 - 59.45 MeV. Proton energies: 21.25 - 0 MeV - D. Baker (University of Colorado at Boulder)",
+          "start_date": "2012-09-02T14:17:46.000Z",
+          "stop_date": "2019-07-16T16:37:58.000Z",
+          "pi_name": "D. Baker",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/5t1q-9z75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL03_ECT-REPT-SCI-L3"
+        },
+        "RBSP-B-RBSPICE_LEV-2_TOFXPHHLEHT": {
+          "description": "TOF x Pulse Height Hydrogen and Oxygen Fluxes ~0.01-0.2 MeV measured at low energy resolution and high time resolution (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-12-02T02:11:56.000Z",
+          "stop_date": "2014-10-03T16:51:58.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/2jc4-tb70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B-RBSPICE_LEV-2_TOFXPHHLEHT"
+        },
+        "RBSP-A-RBSPICE_LEV-2_ESRLEHT": {
+          "description": "Low-energy high-time resolution electron fluxes ~0.02-1.0 MeV (with spin accumulations plotted at end of accumulation in sector order) - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:06:46.000Z",
+          "stop_date": "2014-10-03T09:14:00.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/x715-ah28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-2_ESRLEHT"
+        },
+        "RBSPA_REL04_ECT-HOPE-SCI-L2SA": {
+          "description": "Spin averaged ECT-HOPE science data. Electron fluxes ~15-50,000 eV, ion fluxes ~1-50,000 eV. Electrons and ions measured in alternate spin cadence.  - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:11.000Z",
+          "stop_date": "2019-10-14T13:53:22.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/rcxw-mm23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL04_ECT-HOPE-SCI-L2SA"
+        },
+        "RBSPA_REL04_ECT-MAGEIS-L3": {
+          "description": "Electron fluxes ~20-4000keV and proton fluxes ~60-1500 keV from ECT/MagEIS - J. Bernard Blake (JBernard.Blake@aero.org) (The Aerospace Corporation)",
+          "start_date": "2012-09-07T02:29:48.000Z",
+          "stop_date": "2019-10-14T13:53:17.000Z",
+          "pi_name": "J. Bernard Blake (JBernard.Blake@aero.org)",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/09qz-tf17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL04_ECT-MAGEIS-L3"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_TOFXEHE-0": {
+          "description": "TOF x Energy High Energy Low Time resolution Helium intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2013-01-26T10:04:21.000Z",
+          "stop_date": "2015-01-14T23:59:50.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/z9kh-tp03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_TOFXEHE-0"
+        },
+        "RBSP-A-RBSPICE_LEV-3-PAP_ESRHELT": {
+          "description": "High Energy Low Time resolution electron intensities and pressures sorted by pitch angles - Lou Lanzerotti (New Jersey Institute of Technology)",
+          "start_date": "2012-11-13T22:07:41.000Z",
+          "stop_date": "2019-10-13T23:59:43.000Z",
+          "pi_name": "Lou Lanzerotti",
+          "pi_affiliation": "New Jersey Institute of Technology",
+          "doi": "10.48322/7mxy-dn25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A-RBSPICE_LEV-3-PAP_ESRHELT"
+        },
+        "RBSPA_L2-1MIN_PSBR-RPS": {
+          "description": "Van Allen Probes/RPS Level 2 1-Minute Data - J. Mazur (The Aerospace Corporation)",
+          "start_date": "2012-09-02T00:00:30.000Z",
+          "stop_date": "2019-10-14T23:59:30.000Z",
+          "pi_name": "J. Mazur",
+          "pi_affiliation": "The Aerospace Corporation",
+          "doi": "10.48322/h4my-4k78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_L2-1MIN_PSBR-RPS"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "RBSP-B_WFR-WAVEFORM-CONTINUOUS-BURST_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Three Axis Electric Field (EU, EV, EW) and Three Axis Magnetic field (BU, BV, BW)  continuous burst waveforms @ 35 kS/sec - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-02T20:03:26.000Z",
+          "stop_date": "2019-07-16T05:38:29.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/gm07-2739",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WFR-WAVEFORM-CONTINUOUS-BURST_EMFISIS-L2"
+        },
+        "RBSP-A_WNA-SURVEY-SHEATH-CORRECTED-E_EMFISIS-L4": {
+          "description": "Probes-A EMFISIS wave normal angle products and sheath corrected electric field level Level-4 - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-31T00:00:01.000Z",
+          "stop_date": "2019-10-14T00:00:00.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WNA-SURVEY-SHEATH-CORRECTED-E_EMFISIS-L4"
+        },
+        "RBSP-B_WFR-WAVEFORM_EMFISIS-L2": {
+          "description": "WFR Three Axis Electric Field (EU, EV, EW) and Three Axis Magnetic field (BU, BV, BW)  waveforms as 16384 samples @ 35 kS/sec - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:01:33.000Z",
+          "stop_date": "2019-07-16T16:01:05.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/mf9b-6r41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WFR-WAVEFORM_EMFISIS-L2"
+        },
+        "RBSP-A_MAGNETOMETER_1SEC-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/esgw-y164",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_1SEC-GEI_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_1SEC-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/x429-5310",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_1SEC-GSM_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_4SEC-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/zgv3-5m40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_4SEC-GEO_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_HIRES-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/q8rs-hg23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_HIRES-GEI_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_HIRES-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/mdts-0y61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_HIRES-GSE_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_HIRES-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/4dx1-s250",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_HIRES-GSM_EMFISIS-L3"
+        },
+        "RBSP-B_WNA-SURVEY-SHEATH-CORRECTED-E_EMFISIS-L4": {
+          "description": "Probes-B EMFISIS wave normal angle products and sheath corrected electric field Level-4 - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:04.000Z",
+          "stop_date": "2019-07-16T16:01:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WNA-SURVEY-SHEATH-CORRECTED-E_EMFISIS-L4"
+        },
+        "RBSP-B_MAGNETOMETER_4SEC-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/e698-nb28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_4SEC-GSE_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_1SEC-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/xhkc-6v40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_1SEC-GSE_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_UVW_EMFISIS-L2": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-31T01:30:56.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/66f8-6c92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_UVW_EMFISIS-L2"
+        },
+        "RBSP-B_MAGNETOMETER_HIRES-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/k10e-1w74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_HIRES-SM_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_4SEC-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/zrvq-vt55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_4SEC-GSM_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_4SEC-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/knn2-mp16",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_4SEC-SM_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_1SEC-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/fg6n-yr78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_1SEC-SM_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_HIRES-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/yhbp-n321",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_HIRES-GEO_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_HIRES-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/hn0a-s943",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_HIRES-GSE_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_UVW_EMFISIS-L2": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/8ttw-6h90",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_UVW_EMFISIS-L2"
+        },
+        "RBSP-B_MAGNETOMETER_1SEC-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/8zvn-5753",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_1SEC-GEI_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_4SEC-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/6f9r-x856",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_4SEC-GSE_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_1SEC-GSE_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/s5sk-bm30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_1SEC-GSE_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_HIRES-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/h47r-sf90",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_HIRES-SM_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_4SEC-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/kh8k-hc54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_4SEC-GSM_EMFISIS-L3"
+        },
+        "RBSP-A_WFR-WAVEFORM_EMFISIS-L2": {
+          "description": "WFR Three Axis Electric Field (EU, EV, EW) and Three Axis Magnetic field (BU, BV, BW)  waveforms as 16384 samples @ 35 kS/sec - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T23:00:36.000Z",
+          "stop_date": "2019-10-14T13:46:23.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/13vc-c837",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WFR-WAVEFORM_EMFISIS-L2"
+        },
+        "RBSP-A_MAGNETOMETER_1SEC-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/4kbj-9183",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_1SEC-SM_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_1SEC-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/w6r4-fp76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_1SEC-GSM_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_HIRES-GSM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/2tyy-s986",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_HIRES-GSM_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_4SEC-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/7gy4-qd32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_4SEC-GEI_EMFISIS-L3"
+        },
+        "RBSP-A_WFR-WAVEFORM-CONTINUOUS-BURST_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Three Axis Electric Field (EU, EV, EW) and Three Axis Magnetic field (BU, BV, BW)  continuous burst waveforms @ 35 kS/sec - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T22:14:55.000Z",
+          "stop_date": "2019-10-14T12:05:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/czxv-qx38",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WFR-WAVEFORM-CONTINUOUS-BURST_EMFISIS-L2"
+        },
+        "RBSP-A_WNA-SURVEY_EMFISIS-L4": {
+          "description": "Probes-A EMFISIS wave normal angle products level Level-4 - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-31T00:00:01.000Z",
+          "stop_date": "2019-10-14T00:00:00.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WNA-SURVEY_EMFISIS-L4"
+        },
+        "RBSP-B_MAGNETOMETER_1SEC-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/9fmv-3p17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_1SEC-GEO_EMFISIS-L3"
+        },
+        "RBSP-B_WNA-SURVEY_EMFISIS-L4": {
+          "description": "Probes-B EMFISIS wave normal angle products level Level-4 - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-31T01:56:16.000Z",
+          "stop_date": "2019-07-16T16:01:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WNA-SURVEY_EMFISIS-L4"
+        },
+        "RBSP-B_MAGNETOMETER_HIRES-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/y09z-a990",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_HIRES-GEO_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_1SEC-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:31.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/2913-5d64",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_1SEC-GEO_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_4SEC-SM_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/d15r-3a05",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_4SEC-SM_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_HIRES-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:32.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/b30v-s029",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_HIRES-GEI_EMFISIS-L3"
+        },
+        "RBSP-B_MAGNETOMETER_4SEC-GEO_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:35:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/5zd2-dk98",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_MAGNETOMETER_4SEC-GEO_EMFISIS-L3"
+        },
+        "RBSP-A_MAGNETOMETER_4SEC-GEI_EMFISIS-L3": {
+          "description": "Fluxgate magnetometer data - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:54:52.000Z",
+          "stop_date": "2019-10-14T12:30:28.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/hnyz-nk70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_MAGNETOMETER_4SEC-GEI_EMFISIS-L3"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "RBSP-B_WFR-SPECTRAL-MATRIX_EMFISIS-L2": {
+          "description": "WFR Spectral Matrix - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:04.000Z",
+          "stop_date": "2019-07-16T16:01:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/abqk-a365",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WFR-SPECTRAL-MATRIX_EMFISIS-L2"
+        },
+        "RBSP-A_WFR-SPECTRAL-MATRIX-DIAGONAL-MERGED_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Spectral Matrix ~5-10,000 Hz (Merged, Diagonal Elements Only) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:02.000Z",
+          "stop_date": "2019-10-14T13:50:59.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/at6y-vy38",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WFR-SPECTRAL-MATRIX-DIAGONAL-MERGED_EMFISIS-L2"
+        },
+        "RBSP-A_HFR-SPECTRA-BURST_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T21:25:35.000Z",
+          "stop_date": "2019-10-14T12:05:18.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/18b2-kt74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_HFR-SPECTRA-BURST_EMFISIS-L2"
+        },
+        "RBSP-B_WFR-SPECTRAL-MATRIX-DIAGONAL_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Spectral Matrix ~5-10000 Hz (Diagonal Elements Only) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:04.000Z",
+          "stop_date": "2019-07-16T16:01:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/dafd-6p95",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WFR-SPECTRAL-MATRIX-DIAGONAL_EMFISIS-L2"
+        },
+        "RBSP-B_HFR-WAVEFORM_EMFISIS-L2": {
+          "description": "High Frequency Receiver (HFR) Field Waveform Samples in V/m (Selectable between the U, V and W Axes) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T03:43:57.000Z",
+          "stop_date": "2019-07-16T05:38:06.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/dz64-x875",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_HFR-WAVEFORM_EMFISIS-L2"
+        },
+        "RBSP-A_HFR-WAVEFORM_EMFISIS-L2": {
+          "description": "High Frequency Receiver (HFR) Field Waveform Samples in V/m (Selectable between the U, V and W Axes) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T21:03:07.000Z",
+          "stop_date": "2019-10-14T12:05:18.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/pg1z-7a92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_HFR-WAVEFORM_EMFISIS-L2"
+        },
+        "RBSP-B_HFR-SPECTRA-BURST_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-03T02:15:16.000Z",
+          "stop_date": "2019-07-16T05:23:55.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/prbv-3b62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_HFR-SPECTRA-BURST_EMFISIS-L2"
+        },
+        "RBSP-A_WFR-SPECTRAL-MATRIX_EMFISIS-L2": {
+          "description": "WFR Spectral Matrix - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:55:42.000Z",
+          "stop_date": "2019-10-14T13:50:59.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WFR-SPECTRAL-MATRIX_EMFISIS-L2"
+        },
+        "RBSP-B_HFR-SPECTRA_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-16T16:01:19.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/zpmq-qm18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_HFR-SPECTRA_EMFISIS-L2"
+        },
+        "RBSP-B_HFR-SPECTRA-MERGED_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:03.000Z",
+          "stop_date": "2019-07-12T23:59:59.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/g03f-pz86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_HFR-SPECTRA-MERGED_EMFISIS-L2"
+        },
+        "RBSP-B_WFR-SPECTRAL-MATRIX-DIAGONAL-MERGED_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Spectral Matrix ~5-10,000 Hz (Merged, Diagonal Elements Only) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-01T00:00:04.000Z",
+          "stop_date": "2019-07-16T16:01:11.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/0ch5-t113",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-B_WFR-SPECTRAL-MATRIX-DIAGONAL-MERGED_EMFISIS-L2"
+        },
+        "RBSP-A_WFR-SPECTRAL-MATRIX-DIAGONAL_EMFISIS-L2": {
+          "description": "WaveForm Receiver (WFR) Spectral Matrix ~5-10000 Hz (Diagonal Elements Only) - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T22:55:42.000Z",
+          "stop_date": "2019-10-14T13:50:59.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/3v2f-af86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_WFR-SPECTRAL-MATRIX-DIAGONAL_EMFISIS-L2"
+        },
+        "RBSP-A_HFR-SPECTRA_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-08-30T02:12:39.000Z",
+          "stop_date": "2019-10-14T13:51:06.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/2gay-q957",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_HFR-SPECTRA_EMFISIS-L2"
+        },
+        "RBSP-A_HFR-SPECTRA-MERGED_EMFISIS-L2": {
+          "description": "Single Axis AC Electric Field Spectra ~5-10,000 Hz - Craig Kletzing (University of Iowa)",
+          "start_date": "2012-09-02T00:00:01.000Z",
+          "stop_date": "2019-10-14T13:51:06.000Z",
+          "pi_name": "Craig Kletzing",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.48322/j4rf-2n06",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSP-A_HFR-SPECTRA-MERGED_EMFISIS-L2"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "RBSPA_EFW-L3": {
+          "description": "DERIVED FROM: Spinfit DC Electric Field estimates in M-GSE coordinates - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-18T00:00:06.000Z",
+          "stop_date": "2019-02-23T23:59:57.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/4k9n-gs06",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L3"
+        },
+        "RBSPA_EFW-L2_FBK": {
+          "description": "Filterbank peak and average values 1-7000 Hz from RBSP-EFW (with peak and average values returned for 2 of 20 possible sources at any one time) - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T15:01:52.000Z",
+          "stop_date": "2019-10-14T00:00:02.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/6a7j-p736",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_FBK"
+        },
+        "RBSPA_EFW-L2_SPEC": {
+          "description": "On-Board Spin-Fit 4-8000 Hz electric and magnetic field spectral data from RBSP-EFW (with 7 of 75 possible sources returned at any one time) - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T14:35:57.000Z",
+          "stop_date": "2019-10-14T00:00:06.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/78pf-4k59",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_SPEC"
+        },
+        "RBSPB_EFW-L2_E-SPINFIT-MGSE": {
+          "description": "Spinfit (10.9 sec resolution) DC Electric Field estimates in M-GSE coordinates. - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T23:21:46.000Z",
+          "stop_date": "2019-07-16T23:59:59.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/s0hb-rp21",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_E-SPINFIT-MGSE"
+        },
+        "RBSPB_EFW_BURST-WAVEFORM-UVW-L1": {
+          "description": "Burst Mode 1 (512 samples/sec) Electric and Magnetic Fields - J. R. Wygant",
+          "start_date": "2014-01-01T00:00:00.000Z",
+          "stop_date": "2014-01-01T01:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "doi": "10.48322/zbw6-0626",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW_BURST-WAVEFORM-UVW-L1"
+        },
+        "RBSPA_EFW-L2_E-SPINFIT-MGSE": {
+          "description": "Spinfit (10.9 sec resolution) DC Electric Field estimates in M-GSE coordinates. - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T14:36:16.000Z",
+          "stop_date": "2019-10-14T13:11:11.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/rhve-mz23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_E-SPINFIT-MGSE"
+        },
+        "RBSPA_EFW_BURST-WAVEFORM-UVW-L1": {
+          "description": "Burst Mode 1 (512 samples/sec) Electric and Magnetic Fields - J. R. Wygant",
+          "start_date": "2014-01-01T00:00:00.000Z",
+          "stop_date": "2014-01-01T01:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "doi": "10.48322/jcd5-kf50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW_BURST-WAVEFORM-UVW-L1"
+        },
+        "RBSPB_EFW-L2_ESVY_DESPUN": {
+          "description": "Despun (32 Samples/sec) E-Field estimates in M-GSE coords - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T00:00:00.000Z",
+          "stop_date": "2019-07-17T00:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/036a-q517",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_ESVY_DESPUN"
+        },
+        "RBSPB_EFW-L2_VSVY-HIRES": {
+          "description": "DERIVED FROM: Spinfit DC Electric Field estimates in M-GSE coordinates - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T00:00:00.000Z",
+          "stop_date": "2019-07-17T00:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/e9bt-8x09",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_VSVY-HIRES"
+        },
+        "RBSPA_EFW-L2_VSVY-HIRES": {
+          "description": "DERIVED FROM: Spinfit DC Electric Field estimates in M-GSE coordinates - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T00:00:00.000Z",
+          "stop_date": "2019-10-15T00:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/7mwt-de58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_VSVY-HIRES"
+        },
+        "RBSPB_EFW-L2_FBK": {
+          "description": "Filterbank peak and average values 1-7000 Hz from RBSP-EFW (with peak and average values returned for 2 of 20 possible sources at any one time) - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T23:21:28.000Z",
+          "stop_date": "2019-07-16T00:00:08.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/m9dn-c472",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_FBK"
+        },
+        "RBSPB_EFW-L2_SPEC": {
+          "description": "On-Board Spin-Fit 4-8000 Hz electric and magnetic field spectral data from RBSP-EFW (with 7 of 75 possible sources returned at any one time) - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T23:21:32.000Z",
+          "stop_date": "2019-07-16T00:00:20.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/hdnm-mh60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_SPEC"
+        },
+        "RBSPB_EFW-L2_E-HIRES-UVW": {
+          "description": "Reference for Spin Axis Vector in GSE - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-22T23:59:59.000Z",
+          "stop_date": "2019-07-16T16:52:40.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/64bn-y776",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L2_E-HIRES-UVW"
+        },
+        "RBSPA_EFW-L2_E-HIRES-UVW": {
+          "description": "Reference for Spin Axis Vector in GSE - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-22T23:59:59.000Z",
+          "stop_date": "2019-02-23T23:59:59.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/qtvb-dd97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_E-HIRES-UVW"
+        },
+        "RBSPA_EFW-L2_ESVY_DESPUN": {
+          "description": "Despun (32 Samples/sec) E-Field estimates in M-GSE coords - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-05T00:00:00.000Z",
+          "stop_date": "2019-10-15T00:00:00.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/t40m-em97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_EFW-L2_ESVY_DESPUN"
+        },
+        "RBSPB_EFW-L3": {
+          "description": "DERIVED FROM: Spinfit DC Electric Field estimates in M-GSE coordinates - J. R. Wygant (University of Minnesota)",
+          "start_date": "2012-09-18T01:19:18.000Z",
+          "stop_date": "2019-07-16T23:59:59.000Z",
+          "pi_name": "J. R. Wygant",
+          "pi_affiliation": "University of Minnesota",
+          "doi": "10.48322/p4ze-4247",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_EFW-L3"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "RBSPA_REL04_ECT-HOPE-MOM-L3": {
+          "description": "Spin resolved HOPE science data.  Plasma moments from electrons >200 eV and ions >30 eV measured at apogee in alternate spin cadence. - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-25T00:00:23.000Z",
+          "stop_date": "2019-10-14T13:53:22.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/egeg-7005",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPA_REL04_ECT-HOPE-MOM-L3"
+        },
+        "RBSPB_REL04_ECT-HOPE-MOM-L3": {
+          "description": "Spin resolved HOPE science data.  Plasma moments from electrons >200 eV and ions >30 eV measured at apogee in alternate spin cadence. - Herbert Funsten (Los Alamos National Laboratory)",
+          "start_date": "2012-10-26T00:00:20.000Z",
+          "stop_date": "2019-07-16T16:37:53.000Z",
+          "pi_name": "Herbert Funsten",
+          "pi_affiliation": "Los Alamos National Laboratory",
+          "doi": "10.48322/ndtr-v928",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesR.html#RBSPB_REL04_ECT-HOPE-MOM-L3"
+        }
+      }
+    }
+  },
+  "observatory_group": "Van Allen Probes (RBSP)",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

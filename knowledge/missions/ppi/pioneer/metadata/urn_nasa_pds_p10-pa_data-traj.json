@@ -1,0 +1,168 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCID",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft ID\n                        SCID = 'P10' for Pioneer 10.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YRDAY",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing year (19YY) and the day of\n                        year (DDD) in the form (YYDDD.0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MSEC",
+      "type": "double",
+      "units": "m",
+      "description": "Real number containing time in milliseconds of day\n                        from 0.0 to 86400000.0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RSC",
+      "type": "double",
+      "units": "km",
+      "description": "Heliocentric distance in kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANGL1",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANGL2",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ZSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VXSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VYSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VZSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Six-element array containing the Cartesian \n                        coords and velocity of s/c (km, km/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VSC",
+      "type": "double",
+      "units": "km/s",
+      "description": "Speed of s/c (km/sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RE",
+      "type": "double",
+      "units": "km",
+      "description": "Sun-Earth distance (km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EANGL1",
+      "type": "double",
+      "units": "deg",
+      "description": "Longtitude of Earth (degrees)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EANGL2",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude of Earth (degrees)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RESC",
+      "type": "double",
+      "units": "km",
+      "description": "Sun-Earth distance (km).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

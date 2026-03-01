@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude at this grid point (South is negative; North is positive).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "East Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "East longitude at this grid point.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Data Points in Bin",
+      "type": "double",
+      "units": "",
+      "description": "Number of data points in this latitude/longitude bin.                     \n                          The bin size can be deduced from the difference between                   \n                          successive latitude and longitude values (e.g.,                           \n                          0.5 degrees by 0.5 degrees for altitudes near 100 km;                     \n                          0.25 degrees by 0.25 degrees for altitudes near 25 km).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

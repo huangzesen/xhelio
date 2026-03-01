@@ -1,0 +1,131 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ion_Temperature",
+      "type": "double",
+      "units": "[keV]",
+      "description": "Inner Magnetospheric Ion Temperature images - original",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Ion_Temperature_flipped",
+      "type": "double",
+      "units": "[keV]",
+      "description": "Inner Magnetospheric Ion Temperature images",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Ion_Temperature_movie",
+      "type": "double",
+      "units": "[keV]",
+      "description": "---> Movie display",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Satellite",
+      "type": "integer",
+      "units": "[]",
+      "description": "TWINS Satellite 1 or 2 Used to calculate Ion Temperature",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "X_GSM",
+      "type": "double",
+      "units": "[Re]",
+      "description": "TWINS Spacecraft Location X GSM [RE]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Y_GSM",
+      "type": "double",
+      "units": "[Re]",
+      "description": "TWINS Spacecraft Location Y GSM [RE]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Z_GSM",
+      "type": "double",
+      "units": "[Re]",
+      "description": "TWINS Spacecraft Location Z GSM [RE]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Active_Region",
+      "type": "double",
+      "units": "Active Region Z score",
+      "description": "Active Region Z Score",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Active_Region_flipped",
+      "type": "double",
+      "units": "Active Region Z score",
+      "description": "Active Region Z Score",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Active_Region_flipped_mv",
+      "type": "double",
+      "units": "Active Region Z score",
+      "description": "--> Movie display of above",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "Coverage_flag",
+      "type": "integer",
+      "units": "[]",
+      "description": "The 5-level quality flag for data coverage. 5-level quality flag for data coverage. 5 > 95%, 4 > 90%, 3 > 75%, 2 > 50%, 1 > 25%",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ErrorFlag",
+      "type": "integer",
+      "units": "[]",
+      "description": "Overlap of TWINS error array and the overlapped identified active regions. Error_array comes from the estimation of the error in the flux values from the statistical smoothing algorithm. 0 = good quality, 1 = bad",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Count_Error",
+      "type": "double",
+      "units": "[]",
+      "description": "The Count_Error spatial map. The Count_Error is the energy averaged from raw counts per instrument pixel",
+      "fill": "-1e+31",
+      "size": [
+        160,
+        160
+      ]
+    }
+  ],
+  "startDate": "2009-04-09T15:10:00.000Z",
+  "stopDate": "2018-09-14T00:00:59.000Z"
+}

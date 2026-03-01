@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HET_A_Electrons_Rate_TS",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "HET Electrons count rate side A 1-5MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_H_Rate_TS",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H count rate side A 2-10MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_Heavy_Rate_TS",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Heavy (6<=z<=28) ion count rate side A 4-40 MeV/nuc",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_CountRate_ChanP_SP",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H count rate channel P (HiResProtons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "Electron_CountRate_ChanE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Electron count rate channel E (HiResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "HET_A_H_Rate_TS",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "HET H count rate side A 10-50MeV",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": "",
+  "_validated": true,
+  "_validations": [
+    {
+      "source_file": "psp_isois_l2-summary_20210427_v24.cdf",
+      "validated_at": "2026-02-19T10:44:28.672516+00:00",
+      "discrepancies": {},
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/isois/merged/l2/summary/2021/psp_isois_l2-summary_20210427_v24.cdf"
+    }
+  ]
+}

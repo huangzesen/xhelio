@@ -1,0 +1,395 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "L1",
+      "type": "double",
+      "units": "",
+      "description": "PROTONS (0.9-1.2 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L2",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.2-3.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L3",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L4",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 1",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L5",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 2",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L6",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 3",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L7",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 4",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L8",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 5",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L9",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 6",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L10",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 7",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L11",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (1.8-3.8 MeV) SECTOR 8",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L12",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L13",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 1",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L14",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 2",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L15",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 3",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L16",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 4",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L17",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 5",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L18",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 6",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L19",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 7",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L20",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (3.8-8.0 MeV) SECTOR 8",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L21",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "PROTONS (8.0-19.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L22",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "ALPHAS (1.0-5.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L23",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "ALPHAS (1.9-3.7 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L24",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "ALPHAS (3.7-8.4 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L25",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "ALPHAS (8.4-19.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L26",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "LI,BE,B (1.9-4.9 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L27",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "LI,BE,B (4.9-26 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L28",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "C,N,O (2.6-7.1 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L29",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "C,N,O (7.1-39.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L30",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Z>=10 (3.0-9.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L31",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "10<=Z<=20 (9.0-50 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L32",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Z>=20 (12.0-75.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L33",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "ELECTRONS (0.3-1.0 MeV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L34",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Single Detector Counting Rate 1",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L35",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Single Detector Counting Rate 2",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L36",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Single Detector Counting Rate 3",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L37",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Single Detector Counting Rate 4",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "L38",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "Single Detector Counting Rate 5",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

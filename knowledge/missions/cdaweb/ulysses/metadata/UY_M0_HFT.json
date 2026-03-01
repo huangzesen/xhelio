@@ -1,0 +1,83 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "F1J_protons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=1 flux (mainly protons), 0.28-2.27 MeV, 3 channels: F1J(0) - F1J(2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "F1J_helium",
+      "type": "double",
+      "units": "",
+      "description": "Z>=2 flux (mainly helium), 0.31-5.4 MeV/n, in 11 channels: F1J(3) to F1J(13)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "F1J_oxygen",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=2 flux (mainly oxygen), >= 0.34 MeV/n, in 2 channels: F1J(14) to F1J(15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "F2_protons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=1 flux (mainly protons), 0.29-6.7 MeV,channels F2L: 0.29-6.7, F2H: 0.55-1.95 MeV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "F3_helium",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=2 flux (mainly helium), 0.68-1.56 MeV/n, channel F3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F4_C_O",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=3 flux (mainly carbon 0.8-4.9 MeV/n, oxygen 0.64-10.7 MeV/n), channel F4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F5_S_Fe",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=12 flux (mainly sulphur 1.28-8.5, iron 0.8-34 MeV/n), channel F5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F2S_protons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Z>=1 flux (mainly protons), in 32 sectors, channel F2S",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "1991-01-01T00:00:00.000Z",
+  "stopDate": "2008-08-31T23:50:00.000Z"
+}

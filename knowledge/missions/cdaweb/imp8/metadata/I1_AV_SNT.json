@@ -1,0 +1,53 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "freq_mark",
+      "type": "double",
+      "units": "MHz",
+      "description": "frequency markers for sounder",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ampl",
+      "type": "integer",
+      "units": "",
+      "description": "Sounder amplitude at 335 virtual heights for fixed & swept frequency",
+      "fill": "-128.0",
+      "size": [
+        335
+      ]
+    },
+    {
+      "name": "freq",
+      "type": "double",
+      "units": "MHz",
+      "description": "Interpolated fixed & sweep frequencies",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "height",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FH",
+      "type": "double",
+      "units": "MHz",
+      "description": "Electron Gyrofrequency",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1969-01-31T01:29:39.000Z",
+  "stopDate": "1972-12-25T07:01:13.000Z"
+}

@@ -1,0 +1,176 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SC_ECI",
+      "type": "double",
+      "units": "km",
+      "description": "Earth Centered Inertial (ECI) spacecraft location (x,y,z) in km.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_GEOCENTRIC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geocentric latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_GEOCENTRIC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Geocentric Longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_GEOCENTRIC_R",
+      "type": "double",
+      "units": "km",
+      "description": "Distance from center of Earth in km.",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Altitude Adjusted Corrected Geomagnetic  Latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Altitude Adjusted Corrected Geomagnetic  Longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LTIME",
+      "type": "double",
+      "units": "hr",
+      "description": "Altitude Adjusted Corrected Geomagnetic Local Time",
+      "fill": "nan"
+    },
+    {
+      "name": "B_SC_OBS_ORIG",
+      "type": "double",
+      "units": "nT",
+      "description": "Original measured field (x,y,z) in nT in spacecraft frame.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_SC_ORIG",
+      "type": "double",
+      "units": "nT",
+      "description": "delta-B (Original measured B - Modeled IGRF field) (x,y,z) in nT in spacecraft frame.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_GEO",
+      "type": "double",
+      "units": "nT",
+      "description": "Baseline Corrected delta-B in nT rotated into geocentric spherical (east-north-up) coordinates.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_APX",
+      "type": "double",
+      "units": "nT",
+      "description": "Baseline Corrected delta-B in nT rotated into Modified Apex Coordinates with Reference Height 110 km.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Baseline Corrected delta-B in nT in spacecraft frame.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_APEX_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Modified Apex Geomagnetic Latitude (Reference Height 110km)",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_APEX_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Modified Apex Geomagnetic Longitude (Reference Height 110km)",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_APEX_MLT",
+      "type": "double",
+      "units": "hour",
+      "description": "Modified Apex Geomagnic Local Time (Reference Height 110km)",
+      "fill": "nan"
+    },
+    {
+      "name": "AURORAL_REGION",
+      "type": "double",
+      "units": "(2=Auroral)",
+      "description": "Numerical code for auroral region of spacecraft location (1=Equatorial,2=Auroral,3=Polar)",
+      "fill": "nan"
+    },
+    {
+      "name": "AURORAL_BOUNDARY_FOM",
+      "type": "double",
+      "units": "(OK>=2)",
+      "description": "Figure of Merit for Auroral Boundary Determination",
+      "fill": "nan"
+    },
+    {
+      "name": "ORBIT_INDEX",
+      "type": "double",
+      "units": "N/A",
+      "description": "Integer representing the orbit of the day, signed by hemisphere (>0 Northern, <0 Southern).",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_ALONG_GEO",
+      "type": "double",
+      "units": "N/A",
+      "description": "Unit vector in the direction of spacecraft velocity (ram) in geocentric coordintes",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_ACROSS_GEO",
+      "type": "double",
+      "units": "N/A",
+      "description": "Unit vector across the spacecraft track to the left ( orthogonal to the direction of spacecraft velocity (ram) ) in geocentric coordintes.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2009-01-01T00:00:00.000Z",
+  "stopDate": "2015-01-01T23:59:59.000Z"
+}

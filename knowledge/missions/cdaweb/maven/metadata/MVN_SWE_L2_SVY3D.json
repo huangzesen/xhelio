@@ -1,0 +1,278 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "time_met",
+      "type": "double",
+      "units": "s",
+      "description": "Time, center of sample, in raw mission elapsed time",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "binning",
+      "type": "integer",
+      "units": "",
+      "description": "Energy binning factor: 1 = 64 energies, 2 = 32 energies, 4 = 16 energies",
+      "fill": "255.0"
+    },
+    {
+      "name": "counts",
+      "type": "double",
+      "units": "counts",
+      "description": "[no-plot]Raw Instrument Counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated differential energy flux [vary with time, energy, deflection index and azimuth angle] at 1st Deflection Index [Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "variance",
+      "type": "double",
+      "units": "(eV/[eV cm^2 sr s])^2",
+      "description": "Variance of differential energy flux (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "secondary",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Secondary electron contamination (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec1",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at selected Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_2",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and azimuth angle] at 2nd Deflection Index[Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_2mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec2",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_3",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and azimuth angle] at 3rd Deflection Index[Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_3mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec3",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_4",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and azimuth angle] at 4th Deflection Index[Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_4mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec4",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_5",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and azimuth angle] at 5th Deflection Index[Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_5mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec5",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_6",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated Differential Energy Flux [vary with time, energy, deflection index and azimuth angle] at 6th Deflection Index[Thumbnails, select a few hours]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_6mv",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Movie of above [flux vs. energy and azimuth angle]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_spec6",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Spectrogram at Azimuth Angle bins 1,4,7,10,13,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        16,
+        64
+      ]
+    }
+  ],
+  "startDate": "2014-03-19T14:13:00.000Z",
+  "stopDate": "2025-10-31T23:59:28.000Z"
+}

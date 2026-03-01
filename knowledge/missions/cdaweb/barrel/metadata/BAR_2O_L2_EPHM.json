@@ -1,0 +1,68 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "GPS_Lat",
+      "type": "double",
+      "units": "degrees North",
+      "description": "GPS Latitude.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GPS_Lon",
+      "type": "double",
+      "units": "degrees East",
+      "description": "GPS Longitude.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GPS_Alt",
+      "type": "double",
+      "units": "km",
+      "description": "GPS Altitude.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Kp2_T89c",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic local time for Kp=2 in hours (using T89c).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Kp6_T89c",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic local time for Kp=6 in hours (using T89c).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Kp2",
+      "type": "double",
+      "units": "",
+      "description": "L shell for Kp=2 (using T89c).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Kp6",
+      "type": "double",
+      "units": "",
+      "description": "L shell for Kp=6 (using T89c).",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2014-01-26T18:47:00.000Z",
+  "stopDate": "2014-02-09T07:10:00.000Z"
+}

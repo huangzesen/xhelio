@@ -1,0 +1,844 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Index for data quality",
+      "fill": "65535.0",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "spin_phase",
+      "type": "integer",
+      "units": "",
+      "description": "Spin phase number",
+      "fill": "-128.0"
+    },
+    {
+      "name": "mode_reduction",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for data reduction mode",
+      "fill": "-128.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV",
+      "description": "[CDAWeb plots not supported] Unidirectional differential proton energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential proton energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential proton energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential proton energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential proton energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_P",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] Proton raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FPDU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FPDU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential He++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential He++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential He++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential He++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential He++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2EDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential He++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2EDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential He++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2EDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential He++ energy  flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2EDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential He++ energy  flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2EDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential He++ energy  flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_HE2",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] He++ raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHE2DU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FHE2DU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHEDU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential He+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential He+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential He+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential He+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential He+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_HE",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] He+ raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FHEDU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FHEDU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O++ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_OPP",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] O++ raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOPPDU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FOPPDU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FODU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FODU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FODU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FODU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FODU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FOEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_O",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] O+ raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FODU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FODU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV/q",
+      "description": "[CDAWeb plots not supported] Unidirectional differential O2+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 88 keV/q Unidirectional differential O2+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 36 keV/q Unidirectional differential O2+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 15 keV/q Unidirectional differential O2+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 6.3 keV/q Unidirectional differential O2+ energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16
+      ]
+    },
+    {
+      "name": "count_raw_O2P",
+      "type": "double",
+      "units": "counts/sample",
+      "description": "[CDAWeb plots not supported] O2+ raw count",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FO2PDU_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Energy for FO2PDU",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2017-03-24T04:04:51.000Z",
+  "stopDate": "2025-01-31T22:21:48.000Z"
+}

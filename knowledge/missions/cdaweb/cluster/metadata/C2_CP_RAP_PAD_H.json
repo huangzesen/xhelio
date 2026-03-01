@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_mean__C2_CP_RAP_PAD_H",
+      "type": "double",
+      "units": "nT",
+      "description": "Averaged GSE magnetic field vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PAD_Proton_Dif_flux__C2_CP_RAP_PAD_H",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Proton Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "PAD_Proton_Dif_flux_SD__C2_CP_RAP_PAD_H",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of Proton Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    }
+  ],
+  "startDate": "2000-12-07T07:09:40.000Z",
+  "stopDate": "2024-02-01T03:55:52.000Z"
+}

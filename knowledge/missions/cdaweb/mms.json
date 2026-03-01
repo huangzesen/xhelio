@@ -1,0 +1,2491 @@
+{
+  "id": "MMS",
+  "name": "MMS Magnetospheric Multiscale",
+  "keywords": [
+    "magnetospheric",
+    "mms",
+    "mms1",
+    "mms1_fgm",
+    "mms1_fpi",
+    "mms2",
+    "mms2_fgm",
+    "mms2_fpi",
+    "mms3",
+    "mms3_fgm",
+    "mms3_fpi",
+    "mms4",
+    "mms4_fgm",
+    "mms4_fpi",
+    "multiscale"
+  ],
+  "profile": {
+    "description": "MMS Magnetospheric Multiscale spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "MMS1_EDP_BRST_L2_HMFE": {
+          "description": "MMS1 L2 (brst), 3D HMFE Electric field - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T12:11:18.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/9ssk-hm65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_BRST_L2_HMFE"
+        },
+        "MMS4_EDP_SLOW_L2_SCPOT": {
+          "description": "MMS 4 dual probe scpot (slow), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/t44j-x227",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_SLOW_L2_SCPOT"
+        },
+        "MMS3_DSP_FAST_L2_EPSD": {
+          "description": "Low and medium frequency Electric Field spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/9v39-nb07",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_DSP_FAST_L2_EPSD"
+        },
+        "MMS1_EDI_SRVY_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:03:08.000Z",
+          "stop_date": "2023-08-22T05:37:02.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/g67z-2f55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_SRVY_L2_EFIELD"
+        },
+        "MMS1_EDP_SRVY_L2_HFESP": {
+          "description": "MMS1 L2 (srvy), HF ACE Spectra - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:11.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/81bq-5z12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_SRVY_L2_HFESP"
+        },
+        "MMS4_EDP_SRVY_L2_HFESP": {
+          "description": "MMS4 L2 (srvy), HF ACE Spectra - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:09.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/kcms-y548",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_SRVY_L2_HFESP"
+        },
+        "MMS4_DSP_FAST_L2_EPSD": {
+          "description": "Low and medium frequency Electric Field spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/k1zc-jw52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_DSP_FAST_L2_EPSD"
+        },
+        "MMS1_EDP_SLOW_L2_SCPOT": {
+          "description": "MMS 1 dual probe scpot (slow), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/5t77-ka57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_SLOW_L2_SCPOT"
+        },
+        "MMS2_EDP_BRST_L2_SCPOT": {
+          "description": "MMS 2 dual probe scpot (brst), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/a6r6-hr28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_BRST_L2_SCPOT"
+        },
+        "MMS1_EDP_BRST_L2_SCPOT": {
+          "description": "MMS 1 dual probe scpot (brst), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/7t5y-eq71",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_BRST_L2_SCPOT"
+        },
+        "MMS4_EDP_FAST_L2_DCE": {
+          "description": "MMS4 L2 (fast mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:11.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/dwae-wd67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_FAST_L2_DCE"
+        },
+        "MMS2_EDP_SLOW_L2_DCE": {
+          "description": "MMS2 L2 (slow mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/fndt-c968",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_SLOW_L2_DCE"
+        },
+        "MMS3_EDP_SLOW_L2_SCPOT": {
+          "description": "MMS 3 dual probe scpot (slow), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/5vc4-ys82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_SLOW_L2_SCPOT"
+        },
+        "MMS4_DSP_SLOW_L2_EPSD": {
+          "description": "electric spectral density - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/eg0n-fn33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_DSP_SLOW_L2_EPSD"
+        },
+        "MMS3_EDP_FAST_L2_DCE": {
+          "description": "MMS3 L2 (fast mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:10.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/tq56-bj65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_FAST_L2_DCE"
+        },
+        "MMS1_EDP_BRST_L2_DCE": {
+          "description": "MMS1 L2 (Burst Mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/rxbn-r719",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_BRST_L2_DCE"
+        },
+        "MMS2_DSP_FAST_L2_EPSD": {
+          "description": "Low and medium frequency Electric Field spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/41kp-mn45",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_DSP_FAST_L2_EPSD"
+        },
+        "MMS4_EDP_FAST_L2_SCPOT": {
+          "description": "MMS 4 dual probe scpot (fast), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/194m-pq72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_FAST_L2_SCPOT"
+        },
+        "MMS2_EDP_FAST_L2_SCPOT": {
+          "description": "MMS 2 dual probe scpot (fast), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/myvz-be60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_FAST_L2_SCPOT"
+        },
+        "MMS2_EDP_BRST_L2_HMFE": {
+          "description": "MMS2 L2 (brst), 3D HMFE Electric field - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T12:11:17.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/c82z-9z72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_BRST_L2_HMFE"
+        },
+        "MMS3_EDP_FAST_L2_SCPOT": {
+          "description": "MMS 3 dual probe scpot (fast), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/kzh6-vf67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_FAST_L2_SCPOT"
+        },
+        "MMS1_EDP_SLOW_L2_DCE": {
+          "description": "MMS1 L2 (slow mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/3s8b-0j08",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_SLOW_L2_DCE"
+        },
+        "MMS1_EDP_FAST_L2_DCE": {
+          "description": "MMS1 L2 (fast mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T09:51:44.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/1tgb-hx06",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_FAST_L2_DCE"
+        },
+        "MMS4_EDP_BRST_L2_HMFE": {
+          "description": "MMS4 L2 (brst), 3D HMFE Electric field - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2023-09-05T03:43:53.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/g4hf-3b35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_BRST_L2_HMFE"
+        },
+        "MMS2_DSP_SLOW_L2_EPSD": {
+          "description": "electric spectral density - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/hyb0-b362",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_DSP_SLOW_L2_EPSD"
+        },
+        "MMS3_EDP_BRST_L2_DCE": {
+          "description": "MMS3 L2 (Burst Mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/zn13-qd40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_BRST_L2_DCE"
+        },
+        "MMS2_EDP_FAST_L2_DCE": {
+          "description": "MMS2 L2 (fast mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:10.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/c4r1-p672",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_FAST_L2_DCE"
+        },
+        "MMS4_EDI_BRST_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-14T14:14:27.000Z",
+          "stop_date": "2022-09-12T18:06:31.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/pfaw-ps82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_EFIELD"
+        },
+        "MMS1_EDP_FAST_L2_SCPOT": {
+          "description": "MMS 1 dual probe scpot (fast), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/jjsp-6g51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDP_FAST_L2_SCPOT"
+        },
+        "MMS3_EDP_SRVY_L2_HFESP": {
+          "description": "MMS3 L2 (srvy), HF ACE Spectra - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/yng0-j976",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_SRVY_L2_HFESP"
+        },
+        "MMS3_EDP_BRST_L2_SCPOT": {
+          "description": "MMS 3 dual probe scpot (brst), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/x3td-gh63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_BRST_L2_SCPOT"
+        },
+        "MMS3_EDP_SLOW_L2_DCE": {
+          "description": "MMS3 L2 (slow mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/nyhv-ch69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_SLOW_L2_DCE"
+        },
+        "MMS4_EDP_SLOW_L2_DCE": {
+          "description": "MMS4 L2 (slow mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/3wwj-0924",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_SLOW_L2_DCE"
+        },
+        "MMS2_EDP_BRST_L2_DCE": {
+          "description": "MMS2 L2 (Burst Mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/pktt-ww31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_BRST_L2_DCE"
+        },
+        "MMS2_EDP_SRVY_L2_HFESP": {
+          "description": "MMS2 L2 (srvy), HF ACE Spectra - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/ty4n-jw51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_SRVY_L2_HFESP"
+        },
+        "MMS2_EDP_SLOW_L2_SCPOT": {
+          "description": "MMS 2 dual probe scpot (slow), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/mgay-bk26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDP_SLOW_L2_SCPOT"
+        },
+        "MMS1_EDI_BRST_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-14T14:13:07.000Z",
+          "stop_date": "2023-08-11T07:13:57.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/aw7y-sk87",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_BRST_L2_EFIELD"
+        },
+        "MMS3_EDI_SRVY_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:03:23.000Z",
+          "stop_date": "2020-05-02T10:23:36.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/r6q9-j033",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_SRVY_L2_EFIELD"
+        },
+        "MMS1_DSP_FAST_L2_EPSD": {
+          "description": "Low and medium frequency Electric Field spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/n5ky-bm34",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_DSP_FAST_L2_EPSD"
+        },
+        "MMS1_DSP_SLOW_L2_EPSD": {
+          "description": "electric spectral density - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/k8g5-s923",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_DSP_SLOW_L2_EPSD"
+        },
+        "MMS4_EDP_BRST_L2_DCE": {
+          "description": "MMS4 L2 (Burst Mode), 3D Electric field - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/zpw3-4w58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_BRST_L2_DCE"
+        },
+        "MMS2_EDI_SRVY_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-01T02:52:59.000Z",
+          "stop_date": "2022-02-20T06:00:37.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/5h96-xp75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_SRVY_L2_EFIELD"
+        },
+        "MMS4_EDP_BRST_L2_SCPOT": {
+          "description": "MMS 4 dual probe scpot (brst), Spacecraft potential - J.Burch, R.Ergun, P.Lindqvist. (SWRI, LASP, KTH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J.Burch, R.Ergun, P.Lindqvist.",
+          "pi_affiliation": "SWRI, LASP, KTH",
+          "doi": "10.48322/j5ge-t096",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDP_BRST_L2_SCPOT"
+        },
+        "MMS2_EDI_BRST_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-14T14:13:06.000Z",
+          "stop_date": "2022-02-20T05:15:18.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/q9w3-7816",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_BRST_L2_EFIELD"
+        },
+        "MMS3_EDP_BRST_L2_HMFE": {
+          "description": "MMS3 L2 (brst), 3D HMFE Electric field - Burch, J, Ergun, R., Lindqvist, P. (SwRI, LASP, KTH)",
+          "start_date": "2015-09-01T12:11:16.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Burch, J, Ergun, R., Lindqvist, P.",
+          "pi_affiliation": "SwRI, LASP, KTH",
+          "doi": "10.48322/aa15-ys50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDP_BRST_L2_HMFE"
+        },
+        "MMS4_EDI_SRVY_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-02T10:27:18.000Z",
+          "stop_date": "2022-10-07T05:21:07.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/a7yd-qk94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_SRVY_L2_EFIELD"
+        },
+        "MMS3_DSP_SLOW_L2_EPSD": {
+          "description": "electric spectral density - J. Burch, R. Ergun (SWRI, LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun",
+          "pi_affiliation": "SWRI, LASP",
+          "doi": "10.48322/ed68-1n78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_DSP_SLOW_L2_EPSD"
+        },
+        "MMS3_EDI_BRST_L2_EFIELD": {
+          "description": "Level 2 EDI electric field - Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2020-04-14T11:23:27.000Z",
+          "pi_name": "Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/579p-6d92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_BRST_L2_EFIELD"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "MMS3_EPD-EIS_SRVY_L2_ELECTRONENERGY": {
+          "description": "Level 2 Energetic Ion Spectrometer Electron Spectra Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-26T00:00:01.000Z",
+          "stop_date": "2025-11-10T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/8v0b-ja97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EPD-EIS_SRVY_L2_ELECTRONENERGY"
+        },
+        "MMS1_EDI_BRST_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-14T20:45:04.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/2hhk-px04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_BRST_L2_AMB-PM2"
+        },
+        "MMS1_EDI_SRVY_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:02:03.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/2xx6-jv22",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_SRVY_L2_Q0"
+        },
+        "MMS1_FEEPS_BRST_L2_ION": {
+          "description": "MMS1 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/kpye-yg23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FEEPS_BRST_L2_ION"
+        },
+        "MMS4_FEEPS_SRVY_L2_ION": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/bfkq-qe85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FEEPS_SRVY_L2_ION"
+        },
+        "MMS3_EDI_BRST_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-04-12T22:24:14.000Z",
+          "stop_date": "2023-02-21T02:19:11.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/1swz-j527",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_BRST_L2_Q0"
+        },
+        "MMS4_HPCA_SRVY_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/111c-sq92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_HPCA_SRVY_L2_MOMENTS"
+        },
+        "MMS1_FEEPS_BRST_L2_ELECTRON": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/9h93-nj07",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FEEPS_BRST_L2_ELECTRON"
+        },
+        "MMS1_EPD-EIS_SRVY_L2_ELECTRONENERGY": {
+          "description": "Level 2 Energetic Ion Spectrometer Electron Spectra Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T00:00:01.000Z",
+          "stop_date": "2025-11-03T23:59:56.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/yjk7-fa25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EPD-EIS_SRVY_L2_ELECTRONENERGY"
+        },
+        "MMS3_EDI_BRST_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T22:25:03.000Z",
+          "stop_date": "2021-05-02T07:12:22.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/9fx2-zt10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_BRST_L2_AMB-PM2"
+        },
+        "MMS4_EDI_BRST_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-02T13:39:04.000Z",
+          "stop_date": "2018-06-11T07:43:24.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/bg1f-ft56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_AMB"
+        },
+        "MMS1_HPCA_SRVY_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/hjvz-aw21",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_SRVY_L2_ION"
+        },
+        "MMS1_EDI_SRVY_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T03:13:11.000Z",
+          "stop_date": "2016-01-06T00:49:29.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/65ar-hc72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_SRVY_L2_AMB"
+        },
+        "MMS1_HPCA_BRST_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:35.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/x9qf-qs34",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_BRST_L2_MOMENTS"
+        },
+        "MMS2_FEEPS_BRST_L2_ELECTRON": {
+          "description": "MMS2 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/vpb7-0a70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FEEPS_BRST_L2_ELECTRON"
+        },
+        "MMS4_HPCA_BRST_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:41.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/tzpt-4t90",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_HPCA_BRST_L2_MOMENTS"
+        },
+        "MMS2_EDI_SRVY_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T16:23:45.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/wd92-1389",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_SRVY_L2_AMB-PM2"
+        },
+        "MMS2_HPCA_SRVY_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/jjjs-k412",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_HPCA_SRVY_L2_ION"
+        },
+        "MMS4_EDI_BRST_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-04-12T22:24:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/48t8-nh56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_Q0"
+        },
+        "MMS1_FEEPS_SRVY_L2_ION": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/rfhf-vj82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FEEPS_SRVY_L2_ION"
+        },
+        "MMS2_HPCA_BRST_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:36.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/herb-7r76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_HPCA_BRST_L2_MOMENTS"
+        },
+        "MMS3_EDI_BRST_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2016-01-04T06:02:03.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/12xy-an19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_BRST_L2_AMB"
+        },
+        "MMS1_EPD-EIS_BRST_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Burst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/f8pf-hj26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EPD-EIS_BRST_L2_PHXTOF"
+        },
+        "MMS4_EPD-EIS_SRVY_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:02.000Z",
+          "stop_date": "2025-10-30T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/449k-pc63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_SRVY_L2_EXTOF"
+        },
+        "MMS3_FEEPS_SRVY_L2_ION": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/50ck-w733",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FEEPS_SRVY_L2_ION"
+        },
+        "MMS2_EDI_BRST_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-01T05:28:14.000Z",
+          "stop_date": "2022-02-20T05:15:51.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/wxd9-w277",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_BRST_L2_Q0"
+        },
+        "MMS1_HPCA_SRVY_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/xh05-q537",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_SRVY_L2_MOMENTS"
+        },
+        "MMS2_FEEPS_SRVY_L2_ELECTRON": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/6pz6-zb50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FEEPS_SRVY_L2_ELECTRON"
+        },
+        "MMS2_EDI_SRVY_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T03:13:54.000Z",
+          "stop_date": "2016-01-04T00:00:04.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/mq1a-5a56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_SRVY_L2_AMB"
+        },
+        "MMS1_EDI_BRST_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2015-12-26T02:14:32.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/3xkv-pk91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_BRST_L2_AMB"
+        },
+        "MMS1_EPD-EIS_BRST_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Brst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/c8gk-pv81",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EPD-EIS_BRST_L2_EXTOF"
+        },
+        "MMS3_EDI_SRVY_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:00:01.000Z",
+          "stop_date": "2016-01-04T00:00:02.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/a0g4-rp41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_SRVY_L2_AMB"
+        },
+        "MMS3_EPD-EIS_SRVY_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:01.000Z",
+          "stop_date": "2025-11-04T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/p4ht-0j11",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EPD-EIS_SRVY_L2_EXTOF"
+        },
+        "MMS4_EPD-EIS_BRST_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Burst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/4wkx-qj86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_BRST_L2_PHXTOF"
+        },
+        "MMS1_EPD-EIS_SRVY_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-29T20:38:38.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/tw22-4q51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EPD-EIS_SRVY_L2_PHXTOF"
+        },
+        "MMS4_EDI_SRVY_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-02T10:50:16.000Z",
+          "stop_date": "2016-01-04T00:00:03.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/ssjk-7b91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_SRVY_L2_AMB"
+        },
+        "MMS4_EDI_BRST_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T22:25:03.000Z",
+          "stop_date": "2020-05-10T09:37:42.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/scdt-ce81",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_BRST_L2_AMB-PM2"
+        },
+        "MMS3_HPCA_BRST_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:51.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/700m-dw30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_HPCA_BRST_L2_ION"
+        },
+        "MMS4_EPD-EIS_SRVY_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:02.000Z",
+          "stop_date": "2025-10-30T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/4k1n-8y36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_SRVY_L2_PHXTOF"
+        },
+        "MMS1_EDI_SRVY_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-06T00:38:49.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/vf3e-ar53",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_SRVY_L2_AMB-PM2"
+        },
+        "MMS1_EPD-EIS_SRVY_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-29T20:38:38.000Z",
+          "stop_date": "2025-11-03T23:59:56.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/q4bk-m222",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EPD-EIS_SRVY_L2_EXTOF"
+        },
+        "MMS2_EPD-EIS_BRST_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Burst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/zw4f-nq40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EPD-EIS_BRST_L2_PHXTOF"
+        },
+        "MMS3_FEEPS_SRVY_L2_ELECTRON": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/4rcr-jr82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FEEPS_SRVY_L2_ELECTRON"
+        },
+        "MMS4_HPCA_SRVY_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/6ewa-9074",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_HPCA_SRVY_L2_ION"
+        },
+        "MMS2_EDI_BRST_L2_AMB": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2016-01-04T01:59:02.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/wqyj-3p45",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_BRST_L2_AMB"
+        },
+        "MMS1_HPCA_BRST_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:52.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/ek80-vc69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_BRST_L2_ION"
+        },
+        "MMS1_EDI_BRST_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-04-12T22:24:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/62bx-2070",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_EDI_BRST_L2_Q0"
+        },
+        "MMS2_EPD-EIS_SRVY_L2_ELECTRONENERGY": {
+          "description": "Level 2 Energetic Ion Spectrometer Electron Spectra Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T00:00:01.000Z",
+          "stop_date": "2025-11-10T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/17jn-6367",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EPD-EIS_SRVY_L2_ELECTRONENERGY"
+        },
+        "MMS4_FEEPS_BRST_L2_ELECTRON": {
+          "description": "MMS4 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/z618-c595",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FEEPS_BRST_L2_ELECTRON"
+        },
+        "MMS4_EPD-EIS_SRVY_L2_ELECTRONENERGY": {
+          "description": "Level 2 Energetic Ion Spectrometer Electron Spectra Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-26T00:00:01.000Z",
+          "stop_date": "2025-11-06T23:59:56.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/jj7n-8c31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_SRVY_L2_ELECTRONENERGY"
+        },
+        "MMS3_FEEPS_BRST_L2_ION": {
+          "description": "MMS3 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/m5yp-yj03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FEEPS_BRST_L2_ION"
+        },
+        "MMS2_FEEPS_SRVY_L2_ION": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/g65x-mj86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FEEPS_SRVY_L2_ION"
+        },
+        "MMS2_EPD-EIS_SRVY_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:00.000Z",
+          "stop_date": "2025-11-07T00:00:51.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/6pav-5r08",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EPD-EIS_SRVY_L2_PHXTOF"
+        },
+        "MMS3_HPCA_BRST_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:33.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/60q2-ev15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_HPCA_BRST_L2_MOMENTS"
+        },
+        "MMS2_EPD-EIS_BRST_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Brst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/ggdg-fp02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EPD-EIS_BRST_L2_EXTOF"
+        },
+        "MMS2_HPCA_SRVY_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/2v65-6696",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_HPCA_SRVY_L2_MOMENTS"
+        },
+        "MMS3_HPCA_SRVY_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/y32t-e208",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_HPCA_SRVY_L2_ION"
+        },
+        "MMS3_FEEPS_BRST_L2_ELECTRON": {
+          "description": "MMS3 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/py6t-t872",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FEEPS_BRST_L2_ELECTRON"
+        },
+        "MMS2_EDI_BRST_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T22:25:03.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/bcnm-cs10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_BRST_L2_AMB-PM2"
+        },
+        "MMS3_EDI_SRVY_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T16:23:19.000Z",
+          "stop_date": "2021-05-02T09:19:15.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/k30r-dp97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_SRVY_L2_AMB-PM2"
+        },
+        "MMS3_HPCA_SRVY_L2_MOMENTS": {
+          "description": "Level 2 Moments> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/tfc0-jy75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_HPCA_SRVY_L2_MOMENTS"
+        },
+        "MMS2_EPD-EIS_SRVY_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:00.000Z",
+          "stop_date": "2025-11-07T00:00:51.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/n2at-sb97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EPD-EIS_SRVY_L2_EXTOF"
+        },
+        "MMS3_EPD-EIS_BRST_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Burst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T09:13:54.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/yags-0v32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EPD-EIS_BRST_L2_PHXTOF"
+        },
+        "MMS4_FEEPS_BRST_L2_ION": {
+          "description": "MMS4 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/4kf9-3e63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FEEPS_BRST_L2_ION"
+        },
+        "MMS2_HPCA_SRVY_L2_TOF-COUNTS": {
+          "description": "MMS Level L2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2018-11-15T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/6t90-mz79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_HPCA_SRVY_L2_TOF-COUNTS"
+        },
+        "MMS4_EPD-EIS_BRST_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Brst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T07:30:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/hcgy-8a40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EPD-EIS_BRST_L2_EXTOF"
+        },
+        "MMS2_FEEPS_BRST_L2_ION": {
+          "description": "MMS2 Level 2 Flys Eye Energetic Particle Sensor Burst Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/va5q-pw54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FEEPS_BRST_L2_ION"
+        },
+        "MMS2_EDI_SRVY_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T02:23:41.000Z",
+          "stop_date": "2022-02-20T06:02:04.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/ydzg-zr55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_EDI_SRVY_L2_Q0"
+        },
+        "MMS3_EPD-EIS_SRVY_L2_PHXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer PulseHeightxTOF Srvy - B. Mauk (JHU/APL)",
+          "start_date": "2016-09-27T00:00:01.000Z",
+          "stop_date": "2025-10-30T23:59:58.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/srk0-gr10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EPD-EIS_SRVY_L2_PHXTOF"
+        },
+        "MMS4_HPCA_SRVY_L2_TOF-COUNTS": {
+          "description": "MMS Level L2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2018-11-15T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/s1dx-qt59",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_HPCA_SRVY_L2_TOF-COUNTS"
+        },
+        "MMS1_HPCA_SRVY_L2_TOF-COUNTS": {
+          "description": "MMS Level L2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2018-11-15T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/0mzf-je25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_HPCA_SRVY_L2_TOF-COUNTS"
+        },
+        "MMS4_FEEPS_SRVY_L2_ELECTRON": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/8g5c-z737",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FEEPS_SRVY_L2_ELECTRON"
+        },
+        "MMS4_EDI_SRVY_L2_AMB-PM2": {
+          "description": "Level 2 EDI Ambient electron flux - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2016-01-04T16:23:20.000Z",
+          "stop_date": "2020-05-10T10:54:43.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/ryg0-nd63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_SRVY_L2_AMB-PM2"
+        },
+        "MMS4_HPCA_BRST_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:51.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/6cfb-rq65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_HPCA_BRST_L2_ION"
+        },
+        "MMS1_FEEPS_SRVY_L2_ELECTRON": {
+          "description": "Level 2 Flys Eye Energetic Particle Sensor Survey Data - STP (LASP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "STP",
+          "pi_affiliation": "LASP",
+          "doi": "10.48322/c3da-gn24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FEEPS_SRVY_L2_ELECTRON"
+        },
+        "MMS2_HPCA_BRST_L2_ION": {
+          "description": "Level 2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:24:51.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/zdhn-3867",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_HPCA_BRST_L2_ION"
+        },
+        "MMS3_HPCA_SRVY_L2_TOF-COUNTS": {
+          "description": "MMS Level L2> Hot Plasma Composition Analyzer - J. Burch, S. Fuselier (SWRI)",
+          "start_date": "2018-11-15T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, S. Fuselier",
+          "pi_affiliation": "SWRI",
+          "doi": "10.48322/2dfa-yh15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_HPCA_SRVY_L2_TOF-COUNTS"
+        },
+        "MMS4_EDI_SRVY_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-02T10:26:40.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/dshp-bk41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_EDI_SRVY_L2_Q0"
+        },
+        "MMS3_EPD-EIS_BRST_L2_EXTOF": {
+          "description": "Level 2 Energetic Ion Spectrometer EnergyxTOF Brst - B. Mauk (JHU/APL)",
+          "start_date": "2015-09-25T09:13:54.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "B. Mauk",
+          "pi_affiliation": "JHU/APL",
+          "doi": "10.48322/825c-8y03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EPD-EIS_BRST_L2_EXTOF"
+        },
+        "MMS3_EDI_SRVY_L2_Q0": {
+          "description": "Level 2 EDI Quality 0 Counts - Roy Torbert, Hans Vaith (UNH)",
+          "start_date": "2015-09-01T00:03:13.000Z",
+          "stop_date": "2024-11-15T19:04:26.000Z",
+          "pi_name": "Roy Torbert, Hans Vaith",
+          "pi_affiliation": "UNH",
+          "doi": "10.48322/cwb6-vf46",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_EDI_SRVY_L2_Q0"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "MMS4_DSP_FAST_L2_BPSD": {
+          "description": "SCM Low frequency Magnetic spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/gnbq-p392",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_DSP_FAST_L2_BPSD"
+        },
+        "MMS1_SCM_BRST_L2_SCHB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field High Burst (16384S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T12:11:18.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/5dsj-t876",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_SCM_BRST_L2_SCHB"
+        },
+        "MMS1_DSP_SLOW_L2_BPSD": {
+          "description": "search coil magnetometer spectral density - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/1cbf-hb73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_DSP_SLOW_L2_BPSD"
+        },
+        "MMS2_SCM_BRST_L2_SCHB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field High Burst (16384S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T12:11:17.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/32sc-7075",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_SCM_BRST_L2_SCHB"
+        },
+        "MMS1_R0_SUMMARY": {
+          "description": "Links to MMS-1 pre-generated Quicklook Summary plots - James Burch (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2015-09-01T01:00:00.000Z",
+          "pi_name": "James Burch",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_R0_SUMMARY"
+        },
+        "MMS3_SCM_BRST_L2_SCB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Burst (8192S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/mg2d-6848",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_SCM_BRST_L2_SCB"
+        },
+        "MMS2_DSP_FAST_L2_BPSD": {
+          "description": "SCM Low frequency Magnetic spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/pk77-y229",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_DSP_FAST_L2_BPSD"
+        },
+        "MMS2_SCM_SRVY_L2_SCSRVY": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Survey (32S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-02T00:00:03.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/tscb-r537",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_SCM_SRVY_L2_SCSRVY"
+        },
+        "MMS4_SCM_BRST_L2_SCB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Burst (8192S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/kp2d-gb32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_SCM_BRST_L2_SCB"
+        },
+        "MMS4_SCM_BRST_L2_SCHB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field High Burst (16384S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/89rs-0f95",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_SCM_BRST_L2_SCHB"
+        },
+        "MMS1_SCM_SRVY_L2_SCSRVY": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Survey (32S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-02T00:00:01.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/teh0-2s71",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_SCM_SRVY_L2_SCSRVY"
+        },
+        "MMS4_R0_SUMMARY": {
+          "description": "Links to MMS-4 pre-generated Quicklook Summary plots - James Burch (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2015-09-01T01:00:00.000Z",
+          "pi_name": "James Burch",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_R0_SUMMARY"
+        },
+        "MMS2_SCM_BRST_L2_SCB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Burst (8192S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/axbs-qh32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_SCM_BRST_L2_SCB"
+        },
+        "MMS4_DSP_SLOW_L2_BPSD": {
+          "description": "search coil magnetometer spectral density - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/b9vr-gb77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_DSP_SLOW_L2_BPSD"
+        },
+        "MMS3_SCM_BRST_L2_SCHB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field High Burst (16384S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T12:11:16.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/ay0x-6k10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_SCM_BRST_L2_SCHB"
+        },
+        "MMS3_SCM_SRVY_L2_SCSRVY": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Survey (32S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-02T00:00:02.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/hhfm-0s08",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_SCM_SRVY_L2_SCSRVY"
+        },
+        "MMS3_DSP_SLOW_L2_BPSD": {
+          "description": "search coil magnetometer spectral density - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/qjgq-zm28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_DSP_SLOW_L2_BPSD"
+        },
+        "MMS1_DSP_FAST_L2_BPSD": {
+          "description": "SCM Low frequency Magnetic spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/jt8z-7x15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_DSP_FAST_L2_BPSD"
+        },
+        "MMS1_SCM_BRST_L2_SCB": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Burst (8192S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/gyvg-pf49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_SCM_BRST_L2_SCB"
+        },
+        "MMS2_DSP_SLOW_L2_BPSD": {
+          "description": "search coil magnetometer spectral density - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/b763-bg33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_DSP_SLOW_L2_BPSD"
+        },
+        "MMS4_SCM_SRVY_L2_SCSRVY": {
+          "description": "Level 2 Search Coil Magnetometer AC Magnetic Field Survey (32S/s) Data - J. Burch, O. Le Contel (SWRI, LPP)",
+          "start_date": "2015-09-02T00:00:01.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, O. Le Contel",
+          "pi_affiliation": "SWRI, LPP",
+          "doi": "10.48322/y1th-nw11",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_SCM_SRVY_L2_SCSRVY"
+        },
+        "MMS3_R0_SUMMARY": {
+          "description": "Links to MMS-3 pre-generated Quicklook Summary plots - James Burch (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2015-09-01T01:00:00.000Z",
+          "pi_name": "James Burch",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_R0_SUMMARY"
+        },
+        "MMS3_DSP_FAST_L2_BPSD": {
+          "description": "SCM Low frequency Magnetic spectral density from the FIELDS Digital Signal Processor - J. Burch, R. Ergun, O. Le Contel (SWRI, LASP, LPP)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, R. Ergun, O. Le Contel",
+          "pi_affiliation": "SWRI, LASP, LPP",
+          "doi": "10.48322/6shs-d833",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_DSP_FAST_L2_BPSD"
+        },
+        "MMS2_R0_SUMMARY": {
+          "description": "Links to MMS-2 pre-generated Quicklook Summary plots - James Burch (SWRI)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2015-09-01T01:00:00.000Z",
+          "pi_name": "James Burch",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_R0_SUMMARY"
+        }
+      }
+    },
+    "FPI-DIS": {
+      "name": "FPI-DIS",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "MMS3_FPI_FAST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:47:07.000Z",
+          "stop_date": "2021-06-19T23:59:58.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/5fnm-hc61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DES-PARTMOMS"
+        },
+        "MMS1_FPI_BRST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/dq1y-nf73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DIS-DIST"
+        },
+        "MMS4_FPI_BRST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2021-02-20T09:25:02.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/20ws-ge68",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DES-MOMS"
+        },
+        "MMS3_FPI_FAST_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:47:07.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DIS-MOMSAUX"
+        },
+        "MMS1_FPI_BRST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/64q8-vn69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DIS-PARTMOMS"
+        },
+        "MMS2_FPI_BRST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/8az2-0h04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DIS-MOMS"
+        },
+        "MMS4_FPI_FAST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:46:45.000Z",
+          "stop_date": "2018-06-07T11:59:58.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/yvzm-q092",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DES-PARTMOMS"
+        },
+        "MMS1_FPI_FAST_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:00:01.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DIS-MOMSAUX"
+        },
+        "MMS1_FPI_FAST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/cygs-gx59",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DES-DIST"
+        },
+        "MMS4_FPI_SLOW_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-29T23:04:53.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DIS-MOMS"
+        },
+        "MMS2_FPI_SLOW_L2_DES-DIST": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DES-DIST"
+        },
+        "MMS3_FPI_FAST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/k20n-5077",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DIS-MOMS"
+        },
+        "MMS4_FPI_SLOW_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-26T07:14:40.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DES-MOMSAUX"
+        },
+        "MMS2_FPI_SLOW_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DES-MOMSAUX"
+        },
+        "MMS2_FPI_FAST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:45:54.000Z",
+          "stop_date": "2021-06-19T23:59:54.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/5mga-9573",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DES-PARTMOMS"
+        },
+        "MMS3_FPI_BRST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/c4bw-y163",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DIS-PARTMOMS"
+        },
+        "MMS1_FPI_FAST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/550t-zy35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DES-MOMS"
+        },
+        "MMS1_FPI_SLOW_L2_DES-DIST": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DES-DIST"
+        },
+        "MMS3_FPI_SLOW_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DES-MOMS"
+        },
+        "MMS4_FPI_SLOW_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-29T23:04:53.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DIS-MOMSAUX"
+        },
+        "MMS1_FPI_BRST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/6172-zw20",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DES-MOMS"
+        },
+        "MMS2_FPI_SLOW_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DES-MOMS"
+        },
+        "MMS1_FPI_BRST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/qggf-vr83",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DIS-MOMS"
+        },
+        "MMS2_FPI_FAST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/cqez-ga35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DES-MOMS"
+        },
+        "MMS1_FPI_FAST_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:00:01.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DES-MOMSAUX"
+        },
+        "MMS1_FPI_SLOW_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DIS-MOMS"
+        },
+        "MMS4_FPI_FAST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:59.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/54t4-e826",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DIS-MOMS"
+        },
+        "MMS1_FPI_FAST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:00:01.000Z",
+          "stop_date": "2021-06-19T23:59:56.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/0bbk-4s61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DIS-PARTMOMS"
+        },
+        "MMS2_FPI_FAST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/nf79-gp85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DES-DIST"
+        },
+        "MMS4_FPI_FAST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:59.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/4pvc-cs50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DES-DIST"
+        },
+        "MMS1_FPI_SLOW_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DES-MOMSAUX"
+        },
+        "MMS1_FPI_FAST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:00:01.000Z",
+          "stop_date": "2021-06-19T23:59:56.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/abk7-xm15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DES-PARTMOMS"
+        },
+        "MMS2_FPI_FAST_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:45:54.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DES-MOMSAUX"
+        },
+        "MMS1_FPI_SLOW_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DES-MOMS"
+        },
+        "MMS2_FPI_FAST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/wwxb-p635",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DIS-DIST"
+        },
+        "MMS2_FPI_FAST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:45:54.000Z",
+          "stop_date": "2021-06-19T23:59:54.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/sypp-0339",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DIS-PARTMOMS"
+        },
+        "MMS3_FPI_FAST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/re6g-mv86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DIS-DIST"
+        },
+        "MMS4_FPI_FAST_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:46:45.000Z",
+          "stop_date": "2017-10-31T01:53:52.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DES-MOMSAUX"
+        },
+        "MMS1_FPI_FAST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/bqvd-yf57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DIS-DIST"
+        },
+        "MMS4_FPI_FAST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2018-06-07T11:59:58.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/62dq-ym51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DES-MOMS"
+        },
+        "MMS3_FPI_FAST_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:47:07.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DES-MOMSAUX"
+        },
+        "MMS3_FPI_FAST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/twp4-4391",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DES-DIST"
+        },
+        "MMS2_FPI_BRST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/4e97-8k46",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DIS-PARTMOMS"
+        },
+        "MMS1_FPI_BRST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/azhm-bh51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DES-PARTMOMS"
+        },
+        "MMS3_FPI_FAST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:47:07.000Z",
+          "stop_date": "2021-06-19T23:59:58.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/7cnm-bb27",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DIS-PARTMOMS"
+        },
+        "MMS3_FPI_BRST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/0gzp-vp15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DIS-DIST"
+        },
+        "MMS2_FPI_BRST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/bger-by60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DES-PARTMOMS"
+        },
+        "MMS1_FPI_SLOW_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DIS-DIST"
+        },
+        "MMS4_FPI_SLOW_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-26T07:14:40.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DES-MOMS"
+        },
+        "MMS4_FPI_FAST_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:46:45.000Z",
+          "stop_date": "2025-12-27T17:59:59.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DIS-MOMSAUX"
+        },
+        "MMS4_FPI_FAST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer Fast Survey-resolution instrument distributions - J. Burch; C. Pollock and B. Giles (SwRI; NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:59.000Z",
+          "pi_name": "J. Burch; C. Pollock and B. Giles",
+          "pi_affiliation": "SwRI; NASA/GSFC",
+          "doi": "10.48322/yc5m-1x13",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DIS-DIST"
+        },
+        "MMS3_FPI_FAST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:27.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/yaqw-7j55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_FAST_L2_DES-MOMS"
+        },
+        "MMS3_FPI_SLOW_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DIS-MOMSAUX"
+        },
+        "MMS3_FPI_SLOW_L2_DES-MOMSAUX": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DES-MOMSAUX"
+        },
+        "MMS1_FPI_FAST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T17:59:47.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/kgr0-yb53",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_FAST_L2_DIS-MOMS"
+        },
+        "MMS2_FPI_FAST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer Survey-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/09tv-hh36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DIS-MOMS"
+        },
+        "MMS2_FPI_BRST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/tryj-n584",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DES-MOMS"
+        },
+        "MMS2_FPI_FAST_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer FastSurvey-resolution auxiliary moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:45:54.000Z",
+          "stop_date": "2025-12-27T18:00:21.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_FAST_L2_DIS-MOMSAUX"
+        },
+        "MMS4_FPI_FAST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer FastSurvey-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T09:46:45.000Z",
+          "stop_date": "2021-06-19T23:59:54.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/24jz-z578",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_FAST_L2_DIS-PARTMOMS"
+        },
+        "MMS2_FPI_SLOW_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DIS-MOMS"
+        },
+        "MMS3_FPI_SLOW_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer SlowSurvey-resolution distribution moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DIS-MOMS"
+        },
+        "MMS4_FPI_BRST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-03-27T20:40:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/sd5n-d872",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DES-PARTMOMS"
+        },
+        "MMS2_FPI_SLOW_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DIS-DIST"
+        },
+        "MMS4_FPI_SLOW_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-29T23:04:53.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DIS-DIST"
+        },
+        "MMS3_FPI_BRST_L2_DES-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/8ypa-ba28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DES-MOMS"
+        },
+        "MMS3_FPI_BRST_L2_DES-PARTMOMS": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/t9g8-3633",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DES-PARTMOMS"
+        },
+        "MMS4_FPI_BRST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/4csh-1637",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DIS-DIST"
+        },
+        "MMS3_FPI_BRST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/abk8-1g31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DIS-MOMS"
+        },
+        "MMS4_FPI_BRST_L2_DIS-PARTMOMS": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer Burst-resolution partial moments - J. Burch, B. Giles (SwRI, GSFC)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2021-06-19T22:06:42.000Z",
+          "pi_name": "J. Burch, B. Giles",
+          "pi_affiliation": "SwRI, GSFC",
+          "doi": "10.48322/2cyr-1h98",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DIS-PARTMOMS"
+        },
+        "MMS4_FPI_SLOW_L2_DES-DIST": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:28:46.000Z",
+          "stop_date": "2025-08-26T07:14:40.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_SLOW_L2_DES-DIST"
+        },
+        "MMS1_FPI_BRST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 1 Dual Electron Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/1rpt-0w56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_BRST_L2_DES-DIST"
+        },
+        "MMS2_FPI_BRST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 2 Dual Electron Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/cdgv-3h64",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DES-DIST"
+        },
+        "MMS3_FPI_SLOW_L2_DES-DIST": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DES-DIST"
+        },
+        "MMS3_FPI_BRST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 3 Dual Electron Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/jcr8-1573",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_BRST_L2_DES-DIST"
+        },
+        "MMS4_FPI_BRST_L2_DES-DIST": {
+          "description": "MMS Satellite Number 4 Dual Electron Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/0t8n-yn22",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DES-DIST"
+        },
+        "MMS2_FPI_SLOW_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:03.000Z",
+          "stop_date": "2025-08-29T23:04:17.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_SLOW_L2_DIS-MOMSAUX"
+        },
+        "MMS4_FPI_BRST_L2_DIS-MOMS": {
+          "description": "MMS Satellite Number 4 Dual Ion Spectrometer Burst-resolution distribution moments - J.Burch; C.Pollock, B.Giles (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J.Burch; C.Pollock, B.Giles",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/vchg-7r51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FPI_BRST_L2_DIS-MOMS"
+        },
+        "MMS1_FPI_SLOW_L2_DIS-MOMSAUX": {
+          "description": "MMS Satellite Number 1 Dual Ion Spectrometer SlowSurvey-resolution auxiliary moments - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-01T00:32:55.000Z",
+          "stop_date": "2025-08-29T23:04:25.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FPI_SLOW_L2_DIS-MOMSAUX"
+        },
+        "MMS2_FPI_BRST_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 2 Dual Ion Spectrometer Burst-resolution instrument distributions - J. Burch, C. Pollock (SwRI, NASA/GSFC)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-09-03T21:07:22.000Z",
+          "pi_name": "J. Burch, C. Pollock",
+          "pi_affiliation": "SwRI, NASA/GSFC",
+          "doi": "10.48322/12sw-b676",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FPI_BRST_L2_DIS-DIST"
+        },
+        "MMS3_FPI_SLOW_L2_DIS-DIST": {
+          "description": "MMS Satellite Number 3 Dual Ion Spectrometer SlowSurvey-resolution instrument distributions - J. Burch, D. Gershman (SwRI, GSFC)",
+          "start_date": "2015-09-02T00:27:42.000Z",
+          "stop_date": "2025-08-29T23:04:48.000Z",
+          "pi_name": "J. Burch, D. Gershman",
+          "pi_affiliation": "SwRI, GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FPI_SLOW_L2_DIS-DIST"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "MMS2_MEC_BRST_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/edy0-fc92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_BRST_L2_EPHT89Q"
+        },
+        "MMS2_MEC_BRST_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/a62q-nc06",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_BRST_L2_EPHT89D"
+        },
+        "MMS1_MEC_BRST_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/v963-m344",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_BRST_L2_EPHTS04D"
+        },
+        "MMS4_MEC_BRST_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/amdw-by56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_BRST_L2_EPHT89Q"
+        },
+        "MMS4_MEC_BRST_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/aj2h-2391",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_BRST_L2_EPHT89D"
+        },
+        "MMS1_MEC_SRVY_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-30T23:59:30.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/6pry-xd44",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_SRVY_L2_EPHTS04D"
+        },
+        "MMS2_MEC_BRST_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/azyb-e325",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_BRST_L2_EPHTS04D"
+        },
+        "MMS1_MEC_BRST_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/rc3z-t818",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_BRST_L2_EPHT89D"
+        },
+        "MMS1_MEC_BRST_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/xg33-ts96",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_BRST_L2_EPHT89Q"
+        },
+        "MMS3_MEC_SRVY_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-30T23:59:30.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/evtt-qv31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_SRVY_L2_EPHTS04D"
+        },
+        "MMS1_MEC_SRVY_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/4hrj-r063",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_SRVY_L2_EPHT89Q"
+        },
+        "MMS1_MEC_SRVY_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 1 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/kte7-4922",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_MEC_SRVY_L2_EPHT89D"
+        },
+        "MMS3_MEC_BRST_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/tfq4-4v16",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_BRST_L2_EPHT89Q"
+        },
+        "MMS4_MEC_SRVY_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/fzjx-2q08",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_SRVY_L2_EPHT89Q"
+        },
+        "MMS3_MEC_BRST_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/w5ky-zx69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_BRST_L2_EPHT89D"
+        },
+        "MMS4_MEC_SRVY_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/552n-er81",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_SRVY_L2_EPHT89D"
+        },
+        "MMS3_MEC_BRST_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/0t9a-2826",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_BRST_L2_EPHTS04D"
+        },
+        "MMS3_MEC_SRVY_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/jbnc-zj48",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_SRVY_L2_EPHT89D"
+        },
+        "MMS3_MEC_SRVY_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 3 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/2jav-m822",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_MEC_SRVY_L2_EPHT89Q"
+        },
+        "MMS4_MEC_BRST_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-12-06T00:23:05.000Z",
+          "stop_date": "2025-11-29T13:17:12.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/q52x-jp67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_BRST_L2_EPHTS04D"
+        },
+        "MMS2_MEC_SRVY_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-30T23:59:30.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/66y1-pa21",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_SRVY_L2_EPHTS04D"
+        },
+        "MMS2_MEC_SRVY_L2_EPHT89D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/d8h8-nv79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_SRVY_L2_EPHT89D"
+        },
+        "MMS2_MEC_SRVY_L2_EPHT89Q": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 2 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/mdgn-bb43",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_MEC_SRVY_L2_EPHT89Q"
+        },
+        "MMS4_MEC_SRVY_L2_EPHTS04D": {
+          "description": "Magnetic ephemeris and support data for MMS satellite number 4 - M. G. Henderson, S. K. Morley (Los Alamos National Laboratory (LANL))",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-12-30T23:59:30.000Z",
+          "pi_name": "M. G. Henderson, S. K. Morley",
+          "pi_affiliation": "Los Alamos National Laboratory (LANL)",
+          "doi": "10.48322/xrg9-1y30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_MEC_SRVY_L2_EPHTS04D"
+        }
+      }
+    },
+    "FGM": {
+      "name": "FGM",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "MMS1_FGM_BRST_L2": {
+          "description": "Level2 Flux Gate Magnetometer Burst DC Magnetic Field for MMS Satellite Number 1 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/pj0n-m695",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FGM_BRST_L2"
+        },
+        "MMS2_FGM_SRVY_L2": {
+          "description": "Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 2 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T00:00:03.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/xz3n-g079",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FGM_SRVY_L2"
+        },
+        "MMS3_FGM_BRST_L2": {
+          "description": "Level2 Flux Gate Magnetometer Burst DC Magnetic Field for MMS Satellite Number 3 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/y55w-eb74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FGM_BRST_L2"
+        },
+        "MMS4_FGM_SRVY_L2": {
+          "description": "Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 4 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T00:00:04.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/50p5-d131",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FGM_SRVY_L2"
+        },
+        "MMS2_FGM_BRST_L2": {
+          "description": "Level2 Flux Gate Magnetometer Burst DC Magnetic Field for MMS Satellite Number 2 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/ggx2-zg64",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_FGM_BRST_L2"
+        },
+        "MMS4_FGM_BRST_L2": {
+          "description": "Level2 Flux Gate Magnetometer Burst DC Magnetic Field for MMS Satellite Number 4 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T12:11:14.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/257w-3j79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_FGM_BRST_L2"
+        },
+        "MMS1_FGM_SRVY_L2": {
+          "description": "Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 1 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T00:00:12.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/mxbx-r466",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_FGM_SRVY_L2"
+        },
+        "MMS3_FGM_SRVY_L2": {
+          "description": "Level2 Flux Gate Magnetometer Combined Fast/Slow Survey DC Magnetic Field for MMS Satellite Number 3 - J. Burch, C. Russell, W. Magnus (SWRI, UCLA, IWF)",
+          "start_date": "2015-09-01T00:00:06.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "J. Burch, C. Russell, W. Magnus",
+          "pi_affiliation": "SWRI, UCLA, IWF",
+          "doi": "10.48322/8s4y-en47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_FGM_SRVY_L2"
+        }
+      }
+    },
+    "engineering": {
+      "name": "Engineering",
+      "keywords": [
+        "engineering",
+        "housekeeping"
+      ],
+      "datasets": {
+        "MMS3_ASPOC_SRVY_L2": {
+          "description": "Level 2 Active Spacecraft Potential Control Survey Data - K. Torkar, R. Nakamura (IWF)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2025-03-18T23:59:59.000Z",
+          "pi_name": "K. Torkar, R. Nakamura",
+          "pi_affiliation": "IWF",
+          "doi": "10.48322/jwtq-2874",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS3_ASPOC_SRVY_L2"
+        },
+        "MMS1_ASPOC_SRVY_L2": {
+          "description": "Level 2 Active Spacecraft Potential Control Survey Data - K. Torkar, R. Nakamura (IWF)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "K. Torkar, R. Nakamura",
+          "pi_affiliation": "IWF",
+          "doi": "10.48322/541v-1f57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS1_ASPOC_SRVY_L2"
+        },
+        "MMS2_ASPOC_SRVY_L2": {
+          "description": "Level 2 Active Spacecraft Potential Control Survey Data - K. Torkar, R. Nakamura (IWF)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "K. Torkar, R. Nakamura",
+          "pi_affiliation": "IWF",
+          "doi": "10.48322/9712-0x57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS2_ASPOC_SRVY_L2"
+        },
+        "MMS4_ASPOC_SRVY_L2": {
+          "description": "Level 2 Active Spacecraft Potential Control Survey Data - K. Torkar, R. Nakamura (IWF)",
+          "start_date": "2015-09-01T00:00:00.000Z",
+          "stop_date": "2026-01-08T23:59:59.000Z",
+          "pi_name": "K. Torkar, R. Nakamura",
+          "pi_affiliation": "IWF",
+          "doi": "10.48322/3470-wp93",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesM.html#MMS4_ASPOC_SRVY_L2"
+        }
+      }
+    }
+  },
+  "observatory_group": "MMS",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

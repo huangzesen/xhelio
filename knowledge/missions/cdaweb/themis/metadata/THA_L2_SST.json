@@ -1,0 +1,1214 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tha_psif_data_quality",
+      "type": "integer",
+      "units": "0=good",
+      "description": "SST Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/sst_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_psif_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "SST Ion energy spectrogram(Full Mode) (Good data only)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psif_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "SST full mode derived ion density(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode derived average ion temperature(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full mode derived average ion thermal velocity(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential used in generation of tha_psif moments(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode ion diagonalized temperature (Tprp1, Tprp2, Tpar)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode ion temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST full distribution derived ion pressure tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psif_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST full distribution derived ion momentum flux tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psif_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "SST full mode ion particle flux vector(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "SST full mode ion direction of pressure tensor symmetry. In DSL Coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "SST full distribution derived ion symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector used for generation of psif moments in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived ion velocity vector in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived ion velocity vector in GSE coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived ion velocity vector in GSM coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "SST Ion energy spectrogram(Full Mode)(All qualities)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psif_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "SST full mode derived ion density(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode derived average ion temperature(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full mode derived average ion thermal velocity(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "Spacecraft potential used in generation of tha_psif moments(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode ion diagonalized temperature (Tprp1, Tprp2, Tpar)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode ion temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST full distribution derived ion pressure tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psif_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST full distribution derived ion momentum flux tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psif_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "SST full mode ion particle flux vector(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "SST full mode ion direction of pressure tensor symmetry. In DSL Coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "SST full distribution derived ion symmetry angle (Angle between Symmetry Direction and Magnetic Field(B)). (All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psif_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "Magnetic field vector used for generation of psif moments in DSL coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived ion velocity vector in DSL coordinates. (All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived ion velocity vector in GSE coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psif_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived ion velocity vector in GSM coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_data_quality",
+      "type": "integer",
+      "units": "0=good",
+      "description": "SST Full Mode Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/sst_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_psef_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "SST Electron energy spectrogram(Good data only)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psef_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "SST full mode derived electron density(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode derived average electron temperature(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full mode derived average electron thermal velocity(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential used in generation of tha_psef moments(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST full mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST full distribution derived electron pressure tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psef_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST full distribution derived electron momentum flux tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psef_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "SST full mode electron particle flux vector(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "SST full mode electron direction of pressure tensor symmetry. In DSL Coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "SST full distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector used for generation of psef moments in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived electron velocity vector in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived electron velocity vector in GSE coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST full distribution derived electron velocity vector in GSM coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "SST Electron energy spectrogram(Full Mode)(All qualities)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psef_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "SST full mode derived electron density(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode derived average electron temperature(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full mode derived average electron thermal velocity(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "Spacecraft potential used in generation of tha_psef moments(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST full mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST full distribution derived electron pressure tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psef_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST full distribution derived electron momentum flux tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psef_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "SST full mode electron particle flux vector(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "SST full mode electron direction of pressure tensor symmetry. In DSL Coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "SST full distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psef_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "Magnetic field vector used for generation of psef moments in DSL coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived electron velocity vector in DSL coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived electron velocity vector in GSE coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psef_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST full distribution derived electron velocity vector in GSM coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_data_quality",
+      "type": "integer",
+      "units": "0=good",
+      "description": "SST Burst Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/sst_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_psib_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "SST Ion energy spectrogram(Burst Mode) (Good data only)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psib_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "SST burst mode derived ion density(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode derived average ion temperature(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst mode derived average ion thermal velocity(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential used in generation of tha_psib moments(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode ion diagonalized temperature (Tprp1, Tprp2, Tpar)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode ion temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST burst distribution derived ion pressure tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psib_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST burst distribution derived ion momentum flux tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psib_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "SST burst mode ion particle flux vector(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "SST burst mode ion direction of pressure tensor symmetry. In DSL Coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "SST burst distribution derived ion symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector used for generation of psib moments in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived ion velocity vector in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived ion velocity vector in GSE coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived ion velocity vector in GSM coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "SST Ion energy spectrogram(Burst Mode)(All qualities)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_psib_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "SST burst mode derived ion density(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode derived average ion temperature(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst mode derived average ion thermal velocity(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "Spacecraft potential used in generation of tha_psib moments(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode ion diagonalized temperature (Tprp1, Tprp2, Tpar)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode ion temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST burst distribution derived ion pressure tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psib_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST burst distribution derived ion momentum flux tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_psib_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "SST burst mode ion particle flux vector(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "SST burst mode ion direction of pressure tensor symmetry. In DSL Coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "SST burst distribution derived ion symmetry angle (Angle between Symmetry Direction and Magnetic Field(B)). (All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_psib_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "Magnetic field vector used for generation of psib moments in DSL coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived ion velocity vector in DSL coordinates. (All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived ion velocity vector in GSE coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_psib_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived ion velocity vector in GSM coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_data_quality",
+      "type": "integer",
+      "units": "0=good",
+      "description": "SST Burst Mode Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/sst_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_pseb_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "SST Electron energy spectrogram(Good data only)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_pseb_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "SST burst mode derived electron density(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode derived average electron temperature(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst mode derived average electron thermal velocity(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential used in generation of tha_pseb moments(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "SST burst mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST burst distribution derived electron pressure tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pseb_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "SST burst distribution derived electron momentum flux tensor(Good data only)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pseb_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "SST burst mode electron particle flux vector(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "SST burst mode electron direction of pressure tensor symmetry. In DSL Coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "SST burst distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(Good data only)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector used for generation of pseb moments in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived electron velocity vector in DSL coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived electron velocity vector in GSE coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "SST burst distribution derived electron velocity vector in GSM coordinates(Good data only)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "SST Electron energy spectrogram(Burst Mode)(All qualities)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "tha_pseb_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "SST burst mode derived electron density(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode derived average electron temperature(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst mode derived average electron thermal velocity(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "Spacecraft potential used in generation of tha_pseb moments(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode electron diagonalized temperature (Tprp1, Tprp2, Tpar)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "SST burst mode electron temperature temperature magnetic field aligned. (Tprp1FA, Tprp2FA, TparFA)(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST burst distribution derived electron pressure tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pseb_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "SST burst distribution derived electron momentum flux tensor(All qualities)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pseb_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "SST burst mode electron particle flux vector(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "SST burst mode electron direction of pressure tensor symmetry. In DSL Coordinates(All qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "SST burst distribution derived electron symmetry angle (Angle between Symmetry Direction and Magnetic Field(B))(All qualities)",
+      "fill": "nan"
+    },
+    {
+      "name": "tha_pseb_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "Magnetic field vector used for generation of pseb moments in DSL coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived electron velocity vector in DSL coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived electron velocity vector in GSE coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pseb_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "SST burst distribution derived electron velocity vector in GSM coordinates(All Qualities)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_eesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "tha_iesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2007-03-09T00:00:00.000Z",
+  "stopDate": "2020-12-22T23:59:59.000Z"
+}

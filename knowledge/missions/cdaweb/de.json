@@ -1,0 +1,361 @@
+{
+  "id": "DE",
+  "name": "Dynamics Explorer",
+  "keywords": [
+    "de",
+    "de1",
+    "de2",
+    "dynamics",
+    "explorer"
+  ],
+  "profile": {
+    "description": "Dynamics Explorer spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "DE2_DUCT16MS_RPA": {
+          "description": "16-msec total ion densities - Rod Heelis (University of Texas, Dallas)",
+          "start_date": "1981-08-03T10:49:21.000Z",
+          "stop_date": "1983-02-17T19:54:44.000Z",
+          "pi_name": "Rod Heelis",
+          "pi_affiliation": "University of Texas, Dallas",
+          "doi": "10.48322/aab6-jj49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_DUCT16MS_RPA"
+        },
+        "DE2_UA16S_ALL": {
+          "description": "16-sec combined neutral  and plasma unified abstract (UA) data - Mr. Larry H. Brace (NASA/GSFC)",
+          "start_date": "1981-08-06T03:24:48.000Z",
+          "stop_date": "1983-02-16T23:21:04.000Z",
+          "pi_name": "Mr. Larry H. Brace",
+          "pi_affiliation": "NASA/GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_UA16S_ALL"
+        },
+        "DE1_6SEC_MAGAGMS": {
+          "description": "DE-1 Magnetometer (MAG-A) 6 second GMS Data - Dr. Masahisa Sugiura (NASA/GSFC)",
+          "start_date": "1981-09-15T05:40:30.000Z",
+          "stop_date": "1991-02-18T09:55:45.000Z",
+          "pi_name": "Dr. Masahisa Sugiura",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/ps14-8x77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_6SEC_MAGAGMS"
+        },
+        "DE2_VION250MS_IDM": {
+          "description": "250-msec cross track ion drift velocities - Rod Heelis (University of Texas, Dallas)",
+          "start_date": "1981-08-15T03:44:46.000Z",
+          "stop_date": "1983-02-16T13:04:20.000Z",
+          "pi_name": "Rod Heelis",
+          "pi_affiliation": "University of Texas, Dallas",
+          "doi": "10.48322/reef-jt02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_VION250MS_IDM"
+        },
+        "DE1_62MS_MAGA-GMS": {
+          "description": "DE-1 Magnetometer (MAG-A) 62.5 msec GMS Data - Dr. Masahisa Sugiura (NASA/GSFC)",
+          "start_date": "1981-09-15T05:40:09.000Z",
+          "stop_date": "1991-12-20T23:35:11.000Z",
+          "pi_name": "Dr. Masahisa Sugiura",
+          "pi_affiliation": "NASA/GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_62MS_MAGA-GMS"
+        },
+        "DE2_62MS_VEFIMAGB": {
+          "description": "16-msec merged magnetic and electric field data  - Jim Slavin (NASA/GSFC)",
+          "start_date": "1981-08-15T03:44:46.000Z",
+          "stop_date": "1983-02-16T13:04:25.000Z",
+          "pi_name": "Jim Slavin",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/ha70-4305",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_62MS_VEFIMAGB"
+        },
+        "DE2_LAPI_SHAFT-ENCODER-ANGLE": {
+          "description": "DE-2, The Low Altitude Plasma Instrument (LAPI) Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:24.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_SHAFT-ENCODER-ANGLE"
+        },
+        "DE2_AC500MS_VEFI": {
+          "description": "500-msec AC data from each channel for each of the 3 spectrometers of the vector electric field instrument - N.C. Maynard/R. Pfaff (NASA/GSFC)",
+          "start_date": "1981-08-10T16:03:09.000Z",
+          "stop_date": "1983-02-16T13:04:27.000Z",
+          "pi_name": "N.C. Maynard/R. Pfaff",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/x1km-9q17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_AC500MS_VEFI"
+        },
+        "DE2_DCA500MS_VEFI": {
+          "description": "500-msec DC electric field x- and y-components from the vector electric field instrument - Dr. Nelson C. Maynard (NASA/GSFC)",
+          "start_date": "1981-08-10T16:03:10.000Z",
+          "stop_date": "1983-02-16T13:05:00.000Z",
+          "pi_name": "Dr. Nelson C. Maynard",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/0s61-a111",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_DCA500MS_VEFI"
+        },
+        "DE2_LAPI_GEIGER-MUELLER": {
+          "description": "DE-2, The Low Altitude Plasma Instrument (LAPI) Corrected IDFS format - Dr. J. David  Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:26.000Z",
+          "pi_name": "Dr. J. David  Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_GEIGER-MUELLER"
+        },
+        "DE2_LAPI_GEIGER-MUELLER-RATIO": {
+          "description": "DE-2, LAPI_Corrected IDFS format - Dr. J. David  Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:26.000Z",
+          "pi_name": "Dr. J. David  Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_GEIGER-MUELLER-RATIO"
+        },
+        "DE2_LAPI_ION-FLUX-COUNTS-PPS1": {
+          "description": "DE-2, LAPI_Corrected Ion Counts and Flux from Power Supply 1 IDFS format - Dr. J. David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:23.000Z",
+          "pi_name": "Dr. J. David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ION-FLUX-COUNTS-PPS1"
+        },
+        "DE2_LAPI_ION-FLUX-COUNTS-PPS2": {
+          "description": "DE-2, LAPI_Corrected Ion Counts and Flux from Power Supply 2 IDFS format - Dr. J. David  Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:01.000Z",
+          "stop_date": "1983-02-18T16:42:23.000Z",
+          "pi_name": "Dr. J. David  Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ION-FLUX-COUNTS-PPS2"
+        },
+        "DE2_WIND2S_WATS": {
+          "description": "2-sec neutral densities, temperature, and horizontal (zonal) wind velocity - Nelson W. Spencer (NASA/GSFC)",
+          "start_date": "1981-08-08T15:54:00.000Z",
+          "stop_date": "1983-02-17T17:15:23.000Z",
+          "pi_name": "Nelson W. Spencer",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/z50y-hd65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_WIND2S_WATS"
+        },
+        "DE_VS_EICS": {
+          "description": "DE-1 Energetic Ion Composition Spectrometer (EICS), Validated Summary Data - E. G. Shelley (Lockheed Martin)",
+          "start_date": "1981-09-16T17:17:36.000Z",
+          "stop_date": "1991-02-18T09:51:12.000Z",
+          "pi_name": "E. G. Shelley",
+          "pi_affiliation": "Lockheed Martin",
+          "doi": "10.48322/1gca-r323",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE_VS_EICS"
+        },
+        "DE2_LAPI_ELECTRON-FLUX-COUNTS-PPS2": {
+          "description": "DE-2, LAPI_Corrected Electron Counts and Flux from Power Supply 2 IDFS format - Dr. J. David  Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:01.000Z",
+          "stop_date": "1983-02-18T16:42:23.000Z",
+          "pi_name": "Dr. J. David  Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ELECTRON-FLUX-COUNTS-PPS2"
+        },
+        "DE2_LAPI_ELECTRON-FLUX-COUNTS-PPS1": {
+          "description": "DE-2, LAPI_Corrected Electron Counts and Flux from Power Supply 1 IDFS format - Dr. J. David  Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:23.000Z",
+          "pi_name": "Dr. J. David  Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ELECTRON-FLUX-COUNTS-PPS1"
+        },
+        "DE2_LAPI_PITCH-ANGLES": {
+          "description": "DE-2, LAPI_Corrected Precopitation and Pitch Angles IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:08:52.000Z",
+          "stop_date": "1983-02-18T16:42:26.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_PITCH-ANGLES"
+        },
+        "DE2_PLASMA500MS_LANG": {
+          "description": ".5 sec electron temperature, plasma density, and satellite potential - Larry H. Brace (NASA/GSFC)",
+          "start_date": "1981-08-05T20:31:02.000Z",
+          "stop_date": "1983-02-16T13:04:24.000Z",
+          "pi_name": "Larry H. Brace",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/yq6h-5g10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_PLASMA500MS_LANG"
+        },
+        "DE1_2SEC_OA": {
+          "description": "de1 2 second orbit and additude data - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T00:00:00.000Z",
+          "stop_date": "1982-01-01T23:59:56.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_2SEC_OA"
+        },
+        "DE2_NEUTRAL1S_NACS": {
+          "description": "1-sec ambient densities and error rates - Nelson W. Spencer (NASA/GSFC)",
+          "start_date": "1981-08-08T13:40:02.000Z",
+          "stop_date": "1983-02-15T16:24:32.000Z",
+          "pi_name": "Nelson W. Spencer",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/j8kp-5y58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_NEUTRAL1S_NACS"
+        },
+        "DE2_ION2S_RPA": {
+          "description": "2-sec ion temperature, velocity, and densities (O+, H+, He+, molecular) - Rod Heelis (University of Texas, Dallas)",
+          "start_date": "1981-08-06T17:07:01.000Z",
+          "stop_date": "1983-02-16T13:04:19.000Z",
+          "pi_name": "Rod Heelis",
+          "pi_affiliation": "University of Texas, Dallas",
+          "doi": "10.48322/41b3-kz41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_ION2S_RPA"
+        },
+        "DE2_NEUTRAL8S_FPI": {
+          "description": "8-sec neutral wind and temperature data from FPI plus WATS - Dr. R. Niciejewski (University of Michigan)",
+          "start_date": "1981-08-09T21:09:28.000Z",
+          "stop_date": "1983-02-16T05:24:32.000Z",
+          "pi_name": "Dr. R. Niciejewski",
+          "pi_affiliation": "University of Michigan",
+          "doi": "10.48322/22v6-0p09",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_NEUTRAL8S_FPI"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "DE1_PWI_LFC-SPECTRA": {
+          "description": "DE-1 Plasma Wave Instrument (PWI) Low Frequency Correlator (LFC) Electric and Magnetic Field Spectral Density - Donald Gurnett (University Iowa)",
+          "start_date": "1981-09-16T05:21:48.000Z",
+          "stop_date": "1984-06-28T05:53:31.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/hx4p-3v35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_PWI_LFC-SPECTRA"
+        },
+        "DE1_PWI_SFC-SPECTRA": {
+          "description": "DE-1 Plasma Wave Instrument (PWI) Step Frequency Correlator (SFC) Electric and Magnetic Field Spectral Density - Donald Gurnett (University Iowa)",
+          "start_date": "1981-09-16T05:21:48.000Z",
+          "stop_date": "1984-06-28T20:35:55.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/cb14-a164",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_PWI_SFC-SPECTRA"
+        },
+        "DE1_1MIN_RIMS": {
+          "description": "DE-1 Retarding Ion Mass Spectrometer 1-min temperature and density data (low channel used for H+, He++, high channel for He+, O+, O++) - Dr. Charles R. Chappell (NASA/MSFC)",
+          "start_date": "1981-10-07T10:21:31.000Z",
+          "stop_date": "1984-12-30T02:12:32.000Z",
+          "pi_name": "Dr. Charles R. Chappell",
+          "pi_affiliation": "NASA/MSFC",
+          "doi": "10.48322/4e3s-bm07",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_1MIN_RIMS"
+        },
+        "DE1_PWI_OR-AT": {
+          "description": "DE-1 PWI: Ephemeris and Attitude Parameters - Donald Gurnett (University Iowa)",
+          "start_date": "1981-09-16T05:20:12.000Z",
+          "stop_date": "1984-06-28T23:14:11.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/wma0-gq05",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE1_PWI_OR-AT"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "DE2_LAPI_LAPI-MAG": {
+          "description": "DE-2, LAPI_Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:26.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_LAPI-MAG"
+        },
+        "DE2_LAPI_PROJECTED-MAGB": {
+          "description": "DE-2, MAGB_Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:08:52.000Z",
+          "stop_date": "1983-02-18T16:42:26.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_PROJECTED-MAGB"
+        },
+        "DE2_LAPI_SC-MAGB": {
+          "description": "DE-2, MAGB_Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T03:44:46.000Z",
+          "stop_date": "1983-02-16T13:04:25.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_SC-MAGB"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "DE2_LAPI_ORBIT-ATTITUDE": {
+          "description": "DE-2, OA_Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T13:09:02.000Z",
+          "stop_date": "1983-02-18T16:42:12.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ORBIT-ATTITUDE"
+        },
+        "DE2_LAPI_ORBIT-ATTITUDE-MAGB": {
+          "description": "DE-2, OA_Corrected IDFS format - David Winningham (Southwest Research Institute)",
+          "start_date": "1981-08-15T03:44:46.000Z",
+          "stop_date": "1983-02-16T13:04:22.000Z",
+          "pi_name": "David Winningham",
+          "pi_affiliation": "Southwest Research Institute",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE2_LAPI_ORBIT-ATTITUDE-MAGB"
+        }
+      }
+    },
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "DE_UV_SAI": {
+          "description": "DE-1 Spin-scan Auroral Imager (SAI) Ultraviolet Images - Louis A. Frank (The Univ. of Iowa)",
+          "start_date": "1981-09-23T19:02:17.000Z",
+          "stop_date": "1991-02-18T09:50:31.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The Univ. of Iowa",
+          "doi": "10.48322/t7ya-6231",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesD.html#DE_UV_SAI"
+        }
+      }
+    }
+  },
+  "observatory_group": "Dynamics Explorer",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

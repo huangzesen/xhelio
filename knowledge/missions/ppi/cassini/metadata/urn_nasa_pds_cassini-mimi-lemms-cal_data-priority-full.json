@@ -1,0 +1,402 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "A0",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel A0.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A1",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel A1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A3",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel A3.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A5",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel A5.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C0",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel C0.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C1",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel C1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C2",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel C2.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C3",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority \n    accumulator rates for channel C3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "C5",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel C5.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E0",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel E0.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E1",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel E1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E4",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel E4.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "P2",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel P2.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "P7",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Full time resolution of priority accumulator rates for channel P7.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A0_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel A0 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A1_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel A1 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A3_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel A3 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "A5_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel A5 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C0_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel C0 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C1_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel C1 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C2_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel C2 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C3_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel C3 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "C5_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel C5 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E0_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel E0 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E1_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel E1 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "E4_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel E4 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "P2_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel P2 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "P7_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Full time resolution of priority accumulator rates for channel P7 Uncert.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0E38"
+    },
+    {
+      "name": "Dist_RS",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "radial distance from Cassini to Saturn in Saturn radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Offset_DipoleL",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini L shell location using offset dipole.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Latitude_degrees",
+      "type": "double",
+      "units": "",
+      "description": "Cassini SZS latitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_LocalTime_hours",
+      "type": "double",
+      "units": "Hours",
+      "description": "Cassini SZS localtime in hours",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_LEMMS_LET",
+      "type": "double",
+      "units": "",
+      "description": "pitch angle for the LEMMS Low Energy Telescope.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_LEMMS_HET",
+      "type": "double",
+      "units": "",
+      "description": "pitch angle for the LEMMS High Energy Telescope.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

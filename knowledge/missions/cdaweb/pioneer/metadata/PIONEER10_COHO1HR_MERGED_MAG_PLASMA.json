@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "Au",
+      "description": "Heliocentric distance (start of data interval)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLongitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HGI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "BR in RTN (Radial-Tangential-Normal) coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "BT in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B-Field magnitude (average of fine scale field magnitudes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flowSpeed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton flow speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elevAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow elevation angle / latitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "azimuthAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow azimuth angle / longitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonDensity",
+      "type": "double",
+      "units": "protons/cm3",
+      "description": "Proton density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonTemp",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_CRT",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 3.45-5.15 energy bins, MeV, CRT (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_CRT",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 30.55-56.47 energy bins, MeV, CRT (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_CRT",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 120.7-227.3 energy bins, MeV, CRT (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1972-01-01T00:00:00.000Z",
+  "stopDate": "1995-09-07T02:00:00.000Z"
+}

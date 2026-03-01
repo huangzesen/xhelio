@@ -1,0 +1,93 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E1",
+      "type": "double",
+      "units": "Cnts/sec cm^2 Sr",
+      "description": "Electon flux>2 MeV (protons >40 MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "Cnts/sec cm^2 Sr MeV",
+      "description": "Uncor. dif. Proton Flux (.6-4.2 MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IE",
+      "type": "double",
+      "units": "TBD",
+      "description": "TBD",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_ll",
+      "type": "double",
+      "units": "",
+      "description": "GOES 7 s/c position, Geographic, Polar Coordinates (data begin March 6, 1993)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_eo",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 7 s/c position, Geographic, Cartesian Coordinates (data begin March 6, 1993)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_se",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 7 s/c position, GSE x,y,z",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_sm",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 7 s/c position, GSM x,y,z",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IE_flag",
+      "type": "integer",
+      "units": "Integer Table",
+      "description": "ISTP Definitions (0=no gap)",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EPS_rsrvd",
+      "type": "integer",
+      "units": "",
+      "description": "TBD",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "1992-12-12T00:02:30.000Z",
+  "stopDate": "1996-02-26T23:57:30.000Z"
+}

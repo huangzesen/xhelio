@@ -1,0 +1,267 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SECONDS",
+      "type": "double",
+      "units": "s",
+      "description": "Spacecraft Time (elapsed seconds from epoch \n                       2001-01-01T00:00:00.000 UTC). Derived from spacecraft \n                       clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FRACT",
+      "type": "double",
+      "units": "10**-2 s",
+      "description": "Spacecraft Time (fractional seconds in units of 1/100 second).\n                       Derived from spacecraft clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCNTRL",
+      "type": "double",
+      "units": "",
+      "description": "Detector Bias Delayed Control Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCMD",
+      "type": "double",
+      "units": "",
+      "description": "Detector Bias Voltage Flag (1 = on).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLOW",
+      "type": "double",
+      "units": "",
+      "description": "Internal Calibration Pulser--Low Range Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALHIGH",
+      "type": "double",
+      "units": "",
+      "description": "Internal Calibration Pulser--High Range Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALRATE",
+      "type": "double",
+      "units": "",
+      "description": "Internal Calibration Pulser Pulse Rate Flag (0 = 8 Hz; 1 = 1953 Hz).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 1",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 2",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 3",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 4",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 5",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROCDFLAG 6",
+      "type": "double",
+      "units": "",
+      "description": "Detector Processing Flag (1 = enabled).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LASTCMD",
+      "type": "double",
+      "units": "",
+      "description": "Address of last command to CRaTER.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LASTVALUE",
+      "type": "double",
+      "units": "",
+      "description": "Contents of last command to CRaTER.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DISCTHIN",
+      "type": "double",
+      "units": "",
+      "description": "LLD Setting--Thin Detectors (D1, D3, D5).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DISCTHICK",
+      "type": "double",
+      "units": "",
+      "description": "LLD Setting--Thick Detectors (D2, D4, D6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASK 1",
+      "type": "double",
+      "units": "",
+      "description": "Detector Coincidence Discriminator Accept Mask (64 bits).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASK 2",
+      "type": "double",
+      "units": "",
+      "description": "Detector Coincidence Discriminator Accept Mask (64 bits).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 1",
+      "type": "double",
+      "units": "",
+      "description": "D1 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 2",
+      "type": "double",
+      "units": "",
+      "description": "D2 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 3",
+      "type": "double",
+      "units": "",
+      "description": "D3 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 4",
+      "type": "double",
+      "units": "",
+      "description": "D4 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 5",
+      "type": "double",
+      "units": "",
+      "description": "D5 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SINGLE 6",
+      "type": "double",
+      "units": "",
+      "description": "D6 Singles Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GOOD",
+      "type": "double",
+      "units": "",
+      "description": "Good Events Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "REJECT",
+      "type": "double",
+      "units": "",
+      "description": "Rejected Events Counter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOTAL",
+      "type": "double",
+      "units": "",
+      "description": "Total Events Counter.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

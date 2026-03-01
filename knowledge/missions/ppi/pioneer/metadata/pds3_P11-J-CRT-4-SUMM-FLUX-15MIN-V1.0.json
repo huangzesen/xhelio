@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R6A_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in HET energy channel R6A (1.8-3.2 MeV electrons). The coincidence logic for this channel is A1.^A2.B.^C1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R6A_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel R6A.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R6B_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in HET energy channel R6B (3.2-5.1 MeV electrons). The coincidence logic for this channel is A1.^A2.B.C1.^C2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R6B_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel R6B.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R7A_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in HET energy channel R7A (5.1-8.0 MeV electrons). The coincidence logic for this channel is A1.^A2.B.C1.C2.^C3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R7A_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel R7A.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

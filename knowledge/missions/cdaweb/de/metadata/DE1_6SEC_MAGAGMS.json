@@ -1,0 +1,110 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "brGEO",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial Component of reference magnetic field (MAGSAT model) in GEO coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bthGEO",
+      "type": "double",
+      "units": "nT",
+      "description": "Theta Component of reference magnetic field (MAGSAT model) in GEO coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bphGEO",
+      "type": "double",
+      "units": "nT",
+      "description": "Phi Component of reference magnetic field (MAGSAT model) in GEO coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bpara",
+      "type": "double",
+      "units": "nT",
+      "description": "Parallel Component of Difference Magnetic Field in Local Magnetic (LMG) Coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bparp1",
+      "type": "double",
+      "units": "nT",
+      "description": "Perpendicular Component (1) of Difference Magnetic Field in Local Magnetic (LMG) Coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bparp2",
+      "type": "double",
+      "units": "nT",
+      "description": "Perpendicular (2) Component of Difference Magnetic Field in Local Magnetic (LMG) Coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "brGMS",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial Component of Difference Magnetic Field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bthGMS",
+      "type": "double",
+      "units": "nT",
+      "description": "Theta Component of Difference Magnetic Field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bphGMS",
+      "type": "double",
+      "units": "nT",
+      "description": "Phi Component of Difference Magnetic Field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-09-15T05:40:30.000Z",
+  "stopDate": "1991-02-18T09:55:45.000Z"
+}

@@ -1,0 +1,119 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MOON_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GCI Moon Position Vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SUN_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GCI Sun Position Vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GCI Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSM Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSE Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GCI Cartesian Position",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS",
+      "type": "double",
+      "units": "km",
+      "description": "[All values have been corrected 7/9/2001] GSM Cartesian Position, time-series",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POSO",
+      "type": "double",
+      "units": "km",
+      "description": "[All values have been corrected 7/9/2001] GSM Cartesian Position, orbit plot",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "[All values have been corrected 7/9/2001] GSE Cartesian Position, time-series",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POSO",
+      "type": "double",
+      "units": "km",
+      "description": "[All values have been corrected 7/9/2001] GSE Cartesian Position, orbit plot",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "L_shell",
+      "type": "double",
+      "units": "n/a",
+      "description": "Predicted L-shell",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2000-03-27T00:00:55.000Z",
+  "stopDate": "2005-12-19T23:58:00.000Z"
+}

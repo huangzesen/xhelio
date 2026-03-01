@@ -1,0 +1,278 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "cup1_qflux",
+      "type": "double",
+      "units": "pA",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] The total charge flux (current) incident on the collector of cup 1, in picoAmperes (E/Q-azimuth display)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_qflux_reorder",
+      "type": "double",
+      "units": "pA",
+      "description": "The total charge flux (current) incident on the collector of cup 1, in picoAmperes (E/Q-azimuth display) [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_qflux_E_old",
+      "type": "double",
+      "units": "pA",
+      "description": "---> [PLOTS NOT SUPPORTED] Spectrograms by azimuth at sample E/Q",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_qflux_E",
+      "type": "double",
+      "units": "pA",
+      "description": "---> Spectrograms by azimuth at sample E/Q [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_qflux_A_old",
+      "type": "double",
+      "units": "pA",
+      "description": "---> [PLOTS NOT SUPPORTED] Spectrograms by E/Q at sample azimuths",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_qflux_A",
+      "type": "double",
+      "units": "pA",
+      "description": "---> Spectrograms by E/Q at sample azimuths [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux",
+      "type": "double",
+      "units": "pA",
+      "description": "[CDAWEB PLOTS NOT SUPPORTED] The total charge flux (current) incident on the collector of cup 2, in picoAmperes (E/Q-azimuth display)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux_reorder",
+      "type": "double",
+      "units": "pA",
+      "description": "The total charge flux (current) incident on the collector of cup 2, in picoAmperes (E/Q-azimuth display) [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux_E_old",
+      "type": "double",
+      "units": "pA",
+      "description": "---> [PLOTS NOT SUPPORTED] Spectrograms by azimuth at sample E/Q",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux_E",
+      "type": "double",
+      "units": "pA",
+      "description": "---> Spectrograms by azimuth at sample E/Q [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux_A_old",
+      "type": "double",
+      "units": "pA",
+      "description": "---> [PLOTS NOT SUPPORTED] Spectrograms by E/Q at sample azimuths",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup2_qflux_A",
+      "type": "double",
+      "units": "pA",
+      "description": "---> Spectrograms by E/Q at sample azimuths [data monotonically sorted based on dependencies]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20,
+        31
+      ]
+    },
+    {
+      "name": "cup1_azimuth",
+      "type": "double",
+      "units": "degrees",
+      "description": "Azimuthal angle of the cup 1 normal.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "cup1_azimuth_reorder",
+      "type": "double",
+      "units": "degrees",
+      "description": "Azimuthal angle of the cup 1 normal. [data monotonically sorted]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "cup1_EperQ",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> The Energy-per-charge of admitted ions, i.e. the bias potential of cup 1 (in Volts).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "cup1_EperQ_reorder",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> The Energy-per-charge of admitted ions, i.e. the bias potential of cup 1 (in Volts). [data monotonically sorted]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "cup1_EperQ_DEL",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> Range of Energy-per-charge of admitted ions, i.e. the range of the bias potential of cup 1 (in Volts).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "cup2_azimuth",
+      "type": "double",
+      "units": "degrees",
+      "description": "Azimuthal angle of the cup 2 normal.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "cup2_azimuth_reorder",
+      "type": "double",
+      "units": "degrees",
+      "description": "Azimuthal angle of the cup 2 normal. [data monotonically sorted]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "cup2_EperQ",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> The Energy-per-charge of admitted ions, i.e. the bias potential of cup 2 (in Volts).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "cup2_EperQ_reorder",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> The Energy-per-charge of admitted ions, i.e. the bias potential of cup 2veri (in Volts). [data monotonically sorted]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "cup2_EperQ_DEL",
+      "type": "double",
+      "units": "Volts",
+      "description": "---> Range of Energy-per-charge of admitted ions, i.e. the range of the bias potential of cup 2 (in Volts).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "tracking",
+      "type": "integer",
+      "units": "(1=Track)",
+      "description": "Boolean signifying whether SWE is in peak-tracking mode",
+      "fill": "-128.0"
+    },
+    {
+      "name": "full_scan",
+      "type": "integer",
+      "units": "(1=Full)",
+      "description": "---> Boolean signifying whether SWE is in full-scan mode",
+      "fill": "-128.0"
+    },
+    {
+      "name": "angle_index",
+      "type": "integer",
+      "units": "",
+      "description": "angle_index",
+      "fill": "-128.0",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "bias_index",
+      "type": "integer",
+      "units": "",
+      "description": "bias_index",
+      "fill": "-128.0",
+      "size": [
+        31
+      ]
+    }
+  ],
+  "startDate": "1994-11-17T19:50:45.000Z",
+  "stopDate": "2025-12-21T23:56:51.000Z"
+}

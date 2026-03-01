@@ -1,0 +1,402 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock MOD 65536.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock FDS LINE.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "Rs",
+      "description": "X component of the Voyager 1 trajectory in Kronographic (L1)            \n                        coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99999999"
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "Rs",
+      "description": "Y component of the Voyager 1 trajectory in Kronographic (L1)            \n                        coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99999999"
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "Rs",
+      "description": "Z component of the Voyager 1 trajectory in Kronographic (L1)            \n                        coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99999999"
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "X component of the Voyager 1 velocity in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Y component of the Voyager 1 velocity in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Z component of the Voyager 1 velocity in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "Rs",
+      "description": "S/C distance in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "S/C latitude in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "S/C longitude in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.99999999"
+    },
+    {
+      "name": "XYZ2S311",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[1][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S312",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[1][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S313",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[1][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S321",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[2][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S322",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[2][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S323",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[2][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S331",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[3][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S332",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[3][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "XYZ2S333",
+      "type": "double",
+      "units": "",
+      "description": "CARTESIANS3->SPHERICALS3[3][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ11",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[1][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ12",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[1][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ13",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[1][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ21",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[2][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ22",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[2][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ23",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[2][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ31",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[3][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ32",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[3][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2XYZ33",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->CARTESIANS3[3][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_11",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[1][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_12",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[1][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_13",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[1][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_21",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[2][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_22",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[2][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_23",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[2][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_31",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[3][1]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_32",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[3][2]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    },
+    {
+      "name": "SC2S3_33",
+      "type": "double",
+      "units": "",
+      "description": "PAYLOAD->SPHERICALS3[3][3]",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

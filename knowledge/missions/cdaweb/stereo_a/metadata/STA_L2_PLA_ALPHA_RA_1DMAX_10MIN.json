@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "alpha_density",
+      "type": "double",
+      "units": "1/cc",
+      "description": "Alpha Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alpha_bulk_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha Bulk Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alpha_thermal_speed",
+      "type": "double",
+      "units": "sqrt(2kT/m)",
+      "description": "Alpha Thermal Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Na_Np",
+      "type": "double",
+      "units": "ratio",
+      "description": "Na/Np",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Va_Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Va-Vp",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2007-02-15T00:00:37.000Z",
+  "stopDate": "2010-12-31T23:50:29.000Z"
+}

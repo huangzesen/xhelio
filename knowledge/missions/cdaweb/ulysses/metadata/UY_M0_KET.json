@@ -1,0 +1,79 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LowE_protons",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton count rate (2.7-5.4 MeV) channel K1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Proton_sectors",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton flux (5.4-23.1 MeV) in 8 sectors, channels K21 - K28",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "HiE_protons",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton count rate (5.4-2100+ MeV), in 5 channels: P4, K3, K34, K12, K10",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Helium",
+      "type": "double",
+      "units": "/s",
+      "description": "Helium count rate (6-2100+ MeV) in 5 channels: K2, K33, K29, K31, K30",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Electron_sectors",
+      "type": "double",
+      "units": "/s",
+      "description": "Electron count rate (2.5-7 MeV) in 8 sectors, channels K13 - K20",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Electrons",
+      "type": "double",
+      "units": "/s",
+      "description": "Electron count rate (2.5-170+ MeV) (E4:2.5-7, K11:7-170, K32:>170 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Single_detector",
+      "type": "double",
+      "units": "/s",
+      "description": "Single detector counts in 6 channels (D10, D20, C10, C20, S20, A01)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    }
+  ],
+  "startDate": "1990-10-23T00:10:00.000Z",
+  "stopDate": "2009-06-30T16:30:00.000Z"
+}

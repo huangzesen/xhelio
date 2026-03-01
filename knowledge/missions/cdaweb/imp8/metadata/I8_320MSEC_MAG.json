@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx (GSE)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "By (GSE)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz (GSE)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B (Field magnitude)",
+      "fill": "9999.990234375"
+    }
+  ],
+  "startDate": "1973-10-30T15:00:40.000Z",
+  "stopDate": "2000-06-10T15:09:24.000Z"
+}

@@ -1,0 +1,195 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "K_FACTOR",
+      "type": "double",
+      "units": "eV/volt",
+      "description": "The K-factor refers to how sensitive a sector is to electron energy for a given deflection voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_00",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_01",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_02",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_03",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_04",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_05",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_06",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_07",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_08",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_09",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COEFF_10",
+      "type": "double",
+      "units": "N/A",
+      "description": "Coefficient for relative efficiency polynomial",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ABS_EFF",
+      "type": "double",
+      "units": "N/A",
+      "description": "The absolute efficiency",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GEOM_FACTOR",
+      "type": "double",
+      "units": "cm**2-sr",
+      "description": "The geometric factor in cm**2-steradian",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MCP_TRANS",
+      "type": "double",
+      "units": "N/A",
+      "description": "The MCP transparency (quoted by manufacturer)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GRID_TRANS",
+      "type": "double",
+      "units": "N/A",
+      "description": "The Grid transparency",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANODE_RATIO",
+      "type": "double",
+      "units": "N/A",
+      "description": "The active anode area ration (manufactured/theory)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA_TIME",
+      "type": "double",
+      "units": "seconds",
+      "description": "The delta time (data accumulation period)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RESOLUTION",
+      "type": "double",
+      "units": "N/A",
+      "description": "The detector resolution",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCALING_FACTOR",
+      "type": "double",
+      "units": "N/A",
+      "description": "The anode amplitude adjustment factor",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

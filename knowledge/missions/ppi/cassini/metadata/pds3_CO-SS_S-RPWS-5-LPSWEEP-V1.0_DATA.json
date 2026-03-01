@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "RADIAL_DISTANCE",
+      "type": "double",
+      "units": "252.1km",
+      "description": "Radial distance from the center of Enceladus in Enceladus radii, 252.1km, formatted %15.8e",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_NUMBER_DENSITY",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Electron number density per cubic centimeter, formatted %15.8E",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_TEMPERATURE",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron temperature in electron volts, formatted %15.8E",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential in volts, formatted %15.8E",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "SECONDS",
+      "description": "The Mission Elapsed Time (MET) in seconds               \n        when the LVPS X,Y,Z axis samples were collected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACTUAL_RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Actual Range used by MAG. =0 1530 nT, =1 51300 nT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STATUS_CNT_SENSOR_X",
+      "type": "double",
+      "units": "",
+      "description": "The LVPS X-axis sample. X axis field value in signed    \n      integer counts. If DN value is greater than 8192 then this value is     \n      DN - 16384. DN is the telemetry value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STATUS_CNT_SENSOR_Y",
+      "type": "double",
+      "units": "",
+      "description": "The LVPS Y-axis sample. Y axis field value in signed    \n      integer counts. If DN value is greater than 8192 then this value is     \n      DN - 16384. DN is the telemetry value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STATUS_CNT_SENSOR_Z",
+      "type": "double",
+      "units": "",
+      "description": "The LVPS Z-axis sample. Z axis field value in signed    \n      integer counts. If DN value is greater than 8192 then this value is     \n      DN - 16384. DN is the telemetry value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_DC_DC_CURR",
+      "type": "double",
+      "units": "AMP",
+      "description": "The derived MAG DC/DC current; used the following       \n                      formula:                                                \n                      If the DN value is less than 128,                       \n                        MAG_DC_DC_CURR = DN/64                                \n                      else                                                    \n                        MAG_DC_DC_CURR = (DN-256)/64.                         \n                      Where DN is the telemetry value.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ELEC_TEMP",
+      "type": "double",
+      "units": "CELSIUS",
+      "description": "The derived MAG electronics temperature; used the       \n      following formula:                                                      \n      MAG_ELEC_TEMP = (155*DN/127) - 55                                       \n      Where DN is the telemetry value.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_PROBE_TEMP",
+      "type": "double",
+      "units": "",
+      "description": "The raw telemetry counts for the MAG probe temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FSW_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "The Flight Software (FSW) version number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_PLUS5V",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS +5 voltage counter.     \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_MINUS5V",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS -5 voltage counter.     \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_PLUS12V",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS +12 voltage counter.    \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_MINUS12V",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS -12 voltage counter.    \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_PLUS5I",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS +5 current counter.     \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_MINUS5I",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS -5 current counter.     \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_PLUS12I",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS +12 current counter.    \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_MINUS12I",
+      "type": "double",
+      "units": "",
+      "description": "The raw integer counts for LVPS -12 current counter.    \n      The values for this column are set to an N/A value of 999 when          \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEATER_DUTY_CYCLE",
+      "type": "double",
+      "units": "",
+      "description": "The heater duty cycle.                                  \n      The values for this column are set to an N/A value of 65533 when        \n      FSW_VERSION is less than 9; the measurement did not exist in prior      \n      flight software versions.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

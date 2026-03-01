@@ -1,0 +1,407 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PA_ChanE",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle ChanE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "SA_ChanE",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle ChanE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "RTN_ChanE",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction ChanE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        3
+      ]
+    },
+    {
+      "name": "HCI_ChanE",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction ChanE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        3
+      ]
+    },
+    {
+      "name": "HCI_R_ChanE",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat_ChanE",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lon_ChanE",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R_ChanE",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lat_ChanE",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon_ChanE",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude ChanE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electron_Counts_ChanE",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electron counts channel E (HiResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "Electron_CountRate_ChanE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Electron count rate channel E (HiResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "Electron_Flux_ChanE",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NkeV!E-1!N",
+      "description": "Electron flux channel E (HiResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "H_Counts_ChanE",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts channel E (HiResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "H_CountRate_ChanE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H count rate channel E (HiResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "PA_ChanF",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle ChanF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "SA_ChanF",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle ChanF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "RTN_ChanF",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction ChanF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        3
+      ]
+    },
+    {
+      "name": "HCI_ChanF",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction ChanF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        3
+      ]
+    },
+    {
+      "name": "HCI_R_ChanF",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat_ChanF",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lon_ChanF",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R_ChanF",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lat_ChanF",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon_ChanF",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude ChanF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electron_Counts_ChanF",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electron counts channel F (HiTimeResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "Electron_CountRate_ChanF",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Electron count rate channel F (HiTimeResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "H_Counts_ChanF",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts channel F (HiTimeResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "H_CountRate_ChanF",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H count rate channel F (HiTimeResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        48
+      ]
+    },
+    {
+      "name": "PA_ChanG",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle ChanG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80
+      ]
+    },
+    {
+      "name": "SA_ChanG",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle ChanG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80
+      ]
+    },
+    {
+      "name": "RTN_ChanG",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction ChanG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80,
+        3
+      ]
+    },
+    {
+      "name": "HCI_ChanG",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction ChanG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80,
+        3
+      ]
+    },
+    {
+      "name": "HCI_R_ChanG",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat_ChanG",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lon_ChanG",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R_ChanG",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lat_ChanG",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon_ChanG",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude ChanG",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electron_Counts_ChanG",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electron counts channel G (HiLookResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        80,
+        48
+      ]
+    },
+    {
+      "name": "Electron_CountRate_ChanG",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Electron count rate channel G (HiLookResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80,
+        48
+      ]
+    },
+    {
+      "name": "H_Counts_ChanG",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts channel G (HiLookResElectrons)",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        80,
+        48
+      ]
+    },
+    {
+      "name": "H_CountRate_ChanG",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H count rate channel G (HiLookResElectrons)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        80,
+        48
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

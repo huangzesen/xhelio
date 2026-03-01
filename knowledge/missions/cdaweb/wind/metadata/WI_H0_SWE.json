@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Te",
+      "type": "double",
+      "units": "Deg K",
+      "description": "Electron Temperature, Te",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Te_anisotropy",
+      "type": "double",
+      "units": "",
+      "description": "Temperature anisotropy = Te_para / Te_perp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "average_energy",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron average energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pa_press_tensor",
+      "type": "double",
+      "units": "",
+      "description": "Principle axis of pressure tensor - unit vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pa_dot_B",
+      "type": "double",
+      "units": "",
+      "description": "Pressure tensor principle axis dot magnetic field unit vector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heat_flux_magn",
+      "type": "double",
+      "units": "ergs/(cm^2 s)",
+      "description": "Electron heat flux magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heat_flux_el",
+      "type": "double",
+      "units": "degrees",
+      "description": "Electron heat flux elevation",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heat_flux_az",
+      "type": "double",
+      "units": "degrees",
+      "description": "Electron heat flux azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Q_dot_B",
+      "type": "double",
+      "units": "",
+      "description": "Heat flux dot B unit vector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_position",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Spacecraft Position (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "el_bulk_vel_magn",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron bulk velocity - magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "el_bulk_vel_el",
+      "type": "double",
+      "units": "degrees",
+      "description": "Electron bulk velocity - elevation",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "el_bulk_vel_az",
+      "type": "double",
+      "units": "degrees",
+      "description": "Electron bulk velocity - azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "el_density",
+      "type": "double",
+      "units": "/cc",
+      "description": "Electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_pot",
+      "type": "double",
+      "units": "Volts",
+      "description": "Spacecraft Potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flag",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Flag, yet to be defined",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "major_fr_rec",
+      "type": "integer",
+      "units": "",
+      "description": "major frame record number",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "major_fr_spin_number",
+      "type": "integer",
+      "units": "",
+      "description": "Major frame spin number",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1994-12-29T00:00:02.000Z",
+  "stopDate": "2001-05-31T23:59:57.000Z"
+}

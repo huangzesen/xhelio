@@ -1,0 +1,40 @@
+{
+  "id": "CRRES",
+  "name": "CRRES",
+  "keywords": [
+    "crres"
+  ],
+  "profile": {
+    "description": "CRRES spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "CRRES_H0_MEA": {
+          "description": "CRRES-MEA Data Archive - A. L. Vampola (Space Environment Effects, Vista, CA)",
+          "start_date": "1990-07-28T06:58:00.000Z",
+          "stop_date": "1991-10-12T00:35:00.000Z",
+          "pi_name": "A. L. Vampola",
+          "pi_affiliation": "Space Environment Effects, Vista, CA",
+          "doi": "10.48322/8e23-cz17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CRRES_H0_MEA"
+        }
+      }
+    }
+  },
+  "observatory_group": "CRRES",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

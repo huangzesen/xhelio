@@ -1,0 +1,164 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Decimal Day",
+      "type": "double",
+      "units": "Day",
+      "description": "This column contains the decimal day corresponding to the                 \n                          spacecraft event time (SCET) of the center of the 5 second                \n                          averaging window. Day 1 corresponds to Jan. 1.  Averages                  \n                          are non-overlapping.",
+      "size": [
+        1
+      ],
+      "fill": "999.999999"
+    },
+    {
+      "name": "Bx_SEL",
+      "type": "double",
+      "units": "nT",
+      "description": "X magnetic field component in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "By_SEL",
+      "type": "double",
+      "units": "nT",
+      "description": "Y magnetic field component in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Bz_SEL",
+      "type": "double",
+      "units": "nT",
+      "description": "Z magnetic field component in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Bx_SSE",
+      "type": "double",
+      "units": "nT",
+      "description": "X magnetic field component in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "By_SSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Y magnetic field component in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Bz_SSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Z magnetic field component in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "B_RMS",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation of the field                 \n                          magnitude.  Provides an indication of field variability                   \n                          for the 5 second window.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "X_SEL",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft X coordinate in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "Y_SEL",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Y coordinate in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "Z_SEL",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Z coordinate in the SEL coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "X_SSE",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft X coordinate in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "Y_SSE",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Y coordinate in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "Z_SSE",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Z coordinate in the SSE coordinate system.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "ISUN",
+      "type": "double",
+      "units": "",
+      "description": "A parameter from the sunpulse file         \n                          indicating whether the spacecraft is in the sun (0) or in                 \n                          eclipse (1).  A value of 2 indicates that the sunpulse file               \n                          was not available and the data were processed using the less              \n                          accurate determination of sunpulse time in the Level 0 data               \n                          file.  There may be some errors in this column, with values               \n                          offset 1 and 0 interchanged.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,222 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "seconds",
+      "description": "GPS time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Julian_Day",
+      "type": "double",
+      "units": "days",
+      "description": "Julian Day",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FOY",
+      "type": "double",
+      "units": "fractional year",
+      "description": "Fraction of Year",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "#",
+      "description": "Orbit Number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Lat_Peak",
+      "type": "double",
+      "units": "Degree",
+      "description": "Observed Latitude Peak",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "U_Lat_Peak",
+      "type": "double",
+      "units": "Degree",
+      "description": "Uncertainty in Latitude Peak",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SC_Lat",
+      "type": "double",
+      "units": "Degree",
+      "description": "IBEX S/C Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SC_Lon",
+      "type": "double",
+      "units": "Degree",
+      "description": "IBEX S/C Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spin_Axis_Lat",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spin Axis Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spin_Axis_Lon",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spin Axis Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_220",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow v=22 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_220",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 22.0 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_229",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Lat.Peak for inflow speed = 22.9km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_229",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed 22.9 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_238",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 23.8km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_238",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution, V inflow 23.8 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_247",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Lat.Peak, V inflow=24.7km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_247",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 24.7 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_256",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak, V inflow 25.6km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_256",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 25.6 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_264",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 26.4 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_264",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 26.4 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_273",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 27.3 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_273",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 27.3 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_282",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 28.2 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_282",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 28.2 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_291",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 29.1 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_291",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 29.1 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "M_Lat_Peak_300",
+      "type": "double",
+      "units": "Degree",
+      "description": "Model Latitude Peak for inflow speed = 30.0 km/s",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Chi_Square_300",
+      "type": "double",
+      "units": "(Model-Peak)^2/(uncertainty)^2",
+      "description": "Chi-square contribution for inflow speed = 30.0 km/s",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2009-01-20T01:02:21.000Z",
+  "stopDate": "2014-02-28T05:42:55.000Z"
+}

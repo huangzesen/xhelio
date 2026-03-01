@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT_CLOCK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock counter frame and minor              \n                        frame (mod91) counters in the form frame:mf",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_1",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 3.9 - 6.7 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_2",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 8.0 - 13.5 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_3",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 16.1 - 26.9 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_4",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                       the energy band of E/Q = 31.9 - 53.1 E/Q, Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_5",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 62.6 - 104.0 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_6",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 123.1 - 204.3 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_7",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band  of E/Q = 227.0 - 422.1 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_8",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 510.0 - 892.5 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_9",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 1071. - 1819. Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_10",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 2159. - 3519. Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_11",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 4250. - 7225. Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_12",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 8194. - 14110 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_13",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 16694 - 27710 Volts",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAND_14",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Count rate of electrons in detector 4E in             \n                        the energy band of E/Q = 32300 - 48790 Volts",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

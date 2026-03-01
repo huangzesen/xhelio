@@ -1,0 +1,136 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "GEI_velocity",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GEI Satallite Velocity Vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude above the spheroid Earth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geographic latitude of subsatellite point",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GLON",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geographic longitude of the satellite",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Shell",
+      "type": "double",
+      "units": "Re",
+      "description": "McIlwain's shell parameter (L)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ILAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Current Spacecraft Field Line Footprint's Geomagnetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_B_vec",
+      "type": "double",
+      "units": "nT",
+      "description": "GEI magnetic field vector, B(x), B(y), B(z)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "GEI_position",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position in GEI coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GEI_rel_vel",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GEI satellite velocity relative to a rotating atmosphere.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Spin_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Angle between the Velocity Vector and the Spacecraft x-axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sunlight",
+      "type": "integer",
+      "units": "",
+      "description": "Sunlight/Darkness flag, 0 = Darkness, 1 = Sunlight",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Re",
+      "type": "double",
+      "units": "Re",
+      "description": "Geocentric radial distance in Earth Radii",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic Latitude in degrees",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-09-16T05:20:12.000Z",
+  "stopDate": "1984-06-28T23:14:11.000Z"
+}

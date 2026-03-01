@@ -1,0 +1,124 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "light time",
+      "type": "double",
+      "units": "",
+      "description": "One-way light travel time from the spacecraft to Earth. This time       \n      is given in the format mm:ss.sss where mm is the number of minutes      \n      and ss.sss the number of seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial (along the Jupiter to spacecraft line) magnetic field            \n      component, positive away from Jupiter.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.999"
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "nT",
+      "description": "Southward field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.999"
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "nT",
+      "description": "Corotational field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.999"
+    },
+    {
+      "name": "B-field Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.999"
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic field latitude: Labmda = asin(Btheta/|B|).",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic field longitude: Delta = atan(Bphi/Br).",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Range",
+      "type": "double",
+      "units": "Jupiter radii",
+      "description": "Range of the spacecraft from the Jupiter center of mass in units        \n      of Jupiter radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Planetographic latitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Planetographic east longitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Local Time",
+      "type": "double",
+      "units": "hr",
+      "description": "Angle between the observer's (spacecraft) sub-Jupiter meridian and the  \n      anti-sunward meridian, measured in the Jovian equatorial plane in the   \n      direction of planetary rotation. The local hour angle is converted to a \n      decimal hour (one hour equal to fifteen degrees longitude). The sun     \n      meridian is defined to be noon (12.000), with midnight (0.000) opposite \n      it. Dawn (6.000) and dusk (18.000) are where the sun rises and sets     \n      according to the planet's rotation.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

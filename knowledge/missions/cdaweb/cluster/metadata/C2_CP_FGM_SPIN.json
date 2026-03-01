@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_vec_xyz_gse__C2_CP_FGM_SPIN",
+      "type": "double",
+      "units": "nT",
+      "description": "Cluster C2, Magnetic Field Vector, spin resolution in GSE",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_mag__C2_CP_FGM_SPIN",
+      "type": "double",
+      "units": "nT",
+      "description": "Cluster C2, Magnetic Field Magnitude, spin resolution",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "sc_pos_xyz_gse__C2_CP_FGM_SPIN",
+      "type": "double",
+      "units": "km",
+      "description": "Position of Cluster C2 in GSE",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2001-01-30T22:56:54.000Z",
+  "stopDate": "2024-09-08T18:09:56.000Z"
+}

@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Distance from the Earth along the            \n      Earth-Sun line, positive towards the Sun, in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_GSE",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Distance from the Earth along the            \n      dawn-dusk meridian, positive towards dusk, in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_GSE",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Distance from the Earth above or below       \n      the ecliptic plane (positive 'northwards') in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_GSM",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Distance from the Earth along the GSM        \n      Y-direction in units of Re.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_GSM",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Distance from the Earth along the GSM        \n      Z-direction in units of Re.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

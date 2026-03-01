@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "2147483648.0"
+    },
+    {
+      "name": "PeakDet",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Peak detect rate counter.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LowLevel",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Low level rate counter.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HighLevel",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "High level rate counter.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Interrupt",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Interrupt rate counter.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2013-01-04T17:07:28.000Z",
+  "stopDate": "2013-01-21T10:19:50.000Z"
+}

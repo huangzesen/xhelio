@@ -1,0 +1,185 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Spacecraft Clock",
+      "type": "double",
+      "units": "",
+      "description": "Spacecracft Clock field, use                     \n                                 in the form rim:mod91:mod10:mod8",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Star Code",
+      "type": "double",
+      "units": "",
+      "description": "Star Scanner instrument status",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Day of Year",
+      "type": "double",
+      "units": "day",
+      "description": "Decimal day of year (DOY.%%%%%%%)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Twist",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft rotor twist angle in degrees",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Raw Star Intensity",
+      "type": "double",
+      "units": "count",
+      "description": "The intensity of the most recently           \n                                 recognized star in counts",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Raw Background",
+      "type": "double",
+      "units": "count",
+      "description": "Average Brightness of Sky",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Filtered Data",
+      "type": "double",
+      "units": "count",
+      "description": "Filtered data derived from raw data",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Compensated Data",
+      "type": "double",
+      "units": "count",
+      "description": "Compensated data derived from filtered data",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Error, Low",
+      "type": "double",
+      "units": "",
+      "description": "Error limit in the compenstated data,        \n                                 lower end",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "Error, High",
+      "type": "double",
+      "units": "",
+      "description": "Error limit in the compensated data,         \n                                 high end",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "flux",
+      "type": "double",
+      "units": "PARTICLES CM**-2 SEC**-1",
+      "description": "Omnidirectional flux of electrons in         \n                                 particles cm**-2 sec**-1",
+      "size": [
+        1
+      ],
+      "fill": "-50"
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Spacecraft range from the Jupiter center of  \n                                 mass in units of Rj where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Planetographic latitude of                   \n                                 the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "West Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Planetographic (West) longitude of           \n                                 the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Distance at which a dipole field line        \n                                 crosses the dipole equator.  L is given      \n                                 by L = R sin*2(Magnetic Latitude) where      \n                                 R is the distance from the center of         \n                                 Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAGNETIC LATITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle with respect to the dipole equator     \n                                 where the dipole axis tilts 9.6 degrees      \n                                 towards system III (1965.0) West Longitude.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Magnetic Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle around the dipole axis with respect to \n                                 the prime meridian.  The prime meridian can  \n                                 be considered to intersect with 202 degrees  \n                                 west longitude of System III (1965.0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Notes",
+      "type": "double",
+      "units": "",
+      "description": "Note regarding the data at that specific     \n                                 time.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

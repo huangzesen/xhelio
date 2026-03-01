@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "orbitNumber",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "999.0"
+    },
+    {
+      "name": "ecx",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Contact potential in Millivolts/meter ---> x componen",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "ecy",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> y component",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "ecz",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> z component",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "ex",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in Millivolts/meter in spacecraft coord. ---> x component",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "ey",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> y component",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "potentialX",
+      "type": "double",
+      "units": "Kilovolts",
+      "description": "Integrated potential along the x-axis in spacecraft coordinates",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "ex_nonadj",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in Millivolts/meter in spacecraft coord. (non-adjusted)---> x component",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "ey_nonadj",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> y component",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "potentialX_nonadj",
+      "type": "double",
+      "units": "Kilovolts",
+      "description": "Integrated potential along the x-axis in spacecraft coordinates (non-adjusted)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude in degrees",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude in degrees",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time in hours",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude in degrees",
+      "fill": "9999.990234375"
+    }
+  ],
+  "startDate": "1981-08-10T16:03:10.000Z",
+  "stopDate": "1983-02-16T13:05:00.000Z"
+}

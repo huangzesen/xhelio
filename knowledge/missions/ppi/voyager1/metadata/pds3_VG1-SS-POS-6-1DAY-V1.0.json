@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Range",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric range in AU",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SE_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Ecliptic (SE) latitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SE_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Ecliptic (SE) longitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HG_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Heliographic (HG) latitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HG_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Heliographic (HG) longitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IHG_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Inertial Solar Heliographic longitude in degrees with respect to the ascending node of the solar equator in the ecliptic.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

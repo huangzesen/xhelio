@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Ratename",
+      "type": "double",
+      "units": "",
+      "description": "'C' is appended to the ratename when instrument is in calibrate           \n                            mode. See [SIMPSONETAL1992A] for channel energy ranges.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Interval Time",
+      "type": "double",
+      "units": "ms",
+      "description": "Length of the accumulation interval (LOI) in milliseconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Dead Time Factor",
+      "type": "double",
+      "units": "counts/second",
+      "description": "The dead time factor (DTF) is either 1 (non-sectored data)                \n                            or 32 (sectored data).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Counts",
+      "type": "double",
+      "units": "counts",
+      "description": "Flux can be computed from the counts according to the formula:            \n                            Flux = 1000*DTF*COUNTS/LOI/0.0322 (counts/cm^2/s/sr) where DTF            \n                            is the dead time factor and LOI is the interval time.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

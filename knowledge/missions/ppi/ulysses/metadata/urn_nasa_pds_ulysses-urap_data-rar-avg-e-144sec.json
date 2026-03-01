@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Lopolmod",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates polarization mode of the low receiver band.              \n    Their values are defined as:                                              \n      1: Polarization on.                                                     \n      2: Polarization off.                                                    \n      3: Polarization mode switched during the averaging interval.            \n      4: Polarization mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOSUMMOD",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates summation mode of the low receiver band.                 \n    Their values are defined as:                                              \n      1: Summation on.                                                        \n      2: Summation off.                                                       \n      3: Summation mode switched during the averaging interval.               \n      4: Summation mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HIPOLMOD",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates polarization mode of the high receiver band.             \n    Their values are defined as:                                              \n      1: Polarization on.                                                     \n      2: Polarization off.                                                    \n      3: Polarization mode switched during the averaging interval.            \n      4: Polarization mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HISUMMOD",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates summation mode of the high receiver band.                \n    Their values are defined as:                                              \n      1: Summation on.                                                        \n      2: Summation off.                                                       \n      3: Summation mode switched during the averaging interval.               \n      4: Summation mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates telemetry bit rate during the averaging                  \n    interval. Its values are defined as:                                      \n      1: 128 bps.                                                             \n      2: 256 bps.                                                             \n      3: 512 bps.                                                             \n      4: 1024 bps.                                                            \n      5: Bit rate changed during the averaging period.                        \n      6: Bit rate unknown - usually due to a data gap.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

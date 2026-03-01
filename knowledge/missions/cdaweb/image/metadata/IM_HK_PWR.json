@@ -1,0 +1,187 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BE_BSOC_Percent",
+      "type": "double",
+      "units": "A/Hr",
+      "description": "Battery State of Charge",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_BATTMP",
+      "type": "double",
+      "units": "c",
+      "description": "Battery Temperature (c)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_BATVLTC",
+      "type": "double",
+      "units": "volts",
+      "description": "Battery Voltage (v)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_BUSVLT",
+      "type": "double",
+      "units": "volts",
+      "description": "Bus Voltage (v)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_LDCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Battery Load Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_BATCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Battery Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_SAMCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Solar Array Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_CHASSCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Chassis Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_PriCoilStat",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Torquer Primary Coil Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_RdtCoilStat",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Torquer Primary Coil Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM1Status",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 1 Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM2Status",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 2 Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM3Status",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 3 Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM4Status",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 4 Status (0=off,1=on)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM1Ovride",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 1 Override (0=normal,1=override)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM2Ovride",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 2 Override (0=normal,1=override)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM3Ovride",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 3 Override (0=normal,1=override)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_SAM4Ovride",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Solar Array Modulator 4 Override (0=normal,1=override)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_COILSTATE",
+      "type": "integer",
+      "units": "n/a",
+      "description": "MTR Coil State (0=disabled,1=enabled)",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BE_MTRPCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Torquer Primary Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_MTRPVLTCS",
+      "type": "double",
+      "units": "volts",
+      "description": "Torquer Primary Start Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_MTRPVLTCE",
+      "type": "double",
+      "units": "volts",
+      "description": "Torquer Primary End Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_MTRRCUR",
+      "type": "double",
+      "units": "amps",
+      "description": "Torquer Redundant Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_MTRRVLTCS",
+      "type": "double",
+      "units": "volts",
+      "description": "Torquer Redundant Start Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BE_MTRRVLTCE",
+      "type": "double",
+      "units": "volts",
+      "description": "Torquer Redundant End Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

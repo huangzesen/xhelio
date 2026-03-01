@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RN",
+      "description": "DISTANCE FROM NEP TO SC(24765KM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "SC LATITUDE RELATIVE TO NEPTUNE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_WLON",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "WEST LONGITUDE RELATIVE TO NEP.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

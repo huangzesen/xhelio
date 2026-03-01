@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms1_edp_dce_gse_fast_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "L2 DC E Field (GSE coords) calibrated for SDP and ADP, all flag values included",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_edp_dce_dsl_fast_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "L2 DC E Field (DSL coords) calibrated for SDP and ADP, all flag values included",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_edp_dce_par_epar_fast_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "L2 DC E Parallel Field with error calibrated for SDP and ADP",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_edp_dce_err_fast_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Approximate DC E field error derived from SDP (quality and bitmask) and ADP (residue)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_edp_quality_fast_l2",
+      "type": "integer",
+      "units": "(3=good, 2=OK)",
+      "description": "Quality indicator (3 good), (2 ok data, use with some caution), (1 bad data, use with caution), (0 Really bad data or no data at all)",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2015-09-01T09:51:44.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

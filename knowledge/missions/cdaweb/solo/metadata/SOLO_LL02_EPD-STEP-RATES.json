@@ -1,0 +1,80 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Integral_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "Integral_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "Ion_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Ion number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "Ion_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Ion number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "Integral_HR_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral high resolution (HR) number flux in 2 - 60 keV range with 1 s cadence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Integral_HR_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral HR number flux uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_HR_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Ion HR number flux in 2 - 60 keV range with 1 s cadence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_HR_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Ion HR number flux uncertainty",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2020-06-03T14:27:15.000Z",
+  "stopDate": "2026-02-17T15:41:34.000Z"
+}

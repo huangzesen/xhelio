@@ -1,0 +1,173 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "proton_bulk_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Speed. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "proton_thermal_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Thermal Speed. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "proton_number_density",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Proton Number Density. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "he2pl_phase_space_density",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Stacked time-series) He++ Phase Space Density for mean V/Vsw, 6 V/Vsw means: 2.09 - 1.64 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_28",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 2.09 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_29",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 1.99 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_30",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 1.90 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_31",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 1.81 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_32",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 1.72 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_phase_space_density_33",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "(Individual time-series) He++ Phase Space Density for mean V/Vsw: 1.64 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Stacked time-series) He++ Counts for V/Vsw range, 6 V/Vsw means: 2.09 - 1.64 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_28",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 2.09 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_29",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 1.99 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_30",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 1.90 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_31",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 1.81 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_32",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 1.72 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he2pl_counts_33",
+      "type": "double",
+      "units": "Counts",
+      "description": "(Individual time-series) He++ Counts for V/Vsw range, mean V/Vsw: 1.64 (km/s)/(km/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    }
+  ],
+  "startDate": "2007-04-01T00:00:00.000Z",
+  "stopDate": "2009-12-31T23:00:00.000Z"
+}

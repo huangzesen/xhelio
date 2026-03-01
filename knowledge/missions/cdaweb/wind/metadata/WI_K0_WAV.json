@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_Average",
+      "type": "double",
+      "units": "dB",
+      "description": "Electric field average intensity in dB above background at 76 log-spaced frequencies (250-9.4e6 Hz).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        76
+      ]
+    },
+    {
+      "name": "Ne",
+      "type": "double",
+      "units": "N/cm**3",
+      "description": "Electron density determined from insitu Fpe 'line'; position recognized by a neural network.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_transient",
+      "type": "double",
+      "units": "dB",
+      "description": "Transient electric field antenna max from Time Domain Sampler. 0 indicates no trigger.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sol_min",
+      "type": "double",
+      "units": "Amps",
+      "description": "Solar array current minimum for s/c",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sol_max",
+      "type": "double",
+      "units": "Amps",
+      "description": "Solar array current maximum for s/c",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Moon_pos",
+      "type": "double",
+      "units": "km",
+      "description": "Moon Position, Cartesian GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Moon_posV",
+      "type": "double",
+      "units": "km",
+      "description": "Time axis label: Moon Position, Cartesian GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1994-11-10T00:01:30.000Z",
+  "stopDate": "2026-02-16T23:58:30.000Z"
+}

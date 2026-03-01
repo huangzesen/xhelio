@@ -1,0 +1,706 @@
+{
+  "id": "PIONEER_PPI",
+  "name": "Pioneer (PDS PPI)",
+  "keywords": [
+    "pds",
+    "pioneer",
+    "pioneer_ppi",
+    "ppi"
+  ],
+  "profile": {
+    "description": "Pioneer data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Charged Particle Instrument": {
+      "name": "Charged Particle Instrument",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-S-SW-CPI-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-SW-CPI-4-SUMM-1HR-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-SW-CPI-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-SW-CPI-4-SUMM-15MIN-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-SW-CPI-4-SUMM-15MIN-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-SW-CPI-4-SUMM-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-SW-CPI-4-SUMM-15MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-SW-CPI-4-SUMM-15MIN-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-SW-CPI-4-SUMM-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-CPI-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-CPI-4-SUMM-1HR-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1973-12-31",
+          "slot": "/data/P10-J-CPI-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-CPI-4-SUMM-15MIN-V1.0": {
+          "description": "Pioneer 10 at Jupiter P10-J-CPI-4-SUMM-15MIN-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1973-12-31",
+          "slot": "/data/P10-J-CPI-4-SUMM-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-SW-CPI-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-SW-CPI-4-SUMM-1HR-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-SW-CPI-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Charged Particle Instrument (CPI)": {
+      "name": "Charged Particle Instrument (CPI)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p10-cpi-jup-cal:data-15min": {
+          "description": "Pioneer 10 CPI 15 Minute Count Solar Wind and Jupiter Flyby Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1992-09-01",
+          "slot": "/data/p10-cpi-jup-cal/data-15min",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-cpi-jup-cal:data-1hr": {
+          "description": "Pioneer 10 CPI 1 Hour Count Solar Wind and Jupiter Flyby Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1992-09-01",
+          "slot": "/data/p10-cpi-jup-cal/data-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-cpi-jup-cal:data-1day": {
+          "description": "Pioneer 10 CPI 1 Day Count Solar Wind and Jupiter Flyby Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1992-08-31",
+          "slot": "/data/p10-cpi-jup-cal/data-1day",
+          "archive_type": 4
+        }
+      }
+    },
+    "Cosmic Ray Telescope": {
+      "name": "Cosmic Ray Telescope",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-CRT-4-SUMM-FLUX-15MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "start_date": "1974-11-26",
+          "stop_date": "1974-12-09",
+          "slot": "/data/P11-J-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-CRT-4-SUMM-FLUX-15MIN-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "start_date": "1979-08-31",
+          "stop_date": "1979-09-03",
+          "slot": "/data/P11-S-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-CRT-4-SUMM-FLUX-15MIN-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1973-12-15",
+          "slot": "/data/P10-J-CRT-4-SUMM-FLUX-15MIN-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Cosmic Ray Telescope (CRT)": {
+      "name": "Cosmic Ray Telescope (CRT)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p10-crt-cal:data-6hr": {
+          "description": "Pioneer 10 CRT Calibrated 6 Hour Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1994-12-31",
+          "slot": "/data/p10-crt-cal/data-6hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-crt-cal:data-15min": {
+          "description": "Pioneer 10 CRT Calibrated 15 minute Data Collection",
+          "start_date": "1973-11-26",
+          "stop_date": "1973-12-15",
+          "slot": "/data/p10-crt-cal/data-15min",
+          "archive_type": 4
+        }
+      }
+    },
+    "GEIGER TUBE TELESCOPE": {
+      "name": "GEIGER TUBE TELESCOPE",
+      "keywords": [],
+      "datasets": {
+        "pds3:P10-J-GTT-3-RDR-HIGHRES-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-GTT-3-RDR-HIGHRES-V1.0",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/P10-J-GTT-3-RDR-HIGHRES-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Geiger Tube Telescope": {
+      "name": "Geiger Tube Telescope",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-GTT-3-RDR-HIGHRES-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-GTT-3-RDR-HIGHRES-V1.0",
+          "start_date": "1974-11-19",
+          "stop_date": "1974-12-12",
+          "slot": "/data/P11-J-GTT-3-RDR-HIGHRES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-GTT-3-RDR-HIGHRES-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-GTT-3-RDR-HIGHRES-V1.0",
+          "start_date": "1979-08-30",
+          "stop_date": "1979-09-05",
+          "slot": "/data/P11-S-GTT-3-RDR-HIGHRES-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "General": {
+      "name": "General",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-POS-6-FLYBY-TRAJ-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-POS-6-FLYBY-TRAJ-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-POS-6-FLYBY-TRAJ-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-POS-6-LIGHT-TIME-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-POS-6-LIGHT-TIME-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-POS-6-LIGHT-TIME-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-POS-6-FLYBY-TRAJ-V1.0:DATA": {
+          "description": "Pioneer 10 at Jupiter: P10-J-POS-6-FLYBY-TRAJ-V1.0 : DATA",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-POS-6-FLYBY-TRAJ-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:p10-traj:data-jupiter": {
+          "description": "Pioneer 10 Trajectory Solar Ecliptic and Jupiter System III Coordinates Data Collection",
+          "start_date": "1973-11-04",
+          "stop_date": "1973-12-31",
+          "slot": "/data/p10-traj/data-jupiter",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-traj:data-ssc": {
+          "description": "Pioneer 10 Trajectory in Heliocentric Coordinates for 1990 - 1999 SSC Data Collection",
+          "start_date": "1990-01-01",
+          "stop_date": "1999-12-31",
+          "slot": "/data/p10-traj/data-ssc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-traj:data-ssc": {
+          "description": "Pioneer 11 Trajectory in Heliocentric Coordinates for 1990 - 1999 SSC Data Collection",
+          "start_date": "1990-01-01",
+          "stop_date": "1999-12-31",
+          "slot": "/data/p11-traj/data-ssc",
+          "archive_type": 4
+        },
+        "pds3:P11-J-POS-6-LIGHT-TIME-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-POS-6-LIGHT-TIME-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-POS-6-LIGHT-TIME-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:p11-traj:data-jupiter": {
+          "description": "Pioneer 11 Trajectory Solar Ecliptic and Jupiter System III Coordinates Data Collection",
+          "start_date": "1974-11-04",
+          "stop_date": "1974-12-31",
+          "slot": "/data/p11-traj/data-jupiter",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-traj:data-lighttime": {
+          "description": "Pioneer 11 Trajectory Light Time Data Collection",
+          "start_date": "1973-04-06",
+          "stop_date": "1992-12-31",
+          "slot": "/data/p11-traj/data-lighttime",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-traj:data-saturn": {
+          "description": "Pioneer 11 Trajectory Solar Ecliptic and Saturn Kronographic Coordinates Data Collection",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/p11-traj/data-saturn",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-traj:data-mission": {
+          "description": "Pioneer 11 Trajectory in Heliocentric Coordinates Data Collection",
+          "start_date": "1973-04-06",
+          "stop_date": "1990-01-01",
+          "slot": "/data/p11-traj/data-mission",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-traj:data-mission": {
+          "description": "Pioneer 10 Trajectory in Heliocentric Coordinates Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "2000-01-01",
+          "slot": "/data/p10-traj/data-mission",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-traj:data-lighttime": {
+          "description": "Pioneer 10 Trajectory Light Time Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1975-12-30",
+          "slot": "/data/p10-traj/data-lighttime",
+          "archive_type": 4
+        }
+      }
+    },
+    "HELIUM VECTOR MAGNETOMETER": {
+      "name": "HELIUM VECTOR MAGNETOMETER",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-HVM-4-SUMM-1MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-HVM-4-SUMM-1MIN-V1.0",
+          "start_date": "1974-11-24",
+          "stop_date": "1974-12-14",
+          "slot": "/data/P11-J-HVM-4-SUMM-1MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-HVM-3-RDR-HIGHRES-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-HVM-3-RDR-HIGHRES-V1.0",
+          "start_date": "1973-11-03",
+          "stop_date": "1973-12-29",
+          "slot": "/data/P10-J-HVM-3-RDR-HIGHRES-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Helium Vector Magnetometer (HVM)": {
+      "name": "Helium Vector Magnetometer (HVM)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p10-hvm-jup-cal:data-1min-jg": {
+          "description": "Pioneer 10 HVM Calibrated 1 Min JG coords. Data at Jupiter Collection",
+          "start_date": "1973-12-03",
+          "stop_date": "1973-12-04",
+          "slot": "/data/p10-hvm-jup-cal/data-1min-jg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-hvm-jup-cal:data-1min-s3": {
+          "description": "Pioneer 10 HVM Calibrated 1 Min Sys. 3 coords. Data at Jupiter Collection",
+          "start_date": "1973-11-03",
+          "stop_date": "1973-12-29",
+          "slot": "/data/p10-hvm-jup-cal/data-1min-s3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-hvm-jup-cal:data-highres": {
+          "description": "Pioneer 10 HVM Calibrated Sys. 3 coords. High Res Data at Jupiter Collection",
+          "start_date": "1973-11-24",
+          "stop_date": "1973-12-05",
+          "slot": "/data/p10-hvm-jup-cal/data-highres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-jup-cal:data-1min-jg": {
+          "description": "Pioneer 11 HVM Calibrated 1 Min JG coords. Data at Jupiter Collection",
+          "start_date": "1974-12-03",
+          "stop_date": "1974-12-03",
+          "slot": "/data/p11-hvm-jup-cal/data-1min-jg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-sat-cal:data-1min-pe": {
+          "description": "Pioneer 11 HVM Calibrated 1 Min PE coords. Data at Saturn Collection",
+          "start_date": "1979-08-30",
+          "stop_date": "1979-09-08",
+          "slot": "/data/p11-hvm-sat-cal/data-1min-pe",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-sat-cal:data-highres": {
+          "description": "Pioneer 11 HVM Calibrated Sys. 3 coords. High Res Data at Saturn Collection",
+          "start_date": "1979-08-30",
+          "stop_date": "1979-09-08",
+          "slot": "/data/p11-hvm-sat-cal/data-highres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-jup-cal:data-1min-sj": {
+          "description": "Pioneer 11 HVM Calibrated 1 Min SJ coords. Data at Jupiter Collection",
+          "start_date": "1974-11-24",
+          "stop_date": "1974-12-14",
+          "slot": "/data/p11-hvm-jup-cal/data-1min-sj",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-jup-cal:data-1min-s3": {
+          "description": "Pioneer 11 HVM Calibrated 1 Min Sys. 3 coords. Data at Jupiter Collection",
+          "start_date": "1974-11-25",
+          "stop_date": "1974-12-14",
+          "slot": "/data/p11-hvm-jup-cal/data-1min-s3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-hvm-pa-crt-cal:data-merged-1hour": {
+          "description": "Pioneer 10 Calibrated HVM PA CRT 1 Hour Averaged Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1995-12-31",
+          "slot": "/data/p10-hvm-pa-crt-cal/data-merged-1hour",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-pa-crt-cal:data-merged-1hour": {
+          "description": "Pioneer 11 HVM PA CRT Calibrated 1 Hour Averaged Data Collection",
+          "start_date": "1973-04-06",
+          "stop_date": "1992-08-01",
+          "slot": "/data/p11-hvm-pa-crt-cal/data-merged-1hour",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-hvm-jup-cal:data-highres": {
+          "description": "Pioneer 11 HVM Calibrated Sys. 3 coords. High Res Data at Jupiter Collection",
+          "start_date": "1974-11-25",
+          "stop_date": "1974-12-14",
+          "slot": "/data/p11-hvm-jup-cal/data-highres",
+          "archive_type": 4
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "pds3:P11-J-FGM-4-SUMM-5MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-FGM-4-SUMM-5MIN-V1.0",
+          "start_date": "1974-12-02",
+          "stop_date": "1974-12-03",
+          "slot": "/data/P11-J-FGM-4-SUMM-5MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-FGM-4-SUMM-146SEC-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-FGM-4-SUMM-146SEC-V1.0",
+          "start_date": "1979-09-01",
+          "stop_date": "1979-09-01",
+          "slot": "/data/P11-S-FGM-4-SUMM-146SEC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-FGM-4-SUMM-36SEC-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-FGM-4-SUMM-36SEC-V1.0",
+          "start_date": "1974-12-03",
+          "stop_date": "1974-12-03",
+          "slot": "/data/P11-J-FGM-4-SUMM-36SEC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-FGM-4-SUMM-5MIN-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-FGM-4-SUMM-5MIN-V1.0",
+          "start_date": "1979-09-01",
+          "stop_date": "1979-09-01",
+          "slot": "/data/P11-S-FGM-4-SUMM-5MIN-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "QUADRISPHERICAL PLASMA ANALYZER": {
+      "name": "QUADRISPHERICAL PLASMA ANALYZER",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-SW-PA-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-SW-PA-4-SUMM-1HR-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-SW-PA-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-PA-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-PA-4-SUMM-1HR-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-PA-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-PA-6-TRAJ-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-PA-6-TRAJ-1HR-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-PA-6-TRAJ-1HR-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Quadraspherical Plasma Analyzer (PA)": {
+      "name": "Quadraspherical Plasma Analyzer (PA)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p10-pa:data-avg-1hr": {
+          "description": "Pioneer 10 PA 1 Hour Averaged Calibrated Data Collection",
+          "start_date": "1972-04-18",
+          "stop_date": "1995-09-07",
+          "slot": "/data/p10-pa/data-avg-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-pa:data-traj": {
+          "description": "Pioneer 10 PA Daily Trajectory Data Collection",
+          "start_date": "1972-03-24",
+          "stop_date": "1995-12-31",
+          "slot": "/data/p10-pa/data-traj",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-pa:data-traj": {
+          "description": "Pioneer 11 PA Trajectory Data Collection",
+          "start_date": "1974-01-01",
+          "stop_date": "1998-12-31",
+          "slot": "/data/p11-pa/data-traj",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-pa:data-avg-1hr": {
+          "description": "Pioneer 11 PA 1 Hour Averaged Data Collection",
+          "start_date": "1973-04-21",
+          "stop_date": "1992-05-30",
+          "slot": "/data/p11-pa/data-avg-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-pa:data-highres": {
+          "description": "Pioneer 10 PA Highres Calibrated Data Collection",
+          "start_date": "1972-04-18",
+          "stop_date": "1995-09-07",
+          "slot": "/data/p10-pa/data-highres",
+          "archive_type": 4
+        }
+      }
+    },
+    "Quadrispherical Plasma Analyzer": {
+      "name": "Quadrispherical Plasma Analyzer",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-S-SW-PA-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-SW-PA-4-SUMM-1HR-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-SW-PA-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-SW-PA-6-TRAJ-1HR-V1.0": {
+          "description": "Pioneer 11 at Jupiter P11-J-SW-PA-6-TRAJ-1HR-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-SW-PA-6-TRAJ-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-SW-PA-6-TRAJ-1HR-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-SW-PA-6-TRAJ-1HR-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-SW-PA-6-TRAJ-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-PA-3-RDR-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-PA-3-RDR-1HR-V1.0DATASET ID",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-PA-3-RDR-1HR-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Trapped Radiation Detector": {
+      "name": "Trapped Radiation Detector",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-TRD-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-TRD-4-SUMM-1HR-V1.0DATASET ID",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-TRD-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-TRD-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-TRD-4-SUMM-1HR-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-TRD-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-TRD-4-SUMM-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-TRD-4-SUMM-1HR-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-TRD-4-SUMM-1HR-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Trapped Radiation Detector (TRD)": {
+      "name": "Trapped Radiation Detector (TRD)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p11-trd:data-1hr": {
+          "description": "Pioneer 11 TRD Hourly Avg. Cruise Jupiter and Saturn Flyby Cosmic Ray Data Collection",
+          "start_date": "1973-04-16",
+          "stop_date": "1991-08-31",
+          "slot": "/data/p11-trd/data-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-trd:data-1hr": {
+          "description": "Pioneer 10 TRD Hourly Avg. Cruise and Jupiter Flyby Cosmic Ray Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1993-11-02",
+          "slot": "/data/p10-trd/data-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p10-trd:data-30min": {
+          "description": "Pioneer 10 TRD 30 Minute Cruise and Jupiter Flyby Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1993-11-02",
+          "slot": "/data/p10-trd/data-30min",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:p11-trd:data-30min": {
+          "description": "Pioneer 11 TRD 30 Minute Cruise Jupiter and Saturn Flyby Data Collection",
+          "start_date": "1973-04-16",
+          "stop_date": "1991-08-31",
+          "slot": "/data/p11-trd/data-30min",
+          "archive_type": 4
+        }
+      }
+    },
+    "Ultraviolet Photometer": {
+      "name": "Ultraviolet Photometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-J-SW-UV-4-SUMM-1DAY-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-SW-UV-4-SUMM-1DAY-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-SW-UV-4-SUMM-1DAY-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-SW-UV-4-SUMM-1DAY-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-SW-UV-4-SUMM-1DAY-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-SW-UV-4-SUMM-1DAY-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:p10-uv:data-avg-day": {
+          "description": "Pioneer 10 UV 1 Day Data Collection",
+          "start_date": "1972-03-03",
+          "stop_date": "1996-12-31",
+          "slot": "/data/p10-uv/data-avg-day",
+          "archive_type": 4
+        },
+        "pds3:P10-J-UV-4-SUMM-1DAY-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-UV-4-SUMM-1DAY-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-UV-4-SUMM-1DAY-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Ultraviolet Photometer (UV)": {
+      "name": "Ultraviolet Photometer (UV)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:p11-uv:data-avg-day": {
+          "description": "Pioneer 11 UV Daily Averaged Data Collection",
+          "start_date": "1973-04-06",
+          "stop_date": "1993-12-31",
+          "slot": "/data/p11-uv/data-avg-day",
+          "archive_type": 4
+        }
+      }
+    },
+    "Vector Helium Magnetometer": {
+      "name": "Vector Helium Magnetometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:P11-S-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "start_date": "1979-08-30",
+          "stop_date": "1979-09-08",
+          "slot": "/data/P11-S-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-HVM-PA-4-SUMM-MERGED-1HR-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-HVM-PA-4-SUMM-MERGED-1HR-V1.0",
+          "start_date": "1974-11-03",
+          "stop_date": "1975-01-01",
+          "slot": "/data/P11-J-HVM-PA-4-SUMM-MERGED-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter P11-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0",
+          "start_date": "1974-11-25",
+          "stop_date": "1974-12-14",
+          "slot": "/data/P11-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-HVM/PA-4-SUMM-MERGED-1HR-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-HVM/PA-4-SUMM-MERGED-1HR-V1.0",
+          "start_date": "1973-11-26",
+          "stop_date": "1974-01-01",
+          "slot": "/data/P10-J-HVM_PA-4-SUMM-MERGED-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0",
+          "start_date": "1973-11-03",
+          "stop_date": "1973-12-29",
+          "slot": "/data/P10-J-HVM-4-SUMM-S3COORDS-1MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-HVM-3-RDR-HIGHRES-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-HVM-3-RDR-HIGHRES-V1.0",
+          "start_date": "1973-11-03",
+          "stop_date": "1973-12-29",
+          "slot": "/data/P11-J-HVM-3-RDR-HIGHRES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-HVM-3-RDR-NEAR-ENC-HIGHRES-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-HVM-3-RDR-NEAR-ENC-HIGHRES-V1.0",
+          "start_date": "1979-08-30",
+          "stop_date": "1979-09-08",
+          "slot": "/data/P11-S-HVM-3-RDR-NEAR-ENC-HIGHRES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-S-HVM-PA-4-MERGED-ENC-1HR-V1.0": {
+          "description": "Pioneer 11 at Saturn: P11-S-HVM-PA-4-MERGED-ENC-1HR-V1.0",
+          "start_date": "1979-07-31",
+          "stop_date": "1979-10-04",
+          "slot": "/data/P11-S-HVM-PA-4-MERGED-ENC-1HR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P11-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0": {
+          "description": "Pioneer 11 at Jupiter: P11-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "start_date": "1974-12-03",
+          "stop_date": "1974-12-03",
+          "slot": "/data/P11-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:P10-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0": {
+          "description": "Pioneer 10 at Jupiter: P10-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "start_date": "1973-12-03",
+          "stop_date": "1973-12-04",
+          "slot": "/data/P10-J-HVM-4-SUMM-NEAR-ENC-1MIN-V1.0",
+          "archive_type": 3
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

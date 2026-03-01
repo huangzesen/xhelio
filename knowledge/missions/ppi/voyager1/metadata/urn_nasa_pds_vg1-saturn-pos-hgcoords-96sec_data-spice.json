@@ -1,0 +1,45 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric range from Sun to spacecraft in units of astronomical      \n                        units (1 AU = 149674000 km).",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft heliocentric latitude, the angle between the plane           \n                        containing the solar spin axis and the solar equatorial plane           \n                        (positive above the equatorial plane), in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft heliocentric longitude (increasing in the direction of       \n                        planetary orbital motion) in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,217 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "on2",
+      "type": "double",
+      "units": "",
+      "description": "O/N2 Column density ratio of atomic oxygen to molecular nitrogen",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "on2_north_mv",
+      "type": "double",
+      "units": "",
+      "description": "---> Movie of Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "on2_south_mv",
+      "type": "double",
+      "units": "",
+      "description": "---> Movie of Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "on2_unc_ran",
+      "type": "double",
+      "units": "",
+      "description": "---> Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "on2_dqi",
+      "type": "integer",
+      "units": "0=Good",
+      "description": "---> [NO PLOT] Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+      "fill": "-999999999.0",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "on2_unc_sys",
+      "type": "double",
+      "units": "",
+      "description": "---> Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_n2_lbh",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "N2 LBH Radiance",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_n2_lbh_north_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_n2_lbh_south_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "n2_lbh_unc_ran",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "n2_lbh_unc_sys",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_oi_1356",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "O I 135.6 nm Brightness used in retrieval",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_oi_1356_north_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "radiance_oi_1356_south_mv",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Movie of Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "oi_1356_unc_ran",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "oi_1356_unc_sys",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "---> Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "solar_zenith_angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar Zenith Angle",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "emission_angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Emission Angle",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "dqi",
+      "type": "integer",
+      "units": "0=Good",
+      "description": "File-level Data Quality Indicator. 0 indicates good data. See documentation for list of other values",
+      "fill": "-999999999.0"
+    }
+  ],
+  "startDate": "2018-10-05T06:10:42.000Z",
+  "stopDate": "2025-10-21T18:33:35.000Z"
+}

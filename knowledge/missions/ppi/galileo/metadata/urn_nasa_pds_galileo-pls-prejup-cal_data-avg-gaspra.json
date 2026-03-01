@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START_TIME",
+      "type": "double",
+      "units": "",
+      "description": "Start time (SCET) of the instrument cycle in which                     \n       the accumulation occurred.  The time string is of the                  \n       form yyyy/dddThh:mm:ss.sssZ.  The representation of                    \n       Jan 01, 2000, 00:00:00.000 is 2000-001T00:00:00.000Z.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLK",
+      "type": "double",
+      "units": "",
+      "description": "Binary count of the corrected spacecraft clock's RIM                   \n       and MOD91 counters.  The SCLK string is of the form rrrrrrrr:mm.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

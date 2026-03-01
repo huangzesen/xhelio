@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BF1",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field magnitude (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BRMSF1",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "RMS magnitude (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BRTN",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field vector in RTN cartesian coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BRMSRTN",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "RMS vector in RTN coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3F1",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field magnitude (3 sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B3RMSF1",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "RMS magnitude (3 sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B3RTN",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field vector in RTN cartesian coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3RMSRTN",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "RMS vector in RTN coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1F1",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field magnitude (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B1RMSF1",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "RMS magnitude (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B1RTN",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field vector in RTN cartesian coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1RMSRTN",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "RMS vector in RTN coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1994-11-13T00:00:30.000Z",
+  "stopDate": "2026-02-13T23:59:30.000Z"
+}

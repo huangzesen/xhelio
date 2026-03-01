@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PRO_DEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "PROTON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_PDEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "1 SIGMA ERROR IN PROTON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V_PHI",
+      "type": "double",
+      "units": "KM/S",
+      "description": "AZIMUTHAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_VPHI",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN AZIMUTHAL VEL.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PTHRM_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "PROTON THERMAL SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_PSP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN PROTON THRM SPD",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPLUSDEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "N+ DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_NDEN",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "1 SIGMA ERROR IN THE N+ DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPLUS_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "N+ THERMAL SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_NSP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN N+ THERM SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOTAL_DE",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "TOTAL DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRO_TEMP",
+      "type": "double",
+      "units": "ELECTRON VOLTS",
+      "description": "PROTON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPLUSTMP",
+      "type": "double",
+      "units": "ELECTRON VOLTS",
+      "description": "N+ TEMPERATURE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

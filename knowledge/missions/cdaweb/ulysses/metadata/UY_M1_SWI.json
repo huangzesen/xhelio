@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "",
+      "description": "Density ratio to O6+ of 8 species (Alphas,C6+,O6+,Ne8+,Mg10+,Si9+,S10+,Fe11+)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity of 8 species (Alphas,C6+,O6+,Ne8+,Mg10+,Si9+,S10+,Fe11+)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "deg-K",
+      "description": "Temperature of 8 species (Alphas,C6+,O6+,Ne8+,Mg10+,Si9+,S10+,Fe11+)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    }
+  ],
+  "startDate": "1990-12-07T20:02:48.000Z",
+  "stopDate": "2009-06-30T00:00:00.000Z"
+}

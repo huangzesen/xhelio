@@ -1,0 +1,97 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Onboard density moment, assuming 100% protons",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pressure",
+      "type": "double",
+      "units": "eV/cm^-3",
+      "description": "Onboard pressure moment (Inst. Coords), assuming 100% protons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Onboard velocity moment (Inst. Coords), assuming 100% protons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "velocity_mso",
+      "type": "double",
+      "units": "km/s",
+      "description": "Onboard velocity moment (MSO [Mars-Sun Orbit] Coords), assuming 100% protons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "Onboard temperature moment (Inst. Coords), assuming 100% protons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "temperature_mso",
+      "type": "double",
+      "units": "eV",
+      "description": "Onboard temperature moment (MSO [Mars-Sun Orbit] Coords), assuming 100% protons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "atten_state",
+      "type": "integer",
+      "units": "",
+      "description": "Attenuator state, 1 = open, 2 = closed, 3 = cover closed",
+      "fill": "255.0"
+    },
+    {
+      "name": "telem_mode",
+      "type": "integer",
+      "units": "",
+      "description": "Telemetry Mode: 1 = Sheath, 0 = Solar Wind",
+      "fill": "255.0"
+    },
+    {
+      "name": "quality_flag",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag: 0 = bad, 1 = good",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "decom_flag",
+      "type": "double",
+      "units": "",
+      "description": "Decommutation Flag: 0 = uncertain mode/attenuator flags, 1 = known mode/attenuator flags",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2014-03-19T14:19:43.000Z",
+  "stopDate": "2025-11-15T00:00:55.000Z"
+}

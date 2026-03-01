@@ -1,0 +1,447 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mode",
+      "type": "integer",
+      "units": "0-down,1-up",
+      "description": "Instrument scan mode (down=0, up=1)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "tpDN",
+      "type": "integer",
+      "units": "Day/ni/tw=0/1/2",
+      "description": "Phase of day at Tangent Point (0=Day, 1=Night, 2=Twilight (85<solar zenith angle<95)),",
+      "fill": "-9.0"
+    },
+    {
+      "name": "tpAD",
+      "type": "integer",
+      "units": "asc=0/desc=1",
+      "description": "Orbit phase at Tangent Point (0=Ascending 1=Descending)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solAP",
+      "type": "double",
+      "units": "daily",
+      "description": "Magnetic Ap index (daily)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solKP",
+      "type": "double",
+      "units": "3-hour",
+      "description": "Magnetic Kp index (3-hour)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solf10p7Daily",
+      "type": "double",
+      "units": "daily",
+      "description": "Solar F10.7 index (daily)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "solf10p781dAvg",
+      "type": "double",
+      "units": "81-day",
+      "description": "Solar F10.7 index (81-day)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "solSpotNo",
+      "type": "integer",
+      "units": "",
+      "description": "Zurich Sunspot Number  [all fill]",
+      "fill": "-9.0"
+    },
+    {
+      "name": "Iaurora",
+      "type": "integer",
+      "units": "",
+      "description": "Aurora Flag [all fill]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sclatitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft latitude (scan-average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sclongitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> longitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "scaltitudeAVG",
+      "type": "double",
+      "units": "km",
+      "description": "---------> altitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tplatitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "Tangent point latitude (average ) over lower part of scan",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tplatitude_topAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> latitude (average over upper part of scan",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tplongitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> longitude (lower average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tplongitude_topAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> longitude (upper average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarZenAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> solar zenith angle (lower average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarZen_topAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> solar zenith angle (upper average",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarLTAVG",
+      "type": "double",
+      "units": "hour",
+      "description": "---------> Local Solar Time (lower average",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarLT_topAVG",
+      "type": "double",
+      "units": "hour",
+      "description": "---------> Local Solar Time (upper average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarZen",
+      "type": "double",
+      "units": "degrees",
+      "description": "Tangent point solar zenith angle vs tangent point height (lower part of scan)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "tpSolarZen_top",
+      "type": "double",
+      "units": "degrees",
+      "description": "---------> solar zenith angle vs tangent point height (upper part of scan",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "tpSolarLT",
+      "type": "double",
+      "units": "hour",
+      "description": "---------> Local Solar Time vs tangent point height (lower)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "tpSolarLT_top",
+      "type": "double",
+      "units": "hour",
+      "description": "---------> Local Solar Time vs tangent point height (upper)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "Elevation",
+      "type": "double",
+      "units": "mradians",
+      "description": "Elevation angle (lower part of scan)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "Elevation_top",
+      "type": "double",
+      "units": "mradians",
+      "description": "---------> upper part of scan",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "tpgpaltitude",
+      "type": "double",
+      "units": "km",
+      "description": "Geopotential height at tangent point",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "pressure",
+      "type": "double",
+      "units": "mbar",
+      "description": "---------> Pressure",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "ktemp",
+      "type": "double",
+      "units": "K",
+      "description": "---------> Kinetic temperature",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "density",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "---------> Neutral density",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O3_96",
+      "type": "double",
+      "units": "O3 (9.6um)",
+      "description": "Mixing Ratios (MR): -> O3 (9.6um) MR vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O3_127",
+      "type": "double",
+      "units": "O3 (1.27um)",
+      "description": "---------> O3 (1.27um) MR vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O3_127_92km",
+      "type": "double",
+      "units": "O3 (1.27um)",
+      "description": "-------------> O3 (1.27um) MR at 92km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "H2O",
+      "type": "double",
+      "units": "H2O",
+      "description": "---------> H2O MR vs tangent point height [all fill]",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "C02",
+      "type": "double",
+      "units": "CO2",
+      "description": "---------> CO2 MR vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O",
+      "type": "double",
+      "units": "O",
+      "description": "---------> O MR vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "H",
+      "type": "double",
+      "units": "H",
+      "description": "---------> H MR vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O2_1delta_ver_unfilt",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "Volume Emission Rates (VER): -> O2(1delta) VER vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O2_1delta_ver",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "--------------> filtered (actual measurement with SABER's spectral bandpass for this line)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "O2_1delta_ver_92km",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> unfiltered at 92km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "OH_16_ver_unfilt",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------> OH (1.6um) VER vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "OH_16_ver",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> filtered",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "OH_16_ver_85km",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> unfiltered at 85km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "OH_20_ver_unfilt",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------> OH (2.0 um) VER vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "OH_20_ver",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> filtered",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "OH_20_ver_85km",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "------------------> unfiltered at 85km [lineplot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "NO_ver_top_unfilt",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------> NO VER (upper part of scan) vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "NO_ver_top",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> filtered (upper)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "NO_ver_unfilt",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> unfiltered (lower)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "NO_ver",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> filtered (lower)",
+      "fill": "-999.0",
+      "size": [
+        400
+      ]
+    },
+    {
+      "name": "NO_ver_120km",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "---------------> unfiltered at 120km [line plot]",
+      "fill": "-999.0"
+    }
+  ],
+  "startDate": "2002-01-25T01:21:48.000Z",
+  "stopDate": "2026-02-14T00:34:35.000Z"
+}

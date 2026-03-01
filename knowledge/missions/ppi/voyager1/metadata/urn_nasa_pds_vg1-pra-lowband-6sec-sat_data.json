@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DATE",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Event Time (SCET) at the start of the first sweep in year,   \n                        month and day format (YYMMDD).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Seconds of the day to the nearest second, at the start of the first     \n                        sweep.  In each sweep, the first data value in low band (1326.0 kHz)    \n                        occurs some 3.9 seconds after this time. Subsequent data points are     \n                        sampled at a lower frequency interval of 0.03 second.  Only one time    \n                        is given for the entire major frame, thus the start time of each sweep  \n                        in the major frame is given by this time plus 6 times the sweep number  \n                        minus 1 (i.e. 0 through 7).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

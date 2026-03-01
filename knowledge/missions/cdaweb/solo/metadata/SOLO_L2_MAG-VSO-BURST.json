@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in VSO coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-12-26T00:00:00.000Z",
+  "stopDate": "2025-02-19T23:59:59.000Z"
+}

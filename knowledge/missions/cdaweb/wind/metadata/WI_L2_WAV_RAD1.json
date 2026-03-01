@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PSD_V2_S",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "Power spectral density before antenna calibration (S antenna)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "PSD_V2_SP",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "Power spectral density before antenna calibration (SP antenna)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "PSD_V2_Z",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "Power spectral density before antenna calibration (Z antenna)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    }
+  ],
+  "startDate": "1995-09-14T11:02:11.000Z",
+  "stopDate": "2026-02-10T23:54:34.000Z"
+}

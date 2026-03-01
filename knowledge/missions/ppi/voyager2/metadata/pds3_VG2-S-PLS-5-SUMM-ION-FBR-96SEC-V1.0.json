@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PRO_DEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Proton density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRO_TEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Proton temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HION_DEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Heavy ion density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HIONTEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Heavy ion temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V_RHO",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Rho component of the velocity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V_PHI",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Phi component of the velocity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V_Z",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Z component of the velocity.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

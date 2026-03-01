@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start in UTC",
+      "type": "double",
+      "units": "",
+      "description": "Start time of the data gap as a UTC string in ISO 8601 format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop in UTC",
+      "type": "double",
+      "units": "",
+      "description": "Stop time of the data gap as a UTC string in ISO 8601 format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Mode (0=Neutral,1=Ion,2=Ion2)",
+      "type": "double",
+      "units": "",
+      "description": "Mode (0=Neutral,1=Ion,2=Ion2)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

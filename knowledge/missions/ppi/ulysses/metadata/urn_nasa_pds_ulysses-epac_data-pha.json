@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "E",
+      "type": "double",
+      "units": "",
+      "description": "channel number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "dE",
+      "type": "double",
+      "units": "",
+      "description": "channel number",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ER",
+      "type": "double",
+      "units": "",
+      "description": "Energy Range",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SpID",
+      "type": "double",
+      "units": "",
+      "description": "Species ID",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TID",
+      "type": "double",
+      "units": "",
+      "description": "Telescope ID",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SeID",
+      "type": "double",
+      "units": "",
+      "description": "Sector ID",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

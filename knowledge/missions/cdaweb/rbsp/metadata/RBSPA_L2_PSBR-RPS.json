@@ -1,0 +1,701 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MET_SEC",
+      "type": "double",
+      "units": "sec",
+      "description": "MET at mid-point of sector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Mission_Day",
+      "type": "integer",
+      "units": "",
+      "description": "Mission day of level 0 files for this data point",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position (GEO)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Quality",
+      "type": "integer",
+      "units": "(0=def)",
+      "description": "Position quality flag: 0 - definitive, 1 - predicted",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Attitude_Quality",
+      "type": "integer",
+      "units": "(0=def)",
+      "description": "Attitude quality flag: 0 - definitive, 1 - quick-look, 2 - predicted",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Orbit_Status",
+      "type": "integer",
+      "units": "(0=out,1=in)",
+      "description": "Orbit status: 0 = outbound, 1 = inbound",
+      "fill": "255.0"
+    },
+    {
+      "name": "Orbit_Epoch",
+      "type": "double",
+      "units": "hours",
+      "description": "Decimal hours since perigee",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EarthRadialAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle of incidence of particle coming from center of Earth (relative to normal incidence)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EarthConeAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Half-angle of Earth as seen from Spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Meas",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Meas_Flag",
+      "type": "integer",
+      "units": "(source level)",
+      "description": "Source of Measured field - 0 indicates MAG L0 file, 1 indicates MAG L1 file, etc. If 255, then the OPQ77 model field is used for computing Alpha and Beta",
+      "fill": "255.0"
+    },
+    {
+      "name": "BORE_SIGHT",
+      "type": "double",
+      "units": "",
+      "description": "RPS bore sight vector in GEO (parallel to incoming normally incident particle)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPIN_OMEGA",
+      "type": "double",
+      "units": "rad/s",
+      "description": "RPS spin axis vector in GEO vector norm is spin rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DATA_CHANNEL_COUNTS",
+      "type": "double",
+      "units": "#",
+      "description": "Counts in data channels based on EVENT_ENERGY_MIN2SSD",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "#/cm^2/s/sr/MeV",
+      "description": "Unidirectional, differential flux vs energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDU_RMSE",
+      "type": "double",
+      "units": "",
+      "description": "RMS error in ln(FPDU) including Poisson and FPDU_Crosscalib_RMSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDU_Quality",
+      "type": "integer",
+      "units": "(0=highest)",
+      "description": "Quality flag for FPDU fluxes: 0 - highest quality, 1 - problem with time resolution (less than 5% live time in sector), 2 - contamination, 3 - saturation, 4 - other problem, 5 - possible electron background, 10 -not yet quality checked",
+      "fill": "65535.0",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "DOSE1",
+      "type": "double",
+      "units": "rads",
+      "description": "Mission-Accumulated Dose in Dosimeter 1 (front)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE1_RATE",
+      "type": "double",
+      "units": "rads/sec",
+      "description": "Dose rate in Dosimeter 1 (front)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE2",
+      "type": "double",
+      "units": "rads",
+      "description": "Mission-Accumulated Dose in Dosimeter 2 (side)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE2_RATE",
+      "type": "double",
+      "units": "rads/sec",
+      "description": "Dose rate in Dosimeter 2 (side)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L90",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of locally mirroring particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch angle of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Beta",
+      "type": "double",
+      "units": "deg",
+      "description": "Gyrophase angle of incoming particle along RPS boresight axis (zero when heading away from Earth)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPIN_PHASE",
+      "type": "double",
+      "units": "deg",
+      "description": "Spin phase angle of RPS boresight. Phase of 0 occurs at minimum pitch angle. Phase of 90 occurs when Alpha is 90 and increasing",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Mirror",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength at mirror point for incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Eq",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle (OPQ) of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "R_E",
+      "description": "Roederer L of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Phi",
+      "type": "double",
+      "units": "nT R_E^2",
+      "description": "Third (drift) invariant  of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain integral invariant of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K",
+      "type": "double",
+      "units": "R_E nT^0.5",
+      "description": "Kaufmann K, modified second invariant, of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "OPQ model magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "OPQ model magnetic field strength at local minimum along local field line",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (OPQ)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "h_min",
+      "type": "double",
+      "units": "km",
+      "description": "Minimum geodetic altitude on drift orbit of normally incident particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Eq_T89Q",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle (T89Q) of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_T89Q",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_T89Q",
+      "type": "double",
+      "units": "R_E",
+      "description": "Roederer L of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Phi_T89Q",
+      "type": "double",
+      "units": "nT R_E^2",
+      "description": "Third (drift) invariant  of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_T89Q",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain integral invariant of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K_T89Q",
+      "type": "double",
+      "units": "R_E nT^0.5",
+      "description": "Kaufmann K, modified second invariant, of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_T89Q",
+      "type": "double",
+      "units": "nT",
+      "description": "T89Q model magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Eq_T89Q",
+      "type": "double",
+      "units": "nT",
+      "description": "T89Q model magnetic field strength at local minimum along local field line",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_T89Q",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (T89Q)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "h_min_T89Q",
+      "type": "double",
+      "units": "km",
+      "description": "Minimum geodetic altitude on drift orbit of normally incident particle in T89Q",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Eq_T89D",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle (T89D) of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_T89D",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_T89D",
+      "type": "double",
+      "units": "R_E",
+      "description": "Roederer L of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Phi_T89D",
+      "type": "double",
+      "units": "nT R_E^2",
+      "description": "Third (drift) invariant  of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_T89D",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain integral invariant of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K_T89D",
+      "type": "double",
+      "units": "R_E nT^0.5",
+      "description": "Kaufmann K, modified second invariant, of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_T89D",
+      "type": "double",
+      "units": "nT",
+      "description": "T89D model magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Eq_T89D",
+      "type": "double",
+      "units": "nT",
+      "description": "T89D model magnetic field strength at local minimum along local field line",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_T89D",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (T89D)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "h_min_T89D",
+      "type": "double",
+      "units": "km",
+      "description": "Minimum geodetic altitude on drift orbit of normally incident particle in T89D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Eq_TS04D",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle (TS04D) of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_TS04D",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_TS04D",
+      "type": "double",
+      "units": "R_E",
+      "description": "Roederer L of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Phi_TS04D",
+      "type": "double",
+      "units": "nT R_E^2",
+      "description": "Third (drift) invariant  of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_TS04D",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain integral invariant of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K_TS04D",
+      "type": "double",
+      "units": "R_E nT^0.5",
+      "description": "Kaufmann K, modified second invariant, of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_TS04D",
+      "type": "double",
+      "units": "nT",
+      "description": "TS04D model magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Eq_TS04D",
+      "type": "double",
+      "units": "nT",
+      "description": "TS04D model magnetic field strength at local minimum along local field line",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_TS04D",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (TS04D)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "h_min_TS04D",
+      "type": "double",
+      "units": "km",
+      "description": "Minimum geodetic altitude on drift orbit of normally incident particle in TS04D",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_MET",
+      "type": "double",
+      "units": "sec",
+      "description": "MET of event, combination of Packet's MET_SEC and  EVENT_SUBTIME_CODE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "EVENT_Mission_Day",
+      "type": "integer",
+      "units": "",
+      "description": "Mission day of level 0 files for this data point",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "EVENT_Position",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position (GEO)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EVENT_Orbit_Number",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number",
+      "fill": "65535.0"
+    },
+    {
+      "name": "EVENT_Orbit_Status",
+      "type": "integer",
+      "units": "(0=out,1=in)",
+      "description": "Orbit status: 0 = outbound, 1 = inbound",
+      "fill": "255.0"
+    },
+    {
+      "name": "EVENT_Orbit_Epoch",
+      "type": "double",
+      "units": "hours",
+      "description": "Decimal hours since perigee",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_L90",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of locally mirroring particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_L",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (OPQ)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_Alpha",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch angle of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_Beta",
+      "type": "double",
+      "units": "deg",
+      "description": "Gyrophase angle of incoming particle along RPS boresight axis (zero when heading away from Earth)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_B_Mirror",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength at mirror point for incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_Alpha_Eq",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle (OPQ) of incoming particle along RPS boresight axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_PULSEHEIGHTS",
+      "type": "integer",
+      "units": "",
+      "description": "D1-D9 detector pulse heights",
+      "fill": "65535.0",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "EVENT_ENERGY_DEPOSIT",
+      "type": "double",
+      "units": "MeV",
+      "description": "D1-D8 Energy Deposit",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "EVENT_D9_COULOMBS",
+      "type": "double",
+      "units": "C",
+      "description": "Coulombs deposited in MCP behind Cherenkov Radiator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_CHE_PHOTONS",
+      "type": "double",
+      "units": "",
+      "description": "Photons collected in Cherenkov Radiator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_DIRECTION",
+      "type": "integer",
+      "units": "",
+      "description": "0 - forward, 1 - backward",
+      "fill": "255.0"
+    },
+    {
+      "name": "EVENT_ENERGY",
+      "type": "double",
+      "units": "MeV",
+      "description": "Estimated event energy (uses EVENT_ENERGY_MIN2SSD)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_ENERGY_MIN2SSD",
+      "type": "double",
+      "units": "MeV",
+      "description": "Estimated event energy using the average of minimum 2 SSD deposits algorithm",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_ENERGY_SSDA",
+      "type": "double",
+      "units": "MeV",
+      "description": "Estimated event energy using SSD average algorithm",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_ENERGY_CHE",
+      "type": "double",
+      "units": "MeV",
+      "description": "Estimated event energy using the Cherenkov light only",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_SIGMA_E",
+      "type": "double",
+      "units": "MeV",
+      "description": "Standard error of ln(EVENT_ENERGY)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EVENT_CHANNEL_ID",
+      "type": "integer",
+      "units": "",
+      "description": "ID number of data channel to which the particle is assigned",
+      "fill": "255.0"
+    },
+    {
+      "name": "EVENT_TYPE",
+      "type": "integer",
+      "units": "",
+      "description": "Event classification (-1:INVALID, 0:UNKNOWN, 1:PEN, 2:CHE, 3:ALPHA mode, 127:FILL)",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2012-09-02T00:00:00.000Z",
+  "stopDate": "2019-10-14T23:59:59.000Z"
+}

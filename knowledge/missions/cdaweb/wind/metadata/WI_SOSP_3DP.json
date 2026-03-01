@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Proton number flux 70 keV - 6.8 MeV as a function of energy in 9 channels (spectrogram)",
+      "fill": "nan",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "FLUX_STACKED",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stacked plot",
+      "fill": "nan",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "FLUX_SIMPLE",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As simple time series",
+      "fill": "nan",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "ENERGY_filled",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Time-varying proton energies in 9 channels",
+      "fill": "nan",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec since 1-1-70",
+      "description": "UNIX time; seconds since January 1, 1970",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1994-11-15T12:56:18.000Z",
+  "stopDate": "2025-12-31T23:59:53.000Z"
+}

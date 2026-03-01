@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT EVENT TIME (UT)",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) given in PDS standard time format            \n      (yyyy-mm-ddThh:mm:ss.sss).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Amalthea Radii",
+      "description": "Spacecraft range from the Amalthea center of mass in units of radii           \n      where RI = 1818 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMALTHEA LATITUDE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft Amalthea-centric latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMALTHEA EAST LONGITUDE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft Amalthea-centric east longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-X",
+      "type": "double",
+      "units": "Amalthea Radii",
+      "description": "X component of the spacecraft range from the Amalthea center of mass          \n      in Amalthea Phi-Omega (PHIO) coordinates. In this coordinate system,         \n      X lies in the direction of corotation (at the time of Amalthea                \n      closest approach), the X-Z plane planes contains Jupiter's axis of      \n      rotation (Omega), and Y completes the right-handed set (towards         \n      Jupiter).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-Y",
+      "type": "double",
+      "units": "Amalthea Radii",
+      "description": "Y component of the spacecraft range from the Amalthea center of mass          \n      in PHIO coordinates (towards Jupiter).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-Z",
+      "type": "double",
+      "units": "Amalthea Radii",
+      "description": "Z component of the spacecraft range from the Amalthea center of mass          \n      in PHIO coordinates. In this coordinate system, Z is parallel to       \n      Jupiter's spin axis (Omega), positive northward.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,1808 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tha_ptiff_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Full+Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_ptiff_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA+SST Full+Full Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----(Good Data Only)Ion Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----(Good Data Only)Ion Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Full Ion ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_ptiff_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptiff_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptiff_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Full+Full Mode Elec Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_pteff_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA+SST Full+Full Mode, Elec Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----(Good Data Only)Elec Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----(Good Data Only)Elec Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Full Elec ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_pteff_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pteff_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pteff_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Elec Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL)) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Elec ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Reduced+Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_ptirf_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Average Temperature(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Reduced-Full Ion ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_ptirf_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptirf_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptirf_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Ion ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Reduced+Full Mode Elec Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_pterf_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good Data Only) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Elec Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Elec Average Temperature(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Thermal Velocity(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Reduced-Full Elec ESA-SST data) (Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_pterf_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pterf_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pterf_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Elec Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Elec ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Burst+Burst Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_ptibb_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Average Temperature(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Burst Ion ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_ptibb_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptibb_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptibb_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_data_quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "ESA+SST Burst+Burst Mode Elec Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/gmom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_ptebb_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good Data Only) ESA-SST Burst (High Time and Angular Resolution) Mode, Elec Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Elec Average Temperature(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Thermal Velocity(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Burst Elec ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Elec Energy Flux spectrogram(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_ptebb_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Elec Diagonalized Temperature (Tprp1, Tprp2, Tpar)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Pressure Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptebb_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Elec Momentum Flux Tensor(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptebb_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Elec Particle Flux Vector(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Elec Symmetry Vector (direction of pressure tensor symmetry (DSL))(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Elec Symmetry Angle (between symmetry direction and B)(Good Data Only)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Elec ESA-SST data)(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in DSL(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSE(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Elec Velocity Vector in GSM(Good Data Only)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA+SST Full+Full Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Full Ion ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "tha_ptiff_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptiff_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptiff_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptiff_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptiff_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA-SST Full (High Angular Resolution, few minute time res.) Mode, Electron Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Full Electron ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        46
+      ]
+    },
+    {
+      "name": "tha_pteff_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pteff_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pteff_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pteff_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pteff_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Reduced-Full Ion ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "tha_ptirf_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptirf_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptirf_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptirf_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Ion ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptirf_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) SST Full(High Angular Res, Variable Time Res) Mode, Electron Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Reduced-Full Electron ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        46
+      ]
+    },
+    {
+      "name": "tha_pterf_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pterf_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_pterf_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_pterf_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced-Full Electron ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_pterf_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA-SST Burst (High Time and Angular Resolution) Mode, Ion Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Burst Ion ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tha_ptibb_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptibb_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptibb_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptibb_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptibb_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA-SST Burst (High Time and Angular Resolution) Mode, Electron Density",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Burst Electron ESA-SST data)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "-1e+30",
+      "size": [
+        46
+      ]
+    },
+    {
+      "name": "tha_ptebb_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptebb_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "-1e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "tha_ptebb_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "-1e+30"
+    },
+    {
+      "name": "tha_ptebb_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Electron ESA-SST data)",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_ptebb_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "-1e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_eesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA-SST electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "tha_iesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA-SST ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2007-03-09T00:00:00.000Z",
+  "stopDate": "2026-02-16T00:00:00.000Z"
+}

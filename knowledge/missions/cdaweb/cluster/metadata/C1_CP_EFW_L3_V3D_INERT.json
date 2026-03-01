@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "v_drift_ISR2__C1_CP_EFW_L3_V3D_INERT",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "delta_v_ISR2__C1_CP_EFW_L3_V3D_INERT",
+      "type": "double",
+      "units": "km/s",
+      "description": "Error of velocityISR2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_sigma__C1_CP_EFW_L3_V3D_INERT",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field standard deviation",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-05T19:32:46.000Z",
+  "stopDate": "2018-12-10T03:00:14.000Z"
+}

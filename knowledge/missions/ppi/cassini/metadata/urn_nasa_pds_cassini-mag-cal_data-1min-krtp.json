@@ -1,0 +1,97 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP radial (r) component of the magnetic-field in nT. R is along the   \n      Saturn to spacecraft line, positive away from Saturn.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP southward (theta) component of the magnetic field in nT. Theta     \n      completes the right handed set (Phi x R) and is positive southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP azimuthal (phi) component of the magnetic field in nT. Phi is      \n      parallel to Saturn's equator, perpendicular to the Saturn-spacecraft    \n      line (Omega x R).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the magnetic field magnitudes in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RANGE",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Range from Saturn center of mass to the spacecraft in units of Rs =     \n      60268 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LATITUDE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Planetographic latitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EAST LONGITUDE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Planetographic east longitude of the spacecraft in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCAL HOUR",
+      "type": "double",
+      "units": "hr",
+      "description": "Angle between the observer's (Cassini) sub-Saturn meridian and the      \n      anti-sunward meridian, measured in Saturn's equatorial plane in the     \n      direction of planetary rotation. The local hour angle is converted to a \n      decimal hour (one hour equal to fifteen degrees longitude). The sun     \n      meridian is defined to be noon (12.000), with midnight (0.000) opposite \n      it. Dawn (6.000) and dusk (18.000) are where the sun rises and sets     \n      according to the planet's rotation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

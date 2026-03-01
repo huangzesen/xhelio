@@ -1,0 +1,94 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "INT_IMAGE_51",
+      "type": "integer",
+      "units": "Raw Pixel Cnts",
+      "description": "UVI FUV Image, CCD pixel values (small format, no grid, CDAWeb times +-6 sec) - USE NOISE REJECTION",
+      "fill": "65535.0",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "INT_IMAGE_LF51",
+      "type": "integer",
+      "units": "Raw Pixel Cnts",
+      "description": "UVI FUV Image, CCD pixel values (large format, no grid, CDAWeb times +-6 sec) - USE NOISE REJECTION",
+      "fill": "65535.0",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "INT_IMAGE_Movie51",
+      "type": "integer",
+      "units": "Raw Pixel Cnts",
+      "description": "UVI FUV Image, CCD pixel values (movie, no grid, CDAWeb times +-6 sec) - USE NOISE REJECTION",
+      "fill": "65535.0",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "SYSTEM     ",
+      "type": "integer",
+      "units": "(0=prime,1=second)",
+      "description": "System ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "FILTER     ",
+      "type": "integer",
+      "units": "0-7=H/04/56/HS/HL/SO/SH/U)",
+      "description": "UVI Filter (0=HOME 1=1304 2=1356 3=LBHS 4=LBHL 5=SOLR 6=SHUTTER 7=UNK)",
+      "fill": "255.0"
+    },
+    {
+      "name": "DOORPOS    ",
+      "type": "integer",
+      "units": "(0-3=U/FULL/OPEN/CL)",
+      "description": "Aperture door position (0=UNK 1=FULLEX 2=OPEN 3=CLOSED)",
+      "fill": "255.0"
+    },
+    {
+      "name": "GAIN       ",
+      "type": "integer",
+      "units": "",
+      "description": "Gain step",
+      "fill": "255.0"
+    },
+    {
+      "name": "UVIMODE    ",
+      "type": "integer",
+      "units": "(0-3=U/NORM/STAR/IDLE)",
+      "description": "Instrument operating mode (0=UNK 1=NORMAL 2=STAR 3=IDLE 64-67=SYNC)",
+      "fill": "255.0"
+    },
+    {
+      "name": "FRAMERATE  ",
+      "type": "integer",
+      "units": "# major frames",
+      "description": "Actual integration period (# major frames)",
+      "fill": "255.0"
+    },
+    {
+      "name": "OBSEQNUM   ",
+      "type": "integer",
+      "units": "",
+      "description": "Observation sequence number",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "1996-03-20T00:00:21.000Z",
+  "stopDate": "2008-04-16T14:28:32.000Z"
+}

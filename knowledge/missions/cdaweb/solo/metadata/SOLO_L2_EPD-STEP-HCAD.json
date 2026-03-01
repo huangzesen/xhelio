@@ -1,0 +1,56 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Magnet_Rows_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Magnet channel flux for each row of pixels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4,
+        3
+      ]
+    },
+    {
+      "name": "Integral_Rows_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral channel flux for each row of pixels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4,
+        3
+      ]
+    },
+    {
+      "name": "Magnet_Cols_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Magnet channel flux for each column of pixels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4,
+        5
+      ]
+    },
+    {
+      "name": "Integral_Cols_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Integral channel flux for each column of pixels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4,
+        5
+      ]
+    }
+  ],
+  "startDate": "2020-04-30T00:00:01.000Z",
+  "stopDate": "2021-10-22T11:48:44.000Z"
+}

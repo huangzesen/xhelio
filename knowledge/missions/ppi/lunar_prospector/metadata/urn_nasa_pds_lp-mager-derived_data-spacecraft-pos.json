@@ -1,0 +1,168 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Julian Date",
+      "type": "double",
+      "units": "Day",
+      "description": "Time of the spacecraft position shown in the record, expressed as         \n                          a Julian date.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Radius",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Radius:  Distance of the spacecraft from the center of         \n                          the Moon.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Spacecraft Velocity:  Absolute velocity of the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Sub-spacecraft Latitude:  The selenographic latitude of the point         \n                          directly beneath the spacecraft, with north latitude as positive.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "",
+      "description": "Sub-spacecraft Longitude:  The selenographic longitude of the point       \n                          directly beneath the spacecraft, with east longitude as positive.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Altitude:  The distance of the spacecraft above the            \n                          surface of the moon, assuming that the moon is a sphere of                \n                          radius 1738 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SG X",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft X-coordinate in the SG coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SG Y",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Y-coordinate in the SG coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SG Z",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Z-coordinate in the SG coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSE X",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft X-coordinate in the SSE coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSE Y",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Y-coordinate in the SSE coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSE Z",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Z-coordinate in the SSE coordinate system, in units of          \n                          kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSE X",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft X-coordinate in the GSE coordinate system, in units of         \n                          Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSE Y",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Y-coordinate in the GSE coordinate system, in units of         \n                          Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSE Z",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Z-coordinate in the GSE coordinate system, in units of         \n                          Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSM Y",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Y-coordinate in the GSM coordinate system, in units of         \n                          Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSM Z",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Z-coordinate in the GSM coordinate system, in units of         \n                          Earth radii.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,192 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PSD_FLUX",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "Power spectral density after 1% background subtraction and antenna calibration",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "PSD_SFU",
+      "type": "double",
+      "units": "sfu",
+      "description": "Power spectral density after 1% background subtraction and antenna calibration in solar radio flux unit normalized to 1 au",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "STOKES_I",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "Radio flux density [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "STOKES_Q",
+      "type": "double",
+      "units": "",
+      "description": "Normalized linear polarization [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "STOKES_U",
+      "type": "double",
+      "units": "",
+      "description": "Normalized linear polarization [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "STOKES_V",
+      "type": "double",
+      "units": "",
+      "description": "Normalized circular polarization [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "SOURCE_SIZE",
+      "type": "double",
+      "units": "deg",
+      "description": "The angular half aperture of the source as seen by a spacecraft (uniform profile) [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_COLATITUDE_RTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector colatitude in the Radial-Tangential-Normal (RTN) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_AZIMUTH_RTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector azimuth in the Radial-Tangential-Normal (RTN) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_COLATITUDE_HCI",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector colatitude in the Heliocentric Inertial (HCI) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_AZIMUTH_HCI",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector azimuth in the Heliocentric Inertial (HCI) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_COLATITUDE_HEE",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector colatitude in the Heliocentric Earth Ecliptic (HEE) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_AZIMUTH_HEE",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector azimuth in the Heliocentric Earth Ecliptic (HEE) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_COLATITUDE_HEEQ",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector colatitude in the Heliocentric Earth Equatorial (HEEQ) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "WAVE_AZIMUTH_HEEQ",
+      "type": "double",
+      "units": "deg",
+      "description": "Wave vector azimuth in the Heliocentric Earth Equatorial (HEEQ) system [Data available after 03-Dec-2012]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "SC_POS_HCI",
+      "type": "double",
+      "units": "km",
+      "description": "STEREO spacecraft position in the Heliocentric Inertial (HCI) system in km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_POS_HEE",
+      "type": "double",
+      "units": "km",
+      "description": "STEREO spacecraft position in the Heliocentric Earth Ecliptic (HEE) system in km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_POS_HEEQ",
+      "type": "double",
+      "units": "km",
+      "description": "STEREO spacecraft position in the Heliocentric Earth Equatorial (HEEQ) system in km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2006-10-28T00:00:06.000Z",
+  "stopDate": "2026-01-18T23:59:38.000Z"
+}

@@ -1,0 +1,241 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Purpose",
+      "type": "double",
+      "units": "",
+      "description": "The PURPOSE field identifies the purpose or function of the data       \n       contained in current row. Valid entries include:                       \n       SCI - normal science data values                                       \n       VALID_MIN - the inclusive or exclusive minimum value allowed for this  \n       column                                                                 \n       VALID_MAX - the inclusive or exclusive maximum value allowed for this  \n       column                                                                 \n       MIN - the minimum value for this column present in this product        \n       MAX - the maximum value for this column present in this product        \n       MEAN - the mean of the values in this column in this product, this     \n       value will be rounded for integer columns                              \n       STDEV - the standard deviation of the values in this column in this    \n      product, this value will be rounded for integer columns",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLOCK",
+      "type": "double",
+      "units": "",
+      "description": "SCLOCK in ticks calculated using the starting Ephemeris Time for this  \n       record. The SCLOCK format is #/NNNNNNNNNN.FFF where                    \n       # is the partition number                                              \n       NNNNNNNNNN is the number of ticks since the beginning of the mission   \n       FFF is the fine number of ticks as 1/256 of a second",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Ephermeris_S",
+      "type": "double",
+      "units": "Second",
+      "description": "The J2000 ephemeris time in seconds at the beginning of the time period \n      for this record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_Ephemeris_S",
+      "type": "double",
+      "units": "Second",
+      "description": "The J2000 ephemeris time in seconds at the end of the time period for   \n      this record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Counter",
+      "type": "double",
+      "units": "",
+      "description": "MIMI always organizes time by Spins, when Cassini is not in spin mode,  \n      MIMI uses a commanded virtual spin period. This column is a counter     \n      that increments with each spin or virtual spin. This counter resets     \n      when MIMI undergoes certain operations like shutdown, and is not        \n      sufficiently large that it will not roll over.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sector",
+      "type": "double",
+      "units": "",
+      "description": "Each spin is divided into 16 sectors. Sectors have no meaning with     \n       regard to pointing. They are nothing more or less than segments of     \n       time. This column contains the zero based index of the sector.         \n      Sectors have special significance in that the beginning of a sector is  \n      the only time that MIMI records the SCLOCK. All other times must be     \n      calculated based on the subsector, and, where appropriate, microsector  \n      values provided below. Times in this product were calculated in this    \n      manner.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Sector_Sclock_Major",
+      "type": "double",
+      "units": "counts",
+      "description": "The value of the Spacecraft clock at the beginning of Sector during     \n      which this record occurred. This, combined with subsector, and          \n      microsector where appropriate, is the monotonic timestamp for the each  \n      record. All other times are calculated from this time representation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subsector",
+      "type": "double",
+      "units": "",
+      "description": "Each sector is divided into 16 subsectors. Subsectors have no meaning   \n      as far as pointing. They are nothing more or less than segments of      \n      time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Microsectors_Covered",
+      "type": "double",
+      "units": "",
+      "description": "Each subsector is divided into 16 microsectors. Microsectors have no    \n      meaning as far as pointing. They are nothing more or less than segments \n      of time. This column is the number of microsectors over which this      \n      record was recorded, i.e. 16 for one subsector, 32 for two subsectors,  \n      256 for one sector, etc.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Period_S",
+      "type": "double",
+      "units": "seconds",
+      "description": "The spacecraft spin period in seconds. If the spacecraft is not in spin \n      mode, this is the virtual spin period used by the MIMI sensor to        \n      determine the timing of data collection. This value is not very         \n      reliable. It represents the 'nominal' spin period. When the spin period \n      is changing, it will not be very accurate.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Staring",
+      "type": "double",
+      "units": "",
+      "description": "0 if the spacecraft is in spin mode, 1 if the not in spin mode.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sensor_Bitrate",
+      "type": "double",
+      "units": "",
+      "description": "Describes the bit rate of each of the sensors (CHEMS, INCA, LEMMS).        \n\t  1 = very low, 2 = low, 3 = medium, 4 = high, 5 = very high.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Type_Id",
+      "type": "double",
+      "units": "",
+      "description": "4 byte word describing the type of image collected.                    \n       Byte 0 - Type: 0 = High Spatial, 1 = High Time, 2 = High m-TOF         \n       Byte 1 - Charge: 0 = Neutral, 1 = Ion                                  \n       Byte 2 - Species: 0 = H, 1 = He, 2 = CNO, 3 = Heavy, 4 = Other, 5 =    \n       All                                                                    \n      Byte 3 - TOF: 0 = Low, 1-6 = Medium, 7 = High",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Row_Id",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies the row number of the image.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Nums_Rows",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies the number of rows in the image.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Num_Cols",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies the number of columns in the image.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Compression_Bits",
+      "type": "double",
+      "units": "",
+      "description": "This field the number of compression bits used for the image.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Compression_Method",
+      "type": "double",
+      "units": "",
+      "description": "Identifies the compression algorithm used for the image. Options are    \n      None, Fast, or Rice.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Log_Compression",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies whether the field is log compressed (1) or not    \n      (0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Theta_Offset",
+      "type": "double",
+      "units": "",
+      "description": "Offset in number of pixels of the transmitted image with respect to the \n\t  DPU image memory. Image theta is relative to the spacecraft -Z axis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Phi_Offset",
+      "type": "double",
+      "units": "",
+      "description": "Offset in number of pixels of the transmitted image with respect to the \n\t  DPU image memory. Image phi is in the spacecraft X-Y plane, relative       \n\t  to the spacecraft X axis.",
+      "size": [
+        1
+      ],
+      "fill": "8E+1"
+    },
+    {
+      "name": "High_Resolution",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies the Image Type [High Spatial (0), High Time (1),  \n\t  or high m-TOF (2)].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Neutral_Ion",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies whether the image was taken of neutrals (0) or    \n\t  charged particles and neutrals (1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Species",
+      "type": "double",
+      "units": "",
+      "description": "This field identifies the type of particle imaged as H - hydrogen,      \n\t  He - Helium, CNO - Carbon, Nitrogen, Oxygen, Heavy - others,               \n\t  All - all particles.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF",
+      "type": "double",
+      "units": "",
+      "description": "This field contains the encoded TOF range.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

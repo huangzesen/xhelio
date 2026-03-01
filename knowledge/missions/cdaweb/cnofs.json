@@ -1,0 +1,90 @@
+{
+  "id": "CNOFS",
+  "name": "C/NOFS",
+  "keywords": [
+    "c/nofs",
+    "cnofs"
+  ],
+  "profile": {
+    "description": "C/NOFS spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "CNOFS_PLP_PLASMA_1SEC": {
+          "description": "Planar Langmuir Probe 1-sec average Key Parameters (Ni, Ne, Te). The data are PRELIMINARY, and as such, are intended for BROWSE PURPOSES ONLY - D. E. Hunton (Air Force Research Laboratory, Space Vehicles Directorate)",
+          "start_date": "2008-11-01T00:00:00.000Z",
+          "stop_date": "2010-11-21T23:59:58.000Z",
+          "pi_name": "D. E. Hunton",
+          "pi_affiliation": "Air Force Research Laboratory, Space Vehicles Directorate",
+          "doi": "10.48322/xnnr-w563",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CNOFS_PLP_PLASMA_1SEC"
+        },
+        "CNOFS_CINDI_IVM_500MS": {
+          "description": "CNOFS CINDI IVM ion density, composition, temperature, and drift (0.5-sec) - Dr. Roderick A. Heelis (University of Texas, Dallas)",
+          "start_date": "2008-08-02T00:00:01.000Z",
+          "stop_date": "2015-11-26T03:44:41.000Z",
+          "pi_name": "Dr. Roderick A. Heelis",
+          "pi_affiliation": "University of Texas, Dallas",
+          "doi": "10.48322/r9x4-x639",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CNOFS_CINDI_IVM_500MS"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "CNOFS_VEFI_BFIELD_1SEC": {
+          "description": "Magnetic field solution (at 1 sample per sec) produced by VEFI on the Communication Navigation Outage Forecast System satellite.  - Robert F. Pfaff (NASA GSFC)",
+          "start_date": "2008-05-09T00:00:00.000Z",
+          "stop_date": "2015-09-28T23:43:18.000Z",
+          "pi_name": "Robert F. Pfaff",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/vbt7-gj03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CNOFS_VEFI_BFIELD_1SEC"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "CNOFS_VEFI_EFIELD_1SEC": {
+          "description": "Electric Field solution (at 1 sample/sec) produced by VEFI on the Communication Navigation Outage Forecast System satellite.  The data are PRELIMINARY, and as such, are intended for BROWSE PURPOSES ONLY. - Robert F. Pfaff (GSFC)",
+          "start_date": "2008-05-09T00:00:00.000Z",
+          "stop_date": "2011-03-01T00:00:00.000Z",
+          "pi_name": "Robert F. Pfaff",
+          "pi_affiliation": "GSFC",
+          "doi": "10.48322/1dcn-xp86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CNOFS_VEFI_EFIELD_1SEC"
+        }
+      }
+    }
+  },
+  "observatory_group": "CNOFS",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

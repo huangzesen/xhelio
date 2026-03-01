@@ -1,0 +1,181 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HFWR_Eu",
+      "type": "double",
+      "units": "mV/M",
+      "description": "HFWR Elec. Ant. Eu",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        63488
+      ]
+    },
+    {
+      "name": "HFWR_Evp",
+      "type": "double",
+      "units": "mV/M",
+      "description": "HFWR Elec. Ant. Ev+",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        95232
+      ]
+    },
+    {
+      "name": "HFWR_Evm",
+      "type": "double",
+      "units": "mV/M",
+      "description": "HFWR Elec. Ant. Ev-",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        95232
+      ]
+    },
+    {
+      "name": "HFWR_Bu",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR Mag. Ant. Bu",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Bv",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR Mag. Ant. Bv",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        63488
+      ]
+    },
+    {
+      "name": "HFWR_Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR Mag. Ant. Bz",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Eu",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Eu:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        63488
+      ]
+    },
+    {
+      "name": "DATA_Q_Evp",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Ev+:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        95232
+      ]
+    },
+    {
+      "name": "DATA_Q_Evm",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Ev-:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        95232
+      ]
+    },
+    {
+      "name": "DATA_Q_Bu",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Bu:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Bv",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Bv:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        63488
+      ]
+    },
+    {
+      "name": "DATA_Q_Bz",
+      "type": "integer",
+      "units": "",
+      "description": "Data Q Bz:  0 = OK, 1 = clipped or questionable",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "Delta_T",
+      "type": "double",
+      "units": "ms",
+      "description": "Time, time between HFWR points in this snapshot.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "NUM_PTS",
+      "type": "integer",
+      "units": "",
+      "description": "Number of points that this snapshot contains in each Channel.",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "NUM_FFT",
+      "type": "integer",
+      "units": "",
+      "description": "Number of FFTs of size 1024 that were processed for this snapshot",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Gain1",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 1 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain2",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 2 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain3",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 3 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "MGain",
+      "type": "integer",
+      "units": "",
+      "description": "M Gain (HFWR)",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1996-04-04T00:41:55.000Z",
+  "stopDate": "1997-09-14T18:30:56.000Z"
+}

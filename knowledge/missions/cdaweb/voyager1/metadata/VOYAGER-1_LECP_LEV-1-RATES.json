@@ -1,0 +1,166 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEDU UniDirectional Differential Electron Rates for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        8
+      ]
+    },
+    {
+      "name": "FEDU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEDU Count rate uncertainties for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        8
+      ]
+    },
+    {
+      "name": "FEsDU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEsDU UniDirectional Differential Scattered-Electron Rates for the EBD1-EBD5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "FEsDU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEsDU Count rate uncertainties for the EBD1-EBD5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "FHDU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHDU UniDirectional Differential Hydrogen Rates for the PL01-PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channel.s.",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        8
+      ]
+    },
+    {
+      "name": "FHDU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHDU Count rate uncertainties for the PL01, PL02, PL03, PL04, PL05, PL06, PL07, PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        8
+      ]
+    },
+    {
+      "name": "FHeDU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHeDU UniDirectional Differential Helium Rates for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        8
+      ]
+    },
+    {
+      "name": "FHeDU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHeDU Count rate uncertainties for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        8
+      ]
+    },
+    {
+      "name": "FODU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FODU UniDirectional Differential Oxygen Rates for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        8
+      ]
+    },
+    {
+      "name": "FODU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FODU Count rate uncertainties for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        8
+      ]
+    },
+    {
+      "name": "FFeDU_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FFeDU UniDirectional Differential Iron Rates for the H36, H8, H9, H43, H21 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "FFeDU_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FFeDU Count rate uncertainties for the H36, H8, H9, H43, H21 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5,
+        8
+      ]
+    },
+    {
+      "name": "Singles_SectoredRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "Singles Sectored UniDirectional Differential Rates for the SAR, SE0-SE5, SAL, ALAR energy channels",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        8
+      ]
+    },
+    {
+      "name": "Singles_SectoredRateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "Singles Sectored Count rate uncertainties for the SAR, SE0-SE5, SAL, ALAR energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        9,
+        8
+      ]
+    }
+  ],
+  "startDate": "1991-01-01T21:55:54.000Z",
+  "stopDate": "2021-12-16T02:22:57.000Z"
+}

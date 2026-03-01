@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field radial component in RTN       \n                                 coordinates <nT>",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field tangential component in RTN   \n                                 coordinates <nT>",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field normal component in RTN       \n                                 coordinates <nT>",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude |B| of the magnetic field strength \n                                 <nT>",
+      "size": [
+        1
+      ],
+      "fill": "9.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

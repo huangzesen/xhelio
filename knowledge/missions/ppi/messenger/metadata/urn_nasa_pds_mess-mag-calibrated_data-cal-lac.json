@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC year associated with the LAC sample in\n    each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY_OF_YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC day of year associated with the LAC\n    sample in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "double",
+      "units": "",
+      "description": "UTC hour associated with the LAC sample\n    in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MINUTE",
+      "type": "double",
+      "units": "",
+      "description": "UTC minute associated with the LAC sample\n    in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "double",
+      "units": "",
+      "description": "UTC second associated with the LAC sample\n    in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the time tag associated\n      with the data values in each record.                              \n      The derived value is created by the following formula:               \n      MET + 0.05 * delta_ts + 0.5 + (dt_sample)*(i-1)*(num_samples/num_AC).\n      MET is the mission elapsed time for the entire science packet.       \n      delta_ts is the time in seconds between the MET and the first sample \n      in the science packet.                                               \n      dt_sample is the time between samples in seconds and is given by     \n      dt_sample = 1/sample_rate where sample_rate is the reported sample   \n      rate in samples per second.                                          \n      num_samples is number of magnetometer samples.                       \n      num_AC is the number of logAC values.                                \n      i is the incremental counter for each of the logAC values. i=1 is the\n      first logAC value in the science packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AC_AXIS",
+      "type": "double",
+      "units": "",
+      "description": "AC axis selected. =0 X, =1 Y, =2 Z",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "B_AC",
+      "type": "double",
+      "units": "",
+      "description": "Average output amplitude in units\n            of nano-Tesla of a 1-to-10 Hz bandpass filter for the selected\n            magnetometer axis selected by command.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

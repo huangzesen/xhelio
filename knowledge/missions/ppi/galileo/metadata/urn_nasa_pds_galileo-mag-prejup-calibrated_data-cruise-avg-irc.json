@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SC_CLK",
+      "type": "double",
+      "units": "TICKS",
+      "description": "S/C CLOCK COUNT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in IRC        \n    (despun spacecraft) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BY_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in IRC        \n    (despun spacecraft) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in IRC        \n    (despun spacecraft) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "B field magnitide",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "Z SENSOR OFFSET",
+      "type": "double",
+      "units": "nT",
+      "description": "Z sensor offset",
+      "size": [
+        1
+      ],
+      "fill": "99.999"
+    },
+    {
+      "name": "AVG_CON",
+      "type": "double",
+      "units": "RIM",
+      "description": "Optimal averager decimate constant (sample rate)\n   in units of spacecraft major frames (1 RIM ~ 60 2/3 seconds).",
+      "size": [
+        1
+      ],
+      "fill": "9999"
+    },
+    {
+      "name": "ROTOR RIGHT ASCENSION",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "Rotor right ascension in EME-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "ROTOR DECLINATION",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "Rotor declination in EME-50 coordinates",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "Delta twist angle. The difference between the   \n   rotor twist angles in EME-50 coordinates and ECL-50 coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

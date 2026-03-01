@@ -1,0 +1,103 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Bandwidth",
+      "type": "double",
+      "units": "kHz",
+      "description": "Frequency Bandwidth: 9.5 kHz, 19 kHz, 77 kHz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Translation",
+      "type": "double",
+      "units": "kHz",
+      "description": "Base freq. of freq. bandwidth (0.0, 125.454, 250.908, and 501.816 kHz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Resolution",
+      "type": "integer",
+      "units": "bits",
+      "description": "Number of bits used when digitizing waveform (8-bit, 4-bit, or 1-bit)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ANTENNA",
+      "type": "integer",
+      "units": "",
+      "description": "Antenna (0=Ez, 1=Bx, 2=By, 3=Ey)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Gain",
+      "type": "integer",
+      "units": "dB",
+      "description": "Gain state of WBD instrument",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Ant_B_Field_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Total angle between antenna used for WBD measurement and measured B field direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ant_Xgse_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Total angle between the Xgse axis and the antenna direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ant_YZgse_Plane_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Total angle between Ygse axis and the projection of the antenna direction in the Ygse-Zgse plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DC_Offset",
+      "type": "double",
+      "units": "",
+      "description": "DC Offset used when converting from raw digital values to calibrated data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WBD_Elec",
+      "type": "double",
+      "units": "mV m^-1",
+      "description": "Calibrated AC WBD Electric Field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WBD_Mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Calibrated AC WBD Magnetic Field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "integer",
+      "units": "",
+      "description": "Data Quality: 0 = OK, 1 = clipped or questionable, 2 = bad data point.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BM_Mode",
+      "type": "integer",
+      "units": "",
+      "description": "BM_Mode (0=Duty Cycled 9.5 kHz, 1-in-3,1 = Duty Cycled 9.5 kHz, 1-in-4, 2 = Duty Cycled 19 kHz, 1-in-3, 3 = Duty Cycled 19 kHz, 1-in-4, 4 = Duty Cycled 77 kHz, 1-in-3, 5 = Duty Cycled 77 kHz, 1-in-4, 6 = Digital Filtered 9.5 kHz, 1-in-3,      roll-off at 3.2 kHz 7 = Digital Filtered 9.5 kHz, 1-in-3,      optimized roll-off at 4.2 kHz 8 = Digital Filtered 9.5 kHz, 1-in-4,      roll-off at 2.5 kHz 9 = Digital Filtered 9.5 kHz, 1-in-4,      optimized roll-off at 3.1 kHz)",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2000-09-05T23:55:18.000Z",
+  "stopDate": "2024-07-03T06:29:43.000Z"
+}

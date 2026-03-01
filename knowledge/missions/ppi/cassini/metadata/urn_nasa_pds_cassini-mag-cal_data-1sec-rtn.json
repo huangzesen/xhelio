@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN radial component of the magnetic-field in nT.                       \n      The radial component (R) points from the Sun to the spacecraft,         \n      positive away from the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN tangential component of the magnetic-field in nT.                   \n      The tangential component (T) is parallel to the Solar Equatorial        \n      plane (Omega Sun x R).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN normal component of the magnetic-field in nT.                       \n      The normal component (N) completes the right handed set, and            \n      is roughly normal to the Solar Equatorial plane (R x Phi).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the full-resolution magnetic-field magnitudes          \n      calculated over the averaging interval in nT. Note that this value      \n      may differ slightly from the square root of the sum of the squares      \n      of the averaged field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

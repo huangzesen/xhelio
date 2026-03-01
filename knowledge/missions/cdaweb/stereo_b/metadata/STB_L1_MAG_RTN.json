@@ -1,0 +1,29 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BFIELD",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field vector in RTN coordinates from the IMPACT/MAG instrument.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "MAGFLAGUC",
+      "type": "integer",
+      "units": "",
+      "description": "[HIGHLY ENCODED VALUES] IMPACT/MAG status flag",
+      "fill": "4294967295.0"
+    }
+  ],
+  "startDate": "2006-11-07T00:00:05.000Z",
+  "stopDate": "2014-09-27T16:30:34.000Z"
+}

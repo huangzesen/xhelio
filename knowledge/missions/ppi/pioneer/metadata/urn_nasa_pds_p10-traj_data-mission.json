@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "year",
+      "description": "Spacecraft event year given in PDS time format (yyyy).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDOY",
+      "type": "double",
+      "units": "day",
+      "description": "Spacecraft fractional day of year (1.5 = Jan. 1 at 1200 SCUT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HRANGP",
+      "type": "double",
+      "units": "km",
+      "description": "Distance from Sun to spacecraft in km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar ecliptic latitude of spacecraft with\n                        respect to true-of-date Ecliptic.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar ecliptic longitude of spacecraft with\n                        respect to true-of-date Ecliptic.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HELLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft solar heliographic latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HELLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft solar heliographic longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HILLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar heliographic inertial longitude of spacecraft with respect to\n                        direction of zero heliographic longitude on 1 Jan. 1854 at 1200 UT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "REARSC",
+      "type": "double",
+      "units": "AU",
+      "description": "Distance from Earth to spacecraft in AU\n                        (used to calculate Earth Received Time - UT).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

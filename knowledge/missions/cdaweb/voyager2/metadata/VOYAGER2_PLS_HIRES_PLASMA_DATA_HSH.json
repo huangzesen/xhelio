@@ -1,0 +1,88 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "chi2",
+      "type": "double",
+      "units": "",
+      "description": "chi-square value of fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_rtn",
+      "type": "double",
+      "units": "km/s",
+      "description": "velocity vector in RTN coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "xV_rtn",
+      "type": "double",
+      "units": "km/s",
+      "description": "1-sigma uncertainty of velocity vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "proton bulk velocity",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dens",
+      "type": "double",
+      "units": "cm^(-3)",
+      "description": "density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "xdens",
+      "type": "double",
+      "units": "cm^(-3)",
+      "description": "1-sigma uncertainty of density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "w",
+      "type": "double",
+      "units": "km/s",
+      "description": "Thermal speed w",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "xw",
+      "type": "double",
+      "units": "km/s",
+      "description": "1-sigma uncertainty of thermal speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "eV",
+      "description": "proton temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "xT",
+      "type": "double",
+      "units": "eV",
+      "description": "1-sigma uncertainty of proton temperature",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2007-08-27T21:34:48.000Z",
+  "stopDate": "2018-11-05T13:45:55.000Z"
+}

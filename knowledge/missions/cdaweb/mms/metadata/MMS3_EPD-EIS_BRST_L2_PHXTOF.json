@@ -1,0 +1,2307 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_duration",
+      "type": "double",
+      "units": "s",
+      "description": "Total Exposure Time for Accumulation",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_deadtime",
+      "type": "double",
+      "units": "s",
+      "description": "---> Instrument Deadtime",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_largepixel",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Instrument Large Pixel in Use",
+      "fill": "-128.0"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_spin",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Spin",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_sector",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Sector",
+      "fill": "-128.0"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_quality",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Quality Word",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS3 PhxTOF-Burst proton_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst proton_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst proton_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS3 PhxTOF-Burst oxygen_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst oxygen_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst oxygen_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS3 PhxTOF-Burst dump_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst dump_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst dump_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS3 PhxTOF-Burst proton_P5_counts_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst proton_P5_cps_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst proton_P5_flux_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS3 PhxTOF-Burst oxygen_P5_counts_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst oxygen_P5_cps_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst oxygen_P5_flux_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst proton_P4_counts_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst proton_P4_cps_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst proton_P4_flux_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst oxygen_P4_counts_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst oxygen_P4_cps_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst oxygen_P4_flux_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst proton_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst proton_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst proton_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_proton_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst oxygen_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst oxygen_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst oxygen_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_oxygen_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst dump_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst dump_P4_counts_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS3 PhxTOF-Burst dump_P5_counts_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst dump_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst dump_P4_cps_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS3 PhxTOF-Burst dump_P5_cps_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst dump_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst dump_P4_flux_t0 [data available from 2016/09/29 to 2019/12/19]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS3 PhxTOF-Burst dump_P5_flux_t0 [data available from 2019/12/20 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_dump_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t0",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 0 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t1",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Pitch Angle for Telescope 1 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t2",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Pitch Angle for Telescope 2 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t3",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Pitch Angle for Telescope 3 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t4",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Pitch Angle for Telescope 4 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pitch_angle_t5",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Pitch Angle for Telescope 5 MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t0",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 0 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> Look Direction for Telescope 1 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> Look Direction for Telescope 2 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> Look Direction for Telescope 3 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> Look Direction for Telescope 4 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_look_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> Look Direction for Telescope 5 MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_b",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field BCS MMS3",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_position_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position GSE MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_position_gsm",
+      "type": "double",
+      "units": "km",
+      "description": "---> Spacecraft position in GSM coordinates MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_moon_gse",
+      "type": "double",
+      "units": "km",
+      "description": "---> Spacecraft-Moon vector in GSE coordinates MMS3",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_sc_to_gse",
+      "type": "double",
+      "units": ".",
+      "description": "Transformation Matrix BCS to GSE Frame MMS3",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_gse_to_gsm",
+      "type": "double",
+      "units": ".",
+      "description": "---> Transformation Matrix GSE to GSM Frame MMS3",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_r",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position: Radius MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_l",
+      "type": "double",
+      "units": ".",
+      "description": "Dipole L-shell MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_gse_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in GSE Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_gse_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in GSE Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_gsm_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in GSM Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_gsm_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in GSM Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_sm_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in SM Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_sm_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in SM Frame MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_orbit_num",
+      "type": "double",
+      "units": ".",
+      "description": "Orbit number MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd0",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 0 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd1",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 1 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd2",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 2 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd3",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 3 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd4",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 4 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_ssd5",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 5 Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_vep",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Events Processed per second MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_start0anode",
+      "type": "double",
+      "units": "1/s",
+      "description": "Start 0 Anode Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_stop0anode",
+      "type": "double",
+      "units": "1/s",
+      "description": "Stop 0 Anode Count Rate MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_pulseheight",
+      "type": "double",
+      "units": "1/s",
+      "description": "Events above TOF Pulse Height Threshold MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_vtofxee",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Time of Flight by Energy Events per second MMS3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms3_epd_eis_brst_l2_phxtof_vtofxphe",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Time of Flight by Pulse Height Energy Events per second MMS3",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2015-09-25T09:13:54.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

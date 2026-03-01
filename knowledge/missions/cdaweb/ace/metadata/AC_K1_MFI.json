@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "dBrms",
+      "type": "double",
+      "units": "nT",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] RMS of Magnetic Field (16 sec period)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] B-field magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BGSEc",
+      "type": "double",
+      "units": "nT",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] Magnetic Field, Cartesian GSE coord",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2017-07-01T00:00:00.000Z",
+  "stopDate": "2026-02-12T23:59:57.000Z"
+}

@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Invar_Lat__C1_JP_PMP",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft invariant Latitude (Null/will not plot outside magnetosphere)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Mag_Local_time__C1_JP_PMP",
+      "type": "double",
+      "units": "hours",
+      "description": "Spacecraft local magnetic time in hours",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_value__C1_JP_PMP",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft L-value (Null/will not plot outside magnetosphere)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Pred_B_mag__C1_JP_PMP",
+      "type": "double",
+      "units": "nT",
+      "description": "Predicted magnetic field magnitude (Null/will not plot outside magnetosphere)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-08-14T20:35:00.000Z",
+  "stopDate": "2025-11-06T00:00:00.000Z"
+}

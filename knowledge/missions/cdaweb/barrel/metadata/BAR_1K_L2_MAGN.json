@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "2147483648.0"
+    },
+    {
+      "name": "MAG_X_uncalibrated",
+      "type": "double",
+      "units": "uT",
+      "description": "X axis of magnetic field. *Uncalibrated*",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_Y_uncalibrated",
+      "type": "double",
+      "units": "uT",
+      "description": "Y axis of magnetic field. *Uncalibrated*",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_Z_uncalibrated",
+      "type": "double",
+      "units": "uT",
+      "description": "Z axis of magnetic field. *Uncalibrated*",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Total",
+      "type": "double",
+      "units": "uT",
+      "description": "Magnitude of magnetic field. *Uncalibrated*",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2013-01-05T17:49:57.000Z",
+  "stopDate": "2013-01-21T01:24:08.000Z"
+}

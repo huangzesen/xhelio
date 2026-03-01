@@ -1,0 +1,50 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "orbit_num__C2_JP_PSE",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number: Integer part (non-event times do not plot)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "orbit_phase__C2_JP_PSE",
+      "type": "double",
+      "units": "",
+      "description": "Orbit phase, fractional part of orbit number (non-event times do not plot)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_lat__C2_JP_PSE",
+      "type": "double",
+      "units": "deg",
+      "description": "Predicted gse Latitude of sc, Angle from Ecliptic Plane (non-event times do not plot)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_mag_local_time__C2_JP_PSE",
+      "type": "double",
+      "units": "hours",
+      "description": "Predicted magnetic local time of satellite (non-event times do not plot)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_r2_xyz_gse__C2_JP_PSE",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position at predicted event (non-event times do not plot)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-08-01T00:00:00.000Z",
+  "stopDate": "2024-09-08T17:39:00.000Z"
+}

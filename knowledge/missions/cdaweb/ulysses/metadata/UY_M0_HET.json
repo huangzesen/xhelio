@@ -1,0 +1,49 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Protons",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton count rate (5-92MeV), 5 channels (H1:5-14,H2:14-19,H3:24-31,H4:34-48,H5:68-92 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Electrons",
+      "type": "double",
+      "units": "/s",
+      "description": "Electron count rate (1-10 MeV) in 3 channels (H6:1-3, H7:5-10, H8:3-5 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HiE_protons",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton count rate (>92 MeV), channel H9",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_ge_3",
+      "type": "double",
+      "units": "/s",
+      "description": "Z>=3 count rate (26-173+ MeV/n), 4 channels (H10:26-36,H11:44-127,H12:127-173,H13:>173 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1990-10-23T16:40:00.000Z",
+  "stopDate": "2009-06-30T19:10:00.000Z"
+}

@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Antenna",
+      "type": "double",
+      "units": "",
+      "description": "Antenna used for low band (0.22 to 5.33 Hz). High band (9.8 Hz            \n    and above) is always By.                                                  \n      1: By                                                                   \n      2: Bz                                                                   \n      3: Antenna switched during the averaging interval.                      \n      4: Antenna unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PFRMODE",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates the scan mode of the PFR instrument.                     \n      1: Fast scan mode.                                                      \n      2: Slow scan mode.                                                      \n      3: Fixed-frequency mode.                                                \n      4: The mode switched during the averaging interval.                     \n      5: The mode could not be determined.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates telemetry bit rate:                                      \n      1: 128 bps.                                                             \n      2: 256 bps.                                                             \n      3: 512 bps.                                                             \n      4: 1024 bps.                                                            \n      5: Bit rate changed during averaging period.                            \n      6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "unrecovered_count",
+      "type": "double",
+      "units": "",
+      "description": "Total counter of unrecovered bins",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "total_count",
+      "type": "double",
+      "units": "",
+      "description": "Total count",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "quality_factor",
+      "type": "double",
+      "units": "",
+      "description": "Quality factor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "eflux",
+      "type": "double",
+      "units": "cm-2 s-1 eV/eV",
+      "description": "Energy Flux (Omni-directional)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96
+      ]
+    }
+  ],
+  "startDate": "2020-07-07T16:43:06.000Z",
+  "stopDate": "2025-10-31T23:59:54.000Z"
+}

@@ -1,0 +1,348 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SECONDS",
+      "type": "double",
+      "units": "s",
+      "description": "Spacecraft Time (elapsed seconds from epoch \n                       2001-01-01T00:00:00.000 UTC). Derived from spacecraft \n                       clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FRACT",
+      "type": "double",
+      "units": "10**-2 s",
+      "description": "Spacecraft Time (fractional seconds in units of 1/100 second).\n                       Derived from spacecraft clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V28BUS",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft 28VDC power bus voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V5DIGITAL",
+      "type": "double",
+      "units": "V",
+      "description": "+5VDC Digital Regulated Voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VANALOGERR",
+      "type": "double",
+      "units": "",
+      "description": "Analog Voltage Status Indicator (0 = on; 15 = off, remaining H/K invalid).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V5PLUS",
+      "type": "double",
+      "units": "V",
+      "description": "+5VDC analog regulated voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V5NEG",
+      "type": "double",
+      "units": "V",
+      "description": "-5VDC analog regulated voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "I28BUS",
+      "type": "double",
+      "units": "A",
+      "description": "CRaTER current draw from spacecraft 28VDC power bus.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P28BUS",
+      "type": "double",
+      "units": "W",
+      "description": "CRaTER power draw from spacecraft 28VDC power bus.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 1",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 2",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 3",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 4",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 5",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASCURRENT 6",
+      "type": "double",
+      "units": "10**-6 A",
+      "description": "Detector Bias Currents.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASVOLTTHIN",
+      "type": "double",
+      "units": "V",
+      "description": "Thin Detector (D1, D3, D5) Bias Voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASVOLTTHICK",
+      "type": "double",
+      "units": "V",
+      "description": "Thick Detector (D2, D4, D6) Bias Voltage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALAMP",
+      "type": "double",
+      "units": "V",
+      "description": "Internal Calibration Pulser Pulse Amplitude.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LLDTHIN",
+      "type": "double",
+      "units": "V",
+      "description": "LLD Signal Threshold--Thin Detectors (D1, D3, D5).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LLDTHICK",
+      "type": "double",
+      "units": "V",
+      "description": "LLD Signal Threshold--Thick Detectors (D2, D4, D6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TTELESCOPE",
+      "type": "double",
+      "units": "degC",
+      "description": "Temperature--Telescope Assembly.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TANALOG",
+      "type": "double",
+      "units": "degC",
+      "description": "Temperature--Analog Electronics Board.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TDIGITAL",
+      "type": "double",
+      "units": "degC",
+      "description": "Temperature--Digital Electronics Board.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TPOWER",
+      "type": "double",
+      "units": "degC",
+      "description": "Temperature--Power Supply.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TREF",
+      "type": "double",
+      "units": "degC",
+      "description": "Temperature--Reference Location, Telescope Housing\n                       Wall.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADHIGHSENS",
+      "type": "double",
+      "units": "rad",
+      "description": "Radiation Monitor Integrated Dose--High Sensitivity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADMEDSENS",
+      "type": "double",
+      "units": "rad",
+      "description": "Radiation Monitor Integrated Dose--Medium Sensitivity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADLOWSENS",
+      "type": "double",
+      "units": "rad",
+      "description": "Radiation monitor integrated dose--low sensitivity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADTOTAL",
+      "type": "double",
+      "units": "rad",
+      "description": "Radiation monitor integrated dose--total.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 1",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (1 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 2",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (2 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 3",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (3 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 4",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (4 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 5",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (5 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIASENERGY Item 6",
+      "type": "double",
+      "units": "keV",
+      "description": "Detector LLD deposited energy thresholds (6 of 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OFFMOONFLAG",
+      "type": "double",
+      "units": "",
+      "description": "CRaTER boresite pointing off lunar surface flag\n                       (1 = does not intercept surface).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ECLIPSEFLAG",
+      "type": "double",
+      "units": "",
+      "description": "LRO in eclipse flag (1 = in eclipse).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

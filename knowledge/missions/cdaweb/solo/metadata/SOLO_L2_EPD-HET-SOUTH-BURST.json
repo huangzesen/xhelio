@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Hydrogen flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        68
+      ]
+    },
+    {
+      "name": "Electron_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "He3_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-3 flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "He4_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-4 flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T12:22:28.000Z",
+  "stopDate": "2020-06-15T12:37:28.000Z"
+}

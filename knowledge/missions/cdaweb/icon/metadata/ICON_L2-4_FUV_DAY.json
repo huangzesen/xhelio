@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L24_1356_Emission",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Disk short wave emission",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Ap",
+      "type": "double",
+      "units": "index",
+      "description": "Ap used in retreival",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_LOS_Zen_Angle",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Retrieved disk LOS zenith angle",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_Latitude",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Retrieved disk latitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_Longitude",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Retrieved disk longitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_ON2",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Retrieved disk column O/N2",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_QEUV",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Retrieved Qeuv on the disk",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_SZA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Retrieved disk SZA",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Disk_Sigma_ON2",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Retrieved disk column O/N2 uncertainty",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Initial_Disk_ON2",
+      "type": "double",
+      "units": "Dimensionless",
+      "description": "Initial guess disk column O/N2",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_LBH_Emission",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Disk long wave emission",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Model_Covariance",
+      "type": "double",
+      "units": "unitless scalars",
+      "description": "Covariance matrix of the model parameters found by the algorithm, as a function of time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        13,
+        13
+      ]
+    },
+    {
+      "name": "ICON_L24_Model_Disk_Flags",
+      "type": "integer",
+      "units": "index",
+      "description": "model error flag for disk",
+      "fill": "-999.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ICON_L24_Model_Lower_Limit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Lower limits of the model parameters used by the algorithm, as a function of time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "ICON_L24_Model_Upper_Limit",
+      "type": "double",
+      "units": "unitless",
+      "description": "Upper limits of the model parameters used by the algorithm, as a function of time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "ICON_L24_Predicted_1356_Disk_Emission",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Initial guess disk short wave emission",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Predicted_LBH_Disk_Emission",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Initial guess disk long wave emission",
+      "fill": "-999.0"
+    }
+  ],
+  "startDate": "2019-11-16T00:00:04.000Z",
+  "stopDate": "2022-11-24T23:59:55.000Z"
+}

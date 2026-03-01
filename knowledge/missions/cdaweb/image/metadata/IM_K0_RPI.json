@@ -1,0 +1,198 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Amplitude22",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "Echo Amplitude Image [nV] - Plasmagram - linear (frequency vs. range, standard display/orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude22M",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie - linear (frequency vs. range)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude2",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Plasmagram - linear (range vs frequency)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude2M",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie - linear (range vs. frequency)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude3",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Plasmagram - range vs. log frequency",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude3M",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie - range vs. log frequency",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude4",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Plasmagram - log frequency vs. range",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude4M",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie - log frequency vs. range",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "AmplitudeF",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "Plain images (x=frequency, y=range, no scales)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "AmplitudeFM",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie (x=frequency, y=range, no scales)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "Amplitude",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Images (x=range, y=frequency, no scales)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "AmplitudeM",
+      "type": "integer",
+      "units": "3/4 dBnV/m",
+      "description": "---> Movie (x=range, y=frequency, no scales)",
+      "fill": "255.0",
+      "size": [
+        256,
+        128
+      ]
+    },
+    {
+      "name": "MPA",
+      "type": "integer",
+      "units": "3/4 dBnv/m",
+      "description": "Most Probable Amplitude",
+      "fill": "255.0",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "ProgramSpecs",
+      "type": "integer",
+      "units": "",
+      "description": "Program Specifications (25 values/epoch) [NO PLOT - LISTING ONLY]",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "NumFreqs",
+      "type": "integer",
+      "units": "",
+      "description": "Actual number of frequencies being measured",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Frequency",
+      "type": "double",
+      "units": "kHz",
+      "description": "Measured frequency values",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "NumRanges",
+      "type": "integer",
+      "units": "",
+      "description": "Actual number of ranges being measured",
+      "fill": "255.0"
+    },
+    {
+      "name": "Range",
+      "type": "double",
+      "units": "Re",
+      "description": "Measured range values",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    }
+  ],
+  "startDate": "2000-03-26T07:51:50.000Z",
+  "stopDate": "2005-12-18T07:40:47.000Z"
+}

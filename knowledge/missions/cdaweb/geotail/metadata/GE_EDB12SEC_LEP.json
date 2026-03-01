@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ni",
+      "type": "double",
+      "units": "1/cc (qual only if scan=2=SW)",
+      "description": "Ion Density (Use only if no Editor-A data; qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T",
+      "type": "integer",
+      "units": "eV (qual only if scan=2=SW)",
+      "description": "Ion Temperature in Satellite coordinates (Use only if no Editor-A data; qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "scan_code",
+      "type": "integer",
+      "units": "(1=EA=RAM-A,2=SW=RAM-B)",
+      "description": "Energy Scan Code (1 = Sensor Code EA = energy scan mode RAM-A, 2 = Sensor Code SW = energy scan mode RAM-B)",
+      "fill": null
+    },
+    {
+      "name": "VGSE",
+      "type": "integer",
+      "units": "km/s (qual only if scan=2=SW)",
+      "description": "Ion Velocity (GSE) (Use only if no Editor-A data; qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in GSE cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "VGSM",
+      "type": "integer",
+      "units": "km/s (qual only if scan=2=SW)",
+      "description": "Ion Velocity (GSM) (Use only if no Editor-A data; qualitative use only if Energy Scan Code =  2 = RAM-B/SW)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZGSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in GSM cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "VSM",
+      "type": "integer",
+      "units": "km/s (qual only if scan=2=SW)",
+      "description": "Ion Velocity (SM) (Use only if no Editor-A data; qualitative use only if Energy Scan Code = 2 = RAM-B/SW)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in SM cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1993-10-05T00:00:34.000Z",
+  "stopDate": "2006-12-31T23:59:17.000Z"
+}

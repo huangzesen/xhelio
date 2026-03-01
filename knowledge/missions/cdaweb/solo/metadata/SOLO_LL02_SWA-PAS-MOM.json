@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_PAS_VELOCITY_RTN",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "The quick look proton velocity data from PAS in RTN coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SWA_PAS_PRESSURE_RTN",
+      "type": "double",
+      "units": "eV cm^-3",
+      "description": "The quick look proton pressure data from PAS in RTN coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "SWA_PAS_DENSITY",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "The quick look proton density data from PAS",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_PAS_VELOCITY",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "The quick look proton velocity from PAS",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SWA_PAS_PRESSURE",
+      "type": "double",
+      "units": "eV cm^-3",
+      "description": "The quick look proton pressure data from PAS",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-08-19T16:03:47.000Z",
+  "stopDate": "2026-02-17T15:43:19.000Z"
+}

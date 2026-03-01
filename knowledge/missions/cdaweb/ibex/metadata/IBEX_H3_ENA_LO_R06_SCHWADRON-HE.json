@@ -1,0 +1,53 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Start_Time_GPS",
+      "type": "double",
+      "units": "sec",
+      "description": "Start time of the 512 spin bin in GPS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "End_Time_GPS",
+      "type": "double",
+      "units": "sec",
+      "description": "End time of the 512 spin bin in GPS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Total_Time",
+      "type": "double",
+      "units": "sec",
+      "description": "Total time (sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HB_Counts",
+      "type": "double",
+      "units": "#",
+      "description": "Counts in the Hydrogen histogram bins",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "DE_Counts",
+      "type": "double",
+      "units": "#",
+      "description": "Counts listed as GOLDEN HYDROGEN in the direct events",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    }
+  ],
+  "startDate": "2009-01-21T22:10:27.000Z",
+  "stopDate": "2010-02-28T06:21:40.000Z"
+}

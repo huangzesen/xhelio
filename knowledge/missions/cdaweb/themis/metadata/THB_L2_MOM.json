@@ -1,0 +1,543 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thb_peim_data_quality",
+      "type": "integer",
+      "units": "0 = Good",
+      "description": "Ion Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thb_peim_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA On Board Moment (MOM) Ion Density, THEMIS-B",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peim_ptotQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Total Pressure",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peim_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peim_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s)",
+      "description": "-----Ion Energy Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peim_magQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_magQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector, Field Aligned",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_t3_magQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_ptens_magQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor, Field Aligned",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_data_quality",
+      "type": "integer",
+      "units": "0 = Good",
+      "description": "Electron Moment Data Quality (0: good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/mom_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thb_peem_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA On Board Moment (MOM) Electron Density, THEMIS-B",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peem_ptotQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Total Pressure",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peem_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s)",
+      "description": "-----Electron Energy Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_magQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_magQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector, Field Aligned",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_t3_magQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_ptens_magQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Pressure Tensor, Field Aligned",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peim_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA On Board Moment (MOM) Ion Density, THEMIS-B",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peim_ptot",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Total Pressure",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peim_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peim_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s) (All Qs)",
+      "description": "-----Ion Energy Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peim_mag",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector DSL (Same time array as MOM Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_velocity_mag",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector, Field Aligned",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_t3_mag",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peim_ptens_mag",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor, Field Aligned",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All Qualities data) ESA On Board Moment (MOM) Electron Density, THEMIS-B",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peem_ptot",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Total Pressure",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_peem_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s) (All Qs)",
+      "description": "-----Electron Energy Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_peem_mag",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector DSL (Same time array as MOM Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_velocity_mag",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector, Field Aligned",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_t3_mag",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peem_ptens_mag",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor, Field Aligned",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thb_pxxm_pot",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft Potential, THEMIS-B",
+      "fill": "nan"
+    },
+    {
+      "name": "thb_eesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "thb_iesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2007-08-10T00:00:00.000Z",
+  "stopDate": "2026-02-18T00:00:00.000Z"
+}

@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "Year.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Day of year.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Universal Time of day represented as milliseconds after 00:00:00.000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "PVO orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "Nominal time tag assigned by project (usual value ranging of the       \n       day from -1800 to 1800 in increments of 12)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_HE",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Number density of He part/cc",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_N",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Number density of N part/cc",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_O",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Number density of O (oxygen) part/cc",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_N2",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Number density of N2 (diatomic nitrogen) Particles/cm**3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_CO",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Number density of CO Particles/cm**3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_CO2",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Total density of CO2 Particles/cm**3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS_DEN",
+      "type": "double",
+      "units": "g/cm**3",
+      "description": "Total mass density g/cm**3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUM_DEN",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Total number density Particles/cm**3",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

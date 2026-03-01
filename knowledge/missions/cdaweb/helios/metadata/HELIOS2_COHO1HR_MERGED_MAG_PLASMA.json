@@ -1,0 +1,201 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "Au",
+      "description": "Heliocentric Distance (start of data interval)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLongitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HGI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sepAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Earth-Sun-Helios2 separation angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "BX in SSE (Sun-centered Solar Ecliptic) coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "BY in SSE coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "BZ in SSE coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "BR in RTN (Radial-Tangential-Normal) coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "BT in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B-Field magnitude (average of fine scale field magnitudes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flowSpeed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton flow speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elevAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow elevation angle / latitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "azimuthAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow azimuth angle / longitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonDensity",
+      "type": "double",
+      "units": "N/cm3",
+      "description": "Proton density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonTemp",
+      "type": "double",
+      "units": "deg K",
+      "description": "Proton temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_E6",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 4.0 - 13.0, MeV, E6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_E6",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 13.0 - 27.0, MeV, E6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_E6",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 27.0 - 37.0, MeV, E6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_E6",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 37.0 - 51.0, MeV, E6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 3.42 - 5.40, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 6.40-11.95, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 11.1 - 21.6, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 24.59 - 28.74, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux5_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 32.20 - 45.93, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux6_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 45.93 - 57.56, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux7_E7",
+      "type": "double",
+      "units": "1/(sec-cm**2-ster-MeV)",
+      "description": "Proton Flux 143.2 - 204.5, MeV, E7",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1976-01-01T00:00:00.000Z",
+  "stopDate": "1980-12-31T23:00:00.000Z"
+}

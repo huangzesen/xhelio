@@ -1,0 +1,56 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "OB_B",
+      "type": "double",
+      "units": "nT",
+      "description": "OUTBOARD B J2000",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "OB_B_range",
+      "type": "double",
+      "units": "",
+      "description": "---> OUTBOARD B J2000 range",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "POSN",
+      "type": "double",
+      "units": "km",
+      "description": "SC position",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "OB_BDPL",
+      "type": "double",
+      "units": "nT",
+      "description": "OUTBOARD BD PAYLOAD",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "OB_BDPL_range",
+      "type": "double",
+      "units": "",
+      "description": "---> OUTBOARD BD PAYLOAD range",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2014-10-10T00:00:00.000Z",
+  "stopDate": "2025-11-15T00:00:00.000Z"
+}

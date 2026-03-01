@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM X component of the magnetic-field in nT.                            \n      X points from Saturn to the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM Y component of the magnetic-field in nT.                            \n      Y is perpendicular to the magnetic dipole (Omega) and the               \n      Saturn-Sun direction (Omega x X).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM Z component of the magnetic-field in nT.                            \n      Z is defined such that the X-Z plane contains Saturn's centered         \n      magnetic dipole axis (M).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the full-resolution magnetic-field magnitudes          \n      calculated over the averaging interval in nT. Note that this value      \n      may differ slightly from the square root of the sum of the squares      \n      of the averaged field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

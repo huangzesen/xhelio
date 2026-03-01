@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l3_merged_scam_wf_uvw",
+      "type": "double",
+      "units": "nT",
+      "description": "L3 Magnetic Field from Merged MAG and SCM in SCM sensor (uvw) coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_merged_scam_wf_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "L3 Magnetic Field from Merged MAG and SCM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_merged_scam_wf_RTN",
+      "type": "double",
+      "units": "nT",
+      "description": "L3 Magnetic Field from Merged MAG and SCM in RTN coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "T_UNIX",
+      "type": "double",
+      "units": "Second",
+      "description": "Unix time (number of seconds elapsed since 1970-01-01/00:00:00) \n                        derived from SCLK.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "Orbit number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R_T",
+      "type": "double",
+      "units": "km",
+      "description": "Tangent radius of observation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALT_IAU",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude geodetic IAU coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LST",
+      "type": "double",
+      "units": "Hour",
+      "description": "Local solar time of observation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Latitude.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LONG",
+      "type": "double",
+      "units": "Degree",
+      "description": "East Longitude.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Number of CO2 molecules per cubic centimeter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_ACC",
+      "type": "double",
+      "units": "",
+      "description": "Density accuracy, percent of DEN..",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN_PREC",
+      "type": "double",
+      "units": "",
+      "description": "Density precision, percent of DEN.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP",
+      "type": "double",
+      "units": "K",
+      "description": "Temperature determined from Bates fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP_ACC",
+      "type": "double",
+      "units": "",
+      "description": "Temperature accuracy, percent of TEMP.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP_PREC",
+      "type": "double",
+      "units": "",
+      "description": "Temperature precision, percent of TEMP.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "L1_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "Version of Level 1 source data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "L1_REVISION",
+      "type": "double",
+      "units": "",
+      "description": "Revision of Level 1 source data version.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

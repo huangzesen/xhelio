@@ -1,0 +1,110 @@
+{
+  "_comment": "Copy to ~/.xhelio/config.json and edit. All fields are optional — defaults shown.",
+
+  "_comment_data_dir": "Base directory for all agent state (logs, sessions, memory, caches). Override with XHELIO_DIR env var (highest priority) or this key. Default: ~/.xhelio",
+  "data_dir": null,
+
+  "_comment_llm_provider": "LLM provider: 'gemini', 'openai', or 'anthropic'. Flip this to switch — model names are stored per-provider in the 'providers' section below.",
+  "llm_provider": "gemini",
+  "_comment_api_keys": "API keys are ALWAYS read from .env (never from this file). Set the key for your provider: GOOGLE_API_KEY, OPENAI_API_KEY, or ANTHROPIC_API_KEY. For web search with non-Gemini providers, also set TAVILY_API_KEY.",
+
+  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model, planner_model, fallback_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
+  "providers": {
+    "gemini": {
+      "base_url": null,
+      "model": "gemini-3-flash-preview",
+      "sub_agent_model": "gemini-2.5-flash",
+      "insight_model": "gemini-2.5-flash",
+      "inline_model": "gemini-2.5-flash-lite",
+      "planner_model": "gemini-3-flash-preview",
+      "fallback_model": "gemini-2.5-flash",
+      "thinking_model": "high",
+      "thinking_sub_agent": "low"
+    },
+    "openai": {
+      "_comment": "Use 'openai' provider for any OpenAI-compatible API: OpenRouter, DeepSeek, Ollama, etc. Set base_url and model names to match your provider.",
+      "base_url": "",
+      "model": "",
+      "sub_agent_model": "",
+      "insight_model": "",
+      "inline_model": "",
+      "planner_model": "",
+      "fallback_model": ""
+    },
+    "anthropic": {
+      "base_url": "https://api.minimaxi.com/anthropic",
+      "model": "MiniMax-M2.5-highspeed",
+      "sub_agent_model": "MiniMax-M2.5-highspeed",
+      "insight_model": "MiniMax-M2.5-highspeed",
+      "inline_model": "MiniMax-M2.1",
+      "planner_model": "MiniMax-M2.5-highspeed",
+      "fallback_model": "MiniMax-M2.5-highspeed"
+    }
+  },
+
+  "_comment_data_backend": "Data backend. Only 'cdf' (CDAWeb REST + cdflib) is supported.",
+  "data_backend": "cdf",
+
+  "_comment_catalog_search_method": "Options: 'semantic' (fastembed cosine similarity, default) or 'substring' (case-insensitive multi-word match). Falls back to substring if fastembed is not installed.",
+  "catalog_search_method": "semantic",
+
+  "_comment_parallel_fetch": "Enable parallel data fetching. When true, multiple CDF file downloads, tool calls, and plan tasks run concurrently via thread pools. parallel_max_workers controls the max thread count per pool.",
+  "parallel_fetch": true,
+  "parallel_max_workers": 4,
+
+  "_comment_max_plot_points": "Maximum data points per trace before stride-decimation kicks in. Traces with more points than this are plotted as every Nth point. Higher values give more detail but slower rendering and larger figure JSON. Datasets over 100K original points also switch to WebGL (scattergl).",
+  "max_plot_points": 10000,
+
+  "_comment_prefer_viz_backend": "Visualization backend. 'matplotlib' (static, publication-quality, default), 'plotly' (interactive), or 'jsx' (React/Recharts dashboards).",
+  "prefer_viz_backend": "matplotlib",
+
+  "_comment_memory_limits": "memory_token_budget is the global token cap for all memory injection. The budget controls how many entries are included — no per-type caps.",
+  "memory_token_budget": 100000,
+
+  "_comment_memory": "Memory extraction: a MemoryAgent sees full session context (conversation, ops, events) and outputs add/edit/drop actions on scoped memories. memory_extraction_interval: trigger every N user turns (0 to disable). Runs async on a daemon thread using inline_model.",
+  "memory_extraction_interval": 2,
+
+  "_comment_ops_library": "Max saved operations in the custom_ops_library. Least-used entries are evicted when full.",
+  "ops_library_max_entries": 50,
+
+  "_comment_history_budget": "Token budget for the pull-based orchestrator event feed. Controls how much session history context is available to the orchestrator.",
+  "history_budget_orchestrator": 40000,
+
+  "_comment_console_format": "Options: 'simple' (bare messages for DEBUG/INFO, [LEVEL] prefix for WARNING+, default), 'full' (timestamp + level + name + session_id + message), 'gui' (curated tagged records only — mirrors web UI live-log sidebar), 'clean' (no console output at all, file logging still active).",
+  "console_format": "simple",
+
+  "_comment_reasoning": "Agent reasoning features. observation_summaries: inject human-readable summaries into tool results for better LLM reasoning. self_reflection: add reflection hints on errors to steer LLM toward alternatives. show_thinking: display LLM thinking tokens in the UI (always logged to file).",
+  "reasoning": {
+    "observation_summaries": true,
+    "self_reflection": true,
+    "show_thinking": false,
+    "insight_feedback": false,
+    "insight_feedback_max_iterations": 2,
+    "async_delegation": true,
+    "turnless_mode": true,
+    "pipeline_confirmation": true
+  },
+
+  "_comment_turn_limits": "Override agent loop limits. Keys: orchestrator.max_iterations (200), orchestrator.max_total_calls (400), orchestrator.dup_free_passes (2), orchestrator.dup_hard_block (8), orchestrator.task.max_iterations (10), orchestrator.task.max_total_calls (20), sub_agent.max_iterations (20), sub_agent.max_total_calls (40), sub_agent.dup_free_passes (3), sub_agent.dup_hard_block (10), sub_agent.task.max_iterations (12), sub_agent.task.max_total_calls (25), think.max_iterations (12), think.max_total_calls (25), planner.max_rounds (10). See agent/turn_limits.py DEFAULTS for the full list.",
+  "turn_limits": {},
+
+  "_comment_sandbox": "Sandbox permissions for custom_operation code validation. allowed_attrs: attribute names to permit even if they appear in the default blocklist (e.g. [\"eval\", \"query\"]). extra_blocked_attrs: additional attribute names to block beyond the defaults. See data_ops/custom_ops.py for the default blocklists.",
+  "sandbox": {
+    "allowed_attrs": [],
+    "extra_blocked_attrs": []
+  },
+
+  "_comment_interactions_api": "Use Gemini Interactions API for server-side conversation state. Eliminates quadratic context growth where a 39-turn session consumed 4.6M input tokens. With Interactions API, each call sends only the new input (~17-22K tokens constant). Falls back to Chat API if interactions fail. Only used with Gemini provider.",
+  "use_interactions_api": true,
+
+  "_comment_truncation": "Override truncation limits. Keys are named limits defined in agent/truncation.py. Values are integers (char count for text, item count for items). Set to 0 to disable truncation for that key. Text limits include: console.* (display), history.* (event feed), memory.* (extraction), context.* (LLM context: context.document=50000, context.dataset_docs=4000, context.turn_text=300, context.discovery_search=500, context.param_description=60, context.mission_example=57, context.task_outcome_error=100, context.session_preview=40), output.* (output tokens: output.reflection_tokens=100, output.inline_tokens=100). Item limits include: items.parameters=10, items.catalog_functions=8, items.check_events=200, items.query_event_log=100, items.data_preview_rows=50, items.data_sample_points=20, items.follow_up_turns=6, items.inline_turns=4, items.sessions_shown=10, items.api_data_preview=10, items.api_input_history=200. See agent/truncation.py DEFAULTS and ITEM_DEFAULTS for the full list.",
+  "truncation": {},
+  "truncation_items": {},
+
+  "_comment_spice": "SPICE ephemeris settings. kernel_dir: override kernel cache location (default: {data_dir}/spice_kernels). auto_download: fetch kernels from NAIF on first use. max_cache_gb: soft limit on kernel cache size.",
+  "spice": {
+    "kernel_dir": null,
+    "auto_download": true,
+    "max_cache_gb": 5.0
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_comp",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BB_comp",
+      "type": "double",
+      "units": "nT^2",
+      "description": "magnetic field crossproduct matrix",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "B_dir",
+      "type": "double",
+      "units": "",
+      "description": "magnetic field direction vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_mag",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field magnitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B2_avg",
+      "type": "double",
+      "units": "nT^2",
+      "description": "average of magnetic field square",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_pos",
+      "type": "double",
+      "units": "Re",
+      "description": "S/C coordinates, GSE",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_r",
+      "type": "double",
+      "units": "AU",
+      "description": "S/C helio-distance",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C helio-latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_long",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C helio-longitude",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1978-08-01T00:00:00.000Z",
+  "stopDate": "1990-12-31T23:59:00.000Z"
+}

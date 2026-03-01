@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ni",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ion density from Ion Trap [PRELIMINARY, for BROWSE PURPOSES ONLY]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ni_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Standard deviation (STD) of 1-sec ion density [PRELIMINARY, for BROWSE PURPOSES ONLY.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dN_N",
+      "type": "double",
+      "units": "",
+      "description": "(STD of detrended Ni)/(mean of Ni) for 1-sec interval [PRELIMINARY, for BROWSE PURPOSES ONLY]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_electron",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Electron density from Langmuir Probe [PRELIMINARY, for BROWSE PURPOSES ONLY.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Te",
+      "type": "double",
+      "units": "Kelvin",
+      "description": "Electron temperature from Langmuir Probe [PRELIMINARY, for BROWSE PURPOSES ONLY.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SC_POT",
+      "type": "double",
+      "units": "Volts",
+      "description": "Spacecraft potential in Volts [PRELIMINARY, for BROWSE PURPOSES ONLY.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geodetic Latitdue in degree (WGS84 spheroid)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Geodetic Longitude in degree (WGS84 spheroid)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ALT",
+      "type": "double",
+      "units": "km",
+      "description": "Geodetic Altitude in km (WGS84 spheroid)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Local apparent solar time in decimal hours",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ni_quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Ion density quality flag [not yet defined]",
+      "fill": "255.0"
+    },
+    {
+      "name": "Te_quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Electron temperature quality flag [not yet defined]",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2008-11-01T00:00:00.000Z",
+  "stopDate": "2010-11-21T23:59:58.000Z"
+}

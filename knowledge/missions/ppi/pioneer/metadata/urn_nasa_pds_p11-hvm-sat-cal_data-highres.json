@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX_PE",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of magnetic field in PE coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "BY_PE",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of magnetic field in PE coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "BZ_PE",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of magnetic field in PE coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

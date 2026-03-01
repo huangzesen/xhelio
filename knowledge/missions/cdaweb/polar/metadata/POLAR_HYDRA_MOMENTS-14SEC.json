@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DENSITY_ELE",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Electron Moment Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BULK_VELOCITY_ELE",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron Bulk_Velocity in km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TPARL_ELE",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron Moment Parallel Mean Energy in eV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TPERP_ELE",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron Moment Perpendicular Mean Energy in eV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DENSITY_ION",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Ion Moment Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BULK_VELOCITY_ION",
+      "type": "double",
+      "units": "km/s",
+      "description": "Ion Bulk_Velocity in km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TPARL_ION",
+      "type": "double",
+      "units": "eV",
+      "description": "Ion Moment Parallel Mean Energy in eV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TPERP_ION",
+      "type": "double",
+      "units": "eV",
+      "description": "Ion Moment Perpendicular Mean Energy in eV",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-20T14:38:27.000Z",
+  "stopDate": "2008-04-15T21:00:18.000Z"
+}

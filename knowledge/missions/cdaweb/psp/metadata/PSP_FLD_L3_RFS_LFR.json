@@ -1,0 +1,3191 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch0: V1V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Auto Spectra, Ch0: V1V2 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V3V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V3V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V2_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V2 antenna(s) in RTN frame for times when V1V2 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V4_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V4 antenna(s) in RTN frame for times when V3V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_solar_distance",
+      "type": "double",
+      "units": "Rs",
+      "description": "Distance from the solar center for PSP spacecraft in units of solar radii (Rs).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_HCI",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in HCI frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_HEE",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in HEE frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_PSD_FLUX",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Flux Density (Stokes I) data, from cross dipole measurements.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_PSD_SFU",
+      "type": "double",
+      "units": "sfu",
+      "description": "LFR Flux Density (Stokes I) data, from cross dipole measurements, normalized to 1 AU.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_STOKES_V",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Circular Polarization (Stokes V) data, normalized to Stokes I.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch0: V1V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch0: V1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V1_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch0: V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch0_V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Auto Spectra, Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_averages_ch1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch0: V1V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V2_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Peak Spectra, Ch0: V1V2 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch0: V1V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch0: V1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V1_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch0: V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch0_V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Peak Spectra, Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_auto_peaks_ch1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch0: V1V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V2_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch0: V1V2 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch0: V1V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch0: V1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V1_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch0: V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch0_V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Auto Spectra, Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_averages_ch1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Auto Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch0: V1V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V2_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch0: V1V2 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch0: V1V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch0: V1V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch0: V1V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch0: V1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V1_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch0: V1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V3",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch0: V3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V3_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V3_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch0_V3_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch0: V3",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR HiRes Peak Spectra, Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR HiRes Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR HiRes Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_hires_peaks_ch1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR HiRes Peak Spectra, Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V2_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_im_V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Imag Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V3V4_flux",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V3V4 in units of flux density (W/m^2/Hz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V2_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V1 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V1V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V2",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V4",
+      "type": "double",
+      "units": "Volts^2/Hz",
+      "description": "LFR Cross Spectra Real Part, Ch0: V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_cross_re_V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Spectra Real Part, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1V2 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V2_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V1V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V2",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V2",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1 Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V2",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V1 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V1V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V2",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V4",
+      "type": "double",
+      "units": "None",
+      "description": "LFR Cross Coherence, Ch0: V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Coherence, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Coherence, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_coher_V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Coherence, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1V2 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1V2 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V2_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1V2 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V1V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V2",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1 Ch1: V3V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1 Ch1: V3V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V2",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1 Ch1: V3V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V3V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1 Ch1: V3V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V2",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V1 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V1_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V1 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V1V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V3 Ch1: V1V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V1V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V1V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V1V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V3 Ch1: V1V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V2",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V3 Ch1: V2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V2_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V2_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V2_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V3 Ch1: V2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V4",
+      "type": "double",
+      "units": "Degrees",
+      "description": "LFR Cross Phase, Ch0: V3 Ch1: V4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V4_gain",
+      "type": "integer",
+      "units": "None",
+      "description": "Gain flag for LFR Cross Phase, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V4_nsum",
+      "type": "integer",
+      "units": "None",
+      "description": "N summed spectra for LFR Cross Phase, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_phase_V3_V4_hl",
+      "type": "integer",
+      "units": "None",
+      "description": "Overrange flag for LFR Cross Phase, Ch0: V3 Ch1: V4",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V2_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V2 antenna(s) in J2000 frame for times when V1V2 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V2_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V2 antenna(s) in IAU_JUPITER frame for times when V1V2 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V2_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch0 V1V2 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V3_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V3 antenna(s) in RTN frame for times when V1V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V3_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V3 antenna(s) in J2000 frame for times when V1V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V3_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V3 antenna(s) in IAU_JUPITER frame for times when V1V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1V3_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch0 V1V3 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1 antenna(s) in RTN frame for times when V1 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1 antenna(s) in J2000 frame for times when V1 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1 antenna(s) in IAU_JUPITER frame for times when V1 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V1_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch0 V1 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V3_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3 antenna(s) in RTN frame for times when V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V3_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3 antenna(s) in J2000 frame for times when V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V3_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3 antenna(s) in IAU_JUPITER frame for times when V3 spectra were recorded in LFR ch0.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch0_V3_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch0 V3 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V4_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V4 antenna(s) in J2000 frame for times when V3V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V4_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V4 antenna(s) in IAU_JUPITER frame for times when V3V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V4_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch1 V3V4 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V2_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V2 antenna(s) in RTN frame for times when V3V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V2_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V2 antenna(s) in J2000 frame for times when V3V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V2_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V3V2 antenna(s) in IAU_JUPITER frame for times when V3V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V3V2_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch1 V3V2 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V1V4_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V4 antenna(s) in RTN frame for times when V1V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V1V4_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V4 antenna(s) in J2000 frame for times when V1V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V1V4_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V1V4 antenna(s) in IAU_JUPITER frame for times when V1V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V1V4_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch1 V1V4 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V2_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V2 antenna(s) in RTN frame for times when V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V2_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V2 antenna(s) in J2000 frame for times when V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V2_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V2 antenna(s) in IAU_JUPITER frame for times when V2 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V2_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch1 V2 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V4_RTN",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V4 antenna(s) in RTN frame for times when V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V4_J2000",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V4 antenna(s) in J2000 frame for times when V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V4_IAU_JUPITER",
+      "type": "double",
+      "units": "None",
+      "description": "Unit vector for V4 antenna(s) in IAU_JUPITER frame for times when V4 spectra were recorded in LFR ch1.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_ch1_V4_bias",
+      "type": "double",
+      "units": "uA",
+      "description": "LFR ch1 V4 bias current",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_HAE",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in HAE frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_HEEQ",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in HEEQ frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_HG",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in HG frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_IAU_JUPITER",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in IAU_JUPITER frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_position_RTN",
+      "type": "double",
+      "units": "km",
+      "description": "Position vector for PSP spacecraft in RTN frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_temperature_PA1",
+      "type": "double",
+      "units": "C",
+      "description": "Temperature PA1.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_temperature_PA2",
+      "type": "double",
+      "units": "C",
+      "description": "Temperature PA2.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_temperature_PA3",
+      "type": "double",
+      "units": "C",
+      "description": "Temperature PA3.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_temperature_PA4",
+      "type": "double",
+      "units": "C",
+      "description": "Temperature PA4.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l3_rfs_lfr_temperature_DCB",
+      "type": "double",
+      "units": "C",
+      "description": "Temperature DCB.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

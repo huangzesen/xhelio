@@ -1,0 +1,383 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "vx",
+      "type": "double",
+      "units": "m/s",
+      "description": "Vx - median filtered and smoothed ion flow in the ram direction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vxqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> Vx quality flag [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "vxrms",
+      "type": "double",
+      "units": "",
+      "description": "----> Vx root mean square of the RPA fit",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vxraw",
+      "type": "double",
+      "units": "m/s",
+      "description": "Vx - original unfiltered Vx flow",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vy",
+      "type": "double",
+      "units": "m/s",
+      "description": "Vy - ion flow in the horizontal crosstrack direction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vyqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for Vy data [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "vyrms",
+      "type": "double",
+      "units": "m/s",
+      "description": "----> standard deviation of the Vy flow",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmhrough",
+      "type": "double",
+      "units": "",
+      "description": "----> roughness parameter of Vy",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vz",
+      "type": "double",
+      "units": "m/s",
+      "description": "Vz - ion flow in the vertical crosstrack direction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vzqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for Vz data [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "vzrms",
+      "type": "double",
+      "units": "m/s",
+      "description": "----> standard deviation of the Vz flow",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmvrough",
+      "type": "double",
+      "units": "",
+      "description": "----> roughness parameter of Vz (delta Vz / averaged Vz)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "temp",
+      "type": "double",
+      "units": "deg k",
+      "description": "ion temperature",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "tempqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> Quality flag for the ion temperature [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "te",
+      "type": "double",
+      "units": "deg k",
+      "description": "electron temperature",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dens",
+      "type": "double",
+      "units": "Ions/cc",
+      "description": "Ni calculated from the RPA",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "densqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for the ion density [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "ductdens",
+      "type": "double",
+      "units": "ions/cc",
+      "description": "Ni from scintillation meter",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ductdensrough",
+      "type": "double",
+      "units": "",
+      "description": "----> roughness parameter of SM density",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dens0v",
+      "type": "double",
+      "units": "ions/cc",
+      "description": "Ni measured from the RPA at 0 volts",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmdens",
+      "type": "double",
+      "units": "ions/cc",
+      "description": "Ni from the IDM",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "frach",
+      "type": "double",
+      "units": "",
+      "description": "fractional amount of H+ ions in plasma",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "frachqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for fractional H+ [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "frache",
+      "type": "double",
+      "units": "",
+      "description": "fractional amount of He+ ions in plasma",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "frachequal",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for fractional He+ [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "fraco",
+      "type": "double",
+      "units": "",
+      "description": "fractional amount of O+ ions in plasma",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "fracoqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "----> quality flag for fractional O+ [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "ebm",
+      "type": "double",
+      "units": "Amps",
+      "description": "electron background monitor - high energy particle currents detected by the RPA",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "corrpaqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "Overall quality flag for RPA data [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "rpainfo",
+      "type": "integer",
+      "units": "retarding potential: 1-increasing,2-decreasing",
+      "description": "flag for RPA sweep direction [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "geographical latitude",
+      "fill": null
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "geographic east longitude",
+      "fill": null
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "magnetic latitude, mapped to 120 km",
+      "fill": null
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hour and decimal hour",
+      "description": "magnetic local time, mapped to 120 km",
+      "fill": null
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "deg",
+      "description": "solar zenith angle",
+      "fill": null
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "altitude",
+      "fill": null
+    },
+    {
+      "name": "mlat_tt",
+      "type": "double",
+      "units": "deg",
+      "description": "[Labels on plots] magnetic latitude, mapped to 120 km",
+      "fill": null
+    },
+    {
+      "name": "mlt_tt",
+      "type": "double",
+      "units": "hour and decimal hour",
+      "description": "[Labels on plots] magnetic local time, mapped to 120 km",
+      "fill": null
+    },
+    {
+      "name": "glat_tt",
+      "type": "double",
+      "units": "deg",
+      "description": "[Labels on plots] geographical latitude",
+      "fill": null
+    },
+    {
+      "name": "glon_tt",
+      "type": "double",
+      "units": "deg",
+      "description": "[Labels on plots] geographic east longitude",
+      "fill": null
+    },
+    {
+      "name": "sza_tt",
+      "type": "double",
+      "units": "deg",
+      "description": "[Labels on plots] solar zenith angle",
+      "fill": null
+    },
+    {
+      "name": "alt_tt",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] altitude",
+      "fill": null
+    },
+    {
+      "name": "nmbot",
+      "type": "double",
+      "units": "1-slow mode,6-normal mode",
+      "description": "number of data points in the Vy - Vz average",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "idmqual",
+      "type": "integer",
+      "units": "1,6-good;2,7-fair;else warn",
+      "description": "overall quality flag for the IDM data [READ QUALITY FLAG Document: link below]",
+      "fill": null
+    },
+    {
+      "name": "scvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "spacecraft velocity",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "rpaground",
+      "type": "double",
+      "units": "deg k",
+      "description": "potential difference between SSIES instruments and spacecraft ground",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "pot",
+      "type": "double",
+      "units": "volts",
+      "description": "potential of the SSIES instruments relative to the plasma ground",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "bx",
+      "type": "double",
+      "units": "nT",
+      "description": "north component of Earths magnetic field (IGRF)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "by",
+      "type": "double",
+      "units": "nT",
+      "description": "east component of Earths magnetic field (IGRF)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "bz",
+      "type": "double",
+      "units": "nT",
+      "description": "vertical downward component of Earths magnetic field (IGRF)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "corvelx",
+      "type": "double",
+      "units": "m/s",
+      "description": "corotation velocity of ionosphere in the ram direction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "corvely",
+      "type": "double",
+      "units": "m/s",
+      "description": "corotation velocity of ionosphere in the horizontal crosstrack direction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "corvelz",
+      "type": "double",
+      "units": "m/s",
+      "description": "corotation velocity of ionosphere in the vertical direction",
+      "fill": "-999999.0"
+    }
+  ],
+  "startDate": "2009-10-22T16:31:30.000Z",
+  "stopDate": "2025-08-01T23:23:56.000Z"
+}

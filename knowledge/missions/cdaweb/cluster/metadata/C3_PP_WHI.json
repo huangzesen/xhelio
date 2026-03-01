@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C3_PP_WHI",
+      "type": "integer",
+      "units": "",
+      "description": "WHISPER status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "State_wec__C3_PP_WHI",
+      "type": "integer",
+      "units": "",
+      "description": "WEC status",
+      "fill": "255.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "N_e_res__C3_PP_WHI",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Preliminary electron Density derived from plasma frequency recognition (consult quality flag and PI before use)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_e_res_qual__C3_PP_WHI",
+      "type": "integer",
+      "units": "",
+      "description": "Quality of the resonance recognition, Degree of confidence between 0 and 100",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "E_pow_f4__C3_PP_WHI",
+      "type": "double",
+      "units": "V^2 m^-2 Hz^-1",
+      "description": "E-field Spectral Density, Freq range 4-10 kHz from WHISPER natural noise analyser",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_pow_f5__C3_PP_WHI",
+      "type": "double",
+      "units": "V^2 m^-2 Hz^-1",
+      "description": "E-field spectral density, Freq range 10-20 kHz from WHISPER natural noise analyser",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_pow_f6__C3_PP_WHI",
+      "type": "double",
+      "units": "V^2 m^-2 Hz^-1",
+      "description": "E-field spectral density, Freq range 20-80 kHz from WHISPER natural nopise analyser",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_var_ts__C3_PP_WHI",
+      "type": "double",
+      "units": "",
+      "description": "Normalized standard deviation of E power in 2-80 kHz range from time samples",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-10T00:00:02.000Z",
+  "stopDate": "2012-12-31T23:59:54.000Z"
+}

@@ -1,0 +1,201 @@
+{
+  "id": "JUNO_PPI",
+  "name": "Juno (PDS PPI)",
+  "keywords": [
+    "juno",
+    "juno_ppi",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "Juno data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "ASC": {
+      "name": "ASC",
+      "keywords": [],
+      "datasets": {
+        "pds3:JNO-J-ASC-2-IMG-V1.0:DATA": {
+          "description": "JUNO ASC RAW IMAGES : DATA",
+          "start_date": "2021-07-20",
+          "stop_date": "2025-07-11",
+          "slot": "/data/JNO-J-ASC-2-IMG-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-J-ASC-3-RAD-V1.0:DATA": {
+          "description": "JUNO ASC CALIBRATED RADIATION FLUX : DATA",
+          "start_date": "2021-07-20",
+          "stop_date": "2025-07-11",
+          "slot": "/data/JNO-J-ASC-3-RAD-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "JADE": {
+      "name": "JADE",
+      "keywords": [],
+      "datasets": {
+        "pds3:JNO-SW-JAD-2-UNCALIBRATED-V1.0": {
+          "description": "JUNO JADE UNCALIBRATED CRUISE SCIENCE DATA",
+          "start_date": "2011-10-20",
+          "stop_date": "2014-01-28",
+          "slot": "/data/JNO-SW-JAD-2-UNCALIBRATED-V1.0",
+          "archive_type": 3
+        },
+        "pds3:JNO-J/SW-JAD-2-UNCALIBRATED-V1.0:DATA": {
+          "description": "JUNO JADE UNCALIBRATED SCIENCE DATA : DATA",
+          "start_date": "2015-03-30",
+          "stop_date": "2025-07-13",
+          "slot": "/data/JNO-J_SW-JAD-2-UNCALIBRATED-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-J-JAD-5-MOMENTS-V1.0:DATA": {
+          "description": "JUNO JADE DERIVED MOMENTS SCIENCE DATA : DATA",
+          "start_date": "2015-03-31",
+          "stop_date": "2025-01-09",
+          "slot": "/data/JNO-J-JAD-5-MOMENTS-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-J/SW-JAD-3-CALIBRATED-V1.0:DATA": {
+          "description": "JUNO JADE CALIBRATED SCIENCE DATA : DATA",
+          "start_date": "2015-03-31",
+          "stop_date": "2024-09-22",
+          "slot": "/data/JNO-J_SW-JAD-3-CALIBRATED-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-J/SW-JAD-5-CALIBRATED-V1.0:DATA": {
+          "description": "JUNO JADE DERIVED SCIENCE DATA : DATA",
+          "start_date": "2015-03-31",
+          "stop_date": "2025-01-12",
+          "slot": "/data/JNO-J_SW-JAD-5-CALIBRATED-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-SW-JAD-2-UNCALIBRATED-V1.0:DATA": {
+          "description": "JUNO JADE UNCALIBRATED CRUISE SCIENCE DATA : DATA",
+          "start_date": "2011-10-20",
+          "stop_date": "2014-01-28",
+          "slot": "/data/JNO-SW-JAD-2-UNCALIBRATED-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "JEDI": {
+      "name": "JEDI",
+      "keywords": [],
+      "datasets": {
+        "pds3:JNO-J-JED-2-EDR-V1.0:DATA": {
+          "description": "JUNO JEDI JUPITER STANDARD RAW PRODUCTS : DATA",
+          "start_date": "2016-01-05",
+          "stop_date": "2025-07-14",
+          "slot": "/data/JNO-J-JED-2-EDR-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-J-JED-3-CDR-V1.0:DATA": {
+          "description": "JUNO JEDI JUPITER STANDARD CALIBRATED PRODUCTS : DATA",
+          "start_date": "2016-07-06",
+          "stop_date": "2025-07-13",
+          "slot": "/data/JNO-J-JED-3-CDR-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "pds3:JNO-SS-3-FGM-CAL-V1.0": {
+          "description": "JUNO MAGNETOMETER CRUISE ARCHIVE",
+          "start_date": "2011-08-23",
+          "stop_date": "2016-06-29",
+          "slot": "/data/JNO-SS-3-FGM-CAL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:JNO-J-3-FGM-CAL-V1.0:DATA": {
+          "description": "JUNO MAGNETOMETER JUPITER ARCHIVE : DATA",
+          "start_date": "2016-07-08",
+          "stop_date": "2025-07-27",
+          "slot": "/data/JNO-J-3-FGM-CAL-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:JNO-SS-3-FGM-CAL-V1.0:DATA": {
+          "description": "JUNO MAGNETOMETER CRUISE ARCHIVE : DATA",
+          "start_date": "2011-08-23",
+          "stop_date": "2016-06-29",
+          "slot": "/data/JNO-SS-3-FGM-CAL-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "Waves": {
+      "name": "Waves",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:juno_waves_electron-density:data_io": {
+          "description": "Juno Waves Electron Densities, Io Data Collection",
+          "start_date": "2023-12-30",
+          "stop_date": "2024-02-04",
+          "slot": "/data/juno-waves-electron-density/data_io",
+          "archive_type": 4
+        },
+        "pds3:JNO-E/J/SS-WAV-3-CDR-BSTFULL-V2.0:DATA": {
+          "description": "JUNO WAVES BURST STANDARD SCIENCE PRODUCTS : DATA",
+          "start_date": "2011-08-09",
+          "stop_date": "2025-07-27",
+          "slot": "/data/JNO-E_J_SS-WAV-3-CDR-BSTFULL-V2.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:juno_waves_electron-density:data_ganymede": {
+          "description": "Juno Waves Electron Densities, Ganymede Data Collection",
+          "start_date": "2021-06-07",
+          "stop_date": "2021-06-08",
+          "slot": "/data/juno-waves-electron-density/data_ganymede",
+          "archive_type": 4
+        },
+        "pds3:JNO-E/J/SS-WAV-2-EDR-V1.0:DATA": {
+          "description": "VOLUME 0000: JUNO WAVES STANDARD RAW PRODUCTS : DATA",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/JNO-E_J_SS-WAV-2-EDR-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:juno_waves_electron-density:data_europa": {
+          "description": "Juno Waves Electron Densities, Europa Data Collection",
+          "start_date": "2022-09-29",
+          "stop_date": "2022-09-30",
+          "slot": "/data/juno-waves-electron-density/data_europa",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:juno_waves_electron-density:data_jupiter": {
+          "description": "Juno Waves Electron Densities, Jupiter Data Collection",
+          "start_date": "2016-08-27",
+          "stop_date": "2024-03-08",
+          "slot": "/data/juno-waves-electron-density/data_jupiter",
+          "archive_type": 4
+        },
+        "pds3:JNO-E/J/SS-WAV-3-CDR-SRVFULL-V2.0:DATA": {
+          "description": "JUNO WAVES SURVEY STANDARD SCIENCE PRODUCTS : DATA",
+          "start_date": "2011-08-09",
+          "stop_date": "2025-07-28",
+          "slot": "/data/JNO-E_J_SS-WAV-3-CDR-SRVFULL-V2.0/DATA",
+          "archive_type": 3
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

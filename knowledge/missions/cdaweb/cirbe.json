@@ -1,0 +1,55 @@
+{
+  "id": "CIRBE",
+  "name": "CIRBE",
+  "keywords": [
+    "cirbe"
+  ],
+  "profile": {
+    "description": "CIRBE spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "CIRBE_REPTILE-2_L1A_DETECTORS": {
+          "description": "Colorado Inner Radiation Belt Experiment, Relativistic Electron Proton Telescope integrated little experiment-2, Level 1A Data Product, Detectors - Xinlin Li (University of Colorado at Boulder)",
+          "start_date": "2023-04-19T16:28:15.000Z",
+          "stop_date": "2024-09-28T07:13:58.000Z",
+          "pi_name": "Xinlin Li",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CIRBE_REPTILE-2_L1A_DETECTORS"
+        },
+        "CIRBE_REPTILE-2_L1B_RNG_ELECS": {
+          "description": "Colorado Inner Radiation Belt Experiment, Relativistic Electron Proton Telescope integrated little experiment-2, Level 1B Data Product, Range Electrons - Xinlin Li (University of Colorado at Boulder)",
+          "start_date": "2023-04-19T16:28:15.000Z",
+          "stop_date": "2024-09-28T07:13:58.000Z",
+          "pi_name": "Xinlin Li",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CIRBE_REPTILE-2_L1B_RNG_ELECS"
+        },
+        "CIRBE_REPTILE-2_L2_RNG_ELECS": {
+          "description": "Colorado Inner Radiation Belt Experiment, Relativistic Electron-Proton Telescope integrated little experiment-2, Level 2 Data Product, Range Electrons - Xinlin Li (University of Colorado at Boulder)",
+          "start_date": "2023-04-19T16:28:15.000Z",
+          "stop_date": "2024-09-28T07:13:58.000Z",
+          "pi_name": "Xinlin Li",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CIRBE_REPTILE-2_L2_RNG_ELECS"
+        }
+      }
+    }
+  },
+  "observatory_group": "Smallsats/Cubesats",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

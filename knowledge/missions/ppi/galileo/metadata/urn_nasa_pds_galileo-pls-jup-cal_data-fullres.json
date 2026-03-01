@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PDSTIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time of the sample.               \n        The time string is of the form YYYY-MM-DDThh:mm:ss.sss.               \n        The representation of Jan 01, 2000, 00:00:00.000 would be             \n        2000-01-01T00:00:00.000.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_CLOCK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock counter frame and minor           \n        frame (mod91) counters in the form  frame:mf",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COUNT_RATE",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Detector count rate.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DETECTOR_ID",
+      "type": "double",
+      "units": "",
+      "description": "Detector number (1-20)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E_STEP",
+      "type": "double",
+      "units": "",
+      "description": "E/Q analyzer step (0-63)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "M_STEP",
+      "type": "double",
+      "units": "",
+      "description": "M/Q analyzer step (0-63). Nonzero only for mass    \n                           spectrometer detectors.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECTOR_ID",
+      "type": "double",
+      "units": "",
+      "description": "AACS sector (clock angle) at start of spin-sector  \n                           (0-255). In some instances, this value is greater  \n                           than 255.  These instance might be errors but      \n                           can't be corrected at this time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_NO",
+      "type": "double",
+      "units": "",
+      "description": "Sequential sample number in spin-block.            \n                           First sample is 1,last sample is                   \n                           (number-of-steps)*(number-of-sectors).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACCUM_TIME",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Detector accumulation time in seconds.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

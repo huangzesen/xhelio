@@ -1,0 +1,82 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mv_index",
+      "type": "integer",
+      "units": "index value",
+      "description": "mv_index",
+      "fill": "255.0",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "a_current",
+      "type": "double",
+      "units": "pA",
+      "description": "Current measured by sensor A, in picoAmperes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "b_current",
+      "type": "double",
+      "units": "pA",
+      "description": "Current measured by sensor B, in picoAmperes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "c_current",
+      "type": "double",
+      "units": "pA",
+      "description": "Current measured by sensor C, in picoAmperes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "d_current",
+      "type": "double",
+      "units": "pA",
+      "description": "Current measured by sensor D, in picoAmperes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    },
+    {
+      "name": "flow_angle",
+      "type": "double",
+      "units": "radian",
+      "description": "rough estimate angle of the mean flow into the cup, in radians, in SPC coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "diff_charge_flux_density",
+      "type": "double",
+      "units": "pA*cm**-2",
+      "description": "differential charge flux density, in pA*cm**-2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        128
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

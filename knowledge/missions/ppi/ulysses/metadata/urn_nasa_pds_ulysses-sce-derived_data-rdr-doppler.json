@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "S_Band",
+      "type": "double",
+      "units": "cycles",
+      "description": "S-band phase or 'Doppler count' in cycles.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S_3-11X",
+      "type": "double",
+      "units": "",
+      "description": "S-3/11X differential frequency in hertz.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AGC",
+      "type": "double",
+      "units": "DBM",
+      "description": "Automatic gain control in dBm (decibels to 1 milliwatt).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

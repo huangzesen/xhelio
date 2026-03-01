@@ -1,0 +1,110 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LEMT1",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "He flux (3.2 to 6.2 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LEMT2",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "Oxygen flux (3.2 to 6.2 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LEMT3",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "Iron flux (3.2 TO 6.2 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "APEB1",
+      "type": "double",
+      "units": "e/(cm2 sr sec MeV)",
+      "description": "e- flux (1 to 10 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "APEB2",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "proton flux (19 to 28 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "APEB3",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "proton flux (28 to 72 Mev/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "APEB4",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "He flux (19 to 28 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "APEB5",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "He flux (28 to 72 MeV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP1",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "He flux (80 to 160 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP2",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "He flux (320 to 640 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP3",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "CNO flux (80 to 160 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP4",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "CNO flux (320 to 640 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP5",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "Iron flux (80 to 160 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEP6",
+      "type": "double",
+      "units": "#/(cm2 sr sec MeV/n)",
+      "description": "Iron flux (640 to 1050 keV/n)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1994-11-16T00:00:14.000Z",
+  "stopDate": "2026-02-16T23:59:16.000Z"
+}

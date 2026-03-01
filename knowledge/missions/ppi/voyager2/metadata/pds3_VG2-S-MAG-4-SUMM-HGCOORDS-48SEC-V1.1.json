@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICK",
+      "description": "Spacecraft clock mod 65536.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICK",
+      "description": "Spacecraft clock mod 60.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICK",
+      "description": "Spacecraft clock fds line.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Magnetometer ID.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Radial component of the magnetic field,  positive from sun to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Azimuthal component of the magnetic field, positive in the direction of planetary orbital motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "North/South component of the magnetic field, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Magnitude of the averages of the field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the field magnitudes.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Magnetic latitude, defined as ARCSIN(BN/BMAG).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Magnetic longitude, defined as 180.0 - ARCTAN(BT/BR).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-squared of BR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-squared of BT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-squared of BN.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Number of data points in the averaging window.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

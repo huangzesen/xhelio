@@ -1,0 +1,371 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number 1 - 6 for six-month maps from IBEX Data Release 9",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Fexp5",
+      "type": "double",
+      "units": "Seconds",
+      "description": "O ENA Total Exposure Time at IBEX-Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr5",
+      "type": "double",
+      "units": "",
+      "description": "O ENA Signal/Noise Ratio at IBEX-Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr5_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate5",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA count rate at IBEX-Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate5_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig5",
+      "type": "double",
+      "units": "counts/second",
+      "description": "Standard deviation of count rate at IBEX-Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig5_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6",
+      "type": "double",
+      "units": "Seconds",
+      "description": "O ENA Total Exposure Time at Energy Channel 6, Center Energy 0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr6",
+      "type": "double",
+      "units": "",
+      "description": "O ENA Signal/Noise Ratio at IBEX-Lo Energy Channel 6, Center Energy 0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr6_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate6",
+      "type": "double",
+      "units": "counts/second",
+      "description": "O ENA count rate Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate6_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig6",
+      "type": "double",
+      "units": "counts/second",
+      "description": "Standard deviation of count rate Energy Channel 6, Center Energy 0.439 keV; the energy resolution is delta-E/E = 0.8 for all channels.",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig6_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp7",
+      "type": "double",
+      "units": "Seconds",
+      "description": "O ENA Total Exposure Time (seconds) at Energy Channel 7, Center Energy 0.872 keV; the energy resolution is delta-E/E = 0.8 for all channels.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp7_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr7",
+      "type": "double",
+      "units": "",
+      "description": "O ENA Signal/Noise Ratio at IBEX-Lo Energy Channel 7 ~0.872 keV  - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr7_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate7",
+      "type": "double",
+      "units": "counts/second",
+      "description": "O ENA count rate Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate7_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig7",
+      "type": "double",
+      "units": "counts/second",
+      "description": "Standard deviation of count rate Energy Channel 7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig7_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp8",
+      "type": "double",
+      "units": "Seconds",
+      "description": "O ENA Total Exposure Time at Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp8_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr8",
+      "type": "double",
+      "units": "",
+      "description": "O ENA Signal/Noise Ratio at IBEX-Lo Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr8_plasma",
+      "type": "double",
+      "units": "",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate8",
+      "type": "double",
+      "units": "counts/second",
+      "description": "O ENA count rate Energy Channel 8 ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rate8_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig8",
+      "type": "double",
+      "units": "counts/second",
+      "description": "Standard deviation of count rate Energy Channel 8, ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsig8_plasma",
+      "type": "double",
+      "units": "counts/second",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2008-12-25T00:00:00.000Z"
+}

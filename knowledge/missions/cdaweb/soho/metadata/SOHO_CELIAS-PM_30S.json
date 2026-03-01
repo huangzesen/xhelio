@@ -1,0 +1,85 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "V_p",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton speed, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_p",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Proton number density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vth_p",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton most probable thermal speed, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NS_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Arrival direction (from north-south, positive from the south)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_He",
+      "type": "double",
+      "units": "km/s",
+      "description": "Helium speed, scalar, predicted",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CRN",
+      "type": "integer",
+      "units": "",
+      "description": "Earth Carrington Rotation Number",
+      "fill": "65535.0"
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "Re",
+      "description": "SOHO GSE cartesian position (define Re = 6378km), predicted",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HC_RANGE",
+      "type": "double",
+      "units": "10^6 km",
+      "description": "SOHO heliocentric range [10^6 km], predicted",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HG_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "SOHO heliographic latitude, predicted",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HG_LONG",
+      "type": "double",
+      "units": "deg",
+      "description": "SOHO heliographic longitude, predicted",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-01-20T17:30:28.000Z",
+  "stopDate": "2023-05-31T23:59:16.000Z"
+}

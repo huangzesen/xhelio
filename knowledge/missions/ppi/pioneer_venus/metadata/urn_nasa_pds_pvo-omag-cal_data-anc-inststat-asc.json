@@ -1,0 +1,140 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PCOS",
+      "type": "double",
+      "units": "nT",
+      "description": "Amplitude of spin ripple on P sensor in      \n  phase with sun pulse signal.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PSIN",
+      "type": "double",
+      "units": "nT",
+      "description": "Amplitude of spin ripple on P sensor in      \n  quadrature with sun pulse signal.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DX",
+      "type": "double",
+      "units": "nT",
+      "description": "Difference between amplitudes at spin        \n  period on the T sensor and G sensor that should be parallel to each         \n  other (quadrature component on T and in phase on G).",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "DY",
+      "type": "double",
+      "units": "nT",
+      "description": "Difference between the second pair of        \n  amplitudes at spin frequency that are parallel on the G and T sensors.      \n  These two amplitudes have a phase of 90 degrees to that of the DX pair.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "DZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Difference between the average field along   \n  the G sensor and the average along the P sensor.  This difference           \n  should not change if the ambient field changes.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "RAMP",
+      "type": "double",
+      "units": "",
+      "description": "The output of the 3 non-orthogonal sensors   \n  can be combined to give 3 orthogonal pseudosensor output S1, S2, S3 in      \n  the equatorial X-Y plane and along the Z or spin axis.  RAMP measures       \n  the ratio of the amplitudes of the sine waves in the X-Y plane measured     \n  by pseudosensors 1 and 2.  Should be unity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DPHS",
+      "type": "double",
+      "units": "deg",
+      "description": "Measures the phase difference between the    \n  output of pseudosensors S1 and S2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DC1",
+      "type": "double",
+      "units": "nT",
+      "description": "The average field seen by S1.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "DC2",
+      "type": "double",
+      "units": "nT",
+      "description": "The average field seen by S2.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "ZCOS",
+      "type": "double",
+      "units": "nT",
+      "description": "The cosine amplitude, after spin frequency,  \n  seen along pseudosensor 3.  It should be zero.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "ZSIN",
+      "type": "double",
+      "units": "nT",
+      "description": "The sine amplitude at the spin frequency     \n  seen along pseudosensor 3.  It should be zero.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "ZDC",
+      "type": "double",
+      "units": "nT",
+      "description": "The average field seen along pseudosensor 3.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

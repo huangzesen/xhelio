@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BODY_SPIN_RATE",
+      "type": "double",
+      "units": "rpm",
+      "description": "Body spin rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GCI_R_ASCENSION",
+      "type": "double",
+      "units": "rad",
+      "description": "GCI right ascension",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GCI_DECLINATION",
+      "type": "double",
+      "units": "rad",
+      "description": "GCI declination",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_R_ASCENSION",
+      "type": "double",
+      "units": "rad",
+      "description": "GSE right ascension",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_DECLINATION",
+      "type": "double",
+      "units": "rad",
+      "description": "GSE declination",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_R_ASCENSION",
+      "type": "double",
+      "units": "rad",
+      "description": "GSM right ascension",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_DECLINATION",
+      "type": "double",
+      "units": "rad",
+      "description": "GSM declination",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-08T00:00:00.000Z",
+  "stopDate": "2008-06-14T23:50:00.000Z"
+}

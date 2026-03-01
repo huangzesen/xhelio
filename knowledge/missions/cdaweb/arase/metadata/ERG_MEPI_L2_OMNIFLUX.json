@@ -1,0 +1,142 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FIDO_Energy",
+      "type": "double",
+      "units": "keV/q",
+      "description": "Minimum and maximum energy for FIDO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FPDO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FPDO:  Omni-directional proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FPDO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FPDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHE2DO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FHE2DO:  Omni-directional He++ Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHE2DO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FHE2DO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHEDO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FHEDO:  Omni-directional He+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHEDO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FHEDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FOPPDO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FOPPDO:  Omni-directional O++ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FOPPDO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FOPPDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FODO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FODO:  Omni-directional O+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FODO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FODO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FO2PDO",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "FO2PDO: Omni-directional O2+ flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FO2PDO_T",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> FO2PDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2017-03-24T04:04:51.000Z",
+  "stopDate": "2025-01-31T22:21:48.000Z"
+}

@@ -1,0 +1,143 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "Geomagnetic Field (Solar Magnetic Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Geomagnetic Field Perturbation (Solar-Magnetic Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_GEO",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Geomagnetic Field Perturbation (Geocentric Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DELTA_B_APEX",
+      "type": "double",
+      "units": "nT",
+      "description": "Modified-Apex Magnetic Field Perturbation",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_POS_SM",
+      "type": "double",
+      "units": "Re",
+      "description": "Spacecraft position in (Cartesian) Solar-Magnetic Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_POS_GEO",
+      "type": "double",
+      "units": "",
+      "description": "---> Spacecraft position in Spherical Geocentric Coordinates (R,Lat,Lon)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_APEX_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft Modified-Apex Latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_APEX_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Spacecraft Modified-Apex Longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_APEX_MLT",
+      "type": "double",
+      "units": "hr",
+      "description": "---> Spacecraft Modified-Apex Magnetic Local Time",
+      "fill": "nan"
+    },
+    {
+      "name": "COR_DELTA_B_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "Baseline Corrected Geomagnetic Field Perturbation (Solar-Magnetic Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "COR_DELTA_B_APEX",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Baseline Corrected Modified-Apex Geomagnetic Field Perturbation",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "COR_DELTA_B_GEO",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Baseline Corrected Geomagnetic Field Perturbation (Geocentric Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_POS_AACGM",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft position in Altitude Adjusted Corrected Geomagnetic Coordinates (Lat,Lon,Magnetic Local Time)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IGRF_B_SM",
+      "type": "double",
+      "units": "nT",
+      "description": "International Geomagnetic Reference Field Model Output (Solar-Magnetic Coordinates)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2006-03-26T20:37:22.000Z",
+  "stopDate": "2006-06-21T01:04:29.000Z"
+}

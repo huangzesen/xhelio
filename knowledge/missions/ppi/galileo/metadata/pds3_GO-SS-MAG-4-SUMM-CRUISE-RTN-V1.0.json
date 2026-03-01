@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field radial component in RTN coordinates <nT>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field tangential component in RTN coordinates <nT>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field normal component in RTN coordinates <nT>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "|B| Magnitude of B <nT>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "AU",
+      "description": "Distance of the spacecraft from the Sun <AU>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "degree",
+      "description": "SOLAR LATITUDE <DEG>",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "degree",
+      "description": "SOLAR EAST LONGITUDE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_CON",
+      "type": "integer",
+      "units": "major frames",
+      "description": "Sample rate (decimation rate) of recursively filtered data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "radian",
+      "description": "Magnetic latitude, calculated using delta=arcsin(Bn/Bmag)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "radian",
+      "description": "Magnetic longtitude caluculated using lambda=atan2(Bt, Br)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

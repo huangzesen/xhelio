@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ORB_PITCH",
+      "type": "double",
+      "units": "rad",
+      "description": "Orbital pitch angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ORB_ROLL",
+      "type": "double",
+      "units": "rad",
+      "description": "Orbital roll angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ORB_YAW",
+      "type": "double",
+      "units": "rad",
+      "description": "Orbital yaw angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GCI_PITCH",
+      "type": "double",
+      "units": "rad",
+      "description": "GCI pitch angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GCI_ROLL",
+      "type": "double",
+      "units": "rad",
+      "description": "GCI roll angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GCI_YAW",
+      "type": "double",
+      "units": "rad",
+      "description": "GCI yaw angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_PITCH",
+      "type": "double",
+      "units": "rad",
+      "description": "GSE pitch angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_ROLL",
+      "type": "double",
+      "units": "rad",
+      "description": "GSE roll angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_YAW",
+      "type": "double",
+      "units": "rad",
+      "description": "GSE yaw angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_PITCH",
+      "type": "double",
+      "units": "rad",
+      "description": "GSM pitch angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_ROLL",
+      "type": "double",
+      "units": "rad",
+      "description": "GSM roll angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_YAW",
+      "type": "double",
+      "units": "rad",
+      "description": "GSM yaw angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DPA_INDICATOR",
+      "type": "integer",
+      "units": "",
+      "description": "DPA accuracy indicator, scalar",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSP_ANGLE",
+      "type": "double",
+      "units": "rad",
+      "description": "Despun platform offset angle, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LOCK_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Despun platform lock status, scalar",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-03-15T00:00:00.000Z",
+  "stopDate": "2008-04-28T00:00:00.000Z"
+}

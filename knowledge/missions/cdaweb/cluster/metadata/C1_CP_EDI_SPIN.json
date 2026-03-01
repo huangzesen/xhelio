@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "V_ed_xyz_gse__C1_CP_EDI_SPIN",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "Electron Drift Velocity, spin resolution in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_xyz_gse__C1_CP_EDI_SPIN",
+      "type": "double",
+      "units": "mV m^-1",
+      "description": "Electric Field, spin resolution in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2001-02-02T07:52:05.000Z",
+  "stopDate": "2024-09-12T09:07:29.000Z"
+}

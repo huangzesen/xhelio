@@ -1,0 +1,246 @@
+{
+  "id": "NEW-HORIZONS",
+  "name": "New Horizons",
+  "keywords": [
+    "horizons",
+    "new",
+    "new-horizons",
+    "new_horizons",
+    "nh",
+    "pds3:nh-"
+  ],
+  "profile": {
+    "description": "New Horizons spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-A": {
+          "description": "PEPSSI>Pluto Energetic Particle Spectrometer Science Investigation suprathermal (lowest energy) particle time-of-flight (TOF)  differential intensity in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-A"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-B": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) background corrected cosmic ray flux in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-B"
+        },
+        "NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-FLUX-CRFLUX-SPECTRA-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) background corrected cosmic ray flux in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-01T00:30:00.000Z",
+          "stop_date": "2025-12-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-FLUX-CRFLUX-SPECTRA-A"
+        },
+        "NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-FLUX-CRFLUX-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) background corrected cosmic ray flux in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-01T00:30:00.000Z",
+          "stop_date": "2025-12-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-FLUX-CRFLUX-A"
+        },
+        "NEW_HORIZONS_SWAP_SOLAR-WIND": {
+          "description": "Data from New Horizons SWAP instrument: Solar-Wind around Pluto - David J. McComas (Princeton)",
+          "start_date": "2008-10-10T21:07:46.000Z",
+          "stop_date": "2024-10-02T01:25:56.000Z",
+          "pi_name": "David J. McComas",
+          "pi_affiliation": "Princeton",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW_HORIZONS_SWAP_SOLAR-WIND"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-SPECTRA-A": {
+          "description": "New Horizons NH Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-SPECTRA-A"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-SPECTRA-B": {
+          "description": "New Horizons NH Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-SPECTRA-B"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-SPECTRA-A": {
+          "description": "PEPSSI>Pluto Energetic Particle Spectrometer Science Investigation suprathermal (lowest energy) particle time-of-flight (TOF)  differential intensity in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-SPECTRA-A"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-SPECTRA-B": {
+          "description": "PEPSSI>Pluto Energetic Particle Spectrometer Science Investigation suprathermal (lowest energy) particle time-of-flight (TOF)  differential intensity in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-DIFF-INTENSITY-TOF-LFLUX-SPECTRA-B"
+        },
+        "NEW_HORIZONS_SWAP_PICKUP-IONS": {
+          "description": "Data from New Horizons SWAP instrument - David J. McComas (Princeton)",
+          "start_date": "2008-11-09T06:08:01.000Z",
+          "stop_date": "2024-09-13T17:44:04.000Z",
+          "pi_name": "David J. McComas",
+          "pi_affiliation": "Princeton",
+          "doi": "10.48322/d4g8-sm25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW_HORIZONS_SWAP_PICKUP-IONS"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) 'Doubles' low energy events counts per second, time-of-flight (TOF) only, ~2-250 keV/nuc He+ in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-A"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-B": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) 'Doubles' low energy events counts per second, time-of-flight (TOF) only, ~2-250 keV/nuc He+ in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-B"
+        },
+        "NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-COUNT-RATE-CRCPS": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) corrected cosmic ray count per second - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-COUNT-RATE-CRCPS"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-SPECTRA-B": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-SPECTRA-B"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-SPECTRA-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-SPECTRA-A"
+        },
+        "NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-COUNT-RATE-CRCPS-SPECTRA": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) corrected cosmic ray count per second - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_COSMIC-RAY-CORRECTED-COUNT-RATE-CRCPS-SPECTRA"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-B": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-B"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-DIFF-INTENSITY-BFLUX-A"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-SPECTRA-B": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) background corrected cosmic ray flux in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-SPECTRA-B"
+        },
+        "NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-SPECTRA-A": {
+          "description": "New Horizons Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) background corrected cosmic ray flux in calibration regime 'A' or 'B'  - Dr. Ralph L.McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L.McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_DOUBLES-COUNT-RATE-TOF-LCPS-SPECTRA-A"
+        },
+        "NEW_HORIZONS_SWAP_PICKUP-IONS-HISTOGRAM": {
+          "description": "Data from New Horizons SWAP instrument - David J. McComas (Princeton)",
+          "start_date": "2008-10-31T18:08:03.000Z",
+          "stop_date": "2017-03-31T18:08:01.000Z",
+          "pi_name": "David J. McComas",
+          "pi_affiliation": "Princeton",
+          "doi": "10.48322/z274-yv24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW_HORIZONS_SWAP_PICKUP-IONS-HISTOGRAM"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-B": {
+          "description": "New Horizons NH Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2014-07-03T00:30:00.000Z",
+          "stop_date": "2025-07-30T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-B"
+        },
+        "NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-A": {
+          "description": "New Horizons NH Pluto Energetic Particle Spectrometer Science Investigation (PEPSSI) Box-shaped slab triples count per second, time of flight (TOF) vs energy space, ~15 keV to 1 MeV, H, He, O (CNO group) in calibration regime 'A' or 'B'  - Dr. Ralph L. McNutt, Jr (Johns Hopkins University Applied Physics Laboratory)",
+          "start_date": "2012-01-28T00:30:00.000Z",
+          "stop_date": "2014-05-31T23:30:00.000Z",
+          "pi_name": "Dr. Ralph L. McNutt, Jr",
+          "pi_affiliation": "Johns Hopkins University Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW-HORIZONS_PEPSSI_TRIPLES-COUNT-RATE-BCPS-A"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "NEW_HORIZONS_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2006-01-20T00:00:00.000Z",
+          "stop_date": "2029-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesN.html#NEW_HORIZONS_HELIO1HR_POSITION"
+        }
+      }
+    }
+  },
+  "observatory_group": "New Horizons",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

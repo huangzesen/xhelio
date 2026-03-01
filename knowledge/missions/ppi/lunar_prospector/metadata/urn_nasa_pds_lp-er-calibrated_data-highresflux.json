@@ -1,0 +1,35 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "eflux1",
+      "type": "double",
+      "units": "cm**-2 * s**-1 * sr**-1 * eV**-1",
+      "description": "Electron flux from the first energy bin    \n                          listed in the E_BINS.TAB file for these data.\n\n                          missing_constant = 9.999E-99 represents the flagged values from the instrument team.\n                          error_constant = -9.99E-99 represents the flagged value from the PPI Node.",
+      "size": [
+        1
+      ],
+      "fill": "9.999E-99"
+    },
+    {
+      "name": "eflux2",
+      "type": "double",
+      "units": "cm**-2 * s**-1 * sr**-1 * eV**-1",
+      "description": "Electron flux from the second energy bin    \n                          listed in the E_BINS.TAB file for these data.\n\n                          missing_constant = 9.999E-99 represents the flagged values from the instrument team.\n                          error_constant = -9.99E-99 represents the flagged value from the PPI Node.",
+      "size": [
+        1
+      ],
+      "fill": "9.999E-99"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

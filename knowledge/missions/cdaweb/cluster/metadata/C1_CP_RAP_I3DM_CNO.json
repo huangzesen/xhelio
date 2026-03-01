@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "CNO_Dif_flux_3DM__C1_CP_RAP_I3DM_CNO",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "CNO Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        16,
+        12
+      ]
+    },
+    {
+      "name": "CNO_Dif_flux_3DM_SD__C1_CP_RAP_I3DM_CNO",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of CNO Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        16,
+        12
+      ]
+    }
+  ],
+  "startDate": "2000-12-03T00:21:14.000Z",
+  "stopDate": "2007-03-14T23:59:26.000Z"
+}

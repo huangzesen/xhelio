@@ -1,0 +1,82 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "THSVD_mfa__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "deg",
+      "description": "Polar Angle of the direction of propagation in MFA coordinate system (SVD).",
+      "fill": "-999.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "PHSVD_mfa__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "deg",
+      "description": "Azymuthal angle of the direction of propagation in MFA coordinate system (SVD).",
+      "fill": "-999.0",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "ELLSVD__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "",
+      "description": "Ellipticity of the polarization (SVD).",
+      "fill": "-9.899999618530273",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "POLSVD__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "",
+      "description": "Degree of polarization in the polarization plane (SVD).",
+      "fill": "-9.899999618530273",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "BSUM__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Sum of the three magnetic auto-power spectra.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "PVSIGN__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "",
+      "description": "Parallel component of the Poynting vector normalized by its standard deviation.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    },
+    {
+      "name": "ESUM__C3_CP_STA_PPP",
+      "type": "double",
+      "units": "mV^2 m^-2 Hz^-1",
+      "description": "Sum of the two electric auto-power spectra.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27
+      ]
+    }
+  ],
+  "startDate": "2000-12-07T07:33:26.000Z",
+  "stopDate": "2024-09-29T08:50:12.000Z"
+}

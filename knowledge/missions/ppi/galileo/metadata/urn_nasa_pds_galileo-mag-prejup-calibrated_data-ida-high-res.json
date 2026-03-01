@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX_IDAE",
+      "type": "double",
+      "units": "nT",
+      "description": "X COMP OF B IN IDA-SE COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY_IDAE",
+      "type": "double",
+      "units": "nT",
+      "description": "Y COMP OF B IN IDA-SE COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ_IDAE",
+      "type": "double",
+      "units": "nT",
+      "description": "Z COMP OF B IN IDA-SE COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX_EME50",
+      "type": "double",
+      "units": "nT",
+      "description": "X COMP OF B IN EME-50 COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY_EME50",
+      "type": "double",
+      "units": "nT",
+      "description": "Y COMP OF B IN EME-50 COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ_EME50",
+      "type": "double",
+      "units": "nT",
+      "description": "Z COMP OF B IN EME-50 COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "RADIAL COMP OF B IN RTN COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "TANGENTIAL COMP OF B RTN COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "NORMAL COMP OF B IN RTN COORDS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGNITUDE OF B",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,200 @@
+{
+  "id": "LANL",
+  "name": "LANL",
+  "keywords": [
+    "a1",
+    "a2",
+    "l0",
+    "l1",
+    "l4",
+    "l7",
+    "l9",
+    "lanl"
+  ],
+  "profile": {
+    "description": "LANL spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "L7_H0_MPA": {
+          "description": "LANL 1997 Magnetospheric Plasma Analyzer High Resolution data - Mike Henderson (LANL)",
+          "start_date": "1998-04-29T00:02:23.000Z",
+          "stop_date": "1998-05-09T23:57:09.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/2hyb-ms72",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L7_H0_MPA"
+        },
+        "L9_K0_MPA": {
+          "description": "LANL 1989 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "1993-03-15T00:05:23.000Z",
+          "stop_date": "2008-01-03T18:20:59.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/jv8m-ra10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L9_K0_MPA"
+        },
+        "L4_K0_MPA": {
+          "description": "LANL 1994 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "1996-01-01T00:01:40.000Z",
+          "stop_date": "2008-01-03T02:25:58.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/8y0b-0s77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L4_K0_MPA"
+        },
+        "L0_K0_MPA": {
+          "description": "LANL 1990 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "1992-12-16T00:02:44.000Z",
+          "stop_date": "2005-11-09T23:57:44.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/b3yv-mf47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L0_K0_MPA"
+        },
+        "A1_K0_MPA": {
+          "description": "LANL 2001 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "2001-08-31T00:03:18.000Z",
+          "stop_date": "2008-01-03T01:31:56.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/6jar-ra45",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#A1_K0_MPA"
+        },
+        "L7_K0_MPA": {
+          "description": "LANL 1997 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "1997-07-04T23:00:13.000Z",
+          "stop_date": "2008-01-03T18:21:15.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/pb5s-re17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L7_K0_MPA"
+        },
+        "L9_H0_MPA": {
+          "description": "LANL 1989-046 Magnetospheric Plasma Analyzer High Resolution data - Mike Henderson (LANL)",
+          "start_date": "1998-05-03T04:12:36.000Z",
+          "stop_date": "1998-05-03T07:42:38.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/7d0a-cf96",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L9_H0_MPA"
+        },
+        "A2_K0_MPA": {
+          "description": "LANL 2002 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "2003-10-29T00:03:04.000Z",
+          "stop_date": "2008-01-03T01:31:27.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/z6y7-r007",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesA.html#A2_K0_MPA"
+        },
+        "L1_K0_MPA": {
+          "description": "LANL 1991 Magnetospheric Plasma Analyzer Key Parameters - Mike Henderson (LANL)",
+          "start_date": "1993-10-27T01:31:20.000Z",
+          "stop_date": "2004-11-23T18:14:22.000Z",
+          "pi_name": "Mike Henderson",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/5jaw-x105",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L1_K0_MPA"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "L1_K0_GIFWALK": {
+          "description": "Links to GEOSYNC KP pre-generated survey and other plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-09T00:00:00.000Z",
+          "stop_date": "2004-08-09T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L1_K0_GIFWALK"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "L9_K0_SPA": {
+          "description": "LANL 1989 Synchronous Orbit Particle Analyzer Key Parameters - Reiner Friedel (LANL)",
+          "start_date": "1992-08-01T00:00:27.000Z",
+          "stop_date": "2007-10-15T23:58:30.000Z",
+          "pi_name": "Reiner Friedel",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/7xdy-y825",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L9_K0_SPA"
+        },
+        "L0_K0_SPA": {
+          "description": "LANL 1990 Synchronous Orbit Particle Analyzer Key Parameters - Reiner Friedel (LANL)",
+          "start_date": "1992-08-01T00:00:32.000Z",
+          "stop_date": "2005-11-09T23:58:30.000Z",
+          "pi_name": "Reiner Friedel",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/zzr5-dd89",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L0_K0_SPA"
+        },
+        "L4_K0_SPA": {
+          "description": "LANL 1994 Synchronous Orbit Particle Analyzer Key Parameters - Reiner Friedel (LANL)",
+          "start_date": "1996-02-16T00:00:37.000Z",
+          "stop_date": "2007-10-15T23:58:31.000Z",
+          "pi_name": "Reiner Friedel",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/abg8-2403",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L4_K0_SPA"
+        },
+        "L1_K0_SPA": {
+          "description": "LANL 1991 Synchronous Orbit Particle Analyzer Key Parameters - Reiner Friedel (LANL)",
+          "start_date": "1992-08-01T00:00:26.000Z",
+          "stop_date": "2004-11-23T18:16:33.000Z",
+          "pi_name": "Reiner Friedel",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/1jyx-5h51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L1_K0_SPA"
+        },
+        "L7_K0_SPA": {
+          "description": "LANL 1997 Synchronous Orbit Particle Analyzer Key Parameters - Reiner Friedel (LANL)",
+          "start_date": "1999-01-01T00:00:31.000Z",
+          "stop_date": "2007-10-15T23:58:28.000Z",
+          "pi_name": "Reiner Friedel",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/51vv-e118",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesL.html#L7_K0_SPA"
+        }
+      }
+    }
+  },
+  "observatory_group": "LANL",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

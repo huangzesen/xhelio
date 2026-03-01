@@ -1,0 +1,321 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SECONDS",
+      "type": "double",
+      "units": "s",
+      "description": "Spacecraft Time (elapsed seconds from epoch \n                       2001-01-01T00:00:00.000 UTC). Derived from spacecraft \n                       clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FRACT",
+      "type": "double",
+      "units": "10**-2 s",
+      "description": "Spacecraft Time (fractional seconds in units of 1/100 second). Derived from spacecraft clock time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INDEX",
+      "type": "double",
+      "units": "",
+      "description": "Event Index within Current Second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 1",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D1 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 2",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D2 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 3",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D3 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 4",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D4 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 5",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D5 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMPL Item 6",
+      "type": "double",
+      "units": "ADU",
+      "description": "PHA output amplitude of D6 signals for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 1",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D1 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 2",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D2 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 3",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D3 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 4",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D4 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 5",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D5 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY Item 6",
+      "type": "double",
+      "units": "keV",
+      "description": "Energy deposited in D6 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 1",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D1 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 2",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D2 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 3",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D3 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 4",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D4 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 5",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D5 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET Item 6",
+      "type": "double",
+      "units": "keV/micron",
+      "description": "LET(Si)in D6 for single event.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DQI",
+      "type": "double",
+      "units": "",
+      "description": "Data Quality Indicator.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 1",
+      "type": "double",
+      "units": "",
+      "description": "D1 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 2",
+      "type": "double",
+      "units": "",
+      "description": "D2 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 3",
+      "type": "double",
+      "units": "",
+      "description": "D3 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 4",
+      "type": "double",
+      "units": "",
+      "description": "D4 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 5",
+      "type": "double",
+      "units": "",
+      "description": "D5 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAXSIGFLAGS Item 6",
+      "type": "double",
+      "units": "",
+      "description": "D6 signal near saturation flags (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 1",
+      "type": "double",
+      "units": "",
+      "description": "D1 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 2",
+      "type": "double",
+      "units": "",
+      "description": "D2 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 3",
+      "type": "double",
+      "units": "",
+      "description": "D3 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 4",
+      "type": "double",
+      "units": "",
+      "description": "D4 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 5",
+      "type": "double",
+      "units": "",
+      "description": "D5 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GTLLDFLAGS Item 6",
+      "type": "double",
+      "units": "",
+      "description": "D6 signal exceeds LLD threshold flag (1 = true).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

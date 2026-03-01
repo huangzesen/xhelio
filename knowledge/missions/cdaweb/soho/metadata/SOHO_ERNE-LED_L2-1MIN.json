@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "est",
+      "type": "integer",
+      "units": "",
+      "description": "Status word, see TEXT",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "PL",
+      "type": "double",
+      "units": "(cm^2 s sr MeV)^-1",
+      "description": "Proton intensity in 10 energy ranges (nominal 1.3-13 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "AL",
+      "type": "double",
+      "units": "(cm^2 s sr MeV/n)^-1",
+      "description": "He-4 intensity in 10 energy ranges (nominal 1.3-13 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "PLC",
+      "type": "integer",
+      "units": "counts/min",
+      "description": "Proton count rate in 10 energy ranges (nominal 1.3-13 MeV)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "ALC",
+      "type": "integer",
+      "units": "counts/min",
+      "description": "He-4 count rate in 10 energy ranges (nominal 1.3-13 MeV/n)",
+      "fill": "-2147483648.0",
+      "size": [
+        10
+      ]
+    }
+  ],
+  "startDate": "1996-05-07T17:19:56.000Z",
+  "stopDate": "2023-07-19T14:19:14.000Z"
+}

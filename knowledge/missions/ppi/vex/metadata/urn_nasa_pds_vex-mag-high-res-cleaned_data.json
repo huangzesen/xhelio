@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Planetocentric radial component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BE",
+      "type": "double",
+      "units": "nT",
+      "description": "Planetocentric East (azimuthal) component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Planetocentric North (negative polar angle) component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "VSO X-component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "VSO Y-component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "VSO Z-component of magnetic field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XVSO",
+      "type": "double",
+      "units": "km",
+      "description": "VSO X position of spacecraft (Rv = 6051.8)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YVSO",
+      "type": "double",
+      "units": "km",
+      "description": "VSO Y position of spacecraft (Rv = 6051.8)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ZVSO",
+      "type": "double",
+      "units": "km",
+      "description": "VSO Z position of spacecraft (Rv = 6051.8)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RVSO",
+      "type": "double",
+      "units": "km",
+      "description": "Radial distance from origin of VSO coordinate system (Rv = 6051.8)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BXSCD",
+      "type": "double",
+      "units": "nT",
+      "description": "Detrended X-component of magnetic field in spacecraft coordinates",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BYSCD",
+      "type": "double",
+      "units": "nT",
+      "description": "Detrended Y-component of magnetic field in spacecraft coordinates",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZSCD",
+      "type": "double",
+      "units": "nT",
+      "description": "Detrended Z-component of magnetic field in spacecraft coordinates",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

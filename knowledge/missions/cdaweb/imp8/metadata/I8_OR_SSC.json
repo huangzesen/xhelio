@@ -1,0 +1,94 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "XYZ_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "GSE cartesian coordinates, orbit plot, IMP-8",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSE_Time",
+      "type": "double",
+      "units": "RE",
+      "description": "GSE cartesian coordinates, time-series plot, IMP-8",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "GSM cartesian coordinates, orbit plot, IMP-8",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSM_Time",
+      "type": "double",
+      "units": "RE",
+      "description": "GSM cartesian coordinates, time-series plot, IMP-8",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "RADIUS",
+      "type": "double",
+      "units": "RE",
+      "description": "Orbital radius, IMP-8",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSE_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSE Latitude, IMP-8",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSE Longitude, IMP-8",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LCT_T",
+      "type": "double",
+      "units": "hr",
+      "description": "GSE Local Time, IMP-8",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSM Latitude, IMP-8",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSM Longitude, IMP-8",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1973-10-30T00:00:00.000Z",
+  "stopDate": "2004-06-30T23:48:00.000Z"
+}

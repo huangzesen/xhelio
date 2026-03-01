@@ -1,0 +1,299 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ISTARTTIMEMJD",
+      "type": "double",
+      "units": "MJD",
+      "description": "Start Time MJD - time key of data point",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSCECI",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft ECI Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCECI_O",
+      "type": "double",
+      "units": "km",
+      "description": "---> (Orbit Plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCGEO",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Geographic Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCGEO_O",
+      "type": "double",
+      "units": "km",
+      "description": "---> (Orbit Plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCGSM",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft GSM Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCGSM_O",
+      "type": "double",
+      "units": "km",
+      "description": "---> (Orbit Plot)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCECD",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Eccentric Dipole Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSCLONGGEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft Geographic East Longitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSCLATGEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft Geographic Latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSCRADIALDIST",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Earth-centered Radial Distance",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSCRADIALALT",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Earth-centered Radial Altitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSUNECI",
+      "type": "double",
+      "units": "km",
+      "description": "Sun ECI Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FBECI",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Vector with respect to ECI Basis XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FBMIRROR",
+      "type": "double",
+      "units": "nT",
+      "description": "Field Magnitude at Mirror Point",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FBEQUATORIAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Field Magnitude at Field-line Minimum",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FBNORTH100KM",
+      "type": "double",
+      "units": "nT",
+      "description": "Field Magnitude at North 100 km Point",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FBSOUTH100KM",
+      "type": "double",
+      "units": "nT",
+      "description": "Field Magnitude at South 100 km Point",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FMIRRORGSM",
+      "type": "double",
+      "units": "km",
+      "description": "Mirror Point GSM Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FEQUATORIALGSM",
+      "type": "double",
+      "units": "km",
+      "description": "Equatorial Point GSM Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FNORTH100KMGSM",
+      "type": "double",
+      "units": "km",
+      "description": "North 100 km Point GSM Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FSOUTH100KMGSM",
+      "type": "double",
+      "units": "km",
+      "description": "South 100 km Point GSM Cartesian Coordinate XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FLSHELL",
+      "type": "double",
+      "units": "",
+      "description": "Dimensionless McIlwain Shell Parameter",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FINVLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Magnetic Latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FDIPOLERADIUS",
+      "type": "double",
+      "units": "km",
+      "description": "Dipole Magnetic Radius",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FDIPOLELAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Dipole Magnetic Latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSCLATECD",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft Latitude in Eccentric Dipole Frame",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FLTGEO",
+      "type": "double",
+      "units": "hr",
+      "description": "Local Time in Geographic Frame",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FLTECD",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time (ECD Frame)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FLTEQU",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time (ECD Equatorial)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FSOLARZENITHCOS",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar-zenith Angle",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FLOSSCONE",
+      "type": "double",
+      "units": "deg",
+      "description": "Loss Cone Angle",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FDIPOLETILT",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Dipole Tilt Angle",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FDIPOLEOFFSET",
+      "type": "double",
+      "units": "km",
+      "description": "Magnetic Dipole Displacement",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "NDATAFILEID",
+      "type": "double",
+      "units": "",
+      "description": "DataFile ID as used in TWINS database storage",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2008-04-11T00:03:22.000Z",
+  "stopDate": "2016-10-27T23:59:59.000Z"
+}

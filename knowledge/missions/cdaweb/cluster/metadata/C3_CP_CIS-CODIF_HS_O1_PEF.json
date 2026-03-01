@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "duration__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "double",
+      "units": "s",
+      "description": "Interval duration",
+      "fill": "0.0"
+    },
+    {
+      "name": "cis_mode__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "integer",
+      "units": "",
+      "description": "CIS Operational Mode",
+      "fill": "99.0"
+    },
+    {
+      "name": "tm_product__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "integer",
+      "units": "",
+      "description": "CIS Telemetry Product",
+      "fill": "99.0"
+    },
+    {
+      "name": "codif_mcp_hv__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "double",
+      "units": "volt",
+      "description": "CODIF MCP High-Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "codif_acc_hv__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "double",
+      "units": "volt",
+      "description": "CODIF Acceleration High-Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ions_3d__C3_CP_CIS_CODIF_HS_O1_PEF",
+      "type": "double",
+      "units": "keV cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "CIS-CODIF 3D HS Oxygen+ distributions",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        16,
+        31
+      ]
+    }
+  ],
+  "startDate": "2001-01-10T13:47:52.000Z",
+  "stopDate": "2009-11-11T08:16:23.000Z"
+}

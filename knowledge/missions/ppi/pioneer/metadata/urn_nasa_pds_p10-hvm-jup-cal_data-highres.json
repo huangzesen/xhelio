@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT EVENT TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time at which the spacecraft sampled the magnetometer  \n      instrument memory in order to generate the packetized data. Time is     \n      given in PDS format: yyyy-mm-ddThh:mm:ss.sss. The individual elements   \n      of the time field can be read using the format (i4,4(1x,i2),1x,f6.3)    \n      yr, mon, day, hr, min, sec.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nT",
+      "description": "Southward field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "Corotational field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    },
+    {
+      "name": "B-FIELD MAGNITUDE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ],
+      "fill": "-99999.99"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,1916 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B01S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 0, energy range 25.394-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 1, energy range 2.9784-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 2, energy range 8.9349-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 3, energy range 2.9784-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 4, energy range 2.9784-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 1 Sector 5, energy range 18.669-54.877 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B01S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 1 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 0, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 1, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 2, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 3, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 4, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 2 Sector 5, energy range 56.114-118.11 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B02S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 2 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 0, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 1, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 2, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 3, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 4, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 3 Sector 5, energy range 119.27-217.68 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B03S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 3 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 0, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 1, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 2, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 3, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 4, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 4 Sector 5, energy range 218.84-377.06 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B04S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 4 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 0, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 1, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 2, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 3, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 4, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 5 Sector 5, energy range 378.22-636.43 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B05S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 5 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 0, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 1, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 2, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 3, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 4, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "H+ count rate, Box 6 Sector 5, energy range 584.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B06S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 6 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 0, energy range 53.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 1, energy range 50.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 2, energy range 50.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 3, energy range 50.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 4, energy range 50.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 7 Sector 5, energy range 60.37-94.37 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B07S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 7 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 0, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 1, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 2, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 3, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 4, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 8 Sector 5, energy range 95.37-1020.4 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B08S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 8 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 0, energy range 12.478-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 1, energy range 12.478-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 2, energy range 20.946-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 3, energy range 6.1588-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 4, energy range 6.1588-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 9 Sector 5, energy range 20.946-253.79 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B09S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 9 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 0, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 10 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 1, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 10 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 2, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 10 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 3, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 10 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 4, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 10 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "He+ count rate, Box 10 Sector 5, energy range 255.07-1198.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B10S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "BBox 10 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 0, energy range 62.606-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 1, energy range 46.493-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 2, energy range 40.015-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 3, energy range 40.015-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 4, energy range 40.015-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 11 Sector 5, energy range 49.728-211.09 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B11S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 11 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 0, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 1, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 2, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 3, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 4, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 12 Sector 5, energy range 212.61-535.58 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B12S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 12 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 0, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 1, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 2, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 3, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 4, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "O count rate, Box 13 Sector 5, energy range 537.01-1411.7 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B13S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 13 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 0, energy range 69.066-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 1, energy range 69.066-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 2, energy range 97.501-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 3, energy range 69.066-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 4, energy range 69.066-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 14 Sector 5, energy range 88.856-263.62 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B14S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 14 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 0, energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 1, energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 2, energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 3, energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 4,  energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 15 Sector 5, energy range 265.5-597.45 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B15S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 15 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 0, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S01",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 1, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 2, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S03",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 3, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S04",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 4, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "N2_2 count rate, Box 16 Sector 5, energy range 598.9-1511.0 keV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B16S05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Box 16 Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS01",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS03",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS04",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllSAll",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All, All Sectors",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllSAllUnc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All, All Sectors Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS012",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 12",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ProtonAllS012Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Proton All Sector 12 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS01",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All S02 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS03",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS04",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllSAll",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sectors All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllSAllUnc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector All Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS012",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 12",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IonsAllS012Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Ions All Sector 12 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS01",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS03",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS04",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllSAll",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sectors All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllSAllUnc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sectors All Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS012",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 12",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeliumAllS012Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Helium All Sector 12 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS01",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS03",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS04",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllSAll",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sectors All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllSAllUnc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sectors All Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS012",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 12",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNOAllS012Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "CNO All Sector 12 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS00Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 0 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS01",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS01Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 1 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS02Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 2 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS03",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS03Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 3 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS04",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS04Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 4 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS05Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 5 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllSAll",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sectors All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllSAllUnc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sectors All Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS012",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 12",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeavyAllS012Unc",
+      "type": "double",
+      "units": "c/s",
+      "description": "Heavy All Sector 12 Uncertainty",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2014-07-03T00:30:00.000Z",
+  "stopDate": "2025-07-30T23:30:00.000Z"
+}

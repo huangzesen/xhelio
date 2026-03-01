@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "OPTL1",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains proton flux from Omnidirectional-Protons (520-1423 keV) Spin Averages Telescope 1. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OPTL2",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains proton flux from Omnidirectional-Protons (520-1423 keV) Spin Averages Telescope 2. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OPTL3",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains proton flux from Omnidirectional-Protons (520-1423 keV) Spin Averages Telescope 3. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OPTL4",
+      "type": "double",
+      "units": "protons/(s cm^2 sr)",
+      "description": "This column contains proton flux from Omnidirectional-Protons (520-1423 keV) Spin Averages Telescope 4. Flux units are protons/(s cm^2 sr).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

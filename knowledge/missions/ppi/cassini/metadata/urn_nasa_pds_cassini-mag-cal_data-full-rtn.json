@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN radial component of the magnetic-field component in nT.             \n      The radial component (R) points from the Sun to the spacecraft,         \n      positive away from the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN tangential component of the magnetic field component in nT.         \n      The tangential component (T) is parallel to the Solar Equatorial        \n      plane (Omega Sun x R).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "RTN normal component of the magnetic field component in nT.             \n      The normal component (N) completes the right handed set, and            \n      is roughly normal to the Solar Equatorial plane (R x Phi).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

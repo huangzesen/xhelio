@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Pfrmode",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates the scan mode of the PFR instrument.                     \n      1: Fast scan mode.                                                      \n      2: Slow scan mode.                                                      \n      3: Fixed-frequency mode.                                                \n      4: The mode switched during the averaging interval.                     \n      5: The mode could not be determined.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "double",
+      "units": "",
+      "description": "Column indicates telemetry bit rate:                                      \n      1: 128 bps.                                                             \n      2: 256 bps.                                                             \n      3: 512 bps.                                                             \n      4: 1024 bps.                                                            \n      5: Bit rate changed during averaging period.                            \n      6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

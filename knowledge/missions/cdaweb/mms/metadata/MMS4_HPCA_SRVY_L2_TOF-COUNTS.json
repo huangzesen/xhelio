@@ -1,0 +1,45 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms4_hpca_tof_counts",
+      "type": "integer",
+      "units": "",
+      "description": "TOF Counts for all angles, across all energies",
+      "fill": "65535.0",
+      "size": [
+        8,
+        128
+      ]
+    },
+    {
+      "name": "mms4_hpca_tof_counts_allA_atE",
+      "type": "integer",
+      "units": "",
+      "description": "---> Spectrograms all angles, at selected energies",
+      "fill": "65535.0",
+      "size": [
+        8,
+        128
+      ]
+    },
+    {
+      "name": "mms4_hpca_tof_counts_allE_atA",
+      "type": "integer",
+      "units": "",
+      "description": "---> Spectrograms at select angles, for all energies",
+      "fill": "65535.0",
+      "size": [
+        8,
+        128
+      ]
+    }
+  ],
+  "startDate": "2018-11-15T00:00:00.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

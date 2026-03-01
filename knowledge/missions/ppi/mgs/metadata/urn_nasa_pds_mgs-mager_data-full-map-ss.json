@@ -1,0 +1,99 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Sample_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Universal time of the sample at the spacecraft (UTC, spacecraft event         \n                        time). The time appears as 6 integer columns (year, day of year, hour,        \n                        minute, second, millisecond). Individual elements of the time column are      \n                        separated by a single ASCII space character and have leading zeros            \n                        omitted. The individual elements can be read by using the FORTRAN format      \n                        '(1X,I4,1X,I3,3(1X,I2),1X,I3)' IYR IDOY IHR IMIN ISEC IMSEC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Decimal Day",
+      "type": "double",
+      "units": "day",
+      "description": "Decimal day of year. This column provides a \n                        second representation of the sample time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Gain Range",
+      "type": "double",
+      "units": "",
+      "description": "Gain range of instrument at time of the sample. Pertains \n                        to B components in payload coordinate system. A negative\n                        value indicates a high-resolution vesus a variable time \n                        time resolution.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Outboard RMS Gain Range",
+      "type": "double",
+      "units": "",
+      "description": "Gain range component of a four vector giving the root mean square     \n                        of the outboard delta words (there are 23 delta words between         \n                        fullwords, sampled at either 32, 16, or 8 per second depending        \n                        on data rate allocation).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Outboard BSC Payload Gain Range",
+      "type": "double",
+      "units": "",
+      "description": "Gain range component of a four vector giving the (static)             \n                        spacecraft field in payload coordinates (this has been removed        \n                        from the measured field to compensate for spacecraft field)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Outboard BD Payload Gain Range",
+      "type": "double",
+      "units": "",
+      "description": "Gain range component of a four vector giving the (dynamic)            \n                        spacecraft field in payload coordinates (this has been removed        \n                        from the measured field to compensate for spacecraft field)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Solar Array -Y Panel (SAP) Current",
+      "type": "double",
+      "units": "mA",
+      "description": "Solar array (+Y panel) current from S/C engineering.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    },
+    {
+      "name": "Solar Array +Y Panel (SAP) Current",
+      "type": "double",
+      "units": "mA",
+      "description": "Solar array (+Y panel) current from S/C engineering.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    },
+    {
+      "name": "Solar Array Output (SAO) Current",
+      "type": "double",
+      "units": "mA",
+      "description": "Solar array output current (total) from S/C engineering.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

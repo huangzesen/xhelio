@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT NUMBER",
+      "type": "integer",
+      "units": "N/A",
+      "description": "MGS Orbit number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOLAR LONGITUDE",
+      "type": "double",
+      "units": "degree",
+      "description": "Planetocentric longitude of the Sun at the orbit periapsis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOLAR LATITUDE",
+      "type": "double",
+      "units": "degree",
+      "description": "Planetocentric latitude of the Sun at the orbit periapsis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MGS LONGITUDE",
+      "type": "double",
+      "units": "degree",
+      "description": "Planetocentric longitude of the spacecraft at the orbit periapsis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MGS LATITUDE",
+      "type": "double",
+      "units": "degree",
+      "description": "Planetocentric latitude of the spacecraft at the orbit periapsis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALTITUDE",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of the spacecraft at the orbit periapsis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOLAR RANGE",
+      "type": "double",
+      "units": "km",
+      "description": "Distance from Mars to the Sun at orbit periapsis.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "id": "PIONEER-VENUS",
+  "name": "Pioneer Venus",
+  "keywords": [
+    "pds3:pvo-",
+    "pioneer",
+    "pioneer_venus",
+    "pioneervenus",
+    "urn:nasa:pds:pvo-",
+    "venus"
+  ],
+  "profile": {
+    "description": "Pioneer Venus spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "PIONEERVENUS_MERGED_SOLAR-WIND_10M": {
+          "description": "Pioneer Venus Orbiter 10-minute merged solar wind data - Dr. C.T. Russell (magnetic field), Dr. Aaron Barnes (plasma) (UCLA, NASA/Ames)",
+          "start_date": "1978-12-06T00:00:00.000Z",
+          "stop_date": "1988-08-07T10:50:00.000Z",
+          "pi_name": "Dr. C.T. Russell (magnetic field), Dr. Aaron Barnes (plasma)",
+          "pi_affiliation": "UCLA, NASA/Ames",
+          "doi": "10.48322/ey7t-8763",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEERVENUS_MERGED_SOLAR-WIND_10M"
+        },
+        "PIONEERVENUS_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "PioneerVenus merged hourly magnetic field, plasma and ephermis data - Dr. T. C. Russell (magnetic field), Dr. Aaron Barnes (plasma) (UCLA, NASA/Ames)",
+          "start_date": "1978-12-05T00:00:00.000Z",
+          "stop_date": "1992-12-31T23:00:00.000Z",
+          "pi_name": "Dr. T. C. Russell (magnetic field), Dr. Aaron Barnes (plasma)",
+          "pi_affiliation": "UCLA, NASA/Ames",
+          "doi": "10.48322/f172-0b94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEERVENUS_COHO1HR_MERGED_MAG_PLASMA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Pioneer",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

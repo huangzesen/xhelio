@@ -1,0 +1,591 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCID",
+      "type": "double",
+      "units": "",
+      "description": "S/C identification Number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ISTIM",
+      "type": "double",
+      "units": "sec",
+      "description": "10*Seconds of Day at interval start time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "day",
+      "description": "Day of Year (Jan. 1 = 1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YEAR70",
+      "type": "double",
+      "units": "year",
+      "description": "Years starting from 1970.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TL1NL2",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #1: L1N2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CL1NL2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #1: L1N2.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD1SN237",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #2: D1SN237.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD1SN237",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #2: D1SN237.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD1S2N37",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #3: D1S2N37.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD1S2N37",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #3: D1S2N37.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD1245N6",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #4: D1245N67.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD1245N6",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #4: D1245N67.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD2456N7",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #5: D2456N7.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD2456N7",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #5 (Subcom Digital): D2456N7.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD12NS37",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #6: D12NS37.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD12NS37",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #6 (Subcom Digital): D12NS37.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TL1L2",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Rate #7: L12.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CL1L2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Rate #7 (Subcom Digital): L12.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TFISS1",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Fission 1 Rate: FISS1.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CFISS1",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Fission 1 Rate (Subcom Digital): FISS1.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TFISS2",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for Fission 2 Rate: FISS2.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CFISS2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for Fission 2 Rate (Subcom Digital): FISS2.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TECD",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for ECD Current: ECD.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CECD",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for ECD Current (Subcom Analog): (ECD x 1.00e+9).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TD7",
+      "type": "double",
+      "units": "sec",
+      "description": "Coverage (seconds) for the subcom rate: D7.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CD7",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for the subcom rate (Subcom Analog): D7.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID1",
+      "type": "double",
+      "units": "events",
+      "description": "Total number of PH events for ID1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID2",
+      "type": "double",
+      "units": "events",
+      "description": "Total number of PH events for ID2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID5",
+      "type": "double",
+      "units": "events",
+      "description": "Total number of PH events for ID5.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID713",
+      "type": "double",
+      "units": "events",
+      "description": "Total number of PH events for ID7 + ID13.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID13",
+      "type": "double",
+      "units": "events",
+      "description": "Total number of PH events for ID13.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPHID13",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #01: D1 Protons (3 - 10 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID1HE",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #02: ID1 Helium  (3 - 10 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID1CNO",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #03: ID1 CNO.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2P1",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #04: ID2 Protons  (11 - 20 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2P2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #05: ID2 Protons  (11.00 - 13.25 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2P3",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #06: ID2 Protons  (13.25 - 15.50 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2P4",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #07: ID2 Protons  (15.50 - 17.75 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2P5",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #08: ID2 Protons  (17.75 - 20.00 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID2HE",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #09: ID2 Helium  (11 - 20 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID3P",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #10: ID3 Protons  (20 - 24 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID3HE",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #11: ID3 Helium  (20 - 24 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID4E",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #12: ID4 Electrons.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID4P",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #13: ID4 Protons  (24 - 29 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID4HE",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #14: ID4 Helium  (24 - 29 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID4ZG2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #15:  ID4 Z > 2.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5E1",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #16: ID5 Electrons.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5E2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #17: ID5 Electrons (2 x min. ion.).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5P1",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #18: ID5 Protons  (29 - 67 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5P2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #19: ID5 Protons  (29 - 42 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5P3",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #20: ID5 Protons  (42 - 54 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5P4",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #21: ID5 Protons  (54 - 67 MeV).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5HE",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #22: ID5 Helium  (29 - 67 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID5ZG2",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #23:  ID5 Z>2.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID7ZG5",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #24: ID7 Z>5.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID9E",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #25: ID9 Electrons.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID10E",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #26: ID10 Electrons.\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NID7+13",
+      "type": "double",
+      "units": "counts",
+      "description": "Counts for PH Box #27: ID7 + ID13  (> 67 MeV/amu).\n                        In cases where there were errors in the computation of any \"Counts\",\n                        the reported value will be set to \"-1\".",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEGLONG",
+      "type": "double",
+      "units": "",
+      "description": "100*S/C longitude (Heliographic coord.).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEGLAT",
+      "type": "double",
+      "units": "",
+      "description": "100*S/C latitude (Heliographic coord.).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEGRAD",
+      "type": "double",
+      "units": "",
+      "description": "100*Radial Distance of s/c from the sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TELBRATE",
+      "type": "double",
+      "units": "bps",
+      "description": "S/C Telemetry rate (bps).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFFBRATE",
+      "type": "double",
+      "units": "bps",
+      "description": "Effective bit rate (bps).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPINRATE",
+      "type": "double",
+      "units": "rpm",
+      "description": "S/C Spin Rate (rpm  x 1000).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

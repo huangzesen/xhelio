@@ -1,0 +1,1808 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thd_peif_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Full Mode Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peif_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Full Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram w/",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peif_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peif_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peif_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector /w Quality",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Full Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peef_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Full Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peef_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peef_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peef_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Reduced Mode, Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peir_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Reduced Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peir_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peir_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peir_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Reduced Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peer_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Reduced Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peer_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peer_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peer_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Burst Mode, Ion Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peib_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_sc_potW",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Burst Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peib_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peib_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peib_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_data_quality",
+      "type": "integer",
+      "units": "",
+      "description": "ESA Burst Mode, Electron Moment Data Quality (0: Good data, non-zero: Data may not be suitable, see: http://themis.ssl.berkeley.edu/esa_flag.shtml.)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "thd_peeb_densityQ",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "(Good data only) ESA Burst (High Time and Angular Resolution) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_avgtempQ",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_sc_potQ",
+      "type": "double",
+      "units": "V",
+      "description": "-----SC Potential (Same time array as Burst Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_en_efluxQ",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peeb_t3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_magt3Q",
+      "type": "double",
+      "units": "eV",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_ptensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peeb_mftensQ",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peeb_fluxQ",
+      "type": "double",
+      "units": "#/(cm^2-s)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_symmQ",
+      "type": "double",
+      "units": "None",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_symm_angQ",
+      "type": "double",
+      "units": "degrees",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_magfQ",
+      "type": "double",
+      "units": "nT",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_dslQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_gsmQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Full Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peif_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (TprpFA1, TprpFA2, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peif_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peif_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peif_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peif_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Full (High Angular Resolution, few minute time res.) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Full Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peef_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peef_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peef_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peef_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Full Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peef_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Reduced Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peir_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peir_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peir_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peir_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peir_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Reduced (Low Angular Res., 3-s Time Res.) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Reduced Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peer_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peer_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peer_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peer_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Reduced Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peer_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Burst (High Time and Angular Resolution) Mode, Ion Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Burst Ion ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Ion Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peib_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Ion Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peib_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Ion Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peib_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Ion Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Ion Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Ion Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peib_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Ion ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peib_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Ion Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_density",
+      "type": "double",
+      "units": "cm^-3 (All Qs)",
+      "description": "(All qualities data) ESA Burst (High Time and Angular Resolution) Mode, Electron Density",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_avgtemp",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Average Temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_vthermal",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Thermal Velocity",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_sc_pot",
+      "type": "double",
+      "units": "V (All Qs)",
+      "description": "-----SC Potential (Same time array as Burst Electron ESA data)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_en_eflux",
+      "type": "double",
+      "units": "eV/(cm^2-s-sr-eV) (All Qs)",
+      "description": "-----Electron Energy Flux spectrogram",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_peeb_t3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Diagonalized Temperature (Tprp1, Tprp2, Tpar)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_magt3",
+      "type": "double",
+      "units": "eV (All Qs)",
+      "description": "-----Electron Temperature, Field Aligned (Tprp1FA, Tprp2FA, TparFA)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_ptens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Pressure Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peeb_mftens",
+      "type": "double",
+      "units": "eV/cm^3 (All Qs)",
+      "description": "-----Electron Momentum Flux Tensor",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_peeb_flux",
+      "type": "double",
+      "units": "#/(cm^2-s) (All Qs)",
+      "description": "-----Electron Particle Flux Vector",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_symm",
+      "type": "double",
+      "units": "None (All Qs)",
+      "description": "-----Electron Symmetry Vector (direction of pressure tensor symmetry (DSL))",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_symm_ang",
+      "type": "double",
+      "units": "degrees (All Qs)",
+      "description": "-----Electron Symmetry Angle (between symmetry direction and B)",
+      "fill": "nan"
+    },
+    {
+      "name": "thd_peeb_magf",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "-----Magnetic Field Vector in DSL (Same time array as Burst Electron ESA data)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_dsl",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in DSL",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_gse",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_peeb_velocity_gsm",
+      "type": "double",
+      "units": "km/s (All Qs)",
+      "description": "-----Electron Velocity Vector in GSM",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_eesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA electron solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "thd_iesa_solarwind_flag",
+      "type": "integer",
+      "units": "adc",
+      "description": "ESA ion solar wind mode flag; 0: Not in Solar Wind mode, 1: in Solar Wind mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2007-03-07T00:00:00.000Z",
+  "stopDate": "2026-02-17T00:00:00.000Z"
+}

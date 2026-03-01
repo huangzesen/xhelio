@@ -1,0 +1,292 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "f_para",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "Electron flux, parallel average",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_all",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_even",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_odd",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_all_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_even_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_para_odd_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "Electron flux, perpendicular average",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_all",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_even",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_odd",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_all_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_even_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_perp_odd_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "Electron flux, anti-parallel average",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_all",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_even",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_odd",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_all_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_even_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_anti_odd_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "Electron flux, omni-directional average",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_all",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_even",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_odd",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_all_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for all channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_even_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for even channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "f_omni_odd_2",
+      "type": "double",
+      "units": "#/[cc*(cm/s)^3*str]",
+      "description": "--> stack plot for odd channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    }
+  ],
+  "startDate": "2002-08-16T00:00:05.000Z",
+  "stopDate": "2025-03-31T23:58:36.000Z"
+}

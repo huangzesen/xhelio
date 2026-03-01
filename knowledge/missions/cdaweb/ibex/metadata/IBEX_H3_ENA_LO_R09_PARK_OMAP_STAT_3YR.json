@@ -1,0 +1,371 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number 1 - 6 for six-month maps from IBEX Data Release 9",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Clm5",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Total CLM-filtered count rate, Lo Energy Ch.5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm5_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm6",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA CLM-filtered count rate, Energy Ch.6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm6_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm7",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Total CLM-filtered count rate, Energy Ch.7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm7_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm8",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Total CLM-filtered count rate, Energy Ch.8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clm8_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr5",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Signal/Noise-filtered count rate, Lo Energy Ch.5 ~0.209 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr5_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr6",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Signal/Noise-filtered Count Rate, Lo Energy Ch.6 ~0.439 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr6_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr7",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Signal/Noise-filtered Count Rate, Lo Energy Ch.7 ~0.872 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr7_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr8",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA Signal/Noise-filtered Count Rate, Lo Energy Ch.8 ~1.821 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Rsnr8_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr5",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA count rate filtered by s/n ratio and confidence level method, Lo Energy Ch.5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr5_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr6",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA count rate filtered by s/n ratio and confidence level method, Energy Ch.6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr6_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr7",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA count rate filtered by s/n ratio and confidence level method, Energy Ch.7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr7_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr8",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O ENA count rate filtered by s/n ratio and confidence level method, Lo Energy Ch.8 ~1.821 - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Clmsnr8_plasma",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster5",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "Cluster-filtered count rate at Lo Energy Ch.5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster5_plasma",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster6",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "Cluster-filtered count rate, Energy Ch.6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster6_plasma",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster7",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "Cluster-filtered count rate, Energy Ch.7 ~0.872 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster7_plasma",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster8",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "Cluster-filtered count rate, Energy Ch.8 ~1.821 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Cluster8_plasma",
+      "type": "double",
+      "units": "counts/hour",
+      "description": "---> Above as X/Y image",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2008-12-25T00:00:00.000Z"
+}

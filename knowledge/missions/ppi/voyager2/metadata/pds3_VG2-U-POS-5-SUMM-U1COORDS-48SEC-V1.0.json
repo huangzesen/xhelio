@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "RADII",
+      "description": "PLANETOCENTRIC X",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "RADII",
+      "description": "PLANETOCENTRIC Y",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "RADII",
+      "description": "PLANETOCENTRIC Z",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RADII",
+      "description": "S/C DISTANCE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "S/C LATITUDE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "S/C LONGITUDE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

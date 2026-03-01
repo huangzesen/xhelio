@@ -1,0 +1,247 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac_time_series_seconds",
+      "type": "double",
+      "units": "s",
+      "description": "L2 AC Burst Single Ended Voltage Waveform Time in Seconds (relative to start of burst)",
+      "fill": "-1e+31",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1_f",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1_rms",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1 rms value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1_max",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1 max value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1_min",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1 min value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac1_median",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 1 median value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2_f",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2_rms",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2 rms value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2_max",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2 max value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2_min",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2 min value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac2_median",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 2 median value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3_f",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3_rms",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3 rms value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3_max",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3 max value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3_min",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3 min value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac3_median",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 3 median value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4_f",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4_rms",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4 rms value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4_max",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4 max value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4_min",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4 min value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac4_median",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 4 median value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        524288
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5_f",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5_rms",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5 rms value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5_max",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5 max value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5_min",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5 min value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "psp_fld_l2_dfb_dbm_vac5_median",
+      "type": "double",
+      "units": "V",
+      "description": "L2 AC Burst Single Ended Voltage from Sensor 5 median value",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

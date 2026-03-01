@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "DENSITY FOR THE FIRST FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGDEN1",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN DEN1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "DENSITY FOR THE SECOND FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGDEN2",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN DEN2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN3",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "DENSITY FOR THE THIRD FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGDEN3",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN DEN3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH1",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "THERM. SPD. FOR FIRST FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGWTH1",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN WTH1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH2",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "THERM. SPD. FOR SECOND FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGWTH2",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN WTH2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH3",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "THERM. SPD. FOR THIRD FIT COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGWTH3",
+      "type": "double",
+      "units": "CM**-3",
+      "description": "1 SIGMA UNCERTAINTY IN WTH3",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

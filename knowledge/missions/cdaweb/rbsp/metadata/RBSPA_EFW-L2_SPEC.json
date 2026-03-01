@@ -1,0 +1,92 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "spec64_e12ac",
+      "type": "double",
+      "units": "(mV/m)^2/Hz",
+      "description": "E12 AC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_e56ac",
+      "type": "double",
+      "units": "(mV/m)^2/Hz",
+      "description": "---> E56 AC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_v1ac",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "[64 FREQUENCIES] V1 AC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_v2ac",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "---> V2 AC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_scmu",
+      "type": "double",
+      "units": "pT^2/Hz",
+      "description": "[64 FREQUENCIES] SCM u",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_scmv",
+      "type": "double",
+      "units": "pT^2/Hz",
+      "description": "---> SCM v",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "spec64_scmw",
+      "type": "double",
+      "units": "pT^2/Hz",
+      "description": "---> SCM w",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "efw_qual",
+      "type": "integer",
+      "units": "",
+      "description": "An array that indicates a global estimate of EFW data quality, as well as a breakdown of observatory and instrument-level data quality issues that impact the global quality estimate..",
+      "fill": "-32768.0",
+      "size": [
+        20
+      ]
+    }
+  ],
+  "startDate": "2012-09-05T14:35:57.000Z",
+  "stopDate": "2019-10-14T00:00:06.000Z"
+}

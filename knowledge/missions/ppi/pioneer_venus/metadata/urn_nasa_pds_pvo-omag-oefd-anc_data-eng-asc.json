@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sssZ.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECT",
+      "type": "double",
+      "units": "deg",
+      "description": "ELECT: Magnetometer electronics temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PSENST",
+      "type": "double",
+      "units": "deg",
+      "description": "PSENST: Magnetometer P and T sensor\ntemperatures.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSENST",
+      "type": "double",
+      "units": "deg",
+      "description": "GSENST: Magnetometer G sensor temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MODE",
+      "type": "double",
+      "units": "",
+      "description": "MODE: Magnetometer mode 1=Fast, 2=Normal,\n3=Gradiometer.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SMPLRATE",
+      "type": "double",
+      "units": "",
+      "description": "SMPLRATE: Magnetometer sample format\n(either 1 or 3).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CAL",
+      "type": "double",
+      "units": "",
+      "description": "CAL: Magnetometer calibration cycle: 0=No,\n1=Yes.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAS",
+      "type": "double",
+      "units": "",
+      "description": "SAS: Magnetometer Spin Average Select (SAS).\nValid values are 1, 2, and 4.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FORMAT",
+      "type": "double",
+      "units": "",
+      "description": "FORMAT: Telemetry data format (0-15).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BITRATE",
+      "type": "double",
+      "units": "bits/s",
+      "description": "BITRATE: Telemetry bit rate.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPIN",
+      "type": "double",
+      "units": "s",
+      "description": "SPIN: Spacecraft spin period from the SEDR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TFS",
+      "type": "double",
+      "units": "s",
+      "description": "TFS: Pulse time (Fs) from the SEDR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SMINR",
+      "type": "double",
+      "units": "s",
+      "description": "SMINR: The difference between the Sun pulse\ntime and the Rip pulse time (Sun - Rip).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PTFLAG",
+      "type": "double",
+      "units": "",
+      "description": "PTFLAG: Pulse time flag (0 if there is a\nreal Sun pulse associated with this data sample, -1 otherwise).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

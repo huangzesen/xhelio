@@ -1,0 +1,92 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C2_PP_RAP",
+      "type": "integer",
+      "units": "",
+      "description": "RAPID status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "J_e_lo__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Electron Flux (E>30 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_e_hi__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Electron Flux (E>100 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_p_lo__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Proton Flux (E>30 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_p_hi__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Proton Flux (E>100 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_He_lo__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Helium Flux (E>50 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_He_hi__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Helium Flux (E>150 kev), Integral flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_hvy_lo__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Ion Flux (m>4, E>100 kev), Integral heavy ion flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_hvy_hi__C2_PP_RAP",
+      "type": "double",
+      "units": "1/(cm^2 s sr)",
+      "description": "Ion Flux (m>4, E>300 kev), Integral heavy ion flux averaged over 4 pi",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_e_par__C2_PP_RAP",
+      "type": "double",
+      "units": "",
+      "description": "Field-aligned electron anisotropy (E>30 kev, (J(0)-J(180))/(J(0)+J(180))",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "A_p_par__C2_PP_RAP",
+      "type": "double",
+      "units": "",
+      "description": "Field-aligned proton anisotropy (E>30 kev, (J(0)-J(180))/(J(0)+J(180))",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-09T00:41:06.000Z",
+  "stopDate": "2024-09-30T00:00:00.000Z"
+}

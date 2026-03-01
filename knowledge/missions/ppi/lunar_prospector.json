@@ -1,0 +1,135 @@
+{
+  "id": "LUNAR-PROSPECTOR",
+  "name": "Lunar Prospector",
+  "keywords": [
+    "lunar",
+    "lunar_prospector",
+    "pds",
+    "ppi",
+    "prospector"
+  ],
+  "profile": {
+    "description": "Lunar Prospector data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Electron Reflectometer": {
+      "name": "Electron Reflectometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:lp-er-calibrated:data-3deleflux-anc": {
+          "description": "Lunar Prospector ER 3-D Electron Flux Ancillary Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-3deleflux-anc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-calibrated:data-highresflux-anc": {
+          "description": "Lunar Prospector ER High Resolution Electron Flux Ancillary Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-highresflux-anc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-calibrated:data-lowresflux-anc": {
+          "description": "Lunar Prospector ER Low Resolution Electron Flux Ancillary Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-lowresflux-anc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-calibrated:data-highresflux": {
+          "description": "Lunar Prospector ER High Resolution Electron Flux Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-highresflux",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-derived:data-electron": {
+          "description": "Lunar Prospector ER Electron Reflection Data Collection",
+          "start_date": "1998-06-08",
+          "stop_date": "1999-06-27",
+          "slot": "/data/lp-er-derived/data-electron",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-calibrated:data-3deleflux": {
+          "description": "Lunar Prospector ER 3-D Electron Flux Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-3deleflux",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-er-calibrated:data-lowresflux": {
+          "description": "Lunar Prospector ER Low Resolution Electron Flux Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1999-07-29",
+          "slot": "/data/lp-er-calibrated/data-lowresflux",
+          "archive_type": 4
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:lp-mager-derived:data-moon-pos": {
+          "description": "Lunar Prospector Moon Position Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1998-01-16",
+          "slot": "/data/lp-mager-derived/data-moon-pos",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-mag-derived:data-lunarsurface": {
+          "description": "Lunar Prospector MAG Data Large-Scale Vector Field Maps at a Common Altitude Data Collection",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/lp-mag-derived/data-lunarsurface",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-mag-calibrated:data-lunarfield": {
+          "description": "Lunar Prospector Crustal Magnetic Field Data Collection",
+          "start_date": "1998-02-09",
+          "stop_date": "1998-02-09",
+          "slot": "/data/lp-mag-calibrated/data-lunarfield",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-mag-calibrated:data-lunarcrds": {
+          "description": "Lunar Prospector Magnetic Vector Measurements Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1998-01-16",
+          "slot": "/data/lp-mag-calibrated/data-lunarcrds",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-mager-derived:data-spacecraft-pos": {
+          "description": "Lunar Prospector Trajectory Data Collection",
+          "start_date": "1998-01-16",
+          "stop_date": "1998-01-16",
+          "slot": "/data/lp-mager-derived/data-spacecraft-pos",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:lp-mag-derived:data-fieldbins": {
+          "description": "Lunar Prospector Regional Field Bins at the Spacecraft Altitude Data Collection",
+          "start_date": "1998-02-01",
+          "stop_date": "1998-02-01",
+          "slot": "/data/lp-mag-derived/data-fieldbins",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

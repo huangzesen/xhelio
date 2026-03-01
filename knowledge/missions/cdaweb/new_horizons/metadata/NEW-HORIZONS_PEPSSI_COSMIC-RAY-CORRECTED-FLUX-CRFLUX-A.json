@@ -1,0 +1,75 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "R0S00_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R0 Sector 0 Background Corrected Flux, Lower Bound-Upper Bound (keV): 21.5-22.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R0S02_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R0 Sector 2 Background Corrected Flux, Lower Bound-Upper Bound (keV): 22.5-23.5",
+      "fill": null
+    },
+    {
+      "name": "R0S05_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R0 Sector 5 Background Corrected Flux, Lower Bound-Upper Bound (keV): 23.5-24.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R1S00_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R1 Sector 0 Background Corrected Flux, Lower Bound-Upper Bound (keV): 24.5-25.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R1S02_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R1 Sector 2 Background Corrected Flux, Lower Bound-Upper Bound (keV): 25.5-26.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R1S05_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R1 Sector 5 Background Corrected Flux, Lower Bound-Upper Bound (keV): 26.5-27.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R2S00_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R2 Sector 0 Background Corrected Flux, Lower Bound-Upper Bound (keV): 27.5-28.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R2S02_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R2 Sector 2 Background Corrected Flux, Lower Bound-Upper Bound (keV): 28.5-29.5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R2S05_BkgdCorrFlux",
+      "type": "double",
+      "units": "c/s/ster/cm^2/keV",
+      "description": "R2 Sector 5 Background Corrected Flux, Lower Bound-Upper Bound (keV): 29.5-30.5",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-01-01T00:30:00.000Z",
+  "stopDate": "2025-12-31T23:30:00.000Z"
+}

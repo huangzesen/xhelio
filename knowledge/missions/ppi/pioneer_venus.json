@@ -1,0 +1,608 @@
+{
+  "id": "PIONEER-VENUS_PPI",
+  "name": "Pioneer Venus (PDS PPI)",
+  "keywords": [
+    "pds",
+    "pioneer",
+    "pioneer_venus",
+    "pioneer_venus_ppi",
+    "ppi",
+    "venus"
+  ],
+  "profile": {
+    "description": "Pioneer Venus data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "General": {
+      "name": "General",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-sedr:data-pt": {
+          "description": "PVO SEDR Pulse Time Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-pt",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-sedr:data-att": {
+          "description": "PVO SEDR Spacecraft Attitude Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-att",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-sedr:data-log": {
+          "description": "PVO SEDR Tape Label (Logistic) Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-log",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-POS-5--VSOCOORDS-12SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-POS-5--VSOCOORDS-12SEC-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-POS-5--VSOCOORDS-12SEC-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-sedr:data-pt-corr": {
+          "description": "PVO SEDR Corrected Pulse Time Data Collection",
+          "start_date": "0002-12-31",
+          "stop_date": "2055-10-12",
+          "slot": "/data/pvo-sedr/data-pt-corr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-sedr:data-srr": {
+          "description": "PVO SEDR Selected Roll Reference Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-srr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-sedr:data-ephem": {
+          "description": "PVO SEDR Spacecraft Ephemeris Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-ephem",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-sedr:data-spin": {
+          "description": "PVO SEDR Spin Period Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-sedr/data-spin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-ephem:data-vso-asc": {
+          "description": "PVO Spacecraft VSO Ephemeris and Spacecraft Orientation ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-ephem/data-vso-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-ephem:data-vso-bin": {
+          "description": "PVO Spacecraft VSO Ephemeris and Spacecraft Orientation Original Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-ephem/data-vso-bin",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-POS-6-SEDR-ORBITATTITUDE--V1.0": {
+          "description": "PV0 at Venus: PVO-V-POS-6-SEDR-ORBITATTITUDE--V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-POS-6-SEDR-ORBITATTITUDE--V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Orbiter Electric Field Detector": {
+      "name": "Orbiter Electric Field Detector",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-oefd-cal:data-highres-asc": {
+          "description": "PVO Electric Field Detector (OEFD) High-Res. ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-oefd-cal/data-highres-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-oefd-cal:data-highres-bin": {
+          "description": "PVO Electric Field Detector (OEFD) High-Res. Original Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-oefd-cal/data-highres-bin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-oefd-cal:data-24s-asc": {
+          "description": "PVO Electric Field Detector (OEFD) 24 Sec. Avgs. ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-oefd-cal/data-24s-asc",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OEFD-4--EFIELD-24SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OEFD-4--EFIELD-24SEC-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-OEFD-4--EFIELD-24SEC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OEFD-3--EFIELD-HIRES-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OEFD-3--EFIELD-HIRES-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-OEFD-3--EFIELD-HIRES-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-oefd-cal:data-24s-bin": {
+          "description": "PVO Electric Field Detector (OEFD) 24 Sec. Avgs. Original Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-oefd-cal/data-24s-bin",
+          "archive_type": 4
+        }
+      }
+    },
+    "Orbiter Electron Temperature Probe": {
+      "name": "Orbiter Electron Temperature Probe",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-oetp:data-bowshock": {
+          "description": "Pioneer Venus Orbiter (PVO) Electron Temperature Probe (OETP) Bow Shock Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-06",
+          "slot": "/data/pvo-oetp/data-bowshock",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OETP-5-IONOPAUSELOCATION-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-IONOPAUSELOCATION-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-5-IONOPAUSELOCATION-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-IONOPAUSELOCATION-V1.0:DATA": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-IONOPAUSELOCATION-V1.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-5-IONOPAUSELOCATION-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-LORESELECTRONS-V1.0:DATA": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-LORESELECTRONS-V1.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-5-LORESELECTRONS-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0:DATA": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-01-18",
+          "slot": "/data/PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-oetp:data-electron-lowres": {
+          "description": "Pioneer Venus Orbiter (PVO) Electron Temperature Probe (OETP) Low-Res. Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-oetp/data-electron-lowres",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OETP-3-HIRESELECTRONS-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OETP-3-HIRESELECTRONS-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-3-HIRESELECTRONS-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-LORESELECTRONS-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-LORESELECTRONS-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-5-LORESELECTRONS-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-01-18",
+          "slot": "/data/PVO-V-OETP-5-SOLAREUV-24HRAVG-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-06",
+          "slot": "/data/PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-oetp:data-ionopause": {
+          "description": "Pioneer Venus Orbiter (PVO) Electron Temperature Probe (OETP) Ionopause Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1985-07-22",
+          "slot": "/data/pvo-oetp/data-ionopause",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-oetp:data-solareuv": {
+          "description": "Pioneer Venus Orbiter (PVO) Electron Temperature Probe (OETP) Solar EUV Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-01-18",
+          "slot": "/data/pvo-oetp/data-solareuv",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0:DATA": {
+          "description": "PV0 at Venus: PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-06",
+          "slot": "/data/PVO-V-OETP-5-BOWSHOCKLOCATION-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-oetp:data-electron-highres": {
+          "description": "Pioneer Venus Orbiter (PVO) Electron Temperature Probe (OETP) High-Res. Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-oetp/data-electron-highres",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OETP-3-HIRESELECTRONS-V1.0:DATA": {
+          "description": "PV0 at Venus: PVO-V-OETP-3-HIRESELECTRONS-V1.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OETP-3-HIRESELECTRONS-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "Orbiter Fluxgate Magnetometer": {
+      "name": "Orbiter Fluxgate Magnetometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-omag-cal:data-psens-24s-bin": {
+          "description": "PVO Venus MAG Resampled P-Sensor 24 Sec Avgs Original Binary Data Collection",
+          "start_date": "1988-10-16",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-cal/data-psens-24s-bin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-psens-24s-asc": {
+          "description": "PVO Venus MAG Resampled P-Sensor 24 Sec Avgs ASCII Data Collection",
+          "start_date": "1988-10-16",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-cal/data-psens-24s-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-oefd-anc:data-phaseoff-bin": {
+          "description": "PVO OMAG/OEFD Phase and Offset Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-oefd-anc/data-phaseoff-bin",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OMAG-4-P-SENSOR-24SEC-V2.0": {
+          "description": "PVO at Venus: PVO-V-OMAG-4-P-SENSOR-24SEC-V2.0",
+          "start_date": "1988-10-15",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-OMAG-4-P-SENSOR-24SEC-V2.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-anc-inststat-bin": {
+          "description": "PVO OMAG Instrument Status Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-cal/data-anc-inststat-bin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-sc-highres-asc": {
+          "description": "PVO Magnetic-Field VSO and Spacecraft Coords. High-Res. ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-cal/data-sc-highres-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-oefd-anc:data-eng-asc": {
+          "description": "PVO OMAG/OEFD Engineering ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-oefd-anc/data-eng-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-sc-24s-asc": {
+          "description": "PVO Magnetic-Field VSO and Spacecraft Coords. 24 Sec. Avgs. ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-cal/data-sc-24s-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-psens-highres-asc": {
+          "description": "PVO MAG Calibrated P-Sensor High-Res. ASCII Data Collection",
+          "start_date": "1988-10-15",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-cal/data-psens-highres-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-sc-highres-bin": {
+          "description": "PVO Magnetic-Field VSO and Spacecraft Coords. High-Res. Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-cal/data-sc-highres-bin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-oefd-anc:data-phaseoff-asc": {
+          "description": "PVO OMAG/OEFD Phase and Offset ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-oefd-anc/data-phaseoff-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-anc-inststat-asc": {
+          "description": "PVO OMAG Instrument Status ASCII Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-15",
+          "slot": "/data/pvo-omag-cal/data-anc-inststat-asc",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0:DATA": {
+          "description": "PVO at Venus: PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0 : DATA",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-sc-24s-bin": {
+          "description": "PVO Magnetic-Field VSO and Spacecraft Coords. 24 Sec. Avgs. Original Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/pvo-omag-cal/data-sc-24s-bin",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0": {
+          "description": "PVO at Venus: PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/PVO-V-OMAG-3--SCCOORDS-HIRES-V2.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-omag-cal:data-psens-highres-bin": {
+          "description": "PVO MAG Calibrated P-Sensor High-Res. Original Binary Data Collection",
+          "start_date": "1988-10-15",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-cal/data-psens-highres-bin",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-omag-oefd-anc:data-eng-bin": {
+          "description": "PVO OMAG/OEFD Engineering Original Binary Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-08",
+          "slot": "/data/pvo-omag-oefd-anc/data-eng-bin",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-OMAG-3-P-SENSOR-HIRES-V2.0": {
+          "description": "PVO at Venus: PVO-V-OMAG-3-P-SENSOR-HIRES-V2.0",
+          "start_date": "1988-10-15",
+          "stop_date": "1992-10-08",
+          "slot": "/data/PVO-V-OMAG-3-P-SENSOR-HIRES-V2.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-OMAG-4--SCCOORDS-24SEC-V2.0": {
+          "description": "PVO at Venus: PVO-V-OMAG-4--SCCOORDS-24SEC-V2.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1988-10-16",
+          "slot": "/data/PVO-V-OMAG-4--SCCOORDS-24SEC-V2.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Orbiter Ion Mass Spectrometer": {
+      "name": "Orbiter Ion Mass Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:PVO-V-OIMS-3-IONDENSITY-HIRES-V1.0": {
+          "description": "PV0 at Venus: PVO-V-OIMS-3-IONDENSITY-HIRES-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-OIMS-3-IONDENSITY-HIRES-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-oims:data-12s": {
+          "description": "Pioneer Venus Orbiter (PVO) Ion Mass Spectrometer Low-Res Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1987-02-18",
+          "slot": "/data/pvo-oims/data-12s",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-oims:data-highres": {
+          "description": "Pioneer Venus Orbiter (PVO) Ion Mass Spectrometer High-Res Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-oims/data-highres",
+          "archive_type": 4
+        }
+      }
+    },
+    "Orbiter Neutral Mass Spectrometer": {
+      "name": "Orbiter Neutral Mass Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-onms:data-supthrm-oxy-highres": {
+          "description": "PVO ONMS Superthermal Oxygen High-Res. Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-07-20",
+          "slot": "/data/pvo-onms/data-supthrm-oxy-highres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-onms:data-ion-count-12s": {
+          "description": "PVO ONMS Ion Max Count Rate Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-onms/data-ion-count-12s",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-ONMS-4-NEUTRALDENSITY-12SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-4-NEUTRALDENSITY-12SEC-V1.0",
+          "start_date": "1978-12-07",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ONMS-4-NEUTRALDENSITY-12SEC-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-onms:data-supthrm-ion-loc": {
+          "description": "PVO ONMS Superthermal Ion Location Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-onms/data-supthrm-ion-loc",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-ONMS-4-IONMAXCOUNTRATE-12SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-4-IONMAXCOUNTRATE-12SEC-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ONMS-4-IONMAXCOUNTRATE-12SEC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-ONMS-3-NEUTRALDENSITY-HIRES-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-3-NEUTRALDENSITY-HIRES-V1.0",
+          "start_date": "1978-12-07",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ONMS-3-NEUTRALDENSITY-HIRES-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-onms:data-supthrm-oxy-12s": {
+          "description": "PVO ONMS Superthermal Oxygen 12 Second Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-07-20",
+          "slot": "/data/pvo-onms/data-supthrm-oxy-12s",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-ONMS-5-SUPERTHERMALIONLOC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-5-SUPERTHERMALIONLOC-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ONMS-5-SUPERTHERMALIONLOC-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-onms:data-neu-dens-highres": {
+          "description": "PVO ONMS Neutral Density High-Res. Data Collection",
+          "start_date": "1978-12-07",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-onms/data-neu-dens-highres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-onms:data-neu-dens-12s": {
+          "description": "PVO ONMS Neutral Density 12 Sec Data Collection",
+          "start_date": "1978-12-07",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-onms/data-neu-dens-12s",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-onms:data-thrm-ion-12s": {
+          "description": "PVO ONMS Thermal Ion 12 Second Data Collection",
+          "start_date": "1980-03-15",
+          "stop_date": "1992-09-25",
+          "slot": "/data/pvo-onms/data-thrm-ion-12s",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-ONMS-3-SUPERTHRMLOXYGN-HIRES-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-3-SUPERTHRMLOXYGN-HIRES-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-07-20",
+          "slot": "/data/PVO-V-ONMS-3-SUPERTHRMLOXYGN-HIRES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-ONMS-4-THERMALION-12SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-4-THERMALION-12SEC-V1.0",
+          "start_date": "1980-03-15",
+          "stop_date": "1992-09-25",
+          "slot": "/data/PVO-V-ONMS-4-THERMALION-12SEC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-ONMS-4-SUPERTHRMLOXYGN-12SEC-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ONMS-4-SUPERTHRMLOXYGN-12SEC-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-07-20",
+          "slot": "/data/PVO-V-ONMS-4-SUPERTHRMLOXYGN-12SEC-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Orbiter Radio Science Experiment": {
+      "name": "Orbiter Radio Science Experiment",
+      "keywords": [],
+      "datasets": {
+        "pds3:PVO-V-ORSE-1-ODR-OPENLOOP--V1.0": {
+          "description": "PV0 at Venus: PVO-V-ORSE-1-ODR-OPENLOOP--V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ORSE-1-ODR-OPENLOOP--V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Orbiter Retarding Potential Analyzer": {
+      "name": "Orbiter Retarding Potential Analyzer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:pvo-orpa:data-ion-uncertainty": {
+          "description": "PVO Retarding Potential Analyzer (ORPA) High-Resolution Ion Uncertainty Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-orpa/data-ion-uncertainty",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-orpa:data-thermal-electron": {
+          "description": "PVO Retarding Potential Analyzer (ORPA) Thermal Electron Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-orpa/data-thermal-electron",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-orpa:data-photo-electron": {
+          "description": "PVO Retarding Potential Analyzer (ORPA) Photo Electron Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-orpa/data-photo-electron",
+          "archive_type": 4
+        },
+        "pds3:PVO-V-ORPA-2--IVCURVES-HIRES-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ORPA-2--IVCURVES-HIRES-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ORPA-2--IVCURVES-HIRES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:PVO-V-ORPA-5-ELE/ION/PHOTO/UADS-V1.0": {
+          "description": "PV0 at Venus: PVO-V-ORPA-5-ELE/ION/PHOTO/UADS-V1.0",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/PVO-V-ORPA-5-ELE_ION_PHOTO_UADS-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:pvo-orpa:data-lowres": {
+          "description": "PVO Retarding Potential Analyzer (ORPA) Low-Resolution Data Collection",
+          "start_date": "1978-12-04",
+          "stop_date": "1992-10-06",
+          "slot": "/data/pvo-orpa/data-lowres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:pvo-orpa:data-ion-highres": {
+          "description": "PVO Retarding Potential Analyzer (ORPA) High-Resolution Ion Data Collection",
+          "start_date": "1978-12-05",
+          "stop_date": "1992-10-07",
+          "slot": "/data/pvo-orpa/data-ion-highres",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

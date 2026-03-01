@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "integer",
+      "units": "",
+      "description": "Year of pass",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_ID",
+      "type": "integer",
+      "units": "",
+      "description": "S/C ID.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DSS",
+      "type": "integer",
+      "units": "",
+      "description": "DSS Number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT_NUMBER",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PASS_NUMBER",
+      "type": "integer",
+      "units": "",
+      "description": "Pass Number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "REEL_NUMBER",
+      "type": "integer",
+      "units": "",
+      "description": "Reel Number.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

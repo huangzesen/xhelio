@@ -1,0 +1,251 @@
+{
+  "id": "VOYAGER1",
+  "name": "Voyager 1",
+  "keywords": [
+    "pds3:vg1-",
+    "urn:nasa:pds:vg1-",
+    "urn:nasa:pds:voyager-pws-",
+    "urn:nasa:pds:voyager1.",
+    "vg1",
+    "voyager",
+    "voyager-1",
+    "voyager1"
+  ],
+  "profile": {
+    "description": "Voyager 1 spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "VOYAGER-1_LECP_ELEC-BGND-COR-1D": {
+          "description": "Voyager 1 LECP Background-corrected electron differential fluxes - Rob Decker (The John Hopkins Applied Physics Laboratory)",
+          "start_date": "2002-01-01T00:00:00.000Z",
+          "stop_date": "2012-08-27T00:00:00.000Z",
+          "pi_name": "Rob Decker",
+          "pi_affiliation": "The John Hopkins Applied Physics Laboratory",
+          "doi": "10.48322/s65n-9703",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER-1_LECP_ELEC-BGND-COR-1D"
+        },
+        "VOYAGER1_CRS_DAILY_FLUX": {
+          "description": "Voyager-1 CRS Daily Averaged Flux - E. C. Stone (California Institute of Technology)",
+          "start_date": "1977-09-08T00:00:00.000Z",
+          "stop_date": "2016-12-13T00:00:00.000Z",
+          "pi_name": "E. C. Stone",
+          "pi_affiliation": "California Institute of Technology",
+          "doi": "10.48322/rmq3-1z61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_CRS_DAILY_FLUX"
+        },
+        "VOYAGER-1_LECP_LEV-2-DAILY-AVG": {
+          "description": "Voyager I LECP Ion-Electron daily averaged fluxes and uncertainties. - Stamatios M.Krimigis (The John Hopkins Applied Physics Laboratory)",
+          "start_date": "1991-01-01T21:55:54.000Z",
+          "stop_date": "2021-12-16T01:15:45.000Z",
+          "pi_name": "Stamatios M.Krimigis",
+          "pi_affiliation": "The John Hopkins Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER-1_LECP_LEV-2-DAILY-AVG"
+        },
+        "VOYAGER-1_LECP_LEV-1-RATES": {
+          "description": "Voyager I LECP Ion-Electron count rates and uncertainties. - Stamatios M.Krimigis (The John Hopkins Applied Physics Laboratory)",
+          "start_date": "1991-01-01T21:55:54.000Z",
+          "stop_date": "2021-12-16T02:22:57.000Z",
+          "pi_name": "Stamatios M.Krimigis",
+          "pi_affiliation": "The John Hopkins Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER-1_LECP_LEV-1-RATES"
+        },
+        "VOYAGER-1_LECP_LEV-2-HOURLY-AVG": {
+          "description": "Voyager I LECP Ion-Electron hourly averaged fluxes and uncertainties. - STAMATIOS M KRIMIGIS (The John Hopkins Applied Physics Laboratory)",
+          "start_date": "1991-01-01T21:55:54.000Z",
+          "stop_date": "2021-12-16T02:03:45.000Z",
+          "pi_name": "STAMATIOS M KRIMIGIS",
+          "pi_affiliation": "The John Hopkins Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER-1_LECP_LEV-2-HOURLY-AVG"
+        },
+        "VOYAGER-1_LECP_LEV-2-SCAN-AVG": {
+          "description": "Voyager I LECP Ion-Electron scan averaged rates and fluxes with associated uncertainties. - STAMATIOS M KRIMIGIS (The John Hopkins Applied Physics Laboratory)",
+          "start_date": "1991-01-01T21:55:54.000Z",
+          "stop_date": "2021-12-16T02:22:57.000Z",
+          "pi_name": "STAMATIOS M KRIMIGIS",
+          "pi_affiliation": "The John Hopkins Applied Physics Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER-1_LECP_LEV-2-SCAN-AVG"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "VOYAGER1_2S_MAG": {
+          "description": "1.92 Second Averaged Interplanetary Magnetic Field - Adam Szabo (NASA GSFC)",
+          "start_date": "1977-09-08T00:00:35.000Z",
+          "stop_date": "1991-12-27T00:00:42.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/qhrq-xt70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_2S_MAG"
+        },
+        "VOYAGER1_1HR_MAG": {
+          "description": "hourly average interplanetary magnetic field - Adam Szabo (NASA GSFC)",
+          "start_date": "1990-01-01T17:00:00.000Z",
+          "stop_date": "1990-12-31T08:59:59.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_1HR_MAG"
+        },
+        "VOYAGER1_10S_MAG": {
+          "description": "9.6 Second Averaged Interplanetary Magnetic Field - Adam Szabo (NASA GSFC)",
+          "start_date": "1977-09-05T14:19:47.000Z",
+          "stop_date": "1991-12-27T00:00:42.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/2b60-1b10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_10S_MAG"
+        },
+        "VOYAGER1_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "Merged hourly magnetic field, plasma, proton fluxes, and ephemeris data - Adam Szabo (NASA GSFC)",
+          "start_date": "1977-01-01T00:00:00.000Z",
+          "stop_date": "2025-06-30T00:00:00.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/041p-cv36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_COHO1HR_MERGED_MAG_PLASMA"
+        },
+        "VOYAGER1_48S_MAG-VIM": {
+          "description": "Voyager1 Magnetic field VIM - Adam Szabo (NASA GSFC)",
+          "start_date": "2009-01-01T04:10:26.000Z",
+          "stop_date": "2025-06-30T00:01:28.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/envb-3w78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_48S_MAG-VIM"
+        },
+        "VOYAGER1_48S_MAG": {
+          "description": "48 Second Averaged Interplanetary Magnetic Field - Adam Szabo (NASA GSFC)",
+          "start_date": "1977-09-05T14:19:47.000Z",
+          "stop_date": "1991-12-27T00:00:42.000Z",
+          "pi_name": "Adam Szabo",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/dz4f-yc17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_48S_MAG"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "VOYAGER1_PLS_IONS_M": {
+          "description": "Voyager-1, Jupiter High-Resolution Ion Current Spectra - Dr. John D. Richardson (MIT Kavli Institute)",
+          "start_date": "1979-02-28T14:01:35.000Z",
+          "stop_date": "1979-03-22T13:02:31.000Z",
+          "pi_name": "Dr. John D. Richardson",
+          "pi_affiliation": "MIT Kavli Institute",
+          "doi": "10.48322/kk9h-cw52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_IONS_M"
+        },
+        "VOYAGER1_PLS_IONS_L": {
+          "description": "Voyager-1, Jupiter Low-Resolution Ion Current Spectra - Dr. John D. Richardson (MIT Kavli Institute)",
+          "start_date": "1979-02-28T14:01:00.000Z",
+          "stop_date": "1979-03-22T13:01:56.000Z",
+          "pi_name": "Dr. John D. Richardson",
+          "pi_affiliation": "MIT Kavli Institute",
+          "doi": "10.48322/50jg-a555",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_IONS_L"
+        },
+        "VG1_PWS_LR": {
+          "description": "Lowrate Plasma Waves Instrument - Bill Kurth (University of Iowa)",
+          "start_date": "1977-09-05T14:20:39.000Z",
+          "stop_date": "2026-02-09T08:04:02.000Z",
+          "pi_name": "Bill Kurth",
+          "pi_affiliation": "University of Iowa",
+          "doi": "10.17189/wp0z-1c51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VG1_PWS_LR"
+        },
+        "VOYAGER1_PLS_HIRES_PLASMA_DATA": {
+          "description": "HiRes plasma data - John D. Richardson (Kavli Institute for Astrophysics and Space Research, Massachusetts Institute of Technology.)",
+          "start_date": "1977-09-07T09:21:34.000Z",
+          "stop_date": "1980-12-31T17:56:35.000Z",
+          "pi_name": "John D. Richardson",
+          "pi_affiliation": "Kavli Institute for Astrophysics and Space Research, Massachusetts Institute of Technology.",
+          "doi": "10.48322/kcn9-y866",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_HIRES_PLASMA_DATA"
+        },
+        "VOYAGER1_PLS_COMPOSITION": {
+          "description": "Voyager-1, VIPER-Fit Plasma Ion Composition near Jupiter - Dr. John D. Richardson (MIT Kavli Institute)",
+          "start_date": "1979-03-03T10:23:58.000Z",
+          "stop_date": "1979-03-05T19:24:54.000Z",
+          "pi_name": "Dr. John D. Richardson",
+          "pi_affiliation": "MIT Kavli Institute",
+          "doi": "10.48322/d7ad-5817",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_COMPOSITION"
+        },
+        "VOYAGER1_PLS_ELECTRONS_E1": {
+          "description": "Voyager-1, Jupiter Low-Energy Electron Current Spectra - Dr. John D. Richardson (MIT Kavli Institute)",
+          "start_date": "1979-02-28T14:00:31.000Z",
+          "stop_date": "1979-03-22T12:59:51.000Z",
+          "pi_name": "Dr. John D. Richardson",
+          "pi_affiliation": "MIT Kavli Institute",
+          "doi": "10.48322/34jn-sq92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_ELECTRONS_E1"
+        },
+        "VOYAGER1_PLS_ELECTRONS_E2": {
+          "description": "Voyager-1, Jupiter High-Energy Electron Current Spectra - Dr. John D. Richardson (MIT Kavli Institute)",
+          "start_date": "1979-02-28T14:01:19.000Z",
+          "stop_date": "1979-03-22T13:00:39.000Z",
+          "pi_name": "Dr. John D. Richardson",
+          "pi_affiliation": "MIT Kavli Institute",
+          "doi": "10.48322/1gh0-3543",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VOYAGER1_PLS_ELECTRONS_E2"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "VG1_PWS_WF": {
+          "description": "Voyager 1, Plasma Waves Science, Wideband Electric Waveforms - W. Kurth (University Iowa)",
+          "start_date": "1978-08-21T05:41:36.000Z",
+          "stop_date": "2025-04-21T17:03:59.000Z",
+          "pi_name": "W. Kurth",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.17189/g5fy-rz59",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesV.html#VG1_PWS_WF"
+        }
+      }
+    }
+  },
+  "observatory_group": "Voyager",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

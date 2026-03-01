@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "",
+      "description": "Longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "",
+      "description": "Latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Field Magnitude",
+      "type": "double",
+      "units": "",
+      "description": "Field magnitude in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Field Radial",
+      "type": "double",
+      "units": "",
+      "description": "Radial field component in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Field East",
+      "type": "double",
+      "units": "",
+      "description": "East field component in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Field North",
+      "type": "double",
+      "units": "",
+      "description": "North field component in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "",
+      "description": "Altitude in km.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

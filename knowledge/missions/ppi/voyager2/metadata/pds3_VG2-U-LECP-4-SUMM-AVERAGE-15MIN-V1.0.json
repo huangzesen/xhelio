@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PL02",
+      "type": "double",
+      "units": "COUNTS/SEC",
+      "description": "43 TO 80 KEV/NUC ION CHANNEL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PL07",
+      "type": "double",
+      "units": "COUNTS/SEC",
+      "description": "1 TO 1 MEV/NUC ION CHANNEL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EB01",
+      "type": "double",
+      "units": "COUNTS/SEC",
+      "description": "22 TO 35 KEV ELECTRON CHANNEL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EB05",
+      "type": "double",
+      "units": "COUNTS/SEC",
+      "description": "183 TO 500 KEV ELECTRON CHANNEL",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

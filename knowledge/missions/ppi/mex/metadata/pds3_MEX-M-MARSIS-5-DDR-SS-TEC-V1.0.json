@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PULSE_NUMBER",
+      "type": "integer",
+      "units": "N/A",
+      "description": "THE PULSE NUMBER FOR A GIVEN ORBIT, STARTING AT ZERO",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EPHEMERIS_TIME",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "NUMBER OF SECONDS ELAPSED SINCE JAN, 1, 2000, 12:00 UTC CORRESPONDING TO THE TIME OF THE OBSERVATION",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LATITUDE",
+      "type": "integer",
+      "units": "DEGREE",
+      "description": "PLANETOCENTRIC LATITUDE OF THE OBSERVATION",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LONGITUDE",
+      "type": "integer",
+      "units": "DEGREE",
+      "description": "EAST LONGITUDE OF THE OBSERVATION",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCAL_TRUE_SOLAR_TIME",
+      "type": "integer",
+      "units": "DECIMAL HOURS",
+      "description": "ANGLE BETWEEN THE MERIDIAN PASSING THROUGH THE SUB-SPACECRAFT POINT AND THE MERIDIAN PASSING THROUGH THE SUBSOLAR POINT OF MARS, EXPRESSED ON A 24-HOURS CLOCK. 12.000 CORRESPONDS TO AN ANGLE OF 0 DEGREE, WHILE 00.000 CORRESPONDS TO AN ANGLE OF 180 DEGREES",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X_SC_MSO",
+      "type": "integer",
+      "units": "KILOMETERS",
+      "description": "X COMPONENT OF THE POSITION VECTOR FROM MARS CENTER TO THE SPACECRAFT EXPRESSED IN MSO COORDINATES. +X POINTS FROM MARS TOWARD THE SUN +Y POINTS OPPOSITE TO THE ORBITAL MOTION OF MARS +Z COMPLETES THE RIGHT-HAND COORDINATES SYSTEM",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_SC_MSO",
+      "type": "integer",
+      "units": "KILOMETERS",
+      "description": "Y COMPONENT OF THE POSITION VECTOR FROM MARS CENTER TO THE SPACECRAFT EXPRESSED IN MSO COORDINATES. +X POINTS FROM MARS TOWARD THE SUN +Y POINTS OPPOSITE TO THE ORBITAL MOTION OF MARS +Z COMPLETES THE RIGHT-HAND COORDINATES SYSTEM",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_SC_MSO",
+      "type": "integer",
+      "units": "KILOMETERS",
+      "description": "Z COMPONENT OF THE POSITION VECTOR FROM MARS CENTER TO THE SPACECRAFT EXPRESSED IN MSO COORDINATES. +X POINTS FROM MARS TOWARD THE SUN +Y POINTS OPPOSITE TO THE ORBITAL MOTION OF MARS +Z COMPLETES THE RIGHT-HAND COORDINATES SYSTEM",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA",
+      "type": "integer",
+      "units": "DEGREE",
+      "description": "ANGLE BETWEEN THE ZENITH AND THE APPARENT POSITION OF THE SUN. AT 0 THE SUN IS AT THE ZENITH AND 90 AT THE TERMINATOR",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEC",
+      "type": "integer",
+      "units": "ELECTRONS PER SQUARED METERS",
+      "description": "TOTAL ELECTRON CONTENT DERIVED FROM THE IONOSPHERE DISTORTION CORRECTION METHOD AS DESCRIBED IN MOUGINOT ET AL. 2008 (SEE THE DOCUMENT DIRECTORY)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A1",
+      "type": "integer",
+      "units": "SECOND^(-1.0)",
+      "description": "FIRST PARAMETER OF THE CORRECTION. SEE MOUGINOT ET AL. 2008 (IN THE DOCUMENT DIRECTORY)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A2",
+      "type": "integer",
+      "units": "SECOND^(-3.0)",
+      "description": "2ND PARAMETER OF THE CORRECTION. SEE MOUGINOT ET AL. 2008 (IN THE DOCUMENT DIRECTORY)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A3",
+      "type": "integer",
+      "units": "SECOND^(-5.0)",
+      "description": "3RD PARAMETER OF THE CORRECTION. SEE MOUGINOT ET AL. 2008 (IN THE DOCUMENT DIRECTORY)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FLAG",
+      "type": "double",
+      "units": "N/A",
+      "description": "0/1 : BELOW/ABOVE SIGNAL TO NOISE RATIO THRESHOLD. SEE MARSIS DERIVED ENHANCED IONOSPHERIC CALIBRATION DATA, TECHNICAL REPORT, VOL3.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

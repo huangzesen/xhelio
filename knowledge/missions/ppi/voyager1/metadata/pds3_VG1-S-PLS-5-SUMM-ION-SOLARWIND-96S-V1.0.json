@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Ion fit density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Radial component of ion velocity in RTN coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Tangential component of ion velocity in RTN coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Normal component of ion velocity in RTN coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VELOCITY",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Magnitude of ion velocity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Ion thermal speed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Ion temperature.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

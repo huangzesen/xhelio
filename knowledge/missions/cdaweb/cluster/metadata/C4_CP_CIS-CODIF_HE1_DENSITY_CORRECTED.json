@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "duration__C4_CP_CIS_CODIF_He1_DENSITY_CORRECTED",
+      "type": "double",
+      "units": "s",
+      "description": "Half interval duration",
+      "fill": "0.0"
+    },
+    {
+      "name": "density__C4_CP_CIS_CODIF_He1_DENSITY_CORRECTED",
+      "type": "double",
+      "units": "particles cm^-3",
+      "description": "Density (in cm^-3)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "density_STD__C4_CP_CIS_CODIF_He1_DENSITY_CORRECTED",
+      "type": "double",
+      "units": "particles cm^-3",
+      "description": "Density Standard Deviation(STD) (in cm^-3)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2001-03-01T00:00:22.000Z",
+  "stopDate": "2007-12-30T23:59:48.000Z"
+}

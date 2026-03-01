@@ -1,0 +1,453 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LAPI__0_neg_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 0 neg deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__0_neg_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 0 neg deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__0_pos_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 0 pos deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__0_pos_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 0 pos deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__7_5_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 7.5 deg down Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__7_5_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 7.5 deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__15_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 15 deg down Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__15_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+, sensor 4, 15 deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__30_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 30 deg down Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__30_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 30 deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__45_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 45 deg down Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__45_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 45 deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__60_deg_Down",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 60 deg down Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__60_deg_Down",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 60 deg Down",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__97_5_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 97.5 deg up Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__97_5_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 97.5 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__112_5_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 112.5 deg up Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__112_5_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 112.5 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__105_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 105 deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__105_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 105 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__135_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 135 deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__135_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 135 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__165_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 165 deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__165_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 165 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__172_5_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 172.5 deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__172_5_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 172.5 deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__180_pos_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 180+ deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__180_pos_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 180 pos deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__180_neg_deg_Up",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 180- deg Precipitation Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__180_neg_deg_Up",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 180 neg deg Up",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__0_neg_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 0- deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__0_neg_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 0 neg deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__0_pos_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 0+ deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__0_pos_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 0 pos deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__7_5_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 7.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__7_5_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 7.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__15_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 15 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__15_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 15 deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__30_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 30 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__30_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 30 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__45_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 45 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__45_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 45 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__60_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 60 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__60_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 60 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__97_5_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 97.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__97_5_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 97.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__112_5_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 112.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__112_5_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 112.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__105_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 105 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__105_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 105 deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__135_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 135 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__135_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 135 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__165_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 165 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__165_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 165 deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__172_5_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 172.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__172_5_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 172.5 deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__180_pos_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 180 pos deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__180_pos_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 180 pos deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__180_neg_deg_PA",
+      "type": "double",
+      "units": "degrees",
+      "description": "LAPI+ 180 neg deg Pitch Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__180_neg_deg_PA",
+      "type": "double",
+      "units": "flag",
+      "description": "Data Quality Indicator for LAPI+ 180 neg deg PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE0_Magnetic_Field_Source",
+      "type": "double",
+      "units": "flag",
+      "description": "Status Indicator Magnetic Field From",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE1_Magnetic_Latitude_Unavailable",
+      "type": "double",
+      "units": "flag",
+      "description": "Status Indicator Magnetic Latitude Unavailable",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE2_Geographic_Latitude_Unavailable",
+      "type": "double",
+      "units": "flag",
+      "description": "Status Indicator Geographic Latitude Unavailable",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T13:08:52.000Z",
+  "stopDate": "1983-02-18T16:42:26.000Z"
+}

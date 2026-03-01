@@ -1,0 +1,95 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in the     \n                                VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "BY-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in the     \n                                VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "BZ-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in the     \n                                VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "BX-SC",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in the     \n                                IRC coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "BY-SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in the     \n                                IRC coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "BZ-SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in the     \n                                IRC coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "|B|",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "DQF",
+      "type": "double",
+      "units": "",
+      "description": "Data Quality Flag (0 = good data)",
+      "size": [
+        1
+      ],
+      "fill": "999999999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

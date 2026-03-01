@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thd_efw_gse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFW (Wave Burst, 1/128 to 1/16384 sec time resolution) electric field vector in GSE coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_efw_gsm",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFW (Wave Burst, 1/128 to 1/16384 sec time resolution) electric field vector in GSM coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thd_efw_dsl",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EFW (Wave Burst, 1/128 to 1/16384 sec time resolution) electric field vector in XYZ despun spacecraft coordinates (DSL)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2007-06-07T00:00:00.000Z",
+  "stopDate": "2026-02-17T00:00:00.000Z"
+}

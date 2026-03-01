@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "integer",
+      "units": "(0=OK,1=poor)",
+      "description": "Data Quality 0 = OK, 1 = poor",
+      "fill": "-2147480064.0"
+    },
+    {
+      "name": "LFWR_Ex",
+      "type": "double",
+      "units": "mV/M",
+      "description": "LFWR Elec. Field, Antenna Ex (perp & outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LFWR_Ey",
+      "type": "double",
+      "units": "mV/M",
+      "description": "LFWR Elec. Field, Antenna Ey (perp & eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LFWR_Ez",
+      "type": "double",
+      "units": "mV/M",
+      "description": "LFWR Elec. Field, Antenna Ez (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LFWR_Bx",
+      "type": "double",
+      "units": "nT/Sec",
+      "description": "LFWR Mag. Field, Antenna Bx (perp & outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LFWR_By",
+      "type": "double",
+      "units": "nT/Sec",
+      "description": "LFWR Mag. Field, Antenna By (perp & eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LFWR_Bz",
+      "type": "double",
+      "units": "nT/Sec",
+      "description": "LFWR Mag. Field, Antenna Bz (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-25T00:00:16.000Z",
+  "stopDate": "1997-09-16T16:52:55.000Z"
+}

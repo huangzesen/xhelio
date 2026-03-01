@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in GSE coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in J2000GCI coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1997-08-26T00:00:00.000Z",
+  "stopDate": "2026-02-16T00:00:00.000Z"
+}

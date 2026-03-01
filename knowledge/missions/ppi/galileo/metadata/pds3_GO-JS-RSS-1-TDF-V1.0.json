@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "CONE ANGLE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "The cone angle of Galileo's LGA-1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GAIN",
+      "type": "double",
+      "units": "DECIBEL",
+      "description": "The downlink gain for Galileo's LGA-1 antenna.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

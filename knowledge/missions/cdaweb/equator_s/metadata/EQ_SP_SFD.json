@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "F_e>0.26%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(cm^2)",
+      "description": "Max. energy flux e- (>0.26MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_e>0.44%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(cm^2)",
+      "description": "Max. energy flux e- (>0.44MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_e>1.9%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(m^2)",
+      "description": "Max. energy flux e- (>1.9.MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_p>6.3%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(m^2)",
+      "description": "Max. energy flux e+  (>6.3MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_p>9.5%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(cm^2)",
+      "description": "Max. energy flux e+ (>9.5MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_p>34.9%eq_sp_sfd",
+      "type": "double",
+      "units": "W/(cm^2)",
+      "description": "Max. energy flux e+ (>34.9MeV), scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1997-12-16T11:26:30.000Z",
+  "stopDate": "1998-04-30T02:30:30.000Z"
+}

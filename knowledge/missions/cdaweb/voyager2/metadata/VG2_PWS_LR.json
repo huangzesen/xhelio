@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "electric_field",
+      "type": "double",
+      "units": "V/m",
+      "description": "Electric Field (spectrogram)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "electric_field_stack",
+      "type": "double",
+      "units": "V/m",
+      "description": "---> Electric Field (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "electric_field_timeseries",
+      "type": "double",
+      "units": "V/m",
+      "description": "---> Electric Field (time series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "1977-08-20T15:53:34.000Z",
+  "stopDate": "2026-02-10T00:50:46.000Z"
+}

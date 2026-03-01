@@ -1,0 +1,172 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "H (proton) Intensity in 12 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "H_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> H (proton) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "He3_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "3He Intensity in 10 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "He3_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> 3He uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "He4_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "4He Intensity in 16 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "He4_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> 4He uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "C_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "C (carbon) Intensity in 17 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "C_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> C (carbon) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "O_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "O (oxygen) Intensity in 16 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "O_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> O (oxygen) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "NeS_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "NeS (neon through sulfur) Intensity in 16 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "NeS_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> NeS (neon through sulfur) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Fe_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "Fe (iron) Intensity in 14 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "Fe_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> Fe (iron) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "UH_Intensity",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "UH (ultra-heavy) Intensity in 6 energy ranges",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "UH_Sigma",
+      "type": "double",
+      "units": "particles/(s cm2 sr MeV/n)",
+      "description": "--> UH (ultra-heavy) uncertainty in intensity expressed as sigma due to counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    }
+  ],
+  "startDate": "2007-03-15T00:00:32.000Z",
+  "stopDate": "2025-11-30T23:59:06.000Z"
+}

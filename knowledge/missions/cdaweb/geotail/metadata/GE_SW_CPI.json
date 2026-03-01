@@ -1,0 +1,1059 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Ion Bulk Flow Spee(H only when in solar wind)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PolarAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Ion Bulk Flow Polar angle Theta in degrees (0 toward North Ecliptic Pole, H only when in solar wind)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Azimuthal",
+      "type": "double",
+      "units": "deg",
+      "description": "---> Ion Bulk Flow Azimuthal sector angle Phi in degrees (0 toward Sun, 90 toward Dusk, H only when in solar wind)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "k",
+      "description": "Ion Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ion Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "xgse",
+      "type": "integer",
+      "units": "Re*(10**6)",
+      "description": "Spacecraft location X (GSE)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ygse",
+      "type": "integer",
+      "units": "Re*(10**6)",
+      "description": "---> Spacecraft location Y (GSE)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "zgse",
+      "type": "integer",
+      "units": "Re*(10**6)",
+      "description": "---> Spacecraft location Z (GSE)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Quality",
+      "fill": "-1.0"
+    },
+    {
+      "name": "flux",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux Array [CDAWeb plots not supported]",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3S5_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Speeds, Th=72.5 (D3), Phi=143 (S5)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3S9_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=72.5 (D3), Phi=172 (S9)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3S11_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=72.5 (D3), Phi=188 (S11)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3S13_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=72.5 (D3), Phi=204 (S13)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3S17_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=72.5 (D3), Phi=233 (S17)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6S5_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Speeds, Th=87.5 (D6), Phi=143 (S5)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6S9_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=87.5 (D6), Phi=172 (S9)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6S11_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=87.5 (D6), Phi=188 (S11)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6S13_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=87.5 (D6), Phi=204 (S13)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6S17_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=87.5 (D6), Phi=233 (S17)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7S5_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Speeds, Th=92.5 (D7), Phi=143 (S5)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7S9_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=92.5 (D7), Phi=172 (S9)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7S11_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=92.5 (D7), Phi=188 (S11)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7S13_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=92.5 (D7), Phi=204 (S13)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7S17_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=92.5 (D7), Phi=233 (S17)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9S5_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Speeds, Th=102.5 (D9), Phi=143 (S5)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9S9_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=102.5 (D9), Phi=172 (S9)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9S11_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=102.5 (D9), Phi=188 (S11)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9S13_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=102.5 (D9), Phi=204 (S13)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9S17_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Th=102.5 (D9), Phi=233 (S17)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3E16_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Sectors, Th=72.5 (D3), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3E24_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=72.5 (D3), V=338 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3E32_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=72.5 (D3), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3E40_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=72.5 (D3), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D3E48_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=72.5 (D3), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6E16_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Sectors, Th=87.5 (D6), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6E24_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=87.5 (D6), V=338 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6E32_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=87.5 (D6), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6E40_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=87.5 (D6), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D6E48_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=87.5 (D6), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7E16_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Sectors, Th=92.5 (D7), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7E24_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=92.5 (D7), V=338 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7E32_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=92.5 (D7), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7E40_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=92.5 (D7), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D7E48_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=92.5 (D7), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9E16_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Sectors, Th=102.5 (D9), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9E24_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=102.5 (D9), V=338 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9E32_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=102.5 (D9), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9E40_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=102.5 (D9), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D9E48_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Th=102.5 (D9), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S5E16_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Phi=143 (S5), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S5E24_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=143 (S5), V=336 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S5E32_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=143 (S5), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S5E40_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=143 (S5), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S5E48_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=143 (S5), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9E16_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Phi=172 (S9), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9E24_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=172 (S9), V=336 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9E32_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=172 (S9), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9E40_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=172 (S9), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9E48_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=172 (S9), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S11E16_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Phi=188 (S11), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S11E24_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=188 (S11), V=336 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S11E32_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=188 (S11), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S11E40_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=188 (S11), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S11E48_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=188 (S11), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S13E16_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Phi=204 (S13), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S13E24_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=204 (S13), V=336 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S13E32_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=204 (S13), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S13E40_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=204 (S13), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S13E48_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=204 (S13), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S17E16_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Phi=233 (S17), V=263 (E16)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S17E24_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=233 (S17), V=336 (E24)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S17E32_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=233 (S17), V=429 (E32)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S17E40_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=233 (S17), V=549 (E40)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S17E48_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Phi=233 (S17), V=701 (E48)",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D1_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Speeds, Detector 1: Selected sector bins: 1,3,6,9,12,15,18,21",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D4_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Detector 4: Selected sectors bins: 1,3,6,9,12,15,18,21",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D8_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Detector 8: Selected sector bins: 1,3,6,9,12,15,18,21",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D12_BY_ENERGY",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Speeds, Detector 12: Selected sector bins: 1,3,6,9,12,15,18,21",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D1_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Sectors, Detector 1: Selected speeds bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D4_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Detector 4: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D8_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Detector 8: Selected speeds bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_D12_BY_SECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Sectors, Detector 12: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S1_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "Ion Flux all Detectors, Sector 1: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S3_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 3: Selected speeds bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S6_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 6: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S9_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 9: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S12_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 12: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S15_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 15: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S18_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 18: Selected speed bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    },
+    {
+      "name": "flux_S21_BY_DETECTOR",
+      "type": "double",
+      "units": "cm^-6 sec^3",
+      "description": "---> Ion Flux all Detectors, Sector 21: Selected speeds bins: 16,24,32,40,48",
+      "fill": "-1.0",
+      "size": [
+        12,
+        64,
+        21
+      ]
+    }
+  ],
+  "startDate": "1992-10-06T00:00:55.000Z",
+  "stopDate": "2020-08-04T23:58:33.000Z"
+}

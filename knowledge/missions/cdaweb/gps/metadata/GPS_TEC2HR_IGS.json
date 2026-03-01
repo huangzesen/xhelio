@@ -1,0 +1,922 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tecIGSM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS Final-TEC Global Map, Total Electron Content (TEC) in TECU (10^16 m-2) - (Final product, 2 hr res., 12 days latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE, University Bern, Switzerland [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA, ESOC, Darmstadt, Germany",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL, Jet Propulsion Laboratory, Pasadena, USA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC, University Politecnica Catalonia, Barcelona, Spain",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC Map, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 2 hr res., 12 hr latency), Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRM3",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGSMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Final-TEC Movie, Total Electron Content (TEC) movie - (Final product, 2 hr res., 12 days latency), Mapped Cylindrical Movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC Movie, Total Electron Content (TEC) movie - (Rapid product, 2 hr res., 12 hr latency), Mapped Cylindrical Movie",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRMovie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsIGSM",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, RMS(Final-TEC) Map, RMS error of TEC in TECU (10^16 m-2) - (Final product, 2 hr res., 12 hr latency), RMS Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsCODM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsESAM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsJPLM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsUPCM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsIGRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, RMS(Rapid-TEC) Map, RMS error of TEC in TECU (10^16 m-2) - (Rapid product, 2 hr res., 12 hr latency), RMS Mapped Cylindrical Image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsCORM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsESRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsJPRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "rmsUPRM",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGSM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Final-TEC N Pol Proj, Total Electron Content (TEC) in TECU (10^16 m-2) - (Final product, 2 hr res., 12 days latency), North Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC N Pol Proj, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 2 hr res., 12 hr latency), North Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRM1",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGSM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "North Polar Projection, Movie,Final-TEC-2hr IGS",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC N Pol Proj Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 2 hr res., 12 hr latency), Movie of North Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRM1movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGSM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Final-TEC S Pol Proj, Total Electron Content (TEC) in TECU (10^16 m-2) - (Final product, 2 hr res., 12 days latency), South Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC S Pol Proj, Total Electron Content (TEC) in TECU (10^16 m-2) - (Final product, 2 hr res., 12 hr latency), South Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRM2",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGSM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Final-TEC N Pol Proj Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Final product, 2 hr res., 12 days latency), Movie of North Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCODM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESAM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPLM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPCM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecIGRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "IGS, Rapid-TEC S Pol Proj Movie, Total Electron Content (TEC) in TECU (10^16 m-2) - (Rapid product, 2 hr res., 12 hr latency), Movie of South Polar Projection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecCORM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecESRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> ESA",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecJPRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> JPL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "tecUPRM2movie",
+      "type": "double",
+      "units": "TECU",
+      "description": "-----------> UPC",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        71,
+        73
+      ]
+    },
+    {
+      "name": "IGSnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "IGS, Num Stations Final-2h, Number of ground stations used, (Final product, 2 hr res., 12 day latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CODnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ESAnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA",
+      "fill": "-1.0"
+    },
+    {
+      "name": "JPLnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> JPL",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UPCnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> UPC",
+      "fill": "-1.0"
+    },
+    {
+      "name": "IGRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "IGS, Num stations Rapid-2h, Number of ground stations used, (Rapid product, 2 hr res., 12 hr latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CORnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ESRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA",
+      "fill": "-1.0"
+    },
+    {
+      "name": "JPRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> JPL",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UPRnumStations",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> UPC",
+      "fill": "-1.0"
+    },
+    {
+      "name": "IGSnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "IGS, Num satellites Final-2h, Number of GPS satellites used, (Final product, 2 hr res., 12 day latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CODnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available before 10/19/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ESAnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA",
+      "fill": "-1.0"
+    },
+    {
+      "name": "JPLnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> JPL",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UPCnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> UPC",
+      "fill": "-1.0"
+    },
+    {
+      "name": "IGRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "IGS, Num satellites Rapid-2h, Number of GPS satellites used, (Rapid product, 2 hr res., 12 hr latency)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "CORnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> CODE [ Available before 11/01/2014 ]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "ESRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> ESA",
+      "fill": "-1.0"
+    },
+    {
+      "name": "JPRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> JPL",
+      "fill": "-1.0"
+    },
+    {
+      "name": "UPRnumSatellites",
+      "type": "integer",
+      "units": "",
+      "description": "-----------> UPC",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1998-06-01T01:00:00.000Z",
+  "stopDate": "2026-02-15T22:00:00.000Z"
+}

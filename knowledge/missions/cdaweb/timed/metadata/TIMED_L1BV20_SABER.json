@@ -1,0 +1,295 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mode",
+      "type": "integer",
+      "units": "0-down,1-up",
+      "description": "Instrument scan mode (down=0, up=1)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "tpDN",
+      "type": "integer",
+      "units": "Day/ni/tw=0/1/2",
+      "description": "Phase of day at Tangent Point (0=Day 1=Night 2=Twilight(85<solar zenith angle<95)),",
+      "fill": "-9.0"
+    },
+    {
+      "name": "tpAD",
+      "type": "integer",
+      "units": "asc=0/desc=1",
+      "description": "Orbit phase at Tangent Point (0=Ascending 1=Descending)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solAP",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic Ap index (daily)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solKP",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic Kp index (3-hour)",
+      "fill": "-9.0"
+    },
+    {
+      "name": "solf10p7Daily",
+      "type": "double",
+      "units": "daily",
+      "description": "Solar F10.7 index (daily)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "scSolarZen",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft solar zenith angle",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sclatitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft latitude (scan-average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sclongitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "---------> longitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "scaltitudeAVG",
+      "type": "double",
+      "units": "km",
+      "description": "---------> altitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpaltitude",
+      "type": "double",
+      "units": "km",
+      "description": "Tangent Point altitude vs elevation",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "tplatitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "Tangent point latitude (scan-average)",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tplongitudeAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "------------> longitude",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarZenAVG",
+      "type": "double",
+      "units": "degree",
+      "description": "------------> solar zenith angle",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarLTAVG",
+      "type": "double",
+      "units": "hour",
+      "description": "------------> Local Solar Time",
+      "fill": "-999.0"
+    },
+    {
+      "name": "tpSolarZen",
+      "type": "double",
+      "units": "degree",
+      "description": "Tangent point solar zenith angle vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "tpSolarLT",
+      "type": "double",
+      "units": "hour",
+      "description": "------------> Local Solar Time vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad1",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "Calibrated RADIANCE centered at 15.2um (C02-N) vs tangent point height",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad2",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 14.9 um (C02-W), filter technique 1",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad3",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 14.9 um (C02-W), filter technique 2",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad4",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 9.6 um (O3)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad5",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 6.9 um (H2O)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad6",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 5.3 um (NO)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad7",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 4.3 um (C02)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad8",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 2 um (OH)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad9",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 1.6 um (OH-B)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad10",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 1.27 um (O2)",
+      "fill": "-999.0",
+      "size": [
+        1401
+      ]
+    },
+    {
+      "name": "rad6_80km",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "Calibrated RADIANCE at 5.3 um (NO) at 80km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "rad6_110km",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 5.3 um (NO) at 110km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "rad6_140km",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 5.3 um (NO) at 140km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "rad7_100km",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 4.3 um (C02) at 100km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "rad7_140km",
+      "type": "double",
+      "units": "watts/m2/sr",
+      "description": "------------------> at 4.3 um (C02) at 140km [line plot]",
+      "fill": "-999.0"
+    },
+    {
+      "name": "temperature_nmc",
+      "type": "double",
+      "units": "K",
+      "description": "NMC temperature vs geopotential height at tangent point (scan-average)",
+      "fill": "-999.0",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "geopotential_height_nmc",
+      "type": "double",
+      "units": "km",
+      "description": "NMC geopotential height vs pressure at tangent point (scan-average)",
+      "fill": "-999.0",
+      "size": [
+        64
+      ]
+    }
+  ],
+  "startDate": "2002-01-25T01:21:56.000Z",
+  "stopDate": "2026-02-14T00:34:32.000Z"
+}

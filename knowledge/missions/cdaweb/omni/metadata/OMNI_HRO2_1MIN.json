@@ -1,0 +1,306 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "IMF",
+      "type": "integer",
+      "units": "",
+      "description": "OMNI ID code for the source spacecraft for time-shifted IMF values (see OMNI documentation link for codes)",
+      "fill": "99.0"
+    },
+    {
+      "name": "PLS",
+      "type": "integer",
+      "units": "",
+      "description": "OMNI ID code for the source spacecraft  for time-shifted IP plasma values (see OMNI documentation link for codes)",
+      "fill": "99.0"
+    },
+    {
+      "name": "IMF_PTS",
+      "type": "integer",
+      "units": "",
+      "description": "Number of fine time scale points in IMF averages",
+      "fill": "999.0"
+    },
+    {
+      "name": "PLS_PTS",
+      "type": "integer",
+      "units": "",
+      "description": "Number of fine time scale points in plasma averages",
+      "fill": "999.0"
+    },
+    {
+      "name": "percent_interp",
+      "type": "integer",
+      "units": "",
+      "description": "Percent interpolated",
+      "fill": "999.0"
+    },
+    {
+      "name": "Timeshift",
+      "type": "integer",
+      "units": "seconds",
+      "description": "Timeshift (seconds)",
+      "fill": "999999.0"
+    },
+    {
+      "name": "RMS_Timeshift",
+      "type": "integer",
+      "units": "seconds",
+      "description": "RMS Timeshift (seconds)",
+      "fill": "999999.0"
+    },
+    {
+      "name": "RMS_phase",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS, Phase front normal (nT)",
+      "fill": "99.98999786376953"
+    },
+    {
+      "name": "Time_btwn_obs",
+      "type": "integer",
+      "units": "seconds",
+      "description": "Time between observations (seconds)",
+      "fill": "999999.0"
+    },
+    {
+      "name": "F",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of avg. field vector (nT) (last currently-available OMNI B-field data Dec 09, 2025)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BX_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx (nT), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "By (nT), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz (nT), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BY_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "By (nT), GSM, determined from post-shift GSE components",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BZ_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz (nT), GSM, determined from post-shift GSE components",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "RMS_SD_B",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS SD B scalar (nT)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "RMS_SD_fld_vec",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS SD field vector (nT)",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "flow_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Flow Speed (km/s), GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Vx",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vx Velocity (km/s), GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Vy",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vy Velocity (km/s), GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Vz",
+      "type": "double",
+      "units": "km/s",
+      "description": "Vz Velocity (km/s), GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "proton_density",
+      "type": "double",
+      "units": "n/cc",
+      "description": "Proton density (n/cc) (last currently-available OMNI plasma data Dec 09, 2025)",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "K",
+      "description": "Temperature (K)",
+      "fill": "9999999.0"
+    },
+    {
+      "name": "NaNp_Ratio",
+      "type": "double",
+      "units": "",
+      "description": "Alpha/Proton Density Ratio",
+      "fill": "9.99899959564209"
+    },
+    {
+      "name": "Pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "Flow pressure (nPa)",
+      "fill": "99.98999786376953"
+    },
+    {
+      "name": "E",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric Field (mV/m)",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "Beta",
+      "type": "double",
+      "units": "",
+      "description": "Plasma beta",
+      "fill": "999.989990234375"
+    },
+    {
+      "name": "Mach_num",
+      "type": "double",
+      "units": "",
+      "description": "Alfven mach number",
+      "fill": "999.9000244140625"
+    },
+    {
+      "name": "Mgs_mach_num",
+      "type": "double",
+      "units": "",
+      "description": "1AU IP Magnetosonic mach number",
+      "fill": "99.9000015258789"
+    },
+    {
+      "name": "x",
+      "type": "double",
+      "units": "Re",
+      "description": "X s/c (Re), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "y",
+      "type": "double",
+      "units": "Re",
+      "description": "Y s/c (Re), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "z",
+      "type": "double",
+      "units": "Re",
+      "description": "Z s/c (Re), GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BSN_x",
+      "type": "double",
+      "units": "Re",
+      "description": "Bow Shock Nose (Re) location, X, GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BSN_y",
+      "type": "double",
+      "units": "Re",
+      "description": "Bow Shock Nose (Re) location, Y, GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "BSN_z",
+      "type": "double",
+      "units": "Re",
+      "description": "Bow Shock Nose (Re) location, Z, GSE",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "AE_INDEX",
+      "type": "integer",
+      "units": "nT",
+      "description": "AE - 1-minute AE-index, from WDC Kyoto (Final 1988/001-1988/182, Provisional 1990/001-2020/365)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "AL_INDEX",
+      "type": "integer",
+      "units": "nT",
+      "description": "AL - 1-minute AL-index, from WDC Kyoto (Final 1988/001-1988/182, Provisional 1990/001-2020/365)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "AU_INDEX",
+      "type": "integer",
+      "units": "nT",
+      "description": "AU - 1-minute AU-index,from WDC Kyoto  (Final 1988/001-1988/182, Provisional 1990/001-2020/365)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "SYM_D",
+      "type": "integer",
+      "units": "nT",
+      "description": "SYM/D - 1-minute SYM/D index,from WDC Kyoto (1981/001-2025/334)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "SYM_H",
+      "type": "integer",
+      "units": "nT",
+      "description": "SYM/H - 1-minute SYM/H index,from WDC Kyoto (1981/001-2025/334)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "ASY_D",
+      "type": "integer",
+      "units": "nT",
+      "description": "ASY/D - 1-minute ASY/D index,from WDC Kyoto (1981/001-2025/334)",
+      "fill": "99999.0"
+    },
+    {
+      "name": "ASY_H",
+      "type": "integer",
+      "units": "nT",
+      "description": "ASY/H - 1-minute ASY/H index,from WDC Kyoto (1981/001-2025/334)",
+      "fill": "99999.0"
+    }
+  ],
+  "startDate": "1995-01-01T00:00:00.000Z",
+  "stopDate": "2026-01-31T23:59:00.000Z"
+}

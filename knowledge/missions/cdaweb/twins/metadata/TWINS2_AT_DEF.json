@@ -1,0 +1,46 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ISTARTTIMEMJD",
+      "type": "double",
+      "units": "MJD",
+      "description": "Start Time MJD - time key of data point",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FPOLARPOINTECI",
+      "type": "double",
+      "units": "unitless",
+      "description": "Polar Pointing vector ECI component XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FAZIMUTHALPOINTECI",
+      "type": "double",
+      "units": "unitless",
+      "description": "Azimuthal Pointing vector ECI component XYZ",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "NDATAFILEID",
+      "type": "integer",
+      "units": "",
+      "description": "TWINS DataFile ID",
+      "fill": "-2012696540.0"
+    }
+  ],
+  "startDate": "2008-04-14T00:53:59.000Z",
+  "stopDate": "2016-10-27T23:59:59.000Z"
+}

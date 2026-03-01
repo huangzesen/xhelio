@@ -1,0 +1,148 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "sc_orbit_num__CL_JP_PGP",
+      "type": "double",
+      "units": "",
+      "description": "orbit number including phase",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_r_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted GSE Position of ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_v_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km/s",
+      "description": "Predicted GSE Velocity of ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr1_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted GSE Position of sc 1 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr2_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted GSE Position of sc 2 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr3_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted GSE Position of sc 3 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr4_xyz_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted GSE Position of sc 4 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr_min__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted Minimum Spacecraft Separation",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_dr_max__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted Max distance between sc",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "gse_gsm__CL_JP_PGP",
+      "type": "double",
+      "units": "degrees",
+      "description": "Predicted Rotation angle GSE to GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dipole_tilt__CL_JP_PGP",
+      "type": "double",
+      "units": "degrees",
+      "description": "Predicted Dipole Tilt in GSM z-x Plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_size__CL_JP_PGP",
+      "type": "double",
+      "units": "km",
+      "description": "Predicted Tetrahedron size L, characteristic size",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_elong__CL_JP_PGP",
+      "type": "double",
+      "units": "",
+      "description": "Predicted Tetrahedron Elongation E",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_planarity__CL_JP_PGP",
+      "type": "double",
+      "units": "",
+      "description": "Predicted Tetrahedron Planarity P",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_E_dir_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "",
+      "description": "Predicted Direction of Elongation, Direction cosines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_geom_P_nor_gse__CL_JP_PGP",
+      "type": "double",
+      "units": "",
+      "description": "Predicted Normal of Planarity, Direction cosines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-08-14T20:35:00.000Z",
+  "stopDate": "2025-11-30T23:55:00.000Z"
+}

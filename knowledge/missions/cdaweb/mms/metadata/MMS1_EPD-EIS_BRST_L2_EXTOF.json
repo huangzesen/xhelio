@@ -1,0 +1,3027 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_duration",
+      "type": "double",
+      "units": "s",
+      "description": "Total Exposure Time for Accumulation",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_deadtime",
+      "type": "double",
+      "units": "s",
+      "description": "---> Instrument Deadtime",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_largepixel",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Instrument Large Pixel in Use",
+      "fill": "-128.0"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_spin",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Spin",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_sector",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Sector",
+      "fill": "-128.0"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_quality",
+      "type": "integer",
+      "units": ".",
+      "description": "---> Quality Word",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst proton_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P6_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst proton_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P6_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst proton_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P6_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst helium_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P6_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P6_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P6_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P6_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P6_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst helium_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P6_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P6_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P6_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P6_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P6_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst helium_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P6_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P6_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P6_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P6_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P6_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst oxygen_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P6_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst oxygen_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P6_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst oxygen_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P6_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst dump_P6_counts_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> dump_P6_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst dump_P6_cps_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P6_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst dump_P6_flux_t0 [data available beginning on 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P6_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P6_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst proton_P5_counts_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> proton_P5_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst proton_P5_cps_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P5_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst proton_P5_flux_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P5_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst oxygen_P5_counts_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> oxygen_P5_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst oxygen_P5_cps_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P5_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst oxygen_P5_flux_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P5_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t0",
+      "type": "double",
+      "units": "",
+      "description": "MMS1 ExTOF-Burst helium_P5_counts_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t1",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P5_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t2",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P5_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t3",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P5_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t4",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P5_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_counts_t5",
+      "type": "double",
+      "units": "",
+      "description": "---> helium_P5_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst helium_P5_cps_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P5_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P5_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P5_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P5_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> helium_P5_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst helium_P5_flux_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P5_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P5_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P5_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P5_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> helium_P5_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst proton_P4_counts_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P4_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst proton_P4_cps_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P4_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst proton_P4_flux_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P4_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst alpha_P4_counts_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P4_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P4_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P4_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P4_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P4_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst alpha_P4_cps_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P4_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P4_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P4_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P4_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P4_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst alpha_P4_flux_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P4_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P4_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P4_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P4_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P4_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst oxygen_P4_counts_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P4_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst oxygen_P4_cps_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P4_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst oxygen_P4_flux_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P4_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst proton_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> proton_P3_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst proton_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> proton_P3_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst proton_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_proton_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> proton_P3_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst alpha_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P3_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P3_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P3_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P3_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> alpha_P3_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst alpha_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P3_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P3_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P3_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P3_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> alpha_P3_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst alpha_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P3_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P3_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P3_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P3_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_helium_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> alpha_P3_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst oxygen_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> oxygen_P3_counts_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst oxygen_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> oxygen_P3_cps_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst oxygen_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t1",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t2",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t3",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t4",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_oxygen_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> oxygen_P3_flux_t5",
+      "fill": "-1e+31",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst dump_P3_counts_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P3_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst dump_P4_counts_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P4_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t0",
+      "type": "double",
+      "units": ".",
+      "description": "MMS1 ExTOF-Burst dump_P5_counts_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t1",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t2",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t3",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t4",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_counts_t5",
+      "type": "double",
+      "units": ".",
+      "description": "---> dump_P5_counts_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst dump_P3_cps_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P3_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst dump_P4_cps_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P4_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t0",
+      "type": "double",
+      "units": "1/s",
+      "description": "MMS1 ExTOF-Burst dump_P5_cps_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t1",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t2",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t3",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t4",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_cps_t5",
+      "type": "double",
+      "units": "1/s",
+      "description": "---> dump_P5_cps_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst dump_P3_flux_t0 [data available from 2015/07/02 to 2016/09/28]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P3_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P3_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst dump_P4_flux_t0 [data available from 2016/09/29 to 2019/12/05]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P4_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P4_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t0",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS1 ExTOF-Burst dump_P5_flux_t0 [data available from 2019/12/06 to 2025/01/06]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t3",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t4",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_dump_P5_flux_t5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "---> dump_P5_flux_t5",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t0",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 0 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t1",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 1 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t2",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 2 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t3",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 3 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t4",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 4 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pitch_angle_t5",
+      "type": "double",
+      "units": "deg",
+      "description": "Pitch Angle for Telescope 5 MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t0",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 0 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t1",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 1 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t2",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 2 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t3",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 3 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t4",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 4 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_look_t5",
+      "type": "double",
+      "units": ".",
+      "description": "Look Direction for Telescope 5 MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_b",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field BCS MMS1",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_position_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position GSE MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_position_gsm",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position in GSM coordinates MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_moon_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft-Moon vector in GSE coordinates MMS1",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_sc_to_gse",
+      "type": "double",
+      "units": ".",
+      "description": "Transformation Matrix BCS to GSE Frame MMS1",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_gse_to_gsm",
+      "type": "double",
+      "units": ".",
+      "description": "Transformation Matrix GSE to GSM Frame MMS1",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_r",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position: Radius MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_l",
+      "type": "double",
+      "units": ".",
+      "description": "Dipole L-shell MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_gse_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in GSE Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_gse_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in GSE Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_gsm_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in GSM Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_gsm_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in GSM Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_sm_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in SM Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_sm_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in SM Frame MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_orbit_num",
+      "type": "double",
+      "units": ".",
+      "description": "Orbit number MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd0",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 0 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd1",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 1 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd2",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 2 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd3",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 3 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd4",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 4 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_ssd5",
+      "type": "double",
+      "units": "1/s",
+      "description": "Solid State Energy Detector 5 Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_vep",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Events Processed per second MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_start0anode",
+      "type": "double",
+      "units": "1/s",
+      "description": "Start 0 Anode Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_stop0anode",
+      "type": "double",
+      "units": "1/s",
+      "description": "Stop 0 Anode Count Rate MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_pulseheight",
+      "type": "double",
+      "units": "1/s",
+      "description": "Events above TOF Pulse Height Threshold MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_vtofxee",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Time of Flight by Energy Events per second MMS1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "mms1_epd_eis_brst_l2_extof_vtofxphe",
+      "type": "double",
+      "units": "1/s",
+      "description": "Valid Time of Flight by Pulse Height Energy Events per second MMS1",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2015-09-25T07:30:14.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

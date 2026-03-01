@@ -1,0 +1,109 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Hydrogen flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        36
+      ]
+    },
+    {
+      "name": "H_HCad_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "High Cadence hydrogen flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Electron_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Elec_HE_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron flux in 38 - 96 MeV energy range",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He3_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-3 flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "He4_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-4 flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "C_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Carbon flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "N_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Nitrogen flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "O_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Oxygen flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "Fe_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Iron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2020-05-13T00:00:03.000Z",
+  "stopDate": "2025-10-31T23:59:57.000Z"
+}

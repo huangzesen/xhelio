@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "AMALTHEA RADII",
+      "description": "Spacecraft range from the Amalthea center of mass in units of radii where RI = 1818 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMALTHEA LATITUDE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft Amalthea-centric latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AMALTHEA EAST LONGITUDE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft Amalthea-centric east longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-X",
+      "type": "double",
+      "units": "AMALTHEA RADII",
+      "description": "X component of the spacecraft range from the Amalthea center of mass in Amalthea Phi-Omega (PHIO) coordinates. In this coordinate system, X lies in the direction of corotation (at the time of Amalthea closest approach), the X-Z plane planes contains Jupiter's axis of rotation (Omega), and Y completes the right-handed set (towards Jupiter).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-Y",
+      "type": "double",
+      "units": "AMALTHEA RADII",
+      "description": "Y component of the spacecraft range from the Amalthea center of mass in PHIO coordinates (towards Jupiter).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHIO-Z",
+      "type": "double",
+      "units": "AMALTHEA RADII",
+      "description": "Z component of the spacecraft range from the Amalthea center of mass in PHIO coordinates. In this coordinate system, Z is parallel to Jupiter's spin axis (Omega), positive northward.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,77 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_DENS",
+      "type": "double",
+      "units": "#/cm3",
+      "description": "Electron number density (not corrected for any s/c potential)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_VELS",
+      "type": "double",
+      "units": "km/sec",
+      "description": "---> Electron velocity vector (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_TENS",
+      "type": "double",
+      "units": "(km/s)^2",
+      "description": "---> Residual Variance in Electron Velocity (6 components in instrument coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "E_TEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Electron temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_Q",
+      "type": "double",
+      "units": "(km/s)^3/cm^3",
+      "description": "---> Electron Heat Flux (Q)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GAP",
+      "type": "integer",
+      "units": "(0=No Gap)",
+      "description": "Gap flag (0=no gap, 1=gap)",
+      "fill": null
+    },
+    {
+      "name": "VALID",
+      "type": "integer",
+      "units": "(1=good)",
+      "description": "Data quality flag (1=good, 0=bad)",
+      "fill": null
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "ms since 1970/01/01",
+      "description": "Unix Time (since 1970/01/01)",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1994-11-15T12:53:43.000Z",
+  "stopDate": "2026-01-19T23:59:57.000Z"
+}

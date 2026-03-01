@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "integer",
+      "units": "YEAR",
+      "description": "YEAR PAST 1900",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY",
+      "type": "integer",
+      "units": "DAY",
+      "description": "DAY OF YEAR STARTING AT 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "integer",
+      "units": "HOUR",
+      "description": "HOUR OF DAY STARTING AT 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MINUTE",
+      "type": "integer",
+      "units": "MINUTE",
+      "description": "MINUTE OF HOUR STARTING AT 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "SECOND OF MINUTE STARTING AT 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_NO",
+      "type": "integer",
+      "units": "N/A",
+      "description": "SPACECRAFT NUMBER 1 == VG1, 2 == VG2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_MODE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "SPACECRAFT MODE (0 - 31)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "START_CH",
+      "type": "integer",
+      "units": "N/A",
+      "description": "START CHANNEL OF DATA",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "END_CH",
+      "type": "integer",
+      "units": "N/A",
+      "description": "END CHANNEL OF DATA",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LH_DATA",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "DATA FOR LEFT HAND POLARIZATION STATE FOR CHANNELS 131-200 IN ASCENDING CHANNEL NUMBER ORDER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RH_DATA",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "DATA FOR RIGHT HAND POLARIZATION STATE FOR CHANNELS 131-200 IN ASCENDING CHANNEL NUMBER ORDER",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

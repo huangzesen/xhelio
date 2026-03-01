@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_mean__C4_CP_RAP_PAD_He",
+      "type": "double",
+      "units": "nT",
+      "description": "Averaged GSE magnetic field vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PAD_He_Dif_flux__C4_CP_RAP_PAD_He",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Helium Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "PAD_He_Dif_flux_SD__C4_CP_RAP_PAD_He",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of Helium Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    }
+  ],
+  "startDate": "2001-01-09T15:24:23.000Z",
+  "stopDate": "2024-09-29T06:46:16.000Z"
+}

@@ -1,0 +1,389 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FEDU - Unidirectional Differential Electron Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FEDU_byE_atA: Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FEDU_byA_atE: Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPDU - Unidirectional Differential Proton Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FPDU_byE_atA: Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FPDU_byA_atE: Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FEDU_0to180",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FEDU_0to180 - Unidirectional Differential Electron Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_0to180_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_0to180_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_180to360",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FEDU_180to360 - Unidirectional Differential Electron Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_180to360_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_180to360_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        12
+      ]
+    },
+    {
+      "name": "FPDU_0to180",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPDU_0to180 - Unidirectional Differential Proton Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_0to180_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_0to180_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_180to360",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPDU_180to360 - Unidirectional Differential Proton Flux",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_180to360_byE_atA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample pitch angles",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_180to360_byA_atE",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by pitch angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        17,
+        8
+      ]
+    },
+    {
+      "name": "FEDU_Unbinned_0to180",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FEDU_Unbinned_0to180 - Unidirectional Differential Electron Flux (raw sector data).",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_Unbinned_0to360",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FEDU_Unbinned_0to360 - Unidirectional Differential Electron Flux (raw sector data).",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        12
+      ]
+    },
+    {
+      "name": "FPDU_Unbinned_0to180",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPDU_Unbinned_0to180 - Unidirectional Differential Proton Flux (raw sector data).",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_Unbinned_0to360",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> FPDU_Unbinned_0to360 - Unidirectional Differential Proton Flux (raw sector data).",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_Unbinned_LightMask_0to360",
+      "type": "integer",
+      "units": "none",
+      "description": "[NO PLOTS] FPDU_Unbinned_LightMask_0to360 - LightMask for FPDU_Unbinned_0to360 array.",
+      "fill": "0.0",
+      "size": [
+        36
+      ]
+    },
+    {
+      "name": "FPDU_Unbinned_Light_Flag",
+      "type": "integer",
+      "units": "none",
+      "description": "---> FPDU_Unbinned_Light_Flag",
+      "fill": "0.0"
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "",
+      "description": "Lstar - Roederer's generalized L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "---> L - McIlwain's L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "R!dE!n",
+      "description": "---> I - Integral invariant. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Calc - Magnitude of computed model field at the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Eq - Magnitude of computed model field at the Minimum-|B| point along the field line threading the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "---> MLT - Eccentric Dipole Magnetic Local Time. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> MLAT - Eccentric Dipole Magnetic Latitude. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position in geocentric Geographic coords",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "L_star_TT",
+      "type": "double",
+      "units": "",
+      "description": "[TEXT LABELS] Lstar - Roederer's generalized L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "",
+      "description": "---> L - McIlwain's L-shell parameter. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": "R!dE!n",
+      "description": "---> I - Integral invariant. Computed for 90deg. particles using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Calc_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Calc - Magnitude of computed model field at the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B_Eq - Magnitude of computed model field at the Minimum-|B| point along the field line threading the S/C. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "hours",
+      "description": "---> MLT - Eccentric Dipole Magnetic Local Time. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLAT_TT",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> MLAT - Eccentric Dipole Magnetic Latitude. Computed using OP77Q external field and IGRF internal field.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position in geocentric Geographic coords",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2012-09-01T11:38:18.000Z",
+  "stopDate": "2019-10-14T13:53:29.000Z"
+}

@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "",
+      "description": "Year (YYYY)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DecimalDay",
+      "type": "double",
+      "units": "",
+      "description": "Decimal Day of Year (January 1 =Day 1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "",
+      "description": "Hour of Day (0 - 23)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Distance",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft Heliocentric Distance.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Heliographic Inertial Latitude, +/- 90.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Heliographic Inertial Longitude, 0-360.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BRRTN",
+      "type": "double",
+      "units": "nT",
+      "description": "BR RTN Coordinate System.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTRTN",
+      "type": "double",
+      "units": "nT",
+      "description": "BT RTN Coordinate System.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BNRTN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN RTN Coordinate System.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMag",
+      "type": "double",
+      "units": "nT",
+      "description": "Scalar B.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FlowSpeed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Flow Speed\n                        (RTN-cordinate system). \n                        Measured by the PA intrument",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "THETA",
+      "type": "double",
+      "units": "deg",
+      "description": "Elevation angle of flow velocity vector\n                       (RTN-cordinate system). \n                        Measured by the PA intrument",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHI",
+      "type": "double",
+      "units": "deg",
+      "description": "Azimuth angle of flow velocity vector\n                       (RTN-coordinate system). \n                       Measured by the PA intrument.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "n/cc",
+      "description": "Proton Density measured by the PA intrument",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton Temperature measured by the PA intrument",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HFlux",
+      "type": "double",
+      "units": "Temp",
+      "description": "Proton flux measured by the CRT intrument\n                        in the energy range 3.45-5.15 MeV H",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HFlux",
+      "type": "double",
+      "units": "Temp",
+      "description": "Proton flux measured by the CRT intrument\n                        in the energy range 30.55-56.47 MeV",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HFlux",
+      "type": "double",
+      "units": "Temp",
+      "description": "Proton flux measured by the CRT intrument\n                        in the energy range 120.7-227.3 MeV",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,775 @@
+{
+  "id": "MAVEN_PPI",
+  "name": "MAVEN (PDS PPI)",
+  "keywords": [
+    "maven",
+    "maven_ppi",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "MAVEN data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "EUV": {
+      "name": "EUV",
+      "keywords": [
+        "imaging",
+        "remote sensing"
+      ],
+      "datasets": {
+        "urn:nasa:pds:maven.euv.calibrated:data.bands": {
+          "description": "MAVEN EUV calibrated irradiances Data Collection",
+          "start_date": "2014-10-18",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-euv-calibrated/data/bands",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.euv.derived:occultations": {
+          "description": "MAVEN EUV Derived Occultations Data Collection",
+          "start_date": "2014-11-17",
+          "stop_date": "2025-08-07",
+          "slot": "/data/maven-euv-derived/data/occultations",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.euv.modelled:data.minute.spectra": {
+          "description": "MAVEN EUV minute averaged modelled irradiance spectra Data Collection",
+          "start_date": "2014-10-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-euv-modelled/data/minute",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.euv.modelled:data.daily.spectra": {
+          "description": "MAVEN EUV daily averaged modelled irradiance spectra Data Collection",
+          "start_date": "2014-10-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-euv-modelled/data/daily",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.pf": {
+          "description": "MAVEN Ancillary Particle and Fields instrument data DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-08-20",
+          "slot": "/data/maven-anc/data/drf/pf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.insitu.calibrated:data.kp": {
+          "description": "MAVEN Insitu Key Parameters Data Collection",
+          "start_date": "2014-03-18",
+          "stop_date": "2025-05-14",
+          "slot": "/data/maven-insitu-calibrated/data",
+          "archive_type": 4
+        }
+      }
+    },
+    "General": {
+      "name": "General",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.anc:data.drf.sasm3": {
+          "description": "MAVEN Ancillary Solar Array Switch Module 3 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-08-20",
+          "slot": "/data/maven-anc/data/drf/sasm3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm6": {
+          "description": "MAVEN Ancillary Universal Switching Module 6 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-anc/data/drf/usm6",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.eps": {
+          "description": "MAVEN Ancillary Electrical Power System DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/eps",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.gnc": {
+          "description": "MAVEN Ancillary Guidance Navigation and Control DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/gnc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.pte": {
+          "description": "MAVEN Ancillary Periapsis Timing Estimator DRF Data Collection",
+          "start_date": "2014-11-18",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/pte",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.sasm1": {
+          "description": "MAVEN Ancillary Solar Array Switch Module 1 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/sasm1",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.sasm2": {
+          "description": "MAVEN Ancillary Solar Array Switch Module 2 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/sasm2",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.imu": {
+          "description": "MAVEN Ancillary Intertial Measurement Unit Data Collection",
+          "start_date": "2014-11-18",
+          "stop_date": "2024-11-01",
+          "slot": "/data/maven-anc/data/imu",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm3": {
+          "description": "MAVEN Ancillary Universal Switching Module 3 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/usm3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm5": {
+          "description": "MAVEN Ancillary Universal Switching Module 5 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/usm5",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm2": {
+          "description": "MAVEN Ancillary Universal Switching Module 2 DRF Data Collection",
+          "start_date": "2014-11-18",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/usm2",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm4": {
+          "description": "MAVEN Ancillary Universal Switching Module 4 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-anc/data/drf/usm4",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.events": {
+          "description": "MAVEN Ancillary Events List Data Collection",
+          "start_date": "2013-11-14",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-anc/data/events",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.anc:data.drf.usm1": {
+          "description": "MAVEN Ancillary Universal Switching Module 1 DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/usm1",
+          "archive_type": 4
+        }
+      }
+    },
+    "Imaging Ultraviolet Spectrograph": {
+      "name": "Imaging Ultraviolet Spectrograph",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.anc:data.drf.rs": {
+          "description": "MAVEN Ancillary Remote Sensing (IUVS) instrument data DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/rs",
+          "archive_type": 4
+        }
+      }
+    },
+    "Langmuir Probe and Waves Instrument": {
+      "name": "Langmuir Probe and Waves Instrument",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.lpw.raw:data.speclfact": {
+          "description": "MAVEN LPW Raw Wave Active Sub-Cycle Onboard FFT in Low Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/speclfact",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.pas": {
+          "description": "MAVEN LPW Raw Wave Passive Sub-Cycle Potentials Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/pas",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.specmfact": {
+          "description": "MAVEN LPW Raw Wave Active Sub-Cycle Onboard FFT in Medium Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/specmfact",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.specact": {
+          "description": "MAVEN LPW Calibrated Active Mode Spectra Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-specact",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.hsbmlf": {
+          "description": "MAVEN LPW Raw Low Frequency High Speed Burst Mode (HSBM) Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-07-01",
+          "slot": "/data/maven-lpw-raw/data/hsbmlf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.mrg.scpot": {
+          "description": "MAVEN LPW Spacecraft Potential Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2020-11-01",
+          "slot": "/data/maven-lpw-calibrated/data/mrg-scpot",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.e12bursthf": {
+          "description": "MAVEN LPW High Frequency Burst Mode Calibrated Electric-Field Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-07-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-e12bursthf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.spechfact": {
+          "description": "MAVEN LPW Raw Wave Active Sub-Cycle Onboard FFT in High Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/spechfact",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.hsbmmf": {
+          "description": "MAVEN LPW Raw Medium Frequency High Speed Burst Mode (HSBM) Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-07-01",
+          "slot": "/data/maven-lpw-raw/data/hsbmmf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.speclfpas": {
+          "description": "MAVEN LPW Raw Wave Passive Sub-Cycle Onboard FFT in Low Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/speclfpas",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.e12burstlf": {
+          "description": "MAVEN LPW Low Frequency Burst Mode Calibrated Electric-Field Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-05-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-e12burstlf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.specpas": {
+          "description": "MAVEN LPW Calibrated Passive Mode Spectra Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-specpas",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.spechfpas": {
+          "description": "MAVEN LPW Raw Wave Passive Sub-Cycle Onboard FFT in High Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/spechfpas",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.derived:data.w.n": {
+          "description": "MAVEN LPW Derived Electron Density Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-derived/data/w-n",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.specmfpas": {
+          "description": "MAVEN LPW Raw Wave Passive Sub-Cycle Onboard FFT in Medium Frequency Range Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/specmfpas",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.swp2": {
+          "description": "MAVEN LPW Raw Langmuir Probe Sensor 2 Sub-Cycle Sweep Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-raw/data/swp2",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.hsbmhf": {
+          "description": "MAVEN LPW Raw High Frequency High Speed Burst Mode (HSBM) Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-07-01",
+          "slot": "/data/maven-lpw-raw/data/hsbmhf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.swp1": {
+          "description": "MAVEN LPW Raw Langmuir Probe Sensor 1 Sub-Cycle Sweep Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-lpw-raw/data/swp1",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.act": {
+          "description": "MAVEN LPW Raw Wave Active Sub-Cycle Potentials Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-01",
+          "slot": "/data/maven-lpw-raw/data/act",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.atr": {
+          "description": "MAVEN LPW Active Table Readback Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-lpw-raw/data/atr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.adr": {
+          "description": "MAVEN LPW Active DAC Readback Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-lpw-raw/data/adr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.hsk": {
+          "description": "MAVEN LPW Housekeeping Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-05-14",
+          "slot": "/data/maven-lpw-raw/data/hsk",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.e12burstmf": {
+          "description": "MAVEN LPW Medium Frequency Burst Mode Calibrated Electric-Field Data Collection",
+          "start_date": "2025-06-01",
+          "stop_date": "2025-07-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-e12burstmf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.raw:data.euv": {
+          "description": "MAVEN Raw EUV Packet Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-lpw-raw/data/euv",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.w.e12": {
+          "description": "MAVEN LPW Low Frequency Electric-Field Data Collection",
+          "start_date": "2014-12-20",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-lpw-calibrated/data/w-e12",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.calibrated:data.lp.iv": {
+          "description": "MAVEN LPW Calibrated Current-Voltage Relationships Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-lpw-calibrated/data/lp-iv",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.lpw.derived:data.lp.nt": {
+          "description": "MAVEN LPW Derived Electron Temperature Data Collection",
+          "start_date": "2014-10-11",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-lpw-derived/data/lp-nt",
+          "archive_type": 4
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:maven.mag.calibrated:data.ss": {
+          "description": "MAVEN MAG Tabulated vector magnetic field vs. time in Sun-state coordinates Data Collection",
+          "start_date": "2014-10-10",
+          "stop_date": "2025-11-15",
+          "slot": "/data/maven-mag-calibrated/data/ss",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.mag.calibrated:data.pc": {
+          "description": "MAVEN MAG Tabulated vector magnetic field vs. time in planetocentric coordinates Data Collection",
+          "start_date": "2014-10-10",
+          "stop_date": "2025-11-15",
+          "slot": "/data/maven-mag-calibrated/data/pc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.mag.calibrated:data.pl": {
+          "description": "MAVEN MAG Tabulated vector magnetic field vs. time in payload coordinates Data Collection",
+          "start_date": "2014-09-22",
+          "stop_date": "2025-11-15",
+          "slot": "/data/maven-mag-calibrated/data/pl",
+          "archive_type": 4
+        }
+      }
+    },
+    "Neutral Gas and Ion Mass Spectrometer": {
+      "name": "Neutral Gas and Ion Mass Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.anc:data.drf.ngms": {
+          "description": "MAVEN Ancillary NGIMS instrument data DRF Data Collection",
+          "start_date": "2014-11-15",
+          "stop_date": "2025-11-19",
+          "slot": "/data/maven-anc/data/drf/ngms",
+          "archive_type": 4
+        }
+      }
+    },
+    "Radio Occultation Science Experiment": {
+      "name": "Radio Occultation Science Experiment",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.rose.raw:data.tnf": {
+          "description": "MAVEN ROSE Radio Science Tracking and Navigation File (TNF) Data Collection",
+          "start_date": "2016-02-19",
+          "stop_date": "2025-04-08",
+          "slot": "/data/maven-rose-raw/data/tnf",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.raw:calibration.dlf": {
+          "description": "MAVEN ROSE Downlink Predicted Frequency Data Collection",
+          "start_date": "2016-02-19",
+          "stop_date": "2025-04-08",
+          "slot": "/data/maven-rose-raw/calibration/dlf",
+          "archive_type": 4
+        }
+      }
+    },
+    "Radio Science Instrument": {
+      "name": "Radio Science Instrument",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.rose.calibrated:data.sky": {
+          "description": "MAVEN ROSE Sky and Resudual Frequencies Data Collection",
+          "start_date": "2016-02-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-rose-calibrated/data/sky",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.derived:data.edp": {
+          "description": "MAVEN ROSE Electron Density Profile Data Collection",
+          "start_date": "2016-07-05",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-rose-derived/data/edp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.raw:calibration.tro": {
+          "description": "DSN Tropospheric Data Collection",
+          "start_date": "2016-02-01",
+          "stop_date": "2025-09-01",
+          "slot": "/data/maven-rose-raw/calibration/tro",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.raw:data.rsr": {
+          "description": "MAVEN ROSE Radio Science Receiver (RSR) Data Collection",
+          "start_date": "2016-02-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-rose-raw/data/rsr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.raw:calibration.wea": {
+          "description": "DSN Weather Data Data Collection",
+          "start_date": "2016-01-01",
+          "stop_date": "2025-09-03",
+          "slot": "/data/maven-rose-raw/calibration/wea",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.calibrated:calibration.fup": {
+          "description": "MAVEN ROSE Uplink Transmit Frequency Data Collection",
+          "start_date": "2016-02-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-rose-calibrated/calibration/fup",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.rose.raw:calibration.ion": {
+          "description": "DSN Ionospheric Data Collection",
+          "start_date": "2016-02-01",
+          "stop_date": "2025-09-01",
+          "slot": "/data/maven-rose-raw/calibration/ion",
+          "archive_type": 4
+        }
+      }
+    },
+    "Solar Energetic Particle Instrument": {
+      "name": "Solar Energetic Particle Instrument",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.sep.calibrated:data.counts": {
+          "description": "MAVEN SEP Reduced Ion and Electron Counts Data Collection",
+          "start_date": "2014-09-22",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-sep-calibrated/data/counts",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.sep.calibrated:data.spec": {
+          "description": "MAVEN SEP Calibrated Ion and Electron Spectra Data Collection",
+          "start_date": "2014-09-22",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-sep-calibrated/data/spec",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.sep.calibrated:data.anc": {
+          "description": "MAVEN SEP Ancillary Data Collection",
+          "start_date": "2014-09-20",
+          "stop_date": "2025-10-14",
+          "slot": "/data/maven-sep-calibrated/data/anc",
+          "archive_type": 4
+        }
+      }
+    },
+    "Solar Wind": {
+      "name": "Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "ion"
+      ],
+      "datasets": {
+        "urn:nasa:pds:maven.swia.calibrated:data.onboard_svy_mom": {
+          "description": "MAVEN SWIA Calibrated Onboard Survey Moment Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-swia-calibrated/data/onboard_svy_mom",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swia.calibrated:data.coarse_arc_3d": {
+          "description": "MAVEN SWIA Calibrated Coarse Archive 3D Data Collection",
+          "start_date": "2014-03-20",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-swia-calibrated/data/coarse_arc_3d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swia.calibrated:data.onboard_svy_spec": {
+          "description": "MAVEN SWIA Calibrated Onboard Survey Spectra Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-05-15",
+          "slot": "/data/maven-swia-calibrated/data/onboard_svy_spec",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swia.calibrated:data.coarse_svy_3d": {
+          "description": "MAVEN SWIA Calibrated Coarse Survey 3D Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-swia-calibrated/data/coarse_svy_3d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swea.calibrated:data.svy_3d": {
+          "description": "MAVEN SWEA Survey Rate 3D Electron Distributions Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-swea-calibrated/data/svy_3d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swea.calibrated:data.arc_pad": {
+          "description": "MAVEN SWEA Archive Rate Electron Pitch Angle Distributions Data Collection",
+          "start_date": "2014-10-18",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-swea-calibrated/data/arc_pad",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swia.calibrated:data.fine_arc_3d": {
+          "description": "MAVEN SWIA Calibrated Fine Archive 3D Data Collection",
+          "start_date": "2014-03-20",
+          "stop_date": "2025-05-14",
+          "slot": "/data/maven-swia-calibrated/data/fine_arc_3d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swia.calibrated:data.fine_svy_3d": {
+          "description": "MAVEN SWIA Calibrated Fine Survey 3D Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-swia-calibrated/data/fine_svy_3d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swea.calibrated:data.svy_spec": {
+          "description": "MAVEN SWEA Survey Rate Omni-Directional Electron Energy Spectra Data Collection",
+          "start_date": "2014-03-19",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-swea-calibrated/data/svy_spec",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swea.calibrated:data.svy_pad": {
+          "description": "MAVEN SWEA Survey Rate Electron Pitch Angle Distributions Data Collection",
+          "start_date": "2014-10-10",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-swea-calibrated/data/svy_pad",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.swea.calibrated:data.arc_3d": {
+          "description": "MAVEN SWEA Archive Rate 3D Electron Distributions Data Collection",
+          "start_date": "2014-03-20",
+          "stop_date": "2025-10-31",
+          "slot": "/data/maven-swea-calibrated/data/arc_3d",
+          "archive_type": 4
+        }
+      }
+    },
+    "Supra-Thermal and Thermal Ion Composition": {
+      "name": "Supra-Thermal and Thermal Ion Composition",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.static.c:data.ce_16e4d16a16m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 16 Energy X 64 Solid Angle Bins Data Collection",
+          "start_date": "2014-10-16",
+          "stop_date": "2023-02-21",
+          "slot": "/data/maven-static-c/data/ce_16e4d16a16m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.cf_16e4d16a16m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 16 Energy X 64 Solid Angle X 16 Mass Bins Data Collection",
+          "start_date": "2014-10-16",
+          "stop_date": "2023-02-21",
+          "slot": "/data/maven-static-c/data/cf_16e4d16a16m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.cd_32e8d32m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 32 Energy X 8 Solid Angle X 32 Mass Bins Data Collection",
+          "start_date": "2014-10-18",
+          "stop_date": "2015-06-02",
+          "slot": "/data/maven-static-c/data/cd_32e8d32m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.cc_32e8d32m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 32 Energy X 8 Solid Angle X 32 Mass Bins Data Collection",
+          "start_date": "2014-10-18",
+          "stop_date": "2015-06-02",
+          "slot": "/data/maven-static-c/data/cc_32e8d32m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.c4_4e64m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 4 Energy X 64 Mass Bins Data Collection",
+          "start_date": "2014-10-16",
+          "stop_date": "2023-02-21",
+          "slot": "/data/maven-static-c/data/c4_4e64m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.c2_32e32m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 32 Energy x 32 Mass Bins Data Collection",
+          "start_date": "2014-10-16",
+          "stop_date": "2023-02-21",
+          "slot": "/data/maven-static-c/data/c2_32e32m",
+          "archive_type": 4
+        }
+      }
+    },
+    "Supra-Thermal and Thermal Ion Composition (STATIC)": {
+      "name": "Supra-Thermal and Thermal Ion Composition (STATIC)",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:maven.static.c:data.d9_12r64e": {
+          "description": "MAVEN STATIC Event Rate: 12 Rate Channels Summed Over Multiple Spins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-static-c/data/d9_12r64e",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.c0_64e2m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 64 Energy x 2 Mass Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-11-15",
+          "slot": "/data/maven-static-c/data/c0_64e2m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.c8_32e16d": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 32 Energy X 16 Solid Angle Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/c8_32e16d",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.ca_16e4d16a": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 16 Energy X 64 Solid Angle Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/ca_16e4d16a",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.c6_32e64m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 32 Energy X 64 Mass Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/c6_32e64m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.2a_hkp": {
+          "description": "MAVEN STATIC Housekeeping Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-11-14",
+          "slot": "/data/maven-static-c/data/2a_hkp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d8_12r1e": {
+          "description": "MAVEN STATIC Event Rate: 12 Rate Channels Summed Over a Single Spin Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-05-15",
+          "slot": "/data/maven-static-c/data/d8_12r1e",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d7_fsthkp": {
+          "description": "MAVEN STATIC Fast Housekeeping Data Collection",
+          "start_date": "2014-10-29",
+          "stop_date": "2025-08-01",
+          "slot": "/data/maven-static-c/data/d7_fsthkp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.db_1024tof": {
+          "description": "MAVEN STATIC Raw Time-of-Flight Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/db_1024tof",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d6_events": {
+          "description": "MAVEN STATIC Raw Event Data Collection",
+          "start_date": "2014-10-14",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-static-c/data/d6_events",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d1_32e4d16a8m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 16 Energy X 64 Solid Angle X 8 Mass Bins Data Collection",
+          "start_date": "2014-10-16",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/d1_32e4d16a8m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d0_32e4d16a8m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 16 Energy X 64 Solid Angle X 8 Mass Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-static-c/data/d0_32e4d16a8m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.da_1r": {
+          "description": "MAVEN STATIC Event Rate Selected Channel Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-15",
+          "slot": "/data/maven-static-c/data/da_1r",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:maven.static.c:data.d4_4d16a2m": {
+          "description": "MAVEN STATIC Calibrated Energy Flux: 64 Solid Angle X 2 Mass Bins Data Collection",
+          "start_date": "2014-10-13",
+          "stop_date": "2025-08-14",
+          "slot": "/data/maven-static-c/data/d4_4d16a2m",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

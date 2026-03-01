@@ -1,0 +1,110 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Moment: Density [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Bulk_Speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Bulk_Speed [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vr_HERTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vr in HERTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vt_HERTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vt in HERTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vn_HERTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vn in HERTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vr_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vr in RTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vt_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vt in RTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vn_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Moment: Vn in RTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "N_S_flow_angle_HERTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton N/S Flow Angle. HERTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "N_S_flow_angle_RTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton N/S Flow Angle. RTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "E_W_flow_angle_HERTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton E/W Flow Angle. HERTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "E_W_flow_angle_RTN",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton E/W Flow Angle. RTN [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Temperature_Inst",
+      "type": "double",
+      "units": "K",
+      "description": "Moment: Temperature xx in Instrument Coordinates. [PRELIM]",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Pressure_Inst",
+      "type": "double",
+      "units": "Pa",
+      "description": "Moment: Pressure xx in Instrument Coordinates. [PRELIM]",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2011-07-06T15:16:38.000Z",
+  "stopDate": "2014-09-26T01:59:25.000Z"
+}

@@ -1,0 +1,694 @@
+{
+  "id": "WIND",
+  "name": "Wind",
+  "keywords": [
+    "wi",
+    "wi_at",
+    "wi_h",
+    "wi_k",
+    "wi_or",
+    "wind"
+  ],
+  "profile": {
+    "description": "Wind spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "WIND_WAVES_QTNFIT": {
+          "description": "WIND Radio/Plasma Wave, (WAVES) Quasi-Thermal Noise Key Parameters - Keith Goetz (University of Minnesota)",
+          "start_date": "2005-01-01T00:01:36.000Z",
+          "stop_date": "2017-11-24T23:59:56.000Z",
+          "pi_name": "Keith Goetz",
+          "pi_affiliation": "University of Minnesota",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WIND_WAVES_QTNFIT"
+        },
+        "WIND_WAVES_QTNFIT-FILTERED": {
+          "description": "WIND Radio/Plasma Wave, (WAVES) Filtered Quasi-Thermal Noise Key Parameters - Keith Goetz (University of Minnesota)",
+          "start_date": "2005-01-01T00:03:05.000Z",
+          "stop_date": "2017-11-24T21:18:58.000Z",
+          "pi_name": "Keith Goetz",
+          "pi_affiliation": "University of Minnesota",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WIND_WAVES_QTNFIT-FILTERED"
+        },
+        "WI_H0_WAV": {
+          "description": "Wind Radio/Plasma Wave, (WAVES) High Res. Plasma Density - M. L. Kaiser (GSFC)",
+          "start_date": "1994-11-12T00:00:25.000Z",
+          "stop_date": "2026-02-17T00:00:08.000Z",
+          "pi_name": "M. L. Kaiser",
+          "pi_affiliation": "GSFC",
+          "doi": "10.48322/thkc-wf80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H0_WAV"
+        },
+        "WI_WA_RAD1_L3_DF": {
+          "description": "Wind Waves, Level 3 Direction-Finding (DF) parameters - K. Issautier (LESIA, Observatoire de Paris-PSL, CNRS)",
+          "start_date": "1994-11-10T16:38:07.000Z",
+          "stop_date": "2026-02-14T23:52:57.000Z",
+          "pi_name": "K. Issautier",
+          "pi_affiliation": "LESIA, Observatoire de Paris-PSL, CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_WA_RAD1_L3_DF"
+        },
+        "WI_K0_WAV": {
+          "description": "Wind Radio/Plasma Wave, (WAVES) Key Parameters [PRELIM] - M. L. Kaiser (GSFC)",
+          "start_date": "1994-11-10T00:01:30.000Z",
+          "stop_date": "2026-02-16T23:58:30.000Z",
+          "pi_name": "M. L. Kaiser",
+          "pi_affiliation": "GSFC",
+          "doi": "10.48322/mfc5-cc53",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_WAV"
+        },
+        "WI_H1_WAV": {
+          "description": "Wind Radio/Plasma Wave, (WAVES) Hi-Res Parameters - M. L. Kaiser (GSFC)",
+          "start_date": "1994-11-10T00:00:30.000Z",
+          "stop_date": "2021-11-30T23:59:30.000Z",
+          "pi_name": "M. L. Kaiser",
+          "pi_affiliation": "GSFC",
+          "doi": "10.48322/ys2k-6162",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H1_WAV"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "WI_K1-RTN_MFI": {
+          "description": "Wind Magnetic Fields Investigation, Key Parameters in RTN [PRELIM] - Andriy Koval (UMBC&GSFC)",
+          "start_date": "2017-01-01T00:00:19.000Z",
+          "stop_date": "2025-08-13T23:59:07.000Z",
+          "pi_name": "Andriy Koval",
+          "pi_affiliation": "UMBC&GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K1-RTN_MFI"
+        },
+        "WI_H3-RTN_MFI": {
+          "description": "Wind Magnetic Fields Investigation: 3 sec, 1 min, and hourly Definitive Data (RTN). - A. Koval (UMBC, NASA/GSFC)",
+          "start_date": "1994-11-13T00:00:30.000Z",
+          "stop_date": "2026-02-13T23:59:30.000Z",
+          "pi_name": "A. Koval",
+          "pi_affiliation": "UMBC, NASA/GSFC",
+          "doi": "10.48322/s1d0-5q92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H3-RTN_MFI"
+        },
+        "WI_H0_MFI": {
+          "description": "Wind Magnetic Fields Investigation: 3 sec, 1 min, and hourly Definitive Data. - A. Koval (UMBC, NASA/GSFC)",
+          "start_date": "1994-11-13T00:00:30.000Z",
+          "stop_date": "2026-02-13T23:59:30.000Z",
+          "pi_name": "A. Koval",
+          "pi_affiliation": "UMBC, NASA/GSFC",
+          "doi": "10.48322/av38-wn55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H0_MFI"
+        },
+        "WI_H1_SWE": {
+          "description": "Wind Solar Wind Experiment, 92-sec Solar Wind Alpha and Proton Anisotropy Analysis - K. Ogilvie (NASA GSFC)",
+          "start_date": "1994-11-17T19:50:45.000Z",
+          "stop_date": "2026-01-20T23:57:25.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/nasd-j276",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H1_SWE"
+        },
+        "WI_K0_GIFWALK": {
+          "description": "Links to Wind KP pre-generated survey and other plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-08T00:00:00.000Z",
+          "stop_date": "2004-08-08T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_GIFWALK"
+        },
+        "WI_H1_SWE_RTN": {
+          "description": "Solar wind proton and alpha parameters, including anisotropic temperatures, derived by non-linear fitting of the measurements and with moment techniques. Data in RTN - Bennett Maruca (University of Delaware)",
+          "start_date": "1994-11-17T19:50:45.000Z",
+          "stop_date": "2025-06-22T23:58:43.000Z",
+          "pi_name": "Bennett Maruca",
+          "pi_affiliation": "University of Delaware",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H1_SWE_RTN"
+        },
+        "WI_H4-RTN_MFI": {
+          "description": "Wind Magnetic Fields Investigation, High-resolution Definitive Data (RTN) - A. Koval (UMBC, NASA/GSFC)",
+          "start_date": "1994-11-13T15:50:26.000Z",
+          "stop_date": "2026-02-13T23:59:59.000Z",
+          "pi_name": "A. Koval",
+          "pi_affiliation": "UMBC, NASA/GSFC",
+          "doi": "10.48322/s1kf-0b54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H4-RTN_MFI"
+        },
+        "WI_H2_MFI": {
+          "description": "Wind Magnetic Fields Investigation, High-resolution Definitive Data - A. Koval (UMBC, NASA/GSFC)",
+          "start_date": "1994-11-13T15:50:26.000Z",
+          "stop_date": "2026-02-13T23:59:59.000Z",
+          "pi_name": "A. Koval",
+          "pi_affiliation": "UMBC, NASA/GSFC",
+          "doi": "10.48322/0v0h-df27",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H2_MFI"
+        },
+        "WI_K0_MFI": {
+          "description": "Wind Magnetic Fields Investigation, Key Parameters [PRELIM] - R. Lepping (NASA/GSFC)",
+          "start_date": "2017-07-01T00:00:00.000Z",
+          "stop_date": "2026-02-16T23:58:30.000Z",
+          "pi_name": "R. Lepping",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/pxak-n392",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_MFI"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "WI_L2_3MIN_SMS-STICS-NVT-SOLARWIND": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-01-01T00:07:11.000Z",
+          "stop_date": "2021-06-30T23:55:57.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/2mh5-qw88",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2_3MIN_SMS-STICS-NVT-SOLARWIND"
+        },
+        "WI_L2-30MIN_SMS-STICS-AFM-MAGNETOSPHERE": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-08-01T00:05:19.000Z",
+          "stop_date": "2004-04-28T23:37:06.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/f2m8-ex57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-30MIN_SMS-STICS-AFM-MAGNETOSPHERE"
+        },
+        "WI_L2_3MIN_SMS-STICS-NVT-MAGNETOSPHERE": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-08-01T00:05:19.000Z",
+          "stop_date": "2004-04-28T23:55:32.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/wnzt-eh29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2_3MIN_SMS-STICS-NVT-MAGNETOSPHERE"
+        },
+        "WIND_3DP_ECHSFITS_E0-YR": {
+          "description": "Wind spacecraft, 3DP accurate electron parameters - Chadi S. Salem (University of California, Berkeley)",
+          "start_date": "1995-01-01T00:03:15.000Z",
+          "stop_date": "1998-12-31T19:41:26.000Z",
+          "pi_name": "Chadi S. Salem",
+          "pi_affiliation": "University of California, Berkeley",
+          "doi": "10.48322/rgf7-3h67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WIND_3DP_ECHSFITS_E0-YR"
+        },
+        "WI_L2-3MIN_SMS-STICS-VDF-MAGNETOSPHERE": {
+          "description": "Magnetosphere and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-08-01T00:05:19.000Z",
+          "stop_date": "2004-04-28T23:55:32.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/bm5n-eg33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-3MIN_SMS-STICS-VDF-MAGNETOSPHERE"
+        },
+        "WI_EM_3DP": {
+          "description": "Electron Plasma moments (computed on-board) (NOT CORRECTED FOR S/C POTENTIAL) @ 3 second (spin) resolution (version 3), EESA LOW, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:53:43.000Z",
+          "stop_date": "2026-01-19T23:59:57.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/bsy7-7789",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EM_3DP"
+        },
+        "WI_K0_SWE": {
+          "description": "Wind SWE (Solar Wind Experiment), Key Parameters [PRELIM] - K. Ogilvie (NASA GSFC)",
+          "start_date": "1994-11-01T12:00:00.000Z",
+          "stop_date": "2026-02-16T23:59:20.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/3zky-gy15",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_SWE"
+        },
+        "WI_STRAHL0_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE) strahl detector, ~1/2 sec solar wind electron pitch-angle distributions at ~12 sec cadence - K. Ogilvie (NASA/GSFC)",
+          "start_date": "1995-01-01T00:00:05.000Z",
+          "stop_date": "2001-05-30T23:59:22.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/4mxn-2e20",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_STRAHL0_SWE"
+        },
+        "WI_H4_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE), 3 sec solar wind electron pitch-angle distributions at 6-12 sec cadence - K. Ogilvie (NASA/GSFC)",
+          "start_date": "1994-11-30T00:00:20.000Z",
+          "stop_date": "2001-07-10T00:00:35.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/wx5n-w132",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H4_SWE"
+        },
+        "WI_L2-3MIN_SMS-STICS-VDF-SOLARWIND": {
+          "description": "Solar Wind and Suprathermal Ion Composition Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-01-01T00:07:11.000Z",
+          "stop_date": "2025-03-05T23:55:14.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/h28x-0w82",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-3MIN_SMS-STICS-VDF-SOLARWIND"
+        },
+        "WI_K0_SMS": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters [PRELIM] - G. Gloeckler (U of Maryland)",
+          "start_date": "1994-12-12T16:32:00.000Z",
+          "stop_date": "2000-05-27T04:02:00.000Z",
+          "pi_name": "G. Gloeckler",
+          "pi_affiliation": "U of Maryland",
+          "doi": "10.48322/wms0-rv35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_SMS"
+        },
+        "WI_M2_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE), 3 sec solar wind electron pitch-angle distribution averages - K. Ogilvie (NASA/GSFC)",
+          "start_date": "1994-12-28T23:59:56.000Z",
+          "stop_date": "2001-07-10T00:00:35.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/dq7x-fd74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_M2_SWE"
+        },
+        "WI_H0_SWE": {
+          "description": "Wind SWE (Solar Wind Experiment), 6 - 12 sec Solar Wind Electron Moments - K. Ogilvie (GSFC Code 692)",
+          "start_date": "1994-12-29T00:00:02.000Z",
+          "stop_date": "2001-05-31T23:59:57.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "GSFC Code 692",
+          "doi": "10.48322/2jxp-7x36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H0_SWE"
+        },
+        "WI_L2-30MIN_SMS-STICS-ERPA-SOLARWIND": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-01-01T00:07:11.000Z",
+          "stop_date": "2025-03-05T23:36:57.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/yd5h-ty18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-30MIN_SMS-STICS-ERPA-SOLARWIND"
+        },
+        "WI_L2-30MIN_SMS-STICS-AFM-SOLARWIND": {
+          "description": "Solar Wind and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-01-01T00:07:11.000Z",
+          "stop_date": "2021-06-30T23:36:05.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/57np-qg69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-30MIN_SMS-STICS-AFM-SOLARWIND"
+        },
+        "WI_M0_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE), 9 sec solar wind electron pitch-angle distribution averages - K. Ogilvie (NASA/GSFC)",
+          "start_date": "2002-08-16T00:00:05.000Z",
+          "stop_date": "2025-03-31T23:58:36.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/jsqc-vm88",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_M0_SWE"
+        },
+        "WI_ELM2_3DP": {
+          "description": "Electron Moments (ground-computed), EESA Low, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:54:33.000Z",
+          "stop_date": "2026-01-19T23:55:42.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/4tk0-a011",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_ELM2_3DP"
+        },
+        "WI_L2-30MIN_SMS-STICS-ERPA-MAGNETOSPHERE": {
+          "description": "Magnetosphere and Suprathermal Ion Composition  Instrument, Key Parameters - S. T. Lepri (U of Michigan)",
+          "start_date": "1995-08-01T00:05:19.000Z",
+          "stop_date": "2004-04-28T23:37:06.000Z",
+          "pi_name": "S. T. Lepri",
+          "pi_affiliation": "U of Michigan",
+          "doi": "10.48322/s1x2-0h63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-30MIN_SMS-STICS-ERPA-MAGNETOSPHERE"
+        },
+        "WI_PM_3DP": {
+          "description": "Ion moments (computed on-board) @ 3 second (spin) resolution, PESA LOW, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:53:43.000Z",
+          "stop_date": "2026-01-19T23:59:56.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/s8e6-aw08",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_PM_3DP"
+        },
+        "WI_K0_SWE_RTN": {
+          "description": "Wind Solar Wind Experiment, Key Parameters in RTN [PRELIM] - Bennett Maruca (University of Delaware)",
+          "start_date": "1994-11-01T12:00:00.000Z",
+          "stop_date": "2025-08-13T23:58:44.000Z",
+          "pi_name": "Bennett Maruca",
+          "pi_affiliation": "University of Delaware",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_SWE_RTN"
+        },
+        "WI_PLSP_3DP": {
+          "description": "Ion omnidirectional fluxes 0.4-3 keV and moments, often at ~24 second resolution, PESA Low, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:53:44.000Z",
+          "stop_date": "2026-01-19T23:59:55.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/c4mf-9n52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_PLSP_3DP"
+        },
+        "WI_K0_3DP": {
+          "description": "Wind 3-D Plasma Analyzer, Key Parameters [PRELIM] - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "2019-01-01T00:00:39.000Z",
+          "stop_date": "2026-02-16T23:59:16.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/kwfz-zk29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_3DP"
+        },
+        "WI_H3_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE), 9 sec solar wind electron pitch-angle distributions at 12 sec cadence - K. Ogilvie (NASA/GSFC)",
+          "start_date": "2002-08-16T00:00:05.000Z",
+          "stop_date": "2025-03-31T23:58:36.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/xdpr-7352",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H3_SWE"
+        },
+        "WI_SW-ION-DIST_SWE-FARADAY": {
+          "description": "Faraday Cup orientation and charge flux - Keith Ogilvie (NASA GSFC)",
+          "start_date": "1994-11-17T19:50:45.000Z",
+          "stop_date": "2025-12-21T23:56:51.000Z",
+          "pi_name": "Keith Ogilvie",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/6vrg-6n41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SW-ION-DIST_SWE-FARADAY"
+        },
+        "WI_EMFITS_E0_3DP": {
+          "description": "Wind spacecraft, 3DP electron moments - Stuart D. Bale (University of California, Berkeley)",
+          "start_date": "1995-01-01T00:01:33.000Z",
+          "stop_date": "2004-12-31T23:59:05.000Z",
+          "pi_name": "Stuart D. Bale",
+          "pi_affiliation": "University of California, Berkeley",
+          "doi": "10.48322/ndp9-8t38",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EMFITS_E0_3DP"
+        },
+        "WI_H5_SWE": {
+          "description": "Wind Solar Wind Experiment (SWE), 9 sec solar wind electron moments at 12 sec cadence - K. Ogilvie (NASA/GSFC)",
+          "start_date": "2002-08-16T00:00:05.000Z",
+          "stop_date": "2025-03-31T23:58:36.000Z",
+          "pi_name": "K. Ogilvie",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/chaz-z942",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_H5_SWE"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "WI_L2_WAV_RAD1": {
+          "description": "Wind/WAVES/RAD1 Data - Karine Issautier (Karine.Issautier@@obspm.fr) & Keith Goetz (goetz@@umn.edu) (LESIA, Observatoire de Paris-PSL, CNRS and University of Minnesota, respectively.)",
+          "start_date": "1995-09-14T11:02:11.000Z",
+          "stop_date": "2026-02-10T23:54:34.000Z",
+          "pi_name": "Karine Issautier (Karine.Issautier@@obspm.fr) & Keith Goetz (goetz@@umn.edu)",
+          "pi_affiliation": "LESIA, Observatoire de Paris-PSL, CNRS and University of Minnesota, respectively.",
+          "doi": "10.48322/6vc8-zc62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2_WAV_RAD1"
+        },
+        "WI_L2_WAV_RAD2": {
+          "description": "Wind/WAVES/RAD2 Data - Karine Issautier (Karine.Issautier@@obspm.fr) & Keith Goetz (goetz@@umn.edu) (LESIA, Observatoire de Paris-PSL, CNRS and University of Minnesota, respectively.)",
+          "start_date": "1994-11-12T00:00:08.000Z",
+          "stop_date": "2026-02-10T23:59:37.000Z",
+          "pi_name": "Karine Issautier (Karine.Issautier@@obspm.fr) & Keith Goetz (goetz@@umn.edu)",
+          "pi_affiliation": "LESIA, Observatoire de Paris-PSL, CNRS and University of Minnesota, respectively.",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2_WAV_RAD2"
+        },
+        "WI_L3-DUSTIMPACT_WAVES": {
+          "description": "The Radio and Plasma Wave Investigation on the Wind Spacecraft - D.M. Malaspina (U. Colorado at Boulder, LASP)",
+          "start_date": "1995-01-01T00:00:00.000Z",
+          "stop_date": "2023-09-01T00:00:00.000Z",
+          "pi_name": "D.M. Malaspina",
+          "pi_affiliation": "U. Colorado at Boulder, LASP",
+          "doi": "10.48322/635a-nc73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L3-DUSTIMPACT_WAVES"
+        },
+        "WI_L2_WAV_TNR": {
+          "description": "Wind/WAVES/Thermal Noise Receiver(TNR) Data - Karine Issautier (Karine.Issautier@obspm.fr) & Keith Goetz (goetz@umn.edu) (LIRA, Observatoire de Paris-PSL, CNRS & University of Minnesota)",
+          "start_date": "1994-11-10T16:38:06.000Z",
+          "stop_date": "2026-01-01T00:00:37.000Z",
+          "pi_name": "Karine Issautier (Karine.Issautier@obspm.fr) & Keith Goetz (goetz@umn.edu)",
+          "pi_affiliation": "LIRA, Observatoire de Paris-PSL, CNRS & University of Minnesota",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2_WAV_TNR"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "WI_EPACT_STEP-DIRECTIONAL-DIFF-CNO-FLUX-10MIN": {
+          "description": "Wind EPACT-STEP CNO - Mihir Desai (University of Texas, San Antonio)",
+          "start_date": "1994-11-21T00:03:52.000Z",
+          "stop_date": "2026-01-02T15:02:23.000Z",
+          "pi_name": "Mihir Desai",
+          "pi_affiliation": "University of Texas, San Antonio",
+          "doi": "10.48322/0y67-vc97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EPACT_STEP-DIRECTIONAL-DIFF-CNO-FLUX-10MIN"
+        },
+        "WI_L2-5MIN-SEP_EPACT-LEMT": {
+          "description": "Wind EPACT-LEMT He/C/O/Ne/Si/Fe 2-11 MeV/Nuc Solar Energetic Particle Intensities, 5min Level 2 Data - T. Von Rosenvinge & D. Reames (NASA GSFC)",
+          "start_date": "1994-11-03T00:01:00.000Z",
+          "stop_date": "2014-09-06T23:55:00.000Z",
+          "pi_name": "T. Von Rosenvinge & D. Reames",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/5jq3-gs16",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-5MIN-SEP_EPACT-LEMT"
+        },
+        "WI_ELPD_3DP": {
+          "description": "Electron energy-angle distributions 5-1100 eV, often at 24 sec, EESA Low, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:54:33.000Z",
+          "stop_date": "2026-01-19T23:55:42.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/kesf-re26",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_ELPD_3DP"
+        },
+        "WI_SFSP_3DP": {
+          "description": "Electron omnidirectional fluxes 27 keV - 520 keV, often at 24 sec, SST Foil,  Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:56:18.000Z",
+          "stop_date": "2026-01-19T23:59:48.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/wd3x-9a34",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SFSP_3DP"
+        },
+        "WI_ELSP_3DP": {
+          "description": "Electron omnidirectional fluxes 5-1100 eV, often at 24 sec, EESA Low, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:54:34.000Z",
+          "stop_date": "2026-01-19T23:55:44.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/cbvx-4034",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_ELSP_3DP"
+        },
+        "WI_SFPD_3DP": {
+          "description": "Electron energy-angle distributions 27 keV to 520 keV, often at 24 sec, SST Foil, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:56:18.000Z",
+          "stop_date": "2026-01-19T23:59:54.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/aawb-c884",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SFPD_3DP"
+        },
+        "WI_EPACT_STEP-DIRECTIONAL-DIFF-H-FLUX-10MIN": {
+          "description": "Wind EPACT-STEP H - Mihir Desai (University of Texas, San Antonio)",
+          "start_date": "1994-11-21T00:03:52.000Z",
+          "stop_date": "2026-01-02T15:02:23.000Z",
+          "pi_name": "Mihir Desai",
+          "pi_affiliation": "University of Texas, San Antonio",
+          "doi": "10.48322/c7fp-nf79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EPACT_STEP-DIRECTIONAL-DIFF-H-FLUX-10MIN"
+        },
+        "WI_EPACT_STEP-DIRECTIONAL-DIFF-FE-FLUX-10MIN": {
+          "description": "Wind EPACT-STEP FE - Mihir Desai (University of Texas, San Antonio)",
+          "start_date": "1994-11-21T00:03:52.000Z",
+          "stop_date": "2026-01-02T15:02:23.000Z",
+          "pi_name": "Mihir Desai",
+          "pi_affiliation": "University of Texas, San Antonio",
+          "doi": "10.48322/t2mh-c690",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EPACT_STEP-DIRECTIONAL-DIFF-FE-FLUX-10MIN"
+        },
+        "WI_L2-1HOUR-SEP_EPACT-LEMT": {
+          "description": "Wind EPACT-LEMT He/C/O/Ne/Si/Fe 2-11 MeV/Nuc Solar Energetic Particle Intensities, 1-Hour Level 2 Data - T. Von Rosenvinge & D. Reames (NASA GSFC)",
+          "start_date": "1994-11-03T00:00:00.000Z",
+          "stop_date": "2025-06-30T23:00:00.000Z",
+          "pi_name": "T. Von Rosenvinge & D. Reames",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/n0f2-3519",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-1HOUR-SEP_EPACT-LEMT"
+        },
+        "WI_EPACT_STEP-DIFFERENTIAL-ION-FLUX-1HR": {
+          "description": "Wind EPACT-STEP  - Mihir Desai (University of Texas, San Antonio)",
+          "start_date": "1994-11-21T00:29:58.000Z",
+          "stop_date": "2025-12-31T23:30:20.000Z",
+          "pi_name": "Mihir Desai",
+          "pi_affiliation": "University of Texas, San Antonio",
+          "doi": "10.48322/6654-mc20",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EPACT_STEP-DIFFERENTIAL-ION-FLUX-1HR"
+        },
+        "WI_SOSP_3DP": {
+          "description": "Proton omnidirectional fluxes 70 keV - 6.8 MeV, often at 24 sec, SST Open, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:56:18.000Z",
+          "stop_date": "2025-12-31T23:59:53.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/wkk0-y398",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SOSP_3DP"
+        },
+        "WI_L2-1HOUR-SEP_EPACT-APE_B": {
+          "description": "Wind EPACT-APE_B  H 18.90 -21.90 MeV Solar Energetic Particle Intensities, 1-Hour Level 2 Data - T. Von Rosenvinge & D. Reames (NASA GSFC)",
+          "start_date": "1994-11-03T00:00:00.000Z",
+          "stop_date": "2025-06-30T23:00:00.000Z",
+          "pi_name": "T. Von Rosenvinge & D. Reames",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/k50r-er56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_L2-1HOUR-SEP_EPACT-APE_B"
+        },
+        "WI_EHPD_3DP": {
+          "description": "Electron energy-angle distributions 100 eV - 30 keV, often at 24 sec, EESA High, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-12-20T15:10:03.000Z",
+          "stop_date": "2025-09-22T21:26:08.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/63fs-yr96",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EHPD_3DP"
+        },
+        "WI_SOPD_3DP": {
+          "description": "Proton energy-angle distributions 70 keV - 6.8 MeV, often at 24 sec, SST Open, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-11-15T12:56:18.000Z",
+          "stop_date": "2025-12-31T23:59:59.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/yw1c-yf03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_SOPD_3DP"
+        },
+        "WI_EHSP_3DP": {
+          "description": "Electron omnidirectional fluxes 100 eV-30 keV, often at 24 sec, EESA High, Wind 3DP - R. Lin/S. Bale (UC Berkeley)",
+          "start_date": "1994-12-20T15:10:03.000Z",
+          "stop_date": "2025-09-22T21:26:58.000Z",
+          "pi_name": "R. Lin/S. Bale",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/c201-q577",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EHSP_3DP"
+        },
+        "WI_K0_EPA": {
+          "description": "Wind Energetic Particle Acceleration Composition Transport, Key Parameters [PRELIM] - T. Von Roseavinge (NASA/GSFC)",
+          "start_date": "1994-11-16T00:00:14.000Z",
+          "stop_date": "2026-02-16T23:59:16.000Z",
+          "pi_name": "T. Von Roseavinge",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/x9am-dd03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_EPA"
+        },
+        "WI_EPACT_STEP-DIRECTIONAL-DIFF-HE-FLUX-10MIN": {
+          "description": "Wind EPACT-STEP HE - Mihir Desai (University of Texas, San Antonio)",
+          "start_date": "1994-11-21T00:03:52.000Z",
+          "stop_date": "2026-01-02T15:02:23.000Z",
+          "pi_name": "Mihir Desai",
+          "pi_affiliation": "University of Texas, San Antonio",
+          "doi": "10.48322/z4p2-ky35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_EPACT_STEP-DIRECTIONAL-DIFF-HE-FLUX-10MIN"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "WI_OR_GIFWALK": {
+          "description": "Links to Wind and multi-mission orbit plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-08T00:00:00.000Z",
+          "stop_date": "2004-08-08T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_OR_GIFWALK"
+        },
+        "WI_OR_DEF": {
+          "description": "Wind Definitive Orbit",
+          "start_date": "1994-11-01T11:00:00.000Z",
+          "stop_date": "1997-07-01T23:50:00.000Z",
+          "doi": "10.48322/t0jm-c908",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_OR_DEF"
+        },
+        "WI_OR_PRE": {
+          "description": "Wind Predicted Orbit",
+          "start_date": "1994-08-07T00:00:00.000Z",
+          "stop_date": "2026-04-25T23:50:00.000Z",
+          "doi": "10.48322/73de-sf52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_OR_PRE"
+        },
+        "WIND_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1994-11-02T00:00:00.000Z",
+          "stop_date": "2026-03-30T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WIND_HELIO1HR_POSITION"
+        },
+        "WI_AT_DEF": {
+          "description": "Wind Definitive Attitude",
+          "start_date": "1994-11-01T00:00:00.000Z",
+          "stop_date": "1997-07-01T23:50:00.000Z",
+          "doi": "10.48322/b88q-p434",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_AT_DEF"
+        },
+        "WI_AT_PRE": {
+          "description": "Wind Predicted Attitude",
+          "start_date": "1994-08-07T00:00:00.000Z",
+          "stop_date": "2026-04-11T23:50:00.000Z",
+          "doi": "10.48322/e07a-2494",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_AT_PRE"
+        },
+        "WI_K0_SPHA": {
+          "description": "Wind Spin Phase",
+          "start_date": "1994-11-01T09:06:02.000Z",
+          "stop_date": "2026-02-16T23:59:16.000Z",
+          "doi": "10.48322/0qwn-gj84",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesW.html#WI_K0_SPHA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Wind",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

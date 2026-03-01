@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Intensity",
+      "type": "double",
+      "units": "microVolt/Hz**0.5",
+      "description": "RAR Average electric field intensity in 25 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    }
+  ],
+  "startDate": "1990-11-03T00:00:00.000Z",
+  "stopDate": "2007-11-26T23:50:00.000Z"
+}

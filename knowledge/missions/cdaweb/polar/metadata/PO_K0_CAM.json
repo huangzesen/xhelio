@@ -1,0 +1,243 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Protons",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H+/sec MICS ( +-1deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Protons_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "H+/sec MICS with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_P",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on MICS H+ rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_Plus",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He+ rate MICS (+-1deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_Plus_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He+ rate MICS with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_Hep",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on MICS He+ rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alphas",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He++ rate MICS (+-1deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alphas_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He++ rate MICS with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_alpha",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on MICS He++ rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_le2p",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O+,O++ rate MICS (+-1deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_le2p_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O+,O++ rate MICS with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_Op",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on MICS O+ rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_gt_2pl",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O>2+ rate MICS (+-1deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_gt_2pl_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "O>2+ rate MICS with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_O3pl",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on MICS O>2+ rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_low_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Protons 0.5<E<1.7 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_low_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Protons 0.5<E<1.7 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_H_le",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HIT H_le rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_high_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Protons 1.7<E<5.8 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_high_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Protons 1.7<E<5.8 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_H_he",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HIT H_he rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_low_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He 1.4<E<4.3 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_low_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He 1.4<E<4.3 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_He_le",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HIT He_le rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_high_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He 4.3<E<9.6 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_high_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "He 4.3<E<9.6 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_He_he",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HIT He_he rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_low_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "CNO:5-10,6-11,7-13 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_low_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "CNO:5-10,6-11,7-13 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_CNO_le",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HITS CNO low E rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_high_E",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "CNO:17-92,18-92,21-92 MeV (HIT, +-6deg FOV perp to spin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CNO_high_E_errorbars",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "CNO:17-92,18-92,21-92 MeV (HIT) with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ERR_CNO_he",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "error on HITS CNO high E rate",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-02-26T15:57:28.000Z",
+  "stopDate": "2008-04-28T18:51:05.000Z"
+}

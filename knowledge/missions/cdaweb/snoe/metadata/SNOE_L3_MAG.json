@@ -1,0 +1,85 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "latitude",
+      "type": "integer",
+      "units": "degrees",
+      "description": "Latitude, geomagnetic - center of each 5 degree latitude bin",
+      "fill": null
+    },
+    {
+      "name": "longitude",
+      "type": "integer",
+      "units": "degrees",
+      "description": "Longitude, geomagnetic - average for each 5 degree latitude bin",
+      "fill": "-999.0"
+    },
+    {
+      "name": "orbit",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number",
+      "fill": "-999.0"
+    },
+    {
+      "name": "no",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO (nitric oxide) density [1/cm^3] vs altitude - average over geomagnetic latitude bins",
+      "fill": "0.0",
+      "size": [
+        17
+      ]
+    },
+    {
+      "name": "no_100",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO density [1/cm^-3] at 100km",
+      "fill": "0.0"
+    },
+    {
+      "name": "no_110",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "NO density [1/cm^-3] at 110km",
+      "fill": "0.0"
+    },
+    {
+      "name": "no_120",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO density [1/cm^-3] at 120km",
+      "fill": "0.0"
+    },
+    {
+      "name": "no_130",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO density [1/cm^-3] at 130km",
+      "fill": "0.0"
+    },
+    {
+      "name": "no_140",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO density [1/cm^-3] at 140km",
+      "fill": "0.0"
+    },
+    {
+      "name": "no_150",
+      "type": "double",
+      "units": "cm-3",
+      "description": "NO density [1/cm^-3] at 150km",
+      "fill": "0.0"
+    }
+  ],
+  "startDate": "1998-03-11T00:48:16.000Z",
+  "stopDate": "2000-09-30T19:10:39.000Z"
+}

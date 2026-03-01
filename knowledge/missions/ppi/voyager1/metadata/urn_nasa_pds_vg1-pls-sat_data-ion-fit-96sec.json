@@ -1,0 +1,412 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Rs",
+      "description": "Radial distance of spacecraft from Saturn (Radius of Saturn).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "RHO",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Spacecraft position angle rho (radians).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "BRHO",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Rho component of the magnetic field (nanoTesla).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Phi component of the magnetic field (nanoTesla).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Z component of the magnetic field (nanoTesla).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "MODE",
+      "type": "double",
+      "units": "",
+      "description": "Instrument mode (l or m).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDATE",
+      "type": "double",
+      "units": "",
+      "description": "Date the fit was performed (MMDDYY).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WHO",
+      "type": "double",
+      "units": "",
+      "description": "Initials of person who performed fit (JDR  = Dr. John Richardson, MIT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHI2",
+      "type": "double",
+      "units": "",
+      "description": "Chi-square of the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "NUM_FIT",
+      "type": "double",
+      "units": "",
+      "description": "Number of the ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "IONSPEC1",
+      "type": "double",
+      "units": "",
+      "description": "Atomic number of the first ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "IONMASS1",
+      "type": "double",
+      "units": "",
+      "description": "Mass of the first ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "IONCHRG1",
+      "type": "double",
+      "units": "",
+      "description": "Charge of the first ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XDEN1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the density of the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VRHO1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Rho component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVRHO1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the rho component of the velocity vector for     \n                        the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VPHI1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Phi component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVPHI1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for for phi component of the velocity vector for     \n                        the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VZ1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Z component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVZ1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the Z component of the velocity vector for the   \n                        first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "WPAR1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Thermal speed in parallel direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XWPAR1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the thermal speed in parallel direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "WPER1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Thermal speed in perpendicular direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XWPER1",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the thermal speed in perpendicular direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "IONSPEC2",
+      "type": "double",
+      "units": "",
+      "description": "Atomic number of the second ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "IONMASS2",
+      "type": "double",
+      "units": "",
+      "description": "Mass of the second ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "IONCHRG2",
+      "type": "double",
+      "units": "",
+      "description": "Charge of the second ion species for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XDEN2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the density of the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VRHO2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Rho component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVRHO2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the rho component of the velocity vector for     \n                        the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VPHI2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Phi component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVPHI2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the phi component of the velocity vector for     \n                        the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "VZ2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Z component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XVZ2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the z component of the velocity vector for       \n                        the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "WPAR2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Thermal speed in parallel direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XWPAR2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the thermal speed in parallel direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "WPER2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Thermal speed in perpendicular direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "XWPER2",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Standard deviation for the thermal speed in perpendicular direction.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

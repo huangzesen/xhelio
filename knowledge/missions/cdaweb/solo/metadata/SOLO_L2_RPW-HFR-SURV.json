@@ -1,0 +1,91 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWEEP_NUM",
+      "type": "integer",
+      "units": "",
+      "description": "HFR sweep index number",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SWEEP_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "HFR sweep mode of the current record",
+      "fill": "255.0"
+    },
+    {
+      "name": "SURVEY_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "THR survey mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "AVERAGE_NR",
+      "type": "integer",
+      "units": "",
+      "description": "Number of averages",
+      "fill": "255.0"
+    },
+    {
+      "name": "FRONT_END",
+      "type": "integer",
+      "units": "",
+      "description": "Front end setting",
+      "fill": "255.0"
+    },
+    {
+      "name": "SENSOR_CONFIG",
+      "type": "integer",
+      "units": "",
+      "description": "THR sensor configuration",
+      "fill": "255.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "RPW_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "RPW status",
+      "fill": "255.0",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "TEMPERATURE",
+      "type": "integer",
+      "units": "degrees",
+      "description": "PA temperature",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "AGC1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "Automatic Gain Control of the current record on channel 1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "AGC2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "Automatic Gain Control of the current record on channel 2",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:49.000Z",
+  "stopDate": "2023-11-13T00:03:11.000Z"
+}

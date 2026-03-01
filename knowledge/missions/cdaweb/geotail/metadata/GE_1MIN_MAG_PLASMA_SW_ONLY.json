@@ -1,0 +1,173 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "IMF_PTS",
+      "type": "integer",
+      "units": "",
+      "description": "# fine time scale IMF points",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "ABS_B",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Average B Field Magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Magnitude of average field vector (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BX_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Bx (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP By (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Bz (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP By (nT), GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Bz (nT), GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIGMA_ABS_B",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation of average B magnitude (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIGMA_B",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation of magnitude of the average vector field (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIGMA_Bx",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation Bx (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIGMA_By",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation By (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIGMA_Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS deviation Bz (nT), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLS_PTS",
+      "type": "integer",
+      "units": "",
+      "description": "# fine time scale plasma points",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "Km/s",
+      "description": "1AU IP proton flow speed (km/s)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VX_GSE",
+      "type": "double",
+      "units": "Km/s",
+      "description": "1AU IP Vx (km/s), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Vy (km/s), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "1AU IP Vz (km/s), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "Per cc",
+      "description": "1AU IP Proton number density (per cc)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "Deg K",
+      "description": "1AU IP Proton Temperature, deg K",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "Re",
+      "description": "X s/c (Re), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "Re",
+      "description": "Y s/c (Re), GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "Re",
+      "description": "Z s/c (Re), GSE",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-01-01T00:00:00.000Z",
+  "stopDate": "2005-12-31T23:59:00.000Z"
+}

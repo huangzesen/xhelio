@@ -1,0 +1,250 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ampl2d",
+      "type": "integer",
+      "units": "",
+      "description": "IONOGRAM: expandable thumbnails of color-coded relative amplitude (0-255) on ionogram time (x) vs. apparent range from satellite down (y) grid",
+      "fill": "-128.0",
+      "size": [
+        1300,
+        335
+      ]
+    },
+    {
+      "name": "ampl",
+      "type": "integer",
+      "units": "",
+      "description": "IONOGRAM: continuous-film display of color-coded relative amplitude (0-255) on ionogram time (x) vs. apparent range from satellite down (y) grid",
+      "fill": "-128.0",
+      "size": [
+        335
+      ]
+    },
+    {
+      "name": "freq",
+      "type": "double",
+      "units": "MHz",
+      "description": "-- Sounder frequency in MHz (incl. fixed and swept frequency parts) - ONLY positively identified frequencies are shown",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "swept_start",
+      "type": "integer",
+      "units": "",
+      "description": "-- Scan line number of start of swept portion (before is fixed portion)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mergedFH",
+      "type": "double",
+      "units": "MHz",
+      "description": "-- Electron Gyrofrequency in MHz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "height",
+      "type": "double",
+      "units": "km",
+      "description": "ORBIT PARAMETERS: Satellite altitude in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "deg",
+      "description": "-- Latitude (-90 to 90) in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lon",
+      "type": "double",
+      "units": "deg",
+      "description": "-- Longitude (-180 to 180) in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GMLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "-- Geomagnetic latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GMLONG",
+      "type": "double",
+      "units": "deg",
+      "description": "-- Geomagnetic longitude (-180 to 180) in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DIP",
+      "type": "integer",
+      "units": "deg",
+      "description": "-- Magnetic inclination (Dip angle of magnetic field direction) in degrees",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "INV_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "-- Invariant latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "-- L shell (McIlwain parameter)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CHI",
+      "type": "integer",
+      "units": "deg",
+      "description": "-- Solar zenith angle in degree",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LMT",
+      "type": "double",
+      "units": "hour",
+      "description": "-- Local Mean Time (LMT) in decimal hours",
+      "fill": "-1.0"
+    },
+    {
+      "name": "GMLMT",
+      "type": "double",
+      "units": "",
+      "description": "-- Geomagnetic Local Time in decimal hours",
+      "fill": "-1.0"
+    },
+    {
+      "name": "sun",
+      "type": "integer",
+      "units": "",
+      "description": "-- Spacecraft in(=1)/out(=2) sunlight",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "satellite",
+      "type": "integer",
+      "units": "",
+      "description": "CODES & MODES: Satellite-ID: 1=Alouette-1, 2=Aloutte-2,  3=ISIS-1, 4=ISIS-2",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "station_id",
+      "type": "integer",
+      "units": "",
+      "description": "-- Telemetry station ID (nn) (https://nssdc.gsfc.nasa.gov/space/isis/isis-table1-new.html",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "power_code",
+      "type": "integer",
+      "units": "",
+      "description": "-- Transmitter power code: 1=Prim(400W) 2=Sec(400W)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "sr_code",
+      "type": "integer",
+      "units": "",
+      "description": "-- Sounder/receiver code: 0 = off, 1 = on",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "pps_code",
+      "type": "integer",
+      "units": "",
+      "description": "-- Pulses per second code: 0 = 30 pps, 1 = 60 pps",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DMODE",
+      "type": "integer",
+      "units": "",
+      "description": "-- DMODE (transmitter on/off for alternate frame pairs): 0 = off, 1 = on",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "GMODE",
+      "type": "integer",
+      "units": "",
+      "description": "-- GMODE (transmission of alternate frames of swept and fixed frequency): 0 = off, 1 = on",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mixed_mode",
+      "type": "integer",
+      "units": "",
+      "description": "-- MMODE (sounder mixed mode): 0 = off, 1 = on",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "fix_freq",
+      "type": "integer",
+      "units": "",
+      "description": "-- Fixed frequency code: 0=off, 1=0.25, 2=0.48, 3=1.00, 4=1.95, 5=4.00, 6=9.303 MHz",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "CEP",
+      "type": "integer",
+      "units": "",
+      "description": "-- Cylindrical Electrostatic Probe (CEP) on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "VLF",
+      "type": "integer",
+      "units": "",
+      "description": "-- VLF (0.05-30 kHz) instrument on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SEA",
+      "type": "integer",
+      "units": "",
+      "description": "-- Spherical Electrostatic Analyzer on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "IMS1",
+      "type": "integer",
+      "units": "",
+      "description": "-- Ion Mass Spectrometer 1 on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "IMS2",
+      "type": "integer",
+      "units": "",
+      "description": "-- Ion Mass Spectrometer 2 on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SPS",
+      "type": "integer",
+      "units": "",
+      "description": "-- Soft Particle Spectrometer on(1)/off(0)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "EPD",
+      "type": "integer",
+      "units": "",
+      "description": "-- Energetic Particle Detector on(1)/off(0)",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1969-01-30T14:50:12.000Z",
+  "stopDate": "1983-12-30T15:19:33.000Z"
+}

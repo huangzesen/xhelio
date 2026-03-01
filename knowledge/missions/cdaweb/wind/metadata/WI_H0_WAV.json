@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ne",
+      "type": "double",
+      "units": "N/cm**3",
+      "description": "Electron density determined from insitu Fpe 'line'; position recognized by a neural network.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_peak",
+      "type": "double",
+      "units": "dB",
+      "description": "Electric field power in dB at the peak frequency selected by the neural network algorithm",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ne_Quality",
+      "type": "integer",
+      "units": "",
+      "description": "Electron Density data quality: <50=bad,>50=Fair,>150=ok,>200=good",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1994-11-12T00:00:25.000Z",
+  "stopDate": "2026-02-17T00:00:08.000Z"
+}

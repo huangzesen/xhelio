@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Plasmapause_MLTbin",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Sharpest gradient from equatorial IMAGE EUV Ion Images, at 48 MLT 0:0.5:23.5 MLT hours (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "Mapped_Plasmapause_Grid",
+      "type": "integer",
+      "units": "Re and MLT",
+      "description": "Sharpest gradient from equatorial IMAGE EUV Ion Images.",
+      "fill": "-32768.0",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Mapped_Plasmapause_Grid_flip_vert",
+      "type": "integer",
+      "units": "Re and MLT",
+      "description": "Sharpest gradient from equatorial IMAGE EUV Ion Images. Images flipped so 6MLT is to the left",
+      "fill": "-32768.0",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Mapped_Plasmapause_Grid_Movie",
+      "type": "integer",
+      "units": "Re and MLT",
+      "description": "---> (MOVIE) Sharpest gradient from equatorial IMAGE EUV Ion Images.",
+      "fill": "-32768.0",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Integer quality rating 1:3 of the plasmapause data with 3 being the best",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Equatorial_EUV_Grid",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "IMAGE EUV Images mapped to the equatorial plane.",
+      "fill": "-1e+31",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Equatorial_EUV_Grid_flip_vert",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "IMAGE EUV Images mapped to the equatorial plane. Images flipped so 6MLT is to the left",
+      "fill": "-1e+31",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Equatorial_EUV_Grid_Movie",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "---> (MOVIE) IMAGE EUV Images mapped to the equatorial plane.",
+      "fill": "-1e+31",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Equatorial_EUV_Grid_log",
+      "type": "double",
+      "units": "log(cm^-3)",
+      "description": "IMAGE EUV Images mapped to the equatorial plane, log10 scale.",
+      "fill": "-1e+31",
+      "size": [
+        241,
+        241
+      ]
+    },
+    {
+      "name": "Equatorial_EUV_Grid_log_Movie",
+      "type": "double",
+      "units": "log(cm^-3)",
+      "description": "---> (MOVIE) IMAGE EUV Images mapped to the equatorial plane, log10 scale.",
+      "fill": "-1e+31",
+      "size": [
+        241,
+        241
+      ]
+    }
+  ],
+  "startDate": "2000-05-03T20:20:00.000Z",
+  "stopDate": "2005-12-17T23:49:59.000Z"
+}

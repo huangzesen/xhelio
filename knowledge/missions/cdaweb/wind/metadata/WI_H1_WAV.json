@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_VOLTAGE_RAD2",
+      "type": "double",
+      "units": "",
+      "description": "Normalized receiver average voltage (RAD2, 1075-13825 kHz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "E_VOLTAGE_RAD1",
+      "type": "double",
+      "units": "",
+      "description": "Normalized receiver average voltage (RAD1, 20-1040 kHz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "E_VOLTAGE_TNR",
+      "type": "double",
+      "units": "",
+      "description": "Normalized receiver average voltage (TNR, 4-245 kHz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96
+      ]
+    },
+    {
+      "name": "Minimum_voltage_RAD2",
+      "type": "double",
+      "units": "microV/SQRT(Hz)",
+      "description": "[NO PLOTS] Daily receiver minimum voltage (RAD2, 1075-13825 kHz, non-zero values show active freqs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Minimum_voltage_RAD1",
+      "type": "double",
+      "units": "microV/SQRT(Hz)",
+      "description": "[NO PLOTS] Daily receiver minimum voltage (RAD1, 20-1040 kHz, non-zero values show active freqs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Minimum_voltage_TNR",
+      "type": "double",
+      "units": "microV/SQRT(Hz)",
+      "description": "[NO PLOTS] Daily receiver minimum voltage (TNR, 4-245 kHz, non-zero values show active freqs)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96
+      ]
+    }
+  ],
+  "startDate": "1994-11-10T00:00:30.000Z",
+  "stopDate": "2021-11-30T23:59:30.000Z"
+}

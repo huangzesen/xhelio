@@ -1,0 +1,70 @@
+{
+  "id": "ISS",
+  "name": "ISS",
+  "keywords": [
+    "iss"
+  ],
+  "profile": {
+    "description": "ISS spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "ISS_27DAY-AVERAGES_AMS-02": {
+          "description": "AMS-02 proton flux (p), helium flux (He), p/He flux ratio, electron flux (e-), positron flux (e+) and e+/e- flux ratio at Bartels rotation time resolution - Prof. V. Bindi (University of Hawaii at Manoa)",
+          "start_date": "2011-05-20T00:00:00.000Z",
+          "stop_date": "2017-04-13T00:00:00.000Z",
+          "pi_name": "Prof. V. Bindi",
+          "pi_affiliation": "University of Hawaii at Manoa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISS_27DAY-AVERAGES_AMS-02"
+        },
+        "ISS_DOSANL_TEPC": {
+          "description": "Experiment Data, ISS TEPC  (from ASCII DOS.TXT file) - Edward Semones (NASA Space Radiation Analysis Group/Johnson Space Center)",
+          "start_date": "2010-04-29T03:27:36.000Z",
+          "stop_date": "2018-04-11T23:19:39.000Z",
+          "pi_name": "Edward Semones",
+          "pi_affiliation": "NASA Space Radiation Analysis Group/Johnson Space Center",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISS_DOSANL_TEPC"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "ISS_SP_FPMU": {
+          "description": "ISS FPMU 1-sec Summary Plasma Densities, Temperatures, Spacecraft Potentials. - E. Willis (NASA Marshall Space Flight Center)",
+          "start_date": "2006-08-03T16:08:07.000Z",
+          "stop_date": "2020-09-14T18:00:58.000Z",
+          "pi_name": "E. Willis",
+          "pi_affiliation": "NASA Marshall Space Flight Center",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISS_SP_FPMU"
+        }
+      }
+    }
+  },
+  "observatory_group": "ISS",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

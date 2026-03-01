@@ -1,0 +1,764 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_energy_min",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_energy_center",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_energy_max",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_energy_efficiency_low",
+      "type": "double",
+      "units": "MeV",
+      "description": "H efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_energy_efficiency_high",
+      "type": "double",
+      "units": "MeV",
+      "description": "H efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "H_ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "H_flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "H_FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux Telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "H_FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux Telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "He_energy_min",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_energy_center",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_energy_max",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_energy_efficiency_low",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_energy_efficiency_high",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "HE_ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "HE_ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "He energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "He_flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "He flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "He_flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "He flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "HE_FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "He flux Telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "HE_FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "He flux Telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "CNO_energy_min",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_energy_center",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_energy_max",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_energy_efficiency_low",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_energy_efficiency_high",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "CNO_ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "CNO energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "CNO_flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "CNO flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "CNO flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "CNO_FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "CNO flux Telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "CNO_FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "CNO flux Telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "NeS_energy_min",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_energy_center",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_energy_max",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_energy_efficiency_low",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_energy_efficiency_high",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NES_ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "NES_ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "NeS energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "NeS_flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "NeS flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NeS_flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "NeS flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7,
+        2
+      ]
+    },
+    {
+      "name": "NES_FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "NeS flux Telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "NES_FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "NeS flux Telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "Fe_energy_min",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_energy_center",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_energy_max",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_energy_efficiency_low",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_energy_efficiency_high",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "FE_ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "FE_ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV/nucleon",
+      "description": "Fe energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Fe_flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "Fe flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "Fe_flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "Fe flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6,
+        2
+      ]
+    },
+    {
+      "name": "FE_FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "Fe flux Telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "FE_FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "Fe flux Telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "deg",
+      "description": "Btheta",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "deg",
+      "description": "Bphi",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Brms",
+      "type": "double",
+      "units": "nT",
+      "description": "Brms",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Re",
+      "description": "R",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "xyzGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "xyz gse",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3,
+        2
+      ]
+    },
+    {
+      "name": "Vsw",
+      "type": "double",
+      "units": "km per sec",
+      "description": "Vsw",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "velocity",
+      "type": "double",
+      "units": "km per sec",
+      "description": "velocity",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3,
+        2
+      ]
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "per cc",
+      "description": "Np",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Vth",
+      "type": "double",
+      "units": "km per sec",
+      "description": "Vth",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "spin_rate",
+      "type": "double",
+      "units": "deg per sec",
+      "description": "spin_rate",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "1994-11-21T00:29:58.000Z",
+  "stopDate": "2025-12-31T23:30:20.000Z"
+}

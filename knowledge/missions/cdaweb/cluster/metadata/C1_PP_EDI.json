@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C1_PP_EDI",
+      "type": "integer",
+      "units": "",
+      "description": "EDI status",
+      "fill": "255.0",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "V_ed_xyz_gse__C1_PP_EDI",
+      "type": "double",
+      "units": "km/s",
+      "description": "EDI drift velocity, GSE frame cartesians",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_xyz_gse__C1_PP_EDI",
+      "type": "double",
+      "units": "mV/m",
+      "description": "EDI electric field, GSE frame cartesians",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2001-02-01T00:00:00.000Z",
+  "stopDate": "2024-09-29T00:00:00.000Z"
+}

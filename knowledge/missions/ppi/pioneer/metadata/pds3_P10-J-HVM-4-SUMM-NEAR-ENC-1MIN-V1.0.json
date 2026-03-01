@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "RADII",
+      "description": "Distance of Pioneer from Jupiter, in Jupiter radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Latitude of Pioneer in Jupiter-centered JG system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Longitude of Pioneer in Jupiter-centered JG system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "GAMMA",
+      "description": "X-component of the magnetic field in JG system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "GAMMA",
+      "description": "Y-component of the magnetic field in JG system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "GAMMA",
+      "description": "Z-component of the magnetic field in JG system.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,175 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Channel 1 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 1 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per            \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 2 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 2 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per            \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 3 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 3 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per            \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 4 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 4 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per            \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 5 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 5 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per            \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 10 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 10 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per           \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 11 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 11 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per           \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Channel 12 Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the spin averaged differential flux from             \n                            channel 12 in units of (cm^2 sr s MeV)^-1 (NB. per MeV, not per           \n                            MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 1 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 1 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 2 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 2 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 3 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 3 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 4 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 4 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 5 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 5 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 6 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 6 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 7 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 7 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Sector 8 Channel 7 Sectored Flux",
+      "type": "double",
+      "units": "(cm**2 sr s MeV)**-1",
+      "description": "This column contains the differential sector 6 flux values \n                            from from channel 7. Units are (cm^2 sr s MeV)^-1                 \n                            (NB. per MeV, not per MeV per nucleon).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

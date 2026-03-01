@@ -1,0 +1,215 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LAPI__SC_Bx_1_Bx_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ SC Bx, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bx_2_Bx_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ SC Bx, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bx_3_Bx_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ SC Bx, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__SC_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ SC Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_By_1_By_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ SC By, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_By_2_By_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ SC By, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_By_3_By_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ SC By, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__SC_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ SC By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bz_1_Bz_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ SC Bz, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bz_2_Bz_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ SC Bz, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bz_3_Bz_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ SC Bz, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__SC_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ SC Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bxy_1_Bxy_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ SC Bp, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bxy_2_Bxy_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ SC Bp, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Bxy_3_Bxy_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ SC Bp, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__SC_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ SC Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Btot_1_Btot_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ SC B total, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Btot_2_Btot_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ SC B total, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__SC_Btot_3_Btot_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ SC B total, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Process_Quality_LAPI__SC_Btot",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ SC B total",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE0_SPDF_StatusFlag___All",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - All",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE1_SPDF_StatusFlag___Bit_7",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 7",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE2_SPDF_StatusFlag___Bit_6",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 6",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE3_SPDF_StatusFlag___Bit_5",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE4_SPDF_StatusFlag___Bit_4",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE5_SPDF_StatusFlag___Bit_3",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE6_SPDF_StatusFlag___Bit_2",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE7_SPDF_StatusFlag___Bit_1",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODE8_SPDF_StatusFlag___Bit_0",
+      "type": "double",
+      "units": "unitless",
+      "description": "Status Indicator SPDF StatusFlag - Bit 0",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T13:09:02.000Z",
+  "stopDate": "1983-02-18T16:42:26.000Z"
+}

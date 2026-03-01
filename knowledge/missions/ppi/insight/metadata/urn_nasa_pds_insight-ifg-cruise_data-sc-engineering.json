@@ -1,0 +1,831 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCLK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock counter",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample S/C event time UTC in YYYY-DDDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERT_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample Earth receive time UTC in YYYY-DDDThh:mm:ss.ssssss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOL/MLST",
+      "type": "double",
+      "units": "",
+      "description": "Sample SOL and Mars local solar time (SOL-xxxxMhh:mm:ss.sss)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E-0114",
+      "type": "double",
+      "units": "Volts",
+      "description": "PDDU AAC (analog acquisition card) AIV (analog input voltage) channel 14.  Bus voltage monitor 1A signal.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0126",
+      "type": "double",
+      "units": "Volts",
+      "description": "PDDU AAC (analog acquisition card) AIV (analog input voltage) channel 26.  Bus voltage monitor 2A signal.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0606",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 00 channel 06.  USM 1 \n                        (universal switch module 1) upstream switch DPC 0 (discrete power controller 0) current.  Corresponds to C-0606",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0607",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card)\n                        00 channel 07.  USM 1 (universal switch module 1) upstream \n                        switch DPC 1 (discrete power controller 1) current.  \n                        Corresponds to C-0607",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0608",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 00 channel 08.  \n                    \tUSM 1 (universal switch module 1) upstream switch DPC 2 (discrete power \n                    \tcontroller 2) current.  Corresponds to C-0608 (USM1usD2Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0609",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card)\n                        OFC (off card) 00 channel 09.  USM 1 (universal switch module 1) upstream switch \n                        DPC 3 (discrete power controller 3) current.  Corresponds to C-0609",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0610",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 00 channel 10. \n                        USM 1 (universal switch module 1) upstream switch DPC 4 (discrete power controller 4) current. \n                        Corresponds to C-0610 (USM1usD4Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0611",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 00 channel 11.  \n                        USM 1 (universal switch module 1) upstream switch DPC 5 (discrete power controller 5) current. \n                        Corresponds to C-0611 (USM1usD5Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0623",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 01 channel 03.  \n                        USM 1 (universal switch module 1) upstream switch latching switch current.  \n                        Corresponds to C-0623 (USM1usLTCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0624",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 01 channel 04.  \n                        USM 1 (universal switch module 1) upstream switch low current switch current. \n                        Corresponds to C-0624 (USM1usLCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0625",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 01 channel 05.  \n                        USM 1 (universal switch module 1) upstream switch high current switch current.  \n                        Corresponds to C-0625 (USM1usHCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0646",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 06.  \n                        USM 2 (universal switch module 2) upstream switch DPC 0 (discrete power controller 0) current.  \n                        Corresponds to C-0646 (USM2usD0Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0647",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 07.  \n                        USM 2 (universal switch module 2) upstream switch DPC 1 (discrete power controller 1) current.  \n                        Corresponds to C-0647 (USM2usD1Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0648",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 08.  \n                            USM 2 (universal switch module 2) upstream switch DPC 2 (discrete power controller 2) current.  \n                            Corresponds to C-0648 (USM2usD2Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0649",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 09.  \n                        USM 2 (universal switch module 2) upstream switch DPC 3 (discrete power controller 3) current.  \n                        Corresponds to C-0649 (USM2usD3Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0650",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 10. \n                        USM 2 (universal switch module 2) upstream switch DPC 4 (discrete power controller 4) current.  \n                        Corresponds to C-0650 (USM2usD4Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0651",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 02 channel 11.  \n                        USM 2 (universal switch module 2) upstream switch DPC 5 (discrete power controller 5) current.  \n                        Corresponds to C-0651 (USM2usD5Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0663",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 03 channel 03.  \n                        USM 2 (universal switch module 2) upstream switch latching switch current. \n                        Corresponds to C-0663 (USM2usLTCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0664",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 03 channel 04.  \n                        USM 2 (universal switch module 2) upstream switch low current switch current.  \n                        Corresponds to C-0664 (USM2usLCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0665",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 03 channel 05.  \n                        USM 2 (universal switch module 2) upstream switch high current switch current. \n                        Corresponds to C-0665 (USM2usHCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0686",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 06.  \n                        USM 3 (universal switch module 3) upstream switch DPC 0 (discrete power controller 0) current.  \n                        Corresponds to C-0686 (USM2usD0Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0687",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 07.  \n                        USM 3 (universal switch module 3) upstream switch DPC 1 (discrete power controller 1) current.  \n                        Corresponds to C-0687 (USM2usD1Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0688",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 08.  \n                        USM 3 (universal switch module 3) upstream switch DPC 2 (discrete power controller 2) current.  \n                        Corresponds to C-0688 (USM2usD2Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0689",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 09.  \n                        USM 3 (universal switch module 3) upstream switch DPC 3 (discrete power controller 3) current.  \n                        Corresponds to C-0689 (USM2usD3Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0690",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 10.  \n                        USM 3 (universal switch module 3) upstream switch DPC 4 (discrete power controller 4) current.  \n                        Corresponds to C-0690 (USM2usD4Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0691",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 04 channel 11. \n                        USM 3 (universal switch module 3) upstream switch DPC 5 (discrete power controller 5) current. \n                        Corresponds to C-0691 (USM2usD5Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0703",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 05 channel 03.  \n                        USM 3 (universal switch module 3) upstream switch latching switch current.  \n                        Corresponds to C-0703 (USM3usLTCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0704",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 05 channel 04.  \n                        USM 3 (universal switch module 3) upstream switch low current switch current.  \n                        Corresponds to C-0704 (USM3usLCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0705",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 05 channel 05.  \n                        USM 3 (universal switch module 3) upstream switch high current switch current.  \n                        Corresponds to C-0705 (USM3usHCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0726",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 06.  \n                        USM 4 (universal switch module 4) upstream switch DPC 0 (discrete power controller 0) current.  \n                        Corresponds to C-0726 (USM4usD0Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0727",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 07.  \n                        USM 4 (universal switch module 4) upstream switch DPC 1 (discrete power controller 1) current.  \n                        Corresponds to C-0727 (USM4usD1Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0728",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 08.  \n                        USM 4 (universal switch module 4) upstream switch DPC 2 (discrete power controller 2) current.  \n                        Corresponds to C-0728 (USM4usD2Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0729",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 09.  \n                        USM 4 (universal switch module 4) upstream switch DPC 3 (discrete power controller 3) current.  \n                        Corresponds to C-0729 (USM4usD3Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0730",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 10.  \n                        USM 4 (universal switch module 4) upstream switch DPC 4 (discrete power controller 4) current.  \n                        Corresponds to C-0730 (USM4usD4Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0731",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 06 channel 11.  \n                        USM 4 (universal switch module 4) upstream switch DPC 5 (discrete power controller 5) current.  \n                        Corresponds to C-0731 (USM4usD5Ccio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0743",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 07 channel 03. \n                        USM 4 (universal switch module 4) upstream switch latching switch current. \n                        Corresponds to C-0743 (USM4usLTCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0744",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 07 channel 04.  \n                        USM 4 (universal switch module 4) upstream switch low current switch current.  \n                        Corresponds to C-0744 (USM4usLCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0745",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 07 channel 05.  \n                        USM 4 (universal switch module 4) upstream switch high current switch current. \n                        Corresponds to C-0745 (USM4usHCCcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0769",
+      "type": "double",
+      "units": "Volts",
+      "description": "PDDU AAC (analog acquisition card) \n                        OFC (off card) 08 channel 09.  This channel is used for the SABC_1 VBATT signal. \n                        Corresponds to C-0769 (Sabc1VBAcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0770",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 08 channel 10.  \n                        This channel is used for the SABC_1 IBATT signal.  Corresponds to C-0770 (Sabc1IBAcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0771",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 08 channel 11.  \n                        Corresponds to C-0771.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0772",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 08 channel 12. \n                        This channel is used for the SABC_1 solar array current signal.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0789",
+      "type": "double",
+      "units": "Volts",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 09 channel 09.  \n                        This channel is used for the SABC_2 VBATT signal.  Corresponds to C-0789 (Sabc2VBAcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0790",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 09 channel 10.  \n                        This channel is used for the SABC_2 IBATT signal.  Corresponds to C-0790 (Sabc2IBAcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0791",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 09 channel 11.  \n                        This channel is used for the SABC_2 solar array current signal.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "E-0792",
+      "type": "double",
+      "units": "Amps",
+      "description": "PDDU AAC (analog acquisition card) OFC (off card) 09 channel 12.  \n                        This channel is used for the SABC_2 solar array current signal.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "G-0036",
+      "type": "double",
+      "units": "Amps",
+      "description": "Total Solar Array Current",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "G-1715",
+      "type": "double",
+      "units": "",
+      "description": "The state of the telecom SDST 1 X band exciter.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0003",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 03.  \n                        Landed solar array -Y temperature 1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0004",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 04.  \n                        Landed solar array +Y temperature 1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0007",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 07.  \n                        SEIS Ebox temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0009",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 09.  \n                            SEIS sensor temperature 1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0010",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 10.  HP3 BEE temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0014",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 14.  PAE temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0015",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 15.  Science deck temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0018",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 18.  Landed solar array -Y temperature 2.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0019",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 19.  Landed solar array +Y temperature 2.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0021",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 21.  \n                        SEIS frangibolt 1 temperature.  Corresponds to C-0021 (SeisFb1Tcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0022",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 22.  TWINS +Y temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0027",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 27.  PEB temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0036",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 36.  \n                        330 FT (fuel tank) fuel temperature 3.  Corresponds to C-0036 (FT330F_T3cio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0037",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 37.  \n                        Descent REM lines temperature 5.  Corresponds to C-0037 (DeRemL_T5cio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0039",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 39.  \n                        HP3 frangibolt 1 temperature.  Corresponds to C-0039 (Hp3Fb1Tcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0042",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 42.  \n                        SEIS TB frangibolt temperature.  Corresponds to C-0042 (SeisTbFbTcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0045",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 45. \n                        MAG sensor temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0046",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 46.  \n                        Pressure sensor electronics temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0048",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 48.  \n                        SEIS frangibolt 3 temperature.  Corresponds to C-0048 (SeisFb3Tcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0049",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 49.  \n                        HP3 frangibolt 2 temperature.  Corresponds to C-0049 (Hp3Fb2Tcio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0052",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 52. \n                        SSPA 3 internal temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0202",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "CDH AAC (analog acquisition card) AIP (analog input passive) channel 02.  Thermal enclosure temperature 1.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0216",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "CDH AAC (analog acquisition card) AIP (analog input passive) channel 16.  Thermal enclosure temperature 2.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0229",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "CDH AAC (analog acquisition card) AIP (analog input passive) channel 29.  \n                        150 FT (fuel tank) ullage temperature 1.  Corresponds to C-0229 (FT150U_T1cio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "T-0230",
+      "type": "double",
+      "units": "Degree Celsius",
+      "description": "CDH AAC (analog acquisition card) AIP (analog input passive) channel 30.  \n                        330 FT (fuel tank) ullage temperature 1.  Corresponds to C-0230 (FT330U_T1cio).",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "V-3518",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether science processing is OK.  \n                        See the InSight Block Dictionary for details on how this GV is used.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "V-3531",
+      "type": "double",
+      "units": "",
+      "description": "Indicates whether the spacecraft is in an active UHF session. \n                        See the InSight Block Dictionary for details on how this GV is used.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "V-3644",
+      "type": "double",
+      "units": "",
+      "description": "Written by IDA software and is available for use by IDA and interoperability sequences/blocks.  \n                        Indicates the Cartesian Target X coordinate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "V-3645",
+      "type": "double",
+      "units": "",
+      "description": "Written by IDA software and is available for use by IDA and interoperability sequences/blocks. \n                        Indicates the Cartesian Target Y coordinate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "V-3646",
+      "type": "double",
+      "units": "",
+      "description": "Written by IDA software and is available for use by IDA and interoperability sequences/blocks.  \n                        Indicates the Cartesian Target Z coordinate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

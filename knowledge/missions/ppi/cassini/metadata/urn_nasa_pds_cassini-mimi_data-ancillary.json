@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Gap_Start",
+      "type": "double",
+      "units": "",
+      "description": "Start time of the data gap as a UTC string in ISO 8601 format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Gap_Stop",
+      "type": "double",
+      "units": "",
+      "description": "Stop time of the data gap as a UTC string in ISO 8601 format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Total_Gap_Time",
+      "type": "double",
+      "units": "",
+      "description": "Gap time over one day. In Hours:Minutes:Seconds.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

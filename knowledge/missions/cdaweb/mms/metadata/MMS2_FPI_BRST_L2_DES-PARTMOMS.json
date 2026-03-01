@@ -1,0 +1,154 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_des_errorflags_brst",
+      "type": "integer",
+      "units": "32-bit error flags",
+      "description": "MMS2 FPI/DES vector of data-quality indicators at burst-start time",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "mms2_des_numberdensity_part_brst",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "MMS2 FPI/DES partial electron number density during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "mms2_des_bulkv_part_dbcs_brst",
+      "type": "double",
+      "units": "km/s",
+      "description": "MMS2 FPI/DES partial electron bulk-velocity vector in DBCS during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_bulkv_part_gse_brst",
+      "type": "double",
+      "units": "km/s",
+      "description": "MMS2 FPI/DES partial electron bulk-velocity vector in GSE during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_prestensor_part_dbcs_brst",
+      "type": "double",
+      "units": "nPa",
+      "description": "MMS2 FPI/DES partial electron pressure tensor in DBCS during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_prestensor_part_gse_brst",
+      "type": "double",
+      "units": "nPa",
+      "description": "MMS2 FPI/DES partial electron pressure tensor in GSE during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_temptensor_part_dbcs_brst",
+      "type": "double",
+      "units": "eV",
+      "description": "MMS2 FPI/DES partial electron temperature tensor in DBCS during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_temptensor_part_gse_brst",
+      "type": "double",
+      "units": "eV",
+      "description": "MMS2 FPI/DES partial electron temperature tensor in GSE during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_temppara_part_brst",
+      "type": "double",
+      "units": "eV",
+      "description": "MMS2 FPI/DES partial electron parallel temperature during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "mms2_des_tempperp_part_brst",
+      "type": "double",
+      "units": "eV",
+      "description": "MMS2 FPI/DES partial electron perpendicular temperature during this burst",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "mms2_des_part_index_brst",
+      "type": "integer",
+      "units": "0-31",
+      "description": "MMS2 FPI/DES recommended energy index during this burst",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms2_des_scpmean_brst",
+      "type": "double",
+      "units": "V",
+      "description": "MMS2 FPI/DES spacecraft potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms2_des_bhat_dbcs_brst",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FPI/DES unit vector mag field",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_des_gse_xform_brst",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FPI/DES gse transformation matrix",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        3
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T12:11:14.000Z",
+  "stopDate": "2021-06-19T22:06:42.000Z"
+}

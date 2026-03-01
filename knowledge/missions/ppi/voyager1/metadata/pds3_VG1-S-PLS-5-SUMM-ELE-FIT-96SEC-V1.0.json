@@ -1,0 +1,276 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "IMAX",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Number of data points in spectrum (including 11 points below 10 eV for Moment integrals).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFLY",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Flag value: 1  = encounter, 0 = cruise.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "THBN",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Angle between d cup normal and magnetic field vector.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNE",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Electron moment density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTE",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Electron moment temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHISC",
+      "type": "double",
+      "units": "volts",
+      "description": "Spacecraft potential.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNC",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Cold electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNC",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for cold electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTC",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Cold electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTC",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Standard deviation for cold electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIC",
+      "type": "double",
+      "units": "N/A",
+      "description": "Chi-square of the cold electron fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "First hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the first hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH1",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "First hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH1",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Standard deviation for the first hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH1",
+      "type": "double",
+      "units": "N/A",
+      "description": "Chi-square of the first hot electron fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Second hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the second hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH2",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Second hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH2",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Standard deviation for the second hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH2",
+      "type": "double",
+      "units": "N/A",
+      "description": "Chi-square of the second hot electron fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH3",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Third hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH3",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the third hot electron density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH3",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Third hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH3",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Standard deviation for the third hot electron temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH3",
+      "type": "double",
+      "units": "N/A",
+      "description": "Chi-square of the third hot electron fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHI",
+      "type": "double",
+      "units": "N/A",
+      "description": "Chi-square of the total fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Hot electron moment density.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTH",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Hot electron moment temperature.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

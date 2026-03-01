@@ -1,0 +1,26 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "vlf1_Amplitude",
+      "type": "double",
+      "units": "dB",
+      "description": "Omni-directional intensity (narrow passband filter centred on 1kHz), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vlf3_Amplitude",
+      "type": "double",
+      "units": "dB",
+      "description": "Omni-directional intensity (narrow passband filter centred on 3kHz), scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1992-07-22T00:00:35.000Z",
+  "stopDate": "2001-10-17T15:31:00.000Z"
+}

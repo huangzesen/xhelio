@@ -1,0 +1,57 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms1_aspoc_ionc",
+      "type": "double",
+      "units": "uA",
+      "description": "ASPOC Ion Emission Current Sum, 1s resolution",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_asp1_ionc",
+      "type": "double",
+      "units": "uA",
+      "description": "ASPOC Unit 1 Ion Emission Current, 1s resolution",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_asp2_ionc",
+      "type": "double",
+      "units": "uA",
+      "description": "ASPOC Unit 2 Ion Emission Current, 1s resolution",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_asp1_energy",
+      "type": "double",
+      "units": "kV",
+      "description": "ASPOC Unit 1 Emitted Beam Energy, 1s resolution",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_asp2_energy",
+      "type": "double",
+      "units": "kV",
+      "description": "ASPOC Unit 2 Emitted Beam Energy, 1s resolution",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_aspoc_status",
+      "type": "integer",
+      "units": "",
+      "description": "ASPOC Data Quality and Instrument Status, 1s resolution",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T00:00:00.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

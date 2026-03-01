@@ -1,0 +1,162 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "p_flux",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "E6 proton flux (five bands 4-51 MeV)",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "p_flux_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Proton flux (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "p_flux_sd",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Proton Flux standard deviation",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "p_flux_sd_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Proton flux standard deviation (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "p_flux_yaxis",
+      "type": "double",
+      "units": "MeV",
+      "description": "proton flux energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "e_flux",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "E6 electron flux (3 bands 0.3-2 MeV)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "e_flux_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Electron flux (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "e_flux_sd",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Electron flux standard deviation",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "e_flux_sd_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> Electron flux standard deviation (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "e_flux_yaxis",
+      "type": "double",
+      "units": "MeV",
+      "description": "electron flux energy channels",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "He_flux",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "E6 He Flux (6 bands 2-48 MeV/N",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "He_flux_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> He flux (spectrograms)",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "He_flux_sd",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> He flux standard deviation",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "He_flux_sd_s",
+      "type": "double",
+      "units": "particles/m^2  sec sr MeV/N",
+      "description": "---> He flux standard deviation (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "He_flux_yaxis",
+      "type": "double",
+      "units": "MeV/N",
+      "description": "He flux energy channels",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    }
+  ],
+  "startDate": "1974-12-11T21:07:00.000Z",
+  "stopDate": "1983-12-31T22:01:00.000Z"
+}

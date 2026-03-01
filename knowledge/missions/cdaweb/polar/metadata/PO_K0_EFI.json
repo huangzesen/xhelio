@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ESPIN",
+      "type": "double",
+      "units": "mV/m",
+      "description": "E-Field spin plane, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EXY12G",
+      "type": "double",
+      "units": "mV/m",
+      "description": "E-Field in xy plane, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EZ12G",
+      "type": "double",
+      "units": "mV/m",
+      "description": "E-Field in z plane, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SIG12G",
+      "type": "double",
+      "units": "mV/m",
+      "description": "E-Field Sigma, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "POTENT",
+      "type": "double",
+      "units": "-Volts",
+      "description": "Spacecraft Potential, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BAND1",
+      "type": "double",
+      "units": "Log (microV/m/Hz^0.5)",
+      "description": "Spectral density at 32Hz, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BAND2",
+      "type": "double",
+      "units": "Log (microV/m/Hz^0.5)",
+      "description": "Spectral density at 256Hz, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BAND3",
+      "type": "double",
+      "units": "Log (microV/m/Hz^0.5)",
+      "description": "Spectral density at 2048Hz, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BIAS1",
+      "type": "double",
+      "units": "nA",
+      "description": "Probe Bias Current, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DCURR",
+      "type": "double",
+      "units": "nA",
+      "description": "Indicator of Plasma Density, Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_ANGLE_Z",
+      "type": "double",
+      "units": "degrees",
+      "description": "Declination of spin vector (GSE), Scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_ANGLE_XY",
+      "type": "double",
+      "units": "degrees",
+      "description": "Right ascension of spin vector (GSE), Scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-15T00:00:02.000Z",
+  "stopDate": "2008-04-28T23:59:52.000Z"
+}

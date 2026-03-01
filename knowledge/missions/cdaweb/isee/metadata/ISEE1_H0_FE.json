@@ -1,0 +1,198 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HARVEY STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Harvey Experiment Status (0 = Off)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MOZER STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Mozer Experiment Status (0 = Off)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MODE",
+      "type": "integer",
+      "units": "",
+      "description": "Instrument Mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FORMAT",
+      "type": "integer",
+      "units": "",
+      "description": "Format",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SPIN PERIOD",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Spin Period",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "THEO_GSE_X",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position X (GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THEO_GSE_Y",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position Y (GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THEO_GSE_Z",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position Z (GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FN",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Electron density at 0.5 sec resolution (60-deg sector) taken during one spin.",
+      "fill": "-1e+31",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "UOUT",
+      "type": "double",
+      "units": "Km/sec",
+      "description": "Bulk Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FNOUT",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Electron Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FPOUT",
+      "type": "double",
+      "units": "ergs cm^-2",
+      "description": "Pressure Tensor",
+      "fill": "-1e+31",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "FHOUT",
+      "type": "double",
+      "units": "ergs cm^-2 s^-1",
+      "description": "Heat Flux Vector (GSE)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TROUT",
+      "type": "double",
+      "units": "Deg K",
+      "description": "Electron Temperature = 1/3 trace of the diagonalized pressure tensor.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ETTRT",
+      "type": "double",
+      "units": "",
+      "description": "Electron Temp Anisotropy = Tpara/Tperp",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "DEIG",
+      "type": "double",
+      "units": "",
+      "description": "Normalized Gyrotropy",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "COSB",
+      "type": "double",
+      "units": "",
+      "description": "Cosine of the angle between pressure tensor principal axis and magnetic field",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "EIGVAL",
+      "type": "double",
+      "units": "Deg K",
+      "description": "Eigenvalues of diagonalized pressure tensor divided by (density * Boltzmann constant)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CC3",
+      "type": "double",
+      "units": "eV",
+      "description": "Hi, mid, & lowest energy electron channels > SC potential, used in moments.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "POTNEW",
+      "type": "double",
+      "units": "eV",
+      "description": "Spacecraft potential",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "1-min averaged magnetic field BX",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "1-min averaged magnetic field BY",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "1-min averaged magnetic field BZ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "INSET",
+      "type": "integer",
+      "units": "",
+      "description": "Number of energy channels above spacecraft potential",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "1977-10-29T12:41:25.000Z",
+  "stopDate": "1979-06-03T23:59:51.000Z"
+}

@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ion_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Ion flux in magnet channel",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "Electron_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron flux in foil channel",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        17
+      ]
+    }
+  ],
+  "startDate": "2020-05-13T00:00:00.000Z",
+  "stopDate": "2021-03-23T23:59:59.000Z"
+}

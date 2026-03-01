@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "J_e_1%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "Electron flux (23keV<E<50keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_e_2%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "Electron flux (50keV<E<133keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_e_3%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "Electron flux (133keV<E<226keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_p_1%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr KeV)",
+      "description": "Proton flux (45keV<E<73keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_p_2%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr KeV)",
+      "description": "Proton flux (73keV<E<129keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "J_p_3%eq_pp_epi",
+      "type": "double",
+      "units": "1/(cm^2 s sr KeV)",
+      "description": "Proton flux (129keV<E<407keV), scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1997-01-01T00:00:01.000Z",
+  "stopDate": "1998-04-30T01:56:05.000Z"
+}

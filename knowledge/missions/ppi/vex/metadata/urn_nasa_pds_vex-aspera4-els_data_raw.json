@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start Time",
+      "type": "double",
+      "units": "",
+      "description": "The START TIME field specifies the start time of the data sample(s)\n                                 being returned in the current row.  The Start Time and Stop Time\n                                 fields define the time range covered by the data in the current row.\n                                 Format is YYYY-DDDTHH:MM:SS.mmm, in UTC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop Time",
+      "type": "double",
+      "units": "",
+      "description": "The STOP TIME field specifies the stop time of the data sample(s)\n                                 being returned in the current row.  The Start Time and Stop Time\n                                 fields define the time range covered by the data in the current row.\n                                 Format is YYYY-DDDTHH:MM:SS.mmm, in UTC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Data Type Name",
+      "type": "double",
+      "units": "",
+      "description": "The DATA TYPE NAME field identifies the type of the data sample(s)  \n                                 being returned in the current row.  Valid entries include:\n                                       SENSOR          - primary data",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Data Name",
+      "type": "double",
+      "units": "",
+      "description": "The DATA NAME field identifies the name of the primary data associated with the data values\n                                 being returned in the current row",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Data Unit",
+      "type": "double",
+      "units": "",
+      "description": "The DATA UNIT field identifies the units that the data values are\n                                 expressed in for the current row",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

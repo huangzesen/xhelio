@@ -1,0 +1,71 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "proton_bulk_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Speed. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "proton_number_density",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Proton Number Density. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "spacecraft_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft Ecliptic longitude.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IMF",
+      "type": "double",
+      "units": "nT",
+      "description": "Interplanetary Magnetic Field.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "theta",
+      "type": "double",
+      "units": "deg",
+      "description": "IMF theta.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "phi",
+      "type": "double",
+      "units": "deg",
+      "description": "IMF phi.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "cone_ang",
+      "type": "double",
+      "units": "deg",
+      "description": "IMF cone angle.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PUI_vel_ct_den",
+      "type": "double",
+      "units": "",
+      "description": "PUI velocity count density.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        69
+      ]
+    }
+  ],
+  "startDate": "2007-02-14T00:00:00.000Z",
+  "stopDate": "2013-09-01T00:00:00.000Z"
+}

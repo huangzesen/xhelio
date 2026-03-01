@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ion_Flux_S",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in magnet channel for the sun telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "Ion_Flux_A",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in magnet channel for the anti-sun telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "Ion_Flux_N",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in magnet channel for the north telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "Ion_Flux_D",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in magnet channel for the south telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "Electron_Flux_S",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the sun telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Flux_A",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the anti-sun telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Flux_N",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the north telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Flux_D",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the south telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Corrected_Flux_S",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the sun telescope corrected from ion contamination",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Corrected_Flux_A",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the anti-sun telescope corrected from ion contamination",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Corrected_Flux_N",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the north telescope corrected from ion contamination",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Electron_Corrected_Flux_D",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Particle flux in foil channel for the south telescope corrected from ion contamination",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "2020-01-01T00:00:00.000Z",
+  "stopDate": "2025-12-31T00:00:00.000Z"
+}

@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DEN",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Proton number density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ENDEN",
+      "type": "double",
+      "units": "erg cm-3",
+      "description": "Energy density (erg cm-3)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LH",
+      "type": "integer",
+      "units": "",
+      "description": "Energy range covered, 0: 50 eV to 20 KeV per charge; 1: 70 eV to 40 KeV per charge",
+      "fill": "-128.0"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "Deg Kelvin",
+      "description": "Average 2D proton temperature (Kelvin). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IFLAG",
+      "type": "integer",
+      "units": "",
+      "description": "IFLAG  0: Den >= 0.1 per cm3, 1: Den < 0.1 per cm3 (see VAR_NOTES if = 1)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "GSEX",
+      "type": "double",
+      "units": "RE",
+      "description": "GSEX  Spacecraft Position",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSEY",
+      "type": "double",
+      "units": "RE",
+      "description": "GSEY Spacecraft Position",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSEZ",
+      "type": "double",
+      "units": "RE",
+      "description": "GSEZ  Spacecraft Position",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VX",
+      "type": "double",
+      "units": "km/s",
+      "description": "X-component of 2D bulk velocity (s/c coordinates). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VY",
+      "type": "double",
+      "units": "km/s",
+      "description": "Y-component of 2D bulk velocity (s/c coordinates). See VAR_NOTES.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IORB",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1977-10-27T03:00:09.000Z",
+  "stopDate": "1979-01-19T13:53:17.000Z"
+}

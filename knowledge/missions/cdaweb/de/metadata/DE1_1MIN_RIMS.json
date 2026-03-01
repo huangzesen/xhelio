@@ -1,0 +1,1457 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "re",
+      "type": "double",
+      "units": "Re",
+      "description": "S/C radial distance in earth radii",
+      "fill": "-0.0"
+    },
+    {
+      "name": "smlong_sc",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C Longitude in SM coord.",
+      "fill": "-0.0"
+    },
+    {
+      "name": "smlat_sc",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C Latitude in SM coord.",
+      "fill": "-0.0"
+    },
+    {
+      "name": "smlat_sun",
+      "type": "double",
+      "units": "deg",
+      "description": "SM Latitude of sun",
+      "fill": "-0.0"
+    },
+    {
+      "name": "calc_mlt",
+      "type": "double",
+      "units": "",
+      "description": "Calculated Magnetic Local Time",
+      "fill": "-0.0"
+    },
+    {
+      "name": "shell_l",
+      "type": "double",
+      "units": "",
+      "description": "L value",
+      "fill": "-0.0"
+    },
+    {
+      "name": "bfsm",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Vector in SM Coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "kp",
+      "type": "integer",
+      "units": "",
+      "description": "3-hour KP magnetic index",
+      "fill": "-1.0"
+    },
+    {
+      "name": "f10_7",
+      "type": "double",
+      "units": "",
+      "description": "Daily F10.7 solar flux at 10.7 cm",
+      "fill": "-0.0"
+    },
+    {
+      "name": "flag_gen",
+      "type": "integer",
+      "units": "",
+      "description": "Flag gen",
+      "fill": "255.0"
+    },
+    {
+      "name": "temp_pz_lo_Hplus",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Temperature in eV, detector head in positive z-direction (spin axis)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_lo_Heplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_hi_Heplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ Temperature, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_hi_Oplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_hi_Oplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_pz_lo_Hplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag H+ Temperature, +z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pz_lo_Heplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++ Temperature, +z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pz_hi_Heplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+ Temperature, +z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pz_hi_Oplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+ Temperature, +z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pz_hi_Oplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++ Temperature, +z",
+      "fill": "255.0"
+    },
+    {
+      "name": "temp_mz_lo_Hplus",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Temperature in eV, detector head in negative z-direction (spin axis)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_lo_Heplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_hi_Heplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ Temperature, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_hi_Oplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_hi_Oplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_mz_lo_Hplus",
+      "type": "integer",
+      "units": "",
+      "description": "Flag H+ Temperature, negative z-direction",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_mz_lo_Heplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++ Temperature, -z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_mz_hi_Heplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+ Temperature, -z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_mz_hi_Oplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+ Temperature, -z",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_mz_hi_Oplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++ Temperature, -z",
+      "fill": "255.0"
+    },
+    {
+      "name": "temp_z_lo_Hplus",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Temperature in eV, average radial head temperature (temp-z)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_lo_Heplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature, radial",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_hi_Heplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> H+ Temperature, radial",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_hi_Oplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature, radial",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_hi_Oplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature, radial",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_z_lo_Hplus",
+      "type": "integer",
+      "units": "",
+      "description": "Flag H+ Temperature, radial",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_lo_Heplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++ Temperature, radial",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_hi_Heplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+ Temperature, radial",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_hi_Oplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+ Temperature, radial",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_hi_Oplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++ Temperature, radial",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_lo_Hplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "H+ density in cm-3, fit to radial head data with temp-z held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_lo_Heplusplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He++ density, n, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_hi_Heplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He+ density, n, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_hi_Oplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O+ density, n, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_hi_Oplusplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O++ density, n, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_lo_Hplus",
+      "type": "double",
+      "units": "V",
+      "description": "H+ Potential in V, with temp_z held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_lo_Heplusplus",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He++ Potential, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_hi_Heplus",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He+ Potential, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_hi_Oplus",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O+ Potential, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_hi_Oplusplus",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O++ Potential, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_lo_Hplus",
+      "type": "double",
+      "units": "",
+      "description": "Chi-square for H+ fit with temp-z held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_lo_Heplusplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 He++, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_hi_Heplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 He+, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_hi_Oplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 O+, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_hi_Oplusplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 O++, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_temp_lo_Hplus",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for H+ fit with temp-z held constant",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_lo_Heplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++, T=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_hi_Heplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+, T=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_hi_Oplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+, T=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_hi_Oplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++, T=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "avg_pot",
+      "type": "double",
+      "units": "V",
+      "description": "Weighted average of H+ and He+ potentials (avg_pot)",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "pot_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for weighted avg of H+ and He+ potentials",
+      "fill": "255.0"
+    },
+    {
+      "name": "den_pot_lo_Hplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "H+ density in cm-3, radial head data with potential (avg_pot) held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_lo_Heplusplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He++ Density, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_hi_Heplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He+ Density, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_hi_Oplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O+ Density, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_hi_Oplusplus",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O++ Density, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_lo_Hplus",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Temperature in K with potential held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_lo_Heplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> He++ Temperature, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_hi_Heplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> He+ Temperature, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_hi_Oplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> O+ Temperature, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_hi_Oplusplus",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> O++ Temperature, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_lo_Hplus",
+      "type": "double",
+      "units": "",
+      "description": "Chi-square for H+ fit with potential held constant",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_lo_Heplusplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 He++, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_hi_Heplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 He+, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_hi_Oplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 O+, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_hi_Oplusplus",
+      "type": "double",
+      "units": "",
+      "description": "-----> Chi^2 O++, Potential=const",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_pot_lo_Hplus",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for H+ fit with potential held constant",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_lo_Heplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++, Potential=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_hi_Heplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+, Potential=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_hi_Oplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+, Potential=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_hi_Oplusplus",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++, Potential=const",
+      "fill": "255.0"
+    },
+    {
+      "name": "temp_pz_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Temperature values minus standard deviation (StD) in K, +z head",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature -StD, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ Temperature -StD, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature -StD, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature -StD, +z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature in K minus StD, -z head",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature -StD, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ Temperature -StD, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature -StD, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature -StD, -z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature (in K) minus STD, average of radial data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ Temperature -StD, r",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ Temperature -StD, r",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ Temperature -StD, r",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ Temperature -StD, r",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_z_LO_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T (H+)-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_LO_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T (He++) -STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_LO_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T (He+) -STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_LO_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T (O+) -STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_LO_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T (O++) -STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "den_temp_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "n (H+) from fit to radial head data with temp held constant (temp_z-STD)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n (He++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n(He+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n(O+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n(O++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> H+ potential from fit, T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He++ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He+ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O+ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O++ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for H+ fit, T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for He++ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for He+ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for O+ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for O++ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_temp_LO_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for H+ fit, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_LO_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He++ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_LO_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He+ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_LO_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O+ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_LO_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O++ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "avg_pot_LO",
+      "type": "double",
+      "units": "V",
+      "description": "Weighted average of H+ and He+ potentials (avg_pot), T-STD",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "pot_flag_LO",
+      "type": "integer",
+      "units": "",
+      "description": "-----> Flag for avg_pot",
+      "fill": "255.0"
+    },
+    {
+      "name": "den_pot_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "H+ density from fit to radial head data with potential (avg_pot) held constant, T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He++ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He+ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O+ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O++ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> H+ temperature from fit, T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (He++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (He+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (O+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (O++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_LO_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for H+ fit, T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_LO_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (He++), T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_LO_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (He+), T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_LO_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (O+), T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_LO_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (O++), T-STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_pot_LO_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for H+ fit, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_LO_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He++, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_LO_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag He+, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_LO_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O+, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_LO_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag O++, T-STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "temp_pz_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "+++ Temperature values plus standard deviation (STD): H+ temperature in K plus STD, +z head",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He++ temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> He+ temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O+ temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_pz_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> O++ temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature (in K) plus STD, -z head data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T (He++)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(He+)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(O+)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_mz_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(O++)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature (in K) plus STD, average of radial data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(He++)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(He+)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(O+)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_z_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> T(O++)+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_z_HI_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T(H+)+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_HI_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T(He++)+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_HI_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T(He+)+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_HI_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T(O+)+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_z_HI_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for T(O++)+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "den_temp_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "n (H+) from fit to radial head data with temp held constant (temp_z+STD)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n (He++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n (He+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n (O+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_temp_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> n (O++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> H+ potential from fit, T+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He++ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> He+ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O+ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pot_temp_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "V",
+      "description": "-------> O++ potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for H+ fit, T+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for He++ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for He+ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for O+ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_temp_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for O++ fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_temp_HI_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for H+ fit, T+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_HI_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He++ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_HI_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He+ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_HI_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O+ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_temp_HI_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O++ fit",
+      "fill": "255.0"
+    },
+    {
+      "name": "avg_pot_HI",
+      "type": "double",
+      "units": "V",
+      "description": "Weighted average of H+ and He+ potentials (avg_pot), T+STD",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "pot_flag_HI",
+      "type": "integer",
+      "units": "",
+      "description": "-----> Flag for avg_pot",
+      "fill": "255.0"
+    },
+    {
+      "name": "den_pot_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "H+ density from fit to radial head data with potential (avg_pot) held constant, T+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He++ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> He+ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O+ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "den_pot_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> O++ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> H+ temperature from fit, T+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (He++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (He+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (O+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_rd_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "eV",
+      "description": "-------> T (O++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_HI_lo_Hplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi-square for H+ fit, T+STD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_HI_lo_Heplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (He++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_HI_hi_Heplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (He+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_HI_hi_Oplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (O+)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "chisqr_pot_HI_hi_Oplusplus_plus_std",
+      "type": "double",
+      "units": "",
+      "description": "-----> chi^2 (O++)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flags_pot_HI_lo_Hplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for H+ fit, T+STD",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_HI_lo_Heplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He++",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_HI_hi_Heplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for He+",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_HI_hi_Oplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O+",
+      "fill": "255.0"
+    },
+    {
+      "name": "flags_pot_HI_hi_Oplusplus_plus_std",
+      "type": "integer",
+      "units": "",
+      "description": "-------> Flag for O++",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "1981-10-07T10:21:31.000Z",
+  "stopDate": "1984-12-30T02:12:32.000Z"
+}

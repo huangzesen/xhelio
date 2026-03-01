@@ -1,0 +1,152 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Heliographic latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dnft1",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Alpha particle density of first population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dnft2",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Alpha particle density of second population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vft1",
+      "type": "double",
+      "units": "km/s",
+      "description": "Speed of first population (relative to <Vparallel>)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vft2",
+      "type": "double",
+      "units": "km/s",
+      "description": "Speed of second population (relative to <Vparallel>)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wpar1",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal parallel speed of first population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wpar2",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal parallel speed of second population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wper1",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal perpendicular speed of first population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wper2",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal perpendicular speed of second population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "anis1",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle T_par/T_per for first population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "anis2",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle T_par/T_per for second population",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "denrat",
+      "type": "double",
+      "units": "",
+      "description": "Normalized total density (dnft1+dnft2)/dens",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle speed in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Valf",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alfven speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vap",
+      "type": "double",
+      "units": "km/s",
+      "description": "Magnitude of proton-alpha streaming vector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BR in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BT in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component BN in inertial RTN coordinates",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_MAG",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field magnitude",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1990-11-18T12:56:11.000Z",
+  "stopDate": "2009-06-30T15:38:12.000Z"
+}

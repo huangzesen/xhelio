@@ -1,0 +1,200 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_spectra_132",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Electric field spectrum, 132 frequency points",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        132
+      ]
+    },
+    {
+      "name": "ti_corrected_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Time index (Corrected) (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "swpia_cnt_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWPIA counter (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "cmp_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Compression mode (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "ch_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Channel (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "obs_cal_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Operation status (E, 132)",
+      "fill": null
+    },
+    {
+      "name": "main_amp_gain_e132",
+      "type": "integer",
+      "units": "dB",
+      "description": "---> Main amplifier gain (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "lpf_e132",
+      "type": "integer",
+      "units": "kHz",
+      "description": "---> LPF threshold (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "sampling_rate_e132",
+      "type": "integer",
+      "units": "kHz",
+      "description": "---> Sampling rate (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "wpt_ac_gain_e132",
+      "type": "integer",
+      "units": "dB",
+      "description": "---> WPT-Pre AC gain (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "quality_flag_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Quality flag (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "ti_original_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Time index (Original) (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "cal_table_id_e132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Calibration table ID (E, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "B_spectra_132",
+      "type": "double",
+      "units": "pT^2/Hz",
+      "description": "Magnetic field spectrum, 132 frequency points",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        132
+      ]
+    },
+    {
+      "name": "ti_corrected_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Time index (Corrected) (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "swpia_cnt_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWPIA counter (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "cmp_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Compression mode (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "ch_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Channel (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "obs_cal_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Operation status (B, 132)",
+      "fill": null
+    },
+    {
+      "name": "main_amp_gain_b132",
+      "type": "integer",
+      "units": "dB",
+      "description": "---> Main amplifier gain (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "lpf_b132",
+      "type": "integer",
+      "units": "kHz",
+      "description": "---> LPF threshold (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "sampling_rate_b132",
+      "type": "integer",
+      "units": "kHz",
+      "description": "---> Sampling rate (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "mscpa_gain_b132",
+      "type": "integer",
+      "units": "dB",
+      "description": "---> MSC-PA gain (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "quality_flag_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Quality flag (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "ti_original_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Time index (Original) (B, 132pts)",
+      "fill": null
+    },
+    {
+      "name": "cal_table_id_b132",
+      "type": "integer",
+      "units": "",
+      "description": "---> Calibration table ID (B, 132pts)",
+      "fill": null
+    }
+  ],
+  "startDate": "2017-03-23T00:00:08.000Z",
+  "stopDate": "2025-01-01T00:00:07.000Z"
+}

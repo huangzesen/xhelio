@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SENSOR_CONFIG",
+      "type": "integer",
+      "units": "",
+      "description": "THR sensor configuration",
+      "fill": "255.0"
+    },
+    {
+      "name": "PLASMA_FREQ",
+      "type": "double",
+      "units": "kHz",
+      "description": "Plasma frequency value derived by the palsma peak tracking",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "QUALITY_FACTOR",
+      "type": "double",
+      "units": "",
+      "description": "Quality factor for the plasma frequency data",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:49.000Z",
+  "stopDate": "2022-12-29T12:50:23.000Z"
+}

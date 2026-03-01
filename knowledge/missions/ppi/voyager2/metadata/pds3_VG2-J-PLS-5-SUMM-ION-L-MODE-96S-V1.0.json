@@ -1,0 +1,168 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "CHI",
+      "type": "double",
+      "units": "N/A",
+      "description": "Column contains chi-square from fit.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains ion velocity radial component (RTN coordinates, Sun-spacecraft direction) in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XVR",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains 1 sigma error in Vr in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains ion velocity North/South component (RTN coordinates, positive northward) in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XVT",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains 1 sigma error in Vt in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains ion velocity azimuthal component (RTN coordinates, positive in the direction of planetary motion) in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XVN",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains 1 sigma error in Vn in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "ION/CM**3",
+      "description": "Column contains ion density 1 in units of ions/cm**3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XDEN1",
+      "type": "double",
+      "units": "ION/CM**3",
+      "description": "Column contains 1 sigma error in density 1 in units of ions/cm**3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains ion thermal speed 1 in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XWTH1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains 1 sigma error in thermal speed 1 in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "ION/CM**3",
+      "description": "Column contains ion density 2 in units of ions/cm**3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XDEN2",
+      "type": "double",
+      "units": "ION/CM**3",
+      "description": "Column contains 1 sigma error in density 2 in units of ions/cm**3.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WTH2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains ion thermal speed 2 in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XWTH2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains 1 sigma error in thermal speed 2 in units of km/s.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP1",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Column contains ion temperature 1 in units of eV.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP2",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Column contains ion temperature 2 in units of eV.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

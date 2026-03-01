@@ -1,0 +1,90 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Solar Wind Proton Number Density, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Bulk Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tpr",
+      "type": "double",
+      "units": "Kelvin",
+      "description": "radial component of the proton temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alpha_ratio",
+      "type": "double",
+      "units": "ratio",
+      "description": "alpha to proton density ratio",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_GSE",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Velocity in GSE coord., 3 components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Velocity in RTN coord., 3 components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Velocity in GSM coord., 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in GSE coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "ACE s/c position, 3 comp. in GSM coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1998-02-04T00:00:00.000Z",
+  "stopDate": "2024-07-09T23:00:00.000Z"
+}

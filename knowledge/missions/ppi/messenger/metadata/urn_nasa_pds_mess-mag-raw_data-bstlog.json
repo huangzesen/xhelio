@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "Mission elapsed time for the last burst record in the\n        burst observation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA_T",
+      "type": "double",
+      "units": "",
+      "description": "An offset time from the MET for the last burst record\n       in the burst observation. Provides 50 msec resolution to the time\n       stamp for the last burst record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUM_BURST_PKTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of burst packets downloaded for the burst \n       observation. Nominally there should be 15 burst packets for one\n       complete burst observation. A value of less than 15 indicates missing\n       packets.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACTUAL_RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Actual range used by MAG. =0 2048 nT, =1 65536 nT",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

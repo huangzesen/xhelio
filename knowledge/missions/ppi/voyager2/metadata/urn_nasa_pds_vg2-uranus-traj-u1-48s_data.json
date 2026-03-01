@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PDSTIME",
+      "type": "double",
+      "units": "",
+      "description": "Date/Time string of the form                                            \n                        yyyy-mm-ddThh:mm:ss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "Neptune radii",
+      "description": "Planetocentric X Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "Neptune radii",
+      "description": "Planetocentric Y Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "Neptune radii",
+      "description": "Planetocentric Z Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "Planetocentric",
+      "description": "Spacecraft distance",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft longitude",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

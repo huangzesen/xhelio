@@ -1,0 +1,131 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "J00",
+      "type": "double",
+      "units": "c/s",
+      "description": "J00 Electron events total count rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R00S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "R0 (5-18 keV), Sector 0 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R00S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "R0 (5-18 keV), Sector 2 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R00S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "R0 (5-18 keV), Sector 5 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R01S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "R1 (19-193 keV), Sector 0 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R01S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "R1 (19-193 keV), Sector 2 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R01S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "R1 (19-193 keV), Sector 5 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R02S00",
+      "type": "double",
+      "units": "c/s",
+      "description": "R2 (194-734 keV), Sector 0 Cosmic RaysCount Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R02S02",
+      "type": "double",
+      "units": "c/s",
+      "description": "R2 (194-734 keV), Sector 2 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R02S05",
+      "type": "double",
+      "units": "c/s",
+      "description": "R2 (194-734 keV), Sector 5 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R00SSUM",
+      "type": "double",
+      "units": "c/s",
+      "description": "R0 (5-18 keV), All Sectors Sum Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R01SSUM",
+      "type": "double",
+      "units": "c/s",
+      "description": "R1 (19-193 keV), All Sectors Sum Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R02SSUM",
+      "type": "double",
+      "units": "c/s",
+      "description": "R2 (194-734 keV), All Sectors Sum Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RSUMS00",
+      "type": "double",
+      "units": "c/s",
+      "description": "All R Sum, Sector 0 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RSUMS02",
+      "type": "double",
+      "units": "c/s",
+      "description": "All R Sum, Sector 2 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RSUMS05",
+      "type": "double",
+      "units": "c/s",
+      "description": "All R Sum, Sector 5 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RSUM",
+      "type": "double",
+      "units": "c/s",
+      "description": "All R Sum Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-01-28T00:30:00.000Z",
+  "stopDate": "2025-07-30T23:30:00.000Z"
+}

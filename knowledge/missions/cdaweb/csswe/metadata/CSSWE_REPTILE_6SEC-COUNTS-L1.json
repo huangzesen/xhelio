@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E1counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for electrons E=0.58-1.63 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E2counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for electrons E=1.63-3.8 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E3counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for electrons E>3.8 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for protons E=9-18 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P2counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for protons E=18-30 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P3counts",
+      "type": "double",
+      "units": "cts/6-sec",
+      "description": "Counts for protons E=30-40 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "L value, calculated using the IGRF magnetic field model",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Valid",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Valid Flag",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "2012-09-14T00:28:03.000Z",
+  "stopDate": "2014-08-20T20:27:56.000Z"
+}

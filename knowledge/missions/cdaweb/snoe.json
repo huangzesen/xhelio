@@ -1,0 +1,48 @@
+{
+  "id": "SNOE",
+  "name": "SNOE",
+  "keywords": [
+    "snoe"
+  ],
+  "profile": {
+    "description": "SNOE spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "SNOE_L3_MAG": {
+          "description": "NO density, 100 - 150 km, geomagnetic coordinates  - Charles A. Barth (LASP/CU)",
+          "start_date": "1998-03-11T00:48:16.000Z",
+          "stop_date": "2000-09-30T19:10:39.000Z",
+          "pi_name": "Charles A. Barth",
+          "pi_affiliation": "LASP/CU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SNOE_L3_MAG"
+        },
+        "SNOE_L3_GEO": {
+          "description": "NO density, 100 - 150 km, geographic coordinates  - Charles A. Barth (LASP/CU)",
+          "start_date": "1998-03-11T00:44:55.000Z",
+          "stop_date": "2000-09-30T19:11:33.000Z",
+          "pi_name": "Charles A. Barth",
+          "pi_affiliation": "LASP/CU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SNOE_L3_GEO"
+        }
+      }
+    }
+  },
+  "observatory_group": "Smallsats/Cubesats",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

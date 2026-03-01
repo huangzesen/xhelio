@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SUN_R",
+      "type": "double",
+      "units": "km",
+      "description": "Distance of Earth from Sun",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "S/C position vector in J2000 GCI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "S/C velocity vector in J2000 GCI coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "S/C position vector in GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOON_GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "Moon position vector in GSE coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2015-02-11T23:39:07.000Z",
+  "stopDate": "2026-03-11T12:00:00.000Z"
+}
