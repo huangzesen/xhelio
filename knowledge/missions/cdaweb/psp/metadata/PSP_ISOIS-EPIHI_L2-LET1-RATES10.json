@@ -1,0 +1,292 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Data-quality flag",
+      "fill": "-128.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "A_H",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts side A",
+      "fill": "-2147483648.0",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "A_He",
+      "type": "integer",
+      "units": "counts",
+      "description": "He counts side A",
+      "fill": "-2147483648.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "B_H",
+      "type": "integer",
+      "units": "counts",
+      "description": "H counts side B",
+      "fill": "-2147483648.0",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "B_He",
+      "type": "integer",
+      "units": "counts",
+      "description": "He counts side B",
+      "fill": "-2147483648.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "A_Electrons",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electrons counts side A",
+      "fill": "-2147483648.0",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "B_Electrons",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electrons counts side B",
+      "fill": "-2147483648.0",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "HCI_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET1_A_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET1A",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET1_A_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET1A",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET1_A_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET1A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET1_A_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET1A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET1_B_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET1B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET1_B_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET1B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET1_B_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET1B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET1_B_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET1B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "A_H_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "A_H_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NMeV!E-1!N",
+      "description": "H flux side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "A_He_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "He count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "A_He_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "He flux side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "B_H_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "H count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "B_H_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!NMeV!E-1!N",
+      "description": "H flux side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "B_He_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "He count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "B_He_Flux",
+      "type": "double",
+      "units": "cm!E-2!Nsr!E-1!Nsec!E-1!N(MeV/nuc)!E-1!N",
+      "description": "He flux side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "A_Electrons_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Electrons count rate side A",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    },
+    {
+      "name": "B_Electrons_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "Electrons count rate side B",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        14
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

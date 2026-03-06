@@ -1,0 +1,241 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Doy",
+      "type": "double",
+      "units": "",
+      "description": "Fractional Day of Year",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "latitude",
+      "type": "double",
+      "units": "Deg N",
+      "description": "Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "units": "Deg_E",
+      "description": "Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sm_mlt",
+      "type": "double",
+      "units": "Deg",
+      "description": "SM MLT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pa0",
+      "type": "double",
+      "units": "Deg",
+      "description": "Pitch angle for MEPED 0 deg. telescopes (pa0)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pa81",
+      "type": "double",
+      "units": "Deg",
+      "description": "Pitch angle for MEPED 81 deg. telescope (pa81)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pa83",
+      "type": "double",
+      "units": "Deg",
+      "description": "Pitch angle for MEPED 83 deg. telescope (pa83)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "quality",
+      "type": "integer",
+      "units": "0=good",
+      "description": "Quality flag for MEPED detector: 0 (good), -1 (bad)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_0dg",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "MEPED Count Rates for 0 Deg. telescopes, 5 proton  and 3 electron energy bands (counts_0dg)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "counts_90dg",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "MEPED Count Rates for 81/83 Deg. telescopes, 5 proton  and 3 electron energy bands (counts_90dg)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "counts_omni",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "MEPED Count Rates for omnidirectional proton telescope, 3 energy bands (counts_omni)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Jperp_p",
+      "type": "double",
+      "units": "p/(cm^2*s*sr)",
+      "description": "MEPED calculated perpendicular proton flux, 5 energy bands (Jperp_p)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Jperp_e",
+      "type": "double",
+      "units": "e/(cm^2*s*sr)",
+      "description": "MEPED calculated perpendicular electron flux, 3 energy bands (Jperp_e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Jomni_p",
+      "type": "double",
+      "units": "p/(cm^2*s*sr)",
+      "description": "MEPED calculated omnidirectional proton flux,  5 energy bands from 0/81 and 3 from omni telescopes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Jomni_e",
+      "type": "double",
+      "units": "e/(cm^2*s*sr)",
+      "description": "MEPED calculated omnidirectional electron flux,  3 energy bands from 0/83 telescopes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IGRF_gsmB",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF magnetic field in GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IGRF_B_Bmin",
+      "type": "double",
+      "units": "",
+      "description": "B/(Min. B along field line) (IGRF)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IGRF_Lm",
+      "type": "double",
+      "units": "",
+      "description": "MclWain L  value in IGRF",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T89_gsmB",
+      "type": "double",
+      "units": "nT",
+      "description": "T89 magnetic field in GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T89_B_Bmin",
+      "type": "double",
+      "units": "",
+      "description": "B/(Min. B along field line) (T89)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T89_Lm",
+      "type": "double",
+      "units": "",
+      "description": "MclWain L  value in T89",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T96_gsmB",
+      "type": "double",
+      "units": "nT",
+      "description": "T96 magnetic field in GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T96_B_Bmin",
+      "type": "double",
+      "units": "",
+      "description": "B/(Min. B along field line) (T96)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T96_Lm",
+      "type": "double",
+      "units": "",
+      "description": "MclWain L  value in T96",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T01_gsmB",
+      "type": "double",
+      "units": "nT",
+      "description": "T01 magnetic field in GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T01_B_Bmin",
+      "type": "double",
+      "units": "",
+      "description": "B/(Min. B along field line) (T01)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T01_Lm",
+      "type": "double",
+      "units": "",
+      "description": "MclWain L  value in T01",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1978-11-02T14:43:00.000Z",
+  "stopDate": "1979-08-11T00:00:00.000Z"
+}

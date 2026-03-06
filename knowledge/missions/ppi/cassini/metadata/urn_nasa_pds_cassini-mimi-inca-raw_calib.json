@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start_Year",
+      "type": "double",
+      "units": "",
+      "description": "The Start_Year field identifies the year of the beginning of the       \n                        particular segment.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_DDOY",
+      "type": "double",
+      "units": "count",
+      "description": "The Start_DDOY field identifies the decimal day of year of the beginning\n                        of the particular segment.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_Year",
+      "type": "double",
+      "units": "",
+      "description": "The Start_Year field identifies the year at the end of the particular  \n                        segment.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_DDOY",
+      "type": "double",
+      "units": "count",
+      "description": "The Start_DDOY field identifies the decimal day of year at the end of   \n                        the particular segment.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Segment_Name",
+      "type": "double",
+      "units": "",
+      "description": "A description of the particular segment.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

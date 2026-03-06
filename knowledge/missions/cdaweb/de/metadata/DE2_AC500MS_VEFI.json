@@ -1,0 +1,84 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "orbitNumber",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "999.0"
+    },
+    {
+      "name": "spectA",
+      "type": "double",
+      "units": "microV/m",
+      "description": "AC electric field values of spectrometer A in microVolts/meter",
+      "fill": "9999.990234375",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "spectB",
+      "type": "double",
+      "units": "microV/m",
+      "description": "AC electric field values of spectrometer B in microVolts/meter",
+      "fill": "9999.990234375",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "spectC",
+      "type": "double",
+      "units": "microV/m",
+      "description": "AC electric field values of spectrometer C in microVolts/meter",
+      "fill": "9999.990234375",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude in degrees",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude in degrees",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude in degrees",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time in hours",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "9999.990234375"
+    }
+  ],
+  "startDate": "1981-08-10T16:03:09.000Z",
+  "stopDate": "1983-02-16T13:04:27.000Z"
+}

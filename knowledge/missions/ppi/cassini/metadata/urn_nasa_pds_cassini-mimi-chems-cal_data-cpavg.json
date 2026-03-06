@@ -1,0 +1,826 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Purpose",
+      "type": "double",
+      "units": "",
+      "description": "indicates that this row contains science\n    data",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLOCK",
+      "type": "double",
+      "units": "",
+      "description": "midpoint time of the averaging interval as a\n    spacecraft clock string; SCLOCK values are recorded as P/NNNNNNNNNN.FFF\n    where P is the partition number, NNNNNNNNNN is roughly the number of\n    seconds since the start of the partition, and FFF is the number of ticks.\n    Each tick is roughly 1/256 of a second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Ephemeris_s",
+      "type": "double",
+      "units": "",
+      "description": "start time of the averaging interval in\n    ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_Ephemeris_s",
+      "type": "double",
+      "units": "",
+      "description": "end time of the averaging interval in\n    ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Counter",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Sector_Sclock_major",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subsector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Microsectors_Covered",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Period_s",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Staring",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sensor_Bitrate",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start",
+      "type": "double",
+      "units": "minutes",
+      "description": "start time of hour-long average",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop",
+      "type": "double",
+      "units": "minutes",
+      "description": "end time of hour-long average",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "years",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Ave_doy",
+      "type": "double",
+      "units": "days",
+      "description": "midpoint of the hour-long averaging interval\n    expressed as a fractional day of year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Radial_Distance",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "position of Cassini at midpoint of interval\n    in Saturn radii, where 1 RS = 60268 km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "latitude of Cassini at midpoint of\n    measurement in the SZS (Saturn Equatorial System) frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Local_Time",
+      "type": "double",
+      "units": "hours",
+      "description": "local time of Cassini at the midpoint of the\n    measurement given in hours and in the SZS system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "H2+Flux_0",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 0; energy\n    bandwidth for this step is 2.77 to 2.85 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_0_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_1",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 1; energy\n    bandwidth for this step is 3.24 to 3.34 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_1_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_2",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 2; energy\n    bandwidth for this step is 3.72 to 3.84 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_2_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_3",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 3; energy\n    bandwidth for this step is 4.33 to 4.47 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_3_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_4",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 4; energy\n    bandwidth for this step is 4.97 to 5.13 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_4_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_5",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 5; energy\n    bandwidth for this step is 5.77 to 5.95 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_5_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_6",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 6; energy\n    bandwidth for this step is 6.65 to 6.85 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_6_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_7",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 7; energy\n    bandwidth for this step is 7.69 to 7.93 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_7_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_8",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 8; energy\n    bandwidth for this step is 8.79 to 9.05 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_8_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_9",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 9; energy\n    bandwidth for this step is 10.15 to 10.45 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_9_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_10",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 10; energy\n    bandwidth for this step is 11.62 to 11.98 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_10_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_11",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 11; energy\n    bandwidth for this step is 13.40 to 13.80 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_11_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_12",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 12; energy\n    bandwidth for this step is 15.46 to 15.94 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_12_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_13",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 13; energy\n    bandwidth for this step is 17.83 to 18.37 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_13_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_14",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 14; energy\n    bandwidth for this step is 20.49 to 21.11 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_14_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_15",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 15; energy\n    bandwidth for this step is 23.54 to 24.26 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_15_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_16",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 16; energy\n    bandwidth for this step is 26.99 to 27.81 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_16_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_17",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 17; energy\n    bandwidth for this step is 31.03 to 31.97 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_17_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_18",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 18; energy\n    bandwidth for this step is 35.66 to 36.74 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_18_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_19",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 19; energy\n    bandwidth for this step is 40.98 to 42.22 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_19_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_20",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 20; energy\n    bandwidth for this step is 47.08 to 48.52 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_20_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_21",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 21; energy\n    bandwidth for this step is 54.08 to 55.72 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_21_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_22",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 22; energy\n    bandwidth for this step is 62.25 to 64.15 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_22_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_23",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 23; energy\n    bandwidth for this step is 71.51 to 73.69 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_23_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_24",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 24; energy\n    bandwidth for this step is 82.15 to 84.65 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_24_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_25",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 25; energy\n    bandwidth for this step is 94.46 to 97.34 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_25_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_26",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 26; energy\n    bandwidth for this step is 108.45 to 111.75 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_26_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_27",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 27; energy\n    bandwidth for this step is 124.70 to 128.50 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_27_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_28",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 28; energy\n    bandwidth for this step is 143.12 to 147.48 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_28_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_29",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 29; energy\n    bandwidth for this step is 164.40 to 169.40 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_29_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_30",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 30; energy\n    bandwidth for this step is 188.73 to 194.47 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_30_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_31",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "intensity of H2+ ions at DPPS step 31; energy\n    bandwidth for this step is 216.90 to 223.50 keV/Q",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    },
+    {
+      "name": "H2+Flux_31_sigma",
+      "type": "double",
+      "units": "counts/sec/ster/cm^2/keV",
+      "description": "uncertainty in particle intensity",
+      "size": [
+        1
+      ],
+      "fill": "-1.00e+00"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C1_UP_FGM",
+      "type": "integer",
+      "units": "",
+      "description": "FGM status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "B_xyz_gse__C1_UP_FGM",
+      "type": "double",
+      "units": "nT",
+      "description": "FGM DC magnetic field, interval centred data from primary sensor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_nsigma_t__C1_UP_FGM",
+      "type": "double",
+      "units": "",
+      "description": "Normalised magnetic variance: summed component variances",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_nsigma_b__C1_UP_FGM",
+      "type": "double",
+      "units": "",
+      "description": "Normalised magnetic variance: magnitude",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2019-02-01T00:00:00.000Z",
+  "stopDate": "2024-09-30T23:58:58.000Z"
+}

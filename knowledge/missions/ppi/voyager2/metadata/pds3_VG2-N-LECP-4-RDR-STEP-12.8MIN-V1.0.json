@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PERCENT",
+      "type": "double",
+      "units": "",
+      "description": "Percent data coverage for current hour.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "QUALITY",
+      "type": "integer",
+      "units": "",
+      "description": "Data quality flag indicating the data quality level of the data in the current hour. Value  Description -1   Affected data is unrated with regard to contamination type. 0   Affected data is uncontaminated by contamination type. 1   Affected data is marginally contaminated by contamination type. 2   Affected data is seriously contaminated by a contamination type, but the measurement is probably retrievable. 3   Affected data is seriously contaminated by contamination type, and the retrievability of the measurement is questionable. 4   Affected data is so contaminated by contamination type that the measurment cannot be retrieved. 11   This dataset is evaluated on a point by point basis for data quality. The indication of data quality is contained in the standard deviation and data availability indicators. In general, higher standard deviations correspond to lower data quality and data availability flags that are 0 indicate that no data was acquired during this measurement.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CONTAMINATION",
+      "type": "integer",
+      "units": "",
+      "description": "Data contamination flag indicating the contimination level of the data in the current hour. Value  Description -1   Contamination type(s) not identified. 1   Ion channels penetrating background. All ion channels are subject to background due to high energy particles that penetrate detector shielding. Channels that are the result of 'Particle Multiple Parameters' measurements are less subject to such contamination (channels 'CH__'). A crude quality parameter has been derived from the ratio of the shielded and unshielded 43 to 80 keV 'PLO1' ion channel. All other channels must be judged independently from context and from a corresponding ratio. No corrections have been applied. 2   Solar UV. When the lowest energy Ion and Electron detectors (Electron detector less affected) face the Sun (Sector 1) substantial background counts can occur in the lowest (PLO1) and (somewhat) next to lowest (PLO2) Ion channels. A very crude quality parameter is derived from the ratio of the Sun-facing and adjacent sector for the PLO1 channel. This parameter should not be accepted as the last word but should be only used for guidance, and it can be misleading. Electrons must be judged separately. No corrections have been applied. 3   Ion channel electron contamination. The lowest energy ion channels (PLO1 through PLO5) are subject to contamination from > 400 keV electrons which penetrate the magnetic shielding. This condition is well diagnosed on Voyager 2 but not on Voyager 1. Context, corresponding Voyager 2 measurements, and the correlation between moderate energy electron channels and these ion channels must be use to diagnose this condition for Voyager 1. A correction has been applied only to the Voyager 2 Uranus data. 4   Ion detector overdrive. If the fluxes striking a detector is too high, the output of that detector becomes anomolous due to pulse pileup (linear effects) and baseline restoration (non-linear effects) problems. All detectors are subject to possible problems. A crude quality parameter has been derived based on the total rate striking the detector that measures the lowest energy ons (PLO1-PLO8). PLO1-5 are the channels most strongly affected, with the greatest effects occurring for the lowest energy channels. A dead-time correction procedure has been applied to the data to help alleviate the less severe problems. 5   Detector noise. The Detector/Electronics noise for the lowest energy detectors (ions in particular) is not too far below the lowest energy discrimination levels. That noise can appear as background counts in the lowest energy channels if the detector noise increases as a result of the detector being overdriven, etc. The lowest discrimination can be adjusted by ground command to help alleviate this problem. A crude quality parameter has been derived based on reasonable/ unreasonable ratios of the ion channels PLO1 and PLO2. This parameter should be used only as a rough guide and can be misleading. No correction has been applied. 6   Electon channels penetrating background. All electron channels are subject to background due to high energy particles that penetrate detector shielding. A crude quality parameter has been derived based on the ratio of the shielded and unshielded 35 to 62 keV 'EBO2' electron channel. All other channels must be judged independently from context and from a corresponding ratio. No correction has been applied. 7   Electron detector overdrive. If the fluxes striking a detector is too high, the output of that detector becomes anomolous due to pulse pileup (linear effects) and baseline restoration (non-linear effects) problems. All detectors are subject to possible problems. A crude quality parameter has been derived based on the total rate striking the detector that measures the lowest energy electrons (EB01-EB05). The greatest effects occur for the lowest energy channels. A dead-time correction procedure has been applied to the data to help alleviate less severe problems. 8   Miscellaneous bad data spikes. There are 'spikes' in the data processed for this instrument due to telemetry problems and other processing problems. Their are routines to eliminate these spikes, however, sometimes real events (fast changing) are also eliminated. We have chosen to leave the spikes in and to eliminate them when needed from context.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUMGOOD",
+      "type": "integer",
+      "units": "",
+      "description": "Number of good points in current hour.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

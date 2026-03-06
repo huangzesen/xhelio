@@ -1,0 +1,210 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "dtc_cor_eflux_stack9",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "Average Electron Flux in Telescope 9 (oriented 70+Y, pointing North or South depending on yaw state) for 5 energy bands 40-475 keV (as time-series plots; corrected for dead-time errors and other contamination sources)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack6",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 6 (oriented 35+Y, pointing N or S)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack3",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 3 (oriented 70-X, pointing equatorial E or W)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack4",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 4 (oriented 35-X, pointing equatorial E or W)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack1",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 1 (pointing AntiEarth)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack2",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 2 (oriented 35+X, pointing equatorial W or E)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack5",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 5 (oriented 70+X, pointing equatorial W or E)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack8",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 8 (oriented 35-Y, pointing S or N)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_stack7",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux in Telescope 7 (oriented 70-Y, pointing S or N)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Spectrogram of Electron Flux by energy for each telescope",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        5
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t_stack1",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "Average Electron Flux at 40 keV for 9 directions ordered north to south (101 to 109) or south to north depending on yaw state in time-series plots; corrected for dead-time errors and other contamination sources",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t_stack2",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux at 75 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t_stack3",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux at 150 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t_stack4",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux at 275 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t_stack5",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Electron Flux at 475 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "dtc_cor_eflux_t",
+      "type": "double",
+      "units": "e/(cm^2-s-sr-keV)",
+      "description": "---> Spectrogram of Electron Flux by telescope for each energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        5
+      ]
+    },
+    {
+      "name": "qual_flag",
+      "type": "double",
+      "units": "(0=OK)",
+      "description": "[NO PLOTS] Quality flag (non-zero value indicates a telemetry processing issue)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        5
+      ]
+    },
+    {
+      "name": "num_pts",
+      "type": "double",
+      "units": "points/avg",
+      "description": "---> [NO PLOTS] Data points per average",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        5
+      ]
+    },
+    {
+      "name": "west_longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "West longitude of satellite sub-orbit point",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "inclination",
+      "type": "double",
+      "units": "deg",
+      "description": "Inclination -- the angle between the plane of the orbit and the equatorial plane measured counter-clockwise from true East",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2010-04-01T00:00:00.000Z",
+  "stopDate": "2020-01-23T23:55:00.000Z"
+}

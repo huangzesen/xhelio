@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "RADIUS",
+      "description": "Spacecraft jovicentric (Jupiter fixed) X position, along the Jupiter-Sun line in the solar equatorial plane (positive towards the Sun), in the unit of Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "RADIUS",
+      "description": "Spacecraft jovicentric (Jupiter fixed) Y position, completing the right handed, orthogonal set, in the unit of Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "RADIUS",
+      "description": "Spacecraft jovicentric (Jupiter fixed) Z position, along the Jovian spin axis, in the unit of Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Spacecraft velocity jovicentric X component, along the Jupiter-Sun line in the solar equatorial plane (positive towards the Sun), in the unit of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Spacecraft velocity jovicentric Y component, completing the right handed, orthogonal set, in the unit of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Spacecraft velocity jovicentric Z component, along the Jovian spin axis, in the unit of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RADIUS",
+      "description": "Jupiter to spacecraft range (positive away from Jupiter) in the unit of Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Jovicentric latitude (positive northward), in degrees .",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Jovicentric east longitude, completing the left handed, orthogonal set in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CARTSYS3_TO_SPHSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This column contains the 9 1pe15.8 rotation matrix elements for converting from Cartesian System III to Spherical System III coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_TO_CARTSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This column contains the 9 1pe15.8 rotation matrix elements for converting from Payload (Spacecraft) to Cartesian System III coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_TO_SPHSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This column contains the 9 1pe15.8 rotation matrix elements for converting from Payload (Spacecraft) to Spherical System III coordinates.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

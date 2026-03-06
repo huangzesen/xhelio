@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "quality flag for EFD",
+      "fill": "4294934528.0"
+    },
+    {
+      "name": "Vu1",
+      "type": "double",
+      "units": "V",
+      "description": "Voltage of probe U1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vv1",
+      "type": "double",
+      "units": "V",
+      "description": "Voltage of probe V1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vu2",
+      "type": "double",
+      "units": "V",
+      "description": "Voltage of probe U2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vv2",
+      "type": "double",
+      "units": "V",
+      "description": "Voltage of probe V2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vave",
+      "type": "double",
+      "units": "V",
+      "description": "Averaged voltage of all probes",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2017-03-23T00:00:15.000Z",
+  "stopDate": "2024-12-31T23:59:44.000Z"
+}

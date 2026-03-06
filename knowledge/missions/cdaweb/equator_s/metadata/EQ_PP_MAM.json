@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_xyz_gse%eq_pp_mam",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field, vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_nsigma_t%eq_pp_mam",
+      "type": "double",
+      "units": "",
+      "description": "Sum of the component variances, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_nsigma_b%eq_pp_mam",
+      "type": "double",
+      "units": "",
+      "description": "Field magnitude variance, scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1997-12-16T11:25:01.000Z",
+  "stopDate": "1998-04-30T00:00:00.000Z"
+}

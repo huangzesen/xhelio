@@ -1,0 +1,139 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "duration",
+      "type": "integer",
+      "units": "",
+      "description": "Duration",
+      "fill": "99.0"
+    },
+    {
+      "name": "flux_He_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "He intensity, at select energies 2.2-8.5 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_He",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> He intensity, at 7 energies 2.2-8.5 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_C_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "C intensity, at select energies 2.9-11.4 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_C",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> C intensity, at 7 energies 2.9-11.4 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_O_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "O intensity, at select energies 2.9-11.3 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_O",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> O intensity, at 7 energies 2.9-11.3 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_Ne_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Ne intensity, at select energies 3.6-11.3 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "flux_Ne",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> Ne intensity, at 6 energies 3.6-11.3 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "flux_Si_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Si intensity, at select energies 2.8-11.6 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_Si",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> Si intensity, at 7 energies 2.8-11.6 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_Fe_stack",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Fe intensity, at select energies 2.7-10.9 MeV/nuc (stacked plots)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "flux_Fe",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "---> Fe intensity, at 7 energies 2.7-10.9 MeV/nuc (time-series with uncertainties)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    }
+  ],
+  "startDate": "1994-11-03T00:01:00.000Z",
+  "stopDate": "2014-09-06T23:55:00.000Z"
+}

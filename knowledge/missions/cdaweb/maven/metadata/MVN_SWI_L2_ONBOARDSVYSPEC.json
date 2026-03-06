@@ -1,0 +1,73 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "spectra_counts",
+      "type": "double",
+      "units": "",
+      "description": "Raw Instrument Counts (as spectrogram)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "spectra_counts_time",
+      "type": "double",
+      "units": "",
+      "description": "---> Raw Instrument Counts (as time series).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "spectra_diff_en_fluxes",
+      "type": "double",
+      "units": "ev/[eV cm^2 sr s]",
+      "description": "Calibrated differential energy flux (as spectrogram)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "spectra_diff_en_fluxes_stack",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Calibrated differential energy flux (as overlaid time series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "atten_state",
+      "type": "integer",
+      "units": "",
+      "description": "Attenuator state, 1 = open, 2 = closed, 3 = cover closed",
+      "fill": "255.0"
+    },
+    {
+      "name": "num_accum",
+      "type": "integer",
+      "units": "",
+      "description": "Number of Accumulations Summed",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "decom_flag",
+      "type": "double",
+      "units": "",
+      "description": "Decommutation Flag: 0 = uncertain mode/attenuator flags, 1 = known mode/attenuator flags",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2014-03-19T14:20:43.000Z",
+  "stopDate": "2025-11-15T00:00:51.000Z"
+}

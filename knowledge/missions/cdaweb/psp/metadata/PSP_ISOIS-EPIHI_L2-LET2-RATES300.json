@@ -1,0 +1,245 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LET2_C_R1_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R25_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HCI_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_R25_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "R1C_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9,
+        3
+      ]
+    },
+    {
+      "name": "R1C_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R1C_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate R1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "HGC_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LET2_C_R1_SECT_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "LET2_C_SA",
+      "type": "double",
+      "units": "degree",
+      "description": "Nominal Parker Spiral angle LET2C",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R25C_FeGroup_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "FeGroup sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "R25C_CNO_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "CNO sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "HGC_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_R25_SECT_RTN",
+      "type": "double",
+      "units": "",
+      "description": "RTN flow direction LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25,
+        3
+      ]
+    },
+    {
+      "name": "HGC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_R25_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2CR25SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "HCI_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2C",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_HCI",
+      "type": "double",
+      "units": "",
+      "description": "HCI flow direction LET2C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HCI_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LET2_C_R1_SECT_PA",
+      "type": "double",
+      "units": "degree",
+      "description": "Pitch angle LET2CR1SECT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "R25C_NetoSi_SECT_Rate",
+      "type": "double",
+      "units": "counts s!E-1!N",
+      "description": "NetoSi sectored count rate R25C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        25
+      ]
+    },
+    {
+      "name": "Quality_Flag",
+      "type": "integer",
+      "units": "",
+      "description": "Data-quality flag",
+      "fill": "-128.0",
+      "size": [
+        10
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

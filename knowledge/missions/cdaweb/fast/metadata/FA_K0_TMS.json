@@ -1,0 +1,330 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H+",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "H+ diff energy flux, averaged over 0-360 pitchangle, at 48 energies, 1-12000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "H+_en",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> [SLOWLY VARYING] H+ energies for H+ variable",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "H+_low",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "H+ diff energy flux, 0.01-1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "H+_low_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> H+ pitch angles for H+_low",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "H+_high",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "H+ diff energy flux, >1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "H+_high_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> H+ pitch angles for H+_high",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "O+",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "O+ diff energy flux, averaged over 0-360 pitchangle, at 48 energies, 1-12000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "O+_en",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> [SLOWLY VARYING] O+ energies for O+ variable",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "O+_low",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "O+ diff energy flux, 0.01-1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "O+_low_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> O+ pitch angles for O+_low",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "O+_high",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "O+ diff energy flux, >1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "O+_high_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> O+ pitch angles for O+_high",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "He+",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "He+ diff energy flux, averaged over 0-360 pitchangle, at 48 energies, 1-12000 eV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "He+_en",
+      "type": "double",
+      "units": "eV",
+      "description": "-----> [SLOWLY VARYING] He+ energies for He+ variable",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "He+_low",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "He+ diff energy flux, 0.01-1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "He+_low_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> He+ pitch angles for He+_low",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "He+_high",
+      "type": "double",
+      "units": "eV/(cm**2-s-sr-eV)",
+      "description": "He+ diff energy flux, >1 keV, 16 pitch angles, 0-360 deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "He+_high_pa",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> He+ pitch angles for He+_high",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "fa_spin_ra",
+      "type": "double",
+      "units": "deg",
+      "description": "Right Ascension of Spin Axis, degrees, GEI coords",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fa_spin_dec",
+      "type": "double",
+      "units": "deg",
+      "description": "Declination of Spin Axis, degrees, GEI coords",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "r",
+      "type": "double",
+      "units": "km",
+      "description": "FAST Spacecraft position, cartesian 3 vector, GEI coords, km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v",
+      "type": "double",
+      "units": "km/s",
+      "description": "FAST Spacecraft velocity, cartesian 3 vector, GEI coords, km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft altitude above an equatorial earth radius of 6378.14 km, km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geodetic latitude of magnetic footprint at 100 km above the oblate earth, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flng",
+      "type": "double",
+      "units": "deg",
+      "description": "Geodetic longitude of magnetic footprint at 100 km above the oblate earth, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hour",
+      "description": "Magnetic Local Time, hours",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude, degrees",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fa_spin_raV",
+      "type": "double",
+      "units": "deg",
+      "description": "Time axis label: Right Ascension of Spin Axis, degrees, GEI coords",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fa_spin_decV",
+      "type": "double",
+      "units": "deg",
+      "description": "Time axis label: Declination of Spin Axis, degrees, GEI coords",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "rV",
+      "type": "double",
+      "units": "km",
+      "description": "Time axis label: FAST Spacecraft position, cartesian 3 vector, GEI coords, km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vV",
+      "type": "double",
+      "units": "km/s",
+      "description": "Time axis label: FAST Spacecraft velocity, cartesian 3 vector, GEI coords, km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "altV",
+      "type": "double",
+      "units": "km",
+      "description": "Time axis label: Spacecraft altitude above an equatorial earth radius of 6378.14 km, km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flatV",
+      "type": "double",
+      "units": "deg",
+      "description": "Time axis label: Geodetic latitude of magnetic footprint at 100 km above the oblate earth, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flngV",
+      "type": "double",
+      "units": "deg",
+      "description": "Time axis label: Geodetic longitude of magnetic footprint at 100 km above the oblate earth, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mltV",
+      "type": "double",
+      "units": "hour",
+      "description": "Time axis label: Magnetic Local Time, hours",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilatV",
+      "type": "double",
+      "units": "deg",
+      "description": "Time axis label: Invariant Latitude, degrees",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-10-01T01:03:06.000Z",
+  "stopDate": "2009-04-30T10:22:16.000Z"
+}

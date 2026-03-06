@@ -1,0 +1,313 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "1/(MeV-cm^2-s-sr)",
+      "description": "FEDU: Electron flux spectrograms in energy, by telescope in sector order (T0= ~110 PA, T3= ~all PAs, T5= FEDU background)",
+      "fill": "-1e+31",
+      "size": [
+        6,
+        14
+      ]
+    },
+    {
+      "name": "FEDU_Error",
+      "type": "double",
+      "units": "",
+      "description": "---> The percentage error of the measurement.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        14
+      ]
+    },
+    {
+      "name": "FEDU_Quality",
+      "type": "integer",
+      "units": "(10=OK)",
+      "description": "---> Quality flag for the measurement for each telescope/channel/timestep. .see PREBM standards for definition",
+      "fill": "-32768.0",
+      "size": [
+        6,
+        14
+      ]
+    },
+    {
+      "name": "Sector",
+      "type": "integer",
+      "units": "",
+      "description": "---> The current sector number where each spin is divided into 36 sectors.",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "Duration",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Duration of the accumulation.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Spin",
+      "type": "integer",
+      "units": "",
+      "description": "---> The current spin number of the spacecraft",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "Position_SM",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "Position of the spacecraft in SM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> Position of the SC in the GEO Reference Frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_GSM",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> Position of the SC in the GSM Reference Frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> The position quality flag, 0=good, 1=bad.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Position_SM_Axis_Label",
+      "type": "integer",
+      "units": "",
+      "description": "",
+      "fill": null
+    },
+    {
+      "name": "OrbitNumber",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number at the time of the measurement",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> Dipole L value calculated using the SM Reference Frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Eq",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> McElqain L value calculated at the Equator (derived from ECT MagEphem data).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Star",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> Roeder's L* value (derived from ECT MagEphem data) for the average pitch angle.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> Integral invariant for the average pitch angle derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K",
+      "type": "double",
+      "units": "EarthRadii_G",
+      "description": "---> The Second Invariant ( I*sqrt(Bm) ) for the average pitch angle derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> Magnetic Local Time of S/C in Centerted Dipole Coordinates derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FEDU_Alpha",
+      "type": "double",
+      "units": "Degrees",
+      "description": "The pitch angle based upon the look direction of each telescope, alpha=cos-1(B*(-look))",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Alpha_Quality",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> A flag describing the Quality of the Pitch Angle as calculated, 0=good, 1=bad.",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ParticleDir_SM",
+      "type": "double",
+      "units": "Degrees",
+      "description": "The particle velocity unit vector for each telescope look direction (i.e. the negative of the telescope look direction unit vector). (No CDAWeb Plotting)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6,
+        3
+      ]
+    },
+    {
+      "name": "NumAxis",
+      "type": "integer",
+      "units": "",
+      "description": "",
+      "fill": null
+    },
+    {
+      "name": "NumAxisFixed",
+      "type": "integer",
+      "units": "",
+      "description": "",
+      "fill": null,
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "L_StarArr",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "Roeder's L* value (derived from ECT MagEphem data) for each of the telescopes based upon the telescope pitch angle.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "IArr",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> The Integral invariant for the pitch angle of each telescope derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "KArr",
+      "type": "double",
+      "units": "EarthRadii_G",
+      "description": "---> Second Invariant ( I*sqrt(Bm) ) for the pitch angle of each telescope derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Position_SM_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "[Labels on plots] Position of the spacecraft in SM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] Position of the SC in the GEO Reference Frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_GSM_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] Position of the SC in the GSM Reference Frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "OrbitNumber_TT",
+      "type": "integer",
+      "units": "",
+      "description": "[Labels on plots] Orbit Number at the time of the measurement",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] Dipole L value calculated using the SM Reference Frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Eq_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] McElqain L value calculated at the Equator (derived from ECT MagEphem data).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Star_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] Roeder's L* value(derived from ECT MagEphem data) for the average pitch angle.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": "EarthRadii",
+      "description": "---> [Labels on plots] Integral invariant for the average pitch angle derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "K_TT",
+      "type": "double",
+      "units": "EarthRadii_G",
+      "description": "---> [Labels on plots] The Second Invariant ( I*sqrt(Bm) ) for the average pitch angle derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [Labels on plots] Magnetic Local Time of S/C in Centerted Dipole Coordinates derived from ECT MagEphem data.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-11-13T22:06:46.000Z",
+  "stopDate": "2014-10-03T09:14:00.000Z"
+}

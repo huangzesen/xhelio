@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PDSTIME",
+      "type": "double",
+      "units": "",
+      "description": "Date/Time string of the form                                           \n                        yyyy-mm-ddThh:mm:ss.sss such that the                                  \n                        representation of the date and time for                                \n                        Jan 01, 2000 00:00:00.000 would be:                                    \n                        2000-01-01T00:00:00.000Z where Z indicates                             \n                        Universal Time (also known as Zulu time).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D1_RATE",
+      "type": "double",
+      "units": "counts/s",
+      "description": "D1 DETECTOR COUNT RATE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

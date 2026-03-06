@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "duration__C3_CP_CIS_CODIF_PAD_HS_He1_PF",
+      "type": "double",
+      "units": "s",
+      "description": "Acquisition interval duration",
+      "fill": "0.0"
+    },
+    {
+      "name": "cis_mode__C3_CP_CIS_CODIF_PAD_HS_He1_PF",
+      "type": "integer",
+      "units": "",
+      "description": "CIS Operational Mode",
+      "fill": "99.0"
+    },
+    {
+      "name": "tm_product__C3_CP_CIS_CODIF_PAD_HS_He1_PF",
+      "type": "integer",
+      "units": "",
+      "description": "CIS Telemetry Product",
+      "fill": "99.0"
+    },
+    {
+      "name": "Differential_Particle_Flux__C3_CP_CIS_CODIF_PAD_HS_He1_PF",
+      "type": "double",
+      "units": "Particles cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "Differential_Particle_Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        31
+      ]
+    }
+  ],
+  "startDate": "2001-01-31T01:02:02.000Z",
+  "stopDate": "2009-11-11T08:16:23.000Z"
+}

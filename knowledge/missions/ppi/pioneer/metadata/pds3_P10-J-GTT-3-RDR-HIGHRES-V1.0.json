@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME-YEAR",
+      "type": "integer",
+      "units": "",
+      "description": "YEAR-1900",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME-MONTH",
+      "type": "integer",
+      "units": "",
+      "description": "MONTH",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME-DAY OF MONTH",
+      "type": "integer",
+      "units": "",
+      "description": "DAY OF MONTH",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME-FRACTION OF DAY",
+      "type": "double",
+      "units": "FRACTION OF DAY",
+      "description": "FRACTION OF DAY (ERT)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DETECTOR ANGLE",
+      "type": "integer",
+      "units": "degree",
+      "description": "207 consecutive angles (degrees) for detectors G1, A, B, G2, AB, DEF, C, D in repeating, cyclic order. 207 obtained from 26 x 8 = 208 - 1 = 207. The subtracted 1 is due to an omission in the file at creation time.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

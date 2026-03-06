@@ -1,0 +1,77 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "elb_pos_gei",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position XYZin GEI-J2000",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "elb_vel_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft Velocity Vxyz in GEI-J2000",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "elb_att_gei",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Attitude in GEI-J2000",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "elb_att_solution_date",
+      "type": "double",
+      "units": "s",
+      "description": "Date of attitude solution, UTC, in seconds",
+      "fill": "-9.223372036854776e+18"
+    },
+    {
+      "name": "elb_att_flag",
+      "type": "integer",
+      "units": "0=Interpolated, 1=Modeled",
+      "description": "Attitude Flag",
+      "fill": "-1.0"
+    },
+    {
+      "name": "elb_att_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "Spin Period - Calculated",
+      "fill": "-128.0"
+    },
+    {
+      "name": "elb_spin_orbnorm_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle Between Spin Vector andOrbit Normal",
+      "fill": "nan"
+    },
+    {
+      "name": "elb_spin_sun_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle Between Spin Vector and Sun",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2018-09-17T00:00:00.000Z",
+  "stopDate": "2022-09-27T23:59:59.000Z"
+}

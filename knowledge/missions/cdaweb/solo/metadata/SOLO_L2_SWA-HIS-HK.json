@@ -1,0 +1,2683 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "AC_LINK_EN",
+      "type": "integer",
+      "units": "",
+      "description": "AC link enable status",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "AC_LINK_ERR",
+      "type": "integer",
+      "units": "",
+      "description": "Undervoltage monitor",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ALPHA_DECI_DECR_THRESH_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha decimation decrement threshold register",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "ALPHA_DECI_INCR_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha decimation increment register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ALPHA_DECI_INCR_THRESH_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha decimation increment threshold register",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "ALPHA_DECI_LEVEL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha decimation level register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ALPHA_MAX_VAL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha max value register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ALPHA_MIN_VAL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Alpha min value register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ANODE_STIM_DELAY",
+      "type": "integer",
+      "units": "",
+      "description": "Anode stim delay",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ANODE_STIM_ON",
+      "type": "integer",
+      "units": "",
+      "description": "Anode stim on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ANODE_STIM_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "Anode stim rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_ADC_WAIT",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC ADC wait",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_CONF_REG",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC config reg",
+      "fill": "-9.223372036854776e+18",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ASIC_CS_MON",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC CS mon",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_OUT_OF_SYSTEM_EN",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC out-of-system enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_REG_SWITCH",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC reg switch",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_RESET",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_STIM_DELAY",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC stim delay",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_STIM_ON",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC stim on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_STIM_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC stim rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_TP_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC TP rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ASIC_WRITE_REG",
+      "type": "integer",
+      "units": "",
+      "description": "ASIC write register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "BOARD_ID",
+      "type": "integer",
+      "units": "",
+      "description": "Board ID",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_CAL_EN",
+      "type": "integer",
+      "units": "",
+      "description": "TOF calibration enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CCSDS_REJ_MESSAGE_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Count of rejected CCSDS messages",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_BOARD_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "CDH board temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_CPU_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "CDH CPU temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_GROUND",
+      "type": "integer",
+      "units": "",
+      "description": "CDH ground",
+      "fill": "-2147483648.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_OPTO_LINK_RX_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Receiver enable/disable status for opto link",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_LINK_RX_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "Rate setting for optical link receive interface",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_LINK_STAT_A",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates if opto link side A is enabled",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_LINK_STAT_B",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates if opto link side B is enabled",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_LINK_TX_POWER",
+      "type": "integer",
+      "units": "",
+      "description": "Power setting for optical link interface transmit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_LINK_TX_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "Rate setting for optical link transmission interface",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_OPTO_RX_CLOCK_SYNC_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "CDH opto RX clock/sync error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "CDH_OPTO_RX_CRC_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "CDH opto RX CRC error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "CDH_OPTO_RX_HDR_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "CDH opto RX header error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "CDH_OPTO_RX_SIDE",
+      "type": "integer",
+      "units": "",
+      "description": "Side selection for CDH opto receive",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_P1_5V",
+      "type": "double",
+      "units": "V",
+      "description": "CDH +1.5V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_P1_8V",
+      "type": "double",
+      "units": "V",
+      "description": "CDH +1.8V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_P3_3V_ADC_V",
+      "type": "double",
+      "units": "V",
+      "description": "CDH +3.3V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_P5V_DAC_V",
+      "type": "double",
+      "units": "V",
+      "description": "CDH +5V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CDH_SWEEP_DAC_EN_LATCHED",
+      "type": "integer",
+      "units": "",
+      "description": "CDH FPGA latched versions of DAC enables",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_SWEEP_STATE",
+      "type": "integer",
+      "units": "",
+      "description": "CDH sweep state machine value",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_WDOG_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates if the CDH watchdog can cause a reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CDH_WDOG_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether the CDH watchdog timed out (and caused a reset)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CHECKSUM",
+      "type": "integer",
+      "units": "",
+      "description": "Checksum",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "CMD_ACC_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Accepted instrument command count (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_ACC_LAST_SERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Service of last accepted instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_ACC_LAST_SUBSERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Subservice of last accepted instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_ACC_SSC",
+      "type": "integer",
+      "units": "",
+      "description": "Source sequence count of last accepted instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_POL_BOT_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded polarity bottom deflector",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_POL_TOP_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded polarity top deflector",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_POL_TOP_PLATE",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded polarity top plate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_REJ_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Rejected instrument command count (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_REJ_LAST_SERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Service of last rejected instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_REJ_LAST_SUBSERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Subservice of last rejected instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_REJ_SSC",
+      "type": "integer",
+      "units": "",
+      "description": "Source sequence count of last rejected instrument command (not from macros)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_RNG_ANALYZER",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded range analyzer",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_RNG_BOT_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded range bottom deflector",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_RNG_TOP_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded range top deflector",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_RNG_TOP_PLATE",
+      "type": "integer",
+      "units": "",
+      "description": "Commanded range top plate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CMD_VAL_ANALYZER",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value analyzer",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_BOT_DEF",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value bottom deflector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_MAIN",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value main",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_OFFSET",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value offset",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_PA",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_SSD",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value SSD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_START_A",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value start A",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_START_B",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value start B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_START_CFD",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value start CFD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_START_MCP",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value start MCP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_STOP_A",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value stop A",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_STOP_B",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value stop B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_STOP_CFD",
+      "type": "double",
+      "units": "V",
+      "description": "Raw commanded DAC value stop CFD",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_STOP_MCP",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value stop MCP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_TOP_DEF",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value top deflector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CMD_VAL_TOP_PLATE",
+      "type": "double",
+      "units": "kV",
+      "description": "Raw commanded DAC value top plate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "COINC_TIMING_ASIC_SHAPE",
+      "type": "integer",
+      "units": "",
+      "description": "Coincidence timing - ASIC shape",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "COINC_TIMING_ASIC_WINDOW",
+      "type": "integer",
+      "units": "",
+      "description": "Coincidence timing - ASIC window",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "COINC_TIMING_POS_TIMEOUT",
+      "type": "integer",
+      "units": "",
+      "description": "Coincidence timing - position timeout",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "COINC_TIMING_TOF_TIMEOUT",
+      "type": "integer",
+      "units": "",
+      "description": "Coincidence timing - TOF timeout",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CONNECTION_TEST_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Count of S17 connection test",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CPU_WDOG_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates if the CPU watchdog can cause a reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "CPU_WDOG_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether the CPU watchdog timed out (and caused a reset)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_ADC_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ADC enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_ADC_WAITS",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ADC waits",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_ASIC_CONTROL_STATE_MACHINE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ASIC control state machine",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_ASIC_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ASIC flag",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_ASIC_V_MON",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB ASIC voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_ASIC_READ_OUT_STATE_MACHINE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ASIC read out state machine",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_ASIC_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB ASIC temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_ASIC_WRITE_STATE_MACHINE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB ASIC write state machine",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_AZIMUTHAL_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB azimuthal select",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_CMD_NAKS",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB command NAKS (rejected uplink)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_COINC",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB coinc",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_COMM_ACTIVE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB comm active",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_DOUBLE_BIT_EDAC",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB double-bit EDAC",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_DSCB_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_DSIB_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB DSIB temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_FPGA_BASE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB FPGA base",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_FPGA_REV",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB FPGA revision",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HK_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB HK rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HV_AUTO_RESET_EN",
+      "type": "integer",
+      "units": "",
+      "description": "HV auto-reset enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HV_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section HV on/off",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HV_LIMITED",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section HV limited",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HV_MON_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB HV monitoring enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_HVPS_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB HVPS temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_INIT_BIT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB initialization bit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_INIT_REG",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB initialization register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_MCP_BIAS_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB MCP bias enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_MCP_BIAS_I_LIMIT_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB MCP bias current limit enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_MCP_BIAS_I_TRIP",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB MCP bias current trip",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_MCP_BIAS_V_LIMIT_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB MCP bias voltage limit enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_MCP_BIAS_V_TRIP",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB MCP bias voltage trip",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_OFFSET_I_MON",
+      "type": "double",
+      "units": "mA",
+      "description": "DSCB offset current monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_OFFSET_V_MON",
+      "type": "double",
+      "units": "kV",
+      "description": "DSCB offset voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_OPTO_RX_CLOCK_SYNC_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB opto RX clock/sync error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_OPTO_RX_CRC_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB opto RX CRC error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_OPTO_RX_DATA1_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB opto RX data1 error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_OPTO_RX_DATA2_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB opto RX data2 error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_OPTO_RX_HDR_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB opto RX header error count",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_P1_5V",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB +1.5V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_P3_3V",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB +3.3V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_P3_3V_ADC_REF",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB +3.3V ADC reference",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_P5V_ADC_REF_MON",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB +5V ADC monitor reference",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_P5V_DAC_REF_MON",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB +5V DAC reference monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_POS_START",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - position start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_START_ADD_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - position start - add/subtract",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_START_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB position start select",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - position stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_STOP_ADD_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - position stop - add/subtract",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_STOP_DUAL_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB position stop dual selection",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_POS_STOP_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB position stop select",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_RATES_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB rates enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_RESET_DECI_LEVEL",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB reset decimation level",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_RESET_FSW",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section FSW reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_RESET_POR",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section power on reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_RESET_WDOG",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section watchdog reset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_SINGLE_BIT_EDAC",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB single-bit EDAC",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "DSCB_SSD_I_MON",
+      "type": "double",
+      "units": "mA",
+      "description": "DSCB SSD current monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_SSD_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB SSD temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_SSD_V_MON",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB SSD voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_START_MCP_I_MON",
+      "type": "double",
+      "units": "mA",
+      "description": "DSCB start MCP current monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_START_MCP_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "DSCB start MCP temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_START_MCP_V_MON",
+      "type": "double",
+      "units": "kV",
+      "description": "DSCB start MCP voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_STARTUP_POWER",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB startup power",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_STARTUP_RX_A_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB startup RX A enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_STARTUP_RX_B_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB startup RX B enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_STARTUP_TX_A_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB startup RX A enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_STARTUP_TX_B_EN",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB startup TX B enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_STOP_MCP_I_MON",
+      "type": "double",
+      "units": "mA",
+      "description": "DSCB stop MCP current monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_STOP_MCP_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "Stop MCP temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_STOP_MCP_V_MON",
+      "type": "double",
+      "units": "kV",
+      "description": "DSCB stop MCP voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_SWEEP_OVER",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB sweep over",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_SYSTEM_FSM",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB system FSM",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_TOF_START",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - TOF start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_TOF_START_ADD_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - TOF start - add/subtract",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_TOF_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - TOF stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_TOF_STOP_ADD_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB measurement adjustment - TOF stop - add/subtract",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_V_I_MON_REF",
+      "type": "double",
+      "units": "V",
+      "description": "DSCB voltage/current monitor ref",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSCB_WDOG_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "DSCB watchdog count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "DSCB_WDOG_ON",
+      "type": "integer",
+      "units": "",
+      "description": "Detector section watchdog on/off",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "EAIS_PORT_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "EAIS temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ENERGY_ASIC_ACQ_TP",
+      "type": "integer",
+      "units": "",
+      "description": "Energy ASIC acq TP",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ENERGY_ASIC_PARITY",
+      "type": "integer",
+      "units": "",
+      "description": "Energy ASIC parity",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "EVENT_ERR_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Count of (5,2) event error messages",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_DSCB_AUTOMATIC_LIMIT",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR DSCB automatic limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_DSCB_COMM_LOSS",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR DSCB communications loss",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_DSCB_DOWNLINK_UNDETERMINED",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR DSCB downlink undetermined",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_DSCB_NOT_RUNNING",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR DSCB not running",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_DSCB_REG_INIT",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR DSCB register initialization",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_EMERGENCY_FAST_SAFE",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR emergency fast safe",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_LEVEL",
+      "type": "integer",
+      "units": "",
+      "description": "Current status of FDIR handling",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_NOMINAL_SLOW_SAFE",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR nominal slow safe",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_RED_LIMIT",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR red limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_RESERVED",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR reserved",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_SCIENCE_AUTO_MODE_FAIL",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR science auto-mode fail",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_SOLAR_ARRAY_STEERING_START",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR solar array steering start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_SOLAR_ARRAY_STEERING_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR solar array steering stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_TASK_TIMEOUT",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR task timeout",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_THRUSTER_FIRING_START",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR thruster firing start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_THRUSTER_FIRING_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR thruster firing stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FDIR_YELLOW_LIMIT",
+      "type": "integer",
+      "units": "",
+      "description": "FDIR yellow limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_STEP_TBL",
+      "type": "integer",
+      "units": "",
+      "description": "DAC select bits",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_STEP_TBL_DATA_ELEV_INDEX",
+      "type": "integer",
+      "units": "",
+      "description": "Elevation step",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_STEP_TBL_E_Q_INDEX",
+      "type": "integer",
+      "units": "",
+      "description": "Current step table pointer from the sweep table - E/Q index (scan or data selectable)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_STEP_TBL_ELEV_INDEX",
+      "type": "integer",
+      "units": "",
+      "description": "Elevation step",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_SWEEP_TBL_ROW",
+      "type": "integer",
+      "units": "",
+      "description": "Currently selected row of scan control table (scan or data selectable)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_SWEEP_TBL_SIDE",
+      "type": "integer",
+      "units": "",
+      "description": "Currently selected \"side\" of scan control table",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "FPGA_SWEEP_TBL_DATA_SIDE",
+      "type": "integer",
+      "units": "",
+      "description": "Currently selected data \"side\" of scan control table",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HK_EN",
+      "type": "integer",
+      "units": "",
+      "description": "HK enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HV_DISABLED",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether high voltage is disabled",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HV_I_LIM_PERSISTENCE",
+      "type": "integer",
+      "units": "",
+      "description": "HV current limit persistence",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HV_LIMITED",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether high voltage is limited",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HV_V_LIM_PERSISTENCE",
+      "type": "integer",
+      "units": "",
+      "description": "HV voltage limit persistence",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "HVPS_ANALYZER",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS analyzer",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_ANALYZER_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS analyzer polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_ANALYZER_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS analyzer range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_BOT_DEF",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS bottom deflector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_BOT_DEF_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS bottom deflector polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_BOT_DEF_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS bottom deflector range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_N",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS main negative",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_N_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS main negative polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_N_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS main negative range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_P",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS main positive",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_P_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS main positive polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_HV_MAIN_P_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS main positive range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_N12V_I",
+      "type": "double",
+      "units": "A",
+      "description": "HVPS -12V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_P12V_I",
+      "type": "double",
+      "units": "A",
+      "description": "HVPS +12V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_DEF",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS top deflector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_DEF_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS top deflector polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_DEF_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS top deflector range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_PLATE",
+      "type": "double",
+      "units": "kV",
+      "description": "HVPS top plate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_PLATE_POL",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS top plate polarity",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HVPS_TOP_PLATE_RNG",
+      "type": "integer",
+      "units": "",
+      "description": "HVPS top plate range",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "INTEGRATION_TIME",
+      "type": "integer",
+      "units": "",
+      "description": "Number of seconds over which the data in this product was collected",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "INTER_INST_INFO_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Inter-instrument information count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "IRAP_HV_ON",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether IRAP high voltage is on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "IRAP_HVPS_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "IRAP HVPS temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LAST_ERR_CODE",
+      "type": "integer",
+      "units": "",
+      "description": "Last (5,2) EID, minus SWA offset",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_ACC_CMD_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro accepted command count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_ACC_SERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro accepted service",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_ACC_SUBSERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro accepted subservice",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_CALLER",
+      "type": "integer",
+      "units": "",
+      "description": "Macro calling last macro",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_CMD_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro command count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_I_WAIT",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro current wait",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LAST_MACRO_REJ_CMD_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro rejected command count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_REJ_SERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro rejected service",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_REJ_SUBSERVICE",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro rejected subservice",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "Last macro run",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LAST_MACRO_TOTAL_CMDS",
+      "type": "integer",
+      "units": "",
+      "description": "Total commands in last macro",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LOW_TOF_CUT_OFF_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Low TOF cut-off register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "LVPS_12V_DC_DC_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "LVPS +/- 12V DC-DC converter temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_5V_DC_DC_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "LVPS 5V DC-DC converter temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_AC_LINK_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS AC link current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_AC_LINK_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "LVPS AC link temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_AC_LINK_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS AC link voltage",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_N12V_OUTPUT_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS -12V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_N12V_OUTPUT_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS -12V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_N5V_OUTPUT_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS -5V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_N5V_OUTPUT_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS -5V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P12V_OUTPUT_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS +12V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P12V_OUTPUT_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS +12V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P3_3V_DC_DC_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "LVPS +3.3V DC-DC converter temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P3_3V_OUTPUT_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS +3.3V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P3_3V_OUTPUT_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS 3.3V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P5V_OUTPUT_I",
+      "type": "double",
+      "units": "A",
+      "description": "LVPS +5V current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LVPS_P5V_OUTPUT_V",
+      "type": "double",
+      "units": "V",
+      "description": "LVPS +5V",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MACRO_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Macro running",
+      "fill": "-32768.0",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "MASTER_SWEEP_EN",
+      "type": "integer",
+      "units": "",
+      "description": "FPGA master sweep enable control",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MASTER_SWEEP_EN_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "FPGA master sweep enable status",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MISSING_SPACEWIRE_TIME_CODE",
+      "type": "integer",
+      "units": "",
+      "description": "Missing spacewire time Code",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MODE_CHANGE_REASON",
+      "type": "integer",
+      "units": "",
+      "description": "Reason For last mode Change",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MRAM_WR_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates if MRAM writes are enabled",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OFFSET_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Offset enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OFFSET_I_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Offset current enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OFFSET_I_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Offset current trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OFFSET_V_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Offset voltage enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OFFSET_V_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Offset voltage trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OP_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "Operating mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_A_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX A enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_A_EN_INIT",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX A enable init",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_B_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX B enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_B_EN_INIT",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX B enable init",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_LOOPBACK",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX loopback",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "Opto RX rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_SIGNAL_QUALITY",
+      "type": "integer",
+      "units": "",
+      "description": "Quality of CDH opto RX",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_RX_SYNCED",
+      "type": "integer",
+      "units": "",
+      "description": "CDH opto RX synced",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_A_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX A enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_A_EN_INIT",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX A enable init",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_B_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX B enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_B_EN_INIT",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX B enable init",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto Tx enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_POWER",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX power",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_POWER_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX power enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "OPTO TX rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OPTO_TX_READY",
+      "type": "integer",
+      "units": "",
+      "description": "Opto TX ready",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OSC_ADJ_POS_START",
+      "type": "integer",
+      "units": "",
+      "description": "Oscillator adjustment - position start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OSC_ADJ_POS_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "Oscillator adjustment - position stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OSC_ADJ_TOF_START",
+      "type": "integer",
+      "units": "",
+      "description": "Oscillator adjustment - TOF start",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "OSC_ADJ_TOF_STOP",
+      "type": "integer",
+      "units": "",
+      "description": "Oscillator adjustment - TOF stop",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PA_HV_ON",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether PA high voltage is on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PA_HVPS_TEMP",
+      "type": "double",
+      "units": "C",
+      "description": "PA HVPS temperature",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PA_HVPS_V_MON",
+      "type": "double",
+      "units": "kV",
+      "description": "PA HVPS voltage monitor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PACKET_SUB_TIME",
+      "type": "integer",
+      "units": "",
+      "description": "Packet sub-seconds timestamp",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "PACKET_WHOLE_TIME",
+      "type": "integer",
+      "units": "",
+      "description": "Packet whole timestamp",
+      "fill": "-9.223372036854776e+18"
+    },
+    {
+      "name": "POS_CAL_DONE",
+      "type": "integer",
+      "units": "",
+      "description": "Position cal done",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROCESSOR_IDLE_PERCENTAGE",
+      "type": "integer",
+      "units": "",
+      "description": "Percent of time spent idling",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROTON_AVOIDANCE_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "Specifies whether proton avoidance was active when read",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROTON_DECI_DECR_THRESH_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton decimation decrement threshold register",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "PROTON_DECI_INCR_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton decimation increment register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROTON_DECI_INCR_THRESH_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton decimation increment threshold register",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "PROTON_DECI_LEVEL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton decimation level register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROTON_MAX_VAL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton max value register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "PROTON_MIN_VAL_REG",
+      "type": "integer",
+      "units": "",
+      "description": "Proton min value register",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "QUALITY_BITMASK",
+      "type": "integer",
+      "units": "",
+      "description": "Quality bitmask",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Quality flag",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SAFETY_CHECKING_STATUS_CDH",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether safety limit checking is enabled for CDH",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SAFETY_CHECKING_STATUS_DSCB",
+      "type": "integer",
+      "units": "",
+      "description": "Status on whether safety limit checking is enabled for DSCB",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SAFING_STATUS_CDH_MON_RED",
+      "type": "integer",
+      "units": "",
+      "description": "Safing status CDF monitor limits red",
+      "fill": "-32768.0",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "SAFING_STATUS_CDH_MON_YEL",
+      "type": "integer",
+      "units": "",
+      "description": "Safing status CDH monitor limits yellow",
+      "fill": "-32768.0",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "SAFING_STATUS_DSCB_MON_RED",
+      "type": "integer",
+      "units": "",
+      "description": "Safing status DSCB monitor limits red",
+      "fill": "-32768.0",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "SAFING_STATUS_DSCB_MON_YEL",
+      "type": "integer",
+      "units": "",
+      "description": "Safing status DSCB monitor limits yellow",
+      "fill": "-32768.0",
+      "size": [
+        24
+      ]
+    },
+    {
+      "name": "SEQ_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Sequence count of packet",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SSD_EN",
+      "type": "integer",
+      "units": "",
+      "description": "SSD enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SSD_I_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "SSD current enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SSD_I_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "SSD current trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SSD_V_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "SSD voltage enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SSD_V_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "SSD voltage trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_ANODE_A_OSC_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Start anode A oscillator counter",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "START_ANODE_B_OSC_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Start anode B oscillator counter",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "START_COLLECTION",
+      "type": "integer",
+      "units": "",
+      "description": "Start collection",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_MCP_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Start MCP enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_MCP_I_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Start MCP current enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_MCP_I_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Start MCP current trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_MCP_V_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Start MCP voltage enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_MCP_V_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Start MCP voltage trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_STIM_DELAY",
+      "type": "integer",
+      "units": "",
+      "description": "Start stim delay",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_STIM_EXT",
+      "type": "integer",
+      "units": "",
+      "description": "Start stim external",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_STIM_ON",
+      "type": "integer",
+      "units": "",
+      "description": "Start stim on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_STIM_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "Start stim rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "START_TOF_OSC_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Start TOF oscillator counter",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "STOP_MCP_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Stop MCP enable",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "STOP_MCP_I_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Stop MCP current enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "STOP_MCP_I_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Stop MCP current trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "STOP_MCP_V_EN_LIM",
+      "type": "integer",
+      "units": "",
+      "description": "Stop MCP voltage enable limit",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "STOP_MCP_V_TRIG",
+      "type": "integer",
+      "units": "",
+      "description": "Stop MCP voltage trigger",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "STOP_TOF_OSC_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Stop TOF oscillator counter",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SWEEP_DATA_A_ACTIVE",
+      "type": "integer",
+      "units": "",
+      "description": "Specifies if sweep side A is active",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_DATA_B_ACTIVE",
+      "type": "integer",
+      "units": "",
+      "description": "Specifies if sweep side B is active",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EDAC_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Whether FPGA checks EDAC on tables",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EDP",
+      "type": "integer",
+      "units": "",
+      "description": "Sweep elevation data processing status",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EN_ANALYZER",
+      "type": "integer",
+      "units": "",
+      "description": "Whether analyzer supply is sweeping or static while in sweeping mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EN_BOT_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Whether bottom deflector supply is sweeping or static while in sweeping mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EN_TOP_DEF",
+      "type": "integer",
+      "units": "",
+      "description": "Whether top deflector supply is sweeping or static while in sweeping mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_EN_TOP_PLATE",
+      "type": "integer",
+      "units": "",
+      "description": "Whether top plate supply is sweeping or static while in sweeping mode",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_SCRUBBING_EN",
+      "type": "integer",
+      "units": "",
+      "description": "Whether FPGA scrubs tables automatically for EDAC",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SWEEP_TBL_POINTER_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "Specifies whether reported sweep table pointers are for scan or data",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SYSTEM_MODULE_VERIFY",
+      "type": "integer",
+      "units": "",
+      "description": "System module verify",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TIME_CODE_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Spacewire time code count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TIME_MESSAGE_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Service 9 time message count",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_CAL_DONE",
+      "type": "integer",
+      "units": "",
+      "description": "TOF cal done",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_START_SEL",
+      "type": "integer",
+      "units": "",
+      "description": "TOF start select",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_STIM_DELAY",
+      "type": "integer",
+      "units": "",
+      "description": "TOF stim delay",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_STIM_EXT",
+      "type": "integer",
+      "units": "",
+      "description": "TOF stim external",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_STIM_ON",
+      "type": "integer",
+      "units": "",
+      "description": "TOF stim on",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "TOF_STIM_RATE",
+      "type": "integer",
+      "units": "",
+      "description": "TOF stim rate",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "WDOG_RESET_CNT",
+      "type": "integer",
+      "units": "",
+      "description": "Count of CDH watchdog resets",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "2022-01-01T00:00:08.000Z",
+  "stopDate": "2023-04-28T12:31:48.000Z"
+}

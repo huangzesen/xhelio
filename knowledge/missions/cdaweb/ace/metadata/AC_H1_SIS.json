@@ -1,0 +1,292 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "flux_He",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "He intensity, at 8 energies 3.4-41.2 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_C",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "C intensity, at 8 energies 6.4-76.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_N",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "N intensity, at 8 energies 6.9-83.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_O",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "O intensity, at 8 energies 7.3-89.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Ne",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Ne intensity, at 8 energies 8.1-101.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Na",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Na intensity, at 8 energies 8.1-104.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Mg",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Mg intensity, at 8 energies 8.7-112.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Al",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Al intensity, at 8 energies 8.7-115.6 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Si",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Si intensity, at 8 energies 9.2-123.2 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_S",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "S intensity, at 8 energies 9.7-132.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Ar",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Ar intensity, at 8 energies 10.1-144.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Ca",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Ca intensity, at 8 energies 10.5-150.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Fe",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Fe intensity, at 8 energies 10.7-167.7 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "flux_Ni",
+      "type": "double",
+      "units": "1/(cm2 Sr sec MeV/nucleon)",
+      "description": "Ni intensity, at 8 energies 11.2-179.0 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_He",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "He counts, at 8 energies 3.4-41.2 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_C",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "C counts, at 8 energies 6.4-76.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_N",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "N counts, at 8 energies 6.9-83.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_O",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "O counts, at 8 energies 7.3-89.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Ne",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Ne counts, at 8 energies 8.1-101.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Na",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Na counts, at 8 energies 8.1-104.8 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Mg",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Mg counts, at 8 energies 8.7-112.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Al",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Al counts, at 8 energies 8.7-115.6 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Si",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Si counts, at 8 energies 9.2-123.2 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_S",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "S counts, at 8 energies 9.7-132.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Ar",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Ar counts, at 8 energies 10.1-144.3 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Ca",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Ca counts, at 8 energies 10.5-150.9 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Fe",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Fe counts, at 8 energies 10.7-167.7 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "cnt_Ni",
+      "type": "double",
+      "units": "Counts/256sec",
+      "description": "Ni counts, at 8 energies 11.2-179.0 MeV/nuc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    }
+  ],
+  "startDate": "1997-08-29T00:00:26.000Z",
+  "stopDate": "2026-01-27T23:56:45.000Z"
+}

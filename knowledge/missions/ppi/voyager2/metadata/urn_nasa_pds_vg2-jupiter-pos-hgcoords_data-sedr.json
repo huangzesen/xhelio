@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock mod 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock mod 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_Line",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock Line Count",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft X position in Heliographic (RTN) coordinates.  \n                        The X axis points towards the the first point of Aries \n                        in the solar equatorial plane on the vernal equinox of the        \n                        reference epoch 1950 (positive away from the Sun).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft Y position in Heliographic (RTN) coordinates.\n                        The Y axis completes the right handed set.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft Z position in Heliographic (RTN) coordinates.\n                        The Z axis points along the Sun's spin axis        \n                        (positive above the equatorial plane).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity X component in Heliographic (RTN).\n                        The X axis points towards the the first point of Aries \n                        in the solar equatorial plane on the vernal equinox of   \n                        the reference epoch 1950 (positive away from the Sun).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity Y component in Heliographic (RTN\n                        The Y axis completes the right handed set.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity Z component in Heliographic (RTN)\n                        The Z axis points along the Sun's spin axis \n                        (positive above the equatorial plane).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric range from Sun to spacecraft \n                        in units of astronomical units (1 AU = 149674000 km).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft heliocentric latitude, the angle between the plane           \n                        containing the solar spin axis and the solar equatorial plane           \n                        (positive above the equatorial plane), in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft heliocentric longitude (increasing in the direction of       \n                        planetary orbital motion) in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

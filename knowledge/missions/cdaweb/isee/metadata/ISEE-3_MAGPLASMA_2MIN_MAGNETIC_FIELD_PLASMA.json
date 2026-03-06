@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_se",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field vector in s/c-centered Solar-Ecliptic coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_mag",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field magnitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton flow speed",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp_long",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow longitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton flow latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "1/cc",
+      "description": "Plasma Proton density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Temp",
+      "type": "double",
+      "units": "K",
+      "description": "Plasma Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_pos",
+      "type": "double",
+      "units": "Re",
+      "description": "S/C coordinates, GSE",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1978-08-13T00:00:00.000Z",
+  "stopDate": "1982-09-15T23:58:00.000Z"
+}

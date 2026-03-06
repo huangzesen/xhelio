@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Spectrum Time",
+      "type": "double",
+      "units": "Seconds",
+      "description": "This column contains spacecraft event time (SCET) of the center of        \n                                 the 5 second averaging window for the first record in a spectrum.         \n                                 Averages are non-overlapping. The time format is given in seconds         \n                                 after 00:00:00 UT on Jan 1, 1970. Leap seconds are not accounted          \n                                 for in this time format. Each day is assumed to have 86400.0              \n                                 seconds and years have either 365 or 366 days.  This time column          \n                                 is native to the data; column 1 was calculated from it.",
+      "size": [
+        1
+      ],
+      "fill": "99999999999999."
+    },
+    {
+      "name": "Energy Bin",
+      "type": "double",
+      "units": "eV",
+      "description": "Center energy value of the data channel.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Spectrum Number",
+      "type": "double",
+      "units": "",
+      "description": "Ordinal number of spectrum, starting with 1 at the beginning of the file.  \n                                 A spectrum is a group of 15 consecutive records, with each record representing \n                                 a sweep at a different energy.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component along the S/C X-axis.",
+      "size": [
+        1
+      ],
+      "fill": "999999.999999"
+    },
+    {
+      "name": "By",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component along the S/C Y-axis.",
+      "size": [
+        1
+      ],
+      "fill": "999999.999999"
+    },
+    {
+      "name": "Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component along the S/C Z-axis.",
+      "size": [
+        1
+      ],
+      "fill": "999999.999999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

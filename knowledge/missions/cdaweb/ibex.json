@@ -1,0 +1,2047 @@
+{
+  "id": "IBEX",
+  "name": "IBEX",
+  "keywords": [
+    "ibex"
+  ],
+  "profile": {
+    "description": "IBEX spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS-GALACTIC_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS-GALACTIC_5YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_OMNI_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, omni-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/68kk-mv11",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_RAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Ram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/9xeb-vw02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_RAM_11YR"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS-J2000_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS-J2000_5YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/4sa7-wr04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_MIF_10MP": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_MIF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ytmb-dg43",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_NOSP_ANTIRAM_7YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, no Survival-Probability, antiram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/s5jq-td10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_NOSP_ANTIRAM_7YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, RAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional median ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2013-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/33ew-ce35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional upper ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R04_LOSS_1AU_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-01T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_LOSS_1AU_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, AntiRAMdirectional 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/yzz4-et03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS-J2000_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS-J2000_5YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2022-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/p855-9622",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_3YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional 3-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/m780-tm05",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_3YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional lower gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_SP_OMNI_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, no Survival-Probability, OMNIdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/czhe-8z20",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_SP_OMNI_1YR"
+        },
+        "IBEX_H3_ENA_LO_R09_PARK_OMAP_STAT_3YR": {
+          "description": "IBEX-Lo Release-09; Park et al. 2015) 3-year combined heavy neutral maps: m1-to-m6 (map1 + map2 + map3 + map4 + map5 + map6) with statistical filtering - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_PARK_OMAP_STAT_3YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_UPPER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional upper gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_UPPER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F3-GDF-MAPS_5YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_SP_ANTIRAM_7YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, Survival-Probability, antiram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/bnb2-z378",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_SP_ANTIRAM_7YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, RAMdirectional mono-energy 11-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_MONO_11YR"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/tqg1-f460",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional upper gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional lower ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_LOWER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional lower gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_LOWER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_ANTIRAM_VESCF_5YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_ANTIRAM_VESCF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_RAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Ram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/b2ht-5g89",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_RAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ramdirectional median gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/jq00-4j33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, RAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, Antiramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, ANTIRAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/qet6-1611",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_MEDIAN_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional median gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_MEDIAN_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, Ramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, ram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/0f8a-vp56",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/aper-3h74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_2YR": {
+          "description": "IBEX-Hi Release 15; Compton-Getting, Survival-Probability, in a ribbon centered frame, 2-Year-Averaged West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2011-12-24T00:00:00.000Z",
+          "stop_date": "2015-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_2YR"
+        },
+        "IBEX_H3_ENA_LO_R06_STATE_VECTORS": {
+          "description": "IBEX State Vectors  - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-01-01T00:00:00.000Z",
+          "stop_date": "2011-12-31T22:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R06_STATE_VECTORS"
+        },
+        "IBEX_H3_ENA_HI_R04_LOSS_SCF_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-01T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_LOSS_SCF_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2011-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/wvkh-8a67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_NOSP_OMNI_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, no Survival-Probability, OMNIdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/0ky5-kh49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_NOSP_OMNI_1YR"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2011-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/bfkf-5y54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_SP_RAM_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/fgrt-k786",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_ANTIRAM_MIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_ANTIRAM_MIF_5YR"
+        },
+        "IBEX_H3_ENA_LO_R07_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Lo Release-07; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2010-01-11T00:00:00.000Z",
+          "stop_date": "2015-02-05T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/hgm9-jp68",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R07_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/xrpe-jx49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_RAM_VEIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_RAM_VEIF_5YR"
+        },
+        "IBEX_H3_ENA_LO_R17_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-lo Release 17; no Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/8482-s207",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_RAM_VESCF_5YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_RAM_VESCF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ramdirectional lower ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_RIBBON_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, ANTIRAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional lower gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/wfbs-w642",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, omni-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_14YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional median gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_14YR"
+        },
+        "IBEX_H3_ENA_LO_R06_SCHWADRON-H": {
+          "description": "IBEX-Hi Release 6; Count Data for Heliospheric Imaging.  - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-03-26T00:00:00.000Z",
+          "stop_date": "2011-04-30T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R06_SCHWADRON-H"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_ANTIRAM_VEIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_ANTIRAM_VEIF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_VEIF_10MP": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_VEIF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_LOWER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional lower ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_LOWER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/61s6-et42",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_OMNI_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, OMNIdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_OMNI_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, antiram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/8960-pv55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional lower ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_RIBBON_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/pjt4-pe60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, Antiramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_MONO_6MO": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional, mono-energy 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_MONO_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional upper ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_LO_R03_ANGULAR_ANALYSIS_7DAY": {
+          "description": "IBEX-Hi Release 3; Angular analysis - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-01-03T15:28:33.000Z",
+          "stop_date": "2010-02-27T15:13:28.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R03_ANGULAR_ANALYSIS_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_OMNI_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, omni-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_OMNI_14YR"
+        },
+        "IBEX_H3_ENA_HI_R04_SURVPRO_SCF_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-01T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_SURVPRO_SCF_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_OMNI_MONO_6MO": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Omnidirectional mono-energy 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_OMNI_MONO_6MO"
+        },
+        "IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR-ODD-MAPS": {
+          "description": "IBEX-Lo Release-09; Park et al. 2015) 3-year combined heavy neutral odd maps: m1m3m5 (map1 + map3 + map5) West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR-ODD-MAPS"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional upper gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Antiram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/qc27-hw91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R04_DEFLECTION_SCF_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-01T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_DEFLECTION_SCF_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_OMNI_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Omnidirectional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/fa2k-n648",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_OMNI_11YR"
+        },
+        "IBEX_H3_ENA_R05_MARINER-H-HE": {
+          "description": "IBEX Data Release 5 - Mariner 10 Hydrogen Ly-alpha backscattered emision and Helium 584A backscattered solar emission from Roll Control Maneuver #7 of Mariner 10.  - Dr. David J. McComas (Princeton University)",
+          "start_date": "1974-01-28T00:00:00.000Z",
+          "stop_date": "1974-01-28T03:52:03.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_R05_MARINER-H-HE"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, ANTIRAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional upper ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_UPPER_RIBBON_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/va6f-mg80",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_VEIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_VEIF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/gre9-7z41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, Survival-Probability, ram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/3f2m-z528",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_MEDIAN_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional median ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_MEDIAN_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_LOWER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional lower ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_LOWER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_MEDIAN_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional median gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_MEDIAN_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/v4rn-nd04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_14YR"
+        },
+        "IBEX_H3_ENA_HI_R13_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release-13; Compton-Getting, no Survival-Probability, ram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2015-12-24T00:00:00.000Z",
+          "stop_date": "2016-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/jr67-ar66",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R13_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/q5mq-2v40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_OMNI_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, no Survival-Probability, Omnidirectional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/se3c-3r85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_OMNI_11YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/jm1t-pg27",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_RAM_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, ram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/nqsx-9a30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_RAM_7YR"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/db3x-tq55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_3YR": {
+          "description": "IBEX-Hi Release 15; Compton-Getting, Survival-Probability, in a ribbon centered frame, 3-Year-Averaged West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_3YR"
+        },
+        "IBEX_H3_ENA_LO_R09_SCHWADRON-INTERSTELLAR-HE_1YR": {
+          "description": "IBEX Release-9; Interstellar He Parameters - David McComas (Princeton University)",
+          "start_date": "2009-01-20T01:02:21.000Z",
+          "stop_date": "2014-02-28T05:42:55.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_SCHWADRON-INTERSTELLAR-HE_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_RAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, RAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_RAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_LO_R07_NOCG_NOSP_OMNI_VESCF_10MP": {
+          "description": "IBEX-Lo Release 7; no Compton-Getting, no Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R07_NOCG_NOSP_OMNI_VESCF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, no Survival-Probability, ram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ab6p-7w38",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, ram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/30g5-mx06",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_11YR"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS_5YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_GALA_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps in galactic coordinates - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_GALA_14YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_UPPER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional upper ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_UPPER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_14YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional median gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2013-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/16jb-2837",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_OMNI_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, omni-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/bcjj-r065",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_UPPER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional upper ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_UPPER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_MONO_6MO": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, Omnidirectional mono-energy 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_MONO_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_GALA_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Ram-directional 11-year-Average West Maps in Galactic coordinates - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_GALA_11YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_RAM_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, ram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/fgm0-nz35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_RAM_7YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_RAM_VEIF_5YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_RAM_VEIF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, Survival-Probability, antiram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/83y1-pw33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/f50h-6551",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_NOSP_OMNI_VESCF_10MP": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_NOSP_OMNI_VESCF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2022-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ww5n-ty58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_NOSP_OMNI_7YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, no Survival-Probability, omni-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/redf-vj78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_NOSP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/wgdc-pg68",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR-EVEN-MAPS": {
+          "description": "IBEX-Lo Release-09; Park et al. 2015) 3-year combined heavy neutral even maps: m2m4m6 (map2 + map4 + map6) West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-06-25T00:00:00.000Z",
+          "stop_date": "2009-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR-EVEN-MAPS"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_ANTIRAM_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, Antiram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_ANTIRAM_14YR"
+        },
+        "IBEX_H3_ENA_LO_R03_CT_RATE_ANALYSIS_7DAY": {
+          "description": "IBEX-Hi Release 3; Count Rate analysis - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-01-02T18:23:52.000Z",
+          "stop_date": "2010-03-03T11:49:51.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R03_CT_RATE_ANALYSIS_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, ANTIRAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/6kb9-t215",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2022-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/4ey3-fd10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R10_NOCG_SP_OMNI_7YR": {
+          "description": "IBEX-Lo Release-10; no Compton-Getting, Survival-Probability, Omnidirectional 7-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/4rqp-d388",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R10_NOCG_SP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional, mono-energy 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_MONO_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, OMNIdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_OMNI_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R02_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 2; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2009-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/0vjh-ph32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R02_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional upper gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_LO_R10_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Lo Release-10; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/bzxb-gm25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R10_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, RAMdirectional 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/a4bm-9844",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/g1tq-ea69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_OMNI_MIF_10MP": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Omnidirectional 1-to-10 map Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_OMNI_MIF_10MP"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS-GALACTIC_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS-GALACTIC_5YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional upper gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Omnidirectional, mono-energy 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_MONO_11YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_ANTIRAM_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Antiram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/1nrf-6w66",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_ANTIRAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_OMNI_VEIF_10MP": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_OMNI_VEIF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS-J2000_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS-J2000_5YR"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/yf48-sn54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_MONO_1YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, RAMdirectional mono-energy 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_RAM_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_MIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_ANTIRAM_MIF_5YR"
+        },
+        "IBEX_H3_ENA_LO_R09_PARK_OMAP_6MO": {
+          "description": "IBEX-Lo Release-09; Park Oxygen Map Counting Rate 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2011-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_PARK_OMAP_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional median gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/2stz-gs57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Omnidirectional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/r428-6n89",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_11YR"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_3YR": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, no Survival-Probability, omni-direction 3-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/qmwe-ve75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_3YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, no Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/tbbn-9555",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, RAMdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R04_SURVPRO_1AU_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_SURVPRO_1AU_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, Ramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R11_SCHWADRON-INTERSTELLAR-O": {
+          "description": "IBEX Release-11; Oxygen count rates for different spin phase bins organized by orbit - David McComas (Southwest Research Institute, San Antonio, TX)",
+          "start_date": "2009-01-21T22:07:15.000Z",
+          "stop_date": "2010-02-25T15:25:34.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Southwest Research Institute, San Antonio, TX",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R11_SCHWADRON-INTERSTELLAR-O"
+        },
+        "IBEX_H3_ENA_LO_R10_NOCG_NOSP_OMNI_7YR": {
+          "description": "IBEX-Lo Release-10; no Compton-Getting, no Survival-Probability, Omnidirectional 7-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/fby3-z379",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R10_NOCG_NOSP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/55hv-vx14",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_SP_OMNI_7YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, Survival-Probability, omni-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/24kn-z991",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_SP_OMNI_7YR"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_6MP": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, no Survival-Probability, omni-direction 3-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_6MP"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2011-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/kef0-gf62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R04_DEFLECTION_1AU_7DAY": {
+          "description": "IBEX-Hi Release 4; Survival Probabilities tables - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-11-20T00:00:00.000Z",
+          "stop_date": "2011-12-01T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_DEFLECTION_1AU_7DAY"
+        },
+        "IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR": {
+          "description": "IBEX-Lo Release-09; Park et al. 2015) 3-year combined heavy neutral  maps: m1-to-m6 (map1 + map2 + map3 + map4 + map5 + map6) West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_PARK_OMAP_3YR"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS_5YR"
+        },
+        "IBEX_H3_ENA_LO_R10_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Lo Release-10; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/2yhf-1s21",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R10_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ANTIRAMdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_14YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_EQUA_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Ram-directional 11-year-Average West Ecliptic Maps in Equatorial coordinates - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_EQUA_11YR"
+        },
+        "IBEX_H3_ENA_HI_R14_PRESS-SLOPE_CG_NOSP_RAM_3YR": {
+          "description": "IBEX-Hi Release-14; Compton-Getting, no Survival-Probability, ram-direction 3-year-Average West Ecliptic Pressure andFlux Power-Law Slope Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ayqx-a052",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R14_PRESS-SLOPE_CG_NOSP_RAM_3YR"
+        },
+        "IBEX_H3_ENA_LO_R17_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-lo Release 17; Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/28sw-nf54",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R17_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R07_NOCG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Lo Release-07; no Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2010-01-11T00:00:00.000Z",
+          "stop_date": "2015-02-05T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ac1y-c580",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R07_NOCG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_GDF_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ramdirectional lower gdf mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_GDF_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_OMNI_VESCF_10MP": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_OMNI_VESCF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_ANTIRAM_VESCF_5YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, no Survival-Probability, Antiram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_ANTIRAM_VESCF_5YR"
+        },
+        "IBEX_H3_ENA_LO_R09_HEIRTZLER-H_7DAY": {
+          "description": "IBEX Release-9; IBEX-Lo Interstellar Neutral Histogram Counts and Direct Event Counts - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T22:32:29.000Z",
+          "stop_date": "2014-03-12T02:41:28.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R09_HEIRTZLER-H_7DAY"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2015-06-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/3v75-8m19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, Antiram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_14YR"
+        },
+        "IBEX_H3_ENA_R18_STATE_VECTOR": {
+          "description": "IBEX State Vectors  - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T08:05:50.000Z",
+          "stop_date": "2022-12-26T08:53:15.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_R18_STATE_VECTOR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_OMNI_2YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, Omnidirectional 2-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2011-12-24T00:00:00.000Z",
+          "stop_date": "2017-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/6181-nk59",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_OMNI_2YR"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2011-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/c9gv-sz19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2022-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R04_NOCG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 4; no Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/c3kb-p352",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_NOCG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_SP_ANTIRAM_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, Survival-Probability, antiram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/aszx-jt19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_SP_ANTIRAM_7YR"
+        },
+        "IBEX_H3_ENA_LO_R07_NOCG_SP_OMNI_VESCF_10MP": {
+          "description": "IBEX-Lo Release 7; no Compton-Getting, Survival-Probability, Omnidirectional 1-to-10-map Average West Ecliptic Maps in Var Energy SC Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R07_NOCG_SP_OMNI_VESCF_10MP"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional upper ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_UPPER_RIBBON_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/t5jf-m957",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional median ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_MEDIAN_RIBBON_MONO_1YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_VEIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Var Energy Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_VEIF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R02_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 2; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2009-06-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/rcw2-kh18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R02_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_11YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, Ram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/bdw2-0y58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_RAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_OMNI_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, omni-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_OMNI_14YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, ANTIRAMdirectional, mono-energy 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_ANTIRAM_MONO_11YR"
+        },
+        "IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS_5YR"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS-J2000_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F3-GDF-MAPS-J2000_5YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2013-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/2hfb-zn61",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_SP_RAM_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, Survival-Probability, RAMdirectional, mono-energy 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_SP_RAM_MONO_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, RAMdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_LOWER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Ramdirectional lower gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_LOWER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional median ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Ramdirectional lower gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_LOWER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R12_MAGNETOSPHERE_24MIN": {
+          "description": "IBEX-Hi Release-12; Count Data for Magnetospheric Imaging.  - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-03-26T21:42:08.000Z",
+          "stop_date": "2013-05-30T23:17:48.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/00z8-0d49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R12_MAGNETOSPHERE_24MIN"
+        },
+        "IBEX_H3_ENA_HI_R10_NOCG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release-10; no Compton-Getting, no Survival-Probability, antiram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2014-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/mfpx-sd13",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_NOCG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_MONO_6MO": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Omnidirectional, mono-energy 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2019-06-28T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_OMNI_MONO_6MO"
+        },
+        "IBEX_H3_ENA_HI_R07_NOCG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 7; no Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ak3m-pg10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_NOCG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_MEDIAN_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional median ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_MEDIAN_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, ANTIRAMdirectional 11-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/y9dn-wh12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_EQUA_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps in Equatorial coordinates - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_RAM_EQUA_14YR"
+        },
+        "IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_MONO_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, ANTIRAMdirectional mono-energy 11-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_CG_NOSP_ANTIRAM_MONO_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_MONO_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, ANTIRAMdirectional mono-energy 14-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_ANTIRAM_MONO_14YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_RAM_1YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, RAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2012-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/qmwd-ct89",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_RAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_NOSP_RAM_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, no Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_NOSP_RAM_14YR"
+        },
+        "IBEX_H3_ENA_HI_R04_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 4; Compton-Getting, no Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2010-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/8m6t-z779",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R04_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_LO_R04_CG_SP_RAM_3YR": {
+          "description": "IBEX-Lo Release 4; Compton-Getting, Survival-Probability, RAM-directional 3-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/515f-h683",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R04_CG_SP_RAM_3YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_OMNI_6MO": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Omnidirectional 6-month-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2013-06-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/dz2p-nd24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_OMNI_6MO"
+        },
+        "IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS-GAL_5YR": {
+          "description": "IBEX-Lo Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R08_OMNI_F2-RIBBON-MAPS-GAL_5YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_RIBBON_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, Antiramdirectional lower ribbon 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_ANTIRAM_LOWER_RIBBON_1YR"
+        },
+        "IBEX_H3_ENA_HI_R13_CG_NOSP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release-13; Compton-Getting, no Survival-Probability, antiram-direction 1-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2015-12-24T00:00:00.000Z",
+          "stop_date": "2015-12-24T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/9vdf-1a43",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R13_CG_NOSP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_OMNI_14YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, omni-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_OMNI_14YR"
+        },
+        "IBEX_H3_ENA_LO_R04_CG_SP_ANTIRAM_3YR": {
+          "description": "IBEX-Lo Release 4; Compton-Getting, Survival-Probability, ANTIRAM direction, 3-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/dsz0-dv71",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R04_CG_SP_ANTIRAM_3YR"
+        },
+        "IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS-GAL_5YR": {
+          "description": "IBEX-Hi Release-08; omni-direction 5-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R08_OMNI_F2-RIBBON-MAPS-GAL_5YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_NOSP_ANTIRAM_11YR": {
+          "description": "IBEX-Hi Release 16; Compton-Getting, no Survival-Probability, Antiram-directional 11-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/tvjy-cp94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_NOSP_ANTIRAM_11YR"
+        },
+        "IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_UPPER_GDF_1YR": {
+          "description": "IBEX-Hi Release 18; no Compton-Getting, Survival-Probability, Antiramdirectional upper gdf 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_NOCG_SP_ANTIRAM_UPPER_GDF_1YR"
+        },
+        "IBEX_H3_ENA_HI_R16_NOCG_SP_ANTIRAM_1YR": {
+          "description": "IBEX-Hi Release 16; no Compton-Getting, Survival-Probability, ANTIRAMdirectional 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2018-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/zja7-dz62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R16_NOCG_SP_ANTIRAM_1YR"
+        },
+        "IBEX_H3_ENA_HI_R10_CG_NOSP_ANTIRAM_7YR": {
+          "description": "IBEX-Hi Release-10; Compton-Getting, no Survival-Probability, antiram-direction 7-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/9g82-sm34",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R10_CG_NOSP_ANTIRAM_7YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_SP_RAM_MIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_SP_RAM_MIF_5YR"
+        },
+        "IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_1YR": {
+          "description": "IBEX-Hi Release 15; Compton-Getting, Survival-Probability, in a ribbon centered frame, 1-Year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2016-12-26T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R15_CG_SP_RIBCEN_1YR"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_14YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, no Survival-Probability, ram-directional 14-year-Average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_NOSP_RAM_14YR"
+        },
+        "IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_MIF_5YR": {
+          "description": "IBEX-Hi Release 7; Compton-Getting, no Survival-Probability, Ram-directional 1-to-5-year Average West Ecliptic Maps in Mono Inertial Frame - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2008-12-25T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R07_CG_NOSP_RAM_MIF_5YR"
+        },
+        "IBEX_H3_ENA_LO_R06_SCHWADRON-HE": {
+          "description": "IBEX-Lo Release 6; Count Data for Heliospheric Imaging.  - Dr. David J. McComas (Princeton University)",
+          "start_date": "2009-01-21T22:10:27.000Z",
+          "stop_date": "2010-02-28T06:21:40.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_LO_R06_SCHWADRON-HE"
+        },
+        "IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_RIBBON_MONO_1YR": {
+          "description": "IBEX-Hi Release 18; Compton-Getting, Survival-Probability, ramdirectional median ribbon mono-energy 1-year-average West Ecliptic Maps - Dr. David J. McComas (Princeton University)",
+          "start_date": "2008-12-25T00:00:00.000Z",
+          "stop_date": "2021-12-27T00:00:00.000Z",
+          "pi_name": "Dr. David J. McComas",
+          "pi_affiliation": "Princeton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_H3_ENA_HI_R18_CG_SP_RAM_MEDIAN_RIBBON_MONO_1YR"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "IBEX_OR_SSC": {
+          "description": "Orbit parameters from SSCWeb - SSCWeb (SPDF/Goddard)",
+          "start_date": "2008-10-19T20:01:30.000Z",
+          "stop_date": "2033-12-31T12:59:30.000Z",
+          "pi_name": "SSCWeb",
+          "pi_affiliation": "SPDF/Goddard",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IBEX_OR_SSC"
+        }
+      }
+    }
+  },
+  "observatory_group": "IBEX",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

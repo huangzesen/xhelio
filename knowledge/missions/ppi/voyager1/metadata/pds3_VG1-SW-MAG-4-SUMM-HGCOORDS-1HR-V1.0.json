@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "X_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "X IHG position component (A.U. - IHG coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "Y IHG position component (A.U. - IHG coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_IHG",
+      "type": "double",
+      "units": "AU",
+      "description": "Z IHG position component (A.U. - IHG coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RANGE",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric range = sqrt(X*X+Y*Y+Z*Z)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "F1",
+      "type": "double",
+      "units": "nT",
+      "description": "Field magnitude (nT)  ( avg(F2(48sec))",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "F2",
+      "type": "double",
+      "units": "nT",
+      "description": "Field modulus (nT)  ( norm (B1,B2,B3) )",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Latitudinal angle (degrees - HG coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Longitudinal angle (degrees - HG coordinates)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

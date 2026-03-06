@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Header",
+      "type": "double",
+      "units": "",
+      "description": "Header Specification",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Version",
+      "type": "double",
+      "units": "",
+      "description": "Version ID",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subhead",
+      "type": "double",
+      "units": "",
+      "description": "Subheader",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Counts",
+      "type": "double",
+      "units": "counts/second",
+      "description": "(25-150 KEV)",
+      "size": [
+        1
+      ],
+      "fill": "-9.999999e+10"
+    },
+    {
+      "name": "Int Time",
+      "type": "double",
+      "units": "seconds",
+      "description": "Integration Time",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

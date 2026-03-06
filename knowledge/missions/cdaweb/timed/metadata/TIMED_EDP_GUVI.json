@@ -1,0 +1,305 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Orbit",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": null
+    },
+    {
+      "name": "norbp_VER0",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "Volume emission rate (no mutual neutralization correction) for 23 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_SIGVER0",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "-----> VER (no correction) uncertainty - sigma for 23 channels",
+      "fill": "-1.0",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_VER",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "Volume emission rate (corrected) for 23 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_SIGVER",
+      "type": "double",
+      "units": "ergs/cm3/sec",
+      "description": "-----> VER (corrected) uncertainty - sigma for 23 channels",
+      "fill": "-1.0",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_EP",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Electron density profiles along orbit for 23 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_SIGEP",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> Electron density uncertainty - Sigma for 23 channels",
+      "fill": "-1.0",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "norbp_EP_100",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Electron density at 100km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "norbp_EP_200",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> at 200km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "norbp_EP_300",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> at 300km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "norbp_EP_400",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> at 400km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "norbp_EP_500",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> at 500km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "norbp_NMF2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Density at F-layer maximum - NmF2 (Chapman layer)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_RMF2",
+      "type": "double",
+      "units": "km",
+      "description": "-----> F-layer height - hmF2",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_HMF2",
+      "type": "double",
+      "units": "km",
+      "description": "-----> Topside scale height",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_SIGNMF2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "-----> Uncertainty of density at F-layer maximum - sigma(NmF2)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_SIGRMF2",
+      "type": "double",
+      "units": "km",
+      "description": "-----> Uncertainty of F-layer height - sigma(hmF2)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_SIGHMF2",
+      "type": "double",
+      "units": "km",
+      "description": "-----> Uncertainty of topside scale height - sigma(H)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_GLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude of profile [registered at ~300km]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_GLON",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> Longitude of profile",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_MLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geomagnetic (simple dipole) Latitude of profile [registered at ~300km]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_MLON",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> Longitude of profile",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_ACMLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geomagnetic AACGM Latitude of profile [registered at ~300km]",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_ACMLON",
+      "type": "double",
+      "units": "deg",
+      "description": "-----> Longitude of profile",
+      "fill": "-1.0"
+    },
+    {
+      "name": "localTime",
+      "type": "double",
+      "units": "hours",
+      "description": "Local Time",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_RE",
+      "type": "double",
+      "units": "km",
+      "description": "Earth radius at the given geographic latitude",
+      "fill": "-1.0"
+    },
+    {
+      "name": "norbp_HPCOR",
+      "type": "integer",
+      "units": "",
+      "description": "H+ correction using IRI model  (-1 if not used)",
+      "fill": "-99.0"
+    },
+    {
+      "name": "norbp_ODEN",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Atomic oxygen density profile from MSIS for 23 channels",
+      "fill": "-1.0",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "k_par_W0",
+      "type": "double",
+      "units": "",
+      "description": "k_par_W0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        50,
+        448
+      ]
+    },
+    {
+      "name": "k_par_W1",
+      "type": "double",
+      "units": "",
+      "description": "k_par_W1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        50,
+        448
+      ]
+    },
+    {
+      "name": "profile_altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Profile altitude for given channel",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23
+      ]
+    },
+    {
+      "name": "k_nonpar_W0",
+      "type": "double",
+      "units": "",
+      "description": "k_nonpar_W0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23,
+        448
+      ]
+    },
+    {
+      "name": "k_nonpar_W1",
+      "type": "double",
+      "units": "",
+      "description": "k_nonpar_W1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        23,
+        448
+      ]
+    },
+    {
+      "name": "k_nonpar_W0C",
+      "type": "double",
+      "units": "",
+      "description": "k_nonpar_W0C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        32
+      ]
+    },
+    {
+      "name": "k_nonpar_W1C",
+      "type": "double",
+      "units": "",
+      "description": "k_nonpar_W1C",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        32
+      ]
+    }
+  ],
+  "startDate": "2002-01-07T05:53:28.000Z",
+  "stopDate": "2007-10-04T23:20:59.000Z"
+}

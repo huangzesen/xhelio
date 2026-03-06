@@ -1,0 +1,159 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start Time",
+      "type": "double",
+      "units": "",
+      "description": "The date and time of the first DSP sample \n                        in the data file.  Format is  YYYY-MM-DDThh:mm:ss                        \n                        where                                                                    \n                                      YYYY is the 4-digit year                                   \n                                      MM   is the 2-digit month                                  \n                                      DD   is the 2-digit day-of-month                           \n                                      hh   is the 2-digit hour                                   \n                                      mm   is the 2-digit minute                                 \n                                      ss   is the 2-digit second                                 \n                        and time reference system is UTC.  Time may be blank if no data were     \n                        collected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop Time",
+      "type": "double",
+      "units": "",
+      "description": "The date and time of the last integer     \n                        second time tag in the data file.  Format is  YYYY-MM-DDThh:mm:ss        \n                        where                                                                    \n                                      YYYY is the 4-digit year                                   \n                                      MM   is the 2-digit month                                  \n                                      DD   is the 2-digit day-of-month                           \n                                      hh   is the 2-digit hour                                   \n                                      mm   is the 2-digit minute                                 \n                                      ss   is the 2-digit second                                 \n                        and time reference system is UTC.  May be blank or partly blank if no    \n                        data were collected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Antenna Number",
+      "type": "double",
+      "units": "",
+      "description": "The number of the DSN antenna used to collect the open-loop data.  \n                            70-m antennas include DSS 14, 43, and 63; \n                            34-m high-efficiency (HEF) antennas include DSS 15, 45, and 65. \n                            34-m beam-waveguide (BWG) antennas include DSS 25, 34, and 54.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sample Rate",
+      "type": "double",
+      "units": "samples/s",
+      "description": "The sampling rate for the channel(s) inthe data file.  \n                        Real 8- or 12-bit samples were taken.  Nominal rate for      \n                        MGS radio occultations was 5000 samples per second.  \n                        Left blank or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Filter Bandwidth",
+      "type": "double",
+      "units": "hz",
+      "description": "The 3 dB width of the bandwidth sampled.  \n                        Nominally 2000 Hertz, for the sampling rate of 5000 sps.  \n                        Left blank or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DSP Mode",
+      "type": "double",
+      "units": "",
+      "description": "The mode selected for the DSCC Spectrum Processor (DSP).  \n                        Usually 2 for MGS radio occultations.  Left blank or   \n                        set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bit Resolution",
+      "type": "double",
+      "units": "bit",
+      "description": "The number of bits in each sample.        \n                        Usually 12 for MGS radio occultations; 8 is the only other \n                        allowed value. 12-bit samples were found to have 11-bit \n                        resolution in practice. Left blank or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Record Length",
+      "type": "double",
+      "units": "byte",
+      "description": "The number of bytes in each logical record in the file. \n                        For nominal operations usually 1666 bytes of which 166 bytes \n                        were header and the remaining 1500 bytes contained 1000        \n                        12-bit data samples. Left blank or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Number of Records",
+      "type": "double",
+      "units": "",
+      "description": "The number of records in the file. Number of records multiplied \n                        by the record length (Sample Rate) should equal the file size in \n                        bytes. Left blank or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Number of Missing Records",
+      "type": "double",
+      "units": "",
+      "description": "The number of records missing from the file, as determined during \n                        quick-look processing. Based on gaps in record numbers in the headers \n                        of each logical record. Duplicate records are not counted here -- only \n                        records that are believed to be missing. There was no attempt to repair \n                        files for either missing or duplicate records. Left blank if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Maximum Signal-To-Noise Ratio",
+      "type": "double",
+      "units": "dB/s",
+      "description": "The maximum carrier-to-noise level during times when the spacecraft \n                        was not occulted by the planet.  Based on 60-second power spectra with \n                        5 Hz resolution (typically), calculated by program FNDLOOK. Left blank\n                        or set to 0 if no data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "System Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "The system temperature of the open-loop receiving system, \n                        read from displays at the Jet Propulsion Laboratory,   \n                        usually during ingress. Set to 0 or left blank if unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ODR File Name",
+      "type": "double",
+      "units": "",
+      "description": "The name of the file containing RSR records (headers plus data samples).  \n                        Files have names of the form       \n                                                   YDDDhhmm.RSR                                  \n                        where                                                                    \n                               Y      is the 1-digit year of the first data sample               \n                               DDD    is the 3-digit day-of-year of the first data sample        \n                               hh     is the 2-digit hour of the first data sample               \n                               mm     is the 2-digit minute of the first data sample (in         \n                                          cases where more than one file has the same            \n                                          YDDDhhmm  the additional names are modified by         \n                                          converting the second digit in  mm  to a letter.       \n                        Left blank if data acquisition was unsuccessful.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOE File Name",
+      "type": "double",
+      "units": "",
+      "description": "The name of the controlling Sequence of Events file when the data \n                        were collected. Typical file names had the form:                                                             \n                             mmNNNc.vv.tsoe                                   \n                             where                                                                    \n                                    mm     identifies this as a Mars Mapping SOE                      \n                                    NNN    is the Mapping Cycle number                                \n                                    c      is the planning version for the Mapping Cycle (a letter)   \n                                    vv     is the version of the SOE                                  \n                                                                                                      \n                        SOE files in the MGS Radio Science Team server are renamed according to  \n                        to an 8.3 file naming convention.  But it may be possible to search for  \n                        the original file name using either the MGS RST data base or index       \n                        files. Left blank if not known or if irrelevant (data acquisition was   \n                        not successful).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Quality",
+      "type": "double",
+      "units": "",
+      "description": "Data quality indicator.                   \n                                                                              \n                        First character indicates expectation from observation:                  \n                            A  HGA, scheduled occultation; high-quality science expected         \n                            B  Lower quality data expected (e.g., spacecraft using LGA)          \n                            C  Non-occultation observation (e.g., USO test)                      \n                            D  Observation opportunity, but not scheduled                        \n                                                                                                 \n                        Second character indicates results:                                      \n                            0  No data, or data irreparably corrupted                            \n                            1  Data badly corrupted; no present plan to attempt recovery         \n                            2  Seriously degraded data, from causes beyond control               \n                                (e.g., weather)                                                  \n                            3  Seriously degraded data from causes associated with equipment     \n                            4  Minor degradations (SNR 6 dB low, frequency residuals,            \n                                missing records, baseline unstable, uplink ramping)              \n                            5  No known problems                                                 \n                                                                                                 \n                        Third character gives main cause for degradation (if any):               \n                            a  all OK                                                            \n                            b  baseline unstable or too short                                    \n                            d  DSP failure                                                       \n                            e  equipment failure (other than DSP or GDS)                         \n                            f  frequency instabilities/residuals                                 \n                            g  data lost in ground data system (GDS)                             \n                            l  incorrect level setting (attenuation)                             \n                            m  missing records                                                   \n                            n  low carrier-to-noise, or unstable noise level                     \n                            o  operator error                                                    \n                            p  POCA                                                              \n                            r  ripple (spectral or temporal)                                     \n                            s  sawtooth frequency residual                                       \n                            t  tuning or timing (orbit) problem                                  \n                            u  spurs                                                             \n                            w  weather                                                           \n                            x  not applicable                                                    \n                            y  unknown                                                           \n                            z  multiple problems",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Comments",
+      "type": "double",
+      "units": "",
+      "description": "Terse comments, usually indicating the number of the occultation\n                        or any problems with the data.  \n                        \n                        Most comment fields begin with:                                                        \n                                             nnnnnx:m                                            \n                           where                                                                 \n                                   nnnnn  is the 5-digit orbit number, where orbit 1 was the     \n                                            first orbit in the MGS Mapping phase                 \n                                   x      denotes ingress (i) or egress (e)                      \n                                   m      is a quality indicator for any observed surface echo   \n                                            -  no surface echo expected (e.g., test data)        \n                                            0  none seen in processing to date                   \n                                            1  hint of a surface echo                            \n                                            2  weak but persistent surface echo                  \n                                            3  moderately strong, often with amplitude variations\n                                            4  very strong                                       \n                                            5  extremely strong (among top 1 percent)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "Integer years",
+      "description": "Quantity:  Year of the observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "Integer days",
+      "description": "Quantity: Day of year of the observation, days\n              are counted from 1 on",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "Integer hours",
+      "description": "Quantity:  Hour of the observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Min",
+      "type": "double",
+      "units": "Integer minutes",
+      "description": "Quantity:  Minute of the observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sec",
+      "type": "double",
+      "units": "Decimal seconds",
+      "description": "Quantity:  Second of the observation",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Decyear",
+      "type": "double",
+      "units": "Decimal years",
+      "description": "Quantity: Fractional year of the observation. Includes the\n              full time information in one number. When converting\n              to day of year, ensure that round years\n              (like 1995.00) have to be equal to DOY\n              1, not DOY 0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Step",
+      "type": "double",
+      "units": "Integer dimensionless number",
+      "description": "Quantity: This is technical information added for completeness.\n              For HGA_Flag=1, \"step\" shows the actual motor positions\n              0-7. For HGA_Flag=0 this information is not available\n              and the value set to invalid (-1E38).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin",
+      "type": "double",
+      "units": "Integer dimensionless number",
+      "description": "Quantity: This is technical information added for completeness.\n              For HGA_Flag=1, \"spin\" is the number of sectors\n              in the sky. Its range is 0-63. For\n              HGA_Flag=0, this information is not available and the\n              value set to invalid (-1E38).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Ej_keV",
+      "type": "double",
+      "units": "keV",
+      "description": "Quantity: Deposited energy in CMS/DeltaExE solid state detector\n              Ja or Jb, depending on the used telescope\n              indicated by \"detector\". This energy is lower than\n              the ambient energy of the particle due to\n              the pulse height defect and because the energy\n              was reduced in the SSD dead layer.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Ek_keV",
+      "type": "double",
+      "units": "keV",
+      "description": "Quantity: Deposited energy in CMS/DeltaExE solid state detector\n              Ka or Kb, depending on the used telescope\n              indicated by \"detector\". This energy is lower than\n              the ambient energy of the particle due to\n              the pulse height defect and because the energy\n              was reduced when the particle passed the J.\n              Comparison of Ej_keV and Ek_keV allows to identify\n              ion species.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "etcode",
+      "type": "double",
+      "units": "Integer dimensionless number",
+      "description": "Quantity:  This is technical information added for completeness.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "detector",
+      "type": "double",
+      "units": "Integer dimensionless number",
+      "description": "Quantity: This is technical information added for completeness.\n              It lists the CMS subsystem: 0 for TOFxE\n              end, 1 for Jb/Kb and 3 for Ja/Kb\n              of the two DeltaExE ends.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "hga_flag",
+      "type": "double",
+      "units": "Integer dimensionless number",
+      "description": "Quantity: This is technical information added for completeness.\n              Is 1 if the data originates from record\n              mode, 0 if the data is from real\n              time mode.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

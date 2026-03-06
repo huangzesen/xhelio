@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "IY",
+      "type": "double",
+      "units": "year",
+      "description": "Integer Year (yy).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IDOY",
+      "type": "double",
+      "units": "day",
+      "description": "Day of year (1 = Jan. 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IH",
+      "type": "double",
+      "units": "hr",
+      "description": "Hour of day.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID2P",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-2 rate for 11-20 MeV protons [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID2HE",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-2 rate for 11-20 MeV/nucleon helium [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID3P",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-3 rate for 20-24 MeV protons [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID3HE",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-3 rate for 20-24 MeV/nucleon helium [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID4P",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-4 rate for 24-29 MeV protons [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID4HE",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-4 rate for 24-29 MeV/nucleon helium [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID5P",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-5 rate for 29-67 MeV protons [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID5HE",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-5 rate for 29-67 MeV/nucleon helium [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID5E1",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-5 rate for 7-17 MeV electrons [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID5E2",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-5 rate for 2 x minimum-ionizing [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID7",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-7 + ID-13 integral rate for ions at E > 67 MeV/nucleon [cps].",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RID7ZG5",
+      "type": "double",
+      "units": "cps",
+      "description": "ID-7 integral rate for Z > 5 ions at E > 67 MeV/nucleon [cps].",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

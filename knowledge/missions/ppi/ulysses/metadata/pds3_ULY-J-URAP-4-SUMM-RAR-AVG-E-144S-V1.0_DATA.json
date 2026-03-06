@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "LOPOLMOD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates polarization mode of the low receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOSUMMOD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates summation mode of the low receiver band. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HIPOLMOD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates polarization mode of the high receiver band. Their values are defined as: 1: Polarization on. 2: Polarization off. 3: Polarization mode switched during the averaging interval. 4: Polarization mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HISUMMOD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates summation mode of the high receiver band. Their values are defined as: 1: Summation on. 2: Summation off. 3: Summation mode switched during the averaging interval. 4: Summation mode was unknown (usually due to a data gap).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates telemetry bit rate during the averaging interval. Its values are defined as: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during the averaging period. 6: Bit rate unknown - usually due to a data gap.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAR AVG E-FIELD",
+      "type": "double",
+      "units": "microvolt/Hz^0.5",
+      "description": "This column consists of 76 Radio Astronomy Receiver (RAR) electric field intensities averaged over 144 second intervals. These values represent the average intensities over the sampling interval. F is a vector containing the average signal for the 76 frequencies of the low and high bands. Elements 0 through 63 are from the low band receiver and correspond to frequencies of 1.25+0.75*N KHz where N is the element number (0..63). The frequency channels from 64 to 75 correspond to the following frequencies: F(64):  52 KHz F(65):  63 KHz F(66):  71 KHz F(67):  100 KHz F(68):  120 KHz F(69):  148 KHz F(70):  196 KHz F(71):  272 KHz F(72):  387 KHz F(73):  540 KHz F(74):  740 KHz F(75):  940 KHz",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

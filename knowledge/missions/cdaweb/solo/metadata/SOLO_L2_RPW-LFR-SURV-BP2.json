@@ -1,0 +1,259 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BP2_RE_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in normal mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in normal mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in the normal mode in SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in normal mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in normal mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in normal mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in burst mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        22,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in burst mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        26,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in burst mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        22,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in burst mode in the SCM B1-B2-B3 axis system frame [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        26,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_N_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in normal mode in spacecraft reference frame (SRF) [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_N_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in normal mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_N_F2_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in normal mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in normal mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        11,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in normal mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        13,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_N_F2_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in normal mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        12,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_B_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in burst mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        22,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_RE_B_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in burst mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        26,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_B_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in burst mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        22,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "BP2_IM_B_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in burst mode in SRF [no plot]",
+      "fill": "-1e+31",
+      "size": [
+        26,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "SURVEY_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "LFR survey mode (0 for normal mode, 1 for burst mode)",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:29.000Z",
+  "stopDate": "2025-11-19T00:04:56.000Z"
+}

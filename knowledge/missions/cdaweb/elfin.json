@@ -1,0 +1,111 @@
+{
+  "id": "ELFIN",
+  "name": "ELFIN",
+  "keywords": [
+    "el",
+    "elfin"
+  ],
+  "profile": {
+    "description": "ELFIN spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "engineering": {
+      "name": "Engineering",
+      "keywords": [
+        "engineering",
+        "housekeeping"
+      ],
+      "datasets": {
+        "ELB_L1_STATE_PRED": {
+          "description": "ELFIN-B state file, contains predictive position, velocity, and attitude - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-09-17T00:00:00.000Z",
+          "stop_date": "2022-09-27T23:59:59.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/vqdr-6e19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_STATE_PRED"
+        },
+        "ELA_L1_STATE_PRED": {
+          "description": "ELFIN-A state file, contains predictive position, velocity, and attitude - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-09-17T00:00:00.000Z",
+          "stop_date": "2022-09-17T23:59:59.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/qmsd-zf76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELA_L1_STATE_PRED"
+        },
+        "ELB_L1_STATE_DEFN": {
+          "description": "ELFIN-B state file, contains definitive position, attitude and orbit events - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-09-16T00:00:00.000Z",
+          "stop_date": "2022-09-27T23:59:59.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_STATE_DEFN"
+        },
+        "ELA_L1_STATE_DEFN": {
+          "description": "ELFIN-A state file, contains definitive position, attitude and orbit events - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-09-16T00:00:00.000Z",
+          "stop_date": "2022-09-17T23:59:59.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELA_L1_STATE_DEFN"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "ELB_L1_EPDEF": {
+          "description": "Energetic Particle Detector, Counts, Electrons>keV [UNCALIBRATED RAW DATA]  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2019-05-22T04:42:13.000Z",
+          "stop_date": "2022-09-24T08:12:01.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/w4ac-2h02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_EPDEF"
+        },
+        "ELB_L1_EPDIF": {
+          "description": "[UNCALIBRATED RAW DATA ONLY] Energetic Partical Detector Energy Particles, Ions>keV  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2019-05-22T04:42:13.000Z",
+          "stop_date": "2022-09-19T20:24:15.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/0etj-j292",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELB_L1_EPDIF"
+        },
+        "ELA_L1_EPDIF": {
+          "description": "Energetic Particle Detector, Counts, Ions>keV [UNCALIBRATED RAW DATA]  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-12-14T20:30:02.000Z",
+          "stop_date": "2022-09-11T23:42:45.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/csjm-bk25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELA_L1_EPDIF"
+        },
+        "ELA_L1_EPDEF": {
+          "description": "Energetic Particle Detector, Counts, Electrons>keV [UNCALIBRATED RAW DATA]  - V. Angelopoulos (UCLA, IGPP/EPSS)",
+          "start_date": "2018-12-14T20:31:00.000Z",
+          "stop_date": "2022-09-11T23:42:45.000Z",
+          "pi_name": "V. Angelopoulos",
+          "pi_affiliation": "UCLA, IGPP/EPSS",
+          "doi": "10.48322/jyaq-cq12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#ELA_L1_EPDEF"
+        }
+      }
+    }
+  },
+  "observatory_group": "Smallsats/Cubesats",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

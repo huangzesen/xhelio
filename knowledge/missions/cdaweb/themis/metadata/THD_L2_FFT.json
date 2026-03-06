@@ -1,0 +1,1722 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thd_fff_16_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_16_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 16 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_fff_32_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_32_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 32 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_fff_64_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_fff_64_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Fast Survey, 64 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_16_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_16_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 16 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffp_32_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_32_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 32 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffp_64_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffp_64_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Particle Burst, 64 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_16_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_16_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 16 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "thd_ffw_32_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_32_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 32 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "thd_ffw_64_dbpara",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for SCM delta-B (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_dbperp",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for SCM delta-B (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_eac12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_eac34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_eac56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_edc12",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_edc34",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_edc56",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_epara",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI E (parallel to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_eperp",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI E (perp to B)",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_scm1",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for SCM, Axis 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_scm2",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for SCM, Axis 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_scm3",
+      "type": "double",
+      "units": "(nT)^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for SCM, Axis 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v1",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v2",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v3",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v4",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v5",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "thd_ffw_64_v6",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "FFT Power Spectrum in Wave Burst, 64 frequencies for EFI Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        64
+      ]
+    }
+  ],
+  "startDate": "2007-02-24T00:00:00.000Z",
+  "stopDate": "2026-02-17T00:00:00.000Z"
+}

@@ -1,0 +1,208 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BT_BATBASEATMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 20 Batt Baseplate Temp 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_BATBASEBTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 21 Batt Baseplate Temp 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_CCRT1TMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 40 Batt TEMP 1 Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_CCRT2TMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 41 Batt TEMP 2 Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_MTRTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 15 Torque Rod Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_NUTDAMPTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 13 Nutation Damper Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_PLCIDPTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 1 CIDP Baseplate Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_PLEUVLENATMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 4 EUV/LENA Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_PLFUVWICTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 2 FUV WIC Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_PLHENAMEUTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 6 HENA MEU Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_PLMENATMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 5 FUV Elec/MENA Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLMXTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 9 Side Panel -X Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLMYTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 11 Side Panel -Y Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLMZHTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 23 Minus Z  Panel Hi Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLMZLTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 12 Minus Z Panel Lo Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLPXTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 8 Side Panel +X Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLPYTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 10 Side Panel +Y Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLPZHTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 3 Minus Z Panel Hi Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SAPNLPZLTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 22 Minus Z Panel Lo Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SCUCMDTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "VME Thermistor 4 SCU Z Command/TLM Module Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SCUCOMTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "VME Thermistor 2 SCU Z Command/Mem Module Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SCUGPIOTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "VME Thermistor 1 SCU GPIO Module Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SCUMASSMTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "VME Thermistor 3 SCU Mass Memory Module Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_SCUPSTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "VME Thermistor 5 SCU Power Supply Module Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_TAMTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 14 Magnetometer",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XMTRRADTMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 34 Transponder Radia",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XPNINT1TMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 44 Receiver Temp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT_XPNINT2TMP",
+      "type": "double",
+      "units": "Celcius",
+      "description": "External Thermistor 45 Transmitter Power",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

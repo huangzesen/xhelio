@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "SECONDS",
+      "description": "Mission elapsed time in seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LR_OFFSET_TIME0",
+      "type": "double",
+      "units": "",
+      "description": "The delta time offset from MET for the first low-rate\n   data sample in the LRHK packet (in steps of 50 milliseconds). Provides 50\n   msec resolution.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MIN_INTERVAL",
+      "type": "double",
+      "units": "",
+      "description": "The minimum derived sampling interval in seconds.\n   Determined by taking the minimum time difference between successive\n   timestamps in the LRHK packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAX_INTERVAL",
+      "type": "double",
+      "units": "",
+      "description": "The maximum derived sampling interval in seconds.\n   Determined by taking the maximum time difference between successive\n   timestamps in the LRHK packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NUM_LR_SAMPLES",
+      "type": "double",
+      "units": "",
+      "description": "Number of low-rate sample data in the LRHK packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNG_UP_TIME_DELAY",
+      "type": "double",
+      "units": "",
+      "description": "Samples before increasing range.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNG_DN_TIME_DELAY",
+      "type": "double",
+      "units": "",
+      "description": "Samples before decreasing range.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_DC_DC_CURR",
+      "type": "double",
+      "units": "",
+      "description": "The derived MAG DC/DC current; used following formula:\n   if the DN (telemetry value) is less than 128:\n      MAG_DC_DC_CURR = DN/64\n   else\n      MAG_DC_DC_CURR = (DN-256)/64\n   The resulting value is in units of amperes.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROBE_TEMP",
+      "type": "double",
+      "units": "",
+      "description": "The derived MAG probe temperature:\n     PROBE_TEMP = 0.0123*(DN**2) - 0.7316*DN - 144.85. Value is in units of\n     degrees Celsius.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ELEC_TEMP",
+      "type": "double",
+      "units": "",
+      "description": "The derived MAG electronics temperature:\n     MAG_ELEC_TEMP = (155*DN/127) - 55\n    The value for this column is in units of degrees Celsius.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

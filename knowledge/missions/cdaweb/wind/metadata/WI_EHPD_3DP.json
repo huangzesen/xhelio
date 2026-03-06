@@ -1,0 +1,307 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 100eV-30keV in 15 energy and 8 angle bins (as energy-pitch angle displays)",
+      "fill": "nan",
+      "size": [
+        8,
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 100eV-30keV at 8 pitch angles as spectrograms by energy",
+      "fill": "nan",
+      "size": [
+        8,
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA0",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 100eV-30keV as a stack_plot of 15 energies at the Bin1 angle (often ~15 deg",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA1",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin2 angle (often ~35 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA2",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot  at the Bin3 angle (often ~57 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA3",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin4 angle (often ~80 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA4",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin5 angle (often ~102 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA5",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin6 angle (often ~123 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA6",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin7 angle (often ~145 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byE_atA_stackPA7",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack_plot at the Bin8 angle (often ~165 deg)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 100eV-30KeV at 8 select energies as spectrograms by pitch angle",
+      "fill": "nan",
+      "size": [
+        8,
+        15
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE0",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 100eV-30keV as a stack_plot of 8 pitch angles at the Ch1 energy (often ~28000 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE2",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch3 energy (often ~13000 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE4",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch5 energy (often ~6100 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE6",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch7 energy (often ~2900 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE8",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch9 energy (often ~1300eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE10",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch11 energy (often ~630 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE12",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch13 energy (often ~300 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FLUX_byA_atE_stackE14",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As a stack plot at the Ch15 energy (often ~140 eV)",
+      "fill": "nan",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "PANGLE",
+      "type": "double",
+      "units": "Deg",
+      "description": "Time-varying pitch angles for 8 angular bins",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "ENERGY_filled",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Time-varying electron energies for 15 channels",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "INTEG_T",
+      "type": "double",
+      "units": "",
+      "description": "integ_t",
+      "fill": "nan"
+    },
+    {
+      "name": "EDENS",
+      "type": "double",
+      "units": "",
+      "description": "EDENS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TEMP",
+      "type": "double",
+      "units": "",
+      "description": "TEMP",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "QP",
+      "type": "double",
+      "units": "",
+      "description": "QP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QM",
+      "type": "double",
+      "units": "",
+      "description": "QM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QT",
+      "type": "double",
+      "units": "",
+      "description": "QT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "REDF",
+      "type": "double",
+      "units": "",
+      "description": "REDF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "VSW",
+      "type": "double",
+      "units": "km/sec",
+      "description": "SW Velocity vector (from ions and ground-based processing)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAGF",
+      "type": "double",
+      "units": "nT",
+      "description": "Vector magnetic field",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec",
+      "description": "UNIX Time (secs since 1 Jan 1970)",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1994-12-20T15:10:03.000Z",
+  "stopDate": "2025-09-22T21:26:08.000Z"
+}

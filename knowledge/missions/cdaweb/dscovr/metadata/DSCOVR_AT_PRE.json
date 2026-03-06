@@ -1,0 +1,75 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "J2000_Yaw",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C yaw from J2000",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "J2000_Pitch",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C pitch from J2000",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "J2000_Roll",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C roll from J2000",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GCI_Yaw",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C yaw from epoch-of-date GCI",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GCI_Pitch",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C pitch from epoch-of-date GCI",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GCI_Roll",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C roll from epoch-of-date GCI",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSE_Yaw",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C yaw from GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSE_Pitch",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C pitch from GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "GSE_Roll",
+      "type": "double",
+      "units": "rad",
+      "description": "S/C roll from GSE",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2015-02-11T22:35:05.000Z",
+  "stopDate": "2017-08-03T23:59:45.000Z"
+}

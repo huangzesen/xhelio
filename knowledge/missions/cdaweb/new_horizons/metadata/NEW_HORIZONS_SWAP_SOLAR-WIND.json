@@ -1,0 +1,173 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "st_met",
+      "type": "integer",
+      "units": "sec",
+      "description": "The start MET time of the coarse-fine energy sweep used to determine the solar wind parameters.",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "sp_met",
+      "type": "integer",
+      "units": "sec",
+      "description": "The stop MET time of the coarse-fine energy sweep used to determine the solar wind parameters.",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Tolar wind proton density in units of cm^-3.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v",
+      "type": "double",
+      "units": "km/s",
+      "description": "The solar wind proton speed in units of km/s.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "t",
+      "type": "double",
+      "units": "K",
+      "description": "The solar wind proton temperature in units of K.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pdyn",
+      "type": "double",
+      "units": "nPa",
+      "description": "The solar wind proton dynamic pressure in units of nPa.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pth",
+      "type": "double",
+      "units": "pPa",
+      "description": "The solar wind thermal dynamic pressure in units of pPa.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_X",
+      "type": "double",
+      "units": "AU",
+      "description": "The x component of the center of the spacecraft position in HGI coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "The y component of the center of the NH spacecraft position in HGI coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "The z component of the center of the spacecraft position in HGI coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_R",
+      "type": "double",
+      "units": "AU",
+      "description": "The distance to the center of the NH spacecraft position from the center of the HGI coordinate system (Sun) in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "The latitude of the center of the NH spacecraft position in HGI coordinates in degrees.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HGI_D_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "The longitude of the center of the NH spacecraft position in HGI coordinates in degrees.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HAE_J2000_D_X",
+      "type": "double",
+      "units": "AU",
+      "description": "The x component of the center of the spacecraft position in HAE coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HAE_J2000_D_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "The y component of the center of the spacecraft position in HAE coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HAE_J2000_D_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "The y component of the center of the spacecraft position in HAE coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HAE_J2000_D_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "The latitude of the center of the spacecraft position in HAE coordinates in units of degrees.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HAE_J2000_D_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "The longitude of the center of the spacecraft position in HAE coordinates in units of degrees.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HG_D_X",
+      "type": "double",
+      "units": "AU",
+      "description": "The x component of the center of the spacecraft position in HG coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HG_D_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "The y component of the center of the spacecraft position in HG coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HG_D_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "The y component of the center of the spacecraft position in HG coordinates in units of AU.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HG_D_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "The latitude of the center of the spacecraft position in HG coordinates in units of degrees.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NH_HG_D_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "The longitude of the center of the spacecraft position in HG coordinates in units of degrees.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2008-10-10T21:07:46.000Z",
+  "stopDate": "2024-10-02T01:25:56.000Z"
+}

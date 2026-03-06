@@ -1,0 +1,185 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Chi",
+      "type": "double",
+      "units": "",
+      "description": "Column contains chi-square from fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains ion velocity radial component (RTN coordinates,         \n                        Sun-spacecraft direction) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XVR",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains 1 sigma error in Vr in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains ion velocity azimuthal component (RTN coordinates,      \n                        positive in the direction of planetary motion) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XVT",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains 1 sigma error in Vt in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains ion velocity North/South component (RTN coordinates,    \n                        positive northward) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XVN",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains 1 sigma error in Vn in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "Ion/cm**3",
+      "description": "Column contains ion density 1 in units of ions/cm**3.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XDEN1",
+      "type": "double",
+      "units": "Ion/cm**3",
+      "description": "Column contains 1 sigma error in density 1 in units of ions/cm**3.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "WTH1",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains ion thermal speed 1 in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XWTH1",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains 1 sigma error in thermal speed 1 in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "Ion/cm**3",
+      "description": "Column contains ion density 2 in units of ions/cm**3.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XDEN2",
+      "type": "double",
+      "units": "Ion/cm**3",
+      "description": "Column contains 1 sigma error in density 2 in units of ions/cm**3.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "WTH2",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains ion thermal speed 2 in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "XWTH2",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Column contains 1 sigma error in thermal speed 2 in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "TEMP1",
+      "type": "double",
+      "units": "Electronvolt",
+      "description": "Column contains ion temperature 1 in units of eV.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    },
+    {
+      "name": "TEMP2",
+      "type": "double",
+      "units": "Electronvolt",
+      "description": "Column contains ion temperature 2 in units of eV.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "FIT_DEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Fit density for thermal electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "FIT_TEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Fit temperature for thermal electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "MOM_DEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Moment density for suprathermal electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "MOM_TEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Moment temperature for suprathermal electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

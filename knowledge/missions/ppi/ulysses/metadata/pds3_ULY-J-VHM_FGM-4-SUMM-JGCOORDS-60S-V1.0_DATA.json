@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nanoTesla",
+      "description": "Column contains radial (Jupiter to spacecraft) component of the magnetic field vector in units of nanoTelsa (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nanoTesla",
+      "description": "Column contains the North/South (system III) component of the magnetic field vector (positive southward). Units are nanoTelsa (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nanoTesla",
+      "description": "Column contains the azimuthal (system III) component of the magnetic field vector (positive eastward). Units are nanoTesla (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nanoTesla",
+      "description": "Column contains average of the magnetic field magnitude.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

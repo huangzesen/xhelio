@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "#",
+      "description": "Orbit Number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Start_Time_GPS",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Start time of the 512 spin bin in GPS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "End_Time_GPS",
+      "type": "double",
+      "units": "Seconds",
+      "description": "End time of the 512 spin bin in GPS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Total_Time",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HB_Counts",
+      "type": "double",
+      "units": "#",
+      "description": "Hydrogen histogram bins counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "DE_Counts",
+      "type": "double",
+      "units": "#",
+      "description": "Golden Hydrogen Counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T22:32:29.000Z",
+  "stopDate": "2014-03-12T02:41:28.000Z"
+}

@@ -1,0 +1,153 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ELEMENT",
+      "type": "double",
+      "units": "",
+      "description": "ELEMENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LET",
+      "type": "double",
+      "units": "",
+      "description": "TELESCOPE IDENTIFIER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "MEV/NUCLEON",
+      "description": "ENERGY",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "WIDTH",
+      "type": "double",
+      "units": "MEV/NUCLEON",
+      "description": "BANDWIDTH",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "DOUBLES",
+      "type": "double",
+      "units": "COUNTS",
+      "description": "DOUBLES",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "TRIPLES",
+      "type": "double",
+      "units": "COUNTS",
+      "description": "TRIPLES",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "WS.L1*",
+      "type": "double",
+      "units": "",
+      "description": "WS.L1*",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "WS.L1",
+      "type": "double",
+      "units": "NONE",
+      "description": "WS.L1",
+      "size": [
+        1
+      ],
+      "fill": "2147483000"
+    },
+    {
+      "name": "Total",
+      "type": "double",
+      "units": "COUNTS",
+      "description": "TOTAL",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "PARTICLES/CM^2-SR-SEC-(MEV/NUC)",
+      "description": "FLUX",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "LOWER",
+      "type": "double",
+      "units": "",
+      "description": "LOWER",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "UPPER",
+      "type": "double",
+      "units": "",
+      "description": "UPPER",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "AVG-LT",
+      "type": "double",
+      "units": "",
+      "description": "AVERAGE LIVETIME",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    },
+    {
+      "name": "GEOM-FAC",
+      "type": "double",
+      "units": "",
+      "description": "GEOMETRIC FACTOR",
+      "size": [
+        1
+      ],
+      "fill": "1.7e+38"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

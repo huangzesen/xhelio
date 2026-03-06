@@ -1,0 +1,919 @@
+{
+  "mission_id": "VOYAGER1_PPI",
+  "dataset_count": 114,
+  "generated_at": "2026-02-19T10:20:14Z",
+  "datasets": [
+    {
+      "id": "pds3:VG1-S-CRS-4-SUMM-D1/D2-192SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-CRS-4-SUMM-D1/D2-192SEC-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-14",
+      "parameter_count": 2,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-crs-jup-avg-flux:data-ions",
+      "description": "Voyager 1 Jupiter CRS Derived Ion Browse Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-02-28",
+      "parameter_count": 2,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-crs-jup-avg-flux:data-pulse-height",
+      "description": "Voyager 1 Jupiter CRS Derived Pulse Height Ion Browse Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-02-28",
+      "parameter_count": 12,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-crs-jup-avg-flux:data-electrons",
+      "description": "Voyager 1 Jupiter CRS Derived Electron Browse Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-02-28",
+      "parameter_count": 4,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-sat-crs-d1-d2-192sec:data",
+      "description": "Voyager 1 Saturn CRS Averaged D1/D2 192 Second Counting Rate Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-11",
+      "parameter_count": 2,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "pds3:VG1-J-CRS-5-SUMM-FLUX-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-CRS-5-SUMM-FLUX-V1.0",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-21",
+      "parameter_count": 4,
+      "instrument": "Cosmic Ray"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-4-SUMM-AVERAGE-15MIN-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-LECP-4-SUMM-AVERAGE-15MIN-V1.1",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-22",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-avg-15min",
+      "description": "Voyager 1 LECP Jupiter Calibtrated Resampled Scan Avg. 15 Minute Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-23",
+      "parameter_count": 7,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-48sec-far-enc-step",
+      "description": "Voyager 1 LECP 48 Second Jupiter Far Encounter Step Data Collection",
+      "start_date": "1979-03-04",
+      "stop_date": "1979-03-30",
+      "parameter_count": 14,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-sat:data-sat-sector-15min",
+      "description": "Voyager 1 Saturn LECP Calibrated Resampled Sector 15 Min Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-16",
+      "parameter_count": 20,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-S-LECP-3-RDR-FAR-ENC-400MSEC-V1.0",
+      "description": "VG1 LECP: VG1-S-LECP-3-RDR-FAR-ENC-400MSEC-V1.0",
+      "start_date": "1980-11-13",
+      "stop_date": "1980-11-16",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-sat:data-sat-far-enc-400msec",
+      "description": "Voyager 1 LECP 0.4S High Resolution Saturn Far Encounter Data Collection",
+      "start_date": "1980-11-13",
+      "stop_date": "1980-11-16",
+      "parameter_count": 13,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-sat:data-sat-avg-15min",
+      "description": "Voyager 1 Saturn LECP Calibrated Resampled Scan Averaged 15 Min Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-16",
+      "parameter_count": 7,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-sat:data-sat-step-6min",
+      "description": "Voyager 1 LECP 6.4 Minute Saturn Far Encounter Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-12-30",
+      "parameter_count": 14,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-3-RDR-STEP-3MIN-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-LECP-3-RDR-STEP-3MIN-V1.0",
+      "start_date": "1979-02-22",
+      "stop_date": "1979-03-20",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-S-LECP-4-SUMM-SECTOR-15MIN-V1.0",
+      "description": "VG1 LECP: VG1-S-LECP-4-SUMM-SECTOR-15MIN-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-16",
+      "parameter_count": 18,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-3-RDR-NEAR-ENC-400MSEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-LECP-3-RDR-NEAR-ENC-400MSEC-V1.0",
+      "start_date": "1979-03-04",
+      "stop_date": "1979-03-06",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-48sec-near-enc-step",
+      "description": "Voyager 1 LECP 48 Second Jupiter Near Encounter Step Data Collection",
+      "start_date": "1979-03-05",
+      "stop_date": "1979-03-06",
+      "parameter_count": 14,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-near-enc-400msec",
+      "description": "Voyager 1 LECP Jupiter 0.4 Second High Resolution Near Encounter Data Collection",
+      "start_date": "1979-03-04",
+      "stop_date": "1979-03-06",
+      "parameter_count": 13,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-sector-15min",
+      "description": "Voyager 1 LECP Jupiter Calibrated Resampled Sectored 15 Min Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-22",
+      "parameter_count": 2,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-3min-far-enc-step",
+      "description": "Voyager 1 LECP Jupiter 3.2 Minute Far Encounter Step Data Collection",
+      "start_date": "1979-02-22",
+      "stop_date": "1979-03-20",
+      "parameter_count": 14,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-lecp-jup:data-far-enc-400msec",
+      "description": "Voyager 1 LECP Jupiter 0.4 Second High Resolution Far Encounter Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-11",
+      "parameter_count": 13,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-S-LECP-3-RDR-STEP-6MIN-V1.0",
+      "description": "VG1 LECP: VG1-S-LECP-3-RDR-STEP-6MIN-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-12-30",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-S-LECP-4-SUMM-AVERAGE-15MIN-V1.0",
+      "description": "VG1 LECP: VG1-S-LECP-4-SUMM-AVERAGE-15MIN-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-16",
+      "parameter_count": 7,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-3-RDR-FAR-ENC-400MSEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-LECP-3-RDR-FAR-ENC-400MSEC-V1.0",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-11",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-4-SUMM-SECTOR-15MIN-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-LECP-4-SUMM-SECTOR-15MIN-V1.1",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-22",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-3-RDR-STEP-NEAR-48SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-LECP-3-RDR-STEP-NEAR-48SEC-V1.0",
+      "start_date": "1979-03-05",
+      "stop_date": "1979-03-06",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "pds3:VG1-J-LECP-3-RDR-STEP-FAR-48SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-LECP-3-RDR-STEP-FAR-48SEC-V1.0",
+      "start_date": "1979-03-04",
+      "stop_date": "1979-03-30",
+      "parameter_count": 0,
+      "instrument": "Energetic Particles"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-saturn-pos-hgcoords-96sec:data-spice",
+      "description": "Voyager 1 Saturn POS Ephemeris Heliographic Coordinates 96 Second SPICE Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-10",
+      "parameter_count": 3,
+      "instrument": "General"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-saturn-pos-l1coords:data-sedr",
+      "description": "Voyager 1 Saturn POS Ephemeris Kronographic (L1) Coords Browse SEDR Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-10",
+      "parameter_count": 39,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-S-POS-4-SUMM-HGCOORDS-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-POS-4-SUMM-HGCOORDS-96SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-20",
+      "parameter_count": 39,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-J-POS-6-SUMM-S3COORDS-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-POS-6-SUMM-S3COORDS-V1.1",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-16",
+      "parameter_count": 15,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-J-POS-6-SUMM-HGCOORDS-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-POS-6-SUMM-HGCOORDS-V1.0",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 15,
+      "instrument": "General"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-saturn-pos-l1coords:data-spice",
+      "description": "Voyager 1 Saturn POS Ephemeris Kronographic (L1) Coords Browse SPICE Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-10",
+      "parameter_count": 4,
+      "instrument": "General"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-saturn-pos-hgcoords-96sec:data-sedr",
+      "description": "Voyager 1 Saturn POS Ephemeris Heliographic Coordinates 96 Second SEDR Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-10",
+      "parameter_count": 39,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-SS-POS-6-1DAY-V1.0",
+      "description": "VOYAGER 1 SOLAR WIND: VG1-SS-POS-6-1DAY-V1.0",
+      "start_date": "1977-09-09",
+      "stop_date": "2005-01-24",
+      "parameter_count": 6,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-S-POS-4-SUMM-L1COORDS-V1.0",
+      "description": "VG1 at Saturn: VG1-S-POS-4-SUMM-L1COORDS-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 39,
+      "instrument": "General"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-S3COORDS-1.92SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-S3COORDS-1.92SEC-V1.1",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-17",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-HGCOORDS-1.92SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-HGCOORDS-1.92SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-21",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-hg-1.92s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled Heliographic (RTN) Coords 1.92 Second Data Collection",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-hg-9.60s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled Heliographic (RTN) Coords 9.60 Second Data Collection",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-s3-1.92s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled System III Coords 1.92 Second Data Collection",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-17",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-hg-9.60sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Heliographic (RTN) Coords 9.60 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-21",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-l1-9.60sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Kronographic (L1) Coords 9.60 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ion-magsheath-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Ion Magnetosheath 96 Second Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-11",
+      "parameter_count": 25,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-L1COORDS-48SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-L1COORDS-48SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-s3-9.60s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled System III Coords 9.60 Second Data Collection",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-17",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-HGCOORDS-1.92SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-HGCOORDS-1.92SEC-V1.0",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-hg-48.0s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled Heliographic (RTN) Coords 48.0 Second Data Collection",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 14,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-l1-1.92sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Kronographic (L1) Coords 1.92 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-s3-48.0s",
+      "description": "Voyager 1 Magnetometer Jupiter Resampled System III Coords 48.0 Second Data Collection",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-16",
+      "parameter_count": 17,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-L1COORDS-1.92SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-L1COORDS-1.92SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-l1-48.0sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Kronographic (L1) Coords 48.0 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 14,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-HGCOORDS-9.60SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-HGCOORDS-9.60SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-21",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-S3COORDS-48.0SEC-V1.1",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-16",
+      "parameter_count": 15,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-hg-48.0sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Heliographic (RTN) Coords 48.0 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-20",
+      "parameter_count": 14,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-sc-field",
+      "description": "Voyager 1 Magnetometer Saturn Spacecraft Field Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-20",
+      "parameter_count": 10,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-HGCOORDS-48.0SEC-V1.",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-20",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-SW-MAG-4-SUMM-HGCOORDS-48SEC-V1.0",
+      "description": "VG1 Cruise: VG1-SW-MAG-4-SUMM-HGCOORDS-48SEC-V1.0",
+      "start_date": "1977-09-05",
+      "stop_date": "1989-12-31",
+      "parameter_count": 8,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-S3COORDS-9.60SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-S3COORDS-9.60SEC-V1.1",
+      "start_date": "1979-03-03",
+      "stop_date": "1979-03-17",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-sat:data-hg-1.92sec",
+      "description": "Voyager 1 Magnetometer Saturn Resampled Heliographic (RTN) Coords 1.92 Second Data Collection",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-21",
+      "parameter_count": 13,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-MAG-4-SUMM-L1COORDS-9.60SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-MAG-4-SUMM-L1COORDS-9.60SEC-V1.0",
+      "start_date": "1980-11-10",
+      "stop_date": "1980-11-18",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-J-MAG-4-SUMM-HGCOORDS-9.60SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-MAG-4-SUMM-HGCOORDS-9.60SEC-V1.0",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 12,
+      "instrument": "MAG"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-mag-jup:data-sc-field",
+      "description": "Voyager 1 Magnetometer Jupiter Spacecraft Field Data Collection",
+      "start_date": "1979-02-26",
+      "stop_date": "1979-03-24",
+      "parameter_count": 10,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0",
+      "description": "VG1 Cruise: VG1-SW-MAG-4-SUMM-HGCOORDS-1HR-V1.0",
+      "start_date": "1977-09-05",
+      "stop_date": "2004-12-31",
+      "parameter_count": 8,
+      "instrument": "MAG"
+    },
+    {
+      "id": "pds3:VG1-S-PWS-4-SUMM-SA-48SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PWS-4-SUMM-SA-48SEC-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-17",
+      "parameter_count": 17,
+      "instrument": "PLASMA WAVE RECEIVER"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pra-jup:data-avg-48sec",
+      "description": "Voyager 1 PRA Averaged 48 Second Jupiter Data Collection",
+      "start_date": "1979-01-06",
+      "stop_date": "1979-01-06",
+      "parameter_count": 0,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "pds3:VG1-J-PRA-4-SUMM-BROWSE-48SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PRA-4-SUMM-BROWSE-48SEC-V1.0",
+      "start_date": "1979-01-06",
+      "stop_date": "1979-04-13",
+      "parameter_count": 0,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pra-lowband-6sec-sat:data",
+      "description": "Voyager 1 Saturn PRA Calibrated Hi-Res Low Frequency Receiver Band 6 Second Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-11",
+      "parameter_count": 2,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "pds3:VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PRA-3-RDR-LOWBAND-6SEC-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-16",
+      "parameter_count": 10,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "pds3:VG1-J-PRA-3-RDR-LOWBAND-6SEC-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PRA-3-RDR-LOWBAND-6SEC-V1.0",
+      "start_date": "1979-01-06",
+      "stop_date": "1979-04-13",
+      "parameter_count": 10,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pra-jup:data-lowband-6sec",
+      "description": "Voyager 1 PRA Calibrated Hi-Res Low Frequency Receiver Band Jupiter Data Collection",
+      "start_date": "1979-01-06",
+      "stop_date": "1979-01-06",
+      "parameter_count": 2,
+      "instrument": "Planetary Radio Astronomy Receiver"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-IONMOM-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-IONMOM-96SEC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-13",
+      "parameter_count": 1,
+      "instrument": "Plasma"
+    },
+    {
+      "id": "pds3:VG1-J-PLS-5-SUMM-ION-INBNDSWIND-96S-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PLS-5-SUMM-ION-INBNDSWIND-96S-V1.0",
+      "start_date": "1979-02-15",
+      "stop_date": "1979-03-02",
+      "parameter_count": 12,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-IONFIT-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-IONFIT-96SEC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-13",
+      "parameter_count": 37,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-J-PLS-5-SUMM-ION-L-MODE-96S-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PLS-5-SUMM-ION-L-MODE-96S-V1.0",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-24",
+      "parameter_count": 17,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-J-PLS-5-SUMM-ELE-MOM-96.0SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-PLS-5-SUMM-ELE-MOM-96.0SEC-V1.1",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-07",
+      "parameter_count": 2,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-jup:data-ion-l-mode-96s",
+      "description": "Voyager 1 Plasma Derived Ion In/Out Bound Magnetosheath L-Mode 96 Second Jupiter Data Collection",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-24",
+      "parameter_count": 17,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ele-fbr-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Electron Browse 96 Second Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 4,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ion-moments-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Ion Moments 96 Second Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 1,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-pls-cup",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Faraday Cup Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 4,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-ss:data-fine-res",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Solar System Fine Resolution Moments Collection",
+      "start_date": "1977-09-07",
+      "stop_date": "1980-12-31",
+      "parameter_count": 9,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-ss:data-1hour",
+      "description": "Voyager 1 PLS Solar System 1 Hour Averaged Proton Moments Data Collection",
+      "start_date": "1977-09-07",
+      "stop_date": "1980-12-31",
+      "parameter_count": 9,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-IONFBR-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-IONFBR-96SEC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-13",
+      "parameter_count": 7,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-ION-SOLARWIND-96S-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-ION-SOLARWIND-96S-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-21",
+      "parameter_count": 7,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-ELE-FIT-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-ELE-FIT-96SEC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-13",
+      "parameter_count": 29,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-ELEFBR-96SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-ELEFBR-96SEC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-13",
+      "parameter_count": 4,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-J-PLS-5-SUMM-ION-M-MODE-96S-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PLS-5-SUMM-ION-M-MODE-96S-V1.0",
+      "start_date": "1979-03-13",
+      "stop_date": "1979-03-24",
+      "parameter_count": 12,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-jup:data-ele-mom-96s",
+      "description": "Voyager 1 Plasma Derived Electron Moments 96.0 Second Jupiter Data Collection",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-07",
+      "parameter_count": 2,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ion-fbr-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Ion Fits Browse 96 Second Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 7,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-jup:data-ion-inbndwind-96s",
+      "description": "Voyager 1 Plasma Derived Ion Inbound Solar Wind 96 Second Jupiter Data Collection",
+      "start_date": "1979-02-15",
+      "stop_date": "1979-03-02",
+      "parameter_count": 12,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-jup:data-ion-mom-96s",
+      "description": "Voyager 1 Plasma Derived Ion Moments 96.0 Second Jupiter Data Collection",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-05",
+      "parameter_count": 1,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-J-PLS-5-SUMM-ION-MOM-96.0SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-PLS-5-SUMM-ION-MOM-96.0SEC-V1.1",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-05",
+      "parameter_count": 1,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ion-fit-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Ion Fits 96 Second Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 40,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-jup:data-ion-m-mode-96s",
+      "description": "Voyager 1 Plasma Derived Ion Outbound Magnetosheath M-Mode 96 Second Jupiter Data Collection",
+      "start_date": "1979-03-13",
+      "stop_date": "1979-03-24",
+      "parameter_count": 12,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-SS-PLS-3-RDR-FINE-RES-V1.0",
+      "description": "VG1 PLS SOLARWIND ARCHIVE: VG1-SS-PLS-3-RDR-FINE-RES-V1.0",
+      "start_date": "1977-09-07",
+      "stop_date": "1980-12-31",
+      "parameter_count": 0,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-S-PLS-5-SUMM-ION-MAGSHEATH-96S-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PLS-5-SUMM-ION-MAGSHEATH-96S-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-12",
+      "parameter_count": 25,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-SS-PLS-4-SUMM-1HR-AVG-V1.0",
+      "description": "VG1 PLS SOLARWIND ARCHIVE: VG1-SS-PLS-4-SUMM-1HR-AVG-V1.0",
+      "start_date": "1977-09-07",
+      "stop_date": "1980-12-31",
+      "parameter_count": 0,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ele-fit-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Electron Parameters 96 Second Data Collection",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 29,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pls-sat:data-ion-solar-wind-96sec",
+      "description": "Voyager 1 Plasma Science Experiment (PLS) Saturn Derived Ion Solar Wind Browse 96 Second Data Collection",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-11",
+      "parameter_count": 7,
+      "instrument": "Plasma Science Experiment"
+    },
+    {
+      "id": "pds3:VG1-J-PWS-2-RDR-SA-4.0SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-PWS-2-RDR-SA-4.0SEC-V1.1",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-23",
+      "parameter_count": 9,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J/S/SS-PWS-2-RDR-SAFULL-V1.0",
+      "description": "VG1 PWS: VG1-J/S/SS-PWS-2-RDR-SAFULL-V1.0",
+      "start_date": "1977-09-05",
+      "stop_date": "2021-03-09",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0",
+      "description": "VG1 at Jupiter: VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-21",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-PWS-2-RDR-SA-4.0SEC-V1.0",
+      "start_date": "1980-11-11",
+      "stop_date": "1980-11-17",
+      "parameter_count": 9,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0:DATA",
+      "description": "VG1 at Jupiter: VG1-J-PWS-5-DDR-ELE-DENSITY-1S-V1.0 : DATA",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-21",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "urn:nasa:pds:voyager1.pws.sa:data",
+      "description": "Voyager 1 PWS Low Rate (Spectrum Analyzer) Data Files",
+      "start_date": "1979-01-01",
+      "stop_date": "2024-09-19",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J-PWS-4-SUMM-SA-48.0SEC-V1.1",
+      "description": "VG1 at Jupiter: VG1-J-PWS-4-SUMM-SA-48.0SEC-V1.1",
+      "start_date": "1979-02-28",
+      "stop_date": "1979-03-22",
+      "parameter_count": 2,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J/S/SS-PWS-4-SUMM-SA1HOUR-V1.0",
+      "description": "VOYAGER PWS: VG1-J/S/SS-PWS-4-SUMM-SA1HOUR-V1.0",
+      "start_date": "1977-09-05",
+      "stop_date": "2021-03-10",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-J/S/SS-PWS-1-EDR-WFRM-60MS-V1.0",
+      "description": "VG1 at Jupiter: VG1-J/S/SS-PWS-1-EDR-WFRM-60MS-V1.0",
+      "start_date": "1978-08-21",
+      "stop_date": "2020-10-20",
+      "parameter_count": 0,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "urn:nasa:pds:vg1-pws-ele-density:data-1sec",
+      "description": "Voyager 1 Jupiter PWS Electron Density 1.0 Second Data Collection",
+      "start_date": "1979-03-01",
+      "stop_date": "1979-03-22",
+      "parameter_count": 17,
+      "instrument": "Plasma Wave Receiver"
+    },
+    {
+      "id": "pds3:VG1-S-RSS-1-ROCC-V1.0",
+      "description": "VG1 at Saturn: VG1-S-RSS-1-ROCC-V1.0",
+      "start_date": "1980-11-13",
+      "stop_date": "1980-11-13",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "pds3:VG1-SSA-RSS-1-ROCC-V1.0",
+      "description": "VG1 from Titan: VG1-SSA-RSS-1-ROCC-V1.0",
+      "start_date": "1980-11-12",
+      "stop_date": "1980-11-12",
+      "parameter_count": 0,
+      "instrument": "Radio Science Subsystem"
+    },
+    {
+      "id": "urn:nasa:pds:voyager1.pws.wf:data",
+      "description": "Voyager 1 PWS Electric Waveforms Data Collection",
+      "start_date": "1978-08-21",
+      "stop_date": "2022-02-05",
+      "parameter_count": 0,
+      "instrument": "VOYAGER 1"
+    }
+  ]
+}

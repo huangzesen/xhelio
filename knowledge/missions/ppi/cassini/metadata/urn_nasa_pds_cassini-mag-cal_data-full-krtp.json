@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP radial (r) component of the magnetic-field component in nT.        \n      R is along the Saturn to spacecraft line, positive away from Saturn.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP southward (theta) component of the magnetic field component in nT. \n      Theta completes the right handed set (Phi x R) and is positive          \n      southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP azimuthal (phi) component of the magnetic field component in nT.   \n      Phi is parallel to Saturn's equator (Omega x R), perpendicular to       \n      the Saturn-spacecraft line, and positive in the direction of            \n      corotation.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

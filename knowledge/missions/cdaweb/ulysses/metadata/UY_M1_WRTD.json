@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Z_gt_1",
+      "type": "double",
+      "units": "/s",
+      "description": "Z > 1 counts in channel Z2 (>0.7 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_gt_7",
+      "type": "double",
+      "units": "/s",
+      "description": "Z > 7 counts in channel Z2A (>7.5 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_gt_5",
+      "type": "double",
+      "units": "/s",
+      "description": "Z > 5 counts in channel Z3 (>2.5 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_gt_10",
+      "type": "double",
+      "units": "/s",
+      "description": "Z > 10 counts in channel Z4 (>9.0 MeV)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1990-11-14T19:00:00.000Z",
+  "stopDate": "2008-12-31T23:00:00.000Z"
+}

@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ETTYEAR",
+      "type": "double",
+      "units": "",
+      "description": "Uplink Time (UTC) - year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ETTDOY",
+      "type": "double",
+      "units": "",
+      "description": "Uplink Time (UTC) - day of year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ETTSEC",
+      "type": "double",
+      "units": "",
+      "description": "Uplink Time (UTC) - seconds",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DFUPDT",
+      "type": "double",
+      "units": "Hz/s",
+      "description": "Rate of change of frequency starting at Uplink Time",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FUP",
+      "type": "double",
+      "units": "Hz",
+      "description": "Start frequency at Uplink Time",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Proton Flux (0.48-0.97 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_very_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Ion Flux (47-65 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Ion Flux (112-187 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_mid",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Ion Flux (310-580 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ion_hi",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Ion Flux (1060-1910 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electron_lo",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Electron Flux (38-53 keV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Electron_hi",
+      "type": "double",
+      "units": "1/(cm2 s ster MeV)",
+      "description": "Electron Flux (175-315 keV)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2017-07-01T00:00:00.000Z",
+  "stopDate": "2026-02-12T23:55:00.000Z"
+}

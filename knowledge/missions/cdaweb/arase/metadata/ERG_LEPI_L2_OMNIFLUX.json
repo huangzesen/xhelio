@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FPDO",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "FPDO: H+ Omni number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "FPDO_T",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "---> FPDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "FHEDO",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "FHEDO: He+ Omni number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "FHEDO_T",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "---> FHEDO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "FODO",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "FODO:  O+ Omni number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "FODO_T",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1 keV^-1",
+      "description": "---> FODO as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "2017-04-01T01:16:44.000Z",
+  "stopDate": "2024-05-15T23:59:49.000Z"
+}

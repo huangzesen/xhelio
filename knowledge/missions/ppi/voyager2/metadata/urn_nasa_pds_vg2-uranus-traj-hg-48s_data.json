@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PDSTIME",
+      "type": "double",
+      "units": "",
+      "description": "Date/Time string of the form                                            \n                        yyyy-mm-ddThh:mm:ss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock Line Count",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric X Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Y Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Z Component",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Spacecraft distance",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft longitude",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,208 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "VxB_efield_of_earth_mgse",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Corotation Efield(MGSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "efield_in_inertial_frame_spinfit_mgse",
+      "type": "double",
+      "units": "",
+      "description": "Einertial(12,MGSE) spinfit",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "efield_in_corotation_frame_spinfit_mgse",
+      "type": "double",
+      "units": "",
+      "description": "Ecoro(12,MGSE) spinfit",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "efield_in_inertial_frame_spinfit_edotb_mgse",
+      "type": "double",
+      "units": "",
+      "description": "Einertial(12,MGSE) spinfit",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "efield_in_corotation_frame_spinfit_edotb_mgse",
+      "type": "double",
+      "units": "",
+      "description": "Ecoro(12,MGSE) spinfit",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "spacecraft_potential",
+      "type": "double",
+      "units": "V(12)",
+      "description": "spacecraft potential(12)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "density(12)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VscxB_motional_efield_mgse",
+      "type": "double",
+      "units": "mv/m",
+      "description": "Vsc x B (MGSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "velocity_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "position_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Position (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "angle_spinplane_Bo",
+      "type": "double",
+      "units": "deg",
+      "description": "angle_spinplane_Bo",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "h",
+      "description": "mlt",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "mlat",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lshell",
+      "type": "double",
+      "units": "#",
+      "description": "lshell",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "spinaxis_gse",
+      "type": "double",
+      "units": "#",
+      "description": "L_vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "global_flag",
+      "type": "double",
+      "units": "None",
+      "description": "Global flag",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "flag_global",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> EFW Global Data Quality",
+      "fill": "-32768.0",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "flags_all",
+      "type": "double",
+      "units": "None",
+      "description": "EFW flag values(12)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "bias_current",
+      "type": "double",
+      "units": "nA",
+      "description": "bias_current",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "flags_charging_bias_eclipse",
+      "type": "double",
+      "units": "None",
+      "description": "flags_charging_bias_eclipse",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "burst1_avail",
+      "type": "double",
+      "units": "none",
+      "description": "burst1_avail",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "burst2_avail",
+      "type": "double",
+      "units": "none",
+      "description": "burst2_avail",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-09-18T01:19:18.000Z",
+  "stopDate": "2019-07-16T23:59:59.000Z"
+}

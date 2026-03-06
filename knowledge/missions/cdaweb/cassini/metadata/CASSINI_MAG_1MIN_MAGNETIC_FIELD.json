@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_comp",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_mag",
+      "type": "double",
+      "units": "nT",
+      "description": "magnetic field magnitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "VHM_mode",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for data source (FGM or VHM)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "FGM_mode",
+      "type": "integer",
+      "units": "",
+      "description": "FGM range mode (0 only currently well calibrated)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "sc_r",
+      "type": "double",
+      "units": "AU",
+      "description": "S/C helio-distance",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C helio-latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_long",
+      "type": "double",
+      "units": "deg",
+      "description": "S/C helio-longitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sc_pos",
+      "type": "double",
+      "units": "AU",
+      "description": "S/C coordinates, HGI",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-01-20T02:28:00.000Z",
+  "stopDate": "2004-06-26T23:59:00.000Z"
+}

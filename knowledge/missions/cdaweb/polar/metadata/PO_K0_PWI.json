@@ -1,0 +1,190 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Fce",
+      "type": "double",
+      "units": "Hz",
+      "description": "Electron Cyclotron Frequency, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fcp",
+      "type": "double",
+      "units": "Hz",
+      "description": "Proton Cyclotron Frequency, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FcO",
+      "type": "double",
+      "units": "Hz",
+      "description": "Oxygen Cyclotron Frequency, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Magnetic Latitude, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EDMLT",
+      "type": "double",
+      "units": "Hours",
+      "description": "Magnetic Local Time, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Shell",
+      "type": "double",
+      "units": "",
+      "description": "McIlwain Parameter, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GR_DIST",
+      "type": "double",
+      "units": "Re",
+      "description": "Geocentric Radial Distance, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SFRA_Av_E",
+      "type": "double",
+      "units": "(V/M)**2/Hz",
+      "description": "Avg. Elec. Field at 160 freq., 25-800000 Hz (SFR A)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRA_Av_M",
+      "type": "double",
+      "units": "(V/M)**2/Hz",
+      "description": "Avg. Mag. Field at 160 freq., 25-800000 Hz (SFR A)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRB_Av_E",
+      "type": "double",
+      "units": "nT**2/Hz",
+      "description": "Avg. Elec. Field at 160 freq., 25-800000 Hz (SFR B)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRB_Av_M",
+      "type": "double",
+      "units": "nT**2/Hz",
+      "description": "Avg. Mag. Field at 160 freq., 25-800000 Hz (SFR B)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRA_Pk_E",
+      "type": "double",
+      "units": "(V/M)**2/Hz",
+      "description": "Pk. Elec. Field at 160 freq., 25-800000 Hz (SFR A)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRA_Pk_M",
+      "type": "double",
+      "units": "nT**2/Hz",
+      "description": "Pk. Mag. Field at 160 freq., 25-800000 Hz (SFR A)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRB_Pk_E",
+      "type": "double",
+      "units": "(V/M)**2/Hz",
+      "description": "Pk. Elec. Field at 160 freq., 25-800000 Hz (SFR B)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFRB_Pk_M",
+      "type": "double",
+      "units": "nT**2/Hz",
+      "description": "Pk. Mag. Field at 160 freq., 25-800000 Hz (SFR B)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160
+      ]
+    },
+    {
+      "name": "SFR_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "Instrument Mode (SFR)  0=Log, 1=Lin, 2=Mixed",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SFRA_Antenna",
+      "type": "integer",
+      "units": "",
+      "description": "Antenna (SFRA) 0 = Eu, 1 = Ez, 2 = L, 3 = Bz",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SFRB_Antenna",
+      "type": "integer",
+      "units": "",
+      "description": "Antenna (SFRB) 0 = Eu 1 = Ev 2 = Ez 3 = L",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "MLATV",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Time axis label: Magnetic Latitude, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EDMLTV",
+      "type": "double",
+      "units": "Hours",
+      "description": "Time axis label: Magnetic Local Time, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_ShellV",
+      "type": "double",
+      "units": "",
+      "description": "Time axis label: McIlwain Parameter, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GR_DISTV",
+      "type": "double",
+      "units": "Re",
+      "description": "Time axis label: Geocentric Radial Distance, scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-02-27T12:20:27.000Z",
+  "stopDate": "1997-09-16T16:51:41.000Z"
+}

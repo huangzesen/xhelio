@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "NT",
+      "description": "P1: The first P-sensor sample of the magnetic field in Magnetometer Sensor Coordinates (PVO_PTG). This is the component that lies nominally along the spacecraft spin axis direction. This is the first of 3 samples of this sensor and is the sample associated with the time stamp.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P2",
+      "type": "double",
+      "units": "NT",
+      "description": "P2: The second P-sensor sample of the magnetic field in Magnetometer Sensor Coordinates (PVO_PTG). This is the component that lies nominally along the spacecraft spin axis direction. This is the second of 3 samples of this sensor and is taken 0.000038 seconds after the time stamp.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "P3",
+      "type": "double",
+      "units": "NT",
+      "description": "P3: The third P-sensor sample of the magnetic field in Magnetometer Sensor Coordinates (PVO_PTG). This is the component that lies nominally along the spacecraft spin axis direction. This is the third of 3 samples of this sensor and is taken 0.000076 seconds after the time stamp.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "NT",
+      "description": "BZ SC: The Z-component of the magnetic field in the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). The Z axis is defined to be anti-parallel to the spacecraft spin axis during orbital operations.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

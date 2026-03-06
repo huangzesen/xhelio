@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Sample_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Universal time of the sample at the spacecraft (UTC, spacecraft event         \n                        time). The time appears as 6 integer columns (year, day of year, hour,        \n                        minute, second, millisecond). Individual elements of the time column are      \n                        separated by a single ASCII space character and have leading zeros            \n                        omitted. The individual elements can be read by using the FORTRAN format      \n                        '(1X,I4,1X,I3,3(1X,I2),1X,I3)' IYR IDOY IHR IMIN ISEC IMSEC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Decimal Day",
+      "type": "double",
+      "units": "day",
+      "description": "Decimal day of year. This column provides a \n                        second representation of the sample time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX Payload",
+      "type": "double",
+      "units": "nT",
+      "description": "B field X-component in payload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY Payload",
+      "type": "double",
+      "units": "nT",
+      "description": "B field Y-component in payload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ Payload",
+      "type": "double",
+      "units": "nT",
+      "description": "B field Z-component in payload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Gain Range Payload",
+      "type": "double",
+      "units": "",
+      "description": "Gain range of instrument at time of the sample.  Pertains\n                        to B components in payload coordinate system.  A negative\n                        value indicates a high-resolution (detail word), as versus\n                        fullword, entry.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX Sun State",
+      "type": "double",
+      "units": "nT",
+      "description": "B field X-component in Sun-state coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY Sun State",
+      "type": "double",
+      "units": "nT",
+      "description": "B field Y-component in Sun-state coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ Sun State",
+      "type": "double",
+      "units": "nT",
+      "description": "B field Z-component in Sun-state coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Gain Range Sun State",
+      "type": "double",
+      "units": "",
+      "description": "Gain range of instrument at time of the sample.  Pertains\n                        to B components in Sun-state coordinate system.  A negative\n                        value indicates a high-resolution (detail word), as versus\n                        fullword, entry.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

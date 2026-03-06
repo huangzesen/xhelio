@@ -1,0 +1,579 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MAGB__LF_Bx_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGB+ Bx projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bx_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "MAGB+ Bx projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bx_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "MAGB+ Bx projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_By_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGB+ By projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_By_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "MAGB+ By projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_By_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "MAGB+ By projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bz_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGB+ Bz projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bz_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "MAGB+ Bz projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bz_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "MAGB+ Bz projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bxy_1_Projection_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGB+ rotational Bxy projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bxy_2_Projection_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "MAGB+ rotational Bxy projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Bxy_3_Projection_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "MAGB+ rotational Bxy projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_B_1_Magnitude_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "MAGB+ magnitude B projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_B_2_Magnitude_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "MAGB+ magnitude B projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_B_3_Magnitude_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "MAGB+ magnitude B projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Theta_B",
+      "type": "double",
+      "units": "deg",
+      "description": "MAGB+ Theta B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Theta_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Theta B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Phi_B",
+      "type": "double",
+      "units": "deg",
+      "description": "MAGB+ Phi B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Phi_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Phi B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bx_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled+ Bx projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bx_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled+ Bx projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bx_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled+ Bx projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_By_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled+ By projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_By_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled+ By projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_By_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled+ By projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bz_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled+ Bz projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bz_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled+ Bz projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bz_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled+ Bz projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bxy_1_Projection_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled+ rotational Bxy projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bxy_2_Projection_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled+ rotational Bxy projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Bxy_3_Projection_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled+ rotational Bxy projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_B_1_Magnitude_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "Modeled+ magnitude B projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_B_2_Magnitude_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "Modeled+ magnitude B projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_B_3_Magnitude_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "Modeled+ magnitude B projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Theta_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Modeled+ Theta B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Theta_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Theta B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Phi_B",
+      "type": "double",
+      "units": "deg",
+      "description": "Modeled+ Phi B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Phi_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Phi B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Magnetic_1_Pressure_nPa",
+      "type": "double",
+      "units": "nPa",
+      "description": "MAGB+ Magnetic Pressure projected into the LAPI Frame, nPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGB__LF_Magnetic_2_Pressure_Pa",
+      "type": "double",
+      "units": "Pa",
+      "description": "MAGB+ Magnetic Pressure projected into the LAPI Frame, Pa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_MAGB__LF_Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for MAGB+ LF Magnetic",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Magnetic_1_Pressure_nPa",
+      "type": "double",
+      "units": "nPa",
+      "description": "Modeled+ Magnetic Pressure projected into the LAPI Frame, nPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Modeled__LF_Magnetic_2_Pressure_Pa",
+      "type": "double",
+      "units": "Pa",
+      "description": "Modeled+ Magnetic Pressure projected into the LAPI Frame, Pa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_Modeled__LF_Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for Modeled+ LF Magnetic",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bx_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ Bx projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bx_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ Bx projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bx_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ Bx projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Bx",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Bx",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_By_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ By projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_By_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ By projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_By_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ By projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_By",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bz_1_Component_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ Bz projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bz_2_Component_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ Bz projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bz_3_Component_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ Bz projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Bz",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bxy_1_Projection_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ rotational Bxy projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bxy_2_Projection_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ rotational Bxy projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Bxy_3_Projection_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ rotational Bxy projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Bxy",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Bxy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_B_1_Magnitude_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "LAPI+ magnitude B projected into the LAPI Frame, nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_B_2_Magnitude_Tesla",
+      "type": "double",
+      "units": "Tesla",
+      "description": "LAPI+ magnitude B projected into the LAPI Frame, Tesla",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_B_3_Magnitude_Gauss",
+      "type": "double",
+      "units": "Gauss",
+      "description": "LAPI+ magnitude B projected into the LAPI Frame, Gauss",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Theta_B",
+      "type": "double",
+      "units": "deg",
+      "description": "LAPI+ Theta B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Theta_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Theta B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Phi_B",
+      "type": "double",
+      "units": "deg",
+      "description": "LAPI+ Phi B projected into the LAPI Frame, deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Phi_B",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Phi B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Magnetic_1_Pressure_nPa",
+      "type": "double",
+      "units": "nPa",
+      "description": "LAPI+ Magnetic Pressure projected into the LAPI Frame, nPa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LAPI__LF_Magnetic_2_Pressure_Pa",
+      "type": "double",
+      "units": "Pa",
+      "description": "LAPI+ Magnetic Pressure projected into the LAPI Frame, Pa",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_LAPI__LF_Magnetic",
+      "type": "double",
+      "units": "unitless",
+      "description": "Data Quality Indicator for LAPI+ LF Magnetic",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T13:08:52.000Z",
+  "stopDate": "1983-02-18T16:42:26.000Z"
+}

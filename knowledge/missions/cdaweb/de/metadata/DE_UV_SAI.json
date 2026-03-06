@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Image_Counts",
+      "type": "integer",
+      "units": "Counts",
+      "description": "Ultraviolet Image (quasi-logarithmically compressed counts)",
+      "fill": "255.0",
+      "size": [
+        121,
+        150
+      ]
+    },
+    {
+      "name": "Image_CountsM",
+      "type": "integer",
+      "units": "Counts",
+      "description": "--> Ultraviolet Mapped Image (quasi-logarithmically compressed counts)",
+      "fill": "255.0",
+      "size": [
+        121,
+        150
+      ]
+    },
+    {
+      "name": "SC_Pos_GCI",
+      "type": "double",
+      "units": "km",
+      "description": "GCI position vector of DE spacecraft in kilometers.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Vel_GCI",
+      "type": "double",
+      "units": "Kilometers/second",
+      "description": "GCI velocity vector of DE spacecraft in km/sec.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_SpinV_GCI",
+      "type": "double",
+      "units": "1",
+      "description": "GCI spin axis unit vector of DE spacecraft.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1981-09-23T19:02:17.000Z",
+  "stopDate": "1991-02-18T09:50:31.000Z"
+}

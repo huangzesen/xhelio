@@ -1,0 +1,579 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "fit_flag",
+      "type": "integer",
+      "units": "(10=He_OK,>1=P_OK)",
+      "description": "This flag denotes the fit quality and encodes any contingencies in the ion VDF analysis (10=SW parameters OK)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "year",
+      "type": "integer",
+      "units": "(2038=Yr0)",
+      "description": "---> year",
+      "fill": "-128.0"
+    },
+    {
+      "name": "doy",
+      "type": "double",
+      "units": "day",
+      "description": "---> Fractional day of year of start of spectrum (Noon on January 1 = 1.5)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Proton_V_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton bulk speed",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_V_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Proton bulk speed (w/ uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaV_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty of the proton bulk speed",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VX_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "VX_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VX_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> VX_GSE (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaVX_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty of VX_GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VY_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "VY_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VY_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> VY_GSE (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaVY_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty of VY_GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VZ_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "VZ_GSE component of the proton vector velocity [km/s], from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VZ_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> VZ_GSE (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaVZ_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty of VZ_GSE",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_W_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Scalar [isotropic] proton thermal speed [km/s], from the trace of the anisotropic temperatures.",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_W_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Scalar [isotropic] proton thermal speed (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaW_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in the proton thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wperp_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton thermal speed perpendicular to the magnetic field direction [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wperp_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Proton thermal speed perpendicular (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaWperp_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in the perpendicular proton thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wpar_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton thermal speed parallel to the magnetic field direction [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wpar_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Proton thermal speed parallel (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_sigmaWpar_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in the parallel proton thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "EW_flowangle",
+      "type": "double",
+      "units": "degrees",
+      "description": "East-West GSE bulk Flow Angle [degrees]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "EW_flowangle_errorbars",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> East-West Flow Angle (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "SigmaEW_flowangle",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 1-sigma uncertainty in the east-west flow angle",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "NS_flowangle",
+      "type": "double",
+      "units": "degrees",
+      "description": "North-south GSE bulk flow angle [degrees]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "NS_flowangle_errorbars",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> North-south flow angle (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "SigmaNS_flowangle",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> 1-sigma uncertainty in north-south flow angle",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Np_nonlin",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Proton number density Np (n/cc) from non-linear analysis",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Proton_Np_nonlin_log",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> Proton number density Np (log scale)",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Proton_Np_nonlin_errorbars",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> Proton number density Np (with uncertainties)",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Proton_sigmaNp_nonlin",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> 1-sigma uncertainty in the proton density",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Alpha_V_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha bulk speed V (km/s) from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_V_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha bulk speed V (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaV_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in alpha V [km/s]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VX_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha velocity component Vx (GSE, km/s) from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VX_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha velocity component Vx (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaVX_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in alpha Vx [km/s]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VY_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha velocity component Vy (GSE, km/s) from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VY_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha velocity component Vy (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaVY_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "--->1-sigma uncertainty in alpha Vy [km/s]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VZ_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha velocity component Vz (GSE, km/s) from non-linear analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_VZ_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha velocity component Vz (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaVZ_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "--->1-sigma uncertainty in alpha Vz [km/s]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_W_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Scalar [isotropic] alpha particle thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_W_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Scalar [isotropic] alpha particle thermal speed [km/s] (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaW_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in alpha thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_Wperp_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal speed perpendicular to the magnetic field direction [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_Wperp_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha particle thermal speed perpendicular (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaWperp_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_Wpar_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha particle thermal speed parallel to the magnetic field direction [km/s]",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_Wpar_nonlin_errorbars",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> Alpha particle thermal speed parallel (with uncertainties)",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_sigmaWpar_nonlin",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> 1-sigma uncertainty in the perpendicular alpha thermal speed [km/s].",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Alpha_Na_nonlin",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Alpha number density Na (n/cc) from non-linear analysis",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Alpha_Na_nonlin_log",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> Alpha number density Na (log scale)",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Alpha_Na_nonlin_errorbars",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> Alpha number density Na (with uncertainties)",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Alpha_sigmaNa_nonlin",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> 1-sigma uncertainty in the alpha density [n/cc]",
+      "fill": "100000.0"
+    },
+    {
+      "name": "ChisQ_DOF_nonlin",
+      "type": "double",
+      "units": "",
+      "description": "Reduced chi-squared for this fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Peak_doy",
+      "type": "double",
+      "units": "days",
+      "description": "---> Time that the peak charge flux was observed for each spectrum (in fractional day of year)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sigmaPeak_doy",
+      "type": "double",
+      "units": "days",
+      "description": "---> 1-sigma uncertainty in time of peak flux (in fractional day of year)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Proton_V_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton bulk speed (km/s) from moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VX_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component Vx (GSE, km/s) from moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VY_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component Vy (GSE, km/s) from moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_VZ_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton velocity component Vz (GSE, km/s) from moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_W_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton thermal speed W (km/s) from isotropic moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wperp_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton thermal speed Wperpendicular (km/s) from bimax moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Wpar_moment",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton thermal speed Wparallel (km/s) from bimax moment analysis",
+      "fill": "99999.8984375"
+    },
+    {
+      "name": "Proton_Np_moment",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Proton number density Np (n/cc) from moment analysis",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Proton_Np_moment_log",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> Proton number density Np (n/cc) from moment analysis (log scale)",
+      "fill": "100000.0"
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component Bx (GSE, nT) averaged over plasma measurement",
+      "fill": "100000.0"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component By (GSE, nT) averaged over plasma measurement",
+      "fill": "100000.0"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component Bz (GSE, nT) averaged over plasma measurement",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Ang_dev",
+      "type": "double",
+      "units": "degrees",
+      "description": "Angluar deviation of magnetic field over plasma measurement [degrees]",
+      "fill": "100000.0"
+    },
+    {
+      "name": "dev",
+      "type": "double",
+      "units": "nT",
+      "description": "Deviation in magnitude of field over plasma measurement [nT]",
+      "fill": "100000.0"
+    },
+    {
+      "name": "xgse",
+      "type": "double",
+      "units": "earth radii",
+      "description": "X (GSE) Position of Wind S/C at start of spectrum [Re]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ygse",
+      "type": "double",
+      "units": "earth radii",
+      "description": "Y (GSE) Position of Wind S/C at start of spectrum [Re]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "zgse",
+      "type": "double",
+      "units": "earth radii",
+      "description": "Z (GSE) Position of Wind S/C at start of spectrum [Re]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ygsm",
+      "type": "double",
+      "units": "earth radii",
+      "description": "Y (GSM) Position of Wind S/C at start of spectrum [Re]",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "zgsm",
+      "type": "double",
+      "units": "earth radii",
+      "description": "Z (GSM) Position of Wind S/C at start of spectrum [Re]",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1994-11-17T19:50:45.000Z",
+  "stopDate": "2026-01-20T23:57:25.000Z"
+}

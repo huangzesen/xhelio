@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Protons",
+      "type": "double",
+      "units": "/s",
+      "description": "Proton counts in channels W1:0.480-0.966 and W2:0.966-1.204 MeV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Alphas",
+      "type": "double",
+      "units": "/s",
+      "description": "Alpha counts in channels W3:0.380-1.278 and W4:1.277-6.984 MeV/n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "C_N_O",
+      "type": "double",
+      "units": "/s",
+      "description": "C, N, and O counts in channels W5:0.465-1.709 and W6:1.709-19.107 MeV/n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Fe_group",
+      "type": "double",
+      "units": "/s",
+      "description": "Fe group counts in channels W7:0.239-0.840 and W8:0.840-92.663 MeV/n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "1990-11-14T19:00:00.000Z",
+  "stopDate": "2008-12-31T23:00:00.000Z"
+}

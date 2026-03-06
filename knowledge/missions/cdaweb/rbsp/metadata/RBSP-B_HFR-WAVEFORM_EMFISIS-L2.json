@@ -1,0 +1,73 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HFRsamples_spec",
+      "type": "double",
+      "units": "V/m",
+      "description": "V/m displayed as spectrogram of values vs time offsets",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "HFRsamples_times",
+      "type": "double",
+      "units": "V/m",
+      "description": "V/m displayed as very high resolution time-series",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "HFRsamples",
+      "type": "double",
+      "units": "V/m",
+      "description": "[NOT USEFUL] HFR Waveform",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "HBGain",
+      "type": "integer",
+      "units": "(0=stnd,1=Atten)",
+      "description": "Attenuator select indicator for U and V axis.  0-Off, 1-On.   Switches in a 19 dB attenuator.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HBSelect",
+      "type": "integer",
+      "units": "(0=U,1=V,2=W/Spin)",
+      "description": "---> Axis channel indicator for the HFR.  0-U axis, 1-V axis, 2-W axis.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HFR_Spec",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "[NOT YET FUNCTIONAL] Spectrogram of HFR waveform",
+      "fill": "-1.0",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "---> MET",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2012-09-01T03:43:57.000Z",
+  "stopDate": "2019-07-16T05:38:06.000Z"
+}

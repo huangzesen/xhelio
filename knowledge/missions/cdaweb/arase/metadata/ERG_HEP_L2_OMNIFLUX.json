@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDO_H",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "FEDO-H: Omni-directional flux of HEP-H min",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "FEDO_L",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "Omni-directional flux of HEP-L mean",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FEDO_L_T",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "---> FEDO_L as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FEDO_H_T",
+      "type": "double",
+      "units": "1/keV-sr-s-cm2",
+      "description": "---> FEDO_H as stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    }
+  ],
+  "startDate": "2017-03-19T23:59:58.000Z",
+  "stopDate": "2025-01-31T22:21:52.000Z"
+}

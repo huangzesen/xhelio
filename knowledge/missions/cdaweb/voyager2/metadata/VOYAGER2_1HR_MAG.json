@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Spacecraft",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft id, 1 for voyager1, 2 for voyager2",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Decimal_Year",
+      "type": "double",
+      "units": "",
+      "description": "Decimal Year (90.00000 is at the start of day 001 for year 1990).",
+      "fill": null
+    },
+    {
+      "name": "F1Mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength from hourly average of high-resolution magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "elevation",
+      "type": "double",
+      "units": "degrees",
+      "description": "The elevation angle  in heliographic (RTN) coordinates",
+      "fill": "999.0"
+    },
+    {
+      "name": "azimuth",
+      "type": "double",
+      "units": "degrees",
+      "description": "The azimuthal angle in heliographic (RTN) coordinates",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2Mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength from magnitude of the hourly averaged vector field",
+      "fill": "999.0"
+    }
+  ],
+  "startDate": "1990-01-01T00:00:00.000Z",
+  "stopDate": "1990-12-31T17:59:59.000Z"
+}

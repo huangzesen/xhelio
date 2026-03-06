@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PDSTIME",
+      "type": "double",
+      "units": "",
+      "description": "Date/Time string of the form                                           \n                        yyyy-mm-ddThh:mm:ss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "Neptune radii",
+      "description": "Distance from Neptune to Spacecraft (24765 km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude relative to Neptune",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_WLON",
+      "type": "double",
+      "units": "deg",
+      "description": "West Longitude Relative to Neptune",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

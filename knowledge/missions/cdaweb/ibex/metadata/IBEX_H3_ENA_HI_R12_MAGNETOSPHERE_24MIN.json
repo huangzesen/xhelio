@@ -1,0 +1,139 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "X_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "x, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Y_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "y, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Z_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "z, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Re",
+      "description": "R, distance (Re)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Z_Axis_RA",
+      "type": "double",
+      "units": "degrees",
+      "description": "z-axis, GSE (RA)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Z_Axis_DEC",
+      "type": "double",
+      "units": "degrees",
+      "description": "z-axis, GSE (DEC)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "X_moon_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "x-moon, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Y_moon_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "y-moon, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Z_moon_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "z-moon, GSE",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Moon_RE",
+      "type": "double",
+      "units": "Re",
+      "description": "Moon_Re",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Spin",
+      "type": "integer",
+      "units": "#",
+      "description": "Spin",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "Cnts2",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts for Spin Angle Bins at Hi Energy Channel 2 ~0.71 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "Cnts3",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts for Spin Angle Bins at Hi Energy Channel 3 ~1.11 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "Cnts4",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts for Spin Angle Bins at Hi Energy Channel 4 ~1.74 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "Cnts5",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts for Spin Angle Bins at Hi Energy Channel 5 ~2.73 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60
+      ]
+    },
+    {
+      "name": "Cnts6",
+      "type": "double",
+      "units": "#",
+      "description": "Total Counts for Spin Angle Bins at Hi Energy Channel 6 ~4.29 keV",
+      "fill": "-1e+31",
+      "size": [
+        60
+      ]
+    }
+  ],
+  "startDate": "2009-03-26T21:42:08.000Z",
+  "stopDate": "2013-05-30T23:17:48.000Z"
+}

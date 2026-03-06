@@ -1,0 +1,94 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT EVENT TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time of the sample. This time corresponds to the       \n      'CORRECTED TIME' given in the Galileo MAG survey data set. Time is      \n      given in PDS format: yyyy-mm-ddThh:mm:ss.sss. The individual            \n      elements of the time field can be read using the format                 \n      (i4,4(1x,i2),1x,f6.3) yr, mon, day, hr, min, sec.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Corotational field component in GPHIO coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "Jupiterward field component in GPHIO coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Northward field component in GPHIO coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "B-FIELD MAGNITUDE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ],
+      "fill": "999999.99"
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "Ganymede Radii",
+      "description": "Corotational component of the instantaneous spacecraft position with    \n      respect to Ganymede in units of Ganymede radii.",
+      "size": [
+        1
+      ],
+      "fill": "999.99999"
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "Ganymede Radii",
+      "description": "Jupiterward component of the instantaneous spacecraft position with     \n      respect to Ganymede in Ganymede radii.",
+      "size": [
+        1
+      ],
+      "fill": "999.99999"
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "Ganymede Radii",
+      "description": "Northward component of the instantaneous spacecraft position with       \n      respect to Ganymede in Ganymede radii.",
+      "size": [
+        1
+      ],
+      "fill": "999.99999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

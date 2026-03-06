@@ -1,0 +1,128 @@
+{
+  "id": "NEW-HORIZONS_PPI",
+  "name": "New Horizons (PDS PPI)",
+  "keywords": [
+    "horizons",
+    "new",
+    "new_horizons",
+    "new_horizons_ppi",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "New Horizons data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Pluto Energetic Particle Spectrometer Science Investigation": {
+      "name": "Pluto Energetic Particle Spectrometer Science Investigation",
+      "keywords": [],
+      "datasets": {
+        "pds3:NH-X-PEPSSI-3-LAUNCH-V1.1": {
+          "description": "NEW HORIZONS PEPSSI POST-LAUNCH CHECKOUT CALIBRATED",
+          "start_date": "2006-01-19",
+          "stop_date": "2007-01-01",
+          "slot": "/data/NH-X-PEPSSI-3-LAUNCH-V1.1",
+          "archive_type": 3
+        },
+        "pds3:NH-X-PEPSSI-2-LAUNCH-V1.1": {
+          "description": "NEW HORIZONS PEPSSI POST-LAUNCH CHECKOUT RAW",
+          "start_date": "2006-01-19",
+          "stop_date": "2007-01-01",
+          "slot": "/data/NH-X-PEPSSI-2-LAUNCH-V1.1",
+          "archive_type": 3
+        },
+        "pds3:NH-J-PEPSSI-2-JUPITER-V1.1": {
+          "description": "NEW HORIZONS PEPSSI JUPITER ENCOUNTER RAW",
+          "start_date": "2007-01-01",
+          "stop_date": "2007-06-27",
+          "slot": "/data/NH-J-PEPSSI-2-JUPITER-V1.1",
+          "archive_type": 3
+        },
+        "pds3:NH-J-PEPSSI-3-JUPITER-V1.1": {
+          "description": "NEW HORIZONS PEPSSI JUPITER ENCOUNTER CALIBRATED",
+          "start_date": "2007-01-01",
+          "stop_date": "2007-06-27",
+          "slot": "/data/NH-J-PEPSSI-3-JUPITER-V1.1",
+          "archive_type": 3
+        },
+        "pds3:NH-P-PEPSSI-2-PLUTO-V3.0": {
+          "description": "NEW HORIZONS PEPSSI PLUTO ENCOUNTER RAW",
+          "start_date": "2015-01-14",
+          "stop_date": "2016-10-29",
+          "slot": "/data/NH-P-PEPSSI-2-PLUTO-V3.0",
+          "archive_type": 3
+        },
+        "pds3:NH-P-PEPSSI-3-PLUTO-V3.0": {
+          "description": "NEW HORIZONS PEPSSI PLUTO ENCOUNTER CALIBRATED",
+          "start_date": "2015-01-14",
+          "stop_date": "2016-10-29",
+          "slot": "/data/NH-P-PEPSSI-3-PLUTO-V3.0",
+          "archive_type": 3
+        },
+        "pds3:NH-P-PEPSSI-4-PLASMA-V1.0": {
+          "description": "NEW HORIZONS PEPSSI PLUTO ENCOUNTER DERIVED DATA",
+          "start_date": "2015-07-12",
+          "stop_date": "2015-07-16",
+          "slot": "/data/NH-P-PEPSSI-4-PLASMA-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Solar Wind": {
+      "name": "Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "ion"
+      ],
+      "datasets": {
+        "pds3:NH-J-SWAP-2-JUPITER-V4.0": {
+          "description": "NEW HORIZONS SWAP JUPITER ENCOUNTER RAW",
+          "start_date": "2007-01-07",
+          "stop_date": "2007-06-20",
+          "slot": "/data/NH-J-SWAP-2-JUPITER-V4.0",
+          "archive_type": 3
+        },
+        "pds3:NH-J-SWAP-3-JUPITER-V4.0": {
+          "description": "NEW HORIZONS SWAP JUPITER ENCOUNTER CALIBRATED",
+          "start_date": "2007-01-07",
+          "stop_date": "2007-06-20",
+          "slot": "/data/NH-J-SWAP-3-JUPITER-V4.0",
+          "archive_type": 3
+        },
+        "pds3:NH-X-SWAP-2-LAUNCH-V2.0": {
+          "description": "NEW HORIZONS SWAP POST-LAUNCH CHECKOUT RAW",
+          "start_date": "2006-01-19",
+          "stop_date": "2007-01-01",
+          "slot": "/data/NH-X-SWAP-2-LAUNCH-V2.0",
+          "archive_type": 3
+        },
+        "pds3:NH-X-SWAP-3-LAUNCH-V2.0": {
+          "description": "NEW HORIZONS SWAP POST-LAUNCH CHECKOUT CALIBRATED",
+          "start_date": "2006-01-19",
+          "stop_date": "2007-01-01",
+          "slot": "/data/NH-X-SWAP-3-LAUNCH-V2.0",
+          "archive_type": 3
+        },
+        "pds3:NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0": {
+          "description": "NEW HORIZONS SWAP SOLAR WIND DATA AT PLUTO",
+          "start_date": "2015-07-14",
+          "stop_date": "2015-07-14",
+          "slot": "/data/NH-P-SWAP-5-DERIVED-SOLARWIND-V1.0",
+          "archive_type": 3
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

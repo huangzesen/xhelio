@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Z2",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Ion count data from the Composition Aperture (WART) \n                        sensor of the HISCALE instrument (Z > 1, E > 0.7 MeV).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "Z2A",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Ion count data from the Composition Aperture (WART) \n                        sensor of the HISCALE instrument (Z > 7, E > 7.5 MeV).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "Z3",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Ion count data from the Composition Aperture (WART) \n                        sensor of the HISCALE instrument (Z > 5, E > 2.5 MeV).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    },
+    {
+      "name": "Z4",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Ion count data from the Composition Aperture (WART) \n                        sensor of the HISCALE instrument (Z > 10, E > 9.0 MeV).",
+      "size": [
+        1
+      ],
+      "fill": "-9.99e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

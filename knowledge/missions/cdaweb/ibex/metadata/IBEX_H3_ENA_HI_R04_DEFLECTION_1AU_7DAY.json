@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Energies",
+      "type": "double",
+      "units": "keV",
+      "description": "Mid-Point Energy keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        37
+      ]
+    },
+    {
+      "name": "Deflection",
+      "type": "double",
+      "units": "",
+      "description": "Deflection",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        360,
+        37
+      ]
+    }
+  ],
+  "startDate": "2008-11-20T00:00:00.000Z",
+  "stopDate": "2011-12-01T00:00:00.000Z"
+}

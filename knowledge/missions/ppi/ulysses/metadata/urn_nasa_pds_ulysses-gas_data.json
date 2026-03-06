@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Measured_Counts",
+      "type": "double",
+      "units": "counts/sec * 100",
+      "description": "Measured counts per second times 100.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Total_Counts",
+      "type": "double",
+      "units": "counts",
+      "description": "Total number of counts in the accumlation period.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Star_Flag",
+      "type": "double",
+      "units": "",
+      "description": "Indicates pixel contamination by star light:\n                            0 = O.K.\n                            1 = pixel contaminated by star light\n                           -1 = not yet determined.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Model_Counts",
+      "type": "double",
+      "units": "counts/second",
+      "description": "Counts per second as calculated along the line of sight from a model \n                        (dummy value = -99.)",
+      "size": [
+        1
+      ],
+      "fill": "-99."
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

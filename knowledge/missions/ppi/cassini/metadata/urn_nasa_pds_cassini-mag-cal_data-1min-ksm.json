@@ -1,0 +1,97 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM X-component of the magnetic-field in nT. X points from Saturn to    \n      the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM Y-component of the magnetic-field in nT. Y is perpendicular to the  \n      magnetic dipole (Omega) and the Saturn-Sun direction (Omega x X).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "KSM Z-component of the magnetic-field in nT. Z is defined such that the \n      X-Z plane contains Saturn's centered magnetic dipole axis (M).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the magnetic field magnitudes in nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "KSM X component (Saturn-Sun) of the spacecraft range from the Saturn    \n      center of mass in units of Saturn radii (1 Rs = 60268 km).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "KSM Y component (Omega x X) of the spacecraft range from the Saturn     \n      center of mass in units of Saturn radii (1 Rs = 60268 km).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "KSM Z component (XZ planes contains Omega) of the spacecraft range from \n      the Saturn center of mass in units of Saturn radii (1 Rs = 60268 km).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCAL HOUR",
+      "type": "double",
+      "units": "hr",
+      "description": "Angle between the observer's (Cassini) sub-Saturn meridian and the      \n      anti-sunward meridian, measured in Saturn's equatorial plane in the     \n      direction of planetary rotation. The local hour angle is converted to a \n      decimal hour (one hour equal to fifteen degrees longitude). The Sun     \n      meridian is defined to be noon (12.000), with midnight (0.000) opposite \n      it. Dawn (6.000) and dusk (18.000) are where the sun rises and sets     \n      according to the planet's rotation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

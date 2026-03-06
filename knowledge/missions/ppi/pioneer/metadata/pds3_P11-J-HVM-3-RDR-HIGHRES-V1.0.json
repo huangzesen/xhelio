@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nT",
+      "description": "Southward field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "Corotational field component, System III [1965] coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "B-FIELD MAGNITUDE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of the average B-field components.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

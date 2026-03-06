@@ -1,0 +1,85 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetometer vector in UVW",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Magnitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Average magnitude (average of |B| values in the interval)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delta",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude (angle delta) of the field vector (where (0,0) is the positive Bx direction)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lambda",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude (angle lambda) of the field vector (where (0,0) is the positive Bx direction)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "range_flag",
+      "type": "integer",
+      "units": "",
+      "description": "range_flag",
+      "fill": "-128.0"
+    },
+    {
+      "name": "partition",
+      "type": "integer",
+      "units": "",
+      "description": "---> partition",
+      "fill": "-128.0"
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "---> MET",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "calState",
+      "type": "integer",
+      "units": "",
+      "description": "---> calState_flag",
+      "fill": "-128.0"
+    },
+    {
+      "name": "magInvalid",
+      "type": "integer",
+      "units": "",
+      "description": "---> magInvalid_flag",
+      "fill": "-128.0"
+    },
+    {
+      "name": "magFill",
+      "type": "integer",
+      "units": "",
+      "description": "---> magFill_flag",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2012-08-30T22:54:52.000Z",
+  "stopDate": "2019-10-14T12:30:32.000Z"
+}

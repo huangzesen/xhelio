@@ -1,0 +1,262 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "spectra_eu",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra Eu^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_ev",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra Ev^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_bgamma",
+      "type": "double",
+      "units": "pT^2/Hz",
+      "description": "Power spectra Bgamma^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_esum",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra Eu^2+Ev^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_er",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra E-right^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_el",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra E-left^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_e_mix",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "Power spectra Eu^2+Ev^2 or Eu^2 or Ev^2",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_e_ar",
+      "type": "double",
+      "units": "LH:-1/RH:+1",
+      "description": "spectra axial ratio",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_eu_ev",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "spectral matrix Eu-Ev*",
+      "fill": null,
+      "size": [
+        479,
+        2
+      ]
+    },
+    {
+      "name": "spectra_eu_ev_d1",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "---> spectral matrix Eu-Ev* [1]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_eu_ev_d2",
+      "type": "double",
+      "units": "mV^2/m^2/Hz",
+      "description": "---> spectral matrix Eu-Ev* [2]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_eu_bg",
+      "type": "double",
+      "units": "mV/m pT/Hz",
+      "description": "spectral matrix Eu-Bgamma*",
+      "fill": null,
+      "size": [
+        479,
+        2
+      ]
+    },
+    {
+      "name": "spectra_eu_bg_d1",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> spectral matrix Eu-Bgamma* [1]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_eu_bg_d2",
+      "type": "double",
+      "units": "pT/Hz",
+      "description": "---> spectral matrix Eu-Bgamma* [2]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_ev_bg",
+      "type": "double",
+      "units": "mV/m pT/Hz",
+      "description": "spectral matrix Ev-Bgamma*",
+      "fill": null,
+      "size": [
+        479,
+        2
+      ]
+    },
+    {
+      "name": "spectra_ev_bg_d1",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> spectral matrix Ev-Bgamma* [1]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "spectra_ev_bg_d2",
+      "type": "double",
+      "units": "pT/Hz",
+      "description": "---> spectral matrix Ev-Bgamma* [2]",
+      "fill": null,
+      "size": [
+        479
+      ]
+    },
+    {
+      "name": "e_mix_content",
+      "type": "integer",
+      "units": "",
+      "description": "e_mix_content",
+      "fill": null
+    },
+    {
+      "name": "ch1_in",
+      "type": "integer",
+      "units": "",
+      "description": "HFA Ch1 input",
+      "fill": null
+    },
+    {
+      "name": "ch2_in",
+      "type": "integer",
+      "units": "",
+      "description": "HFA Ch2 input",
+      "fill": null
+    },
+    {
+      "name": "ch1_gain",
+      "type": "integer",
+      "units": "dB",
+      "description": "HFA Ch1 gain",
+      "fill": null
+    },
+    {
+      "name": "ch2_gain",
+      "type": "integer",
+      "units": "dB",
+      "description": "HFA Ch2 gain",
+      "fill": null
+    },
+    {
+      "name": "obs_stat",
+      "type": "integer",
+      "units": "",
+      "description": "HFA FPGA observation mode",
+      "fill": null
+    },
+    {
+      "name": "wav_stat",
+      "type": "integer",
+      "units": "",
+      "description": "HFA Waveform output status",
+      "fill": null
+    },
+    {
+      "name": "ave_stat",
+      "type": "integer",
+      "units": "",
+      "description": "HFA Average mode status",
+      "fill": null
+    },
+    {
+      "name": "quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "quality flag",
+      "fill": "-128.0"
+    },
+    {
+      "name": "wpt_ac_gain",
+      "type": "integer",
+      "units": "",
+      "description": "WPT-Pre AC gain",
+      "fill": null
+    },
+    {
+      "name": "mscpa_gain",
+      "type": "integer",
+      "units": "",
+      "description": "MSC-PA gain",
+      "fill": null
+    }
+  ],
+  "startDate": "2017-03-23T00:57:54.000Z",
+  "stopDate": "2025-01-01T00:00:07.000Z"
+}

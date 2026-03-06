@@ -1,0 +1,135 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MOM_DENS",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Column contains ion moment density in units of ions/cm**3.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "MOM_VR",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion moment velocity radial component (RTN coordinates,\n                        Sun-spacecraft direction) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "MOM_VT",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion moment velocity North/South component (RTN\n                        coordinates, positive northward) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "MOM_VN",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion moment velocity azimuthal component (RTN coordinates,\n                        positive in the direction of planetary motion) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "MOM_V",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion moment velocity magnitude in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "MOM_WTH",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion moment thermal speed in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "FIT_DENS",
+      "type": "double",
+      "units": "IONS/CM**3",
+      "description": "Column contains ion fit density in units of ions/cm**3",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "FIT_VR",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion fit velocity radial component (RTN coordinates,\n                        Sun-spacecraft direction) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "FIT_VT",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion fit velocity North/South component (RTN coordinates,\n                        positive northward) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "FIT_VN",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion fit velocity azimuthal component (RTN coordinates,\n                        positive in the direction of planetary motion) in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "FIT_V",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion fit velocity magnitude in units of km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    },
+    {
+      "name": "FIT_WTH",
+      "type": "double",
+      "units": "KM/S",
+      "description": "Column contains ion fit thermal speed in units of km/s",
+      "size": [
+        1
+      ],
+      "fill": "-9999.9"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

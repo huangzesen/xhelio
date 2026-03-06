@@ -1,0 +1,71 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "xhelio"
+version = "0.1.0"
+description = "AI-powered natural language interface for spacecraft and heliophysics data visualization"
+readme = "README.md"
+license = "MIT"
+requires-python = ">=3.11,<3.14"
+dependencies = [
+    "google-genai==1.62.0",
+    "openai>=1.0.0",
+    "anthropic>=0.40.0",
+    "python-dotenv==1.2.1",
+    "requests==2.32.5",
+    "numpy==2.4.2",
+    "scipy==1.17.0",
+    "PyWavelets>=1.8.0",
+    "pandas==3.0.0",
+    "matplotlib==3.10.8",
+    "plotly==6.5.2",
+    "kaleido==1.2.0",
+    "tqdm==4.67.3",
+    "cdflib==1.3.8",
+    "xarray>=2024.0.0",
+    "fastembed>=0.6.1",
+    "tavily-python>=0.5.0",
+    "mcp>=1.26.0",
+    "heliospice[mcp]>=0.4.0",
+    "fastapi>=0.115.0",
+    "uvicorn[standard]>=0.30.0",
+    "sse-starlette>=2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest==9.0.2",
+]
+
+[project.scripts]
+xhelio = "xhelio_cli:main"
+
+[tool.hatch.build.targets.wheel]
+# Include Python packages (directories with __init__.py)
+packages = [
+    "agent",
+    "api",
+    "data_ops",
+    "knowledge",
+    "rendering",
+]
+# Include root-level modules needed at runtime
+include = [
+    "agent/",
+    "api/",
+    "data_ops/",
+    "knowledge/",
+    "rendering/",
+    "xhelio_cli.py",
+    "config.py",
+    "api_server.py",
+    "main.py",
+    "mcp_server.py",
+]
+
+[tool.pytest.ini_options]
+markers = [
+    "slow: marks tests as slow (run with 'pytest --slow' or 'pytest -m slow')",
+]

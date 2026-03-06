@@ -1,0 +1,184 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "the_pos",
+      "type": "double",
+      "units": "",
+      "description": "the_position XYZ in GEI (timeseries plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_posV",
+      "type": "double",
+      "units": "km",
+      "description": "the_position XYZ in GEI (orbit plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_vel",
+      "type": "double",
+      "units": "",
+      "description": "the_velocity",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_spin_initial_delta_phi",
+      "type": "double",
+      "units": "deg",
+      "description": "[Not populated yet] Initial angle offset between IDPU model and eclipse model in this segment.",
+      "fill": "nan"
+    },
+    {
+      "name": "the_spin_idpu_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "[Not populated yet] IDPU spin period",
+      "fill": "nan"
+    },
+    {
+      "name": "the_spin_segflags",
+      "type": "integer",
+      "units": "none",
+      "description": "[Not populated yet] Marker for eclipse segments.",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "the_spin_ecl_initial_delta_phi",
+      "type": "double",
+      "units": "deg",
+      "description": "Initial angle offset between IDPU model and eclipse model in this segment (eclipse spin model).",
+      "fill": "nan"
+    },
+    {
+      "name": "the_spin_ecl_idpu_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "IDPU spin period (eclipse spin model)",
+      "fill": "nan"
+    },
+    {
+      "name": "the_spin_ecl_segflags",
+      "type": "integer",
+      "units": "none",
+      "description": "Marker for eclipse segments (eclipse spin model).",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "the_pos_gse",
+      "type": "double",
+      "units": "",
+      "description": "the_position XYZ in GSE (timeseries plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_pos_gseV",
+      "type": "double",
+      "units": "km",
+      "description": "the_position XYZ in GSE (orbit plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_pos_gsm",
+      "type": "double",
+      "units": "",
+      "description": "the_position XYZ in GSM (timeseries plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_pos_gsmV",
+      "type": "double",
+      "units": "km",
+      "description": "the_position XYZ in GSM (orbit plot)",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_vel_gse",
+      "type": "double",
+      "units": "",
+      "description": "the_velocity_gse",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_vel_gsm",
+      "type": "double",
+      "units": "",
+      "description": "the_velocity_gsm",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_pos_sel",
+      "type": "double",
+      "units": "",
+      "description": "the_pos_sel",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_pos_sse",
+      "type": "double",
+      "units": "",
+      "description": "the_pos_sse",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_vel_sel",
+      "type": "double",
+      "units": "",
+      "description": "the_velocity_sel",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "the_vel_sse",
+      "type": "double",
+      "units": "",
+      "description": "the_velocity_sse",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2007-02-17T23:36:00.000Z",
+  "stopDate": "2026-02-17T23:59:00.000Z"
+}

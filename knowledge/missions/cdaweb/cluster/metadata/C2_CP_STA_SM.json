@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BB_xyz_xyz_sr2__C2_CP_STA_SM",
+      "type": "double",
+      "units": "mV^2 m^-2 Hz^-1",
+      "description": "Cross-spectral matrix of the magnetic field at 27 frequencies from 8 Hz to 4 kHz",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27,
+        2,
+        3,
+        3
+      ]
+    },
+    {
+      "name": "EE_xy_xy_sr2__C2_CP_STA_SM",
+      "type": "double",
+      "units": "mV^2 m^-2 Hz^-1",
+      "description": "Cross-spectral matrix of the electric field at 27 frequencies from 8 Hz to 4 kHz",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27,
+        2,
+        2,
+        2
+      ]
+    },
+    {
+      "name": "BE_xyz_xy_sr2__C2_CP_STA_SM",
+      "type": "double",
+      "units": "mV^2 m^-2 Hz^-1",
+      "description": "Electromagnetic cross-spectral ExB products at 27 frequencies from 8 Hz to 4 kHz",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27,
+        2,
+        3,
+        2
+      ]
+    }
+  ],
+  "startDate": "2000-09-05T23:20:20.000Z",
+  "stopDate": "2024-07-16T13:37:45.000Z"
+}

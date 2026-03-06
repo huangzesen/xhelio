@@ -1,0 +1,592 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_Version",
+      "type": "integer",
+      "units": "None",
+      "description": "FIELDS2 100bps flight software telemetry format version number",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_Integration_Time",
+      "type": "double",
+      "units": "s",
+      "description": "Integration time duration for each measurement stripe (seconds)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_MAGi_magnitude_B_RMS_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The RMS of the magnitude of the 3-axis B field vector observed during this sample period on the inner magnetometer (nT RMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_MAGi_Average_B_SC_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The average value observed during this sample period on the three inner magnetometer axes in S/C coordinates (nT)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_MAGi_Average_B_RTN_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The average value observed during this sample period on the three inner magnetometer axes in RTN coordinates (nT)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Burst_Count",
+      "type": "integer",
+      "units": "Bursts",
+      "description": "The number of TDS bursts obtained during this sample period (count)",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Best_Burst_Quality_Raw",
+      "type": "integer",
+      "units": "Arbitrary",
+      "description": "The quality value of the best TDS burst obtained during this sample period (arbitrary units - bigger is better)",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Best_Burst_QFrequency_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The frequency (or zero crossings) value observed from the best TDS burst obtained during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V1 high-gain full-speed TDS channel (Ch1) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V2_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V2 high-gain full-speed TDS channel (Ch2) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V3 high-gain full-speed TDS channel (Ch3) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V4_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V4 high-gain full-speed TDS channel (Ch4) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V5_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V5 high-gain full-speed TDS channel (Ch5) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1V2_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V1-V2 difference full-speed TDS channel (Ch3) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3V4_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V3-V4 difference full-speed TDS channel (Ch1) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1234_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V1234 summation full-speed TDS channel (Ch2) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx4_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the MF SCM high-gain full-speed TDS channel (Ch4) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx5_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the MF SCM high-gain full-speed TDS channel (Ch5) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx4LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the MF SCM low-gain full-speed TDS channel (Ch4) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V1 low-gain full-speed TDS channel (Ch3) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V2LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V2 low-gain full-speed TDS channel (Ch5) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V3 low-gain full-speed TDS channel (Ch1) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V4LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V4 low-gain full-speed TDS channel (Ch2) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V5LG_Normalized",
+      "type": "double",
+      "units": "Normalized",
+      "description": "The normalized peak value observed on the V5 low-gain full-speed TDS channel (Ch4) during this sample period (+1 to -1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V1 high-gain full-speed TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V2_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V2 high-gain full-speed TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V3 high-gain full-speed TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V4_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V4 high-gain full-speed TDS channel (Ch4) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V5_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V5 high-gain full-speed TDS channel (Ch5) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1V2_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V1-V2 difference full-speed TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3V4_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V3-V4 difference full-speed TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1234_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V1+V2+V3+V4 summation full-speed TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx4_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The peak value observed on the MF SCM high-gain full-speed TDS channel (Ch4) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx5_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The peak value observed on the MF SCM high-gain full-speed TDS channel (Ch5) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_SCMx4LG_nT",
+      "type": "double",
+      "units": "nT",
+      "description": "The peak value observed on the MF SCM low-gain full-speed TDS channel (Ch4) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V1LG_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V1 low-gain full-speed TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V2LG_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V2 low-gain full-speed TDS channel (Ch5) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V3LG_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V3 low-gain full-speed TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V4LG_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V4 low-gain full-speed TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Peak_V5LG_mV",
+      "type": "double",
+      "units": "mV",
+      "description": "The peak value observed on the V5 low-gain full-speed TDS channel (Ch4) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V1_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V1 high-gain possibly down-sampled TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V2_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V2 high-gain possibly down-sampled TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V3_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V3 high-gain possibly down-sampled TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V4_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V4 high-gain possibly down-sampled TDS channel (Ch4) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V5_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V5 high-gain possibly down-sampled TDS channel (Ch5) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V1V2_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V1-V2 difference possibly down-sampled TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V3V4_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V3-V4 difference possibly down-sampled TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V1234_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V1+V2+V3+V4 summation possibly down-sampled TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_SCMx4_nT",
+      "type": "double",
+      "units": "nT RMS",
+      "description": "The RMS value observed on the MF SCM high-gain possibly down-sampled TDS channel (Ch4) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_SCMx5_nT",
+      "type": "double",
+      "units": "nT RMS",
+      "description": "The RMS value observed on the MF SCM high-gain possibly down-sampled TDS channel (Ch5) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_SCMx4LG_nT",
+      "type": "double",
+      "units": "nT RMS",
+      "description": "The RMS value observed on the MF SCM low-gain possibly down-sampled TDS channel (Ch4) during this sample period (nT)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V1LG_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V1 low-gain possibly down-sampled TDS channel (Ch3) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V2LG_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V2 low-gain possibly down-sampled TDS channel (Ch5) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V3LG_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V3 low-gain possibly down-sampled TDS channel (Ch1) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V4LG_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V4 low-gain possibly down-sampled TDS channel (Ch2) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_RMS_V5LG_mV",
+      "type": "double",
+      "units": "mV RMS",
+      "description": "The RMS value observed on the V5 low-gain possibly down-sampled TDS channel (Ch4) during this sample period (mV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V1_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V1 high-gain TDS channel (Ch1) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V2_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V2 high-gain TDS channel (Ch2) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V3_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V3 high-gain TDS channel (Ch3) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V4_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V4 high-gain TDS channel (Ch4) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V5_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V5 high-gain TDS channel (Ch5) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V1V2_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V1-V2 difference TDS channel (Ch3) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V3V4_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V3-V4 difference TDS channel (Ch1) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V1234_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V1+V2+V3+V4 summation TDS channel (Ch2) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_SCMx4_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the MF SCM high-gain TDS channel (Ch4) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_SCMx5_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the MF SCM high-gain TDS channel (Ch5) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_SCMx4LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the MF SCM low-gain TDS channel (Ch4) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V1LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V1 low-gain TDS channel (Ch3) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V2LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V2 low-gain TDS channel (Ch5) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V3LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V3 low-gain TDS channel (Ch1) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V4LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V4 low-gain TDS channel (Ch2) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_Frequency_V5LG_Hz",
+      "type": "double",
+      "units": "Hz",
+      "description": "The banded frequency (or zero crossings) observed on the V5 low-gain TDS channel (Ch4) during this sample period (Hz)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_WPC_Count_Rate_PPS",
+      "type": "double",
+      "units": "C/s",
+      "description": "The wave-particle correlator particle counting frequency observed during this sample period (particle counts per second)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_TDS_WPC_Skew",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "The wave-particle correlator skew observed during this sample period (dimensionless)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_DFB_VDC_V1",
+      "type": "double",
+      "units": "V",
+      "description": "Gives the average DC voltage from one of the four V1234 electric field sensors during the event/packet (Volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_DFB_VDC_V2",
+      "type": "double",
+      "units": "V",
+      "description": "Gives the average DC voltage from one of the four V1234 electric field sensors during the event/packet (Volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_DFB_VDC_V3",
+      "type": "double",
+      "units": "V",
+      "description": "Gives the average DC voltage from one of the four V1234 electric field sensors during the event/packet (Volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_DFB_VDC_V4",
+      "type": "double",
+      "units": "V",
+      "description": "Gives the average DC voltage from one of the four V1234 electric field sensors during the event/packet (Volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_SC_Reaction_Wheel_Speed_RW1",
+      "type": "double",
+      "units": "RPS",
+      "description": "Indicates the average rotational speed of one of the four reaction wheels during the event/packet (revolutions per second)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_SC_Reaction_Wheel_Speed_RW2",
+      "type": "double",
+      "units": "RPS",
+      "description": "Indicates the average rotational speed of one of the four reaction wheels during the event/packet (revolutions per second)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_SC_Reaction_Wheel_Speed_RW3",
+      "type": "double",
+      "units": "RPS",
+      "description": "Indicates the average rotational speed of one of the four reaction wheels during the event/packet (revolutions per second)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP_FLD_L2_F2_100bps_SC_Reaction_Wheel_Speed_RW4",
+      "type": "double",
+      "units": "RPS",
+      "description": "Indicates the average rotational speed of one of the four reaction wheels during the event/packet (revolutions per second)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

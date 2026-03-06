@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Waveform",
+      "type": "integer",
+      "units": "",
+      "description": "Raw Values, Centered/Scaled (RAW*2 - 15) - spectrogram",
+      "fill": "-128.0",
+      "size": [
+        1600
+      ]
+    },
+    {
+      "name": "Waveform_time",
+      "type": "integer",
+      "units": "",
+      "description": "Raw Values, Centered/Scaled (RAW*2 - 15) - very high res. time-series",
+      "fill": "-128.0",
+      "size": [
+        1600
+      ]
+    }
+  ],
+  "startDate": "1979-04-28T07:59:16.000Z",
+  "stopDate": "2006-03-07T08:48:04.000Z"
+}

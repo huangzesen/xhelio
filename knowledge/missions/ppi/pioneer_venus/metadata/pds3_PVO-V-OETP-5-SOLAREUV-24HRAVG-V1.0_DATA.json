@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START_DATE",
+      "type": "integer",
+      "units": "",
+      "description": "Start date in the format YYDOY where YY is the 2 digit year and DOY is the day-of-year (Jan 1 = 1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP_DATE",
+      "type": "integer",
+      "units": "",
+      "description": "Date in the form YYDOY where YY is the 2 digit year and the DOY is the day-of-year (Jan 1 =1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "START_ORBIT",
+      "type": "integer",
+      "units": "",
+      "description": "The start orbit number of the 10 orbit record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP_ORBIT",
+      "type": "integer",
+      "units": "",
+      "description": "The last orbit of the 10 orbit record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IPE",
+      "type": "double",
+      "units": "",
+      "description": "10 values which contain the magnitude of the photoemission current, Ipe (units of 10^9 amps), where each value corresponds to the daily average value. The first of the ten values is the average for the start orbit...",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

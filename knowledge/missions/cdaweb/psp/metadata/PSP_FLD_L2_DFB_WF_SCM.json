@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_scm_hg_sensor",
+      "type": "double",
+      "units": "nT",
+      "description": "L2 Magnetic field from SCM High Gain in Sensor coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_scm_hg_sc",
+      "type": "double",
+      "units": "nT",
+      "description": "L2 Magnetic field from SCM High Gain in Spacecraft coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_scm_lg_sensor",
+      "type": "double",
+      "units": "nT",
+      "description": "L2 Magnetic field from SCM Low Gain in Sensor coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_scm_lg_sc",
+      "type": "double",
+      "units": "nT",
+      "description": "L2 Magnetic field from SCM Low Gain in Spacecraft coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

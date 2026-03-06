@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "RANGE",
+      "type": "double",
+      "units": "RN",
+      "description": "DISTANCE FROM NEPTUNE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRO_DEN",
+      "type": "double",
+      "units": "N/A",
+      "description": "PROTON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGMA_DE",
+      "type": "double",
+      "units": "N/A",
+      "description": "1 SIGMA ERROR IN PRO_DEN",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_R",
+      "type": "double",
+      "units": "KM/S",
+      "description": "RADIAL COMP OF VELOCITY RTN SYS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_VR",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN VEL_R",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_T",
+      "type": "double",
+      "units": "KM/S",
+      "description": "TANGENTIAL COMP OF VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_VT",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN VEL_T",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_N",
+      "type": "double",
+      "units": "KM/S",
+      "description": "NORMAL COMPONENT OF VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIG_VN",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN VEL_N",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "THERM_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "THERMAL SPEED",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STHRM_SP",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR IN THERM_SP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMP",
+      "type": "double",
+      "units": "EV",
+      "description": "TEMPERATURE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

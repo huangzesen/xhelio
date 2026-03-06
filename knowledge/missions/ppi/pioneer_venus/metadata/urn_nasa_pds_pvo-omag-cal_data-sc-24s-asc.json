@@ -1,0 +1,244 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "s",
+      "description": "Universal Time in the ISO month/day          \n      format YYYY-MM-DDThh:mm:ss.sss where YYYY is the year, MM is the month, \n      DD is the day of month, T is literal, hh is the hour, mm in the minute, \n      and ss.sss is the second to millisecond resolution. The time stamp is   \n      placed at the center of a 24 second moving average window that is       \n      advanced by 12 seconds each sample.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx VSO: The X-component of the magnetic      \n      field in the Venus Solar Orbital System (VSO - GSE at Venus). The       \n      system is Venus centered, with the X axis pointing instantaneously      \n      from Venus to the Sun, the Z axis is perpendicular to the orbital       \n     (ecliptic) plane of Venus positive 'up', and the Y axis completing       \n      the right-handed set.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "By_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "By VSO: The Y-component of the magnetic      \n      field in the Venus Solar Orbital System (VSO).",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Bz_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "BZ VSO: The Z-component of the magnetic      \n      field in the Venus Solar Orbital System (VSO).",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Bx_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx SC: The X-component of the magnetic field \n      in the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). This is    \n      the component that lies in the sunward direction in the plane that      \n      contains the Sun-spacecraft vector and the spacecraft spin axis. This   \n      vector has been averaged over two spin periods from the high            \n      resolution data.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "By_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "By SC: The Y-component of the magnetic field \n      in the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). The Y axis \n      is formed by the right-handed vector cross product of the X and Z unit  \n      vectors where the Z axis is anti-parallel to the spacecraft spin axis   \n      and the X-Z plane contains the Sun. This vector has been averaged over  \n      two spin periods from the high resolution data.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Bz_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz SC: The Z-component of the magnetic field \n      in the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). The Z axis \n      is defined to be anti-parallel to the spacecraft spin axis during       \n      orbital operations. This vector has been averaged over two spin         \n      periods from the high resolution data.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Bt: The vector magnitude of the averaged     \n      field components.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "VAR_Bx",
+      "type": "double",
+      "units": "nT**2",
+      "description": "VAR Bx: Variance of the Bx SC over the       \n      averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "CVAR_Bxy",
+      "type": "double",
+      "units": "nT**2",
+      "description": "CVAR Bxy: The covariance of Bx SC wrt By SC  \n      over the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "CVAR_BZ",
+      "type": "double",
+      "units": "nT**2",
+      "description": "CVAR Bxz: The covariance of Bx SC wrt Bz SC  \n      over the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "VAR_By",
+      "type": "double",
+      "units": "nT**2",
+      "description": "VAR By: Variance of the By SC over the       \n      averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "CVAR_Byz",
+      "type": "double",
+      "units": "nT**2",
+      "description": "CVAR_Byz: The covariance of By SC wrt Bz SC  \n      over the averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "VAR_Bz",
+      "type": "double",
+      "units": "nT**2",
+      "description": "VAR Bz: Variance of the Bz SC over the       \n      averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "VAR_Bt",
+      "type": "double",
+      "units": "nT**2",
+      "description": "VAR Bt: Variance of the Bt SC over the       \n      averaging window.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "",
+      "description": "N: The number of data points in the          \n      magnetic field averages.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    },
+    {
+      "name": "X_VSO",
+      "type": "double",
+      "units": "Venus radii",
+      "description": "X VSO: The X-component of the PVO spacecraft \n      position in Venus Solar Orbital Coordinates (VSO). The X component of   \n      the VSO coordinate system is taken to be positive in the direction of   \n      the Sun measured along the Venus- Sun line. The units are given in      \n      Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Y_VSO",
+      "type": "double",
+      "units": "Venus radii",
+      "description": "Y VSO: The Y-component of the PVO spacecraft \n      position in Venus Solar Orbital Coordinates (VSO).The Y component of    \n      the VSO coordinate system is taken to be positive in the direction      \n      opposing orbital motion (dusk) and lying in the orbital plane of        \n      Venus. The units given in Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "Z_VSO",
+      "type": "double",
+      "units": "Venus radii",
+      "description": "Z VSO: The Z-component of the PVO spacecraft \n      position in Venus Solar Orbital Coordinates (VSO). The Z component of   \n      the VSO coordinate system is taken to be parallel to the pole of the    \n      Venus orbital plane and positive in the northward direction (upward     \n      normal).  The units are given in Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "ALT",
+      "type": "double",
+      "units": "km",
+      "description": "ALT: Spacecraft Altitude above the Venus     \n      surface. This value is computed by subtracting 6050 km from the         \n      centered Venus-to-PVO range given in the SEDR.",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "deg",
+      "description": "SZA: Solar Zenith Angle. This is the three   \n      body angle Sun-Venus-PVO taken from the SEDR.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "deg",
+      "description": "LON: Venus centered longitude of the PVO     \n      spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "LAT: Venus centered latitude of the PVO      \n      spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

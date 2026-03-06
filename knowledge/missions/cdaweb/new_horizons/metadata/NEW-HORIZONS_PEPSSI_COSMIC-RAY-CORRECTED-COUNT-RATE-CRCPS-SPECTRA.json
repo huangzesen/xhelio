@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Sector0",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 0 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector2",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 2 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Sector5",
+      "type": "double",
+      "units": "c/s",
+      "description": "Sector 5 Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "AllSectorsSum",
+      "type": "double",
+      "units": "c/s",
+      "description": "All Sectors Sum Cosmic Rays Count Rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2012-01-28T00:30:00.000Z",
+  "stopDate": "2025-07-30T23:30:00.000Z"
+}

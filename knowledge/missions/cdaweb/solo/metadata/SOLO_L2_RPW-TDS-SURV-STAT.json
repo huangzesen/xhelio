@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SN_NR_EVENTS",
+      "type": "integer",
+      "units": "",
+      "description": "Total number of valid snapshots processed",
+      "fill": "255.0"
+    },
+    {
+      "name": "SN_MAX_E",
+      "type": "double",
+      "units": "V/m",
+      "description": "Maximum of maxima of the amplitude of snapshots",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SN_MED_MAX_E",
+      "type": "double",
+      "units": "V/m",
+      "description": "Median of maxima of the amplitude of snapshots",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SN_RMS_E",
+      "type": "double",
+      "units": "V/m",
+      "description": "RMS of all proceeded snapshots.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SN_THRESHOLD",
+      "type": "integer",
+      "units": "",
+      "description": "Number of snapshots exceed the threshold",
+      "fill": "255.0"
+    },
+    {
+      "name": "DU_NR_IMPACT",
+      "type": "integer",
+      "units": "counts",
+      "description": "Number of dust impact",
+      "fill": "255.0"
+    },
+    {
+      "name": "DU_MED_AMP",
+      "type": "double",
+      "units": "V/m",
+      "description": "Median wave amplitude of dust impacts",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WA_AMP_MAX",
+      "type": "double",
+      "units": "V/m",
+      "description": "Maximum of detected wave amplitudes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WA_AMP_MED",
+      "type": "double",
+      "units": "V/m",
+      "description": "Median of the peak wave amplitudes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WA_RMS",
+      "type": "double",
+      "units": "V/m",
+      "description": "RMS value calculated form all waves",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WA_NR_EVENTS",
+      "type": "integer",
+      "units": "counts",
+      "description": "Total number of valid snapshots",
+      "fill": "255.0"
+    },
+    {
+      "name": "WA_MED_FREQ",
+      "type": "double",
+      "units": "Hz",
+      "description": "Median frequency of all identified waves",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:21.000Z",
+  "stopDate": "2023-11-13T00:02:58.000Z"
+}

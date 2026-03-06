@@ -1,0 +1,445 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT_NUMBER",
+      "type": "double",
+      "units": "",
+      "description": "Orbit Number (Orb).",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "ACCUM_TIME",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Accumulation Time (ACCUM_t) per record.               \n                        Values are 0.1500, 0.2667 or 0.5000.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "DT",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Delta-Time (delta-t or dt) per record.                \n                        This is half the accumulation time used for the record\n                        such that the start time of the record is UTC - dt,   \n                        and end time is UTC + dt (seconds).  Because we merged\n                        many Level 2 records to get one merged record to fit, \n                        this value can vary greatly.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "Jovian Radii",
+      "description": "Spacecraft's Radial distance from Jupiter, in RJ.     \n                        [1 RJ = 71492 km = 1 Jovian Radius]",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "SC_LT",
+      "type": "double",
+      "units": "Hours",
+      "description": "Spacecraft's Local Time, in hours.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Spacecraft's Jovian Latitude, in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC_CLAT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Spacecraft's Centrifugal Latitude, in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC_SIII",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Spacecraft's SYSIII West Longitude, in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC_COROT",
+      "type": "double",
+      "units": "km/s",
+      "description": "Rigid corotation velocity at Spacecraft's position,   \n                        in km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "M",
+      "type": "double",
+      "units": "amu",
+      "description": "Assumed mass of ion used in fit, in amu.",
+      "size": [
+        1
+      ],
+      "fill": "0.00"
+    },
+    {
+      "name": "Q",
+      "type": "double",
+      "units": "e",
+      "description": "Assumed charge of ion used in fit, in elementary      \n                        charges (e).",
+      "size": [
+        1
+      ],
+      "fill": "0.00"
+    },
+    {
+      "name": "LOWER_LIMIT_VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vr (LowerLim_Vr) used in       \n                        process, units of km/s.                               \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "LOWER_LIMIT_VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vtheta (LowerLim_Vt) used in   \n                        process, units of km/s.                               \n                        [This value is fixed at -200.000 for all records.]    \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "LOWER_LIMIT_VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vphi (LowerLim_Vp) used in     \n                        process, units of km/s.                               \n                        [This value is fixed at -200.000 for all records.]    \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "LOWER_LIMIT_N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Lower fitting limit of n (LowerLim_n) used in         \n                        process, units of cm^-3.                              \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "LOWER_LIMIT_T",
+      "type": "double",
+      "units": "eV",
+      "description": "Lower fitting limit of T (LowerLim_T) used in         \n                        process, units of eV.                                 \n                        [This value is fixed at 0.001 for all records.]       \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UPPER_LIMIT_VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vr (UpperLim_Vr) used in       \n                        process, units of km/s.                               \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UPPER_LIMIT_VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vtheta (UpperLim_Vt) used in   \n                        process, units of km/s.                               \n                        [This value is fixed at 200.000 for all records.]     \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UPPER_LIMIT_VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vphi (UpperLim_Vp) used in     \n                        process, units of km/s.                               \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UPPER_LIMIT_N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Upper fitting limit of n (UpperLim_n) used in         \n                        process, units of cm^-3.                              \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UPPER_LIMIT_T",
+      "type": "double",
+      "units": "eV",
+      "description": "Upper fitting limit of T (UpperLim_T) used in         \n                        process, units of eV.                                 \n                        [This value is fixed at 20000.000 for all records.]   \n                        During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "RECORD_NUMBER_DATA_POINTS",
+      "type": "double",
+      "units": "",
+      "description": "\"Record's number of Data Points used in fit (#rdp).    \n                        This is the number of points fitted in the reduced    \n                        Chi square fit, always with 5 free parameters.        \n                        Therefore degrees of freedom for each reduced Chi     \n                        square fit is this value minus 5.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "RECORD_NUMBER_EXPECTED",
+      "type": "double",
+      "units": "",
+      "description": "Expected record number (ern) of sweeps to fully       \n                        populate a merged-spin to fit.                        \n                        Values are 8, 16 or 32, dependent on ACCUM_TIME.      \n                        If this value does not match RECORD_NUMBER_ACTUAL     \n                        then not all sweeps were available and the fit did    \n                        not have an all sky view.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "RECORD_NUMBER_ACTUAL",
+      "type": "double",
+      "units": "",
+      "description": "Actual record number (arn) of sweeps available to     \n                        populate a merged-spin to fit.                        \n                        If this value does not match RECORD_NUMBER_EXPECTED   \n                        then not all sweeps were available and the fit did    \n                        not have an all sky view, or perhaps not all expected \n                        energy steps were returned.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "RECORD_MIN_COUNT",
+      "type": "double",
+      "units": "Counts per accumulation",
+      "description": "The minimum counts/accumulation observed (Min_Cnt)    \n                        within the level 2 records for this merged-spin.      \n                        E.g. provides an indication of background.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "RECORD_MAX_COUNT",
+      "type": "double",
+      "units": "Counts per accumulation",
+      "description": "The maximum counts/accumulation observed (Max_Cnt)    \n                        within the level 2 records for this merged-spin.      \n                        E.g. provides an indication of signal (rather than    \n                        noise) when compared with RECORD_MIN_COUNT.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "COST_OF_FIT",
+      "type": "double",
+      "units": "",
+      "description": "Cost function of the fit (Fit_Cost), that is the      \n                        value of the reduced Chi-Square plus any penalties.   \n                        Since penalties were multiples of 10^6 and the maximum\n                        seen in this file is under 8000, no penalties were    \n                        hit in these fits, and the Cost function is equivalent\n                        to the reduced Chi square value of the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000"
+    },
+    {
+      "name": "FIT_VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vr (Fit_Vr), units of km/s.           \n                        -> Value is really FIT_VR +/- UNCERTAINTY_VR.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "FIT_VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vtheta (Fit_Vt), units of km/s.       \n                        -> Value is really FIT_VTHETA +/- UNCERTAINTY_VTHETA.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "FIT_VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vphi (Fit_Vp), units of km/s.         \n                        -> Value is really FIT_VPHI +/- UNCERTAINTY_VPHI.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "FIT_N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Fitted value of n (Fit_n), units of cm^-3.            \n                        -> Value is really FIT_N +/- UNCERTAINTY_N.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "FIT_T",
+      "type": "double",
+      "units": "eV",
+      "description": "Fitted value of T (Fit_T), units of eV.               \n                        -> Value is really FIT_T +/- UNCERTAINTY_T.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UNCERTAINTY_VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty value of Vr (Sigma_Vr), units of km/s.    \n                        -> Value is really FIT_VR +/- UNCERTAINTY_VR.         \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UNCERTAINTY_VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty value of Vtheta (Sigma_Vt), units of km/s.\n                        -> Value is really FIT_VTHETA +/- UNCERTAINTY_VTHETA. \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UNCERTAINTY_VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty value of Vphi (Sigma_Vp), units of km/s.  \n                        -> Value is really FIT_VPHI +/- UNCERTAINTY_VPHI.     \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UNCERTAINTY_N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Uncertainty value of n (Sigma_n), units of cm^-3.     \n                        -> Value is really FIT_N +/- UNCERTAINTY_N.           \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "UNCERTAINTY_T",
+      "type": "double",
+      "units": "eV",
+      "description": "Uncertainty value of T (Sigma_T), units of eV.        \n                        -> Value is really FIT_T +/- UNCERTAINTY_T.           \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "INDEPENTENT_STDDEV_VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vr (Ind_SDev_Vr) , units of km/s.                     \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VR           \n                        instead. This is here for comparison only.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "INDEPENTENT_STDDEV_VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vtheta (Ind_SDev_Vt) , units of km/s.                 \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VTHETA       \n                        instead. This is here for comparison only.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "INDEPENTENT_STDDEV_VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vphi (Ind_SDev_Vp) , units of km/s.                   \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VPHI         \n                        instead. This is here for comparison only.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "INDEPENTENT_STDDEV_N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        n (Ind_SDev_n) , units of cm^-3.                      \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_N            \n                        instead. This is here for comparison only.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "INDEPENTENT_STDDEV_T",
+      "type": "double",
+      "units": "eV",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        T (Ind_SDev_T) , units of eV.                         \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_T            \n                        instead. This is here for comparison only.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "JGR",
+      "type": "double",
+      "units": "",
+      "description": "JGR use flag.                                         \n                        1 = 'good' fit, used in our JGR paper.                \n                        0 = 'bad' fit, not used in our JGR paper.             \n                        \n                        Our criteria for a 'good' fit is given in our JGR     \n                        paper, however here we provide all fits for all the   \n                        PLS data as your criteria may be stronger or weaker.  \n                        If you publish on these results, you should state what\n                        your criteria for good fits was.                      \n                        \n                        Our JGR paper has the following citation:             \n                        Bagenal, F., R. J. Wilson, S. Siler, W. R. Paterson, and W. S. Kurth (2016), \n                        Survey of Galileo plasma observations in Jupiter's plasma sheet,             \n                        J. Geophys. Res. Planets, 121, 871-894, doi:10.1002/2016JE005009.            \n                        \n                        Please cite this paper and this PDS volume if you     \n                        use this dataset.",
+      "size": [
+        1
+      ],
+      "fill": "9"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

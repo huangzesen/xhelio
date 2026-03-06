@@ -1,0 +1,160 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AOBT",
+      "type": "double",
+      "units": "",
+      "description": "APSS onboard time (AOBT) value of sample. This is the spacecraft\n                        clock time used by the APSS instruments.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "frequency",
+      "type": "double",
+      "units": "Hz",
+      "description": "IFG sample frequency [Hz]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "conf",
+      "type": "double",
+      "units": "",
+      "description": "Configuration table number used to define onboard\n                       processing including IFG down-sampling rate and the\n                       computation of the estimated parameters.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "off",
+      "type": "double",
+      "units": "",
+      "description": "Sample offset within the downlink packet (samples 1 - 1024).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG1_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 1 value in data numbers.",
+      "size": [
+        1
+      ],
+      "fill": "9999999"
+    },
+    {
+      "name": "IFG2_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 2 value in data numbers.",
+      "size": [
+        1
+      ],
+      "fill": "9999999"
+    },
+    {
+      "name": "IFG3_DN",
+      "type": "double",
+      "units": "",
+      "description": "IFG axis 3 value in data numbers.",
+      "size": [
+        1
+      ],
+      "fill": "9999999"
+    },
+    {
+      "name": "MLST",
+      "type": "double",
+      "units": "Hour",
+      "description": "Mean local time represented as decimal SOLs with the format SSSS.xxxxxxx where SSSS is the SOL number and xxxxxxx is the fractional SOL.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "TLST",
+      "type": "double",
+      "units": "Hour",
+      "description": "Mars true local time represented as decimal hours (0 - 24)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "HR_Angle",
+      "type": "double",
+      "units": "Degree",
+      "description": "Solar hour angle in degrees (0-360) with 0 at noon and 90 at dusk.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "modelET",
+      "type": "double",
+      "units": "Degree",
+      "description": "Prior to 2019-11-18, the actual IFG electronics temperature (ET) was only \n                        available a few times per SOL. Since a value is required for every IFG \n                        vector for calibration purposes, a spline fit to the PAE temperature T-0014 \n                        was used as a proxy. T-0014 is sometimes available every minute or so, but is only\n                        infrequently returned at night. The observed values of T-0014 were spline\n                        fit to produce data set that is sampled at 5 minute resolution or better\n                        and then the values between those samples are derived by linear interpolation.\n                        After 2019-11-18, ET data became available every 15 minutes and data\n                        were linearly interpolated between samples to provide continuous data.\n                        This value is given in units of degrees Celsius.\n                        See the IFG calibration document for additional details.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "modelST",
+      "type": "double",
+      "units": "Degree",
+      "description": "Since the value of the actual IFG sensor temperature is not available in the high\n                       rate data, a model value of the sensor temperature derived from low rate data [deg C]\n                       is used for the calibration.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "modelSA",
+      "type": "double",
+      "units": "A",
+      "description": "TLST and UTC dependent model of the fixed solar array current [A]\n                        derived from the values of the E-0771 from selected time intervals.\n                        Actual data values are sparsely sampled.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "ModSACT",
+      "type": "double",
+      "units": "A",
+      "description": "TLST and UTC dependent model of the solar array current [A] total (SACT)\n                        derived from the sum of E-0772 and E-0772 from selected time intervals.\n                        Actual data values are sparsely sampled.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

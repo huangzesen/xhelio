@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field X Comp. - Spacecraft axes (near GSE): 12-sec avg at 4-sec intervals",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Y Comp. - Spacecraft axes (near GSE): 12-sec avg at 4-sec intervals",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Z Comp. - Spacecraft axes (near GSE): 12-sec avg at 4-sec intervals",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "Total Magnetic Field: 12-sec avg at 4-sec intervals",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1977-10-22T19:54:12.000Z",
+  "stopDate": "1987-09-26T06:10:21.000Z"
+}

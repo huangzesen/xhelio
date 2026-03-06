@@ -1,0 +1,1006 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SoftwareVersion",
+      "type": "integer",
+      "units": "",
+      "description": "IDPU Software version",
+      "fill": "255.0"
+    },
+    {
+      "name": "HardwareVersion",
+      "type": "integer",
+      "units": "",
+      "description": "IDPU Hardware version",
+      "fill": "255.0"
+    },
+    {
+      "name": "PollTimeMax",
+      "type": "double",
+      "units": "s",
+      "description": "Maximum foreground loop time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PollTimeAvg",
+      "type": "double",
+      "units": "s",
+      "description": "Average foreground loop time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TimeJitter",
+      "type": "double",
+      "units": "s",
+      "description": "Max UTC time jitter compared to Sample Clock once a second",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ErrorCode",
+      "type": "integer",
+      "units": "",
+      "description": "Error code reported by IDPU",
+      "fill": "255.0"
+    },
+    {
+      "name": "ErrorData",
+      "type": "integer",
+      "units": "",
+      "description": "Error data reported by IDPU",
+      "fill": "255.0"
+    },
+    {
+      "name": "ErrorCount",
+      "type": "integer",
+      "units": "",
+      "description": "Error count",
+      "fill": "255.0"
+    },
+    {
+      "name": "CommandCount",
+      "type": "integer",
+      "units": "",
+      "description": "IMPACT Command Counter",
+      "fill": "65535.0"
+    },
+    {
+      "name": "CommandLastID",
+      "type": "integer",
+      "units": "",
+      "description": "IMPACT Last Command Ap ID (Bits 8,6,5,4,3,2,1,0)",
+      "fill": "255.0"
+    },
+    {
+      "name": "CommandLastSeq",
+      "type": "integer",
+      "units": "",
+      "description": "IMPACT Last Command Sequence Counter (LSB)",
+      "fill": "255.0"
+    },
+    {
+      "name": "PCommandCount",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC command counter",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PCommandLastID",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Last Command Ap ID (Bits 8,6,5,4,3,2,1,0)",
+      "fill": "255.0"
+    },
+    {
+      "name": "PCommandLastSeq",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Last Command Sequence Counter (LSB)",
+      "fill": "255.0"
+    },
+    {
+      "name": "IMPACT_SSR",
+      "type": "integer",
+      "units": "%",
+      "description": "IMPACT SSR Fill Level",
+      "fill": "255.0"
+    },
+    {
+      "name": "PLASTIC_SSR",
+      "type": "integer",
+      "units": "%",
+      "description": "PLASTIC SSR Fill Level",
+      "fill": "255.0"
+    },
+    {
+      "name": "SCStatus",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft status",
+      "fill": "255.0"
+    },
+    {
+      "name": "BootSelect",
+      "type": "integer",
+      "units": "",
+      "description": "Boot Select (0-3=EEPROM to RAM, 4-7=EEPROM, else PROM)",
+      "fill": "255.0"
+    },
+    {
+      "name": "CodePage",
+      "type": "integer",
+      "units": "",
+      "description": "Code Page (0=PROM, 8-11=EEPROM0-3, 16=RAM, Else = Illegal)",
+      "fill": "255.0"
+    },
+    {
+      "name": "CodePageStatus",
+      "type": "integer",
+      "units": "",
+      "description": "Code Page Status Bits",
+      "fill": "255.0"
+    },
+    {
+      "name": "CmdSeqRunning",
+      "type": "integer",
+      "units": "",
+      "description": "Command Sequence # Running (>31 -> no sequence running)",
+      "fill": "255.0"
+    },
+    {
+      "name": "InterfaceEnables",
+      "type": "integer",
+      "units": "",
+      "description": "Instrument Interface Enables",
+      "fill": "255.0"
+    },
+    {
+      "name": "ITelemEnables",
+      "type": "integer",
+      "units": "",
+      "description": "IMPACT Telemetry Enables",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PTelemEnables",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Telemetry Enables",
+      "fill": "65535.0"
+    },
+    {
+      "name": "InterfaceActive",
+      "type": "integer",
+      "units": "",
+      "description": "Instrument Interfaces Active",
+      "fill": "255.0"
+    },
+    {
+      "name": "MaxIMPACTQ",
+      "type": "integer",
+      "units": "",
+      "description": "Maximum IMPACT queue depth",
+      "fill": "255.0"
+    },
+    {
+      "name": "MaxPLASTICQ",
+      "type": "integer",
+      "units": "",
+      "description": "Maximum PLASTIC queue depth",
+      "fill": "255.0"
+    },
+    {
+      "name": "IMPACTBitrate",
+      "type": "double",
+      "units": "bps",
+      "description": "IMPACT Telemetry bit rate (1 minute average)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLASTICBitrate",
+      "type": "double",
+      "units": "bps",
+      "description": "PLASTIC Telemetry bit rate (1 minute average)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CmdSeqMask",
+      "type": "integer",
+      "units": "",
+      "description": "Command sequence mask",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "BurstModeID",
+      "type": "integer",
+      "units": "",
+      "description": "Burst Parameter Table Mode ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "BurstCurCriteria",
+      "type": "integer",
+      "units": "",
+      "description": "Burst Current Criteria",
+      "fill": "255.0"
+    },
+    {
+      "name": "STEUDoorCount",
+      "type": "integer",
+      "units": "",
+      "description": "STE-U Door motion count",
+      "fill": "255.0"
+    },
+    {
+      "name": "STEUDoorStart",
+      "type": "double",
+      "units": "s",
+      "description": "STE-U Time from power application to motion start",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUDoorDone",
+      "type": "double",
+      "units": "s",
+      "description": "STE-U Time from power application to motion complete",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEDDoorCount",
+      "type": "integer",
+      "units": "",
+      "description": "STE-D Door motion count",
+      "fill": "255.0"
+    },
+    {
+      "name": "STEDDoorStart",
+      "type": "double",
+      "units": "s",
+      "description": "STEDDoorStart",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEDDoorDone",
+      "type": "double",
+      "units": "s",
+      "description": "STE-D Time from power application to motion complete",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "AutoLUT",
+      "type": "integer",
+      "units": "",
+      "description": "SWEA/STE Auto LUT enables",
+      "fill": "255.0"
+    },
+    {
+      "name": "STEModeID",
+      "type": "integer",
+      "units": "",
+      "description": "STE LUT Table ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAModeID",
+      "type": "integer",
+      "units": "",
+      "description": "SWEA LUT Table ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "BurstSavePage",
+      "type": "integer",
+      "units": "",
+      "description": "Burst recording page number",
+      "fill": "255.0"
+    },
+    {
+      "name": "BurstSendPage",
+      "type": "integer",
+      "units": "",
+      "description": "Burst transmission page number",
+      "fill": "255.0"
+    },
+    {
+      "name": "BurstBestCriteria",
+      "type": "integer",
+      "units": "",
+      "description": "Burst Save Best Criteria",
+      "fill": "255.0"
+    },
+    {
+      "name": "MAGHKP",
+      "type": "integer",
+      "units": "",
+      "description": "MAG Hardware Housekeeping",
+      "fill": "65535.0"
+    },
+    {
+      "name": "MAGHeater",
+      "type": "double",
+      "units": "mA",
+      "description": "MAG sensor heater input current (on 28V primary)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAGTemp",
+      "type": "double",
+      "units": "C",
+      "description": "MAG sensor temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUCur",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U Front End Current (sum of +5A, -5A, and +5D)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUTemp",
+      "type": "double",
+      "units": "C",
+      "description": "STEUTemp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUDACTemp",
+      "type": "double",
+      "units": "C",
+      "description": "STE-U Interface PWB Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUVCCA",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U +2.5V Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEU5VD",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U +5V Digital Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUVCC1",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U FPGA Interface +5V Supply voltage (ref)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEU5VA",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U +5V Analog Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEU12V",
+      "type": "double",
+      "units": "V",
+      "description": "STE-U +12V Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEAMCP",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA MCP Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEANR5V",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA Non-regulated HV Voltage 5V supply",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEAAnal",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA Analyzer Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEADefl1",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA Deflector 1 Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEADefl2",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA Deflector 2 Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEAV0",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA V0 Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEAGND",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA Ground",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTEDCur",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE-D Front End Current (sum of +5A, -5A, and +5D).",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEAMCPTemp",
+      "type": "double",
+      "units": "C",
+      "description": "SWEA MCP Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEDTemp",
+      "type": "double",
+      "units": "C",
+      "description": "STE-D temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEADACTemp",
+      "type": "double",
+      "units": "C",
+      "description": "SWEA PWB Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTEDVCCA",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE-D +2.5V Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTED5VD",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE-D +5V Digital Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTEDVCC1",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE FPGA Interface +5V Supply voltage (ref)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTE5VA",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE-D +5V Analog Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEASTE12V",
+      "type": "double",
+      "units": "V",
+      "description": "SWEA/STE-D +12V Supply Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STEUDig",
+      "type": "integer",
+      "units": "",
+      "description": "STE-U digital housekeeping",
+      "fill": "65535.0"
+    },
+    {
+      "name": "SWEASTEDDig",
+      "type": "integer",
+      "units": "",
+      "description": "SWEA/STE-D digital housekeeping",
+      "fill": "65535.0"
+    },
+    {
+      "name": "BLK_ID",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Block ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "DEV_ID",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Device ID",
+      "fill": "255.0"
+    },
+    {
+      "name": "PLRNM_SPARE",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC spare monitor channel (negative)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_N12V",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter -12 V",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_N5V",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter -5 V",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PESA_VM_POS",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Electrostatic Analyzer Positive Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_1_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Deflection 1 HV Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_1_TAP",
+      "type": "double",
+      "units": "V",
+      "description": "Deflection 1 HV Tap Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_2_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Deflection 2 HV Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_2_TAP",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Deflection 2 HV Tap Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P2VB",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter +2.5 V b",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PPAC_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Post-Acceleration Voltage DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P12V",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter +12 V",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLRPM_SPARE",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC spare monitor channel (positive)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P2VA",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter +2.5 V a",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P5V",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC low voltage converter +5 V",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PADC_AVDD",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Analog to Digital Converter Voltage (Analog)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PADC_DVDD",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Analog to Digital Converter Voltage (Digital)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PPAC_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Post-Acceleration Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PCAL_VREF",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Calibrated Reference Voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PPAC_CM_AC",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Post-Acceleration AC Current Monitor -- not in use",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PMCP_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Microchannel Plate Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PMCP_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Microchannel Plate DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PMCP_CM_AC",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Microchannel Plate AC Current Monitor -- not in use",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PSSD_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Solid State Detector DC Current Monitor  primary si",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PS_CH_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC S-Channel Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PS_CH_VM_TAP",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC S-Channel Voltage Monitor Tap",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PS_CH_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC S-Channel DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PESA_VM_NEG",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Electrostatic Analyzer Negative Voltage Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PESA_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Electrostatic Analyzer DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_1_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Deflection 1 HV DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PDFL_2_CM_DC",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC Deflection 2 HV DC Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P2VB_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter +2.5 V b Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P12V_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter +12 V Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_N12V_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter -12 V Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P5V_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter +5 V Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_N5V_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter -5 V Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC_P2VA_IMON",
+      "type": "double",
+      "units": "mA",
+      "description": "PLASTIC low voltage converter +2.5 V a Current Monitor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_VM",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Solid State Detector Voltage Monitor - primary side estimate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PPLUG_ID",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC high voltage limit plug (noneHV fully enable",
+      "fill": "255.0"
+    },
+    {
+      "name": "PADC_LU_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC DAC Boards Analog to Digital Converter latchup flag",
+      "fill": "255.0"
+    },
+    {
+      "name": "PDAC_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC DAC Board Status",
+      "fill": "255.0"
+    },
+    {
+      "name": "PADC_LU_CTR",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC DAC Board Analog to Digital Converter latchup counter",
+      "fill": "255.0"
+    },
+    {
+      "name": "PDHK_SPARE",
+      "type": "integer",
+      "units": "",
+      "description": "PDHK_SPARE",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PADC0_AGND",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC Analog to Digital Converter 0 Analog Ground",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PADC1_AGND",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC Analog to Digital Converter 1 Analog Ground",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PRA_E0",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC Resistive Anode Charge Amplifier Output 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PRA_E1",
+      "type": "double",
+      "units": "",
+      "description": "PLASTIC Resistive Anode Charge Amplifier Output 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PTAC0_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Time to Amplitude Converter board 0 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PTAC2_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Time to Amplitude Converter board 2 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSB0_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Signal Board 0 temperature -- not in use",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSB1_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Signal Board 1 temperature -- not in use",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PTOF_HV0_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Time-of-Flight System High Voltage 0 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PTOF_HV1_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Time-of-Flight System High Voltage 1 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PS_C_0_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "Spacecraft/Instrument Case temperature 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PS_C_1_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Spacecraft/Instrument Case temperature 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC0_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Low voltage converter 0 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PLVC1_TSP",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Low voltage converter 1 temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PADC0_VREF",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Analog to Digital Converter 0 reference voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PADC1_VREF",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Analog to Digital Converter 1 reference voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "PLASTIC Solid State Detector Status",
+      "fill": "65535.0"
+    },
+    {
+      "name": "PSSD_V_POS_ANALOG",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Solid State Detector Positive Voltage (Analog)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_V_NEG_ANALOG",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Solid State Detector Negative Voltage (Analog)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_HV_BIAS",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Solid State Detector High Voltage Bias",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_TC0",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Solid State Detector 0 Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_TC1",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Solid State Detector 1 Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_TC2",
+      "type": "double",
+      "units": "C",
+      "description": "PLASTIC Solid State Detector 2 Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSSD_V_POS_DIG",
+      "type": "double",
+      "units": "V",
+      "description": "PLASTIC Solid State Detector Positive Voltage (Digital)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SampleTime",
+      "type": "integer",
+      "units": "",
+      "description": "Sample time as reported by IDPU",
+      "fill": "65535.0"
+    }
+  ],
+  "startDate": "2006-10-28T14:44:27.000Z",
+  "stopDate": "2025-12-14T23:59:06.000Z"
+}

@@ -1,0 +1,182 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "TIME",
+      "description": "OUTPUT FROM TIME FITTING",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY",
+      "type": "double",
+      "units": "TIME",
+      "description": "OUTPUT FROM TIME FITTING",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SEC",
+      "type": "double",
+      "units": "TIME",
+      "description": "OUTPUT FROM TIME FITTING",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BX",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BY_GSE",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BY_GSE",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BZ_GSE",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BZ_GSE",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BY_GSM",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BY_GSM",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BZ_GSM",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BZ_GSM",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NT",
+      "description": "RUNNING AVG FOR: BMAG",
+      "size": [
+        1
+      ],
+      "fill": "99999.999"
+    },
+    {
+      "name": "STBX",
+      "type": "double",
+      "units": "NONE",
+      "description": "STANDARD DEVIATION FOR: BX",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STBY_GSE",
+      "type": "double",
+      "units": "NONE",
+      "description": "STANDARD DEVIATION FOR: BY_GSE",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STBZ_GSE",
+      "type": "double",
+      "units": "NONE",
+      "description": "STANDARD DEVIATION FOR: BZ_GSE",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STBY_GSM",
+      "type": "double",
+      "units": "NONE",
+      "description": "STANDARD DEVIATION FOR: BY_GSM",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STBZ_GSM",
+      "type": "double",
+      "units": "NONE",
+      "description": "STANDARD DEVIATION FOR: BZ_GSM",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "STBMAG",
+      "type": "double",
+      "units": "NT",
+      "description": "STANDARD DEVIATION FOR: BMAG",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "N/A",
+      "description": "POINTS IN AVERAGE",
+      "size": [
+        1
+      ],
+      "fill": "999"
+    },
+    {
+      "name": "DQF",
+      "type": "double",
+      "units": "N/A",
+      "description": "DATA QUALITY FLAG",
+      "size": [
+        1
+      ],
+      "fill": "99999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

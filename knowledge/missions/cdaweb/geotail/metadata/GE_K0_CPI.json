@@ -1,0 +1,102 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SW_P_Den",
+      "type": "double",
+      "units": "/cm**3",
+      "description": "Ion number density (Solar Wind Analyzer), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SW_P_AVGE",
+      "type": "double",
+      "units": "eV",
+      "description": "Ion Average Energy (Solar Wind Anal. s/c frame), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SW_V",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Ion bulk flow velocity, 3 ~GSE cartesian components (SWA)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HP_P_Den",
+      "type": "double",
+      "units": "/cm**3",
+      "description": "Ion Number Density (Hot Plasma 2D Anal), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HP_P_AVGE",
+      "type": "double",
+      "units": "eV",
+      "description": "Ion Average Energy (Hot Plasma 2D Anal), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HP_V",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Ion Bulk Flow Velocity, ~GSE X-Y components (Hot Plasma 2D Anal)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HP_E_AVGE",
+      "type": "double",
+      "units": "eV",
+      "description": "Average Electron Energy  (Hot Plasma 2D Anal), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W",
+      "type": "double",
+      "units": "Pascals",
+      "description": "Plasma Pressure (Hot Plasma 2D Anal) scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_P_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "H+ Flag (non-zero = H+ present CPI/ICA), scalar",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HE_PP_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "He++ Flag (non-zero = He++ present CPI/ICA)), scalar",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HE_P_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "He+ Flag (non-zero = He+ present CPI/ICA), scalar",
+      "fill": "-128.0"
+    },
+    {
+      "name": "O_P_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "O+ Flag (non-zero = O+ present, CPI/ICA), scalar",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "1992-09-08T07:30:40.000Z",
+  "stopDate": "2022-06-27T12:22:28.000Z"
+}

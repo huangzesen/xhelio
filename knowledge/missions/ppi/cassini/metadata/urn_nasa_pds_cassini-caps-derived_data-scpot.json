@@ -1,0 +1,65 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START_TIME",
+      "type": "double",
+      "units": "N/A",
+      "description": "Start of the sampling period, spacecraft event time, \n                         UTC, in ISOD format to second resolution.  ISOD      \n                         format is as follows:  YYYY-DOYTHH:MM:SS",
+      "size": [
+        1
+      ],
+      "fill": "2030-001T00:00:00"
+    },
+    {
+      "name": "END_TIME",
+      "type": "double",
+      "units": "N/A",
+      "description": "End of the sampling period, spacecraft event time,   \n                         UTC, in ISOD format to second resolution.  ISOD      \n                         format is as follows:  YYYY-DOYTHH:MM:SS",
+      "size": [
+        1
+      ],
+      "fill": "2030-001T00:00:00"
+    },
+    {
+      "name": "ANODE_USED",
+      "type": "double",
+      "units": "",
+      "description": "Anode used to assign potential.",
+      "size": [
+        1
+      ],
+      "fill": "0"
+    },
+    {
+      "name": "SC_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential during the time period given",
+      "size": [
+        1
+      ],
+      "fill": "-999.99"
+    },
+    {
+      "name": "ACCURACY_FLAG",
+      "type": "double",
+      "units": "N/A",
+      "description": "0 = Accurate value derived from ELS data.            \n                             Value will be accurate to +/- 8.5% as the dE/E   \n                             of ELS is 17%.                                   \n                         1 = Potential below ELS lowest energy, therefore     \n                             estimated, use with care.                        \n                         2 = Accurate value derived from non-ELS data, eg.    \n                             RPWS at periapsis or PE at moon encounters.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

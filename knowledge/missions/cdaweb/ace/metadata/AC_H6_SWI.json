@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "nH",
+      "type": "double",
+      "units": "#/cm^3",
+      "description": "Solar Wind Proton Number Density, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "nH_err",
+      "type": "double",
+      "units": "#/cm^3",
+      "description": "Proton Number Density statistical uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vH",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Proton speed, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vthH",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Proton Thermal speed, scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1998-01-29T00:07:03.000Z",
+  "stopDate": "2024-12-31T23:58:24.000Z"
+}

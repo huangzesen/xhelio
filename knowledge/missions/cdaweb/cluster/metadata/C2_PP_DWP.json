@@ -1,0 +1,93 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "DWP status Corr",
+      "fill": "255.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Status_Acf__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "DWP status Acf",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Status_Heea__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "DWP status Heea",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Status_B__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "DWP status B",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "State_wec__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "WEC status",
+      "fill": "255.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "Status_wbd__C2_PP_DWP",
+      "type": "integer",
+      "units": "",
+      "description": "WBD status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Correl_signif__C2_PP_DWP",
+      "type": "double",
+      "units": "%",
+      "description": "Particle Correlator Significance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Correl_P__C2_PP_DWP",
+      "type": "double",
+      "units": "eV",
+      "description": "Particle Correlator Energy Band",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Correl_freq__C2_PP_DWP",
+      "type": "double",
+      "units": "kHz",
+      "description": "Particle Correlator Frequency Band",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-11-01T00:00:02.000Z",
+  "stopDate": "2022-07-02T23:59:46.000Z"
+}

@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Volume ID",
+      "type": "double",
+      "units": "",
+      "description": "The volume_id element uniquely identifies a data volume.  \n                                   Example: LP_0001.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Product ID",
+      "type": "double",
+      "units": "",
+      "description": "The product_id element uniquely identifies a data product.  \n                                   The product_id for a Lunar Prospector merged telemetry file \n                                   is the file name used by the LP project.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start Time",
+      "type": "double",
+      "units": "",
+      "description": "Start time of a telemetry data gap in UTC.  \n                                   Format is yyyy-mm-ddThh:mm.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop Time",
+      "type": "double",
+      "units": "",
+      "description": "Stop time of a telemetry data gap in UTC.  \n                                   Format is yyyy-mm-ddThh:mm.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Outage Description",
+      "type": "double",
+      "units": "",
+      "description": "This element describes provides information about the cause of \n                                   a telemetry data gap or outage.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Outage Status",
+      "type": "double",
+      "units": "",
+      "description": "This element describes the action, if, any, taken to correct the \n                                   telemetry data gap or outage.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_fgm_b_gse_brst_l2_clean",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in Geocentric Solar Ecliptic (GSE) cartesian coordinates plus Btotal (128 S/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_gse_brst_l2",
+      "type": "double",
+      "units": "nT (all flags)",
+      "description": "---> Magnetic field vector in Geocentric Solar Ecliptic (GSE) cartesian coordinates plus Btotal (8 or 16 S/s), including flagged data",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_gsm_brst_l2_clean",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in Geocentric Solar Magnetospheric (GSM) cartesian coordinates plus Btotal (128 S/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_gsm_brst_l2",
+      "type": "double",
+      "units": "nT (all flags)",
+      "description": "---> Magnetic field vector in Geocentric Solar Magnetospheric (GSM) cartesian coordinates plus Btotal (8 or 16 S/s), including flagged data",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_dmpa_brst_l2_clean",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in Despun MPA-aligned cartesian coordinates plus Btotal (128 S/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_dmpa_brst_l2",
+      "type": "double",
+      "units": "nT (all flags)",
+      "description": "---> Magnetic field vector in Despun MPA-aligned cartesian coordinates plus Btotal (128 S/s), including flagged data",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_bcs_brst_l2_clean",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in Body Coordinate System cartesian coordinates plus Btotal (128 S/s)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_b_bcs_brst_l2",
+      "type": "double",
+      "units": "nT (all flags)",
+      "description": "---> Magnetic field vector in Body Coordinate System cartesian coordinates plus Btotal (128 S/s), including flagged data",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_flag_brst_l2",
+      "type": "integer",
+      "units": "0=Good",
+      "description": "Quality Flag:  0 = No identified problems, non-zero = blank out the data",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "mms2_fgm_r_gse_brst_l2",
+      "type": "double",
+      "units": "km",
+      "description": "Definitive Position in GSE coordinates, 30 second",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_fgm_r_gsm_brst_l2",
+      "type": "double",
+      "units": "km",
+      "description": "Definitive Position in GSM coordinates, 30 second",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T12:11:14.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

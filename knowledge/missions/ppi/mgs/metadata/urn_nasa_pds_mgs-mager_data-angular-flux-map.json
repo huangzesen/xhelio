@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Sample_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Universal time of the sample at the spacecraft (UTC, spacecraft event         \n                        time). The time appears as 6 integer columns (year, day of year, hour,        \n                        minute, second, millisecond). Individual elements of the time column are      \n                        separated by a single ASCII space character and have leading zeros            \n                        omitted. The individual elements can be read by using the FORTRAN format      \n                        '(1X,I4,1X,I3,3(1X,I2),1X,I3)' IYR IDOY IHR IMIN ISEC IMSEC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Background_Flux",
+      "type": "double",
+      "units": "eV/(cm**2*s*sr*eV)",
+      "description": "Estimate of instrument background, which is caused primarily by               \n                        penetrating particles (galactic cosmic rays and solar energetic               \n                        particles with energies greater than 20 MeV).",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+9"
+    },
+    {
+      "name": "MAG_AZ",
+      "type": "double",
+      "units": "deg",
+      "description": "Azimuth of local magnetic field (B) in ER sensor coordinates.\n                        ER azimuth is defined in the ER X-Y plane with zero at the \n                        boundary between sectors 0 and 15.  Note that ER coordinates are \n                        left handed, so that azimuth increases with sector number.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "MAG_EL",
+      "type": "double",
+      "units": "deg",
+      "description": "Elevation of local magnetic field (B) in ER sensor coordinates.\n                        ER elevation is measured out of the ER X-Y plane.  The field of \n                        view extends to +/- 7 degrees elevation.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "MAG_Angle_Error",
+      "type": "double",
+      "units": "deg",
+      "description": "Angular uncertainty in local magnetic (B) field direction.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

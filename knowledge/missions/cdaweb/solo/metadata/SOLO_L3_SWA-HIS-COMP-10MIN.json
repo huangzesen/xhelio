@@ -1,0 +1,274 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HE2_DENS",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "He++ density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HE2_TH_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "He++ thermal speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HE2_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "He++ speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C5_DENS",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Carbon 5 density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C5_TH_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Carbon 5 thermal speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C5_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Carbon 5 speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O6_DENS",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Oxygen 6 density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O6_TH_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Oxygen 6 thermal speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O6_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Oxygen 6 speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FE10_DENS",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Iron 10 density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FE10_TH_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Iron 10 thermal speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FE10_SPEED",
+      "type": "double",
+      "units": "km/s",
+      "description": "Iron 10 speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Oxygen charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "C_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Carbon charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FE_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Iron charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "SI_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Silicon charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "NE_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Neon charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "MG_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Magnesium charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "N_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Nitrogen charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "S_CHARGE_DIST",
+      "type": "double",
+      "units": "unitless",
+      "description": "Sulpher charge distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "O7_O6_RATIO",
+      "type": "double",
+      "units": "unitless",
+      "description": "O7/O6 element ratio",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C6_C4_RATIO",
+      "type": "double",
+      "units": "unitless",
+      "description": "C6/C4 element ratio",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C6_C5_RATIO",
+      "type": "double",
+      "units": "unitless",
+      "description": "C6/C5 element ratio",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_AVE_CHARGE",
+      "type": "double",
+      "units": "unitless",
+      "description": "Oxygen average charge",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_AVE_CHARGE",
+      "type": "double",
+      "units": "unitless",
+      "description": "Carbon average charge",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FE_AVE_CHARGE",
+      "type": "double",
+      "units": "unitless",
+      "description": "Iron average charge",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FE_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Iron/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "C_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Carbon/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HE_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Helium/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MG_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Magnesium/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SI_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Silicon/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NE_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Neon/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "S_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Sulpher/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_O_ABUN",
+      "type": "double",
+      "units": "unitless",
+      "description": "Nitrogen/Oxygen abundance",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2022-01-01T00:00:27.000Z",
+  "stopDate": "2023-04-27T14:10:15.000Z"
+}

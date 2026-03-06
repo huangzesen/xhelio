@@ -1,0 +1,183 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Quality indicator (also quickly shows times when images are available)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "IMAGE_DATA",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "Far UV Images (kRay), small format display with click-expand (~10 min res)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "IMAGE_DATA_LF",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Large format display with click-expand, no geographic registration",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "GEOD_IMAGE_O",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) With geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "GEOD_IMAGE",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> [DO NOT USE: UNDER-DEVELOPMENT] Test Display",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "GEOD_IMAGE_PS",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (with fixed sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "GEOD_IMAGE_M",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat, using eccentric dipole model",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "IMAGE_MOVIE",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Movie display of images, no geographic registration",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "IMAGE_MOVIE_O",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Movie, with geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "IMAGE_MOVIE_PS",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (with fixed sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "IMAGE_MOVIE_M",
+      "type": "double",
+      "units": "photon cm^-2 s^-1",
+      "description": "--> (USE SHORT TIME SPAN) Movie, azimuthal projection to magnetic LT and invariant lat, using eccentric dipole model",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        228,
+        200
+      ]
+    },
+    {
+      "name": "GCI_POSITION",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position in GCI, 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ATTITUDE",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft Attitude in GCI, 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_SUN",
+      "type": "double",
+      "units": "km",
+      "description": "Sun Position in GCI, 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_LOOK_DIR",
+      "type": "double",
+      "units": "",
+      "description": "Unit vector along field of view.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DSP_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Offset angle of despun platform from nadir.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "FILTER",
+      "type": "integer",
+      "units": "",
+      "description": "Filter selection.",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-03-01T23:59:59.000Z",
+  "stopDate": "2008-04-28T23:59:59.000Z"
+}

@@ -1,0 +1,724 @@
+{
+  "id": "CASSINI_PPI",
+  "name": "Cassini (PDS PPI)",
+  "keywords": [
+    "cassini",
+    "cassini_ppi",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "Cassini data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Cassini Plasma Spectrometer": {
+      "name": "Cassini Plasma Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:CO-E/J/S/SW-CAPS-3-CALIBRATED-V1.0:DATA": {
+          "description": "CASSINI CAPS UNCALIBRATED DATA ARCHIVE - DATA",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-02",
+          "slot": "/data/CO-E_J_S_SW-CAPS-3-CALIBRATED-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-log": {
+          "description": "Cassini CAPS Raw Ion Mass Spectrometer Logicals (LOG) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-log",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-act": {
+          "description": "Cassini CAPS Raw Actuator (ACT) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-act",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-calibrated:data-tofst": {
+          "description": "Cassini-Huygens Plasma Spectrometer (CAPS) Calibrated Ion Mass Spectrometer 'Time Of Flight' Straight Through Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-calibrated/data-tofst",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-water-group-ion:data": {
+          "description": "Global Survey of Individual Water Group Ion Properties in Saturn's Magnetosphere: Cassini CAPS Observations Data Collection",
+          "start_date": "2004-06-30",
+          "stop_date": "2012-05-22",
+          "slot": "/annex/cassini-caps-water-group-ion/data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-calibrated:data-els": {
+          "description": "Cassini-Huygens Plasma Spectrometer (CAPS) Calibrated Electron Spectrometer Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-calibrated/data-els",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-ibs": {
+          "description": "Cassini CAPS Raw Ion Beam Spectrometer (IBS) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-ibs",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-fitted-parameters:data": {
+          "description": "Cassini CAPS Moments Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2012-06-03",
+          "slot": "/data/cassini-caps-fitted-parameters/Data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-anc": {
+          "description": "Cassini CAPS Raw Ancillary (ANC) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-anc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-calibrated:data-ibs": {
+          "description": "Cassini-Huygens Plasma Spectrometer (CAPS) Calibrated Ion Beam Spectrometer Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-calibrated/data-ibs",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-tof": {
+          "description": "Cassini CAPS Raw Ion Mass Spectrometer Time Of Flight (TOF) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-tof",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-els": {
+          "description": "Cassini CAPS Raw Electron Spectrometer (ELS) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-els",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-ion": {
+          "description": "Cassini CAPS Raw Ion Mass Spectrometer Ion Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-ion",
+          "archive_type": 4
+        },
+        "pds3:CO-E/J/S/SW-CAPS-2-UNCALIBRATED-V1.0:DATA": {
+          "description": "CASSINI CAPS UNCALIBRATED DATA ARCHIVE",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-02",
+          "slot": "/data/CO-E_J_S_SW-CAPS-2-UNCALIBRATED-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-caps-raw:data-sng": {
+          "description": "Cassini CAPS Raw Ion Mass Spectrometer Singles (SNG) Data Collection",
+          "start_date": "1999-01-04",
+          "stop_date": "2012-06-01",
+          "slot": "/data/cassini-caps-raw/data-sng",
+          "archive_type": 4
+        },
+        "pds3:CO-E/J/S/SW-CAPS-5-DDR-ELE-MOMENTS-V1.0:DATA": {
+          "description": "CO-E/J/S/SW-CAPS-5-DDR-ELE-MOMENTS-V1.0 - DATA",
+          "start_date": "1999-01-04",
+          "stop_date": "1999-01-04",
+          "slot": "/data/CO-E_J_S_SW-CAPS-5-DDR-ELE-MOMENTS-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-caps-calibrated:data-toflef": {
+          "description": "Cassini-Huygens Plasma Spectrometer (CAPS) Calibrated Ion Mass Spectrometer 'Time Of Flight' Linear Electric Field Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-calibrated/data-toflef",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-derived:data-scpot": {
+          "description": "Cassini-Huygens Cassini Plasma Spectrometer (CAPS) Derived Spacecraft Potential Data Collection",
+          "start_date": "2004-06-28",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-derived/data-scpot",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-derived:data-ele-mom": {
+          "description": "Cassini-Huygens Plasma Spectrometer (CAPS) Derived Electron Moments Data Collection",
+          "start_date": "1999-08-17",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-derived/data-ele-mom",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-caps-derived:data-ion-moments": {
+          "description": "Cassini-Huygens Cassini Plasma Spectrometer (CAPS) Derived Ion Moments Data Collection",
+          "start_date": "2004-06-28",
+          "stop_date": "2012-06-02",
+          "slot": "/data/cassini-caps-derived/data-ion-moments",
+          "archive_type": 4
+        }
+      }
+    },
+    "Ion And Neutral Mass Spectrometer": {
+      "name": "Ion And Neutral Mass Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "pds3:CO-S-INMS-3-L1A-U-V1.0:DATA": {
+          "description": "CASSINI INMS LEVEL 1A DATA ARCHIVE",
+          "start_date": "2004-07-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/CO-S-INMS-3-L1A-U-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:CO-S-INMS-3-L1A-U-V2.0:DATA": {
+          "description": "CASSINI INMS LEVEL 1A DATA ARCHIVE",
+          "start_date": "2004-07-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/CO-S-INMS-3-L1A-U-V2.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:CO-S-INMS-2-PKT-U-V1.0:DATA": {
+          "description": "CASSINI ORBITER INMS TELEMETRY PACKET DATA",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/CO-S-INMS-2-PKT-U-V1.0/DATA",
+          "archive_type": 3
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:cassini-mag-raw:data-hk-cmd-hkrate": {
+          "description": "Cassini MAG Command Validation Information Data Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-cmd-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-full-rtn": {
+          "description": "Cassini MAG Calibrated Full Res. Data in RTN Coords. Collection",
+          "start_date": "1998-12-30",
+          "stop_date": "2004-06-30",
+          "slot": "/data/cassini-mag-cal/data-full-rtn",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-hk-ana-hkrate": {
+          "description": "Cassini Analog Data from the MAG Control Unit Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-ana-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-hk-con-hkrate": {
+          "description": "Cassini MAG Configuration Image Data Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-con-hkrate",
+          "archive_type": 4
+        },
+        "pds3:CO-E/SW/J/S-MAG-3-RDR-FULL-RES-V2.0:DATA": {
+          "description": "CASSINI MAGNETOMETER CALIBRATED FULL RES ARCHIVE : DATA",
+          "start_date": "1998-12-30",
+          "stop_date": "2017-09-15",
+          "slot": "/data/CO-E_SW_J_S-MAG-3-RDR-FULL-RES-V2.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:CO-E/SW/J/S-MAG-3-RDR-CALIB-SHM-V2.0:DATA": {
+          "description": "CASSINI MAGNETOMETER RAW SHM DATA ARCHIVE : DATA",
+          "start_date": "1999-08-16",
+          "stop_date": "2005-10-11",
+          "slot": "/data/CO-E_SW_J_S-MAG-3-RDR-CALIB-SHM-V2.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-j3": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in J3 Coords. Collection",
+          "start_date": "2000-10-26",
+          "stop_date": "2001-03-02",
+          "slot": "/data/cassini-mag-cal/data-1sec-j3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-shm-hkrate-asc": {
+          "description": "Cassini Scalar Helium MAG Calibrated Housekeeping ASCII Data Collection",
+          "start_date": "1999-08-18",
+          "stop_date": "2005-06-08",
+          "slot": "/data/cassini-mag-cal/data-shm-hkrate-asc",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-full-j3": {
+          "description": "Cassini MAG Calibrated Full Res. Data in J3 Coords. Collection",
+          "start_date": "2000-11-06",
+          "stop_date": "2001-03-02",
+          "slot": "/data/cassini-mag-cal/data-full-j3",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-shm-hkrate": {
+          "description": "Cassini Scalar Helium MAG Calibrated Housekeeping Data Collection",
+          "start_date": "1999-08-18",
+          "stop_date": "2005-06-08",
+          "slot": "/data/cassini-mag-cal/data-shm-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-shm-scirate": {
+          "description": "Cassini Scalar Helium MAG Calibrated Science Data Collection",
+          "start_date": "1999-08-18",
+          "stop_date": "2005-10-11",
+          "slot": "/data/cassini-mag-cal/data-shm-scirate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-hk-att-hkrate": {
+          "description": "Cassini MAG Channelized Spacecraft Attitude Data Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-att-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-krtp": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in KRTP Coords. Collection",
+          "start_date": "2004-05-14",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1sec-krtp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-sci-vhm-scirate": {
+          "description": "Cassini MAG Vector Helium Magnetic-Field Data at the Science Rate Collection",
+          "start_date": "1998-12-30",
+          "stop_date": "2006-01-01",
+          "slot": "/data/cassini-mag-raw/data-sci-vhm-scirate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1min-ksm": {
+          "description": "Cassini MAG Calibrated 1 Min. Avg. Data in KSM Coords. Collection",
+          "start_date": "2004-05-11",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1min-ksm",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-gse": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in GSE Coords. Collection",
+          "start_date": "1999-08-16",
+          "stop_date": "1999-09-15",
+          "slot": "/data/cassini-mag-cal/data-1sec-gse",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-sci-fgm-hkrate": {
+          "description": "Cassini MAG Fluxgate Magnetic-Field Data at the Housekeeping Rate Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-sci-fgm-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-hk-fgm-eng": {
+          "description": "Cassini MAG Channelized User-Defined Engineering Data Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-fgm-eng",
+          "archive_type": 4
+        },
+        "pds3:CO-E/SW/J/S-MAG-4-SUMM-1MINAVG-V2.1:DATA": {
+          "description": "CASSINI MAGNETOMETER CALIBRATED 1 MINUTE AVERAGED ARCHIVE : DATA",
+          "start_date": "1998-12-30",
+          "stop_date": "2017-09-12",
+          "slot": "/data/CO-E_SW_J_S-MAG-4-SUMM-1MINAVG-V2.1/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-rtn": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in RTN Coords. Collection",
+          "start_date": "1998-12-30",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1sec-rtn",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-jmxyz": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in JMXYZ Coords. Collection",
+          "start_date": "2000-10-26",
+          "stop_date": "2001-03-02",
+          "slot": "/data/cassini-mag-cal/data-1sec-jmxyz",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1min-kso": {
+          "description": "Cassini MAG Calibrated 1 Min. Avg. Data in KSO Coords. Collection",
+          "start_date": "2004-05-11",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-cal/data-1min-kso",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-full-krtp": {
+          "description": "Cassini MAG Calibrated Full Res. Data in KRTP Coords. Collection",
+          "start_date": "2004-05-11",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-cal/data-full-krtp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-ksm": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in KSM Coords. Collection",
+          "start_date": "2004-05-14",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1sec-ksm",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-full-jmxyz": {
+          "description": "Cassini MAG Calibrated Full Res. Data in JMXYZ Coords. Collection",
+          "start_date": "2000-11-06",
+          "stop_date": "2001-03-02",
+          "slot": "/data/cassini-mag-cal/data-full-jmxyz",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1sec-kso": {
+          "description": "Cassini MAG Calibrated 1 Sec. Avg. Data in KSO Coords. Collection",
+          "start_date": "2004-05-14",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1sec-kso",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-full-gse": {
+          "description": "Cassini MAG Calibrated Full Res. Data in GSE Coords. Collection",
+          "start_date": "1999-08-13",
+          "stop_date": "1999-08-25",
+          "slot": "/data/cassini-mag-cal/data-full-gse",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-sci-vhm-hkrate": {
+          "description": "Cassini MAG Vector Helium Magnetic-Field Data at the Housekeeping Rate Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2005-11-24",
+          "slot": "/data/cassini-mag-raw/data-sci-vhm-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1min-rtn": {
+          "description": "Cassini MAG Calibrated 1 Min. Avg. Data in RTN Coords. Collection",
+          "start_date": "1998-12-30",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-cal/data-1min-rtn",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-sci-fgm-scirate": {
+          "description": "Cassini MAG Fluxgate Magnetic-Field Data at the Science Rate Collection",
+          "start_date": "1998-12-30",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-sci-fgm-scirate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-1min-krtp": {
+          "description": "Cassini MAG Calibrated 1 Min. Avg. Data in KRTP Coords. Collection",
+          "start_date": "2004-05-11",
+          "stop_date": "2017-09-12",
+          "slot": "/data/cassini-mag-cal/data-1min-krtp",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-raw:data-hk-err-hkrate": {
+          "description": "Cassini MAG Error Counter Information Data Collection",
+          "start_date": "1997-10-28",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mag-raw/data-hk-err-hkrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mag-cal:data-shm-scirate-asc": {
+          "description": "Cassini Scalar Helium MAG Calibrated Science ASCII Data Collection",
+          "start_date": "1999-08-18",
+          "stop_date": "2005-10-11",
+          "slot": "/data/cassini-mag-cal/data-shm-scirate-asc",
+          "archive_type": 4
+        }
+      }
+    },
+    "MIMI Charge/Energy Mass Spectrometer": {
+      "name": "MIMI Charge/Energy Mass Spectrometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:cassini-mimi-chems-raw:data-pha": {
+          "description": "Cassini MIMI CHEMS Raw Pulse Height Analysis Data Collection",
+          "start_date": "1999-01-03",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-chems-raw/data-pha",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-chems-cal:data-cmfull": {
+          "description": "Cassini MIMI CHEMS Calibrated Full Time Resolution Intensity Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-chems-cal/data-cmfull",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-chems-cal:data-cpavg": {
+          "description": "Cassini MIMI CHEMS Calibrated Pulse Height Analysis Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-chems-cal/data-cpavg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-chems-raw:data-accumulation-rates": {
+          "description": "Cassini MIMI CHEMS Raw Accumulation Rates Data Collection",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/cassini-mimi-chems-raw/data-accumulation-rates",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-chems-cal:data-cmavg": {
+          "description": "Cassini MIMI CHEMS Calibrated Mass per Charge Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-chems-cal/data-cmavg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-chems-raw:data-science-rates": {
+          "description": "Cassini MIMI CHEMS Raw Science Rates Data Collection",
+          "start_date": "1999-01-03",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-chems-raw/data-science-rates",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi:data-ancillary": {
+          "description": "Cassini MIMI CHEMS, INCA and LEMMS Ancillary Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi/data-ancillary",
+          "archive_type": 4
+        }
+      }
+    },
+    "MIMI Ion Neutral Camera": {
+      "name": "MIMI Ion Neutral Camera",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:cassini-mimi-inca-raw:data-anc-outcal": {
+          "description": "Cassini MIMI INCA Ancillary Out of Calibration Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/data-anc-outcal",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-iangave_m": {
+          "description": "Cassini MIMI INCA Calibrated Angle Image Averages of High Mass TOF Resolution Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-cal/data-iangave_m",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-raw:data-anc-mode": {
+          "description": "Cassini MIMI INCA Ancillary Mode Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/data-anc-mode",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-raw:data-accumulation-rates": {
+          "description": "Cassini MIMI INCA Raw Accumulation Rate Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/data-accumulation-rates",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-raw:calib": {
+          "description": "Cassini MIMI INCA Raw Calibration Collection",
+          "start_date": "1999-09-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/calib",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-raw:data-pha": {
+          "description": "Cassini MIMI INCA Raw Pulse Height Analysis Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/data-pha",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-icimg_p": {
+          "description": "Cassini MIMI INCA Calibrated Differential Intensities of Pitch Angle Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/cassini-mimi-inca-cal/data-icimg_p",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-raw:data-images": {
+          "description": "Cassini MIMI INCA Raw Images Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-raw/data-images",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-iangave_s": {
+          "description": "Cassini MIMI INCA Calibrated Angle Image Averages of High Spatial Resolution Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-cal/data-iangave_s",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-iangave_t": {
+          "description": "Cassini MIMI INCA Calibrated Angle Image Averages of High Time Resolution Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-inca-cal/data-iangave_t",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-icimg_u": {
+          "description": "Cassini MIMI INCA Calibrated Differential Intensities of Uncertainty Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/cassini-mimi-inca-cal/data-icimg_u",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-inca-cal:data-icimg_i": {
+          "description": "Cassini MIMI INCA Calibrated Differential Intensities of Image Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/cassini-mimi-inca-cal/data-icimg_i",
+          "archive_type": 4
+        }
+      }
+    },
+    "MIMI Low Energy Magnetospheric Measurement Sensor": {
+      "name": "MIMI Low Energy Magnetospheric Measurement Sensor",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-pha-avg-1min": {
+          "description": "Cassini MIMI LEMMS Calibrated 1 Minute Pulse Height Analysis Averages Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/cassini-mimi-lemms-cal/data-pha-avg-1min",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-raw:data-fine-accumulation-rates": {
+          "description": "Cassini MIMI LEMMS Raw Fine Accumulation Rate Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-raw/data-fine-accumulation-rates",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-raw:data-pha": {
+          "description": "Cassini MIMI LEMMS Raw Pulse Height Analysis Data Collection",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-raw/data-pha",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-pha-full": {
+          "description": "Cassini MIMI LEMMS Calibrated Full Time Resolution Pulse Height Analysis Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-cal/data-pha-full",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-pha-avg-1hr": {
+          "description": "Cassini MIMI LEMMS Calibrated 1 Hour Pulse Height Analysis Averages Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/cassini-mimi-lemms-cal/data-pha-avg-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-accumulation-rates-avg-1hr": {
+          "description": "Cassini MIMI LEMMS Calibrated 1 Hour Accumulation Rate Averages Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-cal/data-accumulation-rates-avg-1hr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-accumulation-full": {
+          "description": "Cassini MIMI LEMMS Calibrated Full Time Resolution Accumulation Rates Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-cal/data-accumulation-full",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-priority-full": {
+          "description": "Cassini MIMI LEMMS Calibrated Full Time Resolution Priority Accumulation Rates Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-cal/data-priority-full",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-mimi-lemms-cal:data-accumulation-rates-avg-1min": {
+          "description": "Cassini MIMI LEMMS Calibrated 1 Minute Accumulation Rate Averages Data Collection",
+          "start_date": "2004-01-01",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-mimi-lemms-cal/data-accumulation-rates-avg-1min",
+          "archive_type": 4
+        }
+      }
+    },
+    "Radio And Plasma Wave Science": {
+      "name": "Radio And Plasma Wave Science",
+      "keywords": [],
+      "datasets": {
+        "pds3:CO-V/E/J/S/SS-RPWS-3-RDR-LRFULL-V1.0:DATA": {
+          "description": "CASSINI RADIO AND PLASMA WAVE LOW RATE FULL RES - DATA",
+          "start_date": "1997-10-25",
+          "stop_date": "1997-10-25",
+          "slot": "/data/CO-V_E_J_S_SS-RPWS-3-RDR-LRFULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:CO-SS/S-RPWS-3-LPCNTCUR-V1.0:DATA": {
+          "description": "CASSINI RPWS LANGMUIR PROBE CONTINUOUS CURRENT DATA : DATA",
+          "start_date": "1999-01-01",
+          "stop_date": "2017-09-16",
+          "slot": "/data/CO-SS_S-RPWS-3-LPCNTCUR-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:CO-SS/S-RPWS-5-NEPROXY-V1.0:DATA": {
+          "description": "CASSINI RPWS LANGMUIR PROBE DENSITY FROM FLOATING POTENTIAL DATA - DATA",
+          "start_date": "1997-10-25",
+          "stop_date": "1997-10-25",
+          "slot": "/data/CO-SS_S-RPWS-5-NEPROXY-V1.0",
+          "archive_type": 3
+        },
+        "pds3:CO-SS/S-RPWS-5-LPSWEEP-V1.0:DATA": {
+          "description": "CASSINI RPWS LANGMUIR PROBE SWEEP DATA - DATA",
+          "start_date": "1997-10-25",
+          "stop_date": "1997-10-25",
+          "slot": "/data/CO-SS_S-RPWS-5-LPSWEEP-V1.0",
+          "archive_type": 3
+        },
+        "pds3:CO-V/E/J/S/SS-RPWS-2-REFDR-ALL-V1.0:ANCILLARY": {
+          "description": "CASSINI RADIO AND PLASMA WAVE RAW COMPLETE : ANCILLARY",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/CO-V_E_J_S_SS-RPWS-2-REFDR-ALL-V1.0/data/ANCILLARY",
+          "archive_type": 3
+        },
+        "pds3:CO-V/E/J/S/SS-RPWS-2-REFDR-WBRFULL-V1.0:DATA": {
+          "description": "CASSINI RADIO AND PLASMA WAVE FULL RES WIDEBAND - DATA",
+          "start_date": "1997-10-25",
+          "stop_date": "1997-10-25",
+          "slot": "/data/CO-V_E_J_S_SS-RPWS-2-REFDR-WBRFULL-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:cassini-rpws-electron_density:data": {
+          "description": "Cassini RPWS Electron Densities from Upper Hybrid and Plasma Wave Frequencies",
+          "start_date": "1999-08-18",
+          "stop_date": "2017-09-15",
+          "slot": "/data/cassini-rpws-electron_density/data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:cassini-rpws-hfr-qtn:data": {
+          "description": "Quasi Thermal Noise spectroscopy on High Frequency Receiver Data Data Collection",
+          "start_date": "2004-06-30",
+          "stop_date": "2012-04-15",
+          "slot": "/data/cassini-rpws-hfr-qtn/data",
+          "archive_type": 4
+        },
+        "pds3:CO-V/E/J/S/SS-RPWS-4-SUMM-KEY60S-V1.0:DATA": {
+          "description": "CASSINI RADIO AND PLASMA WAVE SUMMARY KEY PARAMETER 60S - DATA",
+          "start_date": "1997-10-25",
+          "stop_date": "1997-10-25",
+          "slot": "/data/CO-V_E_J_S_SS-RPWS-4-SUMM-KEY60S-V1.0",
+          "archive_type": 3
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

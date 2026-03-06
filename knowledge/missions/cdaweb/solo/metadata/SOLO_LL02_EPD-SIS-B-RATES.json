@@ -1,0 +1,252 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Hydrogen number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "H_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "H number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "He3_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-3 number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "He3_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "He3 number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "He4_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Helium-4 number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "He4_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "He4 number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "C_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Carbon number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "C_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "C number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "N_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Nitrogen number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "N_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "N number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "O_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Oxygen number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "O_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "O number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Ne_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Neon number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Ne_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Ne number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Mg_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Magnesium number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Mg_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Mg number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Si_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Silicon number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Si_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Si number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "S_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Sulfur number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "S_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "S number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Ca_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Calcium number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Ca_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Ca number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Fe_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Iron number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Fe_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV/n)",
+      "description": "Fe number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    }
+  ],
+  "startDate": "2020-06-03T14:10:07.000Z",
+  "stopDate": "2026-02-17T14:52:32.000Z"
+}

@@ -1,0 +1,122 @@
+{
+  "id": "INSIGHT",
+  "name": "InSight",
+  "keywords": [
+    "insight",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "InSight data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "InSight Fluxgate Magnetometer": {
+      "name": "InSight Fluxgate Magnetometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:insight-ifg-cruise:data-ifg-raw": {
+          "description": "InSight IFG Magnetometer Cruise Raw Data Collection",
+          "start_date": "2018-07-16",
+          "stop_date": "2018-08-17",
+          "slot": "/data/insight-ifg-cruise/data-ifg-raw",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars:data-ifg-raw": {
+          "description": "InSight IFG Magnetometer Mars Raw Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2020-04-02",
+          "slot": "/data/insight-ifg-mars/data-ifg-raw",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars-newcal:data-ifg-calibrated": {
+          "description": "InSight IFG Magnetometer Mars New Calibrated Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-04-08",
+          "slot": "/data/insight-ifg-mars-newcal/data-ifg-calibrated",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-cruise:data-ifg-partially-processed": {
+          "description": "InSight IFG Magnetometer Cruise Quick Look Data Collection ",
+          "start_date": "2018-07-16",
+          "stop_date": "2018-08-17",
+          "slot": "/data/insight-ifg-cruise/data-ifg-partially-processed",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars:data-ifg-partially-processed": {
+          "description": "InSight IFG Magnetometer Mars Partially Processed Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-05-24",
+          "slot": "/data/insight-ifg-mars/data-ifg-partially-processed",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-cruise:data-sc-engineering": {
+          "description": "InSight IFG Magnetometer Cruise Engineering Data Collection",
+          "start_date": "2018-07-15",
+          "stop_date": "2018-08-17",
+          "slot": "/data/insight-ifg-cruise/data-sc-engineering",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars:calibration": {
+          "description": "InSight IFG Magnetometer Mars Calibration Data Collection",
+          "start_date": "2018-12-11",
+          "stop_date": "2022-06-08",
+          "slot": "/data/insight-ifg-mars/calibration",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars-newcal:calibration": {
+          "description": "InSight IFG Magnetometer Mars Calibration Data Collection",
+          "start_date": "2018-12-11",
+          "stop_date": "2022-06-08",
+          "slot": "/data/insight-ifg-mars-newcal/calibration",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars:data-ifg-calibrated": {
+          "description": "InSight IFG Magnetometer Mars Calibrated Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-05-24",
+          "slot": "/data/insight-ifg-mars/data-ifg-calibrated",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars-newcal:data-ifg-partially-processed": {
+          "description": "InSight IFG Magnetometer Mars New Partially Processed Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-05-24",
+          "slot": "/data/insight-ifg-mars-newcal/data-ifg-partially-processed",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars-newcal:data-ifg-calibrated-maven-20hz": {
+          "description": "InSight IFG Magnetometer Mars Maven Fly-Over 20Hz Calibrated (v07) Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-04-08",
+          "slot": "/data/insight-ifg-mars-newcal/data-ifg-calibrated-maven-20hz",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars:data-sc-engineering": {
+          "description": "InSight Spacecraft Raw Engineering and Ancillary Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-06-08",
+          "slot": "/data/insight-ifg-mars/data-sc-engineering",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:insight-ifg-mars-newcal:data-ifg-raw": {
+          "description": "InSight IFG Magnetometer Mars New Raw Data Collection",
+          "start_date": "2018-11-30",
+          "stop_date": "2022-05-24",
+          "slot": "/data/insight-ifg-mars-newcal/data-ifg-raw",
+          "archive_type": 4
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

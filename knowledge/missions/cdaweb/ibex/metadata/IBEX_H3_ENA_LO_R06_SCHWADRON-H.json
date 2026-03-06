@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Uncertainty_ESA1",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Uncertainty ESA1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "iSector_ESA1",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "i sector rate ESA1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "Uncertainty_ESA2",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Uncertainty ESA2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "iSector_ESA2",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "i sector rate ESA2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    }
+  ],
+  "startDate": "2009-03-26T00:00:00.000Z",
+  "stopDate": "2011-04-30T00:00:00.000Z"
+}

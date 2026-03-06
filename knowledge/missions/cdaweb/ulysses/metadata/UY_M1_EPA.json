@@ -1,0 +1,116 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Omni_Protons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Omnidirectional proton flux (0.5-1.5 MeV) Telescopes 1-4 (OPTL1-OPTL4)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "PRTL2_sectors",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Telescope 2 proton flux (0.5-1 MeV) in 8 sectors (PRTL2)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "PRTL3_sectors",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Telescope 3 proton flux (0.5-1 MeV) in 8 sectors (PRTL3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "LowE_Electrons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Electron flux (0.1-0.4 MeV)Telescopes 1-4 (ELTL1-ELTL4)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "HiE_Electrons",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Electron flux (> 180 keV) Telescopes 1-4 (EHTL1-EHTL4)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Event_rate",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Omnidirectional event rate, low, medium & high (channels ERL, ERM, ERH)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PSTL1",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Proton Telescope 1 flux in 8 energy channels (0.5-1.5 MeV) and 8 sectors/channel: x>energy y>sector",
+      "fill": "-1.0",
+      "size": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "PSTL2",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Proton Telescope 2 flux in 8 energy channels (0.5-1.5 MeV) and 8 sectors/energy: x>energy y>sector",
+      "fill": "-1.0",
+      "size": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "PSTL3",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Proton Telescope 3 flux in 8 energy channels (0.5-1.5 MeV) and 8 sectors/energy: x>energy y>sector",
+      "fill": "-1.0",
+      "size": [
+        8,
+        8
+      ]
+    },
+    {
+      "name": "PSTL4",
+      "type": "double",
+      "units": "/cm2/s/sr",
+      "description": "Proton Telescope 4 flux in 8 energy channels (0.5-1.5 MeV) and 8 sectors/energy: x>energy y>sector",
+      "fill": "-1.0",
+      "size": [
+        8,
+        8
+      ]
+    }
+  ],
+  "startDate": "1990-10-01T00:00:00.000Z",
+  "stopDate": "1997-12-31T23:00:00.000Z"
+}

@@ -1,0 +1,106 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ele_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Ele_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "Prot_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Proton number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Prot_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Proton number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Alpha_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Alpha number flux as a function of energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Alpha_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Alpha number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ele_HR_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron number flux in 0.05 - 0.1 MeV range with 5 s cadence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ele_HR_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Electron HR number flux uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Prot_HR_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Proton number flux with 5 s cadence",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Prot_HR_Flux_Sigma",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Proton HR number flux uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "2020-06-03T14:22:45.000Z",
+  "stopDate": "2026-02-17T15:32:34.000Z"
+}

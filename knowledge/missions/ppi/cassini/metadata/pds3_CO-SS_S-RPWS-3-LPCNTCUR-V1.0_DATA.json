@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PROBE_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "set electric potential at the probe in volts, formatted %12.5E",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROBE_CURRENT",
+      "type": "double",
+      "units": "A",
+      "description": "measured electric current at the probe in amps, formatted %12.5E",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

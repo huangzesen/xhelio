@@ -1,0 +1,138 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "fit_n_e",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Electron number density from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delta_n_e",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Electron number density uncertainty from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "coarse_n_e",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Electron number density from plasma resonance peak",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fit_T_c",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron core temperature from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delta_T_c",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron core temperature uncertainty from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "coarse_T_c",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron core temperature from thermal plateau levels",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fit_a",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron density ratio from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delta_a",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron density ratio uncertainty from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "coarse_a",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron density ratio from fit initial guess",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fit_t",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron temperature ratio from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delta_t",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron temperature ratio uncertainty from fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "coarse_t",
+      "type": "double",
+      "units": "",
+      "description": "Halo to core electron temperature ratio from fit initial guess",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag of QTN fits of selected QTN data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF_points",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag of QTN fits of selected QTN data; from number of selected QTN channels",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF_peak",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag of QTN fits of selected QTN data; from fitting the plasma peak",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF_shift",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag of QTN fits of selected QTN data; from shifts between fit and data",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF_low_level",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag of QTN fits of selected QTN data; from data levels lower then the fit",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "filtered",
+      "type": "double",
+      "units": "",
+      "description": "Filtered data for quick survey use (outliers labeled).",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2005-01-01T00:01:36.000Z",
+  "stopDate": "2017-11-24T23:59:56.000Z"
+}

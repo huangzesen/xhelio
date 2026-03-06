@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Absorption",
+      "type": "double",
+      "units": "dB",
+      "description": "Ionospheric Absorption(shifted onto L-shell-aligned coord sys)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1994-01-02T00:00:00.000Z",
+  "stopDate": "2001-10-16T23:59:00.000Z"
+}

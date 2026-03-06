@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock mod 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock mod 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_Line",
+      "type": "double",
+      "units": "ticks",
+      "description": "S/C Clock Line Count",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "Spacecraft X position in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "Spacecraft Y position in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "Spacecraft Z position in Kronographic (L1) coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "km/s",
+      "description": "Planetocentric Velocity X compenent.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "km/s",
+      "description": "Planetocentric Velocity Y compenent.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "km/s",
+      "description": "Planetocentric Velocity Z compenent.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "Spacecraft distance.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft longitude.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

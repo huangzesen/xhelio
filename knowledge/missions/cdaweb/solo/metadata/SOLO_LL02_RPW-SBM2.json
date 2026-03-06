@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SBM2_ALGO_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "SBM2 detection algorithm status",
+      "fill": "255.0"
+    },
+    {
+      "name": "SBM2_TIME",
+      "type": "integer",
+      "units": "",
+      "description": "SBM2 event absolute time.",
+      "fill": "4294967295.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "SBM2_QF",
+      "type": "integer",
+      "units": "",
+      "description": "SBM2 event quality factor.",
+      "fill": "65535.0"
+    },
+    {
+      "name": "DT_SBM2",
+      "type": "integer",
+      "units": "",
+      "description": "DT_SBM2 parameter",
+      "fill": "65535.0"
+    },
+    {
+      "name": "DT_LW",
+      "type": "integer",
+      "units": "",
+      "description": "DT_LW",
+      "fill": "65535.0"
+    },
+    {
+      "name": "EPD_S20_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Electron fluxes from EPD instrument",
+      "fill": "255.0",
+      "size": [
+        8
+      ]
+    }
+  ],
+  "startDate": "2021-03-11T08:04:44.000Z",
+  "stopDate": "2021-10-09T07:06:51.000Z"
+}

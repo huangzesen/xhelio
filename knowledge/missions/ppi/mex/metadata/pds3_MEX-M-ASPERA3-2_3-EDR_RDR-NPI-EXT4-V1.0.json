@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DARK_CNT_0_1",
+      "type": "double",
+      "units": "counts/second",
+      "description": "The sector dependent dark count/sec when the MCP Mode is 0 or 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DARK_CNT_2_3",
+      "type": "double",
+      "units": "counts/second",
+      "description": "The sector dependent dark count/sec when the MCP Mode is 2 or 3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DARK_CNT_4_5",
+      "type": "double",
+      "units": "counts/second",
+      "description": "The sector dependent dark count/sec when the MCP Mode is 4 or 5",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_ENERGY",
+      "type": "double",
+      "units": "keV",
+      "description": "The average energy efficiency of the MCP in KeV",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_SLOPE_0",
+      "type": "double",
+      "units": "1/keV",
+      "description": "The efficiency slope to use when MCP Mode is 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_SLOPE_1",
+      "type": "double",
+      "units": "1/keV",
+      "description": "The efficiency slope to use when MCP Mode is 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_SLOPE_2",
+      "type": "double",
+      "units": "1/keV",
+      "description": "The efficiency slope to use when MCP Mode is 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_SLOPE_3_4_5",
+      "type": "double",
+      "units": "1/keV",
+      "description": "The efficiency slope to use when MCP Mode is 3,4,or 5",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_OFFSET_0",
+      "type": "double",
+      "units": "N/A",
+      "description": "The efficiency offset to use when MCP Mode is 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_OFFSET_1",
+      "type": "double",
+      "units": "N/A",
+      "description": "The efficiency offset to use when MCP Mode is 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_OFFSET_2",
+      "type": "double",
+      "units": "N/A",
+      "description": "The efficiency offset to use when MCP Mode is 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EFF_OFFSET_3_4_5",
+      "type": "double",
+      "units": "N/A",
+      "description": "The efficiency offset for MCP Mode = 3, 4, or 5",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GEOM_FACTOR",
+      "type": "double",
+      "units": "cm**2-sr",
+      "description": "The geometric factor in cm**2-steradian",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RESPONSE_FACTOR",
+      "type": "double",
+      "units": "N/A",
+      "description": "The relative amplitude response factor",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TRANSMIT_FACTOR",
+      "type": "double",
+      "units": "N/A",
+      "description": "The sector dependent transmission factor",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

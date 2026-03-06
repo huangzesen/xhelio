@@ -1,0 +1,303 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Priority_0_A1_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_0_A1_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_1_A5_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_1_A5_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_2_C1_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_2_C1_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_3_C5_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_3_C5_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_4_E4_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_4_E4_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_5_P2_Sum",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "Priority_5_P2_Sum  \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E0_outer",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E0 outside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E0_inner",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E0 inside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E1_outer",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E1 outside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E1_inner",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E1 inside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_0_A1_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_0_A1_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_1_A5_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_1_A5_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_2_C1_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_2_C1_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_3_C5_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_3_C5_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_4_E4_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_4_E4_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Priority_5_P2_Sum_uncert",
+      "type": "double",
+      "units": "",
+      "description": "Priority_5_P2_Sum _uncert \n                        based on summing a higher time cadence version of the channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E0_outer",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E0_uncert outside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E0_inner",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E0_uncert inside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E1_outer",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E1_uncert outside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E1_inner",
+      "type": "double",
+      "units": "particles/s/keV/cm^2/ster",
+      "description": "proxy for E1_uncert inside 3.5 Rs based on a linear combination \n                        of C channels, namely 0.1*C4 + 0.5*C5 -0.25*C7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Dist_RS",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "radial distance from Cassini to Saturn in Saturn radii",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SSO frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SZS frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Offset_DipoleL",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini L shell location using offset dipole",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Latitude_degrees",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Cassini SZS latitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_LocalTime_hours",
+      "type": "double",
+      "units": "Hours",
+      "description": "Cassini SZS localtime in hours",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_LEMMS_LET",
+      "type": "double",
+      "units": "",
+      "description": "pitch angle for the LEMMS Low Energy Telescope",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_LEMMS_HET",
+      "type": "double",
+      "units": "",
+      "description": "pitch angle for the LEMMS High Energy Telescope",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_vec_xyz_gse__C4_CP_FGM_5VPS",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Vector, 5 vectors/sec resolution in GSE",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_mag__C4_CP_FGM_5VPS",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Magnitude, 5 vectors/sec resolution",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "sc_pos_xyz_gse__C4_CP_FGM_5VPS",
+      "type": "double",
+      "units": "km",
+      "description": "Position in GSE",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2001-01-07T00:15:19.000Z",
+  "stopDate": "2024-09-16T23:59:52.000Z"
+}

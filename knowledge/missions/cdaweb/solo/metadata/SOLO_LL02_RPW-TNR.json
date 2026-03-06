@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "AGC_BAND_D",
+      "type": "double",
+      "units": "",
+      "description": "Automatic Gain Control on band D",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "AUTO_MEDIAN_1MHZ",
+      "type": "double",
+      "units": "",
+      "description": "Median value of the 5 top frequency channels of the TNR D band auto-correlations",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "POWER_MEDIAN_1MHZ",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "TNR D band spectral voltage power median value close to 1 MHz",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "PLASMA_FREQ_INDEX",
+      "type": "integer",
+      "units": "",
+      "description": "Index of the plasma frequency",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2020-06-03T14:10:19.000Z",
+  "stopDate": "2026-02-17T15:39:28.000Z"
+}

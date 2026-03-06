@@ -1,0 +1,127 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SourceFlag",
+      "type": "integer",
+      "units": "",
+      "description": "Data source flag =1 if based on 320ms data, = 2 if based  on old V2 15.36s data",
+      "fill": "9.0"
+    },
+    {
+      "name": "N_of_points",
+      "type": "integer",
+      "units": "",
+      "description": "Number of points in 15.36 second average. Max. number is 48(12) for data source flag equal 1(2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "SC_Pos_GSE",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Spacecraft position, GSE coordinates (orbit plot)",
+      "fill": "999.989990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Pos_GSET",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Spacecraft position, GSE coordinates (time-series plot)",
+      "fill": "999.989990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Pos_GSM",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Spacecraft position, GSM coordinates (orbit plot)",
+      "fill": "999.989990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Pos_GSMT",
+      "type": "double",
+      "units": "Earth Radii",
+      "description": "Spacecraft position, GSM coordinates (time-series plot)",
+      "fill": "999.989990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "F1_Average_B_15s",
+      "type": "double",
+      "units": "nT",
+      "description": "B magnitude, <|B|>",
+      "fill": "9999.990234375"
+    },
+    {
+      "name": "B_Vector_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "B vector, GSE cartesian components",
+      "fill": "9999.990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Vector_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "B vector, GSM cartesian components",
+      "fill": "9999.990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_jj_Variances",
+      "type": "double",
+      "units": "nT**2",
+      "description": "Variances; diagonal elements Bxx, Byy, Bzz; GSE coordinates",
+      "fill": "9999.990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_jk_Variances",
+      "type": "double",
+      "units": "nT**2",
+      "description": "Variances; off-diagonal elements Byx, Bzx, Bzy; GSE coordinates",
+      "fill": "9999.990234375",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TimeShift",
+      "type": "double",
+      "units": "seconds",
+      "description": "Difference between record time tag and start of average,Relevant to data source flag = 2 records only.",
+      "fill": "999.9000244140625"
+    },
+    {
+      "name": "SW_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Solar wind flag =0 if IMP in solar wind =1 otherwise",
+      "fill": "9.0"
+    }
+  ],
+  "startDate": "1973-10-30T00:00:00.000Z",
+  "stopDate": "2000-06-10T23:59:44.000Z"
+}

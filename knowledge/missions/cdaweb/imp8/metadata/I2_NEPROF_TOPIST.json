@@ -1,0 +1,109 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ni",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Topside electron density along orbit in cm-3 (Image)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        1000
+      ]
+    },
+    {
+      "name": "niLog10",
+      "type": "double",
+      "units": "",
+      "description": "Log10 of Topside electron density along orbit in cm-3 (Image)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        1000
+      ]
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Satellite altitude in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lon",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude in degree (0 to 360)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude in degree (-90 to +90)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "h",
+      "description": "Magnetic Local Time (MLT) in hours",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar zenith angle in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "McIlwain L parameter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "diplat",
+      "type": "double",
+      "units": "deg",
+      "description": "Dip Latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "invdip",
+      "type": "double",
+      "units": "deg",
+      "description": "Invdip - A new coordinate that combines Invariant Latitude and Dip Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlon",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Longitude (0-360) in degree",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1971-11-11T18:18:40.000Z",
+  "stopDate": "1984-01-04T05:15:38.000Z"
+}

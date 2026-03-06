@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS_BM_Data",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "Electron pitch angle data - Differential Energy Flux [available 06/2020 - 10/2020, varying with energy, azimuth and elevation angles, CDAWeb plots not supported]",
+      "fill": "-1e+31",
+      "size": [
+        2,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS_PAD_DEF_Data",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "Electron pitch angle distribution - Differential Energy Flux [available 04/2021 - ongoing, varying with energy, azimuth and elevation angles, CDAWeb plots not supported]",
+      "fill": "-1e+31",
+      "size": [
+        2,
+        64,
+        32
+      ]
+    }
+  ],
+  "startDate": "2020-06-16T09:00:01.000Z",
+  "stopDate": "2025-10-31T05:35:03.000Z"
+}

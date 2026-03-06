@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "HEADER",
+      "type": "integer",
+      "units": "N/A",
+      "description": "HEADER SPECIFICATION",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VERSION",
+      "type": "integer",
+      "units": "N/A",
+      "description": "VERSION",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SUBHEAD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "SUBHEADER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COUNTS",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "(25-150 KEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INT_TIME",
+      "type": "integer",
+      "units": "SECONDS",
+      "description": "INTEGRATION TIME",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

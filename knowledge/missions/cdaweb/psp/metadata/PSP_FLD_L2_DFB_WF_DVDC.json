@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_dVdc_sensor",
+      "type": "double",
+      "units": "V",
+      "description": "DFB DC differential voltage waveform in sensor coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_wf_dVdc_sc",
+      "type": "double",
+      "units": "V",
+      "description": "DFB DC differential voltage waveform in spacecraft coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

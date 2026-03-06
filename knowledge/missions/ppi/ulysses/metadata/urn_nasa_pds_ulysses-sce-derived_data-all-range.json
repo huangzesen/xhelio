@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Set",
+      "type": "double",
+      "units": "",
+      "description": "Running number for each DSN pass.",
+      "size": [
+        1
+      ],
+      "fill": "-99"
+    },
+    {
+      "name": "Number",
+      "type": "double",
+      "units": "",
+      "description": "Running number for range measurement within each DSN pass.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DSS",
+      "type": "double",
+      "units": "",
+      "description": "DSN Station Number.",
+      "size": [
+        1
+      ],
+      "fill": "-99"
+    },
+    {
+      "name": "DIFRNG",
+      "type": "double",
+      "units": "range units",
+      "description": "Differential range delay in 'range units' [DSN810-5].",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    },
+    {
+      "name": "ECONT",
+      "type": "double",
+      "units": "hexems",
+      "description": "Electron content in 'hexems' found in: BIRDETAL1992B",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

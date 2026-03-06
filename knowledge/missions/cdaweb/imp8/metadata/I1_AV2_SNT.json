@@ -1,0 +1,56 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "geo_coord",
+      "type": "double",
+      "units": "",
+      "description": "Geographic coordinates (Lat,Long,Hgt)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "FH",
+      "type": "double",
+      "units": "MHz",
+      "description": "Local Gyrofrequency",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "freq_mark",
+      "type": "double",
+      "units": "MHz",
+      "description": "Frequency markers for sounder",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ampl",
+      "type": "integer",
+      "units": "",
+      "description": "Sounder amplitude at 335 virtual heights for fixed & swept frequency",
+      "fill": "-128.0",
+      "size": [
+        335
+      ]
+    },
+    {
+      "name": "freq",
+      "type": "double",
+      "units": "MHz",
+      "description": "Interpolated fixed & sweep frequencies",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1969-01-31T04:32:48.000Z",
+  "stopDate": "1970-12-28T00:45:37.000Z"
+}

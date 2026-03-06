@@ -1,0 +1,58 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "rates",
+      "type": "double",
+      "units": "1/sec",
+      "description": "Rate data for the rate channels sorted by energy step",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        12
+      ]
+    },
+    {
+      "name": "quality_flag",
+      "type": "integer",
+      "units": "None",
+      "description": "Quality flag",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "valid",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Validity flag codes valid data (bit 0), test pulser on (bit 1), diag mode (bit 2), data comp type (bit 3-4), packet compn (bit 5)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "mode",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Decoded mode number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "rate",
+      "type": "integer",
+      "units": "None",
+      "description": "Decoded telemetry rate number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "swp_ind",
+      "type": "integer",
+      "units": "None",
+      "description": "---> Index that identifies the energy and deflector sweep look up tables (LUT) for the sensor",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "2014-10-13T00:02:34.000Z",
+  "stopDate": "2025-11-15T00:00:55.000Z"
+}

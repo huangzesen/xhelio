@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ANODE_USED",
+      "type": "integer",
+      "units": "",
+      "description": "Anode used to calculate moments.  A value of 9 implies that multiple anodes were used.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SIGNAL_TO_NOISE",
+      "type": "double",
+      "units": "N/A",
+      "description": "Signal to noise ratio threshold.  Only data values above this threshold go into the moments calculation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential during the time period given",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "ELECTRONS/M^3",
+      "description": "Density, summed over all energies.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMPERATURE",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature, summed over all energies",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "QUALITY_FACTOR",
+      "type": "double",
+      "units": "N/A",
+      "description": "The number of standard deviations, assuming Poisson counting statistics, that the peak of the Maxwellian corresponding to the determined moments lies above the ELS one-count level.  The larger the value, the better.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_CHARGE_STATE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Indicates whether the data is likely to be from a region in which the spacecraft is negatively charged. 0: likely positively charged 1: likely negatively charged",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PENETRATING_RADIATION",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Indicates whether the data is probably from a region in which there is penetrating radiation present. 0: not likely to be present 1: likely to be present",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DENSITY_WITHOUT_PEN_RAD",
+      "type": "double",
+      "units": "ELECTRONS/M^3",
+      "description": "Density, summed over all energies, but with penetrating radiation subtracted from the data before moments calculations were made.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEMPERATURE_WITHOUT_PEN_RAD",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature, summed over all energies, but with penetrating radiation subtracted from the data before moments calculations were made.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "QUALITY_FACTOR_WITHOUT_PEN_RAD",
+      "type": "double",
+      "units": "N/A",
+      "description": "The number of standard deviations, assuming Poisson counting statistics, that the peak of the Maxwellian corresponding to the determined moments lies above the ELS one-count level, but with penetrating radiation subtracted from the data before moments calculations were made.  The larger the value, the better.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

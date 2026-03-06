@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E100_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Phase of sun synchronous modulation of E100  \n  signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E100_AMP",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Amplitude of sun synchronous modulation of   \n  E100 signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E730_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Phase of sun synchronous modulation of E730  \n  signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E730_AMP",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Amplitude of sun synchronous modulation of   \n  E730 signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E5.4KPH",
+      "type": "double",
+      "units": "deg",
+      "description": "Phase of sun synchronous modulation of E5.4  \n  signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E5.4KAMP",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Amplitude of sun synchronous modulation of   \n  E5.4 signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E30K_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Phase of sun synchronous modulation of E30   \n  signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E30K_AMP",
+      "type": "double",
+      "units": "V/m/Hz**.5",
+      "description": "Amplitude of sun synchronous modulation of   \n  E30 signal.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "TAV",
+      "type": "double",
+      "units": "nT",
+      "description": "Offset subtracted from T sensor in data      \n  processing to get a sine wave centered on zero.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "GDIFFX",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction of the G sensor data for the      \n  spacecraft field along the X direction.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "GDIFFY",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction of the G sensor data for the      \n  spacecraft field along the Y direction.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "GDIFFZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction of the G sensor data for the      \n  spacecraft field along the Z direction.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

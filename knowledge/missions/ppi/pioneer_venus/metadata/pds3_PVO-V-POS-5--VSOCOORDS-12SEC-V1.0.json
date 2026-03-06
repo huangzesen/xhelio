@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "X_VSO",
+      "type": "double",
+      "units": "Rv",
+      "description": "The X-component of the PVO spacecraft position in Venus Solar Orbital Coordinates (VSO). The X component of the VSO coordinate system is taken to be positive in the direction of the Sun measured along the Venus-Sun line. The units are given in Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_VSO",
+      "type": "double",
+      "units": "Rv",
+      "description": "The Y-component of the PVO spacecraft position in Venus Solar Orbital Coordinates (VSO).The Y component of the VSO coordinate system is taken to be positive in the direction opposing orbital motion (dusk) and lying in the orbital plane of Venus. The units are given in Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_VSO",
+      "type": "double",
+      "units": "Rv",
+      "description": "The Z-component of the PVO spacecraft position in Venus Solar Orbital Coordinates (VSO). The Z component of the VSO coordinate system is taken to be parallel to the pole of the Venus orbital plane and positive in the northward direction (upward normal).  The units are given in Venus Radii where Rv = 6050 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALT",
+      "type": "double",
+      "units": "Km",
+      "description": "Spacecraft Altitude above the Venus surface. This value is computed by subtracting 6050 km from the centered Venus-to-PVO range given in the SEDR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Solar Zenith Angle. This is the three body angle Sun-Venus-PVO taken from the SEDR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PLONG",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Venus centered longitude of the PVO spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PLAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Venus centered latitude of the PVO spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPX_VSO",
+      "type": "double",
+      "units": "",
+      "description": "The VSO X-component of the spacecraft spin axis (ISCC_Z).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPY_VSO",
+      "type": "double",
+      "units": "",
+      "description": "The VSO Y-component of the spacecraft spin axis (ISCC_Z).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPZ_VSO",
+      "type": "double",
+      "units": "",
+      "description": "The VSO Z-component of the spacecraft spin axis (ISCC_Z).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Heliocentric Celestial Latitude of the PVO spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLONG",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Heliocentric Celestial Longitude of the PVO spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELONG",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Heliocentric Celestial Longitude of the Earth.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RSUN",
+      "type": "double",
+      "units": "AU",
+      "description": "Sun - Spacecraft range.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

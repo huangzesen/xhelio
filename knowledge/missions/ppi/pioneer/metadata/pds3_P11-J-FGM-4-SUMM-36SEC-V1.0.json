@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "RADII",
+      "description": "Distance of Pioneer 11 from Jupiter, in Jupiter RADII (1 Jupiter radii is 71372 KM).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Latitude of Pioneer 11 in System III (1957.0), measured from the equotor, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Longitude of Pioneer 11 in System III (1957.0), west longitude.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "GAUSS",
+      "description": "Radial component of the magnetic field in RJ coordinates, positive away from Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "GAUSS",
+      "description": "Polar component of the magnetic field in RJ coordinates, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "GAUSS",
+      "description": "Azimuthal component of the magnetic field in RJ coordinates, positive eastward.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

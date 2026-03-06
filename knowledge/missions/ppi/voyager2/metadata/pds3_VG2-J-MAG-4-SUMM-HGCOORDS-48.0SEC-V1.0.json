@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "MAGNETOMETER ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Radial component of the magnetic field, positive in the direction of sun to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Azimuthal component of the magnetic field, positive in the direction of planetary orbital motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "North/South component of the magnetic field, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Magnitude of the averaged magnetic field component vectors.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the magnetic field magnitudes in.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "DELTA = ARCSIN(BN/BMAG)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "LAMBDA = 180. - ATAN(BT/-BR)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS 3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "POINT",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

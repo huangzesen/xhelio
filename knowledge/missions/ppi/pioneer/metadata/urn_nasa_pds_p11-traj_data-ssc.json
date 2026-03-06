@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "year",
+      "description": "Spacecraft event year given in PDS time format (yyyy).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "day",
+      "description": "Spacecraft day of year (1= Jan. 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAD.AU",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliospheric radial distance in AU.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar ecliptic latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar ecliptic longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HELLAT",
+      "type": "double",
+      "units": "km",
+      "description": "Solar heliographic latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HELLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar heliographic longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HILLON",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar heliographic inertial longitude in degrees \n                     with respect to ascending node of solar equator \n                     on the ecliptic.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

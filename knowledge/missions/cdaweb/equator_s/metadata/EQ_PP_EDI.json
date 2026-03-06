@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "V_ed_xyz_gse%eq_pp_edi",
+      "type": "double",
+      "units": "km/s",
+      "description": "Drift velocity, vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "E_xyz_gse%eq_pp_edi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field, vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1998-03-25T21:53:13.000Z",
+  "stopDate": "1998-04-28T09:25:25.000Z"
+}

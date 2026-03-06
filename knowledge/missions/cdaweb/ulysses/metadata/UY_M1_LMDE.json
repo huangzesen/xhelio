@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Electrons",
+      "type": "double",
+      "units": "/s",
+      "description": "Electron counts in 4 channels, DE1 to DE4 (30 to 300 keV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1990-11-14T19:00:00.000Z",
+  "stopDate": "2008-12-31T23:00:00.000Z"
+}

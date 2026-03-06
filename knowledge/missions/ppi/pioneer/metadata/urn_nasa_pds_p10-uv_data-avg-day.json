@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DAY",
+      "type": "double",
+      "units": "",
+      "description": "Integer day of year (DAY=1 on\n  January 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "COR",
+      "type": "double",
+      "units": "",
+      "description": "Integer indicator of the spacecraft\n                        orientation correction (1 =\n                        correction occurred;  0 =  no\n                        correction occurred).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DRATLW",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "Daily averaged count rates for the\n                        long wavelength channel of the UV\n                        photometer.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DRATSW",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "Daily averaged count rates for the\n                        short wavelength channel of the\n                        UV photometer.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HRADSP",
+      "type": "double",
+      "units": "AU",
+      "description": "Radial distance of the spacecraft\n                        from the Sun's center.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLATSP",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial latitude of the\n                        pointing direction for the\n                        spacecraft's +Z axis, where the\n                        latter is along the spacecraft spin\n                        axis pointed approximately towards\n                        the Earth.  The UV photometer\n                        points away from the Earth at an\n                        angle of 20 degrees to the -Z axis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLONSP",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial longitude of the\n                        pointing direction for the\n                        spacecraft's +Z axis, where the\n                        latter is along the spacecraft spin\n                        axis pointed approximately towards\n                        the Earth.  The UV photometer\n                        points away from the Earth at an\n                        angle of 20 degrees to the -Z axis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLATSU",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial latitude of the Sun as\n                        seen from the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLONSU",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial longitude of the Sun\n                        as seen from the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLATEA",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial latitude of the Earth\n                        as seen from the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CLONEA",
+      "type": "double",
+      "units": "deg",
+      "description": "The celestial longitude of the Earth\n                        as seen from the spacecraft.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

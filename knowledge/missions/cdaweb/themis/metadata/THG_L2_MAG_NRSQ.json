@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thg_mag_nrsq",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field B in HEZ vector components",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thg_magh_nrsq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> H - Local magnetic North component of B",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "thg_magd_nrsq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> E - Local magnetic East component of B",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "thg_magz_nrsq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Z - Local vertical down component of B",
+      "fill": "-1.0000000150474662e+30"
+    }
+  ],
+  "startDate": "2008-10-01T00:00:00.000Z",
+  "stopDate": "2009-12-14T00:00:00.000Z"
+}

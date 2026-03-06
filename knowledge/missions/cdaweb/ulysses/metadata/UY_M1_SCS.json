@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha Velocity",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RATC6_C5",
+      "type": "double",
+      "units": "",
+      "description": "Ratio of Carbon 6+ to 5+",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RATO7_O6",
+      "type": "double",
+      "units": "",
+      "description": "Ratio of Oxygen 7+ to 6+",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RATFE_O ",
+      "type": "double",
+      "units": "",
+      "description": "Abundance Ratio of Iron to Oxygen",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FECHARGE",
+      "type": "double",
+      "units": "",
+      "description": "Iron Charge State",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1990-12-07T20:02:48.000Z",
+  "stopDate": "2009-06-30T00:00:00.000Z"
+}

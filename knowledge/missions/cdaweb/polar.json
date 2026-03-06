@@ -1,0 +1,458 @@
+{
+  "id": "POLAR",
+  "name": "Polar",
+  "keywords": [
+    "po",
+    "polar"
+  ],
+  "profile": {
+    "description": "Polar spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "PO_VIS_EARTH-CAMERA-CALIBRATED": {
+          "description": "Polar Visible Imaging System (VIS) Earth Camera Images at ~4 minute cadence - Louis A. Frank (The University of Iowa)",
+          "start_date": "1996-04-30T00:00:26.000Z",
+          "stop_date": "2008-04-16T07:08:02.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The University of Iowa",
+          "doi": "10.48322/ma2e-tm75",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_VIS_EARTH-CAMERA-CALIBRATED"
+        },
+        "PO_EJ_VIS": {
+          "description": "Polar Visible Imaging System, Earth Camera Images, processed - Louis A. Frank (The University of Iowa)",
+          "start_date": "1996-05-26T00:00:48.000Z",
+          "stop_date": "2000-07-16T23:59:06.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_EJ_VIS"
+        },
+        "PO_K0_PIX": {
+          "description": "Polar Ionospheric X-ray Imaging Experiment Key Parameters - D. Chenette (Lockheed)",
+          "start_date": "1996-02-27T23:59:57.000Z",
+          "stop_date": "2008-04-04T23:59:57.000Z",
+          "pi_name": "D. Chenette",
+          "pi_affiliation": "Lockheed",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_PIX"
+        },
+        "PO_K0_UVI": {
+          "description": "Polar Ultraviolet Imager, Key Parameters - G. Parks (U. Washington)",
+          "start_date": "1996-03-01T23:59:59.000Z",
+          "stop_date": "2008-04-28T23:59:59.000Z",
+          "pi_name": "G. Parks",
+          "pi_affiliation": "U. Washington",
+          "doi": "10.48322/1ac1-5c88",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_UVI"
+        },
+        "PO_H0_UVI": {
+          "description": "Polar Ultraviolet Imager, High Res. - G. Parks (U. Washington)",
+          "start_date": "1998-04-29T11:52:00.000Z",
+          "stop_date": "1998-05-09T20:20:00.000Z",
+          "pi_name": "G. Parks",
+          "pi_affiliation": "U. Washington",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_UVI"
+        },
+        "PO_LEVEL1_UVI": {
+          "description": "Polar UVI Level-1 Full Resolution Imager Data - G. Parks (U. Washington)",
+          "start_date": "1996-03-20T00:00:21.000Z",
+          "stop_date": "2008-04-16T14:28:32.000Z",
+          "pi_name": "G. Parks",
+          "pi_affiliation": "U. Washington",
+          "doi": "10.48322/kchw-gw93",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_LEVEL1_UVI"
+        },
+        "PO_K0_VIS": {
+          "description": "Polar Visible Imaging System Key Parameters - Louis A. Frank (The University of Iowa)",
+          "start_date": "1996-11-01T00:00:00.000Z",
+          "stop_date": "2008-04-28T00:00:00.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_VIS"
+        },
+        "PO_H1_UVI": {
+          "description": "Polar Ultraviolet Imager, High Res. - G. Parks (U. Washington)",
+          "start_date": "1998-04-29T11:52:00.000Z",
+          "stop_date": "1998-05-09T20:20:00.000Z",
+          "pi_name": "G. Parks",
+          "pi_affiliation": "U. Washington",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H1_UVI"
+        },
+        "PO_VIS_VISIBLE-IMAGER-CALIBRATED": {
+          "description": "Polar Visible Imaging System (VIS) Low Res. Camera - Louis A. Frank (The University of Iowa)",
+          "start_date": "1996-11-12T22:41:50.000Z",
+          "stop_date": "2008-04-16T06:27:07.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The University of Iowa",
+          "doi": "10.48322/1mkd-p917",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_VIS_VISIBLE-IMAGER-CALIBRATED"
+        },
+        "PO_K1_VIS": {
+          "description": "Polar Visible Imaging System Earth Camera Key Parameter - Louis A. Frank (The University of Iowa)",
+          "start_date": "1996-04-30T00:00:26.000Z",
+          "stop_date": "2008-04-28T00:00:00.000Z",
+          "pi_name": "Louis A. Frank",
+          "pi_affiliation": "The University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K1_VIS"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "PO_K0_CEP": {
+          "description": "CEPPAD Energetic particles & angular distribution, Key parameters - J. B.Blake  (Aerospace Corp. )",
+          "start_date": "1996-02-26T15:57:28.000Z",
+          "stop_date": "2004-01-27T23:58:44.000Z",
+          "pi_name": "J. B.Blake",
+          "pi_affiliation": "Aerospace Corp.",
+          "doi": "10.48322/gav4-4v68",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_CEP"
+        },
+        "PO_H1_TID": {
+          "description": "Polar TIDE Total Ion High Time Resolution Data (after 12/7/96)  - Thomas E. Moore (Goddard Space Flight Center)",
+          "start_date": "1996-12-08T00:00:00.000Z",
+          "stop_date": "2008-04-16T23:59:45.000Z",
+          "pi_name": "Thomas E. Moore",
+          "pi_affiliation": "Goddard Space Flight Center",
+          "doi": "10.48322/t5sd-r305",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H1_TID"
+        },
+        "PO_K1_TIM": {
+          "description": "Polar Toroidal Imaging Mass-Angle Spectrograph, Supplemental Key Parameters - W.K. Peterson (LASP/University of Colorado)",
+          "start_date": "1999-06-07T00:09:31.000Z",
+          "stop_date": "2008-04-16T13:22:28.000Z",
+          "pi_name": "W.K. Peterson",
+          "pi_affiliation": "LASP/University of Colorado",
+          "doi": "10.48322/qzm5-9r79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K1_TIM"
+        },
+        "PO_H0_TIM": {
+          "description": "Polar Toroidal Imaging Mass-Angle Spectrograph, High Time Resolution data - W.K. Peterson (Lockheed Martin)",
+          "start_date": "1996-03-17T00:03:19.000Z",
+          "stop_date": "2004-04-03T09:04:47.000Z",
+          "pi_name": "W.K. Peterson",
+          "pi_affiliation": "Lockheed Martin",
+          "doi": "10.48322/khhg-8859",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_TIM"
+        },
+        "PO_H0_CAM": {
+          "description": "Ion Fluxes 1-200 keV/q @ 3-minute resolution, Polar CAMMICE - R. Friedel (Lanl)",
+          "start_date": "1996-03-18T00:02:46.000Z",
+          "stop_date": "2000-03-16T23:57:56.000Z",
+          "pi_name": "R. Friedel",
+          "pi_affiliation": "Lanl",
+          "doi": "10.48322/bdjc-7g81",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_CAM"
+        },
+        "PO_H2_TIM": {
+          "description": "H+, O+, He+ and He++ upflowing fluxes, from Polar TIMAS - W.K. Peterson (LASP/University of Colorado)",
+          "start_date": "1996-03-17T00:03:25.000Z",
+          "stop_date": "1998-12-08T22:55:45.000Z",
+          "pi_name": "W.K. Peterson",
+          "pi_affiliation": "LASP/University of Colorado",
+          "doi": "10.48322/5hsz-5423",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H2_TIM"
+        },
+        "PO_K0_CAM": {
+          "description": "~2.3-minute Key Parameters, CAMMICE/Polar Charge And Mass Magnetospheric Ion Composition Experiment - T. A. Fritz (Boston University)",
+          "start_date": "1996-02-26T15:57:28.000Z",
+          "stop_date": "2008-04-28T18:51:05.000Z",
+          "pi_name": "T. A. Fritz",
+          "pi_affiliation": "Boston University",
+          "doi": "10.48322/88r3-b823",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_CAM"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "PO_H0_HYD": {
+          "description": "Polar Fast Plasma Analyzer 13.8 second Resolution Parameters - J. Scudder (U of Iowa)",
+          "start_date": "1996-03-20T00:00:06.000Z",
+          "stop_date": "2008-03-31T23:59:52.000Z",
+          "pi_name": "J. Scudder",
+          "pi_affiliation": "U of Iowa",
+          "doi": "10.48322/rpbf-wd36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_HYD"
+        },
+        "POLAR_HYDRA_MOMENTS-14SEC": {
+          "description": "Polar Fast Plasma Analyzer 13.8 second Resolution Moments - J. Scudder (U of Iowa)",
+          "start_date": "1996-03-20T14:38:27.000Z",
+          "stop_date": "2008-04-15T21:00:18.000Z",
+          "pi_name": "J. Scudder",
+          "pi_affiliation": "U of Iowa",
+          "doi": "10.48322/gvf7-x480",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#POLAR_HYDRA_MOMENTS-14SEC"
+        },
+        "PO_K0_HYD": {
+          "description": "Polar  Fast Plasma Analyzer  Key Parameter - J. Scudder (U of Iowa)",
+          "start_date": "1996-03-20T14:38:20.000Z",
+          "stop_date": "2008-03-31T23:59:45.000Z",
+          "pi_name": "J. Scudder",
+          "pi_affiliation": "U of Iowa",
+          "doi": "10.48322/8ksp-p425",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_HYD"
+        },
+        "PO_HYD_ENERGY_FLUX": {
+          "description": "Polar Fast Plasma Analyzer 13.8 second Resolution Moments - J. Scudder (U of Iowa)",
+          "start_date": "1997-04-29T00:00:07.000Z",
+          "stop_date": "2004-11-07T23:59:32.000Z",
+          "pi_name": "J. Scudder",
+          "pi_affiliation": "U of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_HYD_ENERGY_FLUX"
+        },
+        "PO_H0_TID": {
+          "description": "Polar TIDE H+,O+,He+ High Time Resolution Data (before 10/01/96)  - Thomas E. Moore (Goddard Space Flight Center)",
+          "start_date": "1996-03-27T00:00:00.000Z",
+          "stop_date": "1996-09-30T23:59:51.000Z",
+          "pi_name": "Thomas E. Moore",
+          "pi_affiliation": "Goddard Space Flight Center",
+          "doi": "10.48322/zkvp-5751",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_TID"
+        },
+        "PO_K0_GIFWALK": {
+          "description": "Links to Polar KP pre-generated survey and other plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-08T00:00:00.000Z",
+          "stop_date": "2004-08-08T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_GIFWALK"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "PO_K0_PWI": {
+          "description": "Polar Plasma Wave Instrument Key Parameter - D. Gurnett (U. Iowa)",
+          "start_date": "1996-02-27T12:20:27.000Z",
+          "stop_date": "1997-09-16T16:51:41.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/0zmq-1b63",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_PWI"
+        },
+        "PO_H0_PWI": {
+          "description": "Polar Plasma Wave Instrument, MCA, ~1.3 sec fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T00:00:07.000Z",
+          "stop_date": "1997-09-16T16:53:03.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/879x-0r04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H0_PWI"
+        },
+        "PO_H2_PWI": {
+          "description": "Polar Plasma Wave Instrument, Low Frequency Waveform Receiver, ~0.01 sec resolution fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T00:00:16.000Z",
+          "stop_date": "1997-09-16T16:52:55.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/xbm6-4c53",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H2_PWI"
+        },
+        "PO_H5_PWI": {
+          "description": "Polar Plasma Wave Instrument, High Frequency Waveform Receiver, 16 kHz/30 usec (interferometry) fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T00:01:35.000Z",
+          "stop_date": "1997-09-14T21:44:35.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/kvvt-2c42",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H5_PWI"
+        },
+        "PO_H7_PWI": {
+          "description": "Polar Plasma Wave Instrument, High Frequency Waveform Receiver, 6-channel (~1.5 usec resolution) fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-26T15:38:25.000Z",
+          "stop_date": "1997-09-16T16:52:51.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/7vp8-5w49",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H7_PWI"
+        },
+        "PO_H9_PWI": {
+          "description": "Polar Plasma Wave Instrument, High Frequency Waveform Receiver - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T10:52:30.000Z",
+          "stop_date": "1997-09-16T16:00:07.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/ybd2-7a47",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H9_PWI"
+        },
+        "PO_H1_PWI": {
+          "description": "Polar Plasma Wave Instrument, Step Frequency Receivers A & B, ~2 sec resolution fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T00:00:06.000Z",
+          "stop_date": "1997-09-16T16:52:43.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/k1kt-d028",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H1_PWI"
+        },
+        "PO_H3_PWI": {
+          "description": "Polar Plasma Wave Instrument, Low-rate High Frequency Waveform Receiver, 16K (6-channel, ~0.00003 sec resolution) fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-25T00:01:35.000Z",
+          "stop_date": "1997-09-16T09:28:30.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/zvyr-jh19",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H3_PWI"
+        },
+        "PO_H4_PWI": {
+          "description": "Polar Plasma Wave Instrument, High Frequency Waveform Receiver, 2 kHz (6-channel, ~0.0002 sec resolution) fields - D. Gurnett (U. Iowa)",
+          "start_date": "1996-03-26T23:02:19.000Z",
+          "stop_date": "1997-09-16T15:57:03.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/32d0-db83",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H4_PWI"
+        },
+        "PO_H8_PWI": {
+          "description": "Polar Plasma Wave Instrument, High Frequency Waveform Receiver - D. Gurnett (U. Iowa)",
+          "start_date": "1996-04-04T00:41:55.000Z",
+          "stop_date": "1997-09-14T18:30:56.000Z",
+          "pi_name": "D. Gurnett",
+          "pi_affiliation": "U. Iowa",
+          "doi": "10.48322/06zn-yc02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_H8_PWI"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "PO_10MINATT_EFI": {
+          "description": "Polar Spacecraft Attitude in GSE Coordinates - Mozer (UC Berkeley)",
+          "start_date": "1996-03-16T00:00:00.000Z",
+          "stop_date": "2008-04-12T23:50:00.000Z",
+          "pi_name": "Mozer",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/a4sb-1d04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_10MINATT_EFI"
+        },
+        "PO_K0_EFI": {
+          "description": "Polar Electric Field Instrument, Key Parameters  - F. Mozer (UC Berkeley)",
+          "start_date": "1996-03-15T00:00:02.000Z",
+          "stop_date": "2008-04-28T23:59:52.000Z",
+          "pi_name": "F. Mozer",
+          "pi_affiliation": "UC Berkeley",
+          "doi": "10.48322/6n18-vn30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_EFI"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "PO_K0_MFE": {
+          "description": "Polar Magnetic Field,Key Parameters - C.T. Russell (UCLA)",
+          "start_date": "1996-03-16T00:00:55.000Z",
+          "stop_date": "2006-05-31T23:59:48.000Z",
+          "pi_name": "C.T. Russell",
+          "pi_affiliation": "UCLA",
+          "doi": "10.48322/vsfk-ph35",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_MFE"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "PO_PA_DEF": {
+          "description": "Polar Platform Attitude Definitive data",
+          "start_date": "1996-03-15T00:00:00.000Z",
+          "stop_date": "2008-04-28T00:00:00.000Z",
+          "doi": "10.48322/akgc-de65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_PA_DEF"
+        },
+        "PO_AT_PRE": {
+          "description": "Polar Predicted Attitude Data",
+          "start_date": "1996-03-08T00:00:00.000Z",
+          "stop_date": "2008-06-14T23:50:00.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_AT_PRE"
+        },
+        "PO_OR_PRE": {
+          "description": "Polar Predicted Orbit Data",
+          "start_date": "1996-02-27T00:00:00.000Z",
+          "stop_date": "2008-06-14T23:59:00.000Z",
+          "doi": "10.48322/5tsm-w805",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_OR_PRE"
+        },
+        "PO_OR_DEF": {
+          "description": "Polar Definitive Orbit Data",
+          "start_date": "1996-02-27T00:00:00.000Z",
+          "stop_date": "1997-07-15T23:59:00.000Z",
+          "doi": "10.48322/x2af-pn51",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_OR_DEF"
+        },
+        "PO_AT_DEF": {
+          "description": "Polar Definitive Attitude Data",
+          "start_date": "1996-02-24T00:00:00.000Z",
+          "stop_date": "1997-07-15T23:50:00.000Z",
+          "doi": "10.48322/r4rq-sq24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_AT_DEF"
+        },
+        "PO_K0_SPHA": {
+          "description": "Polar Spin Phase Key Parameters",
+          "start_date": "1996-01-25T02:06:42.000Z",
+          "stop_date": "2008-04-28T18:53:05.000Z",
+          "doi": "10.48322/f58f-3y50",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PO_K0_SPHA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Polar",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

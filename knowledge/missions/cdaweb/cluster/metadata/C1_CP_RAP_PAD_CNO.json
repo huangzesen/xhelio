@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_mean__C1_CP_RAP_PAD_CNO",
+      "type": "double",
+      "units": "nT",
+      "description": "Averaged GSE magnetic field vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PAD_CNO_Dif_flux__C1_CP_RAP_PAD_CNO",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "CNO Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    },
+    {
+      "name": "PAD_CNO_Dif_flux_SD__C1_CP_RAP_PAD_CNO",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of CNO Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        9
+      ]
+    }
+  ],
+  "startDate": "2000-12-03T00:21:14.000Z",
+  "stopDate": "2007-03-15T23:59:33.000Z"
+}

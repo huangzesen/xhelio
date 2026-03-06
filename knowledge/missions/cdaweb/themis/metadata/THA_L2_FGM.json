@@ -1,0 +1,396 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tha_fgm_fgs_quality",
+      "type": "integer",
+      "units": "",
+      "description": "FGM-FGS Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_fgs_btotalQ",
+      "type": "double",
+      "units": "nT",
+      "description": "(Good data only) FGS magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgs_gseQ",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgs_gsmQ",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgs_dslQ",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "---- FGS magnetic field B in DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgs_btotal",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "(All Qualities data) FGS magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgs_gse",
+      "type": "double",
+      "units": "nT GSE (All Qs)",
+      "description": "---- FGS (spin-resolution/~3 sec) magnetic  field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgs_gsm",
+      "type": "double",
+      "units": "nT GSM (All Qs)",
+      "description": "---- FGS magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgs_dsl",
+      "type": "double",
+      "units": "nT DSL (All Qs)",
+      "description": "---- FGS magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgm_fgl_quality",
+      "type": "integer",
+      "units": "",
+      "description": "FGM-FGL Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_fgl_btotalQ",
+      "type": "double",
+      "units": "nT",
+      "description": "(Good data only) FGL magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgl_gseQ",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_gsmQ",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "---- FGL (low-resolution/~0.25 sec) magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_dslQ",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "---- FGL magnetic field B in DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_sslQ",
+      "type": "double",
+      "units": "nT SSL",
+      "description": "---- FGL magnetic field B in SSL (Spinning Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_btotal",
+      "type": "double",
+      "units": "nT (All Q's)",
+      "description": "(All Qualitities data) FGL magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgl_gse",
+      "type": "double",
+      "units": "nT GSE (All Q's)",
+      "description": "---- FGL (low-resolution/~0.25 sec) field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_gsm",
+      "type": "double",
+      "units": "nT GSM (All Q's)",
+      "description": "---- FGL magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_dsl",
+      "type": "double",
+      "units": "nT DSL (All Q's)",
+      "description": "---- FGL magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgl_ssl",
+      "type": "double",
+      "units": "nT SSL (All Q's)",
+      "description": "---- FGL magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgm_fgh_quality",
+      "type": "integer",
+      "units": "",
+      "description": "FGM-FGH Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_fgh_btotalQ",
+      "type": "double",
+      "units": "nT",
+      "description": "(Good data only) FGH magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgh_gseQ",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_gsmQ",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_dslQ",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "---- FGH magnetic field B in DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_sslQ",
+      "type": "double",
+      "units": "nT SSL",
+      "description": "---- FGH magnetic field B in SSL (Spinning Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_btotal",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "(All Qualities) FGH magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fgh_gse",
+      "type": "double",
+      "units": "nT GSE (All Qs)",
+      "description": "---- FGH (high-resolution/~0.008 sec) magnetic field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_gsm",
+      "type": "double",
+      "units": "nT GSM (All Qs)",
+      "description": "---- FGH magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_dsl",
+      "type": "double",
+      "units": "nT DSL (All Qs)",
+      "description": "---- FGH magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgh_ssl",
+      "type": "double",
+      "units": "nT SSL (All Qs)",
+      "description": "----FGH magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fgm_fge_quality",
+      "type": "integer",
+      "units": "",
+      "description": "FGM-FGE Data Quality (0: Good data, 1:boom not deployed, 2:in shadow, 3:uncorrected shadow, 4:noisy waveforms)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "tha_fge_btotalQ",
+      "type": "double",
+      "units": "nT",
+      "description": "(Good data only) FGE magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fge_gseQ",
+      "type": "double",
+      "units": "nT GSE",
+      "description": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_gsmQ",
+      "type": "double",
+      "units": "nT GSM",
+      "description": "---- FGE (engineering mode) magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_dslQ",
+      "type": "double",
+      "units": "nT DSL",
+      "description": "---- FGE (engineering mode) magnetic field B in DSL Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_sslQ",
+      "type": "double",
+      "units": "nT SSL",
+      "description": "---- FGE (engineering mode) magnetic field B in SSL Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_btotal",
+      "type": "double",
+      "units": "nT (All Qs)",
+      "description": "(All Qualities) FGE (engineering) magnetic field B magnitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "tha_fge_gse",
+      "type": "double",
+      "units": "nT GSE (All Qs)",
+      "description": "---- FGE (engineering mode) magnetic field B in XYZ GSE Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_gsm",
+      "type": "double",
+      "units": "nT GSM (All Qs)",
+      "description": "---- FGE magnetic field B in XYZ GSM Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_dsl",
+      "type": "double",
+      "units": "nT DSL (All Qs)",
+      "description": "---- FGE magnetic field B in XYZ DSL (Despun Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "tha_fge_ssl",
+      "type": "double",
+      "units": "nT SSL (All Qs)",
+      "description": "---- FGE magnetic field B in XYZ SSL (Spinning Spacecraft) Coordinates",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2007-02-23T00:00:00.000Z",
+  "stopDate": "2026-02-17T00:00:00.000Z"
+}

@@ -1,0 +1,177 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICK",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "MAGNETOMETER ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Radial component of the magnetic field, positive in the direction of Jupiter to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "North/South (System III) component of the magnetic field, positive southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Azimuthal (System III) component of the magnetic field, positive eastward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Column contains the magnitude of the averaged magnetic field component vectors in units of nanoTesla.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the magnetic field magnitudes.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "DELTA = ARCSIN(BTHETA/BMAG)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "LAMBDA = 180. - ATAN(BPHI/-BR)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS BR",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS BT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BP",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "RMS BP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RADII",
+      "description": "Jupiter to spacecraft range in units of jovian (Rj=71942 km) radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft jovicentric latitude (positive northward) in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft jovicentric east (system III) longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "POINT",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

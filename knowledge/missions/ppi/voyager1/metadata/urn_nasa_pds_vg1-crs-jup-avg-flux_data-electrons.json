@@ -1,0 +1,55 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ELECTRON_FLUX_A",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1",
+      "description": "ELECTRON_FLUX_A = (IBS2E / 1.920E+00) + (IIBS2E / 1.920E+00) where   \n                        IBS2E  = ^C1.C2.C3.C4.B2.B1.^SB.^G1 and                            \n                        IIBS2E = ^C1.C2.C3.C4.B2.B1.^SB.^G1.                               \n                        A value of -9.99999e+10 is a missing data value.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "STD_DEVIATION_A",
+      "type": "double",
+      "units": "",
+      "description": "Column contains the statistical error in the associated with         \n                        ELECTRON_FLUX_A.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "ELECTRON_FLUX_B",
+      "type": "double",
+      "units": "cm^-2 s^-1 sr^-1",
+      "description": "ELECTRON_FLUX_B = (IBS2E / 1.920E 00) + (IIBS2E / 1.920E 00) where   \n                        IBS2E  = ^C1.C2.C3.C4.B2.B1.^SB and                                \n                        IIBS2E = ^C1.C2.C3.C4.B2.B1.^SB.                                   \n                        A value of -9.99999e+10 is a missing data value.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "STD_DEVIATION_B",
+      "type": "double",
+      "units": "",
+      "description": "Column contains the statistical error in the associated with         \n                        ELECTRON_FLUX_B.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

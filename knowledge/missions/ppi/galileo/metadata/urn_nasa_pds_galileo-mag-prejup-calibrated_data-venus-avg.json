@@ -1,0 +1,151 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "year",
+      "description": "Year (1990)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY-OF-YEAR",
+      "type": "double",
+      "units": "day",
+      "description": "Day of year (40 or 41)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SEC-OF-DAY",
+      "type": "double",
+      "units": "second",
+      "description": "Universal Time second of day.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_CLK",
+      "type": "double",
+      "units": "",
+      "description": "Galileo spacecraft clock                     \n                                 (RIM:mod91:mod10:mod8)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in the     \n                                 VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "By-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in the     \n                                 VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Bz-VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in the     \n                                 VSO coordinate system",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "avgBmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the magnitude of the        \n                                 magnetic field.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "std_Bx",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bx",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "std_By",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of By",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "std_Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bz",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "std_Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bmag",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of data points in the average",
+      "size": [
+        1
+      ],
+      "fill": "999"
+    },
+    {
+      "name": "DQF",
+      "type": "double",
+      "units": "",
+      "description": "Data Quality Flag (0 = good data)",
+      "size": [
+        1
+      ],
+      "fill": "999999999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

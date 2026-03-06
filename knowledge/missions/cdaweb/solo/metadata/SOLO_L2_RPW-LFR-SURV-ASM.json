@@ -1,0 +1,307 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ASM_RE_F0",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F0_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F0",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F0_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F1",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F1_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F1",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F1_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F2",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F2_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F2",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in the SCM B1-B2-B3 axis system frame (ASF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F2_ASF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F0_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F0 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F0_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        88,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F1_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F1 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F1_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        104,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F2_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the real part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_RE_F2_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F2_SRF",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT/LIST] All the imaginary part of the 5x5 calibrated matrices for all bins of F2 sampling frequency in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "ASM_IM_F2_SRF_SPEC",
+      "type": "double",
+      "units": "",
+      "description": "|---> spectrogram, autocorrelated values.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        96,
+        5,
+        5
+      ]
+    },
+    {
+      "name": "SURVEY_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "LFR survey mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2020-06-15T01:05:14.000Z",
+  "stopDate": "2025-11-19T00:04:56.000Z"
+}

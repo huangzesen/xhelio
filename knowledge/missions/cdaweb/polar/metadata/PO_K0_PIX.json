@@ -1,0 +1,224 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "XSA_LOW",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "Low Energy X-ray Source Array, 64x64 image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_O",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array with geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_Test",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "[DO NOT USE: UNDER-DEVELOPMENT] -->  Test Display",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_P",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array, azimuthal projection to geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_M",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array, azimuthal projection to magnetic local time and invariant latitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "Low Energy X-ray Source Array, 64x64 mpeg movie image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_O_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array with geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_P_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array, azimuthal projection to geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_LOW_M_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  Low Energy X-ray Source Array, azimuthal projection to magnetic local time and invariant latitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "64x64 X-ray Source Array for high energy range",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_O",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array with geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_Test",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "[DO NOT USE: UNDER-DEVELOPMENT] -->  Test Display",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_P",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array, azimuthal projection to geographic coordinates (fixed-sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_M",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array, azimuthal projection to magnetic local time and invariant latitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "64x64 X-ray Source Array for high energy range, mpeg movie image.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_O_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array with geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_P_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array, azimuthal projection to geographic coordinates (fixed-sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "XSA_HIGH_M_MV",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "-->  High Energy X-ray Source Array, azimuthal projection to magnetic local time and invariant latitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        64
+      ]
+    },
+    {
+      "name": "TXF_LOW",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "Mean photon intensity over entire image for low energy range",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TXF_HIGH",
+      "type": "double",
+      "units": "photon cm-2 s-1 sr-1",
+      "description": "Mean photon intensity over entire image for high energy range",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-02-27T23:59:57.000Z",
+  "stopDate": "2008-04-04T23:59:57.000Z"
+}

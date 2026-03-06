@@ -1,0 +1,182 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Spacecraft Clock",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock counter (mod65536:mod60:fds_line)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG ID",
+      "type": "double",
+      "units": "",
+      "description": "Magnetometer ID (1=LFM, 2=HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial (Jupiter to spacecraft) component of the magnetic field,         \n                        positive away from Jupiter.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "nT",
+      "description": "North/South component of the magnetic field, positive southward.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "nT",
+      "description": "Azimuthal component of the magnetic field, positive eastward.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude (sqrt of sum of squares) of the field component averages.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "Average Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the field magnitude over the averaging interval (nT).",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft centered heliographic magnetic field latitude:               \n                        Delta = asin(Bz/Bmag). Delta is derived from Cartesian coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft centered heliographic magnetic field longitude:              \n                        Lambda = atan(By/Bx). Lambda is derived from Cartesian coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "RMS Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Br over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "RMS Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Btheta over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "RMS Bp",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Bphi over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC R",
+      "type": "double",
+      "units": "nT",
+      "description": "Jupiter to spacecraft range in units of Jovian radii (Rj=71942 km)",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC LAT",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft Jovicentric latitude (positive northward) in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "SC LON",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft Jovicentric west longitude in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "POINT",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "DFLAG",
+      "type": "double",
+      "units": "",
+      "description": "An 8-character flag indicating software or spacecraft hardware          \n                        intervention which reduce confidence in the data.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

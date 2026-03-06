@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ANTENNA",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates antenna used for low band (0.22 to 5.33 Hz). High band (9.8 Hz and above) is always By. 1: By 2: Bz 3: Antenna switched during the averaging interval. 4: Antenna unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PFRMODE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates the scan mode of the PFR instrument. 1: Fast scan mode. 2: Slow scan mode. 3: Fixed-frequency mode. 4: The mode switched during the averaging interval. 5: The mode could not be determined.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates telemetry bit rate: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during averaging period. 6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WFA AVG B-FIELD",
+      "type": "double",
+      "units": "10^-15 Tesla/Hz^0.5",
+      "description": "This column consists of 22 Waveform Analyzer (WFA) averaged magnetic field intensities from 22 frequency channels. These values represent the average intensities over the sampling interval. Below is a list of the center frequency for each channel: F(1): 0.22 Hz F(2): 0.33 Hz F(3): 0.44 Hz F(4): 0.66 Hz F(5): 0.88 Hz F(6): 1.33 Hz F(7): 1.77 Hz F(8): 2.66 Hz F(9): 3.55 Hz F(10):  5.33 Hz F(11):  9.00 Hz F(12):  14.00 Hz F(13):  19.00 Hz F(14):  28.00 Hz F(15):  37.00 Hz F(16):  56.00 Hz F(17):  75.00 Hz F(18):  112.00 Hz F(19):  149.00 Hz F(20):  224.00 Hz F(21):  299.00 Hz F(22):  448.00 Hz",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

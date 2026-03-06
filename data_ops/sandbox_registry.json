@@ -1,0 +1,130 @@
+{
+  "version": 1,
+
+  "packages": [
+    {
+      "import_path": "scipy",
+      "sandbox_alias": "scipy",
+      "required": true,
+      "description": "Scientific computing (signal, FFT, interpolation, stats, integration)",
+      "catalog_submodules": ["scipy.signal", "scipy.fft", "scipy.interpolate", "scipy.stats", "scipy.integrate"]
+    },
+    {
+      "import_path": "pywt",
+      "sandbox_alias": "pywt",
+      "required": true,
+      "description": "Wavelet transforms",
+      "catalog_submodules": ["pywt"]
+    },
+    {
+      "import_path": "numba",
+      "sandbox_alias": "numba",
+      "required": false,
+      "description": "JIT compilation for performance-critical numeric loops",
+      "catalog_submodules": []
+    },
+    {
+      "import_path": "sklearn",
+      "sandbox_alias": "sklearn",
+      "required": false,
+      "description": "Machine learning (clustering, PCA, regression, classification)",
+      "catalog_submodules": ["sklearn.decomposition", "sklearn.cluster", "sklearn.preprocessing"]
+    },
+    {
+      "import_path": "statsmodels",
+      "sandbox_alias": "statsmodels",
+      "required": false,
+      "description": "Statistical models (ARIMA, seasonal decomposition, Granger causality)",
+      "catalog_submodules": ["statsmodels.tsa.stattools", "statsmodels.tsa.seasonal"]
+    },
+    {
+      "import_path": "astropy",
+      "sandbox_alias": "astropy",
+      "required": false,
+      "description": "Astronomy (units, constants, coordinate transforms)",
+      "catalog_submodules": ["astropy.units", "astropy.constants"]
+    },
+    {
+      "import_path": "lmfit",
+      "sandbox_alias": "lmfit",
+      "required": false,
+      "description": "Curve fitting with constraints and model building",
+      "catalog_submodules": ["lmfit"]
+    },
+    {
+      "import_path": "sympy",
+      "sandbox_alias": "sympy",
+      "required": false,
+      "description": "Symbolic mathematics",
+      "catalog_submodules": []
+    },
+    {
+      "import_path": "matplotlib.cm",
+      "sandbox_alias": "mpl_cm",
+      "required": false,
+      "description": "Matplotlib colormaps (for colormap extraction only, no plotting)",
+      "catalog_submodules": []
+    }
+  ],
+
+  "builtins": {
+    "safe": [
+      "abs", "bool", "dict", "enumerate", "float", "int", "len", "list",
+      "max", "min", "print", "range", "round", "sorted", "str", "sum",
+      "tuple", "zip", "True", "False", "None", "isinstance"
+    ],
+    "dangerous": [
+      "exec", "eval", "compile", "open", "__import__", "getattr", "setattr",
+      "delattr", "globals", "locals", "vars", "dir", "breakpoint", "exit",
+      "quit", "input", "memoryview", "classmethod", "staticmethod", "super",
+      "property", "type"
+    ]
+  },
+
+  "blocked_attrs": {
+    "any_object": {
+      "_comment": "Blocked on ALL objects regardless of receiver type",
+      "pandas_io": [
+        "read_csv", "read_excel", "read_json", "read_html", "read_xml",
+        "read_parquet", "read_feather", "read_orc", "read_stata", "read_sas",
+        "read_spss", "read_pickle", "read_table", "read_fwf", "read_clipboard",
+        "read_sql", "read_sql_table", "read_sql_query", "read_gbq", "read_hdf",
+        "to_pickle", "to_csv", "to_excel", "to_json", "to_html", "to_xml",
+        "to_parquet", "to_feather", "to_orc", "to_stata", "to_hdf"
+      ],
+      "numpy_io": [
+        "save", "savez", "savez_compressed", "loadtxt", "savetxt",
+        "genfromtxt", "fromfile", "tofile", "memmap"
+      ],
+      "xarray_io": [
+        "open_dataset", "open_dataarray", "open_mfdataset", "open_zarr",
+        "load_dataset", "load_dataarray"
+      ],
+      "system": ["system", "popen"],
+      "pandas_internal": ["io"],
+      "ctypes": ["ctypeslib"],
+      "sklearn_io": [
+        "fetch_openml", "fetch_california_housing", "fetch_covtype",
+        "fetch_kddcup99", "fetch_lfw_pairs", "fetch_lfw_people",
+        "fetch_olivetti_faces", "fetch_rcv1", "fetch_species_distributions",
+        "fetch_20newsgroups", "fetch_20newsgroups_vectorized",
+        "load_iris", "load_digits", "load_wine", "load_breast_cancer",
+        "load_diabetes", "load_linnerud", "load_sample_images",
+        "load_svmlight_file", "dump_svmlight_file"
+      ],
+      "astropy_io": [
+        "download_file", "download_files_in_parallel",
+        "get_readable_fileobj", "get_pkg_data_filename"
+      ],
+      "matplotlib_io": ["savefig", "show"],
+      "numba_ffi": ["cffi_support", "extending"],
+      "serialization": ["dumps", "loads"]
+    },
+    "module_only": {
+      "_comment": "Blocked only when receiver is a known module name (pd, np, etc.). Legitimate as DataFrame/DataArray methods.",
+      "code_execution": ["eval", "query"],
+      "deserialization": ["load"],
+      "callable_wrapping": ["frompyfunc", "vectorize"]
+    }
+  }
+}

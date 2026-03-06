@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Mission Elapsed Time at the end of the accumulation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "double",
+      "units": "",
+      "description": "Data quality flag.\n   =0 Good Data, =1 Undefined Bad Data,\n   =2 Hot Pixel, =4 Scan Hard Limit Exceeded,\n   =8 SEP, =16 Start Rate Anomaly,\n   =32 Bad WSZ, 128 Instrument Off,\n   =32768 Flag Value is Manually Defined.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "FIPS_SCANTYPE",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the FIPS Scan Mode. Tables referenced here \n   are one of the eight E/q stepping tables loaded into the instrument. \n   See the EPPS CDR SIS in the EPPS Document Archive Volume for details.\n   =0 Normal Scan, =1 High Temp Scan, =2 Burst Scan, =3 Test Scan, \n   =4 Table 4, =5 Table 5, =6 Table 6, =7 Table 7.",
+      "size": [
+        1
+      ],
+      "fill": "99"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

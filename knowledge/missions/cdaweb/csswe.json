@@ -1,0 +1,62 @@
+{
+  "id": "CSSWE",
+  "name": "CSSWE",
+  "keywords": [
+    "csswe"
+  ],
+  "profile": {
+    "description": "CSSWE spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "CSSWE_REPTILE_6SEC-FLUX-L2": {
+          "description": "CSSWE REPTile level2 6sec flux and Position - Xinlin Li (University of Colorado at Boulder)",
+          "start_date": "2012-09-14T00:28:03.000Z",
+          "stop_date": "2014-08-20T20:27:56.000Z",
+          "pi_name": "Xinlin Li",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/brd0-ak96",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CSSWE_REPTILE_6SEC-FLUX-L2"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "CSSWE_REPTILE_6SEC-COUNTS-L1": {
+          "description": "CSSWE REPTile level1 6sec Counts and Position - Xinlin Li (University of Colorado at Boulder)",
+          "start_date": "2012-09-14T00:28:03.000Z",
+          "stop_date": "2014-08-20T20:27:56.000Z",
+          "pi_name": "Xinlin Li",
+          "pi_affiliation": "University of Colorado at Boulder",
+          "doi": "10.48322/dy3g-xz52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CSSWE_REPTILE_6SEC-COUNTS-L1"
+        }
+      }
+    }
+  },
+  "observatory_group": "Smallsats/Cubesats",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

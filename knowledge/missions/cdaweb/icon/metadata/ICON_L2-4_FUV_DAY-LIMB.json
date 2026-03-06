@@ -1,0 +1,247 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L24_Column_O_N2",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "Retrieved column O/N2",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Input_Altitude",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Tangent altitudes of input data, in km above the WGS-84 geoid, as functions of time",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Corrected_LW_L1_Radiance",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Corrected input data for the LW channel, in Rayleighs, as functions of tangent altitude and time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Corrected_SW_L1_Radiance",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Corrected input data for the SW channel, in Rayleighs, as functions of tangent altitude and time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Look_Azimuth_Angle",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Line of sight azimuth angles, in degrees, as functions tangent altitdue of time",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Look_Zenith_Angle",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Line of sight zenith angles, in degrees, as functions tangent altitdue of time",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Uncorrected_LW_L1_Radiance",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Uncorrected input data for the LW channel, in Rayleighs, as functions of tangent altitude and time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Input_Uncorrected_SW_L1_Radiance",
+      "type": "double",
+      "units": "Rayleighs",
+      "description": "Uncorrected input data for the SW channel, in Rayleighs, as functions of tangent altitude and time.",
+      "fill": "-999.9000244140625",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "ICON_L24_Iteration_Steps",
+      "type": "integer",
+      "units": "integer",
+      "description": "iteration_steps",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Model_Flags",
+      "type": "integer",
+      "units": "index",
+      "description": "model error flag",
+      "fill": "-999.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ICON_L24_N2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid molecular N2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_O",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid atomic O",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_O2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid molecular O2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Predicted_Column_O_N2",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "initial column on2",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Predicted_N2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "altitude grid initial molecular n2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Predicted_O",
+      "type": "double",
+      "units": "cm-3",
+      "description": "altitude grid initial atomic O",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Predicted_O2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "altitude grid initial molecular o2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Predicted_Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "altitude grid initial temperature",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_QEUV",
+      "type": "double",
+      "units": "mW/m2",
+      "description": "Retrieved Qeuv",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Sigma_N2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid sigma molecular N2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Sigma_O",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid sigma atomic O",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Sigma_O2",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Retrieved altitude grid sigma molecular O2",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Sigma_O_N2",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "Retrieved altitude grid sigma O/N2",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ICON_L24_Sigma_Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Retrieved altitude grid sigma temperature",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ICON_L24_Temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Retrieved altitude grid temperature",
+      "fill": "-999.0",
+      "size": [
+        22
+      ]
+    }
+  ],
+  "startDate": "2019-11-16T00:00:04.000Z",
+  "stopDate": "2022-11-24T23:59:55.000Z"
+}

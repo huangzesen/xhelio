@@ -1,0 +1,182 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "h_flux",
+      "type": "double",
+      "units": "(cm^2-s-sr-keV)^-1",
+      "description": "H+ number flux, at 15 energies (~0.01 to ~20keV) and 14 pitch angles (6 shown)",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "h_uncertainty",
+      "type": "double",
+      "units": "(cm^2-s-sr-keV)^-1",
+      "description": "---> ONE Standard deviation of H+ number flux at 15 energy and 14 pitch angle bins.",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "o_flux",
+      "type": "double",
+      "units": "(cm^2-s-sr-keV)^-1",
+      "description": "O+ number flux, at 15 energies (~0.01 to ~20keV) and 14 pitch angles (6 shown)",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "o_uncertainty",
+      "type": "double",
+      "units": "Ions (cm^2-s-sr-keV)^-1",
+      "description": "---> ONE Standard deviation of O+ number flux at 15 energy and 14 pitch angle bins.",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "he_flux",
+      "type": "double",
+      "units": "(cm^2-s-sr-keV)^-1",
+      "description": "He+ number flux, at 15 energies (~0.01 to ~20keV) and 14 pitch angles (6 shown)",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "he_uncertainty",
+      "type": "double",
+      "units": "Ions (cm^2-s-sr-keV)^-1",
+      "description": "ONE Standard deviation of He+ number fluxat 15 energy and 14 pitch angle bins.",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        15,
+        14
+      ]
+    },
+    {
+      "name": "INTERPOLATED_BACKGROUND",
+      "type": "double",
+      "units": "counts per sample",
+      "description": "Background count rate interpolated to center time. scalar",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "STANDARD_DEVIATION_OF_INTERPOLATED_BACKGROUND",
+      "type": "double",
+      "units": "counts per sample",
+      "description": "---> One standard deviation of Interpolated Background. scalar",
+      "fill": "-9.999999796611898e-32"
+    },
+    {
+      "name": "Low_energy_cut_off",
+      "type": "double",
+      "units": "keV",
+      "description": "Lowest Energy above the spacecraft potential accepted. scalar",
+      "fill": "-0.0"
+    },
+    {
+      "name": "Mode_error_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Bitwise combination of  He_data,N_flag, C_flag, A_flag, Noisy_flag, Short_flag, and PA_coverage_flag. scalar",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "He_data",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "He+ data available flag 0=data for he+; 1=no he+ data",
+      "fill": "255.0"
+    },
+    {
+      "name": "N_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Data valid flag 0=good; 1=Not available or use with caution",
+      "fill": "255.0"
+    },
+    {
+      "name": "C_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Sun Pulse Flag0=good; 1=use data from the lowest energy channel with caution.",
+      "fill": "255.0"
+    },
+    {
+      "name": "A_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Attitude Available Flag 0: Source data CAN provide sensor orientation relative to the spacecraft velocity. 1: CAN NOT",
+      "fill": "255.0"
+    },
+    {
+      "name": "Noisy_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Supplemental Data Valid Flag #1 0=good; 1= Telemetry interval contains unphysically high signal levels",
+      "fill": "255.0"
+    },
+    {
+      "name": "Short_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Supplemental Data Valid Flag #2 0=good; 1=Too short to evaluate data quality.",
+      "fill": "255.0"
+    },
+    {
+      "name": "PA_coverage_flag",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Pitch Angle Coverage Flag 0=good; 1=Incomplete PA coverage.",
+      "fill": "255.0"
+    },
+    {
+      "name": "Q_FLAG_FILE_CORRUPTED",
+      "type": "integer",
+      "units": "(0=good)",
+      "description": "---> Quality Flags Corrupted 0=OK ; 1= Information Lost",
+      "fill": "255.0"
+    },
+    {
+      "name": "Geographic_position",
+      "type": "double",
+      "units": "",
+      "description": "Geographic Position Altitude above the geoid, latitude and longitude.",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Geomagnetic_position",
+      "type": "double",
+      "units": "",
+      "description": "Geomagnetic Position Magnetic local time, Invariant latitude and geomagnetic latitude.",
+      "fill": "-9.999999796611898e-32",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1981-09-16T17:17:36.000Z",
+  "stopDate": "1991-02-18T09:51:12.000Z"
+}

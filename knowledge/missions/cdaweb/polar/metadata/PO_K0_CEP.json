@@ -1,0 +1,236 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "IPS_10",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Spin averaged integral proton rate 10 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_10_errorbars",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Spin averaged integral proton rate 10 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_10_ERR",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Stat. err. P 10 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_30",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral proton rate 30 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_30_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral proton rate 30 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_30_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. P 30 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_50",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral proton rate 50 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_50_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral proton rate 50 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_50_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. P 50 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IPS_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Good/Bad => 10/0",
+      "fill": "-128.0"
+    },
+    {
+      "name": "IES_10",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Spin averaged integral elec rate 10 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_10_errorbars",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Spin averaged integral elec rate 10 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_10_ERR",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Stat. err. e 10 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_30",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral elec rate 30 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_30_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral elec rate 30 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_30_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. e 30 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_50",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral elec rate 50 deg from spin axis",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_50_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "Spin averaged integral elec rate 50 deg from spin axis, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IES_50_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. e 50 deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCI",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "HIST Spin averaged integral Ion rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCI_errorbars",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "HIST Spin averaged integral Ion rate, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCI_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. HIST ions",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCE",
+      "type": "double",
+      "units": "",
+      "description": "HIST spin averaged integral electron rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCE_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "HIST spin averaged integral electron rate, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_ABCE_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Error HIST ele",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_AH",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "HIST Front detec singles (high)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_AH_errorbars",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "HIST Front detec singles (high), with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_AH_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. HIST front detec (H)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_A1",
+      "type": "double",
+      "units": "",
+      "description": "HIST front detec singles (A1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_A1_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "HIST front detec singles (A1), with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_A1_ERR",
+      "type": "double",
+      "units": "",
+      "description": "Stat. err. HIST front detec (A1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HIST_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Good/Bad => 10/0",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "1996-02-26T15:57:28.000Z",
+  "stopDate": "2004-01-27T23:58:44.000Z"
+}

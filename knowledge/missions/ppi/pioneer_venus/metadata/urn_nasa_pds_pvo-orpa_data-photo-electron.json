@@ -1,0 +1,356 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "ORBIT NUMBER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PERIAPSIS TIME",
+      "type": "double",
+      "units": "ms",
+      "description": "PERIAPSIS TIME (UT)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY",
+      "type": "double",
+      "units": "",
+      "description": "PERIAPSIS DAY OF YEAR",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP",
+      "type": "double",
+      "units": "",
+      "description": "UNIQUE SWEEP NUMBER",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP TIME",
+      "type": "double",
+      "units": "ms",
+      "description": "UNIQUE TIME OF MEASUREMENT FOR SWEEP\n                        UNCERTAINTY = +/- 100 MS\n                        This value contains the time of day\n                        effectively formatted as hhmm.ssmmm\n                        in a floating point number where\n                        hhmm is hours and minutes, and ssmmm\n                        is seconds and milliseconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ALTITUDE",
+      "type": "double",
+      "units": "km",
+      "description": "ALTITUDE OF SWEEP.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "SOLAR ZENITH ANGLE OF SWEEP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VPPH",
+      "type": "double",
+      "units": "V",
+      "description": "SUPRATHERMAL ELECTRON SPACECRAFT POTENTIAL\n                        RANGE = -5 - +20V\n                        UNCERTAINTY = 0.1V",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "DENPH1",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "FIRST SUPRATHERMAL ELECTRON DENSITY OF SWEEP",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "TEMPH1",
+      "type": "double",
+      "units": "eV",
+      "description": "FIRST SUPRATHERMAL ELECTRON TEMP OF SWEEP",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "DENPH2",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "SECOND SUPRATHERMAL ELECTRON DENSITY OF SWEEP",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "TEMPH2",
+      "type": "double",
+      "units": "eV",
+      "description": "SECOND SUPRATHERMAL ELECTRON TEMP OF SWEEP",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "SDENPH1",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "LEAST-SQUARES-FIT STATISTICAL UNCERTAINTY OF DENPH1",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "STEMPH1",
+      "type": "double",
+      "units": "eV",
+      "description": "LEAST-SQUARES-FIT STATISTICAL UNCERTAINTY OF TEMPH1",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "SDENPH2",
+      "type": "double",
+      "units": "",
+      "description": "LEAST-SQUARES-FIT STATISTICAL UNCERTAINTY OF DENPH2",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "STEMPH2",
+      "type": "double",
+      "units": "",
+      "description": "LEAST-SQUARES-FIT STATISTICAL UNCERTAINTY OF TEMPH2",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000e+00"
+    },
+    {
+      "name": "CSQ",
+      "type": "double",
+      "units": "",
+      "description": "CHI SQUARE, GOODNESS OF CURVE FIT",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "Saturation Current",
+      "type": "double",
+      "units": "A",
+      "description": "SATURATION SUPRATHERMAL ELECTRON CURRENT",
+      "size": [
+        1
+      ],
+      "fill": "9.9999999"
+    },
+    {
+      "name": "BCKPH",
+      "type": "double",
+      "units": "A",
+      "description": "BACKGROUND SUPRATHERMAL ELECTRON CURRENT",
+      "size": [
+        1
+      ],
+      "fill": "9.9999999"
+    },
+    {
+      "name": "Roll Angle",
+      "type": "double",
+      "units": "Degree",
+      "description": "ROLL ANGLE (NON ROTATING SPIN COORDINATE \n                        SYSTEM - RAMROLL)",
+      "size": [
+        1
+      ],
+      "fill": "999.99"
+    },
+    {
+      "name": "Spin Period",
+      "type": "double",
+      "units": "s",
+      "description": "SPIN PERIOD",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Spin Axis",
+      "type": "double",
+      "units": "Degree",
+      "description": "ATTITUDE OF SPIN AXIS X COMPONENT\n                        (NON ROTATING SPIN COORDINATE SYSTEM\n                        - ATTX)",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "Y Spin Axis",
+      "type": "double",
+      "units": "",
+      "description": "ATTITUDE OF SPIN AXIS Y COMPONENT\n                        (NON ROTATING SPIN COORDINATE SYSTEM\n                        - ATTY)",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "Z Spin Axis",
+      "type": "double",
+      "units": "",
+      "description": "ATTITUDE OF SPIN AXIS Z COMPONENT\n                       (NON ROTATING SPIN COORDINATE SYSTEM\n                       - ATTZ)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT,\n                        X COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - XP1SFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT,\n                        Y COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - YP1SFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z Venus to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM VENUS TO CENTER OF SPACECRAFT,\n                        Z COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - ZP1SFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY X COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - DXP1SF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY Y COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - DYP1SF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z PVO Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "SPACECRAFT VELOCITY Z COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - DZP1SF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT,\n                        X COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - XPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT,\n                        Y COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - YPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z Sun to PVO",
+      "type": "double",
+      "units": "km",
+      "description": "DISTANCE FROM SUN TO CENTER OF SPACECRAFT,\n                        Z COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM -\n                        ECLIPTIC - ZPHSFF)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, X COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, Y COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "Z Venus Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "VENUS CENTER VELOCITY, Z COMPONENT\n                        (INERTIAL CARTESIAN COORDINATE SYSTEM)",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

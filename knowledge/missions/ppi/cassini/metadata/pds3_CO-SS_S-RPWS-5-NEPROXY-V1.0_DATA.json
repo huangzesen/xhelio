@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "FLOATING_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "measured electric potential at the probe in volts, formatted %7.2f",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_POTENTIAL",
+      "type": "double",
+      "units": "V",
+      "description": "electric potential at the spacecraft surface derived from the probe floating potential, formatted %7.2f",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_NUMBER_DENSITY",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "derived proxy electron number density, formatted %9.2E",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

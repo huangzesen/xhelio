@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS2_TM3D_DEF_DATA",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS2 3D electron distribution - Differential Energy Flux (No Plot)",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS2_TM3D_DEF_DATA_reorder",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS2 3D electron distribution - Differential Energy Flux [varying with reordered elevation and energy (No Plot)]",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS2_TM3D_DEF_DATA_spec1",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS2 3D electron distribution - Spectrograms around -20^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS2_TM3D_DEF_DATA_spec2",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS2 3D electron distribution - Spectrograms around 0^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS2_TM3D_DEF_DATA_spec3",
+      "type": "double",
+      "units": "eV m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS2 3D electron distribution - Spectrograms around 20^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    }
+  ],
+  "startDate": "2023-01-08T13:56:46.000Z",
+  "stopDate": "2025-10-13T01:51:36.000Z"
+}

@@ -1,0 +1,274 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ICON_L25_HMF2",
+      "type": "double",
+      "units": "km",
+      "description": "Altitudes of the peak O+ densities (stacked plot)",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_HMF2_t",
+      "type": "double",
+      "units": "km",
+      "description": "---> same as above (as individual time series)",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_HMF2_Error",
+      "type": "double",
+      "units": "km",
+      "description": "Error in estimated altitudes of the peak O+ densities",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_HMF2_Error_t",
+      "type": "double",
+      "units": "km",
+      "description": "---> same as above (as individual time series)",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "Latitudes of the peak O+ densities in WGS84",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Local_Solar_Time",
+      "type": "double",
+      "units": "hours",
+      "description": "Local solar times at the retrieved peak O+ density locations",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "Longitudes of the peak O+ densities in WGS84",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Magnetic_Latitude",
+      "type": "double",
+      "units": "degrees North",
+      "description": "Magnetic latitudes of the peak O+ densities",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Magnetic_Longitude",
+      "type": "double",
+      "units": "degrees East",
+      "description": "Magnetic longitudes of the peak O+ densities",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_NMF2",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Estimated peak O+ densities",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_NMF2_Error",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Error in estimated peak O+ densities",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "O+ density scans(non-smoothed, whole earth view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density_sm_zo1",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "O+ density scans (smoothed & closest view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density_mapped_m",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "---> same as above (movie: non-smoothed/whole earth)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density_mapped_m_sm_z1",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "---> same as above (movie: smoothed & closest view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density_Error",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "Error in O+ density as a function of altitude (mapped)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_O_Plus_Density_Error_m",
+      "type": "double",
+      "units": "1/cm^3",
+      "description": "---> movie of above",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Quality",
+      "type": "double",
+      "units": "1=Good",
+      "description": "A quantification of the inversion quality, from 0 (Bad) to 1 (Good)",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_Quality_Flags",
+      "type": "integer",
+      "units": "",
+      "description": "Provides description about the observed inversion quality",
+      "fill": "-999.0",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Volume Emission Rate (VER) of 135.6-nm emission (non-smoothed, whole earth view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER_map_m",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "---> movie of above",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER_map_z1",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "---> same as above (smoothed & closest view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER_map_z1_movie",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "---> movie of above: smoothed & closest view)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER_Error",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "Error in VER of 135.6-nm emission as a function of altitude",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    },
+    {
+      "name": "ICON_L25_VER_Error_m",
+      "type": "double",
+      "units": "ph/cm^3/s",
+      "description": "---> same as above (movie)",
+      "fill": "-999.0",
+      "size": [
+        135,
+        6
+      ]
+    }
+  ],
+  "startDate": "2019-11-16T00:00:10.000Z",
+  "stopDate": "2022-11-25T14:52:06.000Z"
+}

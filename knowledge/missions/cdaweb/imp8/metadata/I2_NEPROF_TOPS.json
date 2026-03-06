@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "density",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Topside electon density in cm-3 from F peak to orbit altitude",
+      "fill": "-9999.0",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "log_density",
+      "type": "double",
+      "units": "",
+      "description": "Logarithm (base 10) of topside Ne in cm-3",
+      "fill": "-9.0",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "tec",
+      "type": "double",
+      "units": "1E16 m-2",
+      "description": "Total Electron Content in TECU (=1E16 m-2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "tec_iri",
+      "type": "double",
+      "units": "1.E16 m-2",
+      "description": "IRI-95 value for TEC in TECU",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IRI_F2peak",
+      "type": "double",
+      "units": "IRI95",
+      "description": "IRI-95 value for the natural logarithm of the F2 peak density in cm-3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IRI_F2peakHeight",
+      "type": "double",
+      "units": "km",
+      "description": "IRI-95 value for F2 peak height in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "numDataPoints",
+      "type": "integer",
+      "units": "data points",
+      "description": "Number of data points per profile",
+      "fill": null
+    },
+    {
+      "name": "qualityIndex",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Index ( 0-best, 10-worst)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "lon",
+      "type": "double",
+      "units": "degree",
+      "description": "Longitude in degree (-180 to 180)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "degree",
+      "description": "Latitude in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dip",
+      "type": "double",
+      "units": "degree",
+      "description": "Magnetic Inclination in degree",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "L value",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "degree",
+      "description": "solar zenith angle at 100 km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sunspotNumber",
+      "type": "integer",
+      "units": "",
+      "description": "12-month-running mean of sunspot number",
+      "fill": "-1.0"
+    },
+    {
+      "name": "IGindex",
+      "type": "integer",
+      "units": "",
+      "description": "12-month-running mean of IG ionosonde index",
+      "fill": "-1.0"
+    }
+  ],
+  "startDate": "1971-04-08T22:27:48.000Z",
+  "stopDate": "1979-08-27T17:52:25.000Z"
+}

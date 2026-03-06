@@ -1,0 +1,135 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ION_METHOD_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Ion Method Flag for calculation of numerical ion     \n                         moments. Value: meaning                              \n                         1 : SNG data, TOF-based partition                    \n                         2 : SNG data, E-based partition                      \n                         3 : SNG data, hard-wired partition                   \n                         4 : ION data",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "H+_DENSITY",
+      "type": "double",
+      "units": "IONS/CM^3",
+      "description": "H+ density.  Please note the difference between a    \n                         value of 0.000 and -1.  The 0.000 corresponds to a   \n                         valid determination that is just extremely low (and  \n                         there is no confidence in the actual quantitative    \n                         value, other than that it is very low), whereas the  \n                         fill value corresponds to an invalid determination,  \n                         usually caused by problems in the integration        \n                         process.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "H+_TEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "H2+_DENSITY",
+      "type": "double",
+      "units": "IONS/CM^3",
+      "description": "H2+ density.  Please note the difference between a   \n                         value of 0.000 and -1.  The 0.000 corresponds to a   \n                         valid determination that is just extremely low (and  \n                         there is no confidence in the actual quantitative    \n                         value, other than that is is very low), whereas the  \n                         fill value corresponds to an invalid determination,  \n                         usually caused by problems in the integration        \n                         process.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "H2+_TEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "H2+ temperature",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "W+_DENSITY",
+      "type": "double",
+      "units": "IONS/CM^3",
+      "description": "W+ density.  Water-group ions, W+, includes O+, OH+, \n                         H2O+, and H3O+ (where the 2 and 3 are subscripts).   \n                         Please note the difference between a value of 0.000  \n                         and -1.  The 0.000 corresponds to a valid            \n                         determination that is just extremely low (and there  \n                         is no confidence in the actual quantitative value,   \n                         other than that is is very low), whereas the fill    \n                         value corresponds to an invalid determination,       \n                         usually caused by problems in the integration        \n                         process.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "W+_TEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "W+ temperature, where W+ are water group ions.       \n                         W+ includes ions: O+, OH+, H2O+, and H3O+.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "AVE_V_R",
+      "type": "double",
+      "units": "KILOMETER/SECOND",
+      "description": "Weighted average flow velocity, r component, in      \n                         Saturn centered spherical coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "AVE_V_PHI",
+      "type": "double",
+      "units": "KILOMETER/SECOND",
+      "description": "Weighted average flow velocity, phi component, in    \n                         Saturn centered spherical coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "AVE_V_THETA",
+      "type": "double",
+      "units": "KILOMETER/SECOND",
+      "description": "Weighted average flow velocity, theta component, in  \n                         Saturn centered spherical coordinates.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "AVE_FLOW_SPEED",
+      "type": "double",
+      "units": "KILOMETER/SECOND",
+      "description": "Weighted average flow speed.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.999"
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Value: meaning                                       \n                         0: Not-bad; corotation direction is in the Field of  \n                            View (FOV)                                        \n                         1: Not-bad; corotation direction not in FOV          \n                         2: Bad (the spacecraft is rolling and/or CAPS is not \n                            actuating)",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,133 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "N_elec",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Ne Electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NcElec",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Ne core Electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "U_eGSE",
+      "type": "double",
+      "units": "km/s",
+      "description": "Ue (GSE, 3 comp.) Electron bulk-velocity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "UceGSE",
+      "type": "double",
+      "units": "km/s",
+      "description": "Ue core (GSE, 3 comp.) Electron bulk-velocity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "P_eGSE",
+      "type": "double",
+      "units": "erg/cc",
+      "description": "Pe (GSE, 6 comp.) Electron pressure-tensor",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "T_elec",
+      "type": "double",
+      "units": "K",
+      "description": "Te Electron total-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TcElec",
+      "type": "double",
+      "units": "K",
+      "description": "Te core Electron total-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "W_elec",
+      "type": "double",
+      "units": "eV",
+      "description": "We Electron average thermal-energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WcElec",
+      "type": "double",
+      "units": "eV",
+      "description": "We core Electron average thermal-energy",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Te_pal",
+      "type": "double",
+      "units": "K",
+      "description": "TePal Electron parallel-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Te_per",
+      "type": "double",
+      "units": "K",
+      "description": "TePer Electron perpendicular-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TecPal",
+      "type": "double",
+      "units": "K",
+      "description": "TePal core Electron parallel-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TecPer",
+      "type": "double",
+      "units": "K",
+      "description": "TePer core Electron perpendicular-temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Te_ani",
+      "type": "double",
+      "units": "unitless",
+      "description": "Aniso_e Electron temperature-anisotropy (TePer/TePal)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TecAni",
+      "type": "double",
+      "units": "unitless",
+      "description": "Aniso_e core Electron temperature-anisotropy (TePer_core/TePal_core)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Gyrtrp",
+      "type": "double",
+      "units": "unitless",
+      "description": "Gyrtrp_e Electron gyrotropy",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2002-08-16T00:00:05.000Z",
+  "stopDate": "2025-03-31T23:58:36.000Z"
+}

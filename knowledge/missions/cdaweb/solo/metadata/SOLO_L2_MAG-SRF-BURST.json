@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_SRF",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in spacecraft reference frame",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-04-15T00:00:00.000Z",
+  "stopDate": "2025-08-31T23:59:59.000Z"
+}

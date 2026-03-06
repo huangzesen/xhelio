@@ -1,0 +1,79 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Amplitude_XY",
+      "type": "double",
+      "units": "dBV/root-Hz",
+      "description": "Thermal Noise Amplitude, antennas XY summary (standard display)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Amplitude_X",
+      "type": "double",
+      "units": "dBV/root-Hz",
+      "description": "---> Antenna X",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Amplitude_Y",
+      "type": "double",
+      "units": "dBV/root-Hz",
+      "description": "---> Antenna Y",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Amplitude_Z",
+      "type": "double",
+      "units": "dBV/root-Hz",
+      "description": "---> Antenna Z",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "ProgramSpecs",
+      "type": "integer",
+      "units": "",
+      "description": "Program Specifications [NO PLOT - LISTING ONLY]",
+      "fill": "-32768.0",
+      "size": [
+        25
+      ]
+    },
+    {
+      "name": "NumFreqs",
+      "type": "integer",
+      "units": "",
+      "description": "Number of frequencies measured",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Frequency",
+      "type": "double",
+      "units": "kHz",
+      "description": "Frequency",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    }
+  ],
+  "startDate": "2000-04-12T20:35:45.000Z",
+  "stopDate": "2005-12-18T07:39:52.000Z"
+}

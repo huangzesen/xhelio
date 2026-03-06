@@ -1,0 +1,74 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms4_des_errorflags_slow",
+      "type": "integer",
+      "units": "32-bit error flags",
+      "description": "MMS4 FPI/DES vector of data-quality indicators at survey-start time",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "mms4_des_compressionloss_slow",
+      "type": "integer",
+      "units": "0, 1",
+      "description": "MMS4 FPI/DES compression lossless/lossy indicator at survey-start time",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms4_des_startdelphi_count_slow",
+      "type": "integer",
+      "units": "del-phi counts",
+      "description": "MMS4 FPI/DES Del-Phi (obs spin-phase) count at survey-start time",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms4_des_startdelphi_angle_slow",
+      "type": "double",
+      "units": "deg",
+      "description": "MMS4 FPI/DES Del-Phi (obs spin-phase) angle at survey-start time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_des_dist_slow",
+      "type": "double",
+      "units": "s^3/cm^6",
+      "description": "MMS4 FPI/DES Slow Survey sky-map instrument distribution",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        32
+      ]
+    },
+    {
+      "name": "mms4_des_disterr_slow",
+      "type": "double",
+      "units": "s^3/cm^6",
+      "description": "MMS4 FPI/DES Slow Survey sky-map instrument distribution 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        16,
+        32
+      ]
+    },
+    {
+      "name": "mms4_des_avgf1counts_slow",
+      "type": "double",
+      "units": "s^3/cm^6",
+      "description": "MMS4 FPI/DES slow survey average f1 count values",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "2015-09-02T00:28:46.000Z",
+  "stopDate": "2025-08-26T07:14:40.000Z"
+}

@@ -1,0 +1,333 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BF1",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field magnitude (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF1LOG",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field magnitude (1 min - log scaled)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BRMSF1",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "RMS magnitude (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BGSM",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field vector in GSM cartesian coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BRMSGSM",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "RMS vector in GSM coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSE",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "Magnetic field vector in GSE cartesian coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSEa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field vector in GSE angular coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BRMSGSE",
+      "type": "double",
+      "units": "nT (1min)",
+      "description": "RMS vector in GSE coordinates (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DIST",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Distance from the center of the earth (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PGSM",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Position vector in GSM coordinates (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PGSE",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Position vector in GSE coordinates (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3F1",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field magnitude (3 sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B3F1LOG",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field magnitude (3 sec - log scaled)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B3RMSF1",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "RMS magnitude (3 sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B3GSM",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field vector in GSM cartesian coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3RMSGSM",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "RMS vector in GSM coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3GSE",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "Magnetic field vector in GSE cartesian coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3GSEa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field vector in GSE angular coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B3RMSGSE",
+      "type": "double",
+      "units": "nT (3sec)",
+      "description": "RMS vector in GSE coordinates (3 sec)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1F1",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field magnitude (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B1F1LOG",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field magnitude (1 hour - log scaled)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B1RMSF1",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "RMS magnitude (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B1GSM",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field vector in GSM cartesian coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1RMSGSM",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "RMS vector in GSM coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1GSE",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "Magnetic field vector in GSE cartesian coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1GSEa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field vector in GSE angular coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B1RMSGSE",
+      "type": "double",
+      "units": "nT (1hr)",
+      "description": "RMS vector in GSE coordinates (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DIST1",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Distance from the center of the earth (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1GSM",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Position vector in GSM coordinates (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "P1GSE",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Position vector in GSE coordinates (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DISTV",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Time axis label: Distance from the center of the earth (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PGSMV",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Time axis label: Position vector in GSM coordinates (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PGSEV",
+      "type": "double",
+      "units": "Re (1min)",
+      "description": "Time axis label: Position vector in GSE coordinates (Define Re = 6378km) (1 min)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DIST1V",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Time axis label: Distance from the center of the earth (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1GSMV",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Time axis label: Position vector in GSM coordinates (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "P1GSEV",
+      "type": "double",
+      "units": "Re (1hr)",
+      "description": "Time axis label: Position vector in GSE coordinates (Define Re = 6378km) (1 hour)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1994-11-13T00:00:30.000Z",
+  "stopDate": "2026-02-13T23:59:30.000Z"
+}

@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "F1",
+      "type": "double",
+      "units": "nT",
+      "description": "B Field Magnitude (average of fine scale magnitudes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "BR in RTN (Radial-Tangential-Normal) coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "BT in RTN coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN in RTN coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dF",
+      "type": "double",
+      "units": "nT",
+      "description": "Uncertainty in B",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dBR",
+      "type": "double",
+      "units": "nT",
+      "description": "Uncertainty in BR",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dBT",
+      "type": "double",
+      "units": "nT",
+      "description": "Uncertainty in BT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dBN",
+      "type": "double",
+      "units": "nT",
+      "description": "Uncertainty in BN",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Radius",
+      "type": "double",
+      "units": "au",
+      "description": "Radius",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "hg_lat",
+      "type": "double",
+      "units": "deg",
+      "description": "heliographic latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "hg_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "heliographic longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "hgi_lon",
+      "type": "double",
+      "units": "deg",
+      "description": "heliographic inertial longitude",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2009-01-31T11:01:29.000Z",
+  "stopDate": "2022-12-31T23:59:52.000Z"
+}

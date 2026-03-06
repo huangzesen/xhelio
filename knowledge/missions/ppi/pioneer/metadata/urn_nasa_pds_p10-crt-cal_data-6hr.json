@@ -1,0 +1,375 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PROTONFLUX3",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the HET and is derived\n                        from pulse height data using R2 for normalization.\n                        120.7 - 227.3 MeV Proton flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "PROTONFLUX2",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the HET and is derived\n                        from pulse height data using R1 for normalization.\n                        30.55 - 56.47 MeV Proton flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "PROTONFLUX1",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the LET-I and is derived\n                        from pulse height data using R11A for normalization.\n                        3.45 - 5.15 MeV Proton flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "HELIUMFLUX4",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the HET and is derived\n                        from pulse height data using R3A for normalization.\n                        112.7 - 413 MeV/n Helium flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "HELIUMFLUX3",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the HET and is derived\n                        from pulse height data using R2B for normalization.\n                        30.67 - 56.7 MeV/n Helium flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "HELIUMFLUX2",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the LET-1 and is derived\n                        from pulse height data using R11B for normalization.\n                        10 - 21.7 MeV/n Helium flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "HELIUMFLUX1",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the LET-1 and is derived\n                        from pulse height data using R11B for normalization.\n                        3.44 - 4.97 MeV/n Helium flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "ELECTRONFLUX",
+      "type": "double",
+      "units": "particles/cm**2*sr*sec*MeV",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        The flux is obtained from the HET and is derived\n                        from pulse height data using R1 for normalization.\n                        2 - 6 MeV Electron flux.",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R1",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R1 counter.\n                        This counter also responds to 2-8 MeV electrons.\n                        Counting rate (20-56 MeV/n z >= 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R2A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R2A counter.\n                        This counter also responds to > 8 MeV electrons.\n                        Counting rate (>180 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R2B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R2B counter.\n                        Counting rate (z >= 2 of stopping range<1.5 cm Si).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R3A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R3A counter.\n                        This counter also responds to >56 MeV/n z = 2.\n                        Counting rate (56-180 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R9A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R9A counter.\n                        Counting rate (particles that lose >.22 MeV in B detector).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R9B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R9B counter.\n                        Counting rate (particles that lose >1.0 MeV in CI detector).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R9C",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R9C counter.\n                         Counting rate (particles that lose >1.1 MeV in CII detector).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R9D",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R9D counter.\n                         Counting rate (particles that lose >.23 MeV in CIII detector).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10A counter.\n                         The R10A mnemonic is also referred to as DI1.\n                         Counting rate (particles that lose >.13 MeV in DI detector).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10B counter.\n                         This counter also responds to >.39 MeV/n z = 2.\n                         Counting rate (.66 - 33 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10C",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031\n                         This field represents average counts in R10C counter.\n                         This counter also responds to >.42 MeV/n z = 2.\n                         Counting rate (.72 - 20 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10D",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10D counter.\n                         This counter also responds to >.46 MeV/n z = 2.\n                         Counting rate (.84 - 14.2 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10E",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10E counter.\n                         This counter also responds to >.53 MeV/n z = 2.\n                         Counting rate (1.1 - 8.1 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10F",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10F counter.\n                         This counter also responds to >.63 MeV/n z = 2.\n                         Counting rate (1.6 - 5.1 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10G",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10G counter.\n                         This counter also responds to >.75 MeV/n z = 2.\n                         Counting rate (2.29 - 3.8 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R10H",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R10H counter.\n                         This counter also has proton contamination.\n                         Counting rate (>.99 MeV/n z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R11A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R11A counter.\n                         Counting rate (3.2 - 21 MeV/n z >= 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R11B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R11B counter.\n                         Counting rate (3.2 - 21 MeV/n z >= 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R12A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R12A counter.\n                         Counting rate (5.6 - 21 MeV/n z >= 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R12B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R12B counter.\n                         Counting rate (5.6 - 21 MeV/n z >= 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R15A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R15A counter.\n                         Counting rate (.20 - 2.15 MeV z = 1, z >= 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R15B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                        value not available for error = 1.0E+031.\n                        This field represents average counts in R15B counter.\n                        This counter also responds to .22 - 2.05 Mev/n z = 2.\n                        Counting rate (.74 - 2.15 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R15C",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R15C counter.\n                         This counter also responds to .34 - 2.05 MeV/n z = 2.\n                         Counting rate (1.24 - 2.15 MeV z = 1).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R15D",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R15D counter.\n                         Counting rate (.69 - 2.05 MeV/n z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R16A",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R16A counter.\n                         Counting rate (3.2 - 20.6 MeV z = 1; z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R16B",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R16B counter.\n                         Counting rate (5.7 - 20.6 MeV z = 1; z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R16C",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R16C counter.\n                         Counting rate (14.9 - 20.6 MeV z = 1; z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    },
+    {
+      "name": "R16D",
+      "type": "double",
+      "units": "particles/sec",
+      "description": "value >= 0 when 0 <= error < 1.0E+031;   \n                         value not available for error = 1.0E+031.\n                         This field represents average counts in R16D counter.\n                         Counting rate (6.6 - 20.6 MeV/n z = 2).",
+      "size": [
+        1
+      ],
+      "fill": "1.000000e+031"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

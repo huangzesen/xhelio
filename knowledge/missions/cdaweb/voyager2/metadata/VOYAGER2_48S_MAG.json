@@ -1,0 +1,343 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "magStatus",
+      "type": "integer",
+      "units": "",
+      "description": "MAG Status Word",
+      "fill": null
+    },
+    {
+      "name": "magCommand",
+      "type": "integer",
+      "units": "",
+      "description": "---> MAG Command Word",
+      "fill": null
+    },
+    {
+      "name": "F1",
+      "type": "double",
+      "units": "nT",
+      "description": "B-Magnitude by Method 1 (F1): 48 second average of 9.6 second magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2",
+      "type": "double",
+      "units": "nT",
+      "description": "B-Magnitude by Method 2 (F2): average derived from 48 second component averages=sqrt(B1**2+B2**2+B3**2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "B1",
+      "type": "double",
+      "units": "nT",
+      "description": "BR (B1): 48 second average of 9.6 second averages of the B-radial component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B2",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BT (B2): 48 second average of 9.6 second averages of the B-tangential component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B3",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BN (B3): 48 second average of 9.6 second averages of the B-normal component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "F1_100nt",
+      "type": "double",
+      "units": "nT",
+      "description": "[100nT plot scale] B-Magnitude by Method 1 (F1): 48 second average of 9.6 second magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2_100nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-Magnitude by Method 2 (F2): average derived from 48 second component averages=sqrt(B1**2+B2**2+B3**2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "B1_100nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BR (B1): 48 second average of 9.6 second averages of the B-radial component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B2_100nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BT (B2): 48 second average of 9.6 second averages of the B-tangential component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B3_100nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BN (B3): 48 second average of 9.6 second averages of the B-normal component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "F1_10nt",
+      "type": "double",
+      "units": "nT",
+      "description": "[10nT plot scale] B-Magnitude by Method 1 (F1): 48 second average of 9.6 second magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2_10nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-Magnitude by Method 2 (F2): average derived from 48 second component averages=sqrt(B1**2+B2**2+B3**2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "B1_10nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BR (B1): 48 second average of 9.6 second averages of the B-radial component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B2_10nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BT (B2): 48 second average of 9.6 second averages of the B-tangential component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B3_10nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BN (B3): 48 second average of 9.6 second averages of the B-normal component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "F1_1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "[1nT plot scale] B-Magnitude by Method 1 (F1): 48 second average of 9.6 second magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2_1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-Magnitude by Method 2 (F2): average derived from 48 second component averages=sqrt(B1**2+B2**2+B3**2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "B1_1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BR (B1): 48 second average of 9.6 second averages of the B-radial component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B2_1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BT (B2): 48 second average of 9.6 second averages of the B-tangential component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B3_1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BN (B3): 48 second average of 9.6 second averages of the B-normal component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "F1_dot1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "[0.1nT plot scale] B-Magnitude by Method 1 (F1): 48 second average of 9.6 second magnitudes",
+      "fill": "999.0"
+    },
+    {
+      "name": "F2_dot1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> B-Magnitude by Method 2 (F2): average derived from 48 second component averages=sqrt(B1**2+B2**2+B3**2)",
+      "fill": "999.0"
+    },
+    {
+      "name": "B1_dot1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BR (B1): 48 second average of 9.6 second averages of the B-radial component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B2_dot1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BT (B2): 48 second average of 9.6 second averages of the B-tangential component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "B3_dot1nt",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BN (B3): 48 second average of 9.6 second averages of the B-normal component in HG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "RMSB1",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS of BR",
+      "fill": "999.0"
+    },
+    {
+      "name": "RMSB2",
+      "type": "double",
+      "units": "nT",
+      "description": "---> RMS of BT",
+      "fill": "999.0"
+    },
+    {
+      "name": "RMSB3",
+      "type": "double",
+      "units": "nT",
+      "description": "---> RMS of BN",
+      "fill": "999.0"
+    },
+    {
+      "name": "num9_6_averages",
+      "type": "integer",
+      "units": "",
+      "description": "---> Number of 9.6 averages per 48 second average (0<n<5)",
+      "fill": null
+    },
+    {
+      "name": "x",
+      "type": "double",
+      "units": "AU",
+      "description": "V1 X position in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "y",
+      "type": "double",
+      "units": "AU",
+      "description": "---> V1 Y position in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "z",
+      "type": "double",
+      "units": "AU",
+      "description": "---> V1 Z position in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "xvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "V1 X velocity in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "yvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> V1 Y velocity in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "zvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> V1 Z velocity in IHG coords",
+      "fill": "999.0"
+    },
+    {
+      "name": "scDistance",
+      "type": "double",
+      "units": "Au",
+      "description": "V1 distance from the Sun",
+      "fill": "999.0"
+    },
+    {
+      "name": "scLon",
+      "type": "double",
+      "units": "radians",
+      "description": "---> V1 longitude in IHG coords = asin(Z/R)",
+      "fill": "999.0"
+    },
+    {
+      "name": "scLat",
+      "type": "double",
+      "units": "radians",
+      "description": "---> V1 latitude in IHG coords = asin(Z/R)",
+      "fill": "999.0"
+    },
+    {
+      "name": "matrix1",
+      "type": "double",
+      "units": "",
+      "description": "Matrix1: transforms 3-element vector from Inertial Heliographic (IHG) to Heliographic (HG)coordinates.",
+      "fill": "999.0",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "matrix2",
+      "type": "double",
+      "units": "",
+      "description": "---> Matrix2: transforms 3-element vector from Earth Mean ecliptic, Equinox of 1950 (EME 50) to Heliographic (HG) coordinates.",
+      "fill": "999.0",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "matrix3",
+      "type": "double",
+      "units": "",
+      "description": "---> Matrix3: transforms 3-element vector from payload coordinates to Heliographic (HG) coordinates.",
+      "fill": "999.0",
+      "size": [
+        9
+      ]
+    },
+    {
+      "name": "calib_flag_on",
+      "type": "integer",
+      "units": "flag",
+      "description": "calibration flag",
+      "fill": "-128.0"
+    },
+    {
+      "name": "calib_flag_MF",
+      "type": "integer",
+      "units": "flag",
+      "description": "calibration flag for MField",
+      "fill": "-128.0"
+    },
+    {
+      "name": "calib_flag_offset",
+      "type": "integer",
+      "units": "points",
+      "description": "calibration flag offset",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "1977-08-20T15:57:30.000Z",
+  "stopDate": "1991-01-01T00:01:09.000Z"
+}

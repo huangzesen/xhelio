@@ -1,0 +1,222 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ve",
+      "type": "double",
+      "units": "cm/s",
+      "description": "Electron speed",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "Ve_stack",
+      "type": "double",
+      "units": "cm/s",
+      "description": "--> stack plot of all channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "eV",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "eV_stack",
+      "type": "double",
+      "units": "eV",
+      "description": "--> stack plot of all channels, by energy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "f_pitch_E00",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 00 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E01",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 01 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E02",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 02 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E03",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 03 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E04",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 04 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E05",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 05 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E06",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 06 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E07",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 07 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E08",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 08 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E09",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 09 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E10",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 10 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E11",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 11 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E12",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 12 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E13",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 13 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E14",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 14 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_E15",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron pitch-angle distributions (6 degrees/bin), energy chanel 15 (time-varying energy value)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "f_pitch_SPA",
+      "type": "double",
+      "units": "#/{cc*(cm/s)^3}",
+      "description": "Electron spin-averaged flux, binned by energy channel",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "1994-11-30T00:00:20.000Z",
+  "stopDate": "2001-07-10T00:00:35.000Z"
+}

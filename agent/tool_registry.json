@@ -1,0 +1,191 @@
+{
+  "version": 1,
+  "agents": {
+    "orchestrator": {
+      "call": [
+        "web_search",
+        "list_missions",
+        "search_datasets",
+        "list_parameters",
+        "browse_datasets",
+        "get_dataset_docs",
+        "search_full_catalog",
+        "ask_clarification",
+        "get_session_assets",
+        "delegate_to_envoy",
+        "delegate_to_viz",
+        "delegate_to_data_ops",
+        "delegate_to_data_extraction",
+        "delegate_to_insight",
+        "request_planning",
+        "review_memory",
+        "pipeline",
+        "list_fetched_data",
+        "merge_datasets",
+        "preview_data",
+        "restore_plot",
+        "events_admin",
+        "list_active_work",
+        "cancel_work"
+      ],
+      "informed": [
+        "render_plotly_json",
+        "manage_plot",
+        "generate_mpl_script",
+        "generate_jsx_component",
+        "custom_operation",
+        "fetch_data"
+      ]
+    },
+    "envoy": {
+      "call": [
+        "list_missions",
+        "search_datasets",
+        "list_parameters",
+        "browse_datasets",
+        "get_dataset_docs",
+        "search_full_catalog",
+        "fetch_data",
+        "ask_clarification",
+        "get_session_assets",
+        "list_fetched_data",
+        "review_memory",
+        "events"
+      ],
+      "informed": []
+    },
+    "viz_plotly": {
+      "call": [
+        "render_plotly_json",
+        "manage_plot",
+        "list_fetched_data",
+        "describe_data",
+        "preview_data",
+        "review_memory",
+        "events"
+      ],
+      "informed": [
+        "fetch_data",
+        "custom_operation",
+        "store_dataframe"
+      ]
+    },
+    "viz_mpl": {
+      "call": [
+        "generate_mpl_script",
+        "manage_mpl_output",
+        "list_fetched_data",
+        "describe_data",
+        "preview_data",
+        "review_memory",
+        "events"
+      ],
+      "informed": [
+        "fetch_data",
+        "custom_operation",
+        "store_dataframe"
+      ]
+    },
+    "viz_jsx": {
+      "call": [
+        "generate_jsx_component",
+        "manage_jsx_output",
+        "list_fetched_data",
+        "describe_data",
+        "preview_data",
+        "review_memory",
+        "events"
+      ],
+      "informed": [
+        "fetch_data",
+        "custom_operation",
+        "store_dataframe"
+      ]
+    },
+    "dataops": {
+      "call": [
+        "custom_operation",
+        "describe_data",
+        "preview_data",
+        "merge_datasets",
+        "ask_clarification",
+        "get_session_assets",
+        "list_fetched_data",
+        "search_function_docs",
+        "get_function_docs",
+        "review_memory",
+        "events"
+      ],
+      "informed": [
+        "fetch_data"
+      ]
+    },
+    "planner": {
+      "call": [
+        "list_missions",
+        "web_search",
+        "search_datasets",
+        "list_parameters",
+        "browse_datasets",
+        "get_dataset_docs",
+        "search_full_catalog",
+        "list_fetched_data",
+        "events_admin"
+      ],
+      "informed": [
+        "fetch_data",
+        "custom_operation",
+        "store_dataframe",
+        "render_plotly_json",
+        "manage_plot",
+        "generate_mpl_script",
+        "manage_mpl_output",
+        "generate_jsx_component",
+        "manage_jsx_output"
+      ]
+    },
+    "extraction": {
+      "call": [
+        "store_dataframe",
+        "read_document",
+        "ask_clarification",
+        "get_session_assets",
+        "list_fetched_data",
+        "review_memory",
+        "events"
+      ],
+      "informed": []
+    },
+    "eureka": {
+      "call": [
+        "list_fetched_data",
+        "preview_data",
+        "describe_data",
+        "delegate_to_insight",
+        "events"
+      ],
+      "informed": []
+    }
+  },
+  "envoy_groups": {
+    "base": [
+      "ask_clarification",
+      "get_session_assets",
+      "list_fetched_data",
+      "review_memory",
+      "events"
+    ],
+    "cdaweb": [
+      "search_datasets",
+      "list_parameters",
+      "browse_datasets",
+      "list_missions",
+      "get_dataset_docs",
+      "search_full_catalog",
+      "fetch_data"
+    ]
+  },
+  "envoy_informed": [],
+  "envoy_group_assignments": {},
+  "envoy_default_group": "cdaweb"
+}

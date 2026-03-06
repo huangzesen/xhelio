@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "JMXYZ X component of the magnetic-field component in nT.                \n      X is in the plane containing Z and the IAU_JUPITER (S3 1997)            \n      Prime Merdian.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "JMXYZ Y component of the magnetic field component in nT.                \n      Y completes the right handed set (Z x X).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "JMXYZ Z component of the magnetic field component in nT.                \n      Z is the Jupiter dipole.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

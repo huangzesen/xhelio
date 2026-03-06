@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "Year in which a new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "ERT/UTC day of year on which a new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "",
+      "description": "ERT/UTC hour at which a new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Minute",
+      "type": "double",
+      "units": "",
+      "description": "ERT/UTC minute at which a new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Second",
+      "type": "double",
+      "units": "",
+      "description": "ERT/UTC second at which a new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "Mission elapsed time (MET) on the spacecraft clock\n                                     when the new antenna configuration was selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Downlink Antenna",
+      "type": "double",
+      "units": "",
+      "description": "Code for downlink antenna selected.  Possible values are:\n                                          0: Front Fan beam\n                                          1: AFT LGA\n                                          2: Front LGA\n                                          3: Back Fan beam\n                                          4: FWD LGA5: Back LGA\n                                          6: Front Phased Array\n                                          7: Back Phased Array\n                                          8: Hardware Error",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Uplink Antenna",
+      "type": "double",
+      "units": "",
+      "description": "Code for uplink antenna selected.  Possible values are:\n                                          0: Front Fan beam\n                                          1: AFT LGA\n                                          2: Front LGA\n                                          3: Back Fan beam\n                                          4: FWD LGA\n                                          5: Back LGA\n                                          6: N/A\n                                          7: N/A\n                                          8: Hardware Error",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

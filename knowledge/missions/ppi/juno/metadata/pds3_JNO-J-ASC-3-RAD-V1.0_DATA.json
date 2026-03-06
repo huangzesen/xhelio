@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCLK_TIME",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock in decimal seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIATION_COUNTS",
+      "type": "integer",
+      "units": "",
+      "description": "The calibrated, shutter compensated, radiation count. The count values are calibrated to counts as reaching the CCD per image cycle (250ms).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BBO_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Indicating presence of a bright luminous object in the field of view at the time of acquisition 0 means no BBO, 1 means at least one BBO.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OBJECT_COUNT",
+      "type": "integer",
+      "units": "",
+      "description": "Number of stellar candidate objects identified in the image",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SHUTTER_COMPENSATION",
+      "type": "double",
+      "units": "",
+      "description": "The measured count depends on the use of electronic shutter. This field indicates the level of compensation applied for the engineering count values",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIATION_COUNT_RAW",
+      "type": "integer",
+      "units": "",
+      "description": "The raw radiation count as telemetered by the instrument",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UTC_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The UTC time in decimal seconds. The time epoch is seconds since Jan 1st, 2000 at noon.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OMNI-DIRECTIONAL FLUX",
+      "type": "integer",
+      "units": "",
+      "description": "The external omnidirectional flux in [particles/cm^2/s], within the energy sensitivity range of the sensor.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

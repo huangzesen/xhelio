@@ -1,0 +1,1076 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Period_1",
+      "type": "double",
+      "units": "minutes",
+      "description": "(1) Period in minutes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_1",
+      "type": "double",
+      "units": "unitless",
+      "description": "(1) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Inclin_2",
+      "type": "double",
+      "units": "degrees",
+      "description": "(2) Inclination in degrees",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_2",
+      "type": "double",
+      "units": "unitless",
+      "description": "(2) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Eccen_3",
+      "type": "double",
+      "units": "unitless",
+      "description": "(3) Eccentricity",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_3",
+      "type": "double",
+      "units": "unitless",
+      "description": "(3) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SemiMaj_4",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(4) Semi Major Axis in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_4",
+      "type": "double",
+      "units": "unitless",
+      "description": "(4) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ArgOfPrge_5",
+      "type": "double",
+      "units": "degrees",
+      "description": "(5) Argument Of Perigee in Degrees",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_5",
+      "type": "double",
+      "units": "unitless",
+      "description": "(5) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RA_AscNode_6",
+      "type": "double",
+      "units": "degrees",
+      "description": "(6) Right Ascension Of Ascendng Node",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_6",
+      "type": "double",
+      "units": "unitless",
+      "description": "(6) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Apogee_7",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(7) Apogee Height in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_7",
+      "type": "double",
+      "units": "unitless",
+      "description": "(7) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Perigee_8",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(8) Perigee Height in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_8",
+      "type": "double",
+      "units": "unitless",
+      "description": "(8) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Orbit_#_9",
+      "type": "double",
+      "units": "int",
+      "description": "(9) Orbit number",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_9",
+      "type": "double",
+      "units": "unitless",
+      "description": "(9) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TmFmPrge_10",
+      "type": "double",
+      "units": "sec",
+      "description": "(10) Time From Perigee In Seconds",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_10",
+      "type": "double",
+      "units": "unitless",
+      "description": "(10) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Lit_Drk_11",
+      "type": "double",
+      "units": "unitless",
+      "description": "(11) Sunlight / Darkness Flag",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_11",
+      "type": "double",
+      "units": "unitless",
+      "description": "(11) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "AltOvSph_12",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(12) Altitude Above Spheriod",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_12",
+      "type": "double",
+      "units": "unitless",
+      "description": "(12) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SpinAng_13",
+      "type": "double",
+      "units": "radians",
+      "description": "(13) Phase Angle Of Spin, rad",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_13",
+      "type": "double",
+      "units": "unitless",
+      "description": "(13) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SpinRate_14",
+      "type": "double",
+      "units": "rad/s",
+      "description": "(14) Spin Rate With Respect To Nadir",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_14",
+      "type": "double",
+      "units": "unitless",
+      "description": "(14) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ConingAng_15",
+      "type": "double",
+      "units": "radians",
+      "description": "(15) Coning Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_15",
+      "type": "double",
+      "units": "unitless",
+      "description": "(15) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ConingRate_16",
+      "type": "double",
+      "units": "rad/s",
+      "description": "(16) Coning Rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_16",
+      "type": "double",
+      "units": "unitless",
+      "description": "(16) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ConingPha_17",
+      "type": "double",
+      "units": "radians",
+      "description": "(17) Coning Phase",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_17",
+      "type": "double",
+      "units": "unitless",
+      "description": "(17) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GeodLat_18",
+      "type": "double",
+      "units": "degrees",
+      "description": "(18) Geodetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_18",
+      "type": "double",
+      "units": "unitless",
+      "description": "(18) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GcenLat_19",
+      "type": "double",
+      "units": "degrees",
+      "description": "(19) Geocentric Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_19",
+      "type": "double",
+      "units": "unitless",
+      "description": "(19) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GmagLat_20",
+      "type": "double",
+      "units": "degrees",
+      "description": "(20) Geomagnetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_20",
+      "type": "double",
+      "units": "unitless",
+      "description": "(20) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ELong_21",
+      "type": "double",
+      "units": "degrees",
+      "description": "(21) East Longitude Of Satellite",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_21",
+      "type": "double",
+      "units": "unitless",
+      "description": "(21) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GrnwST_22",
+      "type": "double",
+      "units": "radians",
+      "description": "(22) Greenwhich Sidereal Time In Radians",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_22",
+      "type": "double",
+      "units": "unitless",
+      "description": "(22) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LASTm_23",
+      "type": "double",
+      "units": "hours",
+      "description": "(23) Local Apparent Solar Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_23",
+      "type": "double",
+      "units": "unitless",
+      "description": "(23) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LMTm_24",
+      "type": "double",
+      "units": "hours",
+      "description": "(24) Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_24",
+      "type": "double",
+      "units": "unitless",
+      "description": "(24) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_NV_P_25",
+      "type": "double",
+      "units": "unitless",
+      "description": "(25) Gei Vector Normal To Orbit Plane, P",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_25",
+      "type": "double",
+      "units": "unitless",
+      "description": "(25) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_NV_X_26",
+      "type": "double",
+      "units": "unitless",
+      "description": "(26) Gei Vector Normal To Orbit Plane, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_26",
+      "type": "double",
+      "units": "unitless",
+      "description": "(26) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_NV_V_27",
+      "type": "double",
+      "units": "unitless",
+      "description": "(27) Gei Vector Normal To Orbit Plane, V",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_27",
+      "type": "double",
+      "units": "unitless",
+      "description": "(27) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MimRayLat_28",
+      "type": "double",
+      "units": "degrees",
+      "description": "(28) Minimum Ray Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_28",
+      "type": "double",
+      "units": "unitless",
+      "description": "(28) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISUN_X_29",
+      "type": "double",
+      "units": "AU",
+      "description": "(29) Gei Vector Toward Sun, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_29",
+      "type": "double",
+      "units": "unitless",
+      "description": "(29) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISUN_Y_30",
+      "type": "double",
+      "units": "AU",
+      "description": "(30) Gei Vector Toward Sun, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_30",
+      "type": "double",
+      "units": "unitless",
+      "description": "(30) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISUN_Z_31",
+      "type": "double",
+      "units": "AU",
+      "description": "(31) Gei Vector Toward Sun, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_31",
+      "type": "double",
+      "units": "unitless",
+      "description": "(31) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEIMOON_X_32",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(32) Gei Vector From Satellite Toward Moon, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_32",
+      "type": "double",
+      "units": "unitless",
+      "description": "(32) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEIMOON_Y_33",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(33) Gei Vector From Satellite Toward Moon, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_33",
+      "type": "double",
+      "units": "unitless",
+      "description": "(33) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEIMOON_Z_34",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(34) Gei Vector From Satellite Toward Moon, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_34",
+      "type": "double",
+      "units": "unitless",
+      "description": "(34) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISPOS_X_35",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(35) Gei Satellite Position Vector, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_35",
+      "type": "double",
+      "units": "unitless",
+      "description": "(35) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISPOS_Y_36",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(36) Gei Satellite Position Vector, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_36",
+      "type": "double",
+      "units": "unitless",
+      "description": "(36) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISPOS_Z_37",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(37) Gei Satellite Position Vector, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_37",
+      "type": "double",
+      "units": "unitless",
+      "description": "(37) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVEL_X_38",
+      "type": "double",
+      "units": "km/s",
+      "description": "(38) Gei Satellite Velocity Vector, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_38",
+      "type": "double",
+      "units": "unitless",
+      "description": "(38) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVEL_Y_39",
+      "type": "double",
+      "units": "km/s",
+      "description": "(39) Gei Satellite Velocity Vector, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_39",
+      "type": "double",
+      "units": "unitless",
+      "description": "(39) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVEL_Z_40",
+      "type": "double",
+      "units": "km/s",
+      "description": "(40) Gei Satellite Velocity Vector, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_40",
+      "type": "double",
+      "units": "unitless",
+      "description": "(40) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVRRA_X_41",
+      "type": "double",
+      "units": "km/s",
+      "description": "(41) Gei Satellite Velocity Relative To Rotating Atmosphere, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_41",
+      "type": "double",
+      "units": "unitless",
+      "description": "(41) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVRRA_Y_42",
+      "type": "double",
+      "units": "km/s",
+      "description": "(42) Gei Satellite Velocity Relative To Rotating Atmosphere, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_42",
+      "type": "double",
+      "units": "unitless",
+      "description": "(42) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISVRRA_Z_43",
+      "type": "double",
+      "units": "km/s",
+      "description": "(43) Gei Satellite Velocity Relative To Rotating Atmosphere, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_43",
+      "type": "double",
+      "units": "unitless",
+      "description": "(43) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISatL_X_44",
+      "type": "double",
+      "units": "unitless",
+      "description": "(44) Gei Coordinates Of Spacecraft Angular Momentum Vector, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_44",
+      "type": "double",
+      "units": "unitless",
+      "description": "(44) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISatL_Y_45",
+      "type": "double",
+      "units": "unitless",
+      "description": "(45) Gei Coordinates Of Spacecraft Angular Momentum Vector, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_45",
+      "type": "double",
+      "units": "unitless",
+      "description": "(45) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISatL_Z_46",
+      "type": "double",
+      "units": "unitless",
+      "description": "(46) Gei Coordinates Of Spacecraft Angular Momentum Vector, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_46",
+      "type": "double",
+      "units": "unitless",
+      "description": "(46) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEINIngr_X_47",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(47) Gei Coordinates Of Ingress, North, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_47",
+      "type": "double",
+      "units": "unitless",
+      "description": "(47) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEINIngr_Y_48",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(48) Gei Coordinates Of Ingress, North, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_48",
+      "type": "double",
+      "units": "unitless",
+      "description": "(48) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEINIngr_Z_49",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(49) Gei Coorfinates Of Ingress, North, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_49",
+      "type": "double",
+      "units": "unitless",
+      "description": "(49) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEINIngr_Z_50",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(50) Gei Coordinates Of Ingress, North, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_50",
+      "type": "double",
+      "units": "unitless",
+      "description": "(50) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NIngr_Lat_51",
+      "type": "double",
+      "units": "degrees",
+      "description": "(51) Geodetic Latitude Of Ingress Point, North",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_51",
+      "type": "double",
+      "units": "unitless",
+      "description": "(51) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NIngr_Long_52",
+      "type": "double",
+      "units": "degrees",
+      "description": "(52) Geodetic Longitude Of Ingress Point, North",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_52",
+      "type": "double",
+      "units": "unitless",
+      "description": "(52) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISEgr_X_53",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(53) Gei Coordinates Of Egress, South, X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_53",
+      "type": "double",
+      "units": "unitless",
+      "description": "(53) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISEgr_Y_54",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(54) Gei Coordinates Of Egress, South, Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_54",
+      "type": "double",
+      "units": "unitless",
+      "description": "(54) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEISEgr_Z_55",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(55) Gei Coordinates Of Egress, South, Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_55",
+      "type": "double",
+      "units": "unitless",
+      "description": "(55) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEgr_Lat_56",
+      "type": "double",
+      "units": "degrees",
+      "description": "(56) Geodetic Latitude Of Egress Point, South",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_56",
+      "type": "double",
+      "units": "unitless",
+      "description": "(56) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEgr_Long_57",
+      "type": "double",
+      "units": "degrees",
+      "description": "(57) Geodetic Longitude Of Egress Point, South",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_57",
+      "type": "double",
+      "units": "unitless",
+      "description": "(57) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_By_58",
+      "type": "double",
+      "units": "gauss",
+      "description": "(58) Gei Magnetic Field Vector, By",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_58",
+      "type": "double",
+      "units": "unitless",
+      "description": "(58) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEI_Bz_59",
+      "type": "double",
+      "units": "gauss",
+      "description": "(59) Gei Magnetic Field Vector, Bz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_59",
+      "type": "double",
+      "units": "unitless",
+      "description": "(59) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Br_60",
+      "type": "double",
+      "units": "gauss",
+      "description": "(60) Polar Components Of Magnetic Field, Br",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_60",
+      "type": "double",
+      "units": "unitless",
+      "description": "(60) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Bt_61",
+      "type": "double",
+      "units": "gauss",
+      "description": "(61) Polar Components Of Magnetic Field, Bt",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_61",
+      "type": "double",
+      "units": "unitless",
+      "description": "(61) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Bp_62",
+      "type": "double",
+      "units": "gauss",
+      "description": "(62) Polar Components Of Magnetic Field, Bp",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_62",
+      "type": "double",
+      "units": "unitless",
+      "description": "(62) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MinRayH_63",
+      "type": "double",
+      "units": "kilometers",
+      "description": "(63) Minimum Ray Height",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_63",
+      "type": "double",
+      "units": "unitless",
+      "description": "(63) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LShell_64",
+      "type": "double",
+      "units": "Re",
+      "description": "(64) Mcilwain's Shell Parameter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_64",
+      "type": "double",
+      "units": "unitless",
+      "description": "(64) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "IL_65",
+      "type": "double",
+      "units": "degrees",
+      "description": "(65) Invarient Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_65",
+      "type": "double",
+      "units": "unitless",
+      "description": "(65) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GcenMagI_66",
+      "type": "double",
+      "units": "degrees",
+      "description": "(66) Geocentric Magnetic Inclination",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_66",
+      "type": "double",
+      "units": "unitless",
+      "description": "(66) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZA_67",
+      "type": "double",
+      "units": "degrees",
+      "description": "(67) Solar Zenith Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_67",
+      "type": "double",
+      "units": "unitless",
+      "description": "(67) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A11_68",
+      "type": "double",
+      "units": "unitless",
+      "description": "(68) A11 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_68",
+      "type": "double",
+      "units": "unitless",
+      "description": "(68) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A21_69",
+      "type": "double",
+      "units": "unitless",
+      "description": "(69) A21 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_69",
+      "type": "double",
+      "units": "unitless",
+      "description": "(69) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A31_70",
+      "type": "double",
+      "units": "unitless",
+      "description": "(70) A31 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_70",
+      "type": "double",
+      "units": "unitless",
+      "description": "(70) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A12_71",
+      "type": "double",
+      "units": "unitless",
+      "description": "(71) A12 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_71",
+      "type": "double",
+      "units": "unitless",
+      "description": "(71) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A22_72",
+      "type": "double",
+      "units": "unitless",
+      "description": "(72) A22 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_72",
+      "type": "double",
+      "units": "unitless",
+      "description": "(72) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A32_73",
+      "type": "double",
+      "units": "unitless",
+      "description": "(73) A32 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_73",
+      "type": "double",
+      "units": "unitless",
+      "description": "(73) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A13_74",
+      "type": "double",
+      "units": "unitless",
+      "description": "(74) A13 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_74",
+      "type": "double",
+      "units": "unitless",
+      "description": "(74) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A23_75",
+      "type": "double",
+      "units": "unitless",
+      "description": "(75) A23 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_75",
+      "type": "double",
+      "units": "unitless",
+      "description": "(75) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TMat_A33_76",
+      "type": "double",
+      "units": "unitless",
+      "description": "(76)A33 of Rotation Transformation Matrix",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Data_Quality_76",
+      "type": "double",
+      "units": "unitless",
+      "description": "(76) Data Quality",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-08-15T00:00:00.000Z",
+  "stopDate": "1982-01-01T23:59:56.000Z"
+}

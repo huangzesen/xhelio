@@ -1,0 +1,320 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Position_Ion",
+      "type": "double",
+      "units": "km",
+      "description": "Position of the satellite in geographic coordinates (ion timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Ele",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position of the satellite in geographic coordinates (electron timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength at magnetic equator (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength at magnetic equator (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion",
+      "type": "double",
+      "units": "",
+      "description": "Calculated McIlwains L parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele",
+      "type": "double",
+      "units": "",
+      "description": "---> Calculated McIlwains L parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion",
+      "type": "double",
+      "units": "",
+      "description": "Calculated Roederers L* parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele",
+      "type": "double",
+      "units": "",
+      "description": "---> Calculated Roederers L* parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion",
+      "type": "double",
+      "units": "none",
+      "description": "Adiabatic invariant (bounce) (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce) (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion",
+      "type": "double",
+      "units": "h",
+      "description": "Calculated Magnetic Local Time (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ion_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates(ion)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator(ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ele_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates (ele)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HOPE_DETECTOR",
+      "type": "double",
+      "units": "",
+      "description": "Detector No.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "HOPE_SECTOR",
+      "type": "double",
+      "units": "",
+      "description": "Sector No.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FOSA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "HOPE Spin averaged differential oxygen flux (as spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FOSA_ts",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> as stacked time-series",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FPSA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "HOPE Spin averaged differential proton flux",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FPSA_ts",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> as stacked time-series",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FHESA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "HOPE Spin averaged differential helium flux",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FHESA_ts",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> as stacked time-series",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FESA",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "HOPE Spin averaged differential electron flux",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    },
+    {
+      "name": "FESA_ts",
+      "type": "double",
+      "units": "s!E-1!Ncm!E-2!Nster!E-1!NkeV!E-1!N",
+      "description": "---> as stacked time_series",
+      "fill": "-1e+31",
+      "size": [
+        72
+      ]
+    }
+  ],
+  "startDate": "2012-10-25T00:00:09.000Z",
+  "stopDate": "2019-07-16T16:37:53.000Z"
+}

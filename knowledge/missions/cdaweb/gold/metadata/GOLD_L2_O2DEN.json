@@ -1,0 +1,83 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "o2den",
+      "type": "double",
+      "units": "mol/cm^3",
+      "description": "Retrieved O2 density",
+      "fill": "nan",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "o2den_unc_ran",
+      "type": "double",
+      "units": "mol/cm^3",
+      "description": "Random uncertainty of retrieved O2",
+      "fill": "nan",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "o2den_unc_mod",
+      "type": "double",
+      "units": "mol/cm^3",
+      "description": "Model uncertainty of retrieved O2",
+      "fill": "nan",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "o2den_unc_sys",
+      "type": "double",
+      "units": "mol/cm^3",
+      "description": "Systematic uncertainty of retrieved O2",
+      "fill": "nan",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "lon_ref",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude at ZREF",
+      "fill": "nan"
+    },
+    {
+      "name": "lat_ref",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude at ZREF",
+      "fill": "nan"
+    },
+    {
+      "name": "signal_to_noise",
+      "type": "double",
+      "units": "",
+      "description": "Effective signal to noise above the atmosphere",
+      "fill": "nan",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "sza_ref",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar Zenith Angle at ZREF",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2018-10-19T15:22:12.000Z",
+  "stopDate": "2025-10-21T07:47:12.000Z"
+}

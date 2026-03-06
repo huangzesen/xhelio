@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "xsm",
+      "type": "double",
+      "units": "Re",
+      "description": "x satellite position in sm coordinates",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "ysm",
+      "type": "double",
+      "units": "Re",
+      "description": "y satellite position in sm coordinates",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "zsm",
+      "type": "double",
+      "units": "Re",
+      "description": "z satellite position in sm coordinates",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hours",
+      "description": "magnetic local time",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "magnetic latitude",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "L_dip - L-shell calculated from R and MLAT assuming a dipole magnetic field",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "fce_model",
+      "type": "double",
+      "units": "kHz",
+      "description": "model gyrofrequency",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "den",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "electron density",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "fpe",
+      "type": "double",
+      "units": "kHz",
+      "description": "Electron plasma frequency from fits",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "doy",
+      "type": "integer",
+      "units": "",
+      "description": "day of year",
+      "fill": "-32767.0"
+    },
+    {
+      "name": "type",
+      "type": "integer",
+      "units": "",
+      "description": "Spectral feature for auto-fit, 1:Upper Hybrid, 2:Z-Mode, 3:Continuum Edge",
+      "fill": "-127.0"
+    },
+    {
+      "name": "numHarmonics",
+      "type": "integer",
+      "units": "",
+      "description": "number of n+1/2 harmonics recognized by automatic routine",
+      "fill": "-127.0"
+    },
+    {
+      "name": "fce",
+      "type": "double",
+      "units": "kHz",
+      "description": "electron cyclotron frequency from the spacing of n+1/2 harmonics",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "stdevFCE",
+      "type": "double",
+      "units": "kHz",
+      "description": "standard deviation (kHz) of fce_n+1/2 based on individual frequencies",
+      "fill": "-1.0000000150474662e+30"
+    },
+    {
+      "name": "am",
+      "type": "integer",
+      "units": "",
+      "description": "1: automatic fit, 2: manual fit",
+      "fill": "-127.0"
+    }
+  ],
+  "startDate": "2001-01-01T00:06:37.000Z",
+  "stopDate": "2005-12-18T06:45:56.000Z"
+}

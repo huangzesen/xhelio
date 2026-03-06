@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "Electron differential number flux as function of time-varying energy  in range 5-1100 eV [as spectrogram]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_STACKED",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "---> As stacked plot",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_SIMPLE",
+      "type": "double",
+      "units": "#/cm2-ster-sec-eV",
+      "description": "---> As simple time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "Time-varying electron energies in 15 channels (center of 40% wide energy band)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec since 1-1-70",
+      "description": "UNIX time; seconds since January 1, 1970",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1994-11-15T12:54:34.000Z",
+  "stopDate": "2026-01-19T23:55:44.000Z"
+}

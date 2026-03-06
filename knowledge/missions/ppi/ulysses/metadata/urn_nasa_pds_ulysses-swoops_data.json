@@ -1,0 +1,144 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DIM",
+      "type": "double",
+      "units": "",
+      "description": "Dimension of electron spectrum.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RJ",
+      "type": "double",
+      "units": "Jovian Raddi",
+      "description": "Jupiter-spacecraft distance.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "XLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Spacecraft Jovigraphic latitude.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99"
+    },
+    {
+      "name": "XMLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Spacecraft magnetic latitude.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99"
+    },
+    {
+      "name": "LT",
+      "type": "double",
+      "units": "HHMM",
+      "description": "Spacecraft local time in the format hhmm.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Charge density per cubic cm.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "TEMP",
+      "type": "double",
+      "units": "kelvins",
+      "description": "Electron temperature.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VX",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity in the X direction (XYZ system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VY",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity in the Y direction (XYZ system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VZ",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity in the Z direction (XYZ system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity, radial component (spherical system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VTHETA",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity, tangential component (spherical system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    },
+    {
+      "name": "VPHI",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma bulk velocity, azimuthal component (spherical system).",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

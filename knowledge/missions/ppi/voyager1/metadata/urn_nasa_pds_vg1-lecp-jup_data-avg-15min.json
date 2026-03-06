@@ -1,0 +1,85 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PL02",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 53 to 85 keV/nuc. ions.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "PL07",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 1 to 2 MeV/nuc. ions.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "CH1",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 0.57 to 1.8 MeV/nuc. protons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "CH38",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 120 to 240 keV/nuc. Z>=6 ions.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "CH33",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 200 to 510 keV/nuc. Z=2 ions.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "EB02",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 37 to 70 keV electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    },
+    {
+      "name": "EB05",
+      "type": "double",
+      "units": "Counts/s",
+      "description": "Column contains 200 to 500 keV electrons.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

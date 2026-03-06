@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Start time of the data gap as a UTC string in ISO 8601 format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_ET",
+      "type": "double",
+      "units": "",
+      "description": "Start time in ephemeris seconds past J2000.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Stop time of the data gap as a UTC string in ISO 8601 format.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop_ET",
+      "type": "double",
+      "units": "",
+      "description": "Stop time in ephemeris seconds past J2000.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OutOfCal_Flag",
+      "type": "double",
+      "units": "",
+      "description": "INCA calibration:\n                            mode (0) indicates neutral mode, \n                            planned (1) \n                            unplanned (2) out of calibration period.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

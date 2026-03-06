@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Electrons",
+      "type": "double",
+      "units": "/s",
+      "description": "Electron counts in channels E1':42-65,E2':64-112,E3':112-178 and E4':178-290 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Ions",
+      "type": "double",
+      "units": "/s",
+      "description": "Ion counts in channels FP5':546-761, FP6':761-1223 and FP7':1223-4974 keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1990-11-14T19:00:00.000Z",
+  "stopDate": "2008-12-31T23:00:00.000Z"
+}

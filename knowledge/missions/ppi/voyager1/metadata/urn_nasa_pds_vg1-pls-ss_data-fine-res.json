@@ -1,0 +1,102 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "Year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Day of Year",
+      "type": "double",
+      "units": "",
+      "description": "Day of year, day 1 is January 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DECIMAL HOUR",
+      "type": "double",
+      "units": "",
+      "description": "Decimal hour",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Proton Speed",
+      "type": "double",
+      "units": "",
+      "description": "proton speed in km/s, magnitude of the velocity \n                        vector",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "Proton Density",
+      "type": "double",
+      "units": "",
+      "description": "proton density in cm-3",
+      "size": [
+        1
+      ],
+      "fill": "99.99999"
+    },
+    {
+      "name": "PROTON THERMAL SPEED",
+      "type": "double",
+      "units": "",
+      "description": "proton thermal speed in km/s",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "",
+      "description": "Radial Velocity (along the spacecraft/Sun       \n                        direction) in km/s",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "",
+      "description": "Tangential Velocity (parallel to the solar      \n                        equatorial plane and perpendicular to the radial\n                        direction) in km/s",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "",
+      "description": "Normal Velocity (perpendicular to the VR and VT \n                        directions) in km/s",
+      "size": [
+        1
+      ],
+      "fill": "9999.9"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

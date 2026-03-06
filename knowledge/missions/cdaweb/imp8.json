@@ -1,0 +1,538 @@
+{
+  "id": "IMP8",
+  "name": "IMP-8",
+  "keywords": [
+    "i1",
+    "i2",
+    "i8",
+    "ia",
+    "imp-8",
+    "imp8"
+  ],
+  "profile": {
+    "description": "IMP-8 spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "I2_AV_QUI": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Quito, Equador (lat/lon=-1/281) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-01-03T02:22:10.000Z",
+          "stop_date": "1979-10-18T04:22:30.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_QUI"
+        },
+        "I1_AV_RES": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Resolute Bay, Canada (lat/lon=75/265) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-30T21:18:14.000Z",
+          "stop_date": "1976-02-22T19:07:32.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_RES"
+        },
+        "I1_AV_ALL": {
+          "description": "ISIS-1 Topside sounder ionograms, all stations merged into a single dataset - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-30T14:50:12.000Z",
+          "stop_date": "1983-12-30T15:19:33.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_ALL"
+        },
+        "I1_AV2_QUI": {
+          "description": "ISIS Topside Sounder Ionogram - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-31T04:20:04.000Z",
+          "stop_date": "1972-03-29T04:06:03.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV2_QUI"
+        },
+        "I2_AV_ULA": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Fairbanks, Alaska (lat/lon=65/212) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-12-31T00:00:00.000Z",
+          "stop_date": "1979-07-30T02:17:45.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_ULA"
+        },
+        "I1_AV_QUI": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Quito, Equador (lat/lon=-1/281) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-31T04:20:04.000Z",
+          "stop_date": "1978-06-22T04:44:35.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_QUI"
+        },
+        "I2_AV_LAU": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Lauder, New Zealand (lat/lon=-45/170) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-01-01T04:14:29.000Z",
+          "stop_date": "1981-01-18T15:47:50.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_LAU"
+        },
+        "I2_AV_TRO": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Tromso, Norway (lat/lon=70/19) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-01-19T10:38:36.000Z",
+          "stop_date": "1977-10-06T20:20:00.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_TRO"
+        },
+        "I2_AV_CNA": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Las Palmas,  Canary Is., Spain (lat/lon=28/345) - R.F. Benson (NASA GSFC)",
+          "start_date": "1974-01-16T17:42:39.000Z",
+          "stop_date": "1976-02-01T11:15:40.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_CNA"
+        },
+        "I1_NEPROF_TOPS": {
+          "description": "ISIS-1 Topside Electron Density Profiles, manually scaled at CRC - J. E. Jackson (Communication Research Centre (CRC), Ottawa)",
+          "start_date": "1969-02-01T15:50:12.000Z",
+          "stop_date": "1980-05-30T02:41:08.000Z",
+          "pi_name": "J. E. Jackson",
+          "pi_affiliation": "Communication Research Centre (CRC), Ottawa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_NEPROF_TOPS"
+        },
+        "I2_AV_KSH": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Kashima, Japan (lat/lon=36/141) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-01-01T00:01:10.000Z",
+          "stop_date": "1984-01-06T14:08:01.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_KSH"
+        },
+        "I1_AV_ULA": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Fairbanks, Alaska (lat/lon=65/212) - R.F. Benson (NASA GSFC)",
+          "start_date": "1975-01-04T18:15:16.000Z",
+          "stop_date": "1979-09-14T12:06:35.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_ULA"
+        },
+        "I2_AV_KRU": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Kourou, French Guyana (lat/lon=5/307) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-02-06T01:16:08.000Z",
+          "stop_date": "1978-07-23T22:07:30.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_KRU"
+        },
+        "I2_AV_KWA": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Kwajalein, Marshall Is. (lat/lon=9/168) - R.F. Benson (NASA GSFC)",
+          "start_date": "1978-01-10T08:46:53.000Z",
+          "stop_date": "1978-11-09T07:38:18.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_KWA"
+        },
+        "I2_AV_BRZ": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Brazzavillle, Congo (lat/lon=-4/15) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-08-05T16:17:40.000Z",
+          "stop_date": "1975-09-25T16:12:59.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_BRZ"
+        },
+        "I2_AV_SNT": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Santiago, Chile (lat/lon=-33/298)  - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-06-15T09:48:17.000Z",
+          "stop_date": "1980-03-21T09:09:03.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_SNT"
+        },
+        "I1_AV2_OTT": {
+          "description": "ISIS Topside Sounder Ionogram - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-30T14:50:12.000Z",
+          "stop_date": "1983-12-17T13:08:05.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV2_OTT"
+        },
+        "I2_AV_SOD": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Sodankyla, Finland (lat/lon=67/27) - R.F. Benson (NASA GSFC)",
+          "start_date": "1977-12-11T21:47:50.000Z",
+          "stop_date": "1978-09-13T21:01:48.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_SOD"
+        },
+        "I2_AV_SOL": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Falkland Is., U.K. (lat/lon=-52/302) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-01-12T16:31:05.000Z",
+          "stop_date": "1972-12-10T00:57:02.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_SOL"
+        },
+        "I2_AV_OTT": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Ottawa, Canada (lat/lon=45/284) - R.F. Benson (NASA GSFC)",
+          "start_date": "1971-11-11T18:18:16.000Z",
+          "stop_date": "1984-01-04T05:16:00.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_OTT"
+        },
+        "I2_AV_SYO": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Syowa Base, Antartica (lat/lon=-69/40) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-02-03T05:49:37.000Z",
+          "stop_date": "1983-01-13T11:06:43.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_SYO"
+        },
+        "I2_AV_ORR": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Orroral Australia (lat/lon=-36/149) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-03-15T03:33:11.000Z",
+          "stop_date": "1981-07-20T20:42:22.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_ORR"
+        },
+        "I2_AV_BUR": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Johannesburg, South Africa (lat/lon=-26/28) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-08-07T15:26:03.000Z",
+          "stop_date": "1976-01-16T19:18:39.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_BUR"
+        },
+        "I2_AV_KER": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Kerguelen Is., France (lat/lon=-49/70) - R.F. Benson (NASA GSFC)",
+          "start_date": "1977-01-01T00:01:37.000Z",
+          "stop_date": "1984-01-27T18:16:53.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_KER"
+        },
+        "I1_AV2_SNT": {
+          "description": "ISIS Topside Sounder Ionogram - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-31T04:32:48.000Z",
+          "stop_date": "1970-12-28T00:45:37.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV2_SNT"
+        },
+        "I1_AV_KWA": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Kwajalein, Marshall Is. (lat/lon=9/168) - R.F. Benson (NASA GSFC)",
+          "start_date": "1978-01-03T04:13:25.000Z",
+          "stop_date": "1978-12-30T21:34:08.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_KWA"
+        },
+        "I2_AV_ODG": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Ouagadougou, Burkina Faso (lat/lon=14/359) - R.F. Benson (NASA GSFC)",
+          "start_date": "1972-08-06T05:36:37.000Z",
+          "stop_date": "1979-11-22T15:25:12.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_ODG"
+        },
+        "I2_NEPROF_TOPIST": {
+          "description": "ISIS-2 TOPIST produced electron density profiles, of highest quality (quality flag = 2 and 3 - X. Huang and B. Reinisch (University of MassachusettsLowell)",
+          "start_date": "1971-11-11T18:18:40.000Z",
+          "stop_date": "1984-01-04T05:15:38.000Z",
+          "pi_name": "X. Huang and B. Reinisch",
+          "pi_affiliation": "University of MassachusettsLowell",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_NEPROF_TOPIST"
+        },
+        "I1_AV_TRO": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Tromso, Norway (lat/lon=70/19) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-02-05T18:15:49.000Z",
+          "stop_date": "1969-12-28T15:12:00.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_TRO"
+        },
+        "I2_AV_WNK": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Winkfield, U.K. (lat/lon=51/359) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-03-14T11:55:35.000Z",
+          "stop_date": "1979-07-15T04:35:11.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_WNK"
+        },
+        "I1_AV_ORR": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Orroral, Australia (lat/lon=-36/149) - R.F. Benson (NASA GSFC)",
+          "start_date": "1970-01-28T09:47:09.000Z",
+          "stop_date": "1981-08-24T14:00:56.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_ORR"
+        },
+        "I2_AV_AME": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Ahmedabad, India (lat/lon=23/73) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-02-03T04:00:26.000Z",
+          "stop_date": "1978-01-23T07:28:43.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_AME"
+        },
+        "I1_AV_KER": {
+          "description": "ISIS-1 Topside Sounder Ionograms over Kerguelen Island, France (Lat=-49, Long=70) - R.F. Benson (NASA GSFC)",
+          "start_date": "1983-08-24T15:21:21.000Z",
+          "stop_date": "1983-12-30T15:19:33.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_KER"
+        },
+        "I1_AV2_ULA": {
+          "description": "ISIS Topside Sounder Ionogram - R.F. Benson (NASA GSFC)",
+          "start_date": "1975-01-04T18:15:50.000Z",
+          "stop_date": "1979-09-14T12:06:30.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV2_ULA"
+        },
+        "I1_AV_KSH": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Kashima, Japan (lat/lon=36/141) - R.F. Benson (NASA GSFC)",
+          "start_date": "1978-01-06T04:52:17.000Z",
+          "stop_date": "1981-12-30T16:22:49.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_KSH"
+        },
+        "I2_NEPROF_TOPS": {
+          "description": "ISIS-2 Topside Electron Density Profiles, manually scaled at CRC - J. E. Jackson (Communication Research Centre (CRC), Ottawa)",
+          "start_date": "1971-04-08T22:27:48.000Z",
+          "stop_date": "1979-08-27T17:52:25.000Z",
+          "pi_name": "J. E. Jackson",
+          "pi_affiliation": "Communication Research Centre (CRC), Ottawa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_NEPROF_TOPS"
+        },
+        "I1_AV_OTT": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Ottawa, Canada (lat/lon=45/284) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-30T14:50:12.000Z",
+          "stop_date": "1983-12-17T13:08:05.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_OTT"
+        },
+        "I1_AV_WNK": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Winkfield, U.K. (lat/lon=51/359) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-02-03T01:02:10.000Z",
+          "stop_date": "1975-07-18T05:06:36.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_WNK"
+        },
+        "I1_AV_SNT": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Santiago, Chile (lat/lon=-33/298) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-01-31T01:29:39.000Z",
+          "stop_date": "1972-12-25T07:01:13.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_SNT"
+        },
+        "I1_AV_SOD": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Sodankyla, Finland (lat/lon=67/27) - R.F. Benson (NASA GSFC)",
+          "start_date": "1977-12-14T22:30:46.000Z",
+          "stop_date": "1979-03-30T14:10:33.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_SOD"
+        },
+        "I2_AV_ACN": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Ascension Is., U.K. (lat/lon= -8/346) - R.F. Benson (NASA GSFC)",
+          "start_date": "1975-01-09T01:22:59.000Z",
+          "stop_date": "1978-09-28T16:37:11.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_ACN"
+        },
+        "I2_AV_RES": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Resolute Bay, Canada (lat/lon=75/265) - R.F. Benson (NASA GSFC)",
+          "start_date": "1971-04-01T09:22:52.000Z",
+          "stop_date": "1983-01-13T11:06:43.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_RES"
+        },
+        "I2_AV_ADL": {
+          "description": "ISIS-2 Topside Sounder Ionogram over Terre Adelie, Antarctica (lat/lon=-67/140) - R.F. Benson (NASA GSFC)",
+          "start_date": "1973-01-12T10:18:21.000Z",
+          "stop_date": "1983-02-03T18:47:56.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I2_AV_ADL"
+        },
+        "I1_AV_ODG": {
+          "description": "ISIS-1 Topside Sounder Ionogram over Ouagadougou, Burkina Faso (lat/lon=14/359) - R.F. Benson (NASA GSFC)",
+          "start_date": "1969-02-03T13:27:25.000Z",
+          "stop_date": "1976-06-28T17:19:36.000Z",
+          "pi_name": "R.F. Benson",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I1_AV_ODG"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "I8_H0_GME": {
+          "description": "IMP-8 GME 30-min Fluxes (SEP optimal bands) - R.E. McGuire (SPDF/Code 612.4, NASA's GSFC)",
+          "start_date": "1973-11-01T00:15:00.000Z",
+          "stop_date": "2001-10-26T14:15:00.000Z",
+          "pi_name": "R.E. McGuire",
+          "pi_affiliation": "SPDF/Code 612.4, NASA's GSFC",
+          "doi": "10.48322/m36p-0998",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_H0_GME"
+        },
+        "IA_K0_ENF": {
+          "description": "Interball Auroral Probemeasurements of spectra and anisotropy of electrons SKA-3, Key Parameters - Yu. Galperin, R. Kovrazhkin,  A. Kuzmin,  F. Shuiskaya (IKI RAN, Russia)",
+          "start_date": "1996-09-20T01:03:00.000Z",
+          "stop_date": "1997-03-28T23:59:00.000Z",
+          "pi_name": "Yu. Galperin, R. Kovrazhkin,  A. Kuzmin,  F. Shuiskaya",
+          "pi_affiliation": "IKI RAN, Russia",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IA_K0_ENF"
+        },
+        "IA_K0_ICD": {
+          "description": "Interball Auroral Probe Ion Composition Experiment PROMICS, Key Parameters - I.Sandahl (IRF, Kiruna, Sweden)",
+          "start_date": "1996-09-18T09:23:36.000Z",
+          "stop_date": "1998-05-01T09:28:02.000Z",
+          "pi_name": "I.Sandahl",
+          "pi_affiliation": "IRF, Kiruna, Sweden",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IA_K0_ICD"
+        },
+        "IA_K0_EPI": {
+          "description": "Interball Auroral Energetic Particle Instruments, KeyParameters - DOK-2: K.Kudela (DOK-2: Institute of experimental physics Slovak Acad. Sci., Kosize, Slovakia )",
+          "start_date": "1996-09-03T09:39:00.000Z",
+          "stop_date": "1997-10-30T12:51:00.000Z",
+          "pi_name": "DOK-2: K.Kudela",
+          "pi_affiliation": "DOK-2: Institute of experimental physics Slovak Acad. Sci., Kosize, Slovakia",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IA_K0_EPI"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "I8_R0_LEPEDEA": {
+          "description": "Link to IMP8 LEPEDEA Energy-Time Spectrograms in GIF format at the University of Iowa. - L. A. Frank (University of Iowa)",
+          "start_date": "2004-08-09T00:00:00.000Z",
+          "stop_date": "2004-08-09T01:00:00.000Z",
+          "pi_name": "L. A. Frank",
+          "pi_affiliation": "University of Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_R0_LEPEDEA"
+        },
+        "I8_H0_MITPLASMA": {
+          "description": "IMP-8 MIT Plasma Investigation, High Resolution Definitive Data   - A. Lazarus (MIT)",
+          "start_date": "1973-10-31T20:10:27.000Z",
+          "stop_date": "2006-07-26T17:10:35.000Z",
+          "pi_name": "A. Lazarus",
+          "pi_affiliation": "MIT",
+          "doi": "10.48322/4dhv-w146",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_H0_MITPLASMA"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "I8_15SEC_MAG": {
+          "description": "IMP-8 Fluxgate Magnetometer, 15.36-Second Resolution Data - A. Szabo / R.P. Lepping (NASA GSFC)",
+          "start_date": "1973-10-30T00:00:00.000Z",
+          "stop_date": "2000-06-10T23:59:44.000Z",
+          "pi_name": "A. Szabo / R.P. Lepping",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/pxb6-h511",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_15SEC_MAG"
+        },
+        "IA_K0_MFI": {
+          "description": "Interball Auroral probe Magnetic Field, Key Parameters - V.Petrov (IMAP:IZMIRAN,Troitsk,  Russia. )",
+          "start_date": "1996-09-01T04:25:00.000Z",
+          "stop_date": "1997-06-17T04:25:00.000Z",
+          "pi_name": "V.Petrov",
+          "pi_affiliation": "IMAP:IZMIRAN,Troitsk,  Russia.",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IA_K0_MFI"
+        },
+        "I8_320MSEC_MAG": {
+          "description": "IMP-8 Fluxgate Magnetometer, 320 msec Resolution Data - Adam Szabo, Joe King and Natalia Papitashvili (NASA GSFC)",
+          "start_date": "1973-10-30T15:00:40.000Z",
+          "stop_date": "2000-06-10T15:09:24.000Z",
+          "pi_name": "Adam Szabo, Joe King and Natalia Papitashvili",
+          "pi_affiliation": "NASA GSFC",
+          "doi": "10.48322/k2cv-vy73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_320MSEC_MAG"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "IA_OR_DEF": {
+          "description": "Interball Auroral Probe Orbital Data, Key Parameters - V.Prokhorenko (Space Research Inst., Russian Acad. Sci., Moscow, Russia. )",
+          "start_date": "1996-09-19T00:00:00.000Z",
+          "stop_date": "1997-06-04T23:50:00.000Z",
+          "pi_name": "V.Prokhorenko",
+          "pi_affiliation": "Space Research Inst., Russian Acad. Sci., Moscow, Russia.",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#IA_OR_DEF"
+        },
+        "I8_OR_GIFWALK": {
+          "description": "Links to IMP-8 and multi-mission orbit plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-08T00:00:00.000Z",
+          "stop_date": "2004-08-08T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_OR_GIFWALK"
+        },
+        "I8_OR_SSC": {
+          "description": "IMP-8 orbital position (multiple coordinate systems, from April 2003 updated I8 orbit model) -  SSC ( SPDF/GSFC)",
+          "start_date": "1973-10-30T00:00:00.000Z",
+          "stop_date": "2004-06-30T23:48:00.000Z",
+          "pi_name": "SSC",
+          "pi_affiliation": "SPDF/GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#I8_OR_SSC"
+        }
+      }
+    }
+  },
+  "observatory_group": "ISIS",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

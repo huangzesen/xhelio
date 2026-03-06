@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_HDZ",
+      "type": "integer",
+      "units": "nT",
+      "description": "Magnetic field, cartesian HDZ coordinates",
+      "fill": "-2147483648.0",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1993-12-09T00:00:00.000Z",
+  "stopDate": "2001-10-17T23:59:00.000Z"
+}

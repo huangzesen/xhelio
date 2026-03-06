@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ENERGY_INDEX",
+      "type": "integer",
+      "units": "N/A",
+      "description": "The index of the energy step, starting at 0",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CENTER_ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "The center energy value in electron volts (eV) for the corresponding index.  Negative values indicate that IMA cannot measure the positive ions on the given energy step and data should be excluded from data analysis.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

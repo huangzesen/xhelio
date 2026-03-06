@@ -1,0 +1,79 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS1_HIRES3D_DNF_DATA",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS1 3D electron distribution - Differential Number Flux (No Plot)",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_HIRES3D_DNF_DATA_reorder",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "EAS1 3D electron distribution - Differential Number Flux [varying with reordered elevation and energy] (No Plot)",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_HIRES3D_DNF_DATA_spec1",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS1 3D Differential Number Flux: Spectrograms around 6^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_HIRES3D_DNF_DATA_spec2",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS1 3D Differential Number Flux: Spectrograms around 23^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "SWA_EAS1_HIRES3D_DNF_DATA_spec3",
+      "type": "double",
+      "units": "m^-2 s^-1 sr^-1 eV^-1",
+      "description": "---> EAS1 3D Differential Number Flux: Spectrograms around -20^o elevation and at selected azimuth bin #10, 20, 30.",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        16,
+        64,
+        32
+      ]
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "unitless",
+      "description": "EAS1 Data Quality flag",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2024-02-05T11:25:00.000Z",
+  "stopDate": "2025-10-01T02:39:58.000Z"
+}

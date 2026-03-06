@@ -1,0 +1,53 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "proton_bulk_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Speed. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "proton_thermal_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Thermal Speed. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "proton_number_density",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Proton Number Density. 1D Maxwellian Fit.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "he_plus_phase_space_density",
+      "type": "double",
+      "units": "s^3 / km^6",
+      "description": "He+ Phase Space Density for mean V/Vsw.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    },
+    {
+      "name": "he_plus_counts",
+      "type": "double",
+      "units": "Counts",
+      "description": "He+ Counts for V/Vsw range.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        51
+      ]
+    }
+  ],
+  "startDate": "2007-04-01T00:00:00.000Z",
+  "stopDate": "2017-07-31T23:00:00.000Z"
+}

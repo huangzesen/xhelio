@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Fe1",
+      "type": "double",
+      "units": "no/cm^2/s/keV/st",
+      "description": "Electron Flux, 26-29 keV (DOK-2 firstelectron sensor, fixed)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fe2",
+      "type": "double",
+      "units": "no/cm^2/s/keV/st",
+      "description": "Electron Flux, 25-28 keV (DOK-2 firstelectron sensor, fixed)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fp1",
+      "type": "double",
+      "units": "no/cm^2/s/keV/st",
+      "description": "Proton Flux, 18-24 keV (DOK-2 first proton sensor, fixed)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Fp2",
+      "type": "double",
+      "units": "no/cm^2/s/keV/st",
+      "description": "Proton Flux, 20-26 keV (DOK-2 second proton sensor, scan)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-09-03T09:39:00.000Z",
+  "stopDate": "1997-10-30T12:51:00.000Z"
+}

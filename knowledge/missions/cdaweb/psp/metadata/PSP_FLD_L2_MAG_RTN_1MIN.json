@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_mag_RTN_1min",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field in RTN coordinates (1 minute cadence)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": "",
+  "_validated": true,
+  "_validations": [
+    {
+      "source_file": "psp_fld_l2_mag_rtn_1min_20210427_v02.cdf",
+      "validated_at": "2026-02-19T10:44:26.171393+00:00",
+      "discrepancies": {},
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/fields/l2/mag_rtn_1min/2021/psp_fld_l2_mag_rtn_1min_20210427_v02.cdf"
+    },
+    {
+      "source_file": "psp_fld_l2_mag_rtn_1min_20250315_v02.cdf",
+      "validated_at": "2026-02-19T11:10:51.298143+00:00",
+      "discrepancies": {},
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/fields/l2/mag_rtn_1min/2025/psp_fld_l2_mag_rtn_1min_20250315_v02.cdf"
+    },
+    {
+      "source_file": "psp_fld_l2_mag_rtn_1min_20210428_v02.cdf",
+      "validated_at": "2026-02-19T23:42:28.218668+00:00",
+      "discrepancies": {},
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/fields/l2/mag_rtn_1min/2021/psp_fld_l2_mag_rtn_1min_20210428_v02.cdf"
+    }
+  ]
+}

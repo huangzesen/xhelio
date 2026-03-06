@@ -1,0 +1,206 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status%eq_pp_ici",
+      "type": "integer",
+      "units": "",
+      "description": "ICI status flags for operational modes, data compression, scalar ([0]: 0=bad,1=caution,2=OK)",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "N_p%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Final proton density (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_O1%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Final oxygen+ density (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_He1%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Final Helium+ density (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_He2%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Final Helium++ density (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_p_xyz_gse%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Final proton bulk velocity (3d), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_O1_xyz_gse%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Final oxygen+ bulk velocity (3d), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T_p%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final proton temperature (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_O1%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final oxygen+ temperature (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_HE1_xyz_gse%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Final Helium+ bulk velocity (3d), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_HE2_xyz_gse%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Final Helium++ bulk velocity (3d), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T_p_xx_gse%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final proton temperature tensor (3d), 1 parallel and 2 perpendicular GSE components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "T_O1_xx_gse%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final oxygen+ temperature tensor (3d), 1 parallel and 2 perpendicular GSE components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "T_HE1%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final Helium+ temperature (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_HE2%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Final Helium++ temperature (3d), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_p*%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Raw proton density (onboard), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_O1*%eq_pp_ici",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Raw oxygen+ density (onboard), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_p_xyz_scs*%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Raw proton bulk velocity (onboard), vector SCS",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_O1_xyz_scs*%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Raw oxygen+ bulk velocity (onboard), vector SCS",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T_p*%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Raw proton temperature (onboard), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_O1*%eq_pp_ici",
+      "type": "double",
+      "units": "MK",
+      "description": "Raw oxygen+ temperature (onboard), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_p_xyz_gse*%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Raw proton bulk velocity (onboard), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_O1_xyz_gse*%eq_pp_ici",
+      "type": "double",
+      "units": "km/s",
+      "description": "Raw oxygen+ bulk velocity (onboard), vector GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1998-01-21T00:33:11.000Z",
+  "stopDate": "1998-04-28T17:18:29.000Z"
+}

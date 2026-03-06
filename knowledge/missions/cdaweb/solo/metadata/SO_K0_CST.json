@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Electron",
+      "type": "double",
+      "units": "1/(cm**2 s sr MeV)",
+      "description": "Electron flux at 4 energies (0-10 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Proton",
+      "type": "double",
+      "units": "1/(cm**2 s sr MeV)",
+      "description": "Proton flux at 7 energies (0-60MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "Helium",
+      "type": "double",
+      "units": "1/(cm**2 s sr MeV/n)",
+      "description": "Helium flux at 4 E/C (0-50Mev/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1995-12-02T00:00:00.000Z",
+  "stopDate": "2002-01-31T23:57:25.000Z"
+}

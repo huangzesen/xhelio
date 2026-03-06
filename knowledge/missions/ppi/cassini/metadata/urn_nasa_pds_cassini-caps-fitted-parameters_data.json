@@ -1,0 +1,565 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Delta_time",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Delta-Time (delta_t or dt) per record.                \n                        This is half the accumulation time used for the record\n                        such that the start time of the record is UTC - dt,   \n                        and end time is UTC + dt (seconds).",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "Sc_r",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Spacecraft's Radial distance from Saturn, in RS.      \n                       [1 RS = 60268 km = 1 Saturn Radius]",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "Sc_lt",
+      "type": "double",
+      "units": "Hours",
+      "description": "Spacecraft's Local Time, in hours.",
+      "size": [
+        1
+      ],
+      "fill": "-1.000"
+    },
+    {
+      "name": "Sc_lat",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Spacecraft's Saturn Latitude, in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "Sc_corot",
+      "type": "double",
+      "units": "km/s",
+      "description": "Rigid corotation velocity at Spacecraft's position,   \n                        in km/s.",
+      "size": [
+        1
+      ],
+      "fill": "-99.999"
+    },
+    {
+      "name": "Lower_limit_vr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vr (LowerLim_Vr)               \n                        used in process, units of km/s.                       \n                        [This value is fixed at -500.000 for all records.]    \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_vtheta",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vtheta (LowerLim_Vt)           \n                        used in process, units of km/s.                       \n                        [This value is fixed at -500.000 for all records.]    \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_vphi",
+      "type": "double",
+      "units": "km/s",
+      "description": "Lower fitting limit of Vphi (LowerLim_Vp)             \n                        used in process, units of km/s.                       \n                        [This value is fixed at -500.000 for all records.]    \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_w_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Lower fitting limit of W_n (LowerLim_Wn)              \n                        used in process, units of cm^-3.                      \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_w_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Lower fitting limit of W_T_perp (LowerLim_WTperp)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_w_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Lower fitting limit of W_T_para (LowerLim_WTpara)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_h_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Lower fitting limit of H_n (LowerLim_Hn)              \n                        used in process, units of cm^-3.                      \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_h_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Lower fitting limit of H_T_perp (LowerLim_HTperp)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Lower_limit_h_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Lower fitting limit of H_T_para (LowerLim_HTpara)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 0.001 for all records.]       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_vr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vr (UpperLim_Vr)               \n                        used in process, units of km/s.                       \n                        [This value is fixed at 500.000 for all records.]     \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_vtheta",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vtheta (UpperLim_Vt)           \n                        used in process, units of km/s.                       \n                        [This value is fixed at 500.000 for all records.]     \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_vphi",
+      "type": "double",
+      "units": "km/s",
+      "description": "Upper fitting limit of Vphi (UpperLim_Vp)             \n                        used in process, units of km/s.                       \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_w_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Upper fitting limit of W_n (UpperLim_Wn)              \n                        used in process, units of cm^-3.                      \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_w_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Upper fitting limit of W_T_perp (UpperLim_WTperp)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 10000.000 for all records.]   \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_w_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Upper fitting limit of W_T_para (UpperLim_WTpara)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 10000.000 for all records.]   \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_h_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Upper fitting limit of H_n (UpperLim_Hn)              \n                        used in process, units of cm^-3.                      \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_h_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Upper fitting limit of H_T_perp (UpperLim_HTperp)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 10000.000 for all records.]   \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Upper_limit_h_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Upper fitting limit of H_T_para (UpperLim_HTpara)     \n                        used in process, units of eV.                         \n                        [This value is fixed at 10000.000 for all records.]   \n                          During the fitting process, free parameters are only\n                        allowed to vary between these lower and upper limits.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Record_number_data_points",
+      "type": "double",
+      "units": "",
+      "description": "Record's number of Data Points (Number_Data_Points)   \n                        used in fit. This is the number of points fitted in   \n                        the reduced Chi square fit, always with 9 free        \n                        parameters. Therefore degrees of freedom for each     \n                        reduced Chi square fit is this value minus 9.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "Record_min_count",
+      "type": "double",
+      "units": "Counts per accumulation",
+      "description": "The minimum counts/accumulation observed (Count_Min)  \n                        within the level 2 records.                           \n                        E.g. provides an indication of background.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "Record_max_count",
+      "type": "double",
+      "units": "Counts per accumulation",
+      "description": "The maximum counts/accumulation observed (Count_Max)  \n                        within the level 2 records.                           \n                        E.g. provides an indication of signal (rather than    \n                        noise) when compared with RECORD_MIN_COUNT.",
+      "size": [
+        1
+      ],
+      "fill": "-1"
+    },
+    {
+      "name": "Cost_of_fit",
+      "type": "double",
+      "units": "",
+      "description": "Cost function of the fit (Fit_Cost), that is the      \n                        value of the reduced Chi-Square plus any penalties.   \n                        Since penalties were multiples of 10^6 and the maximum\n                        seen in this file is under 15000, no penalties were   \n                        hit in these fits, and the Cost function is equivalent\n                        to the reduced Chi square value of the fit.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0000"
+    },
+    {
+      "name": "Fit_vr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vr (Fit_Vr), units of km/s.           \n                        -> Value is really:                                   \n                           FIT_VR +/- UNCERTAINTY_VR.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_vtheta",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vtheta (Fit_Vt), units of km/s.       \n                        -> Value is really:                                   \n                           FIT_VTHETA +/- UNCERTAINTY_VTHETA.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_vphi",
+      "type": "double",
+      "units": "km/s",
+      "description": "Fitted value of Vphi (Fit_Vp), units of km/s.         \n                        -> Value is really:                                   \n                           FIT_VPHI +/- UNCERTAINTY_VPHI.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_w_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Fitted value of W_n (Fit_Wn), units of cm^-3.         \n                        -> Value is really:                                   \n                           FIT_W_N +/- UNCERTAINTY_W_N.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_w_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Fitted value of W_T_perp (Fit_WTperp), units of eV.   \n                        -> Value is really:                                   \n                           FIT_W_T_PERP +/- UNCERTAINTY_W_T_PERP.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_w_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Fitted value of W_T_para (Fit_WTpara), units of eV.   \n                        -> Value is really:                                   \n                           FIT_W_T_PARA +/- UNCERTAINTY_W_T_PARA.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_h_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Fitted value of H_n (Fit_Hn), units of cm^-3.         \n                        -> Value is really:                                   \n                           FIT_H_N +/- UNCERTAINTY_H_N.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_h_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Fitted value of H_T_perp (Fit_HTperp), units of eV.   \n                        -> Value is really:                                   \n                           FIT_H_T_PERP +/- UNCERTAINTY_H_T_PERP.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Fit_h_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Fitted value of H_T_para (Fit_HTpara), units of eV.   \n                        -> Value is really:                                   \n                           FIT_H_T_PARA +/- UNCERTAINTY_H_T_PARA.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_vr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty of Vr (Sigma_Vr), units of km/s.          \n                        -> Value is really:                                   \n                           FIT_VR +/- UNCERTAINTY_VR.                         \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_vtheta",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty of Vtheta (Sigma_Vt), units of km/s.      \n                        -> Value is really:                                   \n                           FIT_VTHETA +/- UNCERTAINTY_VTHETA.                 \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_vphi",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty of Vphi (Sigma_Vp), units of km/s.        \n                        -> Value is really:                                   \n                           FIT_VPHI +/- UNCERTAINTY_VPHI.                     \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_w_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Uncertainty of W_n (Sigma_Wn), units of cm^-3.        \n                        -> Value is really:                                   \n                           FIT_W_N +/- UNCERTAINTY_W_N.                       \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_w_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Uncertainty of W_T_perp (Sigma_WTperp), units of eV.  \n                        -> Value is really:                                   \n                           FIT_W_T_PERP +/- UNCERTAINTY_W_T_PERP.             \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_w_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Uncertainty of W_T_para (Sigma_WTpara), units of eV.  \n                        -> Value is really:                                   \n                           FIT_W_T_PARA +/- UNCERTAINTY_W_T_PARA.             \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_h_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Uncertainty of H_n (Sigma_Hn), units of cm^-3.        \n                        -> Value is really:                                   \n                           FIT_H_N +/- UNCERTAINTY_H_N.                       \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_h_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "Uncertainty of H_T_perp (Sigma_HTperp), units of eV.  \n                        -> Value is really:                                   \n                           FIT_H_T_PERP +/- UNCERTAINTY_H_T_PERP.             \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Uncertainty_h_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "Uncertainty of H_T_para (Sigma_HTpara), units of eV.  \n                        -> Value is really:                                   \n                           FIT_H_T_PARA +/- UNCERTAINTY_H_T_PARA.             \n                        Uncertainties are found from taking the square roots  \n                        of the diagonal of the covariance matrix for the fit. \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_vr",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vr (Ind_SDev_Vr) , units of km/s.                     \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VR           \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_vtheta",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vtheta (Ind_SDev_Vt) , units of km/s.                 \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VTHETA       \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_vphi",
+      "type": "double",
+      "units": "km/s",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        Vphi (Ind_SDev_Vp) , units of km/s.                   \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_VPHI         \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_w_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        W_n (Ind_SDev_Wn) , units of cm^-3.                   \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_W_N          \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_w_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        W_T_perp (Ind_SDev_WTperp) , units of eV.             \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_W_T_PERP     \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_w_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        W_T_para (Ind_SDev_WTpara) , units of eV.             \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_W_T_PARA     \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_h_n",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        H_n (Ind_SDev_Hn) , units of cm^-3.                   \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_H_N          \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_h_t_perp",
+      "type": "double",
+      "units": "eV",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        H_T_perp (Ind_SDev_HTperp) , units of eV.             \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_H_T_PERP     \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Indepentent_stddev_h_t_para",
+      "type": "double",
+      "units": "eV",
+      "description": "The standard deviation (assuming our 5 free           \n                        parameters are independent of each other) of          \n                        H_T_para (Ind_SDev_HTpara) , units of eV.             \n                        HOWEVER, our free parameters are not independent of   \n                        each other so you should use UNCERTAINTY_H_T_PARA     \n                        instead. This is here for comparison only.            \n                          Note: a value of 0.000 really means a non-zero      \n                        positive value less than 0.0005.",
+      "size": [
+        1
+      ],
+      "fill": "-9999.000"
+    },
+    {
+      "name": "Jgr",
+      "type": "double",
+      "units": "",
+      "description": "JGR use flag.                                         \n                        1 = 'good' fit, used in our JGR paper.                \n                        0 = 'bad' fit, not used in our JGR paper.             \n                                                                              \n                        Our criteria for a 'good' fit is given in our JGR     \n                        paper, however here we provide all fits for all the   \n                        PLS data as your criteria may be stronger or weaker.  \n                        If you publish on these results, you should state what\n                        your criteria for good fits was.                      \n                                                                              \n                        Our JGR paper has the following citation:             \n\n                        Wilson, R. J., F. Bagenal, and A. M. Persoon (2017), Survey of thermal \n                        plasma ions in Saturn's magnetosphere utilizing a forward model, \n                        J. Geophys. Res. Space Physics, 122, 7256–7278,\n                        doi:10.1002/2017JA024117.\n                                                                              \n                        Please cite this paper and this PDS volume if you     \n                        use this dataset.",
+      "size": [
+        1
+      ],
+      "fill": "9"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

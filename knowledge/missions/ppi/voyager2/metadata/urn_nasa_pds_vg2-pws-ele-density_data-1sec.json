@@ -1,0 +1,168 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "FCE",
+      "type": "double",
+      "units": "Hz",
+      "description": "Electron cyclotron frequency measured in \n      Hz.  This term can be approximated by multiplying 28 times the \n      magnetic field strength in nT, which is measured by the \n      magnetometers on both Voyager 1 and 2.\n      \n      If magnetometer data is absent, this field is empty.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MEASURED_FREQ_VALUE",
+      "type": "double",
+      "units": "Hz",
+      "description": "This value is the frequency in Hz, \n      measured from Voyager 1 and 2 high-resolution wideband spectrum \n      data, that is used to calculate the electron number density as \n      well as the remaining frequencies of interest.  This frequency \n      will inevitably be identical to one of the four \n      characteristic frequencies shown in subsequent columns.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_NUMBER_DENSITY",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Electron number density in cm**-3 as \n      determined from frequency measurements of the plasma (shown in the\n      MEASURED_FREQ column) and equations of cold plasma theory.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JOVIGRAPHIC_DISTANCE",
+      "type": "double",
+      "units": "Jovian Radii",
+      "description": "The distance from the center of Jupiter\n      to the spacecraft (in kilometers) divided by the radius of Jupiter\n      at the equator (71492 km).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SYS_III_LONGITUDE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Jovian System III longitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JOVIGRAPHIC_MAGNETIC_LATITUDE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_X",
+      "type": "double",
+      "units": "Jovian Radii",
+      "description": "The Jovicentric Solar Ecliptic (JSE) X\n      axis is chosen to point from Jupiter's equator towards the \n      Sun.  The units are measured in Jovian radii where 1 Jovian radii\n      is equal to 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Y",
+      "type": "double",
+      "units": "Jovian Radii",
+      "description": "The JSE Y axis is chosen to be in\n      the ecliptic plane and points toward Jupiter's dusk (thus opposing\n      planetary motion). The units are measured in Jovian radii where \n      1 Jovian radii is equal to 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Z",
+      "type": "double",
+      "units": "Jovian Radii",
+      "description": "The JSE Z axis is chosen to be\n      parallel to the ecliptic pole.  This axis is defined as the \n      cross product of Jupiter's velocity vector j and the x-axis.  The \n      units are measured in Jovian radii where 1 Jovian radii is equal \n      to 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_CHECK",
+      "type": "double",
+      "units": "",
+      "description": "This value is 1 when there exists \n      magnetic field data from the magnetometers onboard Voyager 1 and \n      2, and is 0 when data does not exist.  If there is no magnetic \n      field data then the electron cyclotron frequency cannot be\n      determined.  Therefore, during periods when this value is 0, the\n      density can only determined if the measured frequency \n      (MEASURED_FREQ_ABBREV) is the plasma frequency.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_QUALITY_INDEX",
+      "type": "double",
+      "units": "",
+      "description": "An integer between 0 and 3 which gives a \n      qualitative description for the accuracy of a frequency \n      measurement.  \n      \n      For measurement made from cutoff characteristic frequencies a data\n      quality index of 0 is given when a sharp cutoff is present within\n      a spectrum containing minimal background noise.  Conversely, a\n      quality index of 3 is given for measurements taken from a very\n      noisy background spectrum and where the cutoff is not well-\n      defined.  Voyager's wideband receivers have notch filters that are\n      used to suppress interference at the power supply frequency of 2.4\n      kHz and its third harmonic.  When a cutoff resides near a notch\n      filter, a quality index of 3 is used.  \n      \n      For measurements made from a peak characteristic frequency the\n      DATA_QUALITY_INDEX is directly related to the full-width at \n      half-max as listed below.\n      \n      +---------------------------------------------------------------+\n      |    INTERVAL OF FWHM (Hz)   |    DATA_QUALITY_INDEX DESCRIPTOR |\n      +----------------------------+----------------------------------+\n      |       0 < f <= 20 Hz |            0                     |\n      |                            |                                  |\n      |      20 < f <= 35 Hz |            1                     |\n      |                            |                                  |\n      |      35 < f <= 50 Hz |            2                     |\n      |                            |                                  |\n      |        f >  50 Hz       |            3                     |\n      +---------------------------------------------------------------+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MEASURED_FREQ_ABBREV",
+      "type": "double",
+      "units": "",
+      "description": "A letter is given to label which \n      characteristic frequency of the plasma was used to calculate the\n      density.  Any of the four characteristic frequencies shown below \n      can be measured and used with the cyclotron frequency to determine\n      the density.  The table below displays the characteristic \n      frequencies used to calculate the density along with their \n      corresponding common notation and abbreviated value. \n      \n      +----------------------------------------------------------------+\n      |         Frequency            |  Common  | Measured_Freq_Abbrev |\n      |           Name               | Notation |       Value          |\n      +----------------------------------------------------------------+\n      |   Electron Plasma Frequency  |  fpe     |         p            |\n      |                              |          |                      |\n      |       R=0 Frequency          |  fR=0    |         R            |\n      |                              |          |                      |\n      |       L=0 Frequency          |  fL=0    |         L            |\n      |                              |          |                      |\n      |    Upper Hybrid Frequency    |  fUH     |         u            |\n      +----------------------------------------------------------------+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PLASMA_FREQ",
+      "type": "double",
+      "units": "Hz",
+      "description": "The electron plasma frequency in Hz as\n      either measured directly from the Voyager wideband spectrum data\n      or calculated from the equations of cold plasma theory using the \n      MEASURED_FREQUENCY measurement and the cyclotron frequency.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "L_FREQ",
+      "type": "double",
+      "units": "Hz",
+      "description": "The L=0 frequency in Hz as\n      either measured directly from the Voyager wideband spectrum data\n      or calculated from the equations of cold plasma theory using the \n      MEASURED_FREQUENCY measurement and the cyclotron frequency.\n      \n      If magnetometer data is absent, this field is empty.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R_FREQ",
+      "type": "double",
+      "units": "Hz",
+      "description": "The R=0 frequency in Hz as\n      either measured directly from the Voyager wideband spectrum data\n      or calculated from the equations of cold plasma theory using the \n      MEASURED_FREQUENCY measurement and the cyclotron frequency.\n      \n      If magnetometer data is absent, this field is empty.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UH_FREQ",
+      "type": "double",
+      "units": "Hz",
+      "description": "The upper hybrid frequency in Hz as\n      either measured directly from the Voyager wideband spectrum data\n      or calculated from the equations of cold plasma theory using the \n      MEASURED_FREQUENCY measurement and the cyclotron frequency.\n      \n      If magnetometer data is absent, this field is empty.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FWHM",
+      "type": "double",
+      "units": "Hz",
+      "description": "Full width at half maximum of the frequency peak.\n      \n      When the density is determined from a characteristic frequency\n      peak this field contains the full-width at half-maximum ratio\n      and this value determines the DATA_QUALITY_INDEX field.\n      \n      If number density is determined from a cutoff frequency, this\n      field is empty.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

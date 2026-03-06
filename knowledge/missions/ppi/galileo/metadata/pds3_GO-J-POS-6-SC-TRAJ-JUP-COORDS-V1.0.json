@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "Spacecraft range from the Jupiter center of mass in units of Rj where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S3_LAT",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S3_WLON",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_X",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "X component of the spacecraft range from the Jupiter center of mass in JSE coordinates. In this coordinate system, The X-Z plane contains the Jupiter-Sun vector. X lies in the equatorial plane and points sunwards. Units are Jovian radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Y",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "Y component of the spacecraft range from the Jupiter center of mass in JSE coordinates. In this coordinate system, Y is along the dawn-dusk meridian, positive towards dusk (opposing orbital motion). Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Z",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "Z component of the spacecraft range from the Jupiter center of mass in JSE coordinates. In this coordinate system, Z is parallel to Jupiter's spin axis (omega), positive northward. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_X",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "X component of the spacecraft range from the Jupiter center of mass in JSM coordinates. In this coordinate system, X is along the Jupiter-Sun line, positive sunwards. Units are Jovian radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_Y",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "Y component of the spacecraft range from the Jupiter center of mass in JSM coordinates. In this coordinate system, the Y-Z plane rocks about the X-axis as the planet (and dipole) spins. Y is nominally towards dusk. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_Z",
+      "type": "double",
+      "units": "PLANETARY RADII",
+      "description": "Z component of the spacecraft range from the Jupiter center of mass in JSM coordinates. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCAL HOUR",
+      "type": "double",
+      "units": "HOUR",
+      "description": "Local hour is computed by converting the local hour angle into hours where 15 degrees equals one hour. To compute the hour angle, the S/C position is projected into the Jovian equatorial plane and then the angle is measured from the anti-sunward line (midnight) in the counter-clockwise direction.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAGNETIC LOCAL HOUR",
+      "type": "double",
+      "units": "HOUR",
+      "description": "Magnetic local hour is similar to the local hour except that the spacecraft position is projected into the dipole equator rather than the planetographic equator.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

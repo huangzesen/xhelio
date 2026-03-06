@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "unrecovered_count",
+      "type": "double",
+      "units": "",
+      "description": "Total counter of unrecovered bins",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "total_count",
+      "type": "double",
+      "units": "",
+      "description": "Total count",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "quality_factor",
+      "type": "double",
+      "units": "",
+      "description": "Quality factor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_SRF",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity in spacecraft reference frame (SRF)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity in RTN frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "P_SRF",
+      "type": "double",
+      "units": "J.cm^-3",
+      "description": "Pressure tensor in spacecraft reference frame (SRF)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "P_RTN",
+      "type": "double",
+      "units": "J.cm^-3",
+      "description": "Pressure tensor in RTN frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "TxTyTz_SRF",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature components in SRF",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "TxTyTz_RTN",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature components in RTN frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_SOLO_RTN",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity in RTN frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-07-07T16:43:06.000Z",
+  "stopDate": "2025-10-31T23:59:54.000Z"
+}

@@ -1,0 +1,63 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HFR_Spectra",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "HFR Spectra Data",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        82
+      ]
+    },
+    {
+      "name": "HFR_frequencies",
+      "type": "double",
+      "units": "Hz",
+      "description": "---> HFR center band frequencies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        82
+      ]
+    },
+    {
+      "name": "HFR_bins",
+      "type": "integer",
+      "units": "",
+      "description": "---> HFR bin size - Number of bins summed on board",
+      "fill": "65535.0",
+      "size": [
+        82
+      ]
+    },
+    {
+      "name": "HBGain",
+      "type": "integer",
+      "units": "(0=stnd,1=Atten)",
+      "description": "---> HFR Gain Select (0 - Standard Gain, 1 - Attenuator On)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HBSelect",
+      "type": "integer",
+      "units": "(0=U,1=V,2=W/Spin)",
+      "description": "---> HFR receiver Antenna Select (0 - U axis,1 - V axis,2 - W axis {spin axis})",
+      "fill": "-128.0"
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "---> MET",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2012-09-01T00:00:03.000Z",
+  "stopDate": "2019-07-12T23:59:59.000Z"
+}

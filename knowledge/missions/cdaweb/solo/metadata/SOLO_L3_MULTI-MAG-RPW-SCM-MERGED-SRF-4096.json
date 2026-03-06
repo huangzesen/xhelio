@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_SRF",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field values (Bxsrf, Bysrf, Bzsrf) in the Spacecraft Reference Frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T12:15:17.000Z",
+  "stopDate": "2025-07-05T23:34:58.000Z"
+}

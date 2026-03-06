@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "Electron number flux 27 keV - 520 keV as a function of energy in 7 channels (spectrogram)",
+      "fill": "nan",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "FLUX_STACKED",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As stacked plot",
+      "fill": "nan",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "FLUX_SIMPLE",
+      "type": "double",
+      "units": "#/cm2-ster-eV-sec",
+      "description": "---> As simple time series",
+      "fill": "nan",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "ENERGY_filled",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Time-varying electron energies in 7 channels",
+      "fill": "nan",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec since 1-1-70",
+      "description": "UNIX time; seconds since January 1, 1970",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1994-11-15T12:56:18.000Z",
+  "stopDate": "2026-01-19T23:59:48.000Z"
+}

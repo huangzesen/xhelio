@@ -1,0 +1,268 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "sc_status__CL_SP_AUX",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft status",
+      "fill": "255.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "sc_orbit_num__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "orbit number including phase",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_r_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position of reference Spacecraft (cluster 3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_v_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity of reference Spacecraft (cluster 3)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr1_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position of sc 1 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr2_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position of sc 2 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr3_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position of sc 3 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_dr4_xyz_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position of sc 4 from ref sc",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_at1_lat__CL_SP_AUX",
+      "type": "double",
+      "units": "deg",
+      "description": "gse Latitude of sc 1 axis, Angle from Ecliptic Plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at1_long__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "gse Longitude of sc 1 axis, Angle from x in x-y (GSE) plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at2_lat__CL_SP_AUX",
+      "type": "double",
+      "units": "deg",
+      "description": "gse Latitude of sc 2 axis, Angle from Ecliptic Plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at2_long__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "gse Longitude of sc 2 axis, Angle from x in x-y (GSE) plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at3_lat__CL_SP_AUX",
+      "type": "double",
+      "units": "deg",
+      "description": "gse Latitude of sc 3 axis, Angle from Ecliptic Plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at3_long__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "gse Longitude of sc 3 axis, Angle from x in x-y (GSE) plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at4_lat__CL_SP_AUX",
+      "type": "double",
+      "units": "deg",
+      "description": "gse Latitude of sc 4 axis, Angle from Ecliptic Plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_at4_long__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "gse Longitude of sc 4 axis, Angle from x in x-y (GSE) plane",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_config_QG__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Tetrahedron Quality G, (vol/ideal) + (surf/ideal) + 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_config_QR__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Tetrahedron Quality R, norm*(vol/sphere vol)^(1/3)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_dr_min__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Minimum Distance Between Spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_dr_max__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Maximum Distance Between Spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "gse_gsm__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "Rotation angle GSE to GSM, positive from +z towards +y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "dipole_tilt__CL_SP_AUX",
+      "type": "double",
+      "units": "degrees",
+      "description": "Dipole Tilt in GSM z-x Plane, positive from +z towards +x",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_size__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Tetrahedron size L, characteristic size",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_elong__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Tetrahedron Elongation E, elongation",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_planarity__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Tetrahedron Planarity P",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_geom_E_dir_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Direction of Elongation, Direction cosines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_geom_P_nor_gse__CL_SP_AUX",
+      "type": "double",
+      "units": "",
+      "description": "Normal of Planarity, Direction cosines",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_r_xyz_gei__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position for reference Spacecraft (cluster 3, GEI)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_r1_xyz_gei__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position for Spacecraft 1 (GEI)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_r2_xyz_gei__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position for Spacecraft 2 (GEI)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_r4_xyz_gei__CL_SP_AUX",
+      "type": "double",
+      "units": "km",
+      "description": "Position for Spacecraft 4 (GEI)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2000-08-22T00:00:30.000Z",
+  "stopDate": "2024-09-30T23:59:30.000Z"
+}

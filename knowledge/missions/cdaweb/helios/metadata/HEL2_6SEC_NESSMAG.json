@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BXSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Bx (SSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BYSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "By (SSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Bz (SSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B (Field magnitude average)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "stdevBXSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "standard deviation of Bx (SSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "stdevBYSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "standard deviation of By (SSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "stdevBZSSE",
+      "type": "double",
+      "units": "nT",
+      "description": "standard deviation of Bz (SSE)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1976-01-17T07:34:06.000Z",
+  "stopDate": "1980-03-08T17:50:00.000Z"
+}

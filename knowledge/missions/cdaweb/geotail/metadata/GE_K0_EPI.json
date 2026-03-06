@@ -1,0 +1,346 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Time_PB5",
+      "type": "integer",
+      "units": "",
+      "description": "Time_PB5, centered, in ISTP PB5 format",
+      "fill": "-2147483648.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "IDiffI_I",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "Ion Diff. Intensity, at 12 energies 67-1361 keV (EPIC/ICS) - spectrogram",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "IDiffI_I2",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "Ion Diff. Intensity, at 12 energies 67-1361 keV (EPIC/ICS) - stacked time series",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "IDiffI_I_Uncert",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV]",
+      "description": "Uncertainty, Ion Diff. Intensity, at 12 energies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "PDiffI_S",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV/e]",
+      "description": "H Diff. Intensity, at 2 energies 9 & 23  keV/e (EPIC/STICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "PDiffI_S_errorbars",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV/e]",
+      "description": "H Diff. Intensity, at 2 energies 9 & 23  keV/e (EPIC/STICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "PDiffI_S_Uncert",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-keV/e]",
+      "description": "Uncertainty, H Differential Intensity, at 2 energies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "EIntI_I",
+      "type": "double",
+      "units": "1/[cm**2-s-sr]",
+      "description": "Electron Integral Intensity, >38 keV (EPIC/ICS), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EIntI_I_errorbars",
+      "type": "double",
+      "units": "1/[cm**2-s-sr]",
+      "description": "Electron Integral Intensity, >38 keV (EPIC/ICS), scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EIntI_I_Uncert",
+      "type": "double",
+      "units": "1/[cm**2-s-sr]",
+      "description": "Uncertainty, Electron Integral Intensity",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EIntI_I_Energy",
+      "type": "double",
+      "units": "keV",
+      "description": "Electron Energy,  time-varying lower bound (between 34-50 keV) on electron integral flux (EPIC/ICS), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EIntI_I_Eplus",
+      "type": "double",
+      "units": "keV",
+      "description": "e Chan Energy plus, ICS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EIntI_I_Eminus",
+      "type": "double",
+      "units": "keV",
+      "description": "e Chan Energy minus, ICS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeHRatio_I",
+      "type": "double",
+      "units": "",
+      "description": "He/H Ratio, of (82keV He/67keV H) & (233keV He/67keV H) Diff.  Intens. (EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HeHRatio_I_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "He/H Ratio, of (82keV He/67keV H) & (233keV He/67keV H) Diff.  Intens. (EPIC/ICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HeHRatio_I_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, He/H Ratio, (2) Diff. Intens. (EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "OHRatio_I",
+      "type": "double",
+      "units": "",
+      "description": "O/H Ratio, at (247keV O/67keV H) & (1244keV O/67keV H) Diff. Intens. (EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "OHRatio_I_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "O/H Ratio, at (247keV O/67keV H) & (1244keV O/67keV H) Diff. Intens. (EPIC/ICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "OHRatio_I_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, O/H Ratio, (2) Diff. Intens. (EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HeHRatio_S",
+      "type": "double",
+      "units": "",
+      "description": "He++/H+ Ratio, of (9.4-212keV He++/67keV H+) Diff. Inten. (EPIC/STICS), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeHRatio_S_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "He++/H+ Ratio, of (9.4-212keV He++/67keV H+) Diff. Inten. (EPIC/STICS), scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HeHRatio_S_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, He++/H+ Ratio, of Diff. Inten.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "OHRatio_S",
+      "type": "double",
+      "units": "",
+      "description": "O+/H+ Ratio, of (9.4-212keV O+/67keV H+) Diff. Inten. (EPIC/STICS), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "OHRatio_S_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "O+/H+ Ratio, of (9.4-212keV O+/67keV H+) Diff. Inten. (EPIC/STICS), scalar, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "OHRatio_S_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, O+/H+ Ratio of Diff. Inten.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EAni_I",
+      "type": "double",
+      "units": "",
+      "description": ">38keV Electron anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to elec. int. flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "EAni_I_errorbars",
+      "type": "double",
+      "units": "",
+      "description": ">38keV Electron anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to elec. int. flux, with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "EAni_I_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, >38keV Electron anisotropy parameters",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni_S",
+      "type": "double",
+      "units": "",
+      "description": "9-212 keV/e H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/STICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni_S_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "9-212 keV/e H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/STICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni_S_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, 9-212 keV/e H Anisotropy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni67_I",
+      "type": "double",
+      "units": "",
+      "description": "67 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni67_I_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "67 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni67_I_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, 67 keV H Anisotropy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni129_I",
+      "type": "double",
+      "units": "",
+      "description": "129 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni129_I_errorbars",
+      "type": "double",
+      "units": "",
+      "description": "129 keV H Anis. param. (a0/a1/a2/phi1/phi2 from Fourier fit to H flux , EPIC/ICS), with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "PAni129_I_Uncert",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty, 129 keV H Anisotropy",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    }
+  ],
+  "startDate": "1992-09-08T22:31:29.000Z",
+  "stopDate": "2022-06-27T12:22:28.000Z"
+}

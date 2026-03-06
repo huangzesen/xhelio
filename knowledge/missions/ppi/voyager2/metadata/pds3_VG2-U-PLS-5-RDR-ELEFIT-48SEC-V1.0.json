@@ -1,0 +1,276 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "IMAX",
+      "type": "integer",
+      "units": "N/A",
+      "description": "NUMBER OF POINTS IN SPECTRUM",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFLY",
+      "type": "integer",
+      "units": "N/A",
+      "description": "FLAG VALUE, 1=ENCOUNT., 0=CRUISE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "THBN",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "ANGLE BET'N DCUP NORM & MAG VECT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNE",
+      "type": "double",
+      "units": "N/A",
+      "description": "MOMENT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTE",
+      "type": "double",
+      "units": "EV",
+      "description": "MOMENT ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PHISC",
+      "type": "double",
+      "units": "VOLTS",
+      "description": "SPACECRAFT POTENTIAL",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNC",
+      "type": "double",
+      "units": "N/A",
+      "description": "COLD ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNC",
+      "type": "double",
+      "units": "N/A",
+      "description": "STD DEV COLD ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTC",
+      "type": "double",
+      "units": "EV",
+      "description": "COLD ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTC",
+      "type": "double",
+      "units": "EV",
+      "description": "STD DEV OF COLD ELECTRONS",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIC",
+      "type": "double",
+      "units": "N/A",
+      "description": "CHI SQUARED OF COLD FIT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH1",
+      "type": "double",
+      "units": "N/A",
+      "description": "1ST HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH1",
+      "type": "double",
+      "units": "N/A",
+      "description": "STD DEV 1ST HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH1",
+      "type": "double",
+      "units": "EV",
+      "description": "1ST HOT ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH1",
+      "type": "double",
+      "units": "EV",
+      "description": "STD DEV 1ST HOT ELECTRON TEMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH1",
+      "type": "double",
+      "units": "N/A",
+      "description": "CHI SQUARED FOR 1ST HOT FIT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH2",
+      "type": "double",
+      "units": "N/A",
+      "description": "2ND HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH2",
+      "type": "double",
+      "units": "N/A",
+      "description": "STD DEV 2ND HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH2",
+      "type": "double",
+      "units": "EV",
+      "description": "2ND HOT ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH2",
+      "type": "double",
+      "units": "EV",
+      "description": "STD DEV 2ND HOT ELECTRON TEMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH2",
+      "type": "double",
+      "units": "N/A",
+      "description": "CHI SQUARED FOR 2ND HOT FIT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH3",
+      "type": "double",
+      "units": "N/A",
+      "description": "3RD HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGNH3",
+      "type": "double",
+      "units": "N/A",
+      "description": "STD DEV 3RD HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TH3",
+      "type": "double",
+      "units": "EV",
+      "description": "3RD HOT ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SGTH3",
+      "type": "double",
+      "units": "EV",
+      "description": "STD DEV 3RD HOT ELECTRON TEMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHIH3",
+      "type": "double",
+      "units": "N/A",
+      "description": "CHI SQUARED FOR 3RD HOT FIT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHI",
+      "type": "double",
+      "units": "N/A",
+      "description": "CHI SQUARED FOR TOTAL FIT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RNH",
+      "type": "double",
+      "units": "N/A",
+      "description": "MOMENT HOT ELECTRON DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RTH",
+      "type": "double",
+      "units": "EV",
+      "description": "MOMENT HOT ELECTRON TEMPERATURE",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

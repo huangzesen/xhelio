@@ -1,0 +1,135 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms3_edi_optics_state_srvy_l2",
+      "type": "integer",
+      "units": "",
+      "description": "Optics state",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms3_edi_energy_gdu1_srvy_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU1 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms3_edi_energy_gdu2_srvy_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU2 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms3_edi_flux1_0_srvy_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Field-aligned electron flux from both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_flux1_0_srvy_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Field-aligned  electron flux from both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_flux1_0_delta_srvy_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in field-aligned electron flux from both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_flux1_180_srvy_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Anti-field-aligned electron flux from both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_flux1_180_srvy_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Anti-field-aligned electron flux from both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_flux1_180_delta_srvy_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in anti-field-aligned electron flux from both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms3_edi_traj1_dbcs_0_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms3_edi_traj1_dbcs_180_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms3_edi_traj1_gse_0_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from both GDUs in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms3_edi_traj1_gse_180_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from both GDUs, in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms3_edi_traj1_gsm_0_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "[OUTDATED] Trajectory of flux1 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms3_edi_traj1_gsm_180_srvy_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "[OUTDATED] Trajectory of flux1 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T00:00:01.000Z",
+  "stopDate": "2016-01-04T00:00:02.000Z"
+}

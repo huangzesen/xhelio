@@ -1,0 +1,249 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT EVENT TIME (UT)",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) given in PDS standard time format            \n      (YYYY-MM-DDThh:mm:ss.sssZ).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GLL_R",
+      "type": "double",
+      "units": "Radii",
+      "description": "Spacecraft range from the Jupiter center of mass in units of Rj         \n      where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GLL_S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GLL_S3_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GLL_SOLAR_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft solar phase angle, measured couterclockwise from the         \n      Sun-Jupiter anti-solar line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GLL_EARTH_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft Earth phase angle, measured couterclockwise from the         \n      Earth-Jupiter anti-earthward line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_R",
+      "type": "double",
+      "units": "Radii",
+      "description": "Io range from the Jupiter center of mass in units of Rj                 \n      where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Io System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_S3_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Io System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_SOLAR_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Io solar phase angle, measured couterclockwise from the                 \n      Sun-Jupiter anti-solar line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_EARTH_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Io Earth phase angle, measured couterclockwise from the                 \n      Earth-Jupiter anti-earthward line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EUROPA_R",
+      "type": "double",
+      "units": "Radii",
+      "description": "Europa range from the Jupiter center of mass in units of Rj             \n      where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EUROPA_S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Europa System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EUROPA_S3_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Europa System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EUROPA_SOLAR_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Europa solar phase angle, measured couterclockwise from the             \n      Sun-Jupiter anti-solar line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EUROPA_EARTH_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Europa Earth phase angle, measured couterclockwise from the             \n      Earth-Jupiter anti-earthward line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GANYMEDE_R",
+      "type": "double",
+      "units": "Radii",
+      "description": "Ganymede range from the Jupiter center of mass in units of Rj           \n      where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GANYMEDE_S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Ganymede System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GANYMEDE_S3_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Ganymede System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GANYMEDE_SOLAR_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Ganymede solar phase angle, measured couterclockwise from the           \n      Sun-Jupiter anti-solar line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GANYMEDE_EARTH_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Ganymede Earth phase angle, measured couterclockwise from the           \n      Earth-Jupiter anti-earthward line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLISTO_R",
+      "type": "double",
+      "units": "Radii",
+      "description": "Callisto range from the Jupiter center of mass in units of Rj           \n      where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLISTO_S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Callisto System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLISTO_S3_LON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Callisto System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLISTO_SOLAR_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Callisto solar phase angle, measured couterclockwise from the           \n      Sun-Jupiter anti-solar line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CALLISTO_EARTH_PHASE_ANGLE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Callisto Earth phase angle, measured couterclockwise from the           \n      Earth-Jupiter anti-earthward line in the jovian equatorial plane.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

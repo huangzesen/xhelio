@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP radial (r) component of the magnetic-field in nT.                  \n      R is along the Saturn to spacecraft line, positive away from Saturn.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP southward (theta) component of the magnetic-field in nT.           \n      Theta completes the right handed set (Phi x R) and is positive          \n      southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "nT",
+      "description": "KRTP azimuthal (phi) component of the magnetic-field in nT.             \n      Phi is parallel to Saturn's equator (Omega x R), perpendicular to       \n      the Saturn-spacecraft line, and positive in the direction of            \n      corotation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTOTAL",
+      "type": "double",
+      "units": "nT",
+      "description": "Average value of the full-resolution magnetic-field magnitudes          \n      calculated over the averaging interval in nT. Note that this value      \n      may differ slightly from the square root of the sum of the squares      \n      of the averaged field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

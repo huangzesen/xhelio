@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated with the data\n    values in each record. The length of the observation (8 minutes) and the \n    sample rate results in a total of 9600 records. However, the burst packet\n    can only contain up to 640 records. Fifteen burst packets are required to\n    download all the records for one burst observation. The timetag for each \n    record is created by:                                \n       MET + 0.05*delta_t - 0.05*(9600-640*(i-1)-j)\n    MET is mission elapsed time for the last burst record of the observation.\n    delta_t is the delta time for the last burst record of the observation,\n    giving a 50ms resolution to the timestamp.\n    i is the 'ith' record in a given burst packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_X",
+      "type": "double",
+      "units": "",
+      "description": "X axis field value in signed integer counts. If DN\n    is greater than 32768 then this value is DN - 65536. DN is the\n    telemetry value stored in the downloaded burst packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_Y",
+      "type": "double",
+      "units": "",
+      "description": "Y axis field value in signed integer counts. If DN\n    is greater than 32768 then this value is DN - 65536. DN is the\n    telemetry value stored in the downloaded burst packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_Z",
+      "type": "double",
+      "units": "",
+      "description": "Z axis field value in signed integer counts. If DN\n    is greater than 32768 then this value is DN - 65536. DN is the\n    telemetry value stored in the downloaded burst packet.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

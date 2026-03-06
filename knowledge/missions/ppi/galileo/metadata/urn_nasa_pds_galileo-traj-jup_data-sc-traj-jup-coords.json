@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SPACECRAFT EVENT TIME (UT)",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft event time (UT) given in PDS standard time format           \n       (yyyy-mm-ddThh:mm:ss.sss).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Spacecraft range from the Jupiter center of mass in units of Rj        \n       where Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S3_LAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft System III (1965.0) latitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S3_WLON",
+      "type": "double",
+      "units": "Degree",
+      "description": "Spacecraft System III (1965.0) West longitude in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_X",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "X component of the spacecraft range from the Jupiter center of mass in \n       JSE coordinates. In this coordinate system, The X-Z plane contains the \n       Jupiter-Sun vector. X lies in the equatorial plane and points          \n       sunwards. Units are Jovian radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Y",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Y component of the spacecraft range from the Jupiter center of mass in \n       JSE coordinates. In this coordinate system, Y is along the dawn-dusk   \n       meridian, positive towards dusk (opposing orbital motion). Units are   \n       Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSE_Z",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Z component of the spacecraft range from the Jupiter center of mass in \n       JSE coordinates. In this coordinate system, Z is parallel to Jupiter's \n       spin axis (omega), positive northward. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_X",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "X component of the spacecraft range from the Jupiter center of mass in \n       JSM coordinates. In this coordinate system, X is along the Jupiter-Sun \n       line, positive sunwards. Units are Jovian radii where 1 Rj = 71492 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_Y",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Y component of the spacecraft range from the Jupiter center of mass in \n       JSM coordinates. In this coordinate system, the Y-Z plane rocks about  \n       the X-axis as the planet (and dipole) spins. Y is nominally towards    \n       dusk. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JSM_Z",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Z component of the spacecraft range from the Jupiter center of mass in \n       JSM coordinates. Units are Jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOCAL HOUR",
+      "type": "double",
+      "units": "Hour",
+      "description": "Local hour is computed by converting the local hour angle into hours   \n       where 15 degrees equals one hour. To compute the hour angle, the S/C   \n       position is projected into the Jovian equatorial plane and then the    \n       angle is measured from the anti-sunward line (midnight) in the         \n       counter-clockwise direction.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAGNETIC LOCAL HOUR",
+      "type": "double",
+      "units": "Hour",
+      "description": "Magnetic local hour is similar to the local hour except that the       \n       spacecraft position is projected into the dipole equator rather than   \n       the planetographic equator.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

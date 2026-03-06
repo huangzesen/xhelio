@@ -1,0 +1,280 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "H_Fluence",
+      "type": "double",
+      "units": "#/cm^2-sec",
+      "description": "H+ Fluence at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_Fluence",
+      "type": "double",
+      "units": "#/cm^2-sec",
+      "description": "--> O+ Fluence at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He1_Fluence",
+      "type": "double",
+      "units": "#/cm^2-sec",
+      "description": "--> He+ Fluence at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He2_Fluence",
+      "type": "double",
+      "units": "#/cm^2-sec",
+      "description": "--> He++ Fluence at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_sigma",
+      "type": "integer",
+      "units": "% of H+ Fluence",
+      "description": "% of H+ Fluence",
+      "fill": "-128.0"
+    },
+    {
+      "name": "O_sigma",
+      "type": "integer",
+      "units": "% of O+ Fluence",
+      "description": "--> % of O+ Fluence",
+      "fill": "-128.0"
+    },
+    {
+      "name": "He1_sigma",
+      "type": "integer",
+      "units": "% of He1 Fluence",
+      "description": "--> % of He1 Fluence",
+      "fill": "-128.0"
+    },
+    {
+      "name": "He2_sigma",
+      "type": "integer",
+      "units": "% of He2 Fluence",
+      "description": "--> % of He2 Fluence",
+      "fill": "-128.0"
+    },
+    {
+      "name": "H_Eflux",
+      "type": "double",
+      "units": "keV/cm^2-sec",
+      "description": "H+ E-Flux at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "O_Eflux",
+      "type": "double",
+      "units": "keV/cm^2-sec",
+      "description": "--> O+ E-Flux at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He1_Eflux",
+      "type": "double",
+      "units": "keV/cm^2-sec",
+      "description": "--> He+ E-Flux at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He2_Eflux",
+      "type": "double",
+      "units": "keV/cm^2-sec",
+      "description": "--> He++ E-Flux at this altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "H_efluxsigma",
+      "type": "integer",
+      "units": "% of H+ E-Flux",
+      "description": "% of H+ E-Flux.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "O_efluxsigma",
+      "type": "integer",
+      "units": "% of O+ E-Flux",
+      "description": "--> % of O+ E-Flux.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "He1_efluxsigma",
+      "type": "integer",
+      "units": "% of He+ E-Flux",
+      "description": "--> % of He+ E-Flux.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "He2_efluxsigma",
+      "type": "integer",
+      "units": "% of He++ E-Flux",
+      "description": "--> % of He++ E-Flux.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "SZA",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar Zenith angle at the magnetic foot point",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Conjugate_SZA",
+      "type": "double",
+      "units": "degrees",
+      "description": "Solar Zenith angle at the Conjugate magnetic foot point",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SZA_status",
+      "type": "integer",
+      "units": "",
+      "description": "Quality of the SZA Values: 0=good 99=invalid",
+      "fill": "255.0"
+    },
+    {
+      "name": "Conjugate_SZA_status",
+      "type": "integer",
+      "units": "",
+      "description": "Quality of the Conjugate SZA Values: 0=good 99=invalid",
+      "fill": "255.0"
+    },
+    {
+      "name": "H_quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "H+ Quality Flag (0 indicates OK, See Var_notes for other codes)",
+      "fill": "255.0"
+    },
+    {
+      "name": "O_quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "--> O+ Quality Flag (0 indicates OK, See Var_notes for other codes)",
+      "fill": "255.0"
+    },
+    {
+      "name": "He1_quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "--> He+ Quality Flag (0 indicates OK, See Var_notes for other codes)",
+      "fill": "255.0"
+    },
+    {
+      "name": "He2_quality",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "--> He++ Quality Flag (0 indicates OK, See Var_notes for other codes)",
+      "fill": "255.0"
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Re",
+      "description": "Geocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "Re",
+      "description": "MacIlwain L Parameter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "Hours",
+      "description": "Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LocT",
+      "type": "double",
+      "units": "Hours",
+      "description": "Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Mlat",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Magnetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ILA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Invariant Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MagField",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field in GSM Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Potential",
+      "type": "double",
+      "units": "eV",
+      "description": "Space Craft Potential from EFI (use with caution)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Imf_Gsm",
+      "type": "double",
+      "units": "nT",
+      "description": "Time delayed Wind IFM Magnetic Field from WIND in GSM Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SW_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "Time lagged solar wind pressure from WIND",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SW_density",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Time lagged solar wind density from WIND",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SW_velocity",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Time lagged Solar wind velocity from WIND in GSM Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Energy_range",
+      "type": "integer",
+      "units": "",
+      "description": "Energy Range Identification:  0: Full energy range;  1: Reduced energy range;  2: Low energy range",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "1996-03-17T00:03:25.000Z",
+  "stopDate": "1998-12-08T22:55:45.000Z"
+}

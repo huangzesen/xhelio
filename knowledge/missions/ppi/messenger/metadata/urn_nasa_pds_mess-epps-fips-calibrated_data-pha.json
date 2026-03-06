@@ -1,0 +1,181 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Mission Elapsed Time at the end of the accumulation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "double",
+      "units": "",
+      "description": "Data quality flag, taking on values of 0 (good) and\n   1 (bad).",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "FIPS_SCANTYPE",
+      "type": "double",
+      "units": "",
+      "description": "Indicates the FIPS Scan Mode and particle type.\n    Tables referenced here are one of the eight E/q stepping tables\n    loaded into the instrument. See the EPPS CDR SIS for details.\n    =0 Normal Scan Heavy Ion, =1 High Temp Scan Heavy Ion,\n    =2 Burst Scan Heavy Ion, =3 Test Scan Heavy Ion,\n    =4 Table 4 Heavy Ion, =5 Table 5 Heavy Ion,\n    =6 Table 6 Heavy Ion, =7 Table 7 Heavy Ion,\n    =8 Normal Scan Proton, =9 High Temp Scan Proton,\n    =10 Burst Scan Proton, =11 Test Scan Proton, =12 Table 4 Proton,\n    =13 Table 5 Proton, =14 Table 6 Proton, =15 Table 7 Proton.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "PRIORITY_DECIMATION",
+      "type": "double",
+      "units": "",
+      "description": "Prior to FSW7 this column records the priority level\n   of the PHA data. 0 = High Priority, 1 = Medium priority, 2 = Low priority.\n   After FSW7 this column records the proton hardware decimation level for\n   proton PHAs or =99 for Heavy Ion PHAs.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "STEP_NUM",
+      "type": "double",
+      "units": "",
+      "description": "E/q Step Number at which particle was measured.\n   Value may range 0-63.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "ENERGY_PER_CHARGE",
+      "type": "double",
+      "units": "keV/e",
+      "description": "E/q value corresponding to step number at which\n   particle was measured.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "",
+      "description": "In FSW4, FSW5, and FSW7, X is computed as\n   [128*(w+(w-z)/5)/sum], and in FSW6, X is computed as\n   [ 96*(s+(s-z)/5)/sum] where\n\tw = wedge - wedge_offset\n\ts = strip - strip_offset\n\tz = 14*(zigzag - zigzag_offset)/10\n      sum = w+s+z.\n   A value of -9999 means X is N/A.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "",
+      "description": "In FSW4, FSW5, and FSW7, Y is computed as\n   [128*(s+(s-z)/5)/sum], and in FSW6, Y is computed as\n   [100*(s+2*(s-z)/11)/sum] where\n\tw = wedge - wedge_offset\n\ts = strip - strip_offset\n\tz = 14*(zigzag-zigzag_offset)/10\n      sum = w+s+z.\n   A value of -9999 means Y is N/A.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "ZENITH_ANGLE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Incident zenith angle for particle. A value of -9999\n   means ZENITH_ANGLE cannot be properly calculated.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "AZIMUTHAL_ANGLE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Incident azimuthal angle for particle. A value of -9999\n   means AZIMUTHAL_ANGLE cannot be properly calculated.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "TIME_OF_FLIGHT",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight in digital channels.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "TIME_OF_FLIGHT_NS",
+      "type": "double",
+      "units": "NANOSECOND",
+      "description": "Time of flight.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WEDGE",
+      "type": "double",
+      "units": "",
+      "description": "Wedge number. A value of -9999 means WEDGE is N/A.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "STRIP",
+      "type": "double",
+      "units": "",
+      "description": "Strip number. A value of -9999 means STRIP is N/A.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "ZIGZAG",
+      "type": "double",
+      "units": "",
+      "description": "Zigzag number. A value of -9999 means ZIGZAG is N/A.",
+      "size": [
+        1
+      ],
+      "fill": "-9999"
+    },
+    {
+      "name": "MASS_PER_CHARGE",
+      "type": "double",
+      "units": "amu/e",
+      "description": "Estimated mass per charge (m/q) for particle.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+03"
+    },
+    {
+      "name": "WEIGHT",
+      "type": "double",
+      "units": "",
+      "description": "Weight for particle, includes instrument-related\n   factors such as efficiency and angle dependence.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

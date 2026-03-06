@@ -1,0 +1,252 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEDU OmniDirectional Scan Averaged Electron Rates for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FEDU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FEDU OmniDirectional Scan Averaged Electron Fluxes for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FEDU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEDU Count Rate Uncertainties for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FEDU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FEDU Flux Uncertainties for the EB01-EB05, EG06-EG09, E44, E45, E37 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FEsDU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEsDU OmniDirectional Scan Averaged Scattered-Electron Rates for the EBD1-EBD5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FEsDU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FEsDU OmniDirectional Scan Averaged Scattered-Electron Fluxes for the EBD1-EBD5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FEsDU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FEsDU Count Rate Uncertainties for the EBD1-EBD5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FEsDU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FEsDU Flux Uncertainties for the EBD1-EBD5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FHDU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHDU OmniDirectional Scan Averaged Hydrogen Rates for the PL01-PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHDU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FHDU OmniDirectional Scan Averaged Hydrogen Fluxes for the PL01-PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHDU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHDU Count Rate Uncertainties for the PL01-PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channel measurements.",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHDU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FHDU Flux Uncertainties for the PL01-PL08, P32, P1, P10, P11, P16, P23, P27, P31 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FHeDU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHeDU OmniDirectional Scan Averaged Helium Rates for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "FHeDU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FHeDU OmniDirectional Scan Averaged Helium Fluxes for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "FHeDU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FHeDU Count Rate Uncertainties for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "FHeDU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FHeDU Flux Uncertainties for the A39, A33, A46, A3, A4, A12, A13, A17, A24, A28, AL01, AL02, L5 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "FODU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FODU OmniDirectional Scan Averaged Oxygen Rates for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FODU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FODU OmniDirectional Scan Averaged Oxygen Fluxes for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FODU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FODU Count Rate Uncertainties for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channel measurements.",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FODU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FODU Flux Uncertainties for the M34, L14, L18, M38, M35, M47, M6, M7, M15, M19, M20, M25 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FFeDU_ScanAveragedRates",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FFeDU OmniDirectional Scan Averaged Iron Rates for the H36, H8, H9, H43, H21 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FFeDU_ScanAveragedFluxes",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FFeDU OmniDirectional Scan Averaged Iron Fluxes for the H36, H8, H9, H43, H21 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FFeDU_RateUncertainties",
+      "type": "double",
+      "units": "Counts/second",
+      "description": "FFeDU Count Rate Uncertainties for the H36, H8, H9, H43, H21 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "FFeDU_FluxUncertainties",
+      "type": "double",
+      "units": "Counts/(MeV-cm^2-s-sr)",
+      "description": "FFeDU Flux Uncertainties for the H36, H8, H9, H43, H21 energy channel measurements",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    }
+  ],
+  "startDate": "1991-01-01T21:55:54.000Z",
+  "stopDate": "2021-12-16T02:22:57.000Z"
+}

@@ -1,0 +1,966 @@
+{
+  "id": "PSP",
+  "name": "Parker Solar Probe",
+  "keywords": [
+    "parker",
+    "probe",
+    "psp",
+    "psp_fld",
+    "psp_isois",
+    "psp_swp",
+    "psp_swp_spa",
+    "psp_swp_spb",
+    "psp_swp_spc",
+    "psp_swp_spi",
+    "solar"
+  ],
+  "profile": {
+    "description": "Parker Solar Probe spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "FIELDS/MAG": {
+      "name": "FIELDS/MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "PSP_FLD_L2_DFB_DBM_VDC": {
+          "description": "PSP FIELDS Level 2 DFB DC Burst Single Ended Voltage Waveform Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2020-01-24T11:13:57.000Z",
+          "stop_date": "2024-07-02T19:19:33.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DBM_VDC"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMMF": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of SCMmf Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-03-03T13:07:19.000Z",
+          "stop_date": "2019-08-17T00:48:16.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/16qy-w286",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMMF"
+        },
+        "PSP_FLD_L2_DFB_AC_XSPEC_SCMDLFHG_SCMELFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) D and E Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:59:10.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/kt78-6c57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_XSPEC_SCMDLFHG_SCMELFHG"
+        },
+        "PSP_FLD_L2_DFB_DBM_VAC": {
+          "description": "PSP FIELDS Level 2 DFB AC Burst Single Ended Voltage Waveform Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2020-05-27T21:22:58.000Z",
+          "stop_date": "2025-07-19T21:49:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/qvh5-g747",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DBM_VAC"
+        },
+        "PSP_FLD_L2_DFB_AC_XSPEC_SCMELFHG_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) E and F Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:59:10.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/srne-rk07",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_XSPEC_SCMELFHG_SCMFLFHG"
+        },
+        "PSP_FLD_L2_DFB_DBM_DVDC": {
+          "description": "PSP FIELDS Level 2 DFB DC Burst Differential Voltage Waveform Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2020-01-24T11:13:57.000Z",
+          "stop_date": "2020-01-31T23:01:36.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DBM_DVDC"
+        },
+        "PSP_FLD_L2_RFS_LFR": {
+          "description": "PSP FIELDS Level 2 Radio Frequency Spectrometer (RFS) Low Frequency Receiver (LFR) Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-09-02T22:19:16.000Z",
+          "stop_date": "2025-07-31T23:59:57.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/re4h-tk40",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_RFS_LFR"
+        },
+        "PSP_FLD_L2_RFS_BURST": {
+          "description": "PSP FIELDS L2 Radio Frequency Spectrometer (RFS) Burst Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-12-26T18:04:05.000Z",
+          "stop_date": "2019-12-26T18:24:12.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_RFS_BURST"
+        },
+        "PSP_FLD_L3_DUST": {
+          "description": "PSP FIELDS Level 3 dust impact detection data - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T04:00:00.000Z",
+          "stop_date": "2025-07-31T20:00:00.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/sn3j-1a94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_DUST"
+        },
+        "PSP_FLD_L2_DFB_DC_XSPEC_SCMELFHG_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) E and F Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:58:52.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/x8yt-7b32",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_XSPEC_SCMELFHG_SCMFLFHG"
+        },
+        "PSP_FLD_L2_MAG_SC_1MIN": {
+          "description": "PSP FIELDS 1 minute cadence Fluxgate Magnetometer (MAG) data in SC coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:30.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/7hrp-ya88",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_SC_1MIN"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of Search Coil Magnetometer (SCM) E Low Frequency (LF) High Gain (HG) Channel (SCMELFHG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2019-08-16T23:59:48.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/qj28-mq33",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMELFHG"
+        },
+        "PSP_FLD_L2_DFB_DC_XSPEC_SCMVLFHG_SCMWLFHG": {
+          "description": "PSP FIELDS Level 2 Digital Fields Board (DFB) DC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) V and W Low Frequency (LH) High Gain (HG) Sensors - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-21T23:51:12.000Z",
+          "stop_date": "2025-06-24T20:22:48.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/4sc7-7454",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_XSPEC_SCMVLFHG_SCMWLFHG"
+        },
+        "PSP_FLD_L2_MAG_SC_4_SA_PER_CYC": {
+          "description": "PSP FIELDS 4 samples per cycle cadence Fluxgate Magnetometer (MAG) data in SC coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:26.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/pq4w-8z67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_SC_4_SA_PER_CYC"
+        },
+        "PSP_FLD_L2_DFB_DBM_SCM": {
+          "description": "PSP FIELDS Level 2 DFB Search Coil Burst Waveform Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-08-13T14:46:13.000Z",
+          "stop_date": "2025-07-19T17:49:32.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/y1e1-8f41",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DBM_SCM"
+        },
+        "PSP_FLD_L2_MAG_VSO": {
+          "description": "PSP FIELDS full cadence Fluxgate Magnetometer (MAG) data in VSO coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:17.000Z",
+          "stop_date": "2021-10-17T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/7r0d-mp78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_VSO"
+        },
+        "PSP_FLD_L2_DFB_DBM_DVAC": {
+          "description": "PSP FIELDS Level 2 DFB AC Differential Voltage (DV) Burst Waveform (DBM) Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:53:00.000Z",
+          "stop_date": "2025-07-18T13:32:34.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/6rwq-2e67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DBM_DVAC"
+        },
+        "PSP_FLD_L3_RFS_LFR_QTN": {
+          "description": "PSP FIELDS Level 3 Electron Density Data from Radio Frequency Spectrometer (RFS) Low Frequency Receiver (LFR) Quasi-Thermal Noise (QTN) Spectroscopy - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-19T00:11:48.000Z",
+          "stop_date": "2024-04-08T07:29:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_RFS_LFR_QTN"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMVLFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of Search Coil Magnetometer (SCM) V Low Frequency (LF) High Gain (HG) Channel (SCMVLFHG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-17T00:03:59.000Z",
+          "stop_date": "2025-07-31T23:59:44.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/83y8-hg94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMVLFHG"
+        },
+        "PSP_FLD_L3_SQTN_RFS_V1V2": {
+          "description": "Parker Solar Probe FIELDS Level 3 Simplified Quasi-Thermal Noise (SQTN) data, using the Radio Frequency Spectrometer (RFS) spectra when connected to V1V2 dipole antenna - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-15T00:00:26.000Z",
+          "stop_date": "2025-06-25T23:59:58.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/jdj2-1912",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_SQTN_RFS_V1V2"
+        },
+        "PSP_FLD_L2_MAG_RTN": {
+          "description": "PSP FIELDS full cadence Fluxgate Magnetometer (MAG) data in RTN coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:17.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/0yy0-ba92",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_RTN"
+        },
+        "PSP_FLD_L2_DFB_DC_BPF_SCMULFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Bandpass Filter SCMulfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2019-05-12T00:28:41.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/q09x-dw27",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_BPF_SCMULFHG"
+        },
+        "PSP_FLD_L2_DFB_DC_XSPEC_SCMDLFHG_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) D and F Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:58:52.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/j3dc-kr21",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_XSPEC_SCMDLFHG_SCMFLFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_XSPEC_SCMDLFHG_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) D and F Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:59:10.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/scxb-g511",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_XSPEC_SCMDLFHG_SCMFLFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_V5HG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of V5 High Gain (HG) Channel (V5HG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-03-03T13:07:19.000Z",
+          "stop_date": "2025-07-31T23:59:44.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/g6gw-8t30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_V5HG"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMELFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra SCMelfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:49:21.000Z",
+          "stop_date": "2019-08-16T23:59:34.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/s9kz-nb55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMELFHG"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMVLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra of SCMvlfhg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-17T00:04:13.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/hvzj-4k68",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMVLFHG"
+        },
+        "PSP_FLD_L3_MERGED_SCAM_WF": {
+          "description": "PSP FIELDS Level 3 Merged Search Coil and Fluxgate Magnetic Field Waveform - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2024-12-25T11:10:44.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/baqw-yt37",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_MERGED_SCAM_WF"
+        },
+        "PSP_FLD_L2_TDS_WF": {
+          "description": "PSP FIELDS TDS Wave-Form Burst Science Telemetry - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-08-13T11:50:15.000Z",
+          "stop_date": "2025-07-19T19:46:04.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_TDS_WF"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra SCMflfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:49:21.000Z",
+          "stop_date": "2019-08-16T23:59:34.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/gn7g-y542",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMFLFHG"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMULFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra of SCMulfhg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-17T00:04:13.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/0cwt-mw28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMULFHG"
+        },
+        "PSP_FLD_L2_F2_100BPS": {
+          "description": "PSP FIELDS F2-100bps Summary Telemetry - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-08-13T11:01:11.000Z",
+          "stop_date": "2025-08-01T00:04:08.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/8khn-cs70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_F2_100BPS"
+        },
+        "PSP_FLD_L2_DFB_AC_BPF_SCMULFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Bandpass Filter SCMulfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2019-03-02T13:38:38.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/6svt-vr86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_BPF_SCMULFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_XSPEC_DV12HG_DV34HG": {
+          "description": "PSP FIELDS Level 2 DFB AC Cross Spectra (XSPEC) between DV12HG and DV34HG Channels - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-03-25T22:55:39.000Z",
+          "stop_date": "2025-06-24T07:10:05.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/2a1q-xm10",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_XSPEC_DV12HG_DV34HG"
+        },
+        "PSP_FLD_L2_DFB_WF_SCM": {
+          "description": "PSP FIELDS Level 2 DFB Search Coil Magnetometer (SCM) Waveform - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:50:00.000Z",
+          "stop_date": "2025-07-18T13:32:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/h34r-jn18",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_WF_SCM"
+        },
+        "PSP_FLD_L2_MAG_RTN_4_SA_PER_CYC": {
+          "description": "PSP FIELDS 4 samples per cycle cadence Fluxgate Magnetometer (MAG) data in RTN coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:26.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/wqcs-a534",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_RTN_4_SA_PER_CYC"
+        },
+        "PSP_FLD_L3_RFS_LFR": {
+          "description": "PSP FIELDS RFS LFR Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:19.000Z",
+          "stop_date": "2025-07-31T23:59:57.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_RFS_LFR"
+        },
+        "PSP_FLD_L2_DFB_WF_DVDC": {
+          "description": "PSP FIELDS Level 2 DFB Differential Voltage Waveform - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-08-14T15:02:09.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/fdh3-5n37",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_WF_DVDC"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_DV34HG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of dV34 High Gain (HG) Channel (DV34HG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-03-03T13:07:19.000Z",
+          "stop_date": "2025-07-18T13:32:58.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/52bj-8b73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_DV34HG"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMULFLG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of Search Coil Magnetometer (SCM) U Low Frequency (LF) Low Gain (LG) Channel (SCMULFLG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-17T00:54:46.000Z",
+          "stop_date": "2020-01-14T20:50:12.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/2nwb-7q79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMULFLG"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMFLFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of Search Coil Magnetometer (SCM) F Low Frequency (LF) High Gain (HG) Channel (SCMFLFHG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2019-03-02T14:38:05.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/p0th-a636",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMFLFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_DV12HG": {
+          "description": "PSP FIELDS Level 2 DFB AC  Spectra of dV12hg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2025-07-31T23:59:44.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/rknp-e976",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_DV12HG"
+        },
+        "PSP_FLD_L2_DFB_DC_BPF_DV12HG": {
+          "description": "PSP FIELDS Level 2 DFB DC Bandpass Filter (BPF) of dV12hg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-21T23:59:57.000Z",
+          "stop_date": "2021-10-16T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/j99p-vf52",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_BPF_DV12HG"
+        },
+        "PSP_FLD_L3_RFS_HFR": {
+          "description": "PSP FIELDS RFS HFR Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2025-07-31T23:59:55.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L3_RFS_HFR"
+        },
+        "PSP_FLD_L2_DFB_DC_BPF_DV34HG": {
+          "description": "PSP FIELDS Level 2 DFB DC Bandpass Filter (BPF) of dV34 High Gain (HG) Channel (DV34HG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2025-08-01T00:00:15.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/p859-3938",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_BPF_DV34HG"
+        },
+        "PSP_FLD_L2_DFB_AC_BPF_SCMUMFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Bandpass Filter SCMumfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-03-03T13:07:19.000Z",
+          "stop_date": "2025-07-18T13:32:58.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/be3k-1d62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_BPF_SCMUMFHG"
+        },
+        "PSP_FLD_L2_MAG_SC": {
+          "description": "PSP FIELDS full cadence Fluxgate Magnetometer (MAG) data in SC coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:17.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/8fc4-fq16",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_SC"
+        },
+        "PSP_FLD_L2_DFB_AC_SPEC_SCMDLFHG": {
+          "description": "PSP FIELDS Level 2 DFB AC Spectra of Search Coil Magnetometer (SCM) D Low Frequency (LF) High Gain (HG) Channel (SCMDLFHG) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2019-03-02T14:38:05.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/ncfd-vr25",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_SPEC_SCMDLFHG"
+        },
+        "PSP_FLD_L2_RFS_HFR": {
+          "description": "PSP FIELDS Level 2 Radio Frequency Spectrometer (RFS) High Frequency Receiver (HFR) Data - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-09-02T22:19:13.000Z",
+          "stop_date": "2025-07-31T23:59:55.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/gf9t-4082",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_RFS_HFR"
+        },
+        "PSP_FLD_L2_AEB": {
+          "description": "PSP FIELDS L2 Data from Antenna Electronics Board (AEB) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:46:32.000Z",
+          "stop_date": "2025-07-31T23:39:21.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/ydvh-f703",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_AEB"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_DV12HG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra of dV12hg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T01:48:30.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/zqz0-3j38",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_DV12HG"
+        },
+        "PSP_FLD_L2_DFB_WF_VDC": {
+          "description": "PSP FIELDS Level 2 DFB Single Ended Antenna Voltage Waveform - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:19.000Z",
+          "stop_date": "2025-07-31T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/qhgy-hm62",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_WF_VDC"
+        },
+        "PSP_FLD_L2_DFB_DC_XSPEC_SCMDLFHG_SCMELFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Cross Spectra (XSPEC) between Search Coil Magnetometer (SCM) D and E Low Frequency (LF) High Gain (HG) Channels  - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-03T06:58:52.000Z",
+          "stop_date": "2018-11-11T22:40:54.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/krzj-sw31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_XSPEC_SCMDLFHG_SCMELFHG"
+        },
+        "PSP_FLD_L2_MAG_RTN_1MIN": {
+          "description": "PSP FIELDS 1 minute cadence Fluxgate Magnetometer (MAG) data in RTN coordinates - Stuart D. Bale (bale@berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:30.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/c0zj-xf76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_MAG_RTN_1MIN"
+        },
+        "PSP_FLD_L2_DFB_DC_BPF_SCMVLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Bandpass Filter SCMvlfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-07-24T02:53:18.000Z",
+          "stop_date": "2025-08-01T00:00:15.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/k7kr-he12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_BPF_SCMVLFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_BPF_DV12HG": {
+          "description": "PSP FIELDS Level 2 Digital Fields Board (DFB) AC Bandpass Filter (BPF) of dV12 High Gain (HG) Channel (dV12hg) - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-21T23:59:57.000Z",
+          "stop_date": "2021-10-16T23:59:59.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/y8gb-3n29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_BPF_DV12HG"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMWLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra of SCMwlfhg Channel - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2019-08-17T00:04:13.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/pakh-kk30",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMWLFHG"
+        },
+        "PSP_FLD_L2_DFB_AC_BPF_DV34HG": {
+          "description": "PSP FIELDS Level 2 DFB AC Bandpass Filter (BPF) dV34hg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:48:16.000Z",
+          "stop_date": "2025-07-18T13:32:58.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/6nn3-ts64",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_AC_BPF_DV34HG"
+        },
+        "PSP_FLD_L2_DFB_DC_SPEC_SCMDLFHG": {
+          "description": "PSP FIELDS Level 2 DFB DC Spectra SCMdlfhg - Stuart D. Bale (bale@ssl.berkeley.edu) (UC Berkeley Space Sciences Laboratory)",
+          "start_date": "2018-10-02T03:49:21.000Z",
+          "stop_date": "2019-08-16T23:59:34.000Z",
+          "pi_name": "Stuart D. Bale (bale@ssl.berkeley.edu)",
+          "pi_affiliation": "UC Berkeley Space Sciences Laboratory",
+          "doi": "10.48322/nf08-v237",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_FLD_L2_DFB_DC_SPEC_SCMDLFHG"
+        }
+      }
+    },
+    "ISOIS": {
+      "name": "ISOIS",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "PSP_ISOIS-EPIHI_L2-LET1-RATES3600": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET1 Hourly Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:29:56.000Z",
+          "stop_date": "2025-08-06T02:30:15.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/xkhj-qx02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET1-RATES3600"
+        },
+        "PSP_ISOIS_L2-SUMMARY": {
+          "description": "Parker Solar Probe ISOIS level 2 summary - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:29:56.000Z",
+          "stop_date": "2025-08-06T02:30:15.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/mede-7j02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS_L2-SUMMARY"
+        },
+        "PSP_ISOIS-EPILO_L2-PE": {
+          "description": "Parker Solar Probe ISOIS EPI-Lo Level 2 Particle Energy - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:10:54.000Z",
+          "stop_date": "2025-08-06T03:42:18.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/rz8e-5y91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPILO_L2-PE"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET2-RATES3600": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET2 Hourly Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:29:56.000Z",
+          "stop_date": "2025-08-06T02:30:15.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/2xj3-hj37",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET2-RATES3600"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET1-RATES60": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET1 1-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:26.000Z",
+          "stop_date": "2025-08-06T03:37:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/97te-0132",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET1-RATES60"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET1-RATES10": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET1 10-second Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:01.000Z",
+          "stop_date": "2025-06-24T07:05:59.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/nez9-cx16",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET1-RATES10"
+        },
+        "PSP_ISOIS-EPILO_L2-IC": {
+          "description": "Parker Solar Probe ISOIS EPI-Lo Level 2 Ion Composition - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:10:54.000Z",
+          "stop_date": "2025-08-06T03:42:18.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/vrve-qw24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPILO_L2-IC"
+        },
+        "PSP_ISOIS-EPIHI_L2-HET-RATES60": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 HET 1-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:26.000Z",
+          "stop_date": "2025-08-06T03:37:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/7gr7-1791",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-HET-RATES60"
+        },
+        "PSP_ISOIS-EPIHI_L2-HET-RATES300": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 HET 5-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:02:26.000Z",
+          "stop_date": "2025-08-06T03:32:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/jwkm-bn55",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-HET-RATES300"
+        },
+        "PSP_ISOIS_L2-EPHEM": {
+          "description": "Parker Solar Probe ISOIS Level 2 ephem - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:00.000Z",
+          "stop_date": "2025-08-07T23:55:00.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/y0fb-3v04",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS_L2-EPHEM"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET1-RATES300": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET1 5-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:02:26.000Z",
+          "stop_date": "2025-08-06T03:32:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/53vk-b987",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET1-RATES300"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET2-RATES10": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET2 10-second Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:01.000Z",
+          "stop_date": "2025-06-24T07:05:59.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/7853-6s02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET2-RATES10"
+        },
+        "PSP_ISOIS-EPIHI_L2-SECOND-RATES": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 one-second Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:00.000Z",
+          "stop_date": "2025-06-24T07:06:12.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/8ng6-5z57",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-SECOND-RATES"
+        },
+        "PSP_ISOIS-EPIHI_L2-HET-RATES3600": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 HET Hourly Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:29:56.000Z",
+          "stop_date": "2025-08-06T02:30:15.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/ahkk-d044",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-HET-RATES3600"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET2-RATES60": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET2 1-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:26.000Z",
+          "stop_date": "2025-08-06T03:37:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/54ew-zj36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET2-RATES60"
+        },
+        "PSP_ISOIS-EPIHI_L2-HET-RATES10": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 HET 10-second Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:00:01.000Z",
+          "stop_date": "2025-06-24T07:05:59.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/6b2f-mx69",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-HET-RATES10"
+        },
+        "PSP_ISOIS-EPIHI_L2-LET2-RATES300": {
+          "description": "Parker Solar Probe ISOIS EPI-Hi Level 2 LET2 5-minute Rates - David McComas (Princeton University)",
+          "start_date": "2018-09-28T00:02:26.000Z",
+          "stop_date": "2025-08-06T03:32:45.000Z",
+          "pi_name": "David McComas",
+          "pi_affiliation": "Princeton University",
+          "doi": "10.48322/k5z7-rv23",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_ISOIS-EPIHI_L2-LET2-RATES300"
+        }
+      }
+    },
+    "SWEAP/SPAN-E": {
+      "name": "SWEAP/SPAN-E",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "PSP_SWP_SPA_SF0_L2_16AX8DX32E": {
+          "description": "Differential Electron Energy Flux for the SPAN-A Electron Instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:47.000Z",
+          "stop_date": "2025-07-31T23:46:53.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/7j5c-zg65",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPA_SF0_L2_16AX8DX32E"
+        },
+        "PSP_SWP_SPB_SF0_L2_16AX8DX32E": {
+          "description": "Electron Differential Energy Flux at each measured energy/deflector step and anode of the SPAN-Electron instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:15.000Z",
+          "stop_date": "2025-07-31T23:46:53.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/f1vx-0f86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPB_SF0_L2_16AX8DX32E"
+        },
+        "PSP_SWP_SPA_SF0_L3_PAD": {
+          "description": "Electron Pitch Angle Distribution for the SPAN-Electron instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:47.000Z",
+          "stop_date": "2025-07-31T23:46:53.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/envk-8520",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPA_SF0_L3_PAD"
+        },
+        "PSP_SWP_SPA_SF1_L2_32E": {
+          "description": "Differential Electron Energy Flux for the SPAN-A Electron Instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:57.000Z",
+          "stop_date": "2025-07-31T23:59:00.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/9pz0-sj43",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPA_SF1_L2_32E"
+        },
+        "PSP_SWP_SPB_SF1_L2_32E": {
+          "description": "Electron Differential Energy Flux at each measured energy step, and averaged over all deflection steps and anodes of the SPAN-Electron instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:19.000Z",
+          "stop_date": "2025-07-31T23:59:00.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/db2p-rk78",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPB_SF1_L2_32E"
+        },
+        "PSP_SWP_SPB_SF0_L3_PAD": {
+          "description": "Electron Pitch Angle Distribution for the SPAN-B Electron Instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:15.000Z",
+          "stop_date": "2025-07-31T23:46:53.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/ccen-5a96",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPB_SF0_L3_PAD"
+        }
+      }
+    },
+    "SWEAP/SPAN-I": {
+      "name": "SWEAP/SPAN-I",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "PSP_SWP_SPI_SF0A_L3_MOM": {
+          "description": "Partial moments of the Alpha distribution function in the SPAN-Ion instrument, PSP spacecraft, and RTN coordinate systems. User should be aware that the full ion distribution is typically NOT in the FOV of the instrument. - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:15.000Z",
+          "stop_date": "2025-07-31T23:59:49.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/9z9b-sz73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF0A_L3_MOM"
+        },
+        "PSP_SWP_SPI_SF0A_L3_MOM_INST": {
+          "description": "Partial moments of the Alpha distribution function in the instrument frame of reference. User should be aware that the full ion distribution is typically NOT in the FOV of the instrument. - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:47.000Z",
+          "stop_date": "2021-07-31T23:59:48.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/ke19-2789",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF0A_L3_MOM_INST"
+        },
+        "PSP_SWP_SPI_SF00_L3_MOM": {
+          "description": "Partial moments of the Proton distribution function in the SPAN-Ion instrument, PSP spacecraft, and RTN coordinate systems. User should be aware that the full ion distribution is typically NOT in the FOV of the instrument. - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:01.000Z",
+          "stop_date": "2025-07-31T23:59:49.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/vw42-m541",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF00_L3_MOM"
+        },
+        "PSP_SWP_SPI_SF01_L2_8DX32EX8A": {
+          "description": "Proton-Contaminated Alpha Differential Energy Flux at Each Measured Energy/Deflector Step and Anode of the SPAN-Ion Instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:15.000Z",
+          "stop_date": "2025-07-31T23:59:49.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/7mn4-wj46",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF01_L2_8DX32EX8A"
+        },
+        "PSP_SWP_SPI_SF00_L3_MOM_INST": {
+          "description": "Partial moments of the Proton distribution function in the instrument frame of reference. User should be aware that the full ion distribution is typically NOT in the FOV of the instrument. - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:47.000Z",
+          "stop_date": "2021-07-31T23:59:48.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/ypyh-s325",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF00_L3_MOM_INST"
+        },
+        "PSP_SWP_SPI_SF00_L2_8DX32EX8A": {
+          "description": "Proton Differential Energy Flux at each measured energy/deflector step and anode of the SPAN-Ion instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:04:01.000Z",
+          "stop_date": "2025-07-31T23:59:49.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/ftnv-7755",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPI_SF00_L2_8DX32EX8A"
+        }
+      }
+    },
+    "SWEAP": {
+      "name": "SWEAP",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "PSP_SWP_SPE_SF0_L3_PAD": {
+          "description": "Electron Pitch Angle Distribution for the SPAN-Electron instrument - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-02T04:03:47.000Z",
+          "stop_date": "2025-07-31T23:46:53.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/8ync-7p95",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPE_SF0_L3_PAD"
+        },
+        "PSP_SWP_SPC_L3I": {
+          "description": "Parker Solar Probe/SWEAP/SPC level 3 ion data - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-30T23:59:59.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/49we-tr31",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPC_L3I"
+        },
+        "PSP_SWP_SPC_L2I": {
+          "description": "Parker Solar Probe/SWEAP/SPC Level 2 charge flux distributions - Michael L. Stevens (Center for Astrophysics, Harvard and Smithsonian)",
+          "start_date": "2018-10-30T23:59:59.000Z",
+          "stop_date": "2025-07-31T23:59:30.000Z",
+          "pi_name": "Michael L. Stevens",
+          "pi_affiliation": "Center for Astrophysics, Harvard and Smithsonian",
+          "doi": "10.48322/wpk2-yq48",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_SWP_SPC_L2I"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "PSP_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2018-08-13T00:00:00.000Z",
+          "stop_date": "2029-01-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_HELIO1HR_POSITION"
+        },
+        "PSP_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2018-08-13T00:00:00.000Z",
+          "stop_date": "2029-01-31T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "doi": "10.48322/41s1-hx58",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_HELIO1DAY_POSITION"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "PSP_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "Merged hourly magnetic field, plasma, proton fluxes, and ephermis data of PSP  - Natalia Papitashvili (NASA/GSFC)",
+          "start_date": "2018-01-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC",
+          "doi": "10.48322/19ed-kz70",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PSP_COHO1HR_MERGED_MAG_PLASMA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Parker Solar Probe (PSP)",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

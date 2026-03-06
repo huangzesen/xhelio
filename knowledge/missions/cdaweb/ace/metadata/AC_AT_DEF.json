@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "RTN_ATT",
+      "type": "double",
+      "units": "",
+      "description": "ACE s/c attitude, direction cosines in RTN coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_ATT",
+      "type": "double",
+      "units": "",
+      "description": "ACE s/c attitude, direction cosines in J2000 GCI coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_ATT",
+      "type": "double",
+      "units": "",
+      "description": "ACE s/c attitude, direction cosines in GSE coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1997-08-26T00:00:00.000Z",
+  "stopDate": "2026-02-16T16:00:00.000Z"
+}

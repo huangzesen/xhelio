@@ -1,0 +1,232 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "hp_den",
+      "type": "double",
+      "units": "no/cc",
+      "description": "H+ Ion density, only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "hp_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "H+ Ion Plasma Velocity, Field Aligned, available before 01-Oct-1996",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "hp_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ Ion Temperature, Parallel and Perendicular to the Magnetic Field, available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "hp_en",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "H+ Energy Spectrogram. Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "hp_spin",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "H+ Spin Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "hp_polar",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "H+ Polar Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "op_den",
+      "type": "double",
+      "units": "no/cc",
+      "description": "O+ Ion Density.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "op_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "O+ Ion Plasma Velocity, Field Aligned, available before 01-Oct-1996",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "op_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "O+ Ion Temperature, Parallel and Perendicular to the Magnetic Field, available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "op_en",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "O+ Energy Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "op_spin",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "O+ Spin Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "op_polar",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "O+ Polar Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "hep_den",
+      "type": "double",
+      "units": "no/cc",
+      "description": "He+ Ion Density.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "hep_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "He+ Ion Plasma Velocity, Field Aligned, available before 01-Oct-1996",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "hep_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "He+ Ion Temperature, Parallel and Perendicular to Magnetic Field, available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "hep_en",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "He+ Energy Spectrogram, only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "hep_spin",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "He+ Spin Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "hep_polar",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "He+ Polar Angle Spectrogram.  Only available before 01-Oct-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "tide_stat",
+      "type": "integer",
+      "units": "TIDE",
+      "description": "TIDE Instrument Status (0-off,1-on,2-standby,3-mirrors stepped)",
+      "fill": "255.0"
+    },
+    {
+      "name": "psi_stat",
+      "type": "integer",
+      "units": "PSI",
+      "description": "PSI Instrument Status (0-off,1-on,2-standby)",
+      "fill": "255.0"
+    },
+    {
+      "name": "sc_pot",
+      "type": "double",
+      "units": "Volts",
+      "description": "Spacecraft Potential (from EFI K0 or a constant value)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ram_spin",
+      "type": "double",
+      "units": "Deg",
+      "description": "Spacecraft Ram Spin Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ram_polar",
+      "type": "double",
+      "units": "Deg",
+      "description": "Spacecraft Ram Polar Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_az",
+      "type": "double",
+      "units": "Deg",
+      "description": "Magnetic Field Azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_el",
+      "type": "double",
+      "units": "Deg",
+      "description": "Magnetic Field Elevation",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-03-27T00:00:00.000Z",
+  "stopDate": "1996-09-30T23:59:51.000Z"
+}

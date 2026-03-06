@@ -1,0 +1,59 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Flux_H",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "H+ number flux.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "Flux_O",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "O+ number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "Flux_He_1",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He+ number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "Flux_He_2",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He++ number flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "Bcr",
+      "type": "double",
+      "units": "Counts per spin",
+      "description": "Total Background counts per spin",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1999-06-07T00:09:31.000Z",
+  "stopDate": "2008-04-16T13:22:28.000Z"
+}

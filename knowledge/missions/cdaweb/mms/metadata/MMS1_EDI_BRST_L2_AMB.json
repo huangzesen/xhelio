@@ -1,0 +1,441 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms1_edi_optics_state_brst_l2",
+      "type": "integer",
+      "units": "",
+      "description": "Optics state",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms1_edi_energy_gdu1_brst_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU1 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms1_edi_energy_gdu2_brst_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU2 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms1_edi_flux1_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by Traj-1 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux1_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux1_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux1 0-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by Traj-2 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux2 0-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by Traj-3 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux3 0-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by Traj-4 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 0PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux4 0-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux1_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by Traj-1 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux1_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-1 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux1_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux1 180-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by traj2 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-2 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux2_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux2 180-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by traj3 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-3 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux3_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux3 180-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Flux for electrons with trajectories given by traj4 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Flux for electrons with trajectories given by Traj-4 180PA",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_flux4_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error for flux4 180-degree pitch angle electron flux.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms1_edi_traj1_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of flux1 0-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux2 0-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux3 0-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux4 0-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj1_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of flux1 180-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux2 180-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux3 180-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux4 180-degree pitch angle electrons in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj1_gsm_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of flux1 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_gsm_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux2 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_gsm_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux3 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_gsm_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux4 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj1_gsm_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of flux1 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_gsm_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux2 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_gsm_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux3 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_gsm_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Trajectory of flux4 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj1_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 1 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 2 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 3 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 4 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj1_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 1 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj2_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 2 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj3_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 3 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms1_edi_traj4_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 4 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T12:11:14.000Z",
+  "stopDate": "2015-12-26T02:14:32.000Z"
+}

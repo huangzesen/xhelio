@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ERTYEAR",
+      "type": "double",
+      "units": "",
+      "description": "Earth Receive Time (ERT) - year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERTDOY",
+      "type": "double",
+      "units": "",
+      "description": "Earth Receive Time (ERT) - day of year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERTSEC",
+      "type": "double",
+      "units": "",
+      "description": "Earth Receive Time (ERT) - seconds of day",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FSKY",
+      "type": "double",
+      "units": "Hz",
+      "description": "Predicted frequency at the receiving station assuming no Mars atmosphere.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FRESID",
+      "type": "double",
+      "units": "Hz",
+      "description": "Difference between observed frequency and frequency predicted with no Mars atmosphere",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

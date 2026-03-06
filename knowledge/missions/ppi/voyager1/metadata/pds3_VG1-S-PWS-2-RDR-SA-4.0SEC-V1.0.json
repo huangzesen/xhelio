@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "integer",
+      "units": "YEAR",
+      "description": "Year past 1900 (2 digit)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "integer",
+      "units": "HOUR",
+      "description": "Hour of year starting at 24",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "Second of hour",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MILLI",
+      "type": "integer",
+      "units": "MILLISECOND",
+      "description": "Millisecond of second",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS MOD16",
+      "type": "integer",
+      "units": "COUNT",
+      "description": "S/C clock modulo 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS MOD60",
+      "type": "integer",
+      "units": "COUNT",
+      "description": "S/C clock modulo 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS LINES",
+      "type": "integer",
+      "units": "COUNT",
+      "description": "S/C clock FDS line count (1-800)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT MODE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Data format mode (0-31)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHANNEL",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Uncalibrated e-field intensity for channel n. This column is repeated 16 times for channels (items) 1-16.  Channel center frequencies range from 10 Hertz to 56.2 kHz, logarithmically spaced in frequency, four channels per decade. Refer to the PWS CATALOG file for how to convert these uncalibrated data numbers to antenna voltage.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

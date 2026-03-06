@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ENERGY STEP",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Detector energey step (0-63).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DET 14 (ELECTRON 1)",
+      "type": "double",
+      "units": "CM**-2 S**-1 STERADIAN**-1 eV**-1",
+      "description": "Differential energy conversion factor CHI for electron channel 1 (Detector Id 14).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DET 16 (ELECTRON 3)",
+      "type": "double",
+      "units": "CM**-2 S**-1 STERADIAN**-1 eV**-1",
+      "description": "Differential energy conversion factor CHI for electron channel 3 (Detector Id 16).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DET 18 (ELECTRON 5)",
+      "type": "double",
+      "units": "CM**-2 S**-1 STERADIAN**-1 eV**-1",
+      "description": "Differential energy conversion factor CHI for electron channel 5 (Detector Id 18).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DET 20 (ELECTRON 7)",
+      "type": "double",
+      "units": "CM**-2 S**-1 STERADIAN**-1 eV**-1",
+      "description": "Differential energy conversion factor CHI for electron channel 7 (Detector Id 20).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

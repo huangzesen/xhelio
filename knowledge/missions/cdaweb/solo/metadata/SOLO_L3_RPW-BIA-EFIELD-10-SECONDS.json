@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "EDC_SRF",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field vector in SRF. Median value over 10 s interval.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EDCSTD_SRF",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Std. deviation of electric field vector in SRF over 10 s interval.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T00:00:10.000Z",
+  "stopDate": "2022-12-01T00:01:20.000Z"
+}

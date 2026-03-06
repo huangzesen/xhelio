@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BurstTableID",
+      "type": "integer",
+      "units": "",
+      "description": "ID of the IMPACT Burst Table",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEAModeID",
+      "type": "integer",
+      "units": "",
+      "description": "ID of the SWEA instrument's mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "STEModeID",
+      "type": "integer",
+      "units": "",
+      "description": "ID of the STE instrument's mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWEARate",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled SWEA count rate used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "STERate",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled STE LLD rate used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "MAGDelB",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled MAG delta B value used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "PLASTICDelV",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled PLASTIC delta V value used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWAVESNTDS",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled SWAVES NTDS value used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWAVESPlasma",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled SWAVES plasma power value used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWAVESHFR1",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled SWAVES HFR1 power value used in burst criteria calculation",
+      "fill": "255.0"
+    },
+    {
+      "name": "SWAVESHFR2",
+      "type": "integer",
+      "units": "",
+      "description": "Scaled SWAVES HFR2 power value used in burst criteria calculation",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2006-10-28T18:58:18.000Z",
+  "stopDate": "2014-03-01T00:00:39.000Z"
+}

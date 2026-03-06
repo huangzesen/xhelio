@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Counts",
+      "type": "integer",
+      "units": "counts/(channel-10ms)",
+      "description": "10ms, 30 channel x-ray spectra",
+      "fill": "255.0",
+      "size": [
+        30
+      ]
+    }
+  ],
+  "startDate": "2016-08-21T18:23:54.000Z",
+  "stopDate": "2016-08-22T13:25:06.000Z"
+}

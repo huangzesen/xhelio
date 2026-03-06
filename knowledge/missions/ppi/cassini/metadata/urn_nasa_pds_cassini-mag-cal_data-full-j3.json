@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 X component of the magnetic-field component in nT.                   \n      X is in the Jovian equatorial plane along the line through the          \n      System 3 (1997), positive away from Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 Y component of the magnetic field component in nT.                   \n      Y completes the right handed set (Z x X).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "J3 Z component of the magnetic field component in nT.                   \n      Z is parallel to Jovian spin axis, Omega, positive north of             \n      the equator.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

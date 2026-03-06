@@ -1,0 +1,129 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number for six-month maps from IBEX Data",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Fexp2",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 2 ~0.71 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp2_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 3 ~1.11 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp3_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 4 ~1.74 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp4_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 5 ~2.73 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp5_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6",
+      "type": "double",
+      "units": "Seconds",
+      "description": "Total Exposure Time, Hi Energy Channel 6 ~4.29 keV - mapped",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Fexp6_plasma",
+      "type": "double",
+      "units": "Seconds",
+      "description": "---> Above as X/Y image",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2021-12-27T00:00:00.000Z"
+}

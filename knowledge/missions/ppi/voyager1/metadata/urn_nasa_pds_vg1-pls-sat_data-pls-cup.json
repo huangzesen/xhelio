@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "CUP",
+      "type": "double",
+      "units": "",
+      "description": "Voyager 1 PLS Faraday cup identifier (A-D)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NCHANSET",
+      "type": "double",
+      "units": "",
+      "description": "Channel set number. \"1\" indicates the first set of channels for a given cup\n                        and time, \"2\" is the second set of channels for the same cup and time, etc.\n                        \"0\" indicates that no start and stop channel information are available.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "START_CH",
+      "type": "double",
+      "units": "",
+      "description": "Start channel",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP_CH",
+      "type": "double",
+      "units": "",
+      "description": "Stop channel",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

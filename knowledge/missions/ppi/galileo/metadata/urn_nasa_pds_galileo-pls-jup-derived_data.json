@@ -1,0 +1,134 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "duration",
+      "type": "double",
+      "units": "SECOND",
+      "description": "The duration is the number of seconds from start of the first mode     \n      until start of the last mode.  Duration is related to the length of an \n      instrument cycle.  Several different spin modes are required to gather \n      all of the data necessary to compute these parameters.  The timing     \n      was variable, dependent on telemetry rate and compressibility of the   \n      data, so duration varies considerably.",
+      "size": [
+        1
+      ],
+      "fill": "99999.9"
+    },
+    {
+      "name": "mode",
+      "type": "double",
+      "units": "",
+      "description": "This column gives the spin mode of the instrument during the sample.   \n      Refer to the instrument paper for the complete definition of each      \n      mode.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "density",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "Number density (1/cm^3) of the heavy ion component of the plasma.",
+      "size": [
+        1
+      ],
+      "fill": "0.000"
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "Temperature (eV) of the heavy ion component of the plasma.",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vx",
+      "type": "double",
+      "units": "km/sec",
+      "description": "X component of the plasma velocity vector in inertial rotor coordiantes\n      (despun spacecraft coordinates).",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vy",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Y component of the plasma velocity vector in inertial rotor coordiantes\n      (despun spacecraft coordinates).",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vz",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Z component of the plasma velocity vector in inertial rotor coordiantes\n      (despun spacecraft coordinates).",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "density error",
+      "type": "double",
+      "units": "cm**-3",
+      "description": "One sigma error in the number density parameter.",
+      "size": [
+        1
+      ],
+      "fill": "0.000"
+    },
+    {
+      "name": "Temperature error",
+      "type": "double",
+      "units": "eV",
+      "description": "One sigma error in the temperature parameter.",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vx error",
+      "type": "double",
+      "units": "km/sec",
+      "description": "One sigma error in the Vx parameter.",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vy error",
+      "type": "double",
+      "units": "km/sec",
+      "description": "One sigma error in the Vy parameter.",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    },
+    {
+      "name": "Vz error",
+      "type": "double",
+      "units": "km/sec",
+      "description": "One sigma error in the Vz parameter.",
+      "size": [
+        1
+      ],
+      "fill": "0."
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

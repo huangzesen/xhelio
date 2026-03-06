@@ -1,0 +1,225 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Seconds",
+      "type": "double",
+      "units": "sec",
+      "description": "Seconds of livetime in minute",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MET_SEC",
+      "type": "double",
+      "units": "sec",
+      "description": "MET at mid-point of minute",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Mission_Day",
+      "type": "integer",
+      "units": "",
+      "description": "Mission day of level 0 files for this data point",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Position (GEO)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Quality",
+      "type": "integer",
+      "units": "(0=def)",
+      "description": "Position quality flag: 0 - definitive, 1 - predicted",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Orbit_Status",
+      "type": "integer",
+      "units": "(0=out,1=in)",
+      "description": "Orbit status: 0 = outbound, 1 = inbound",
+      "fill": "255.0"
+    },
+    {
+      "name": "Orbit_Epoch",
+      "type": "double",
+      "units": "hours",
+      "description": "Decimal hours since perigee",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EarthConeAngle",
+      "type": "double",
+      "units": "deg",
+      "description": "Half-angle of Earth as seen from Spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Meas",
+      "type": "double",
+      "units": "nT",
+      "description": "Measured magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Meas_Flag",
+      "type": "integer",
+      "units": "(source level)",
+      "description": "Source of Measured field - 0 indicates MAG L0 file, 1 indicates MAG L1 file, etc. If 255, then the OPQ77 model field is used for computing Alpha and Beta",
+      "fill": "255.0"
+    },
+    {
+      "name": "SPIN_OMEGA",
+      "type": "double",
+      "units": "rad/s",
+      "description": "RPS spin axis vector in GEO vector norm is spin rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DATA_CHANNEL_COUNTS",
+      "type": "double",
+      "units": "#",
+      "description": "Counts in data channels based on EVENT_ENERGY_MIN2SSD",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDI",
+      "type": "double",
+      "units": "#/cm^2/s/sr/MeV",
+      "description": "Unidirectional, differential flux vs energy (Isotropic assumption)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDI_RMSE",
+      "type": "double",
+      "units": "",
+      "description": "RMS error in ln(FPDI) including Poisson and Crosscal Errors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "FPDI_Quality",
+      "type": "integer",
+      "units": "(0=highest)",
+      "description": "Quality flag for FPDI fluxes: 0 - highest quality, 1 - problem with time resolution, 2 - contamination, 3 - saturation, 4 - other problem, 5 - possible electron background, 10 -not yet quality checked",
+      "fill": "65535.0",
+      "size": [
+        20
+      ]
+    },
+    {
+      "name": "DOSE1",
+      "type": "double",
+      "units": "rads",
+      "description": "Mission-Accumulated Dose in Dosimeter 1 (front)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE1_RATE",
+      "type": "double",
+      "units": "rads/sec",
+      "description": "Dose rate in Dosimeter 1 (front)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE2",
+      "type": "double",
+      "units": "rads",
+      "description": "Mission-Accumulated Dose in Dosimeter 2 (side)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE2_RATE",
+      "type": "double",
+      "units": "rads/sec",
+      "description": "Dose rate in Dosimeter 2 (side)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "R_E",
+      "description": "McIlwain L of locally mirroring particle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "R_E",
+      "description": "Roederer L of particle with 90 degree pitch angle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Phi",
+      "type": "double",
+      "units": "nT R_E^2",
+      "description": "Third (drift) invariant  of particle with 90 degree pitch angle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Eq",
+      "type": "double",
+      "units": "deg",
+      "description": "Equatorial pitch angle of particle with 90 degree pitch angle in OPQ",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "OPQ model magnetic field vector in GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "OPQ model magnetic field strength at local minimum along local field line",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic local time (OPQ)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-09-01T00:00:30.000Z",
+  "stopDate": "2019-07-16T23:59:30.000Z"
+}

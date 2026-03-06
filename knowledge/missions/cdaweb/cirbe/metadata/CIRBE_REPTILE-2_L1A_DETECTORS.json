@@ -1,0 +1,194 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Geodetic Altitude of CIRBE in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic Latitude of CIRBE in Degrees (-90 to 90)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic Longitude of CIRBE in Degrees (-180 to 180)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_McIlwain",
+      "type": "double",
+      "units": "",
+      "description": "McIlwain's L Parameter at CIRBE's Position",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hrs",
+      "description": "Magnetic Local Time at CIRBE's Position (0 to 24)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic Latitude at CIRBE's Position (-90 to 90)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "D1_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the First Detector",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D1_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the First Detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D2_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the Second Detector",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D2_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the Second Detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D3_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the Third Detector",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D3_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the Third Detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D4_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the Fourth Detector",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D4_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the Fourth Detector",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "G_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the Guard Rings",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "G_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the Guard Rings",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D12n_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the First Detector but Not the Second",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D12n_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the First Detector but Not the Second",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D123n_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the First Two Detectors but Not the Third",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D123n_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the First Two Detectors but Not the Third",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D1234n_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger the First Three Detectors but Not the Fourth",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D1234n_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger the First Three Detectors but Not the Fourth",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "D1234_Count_Rates",
+      "type": "double",
+      "units": "#/s",
+      "description": "Countrate of Events that Trigger All Four Detectors",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "D1234_Counts",
+      "type": "integer",
+      "units": "",
+      "description": "Count of Events that Trigger All Four Detectors",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Integration_Period",
+      "type": "integer",
+      "units": "ms",
+      "description": "Integration Period Length of This Datapoint in ms",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Pointing_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Instrument Pointing Angle Relative to the Local Magnetic Field",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2023-04-19T16:28:15.000Z",
+  "stopDate": "2024-09-28T07:13:58.000Z"
+}

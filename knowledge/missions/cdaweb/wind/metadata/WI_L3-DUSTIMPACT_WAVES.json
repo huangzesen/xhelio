@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ch01___Peak_amplitude",
+      "type": "double",
+      "units": "mV",
+      "description": "Peak amplitude (mV) on Ch 1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch01___cc_value",
+      "type": "double",
+      "units": "",
+      "description": "Value of cross-correlation on Ch 1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch01___cc_threshold",
+      "type": "double",
+      "units": "",
+      "description": "Threshold value allowed for cross-correlation on Ch 1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MinCh1_threshold",
+      "type": "double",
+      "units": "mV",
+      "description": "Event selection threshold amplitude (mV) on Ch 1",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch1ImpAnt_E_S_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Avg. clockwise angle (degrees) of closest Ex antenna (to dust impact on spacecraft bus) from Earth-sun line (i.e., roughly +X-GSE)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch02___Peak_amplitude",
+      "type": "double",
+      "units": "mV",
+      "description": "Peak amplitude (mV) on Ch 2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch02___cc_value",
+      "type": "double",
+      "units": "",
+      "description": "Value of cross-correlation on Ch 2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch02___cc_threshold",
+      "type": "double",
+      "units": "",
+      "description": "Threshold value allowed for cross-correlation on Ch 2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MinCh2_threshold",
+      "type": "double",
+      "units": "mV",
+      "description": "Event selection threshold amplitude (mV) on Ch 2",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch2ImpAnt_E_S_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Avg. clockwise angle (degrees) of closest Ey antenna (to dust impact on spacecraft bus) from Earth-sun line (i.e., roughly +X-GSE)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Pos_Ax_SCS_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Avg. clockwise angle (degrees) of +Ex antenna from spacecraft-sun line",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Pos_Ax_E_S_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Avg. clockwise angle (degrees) of +Ex antenna from Earth-sun line (i.e., roughly +X-GSE)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Pos_Ay_E_S_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Avg. clockwise angle (degrees) of +Ey antenna from Earth-sun line (i.e., roughly +X-GSE)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Pos_Ax_E_S_Delta_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Uncertainty in Pos_Ax_E_S_Angle",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ImpAnt_E_S_Delta_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Uncertainty in E[x,y]_ImpAnt_E_S_Angle",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1995-01-01T00:00:00.000Z",
+  "stopDate": "2023-09-01T00:00:00.000Z"
+}

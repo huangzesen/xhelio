@@ -1,0 +1,359 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "sweepsMin",
+      "type": "integer",
+      "units": "",
+      "description": "Number of TWINS sweeps used - minimun",
+      "fill": "-1.0"
+    },
+    {
+      "name": "sweepsMax",
+      "type": "integer",
+      "units": "",
+      "description": "Number of TWINS sweeps used - maximum",
+      "fill": "-1.0"
+    },
+    {
+      "name": "satellite",
+      "type": "integer",
+      "units": "",
+      "description": "Satellite ID number (1=twins1 or 2:twins2)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "fluxarrays",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "[NO PLOT] Average ENA flux images for different energies projected along the LOS to the bins in the GSM xy plane",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        19,
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux2",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "ENA flux image in GSM at 2keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux8",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 8keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux14",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 14keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux20",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 20keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux24",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 24keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux32",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 32keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux45",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> 45keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux_x20",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "ENA flux vs energy along GSM-y at GSM-x=20Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_x10",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> along GSM-y at GSM-x=10 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_yneg5",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> along GSM-x at GSM-y=-5 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_y5",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> along GSM-x at GSM-y=5 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux2M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "ENA flux Movie image in GSM at 2keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux8M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 8keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux14M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 14keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux20M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 20keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux24M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 24keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux32M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 32keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux45M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "------------> Movie at 45keV",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "flux_x20M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "ENA flux vs energy movie along GSM-y at GSM-x=20Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_x10M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> Movie along GSM-y at GSM-x=10 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_yneg5M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> Movie along GSM-x at GSM-y=-5 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "flux_y5M",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "----------> Movie along GSM-x at GSM-y=5 Re",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        19
+      ]
+    },
+    {
+      "name": "countarrays",
+      "type": "double",
+      "units": "Re",
+      "description": "[NO PLOT] countarrays: Number of flux values in each energy-spatial bin",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        19,
+        160,
+        160
+      ]
+    },
+    {
+      "name": "temparrays",
+      "type": "double",
+      "units": "keV",
+      "description": "Ion temperature images calculated from ENA fluxes in each GSM spatial bin",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "temparraysM",
+      "type": "double",
+      "units": "keV",
+      "description": "--> Movie of Ion temperature images calculated from ENA fluxes in each GSM spatial bin",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        160,
+        160
+      ]
+    },
+    {
+      "name": "tot_time1",
+      "type": "double",
+      "units": "mjd",
+      "description": "Time interval used for Ti calculation",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "errorarrays",
+      "type": "double",
+      "units": "(eV cm2 sr s)-1",
+      "description": "[NO PLOT] Error in each energy-space bin based on the error given by the algorithm that calculates the flux from the raw TWINS data.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        19,
+        160,
+        160
+      ]
+    },
+    {
+      "name": "counterrors",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT] Another error value determined as 1/sqrt(countarrays).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        19,
+        160,
+        160
+      ]
+    },
+    {
+      "name": "delta_deg",
+      "type": "double",
+      "units": "deg",
+      "description": "Uncertainty in the angle that gives the direction in which the TWINS instrument is pointing.",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2008-06-15T05:31:20.000Z",
+  "stopDate": "2013-12-09T03:10:34.000Z"
+}

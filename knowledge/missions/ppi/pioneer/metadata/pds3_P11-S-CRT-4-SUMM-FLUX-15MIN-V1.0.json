@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R5B_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in HET energy channel R5B (> 2.01 MeV electrons). The coincidence logic for this channel is A2.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R5B_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel R5B.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2E(9)_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in LET-II energy channel SR2E(9) (0.16-2.0 MeV electrons).  The coincidence logic for this channel is ^S1.S2(5).^S2(A).^S3(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2E(9)_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel SR2E(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2F(9)_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in LET-II energy channel SR2F(9) (0.43-2.0 MeV electrons).  The coincidence logic for this channel is ^S1.S2(6).^S2(A).^S3(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2F(9)_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel SR2F(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2G(9)_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in LET-II energy channel SR2G(9) (0.8-2.0 MeV electrons).  The coincidence logic for this channel is ^S1.S2(7).^S2(A).^S3(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2G(9)_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel SR2G(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2H(9)_FLUX",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux measured in LET-II energy channel SR2H(9) (1.1-2.0 MeV electrons).  The coincidence logic for this channel is ^S1.S2(8).^S2(A).^S3(9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SR2H(9)_FLUX_UNCERTAINTY",
+      "type": "double",
+      "units": "CM**-2 SEC**-1 SR**-1",
+      "description": "Flux uncertainty for channel SR2H(9).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

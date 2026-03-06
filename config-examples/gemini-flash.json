@@ -1,0 +1,12 @@
+{
+  "_comment": "Google Gemini 2.5 Flash — cheapest option (~$0.18/session). Set GOOGLE_API_KEY in .env.",
+  "llm_provider": "gemini",
+  "providers": {
+    "gemini": {
+      "model": "gemini-2.5-flash",
+      "sub_agent_model": "gemini-2.5-flash",
+      "planner_model": "gemini-2.5-flash",
+      "fallback_model": "gemini-2.5-flash"
+    }
+  }
+}

@@ -1,0 +1,288 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "proton_distribution",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "H+ Energy-Pitch Angle Distribution (spectrograms at 16 selected pitch angles)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48,
+        16
+      ]
+    },
+    {
+      "name": "oxygen_distribution",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "O+ Energy-Pitch Angle Distribution (spectrograms at 16 selected pitch angles)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48,
+        16
+      ]
+    },
+    {
+      "name": "helium_distribution",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "He+ Energy-Pitch Angle Distribution (spectrograms at 16 selected pitch angles)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48,
+        16
+      ]
+    },
+    {
+      "name": "proton_omni_flux",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "H+ omnidirectional energy flux vs energy in Plasma Frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "oxygen_omni_flux",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "O+ omnidirectional energy flux vs energy in Plasma Frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "helium_omni_flux",
+      "type": "double",
+      "units": "eV/cm^2-s-sr-eV",
+      "description": "He+ omnidirectional energy flux vs energy in Plasma Frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "proton_flag",
+      "type": "integer",
+      "units": "0=good",
+      "description": "Proton Flag. Non-zero values indicate that incomplete data was used",
+      "fill": "255.0"
+    },
+    {
+      "name": "oxygen_flag",
+      "type": "integer",
+      "units": "0=good",
+      "description": "Oxygen Flag. Non-zero values indicate that incomplete data was used",
+      "fill": "255.0"
+    },
+    {
+      "name": "helium_flag",
+      "type": "integer",
+      "units": "0=good",
+      "description": "Helium Flag. Non-zero values indicate that incomplete data was used",
+      "fill": "255.0"
+    },
+    {
+      "name": "v_o_filtered_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "filtered O+ Velocity in GEI in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_o_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "O+ Velocity in GEI in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_sc_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft Velocity in GEI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_convect_gei",
+      "type": "double",
+      "units": "km/s",
+      "description": "Convection Velocity in GEI",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_o_filtered_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "filtered O+ Velocity in GSE in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_o_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "O+ Velocity in GSE in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_sc_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft Velocity in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_convect_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "Convection Velocity in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_o_filtered_sm",
+      "type": "double",
+      "units": "km/s",
+      "description": "filtered O+ Velocity in SM in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_o_sm",
+      "type": "double",
+      "units": "km/s",
+      "description": "O+ Velocity in SM in spacecraft frame",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_sc_sm",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft Velocity in SM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v_convect_sm",
+      "type": "double",
+      "units": "km/s",
+      "description": "Convection Velocity in SM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_potential",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft Potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "orbit_number",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft orbit number",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "fa_pos_gei",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position in GEI coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "fa_pos_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position in GSE coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "fa_pos_sm",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position in SM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft Altitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "invariant_latitude",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft Invariant Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "invariant_longitude",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft Invariant Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hour",
+      "description": "Spacecraft Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-09-20T04:46:26.000Z",
+  "stopDate": "2009-02-14T09:50:52.000Z"
+}

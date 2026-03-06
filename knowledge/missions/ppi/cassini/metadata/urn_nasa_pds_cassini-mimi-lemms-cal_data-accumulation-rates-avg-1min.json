@@ -1,0 +1,159 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Purpose",
+      "type": "double",
+      "units": "",
+      "description": "indicates that this row contains science data",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLOCK",
+      "type": "double",
+      "units": "",
+      "description": "midpoint time of the averaging interval as a\n                        spacecraft clock string; SCLOCK values are recorded as P/NNNNNNNNNN.FFF\n                        where P is the partition number, NNNNNNNNNN is roughly the number of\n                        seconds since the start of the partition, and FFF is the number of ticks.\n                        Each tick is roughly 1/256 of a second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Ephemeris_s",
+      "type": "double",
+      "units": "Second",
+      "description": "start time of the averaging interval in\n                        ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_Ephemeris_s",
+      "type": "double",
+      "units": "Second",
+      "description": "end time of the averaging interval in\n                        ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Counter",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Sector_Sclock_major",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subsector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Microsectors_Covered",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Period_s",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Staring",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sensor_Bitrate",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "SZS x component of the position of Cassini relative to Saturn",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "SZS y component of the position of Cassini relative to Saturn",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "SZS z component of the position of Cassini relative to Saturn",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MinSunAngle",
+      "type": "double",
+      "units": "Degree",
+      "description": "minimum angle between the LEMMS LET boresight\n                        direction and the SC-to-Sun line during the averaging interval; this helps\n                        users determine the possibility of light contamination; the most\n                        conservative estimate is 60 degrees, but sometimes much smaller angles\n                        such as 20 degrees are still ok",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

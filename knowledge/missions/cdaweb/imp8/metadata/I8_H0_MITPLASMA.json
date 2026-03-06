@@ -1,0 +1,214 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Spacecraft",
+      "type": "integer",
+      "units": "8=IMP8",
+      "description": "Spacecraft flag (6/7/8 =IMP 6/7/8)",
+      "fill": "9.0"
+    },
+    {
+      "name": "decimal_year",
+      "type": "double",
+      "units": "",
+      "description": "Decimal Year",
+      "fill": "100000.0"
+    },
+    {
+      "name": "Region",
+      "type": "integer",
+      "units": "(1=SW,2=MULT,3=NSW)",
+      "description": "Region flag (1=Solar Wind, 2= Solar Wind or Magnetosheath, 3= Not Solar Wind)",
+      "fill": "9.0"
+    },
+    {
+      "name": "mode",
+      "type": "integer",
+      "units": "(1=NTMS,2=TMS,3=AQM)",
+      "description": "Operating mode flag [1:Non-tracking (NTMS), 2:Tracking (TMS), 3:Acquisition (AQM)]",
+      "fill": "9.0"
+    },
+    {
+      "name": "xyzgse",
+      "type": "double",
+      "units": "Re",
+      "description": "IMP8 Position, Cartesian-GSE - orbit plot",
+      "fill": "9999.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "xyzgse_t",
+      "type": "double",
+      "units": "Re",
+      "description": "IMP8 Position, Cartesian-GSE - time series plots X/Y/Z",
+      "fill": "9999.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ygsm",
+      "type": "double",
+      "units": "Re",
+      "description": "IMP8 position, Y-component, GSM",
+      "fill": "9999.0"
+    },
+    {
+      "name": "zgsm",
+      "type": "double",
+      "units": "Re",
+      "description": "IMP8 position, Z-component, GSM",
+      "fill": "9999.0"
+    },
+    {
+      "name": "V_fit",
+      "type": "double",
+      "units": "km/sec (from fits)",
+      "description": "(Fits-based, no region selected) Proton Flow Speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "V_fit_rfilt",
+      "type": "double",
+      "units": "km/sec (from fits)",
+      "description": "--> (Fits-based, solar wind only) Proton Flow Speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "V_mom",
+      "type": "double",
+      "units": "km/sec (from moments)",
+      "description": "--> (Moments-based, no region selected) Proton Flow Speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "V_mom_rfilt",
+      "type": "double",
+      "units": "km/sec (from moments)",
+      "description": "--> (Moments-based, solar wind only) Proton Flow Speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "protonV_thermal_fit",
+      "type": "double",
+      "units": "km/sec (from fits)",
+      "description": "(Fits-based, no region selected) Proton most-probable thermal speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "protonV_thermal_fit_rfilt",
+      "type": "double",
+      "units": "km/sec (from fits)",
+      "description": "--> (Fits-based, solar wind only) Proton most-probable thermal speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "protonV_thermal_mom",
+      "type": "double",
+      "units": "km/sec (from moments)",
+      "description": "--> (Moments-based, no region selected) Proton most-probable thermal speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "protonV_thermal_mom_rfilt",
+      "type": "double",
+      "units": "km/sec (from moments)",
+      "description": "--> (Moments-based, solar wind only) Proton most-probable thermal speed",
+      "fill": "9999.0"
+    },
+    {
+      "name": "proton_density_fit",
+      "type": "double",
+      "units": "n/cc (from fits)",
+      "description": "(Fits-based, no region selected) Proton number density",
+      "fill": "9999.0"
+    },
+    {
+      "name": "proton_density_fit_rfilt",
+      "type": "double",
+      "units": "n/cc (from fits)",
+      "description": "--> (Fits-based, solar wind only) Proton number density",
+      "fill": "9999.0"
+    },
+    {
+      "name": "proton_density_mom",
+      "type": "double",
+      "units": "n/cc (from moments)",
+      "description": "--> (Moments-based, no region selected) Proton number density",
+      "fill": "9999.0"
+    },
+    {
+      "name": "proton_density_mom_rfilt",
+      "type": "double",
+      "units": "n/cc (from moments)",
+      "description": "--> (Moments-based, solar wind only) Proton number density",
+      "fill": "9999.0"
+    },
+    {
+      "name": "EW_flowangle_best",
+      "type": "double",
+      "units": "deg (from fits)",
+      "description": "(Fits-based, no region selected) Proton East/West flow angle (aberration corrected)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "EW_flowangle_best_rfilt",
+      "type": "double",
+      "units": "deg (from fits)",
+      "description": "--> (Fits-based, solar wind only) Proton East/West flow angle (aberration corrected)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "EW_flowangle_mom",
+      "type": "double",
+      "units": "deg (from moments)",
+      "description": "--> (Moments-based, no region selected) Proton East/West flow angle (no aberration correction)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "EW_flowangle_mom_rfilt",
+      "type": "double",
+      "units": "deg (from moments)",
+      "description": "--> (Moments-based, solar wind only) Proton East/West flow angle (no aberration correction)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "Flow_elevation_threshsp",
+      "type": "double",
+      "units": "deg (from fits)",
+      "description": "(Fits-based, no region selected) Proton flow elevation angle (from currents above noise threshold)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "Flow_elevation_threshsp_rfilt",
+      "type": "double",
+      "units": "deg (from fits)",
+      "description": "--> (Fits-based, solar wind only) Proton flow elevation angle (from currents above noise threshold)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "Flow_elevation_thresh",
+      "type": "double",
+      "units": "deg (from moments)",
+      "description": "--> (Moments-based, no region selected) Proton flow elevation angle (all currents)",
+      "fill": "9999.0"
+    },
+    {
+      "name": "Flow_elevation_thresh_rfilt",
+      "type": "double",
+      "units": "deg (from moments)",
+      "description": "--> (Moments-based, solar wind only) Proton flow elevation angle (all currents)",
+      "fill": "9999.0"
+    }
+  ],
+  "startDate": "1973-10-31T20:10:27.000Z",
+  "stopDate": "2006-07-26T17:10:35.000Z"
+}

@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PRO_DEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of proton component (counts/cm**3).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PRO_TEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Temperature of proton component (electron volts).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HIONDEN",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of hot ion component (counts/cm**3).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HIONTEMP",
+      "type": "double",
+      "units": "ELECTRONVOLT",
+      "description": "Temperature of hot ion component (electron volts).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_RHO",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Rho component of velocity vector (cm/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_PHI",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Phi component of velocity vector (cm/sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "CM/SEC",
+      "description": "Z component of velocity vector (cm/sec).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

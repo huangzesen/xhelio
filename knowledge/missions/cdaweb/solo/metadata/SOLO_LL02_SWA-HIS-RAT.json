@@ -1,0 +1,108 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_HIS_SPECTRUM1",
+      "type": "double",
+      "units": "",
+      "description": "Spectrum 1 data from HIS",
+      "fill": "-1e+31",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "SWA_HIS_SPECTRUM2",
+      "type": "double",
+      "units": "",
+      "description": "Spectrum 2 data from HIS",
+      "fill": "-1e+31",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "SWA_HIS_RATIO1",
+      "type": "double",
+      "units": "",
+      "description": "The ratio 1 between 2 species from HIS",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_RATIO2",
+      "type": "double",
+      "units": "",
+      "description": "The ratio 2 between 2 species from HIS",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_DIFF_FLUX1",
+      "type": "double",
+      "units": "(cm^2 s sr keV)^-1",
+      "description": "Differential flux calculated from spectrum 1 spectra",
+      "fill": "-1e+31",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "SWA_HIS_N1",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Density calculated from spectrum 1 spectra",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_V1",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "Velocity calculated from spectrum 1 spectra",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_T1",
+      "type": "double",
+      "units": "K",
+      "description": "Temperature calculated from spectrum 1 spectra",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_DIFF_FLUX2",
+      "type": "double",
+      "units": "(cm^2 s sr keV)^-1",
+      "description": "Differential flux calculated from spectrum 2 spectra",
+      "fill": "-1e+31",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "SWA_HIS_N2",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Density calculated from spectrum 2 spectra",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_V2",
+      "type": "double",
+      "units": "km s^-1",
+      "description": "Velocity calculated from spectrum 2 spectra",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SWA_HIS_T2",
+      "type": "double",
+      "units": "K",
+      "description": "Temperature calculated from spectrum 2 spectra",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2021-04-01T02:05:22.000Z",
+  "stopDate": "2023-04-27T14:18:56.000Z"
+}

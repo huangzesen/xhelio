@@ -1,0 +1,424 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "#/cm^2-ster-eV-sec",
+      "description": "[FLUX] Proton number flux, 15 energy channels populated approximately 0.4-3 keV [spectrogram]",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "FLUX_STACKED",
+      "type": "double",
+      "units": "#/cm^2-ster-eV-sec",
+      "description": "---> As stacked plot",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Time-variable energy in each of 15 channels",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "MOM.P.SC_CURRENT",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "[P.SC_CURRENT?] Current contribution to the spacecraft from thermal protons",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.MAGF",
+      "type": "double",
+      "units": "nT",
+      "description": "---> [P.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.DENSITY",
+      "type": "double",
+      "units": "#/cm3",
+      "description": "---> [P.DENSITY] Proton number density",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.AVGTEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [P.AVGTEMP] Average proton temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.VTHERMAL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "---> [P.VTHERMAL] Proton most probable speed",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.VELOCITY",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> [P.VELOCITY] Proton Flow Velocity, GSE cartesian",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.FLUX",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "---> [P.FLUX] Proton total number flux - cartesian GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.PTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "[P.PTENS] Proton Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MOM.P.MFTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "---> [P.MFTENS] Proton Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MOM.P.EFLUX",
+      "type": "double",
+      "units": "",
+      "description": "---> [P.EFLUX] Proton eflux",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.T3",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [P.T3] Proton Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.SYMM",
+      "type": "double",
+      "units": "",
+      "description": "[P.SYMM] Symmetry direction of proton pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.SYMM_THETA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [P.SYMM_THETA] Proton symmetry direction, latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.SYMM_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [P.SYMM_PHI] Proton symmetry direction, longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.SYMM_ANG",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [P.SYMM_ANG] Angle between proton symmetry direction and the magnetic field vector",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.MAGT3",
+      "type": "double",
+      "units": "",
+      "description": "---> [P.SYMM_MAGT3] Proton temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.P.ERANGE",
+      "type": "double",
+      "units": "eV",
+      "description": "[P.ERANGE] Proton energy range used to compute the moments",
+      "fill": "nan",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "MOM.P.MASS",
+      "type": "double",
+      "units": "eV/(km/s)^2",
+      "description": "---> [P.MASS] Proton mass of species",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.VALID",
+      "type": "integer",
+      "units": "(1=OK)",
+      "description": "---> [P.VALID] Proton Validity flag; 1=OK",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MOM.P.VEL_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "[P.VEL_MAG] Proton flow speed",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.VEL_TH",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [P.VEL_TH] Proton flow velocity; latitude/theta",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.VEL_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [P.VELPHI] Proton flow velocity; longitude/phi",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.P.TEMP2",
+      "type": "double",
+      "units": "eV",
+      "description": "[P.TEMP2] Undocumented temperature correction",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.SC_CURRENT",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "[A.SC_CURRENT]  Current contribution to the spacecraft from thermal alphas",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.MAGF",
+      "type": "double",
+      "units": "nT",
+      "description": "---> [A.MAGF] magnetic field vector interpolated (linearly) to the time of the PESA Low distribution, in GSE cartesian components",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.DENSITY",
+      "type": "double",
+      "units": "#/cm3",
+      "description": "---> [A.DENSITY]  Alpha number density",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.AVGTEMP",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [A.AVGTEMP] Average alpha temperature",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.VTHERMAL",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> [A.VTHERMAL] Alpha most probable speed",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.VELOCITY",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> [A.VELOCITY] Alpha Flow Velocity, GSE cartesian",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.FLUX",
+      "type": "double",
+      "units": "#/cm2-sec",
+      "description": "---> [P.FLUX] Alpha total number flux - cartesian GSE",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.PTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "[A.PTENS] Alpha Pressure Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MOM.A.MFTENS",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "---> [A.MFTENS] Alpha Momentum Flux Tensor calculated in the GSE coordinate basis.  The elements correspond to, in the following order: XX, YY, ZZ, XY, XZ, YZ",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "MOM.A.EFLUX",
+      "type": "double",
+      "units": "",
+      "description": "---> [A.EFLUX] Alpha eflux",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.T3",
+      "type": "double",
+      "units": "eV",
+      "description": "---> [A.T3] Alpha Temperature eigenvalues after diagonalization of tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.SYMM",
+      "type": "double",
+      "units": "",
+      "description": "[A.SYMM] Symmetry direction of alpha pressure tensor, calculated in the GSE coordinate basis.  The elements correspond to:  XX, YY, ZZ and are defined by the largest eigenvalue in .T3",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.SYMM_THETA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [A.SYMM_THETA] Alpha symmetry direction, latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.SYMM_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [A.SYMM_PHI] Alpha symmetry direction, longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.SYMM_ANG",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [A.SYMM_ANG] Angle between alpha symmetry direction and magnetic field vector",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.MAGT3",
+      "type": "double",
+      "units": "",
+      "description": "---> [A.SYMM_MAGT3] Alpha temperature tensor... rotated into a field-aligned coordinate basis and then taking the diagonal elements only",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MOM.A.ERANGE",
+      "type": "double",
+      "units": "eV",
+      "description": "[A.ERANGE] Alpha energy range used to compute the moments",
+      "fill": "nan",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "MOM.A.MASS",
+      "type": "double",
+      "units": "eV/(km/s)^2",
+      "description": "---> [A.MASS] Alpha mass of species",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.VALID",
+      "type": "integer",
+      "units": "(1=OK)",
+      "description": "---> [A.VALID] Alpha validity flag; 1=OK",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "MOM.A.VEL_MAG",
+      "type": "double",
+      "units": "km/s",
+      "description": "[A.VEL_MAG] Alpha flow speed",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.VEL_TH",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [A.VEL_TH] Alpha flow velocity, latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "MOM.A.VEL_PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "---> [A.VEL_PHI] Alpha flow velocity, longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "TIME",
+      "type": "double",
+      "units": "sec since 1-1-70",
+      "description": "UNIX time; seconds since January 1, 1970",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "1994-11-15T12:53:44.000Z",
+  "stopDate": "2026-01-19T23:59:55.000Z"
+}

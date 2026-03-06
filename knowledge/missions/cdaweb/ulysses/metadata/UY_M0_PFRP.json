@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Intensity",
+      "type": "double",
+      "units": "microVolt/Hz**0.5",
+      "description": "PFR Peak electric field intensity in 16 channels",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    }
+  ],
+  "startDate": "1990-10-29T00:00:00.000Z",
+  "stopDate": "2004-12-31T00:00:00.000Z"
+}

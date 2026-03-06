@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "YY=2 digit year (e.g. 78 for 1978)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Day of Year DDD=3 digit day of year (e.g. 053)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Universal Time of day represented as milliseconds after 00:00:00.000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "Orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PSEC",
+      "type": "double",
+      "units": "s",
+      "description": "Time after periapsis (sec)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS",
+      "type": "double",
+      "units": "",
+      "description": "Mass number -                              \n                                    4 for He+                                 \n                                   12 for C+                                  \n                                   14 for N+                                  \n                                   16 for O+                                  \n                                   28 for N2+ and/or CO+                      \n                                   30 for NO+                                 \n                                   32 for O2+                                 \n                                   44 for CO2+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PULSE",
+      "type": "double",
+      "units": "",
+      "description": "Maximum count rate/sec in 12 second interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VALT",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude (km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VLAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Latitude (deg N)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VLST",
+      "type": "double",
+      "units": "hr",
+      "description": "Local solar time (hr)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VSZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "Solar zenith angle (deg)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

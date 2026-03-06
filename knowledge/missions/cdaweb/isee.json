@@ -1,0 +1,213 @@
+{
+  "id": "ISEE",
+  "name": "ISEE",
+  "keywords": [
+    "isee"
+  ],
+  "profile": {
+    "description": "ISEE spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "ISEE-3_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1984-01-01T00:00:00.000Z",
+          "stop_date": "1999-12-31T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE-3_HELIO1DAY_POSITION"
+        },
+        "ISEE-3_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2014-01-01T00:00:00.000Z",
+          "stop_date": "2015-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE-3_HELIO1HR_POSITION"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "ISEE1_60SEC_MFI": {
+          "description": "60-sec vector magnetic field - C. T. Russell (UCLA)",
+          "start_date": "1977-10-22T14:49:00.000Z",
+          "stop_date": "1987-09-26T05:59:00.000Z",
+          "pi_name": "C. T. Russell",
+          "pi_affiliation": "UCLA",
+          "doi": "10.48322/6023-ss94",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_60SEC_MFI"
+        },
+        "ISEE-3_MAG_1MIN_MAGNETIC_FIELD": {
+          "description": "1 min averaged magnetic field - Edward Smith (JPL NASA)",
+          "start_date": "1978-08-01T00:00:00.000Z",
+          "stop_date": "1990-12-31T23:59:00.000Z",
+          "pi_name": "Edward Smith",
+          "pi_affiliation": "JPL NASA",
+          "doi": "10.48322/t0jh-af86",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE-3_MAG_1MIN_MAGNETIC_FIELD"
+        },
+        "ISEE-3_MAGPLASMA_2MIN_MAGNETIC_FIELD_PLASMA": {
+          "description": "2 min averaged magnetic field and plasma - Edward Smith (JPL NASA)",
+          "start_date": "1978-08-13T00:00:00.000Z",
+          "stop_date": "1982-09-15T23:58:00.000Z",
+          "pi_name": "Edward Smith",
+          "pi_affiliation": "JPL NASA",
+          "doi": "10.48322/nexz-5z17",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE-3_MAGPLASMA_2MIN_MAGNETIC_FIELD_PLASMA"
+        },
+        "ISEE1_4SEC_MFI": {
+          "description": "12-sec avg vector magnetic field at 4-sec intervals - C. T. Russell (UCLA)",
+          "start_date": "1977-10-22T21:04:19.000Z",
+          "stop_date": "1987-09-25T16:10:30.000Z",
+          "pi_name": "C. T. Russell",
+          "pi_affiliation": "UCLA",
+          "doi": "10.48322/nms1-t205",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_4SEC_MFI"
+        },
+        "ISEE2_60SEC_MFI": {
+          "description": "60-sec vector magnetic field - C. T. Russell (UCLA)",
+          "start_date": "1977-10-22T14:49:00.000Z",
+          "stop_date": "1987-09-26T05:59:00.000Z",
+          "pi_name": "C. T. Russell",
+          "pi_affiliation": "UCLA",
+          "doi": "10.21978/p8t923",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE2_60SEC_MFI"
+        },
+        "ISEE2_4SEC_MFI": {
+          "description": "12-sec avg vector magnetic field at 4-sec intervals - C. T. Russell (UCLA)",
+          "start_date": "1977-10-22T19:54:12.000Z",
+          "stop_date": "1987-09-26T06:10:21.000Z",
+          "pi_name": "C. T. Russell",
+          "pi_affiliation": "UCLA",
+          "doi": "10.21978/p8pg8v",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE2_4SEC_MFI"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "ISEE1_H1_FPE": {
+          "description": "ISEE 1_H1_FPE / Proton Fluid Parameters 6 RE - Bow Shock - S. Bame & J. Gosling (LANL)",
+          "start_date": "1977-10-29T22:50:21.000Z",
+          "stop_date": "1979-01-19T15:03:17.000Z",
+          "pi_name": "S. Bame & J. Gosling",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/qt96-em12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_H1_FPE"
+        },
+        "ISEE1_H2_FPE": {
+          "description": "ISEE1_H2_FPE / Solar Wind 24-sec Ion Moments - S. Bame & J. Gosling (LANL)",
+          "start_date": "1977-10-30T03:55:57.000Z",
+          "stop_date": "1984-01-30T23:59:44.000Z",
+          "pi_name": "S. Bame & J. Gosling",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/wvvd-c308",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_H2_FPE"
+        },
+        "ISEE2_H1_FPE": {
+          "description": "ISEE 2_H1_FPE / Proton Fluid Parameters 6 RE - Bow Shock - S. Bame & J. Gosling (LANL)",
+          "start_date": "1977-10-27T03:00:09.000Z",
+          "stop_date": "1979-01-19T13:53:17.000Z",
+          "pi_name": "S. Bame & J. Gosling",
+          "pi_affiliation": "LANL",
+          "doi": "10.48322/ytnf-nz91",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE2_H1_FPE"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "ISEE1_PWI_SA": {
+          "description": "ISEE-1 PWI: Spectrum Analyzer (SA) - Donald Gurnett (University Iowa)",
+          "start_date": "1977-10-22T19:13:19.000Z",
+          "stop_date": "1987-09-26T06:07:58.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/zw5z-3r03",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_PWI_SA"
+        },
+        "ISEE1_PWI_SA-RAPID-E": {
+          "description": "ISEE-1 PWI: Spectrum Analyzer (SA) rapid samples - Donald Gurnett (University Iowa)",
+          "start_date": "1977-10-22T19:13:19.000Z",
+          "stop_date": "1987-09-26T06:07:59.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/9aeg-0y83",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_PWI_SA-RAPID-E"
+        },
+        "ISEE1_PWI_SFR-E": {
+          "description": "ISEE-1 PWI: Sweep Frequency Receiver (SFR) - Donald Gurnett (University Iowa)",
+          "start_date": "1977-10-22T21:40:38.000Z",
+          "stop_date": "1987-09-26T04:43:49.000Z",
+          "pi_name": "Donald Gurnett",
+          "pi_affiliation": "University Iowa",
+          "doi": "10.48322/7e5f-4z64",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_PWI_SFR-E"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "ISEE1_H0_FE": {
+          "description": "ISEE1_Fast Electrons - K. Ogilvie, R. Fitzenreiter, & A. Vinas (GSFC Code 690)",
+          "start_date": "1977-10-29T12:41:25.000Z",
+          "stop_date": "1979-06-03T23:59:51.000Z",
+          "pi_name": "K. Ogilvie, R. Fitzenreiter, & A. Vinas",
+          "pi_affiliation": "GSFC Code 690",
+          "doi": "10.48322/w4js-dk79",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ISEE1_H0_FE"
+        }
+      }
+    }
+  },
+  "observatory_group": "ISEE",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MAG ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Magnetometer ID (1=LFM, 2=HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial (Jupiter to spacecraft) component of the magnetic field, positive away from Jupiter.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "nT",
+      "description": "North/South component of the magnetic field, positive southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "nT",
+      "description": "Azimuthal component of the magnetic field, positive eastward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude (sqrt of sum of squares) of the field component averages.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Average Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the field magnitude over the averaging interval (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft centered heliographic magnetic field latitude: Delta = asin(Bz/Bmag). Delta is derived from Cartesian coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Spacecraft centered heliographic magnetic field longitude: Lambda = atan(By/Bx). Lambda is derived from Cartesian coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Br over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Btheta over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS Bp",
+      "type": "double",
+      "units": "nT",
+      "description": "Root-mean-square deviation of Bphi over the averaging interval.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "POINT",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

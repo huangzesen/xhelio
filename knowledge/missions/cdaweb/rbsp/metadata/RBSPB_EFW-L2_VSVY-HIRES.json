@@ -1,0 +1,80 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "vsvy",
+      "type": "double",
+      "units": "V",
+      "description": "potential",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "vsvy_vavg",
+      "type": "double",
+      "units": "",
+      "description": "vsvy_vavg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "orbit_num",
+      "type": "double",
+      "units": "#",
+      "description": "orbit_num",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vel_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "Velocity (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Position (GSE)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "",
+      "description": "mlt",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "mlat",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "lshell",
+      "type": "double",
+      "units": "",
+      "description": "lshell",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-09-05T00:00:00.000Z",
+  "stopDate": "2019-07-17T00:00:00.000Z"
+}

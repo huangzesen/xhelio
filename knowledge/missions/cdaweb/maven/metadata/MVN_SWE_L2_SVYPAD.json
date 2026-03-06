@@ -1,0 +1,274 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "counts",
+      "type": "double",
+      "units": "",
+      "description": "Raw instrument counts (energy vs pitch angle index)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "counts_movie",
+      "type": "double",
+      "units": "",
+      "description": "---> Counts (movie: energy vs pitch angle index)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "counts_byPI_atE",
+      "type": "double",
+      "units": "",
+      "description": "---> Counts (spectrograms at select energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "counts_atPI_byE",
+      "type": "double",
+      "units": "",
+      "description": "---> Counts (spectrograms at select angle indices)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Calibrated differential energy flux (energy vs pitch angles for 158eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "variance",
+      "type": "double",
+      "units": "(eV/[eV cm^2 sr s])^2",
+      "description": "Variance of differential energy flux (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "secondary",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Secondary electron contamination (unavailable before 2014/11/15)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_angle_index",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (energy vs pitch angle index)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_movie",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (movie: energy vs  pitch angles for 158eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE01",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "Flux (spectrogram in PA at 4630 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE11",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 1620 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE21",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 506 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE31",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 158 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE41",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 49 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE51",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 15 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_byPA_atE61",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrogram in PA at 5 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "diff_en_fluxes_atPI_byE",
+      "type": "double",
+      "units": "eV/[eV cm^2 sr s]",
+      "description": "---> Flux (spectrograms at select angle indices)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "pa",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angles (energy vs angle index)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "pa_movie",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Pitch angles (movie: energy vs angle index)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "pa_E31",
+      "type": "double",
+      "units": "degrees",
+      "description": "Median pitch angles (values at 158 eV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "pa_byPI_atE",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Pitch Angles (spectrograms at select energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "pa_atPI_byE",
+      "type": "double",
+      "units": "degrees",
+      "description": "---> Pitch Angles (spectrograms at select angle indices)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        64
+      ]
+    },
+    {
+      "name": "b_azim",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic field azimuth in instrument coordiantes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "b_elev",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic field elevation in instrument coordiantes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "binning",
+      "type": "integer",
+      "units": "",
+      "description": "Energy binning factor: 1 = 64 energies, 2 = 32 energies, 4 = 16 energies",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2014-10-10T00:00:01.000Z",
+  "stopDate": "2025-10-31T23:59:56.000Z"
+}

@@ -1,0 +1,985 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "n_tc_hplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_hplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_hplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_hplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_hplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_hplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value H+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_heplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density He+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_heplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics He+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_heplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. He+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_heplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. He+ tc",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_heplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy He+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_heplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value He+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_he2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_he2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_he2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_he2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_he2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_he2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value He2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_oplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_oplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_oplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_oplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_oplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_oplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_o6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_o6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_o6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_o6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_o6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_o6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_c5plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_c5plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_c5plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_c5plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_c5plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_c5plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value C5+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_fe10plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_fe10plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_fe10plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_fe10plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_fe10plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_fe10plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value Fe10+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_cplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_cplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_cplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_cplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_cplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_cplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value C+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_nplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_nplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_nplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_nplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_nplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_nplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value N+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_o2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_o2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_o2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_o2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_o2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_o2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O2+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_c4plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_c4plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_c4plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_c4plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_c4plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_c4plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value C4+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_c6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_c6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_c6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_c6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_c6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_c6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value C6+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_o7plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_o7plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_o7plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_o7plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_o7plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_o7plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O7+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_o8plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_o8plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_o8plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_o8plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_o8plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_o8plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_fe8plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_fe8plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_fe8plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_fe8plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_fe8plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_fe8plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value Fe8+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_fe9plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_fe9plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_fe9plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_fe9plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_fe9plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_fe9plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value Fe9+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_tc_fe16plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_tc_fe16plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_tc_fe16plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_tc_fe16plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_tc_fe16plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_tc_fe16plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value Fe16+ triple coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_hplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_hplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_hplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_hplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_hplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_hplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value H+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_heplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_heplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_heplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_heplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_heplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_heplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value He+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_he2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_he2plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_he2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_he2plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_he2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_he2plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value He2+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_oplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_oplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_oplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_oplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_oplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_oplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_o6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_o6plus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_o6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_o6plus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_o6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_o6plus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value O6+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_dc_cplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "Density C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n_err_dc_cplus",
+      "type": "double",
+      "units": "1/cm^-3",
+      "description": "--- Error in the density value assuming Poisson statistics C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_dc_cplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v Not used. Preserved for compatibility. C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v_err_dc_cplus",
+      "type": "double",
+      "units": "km/s",
+      "description": "v_err Not used. Preserved for compatibility. C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_dc_cplus",
+      "type": "double",
+      "units": "keV",
+      "description": "Average energy C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_ave_err_dc_cplus",
+      "type": "double",
+      "units": "keV",
+      "description": "--- Error average energy value C+ double coincidence",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "delT",
+      "type": "double",
+      "units": "s",
+      "description": "delta time",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-08-01T00:05:19.000Z",
+  "stopDate": "2004-04-28T23:55:32.000Z"
+}

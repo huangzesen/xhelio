@@ -1,0 +1,47 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Sunspot_number__CL_JP_PCY",
+      "type": "double",
+      "units": "",
+      "description": "Sunspot number by month, 12 month smoothed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "median_P_pred__CL_JP_PCY",
+      "type": "double",
+      "units": "nPa",
+      "description": "Predicted solar wind median ram pressure by month",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Lower6_P_pred__CL_JP_PCY",
+      "type": "double",
+      "units": "nPa",
+      "description": "Predicted solar wind lower sextile ram pressure by month",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Upper6_P_pred__CL_JP_PCY",
+      "type": "double",
+      "units": "nPa",
+      "description": "Predicted solar wind upper sextile ram pressure by month",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sigma_Bz_pred__CL_JP_PCY",
+      "type": "double",
+      "units": "nT",
+      "description": "Predicted Standard deviation in interplanetary field by month",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1999-01-01T00:00:00.000Z",
+  "stopDate": "2024-12-01T00:00:00.000Z"
+}

@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Selenographic (body-fixed) longitude of the ER measurement footprint.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Selenographic (body-fixed) latitude of the ER measurement footprint.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "B_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Average magnetic field amplitude at the spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A",
+      "type": "double",
+      "units": "degrees",
+      "description": "Cutoff pitch angle for electrons reflected from the lunar surface at          \n                          the energy channel of the file.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta_A",
+      "type": "double",
+      "units": "degrees",
+      "description": "Uncertainty in the cutoff pitch angle of electrons reflected from the         \n                          lunar surface at the energy channel of the file.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "",
+      "description": "Effective electron reflection coefficient.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta_R",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in the effective electron reflection coefficient.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

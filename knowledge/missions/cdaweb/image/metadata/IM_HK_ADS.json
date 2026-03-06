@@ -1,0 +1,327 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BA_AdsEnable",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Attitude Determination System Enabled",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_HdpEnable",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Hardware Data Processing Enabled",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_McsEnable",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Magnetic Control System Enabled",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_SspEnable",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Sun Sensor Processing Enabled",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_Eclipse",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Eclipsed=1, Not-Eclipsed=0",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_EclipseCount",
+      "type": "double",
+      "units": "counts",
+      "description": "Consecutive Eclipse Count",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_ScRatesValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "S/C Body Rates Valid (Valid=1, Not-Valid=0)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_SspValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Sun Sensor Processing Valid (Valid=1, Not-Valid=0)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_StpValid",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Star Tracker Processing (Valid=1, Not-Valid=0)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_TorqEn",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Torque Rod Enabled (Enabled=1, Not-Enabled=0)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_AdsAstDv",
+      "type": "integer",
+      "units": "n/a",
+      "description": "StarTracker Data Valid (Valid=1, Not-Valid=0)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_AstRatesX",
+      "type": "double",
+      "units": "urads/sec",
+      "description": "AST body rates (X) in GCI frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_AstRatesY",
+      "type": "double",
+      "units": "urads/sec",
+      "description": "AST body rates (Y) in GCI frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_AstRatesZ",
+      "type": "double",
+      "units": "urads/sec",
+      "description": "AST body rates (Z) in GCI frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_CmdHSc1",
+      "type": "double",
+      "units": "NM2",
+      "description": "Commanded Momentum Vector (X) in s/c frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_CmdHSc2",
+      "type": "double",
+      "units": "Nm2",
+      "description": "Commanded Momentum Vector (Y) in s/c frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_CmdHSc3",
+      "type": "double",
+      "units": "Nm2",
+      "description": "Commanded Momentum Vector (Z) in s/c frame",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_SaCurrent",
+      "type": "double",
+      "units": "amps",
+      "description": "Solar Array Current (amps)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltSpPhase",
+      "type": "double",
+      "units": "deg",
+      "description": "Filtered Spin Phase (deg)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_1",
+      "type": "double",
+      "units": "volts",
+      "description": "Sun Sensor Sine Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_2",
+      "type": "double",
+      "units": "volts",
+      "description": "Sun Sensor Cosine Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_3",
+      "type": "double",
+      "units": "volts",
+      "description": "Sun Sensor Bias Voltage (volts)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_4",
+      "type": "double",
+      "units": "gauss",
+      "description": "TAM X Axis Output (gauss)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_5",
+      "type": "double",
+      "units": "gauss",
+      "description": "TAM Y Axis Output (gauss)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BF_HiPres_6",
+      "type": "double",
+      "units": "gauss",
+      "description": "TAM Z Axis Output (gauss)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_NMiss",
+      "type": "double",
+      "units": "n/a",
+      "description": "Number of missed CEPs in Eclipse",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_Theta",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle between spinaxis & magfield vector",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltSpinRate",
+      "type": "double",
+      "units": "rpm",
+      "description": "Filtered Spin Rate (rpm)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_SspSpinRate",
+      "type": "double",
+      "units": "rpm",
+      "description": "Ssp-derived Spin Rate (rpm)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_BMag",
+      "type": "double",
+      "units": "gauss",
+      "description": "Magnetic Field Magnitude (gauss)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_HMag",
+      "type": "double",
+      "units": "N-m-s",
+      "description": "Current Momentum magnitude, N-M-S",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_PsiSwitch",
+      "type": "double",
+      "units": "deg",
+      "description": "Switching commutation angle, (deg)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_McsMode",
+      "type": "integer",
+      "units": "n/a",
+      "description": "MCS Mode (0=Off,1=Acq,2=Science,3=Ground)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BA_FailCount",
+      "type": "double",
+      "units": "counts",
+      "description": "Number of consecutive periods with invalid sensor calcs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltScRatesX",
+      "type": "double",
+      "units": "deg/sec",
+      "description": "Filtered s/c body rates x",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltScRatesY",
+      "type": "double",
+      "units": "deg/sec",
+      "description": "Filtered s/c body rates y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltScRatesZ",
+      "type": "double",
+      "units": "deg/sec",
+      "description": "Filtered s/c body rates z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltSpAttX",
+      "type": "double",
+      "units": "none",
+      "description": "Filtered spinaxis attitude (GCI uvector)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltSpAttY",
+      "type": "double",
+      "units": "deg",
+      "description": "Filtered spinaxis attitude (GCI uvector)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_FiltSpAttZ",
+      "type": "double",
+      "units": "deg",
+      "description": "Filtered spinaxis attitude (GCI uvector)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_CepMet",
+      "type": "double",
+      "units": "sec",
+      "description": "Mission Elapsed Time of last sun pulse",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_ScQuat1",
+      "type": "double",
+      "units": "n/a",
+      "description": "s/c quaternion (1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_ScQuat2",
+      "type": "double",
+      "units": "n/a",
+      "description": "s/c quaternion (2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_ScQuat3",
+      "type": "double",
+      "units": "n/a",
+      "description": "s/c quaternion (3)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BA_ScQuat4",
+      "type": "double",
+      "units": "n/a",
+      "description": "s/c quaternion (4)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

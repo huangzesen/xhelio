@@ -1,0 +1,609 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Seconds of Day (1989-237)",
+      "type": "double",
+      "units": "s",
+      "description": "Second of day at the start of the 6-second accumulation interval for 1989-237 (1989-08-25).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Mode",
+      "type": "double",
+      "units": "",
+      "description": "Instrumet operational mode (0 = H2 mode, 1 = L3 mode)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subcom",
+      "type": "double",
+      "units": "",
+      "description": "Subcom state",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IAS",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 4 MeV protons (HET 1; R1; subcom ALL; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IBSp",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 18 MeV protons (HET 1; R2b; subcom 3, 7, 11, 15; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IBSe",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 2.6 MeV electrons (HET 1; R2a; subcom 0-2, 4-6, 8-10, 12-14; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IPENH",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 70 MeV protons (HET 1; R3; subcom ALL; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IPGH",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 12 MeV electrons (HET 1; R4; subcom ALL; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IA1H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 0; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IA2H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 1; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IA2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 1; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IB1H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 4, 12; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IB2H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 10; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IB2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 10; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC1H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 2; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC2H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 3; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 3; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC3H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 8; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC3L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 8; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC4H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 9; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IC4L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 9; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IG1",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 1; R8; subcom 11; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IIA2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 2; R16; subcom 1; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IIB2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 2; R16; subcom 10; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IIC2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 2; R16; subcom 3; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IIC3L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 2; R16; subcom 8; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IIC4L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (HET 2; R16; subcom 9; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAZ3*",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 0.5 MeV protons (LET A; R17; subcom ALL).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LCX2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for 1.8 - 3.0 MeV protons (LET C, R21; subcom ALL; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LCX3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for 1.8 - 3.0 MeV protons (LET C, R21; subcom ALL; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LDX2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 3.0 MeV protons (LET D; R23; subcom ALL; H2 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LDX3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &gt; 3.0 MeV protons (LET D; R23; subcom ALL; L3 mode).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LA1",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET A; R25; subcom 0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LA2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET A; R25; subcom 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LA3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET A; R25; subcom 2).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SLA",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET A; R25; subcom 4, 12).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LATRP",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET A; R25; subcom 6, 14).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LB2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET B; R25; subcom 9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LB3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET B; R25; subcom 10).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LC1",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET C; R26; subcom 0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LC2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET C; R26; subcom 1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LC3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET C; R26; subcom 2).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SLC",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET C; R26; subcom 4, 12).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LCTRP",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET C; R26; subcom 6, 14).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LD1",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET D; R26; subcom 8).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LD2",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET D; R26; subcom 9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LD3",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET D; R26; subcom 10).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SLD",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET D; R26; subcom 5, 13).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LDTRP",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (LET D; R26; subcom 7, 15).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TAN",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate for &ge; 0.6 MeV electrons (TET; R28; subcom ALL).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TLO",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate (TET; R29b; subcom ODD).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "THI",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Count rate (TET; R29a; subcom EVEN).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D1L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 12).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D1H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 8).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D2L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 10).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D2H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 14).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D3L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 11).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D3H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 13).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D4L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 15).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D4H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 9).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D5L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 6).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D5H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 2).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D6L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D6H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 4).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D7L",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 3).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D7H",
+      "type": "double",
+      "units": "Count Rate",
+      "description": "Singles count rate (TET; R30; subcom 5).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

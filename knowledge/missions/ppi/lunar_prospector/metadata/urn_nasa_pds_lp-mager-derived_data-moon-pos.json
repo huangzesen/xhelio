@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "GSE-X",
+      "type": "double",
+      "units": "Re",
+      "description": "The X component (sunward) of the Moon, \n                          relative to the Earth in GSE coordinates in units of Earth        \n                          radii where 1 Re = 6378.14 km. Note: this column is also GSM-X, \n                          see coordinate system definitions above.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSE-Y",
+      "type": "double",
+      "units": "Re",
+      "description": "The Y component (duskward) of the Moon,       \n                          relative to the Earth in GSE coordinates in units of Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSE-Z",
+      "type": "double",
+      "units": "Re",
+      "description": "The Z component (upward) of the Moon,     \n                          relative to the Earth in GSE coordinates in units of Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "Degrees",
+      "description": "The GSE longitude of the Moon,            \n                          relative to the Earth-Sun line in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSM-Y",
+      "type": "double",
+      "units": "Re",
+      "description": "The Y component of the Moon,              \n                          relative to the Earth in GSM coordinates in units of Earth radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GSM-Z",
+      "type": "double",
+      "units": "Re",
+      "description": "The Z component of the Moon,              \n                          relative to the Earth in GSM coordinates in units of Earth radii.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

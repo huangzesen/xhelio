@@ -1,0 +1,57 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "N_e_dens_wi_3dp",
+      "type": "double",
+      "units": "/cm^3",
+      "description": "Total electron density moment in units of /cm^3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_e_par_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Parallel total electron temperature moment in units of eV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T_e_perp_wi_3dp",
+      "type": "double",
+      "units": "eV",
+      "description": "Perpendicular total electron temperature moment in units of eV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Q_e_par_wi_3dp",
+      "type": "double",
+      "units": "uW/m^2",
+      "description": "Parallel electron heat flux moment in units of uW/m^2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_e_xyz_gse_wi_3dp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron velocity vector moment in GSE coordinates in units of km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Quality0_wi_3dp",
+      "type": "double",
+      "units": "",
+      "description": "Q0, Quality parameter for electron data",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-01-01T00:01:33.000Z",
+  "stopDate": "2004-12-31T23:59:05.000Z"
+}

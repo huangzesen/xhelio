@@ -1,0 +1,222 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Start Time",
+      "type": "double",
+      "units": "",
+      "description": "The start time of the data spectrum in UTC.\n                                 The Start Time and Stop Time fields define\n                                 the time range covered by the data spectrum.\n                                 The format is YYYY-DDDTHH:MM:SS.SSS.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop Time",
+      "type": "double",
+      "units": "",
+      "description": "The end time of the data spectrum in UTC.\n                                 The Start Time and Stop Time fields define\n                                 the time range covered by the data spectrum.\n                                 The format is YYYY-DDDTHH:MM:SS.SSS.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Scan Index",
+      "type": "double",
+      "units": "",
+      "description": "A pure number which ranges from 0 to 30 when the\n                                 electron instrument is in the 1 sec/sweep mode and\n                                 from 0 to 126 when the electron instrument is in the 4 sec/sweep mode.\n                                 The scan is a decay sweep, which means that a low scan index\n                                 value represents a large energy.  The Scan Index, Electron Energy,\n                                 and Velocity fields describe the energy scan of the data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Electron Energy",
+      "type": "double",
+      "units": "eV",
+      "description": "The energy for each Scan Index, which depends on the \n                                 instrument configuration; therefore, the same scan index\n                                 does not always correspond to the same energy value.\n                                 The Scan Index, Electron Energy, and Velocity fields describe\n                                 the energy scan of the data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "m/sec",
+      "description": "The electron energy converted into velocity.\n                                 The Scan Index, Electron Energy, and Velocity\n                                 fields describe the energy scan of the data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "5 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 0 degrees to 10 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "15 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 10 degrees to 20 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "25 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 20 degrees to 30 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "35 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 30 degrees to 40 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "45 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 40 degrees to 50 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "55 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 50 degrees to 60 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "65 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 60 degrees to 70 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "75 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 70 degrees to 80 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "85 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 80 degrees to 90 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "95 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 90 degrees to 100 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "105 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 100 degrees to 110 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "115 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 110 degrees to 120 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "125 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 120 degrees to 130 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "135 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 130 degrees to 140 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "145 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 140 degrees to 150 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "155 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 150 degrees to 160 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "165 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 160 degrees to 170 degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "175 deg PA",
+      "type": "double",
+      "units": "sec**3/(m**6 sr)",
+      "description": "The electron Pitch Angle Distribution value\n                                 for the pitch angle bin that runs from\n                                 170 degrees to 180 degrees.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ELat",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic latitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ELon",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic longitude",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ray_H",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Flux of neutral hydrogen Lyman-alpha emission in Rayleighs",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Cts_H",
+      "type": "double",
+      "units": "#",
+      "description": "Neutral hydrogen number of counts",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ray_He",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Flux of neutral helium 584A emission in Rayleighs",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Cts_He",
+      "type": "double",
+      "units": "#",
+      "description": "Neutral helium number of counts",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1974-01-28T00:00:00.000Z",
+  "stopDate": "1974-01-28T03:52:03.000Z"
+}

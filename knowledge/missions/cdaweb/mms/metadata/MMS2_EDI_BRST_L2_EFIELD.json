@@ -1,0 +1,139 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_edi_vdrift_dsl_brst_l2",
+      "type": "double",
+      "units": "km/s",
+      "description": "ExB drift velocity in DSL coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_vdrift_dsl_brst_l2_noerr",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> ExB drift velocity in DSL coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_vdrift_gse_brst_l2",
+      "type": "double",
+      "units": "km/s",
+      "description": "ExB drift velocity in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_vdrift_gse_brst_l2_noerr",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> ExB drift velocity in GSE coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_vdrift_gsm_brst_l2",
+      "type": "double",
+      "units": "km/s",
+      "description": "ExB drift velocity in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_vdrift_gsm_brst_l2_noerr",
+      "type": "double",
+      "units": "km/s",
+      "description": "---> ExB drift velocity in GSM coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_dsl_brst_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in DSL coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_dsl_brst_l2_noerr",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> Electric field in DSL coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_gse_brst_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_gse_brst_l2_noerr",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> Electric field in GSE coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_gsm_brst_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_e_gsm_brst_l2_noerr",
+      "type": "double",
+      "units": "mV/m",
+      "description": "---> Electric field in GSM coordinates (no error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms2_edi_tri_weight_brst_l2",
+      "type": "integer",
+      "units": "%",
+      "description": "Weighted use of TRI method in L2 results.",
+      "fill": "-32768.0"
+    }
+  ],
+  "startDate": "2015-09-14T14:13:06.000Z",
+  "stopDate": "2022-02-20T05:15:18.000Z"
+}

@@ -1,0 +1,474 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field X Component - Spacecraft axes (near GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field Y Component - Spacecraft axes (near GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field Z Component - Spacecraft axes (near GSE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BTOT",
+      "type": "double",
+      "units": "nT",
+      "description": "Total Magnetic Field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BX_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "BX_GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "BY_GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "BZ_GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BX_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "BX_GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BY_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "BY_GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZ_GSE",
+      "type": "double",
+      "units": "nT",
+      "description": "BZ_GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SDX",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bx values",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SDY",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of By values",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SDZ",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of Bz values",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SDT",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of total field BTOT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SDC",
+      "type": "double",
+      "units": "nT",
+      "description": "SQRT (SDX**2 + SDY**2 + SDZ**2 - SDT**2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BINT",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal field - total observed field",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BXIM_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal field - observed field (X component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BYIM_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal field - observed field (Y component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZIM_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal field - observed field (Z component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BINTEXT",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal + external fields - observed (total)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BXIE_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal + external fields - observed (X component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BYIE_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal + external fields - observed (Y component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BZIE_GSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Model internal + external fields - observed (Z component, GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii) to spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "X_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), X-component, GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Y_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), Y-component, GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), Z-component, GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "X_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), X-component, GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Y_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), Y-component, GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Z_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "Radial distance (Earth Radii), Z-component, GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ZNS_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "Z position of nominal Russell/Brody neutral sheet, GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TILT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Dipole tilt angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "L-shell parameter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Local_time",
+      "type": "double",
+      "units": "hrs",
+      "description": "Local_time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "MLAT: Magnetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SES",
+      "type": "double",
+      "units": "degrees",
+      "description": "Sun-Earth-Satellite angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PHI",
+      "type": "double",
+      "units": "degrees",
+      "description": "Clock angle from Y GSM axis (positive toward +Z GSM)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPIN",
+      "type": "double",
+      "units": "sec",
+      "description": "Spin period of spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SLNG_GSM",
+      "type": "double",
+      "units": "degrees",
+      "description": "SPIN_LON_GSM: Longitude of spin axis of spacecraft in GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SLT_GSM",
+      "type": "double",
+      "units": "degrees",
+      "description": "SPIN_LAT_GSM: Latitude of spin axis of spacecraft in GSM",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SLNG_GSE",
+      "type": "double",
+      "units": "degrees",
+      "description": "SPIN_LON_GSE: Longitude of spin axis of spacecraft in GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SLT_GSE",
+      "type": "double",
+      "units": "degrees",
+      "description": "SPIN_LAT_GSE: Latitude of spin axis of spacecraft in GSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VX_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "X component of velocity in GSM (km/s)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VY_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Y component of velocity in GSM (km/s)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "VZ_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Z component of velocity in GSM (km/s)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "Total velocity (km/sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DVX_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "DVX_GSM:  Comp. of ISEE 1 speed relative to ISEE 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DVY_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "DVY_GSM:  Comp. of ISEE 1 speed relative to ISEE 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DVZ_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "DVZ_GSM:  Comp. of ISEE 1 speed relative to ISEE 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DV",
+      "type": "double",
+      "units": "km/s",
+      "description": "Total speed of ISEE 1 relative to ISEE 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DX_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "DX_GSM:  X separation of craft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DY_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "DY_GSM:  Y separation of craft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DZ_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "DZ_GSM:  Z separation of craft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DX_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "DX_GSE:  X separation of craft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DY_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "DY_GSE:  Y separation of craft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DZ_GSE",
+      "type": "double",
+      "units": "km",
+      "description": "DZ_GSE:  Z separation of craft (ISEE-7 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DR",
+      "type": "double",
+      "units": "km",
+      "description": "DR:  Total separation of spacecraft (ISEE-2 to ISEE-1)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NMPX_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NMPX_GSE:  X comp. of model normal to magnetopause.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NMPY_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NMPY_GSE:  Y comp. of model normal to magnetopause",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NMPZ_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NMPZ_GSE:  Z comp. of model normal to magnetopause",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MPS",
+      "type": "double",
+      "units": "km",
+      "description": "NMP_Sep:  Separation vector <ISEE 1> - <ISEE 2> component along the model normal to the magnetopause",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NSX_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NBSX_GSE:  X comp. of model normal to bow shock",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NSY_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NBSY_GSE:  Y comp. of model normal to bow shock",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NSZ_GSE",
+      "type": "double",
+      "units": "",
+      "description": "NBSZ_GSE:  Z comp. of model normal to bow shock",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SS",
+      "type": "double",
+      "units": "km",
+      "description": "NBS_Sep:  Separation vector <ISEE 1> - <ISEE 2> component along bow shock normal.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QUAL",
+      "type": "double",
+      "units": "",
+      "description": "Quality Flag. =1 is best.",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1977-10-22T14:49:00.000Z",
+  "stopDate": "1987-09-26T05:59:00.000Z"
+}

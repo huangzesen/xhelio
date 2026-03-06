@@ -1,0 +1,289 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BR",
+      "type": "integer",
+      "units": "",
+      "description": "Bartels rotation number.",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "ProFlux",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Proton differential flux, at 45 bins 0.433-59.37 GeV/n.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        45
+      ]
+    },
+    {
+      "name": "ProFlux_TotErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Proton flux total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        45
+      ]
+    },
+    {
+      "name": "ProFlux_StatErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Proton flux statistical error.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        45
+      ]
+    },
+    {
+      "name": "ProFlux_TimeErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Proton fluxtime-dependent error: trigger and reconstruction efficiency errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        45
+      ]
+    },
+    {
+      "name": "ProFlux_SystErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Proton Flux systematic error: acceptance, background contamination, geomagnetic cutoff, event selection, rigidity resolution, unfolding, absolute rigidity scale and time-dependent errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        45
+      ]
+    },
+    {
+      "name": "HeFlux",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Helium differential flux, at 40 bins 0.404-29.23 GeV/n.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "HeFlux_TotErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Helium flux total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "HeFlux_StatErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Helium flux statistical error.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "HeFlux_TimeErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Helium flux time-dependent error: trigger and reconstruction efficiency errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "HeFlux_SystErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV/n]",
+      "description": "Helium flux systematic error: acceptance, background contamination, geomagnetic cutoff, event selection, rigidity resolution, unfolding, absolute rigidity scale and time-dependent errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ProHeRatio",
+      "type": "double",
+      "units": "",
+      "description": "Proton to Helium differential flux ratio, at 40 bins 1.92-60.30 GV.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ProHeRatio_TotErr",
+      "type": "double",
+      "units": "",
+      "description": "p/He ratio total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ProHeRatio_StatErr",
+      "type": "double",
+      "units": "",
+      "description": "p/He ratio statistical error: p and He statistical errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ProHeRatio_TimeErr",
+      "type": "double",
+      "units": "",
+      "description": "p/He ratio time-dependent error: p and He time-dependent errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ProHeRatio_SystErr",
+      "type": "double",
+      "units": "",
+      "description": "p/He ratio systematic error: p and He systematic errors added in quadrature, with correlations in rigidity resolution, unfolding, absolute rigidity scale errors taken into account.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "EleFlux",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Electron differential flux, at 49 bins 1.01-49.3 GeV.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "EleFlux_TotErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Electron flux total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "EleFlux_StatErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Electron flux statistical error.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "EleFlux_SystErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Electron flux systematic error: acceptance and background contamination errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosFlux",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Positron differential flux, at 49 bins 1.01-49.3 GeV.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosFlux_TotErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Positron flux total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosFlux_StatErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Positron flux statistical error.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosFlux_SystErr",
+      "type": "double",
+      "units": "1/[m**2-sr-s-GeV]",
+      "description": "Positron flux systematic error: acceptance and background contamination errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosEleRatio",
+      "type": "double",
+      "units": "",
+      "description": "Positron to electron differential flux ratio, at 49 bins 1.01-49.3 GeV.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosEleRatio_TotErr",
+      "type": "double",
+      "units": "",
+      "description": "e+/e- ratio total error: statistical and systematic added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosEleRatio_StatErr",
+      "type": "double",
+      "units": "",
+      "description": "e+/e- ratio statistical error.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    },
+    {
+      "name": "PosEleRatio_SystErr",
+      "type": "double",
+      "units": "",
+      "description": "e+/e- ratio systematic error: acceptance and background contamination errors added in quadrature.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        49
+      ]
+    }
+  ],
+  "startDate": "2011-05-20T00:00:00.000Z",
+  "stopDate": "2017-04-13T00:00:00.000Z"
+}

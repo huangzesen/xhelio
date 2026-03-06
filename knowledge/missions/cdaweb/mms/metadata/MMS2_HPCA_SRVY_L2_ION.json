@@ -1,0 +1,447 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_hpca_start_azimuth",
+      "type": "integer",
+      "units": "",
+      "description": "Start Azimuth",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms2_hpca_science_mode",
+      "type": "integer",
+      "units": "",
+      "description": "Science Mode Value as defined in the HPCA Science Algorithm Document",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms2_hpca_hplus_data_quality",
+      "type": "integer",
+      "units": "(0=bad)",
+      "description": "H+ per sweep status (0=bad): see Data_Quality_Key global attribute",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms2_hpca_hplus_flux",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "Hydrogen+ Flux for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_flux_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_flux_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample  anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_flux_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_phase_space_density",
+      "type": "double",
+      "units": "cm^-6 s^3",
+      "description": "Hydrogen+ Phase Space Density for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_phase_space_density_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_phase_space_density_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anodes",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_hplus_phase_space_density_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_data_quality",
+      "type": "integer",
+      "units": "(0=bad)",
+      "description": "He+ per sweep status (0=bad): see Data_Quality_Key global attribute",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms2_hpca_heplus_flux",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "Helium+ Flux for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_flux_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_flux_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_flux_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_phase_space_density",
+      "type": "double",
+      "units": "cm^-6 s^3",
+      "description": "Helium+ Phase Space Density for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_phase_space_density_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_phase_space_density_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplus_phase_space_density_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_data_quality",
+      "type": "integer",
+      "units": "(0=bad)",
+      "description": "He++ per sweep status (0=bad): see Data_Quality_Key global attribute",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms2_hpca_heplusplus_flux",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "Helium++ Flux for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_flux_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_flux_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_flux_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_phase_space_density",
+      "type": "double",
+      "units": "cm^-6 s^3",
+      "description": "Helium++ Phase Space Density for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_phase_space_density_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_phase_space_density_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_heplusplus_phase_space_density_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_data_quality",
+      "type": "integer",
+      "units": "(0=bad)",
+      "description": "O+ per sweep status (0=bad): see Data_Quality_Key global attribute",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms2_hpca_oplus_flux",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "Oxygen+ Flux for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_flux_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_flux_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_flux_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_phase_space_density",
+      "type": "double",
+      "units": "cm^-6 s^3",
+      "description": "Oxygen+ Phase Space Density for all Elevation Anodes across all energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_phase_space_density_movie",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Movie display as function of energy and anode",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_phase_space_density_byE_atAnode",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by energy at sample anode numbers",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_oplus_phase_space_density_byAnode_atE",
+      "type": "double",
+      "units": "1/(cm^2 s sr eV)",
+      "description": "---> Spectrograms by anode number at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        16,
+        63
+      ]
+    },
+    {
+      "name": "mms2_hpca_B_GSE_sweep_avg",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in DMPA plus Btotal (8 or 16 S/s), Despun MPA-aligned cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_B_GSM_sweep_avg",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Magnetic field vector in GSM plus Btotal (8 or 16 S/s), Geocentric Solar Magnetospheric (GSM) cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "mms2_hpca_MCP_VMON_MIN_converted",
+      "type": "double",
+      "units": "",
+      "description": "LIMITS - MCP_VMON_MIN_converted",
+      "fill": "1e+31"
+    },
+    {
+      "name": "mms2_hpca_TOF_VMON_MIN_converted",
+      "type": "double",
+      "units": "",
+      "description": "LIMITS - TOF_VMON_MIN_converted",
+      "fill": "1e+31"
+    },
+    {
+      "name": "mms2_hpca_decimation_factor_index",
+      "type": "integer",
+      "units": "",
+      "description": "Decimation Factor Index from mode config file",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2015-09-01T00:00:00.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

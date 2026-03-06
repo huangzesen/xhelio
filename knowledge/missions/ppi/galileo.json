@@ -1,0 +1,1378 @@
+{
+  "id": "GALILEO",
+  "name": "Galileo",
+  "keywords": [
+    "galileo",
+    "pds",
+    "ppi"
+  ],
+  "profile": {
+    "description": "Galileo data from PDS Planetary Plasma Interactions archive.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [
+      "PDS3 datasets use fixed-width ASCII tables (.sts/.TAB files).",
+      "PDS4 datasets use XML-labeled ASCII tables."
+    ],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "Energetic Particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic"
+      ],
+      "datasets": {
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-earth2-avg": {
+          "description": "Galileo EPD Pre-Jupiter Raw Earth2 Resampled 15.0 minute Averaged Data Collection",
+          "start_date": "1990-11-08",
+          "stop_date": "1990-12-17",
+          "slot": "/data/galileo-epd-prejup-raw/data-earth2-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-earth1-avg": {
+          "description": "Galileo EPD Pre-Jupiter Raw Earth1 Resampled 15.0 Averaged minute Data Collection",
+          "start_date": "1990-11-08",
+          "stop_date": "1990-12-17",
+          "slot": "/data/galileo-epd-prejup-raw/data-earth1-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-venus-avg": {
+          "description": "Galileo EPD Pre-Jupiter Raw Venus Resampled 5.0 Min Averaged Data Collection",
+          "start_date": "1992-11-06",
+          "stop_date": "1992-12-18",
+          "slot": "/data/galileo-epd-prejup-raw/data-venus-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-earth1-cr": {
+          "description": "Galileo EPD Pre-Jupiter Edited Raw Earth1 Count Rate Data Collection",
+          "start_date": "1990-12-08",
+          "stop_date": "1990-12-08",
+          "slot": "/data/galileo-epd-prejup-raw/data-earth1-cr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-venus-cr": {
+          "description": "Galileo EPD Pre-Jupiter Edited Raw Venus Count Rate Data Collection",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/galileo-epd-prejup-raw/data-venus-cr",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:data-cms-events-tof": {
+          "description": "Galileo EPD Calibrated Corrected Time-of-Flight Event Data Collection",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/data-cms-events-tof",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-prejup-raw:data-earth2-cr": {
+          "description": "Galileo EPD Pre-Jupiter Edited Raw Earth2 Count Rate Data Collection",
+          "start_date": "1992-12-08",
+          "stop_date": "1992-12-08",
+          "slot": "/data/galileo-epd-prejup-raw/data-earth2-cr",
+          "archive_type": 4
+        },
+        "pds3:GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0": {
+          "description": "Galileo Orbiter at Earth: GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0",
+          "start_date": "1990-11-08",
+          "stop_date": "1990-12-17",
+          "slot": "/data/GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-EPD-2-SAMP-PAD-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-EPD-2-SAMP-PAD-V1.0",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-EPD-2-SAMP-PAD-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-EPD-4-SUMM-5.0MIN-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-EPD-4-SUMM-5.0MIN-V1.0",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-EPD-4-SUMM-5.0MIN-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:data-epd-channels-med-res": {
+          "description": "Galileo EPD Calibrated Corrected Medium Res Data Collection",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/data-epd-channels-med-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:data-epd-channels-low-res": {
+          "description": "Galileo EPD Calibrated Corrected Low Res Data Collection",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/data-epd-channels-low-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:document": {
+          "description": "Galileo EPD Calibrated Data User Guide",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/document",
+          "archive_type": 4
+        },
+        "pds3:GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0:DATA": {
+          "description": "Galileo Orbiter at Earth: GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0 : DATA",
+          "start_date": "1990-11-08",
+          "stop_date": "1990-12-17",
+          "slot": "/data/GO-E-EPD-4-SUMM-EARTH1-15MIN-V1.0/DATA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:data-cms-events-deltaexe": {
+          "description": "Galileo EPD Calibrated Corrected Delta Event Data Collection",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/data-cms-events-deltaexe",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-epd-cal-corrected:data-epd-channels-high-res": {
+          "description": "Galileo EPD Calibrated Corrected High Res Data Collection",
+          "start_date": "1995-07-14",
+          "stop_date": "1995-07-14",
+          "slot": "/data/galileo-epd-cal-corrected/data-epd-channels-high-res",
+          "archive_type": 4
+        }
+      }
+    },
+    "Galileo Dust Detection System": {
+      "name": "Galileo Dust Detection System",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-D-GDDS-5-DUST-V4.1": {
+          "description": "Galileo Orbiter Dust Detection System Data",
+          "start_date": "1989-10-18",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-D-GDDS-5-DUST-V4.1",
+          "archive_type": 3
+        }
+      }
+    },
+    "General": {
+      "name": "General",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-J/JSA/X/V/E/A/C-UPL-V1.0": {
+          "description": "Galileo Uplink Data Records",
+          "start_date": "1997-12-15",
+          "stop_date": "",
+          "slot": "/data/GO-J_JSA_X_V_E_A_C-UPL-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-earth1": {
+          "description": "Galileo Trajectory Pre-Jupiter Earth1 Flyby Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-traj-prejup/data-earth1",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-jup:data-sc-traj-moon-coords": {
+          "description": "Galileo Jupiter Trajectory Moon Centered Coordinates Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-traj-jup/data-sc-traj-moon-coords",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-gaspra": {
+          "description": "Galileo Trajectory Pre-Jupiter Asteroid Gaspra Flyby Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-traj-prejup/data-gaspra",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-ida": {
+          "description": "Galileo Trajectory Pre-Jupiter Asteroid Ida Flyby Data Collection",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/galileo-traj-prejup/data-ida",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-jup:data-moon-traj": {
+          "description": "Galileo Jupiter Moon Trajectory Data Collection",
+          "start_date": "1995-11-06",
+          "stop_date": "1995-11-06",
+          "slot": "/data/galileo-traj-jup/data-moon-traj",
+          "archive_type": 4
+        },
+        "pds3:GO-JG-RSS-1-TDF-V1.0": {
+          "description": "GALILEO TDF DATA: SATELLITE FIELD AND MASS DETERMINATION EXPERIMENT 1996-179 to 1997-311 VOLUME_ID                = GORS_9500 VOLUME_VERSION_ID        = VERSION 1",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-JG-RSS-1-TDF-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-traj-jup:data-rotor-attitude": {
+          "description": "Galileo Jupiter Trajectory Rotor Attitude Data Collection",
+          "start_date": "1995-11-28",
+          "stop_date": "1995-11-28",
+          "slot": "/data/galileo-traj-jup/data-rotor-attitude",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-venus": {
+          "description": "Galileo Trajectory Pre-Jupiter VSO coordinates Data Collection",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-09",
+          "slot": "/data/galileo-traj-prejup/data-venus",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-cruise": {
+          "description": "Galileo Trajectory Pre-Jupiter Cruise RTN Data Collection",
+          "start_date": "1990-01-01",
+          "stop_date": "1990-01-01",
+          "slot": "/data/galileo-traj-prejup/data-cruise",
+          "archive_type": 4
+        },
+        "pds3:GO-J-RSS-5-ROCC-V1.0": {
+          "description": "Galileo Orbiter Jup/Io RSS Ionosph Ele Dens Profile Data",
+          "start_date": "1995-12-08",
+          "stop_date": "1997-08-03",
+          "slot": "/data/GO-J-RSS-5-ROCC-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-earth2": {
+          "description": "Galileo Trajectory Pre-Jupiter Earth2 Flyby Data Collection",
+          "start_date": "1992-11-03",
+          "stop_date": "1992-11-03",
+          "slot": "/data/galileo-traj-prejup/data-earth2",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-e2-gse-gsm-coords": {
+          "description": "Galileo Trajectory Pre-Jupiter Earth2 GSE and GSM Coordinates Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-traj-prejup/data-e2-gse-gsm-coords",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-prejup:data-e1-gse-gsm-coords": {
+          "description": "Galileo Trajectory Pre-Jupiter Earth1 GSE and GSM Coordinates Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-traj-prejup/data-e1-gse-gsm-coords",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-traj-jup:data-sc-traj-jup-coords": {
+          "description": "Galileo Trajectory Jupiter Centered Coordinates Data Collection",
+          "start_date": "1995-11-06",
+          "stop_date": "1995-11-06",
+          "slot": "/data/galileo-traj-jup/data-sc-traj-jup-coords",
+          "archive_type": 4
+        }
+      }
+    },
+    "Heavy Ion Counter": {
+      "name": "Heavy Ion Counter",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-survey-countrate": {
+          "description": "Galileo Jupiter HIC Survey Energetic Ion Count Rate Calibrated Data Collection",
+          "start_date": "1996-06-27",
+          "stop_date": "1996-06-27",
+          "slot": "/data/galileo-hic-jup-calibrated/data-survey-countrate",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-prejup-derived:data": {
+          "description": "Galileo HIC Derived Ion Fluxes October 89 Solar Event Data Collection",
+          "start_date": "1989-10-21",
+          "stop_date": "1989-10-21",
+          "slot": "/data/galileo-hic-prejup-derived/data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres-amalthea": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Amalthea Data Collection",
+          "start_date": "2002-11-05",
+          "stop_date": "2002-11-05",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres-amalthea",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-derived:data": {
+          "description": "Galileo Jupiter HIC Derived Energetic Ion Composition Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "2002-11-06",
+          "slot": "/data/galileo-hic-jup-derived/data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres-io": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Io Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres-io",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-raw:data": {
+          "description": "Galileo Jupiter HIC High Resolution Raw Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-hic-jup-raw/data",
+          "archive_type": 4
+        },
+        "pds3:GO-J-HIC-2-EDR-RAW-V1.0": {
+          "description": "Galileo HIC Jupiter Raw and Uncalibrated Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-HIC-2-EDR-RAW-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres-callisto": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Callisto Data Collection",
+          "start_date": "1996-11-04",
+          "stop_date": "1996-11-04",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres-callisto",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres-europa": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Europa Data Collection",
+          "start_date": "1996-12-19",
+          "stop_date": "1996-12-19",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres-europa",
+          "archive_type": 4
+        },
+        "pds3:GO-SS-HIC-5-IONFLUXES-OCT89-FLARE-V1.0": {
+          "description": "Galileo Orbiter Cruise: GO-SS-HIC-5-IONFLUXES-OCT89-FLARE",
+          "start_date": "1989-10-21",
+          "stop_date": "1989-10-28",
+          "slot": "/data/GO-SS-HIC-5-IONFLUXES-OCT89-FLARE-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-hic-jup-calibrated:data-highres-ganymede": {
+          "description": "Galilieo Jupiter HIC Highres Energetic Ion Count Rate Ganymede Data Collection",
+          "start_date": "1996-06-27",
+          "stop_date": "1996-06-27",
+          "slot": "/data/galileo-hic-jup-calibrated/data-highres-ganymede",
+          "archive_type": 4
+        }
+      }
+    },
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "magnetometer"
+      ],
+      "datasets": {
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-venus-high-res": {
+          "description": "Galileo MAG Venus High Resolution Calibrated Data Collection",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-09",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-venus-high-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-earth1-avg": {
+          "description": "Galileo MAG Averaged Earth1 Summary Calibrated Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-earth1-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-earth2-rdr-high-res": {
+          "description": "Galileo MAG RDR Earth2 High Resolution Calibrated Data Collection",
+          "start_date": "1992-11-03",
+          "stop_date": "1992-11-03",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-earth2-rdr-high-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-earth2-avg": {
+          "description": "Galileo MAG Averaged Earth 2 Summary Calibrated Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-earth2-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-highres-callisto": {
+          "description": "Galileo Jupiter Magnetometer Highres Callisto Data Collection",
+          "start_date": "1996-11-04",
+          "stop_date": "2001-05-25",
+          "slot": "/data/galileo-mag-jup-calibrated/data-highres-callisto",
+          "archive_type": 4
+        },
+        "pds3:GO-A-MAG-4-SUMM-IDA-SUMMARY-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-MAG-4-SUMM-IDA-SUMMARY-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-MAG-4-SUMM-IDA-SUMMARY-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-earth1-rdr-high-res": {
+          "description": "Galileo MAG RDR Earth1 High Resolution Calibrated Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-earth1-rdr-high-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-gaspra-avg-rtn": {
+          "description": "Galileo MAG Averaged Gaspra Summary Calibrated Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-gaspra-avg-rtn",
+          "archive_type": 4
+        },
+        "pds3:GO-V-MAG-4-SUMM-VENUS-SUMMARY-V1.0": {
+          "description": "Galileo Orbiter Venus: GO-V-MAG-4-SUMM-VENUS-SUMMARY-V1.0",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-MAG-4-SUMM-VENUS-SUMMARY-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-ida-avg": {
+          "description": "Galileo MAG Averaged IDA Summary Calibrated Data Collection",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-ida-avg",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-gaspra-high-res": {
+          "description": "Galileo MAG RDR Gaspra High Resolution Calibrated Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-gaspra-high-res",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-ida-high-res": {
+          "description": "Galileo MAG RDR IDA High Resolution Solar Ecliptic Calibrated Data Collection",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-ida-high-res",
+          "archive_type": 4
+        },
+        "pds3:GO-SS-MAG-4-SUMM-CRUISE-IRC-V1.0": {
+          "description": "Galileo Orbiter Cruise: GO-SS-MAG-4-SUMM-CRUISE-IRC-V1.0",
+          "start_date": "1989-12-31",
+          "stop_date": "1994-12-31",
+          "slot": "/data/GO-SS-MAG-4-SUMM-CRUISE-IRC-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0:DATA": {
+          "description": "Galileo Orbiter Gaspra: GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0 : DATA",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0/DATA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:00_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 00_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/00_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:00_JUPITER": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 00_JUPITER",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/00_JUPITER",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:01_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 01_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/01_GANYMEDE",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:03_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 03_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/03_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:04_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 04_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/04_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:06_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 06_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/06_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:07_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 07_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/07_GANYMEDE",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:08_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 08_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/08_GANYMEDE",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:09_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 09_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/09_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:10_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 10_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/10_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:13_JUPITER": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 13_JUPITER",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/13_JUPITER",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:14_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 14_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/14_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:15_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 15_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/15_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:16_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 16_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/16_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:17_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 17_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/17_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:18_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 18_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/18_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:20_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 20_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/20_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:21_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 21_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/21_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:22_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 22_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/22_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:23_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 23_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/23_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:24_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 24_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/24_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:25_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 25_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/25_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:27_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 27_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/27_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:29_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 29_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/29_GANYMEDE",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:31_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 31_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/31_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:32_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 32_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/32_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:33_IO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 33_IO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/33_IO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:34_AMALTHEA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 34_AMALTHEA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/34_AMALTHEA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:35_JUPITER": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 35_JUPITER",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/35_JUPITER",
+          "archive_type": 3
+        },
+        "pds3:GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-MAG-3-RDR-GASPRA-HIGH-RES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SS-MAG-4-SUMM-CRUISE-RTN-V1.0": {
+          "description": "Galileo Orbiter Cruise: GO-SS-MAG-4-SUMM-CRUISE-RTN-V1.0",
+          "start_date": "1989-12-31",
+          "stop_date": "1994-12-31",
+          "slot": "/data/GO-SS-MAG-4-SUMM-CRUISE-RTN-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:30_CALLISTO": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 30_CALLISTO",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/30_CALLISTO",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:28_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 28_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/28_GANYMEDE",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-earth1-avg-gse-gsm-coords": {
+          "description": "Galileo MAG Averaged Earth1 GSE and GSM Coordinates Calibrated Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-earth1-avg-gse-gsm-coords",
+          "archive_type": 4
+        },
+        "pds3:GO-E-MAG-4-SUMM-E1-GSE/GSM-COORDS-V1.0": {
+          "description": "Galileo Orbiter Earth: GO-E-MAG-4-SUMM-E1-GSE/GSM-COORDS",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-12-31",
+          "slot": "/data/GO-E-MAG-4-SUMM-E1-GSE_GSM-COORDS-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:19_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 19_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/19_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:ENG": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : ENG",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/ENG",
+          "archive_type": 3
+        },
+        "pds3:GO-A-MAG-3-RDR-IDA-HIGH-RES-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-MAG-3-RDR-IDA-HIGH-RES-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-MAG-3-RDR-IDA-HIGH-RES-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SS-MAG-2-EDR-CRUISE-V1.0": {
+          "description": "Galileo Cruise: GO-SS-MAG-2-EDR-CRUISE-V1.0",
+          "start_date": "1989-12-31",
+          "stop_date": "1994-12-31",
+          "slot": "/data/GO-SS-MAG-2-EDR-CRUISE-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:12_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 12_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/12_EUROPA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-highres-io": {
+          "description": "Galileo Jupiter Magnetometer Highres Io Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "2001-10-16",
+          "slot": "/data/galileo-mag-jup-calibrated/data-highres-io",
+          "archive_type": 4
+        },
+        "pds3:GO-A-MAG-4-SUMM-GASPRA-SUMMARY-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-MAG-4-SUMM-GASPRA-SUMMARY-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-MAG-4-SUMM-GASPRA-SUMMARY-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:11_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 11_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/11_EUROPA",
+          "archive_type": 3
+        },
+        "pds3:GO-V-MAG-3-RDR-VENUS-HIGH-RES-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-MAG-3-RDR-VENUS-HIGH-RES-V1.0",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-MAG-3-RDR-VENUS-HIGH-RES-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-highres-ganymede": {
+          "description": "Galileo Jupiter Magnetometer Highres Ganymede Data Collection",
+          "start_date": "1995-11-01",
+          "stop_date": "2003-09-21",
+          "slot": "/data/galileo-mag-jup-calibrated/data-highres-ganymede",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-cruise-avg-rtn": {
+          "description": "Galileo Solar System MAG Averaged Cruise RTN Coordinates Calibrated Data Collection",
+          "start_date": "1989-12-31",
+          "stop_date": "1989-12-31",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-cruise-avg-rtn",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-highres-europa": {
+          "description": "Galileo Jupiter Magnetometer Highres Europa Data Collection",
+          "start_date": "1996-12-19",
+          "stop_date": "2000-01-03",
+          "slot": "/data/galileo-mag-jup-calibrated/data-highres-europa",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-magspheric-survey": {
+          "description": "Galileo Jupiter Magnetometer Magnetospheric Survey Data Collection",
+          "start_date": "1995-11-01",
+          "stop_date": "2003-09-21",
+          "slot": "/data/galileo-mag-jup-calibrated/data-magspheric-survey",
+          "archive_type": 4
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:26_EUROPA": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 26_EUROPA",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/26_EUROPA",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-jup-raw:data": {
+          "description": "Galileo Jupiter Magnetometer Raw Data Collection",
+          "start_date": "1995-11-06",
+          "stop_date": "1995-11-06",
+          "slot": "/data/galileo-mag-jup-raw/data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-jup-calibrated:data-highres-magnetosphere": {
+          "description": "Galileo Jupiter Magnetometer Highres Magnetosphere Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "2001-10-16",
+          "slot": "/data/galileo-mag-jup-calibrated/data-highres-magnetosphere",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-cruise-avg-irc": {
+          "description": "Galileo Solar System MAG Averaged Cruise Inertial Rotor Coordinates (IRC) Calibrated Data Collection",
+          "start_date": "1989-12-31",
+          "stop_date": "1989-12-31",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-cruise-avg-irc",
+          "archive_type": 4
+        },
+        "pds3:GO-J-MAG-2-REDR-RAW-DATA-V1.0:02_GANYMEDE": {
+          "description": "Galileo Orbiter at Jupiter: GO-J-MAG-2-REDR-RAW-DATA-V1.0 : 02_GANYMEDE",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-MAG-2-REDR-RAW-DATA-V1.0/data/02_GANYMEDE",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-mag-prejup-calibrated:data-venus-avg": {
+          "description": "Galileo MAG Venus Averaged Calibrated Data Collection",
+          "start_date": "1990-11-05",
+          "stop_date": "1990-11-05",
+          "slot": "/data/galileo-mag-prejupiter-calibrated/data/data-venus-avg",
+          "archive_type": 4
+        }
+      }
+    },
+    "PHOTOPOLARIMETER RADIOMETER": {
+      "name": "PHOTOPOLARIMETER RADIOMETER",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-E/L/CAL-PPR-3-RDR-EARTH1-V1.0": {
+          "description": "Galileo Orbiter Earth: GO-E/L/CAL-PPR-3-RDR-EARTH1-V1.0",
+          "start_date": "1990-11-16",
+          "stop_date": "1990-12-13",
+          "slot": "/data/GO-E_L_CAL-PPR-3-RDR-EARTH1-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-PPR-3-RDR-VENUS-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-PPR-3-RDR-VENUS-V1.0",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-PPR-3-RDR-VENUS-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "PLASMA SCIENCE EXPERIMENT": {
+      "name": "PLASMA SCIENCE EXPERIMENT",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-A-PLS-4-SUMM-IET-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-PLS-4-SUMM-IET-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-PLS-4-SUMM-IET-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Photopolarimeter Radiometer": {
+      "name": "Photopolarimeter Radiometer",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:galileo-ppr-prejup-raw:data-venus-cal": {
+          "description": "Galileo PPR Pre-Jupiter Raw Calibration Venus Encounter Data Collection",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-09",
+          "slot": "/data/galileo-ppr-prejup-raw/data-venus-cal",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-raw:data-ida": {
+          "description": "Galileo PPR Pre-Jupiter Raw Asteroid Ida Data Collection",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/galileo-ppr-prejup-raw/data-ida",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-raw:data-earth2-cal": {
+          "description": "Galileo PPR Pre-Jupiter Raw Calibration Earth2 Encounter Data Collection",
+          "start_date": "1992-11-25",
+          "stop_date": "1992-11-25",
+          "slot": "/data/galileo-ppr-prejup-raw/data-earth2-cal",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-derived:data-venus": {
+          "description": "Galileo PPR Pre-Jupiter Derived Venus Encounter Data Collection",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-09",
+          "slot": "/data/galileo-ppr-prejup-derived/data-venus",
+          "archive_type": 4
+        },
+        "pds3:GO-CAL-PPR-2-EDR-EARTH2-CALIBRATION-V1.0": {
+          "description": "Galileo Orbiter Earth: GO-CAL-PPR-2-EDR-EARTH2-CALIBRATION",
+          "start_date": "1992-11-25",
+          "stop_date": "1992-12-14",
+          "slot": "/data/GO-CAL-PPR-2-EDR-EARTH2-CALIBRATION-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PPR-3-RDR-GASPRA-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-PPR-3-RDR-GASPRA-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-PPR-3-RDR-GASPRA-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-raw:data-gaspra": {
+          "description": "Galileo PPR Pre-Jupiter Raw Asteroid Gaspra Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-ppr-prejup-raw/data-gaspra",
+          "archive_type": 4
+        },
+        "pds3:GO-A-PPR-2-EDR-GASPRA-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-PPR-2-EDR-GASPRA-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-PPR-2-EDR-GASPRA-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-derived:data-ida": {
+          "description": "Galileo PPR Pre-Jupiter Derived Ida Asteroid Encounter Data Collection",
+          "start_date": "1993-08-17",
+          "stop_date": "1993-08-17",
+          "slot": "/data/galileo-ppr-prejup-derived/data-ida",
+          "archive_type": 4
+        },
+        "pds3:GO-L-PPR-2-EDR-MOON2-V1.0": {
+          "description": "Galileo Orbiter Moon: GO-L-PPR-2-EDR-MOON2-V1.0",
+          "start_date": "1992-11-25",
+          "stop_date": "1992-12-14",
+          "slot": "/data/GO-L-PPR-2-EDR-MOON2-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PPR-3-RDR-IDA-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-PPR-3-RDR-IDA-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-PPR-3-RDR-IDA-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-X-PPR-3-RDR-CHECKOUT-V1.0": {
+          "description": "Galileo Orbiter Checkout: GO-X-PPR-3-RDR-CHECKOUT-V1.0",
+          "start_date": "1989-12-27",
+          "stop_date": "1989-12-27",
+          "slot": "/data/GO-X-PPR-3-RDR-CHECKOUT-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-raw:data-earth1-cal": {
+          "description": "Galileo PPR Pre-Jupiter Raw Calibration Earth1 Encounter Data Collection",
+          "start_date": "1992-11-25",
+          "stop_date": "1992-11-25",
+          "slot": "/data/galileo-ppr-prejup-raw/data-earth1-cal",
+          "archive_type": 4
+        },
+        "pds3:GO-A-PPR-2-EDR-IDA-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-PPR-2-EDR-IDA-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-PPR-2-EDR-IDA-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-L-PPR-2-EDR-MOON1-V1.0": {
+          "description": "Galileo Orbiter Moon: GO-L-PPR-2-EDR-MOON1-V1.0",
+          "start_date": "1990-11-14",
+          "stop_date": "1990-12-17",
+          "slot": "/data/GO-L-PPR-2-EDR-MOON1-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-derived:data-checkout": {
+          "description": "Galileo PPR Pre-Jupiter Derived Initial Checkout Data Collection",
+          "start_date": "1989-12-27",
+          "stop_date": "1989-12-27",
+          "slot": "/data/galileo-ppr-prejup-derived/data-checkout",
+          "archive_type": 4
+        },
+        "pds3:GO-CAL-PPR-2-EDR-VENUS-CALIBRATION-V1.0": {
+          "description": "Galileo Orbiter Venus: GO-CAL-PPR-2-EDR-VENUS-CALIBRATION",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-CAL-PPR-2-EDR-VENUS-CALIBRATION-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-X-PPR-2-EDR-CHECKOUT-V1.0": {
+          "description": "Galileo Orbiter Checkout: GO-X-PPR-2-EDR-CHECKOUT-V1.0",
+          "start_date": "1989-12-27",
+          "stop_date": "1989-12-28",
+          "slot": "/data/GO-X-PPR-2-EDR-CHECKOUT-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-ppr-prejup-derived:data-gaspra": {
+          "description": "Galileo PPR Pre-Jupiter Derived Gaspra Asteroid Encounter Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-ppr-prejup-derived/data-gaspra",
+          "archive_type": 4
+        },
+        "pds3:GO-J/C-PPR-3-RDR-SL9-IMPACT-V1.0": {
+          "description": "Galileo Orbiter SL-9 Impact: GO-J/C-PPR-3-RDR-SL9-IMPACT",
+          "start_date": "1994-07-18",
+          "stop_date": "1994-07-21",
+          "slot": "/data/GO-J_C-PPR-3-RDR-SL9-IMPACT-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-PPR-2-EDR-VENUS-V1.0": {
+          "description": "Galileo Orbiter Venus: GO-V-PPR-2-EDR-VENUS-V1.0",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-PPR-2-EDR-VENUS-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Plasma Science Experiment": {
+      "name": "Plasma Science Experiment",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:go-pls-jup-fitted-parameters:data": {
+          "description": "Galileo Orbiter Jupiter PLS Fitted Parameters Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/go-pls-jup-fitted-parameters/Data",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-prejup-cal:data-avg-venus": {
+          "description": "Galileo PLS Averaged Venus Calibrated Data Collection",
+          "start_date": "1990-02-01",
+          "stop_date": "1990-02-01",
+          "slot": "/data/galileo-pls-prejup-cal/data-avg-venus",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-prejup-cal:data-avg-ida": {
+          "description": "Galileo PLS Asteroid Averaged Ida Calibrated Data Collection",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/galileo-pls-prejup-cal/data-avg-ida",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-prejup-cal:data-avg-gaspra": {
+          "description": "Galileo PLS Asteroid Averaged Gaspra Calibrated Data Collection",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/galileo-pls-prejup-cal/data-avg-gaspra",
+          "archive_type": 4
+        },
+        "pds3:GO-V-PLS-4-SUMM-VET-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-PLS-4-SUMM-VET-V1.0",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-PLS-4-SUMM-VET-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-pls-jup-cal:data-avg-counts": {
+          "description": "Galileo PLS Jupiter Averaged Plasma Counts Calibrated Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-pls-jup-cal/data-avg-counts",
+          "archive_type": 4
+        },
+        "pds3:GO-A-PLS-4-SUMM-GET-V1.0": {
+          "description": "Galileo Orbiter Gaspra GO-A-PLS-4-SUMM-GET-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-29",
+          "slot": "/data/GO-A-PLS-4-SUMM-GET-V1.0",
+          "archive_type": 3
+        },
+        "urn:nasa:pds:galileo-pls-prejup-cal:data-avg-earth1": {
+          "description": "Galileo PLS Averaged Earth1 Calibrated Data Collection",
+          "start_date": "1990-11-08",
+          "stop_date": "1990-11-08",
+          "slot": "/data/galileo-pls-prejup-cal/data-avg-earth1",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-jup-cal:data-fullres": {
+          "description": "Galileo PLS Jupiter Full Resolution Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "1995-12-07",
+          "slot": "/data/galileo-pls-jup-cal/data-fullres",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-prejup-cal:data-avg-earth2": {
+          "description": "Galileo PLS Averaged Earth2 Calibrated Data Collection",
+          "start_date": "1992-11-07",
+          "stop_date": "1992-11-07",
+          "slot": "/data/galileo-pls-prejup-cal/data-avg-earth2",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-jup-cal:data-avg-browse": {
+          "description": "Galileo PLS Jupiter Averaged Browse Calibrated Data Collection",
+          "start_date": "1996-06-25",
+          "stop_date": "1996-06-25",
+          "slot": "/data/galileo-pls-jup-cal/data-avg-browse",
+          "archive_type": 4
+        },
+        "urn:nasa:pds:galileo-pls-jup-derived:data": {
+          "description": "Galileo PLS Jupiter RTS Moments Derived Data Collection",
+          "start_date": "1996-06-25",
+          "stop_date": "2002-01-19",
+          "slot": "/data/galileo-pls-jup-derived/data",
+          "archive_type": 4
+        }
+      }
+    },
+    "Plasma Wave Receiver": {
+      "name": "Plasma Wave Receiver",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-V-PWS-4-SUMM-VSA60S-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-PWS-4-SUMM-VSA60S-V1.0",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-PWS-4-SUMM-VSA60S-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PWS-2-REFDR-GSAFULL-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-PWS-2-REFDR-GSAFULL-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-PWS-2-REFDR-GSAFULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-2-EDR-WAVEFORM-80KHZ-V1.0": {
+          "description": "Galileo Orbiter Jupiter PWS 80 kHz Wideband Waveform Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2002-11-06",
+          "slot": "/data/GO-J-PWS-2-EDR-WAVEFORM-80KHZ-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-2-REDR-RTS-SA-FULL-V1.0": {
+          "description": "Galileo Orbiter Jupiter: GO-J-PWS-2-REDR-RTS-SA-FULL-V1.0",
+          "start_date": "1995-12-07",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-PWS-2-REDR-RTS-SA-FULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PWS-4-SUMM-GSA60S-V1.0": {
+          "description": "Galileo Orbiter Gaspra: GO-A-PWS-4-SUMM-GSA60S-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-PWS-4-SUMM-GSA60S-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PWS-2-REFDR-ISAFULL-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-PWS-2-REFDR-ISAFULL-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-PWS-2-REFDR-ISAFULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-PWS-2-REFDR-VSAFULL-V1.0": {
+          "description": "Galileo Orbiter at Venus: GO-V-PWS-2-REFDR-VSAFULL-V1.0",
+          "start_date": "1990-02-10",
+          "stop_date": "1990-02-10",
+          "slot": "/data/GO-V-PWS-2-REFDR-VSAFULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-5-DDR-PLASMA-DENSITY-FULL-V1.0": {
+          "description": "VOLUME 2001: GALILEO PWS ELECTRON PLASMA DENSITY",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/data/GO-J-PWS-5-DDR-PLASMA-DENSITY-FULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-2-EDR-WAVEFORM-10KHZ-V1.0": {
+          "description": "Galileo Orbiter Jupiter PWS 10 kHz Wideband Waveform Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2002-11-06",
+          "slot": "/data/GO-J-PWS-2-EDR-WAVEFORM-10KHZ-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-4-SUMM-SA60S-V1.0": {
+          "description": "Galileo Orbiter Jup PWS 1 Min Avg Elec & Mag Wave Spectra",
+          "start_date": "1995-12-07",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-PWS-4-SUMM-SA60S-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-2-REDR-LPW-SA-FULL-V1.0": {
+          "description": "Galileo Orbiter Jupiter: GO-J-PWS-2-REDR-LPW-SA-FULL-V1.0",
+          "start_date": "1995-12-07",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-PWS-2-REDR-LPW-SA-FULL-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-CAL-PPR-2-EDR-EARTH1-CALIBRATION-V1.0": {
+          "description": "Galileo Earth: GO-CAL-PPR-2-EDR-EARTH1-CALIBRATION-V1.0",
+          "start_date": "1990-11-14",
+          "stop_date": "1990-12-17",
+          "slot": "/data/GO-CAL-PPR-2-EDR-EARTH1-CALIBRATION-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-PWS-4-SUMM-ISA60S-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-PWS-4-SUMM-ISA60S-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-PWS-4-SUMM-ISA60S-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-PWS-2-EDR-WAVEFORM-1KHZ-V1.0": {
+          "description": "Galileo Orbiter Jupiter PWS 1 kHz Wideband Waveform Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2002-11-06",
+          "slot": "/data/GO-J-PWS-2-EDR-WAVEFORM-1KHZ-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Radio Science Subsystem": {
+      "name": "Radio Science Subsystem",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:galileo-rss-jup-der:data": {
+          "description": "Galileo Jupiter RSS Electron Density Profile Data Collection",
+          "start_date": "1995-12-08",
+          "stop_date": "1997-08-03",
+          "slot": "/data/galileo-rss-jup-der/data",
+          "archive_type": 4
+        },
+        "pds3:GO-J-RSS-1-ODR-V1.0": {
+          "description": "GALILEO ODR DATA: JUPITER OCCULTATION MEASUREMENT  EXPERIMENT 1995-342 to 1997-320 VOLUME_ID                = GORS_9120 VOLUME_VERSION_ID        = VERSION 1",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-J-RSS-1-ODR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-RSS-1-TDF-V1.0": {
+          "description": "GALILEO TDF DATA: JUPITER OCCULTATION MEASUREMENT  EXPERIMENT 1995-342 to 1997-320 VOLUME_ID                = GORS_9200 VOLUME_VERSION_ID        = VERSION 1",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-J-RSS-1-TDF-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SS-RSS-1-TDF-V1.0": {
+          "description": "GALILEO TDF DATA:  EARTH1 AND EARTH2 MASS DETERMINATION 1990-333 to 1990-344, and 1992-288 to 1992-346",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-SS-RSS-1-TDF-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-RSS-1-ODF-V1.0": {
+          "description": "GALILEO TDF DATA: JOVIAN SYSTEM EPHEMERIS IMPROVEMENT  EXPERIMENT 1996-199 to 1997-344 VOLUME_ID                = GORS_9400 VOLUME_VERSION_ID        = VERSION 1",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-J-RSS-1-ODF-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-JS-RSS-1-TDF-V1.0": {
+          "description": "GALILEO TDF DATA: SATELLITE OCCULTATION MEASUREMENT  EXPERIMENT 1996-354 to 1997-215 VOLUME_ID                = GORS_9300 VOLUME_VERSION_ID        = VERSION 1",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-JS-RSS-1-TDF-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SUN-RSS-1-TDF-V1.0": {
+          "description": "GALILEO RSS ATDF DATA: SOLAR WIND SCINTILLATION 3 - 5",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-SUN-RSS-1-TDF-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SUN-RSS-1-ODR-V1.0": {
+          "description": "GALILEO RSS ODR DATA: SOLAR WIND SCINTILLATION 3 - 5",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-SUN-RSS-1-ODR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-X-RSS-1-ODR-V1.0": {
+          "description": "ODR DATA: GRAVITATIONAL WAVE EXPERIMENT 1 AND 2",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-X-RSS-1-ODR-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-JS-RSS-1-ODR-V1.0": {
+          "description": "GALILEO ODR DATA: SATELLITE OCC MEAS EXP 1999-032 TO 1999-259",
+          "start_date": "",
+          "stop_date": "",
+          "slot": "/annex/GO-JS-RSS-1-ODR-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Spacecraft Position": {
+      "name": "Spacecraft Position",
+      "keywords": [],
+      "datasets": {
+        "pds3:GO-A-POS-6-GASPRA-FLYBY-TRAJ-V1.0": {
+          "description": "Galileo Orbiter at Gaspra: GO-A-POS-6-GASPRA-FLYBY-TRAJ-V1.0",
+          "start_date": "1991-10-29",
+          "stop_date": "1991-10-30",
+          "slot": "/data/GO-A-POS-6-GASPRA-FLYBY-TRAJ-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-A-POS-6-IDA-FLYBY-TRAJ-V1.0": {
+          "description": "Galileo Orbiter at Ida: GO-A-POS-6-IDA-FLYBY-TRAJ-V1.0",
+          "start_date": "1993-08-28",
+          "stop_date": "1993-08-28",
+          "slot": "/data/GO-A-POS-6-IDA-FLYBY-TRAJ-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-POS-6-REDR-ROTOR-ATTITUDE-V1.0": {
+          "description": "Galileo Orbiter at Jupiter Rotor Attitude Data",
+          "start_date": "1995-11-28",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-POS-6-REDR-ROTOR-ATTITUDE-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-POS-6-SC-TRAJ-MOON-COORDS-V1.0": {
+          "description": "Galileo Orbiter Jupiter SC Traj. Moon-Centered Coords. Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2002-11-06",
+          "slot": "/data/GO-J-POS-6-SC-TRAJ-MOON-COORDS-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-V-POS-6-VENUS-TRAJECTORY-V1.0": {
+          "description": "Galileo Orbiter Venus: GO-V-POS-6-VENUS-TRAJECTORY-V1.0",
+          "start_date": "1990-02-09",
+          "stop_date": "1990-02-11",
+          "slot": "/data/GO-V-POS-6-VENUS-TRAJECTORY-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-J-POS-6-SC-TRAJ-JUP-COORDS-V1.0": {
+          "description": "Galileo Orbiter Jupiter SC Traj. Jup.-Centered Coords. Data",
+          "start_date": "1995-11-06",
+          "stop_date": "2003-09-21",
+          "slot": "/data/GO-J-POS-6-SC-TRAJ-JUP-COORDS-V1.0",
+          "archive_type": 3
+        },
+        "pds3:GO-SS-POS-6-SUMM-CRUISE-RTN-V1.0": {
+          "description": "Galileo Orbiter Cruise: GO-SS-POS-6-SUMM-CRUISE-RTN-V1.0",
+          "start_date": "1990-01-01",
+          "stop_date": "1994-12-31",
+          "slot": "/data/GO-SS-POS-6-SUMM-CRUISE-RTN-V1.0",
+          "archive_type": 3
+        }
+      }
+    },
+    "Star Scanner": {
+      "name": "Star Scanner",
+      "keywords": [],
+      "datasets": {
+        "urn:nasa:pds:galileo-ssd-jup-derived:data": {
+          "description": "Galileo Jupiter Star Scanner Derived Data Collection",
+          "start_date": "1995-12-07",
+          "stop_date": "2003-09-21",
+          "slot": "/data/galileo-ssd-jup-derived/data",
+          "archive_type": 4
+        },
+        "pds3:GO-J-SSD-5-DDR-STAR-SENSOR-V1.0": {
+          "description": "Galileo Orbiter Jupiter SSD Derived Electron Flux Data",
+          "start_date": "1995-12-07",
+          "stop_date": "2000-12-31",
+          "slot": "/data/GO-J-SSD-5-DDR-STAR-SENSOR-V1.0",
+          "archive_type": 3
+        }
+      }
+    }
+  },
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "PDS PPI Metadex"
+  }
+}

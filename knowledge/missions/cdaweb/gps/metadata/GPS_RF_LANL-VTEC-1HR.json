@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "lat_bounds",
+      "type": "double",
+      "units": "",
+      "description": "",
+      "fill": null,
+      "size": [
+        24,
+        2
+      ]
+    },
+    {
+      "name": "lon_bounds",
+      "type": "double",
+      "units": "",
+      "description": "",
+      "fill": null,
+      "size": [
+        72,
+        2
+      ]
+    },
+    {
+      "name": "tec",
+      "type": "double",
+      "units": "",
+      "description": "Vertical Total Electron Content (VTEC) (cylindrical projection)",
+      "fill": "-999.0",
+      "size": [
+        24,
+        72
+      ]
+    },
+    {
+      "name": "tec_movie",
+      "type": "double",
+      "units": "",
+      "description": "---> Mapped Movie",
+      "fill": "-999.0",
+      "size": [
+        24,
+        72
+      ]
+    },
+    {
+      "name": "tec_moll",
+      "type": "double",
+      "units": "",
+      "description": "---> Molleweide projection",
+      "fill": "-999.0",
+      "size": [
+        24,
+        72
+      ]
+    },
+    {
+      "name": "tec_moll_movie",
+      "type": "double",
+      "units": "",
+      "description": "---> Mapped Movie (Molleweide projection)",
+      "fill": "-999.0",
+      "size": [
+        24,
+        72
+      ]
+    }
+  ],
+  "startDate": "2018-01-01T00:30:18.000Z",
+  "stopDate": "2018-12-31T22:30:18.000Z"
+}

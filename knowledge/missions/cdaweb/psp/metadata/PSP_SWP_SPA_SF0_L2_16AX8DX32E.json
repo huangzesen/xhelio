@@ -1,0 +1,267 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "APID",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SEQN",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SEQN_DELTA",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SEQN_GROUP",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN_GROUP",
+      "fill": null
+    },
+    {
+      "name": "SEQ_GROUP",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "PKT_SIZE",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SOURCE_APID",
+      "type": "integer",
+      "units": "",
+      "description": "SOURCE_APID",
+      "fill": null
+    },
+    {
+      "name": "SOURCE",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SOURCE_HASH",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "COMPR_RATIO",
+      "type": "double",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "NDAT",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "DATASIZE",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "SMP_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "LTCSNNNN_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "ARCH_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "MODE1",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "ARCH_SUM",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "ARCH_SMP_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "TOT_ACCUM_PERIOD",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "NUM_ACCUM",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "TIME_TOTAL",
+      "type": "double",
+      "units": "",
+      "description": "TIME_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "TIME_ACCUM",
+      "type": "double",
+      "units": "",
+      "description": "TIME_ACCUM",
+      "fill": null
+    },
+    {
+      "name": "MODE2_ORI",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "MODE2",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "F0",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "STATUS_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "PEAK_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "PRODUCT_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "NUM_TOTAL",
+      "type": "integer",
+      "units": "",
+      "description": "NUM_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "CNTS",
+      "type": "double",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "DATA",
+      "type": "double",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "GAP",
+      "type": "integer",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan"
+    },
+    {
+      "name": "EFLUX",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Energy/angle bin",
+      "fill": "nan",
+      "size": [
+        4096
+      ]
+    },
+    {
+      "name": "ROTMAT_SC_INST",
+      "type": "double",
+      "units": "",
+      "description": "Not known",
+      "fill": "nan",
+      "size": [
+        3,
+        3
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

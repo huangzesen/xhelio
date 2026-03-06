@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "D1",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "DENSITY OF THE 1ST H+ COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XD1",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "1 SIGMA ERROR IN DENSITY 1ST H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "KM/S",
+      "description": "AZIMUTHAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XV",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR AZIMUTHAL VELOCITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "W1",
+      "type": "double",
+      "units": "KM/S",
+      "description": "THERMAL SPEED OF THE 1ST H+ COMP",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XW1",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR THERM SPEED 1ST H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D2",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "DENSITY OF THE 2ND H+ COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XD2",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "1 SIGMA ERROR IN DENSITY 2ND H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "W2",
+      "type": "double",
+      "units": "KM/S",
+      "description": "THERMAL SPEED 2ND H+ COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "XW2",
+      "type": "double",
+      "units": "KM/S",
+      "description": "1 SIGMA ERROR THERM SPEED 2ND H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DTOT",
+      "type": "double",
+      "units": "CM^-3",
+      "description": "TOTAL ION DENSITY",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "T1",
+      "type": "double",
+      "units": "ELECTRON VOLTS",
+      "description": "TEMPERATURE OF 1ST H+ COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "T2",
+      "type": "double",
+      "units": "ELECTRON VOLTS",
+      "description": "TEMPERATURE OF 2ND H+ COMPONENT",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,614 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "RPAflag",
+      "type": "integer",
+      "units": "0high-9low",
+      "description": "RPA data quality flag: 0=high 9=low (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/)",
+      "fill": "-99.0"
+    },
+    {
+      "name": "driftMeterflag",
+      "type": "integer",
+      "units": "0high-9low",
+      "description": "Drift Meter data quality flag for v_horz and v_vert (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/)",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ionVelocityX",
+      "type": "double",
+      "units": "m/s",
+      "description": "Ion velocity in s/c coordinates in m/s (offset and photoemissission corrected if possible) -------> v_ram",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionVelocityY",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> v_horiz (horizontal, positive to right of spacecraft)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionVelocityZ",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> v_vert (vertical, positive in Nadir direction)",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vXvariance",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "Variance (VAR) of ion velocity in s/c coordinates -------> VAR of v_ram in m/s",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vHvariance",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "-------> VAR of v_horiz in (m/s)^2",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "vVvariance",
+      "type": "double",
+      "units": "(m/s)^2",
+      "description": "-------> VAR of v_vert in (m/s)^2",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "offsetFlag",
+      "type": "integer",
+      "units": "",
+      "description": "Offset flag (0 if offset corrected, 1 if non-offset data are used)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Vx",
+      "type": "double",
+      "units": "m/s",
+      "description": "Uncorrected velocity measurement in m/s -------> Vx",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "Vy",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> Vy",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "Vz",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> Vz",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionVelparallel",
+      "type": "double",
+      "units": "m/s",
+      "description": "Ion velocity in magnetic coordinates (GM) -------> Vi_parallel",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionVelzonal",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> Vi_zonal",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionVelmeridional",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> Vi_meridional",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionDensity",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ion density in cm-3",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionDensityvariance",
+      "type": "double",
+      "units": "cm-6",
+      "description": "----> Variance (VAR) of ion density in cm-6",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "Ni",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Ion density in cm-3 from 0V RPA point",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionTemperature",
+      "type": "double",
+      "units": "K",
+      "description": "Ion temperature in Kelvin",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ionTemperaturevariance",
+      "type": "double",
+      "units": "K^2",
+      "description": "----> Variance (VAR) of ion temperature in K^2",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "atomicMass_ion1",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Ion 1 (normally O+) -------> Atomic Mass Number",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ion1fraction",
+      "type": "double",
+      "units": "fraction",
+      "description": "--------> fraction of ion1",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ion1variance",
+      "type": "double",
+      "units": "Ion1",
+      "description": "--------> VAR of fraction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "atomicMass_ion2",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Ion 2 (normally H+) -------> Atomic Mass Number",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ion2fraction",
+      "type": "double",
+      "units": "fraction",
+      "description": "--------> fraction of Ion2",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ion2variance",
+      "type": "double",
+      "units": "Ion2",
+      "description": "--------> VAR of fraction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "atomicMass_ion3",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Ion3 (normally He+) -------> Atomic Mass Number",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ion3fraction",
+      "type": "double",
+      "units": "fraction",
+      "description": "--------> fraction of Ion3",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ion3variance",
+      "type": "double",
+      "units": "Ion3",
+      "description": "--------> VAR of fraction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "atomicMass_ion4",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Ion4 -------> Atomic Mass Number",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ion4fraction",
+      "type": "double",
+      "units": "fraction",
+      "description": "--------> fraction of Ion4",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ion4variance",
+      "type": "double",
+      "units": "Ion4",
+      "description": "--------> VAR of fraction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "atomicMass_ion5",
+      "type": "integer",
+      "units": "AMU",
+      "description": "Ion 5 -------> Atomic Mass Number",
+      "fill": "-99.0"
+    },
+    {
+      "name": "ion5fraction",
+      "type": "double",
+      "units": "fraction",
+      "description": "--------> fraction of Ion5",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ion5variance",
+      "type": "double",
+      "units": "Ion5",
+      "description": "--------> VAR of fraction",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "sensPlanePot",
+      "type": "double",
+      "units": "V",
+      "description": "Sensor plane potential in Volt",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "sensPlanePotvar",
+      "type": "double",
+      "units": "V^2",
+      "description": "----> Variance (VAR) of sensor plane potential in V^2",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmAdensity",
+      "type": "double",
+      "units": "cm-3",
+      "description": "DM Electrometer A -------> Electron density in cm-3",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmAdensityVAR",
+      "type": "double",
+      "units": "cm-6",
+      "description": "-------> VAR of electron density in cm-6",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmAdensityDQ",
+      "type": "integer",
+      "units": "Q*10+N",
+      "description": "-------> n*10+q  q=quality flag (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/), n=number of points for averaging",
+      "fill": "-99.0"
+    },
+    {
+      "name": "dmBdensity",
+      "type": "double",
+      "units": "cm-3",
+      "description": "DM Electrometer B -------> Electron density in cm-3",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmBdensityVAR",
+      "type": "double",
+      "units": "cm-6",
+      "description": "-------> VAR of electron density in cm-6",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "dmBdensityDQ",
+      "type": "integer",
+      "units": "Q*10+N",
+      "description": "-------> n*10+q  q=quality flag (https://spdf.gsfc.nasa.gov/pub/data/cnofs/cindi/), n=number of points for averaging",
+      "fill": "-99.0"
+    },
+    {
+      "name": "date",
+      "type": "double",
+      "units": "YYYYDDD",
+      "description": "Date as YYYYDDD",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "orbitNumber",
+      "type": "double",
+      "units": "",
+      "description": "Orbit number",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "time",
+      "type": "double",
+      "units": "sec",
+      "description": "UT in seconds",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic latitude in degrees",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic longitude in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "xpos",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft position in Earth-centered inertial (ECI) coordinates in km -------> X",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ypos",
+      "type": "double",
+      "units": "km",
+      "description": "-------> Y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "zpos",
+      "type": "double",
+      "units": "km",
+      "description": "-------> Z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "xvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity in ECI in km/sec -------> v_X",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "yvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "-------> v_Y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "zvel",
+      "type": "double",
+      "units": "km/s",
+      "description": "-------> v_Z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar Zenith Angle (SZA) in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "slt",
+      "type": "double",
+      "units": "hrs",
+      "description": "Solar Local Time (SLT) in hours",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "apex_altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Apex altitude in km",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "alat",
+      "type": "double",
+      "units": "deg",
+      "description": "-------> Apex latitude in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "alon",
+      "type": "double",
+      "units": "deg",
+      "description": "-------> Apex longitude in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant latitude in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "mag_incl",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic inclination (Dip) in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "Corrected magnetic latitude in degrees",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hrs",
+      "description": "Magnetic Local Time (MLT) in hours",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "magFieldNorth",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF geomagnetic field in nT -------> North",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "magFieldEast",
+      "type": "double",
+      "units": "nT",
+      "description": "-------> East",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "magFieldDown",
+      "type": "double",
+      "units": "nT",
+      "description": "-------> Down",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "bgx",
+      "type": "double",
+      "units": "nT",
+      "description": "IGRF geomagnetic field in nT in spacecraft coordinates (SCC) -------> x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "bgy",
+      "type": "double",
+      "units": "nT",
+      "description": "-------> y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "bgz",
+      "type": "double",
+      "units": "nT",
+      "description": "-------> z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "ramsunangle",
+      "type": "double",
+      "units": "degree",
+      "description": "RSA - angle between ram and sun",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scABSvelocityX",
+      "type": "double",
+      "units": "m/s",
+      "description": "Spacecraft absolute velocity in spacecraft coordinates SSC (in inertial space) -------> x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scABSvelocityY",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scABSvelocityZ",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scRELvelocityX",
+      "type": "double",
+      "units": "m/s",
+      "description": "Spacecraft relative velocity in spacecraft coordinates (to co-rotating atmosphere) -------> x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scRELvelocityY",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "scRELvelocityZ",
+      "type": "double",
+      "units": "m/s",
+      "description": "-------> z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "zonalunitvectorX",
+      "type": "double",
+      "units": "",
+      "description": "Unit vectors for magnetic coordinate system in s/c coordinates (SC) -------> U_zonal_SC_x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "zonalunitvectorY",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_zonal_SC_y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "zonalunitvectorZ",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_zonal_SC_z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "parallelunitvectorX",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_parallel_SC_x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "parallelunitvectorY",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_parallel_SC_y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "parallelunitvectorZ",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_parallel_SC_z",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "meridionalunitvectorX",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_meridional_SC_x",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "meridionalunitvectorY",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_meridional_SC_y",
+      "fill": "-999999.0"
+    },
+    {
+      "name": "meridionalunitvectorZ",
+      "type": "double",
+      "units": "",
+      "description": "-------> U_meridional_SC_z",
+      "fill": "-999999.0"
+    }
+  ],
+  "startDate": "2008-08-02T00:00:01.000Z",
+  "stopDate": "2015-11-26T03:44:41.000Z"
+}

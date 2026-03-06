@@ -1,0 +1,1541 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DQF",
+      "type": "integer",
+      "units": "-1=unknown 0=good 1=bad",
+      "description": "Array of SPC data quality indicators.",
+      "fill": "-128.0",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "general_flag",
+      "type": "integer",
+      "units": "0 = good",
+      "description": "Global quality flag, signifying whether the data for this epoch are suitable for use without caveate.",
+      "fill": "-128.0"
+    },
+    {
+      "name": "vp_moment_SC_gd",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_SC_deltahigh_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_SC_deltalow_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN_gd",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN_deltahigh_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN_deltalow_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np_moment_gd",
+      "type": "double",
+      "units": "(Good Q) cm^{-3}",
+      "description": "Proton density estimate from the 0th moment of the reduced distribution function (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_moment_deltahigh_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_moment_deltalow_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment_deltahigh_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment_deltalow_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vp1_fit_SC_gd",
+      "type": "double",
+      "units": "",
+      "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_SC_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_RTN_gd",
+      "type": "double",
+      "units": "",
+      "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_RTN_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np1_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "Primary proton population density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np1_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp1_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp1_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vp_fit_SC_gd",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_SC_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_RTN_gd",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_RTN_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "[Total] proton density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_fit_uncertainty_gd",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "va_fit_SC_gd",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_SC_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_RTN_gd",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_RTN_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "na_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "Alpha particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "na_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wa_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wa_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v3_fit_SC_gd",
+      "type": "double",
+      "units": "",
+      "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_SC_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_RTN_gd",
+      "type": "double",
+      "units": "",
+      "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (Only Good Quality)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_RTN_uncertainty_gd",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "n3_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n3_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "w3_fit_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (Only Good Quality)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "w3_fit_uncertainty_gd",
+      "type": "double",
+      "units": "(Good Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "sc_pos_HCI",
+      "type": "double",
+      "units": "km",
+      "description": "PSP Spacecraft position in the Heliocentric Inertial system, in km",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_vel_HCI",
+      "type": "double",
+      "units": "km/s",
+      "description": "PSP Spacecraft velocity in the Heliocentric Inertial system, in km/s",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "carr_latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Carrington Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "carr_longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Carrington Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vp_moment_SC",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity from the 1st moment of the reduced distribution function, in the spacecraft frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_SC_deltahigh",
+      "type": "double",
+      "units": "",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_SC_deltalow",
+      "type": "double",
+      "units": "",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity from the 1st moment of the reduced distribution function in [inertial] RTN coordinate system (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN_deltahigh",
+      "type": "double",
+      "units": "",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_moment_RTN_deltalow",
+      "type": "double",
+      "units": "",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np_moment",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "Proton density estimate from the 0th moment of the reduced distribution function (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_moment_deltahigh",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_moment_deltalow",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "Proton radial [most probable] thermal speed estimate from the 2nd velocity moment of the reduced distribution function (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment_deltahigh",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> upper uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_moment_deltalow",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> lower uncertainty",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vp1_fit_SC",
+      "type": "double",
+      "units": "",
+      "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_SC_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Primary proton population velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp1_fit_RTN_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np1_fit",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "Primary proton population density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np1_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp1_fit",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "Primary proton population radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp1_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vp_fit_SC",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_SC_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Proton bulk velocity, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vp_fit_RTN_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "np_fit",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "[Total] proton density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "np_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_fit",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "Proton radial [most probable] thermal speed component, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wp_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "va_fit_SC",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_SC_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Alpha particle velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "va_fit_RTN_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "na_fit",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "Alpha particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "na_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wa_fit",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "Alpha particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "wa_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "v3_fit_SC",
+      "type": "double",
+      "units": "",
+      "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the spacecraft frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_SC_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_RTN",
+      "type": "double",
+      "units": "",
+      "description": "Population 3 velocity vector, from 1-dimensional Maxwellian fitting, in the [inertial] RTN frame (All Qualities)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "v3_fit_RTN_uncertainty",
+      "type": "double",
+      "units": "",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "n3_fit",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "Population 3 particle density, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "n3_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) cm^{-3}",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "w3_fit",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "Population 3 particle radial [most probable] thermal speed, from 1-dimensional Maxwellian fitting. (All Qualities)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "w3_fit_uncertainty",
+      "type": "double",
+      "units": "(All Qs) km/s",
+      "description": "---> 1-sigma error",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": "",
+  "_validated": true,
+  "parameters_annotations": {
+    "vp_moment_SC_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_moment_SC_deltahigh_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_moment_SC_deltalow_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_moment_RTN_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_moment_RTN_deltahigh_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_moment_RTN_deltalow_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np_moment_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np_moment_deltahigh_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np_moment_deltalow_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp_moment_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp_moment_deltahigh_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp_moment_deltalow_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp1_fit_SC_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp1_fit_SC_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp1_fit_RTN_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp1_fit_RTN_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np1_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np1_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp1_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp1_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_fit_SC_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_fit_SC_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_fit_RTN_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "vp_fit_RTN_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "np_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wp_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "va_fit_SC_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "va_fit_SC_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "va_fit_RTN_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "va_fit_RTN_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "na_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "na_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wa_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "wa_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "v3_fit_SC_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "v3_fit_SC_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "v3_fit_RTN_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "v3_fit_RTN_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "n3_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "n3_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "w3_fit_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    },
+    "w3_fit_uncertainty_gd": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    }
+  },
+  "_validations": [
+    {
+      "source_file": "psp_swp_spc_l3i_20210427_v02.cdf",
+      "validated_at": "2026-02-19T10:44:40.565946+00:00",
+      "discrepancies": {
+        "vp_moment_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        }
+      },
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/sweap/spc/l3/l3i/2021/psp_swp_spc_l3i_20210427_v02.cdf"
+    },
+    {
+      "source_file": "psp_swp_spc_l3i_20250315_v02.cdf",
+      "validated_at": "2026-02-19T11:16:01.408566+00:00",
+      "discrepancies": {
+        "vp_moment_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        }
+      },
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/sweap/spc/l3/l3i/2025/psp_swp_spc_l3i_20250315_v02.cdf"
+    },
+    {
+      "source_file": "psp_swp_spc_l3i_20210428_v02.cdf",
+      "validated_at": "2026-02-19T23:42:42.808192+00:00",
+      "discrepancies": {
+        "vp_moment_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_SC_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_moment_RTN_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltahigh_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_moment_deltalow_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp1_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp1_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "vp_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "np_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wp_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "va_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "na_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "wa_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_SC_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "v3_fit_RTN_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "n3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        },
+        "w3_fit_uncertainty_gd": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        }
+      },
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/sweap/spc/l3/l3i/2021/psp_swp_spc_l3i_20210428_v02.cdf"
+    }
+  ]
+}

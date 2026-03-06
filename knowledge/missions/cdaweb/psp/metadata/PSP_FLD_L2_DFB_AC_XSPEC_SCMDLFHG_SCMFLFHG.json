@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_power_ch1_SCMdlfhg",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "L2 XSpectra Power for channel SCMDLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_power_ch2_SCMflfhg",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "L2 XSpectra Power for channel SCMFLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_coh_SCMdlfhg_SCMflfhg",
+      "type": "double",
+      "units": "",
+      "description": "L2 XSpectra Coherence between channel SCMDLFHG and channel SCMFLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_phase_SCMdlfhg_SCMflfhg",
+      "type": "double",
+      "units": "Degrees",
+      "description": "L2 XSpectra Phase of channel SCMFLFHG relative to channel SCMDLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_crossterm_Real_SCMdlfhg_SCMflfhg",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "L2 XSpectra Real Part of Crossterm (FT_1 x FT_2^*) for channel SCMDLFHG and SCMFLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_crossterm_Imag_SCMdlfhg_SCMflfhg",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "L2 XSpectra Imag Part of Crossterm (FT_1 x FT_2^*) for channel SCMDLFHG and SCMFLFHG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        43
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

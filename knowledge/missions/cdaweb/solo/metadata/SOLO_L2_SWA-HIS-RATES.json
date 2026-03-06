@@ -1,0 +1,142 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "START_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Start rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "STOP_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Stop rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "DC_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Double coincidence rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "TC_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Triple coincidence rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "LOW_TOF_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Low TOF rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "PROTON_DEC_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Proton decimation rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "ALPHA_DEC_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Alpha decimation rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "POS_A_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Position A rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "POS_B_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Position B rate",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64,
+        16
+      ]
+    },
+    {
+      "name": "SSD_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "SSD rate [All Output types supported except plotting]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        64,
+        16
+      ]
+    },
+    {
+      "name": "PRIORITY_RATE",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Priority rate [All Output types supported except plotting]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        8,
+        64,
+        16
+      ]
+    },
+    {
+      "name": "PA_HVPS_SET_POINT",
+      "type": "double",
+      "units": "kV",
+      "description": "PA HVPS set point",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2022-01-01T00:00:27.000Z",
+  "stopDate": "2023-04-27T14:12:45.000Z"
+}

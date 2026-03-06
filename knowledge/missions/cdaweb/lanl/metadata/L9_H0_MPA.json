@@ -1,0 +1,247 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Theta_l",
+      "type": "double",
+      "units": "degs",
+      "description": "detector lower edge look angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "Theta_u",
+      "type": "double",
+      "units": "degs",
+      "description": "detector upper edge look angles",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "etimesg",
+      "type": "double",
+      "units": "cm**2 sr",
+      "description": "geometric factor times efficiency",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "ecp",
+      "type": "double",
+      "units": "eV",
+      "description": "center energy ions values",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "ece",
+      "type": "double",
+      "units": "eV",
+      "description": "center energy electron values",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "effecp",
+      "type": "double",
+      "units": "",
+      "description": "energy dependent effic. values. Ions",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "effece",
+      "type": "double",
+      "units": "",
+      "description": "energy dependent effic. values. Elec",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40
+      ]
+    },
+    {
+      "name": "Uthours",
+      "type": "double",
+      "units": "hours",
+      "description": "UT time of record",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Inval_mf",
+      "type": "integer",
+      "units": "",
+      "description": "Invalid mainframe counts",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "xyzgeo",
+      "type": "double",
+      "units": "km",
+      "description": "Geographic location x,y,z",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "backgrd",
+      "type": "double",
+      "units": "cnts/9ms",
+      "description": "Background count rates 6P's and 6E's",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "Poten",
+      "type": "double",
+      "units": "volts",
+      "description": "Spacecraft potential",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Flags",
+      "type": "integer",
+      "units": "",
+      "description": "Quality flags",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Azanglp",
+      "type": "double",
+      "units": "degs",
+      "description": "Azimuth angle for ions",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40,
+        24
+      ]
+    },
+    {
+      "name": "Azangle",
+      "type": "double",
+      "units": "degs",
+      "description": "Azimuth angle for electrons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40,
+        24
+      ]
+    },
+    {
+      "name": "Pcounts",
+      "type": "double",
+      "units": "counts per 9ms",
+      "description": "Background corrected Ion counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40,
+        6,
+        24
+      ]
+    },
+    {
+      "name": "Ecounts",
+      "type": "double",
+      "units": "counts per 9ms",
+      "description": "Background corrected Electron counts",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        40,
+        6,
+        24
+      ]
+    },
+    {
+      "name": "dens_lop",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density for low-e ions",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vel_lop",
+      "type": "double",
+      "units": "km/sec",
+      "description": "Low-e ion velocity vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "dens_hip",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density high-E electrons",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_hip",
+      "type": "double",
+      "units": "ev",
+      "description": "Temperature high-e ions",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "thetaphi_hip",
+      "type": "double",
+      "units": "deg",
+      "description": "Polar,Azim angle high-e ion sym axis",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "dens_e",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Partial density electrons",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "temp_e",
+      "type": "double",
+      "units": "ev",
+      "description": "Temperature electrons",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "thetaphi_e",
+      "type": "double",
+      "units": "deg",
+      "description": "Polar,Azim angle elect symm axis",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "1998-05-03T04:12:36.000Z",
+  "stopDate": "1998-05-03T07:42:38.000Z"
+}

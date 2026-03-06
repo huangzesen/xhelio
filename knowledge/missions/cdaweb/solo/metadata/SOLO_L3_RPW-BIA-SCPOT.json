@@ -1,0 +1,26 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SCPOT",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential with respect to plasma",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PSP",
+      "type": "double",
+      "units": "V",
+      "description": "Average probe-to-spacecraft potential",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:13.000Z",
+  "stopDate": "2023-01-01T00:02:24.000Z"
+}

@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC year associated with the magnetic field\n    samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY_OF_YEAR",
+      "type": "double",
+      "units": "",
+      "description": "UTC day of year associated with the \n    magnetic field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HOUR",
+      "type": "double",
+      "units": "",
+      "description": "UTC hour associated with the magnetic field\n    samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MINUTE",
+      "type": "double",
+      "units": "",
+      "description": "UTC minute associated with the magnetic \n    field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "double",
+      "units": "",
+      "description": "UTC second associated with the magnetic \n    field samples Bx, By, Bz in each record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated\n           with the x,y,z sample in each record. The derived value is created\n           by the following formula:\n           MET + 0.05 * delta_ts + (dt_sample)*(I-1) - latency. \n           MET is the mission elapsed time for the entire science packet.\n           delta_ts is the delta time in seconds between the MET and\n           the first sample in the downloaded science packet.\n           dt_sample is the time between samples in seconds and given by \n           dt_sample = 1/sample_rate where sample_rate is the reported \n           sample rate in samples per second.\n           I is the incremental counter for each data sample in the\n           science packet. I=1 is the first sample in the packet. \n           Latency is the sample rate-dependent delay of the time stamp \n           recording relative to the actual time of observation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X_VSO",
+      "type": "double",
+      "units": "",
+      "description": "X position in Venus solar orbital (VSO) \n           coordinates in units of kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y_VSO",
+      "type": "double",
+      "units": "",
+      "description": "Y position in Venus solar orbital (VSO) \n           coordinates in units of kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z_VSO",
+      "type": "double",
+      "units": "",
+      "description": "Z position in Venus solar orbital (VSO) \n           coordinates in units of kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX_VSO",
+      "type": "double",
+      "units": "",
+      "description": "X axis magnetic field value in Venus \n            solar orbital (VSO) coordinates in units of nano-Tesla.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY_VSO",
+      "type": "double",
+      "units": "",
+      "description": "Y axis magnetic field value in Venus \n            solar orbital (VSO) coordinates in units of nano-Tesla.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ_VSO",
+      "type": "double",
+      "units": "",
+      "description": "Z axis magnetic field value in Venus \n            solar orbital (VSO) coordinates in units of nano-Tesla.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

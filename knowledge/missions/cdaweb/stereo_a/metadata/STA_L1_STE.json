@@ -1,0 +1,63 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "STE_spectra",
+      "type": "double",
+      "units": "cnts",
+      "description": "STE Electron Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        8
+      ]
+    },
+    {
+      "name": "STE_spectra_f",
+      "type": "double",
+      "units": "cnts",
+      "description": "STE Electron Spectra [Values for detectors #1-4 are saturated and should not be used]",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        8
+      ]
+    },
+    {
+      "name": "STE_mode",
+      "type": "integer",
+      "units": "",
+      "description": "STE Mode",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "STE_energy",
+      "type": "double",
+      "units": "keV",
+      "description": "--> STE Maximum Energy Threshold",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        8
+      ]
+    },
+    {
+      "name": "STE_energy_f",
+      "type": "double",
+      "units": "keV",
+      "description": "--> STE Maximum Energy Threshold",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        8
+      ]
+    }
+  ],
+  "startDate": "2006-11-01T16:59:49.000Z",
+  "stopDate": "2025-12-15T00:00:01.000Z"
+}

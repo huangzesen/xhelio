@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DATE",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft Event Time (SCET) at the start of the first sweep in year, month and day format (YYMMDD).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "Seconds of the day to the nearest second, at the start of the first sweep.  In each sweep, the first data value in low band (1326.0 kHz) occurs some 3.9 seconds after this time. Subsequent data points are sampled at a lower frequency interval of 0.03 second.  Only one time is given for the entire major frame, thus the start time of each sweep in the major frame is given by this time plus 6 times the sweep number minus 1 (i.e. 0 through 7).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP1",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP2",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP3",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP4",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP5",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP6",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP7",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SWEEP8",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column contains 71 4-byte integer values. The first is a status word, the other 70 are low band channels 1326.0 to 1.2 kHz. For the status word the 12 least significant bits have used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: 9\\10 0 1 0    R L 1    L R If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

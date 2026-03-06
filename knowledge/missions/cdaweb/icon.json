@@ -1,0 +1,168 @@
+{
+  "id": "ICON",
+  "name": "ICON",
+  "keywords": [
+    "icon"
+  ],
+  "profile": {
+    "description": "ICON spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "ICON_L2-2_MIGHTI_VECTOR-WIND-GREEN": {
+          "description": "MIGHTI - Cardinal Vector Winds - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:00.000Z",
+          "stop_date": "2022-11-25T00:00:00.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/vtce-7y29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-2_MIGHTI_VECTOR-WIND-GREEN"
+        },
+        "ICON_L2-1_MIGHTI-B_LOS-WIND-GREEN": {
+          "description": "Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI) Sensor B - Line-of-sight Wind Profiles - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:29.000Z",
+          "stop_date": "2022-11-24T23:58:43.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/s7j9-kn77",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-1_MIGHTI-B_LOS-WIND-GREEN"
+        },
+        "ICON_L2-3_MIGHTI-A_TEMPERATURE": {
+          "description": "ICON MIGHTI-A Level 2.3 Retrieved Temperature File - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:57.000Z",
+          "stop_date": "2022-11-24T23:58:57.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/d0qk-qc73",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-3_MIGHTI-A_TEMPERATURE"
+        },
+        "ICON_L2-1_MIGHTI-A_LOS-WIND-GREEN": {
+          "description": "Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI) Sensor A: Line-of-sight Wind Profiles - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:12.000Z",
+          "stop_date": "2022-11-24T23:58:27.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/07nf-qa27",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-1_MIGHTI-A_LOS-WIND-GREEN"
+        },
+        "ICON_L2-5_FUV_NIGHT": {
+          "description": "FUV Short Wavelength Channel - 135.6 Altitude Profiles (night) - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-11-16T00:00:10.000Z",
+          "stop_date": "2022-11-25T14:52:06.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/4vx2-1c67",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-5_FUV_NIGHT"
+        },
+        "ICON_L2-1_MIGHTI-B_LOS-WIND-RED": {
+          "description": "Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI) Sensor B - Line-of-sight Wind Profiles - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:29.000Z",
+          "stop_date": "2022-11-24T23:58:43.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/4fvv-ka29",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-1_MIGHTI-B_LOS-WIND-RED"
+        },
+        "ICON_L2-6_EUV": {
+          "description": "ICON EUV derived ionospheric data products - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-11-12T23:59:58.000Z",
+          "stop_date": "2022-11-25T14:46:07.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/hwg4-hw39",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-6_EUV"
+        },
+        "ICON_L2-4_FUV_DAY": {
+          "description": "ICON FUV Daytime: column density ratio of thermospheric atomic oxygen to molecular nitrogen.  - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-11-16T00:00:04.000Z",
+          "stop_date": "2022-11-24T23:59:55.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/w3qs-ed95",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-4_FUV_DAY"
+        },
+        "ICON_L2-1_MIGHTI-A_LOS-WIND-RED": {
+          "description": "Michelson Interferometer for Global High-resolution Thermospheric Imaging (MIGHTI) Sensor A: Line-of-sight Wind Profiles - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:12.000Z",
+          "stop_date": "2022-11-24T23:58:27.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/mjdw-td24",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-1_MIGHTI-A_LOS-WIND-RED"
+        },
+        "ICON_L2-3_MIGHTI-B_TEMPERATURE": {
+          "description": "ICON MIGHTI-B Level 2.3 Retrieved Temperature File - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:01:15.000Z",
+          "stop_date": "2022-11-24T23:59:13.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/zrhc-pb76",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-3_MIGHTI-B_TEMPERATURE"
+        },
+        "ICON_L2-2_MIGHTI_VECTOR-WIND-RED": {
+          "description": "MIGHTI - Cardinal Vector Winds - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-12-06T00:00:00.000Z",
+          "stop_date": "2022-11-25T00:00:00.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/pyfw-zv85",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-2_MIGHTI_VECTOR-WIND-RED"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "ICON_L2-7_IVM-A": {
+          "description": "ICON Ion Velocity Meter (IVM) Thermal Plasma Measurements - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2019-11-17T23:59:59.000Z",
+          "stop_date": "2022-11-24T23:59:54.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/2mv5-xy46",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-7_IVM-A"
+        },
+        "ICON_L2-7_IVM-B": {
+          "description": "ICON IVM Thermal Plasma Measurements B - T. J. Immel (UC Berkeley>SSL)",
+          "start_date": "2021-06-14T15:35:59.000Z",
+          "stop_date": "2021-06-27T23:59:56.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley>SSL",
+          "doi": "10.48322/1dta-a634",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-7_IVM-B"
+        },
+        "ICON_L2-4_FUV_DAY-LIMB": {
+          "description": "ICON FUV Daytime Limb - T. J. Immel (UC Berkeley > SSL)",
+          "start_date": "2019-11-16T00:00:04.000Z",
+          "stop_date": "2022-11-24T23:59:55.000Z",
+          "pi_name": "T. J. Immel",
+          "pi_affiliation": "UC Berkeley > SSL",
+          "doi": "10.48322/bwjz-nk36",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesI.html#ICON_L2-4_FUV_DAY-LIMB"
+        }
+      }
+    }
+  },
+  "observatory_group": "ICON",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

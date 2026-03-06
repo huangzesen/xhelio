@@ -1,0 +1,81 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DQF",
+      "type": "integer",
+      "units": "(Good=0)",
+      "description": "Data Quality Flag: 0=good; 1=bad",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "V_GSE",
+      "type": "double",
+      "units": "km/s (w/o error bars)",
+      "description": "proton velocity x,y,z-component (w/o error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_GSE_ErrorBars",
+      "type": "double",
+      "units": "km/s (with error bars)",
+      "description": "proton velocity x,y,z-component (with error bars)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "THERMAL_SPD",
+      "type": "double",
+      "units": "km/s (w/o error bars)",
+      "description": "Proton solar winds' most probable thermal speed. (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THERMAL_SPD_ErrorBars",
+      "type": "double",
+      "units": "km/s (with error bars)",
+      "description": "Proton solar winds' most probable thermal speed. (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "#/cc (w/o error bars)",
+      "description": "Scalar solar wind density. (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Np_ErrorBars",
+      "type": "double",
+      "units": "#/cc (with error bars)",
+      "description": "Scalar solar wind density. (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THERMAL_TEMP",
+      "type": "double",
+      "units": "K (w/o error bars)",
+      "description": "Solar wind proton temperature (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "THERMAL_TEMP_ErrorBars",
+      "type": "double",
+      "units": "K (with error bars)",
+      "description": "Solar wind proton temperature (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2016-06-03T00:00:00.000Z",
+  "stopDate": "2019-06-27T23:58:59.000Z"
+}

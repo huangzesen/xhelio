@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ELECTRON_DIFFERENTIAL_ENERGY_FLUX",
+      "type": "double",
+      "units": "1/(cm^2-s-sr)",
+      "description": "Electron Differential Energy Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        29
+      ]
+    },
+    {
+      "name": "ION_DIFFERENTIAL_ENERGY_FLUX",
+      "type": "double",
+      "units": "1/(cm^2-s-sr)",
+      "description": "Ion Differential Energy Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        29
+      ]
+    }
+  ],
+  "startDate": "1996-03-20T00:00:06.000Z",
+  "stopDate": "2008-03-31T23:59:52.000Z"
+}

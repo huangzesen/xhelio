@@ -1,0 +1,22 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "pitch_angles",
+      "type": "double",
+      "units": "degrees",
+      "description": "Pitch angles of MAGED and MAGPD telescopes 1-9 calculated from GOES magnetometer field vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        9
+      ]
+    }
+  ],
+  "startDate": "2012-10-01T00:00:00.000Z",
+  "stopDate": "2020-03-04T23:59:00.000Z"
+}

@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Electron_Flux",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Electron flux measured by HET in 3 energy bins (time series: good with plot overlay option, above)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Electron_Flux_stack",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Electron flux measured by HET in 3 energy bins (stacked plot)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Proton_Flux",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Proton flux measured by the HET instrument in 11 energy bins (time series: good with plot overlay option, above)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "Proton_Flux_stack",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Proton flux measured by the HET instrument in 11 energy bins (stacked)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "Electron_Sigma",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Electron flux sigma uncertainty based on counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Proton_Sigma",
+      "type": "double",
+      "units": "#/(cm2-sr-s-MeV/n)",
+      "description": "Proton flux sigma uncertainty based on counting statistics",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    }
+  ],
+  "startDate": "2006-12-01T00:00:08.000Z",
+  "stopDate": "2014-09-27T16:28:26.000Z"
+}

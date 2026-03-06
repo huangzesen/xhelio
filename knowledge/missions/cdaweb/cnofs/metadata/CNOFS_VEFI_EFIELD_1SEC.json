@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E_meridional",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in the meridional direction, PRELIMINARY",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_zonal",
+      "type": "double",
+      "units": "mV/m",
+      "description": "Electric field in the zonal direction(B x r), PRELIMINARY",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EB_meridional",
+      "type": "double",
+      "units": "m/s",
+      "description": "ExB/B^2 in the meridional direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "EB_zonal",
+      "type": "double",
+      "units": "m/s",
+      "description": "ExB/B^2 in the zonal direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Longitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of the spacecraft",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2008-05-09T00:00:00.000Z",
+  "stopDate": "2011-03-01T00:00:00.000Z"
+}

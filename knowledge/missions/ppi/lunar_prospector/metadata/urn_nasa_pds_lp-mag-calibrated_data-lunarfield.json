@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Hour",
+      "type": "double",
+      "units": "",
+      "description": "Hour of the day in Universal time (to 4 decimal places).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BE_ENR",
+      "type": "double",
+      "units": "nT",
+      "description": "East component of the magnetic field in ENR coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN_ENR",
+      "type": "double",
+      "units": "nT",
+      "description": "North component of the magnetic field in ENR coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR_ENR",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial component of the magnetic field in ENR coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx_SG",
+      "type": "double",
+      "units": "nT",
+      "description": "X component of the magnetic field in SG coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "By_SG",
+      "type": "double",
+      "units": "nT",
+      "description": "Y component of the magnetic field in SG coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bz_SG",
+      "type": "double",
+      "units": "nT",
+      "description": "Z component of the magnetic field in SG coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Lunar Latitude in degrees; north is positive.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "nT",
+      "description": "Lunar east longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Approximate altitude of spacecraft in kilometers.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DE1",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Column contains deflected electron measurements (30-50 keV electrons).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DE2",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Column contains deflected electron measurements (50-90 keV electrons).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DE3",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Column contains deflected electron measurements (90-165 keV electrons).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DE4",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Column contains deflected electron measurements (165-300 keV electrons).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

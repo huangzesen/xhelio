@@ -1,0 +1,32 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_RTN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in RTN coordinates, 8 second resolution",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_SRF",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in spacecraft reference frame, 8 second resolution",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-06-03T14:28:15.000Z",
+  "stopDate": "2023-02-13T20:49:37.000Z"
+}

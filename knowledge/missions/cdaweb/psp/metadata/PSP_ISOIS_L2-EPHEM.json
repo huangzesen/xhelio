@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HGC_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spiral_Lo",
+      "type": "double",
+      "units": "degrees",
+      "description": "Lo look angle with nominal parker spiral",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ram_Pointing",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft is ram pointing",
+      "fill": "-128.0"
+    },
+    {
+      "name": "HCI_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spiral_HETA",
+      "type": "double",
+      "units": "degrees",
+      "description": "HETA look angle with nominal parker spiral",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "HGC longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Clock_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "angle of off-pointing from ecliptic north when not in encounter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Roll_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Angle between nominal ram and actual ram, 0 in encounter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HGC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Umbra_Pointing",
+      "type": "integer",
+      "units": "",
+      "description": "Spacecraft is umbra pointing",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Spiral_LET1A",
+      "type": "double",
+      "units": "degrees",
+      "description": "LET1A look angle with nominal parker spiral",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spiral_LET2C",
+      "type": "double",
+      "units": "degrees",
+      "description": "LET2C look angle with nominal parker spiral",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HCI_Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "HCI latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Sun_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Angle between TPS and Sun, 0 in encounter",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

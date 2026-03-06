@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "PVO orbit number (valid 1-5055)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATE",
+      "type": "double",
+      "units": "",
+      "description": "Time column. This field contains time in PDS format:                  \n                        yydoy.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PERIAPSIS_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The time of the orbital periapsis given in the format HH:MM:SS where HH\n                        is the 2 digit hour, MM in the 2 digit minute, and SS is the 2 digit   \n                        second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_SECONDS",
+      "type": "double",
+      "units": "",
+      "description": "The second-of-day of the inbound bowshock \n                        crossing.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The time of the inbound bowshock crossing given in the format HH:MM:SS \n                        where HH is the 2 digit hour, MM in the 2 digit minute, and SS is the  \n                        2 digit second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_LATITUDE",
+      "type": "double",
+      "units": "",
+      "description": "The venusian latitude of the spacecraft at inbound bowshock crossing  \n                        given in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_LOCAL_SOLAR_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The local solar time of the spacecraft at inbound bowshock crossing   \n                        given in hours.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_ALTITUDE",
+      "type": "double",
+      "units": "",
+      "description": "The altitude of the spacecraft at inbound bowshock crossing given in   \n                        kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INBOUND_SOLAR_ZENITH_ANGLE",
+      "type": "double",
+      "units": "",
+      "description": "The solar zenith angle of the spacecraft at the inbound bowshock       \n                        crossing given in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_SECONDS",
+      "type": "double",
+      "units": "",
+      "description": "The second-of-day of the outbound bowshock \n                        crossing.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The time of the outbound bowshock crossing given in the format HH:MM:SS\n                        where HH is the 2 digit hour, MM in the 2 digit minute, and SS is the 2\n                        digit second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_LATITUDE",
+      "type": "double",
+      "units": "",
+      "description": "The venusian latitude of the spacecraft at outbound bowshock crossing  \n                        given in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_LOCAL_SOLAR_TIME",
+      "type": "double",
+      "units": "",
+      "description": "The local solar time of the spacecraft at outbound bowshock crossing   \n                        given in hours.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_ALTITUDE",
+      "type": "double",
+      "units": "",
+      "description": "The altitude of the spacecraft at outbound bowshock crossing given in  \n                        kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "OUTBOUND_SOLAR_ZENITH_ANGLE",
+      "type": "double",
+      "units": "",
+      "description": "The solar zenith angle of the spacecraft at the outbound bowshock      \n                        crossing given in degrees.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

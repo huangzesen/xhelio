@@ -1,0 +1,88 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "POSITION",
+      "type": "double",
+      "units": "km",
+      "description": "Satellite Position GSE, 3 comp.",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "N0",
+      "type": "integer",
+      "units": "0.01/cc",
+      "description": "Solar Wind Density, scalar",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "V0",
+      "type": "integer",
+      "units": "",
+      "description": "Solar Wind Velocity GSM, 3 comp.",
+      "fill": "-32768.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "EA_E",
+      "type": "integer",
+      "units": "counts",
+      "description": "Electron Flux at 32 energies (100ev - 40keV) and 4 look directions (0/sun, 90/dusk, 180/tail, 270/dawn deg)",
+      "fill": "-32768.0",
+      "size": [
+        32,
+        4
+      ]
+    },
+    {
+      "name": "EA_I",
+      "type": "integer",
+      "units": "counts",
+      "description": "Ion Flux at 32 energies (100ev - 40keV) and 4 look directions (0/sun, 90/dusk, 180/tail, 270/dawn deg)",
+      "fill": "-32768.0",
+      "size": [
+        32,
+        4
+      ]
+    },
+    {
+      "name": "DQF",
+      "type": "integer",
+      "units": "(0=Good,5=Bad)",
+      "description": "Data Quality Flag (0=good, 5=bad)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "energy_e",
+      "type": "integer",
+      "units": "eV",
+      "description": "32 Electron Energy Step Values",
+      "fill": "65535.0",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "energy_p",
+      "type": "integer",
+      "units": "eV",
+      "description": "32 Ion Energy Step Values",
+      "fill": "65535.0",
+      "size": [
+        32
+      ]
+    }
+  ],
+  "startDate": "1992-01-01T00:00:00.000Z",
+  "stopDate": "2022-06-27T12:24:00.000Z"
+}

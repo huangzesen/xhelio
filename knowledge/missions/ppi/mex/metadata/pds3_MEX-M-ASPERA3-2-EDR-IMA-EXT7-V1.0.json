@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "AZIM_ANGLE",
+      "type": "double",
+      "units": "degrees",
+      "description": "Central directions of each azimuth sector from +X to +Z of S/C",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AZIMUTH_EFF",
+      "type": "double",
+      "units": "N/A",
+      "description": "The efficiency of the azimuth sector",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GEOM_FACTOR",
+      "type": "double",
+      "units": "cm**2-sr",
+      "description": "Very rough estimation of the geometric factor in cm**2-steradian",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

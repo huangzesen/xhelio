@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "id",
+      "type": "double",
+      "units": "",
+      "description": "Event ID; a unique event ID number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "event_type_id",
+      "type": "double",
+      "units": "",
+      "description": "Event type code",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "start_time",
+      "type": "double",
+      "units": "",
+      "description": "Event start date and time",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "end_time",
+      "type": "double",
+      "units": "",
+      "description": "Event end date and time (may be the same as start_time for discrete events)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "source",
+      "type": "double",
+      "units": "",
+      "description": "Event source: science, MAVEN Integrated Report, or SPICE kernels",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "description",
+      "type": "double",
+      "units": "",
+      "description": "Text description of the event",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "discussion",
+      "type": "double",
+      "units": "",
+      "description": "Notes from Payload Operations Center (POC) event database",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "modified_time",
+      "type": "double",
+      "units": "",
+      "description": "Event creation time",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

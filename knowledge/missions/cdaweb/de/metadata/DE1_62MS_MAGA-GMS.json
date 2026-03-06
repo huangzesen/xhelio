@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "br",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial-Component of measured magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bth",
+      "type": "double",
+      "units": "nT",
+      "description": "Theta-Component of measured magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "bph",
+      "type": "double",
+      "units": "nT",
+      "description": "Phi-Component of measured magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mr",
+      "type": "double",
+      "units": "nT",
+      "description": "Radial-Component of model magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mth",
+      "type": "double",
+      "units": "nT",
+      "description": "Theta-Component of Model magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mph",
+      "type": "double",
+      "units": "nT",
+      "description": "Phi-Component of Model magnetic field in GMS coord.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlon",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlat",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant Latitude in degrees",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mlt",
+      "type": "double",
+      "units": "hr",
+      "description": "Magnetic Local Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1981-09-15T05:40:09.000Z",
+  "stopDate": "1991-12-20T23:35:11.000Z"
+}

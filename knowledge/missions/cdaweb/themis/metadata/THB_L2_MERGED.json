@@ -1,0 +1,80 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thb_fgs_btotal",
+      "type": "double",
+      "units": "1/N SUM |B|, nT",
+      "description": "FGS (spin-resolution/~3 sec) magnetic field B magnitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "thb_fgs_gse",
+      "type": "double",
+      "units": "nT",
+      "description": "FGS magnetic  field B in XYZ GSE Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thb_peif_densityQ",
+      "type": "double",
+      "units": "n/cc",
+      "description": "(Good data only) ESA Full (High Angular Resolution, few minute time res.) Mode, Ion Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "thb_peif_vthermalQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Thermal Velocity",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "thb_peif_vflowspeedQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Plasma flow speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "thb_peif_velocity_gseQ",
+      "type": "double",
+      "units": "km/s",
+      "description": "-----Ion Velocity Vector in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSE",
+      "type": "double",
+      "units": "Re",
+      "description": "XYZ in GSE coordinates (time-series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_SSE",
+      "type": "double",
+      "units": "Rm",
+      "description": "XYZ in SSE coordinates (time-series)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2010-01-01T00:01:58.000Z",
+  "stopDate": "2025-12-31T23:55:07.000Z"
+}

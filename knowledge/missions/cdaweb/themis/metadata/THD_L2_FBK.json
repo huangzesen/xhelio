@@ -1,0 +1,172 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thd_fb_hff",
+      "type": "double",
+      "units": "V",
+      "description": "High-Frequency Filter peak and average values",
+      "fill": "nan",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "thd_fb_v1",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 1",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_v2",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 2",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_v3",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 3",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_v4",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 4",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_v5",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 5",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_v6",
+      "type": "double",
+      "units": "<|V|>",
+      "description": "Spectrogram FBK Potential, Sensor 6",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_edc12",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field DC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_edc34",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field DC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_edc56",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field DC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_scm1",
+      "type": "double",
+      "units": "<|nT|>",
+      "description": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 1",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_scm2",
+      "type": "double",
+      "units": "<|nT|>",
+      "description": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 2",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_scm3",
+      "type": "double",
+      "units": "nT",
+      "description": "Spectrogram FBK Search Coil Magnetometer (SCM) Axis 3",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_eac12",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field AC Component, Sensors 1&2 (spin plane)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_eac34",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field AC Component, Sensors 3&4 (spin plane)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "thd_fb_eac56",
+      "type": "double",
+      "units": "<|mV/m|>",
+      "description": "Spectrogram FBK E Field AC Component, Sensors 5&6 (axial)",
+      "fill": "nan",
+      "size": [
+        6
+      ]
+    }
+  ],
+  "startDate": "2007-02-24T00:00:00.000Z",
+  "stopDate": "2026-02-16T23:59:59.000Z"
+}

@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "PVO orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS",
+      "type": "double",
+      "units": "particle/cm**3",
+      "description": "Mass number of species                                \n                              4  He+                                          \n                             12  C+                                           \n                             14  N+                                           \n                             16  O+                                           \n                             28  CO++N2+                                      \n                             30  NO+                                          \n                             32  O2+                                          \n                             44  CO2+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BDATE",
+      "type": "double",
+      "units": "",
+      "description": "Beginning Date YYDDD - YY  = last two digits of year DDD = day of year .",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTIME",
+      "type": "double",
+      "units": "",
+      "description": "Beginning Time - HH:MM:SS  - HH = hour                                 \n                                    MM = minutes                              \n                                    SS = seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTPER",
+      "type": "double",
+      "units": "s",
+      "description": "Beginning Time from periapsis (sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BALTIT",
+      "type": "double",
+      "units": "km",
+      "description": "Beginning Altitude in (km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BSZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "Beginning Solar zenith angle (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BLST",
+      "type": "double",
+      "units": "hr",
+      "description": "Beginning Local solar time (hr)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EDATE",
+      "type": "double",
+      "units": "",
+      "description": "Ending Date YYDDD - YY  = last two digits of year DDD = day of year.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ETIME",
+      "type": "double",
+      "units": "",
+      "description": "Ending Time - HH:MM:SS - HH = hour         \n                                                 MM = minutes      \n                                                 SS = seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ETPER",
+      "type": "double",
+      "units": "s",
+      "description": "Ending Time from periapsis (sec).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EALTIT",
+      "type": "double",
+      "units": "km",
+      "description": "Ending Altitude in (km)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ESZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "Ending Solar zenith angle (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELST",
+      "type": "double",
+      "units": "hr",
+      "description": "Ending Local solar time (hr)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

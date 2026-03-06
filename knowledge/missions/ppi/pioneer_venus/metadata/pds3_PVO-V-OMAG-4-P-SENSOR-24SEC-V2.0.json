@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "NT",
+      "description": "BZ_SC: The Z-component of the magnetic field in the PVO Inertial Spacecraft Coordinate System (PVO_ISCC). The Z axis is defined to be anti-parallel to the spacecraft spin axis during orbital operations. This vector has been averaged over two spin periods from the high resolution data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VAR_BZ",
+      "type": "double",
+      "units": "NT",
+      "description": "VAR BZ: Variance of the BZ SC over the averaging window.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "NT",
+      "description": "BT: An estimate of the magnetic field strength over the averaging interval.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

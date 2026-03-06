@@ -1,0 +1,141 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "RADIAL FIELD COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "TANGENTIAL FIELD COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "NORMAL COMPONENT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "TOTAL MAG",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "nT",
+      "description": "AVG. TOTAL MAG",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "ARCSIN(BN/BMAG) - DELTA",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "180. - ATAN(BT,-BR) - LAMBDA",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BN",
+      "type": "double",
+      "units": "nT",
+      "description": "RMS 3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "NONE",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

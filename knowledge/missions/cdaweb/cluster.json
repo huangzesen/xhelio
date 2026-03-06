@@ -1,0 +1,2179 @@
+{
+  "id": "CLUSTER",
+  "name": "Cluster",
+  "keywords": [
+    "c1",
+    "c1_cp",
+    "c2",
+    "c2_cp",
+    "c3",
+    "c3_cp",
+    "c4",
+    "c4_cp",
+    "cl",
+    "cluster"
+  ],
+  "profile": {
+    "description": "Cluster spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "C3_CP_CIS-CODIF_H1_1D_PEF": {
+          "description": "This dataset contains CIS-CODIF Proton omni-directional distributions - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:16:57.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_H1_1D_PEF"
+        },
+        "C4_CP_RAP_PAD_L3DD": {
+          "description": "Electron pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-05-03T11:19:19.000Z",
+          "stop_date": "2024-09-29T08:50:11.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_PAD_L3DD"
+        },
+        "C1_CP_CIS-CODIF_HS_O1_PF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C1, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:45.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_O1_PF"
+        },
+        "C4_CP_CIS-CODIF_HS_O1_PSD": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:07.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_O1_PSD"
+        },
+        "C2_CP_RAP_ISPCT_HE": {
+          "description": "Helium omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:23.000Z",
+          "stop_date": "2024-02-01T03:56:53.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_ISPCT_HE"
+        },
+        "C3_CP_CIS-HIA_HS_MAG_IONS_PF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Magnetospheric Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:17:05.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_MAG_IONS_PF"
+        },
+        "C3_CP_CIS-HIA_LS_SW_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T09:27:14.000Z",
+          "stop_date": "2009-06-01T23:58:14.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_LS_SW_IONS_PEF"
+        },
+        "C4_CP_CIS-CODIF_HS_H1_PSD": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T15:10:05.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_H1_PSD"
+        },
+        "C2_CP_RAP_PAD_H": {
+          "description": "Proton pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:40.000Z",
+          "stop_date": "2024-02-01T03:55:52.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_PAD_H"
+        },
+        "C3_CP_CIS-HIA_HS_SW_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T10:20:07.000Z",
+          "stop_date": "2009-06-01T23:59:33.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_SW_IONS_PEF"
+        },
+        "C3_CP_CIS-HIA_PAD_HS_MAG_IONS_PF": {
+          "description": "Ion Pitch-Angle Distribution for CIS-HIA - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:10.000Z",
+          "stop_date": "2009-11-11T08:17:05.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_PAD_HS_MAG_IONS_PF"
+        },
+        "C3_CP_RAP_I3DM_CNO": {
+          "description": "CNO 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-29T23:58:47.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_I3DM_CNO"
+        },
+        "C3_CP_RAP_ISPCT_CNO": {
+          "description": "CNO omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:20.000Z",
+          "stop_date": "2009-11-29T23:59:45.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_ISPCT_CNO"
+        },
+        "C2_CP_RAP_L3DD": {
+          "description": "Electron 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-05-13T15:38:15.000Z",
+          "stop_date": "2024-02-01T03:59:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_L3DD"
+        },
+        "C4_CP_RAP_I3DM_HE": {
+          "description": "Helium 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:11:15.000Z",
+          "stop_date": "2024-09-30T23:54:59.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_I3DM_HE"
+        },
+        "C4_CP_RAP_PAD_CNO": {
+          "description": "CNO pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2001-01-09T15:24:23.000Z",
+          "stop_date": "2024-09-29T06:46:16.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_PAD_CNO"
+        },
+        "C3_CP_RAP_I3DM_HE": {
+          "description": "Helium 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-29T23:58:47.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_I3DM_HE"
+        },
+        "C1_CP_CIS-CODIF_HE1_1D_PEF": {
+          "description": "CIS-CODIF 1D Helium+ distributions on C1 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:37.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HE1_1D_PEF"
+        },
+        "C3_CP_CIS-CODIF_HS_O1_PF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C3, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_O1_PF"
+        },
+        "C3_CP_CIS-HIA_LS_SW_IONS_PSD": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T09:27:14.000Z",
+          "stop_date": "2009-06-01T23:58:14.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_LS_SW_IONS_PSD"
+        },
+        "C4_CP_RAP_E3DD": {
+          "description": "Electron 3D distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-11T22:03:54.000Z",
+          "stop_date": "2024-09-29T19:44:50.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_E3DD"
+        },
+        "C2_CP_RAP_E3DD": {
+          "description": "Electron 3D distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-16T16:34:28.000Z",
+          "stop_date": "2024-01-31T18:26:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_E3DD"
+        },
+        "C3_CP_RAP_PAD_L3DD": {
+          "description": "Electron pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-04-30T07:19:01.000Z",
+          "stop_date": "2024-09-29T08:50:12.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_PAD_L3DD"
+        },
+        "C4_CP_CIS-CODIF_LS_O1_PF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, Low-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_O1_PF"
+        },
+        "C1_CP_RAP_PAD_CNO": {
+          "description": "CNO pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-15T23:59:33.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_PAD_CNO"
+        },
+        "C3_CP_CIS-CODIF_HS_HE1_PF": {
+          "description": "This dataset contains CIS-CODIF 3D Helium+ distributions - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_HE1_PF"
+        },
+        "C4_CP_CIS-CODIF_PAD_HS_H1_PF": {
+          "description": "Proton Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2024-09-29T08:50:09.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_HS_H1_PF"
+        },
+        "C4_CP_RAP_PAD_E3DD": {
+          "description": "Electron pitch angle distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2001-01-12T10:20:23.000Z",
+          "stop_date": "2024-09-28T23:49:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_PAD_E3DD"
+        },
+        "C4_CP_RAP_PAD_H": {
+          "description": "Proton pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2001-01-09T15:24:23.000Z",
+          "stop_date": "2024-09-29T06:46:16.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_PAD_H"
+        },
+        "C4_CP_RAP_L3DD": {
+          "description": "Electron 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-05-03T11:19:19.000Z",
+          "stop_date": "2024-09-30T23:58:43.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_L3DD"
+        },
+        "C4_CP_CIS-CODIF_LS_HE1_PF": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C4, Low-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_HE1_PF"
+        },
+        "C4_CP_RAP_ESPCT6": {
+          "description": "Electron omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-05T13:02:35.000Z",
+          "stop_date": "2024-09-30T23:58:43.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_ESPCT6"
+        },
+        "C1_CP_RAP_PAD_HE": {
+          "description": "Helium pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-15T23:59:33.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_PAD_HE"
+        },
+        "C3_CP_CIS-CODIF_HS_HE1_PSD": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C3, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_HE1_PSD"
+        },
+        "C3_CP_CIS-HIA_HS_MAG_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Magnetospheric Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:17:05.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_MAG_IONS_PEF"
+        },
+        "C3_CP_CIS-CODIF_HS_O1_PEF": {
+          "description": "This dataset contains CIS-CODIF 3D Oxygen+ distributions - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_O1_PEF"
+        },
+        "C2_CP_RAP_ISPCT_CNO": {
+          "description": "CNO omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:23.000Z",
+          "stop_date": "2024-02-01T03:56:53.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_ISPCT_CNO"
+        },
+        "C1_CP_CIS-CODIF_PAD_HS_O1_PF": {
+          "description": "Oxygen+ Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:03.000Z",
+          "stop_date": "2004-10-25T23:59:45.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_PAD_HS_O1_PF"
+        },
+        "C4_CP_CIS-CODIF_HS_HE1_PSD": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C4, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_HE1_PSD"
+        },
+        "C4_CP_RAP_PAD_HE": {
+          "description": "Helium pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2001-01-09T15:24:23.000Z",
+          "stop_date": "2024-09-29T06:46:16.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_PAD_HE"
+        },
+        "C4_CP_CIS-CODIF_PAD_LS_H1_PF": {
+          "description": "Proton Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T02:00:09.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_LS_H1_PF"
+        },
+        "C2_PP_RAP": {
+          "description": "Cluster Spacecraft 2, RAPID Prime Parameters - B. Wilken and P. Daly (MPAe)",
+          "start_date": "2000-12-09T00:41:06.000Z",
+          "stop_date": "2024-09-30T00:00:00.000Z",
+          "pi_name": "B. Wilken and P. Daly",
+          "pi_affiliation": "MPAe",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_RAP"
+        },
+        "C3_CP_CIS-CODIF_HS_O1_PSD": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C3, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_O1_PSD"
+        },
+        "C1_CP_RAP_E3DD": {
+          "description": "Electron 3D distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-01T09:35:13.000Z",
+          "stop_date": "2023-09-18T11:39:43.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_E3DD"
+        },
+        "C3_CP_RAP_ESPCT6": {
+          "description": "Electron omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-05T12:39:03.000Z",
+          "stop_date": "2024-09-30T23:58:44.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_ESPCT6"
+        },
+        "C4_CP_CIS-CODIF_LS_H1_PSD": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, Low-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_H1_PSD"
+        },
+        "C1_CP_RAP_HSPCT": {
+          "description": "Proton omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:19:28.000Z",
+          "stop_date": "2007-03-14T23:59:57.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_HSPCT"
+        },
+        "C1_CP_CIS-CODIF_H1_1D_PEF": {
+          "description": "CIS-CODIF 1D Proton distributions on C1 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:20.000Z",
+          "stop_date": "2004-10-25T23:59:53.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_H1_1D_PEF"
+        },
+        "C3_CP_CIS-CODIF_HS_H1_PF": {
+          "description": "This dataset contains CIS-CODIF 3D Proton distributions - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:16:57.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_H1_PF"
+        },
+        "C4_CP_CIS-CODIF_HS_H1_PEF": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, High-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T15:10:05.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_H1_PEF"
+        },
+        "C1_CP_CIS-CODIF_HS_H1_PEF": {
+          "description": "CIS-CODIF 3D Proton distributions on C1, High-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:20.000Z",
+          "stop_date": "2004-10-25T23:59:53.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_H1_PEF"
+        },
+        "C1_CP_RAP_I3DM_H": {
+          "description": "Proton 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-14T23:59:26.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_I3DM_H"
+        },
+        "C3_CP_CIS-HIA_HS_SW_IONS_PSD": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T10:20:07.000Z",
+          "stop_date": "2009-06-01T23:59:33.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_SW_IONS_PSD"
+        },
+        "C4_CP_CIS-CODIF_PAD_HS_HE1_PF": {
+          "description": "CIS-CODIF Helium+ Pitch-Angle Distribution, High-sensitivity side, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2024-09-29T08:50:09.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_HS_HE1_PF"
+        },
+        "C4_CP_RAP_HSPCT": {
+          "description": "Proton omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:08:33.000Z",
+          "stop_date": "2024-09-30T23:56:08.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_HSPCT"
+        },
+        "C3_CP_CIS-HIA_HS_SW_IONS_PF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T10:20:07.000Z",
+          "stop_date": "2009-06-01T23:59:33.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_SW_IONS_PF"
+        },
+        "C4_CP_CIS-CODIF_PAD_HS_O1_PF": {
+          "description": "Oxygen+ Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2024-09-29T08:50:13.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_HS_O1_PF"
+        },
+        "C1_CP_CIS-CODIF_HS_H1_PSD": {
+          "description": "CIS-CODIF 3D Proton distributions on C1, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:20.000Z",
+          "stop_date": "2004-10-25T23:59:53.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_H1_PSD"
+        },
+        "C4_CP_RAP_ISPCT_CNO": {
+          "description": "CNO omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:20.000Z",
+          "stop_date": "2024-09-30T23:56:14.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_ISPCT_CNO"
+        },
+        "C4_CP_CIS-CODIF_H1_1D_PEF": {
+          "description": "CIS-CODIF 1D Proton distributions on C4 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T15:10:05.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_H1_1D_PEF"
+        },
+        "C1_CP_CIS-HIA_PAD_HS_MAG_IONS_PF": {
+          "description": "Ion Pitch-Angle Distribution for CIS-HIA - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:11.000Z",
+          "stop_date": "2020-06-16T19:03:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_PAD_HS_MAG_IONS_PF"
+        },
+        "C1_CP_RAP_PAD_L3DD": {
+          "description": "Electron pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-04-20T09:59:58.000Z",
+          "stop_date": "2023-09-18T23:59:41.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_PAD_L3DD"
+        },
+        "C3_CP_CIS-CODIF_PAD_HS_HE1_PF": {
+          "description": "Helium+ Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_PAD_HS_HE1_PF"
+        },
+        "C3_CP_CIS-CODIF_PAD_HS_H1_PF": {
+          "description": "CIS-CODIF Proton Pitch-Angle Distribution, High-sensitivity side, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2009-11-11T08:16:57.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_PAD_HS_H1_PF"
+        },
+        "C1_CP_CIS-HIA_HS_SW_IONS_PF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T15:49:03.000Z",
+          "stop_date": "2011-03-24T14:59:44.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_SW_IONS_PF"
+        },
+        "C1_CP_CIS-HIA_LS_SW_IONS_PF": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T14:54:14.000Z",
+          "stop_date": "2011-03-24T14:59:39.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_LS_SW_IONS_PF"
+        },
+        "C1_CP_CIS-CODIF_HS_O1_PSD": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C1, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:45.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_O1_PSD"
+        },
+        "C1_CP_CIS-HIA_HS_MAG_IONS_PSD": {
+          "description": "CIS-HIA 3D Ion distributions on C1, High-Sensitivity, Magnetospheric Mode, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T15:12:52.000Z",
+          "stop_date": "2020-06-16T19:03:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_MAG_IONS_PSD"
+        },
+        "C1_PP_RAP": {
+          "description": "Cluster Spacecraft 1, RAPID Prime Parameters - B. Wilken and P. Daly (MPAe)",
+          "start_date": "2000-12-09T11:42:23.000Z",
+          "stop_date": "2024-09-30T00:00:00.000Z",
+          "pi_name": "B. Wilken and P. Daly",
+          "pi_affiliation": "MPAe",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_RAP"
+        },
+        "C1_CP_CIS-HIA_LS_1D_PEF": {
+          "description": "Ion omni-directional flux for CIS_HIA in Low-sensitivity mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T14:54:14.000Z",
+          "stop_date": "2011-03-24T14:59:39.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_LS_1D_PEF"
+        },
+        "C1_CP_CIS-CODIF_PAD_HS_H1_PF": {
+          "description": "Proton Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:03.000Z",
+          "stop_date": "2004-10-25T23:59:53.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_PAD_HS_H1_PF"
+        },
+        "C4_CP_CIS-CODIF_LS_HE1_PEF": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C4, Low-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_HE1_PEF"
+        },
+        "C3_CP_RAP_L3DD": {
+          "description": "Electron 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-04-30T07:19:01.000Z",
+          "stop_date": "2024-09-30T23:58:44.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_L3DD"
+        },
+        "C4_CP_CIS-CODIF_PAD_LS_HE1_PF": {
+          "description": "CIS-CODIF Helium+ Pitch-Angle Distribution, Low-sensitivity side, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T02:00:09.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_LS_HE1_PF"
+        },
+        "C1_CP_RAP_PAD_H": {
+          "description": "Proton pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-15T23:59:33.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_PAD_H"
+        },
+        "C4_CP_CIS-CODIF_HE1_DENSITY_CORRECTED": {
+          "description": "Corrected He+ Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-03-01T00:00:22.000Z",
+          "stop_date": "2007-12-30T23:59:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HE1_DENSITY_CORRECTED"
+        },
+        "C3_CP_CIS-HIA_HS_MAG_IONS_PSD": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Magnetospheric Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:17:05.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_MAG_IONS_PSD"
+        },
+        "C1_CP_RAP_I3DM_CNO": {
+          "description": "CNO 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-14T23:59:26.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_I3DM_CNO"
+        },
+        "C2_CP_RAP_I3DM_HE": {
+          "description": "Helium 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:40.000Z",
+          "stop_date": "2024-02-01T03:55:52.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_I3DM_HE"
+        },
+        "C3_CP_RAP_PAD_CNO": {
+          "description": "CNO pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-30T23:32:19.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_PAD_CNO"
+        },
+        "C4_CP_CIS-CODIF_LS_O1_PEF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, Low-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_O1_PEF"
+        },
+        "C4_CP_CIS-CODIF_HS_H1_PF": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T15:10:05.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_H1_PF"
+        },
+        "C3_CP_CIS-HIA_HS_1D_PEF": {
+          "description": "CIS-HIA 1D Ions distributions on C3 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:17:05.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_HS_1D_PEF"
+        },
+        "C4_PP_RAP": {
+          "description": "Cluster Spacecraft 4, RAPID Prime Parameters - B. Wilken and P. Daly (MPAe)",
+          "start_date": "2000-12-09T12:54:16.000Z",
+          "stop_date": "2024-09-30T23:58:47.000Z",
+          "pi_name": "B. Wilken and P. Daly",
+          "pi_affiliation": "MPAe",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_RAP"
+        },
+        "C1_CP_CIS-HIA_HS_MAG_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Magnetospheric Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T15:12:52.000Z",
+          "stop_date": "2020-06-16T19:03:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_MAG_IONS_PEF"
+        },
+        "C2_CP_RAP_I3DM_H": {
+          "description": "Proton 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:40.000Z",
+          "stop_date": "2024-02-01T03:55:52.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_I3DM_H"
+        },
+        "C3_CP_CIS-CODIF_HS_H1_PEF": {
+          "description": "CIS-CODIF 3D Proton distributions on C3, High-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:16:57.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_H1_PEF"
+        },
+        "C4_CP_CIS-CODIF_PAD_LS_O1_PF": {
+          "description": "CIS-CODIF Oxygen+ Pitch-Angle Distribution, Low-sensitivity side, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T02:00:09.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_PAD_LS_O1_PF"
+        },
+        "C1_CP_RAP_L3DD": {
+          "description": "Electron 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-04-20T09:59:58.000Z",
+          "stop_date": "2023-09-18T23:59:41.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_L3DD"
+        },
+        "C3_CP_CIS-HIA_LS_SW_IONS_PF": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T09:27:14.000Z",
+          "stop_date": "2009-06-01T23:58:14.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_LS_SW_IONS_PF"
+        },
+        "C4_CP_CIS-CODIF_LS_H1_PEF": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, Low-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_H1_PEF"
+        },
+        "C1_CP_RAP_I3DM_HE": {
+          "description": "Helium 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:21:14.000Z",
+          "stop_date": "2007-03-14T23:59:26.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_I3DM_HE"
+        },
+        "C1_CP_RAP_ISPCT_CNO": {
+          "description": "CNO omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:20:02.000Z",
+          "stop_date": "2007-03-14T23:59:51.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_ISPCT_CNO"
+        },
+        "C3_CP_CIS-CODIF_O1_1D_PEF": {
+          "description": "CIS-CODIF 1D Oxygen+ distributions on C3 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2005-01-22T00:01:02.000Z",
+          "stop_date": "2005-02-16T23:58:17.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_O1_1D_PEF"
+        },
+        "C3_CP_CIS-CODIF_HE1_1D_PEF": {
+          "description": "This dataset contains CIS-CODIF Helium+ omni-directional distributions - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:47:52.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HE1_1D_PEF"
+        },
+        "C1_CP_CIS-CODIF_HS_H1_PF": {
+          "description": "CIS-CODIF 3D Proton distributions on C1, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:20.000Z",
+          "stop_date": "2004-10-25T23:59:53.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_H1_PF"
+        },
+        "C4_CP_RAP_I3DM_H": {
+          "description": "Proton 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:11:15.000Z",
+          "stop_date": "2024-09-30T23:54:59.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_I3DM_H"
+        },
+        "C2_CP_RAP_HSPCT": {
+          "description": "Proton omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:08:52.000Z",
+          "stop_date": "2024-02-01T03:57:00.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_HSPCT"
+        },
+        "C3_CP_CIS-CODIF_PAD_HS_O1_PF": {
+          "description": "Oxygen+ Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:02.000Z",
+          "stop_date": "2009-11-11T08:16:23.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_PAD_HS_O1_PF"
+        },
+        "C1_CP_CIS-HIA_HS_SW_IONS_PSD": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T15:49:03.000Z",
+          "stop_date": "2011-03-24T14:59:44.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_SW_IONS_PSD"
+        },
+        "C2_CP_RAP_I3DM_CNO": {
+          "description": "CNO 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:40.000Z",
+          "stop_date": "2024-02-01T03:55:52.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_I3DM_CNO"
+        },
+        "C4_CP_CIS-CODIF_HS_HE1_PF": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C4, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_HE1_PF"
+        },
+        "C3_CP_RAP_HSPCT": {
+          "description": "Proton omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:08:34.000Z",
+          "stop_date": "2009-11-29T23:59:56.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_HSPCT"
+        },
+        "C3_CP_CIS-CODIF_HS_H1_PSD": {
+          "description": "CIS-CODIF 3D Proton distributions on C3, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T13:48:08.000Z",
+          "stop_date": "2009-11-11T08:16:57.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-CODIF_HS_H1_PSD"
+        },
+        "C2_CP_RAP_ESPCT6": {
+          "description": "Electron omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:01:38.000Z",
+          "stop_date": "2024-02-01T03:59:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_ESPCT6"
+        },
+        "C4_CP_CIS-CODIF_LS_O1_PSD": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, Low-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_O1_PSD"
+        },
+        "C3_CP_RAP_PAD_HE": {
+          "description": "Helium pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-30T23:32:19.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_PAD_HE"
+        },
+        "C1_CP_CIS-CODIF_HS_HE1_PF": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C1, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:37.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_HE1_PF"
+        },
+        "C1_CP_RAP_ESPCT6": {
+          "description": "Electron omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-01T00:00:01.000Z",
+          "stop_date": "2023-09-18T23:59:41.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_ESPCT6"
+        },
+        "C2_CP_RAP_PAD_HE": {
+          "description": "Helium pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:40.000Z",
+          "stop_date": "2024-02-01T03:55:52.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_PAD_HE"
+        },
+        "C1_CP_RAP_ISPCT_HE": {
+          "description": "Helium omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:20:02.000Z",
+          "stop_date": "2007-03-14T23:59:51.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_ISPCT_HE"
+        },
+        "C4_CP_RAP_ISPCT_HE": {
+          "description": "Helium omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:20.000Z",
+          "stop_date": "2024-09-30T23:56:14.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_ISPCT_HE"
+        },
+        "C1_CP_CIS-CODIF_O1_1D_PEF": {
+          "description": "CIS-CODIF 1D Oxygen+ distributions on C1 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2001-01-26T23:58:49.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_O1_1D_PEF"
+        },
+        "C4_CP_CIS-CODIF_LS_H1_PF": {
+          "description": "CIS-CODIF 3D Proton distributions on C4, Low-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T17:10:10.000Z",
+          "stop_date": "2024-08-19T20:12:58.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_LS_H1_PF"
+        },
+        "C2_CP_RAP_PAD_L3DD": {
+          "description": "Electron pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2004-05-13T15:38:15.000Z",
+          "stop_date": "2024-02-01T03:59:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_PAD_L3DD"
+        },
+        "C3_CP_RAP_PAD_E3DD": {
+          "description": "Electron pitch angle distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:58.000Z",
+          "stop_date": "2024-09-28T23:49:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_PAD_E3DD"
+        },
+        "C1_CP_CIS-CODIF_HS_HE1_PSD": {
+          "description": "CIS-CODIF 3D Helium+ distributions on C1, High-Sensitivity, in Phase_Space_Density - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:37.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_HE1_PSD"
+        },
+        "C1_CP_CIS-HIA_HS_1D_PEF": {
+          "description": "CIS-HIA 1D Ions distributions on C1 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T15:49:03.000Z",
+          "stop_date": "2020-06-16T19:03:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_1D_PEF"
+        },
+        "C4_CP_CIS-CODIF_O1_1D_PEF": {
+          "description": "CIS-CODIF 1D Oxygen+ distributions on C4 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2004-05-07T00:00:02.000Z",
+          "stop_date": "2004-06-01T23:59:50.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_O1_1D_PEF"
+        },
+        "C4_CP_RAP_I3DM_CNO": {
+          "description": "CNO 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:11:15.000Z",
+          "stop_date": "2024-09-30T23:54:59.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_RAP_I3DM_CNO"
+        },
+        "C3_PP_RAP": {
+          "description": "Cluster Spacecraft 3, RAPID Prime Parameters - B. Wilken and P. Daly (MPAe)",
+          "start_date": "2000-12-09T12:54:17.000Z",
+          "stop_date": "2024-09-30T23:58:48.000Z",
+          "pi_name": "B. Wilken and P. Daly",
+          "pi_affiliation": "MPAe",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_RAP"
+        },
+        "C1_CP_CIS-HIA_HS_SW_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, High-Sensitivity, Solar-Wind Mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T15:49:03.000Z",
+          "stop_date": "2011-03-24T14:59:44.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_SW_IONS_PEF"
+        },
+        "C2_CP_RAP_PAD_E3DD": {
+          "description": "Electron pitch angle distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-16T16:34:40.000Z",
+          "stop_date": "2024-01-31T18:26:46.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_RAP_PAD_E3DD"
+        },
+        "C3_CP_RAP_PAD_H": {
+          "description": "Proton pitch angle distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-30T23:32:19.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_PAD_H"
+        },
+        "C1_CP_CIS-HIA_LS_SW_IONS_PSD": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T14:54:14.000Z",
+          "stop_date": "2011-03-24T14:59:39.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_LS_SW_IONS_PSD"
+        },
+        "C1_CP_CIS-CODIF_HS_O1_PEF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C1, High-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T12:08:36.000Z",
+          "stop_date": "2004-10-25T23:59:45.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_HS_O1_PEF"
+        },
+        "C3_CP_RAP_ISPCT_HE": {
+          "description": "Helium omni-directional distribution, differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:14:20.000Z",
+          "stop_date": "2009-11-29T23:59:45.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_ISPCT_HE"
+        },
+        "C1_CP_CIS-HIA_LS_SW_IONS_PEF": {
+          "description": "3D Ion distributions for CIS-HIA, Low-Sensitivity, Solar Wind mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-10T14:54:14.000Z",
+          "stop_date": "2011-03-24T14:59:39.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_LS_SW_IONS_PEF"
+        },
+        "C1_CP_CIS-HIA_HS_MAG_IONS_PF": {
+          "description": "CIS-HIA 3D Ion distributions on C1, High-Sensitivity, Magnetospheric Mode, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-11T15:12:52.000Z",
+          "stop_date": "2020-06-16T19:03:48.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-HIA_HS_MAG_IONS_PF"
+        },
+        "C1_CP_RAP_PAD_E3DD": {
+          "description": "Electron pitch angle distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-03T00:31:20.000Z",
+          "stop_date": "2023-09-18T11:39:43.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_RAP_PAD_E3DD"
+        },
+        "C3_CP_RAP_I3DM_H": {
+          "description": "Proton 3D distribution (standard), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:10:44.000Z",
+          "stop_date": "2009-11-29T23:58:47.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_I3DM_H"
+        },
+        "C4_CP_CIS-CODIF_HS_O1_PEF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, High-Sensitivity, in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:07.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_O1_PEF"
+        },
+        "C3_CP_RAP_E3DD": {
+          "description": "Electron 3D distribution (best), differential flux - Berend Wilken (MPS)",
+          "start_date": "2000-12-07T07:09:58.000Z",
+          "stop_date": "2024-09-29T19:44:49.000Z",
+          "pi_name": "Berend Wilken",
+          "pi_affiliation": "MPS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_RAP_E3DD"
+        },
+        "C1_CP_CIS-CODIF_PAD_HS_HE1_PF": {
+          "description": "Helium+ Pitch-Angle Distribution for CIS-CODIF - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-31T01:02:03.000Z",
+          "stop_date": "2004-10-25T23:59:37.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_CIS-CODIF_PAD_HS_HE1_PF"
+        },
+        "C4_CP_CIS-CODIF_HE1_1D_PEF": {
+          "description": "CIS-CODIF 1D Helium+ distributions on C4 in Particle_Energy_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:03.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HE1_1D_PEF"
+        },
+        "C4_CP_CIS-CODIF_HS_O1_PF": {
+          "description": "CIS-CODIF 3D Oxygen+ distributions on C4, High-Sensitivity, in Differential_Particle_Flux - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-09T16:27:02.000Z",
+          "stop_date": "2024-09-30T23:58:07.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_CIS-CODIF_HS_O1_PF"
+        },
+        "C3_CP_CIS-HIA_LS_1D_PEF": {
+          "description": "Ion omni-directional flux for CIS_HIA in Low-sensitivity mode - Iannis Dandouras (IRAP)",
+          "start_date": "2001-01-12T09:27:14.000Z",
+          "stop_date": "2009-06-01T23:58:14.000Z",
+          "pi_name": "Iannis Dandouras",
+          "pi_affiliation": "IRAP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_CIS-HIA_LS_1D_PEF"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "C2_CP_EDI_QZC": {
+          "description": "Background electron counts (in WW-mode) - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:06.000Z",
+          "stop_date": "2005-06-04T11:59:38.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EDI_QZC"
+        },
+        "C1_CP_WHI_ELECTRON_DENSITY": {
+          "description": "Electron Density - Pierre Henri (LPC2E)",
+          "start_date": "2001-02-02T15:18:23.000Z",
+          "stop_date": "2024-09-30T17:41:59.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_WHI_ELECTRON_DENSITY"
+        },
+        "C3_PP_EFW": {
+          "description": "Cluster Spacecraft 3, EFW Prime Parameters - G. Gustafsson (IRFU)",
+          "start_date": "2000-12-09T12:54:18.000Z",
+          "stop_date": "2024-09-30T23:47:06.000Z",
+          "pi_name": "G. Gustafsson",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_EFW"
+        },
+        "C3_PP_EDI": {
+          "description": "Cluster Spacecraft 3, EDI Prime Parameters - G. Paschmann (MPE)",
+          "start_date": "2001-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-29T00:00:00.000Z",
+          "pi_name": "G. Paschmann",
+          "pi_affiliation": "MPE",
+          "doi": "10.48322/pn1d-v155",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_EDI"
+        },
+        "C3_CP_WHI_WAVE_FORM_ENERGY": {
+          "description": "Electric Wave Form Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-11T22:45:22.000Z",
+          "stop_date": "2024-09-30T23:43:00.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_WHI_WAVE_FORM_ENERGY"
+        },
+        "C3_CP_EDI_AEDC": {
+          "description": "Corrected ambient electron counts - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2004-10-14T00:00:00.000Z",
+          "stop_date": "2024-09-16T23:59:35.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EDI_AEDC"
+        },
+        "C1_CP_EDI_QZC": {
+          "description": "Background electron counts (in WW-mode) - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:04.000Z",
+          "stop_date": "2024-09-12T09:07:34.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EDI_QZC"
+        },
+        "C1_CP_EDI_AEDC": {
+          "description": "Corrected ambient electron counts - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2004-10-14T00:00:00.000Z",
+          "stop_date": "2024-09-30T23:58:36.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EDI_AEDC"
+        },
+        "C2_CP_EFW_L3_V3D_INERT": {
+          "description": "ExB - drift velocity in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-02T14:03:02.000Z",
+          "stop_date": "2022-08-23T13:29:58.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EFW_L3_V3D_INERT"
+        },
+        "C2_CP_WHI_NATURAL": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-05T22:47:56.000Z",
+          "stop_date": "2024-07-16T13:37:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_WHI_NATURAL"
+        },
+        "C1_CP_EFW_L3_E3D_INERT": {
+          "description": "3D Electric field in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-05T19:32:46.000Z",
+          "stop_date": "2018-12-10T03:00:14.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EFW_L3_E3D_INERT"
+        },
+        "C3_CP_WHI_NATURAL": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-11T22:41:55.000Z",
+          "stop_date": "2024-09-30T23:43:00.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_WHI_NATURAL"
+        },
+        "C3_CP_WHI_ELECTRON_DENSITY": {
+          "description": "Electron Density - Pierre Henri (LPC2E)",
+          "start_date": "2001-02-02T15:20:07.000Z",
+          "stop_date": "2024-09-30T23:03:50.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_WHI_ELECTRON_DENSITY"
+        },
+        "C2_CP_EDI_MP": {
+          "description": "Electron Drift Velocity and Electric Field, best resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:10.000Z",
+          "stop_date": "2004-04-08T07:43:03.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EDI_MP"
+        },
+        "C2_PP_EDI": {
+          "description": "Cluster Spacecraft 2, EDI Prime Parameters - G. Paschmann (MPE)",
+          "start_date": "2001-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-09T00:00:00.000Z",
+          "pi_name": "G. Paschmann",
+          "pi_affiliation": "MPE",
+          "doi": "10.48322/g7ht-c763",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_EDI"
+        },
+        "C4_CP_EFW_L3_V3D_INERT": {
+          "description": "ExB - drift velocity in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2001-01-07T00:17:02.000Z",
+          "stop_date": "2024-09-29T23:59:58.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_EFW_L3_V3D_INERT"
+        },
+        "C3_CP_EFW_L3_V3D_INERT": {
+          "description": "ExB - drift velocity in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-02T15:13:02.000Z",
+          "stop_date": "2014-11-03T20:58:14.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EFW_L3_V3D_INERT"
+        },
+        "C2_PP_EFW": {
+          "description": "Cluster Spacecraft 2, EFW Prime Parameters - G. Gustafsson (IRFU)",
+          "start_date": "2000-12-09T00:41:10.000Z",
+          "stop_date": "2024-09-30T00:00:00.000Z",
+          "pi_name": "G. Gustafsson",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_EFW"
+        },
+        "C4_CP_WHI_PASSIVE_ACTIVE": {
+          "description": "Passive Of Active Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-25T21:49:51.000Z",
+          "stop_date": "2024-09-30T23:28:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_WHI_PASSIVE_ACTIVE"
+        },
+        "C2_CP_EDI_AEDC": {
+          "description": "Corrected ambient electron counts - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2004-10-14T00:00:00.000Z",
+          "stop_date": "2023-09-19T11:59:34.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EDI_AEDC"
+        },
+        "C2_CP_WHI_ACTIVE": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-05T22:51:44.000Z",
+          "stop_date": "2024-07-16T13:37:11.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_WHI_ACTIVE"
+        },
+        "C2_CP_EFW_L3_P": {
+          "description": "Spacecraft potential (4 sec resolution) - Mats Andre (IRFU)",
+          "start_date": "2000-12-01T00:00:02.000Z",
+          "stop_date": "2024-07-16T13:37:46.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EFW_L3_P"
+        },
+        "C1_PP_EFW": {
+          "description": "Cluster Spacecraft 1, EFW Prime Parameters - G. Gustafsson (IRFU)",
+          "start_date": "2000-12-09T11:42:30.000Z",
+          "stop_date": "2024-09-30T23:47:06.000Z",
+          "pi_name": "G. Gustafsson",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_EFW"
+        },
+        "C2_CP_WHI_ELECTRON_DENSITY": {
+          "description": "Electron Density - Pierre Henri (LPC2E)",
+          "start_date": "2001-02-02T15:18:22.000Z",
+          "stop_date": "2024-07-16T13:32:47.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_WHI_ELECTRON_DENSITY"
+        },
+        "C4_CP_WHI_WAVE_FORM_ENERGY": {
+          "description": "Electric Wave Form Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-25T21:39:21.000Z",
+          "stop_date": "2024-09-30T23:43:00.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_WHI_WAVE_FORM_ENERGY"
+        },
+        "C4_CP_WHI_ELECTRON_DENSITY": {
+          "description": "Electron Density - Pierre Henri (LPC2E)",
+          "start_date": "2001-02-02T15:25:20.000Z",
+          "stop_date": "2024-09-30T17:44:09.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_WHI_ELECTRON_DENSITY"
+        },
+        "C4_PP_EDI": {
+          "description": "Cluster Spacecraft 4, EDI Prime Parameters - G. Paschmann (MPE)",
+          "start_date": "2001-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-29T00:00:00.000Z",
+          "pi_name": "G. Paschmann",
+          "pi_affiliation": "MPE",
+          "doi": "10.48322/9srb-jb74",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_EDI"
+        },
+        "C1_CP_WHI_NATURAL": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-08T02:37:56.000Z",
+          "stop_date": "2024-09-30T23:43:01.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_WHI_NATURAL"
+        },
+        "C1_CP_EFW_L3_V3D_INERT": {
+          "description": "ExB - drift velocity in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-05T19:32:46.000Z",
+          "stop_date": "2018-12-10T03:00:14.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EFW_L3_V3D_INERT"
+        },
+        "C4_PP_EFW": {
+          "description": "Cluster Spacecraft 4, EFW Prime Parameters - G. Gustafsson (IRFU)",
+          "start_date": "2000-12-09T12:53:58.000Z",
+          "stop_date": "2024-09-30T23:47:06.000Z",
+          "pi_name": "G. Gustafsson",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_EFW"
+        },
+        "C3_CP_EDI_SPIN": {
+          "description": "Electron Drift Velocity and Electric Field, spin resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:10.000Z",
+          "stop_date": "2024-09-15T21:06:39.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EDI_SPIN"
+        },
+        "C1_CP_EDI_SPIN": {
+          "description": "Electron Drift Velocity and Electric Field, spin resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:05.000Z",
+          "stop_date": "2024-09-12T09:07:29.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EDI_SPIN"
+        },
+        "C1_PP_EDI": {
+          "description": "Cluster Spacecraft 1, EDI Prime Parameters - G. Paschmann (MPE)",
+          "start_date": "2001-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-29T00:00:00.000Z",
+          "pi_name": "G. Paschmann",
+          "pi_affiliation": "MPE",
+          "doi": "10.48322/3cp4-n849",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_EDI"
+        },
+        "C3_CP_WHI_PASSIVE_ACTIVE": {
+          "description": "Passive Of Active Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-11T22:55:51.000Z",
+          "stop_date": "2024-09-30T23:28:51.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_WHI_PASSIVE_ACTIVE"
+        },
+        "C1_CP_WHI_PASSIVE_ACTIVE": {
+          "description": "Passive Of Active Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-08T02:51:52.000Z",
+          "stop_date": "2024-09-30T23:28:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_WHI_PASSIVE_ACTIVE"
+        },
+        "C3_CP_WHI_ACTIVE": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-11T22:45:43.000Z",
+          "stop_date": "2024-09-30T23:42:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_WHI_ACTIVE"
+        },
+        "C1_CP_WHI_ACTIVE": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-08T02:41:44.000Z",
+          "stop_date": "2024-09-30T23:42:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_WHI_ACTIVE"
+        },
+        "C2_CP_WHI_WAVE_FORM_ENERGY": {
+          "description": "Electric Wave Form Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-05T22:51:21.000Z",
+          "stop_date": "2024-07-16T13:37:52.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_WHI_WAVE_FORM_ENERGY"
+        },
+        "C2_CP_EFW_L3_E3D_INERT": {
+          "description": "3D Electric field in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-02T14:03:02.000Z",
+          "stop_date": "2022-08-23T13:29:58.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EFW_L3_E3D_INERT"
+        },
+        "C4_CP_WHI_NATURAL": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-25T21:35:55.000Z",
+          "stop_date": "2024-09-30T23:43:00.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_WHI_NATURAL"
+        },
+        "C1_CP_WHI_WAVE_FORM_ENERGY": {
+          "description": "Electric Wave Form Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-08T02:41:22.000Z",
+          "stop_date": "2024-09-30T23:43:01.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_WHI_WAVE_FORM_ENERGY"
+        },
+        "C1_CP_EFW_L3_P": {
+          "description": "Spacecraft potential (4 sec resolution) - Mats Andre (IRFU)",
+          "start_date": "2000-12-05T19:32:46.000Z",
+          "stop_date": "2024-09-30T23:47:02.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EFW_L3_P"
+        },
+        "C3_CP_EFW_L3_P": {
+          "description": "Spacecraft potential (4 sec resolution) - Mats Andre (IRFU)",
+          "start_date": "2000-12-01T00:00:02.000Z",
+          "stop_date": "2024-06-30T23:59:58.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EFW_L3_P"
+        },
+        "C4_CP_EFW_L3_P": {
+          "description": "Spacecraft potential (4 sec resolution) - Mats Andre (IRFU)",
+          "start_date": "2000-12-01T00:00:02.000Z",
+          "stop_date": "2024-09-30T23:47:06.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_EFW_L3_P"
+        },
+        "C1_CP_EDI_MP": {
+          "description": "Electron Drift Velocity and Electric Field, best resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:09.000Z",
+          "stop_date": "2010-01-24T03:19:18.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_EDI_MP"
+        },
+        "C4_CP_EFW_L3_E3D_INERT": {
+          "description": "3D Electric field in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2001-01-07T00:17:02.000Z",
+          "stop_date": "2024-09-29T23:59:58.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_EFW_L3_E3D_INERT"
+        },
+        "C4_CP_WHI_ACTIVE": {
+          "description": "Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-10-25T21:39:44.000Z",
+          "stop_date": "2024-09-30T23:42:54.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_WHI_ACTIVE"
+        },
+        "C3_CP_EDI_MP": {
+          "description": "Electron Drift Velocity and Electric Field, best resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:11.000Z",
+          "stop_date": "2016-09-11T01:15:28.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EDI_MP"
+        },
+        "C3_CP_EFW_L3_E3D_INERT": {
+          "description": "3D Electric field in ISR2 (4-sec) - Mats Andre (IRFU)",
+          "start_date": "2000-12-02T15:13:02.000Z",
+          "stop_date": "2014-11-03T20:58:14.000Z",
+          "pi_name": "Mats Andre",
+          "pi_affiliation": "IRFU",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EFW_L3_E3D_INERT"
+        },
+        "C3_CP_EDI_QZC": {
+          "description": "Background electron counts (in WW-mode) - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:08.000Z",
+          "stop_date": "2024-09-15T21:06:56.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_EDI_QZC"
+        },
+        "C2_CP_WHI_PASSIVE_ACTIVE": {
+          "description": "Passive Of Active Electric Spectral Power Density - Pierre Henri (LPC2E)",
+          "start_date": "2000-09-05T23:01:52.000Z",
+          "stop_date": "2024-07-15T11:19:20.000Z",
+          "pi_name": "Pierre Henri",
+          "pi_affiliation": "LPC2E",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_WHI_PASSIVE_ACTIVE"
+        },
+        "C2_CP_EDI_SPIN": {
+          "description": "Electron Drift Velocity and Electric Field, spin resolution - Goetz Paschmann (University of New Hampshire)",
+          "start_date": "2001-02-02T07:52:10.000Z",
+          "stop_date": "2010-01-01T00:00:00.000Z",
+          "pi_name": "Goetz Paschmann",
+          "pi_affiliation": "University of New Hampshire",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_EDI_SPIN"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "C1_PP_CIS": {
+          "description": "Cluster Spacecraft 1, CIS Prime Parameters - H. Reme (CESR)",
+          "start_date": "2000-12-09T00:00:00.000Z",
+          "stop_date": "2022-09-30T00:00:00.000Z",
+          "pi_name": "H. Reme",
+          "pi_affiliation": "CESR",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_CIS"
+        },
+        "C2_PP_WHI": {
+          "description": "Cluster Spacecraft 2, WHISPER Prime Parameters - P.M.E. Decreau (LPCE)",
+          "start_date": "2000-12-10T00:00:02.000Z",
+          "stop_date": "2012-12-31T23:59:50.000Z",
+          "pi_name": "P.M.E. Decreau",
+          "pi_affiliation": "LPCE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_WHI"
+        },
+        "C1_PP_PEA": {
+          "description": "Cluster Spacecraft 1, PEACE Prime Parameters - A. Fazakerley (MSSL)",
+          "start_date": "2000-11-01T00:00:00.000Z",
+          "stop_date": "2023-12-31T23:58:37.000Z",
+          "pi_name": "A. Fazakerley",
+          "pi_affiliation": "MSSL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_PEA"
+        },
+        "C4_PP_CIS": {
+          "description": "Cluster Spacecraft 4, CIS Prime Parameters - H. Reme (CESR)",
+          "start_date": "2000-12-09T12:53:40.000Z",
+          "stop_date": "2024-09-30T23:49:00.000Z",
+          "pi_name": "H. Reme",
+          "pi_affiliation": "CESR",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_CIS"
+        },
+        "C2_PP_ASP": {
+          "description": "Cluster Spacecraft 2, ASPOC Prime Parameters - W. Riedler (IWF-OAW)",
+          "start_date": "2000-12-09T00:00:01.000Z",
+          "stop_date": "2008-06-30T23:59:59.000Z",
+          "pi_name": "W. Riedler",
+          "pi_affiliation": "IWF-OAW",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_ASP"
+        },
+        "C4_PP_PEA": {
+          "description": "Cluster Spacecraft 4, PEACE Prime Parameters - A. Fazakerley (MSSL)",
+          "start_date": "2000-11-01T00:00:00.000Z",
+          "stop_date": "2023-12-31T23:56:17.000Z",
+          "pi_name": "A. Fazakerley",
+          "pi_affiliation": "MSSL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_PEA"
+        },
+        "C1_PP_ASP": {
+          "description": "Cluster Spacecraft 1, ASPOC Prime Parameters - W. Riedler (IWF-OAW)",
+          "start_date": "2000-12-09T00:00:03.000Z",
+          "stop_date": "2008-06-30T23:59:58.000Z",
+          "pi_name": "W. Riedler",
+          "pi_affiliation": "IWF-OAW",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_ASP"
+        },
+        "C4_PP_WHI": {
+          "description": "Cluster Spacecraft 4, WHISPER Prime Parameters - P.M.E. Decreau (LPCE)",
+          "start_date": "2000-12-10T00:00:02.000Z",
+          "stop_date": "2012-12-31T23:59:54.000Z",
+          "pi_name": "P.M.E. Decreau",
+          "pi_affiliation": "LPCE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_WHI"
+        },
+        "C3_PP_PEA": {
+          "description": "Cluster Spacecraft 3, PEACE Prime Parameters - A. Fazakerley (MSSL)",
+          "start_date": "2000-11-01T00:00:00.000Z",
+          "stop_date": "2023-12-31T23:54:33.000Z",
+          "pi_name": "A. Fazakerley",
+          "pi_affiliation": "MSSL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_PEA"
+        },
+        "C3_PP_CIS": {
+          "description": "Cluster Spacecraft 3, CIS Prime Parameters - H. Reme (CESR)",
+          "start_date": "2000-12-09T12:53:41.000Z",
+          "stop_date": "2021-12-31T00:00:00.000Z",
+          "pi_name": "H. Reme",
+          "pi_affiliation": "CESR",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_CIS"
+        },
+        "C1_PP_WHI": {
+          "description": "Cluster Spacecraft 1, WHISPER Prime Parameters - P.M.E. Decreau (LPCE)",
+          "start_date": "2000-12-10T00:00:06.000Z",
+          "stop_date": "2012-12-31T23:59:54.000Z",
+          "pi_name": "P.M.E. Decreau",
+          "pi_affiliation": "LPCE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_WHI"
+        },
+        "C4_PP_ASP": {
+          "description": "Cluster Spacecraft 4, ASPOC Prime Parameters - W. Riedler (IWF-OAW)",
+          "start_date": "2000-12-09T00:00:00.000Z",
+          "stop_date": "2008-06-30T23:59:56.000Z",
+          "pi_name": "W. Riedler",
+          "pi_affiliation": "IWF-OAW",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_ASP"
+        },
+        "C2_PP_PEA": {
+          "description": "Cluster Spacecraft 2, PEACE Prime Parameters - A. Fazakerley (MSSL)",
+          "start_date": "2000-11-01T00:00:00.000Z",
+          "stop_date": "2023-12-31T23:58:51.000Z",
+          "pi_name": "A. Fazakerley",
+          "pi_affiliation": "MSSL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_PEA"
+        },
+        "C3_PP_ASP": {
+          "description": "Cluster Spacecraft 3, ASPOC Prime Parameters - W. Riedler (IWF-OAW)",
+          "start_date": "2000-12-09T00:00:02.000Z",
+          "stop_date": "2008-06-30T23:59:57.000Z",
+          "pi_name": "W. Riedler",
+          "pi_affiliation": "IWF-OAW",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_ASP"
+        },
+        "C3_PP_WHI": {
+          "description": "Cluster Spacecraft 3, WHISPER Prime Parameters - P.M.E. Decreau (LPCE)",
+          "start_date": "2000-12-10T00:00:02.000Z",
+          "stop_date": "2012-12-31T23:59:54.000Z",
+          "pi_name": "P.M.E. Decreau",
+          "pi_affiliation": "LPCE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_WHI"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "C1_CP_FGM_5VPS": {
+          "description": "Magnetic field, 5 vectors/second resolution - Chris Carr (Imperial College)",
+          "start_date": "2000-12-03T00:00:56.000Z",
+          "stop_date": "2024-09-29T08:50:16.000Z",
+          "pi_name": "Chris Carr",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_FGM_5VPS"
+        },
+        "C1_UP_FGM": {
+          "description": "Cluster Spacecraft 1, FluxGate Magnetometer (FGM) Unvalidated Prime Parameters - A. Balogh (ICSTM)",
+          "start_date": "2019-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-30T23:58:58.000Z",
+          "pi_name": "A. Balogh",
+          "pi_affiliation": "ICSTM",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_UP_FGM"
+        },
+        "C4_CP_STA_PPP": {
+          "description": "Polarization and Propagation Parameters - Patrick Canu  (LPP)",
+          "start_date": "2001-01-07T00:15:33.000Z",
+          "stop_date": "2024-09-29T08:50:13.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_STA_PPP"
+        },
+        "C4_CP_STA_PSD": {
+          "description": "Power Spectral Density (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-10-23T19:11:27.000Z",
+          "stop_date": "2024-09-30T23:43:02.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_STA_PSD"
+        },
+        "C1_CP_STA_SM": {
+          "description": "Spectral Matrix (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-09-08T03:05:20.000Z",
+          "stop_date": "2024-09-30T23:42:58.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_STA_SM"
+        },
+        "C4_UP_FGM": {
+          "description": "Cluster Spacecraft 4, FluxGate Magnetometer (FGM) Unvalidated Prime Parameters - A. Balogh (ICSTM)",
+          "start_date": "2019-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-30T23:58:51.000Z",
+          "pi_name": "A. Balogh",
+          "pi_affiliation": "ICSTM",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_UP_FGM"
+        },
+        "C3_CP_STA_PSD": {
+          "description": "Power Spectral Density (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-10-09T10:31:52.000Z",
+          "stop_date": "2024-09-30T23:43:00.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_STA_PSD"
+        },
+        "C1_CP_FGM_SPIN": {
+          "description": "Cluster Spacecraft 1 FluxGate Magnetometer (FGM) Spin-Resolution Parameters - Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA (Imperial College)",
+          "start_date": "2001-01-30T20:17:42.000Z",
+          "stop_date": "2024-09-29T08:50:11.000Z",
+          "pi_name": "Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_FGM_SPIN"
+        },
+        "C3_CP_STA_PPP": {
+          "description": "Polarization and Propagation Parameters - Patrick Canu  (LPP)",
+          "start_date": "2000-12-07T07:33:26.000Z",
+          "stop_date": "2024-09-29T08:50:12.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_STA_PPP"
+        },
+        "C2_CP_STA_CWF_GSE": {
+          "description": "Magnetic Field Waveform - calibrated - Patrick Canu  (LPP)",
+          "start_date": "2000-09-05T23:20:22.000Z",
+          "stop_date": "2024-07-16T13:37:32.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_STA_CWF_GSE"
+        },
+        "C1_CP_STA_CWF_GSE": {
+          "description": "Magnetic Field Waveform - calibrated - Patrick Canu  (LPP)",
+          "start_date": "2000-09-08T03:05:23.000Z",
+          "stop_date": "2024-09-30T23:42:40.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_STA_CWF_GSE"
+        },
+        "C3_CP_FGM_5VPS": {
+          "description": "Magnetic field, 5 vectors/second resolution - Chris Carr (Imperial College)",
+          "start_date": "2000-12-02T15:11:01.000Z",
+          "stop_date": "2024-09-29T08:50:16.000Z",
+          "pi_name": "Chris Carr",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_FGM_5VPS"
+        },
+        "C4_CP_STA_CWF_GSE": {
+          "description": "Magnetic Field Waveform - calibrated - Patrick Canu  (LPP)",
+          "start_date": "2000-10-23T19:00:55.000Z",
+          "stop_date": "2024-09-30T23:42:41.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_STA_CWF_GSE"
+        },
+        "C4_CP_FGM_SPIN": {
+          "description": "Cluster Spacecraft 4 FluxGate Magnetometer (FGM) Spin-Resolution Parameters - Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA (Imperial College)",
+          "start_date": "2001-01-31T00:16:35.000Z",
+          "stop_date": "2024-09-29T08:50:11.000Z",
+          "pi_name": "Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_FGM_SPIN"
+        },
+        "C2_CP_STA_PPP": {
+          "description": "Polarization and Propagation Parameters - Patrick Canu  (LPP)",
+          "start_date": "2000-12-02T14:01:18.000Z",
+          "stop_date": "2024-07-16T13:37:47.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_STA_PPP"
+        },
+        "C3_CP_STA_SM": {
+          "description": "Spectral Matrix (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-10-09T10:31:52.000Z",
+          "stop_date": "2024-09-30T23:42:57.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_STA_SM"
+        },
+        "C3_CP_STA_CWF_GSE": {
+          "description": "Magnetic Field Waveform - calibrated - Patrick Canu  (LPP)",
+          "start_date": "2000-10-09T10:20:10.000Z",
+          "stop_date": "2024-09-30T23:42:40.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_STA_CWF_GSE"
+        },
+        "C3_UP_FGM": {
+          "description": "Cluster Spacecraft 3, FluxGate Magnetometer (FGM) Unvalidated Prime Parameters - A. Balogh (ICSTM)",
+          "start_date": "2019-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-30T23:58:52.000Z",
+          "pi_name": "A. Balogh",
+          "pi_affiliation": "ICSTM",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_UP_FGM"
+        },
+        "C2_CP_STA_PSD": {
+          "description": "Power Spectral Density (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-09-05T23:20:20.000Z",
+          "stop_date": "2024-07-16T13:37:48.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_STA_PSD"
+        },
+        "C2_CP_FGM_5VPS": {
+          "description": "Magnetic field, 5 vectors/second resolution - Chris Carr (Imperial College)",
+          "start_date": "2000-12-02T14:01:11.000Z",
+          "stop_date": "2024-09-08T18:10:02.000Z",
+          "pi_name": "Chris Carr",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_FGM_5VPS"
+        },
+        "C4_CP_FGM_5VPS": {
+          "description": "Magnetic field, 5 vectors/second resolution - Chris Carr (Imperial College)",
+          "start_date": "2001-01-07T00:15:19.000Z",
+          "stop_date": "2024-09-16T23:59:52.000Z",
+          "pi_name": "Chris Carr",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_FGM_5VPS"
+        },
+        "C1_CP_STA_PPP": {
+          "description": "Polarization and Propagation Parameters - Patrick Canu  (LPP)",
+          "start_date": "2000-12-03T00:00:59.000Z",
+          "stop_date": "2024-09-29T08:50:14.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_STA_PPP"
+        },
+        "C3_CP_FGM_SPIN": {
+          "description": "Cluster Spacecraft 3 FluxGate Magnetometer (FGM) Spin-Resolution Parameters - Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA (Imperial College)",
+          "start_date": "2001-01-30T21:37:18.000Z",
+          "stop_date": "2024-09-29T08:50:12.000Z",
+          "pi_name": "Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_CP_FGM_SPIN"
+        },
+        "C1_CP_STA_PSD": {
+          "description": "Power Spectral Density (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-09-08T03:05:20.000Z",
+          "stop_date": "2024-09-30T23:43:01.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_CP_STA_PSD"
+        },
+        "C2_CP_FGM_SPIN": {
+          "description": "Cluster Spacecraft 2 FluxGate Magnetometer (FGM) Spin-Resolution Parameters - Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA (Imperial College)",
+          "start_date": "2001-01-30T22:56:54.000Z",
+          "stop_date": "2024-09-08T18:09:56.000Z",
+          "pi_name": "Andre Balogh>a.balogh@imperial.ac.uk & Elizabeth Lucek>e.lucek@imperial.ac.uk & ESA CAA",
+          "pi_affiliation": "Imperial College",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_FGM_SPIN"
+        },
+        "C2_CP_STA_SM": {
+          "description": "Spectral Matrix (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-09-05T23:20:20.000Z",
+          "stop_date": "2024-07-16T13:37:45.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_CP_STA_SM"
+        },
+        "C2_UP_FGM": {
+          "description": "Cluster Spacecraft 2, FluxGate Magnetometer (FGM) Unvalidated Prime Parameters - A. Balogh (ICSTM)",
+          "start_date": "2019-02-01T00:00:00.000Z",
+          "stop_date": "2024-09-08T18:10:00.000Z",
+          "pi_name": "A. Balogh",
+          "pi_affiliation": "ICSTM",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_UP_FGM"
+        },
+        "C4_CP_STA_SM": {
+          "description": "Spectral Matrix (8 Hz - 4 kHz) - Patrick Canu  (LPP)",
+          "start_date": "2000-10-23T19:11:27.000Z",
+          "stop_date": "2024-09-30T23:42:59.000Z",
+          "pi_name": "Patrick Canu",
+          "pi_affiliation": "LPP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_CP_STA_SM"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "C3_JP_PMP": {
+          "description": "Cluster Spacecraft 3, JSOC Predicted Magnetic Positions - M. Hapgood (RAL)",
+          "start_date": "2000-08-14T20:35:00.000Z",
+          "stop_date": "2025-11-30T23:55:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_JP_PMP"
+        },
+        "C3_JP_PSE": {
+          "description": "Cluster Spacecraft 3, JSOC Predicted Scientific Events - M. Hapgood (RAL)",
+          "start_date": "2000-08-01T00:00:00.000Z",
+          "stop_date": "2025-11-30T21:52:01.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_JP_PSE"
+        },
+        "C2_JP_PMP": {
+          "description": "Cluster Spacecraft 2, JSOC Predicted Magnetic Positions - M. Hapgood (RAL)",
+          "start_date": "2000-08-14T20:35:00.000Z",
+          "stop_date": "2024-09-08T18:45:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_JP_PMP"
+        },
+        "CL_OR_GIFWALK": {
+          "description": "Links to Cluster orbit plots - Polar-Wind-Geotail Ground System (NASA GSFC)",
+          "start_date": "2004-08-09T00:00:00.000Z",
+          "stop_date": "2004-08-09T01:00:00.000Z",
+          "pi_name": "Polar-Wind-Geotail Ground System",
+          "pi_affiliation": "NASA GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CL_OR_GIFWALK"
+        },
+        "CL_SP_AUX": {
+          "description": "Cluster, Auxiliary  Parameters - Hungarian Data Centre/M. Tatrallyay (KFKI)",
+          "start_date": "2000-08-22T00:00:30.000Z",
+          "stop_date": "2024-09-30T23:59:30.000Z",
+          "pi_name": "Hungarian Data Centre/M. Tatrallyay",
+          "pi_affiliation": "KFKI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CL_SP_AUX"
+        },
+        "C2_JP_PSE": {
+          "description": "Cluster Spacecraft 2, JSOC Predicted Scientific Events - M. Hapgood (RAL)",
+          "start_date": "2000-08-01T00:00:00.000Z",
+          "stop_date": "2024-09-08T17:39:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_JP_PSE"
+        },
+        "C4_JP_PSE": {
+          "description": "Cluster Spacecraft 4, JSOC Predicted Scientific Events - M. Hapgood (RAL)",
+          "start_date": "2000-08-01T00:00:00.000Z",
+          "stop_date": "2025-11-30T20:39:01.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_JP_PSE"
+        },
+        "C1_JP_PMP": {
+          "description": "Cluster Spacecraft 1, JSOC Predicted Magnetic Positions - M. Hapgood (RAL)",
+          "start_date": "2000-08-14T20:35:00.000Z",
+          "stop_date": "2025-11-06T00:00:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_JP_PMP"
+        },
+        "C4_JP_PMP": {
+          "description": "Cluster Spacecraft 4, JSOC Predicted Magnetic Positions - M. Hapgood (RAL)",
+          "start_date": "2000-08-14T20:35:00.000Z",
+          "stop_date": "2025-11-30T23:55:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_JP_PMP"
+        },
+        "C1_JP_PSE": {
+          "description": "Cluster Spacecraft 1, JSOC Predicted Scientific Events - M. Hapgood (RAL)",
+          "start_date": "2000-08-01T00:00:00.000Z",
+          "stop_date": "2025-11-05T22:25:08.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_JP_PSE"
+        },
+        "CL_JP_PGP": {
+          "description": "Cluster, JSOC Predicted Geometric Positions - M. Hapgood (RAL)",
+          "start_date": "2000-08-14T20:35:00.000Z",
+          "stop_date": "2025-11-30T23:55:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CL_JP_PGP"
+        },
+        "CL_JP_PCY": {
+          "description": "Cluster, Monthly JSOC Predicted Solar Cycle Trends - M. Hapgood (RAL)",
+          "start_date": "1999-01-01T00:00:00.000Z",
+          "stop_date": "2024-12-01T00:00:00.000Z",
+          "pi_name": "M. Hapgood",
+          "pi_affiliation": "RAL",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#CL_JP_PCY"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "C1_PP_STA": {
+          "description": "Cluster Spacecraft 1, STAFF Prime Parameters - N. Cornilleau-Wehrlin (CETP)",
+          "start_date": "2000-12-09T12:57:44.000Z",
+          "stop_date": "2012-12-31T23:59:48.000Z",
+          "pi_name": "N. Cornilleau-Wehrlin",
+          "pi_affiliation": "CETP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_STA"
+        },
+        "C1_WAVEFORM_WBD": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-11-27T12:49:43.000Z",
+          "stop_date": "2024-09-28T23:01:04.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "doi": "10.48322/7jw6-ks09",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_WAVEFORM_WBD"
+        },
+        "C4_PP_STA": {
+          "description": "Cluster Spacecraft 4, STAFF Prime Parameters - N. Cornilleau-Wehrlin (CETP)",
+          "start_date": "2000-12-09T12:57:44.000Z",
+          "stop_date": "2012-12-31T23:59:45.000Z",
+          "pi_name": "N. Cornilleau-Wehrlin",
+          "pi_affiliation": "CETP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_STA"
+        },
+        "C4_WAVEFORM_WBD": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2001-01-04T14:56:12.000Z",
+          "stop_date": "2024-09-29T08:31:05.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "doi": "10.48322/nepa-q824",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_WAVEFORM_WBD"
+        },
+        "C3_WAVEFORM_WBD": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-11-27T13:23:47.000Z",
+          "stop_date": "2024-09-29T08:29:59.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "doi": "10.48322/y123-4274",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_WAVEFORM_WBD"
+        },
+        "C4_WAVEFORM_WBD_BM2": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-10-25T23:20:07.000Z",
+          "stop_date": "2024-09-11T06:49:47.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_WAVEFORM_WBD_BM2"
+        },
+        "C2_PP_DWP": {
+          "description": "Cluster Spacecraft 2, DWP Prime Parameters - H. Alleyne (Univ-Sheff)",
+          "start_date": "2000-11-01T00:00:02.000Z",
+          "stop_date": "2022-07-02T23:59:46.000Z",
+          "pi_name": "H. Alleyne",
+          "pi_affiliation": "Univ-Sheff",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_DWP"
+        },
+        "C3_PP_STA": {
+          "description": "Cluster Spacecraft 3, STAFF Prime Parameters - N. Cornilleau-Wehrlin (CETP)",
+          "start_date": "2000-12-09T12:57:44.000Z",
+          "stop_date": "2012-12-31T23:59:47.000Z",
+          "pi_name": "N. Cornilleau-Wehrlin",
+          "pi_affiliation": "CETP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_PP_STA"
+        },
+        "C1_WAVEFORM_WBD_BM2": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-09-08T03:50:23.000Z",
+          "stop_date": "2024-09-11T06:49:47.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "doi": "10.48322/pr6f-rd05",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_WAVEFORM_WBD_BM2"
+        },
+        "C1_PP_DWP": {
+          "description": "Cluster Spacecraft 1, DWP Prime Parameters - H. Alleyne (Univ-Sheff)",
+          "start_date": "2000-11-01T00:00:02.000Z",
+          "stop_date": "2022-07-02T23:59:47.000Z",
+          "pi_name": "H. Alleyne",
+          "pi_affiliation": "Univ-Sheff",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C1_PP_DWP"
+        },
+        "C2_WAVEFORM_WBD_BM2": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-09-05T23:55:18.000Z",
+          "stop_date": "2024-07-03T06:29:43.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_WAVEFORM_WBD_BM2"
+        },
+        "C3_WAVEFORM_WBD_BM2": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-10-12T00:06:00.000Z",
+          "stop_date": "2024-09-11T06:48:44.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C3_WAVEFORM_WBD_BM2"
+        },
+        "C4_PP_DWP": {
+          "description": "Cluster Spacecraft 4, DWP Prime Parameters - H. Alleyne (Univ-Sheff)",
+          "start_date": "2000-11-01T00:00:00.000Z",
+          "stop_date": "2022-07-01T23:59:44.000Z",
+          "pi_name": "H. Alleyne",
+          "pi_affiliation": "Univ-Sheff",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C4_PP_DWP"
+        },
+        "C2_WAVEFORM_WBD": {
+          "description": "Cluster Wideband Data Plasma Wave Receiver/High Time Resolution Waveform Data - 2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett (The University of  Iowa)",
+          "start_date": "2000-11-27T13:12:36.000Z",
+          "stop_date": "2024-07-12T01:46:03.000Z",
+          "pi_name": "2006 - Current:  J. S. Pickett; 1988 - 2006:  D. A. Gurnett",
+          "pi_affiliation": "The University of  Iowa",
+          "doi": "10.48322/8hs9-sg97",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_WAVEFORM_WBD"
+        },
+        "C2_PP_STA": {
+          "description": "Cluster Spacecraft 2, STAFF Prime Parameters - N. Cornilleau-Wehrlin (CETP)",
+          "start_date": "2000-12-09T12:57:44.000Z",
+          "stop_date": "2012-12-31T23:59:46.000Z",
+          "pi_name": "N. Cornilleau-Wehrlin",
+          "pi_affiliation": "CETP",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesC.html#C2_PP_STA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Cluster",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

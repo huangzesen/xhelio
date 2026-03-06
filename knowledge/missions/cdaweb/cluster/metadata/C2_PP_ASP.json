@@ -1,0 +1,29 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C2_PP_ASP",
+      "type": "integer",
+      "units": "",
+      "description": "ASPOC status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "I_ion__C2_PP_ASP",
+      "type": "double",
+      "units": "uA",
+      "description": "Ion Current",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-09T00:00:01.000Z",
+  "stopDate": "2008-06-30T23:59:59.000Z"
+}

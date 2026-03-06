@@ -1,0 +1,695 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_1",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 1",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_2",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 2",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_3",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 3",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_4",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 4",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_5",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 5",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_9",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 9",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_10",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 10",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_11",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 11",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_quality_indicator_sensorid_12",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 12",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_1",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 1",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_2",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 2",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_3",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 3",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_4",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 4",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_5",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 5",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_9",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 9",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_10",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 10",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_11",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 11",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_quality_indicator_sensorid_12",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Indicator (0=VALID FOR SCIENCE, 1=CAUTION, 2=PROBLEMATIC, 3=NOT VALID FOR SCIENCE, 4=CALIBRATION) sensor 12",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_1",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_2",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_3",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_4",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_5",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_9",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_10",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_11",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_count_rate_sensorid_12",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS top side burst mode electron count rate sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_1",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_2",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_3",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_4",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_5",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_9",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_10",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_11",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_count_rate_sensorid_12",
+      "type": "double",
+      "units": "counts/s",
+      "description": "MMS2 FEEPS bottom side burst mode electron count rate sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_9",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_10",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_11",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_intensity_sensorid_12",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS top side burst mode electron intensity sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_1",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_2",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_3",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_4",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_5",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_9",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_10",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_11",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_intensity_sensorid_12",
+      "type": "double",
+      "units": "1/(cm^2 s sr keV)",
+      "description": "MMS2 FEEPS bottom side burst mode electron intensity sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_1",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_2",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_3",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_4",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_5",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_9",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_10",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_11",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_top_percent_error_sensorid_12",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS top side burst mode electron count error statistics sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_1",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 1",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_2",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 2",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_3",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 3",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_4",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 4",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_5",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 5",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_9",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 9",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_10",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 10",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_11",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 11",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_bottom_percent_error_sensorid_12",
+      "type": "double",
+      "units": "",
+      "description": "MMS2 FEEPS bottom side burst mode electron count error statistics sensor 12",
+      "fill": "-1e+31",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_pitch_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "The angle formed by the normal vector of the sensor plane and the magnetic field (BField)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        18
+      ]
+    },
+    {
+      "name": "mms2_epd_feeps_brst_l2_electron_lat_gse",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2015-09-01T00:00:00.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

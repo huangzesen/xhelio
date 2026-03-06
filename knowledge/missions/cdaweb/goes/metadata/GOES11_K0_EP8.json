@@ -1,0 +1,80 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "E1",
+      "type": "double",
+      "units": "e/(cm^2*s*sr)",
+      "description": "GOES Electron Flux (> 0.6 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E2",
+      "type": "double",
+      "units": "e/(cm^2*s*sr)",
+      "description": "GOES Electron Flux (> 2 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E3",
+      "type": "double",
+      "units": "e/(cm^2*s*sr)",
+      "description": "GOES Electron Flux (> 4 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P1",
+      "type": "double",
+      "units": "p/cm^2*s*sr*MeV",
+      "description": "GOES Uncor. Diff. Proton Flux (0.7-4 MeV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SC_pos_ll",
+      "type": "double",
+      "units": "",
+      "description": "GOES 11 position, Geographic Polar Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_eo",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 11 position, Geographics, Cartesian Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_se",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 11 position, GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_sm",
+      "type": "double",
+      "units": "km",
+      "description": "GOES 11 position, GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2006-06-23T00:02:30.000Z",
+  "stopDate": "2010-12-30T23:57:30.000Z"
+}

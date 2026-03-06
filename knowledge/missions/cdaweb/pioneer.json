@@ -1,0 +1,105 @@
+{
+  "id": "PIONEER",
+  "name": "Pioneer",
+  "keywords": [
+    "p10",
+    "p11",
+    "pds3:p10-",
+    "pds3:p11-",
+    "pioneer",
+    "pioneer10",
+    "pioneer11",
+    "urn:nasa:pds:p10-",
+    "urn:nasa:pds:p11-"
+  ],
+  "profile": {
+    "description": "Pioneer spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "PIONEER10_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1972-03-04T00:00:00.000Z",
+          "stop_date": "2049-12-31T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "doi": "10.48322/yzp2-cp45",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER10_HELIO1DAY_POSITION"
+        },
+        "PIONEER11_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1973-04-07T00:00:00.000Z",
+          "stop_date": "2049-12-31T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "doi": "10.48322/3dc9-j157",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER11_HELIO1DAY_POSITION"
+        },
+        "PIONEER10_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1972-03-04T00:00:00.000Z",
+          "stop_date": "2049-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER10_HELIO1HR_POSITION"
+        },
+        "PIONEER11_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "1973-04-07T00:00:00.000Z",
+          "stop_date": "2049-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER11_HELIO1HR_POSITION"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "PIONEER11_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "Pioner-11 merged hourly magnetic field, plasma, proton fluxes,  and ephermis data - E.J. Smith (HVM) and A. Barnes (PLS) (NASA JPL/AMES)",
+          "start_date": "1973-01-01T00:00:00.000Z",
+          "stop_date": "1994-12-31T17:00:00.000Z",
+          "pi_name": "E.J. Smith (HVM) and A. Barnes (PLS)",
+          "pi_affiliation": "NASA JPL/AMES",
+          "doi": "10.48322/vb0s-0w02",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER11_COHO1HR_MERGED_MAG_PLASMA"
+        },
+        "PIONEER10_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "Pioneer-10 merged hourly magnetic field, plasma, proton fluxes, and ephermis data - E.J. Smith (HVM) and A. Barnes (PLS) (NASA JPL/AMES)",
+          "start_date": "1972-01-01T00:00:00.000Z",
+          "stop_date": "1995-09-07T02:00:00.000Z",
+          "pi_name": "E.J. Smith (HVM) and A. Barnes (PLS)",
+          "pi_affiliation": "NASA JPL/AMES",
+          "doi": "10.48322/dn2j-fn46",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesP.html#PIONEER10_COHO1HR_MERGED_MAG_PLASMA"
+        }
+      }
+    }
+  },
+  "observatory_group": "Pioneer",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

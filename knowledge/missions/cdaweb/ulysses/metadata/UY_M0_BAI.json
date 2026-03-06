@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Density",
+      "type": "double",
+      "units": "/cm3",
+      "description": "Particle density of protons and alphas",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Temperature",
+      "type": "double",
+      "units": "deg-K",
+      "description": "Proton temperatures TLARGE and TSMALL",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Plasma velocity in RTN components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1990-11-18T00:33:48.000Z",
+  "stopDate": "2009-06-30T15:54:12.000Z"
+}

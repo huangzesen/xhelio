@@ -1,0 +1,53 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "electron_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Electron number density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "density_quality_flag",
+      "type": "integer",
+      "units": "0=fail 1=>pass",
+      "description": "Electron density quality flag, byte: avail starting 09/17/2023",
+      "fill": "255.0"
+    },
+    {
+      "name": "electron_core_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "Electron core temperature",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": "",
+  "_validated": true,
+  "parameters_annotations": {
+    "density_quality_flag": {
+      "_category": "phantom",
+      "_note": "in master CDF but not found in data CDF"
+    }
+  },
+  "_validations": [
+    {
+      "source_file": "psp_fld_l3_sqtn_rfs_v1v2_20181101_v1.0.cdf",
+      "validated_at": "2026-02-19T11:06:54.136081+00:00",
+      "discrepancies": {
+        "density_quality_flag": {
+          "_category": "phantom",
+          "_note": "in master CDF but not found in data CDF"
+        }
+      },
+      "source_url": "https://cdaweb.gsfc.nasa.gov/sp_phys/data/psp/fields/l3/sqtn_rfs_v1v2/2018/psp_fld_l3_sqtn_rfs_v1v2_20181101_v1.0.cdf"
+    }
+  ]
+}

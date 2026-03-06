@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MAG_ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Magnetometer ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Radial component of the magnetic field, positive in the direction of sun to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Azimuthal component of the magnetic field, positive in the direction of planetary orbital motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "North/South component of the magnetic field, positive northward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Magnitude (sqrt of sum of squares) of the field component averages (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_Bmag",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the field magnitude over the averaging window (nT).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "ARCSIN(Bz/Bmag) = Delta",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "180. - ATAN(By,-Bx) = Lambda",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BR",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BT",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BN",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BN",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Number of data points in averaging window.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

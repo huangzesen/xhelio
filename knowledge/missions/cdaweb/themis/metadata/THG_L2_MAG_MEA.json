@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "thg_mag_mea",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic field B in HEZ vector components",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thg_magh_mea",
+      "type": "double",
+      "units": "nT",
+      "description": "---> H component of B",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thg_magd_mea",
+      "type": "double",
+      "units": "nT",
+      "description": "---> E component of B",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "thg_magz_mea",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Z component of B",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2007-01-01T00:00:00.000Z",
+  "stopDate": "2007-01-04T00:00:00.000Z"
+}

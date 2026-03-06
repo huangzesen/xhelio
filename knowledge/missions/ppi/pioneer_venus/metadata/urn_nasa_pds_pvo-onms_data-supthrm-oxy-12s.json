@@ -1,0 +1,124 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "YYYY=4 digit year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "DDD=3 digit day of year (e.g. 053)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Universal Time of day represented as milliseconds after 00:00:00.000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "Orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PSEC",
+      "type": "double",
+      "units": "s",
+      "description": "Seconds after periapsis",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DO+",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Density of superthermal atomic oxygen in cm**-3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FO+",
+      "type": "double",
+      "units": "1/(cm**2)*(s**1)",
+      "description": "Flux of superthermal atomic oxygen in (cm**-2)*(s**-1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FANG",
+      "type": "double",
+      "units": "Degree",
+      "description": "Apparent angle, in degrees, of the ion flow in the ecliptic            \n       plane measured with respect to the sun",
+      "size": [
+        1
+      ],
+      "fill": "999"
+    },
+    {
+      "name": "VALT",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude above the mean surface of Venus in km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VLAT",
+      "type": "double",
+      "units": "Degree",
+      "description": "Venus latitude in degrees",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VLST",
+      "type": "double",
+      "units": "hr",
+      "description": "Venus local solar time in hr",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VSZA",
+      "type": "double",
+      "units": "Degree",
+      "description": "Venus solar zenith angle in degrees",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

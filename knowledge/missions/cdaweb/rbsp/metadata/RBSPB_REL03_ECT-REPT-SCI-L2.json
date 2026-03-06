@@ -1,0 +1,229 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Data_Quality",
+      "type": "integer",
+      "units": "(0=valid)",
+      "description": "Data Quality Flag (0=valid)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "FESA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FESA: Spin-Averaged Differential Electron Flux 2-20 MeV, in 12 energy bands (spectrogram)",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FESA_E",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> (stacked time series)",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FEDU: Unidirectional Differential Electron Flux 2-20 MeV, in 12 energy and 36 angle bins (energy-angle displays)",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_E",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by energy at sample angles",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        12
+      ]
+    },
+    {
+      "name": "FEDU_A",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms by angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        12
+      ]
+    },
+    {
+      "name": "FPSA",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPSA: Spin-Averaged Differential Proton Flux 20-120 MeV (spectrograms)",
+      "fill": "-1e+31",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FPSA_E",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> (stacked time series)",
+      "fill": "-1e+31",
+      "size": [
+        8
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "FPDU - Unidirectional Differential Proton Flux 20-120 MeV, in 8 energy and 36 angle bins (energy-angle displays)",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_E",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms in energy at sample angles",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        8
+      ]
+    },
+    {
+      "name": "FPDU_A",
+      "type": "double",
+      "units": "cm!e-2!ns!e-1!nsr!e-1!nMeV!e-1!n",
+      "description": "---> Spectrograms in angle at sample energies",
+      "fill": "-1e+31",
+      "size": [
+        36,
+        8
+      ]
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "[Time-series] Position of the satellite in geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2012-09-02T14:17:46.000Z",
+  "stopDate": "2019-07-16T16:37:58.000Z"
+}

@@ -1,0 +1,66 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BF1",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the magnitudes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BRTN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field - Cartesian RTN",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BRTNa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic Field - Angular RTN",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DIST",
+      "type": "double",
+      "units": "Re",
+      "description": "Radial distance from the earth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PGSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Wind Position - Cartesian GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "Wind Position - Cartesian GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2017-01-01T00:00:19.000Z",
+  "stopDate": "2025-08-13T23:59:07.000Z"
+}

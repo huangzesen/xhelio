@@ -1,0 +1,194 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "R_J",
+      "type": "double",
+      "units": "#",
+      "description": "Spacecraft location in Jupiter Radii of RHSIII",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "R_Theta",
+      "type": "double",
+      "units": "degree",
+      "description": "Spacecraft co-latitude (degrees) in RHSIII system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R_Phi",
+      "type": "double",
+      "units": "degree",
+      "description": "East longitude (degrees) of spacecraft in RHSIII system.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F_C",
+      "type": "double",
+      "units": "#",
+      "description": "Fit Case Number 1-5 for how the fit parameters were handled by the VIPER code.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V_R",
+      "type": "double",
+      "units": "km/s",
+      "description": "Radial velocity of bulk plasma flow in RHSIII coordinate system",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_Phi",
+      "type": "double",
+      "units": "km/s",
+      "description": "East longitude (Phi) velocity (km/s) of the bulk plasma flow in RHSIII coordinate system.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_Z",
+      "type": "double",
+      "units": "km/s",
+      "description": "Northward component of bulk flow velocity (km/s) in RHSIII coordinate system.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ch_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Sum of ion charge number densities",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "H_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "H+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "H_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "H+ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "O+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "O+ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_2_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "O++ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_2_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "O++ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "S+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "S+ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_2_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "S++ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_2_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "S++ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_3_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "S+++ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "S_3_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "S+++ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Na_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Na+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Na_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "Na+ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SO2_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "SO2+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SO2_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "SO2+ Ion Temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_hot_Den",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Hot O+ Ion Partial Number Density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "O_hot_Tem",
+      "type": "double",
+      "units": "K",
+      "description": "Hot O+ Ion Temperature",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1979-03-03T10:23:58.000Z",
+  "stopDate": "1979-03-05T19:24:54.000Z"
+}

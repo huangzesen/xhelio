@@ -1,0 +1,294 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "COV",
+      "type": "double",
+      "units": "SECONDS",
+      "description": "COV == Accumulation time in seconds.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K1",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K1:     protons   (2.7-5.4 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K21",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K21: protons (5.4-23.1 MeV) sector 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K22",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K22: protons (5.4-23.1 MeV) sector 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K23",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K23: protons (5.4-23.1 MeV) sector 3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K24",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K24: protons (5.4-23.1 MeV) sector 4",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K25",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K25: protons (5.4-23.1 MeV) sector 5",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K26",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K26: protons (5.4-23.1 MeV) sector 6",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K27",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K27: protons (5.4-23.1 MeV) sector 7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K28",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K28: protons (5.4-23.1 MeV) sector 8",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K3",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K3:  protons (34.1-125.0 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K34",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K34: protons (125.0-320.0 MeV), normal (125.0-250.0 MeV), backward penetrating particles (160.0-260.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K12",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K12: protons (260.0-2200.0 MEV) normal (250.0-2200.0 MeV), backward penetrating particles (260.0-2200.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K10",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K10: protons (>2100.0 MeV) normal (>2200.0 MeV), backward penetrating particles (>2200.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K2",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K2: helium (6.0-20.4 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K33",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K33: helium (6.0-20.4 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K29",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K29: helium (125.0-320.0 MeV) normal (125.0-155.0 MeV), backward penetrating particles (155.0-225.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K31",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K31: helium (320.0-2100.0 MeV) normal (250.0-2100.0 MeV), backward penetrating particles (250.0-2100.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K30",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K30: helium (>2100.0  MeV) backward penetrating particles (>2100.0 MEV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K13",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K13: electrons (2.5-7.0 MeV) sector 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K14",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K14: electrons (2.5-7.0 MeV) sector 2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K15",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K15: electrons (2.5-7.0 MeV) sector 3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K16",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K16: electrons (2.5-7.0 MeV) sector 4",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K17",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K17: electrons (2.5-7.0 MeV) sector 5",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K18",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K18: electrons (2.5-7.0 MeV) sector 6",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K19",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K19: electrons (2.5-7.0 MeV) sector 7",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K20",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K20: electrons (2.5-7.0 MeV) sector 8",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K11",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K11: electrons (7.0-170.0 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "K32",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "K32: electrons (>170.0 MeV)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "A01",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "A01: counting rate of Anticoincidence",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "D10",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "D10: counting rate of D1",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

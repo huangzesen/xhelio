@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SWA_EAS_NMPAD_PSD_DATA",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "Electron pitch angle data, both EAS1 and EAS2 combined - Phase Space Density",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        36,
+        64
+      ]
+    },
+    {
+      "name": "SWA_EAS_NMPAD_PSD_DATA_E",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> Spectrograms by sector at sample energies",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        36,
+        64
+      ]
+    },
+    {
+      "name": "SWA_EAS_NMPAD_PSD_DATA_A",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> Spectrograms by energy at sample sectors",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        36,
+        64
+      ]
+    },
+    {
+      "name": "SWA_EAS_NMPAD_PSD_DATA_movie",
+      "type": "double",
+      "units": "s^3 km^-6",
+      "description": "---> Electron pitch angle data movie",
+      "fill": "-1.0000000150474662e+30",
+      "size": [
+        36,
+        64
+      ]
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "unitless",
+      "description": "EAS Data Quality flag",
+      "fill": "255.0"
+    },
+    {
+      "name": "QUALITY_BITMASK",
+      "type": "integer",
+      "units": "unitless",
+      "description": "EAS Data Quality BITMASK",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2020-06-16T05:01:58.000Z",
+  "stopDate": "2025-02-28T23:59:48.000Z"
+}

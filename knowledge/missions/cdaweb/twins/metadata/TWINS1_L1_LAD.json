@@ -1,0 +1,61 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "lad1_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "LAD photon intensities from the Toward LAD sensor",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lad2_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "LAD photon intensities from the Away LAD sensor",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "sector_position",
+      "type": "double",
+      "units": "deg",
+      "description": "Actuator Position at Sector start",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lad1_0_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "[Diagnostic Use Only] LAD photon intensities from the Toward LAD sensor with 0 degree offset",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lad2_0_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "[Diagnostic Use Only] LAD photon intensities from the Away LAD sensor with 0 degree offset",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lad1_2_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "[Diagnostic Use Only] LAD photon intensities from the Toward LAD sensor with 2 degree offset",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "lad2_2_data",
+      "type": "double",
+      "units": "Rayleigh",
+      "description": "[Diagnostic Use Only] LAD photon intensities from the Away LAD sensor with 2 degree offset",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2007-07-06T07:15:10.000Z",
+  "stopDate": "2018-12-12T19:06:33.000Z"
+}

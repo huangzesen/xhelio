@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "STOKES_I",
+      "type": "double",
+      "units": "W/m^2/Hz",
+      "description": "Stokes I parameter of the incoming wave",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WAVE_COLATITUDE_SRF",
+      "type": "double",
+      "units": "degrees",
+      "description": "Wave vector colatitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "WAVE_AZIMUTH_SRF",
+      "type": "double",
+      "units": "degrees",
+      "description": "Wave vector azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SOURCE_SIZE",
+      "type": "double",
+      "units": "degrees",
+      "description": "Radio source angular size radius",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MODULATION_RATE",
+      "type": "double",
+      "units": "",
+      "description": "Signal modulation rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "3 = Good",
+      "description": "Quality flag; 3=Good, 1=problems, 2=survey, 4=received special treatment",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "1994-11-10T16:38:07.000Z",
+  "stopDate": "2026-02-14T23:52:57.000Z"
+}

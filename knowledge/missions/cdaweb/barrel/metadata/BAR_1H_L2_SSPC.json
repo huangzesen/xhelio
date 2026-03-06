@@ -1,0 +1,46 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SSPC",
+      "type": "double",
+      "units": "cnts/keV/sec",
+      "description": "256 standardized channels accumulated for 32 seconds/record",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    },
+    {
+      "name": "Peak_511",
+      "type": "double",
+      "units": "channel",
+      "description": "Peak location of the 511keV line.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SSPC_UNCAL",
+      "type": "double",
+      "units": "cnts/keV/sec",
+      "description": "Counts/keV/sec. No energy calibrtion.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256
+      ]
+    }
+  ],
+  "startDate": "2013-01-19T17:45:03.000Z",
+  "stopDate": "2013-02-11T16:15:42.000Z"
+}

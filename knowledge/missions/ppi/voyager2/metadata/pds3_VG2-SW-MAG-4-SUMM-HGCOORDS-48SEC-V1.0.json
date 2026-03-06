@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength (nT)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Br",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component 1 (Bx or Br in HG/RTN coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bt",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component 2 (By or Bt in HG/RTN coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bn",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field component 3 (Bz or Bn in HG/RTN coordinates)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Range",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric range of the spacecraft (AU)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "AU",
+      "description": "X component of the S/C position in IHG coordinates",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "AU",
+      "description": "Y component of the S/C position in IHG coordinates",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "AU",
+      "description": "Z component of the S/C position in IHG coordinates",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

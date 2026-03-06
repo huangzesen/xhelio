@@ -1,0 +1,114 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Dist_RS",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Radial distance from Cassini to Saturn in Saturn radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SSO_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SSO frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_X",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini X position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Y position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini Z position in SZS frame.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Offset_DipoleL",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cassini L shell location using offset dipole.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_Latitude_degrees",
+      "type": "double",
+      "units": "",
+      "description": "Cassini SZS latitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SZS_LocalTime_hours",
+      "type": "double",
+      "units": "Hours",
+      "description": "Cassini SZS localtime in hours.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PA_for_LEMMS_LET",
+      "type": "double",
+      "units": "",
+      "description": "pitch angle for the LEMMS Low Energy Telescope.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

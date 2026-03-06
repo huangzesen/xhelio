@@ -1,0 +1,94 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "The X-component of the magnetic field in the PVO Inertial Spacecraft    \n      Coordinate System (PVO_ISCC). This is the component that lies in the    \n      sunward direction in the plane that contains the Sun-spacecraft vector  \n      and the spacecraft spin axis.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BY_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "The Y-component of the magnetic field in the PVO Inertial Spacecraft    \n      Coordinate System (PVO_ISCC). The Y axis is formed by the right-handed  \n      vector cross product of the X and Z unit vectors where the Z axis is    \n      anti-parallel to the spacecraft spin axis and the X-Z plane contains    \n      the Sun.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BZ_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "The Z-component of the magnetic field in the PVO Inertial Spacecraft    \n      Coordinate System (PVO_ISCC). The Z axis is defined to be anti-parallel \n      to the spacecraft spin axis during orbital operations.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "The vector magnitude of the sampled field components.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BX_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "The X-component of the magnetic field in the Venus Solar Orbital        \n      System (VSO - GSE at Venus). The system is Venus centered, with the     \n      X axis pointing instantaneously from Venus to the Sun, the Z axis is    \n      perpendicular to the orbital (ecliptic) plane of Venus positive 'up',   \n      and the Y axis completing the right-handed set.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BY_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "The Y-component of the magnetic field in Venus Solar Orbital            \n      coordinates. This component is the right-handed vector cross product of \n      the Z and X unit vectors, and lies in the Venus orbital plane, positive \n      towards dusk.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "BZ_VSO",
+      "type": "double",
+      "units": "nT",
+      "description": "The Z-component of the magnetic field in Venus Solar Orbital            \n      coordinates. This component is parallel to the northwards pole of the   \n      Venus orbital plane.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

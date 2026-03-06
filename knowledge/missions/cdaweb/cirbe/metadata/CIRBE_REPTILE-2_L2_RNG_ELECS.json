@@ -1,0 +1,78 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Geodetic Altitude of CIRBE in km",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic Latitude of CIRBE in Degrees (-90 to 90)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Geodetic Longitude of CIRBE in Degrees (-180 to 180)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_McIlwain",
+      "type": "double",
+      "units": "",
+      "description": "McIlwain's L Parameter at CIRBE's Position",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hrs",
+      "description": "Magnetic Local Time at CIRBE's Position (0 to 24)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLAT",
+      "type": "double",
+      "units": "degrees",
+      "description": "Magnetic Latitude at CIRBE's Position (-90 to 90)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "#/cm^2/sr/s/MeV",
+      "description": "FEDU: Directional Differential Electron Flux 0.3-5.83 MeV, in 50 energy bands",
+      "fill": "-1e+31",
+      "size": [
+        50
+      ]
+    },
+    {
+      "name": "Integration_Period",
+      "type": "integer",
+      "units": "ms",
+      "description": "Integration Period Length in ms",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Pointing_Angle",
+      "type": "double",
+      "units": "degrees",
+      "description": "Instrument Pointing Angle Relative to the Local Magnetic Field",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2023-04-19T16:28:15.000Z",
+  "stopDate": "2024-09-28T07:13:58.000Z"
+}

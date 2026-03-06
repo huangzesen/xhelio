@@ -1,0 +1,121 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Eu_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD DPB U antenna spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ev_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD DPB V antenna spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Eu_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Eu",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ev_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Ev",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "quality_flag",
+      "type": "integer",
+      "units": "",
+      "description": "quality flag for EFD",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "Eu1_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD SPB U1 probe spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ev1_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD SPB V1 probe spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Eu2_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD SPB U2 probe spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ev2_dsi",
+      "type": "double",
+      "units": "mV/m",
+      "description": "ERG PWE/EFD SPB V2 probe spinfit waveform",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Eu1_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Eu1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ev1_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Ev1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Eu2_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Eu2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ev2_residual",
+      "type": "double",
+      "units": "%",
+      "description": "Averaged residue of sine fit of Ev2",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2017-03-03T00:00:17.000Z",
+  "stopDate": "2024-12-31T23:59:48.000Z"
+}

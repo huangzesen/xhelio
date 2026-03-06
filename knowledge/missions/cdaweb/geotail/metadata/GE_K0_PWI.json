@@ -1,0 +1,93 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MCAE_PK",
+      "type": "integer",
+      "units": "100.0 dBuV/m/sqrt(Hz)",
+      "description": "Peak of spectral intensity for Efield comp (MCA) at 5 frequencies (.01-100 kHz)",
+      "fill": "-32768.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "MCAE_AVE",
+      "type": "integer",
+      "units": "100.0 dBuV/m/sqrt(Hz)",
+      "description": "Average of spectral intensity for Efield comp (MCA) at 5 frequencies (.01-100 kHz)",
+      "fill": "-32768.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "MCAB_PK",
+      "type": "integer",
+      "units": "100.0 dBpT/sqrt(Hz)",
+      "description": "Peak of spectral intensity for Bfield comp (MCA) at 4 frequencies (.01-10 kHz)",
+      "fill": "-32768.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "MCAB_AVE",
+      "type": "integer",
+      "units": "100.0 dBpT/sqrt(Hz)",
+      "description": "Average of spectral intensity for Bfield comp (MCA) at 4 frequencies (.01-10 kHz)",
+      "fill": "-32768.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SFAE_PK",
+      "type": "integer",
+      "units": "100.0 dBuV/m/sqrt(Hz)",
+      "description": "Peak of the spectral intensities averaged over 64 sec for SFA, scalar",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SFAE_AVE",
+      "type": "integer",
+      "units": "100.0 dBuV/m/sqrt(Hz)",
+      "description": "Average of the spectral intensities averaged over 64 sec for SFA, scalar",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "SFAE_FQ",
+      "type": "integer",
+      "units": "10.0 kHz",
+      "description": "Frequency corresponding to the peak of the spectral intensities, scalar",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "km",
+      "description": "Geotail Position, GSE cartesian coord",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "freq_b",
+      "type": "double",
+      "units": "kHz",
+      "description": "4 frequency values",
+      "fill": "-10.0",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1992-09-08T07:30:05.000Z",
+  "stopDate": "2022-06-27T12:23:38.000Z"
+}

@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "nh_swap_distance_to_sun",
+      "type": "double",
+      "units": "AU",
+      "description": "NH SWAP: Distance to Sun in AU",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "nh_swap_histogram",
+      "type": "double",
+      "units": "Hz",
+      "description": "NH SWAP: Histogram Count Rate [Hz] in eV/q",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    },
+    {
+      "name": "nh_swap_histogram_uncertainties",
+      "type": "double",
+      "units": "Hz",
+      "description": "NH SWAP: 1-sigma uncertainties for the count rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        64
+      ]
+    }
+  ],
+  "startDate": "2008-10-31T18:08:03.000Z",
+  "stopDate": "2017-03-31T18:08:01.000Z"
+}

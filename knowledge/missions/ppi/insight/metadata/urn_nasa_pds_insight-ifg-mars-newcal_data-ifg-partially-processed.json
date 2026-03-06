@@ -1,0 +1,163 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AOBT",
+      "type": "double",
+      "units": "",
+      "description": "APSS onboard time (AOBT) value of sample. This is the spacecraft\n                        clock time used by the APSS instruments.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IFG_1",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 1 data in nT with offsets and LST variations subtracted",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "IFG_2",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 2 data in nT with offsets and LST variations subtracted",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "IFG_3",
+      "type": "double",
+      "units": "nT",
+      "description": "IFG axis 3 data in nT with offsets and LST variations subtracted",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Bx_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "i\n                       Spacecraft mechanical coordinate system Bx component in nT.\n                       This frame is called the INSIGHT Lander Frame in SPICE and\n                       is described in the insight_v02.tf file as:\n                       FRAME_INSIGHT_LANDER = -189001, FRAME_-189001_NAME = INSIGHT_LANDER.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "By_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft mechanical coordinate system By component in nT",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Bz_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft mechanical coordinate system Bz component in nT",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "MLST",
+      "type": "double",
+      "units": "Hour",
+      "description": "Mean local time represented as decimal SOLs with the format SSSS.xxxxxxx where SSSS is the SOL number and xxxxxxx is the fractional SOL.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "TLST",
+      "type": "double",
+      "units": "Hour",
+      "description": "Mars true local solar time in decimal hours (0-24)",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "HR_Angle",
+      "type": "double",
+      "units": "Degree",
+      "description": "Solar hour angle in degrees (0-360) with 0 at noon and 90 at dusk.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelET",
+      "type": "double",
+      "units": "Degree",
+      "description": "Prior to 2019-11-18, the actual IFG electronics temperature (ET) was only \n                        available a few times per SOL. Since a value is required for every IFG \n                        vector for calibration purposes, a spline fit to the PAE temperature T-0014 \n                        was used as a proxy. T-0014 is sometimes available every minute or so, but is only\n                        infrequently returned at night. The observed values of T-0014 were spline\n                        fit to produce data set that is sampled at 5 minute resolution or better\n                        and then the values between those samples are derived by linear interpolation.\n                        After 2019-11-18, ET data became available every 15 minutes and data\n                        were linearly interpolated between samples to provide continuous data.\n                        This value is given in units of degrees Celsius.\n                        See the IFG calibration document for additional details.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelST",
+      "type": "double",
+      "units": "Degree",
+      "description": "Value of the actual IFG sensor temperature [SensorT] when available,\n                        otherwise a LST and UTC dependent model of the IFG sensor temperature [deg C]\n                        derived from the measured values from selected time intervals is\n                        provided. The FIR filter applied to the temperature data is longer\n                        than the one applied to the MAG data so there is a roughly two\n                        hour gap in the temperature data whenever the IFG powers on (i.e.\n                        following a spacecraft safing or PAE reset). The value in this column\n                        is used for the MAG calibration since it is available for all samples.\n                        See the IFG calibration document for additional details.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelSA",
+      "type": "double",
+      "units": "A",
+      "description": "LST and UTC dependent model of the fixed solar array current [A]\n                        derived from the values of the E-0771 from selected time intervals.\n                        See the IFG calibration document for additional details.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "ModSACT",
+      "type": "double",
+      "units": "A",
+      "description": "LST and UTC dependent model of the solar array current [A] total (SACT)\n                        derived from the sum of E-0772 and E-0772 from selected time intervals.\n                        See the IFG calibration document for additional details.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,1187 @@
+{
+  "id": "SolO",
+  "name": "Solar Orbiter",
+  "keywords": [
+    "orbiter",
+    "so",
+    "solar",
+    "solo",
+    "solo_l2_mag",
+    "solo_l2_swa"
+  ],
+  "profile": {
+    "description": "Solar Orbiter spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "MAG": {
+      "name": "MAG",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "SOLO_L2_MAG-RTN-LL": {
+          "description": "Solar Orbiter L2 Magnetometer Data Derived from Low Latency Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2021-09-05T00:00:03.000Z",
+          "stop_date": "2021-09-15T23:59:46.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-RTN-LL"
+        },
+        "SOLO_L2_MAG-VSO-NORMAL": {
+          "description": "Solar Orbiter Magnetometer L2 Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-12-26T00:00:00.000Z",
+          "stop_date": "2025-02-19T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-VSO-NORMAL"
+        },
+        "SOLO_L2_MAG-RTN-LL-1-MINUTE": {
+          "description": "Solar Orbiter L2 1-Minute Magnetometer Data Derived from Low Latency Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2021-09-05T00:00:29.000Z",
+          "stop_date": "2021-09-15T23:59:30.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-RTN-LL-1-MINUTE"
+        },
+        "SOLO_L2_MAG-VSO-NORMAL-1-MINUTE": {
+          "description": "Solar Orbiter Magnetometer L2 Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-12-26T00:00:29.000Z",
+          "stop_date": "2022-09-05T23:59:30.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-VSO-NORMAL-1-MINUTE"
+        },
+        "SOLO_L2_MAG-SRF-LL": {
+          "description": "Solar Orbiter L2 Magnetometer Data Derived from Low Latency Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2021-09-05T00:00:03.000Z",
+          "stop_date": "2021-09-15T23:59:46.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-SRF-LL"
+        },
+        "SOLO_L2_MAG-VSO-BURST": {
+          "description": "Solar Orbiter Magnetometer L2 Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-12-26T00:00:00.000Z",
+          "stop_date": "2025-02-19T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-VSO-BURST"
+        },
+        "SOLO_L2_MAG-SRF-BURST": {
+          "description": "Solar Orbiter Level 2 Magnetometer Data in Spacecraft Reference Frame in Burst Mode - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-04-15T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-SRF-BURST"
+        },
+        "SOLO_L2_MAG-RTN-NORMAL": {
+          "description": "Solar Orbiter Level 2 Magnetometer Data in RTN Coordinates in Normal Mode - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-04-15T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-RTN-NORMAL"
+        },
+        "SOLO_L2_MAG-RTN-NORMAL-1-MINUTE": {
+          "description": "Solar Orbiter Magnetometer L2 Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-04-15T00:00:29.000Z",
+          "stop_date": "2025-08-31T23:59:30.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-RTN-NORMAL-1-MINUTE"
+        },
+        "SOLO_L2_MAG-SRF-NORMAL": {
+          "description": "Solar Orbiter Level 2 Magnetometer Data in Spacecraft Reference Frame in Normal Mode - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-04-15T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-SRF-NORMAL"
+        },
+        "SOLO_L2_MAG-RTN-BURST": {
+          "description": "Solar Orbiter Level 2 Magnetometer Data in RTN Coordinates in Burst Mode - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-04-15T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:59:59.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_MAG-RTN-BURST"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "SOLO_LL02_EPD-HET-ASUN-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data of Energetic Particle Detector (EPD) High Energy Telescope (HET) Anti-Sunward Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:15.000Z",
+          "stop_date": "2026-02-17T15:40:04.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-HET-ASUN-RATES"
+        },
+        "SOLO_L2_EPD-HET-SUN-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, Sun direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-SUN-RATES"
+        },
+        "SOLO_L2_EPD-EPT-NORTH-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, North Direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-NORTH-RATES"
+        },
+        "SOLO_LL02_SWA-PAS-MOM": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Solar Wind Analyser (SWA) Proton and Alpha Sensor (PAS) Quick Look Moments - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-08-19T16:03:47.000Z",
+          "stop_date": "2026-02-17T15:43:19.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_SWA-PAS-MOM"
+        },
+        "SOLO_L2_EPD-EPT-ASUN-BURST-ELE-CLOSE": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Anti-Sun direction, Burst, Electrons, Close mode - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-ASUN-BURST-ELE-CLOSE"
+        },
+        "SOLO_L2_EPD-HET-SOUTH-BURST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, South direction, Burst - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-SOUTH-BURST"
+        },
+        "SOLO_L2_EPD-EPT-SUN-BURST-ION": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Sun direction, Burst, Ions - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SUN-BURST-ION"
+        },
+        "SOLO_L2_EPD-HET-NORTH-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, North direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-NORTH-RATES"
+        },
+        "SOLO_L2_EPD-HET-SOUTH-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, South direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-SOUTH-RATES"
+        },
+        "SOLO_L2_EPD-EPT-SOUTH-BURST-ION": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, South direction, Burst, Ions - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SOUTH-BURST-ION"
+        },
+        "SO_K0_CST": {
+          "description": "SOHO ComprehensiveSuprathermal and  EnergeticParticle Analyser  - Horst Kunow (University of Kiel, Germany)",
+          "start_date": "1995-12-02T00:00:00.000Z",
+          "stop_date": "2002-01-31T23:57:25.000Z",
+          "pi_name": "Horst Kunow",
+          "pi_affiliation": "University of Kiel, Germany",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_K0_CST"
+        },
+        "SOLO_LL02_EPD-HET-NORTH-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data of Energetic Particle Detector (EPD) High Energy Telescope (HET) North Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:45.000Z",
+          "stop_date": "2026-02-17T15:32:34.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-HET-NORTH-RATES"
+        },
+        "SOLO_LL02_EPD-HET-SOUTH-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data of Energetic Particle Detector (EPD) High Energy Telescope (HET) South Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:45.000Z",
+          "stop_date": "2026-02-17T15:32:34.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-HET-SOUTH-RATES"
+        },
+        "SOLO_L2_EPD-EPT-NORTH-BURST-ELE-CLOSE": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, North direction, Burst, Electrons, Close mode - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-NORTH-BURST-ELE-CLOSE"
+        },
+        "SOLO_L2_EPD-EPT-ASUN-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Anti-Sun Direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-ASUN-RATES"
+        },
+        "SOLO_L2_EPD-EPT-SUN-BURST-ELE-CLOSE": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Sun direction, Burst, Electrons, Close mode - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SUN-BURST-ELE-CLOSE"
+        },
+        "SOLO_L2_EPD-EPT-SOUTH-HCAD": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, South direction, High Cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:00.000Z",
+          "stop_date": "2021-03-23T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SOUTH-HCAD"
+        },
+        "SOLO_L2_EPD-SIS-B-RATES-FAST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, B Telescope, Particle rates, fast cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:24.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-B-RATES-FAST"
+        },
+        "SOLO_L2_EPD-EPT-NORTH-BURST-ION": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, North direction, Burst, Ions - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-NORTH-BURST-ION"
+        },
+        "SOLO_L3_SWA-HIS-COMP-10MIN": {
+          "description": "Solar Orbiter, Level 3 Data, Solar Wind Analyser, Heavy Ion Sensor Composition 10 Minute Resolution - S. Livi (SWRI)",
+          "start_date": "2022-01-01T00:00:27.000Z",
+          "stop_date": "2023-04-27T14:10:15.000Z",
+          "pi_name": "S. Livi",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_SWA-HIS-COMP-10MIN"
+        },
+        "SOLO_L2_EPD-SIS-B-RATES-SLOW": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, B Telescope, Particle rates, slow cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-02T10:52:18.000Z",
+          "stop_date": "2025-10-31T23:52:15.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-B-RATES-SLOW"
+        },
+        "SOLO_L2_EPD-EPT-ASUN-HCAD": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Anti-Sun direction, High Cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:00.000Z",
+          "stop_date": "2021-03-23T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-ASUN-HCAD"
+        },
+        "SOLO_L2_EPD-SIS-B-RATES-MEDIUM": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, B Telescope, Particle rates, medium cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-02T10:52:18.000Z",
+          "stop_date": "2025-10-31T23:59:45.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-B-RATES-MEDIUM"
+        },
+        "SOLO_LL02_MAG": {
+          "description": "Solar Orbiter Level 2 Low Latency Magnetometer Data - T. Horbury (The Blackett Laboratory, Imperial College London)",
+          "start_date": "2020-06-03T14:28:15.000Z",
+          "stop_date": "2023-02-13T20:49:37.000Z",
+          "pi_name": "T. Horbury",
+          "pi_affiliation": "The Blackett Laboratory, Imperial College London",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_MAG"
+        },
+        "SOLO_LL02_RPW-SBM1": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Radio and Plasma Wave (RPW) Selected Burst Mode 1 (SBM1) (for Shock Crossing) - M. Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-10-05T09:00:01.000Z",
+          "stop_date": "2022-01-08T08:48:38.000Z",
+          "pi_name": "M. Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_RPW-SBM1"
+        },
+        "SOLO_L2_EPD-HET-ASUN-BURST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, Anti-Sun direction, Burst - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-ASUN-BURST"
+        },
+        "SOLO_L3_EPD-EPT-1HOUR": {
+          "description": "Solar Orbiter, Level 3 Data, Energetic Particle Detector, Electron Proton Telescope, 1 hour - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-01T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:00:00.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_EPD-EPT-1HOUR"
+        },
+        "SOLO_LL02_RPW-TNR": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Radio and Plasma Wave (RPW) Thermal Noise Receiver (TNR) - M. Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-03T14:10:19.000Z",
+          "stop_date": "2026-02-17T15:39:28.000Z",
+          "pi_name": "M. Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_RPW-TNR"
+        },
+        "SOLO_LL02_EPD-EPT-ASUN-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Energetic Particle Detector (EPD), Electron Proton Telescope (EPT), Anti-Sunward Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:15.000Z",
+          "stop_date": "2026-02-17T15:40:04.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-EPT-ASUN-RATES"
+        },
+        "SOLO_L2_EPD-SIS-A-RATES-FAST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Particle rates, fast cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:24.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-A-RATES-FAST"
+        },
+        "SOLO_L2_EPD-STEP-BURST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, Burst - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2021-10-21T16:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-STEP-BURST"
+        },
+        "SOLO_L2_EPD-HET-NORTH-BURST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, North direction, Burst - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-NORTH-BURST"
+        },
+        "SOLO_L3_EPD-EPT-1MIN": {
+          "description": "Solar Orbiter, Level 3 Data, Energetic Particle Detector, Electron Proton Telescope, 1 minute - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:00.000Z",
+          "stop_date": "2025-08-31T23:59:00.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_EPD-EPT-1MIN"
+        },
+        "SOLO_L2_EPD-SIS-A-RATES-SLOW": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Particle rates, slow cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-02T10:52:18.000Z",
+          "stop_date": "2025-10-31T23:52:15.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-A-RATES-SLOW"
+        },
+        "SOLO_L2_EPD-EPT-SOUTH-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, South Direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SOUTH-RATES"
+        },
+        "SOLO_L2_EPD-SIS-A-HEHIST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Helium histogram - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-25T00:22:21.000Z",
+          "stop_date": "2025-10-31T23:52:15.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-A-HEHIST"
+        },
+        "SOLO_L2_EPD-HET-SUN-BURST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, Sun direction, Burst - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-SUN-BURST"
+        },
+        "SOLO_LL02_EPD-EPT-SOUTH-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Energetic Particle Detector (EPD) Electron Proton Telescope (EPT), South Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:45.000Z",
+          "stop_date": "2026-02-17T15:32:34.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-EPT-SOUTH-RATES"
+        },
+        "SO_K0_ERN": {
+          "description": "SOHO Energetic and Relativistic Nuclei and Electron experiment, Key Parameters - J Torsti (University of Turku)",
+          "start_date": "1995-12-02T00:00:00.000Z",
+          "stop_date": "2000-02-09T23:59:57.000Z",
+          "pi_name": "J Torsti",
+          "pi_affiliation": "University of Turku",
+          "doi": "10.48322/byv5-gp28",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_K0_ERN"
+        },
+        "SOLO_LL02_EPD-HET-SUN-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data of Energetic Particle Detector (EPD) High Energy Telescope (HET) Sunward Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:15.000Z",
+          "stop_date": "2026-02-17T15:40:04.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-HET-SUN-RATES"
+        },
+        "SOLO_L2_EPD-EPT-ASUN-BURST-ION": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Anti-Sun direction, Burst, Ions - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-ASUN-BURST-ION"
+        },
+        "SOLO_L2_EPD-EPT-SOUTH-BURST-ELE-CLOSE": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, South direction, Burst, Electrons, Close mode - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-15T12:22:28.000Z",
+          "stop_date": "2020-06-15T12:37:28.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SOUTH-BURST-ELE-CLOSE"
+        },
+        "SOLO_LL02_EPD-EPT-SUN-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Energetic Particle Detector (EPD) Electron Proton Telescope (EPT) Sunward Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:15.000Z",
+          "stop_date": "2026-02-17T15:40:04.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-EPT-SUN-RATES"
+        },
+        "SOLO_L2_EPD-EPT-NORTH-HCAD": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, North Direction, High Cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:00.000Z",
+          "stop_date": "2021-03-23T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-NORTH-HCAD"
+        },
+        "SOLO_L2_EPD-SIS-A-RATES-MEDIUM": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, A Telescope, Particle rates, medium cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-02T10:52:18.000Z",
+          "stop_date": "2025-10-31T23:59:45.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-A-RATES-MEDIUM"
+        },
+        "SOLO_LL02_EPD-SIS-B-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data of Energetic Particle Detector (EPD) Suprathermal Ion Spectrograph (SIS) B Telescope Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:10:07.000Z",
+          "stop_date": "2026-02-17T14:52:32.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-SIS-B-RATES"
+        },
+        "SOLO_L2_EPD-SIS-B-HEHIST": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Suprathermal Ion Spectrograph, B Telescope, Helium histogram - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-25T00:22:21.000Z",
+          "stop_date": "2025-10-31T23:52:15.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-SIS-B-HEHIST"
+        },
+        "SOLO_L2_EPD-STEP-MAIN": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, Main product - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2021-10-22T11:38:20.000Z",
+          "stop_date": "2025-10-31T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-STEP-MAIN"
+        },
+        "SOLO_L2_EPD-EPT-SUN-HCAD": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Sun direction, High Cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:00.000Z",
+          "stop_date": "2021-03-23T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SUN-HCAD"
+        },
+        "SOLO_L2_EPD-STEP-HCAD": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, High Cadence - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-30T00:00:01.000Z",
+          "stop_date": "2021-10-22T11:48:44.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-STEP-HCAD"
+        },
+        "SOLO_L2_EPD-EPT-SUN-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, Electron Proton Telescope, Sun Direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:59.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-EPT-SUN-RATES"
+        },
+        "SOLO_LL02_EPD-EPT-NORTH-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Energetic Particle Detector (EPD) Electron Proton Telescope (EPT), North Direction Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:22:45.000Z",
+          "stop_date": "2026-02-17T15:32:34.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-EPT-NORTH-RATES"
+        },
+        "SOLO_LL02_EPD-SIS-A-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency data of Energetic Particle Detector (EPD) Suprathermal Ion Spectrograph (SIS) A Telescope, Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:10:07.000Z",
+          "stop_date": "2026-02-17T14:52:32.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-SIS-A-RATES"
+        },
+        "SOLO_L3_EPD-EPT-1DAY": {
+          "description": "Solar Orbiter, Level 3 Data, Energetic Particle Detector, Electron Proton Telescope, 1 day resolution data - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-01-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T00:00:00.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_EPD-EPT-1DAY"
+        },
+        "SOLO_L2_EPD-STEP-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, SupraThermal Electrons and Protons, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-04-30T00:00:11.000Z",
+          "stop_date": "2021-10-22T11:48:29.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-STEP-RATES"
+        },
+        "SOLO_LL02_EPD-STEP-RATES": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Energetic Particle Detector (EPD) SupraThermal Electrons and Protons (STEP) Particle Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-06-03T14:27:15.000Z",
+          "stop_date": "2026-02-17T15:41:34.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_EPD-STEP-RATES"
+        },
+        "SOLO_L2_EPD-HET-ASUN-RATES": {
+          "description": "Solar Orbiter, Level 2 Data, Energetic Particle Detector, High Energy Telescope, Anti-Sun direction, Rates - J. Rodriguez-Pacheco (Space Research Group, Universidad de Alcala)",
+          "start_date": "2020-05-13T00:00:03.000Z",
+          "stop_date": "2025-10-31T23:59:57.000Z",
+          "pi_name": "J. Rodriguez-Pacheco",
+          "pi_affiliation": "Space Research Group, Universidad de Alcala",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_EPD-HET-ASUN-RATES"
+        }
+      }
+    },
+    "SWA-PAS": {
+      "name": "SWA-PAS",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "SOLO_L2_SWA-EAS-PAD-DNF": {
+          "description": "Solar Orbiter Level 2 Differential Number Flux (DNF) of Pitch Angle Data (PAD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T09:00:01.000Z",
+          "stop_date": "2025-10-31T05:35:03.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS-PAD-DNF"
+        },
+        "SOLO_L2_SWA-EAS2-NM3D-DNF": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Differential Number Flux (NM3D-DNF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-NM3D-DNF"
+        },
+        "SOLO_L2_SWA-EAS1-TM3D-DEF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, Trigger Mode 3D, Differential Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-04T07:29:41.000Z",
+          "stop_date": "2025-10-18T04:44:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-TM3D-DEF"
+        },
+        "SOLO_L2_SWA-EAS1-NM3D-PSD": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Phase Space Density (NM3D-PSD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-NM3D-PSD"
+        },
+        "SOLO_L2_SWA-EAS2-HIRES3D-PSD": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, High Resolution Nominal Mode 3D, Phase Space Density - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "1999-12-31T23:59:59.000Z",
+          "stop_date": "2025-10-01T02:39:59.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-HIRES3D-PSD"
+        },
+        "SOLO_L2_SWA-EAS1-SS-PSD": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Phase Space Density (PSD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-SS-PSD"
+        },
+        "SOLO_L2_SWA-EAS1-TM3D-DNF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, Trigger Mode 3D, Differential Number Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-04T07:29:41.000Z",
+          "stop_date": "2025-10-18T04:44:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-TM3D-DNF"
+        },
+        "SOLO_L2_SWA-EAS-PAD-DEF": {
+          "description": "Solar Orbiter Level 2 Differential Energy Flux (DEF) of Pitch Angle Data (PAD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T09:00:01.000Z",
+          "stop_date": "2025-10-31T05:35:03.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS-PAD-DEF"
+        },
+        "SOLO_L2_SWA-EAS2-NM3D-DEF": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Differential Energy Flux (NM3D-DEF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-NM3D-DEF"
+        },
+        "SOLO_L2_SWA-EAS1-SS-DEF": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Differential Energy Flux (DEF) of Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-SS-DEF"
+        },
+        "SOLO_L2_SWA-EAS2-HIRES3D-DEF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, High Resolution Nominal Mode 3D, Differential Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "1999-12-31T23:59:59.000Z",
+          "stop_date": "2025-10-01T02:39:59.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-HIRES3D-DEF"
+        },
+        "SOLO_L2_SWA-EAS-PAD-PSD": {
+          "description": "Solar Orbiter Level 2 Phase Space Density (PSD) of Pitch Angle Data (PAD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T09:00:01.000Z",
+          "stop_date": "2025-10-31T05:35:03.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS-PAD-PSD"
+        },
+        "SOLO_L2_SWA-EAS1-NM3D-DEF": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Differential Energy Flux (NM3D-DEF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-NM3D-DEF"
+        },
+        "SOLO_L2_SWA-HIS-PHA": {
+          "description": "Solar Orbiter Level 2 Solar Wind Analyser Heavy Ion Sensor Pulse Height Analyzed - S. Livi (SWRI)",
+          "start_date": "2022-01-01T00:00:27.000Z",
+          "stop_date": "2023-04-27T14:12:45.000Z",
+          "pi_name": "S. Livi",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-HIS-PHA"
+        },
+        "SOLO_L2_SWA-EAS1-TM3D-PSD": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, Trigger Mode 3D, Phase Space Density - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-04T07:29:41.000Z",
+          "stop_date": "2025-10-18T04:44:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-TM3D-PSD"
+        },
+        "SOLO_L2_SWA-EAS2-EFLUX": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T05:01:58.000Z",
+          "stop_date": "2025-01-31T23:59:43.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-EFLUX"
+        },
+        "SOLO_L2_SWA-EAS1-EFLUX": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T05:01:58.000Z",
+          "stop_date": "2025-01-31T23:59:43.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-EFLUX"
+        },
+        "SOLO_L2_SWA-EAS1-HIRES3D-PSD": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, High Resolution Nominal Mode 3D, Phase Space Density - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2024-02-05T11:25:00.000Z",
+          "stop_date": "2025-10-01T02:39:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-HIRES3D-PSD"
+        },
+        "SOLO_L2_SWA-EAS1-HIRES3D-DEF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, High Resolution  Nominal Mode 3D, Differential Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2024-02-05T11:25:00.000Z",
+          "stop_date": "2025-10-01T02:39:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-HIRES3D-DEF"
+        },
+        "SOLO_L2_SWA-PAS-EFLUX": {
+          "description": "Solar Orbiter Level 2 Energy Flux from Solar Wind Analyser (SWA) Proton-Alpha Sensor (PAS) - C.J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-07-07T16:43:06.000Z",
+          "stop_date": "2025-10-31T23:59:54.000Z",
+          "pi_name": "C.J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-PAS-EFLUX"
+        },
+        "SOLO_L2_SWA-PAS-VDF": {
+          "description": "Solar Orbiter Level 2 Phase Spase Distribution Function from Solar Wind Analyser (SWA) Proton-Alpha Sensor (PAS) - C.J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-07-07T16:43:06.000Z",
+          "stop_date": "2025-10-31T23:59:54.000Z",
+          "pi_name": "C.J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-PAS-VDF"
+        },
+        "SOLO_L2_SWA-HIS-HK": {
+          "description": "Solar Orbiter Level 2 Solar Wind Analyser Heavy Ion Sensor Housekeeping Parameters - S. Livi (SWRI)",
+          "start_date": "2022-01-01T00:00:08.000Z",
+          "stop_date": "2023-04-28T12:31:48.000Z",
+          "pi_name": "S. Livi",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-HIS-HK"
+        },
+        "SOLO_L2_SWA-PAS-GRND-MOM": {
+          "description": "Solar Orbiter Level 2 Ground Calculated Moments Data from Solar Wind Analyser (SWA) Proton-Alpha Sensor (PAS)  - C.J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-07-07T16:43:06.000Z",
+          "stop_date": "2025-10-31T23:59:54.000Z",
+          "pi_name": "C.J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-PAS-GRND-MOM"
+        },
+        "SOLO_L2_SWA-EAS1-HIRES3D-DNF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 1, High Resolution Nominal Mode 3D, Differential Number Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2024-02-05T11:25:00.000Z",
+          "stop_date": "2025-10-01T02:39:58.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-HIRES3D-DNF"
+        },
+        "SOLO_L2_SWA-EAS2-SS-DEF": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Differential Energy Flux (DEF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-SS-DEF"
+        },
+        "SOLO_L2_SWA-EAS2-SS-DNF": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Differential Number Flux (DNF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-SS-DNF"
+        },
+        "SOLO_L2_SWA-EAS2-SS-PSD": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Phase Space Density (PSD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-SS-PSD"
+        },
+        "SOLO_L2_SWA-EAS2-TM3D-PSD": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, Trigger Mode 3D, Phase Space Density - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-08T13:56:46.000Z",
+          "stop_date": "2025-10-13T01:51:36.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-TM3D-PSD"
+        },
+        "SOLO_L2_SWA-EAS1-NM3D-DNF": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Differential Number Flux (NM3D-DNF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-NM3D-DNF"
+        },
+        "SOLO_L2_SWA-HIS-RATES": {
+          "description": "Solar Orbiter Level 2 Solar Wind Analyser Heavy Ion Sensor Rates - S. Livi (SWRI)",
+          "start_date": "2022-01-01T00:00:27.000Z",
+          "stop_date": "2023-04-27T14:12:45.000Z",
+          "pi_name": "S. Livi",
+          "pi_affiliation": "SWRI",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-HIS-RATES"
+        },
+        "SOLO_L2_SWA-EAS2-TM3D-DEF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, Trigger Mode 3D, Differential Energy Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-08T13:56:46.000Z",
+          "stop_date": "2025-10-13T01:51:36.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-TM3D-DEF"
+        },
+        "SOLO_L2_SWA-EAS2-HIRES3D-DNF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, High Resolution Nominal mode 3D, Differential Number Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "1999-12-31T23:59:59.000Z",
+          "stop_date": "2025-10-01T02:39:59.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-HIRES3D-DNF"
+        },
+        "SOLO_L2_SWA-EAS1-SS-DNF": {
+          "description": "Solar Orbiter Level 2 Single Strahl (SS) Differential Number Flux (DNF) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 1 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:49:26.000Z",
+          "stop_date": "2025-10-31T23:59:25.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS1-SS-DNF"
+        },
+        "SOLO_L2_SWA-EAS2-TM3D-DNF": {
+          "description": "Solar Orbiter, Level L2, Solar Wind Analyzer, Electron Analyser System 2, Trigger Mode 3D, Differential Number Flux - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2023-01-08T13:56:46.000Z",
+          "stop_date": "2025-10-13T01:51:36.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-TM3D-DNF"
+        },
+        "SOLO_L2_SWA-EAS2-NM3D-PSD": {
+          "description": "Solar Orbiter Level 2 Nominal Mode 3D Phase Space Density (NM3D-PSD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) Sensor 2 - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-15T14:48:38.000Z",
+          "stop_date": "2025-10-31T23:59:47.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_SWA-EAS2-NM3D-PSD"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "SO_K0_CEL": {
+          "description": "SOHO Charge, Element and Isotope Analysis System, Key Parameters - Peter Bochsler (Physikalisches Institut, )",
+          "start_date": "1995-12-22T00:00:11.000Z",
+          "stop_date": "2002-01-31T23:51:06.000Z",
+          "pi_name": "Peter Bochsler",
+          "pi_affiliation": "Physikalisches Institut,",
+          "doi": "10.48322/n40y-m550",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_K0_CEL"
+        },
+        "SOLO_L3_SWA-EAS-NMPAD-PSD": {
+          "description": "Solar Orbiter Level 2 Phase Space Density (PSD) of Nominal Mode Pitch Angle Data (NMPAD) from Solar Wind Analyser (SWA) Electron Analyser System (EAS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2020-06-16T05:01:58.000Z",
+          "stop_date": "2025-02-28T23:59:48.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_SWA-EAS-NMPAD-PSD"
+        },
+        "SOLO_LL02_SWA-HIS-RAT": {
+          "description": "Solar Orbiter Level 2 Low Latency Ratios and Spectra Data from Solar Wind Analyser (SWA) Heavy Ion Sensor (HIS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2021-04-01T02:05:22.000Z",
+          "stop_date": "2023-04-27T14:18:56.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_SWA-HIS-RAT"
+        },
+        "SOLO_LL02_SWA-EAS-SS": {
+          "description": "Solar Orbiter Level 2 Low Latency Single Strahl (SS) Data from Solar Wind Analyzer (SWA) Electron Analyzer System (EAS) - C. J. Owen (MSSL-UCL, University College London, UK)",
+          "start_date": "2021-01-01T00:00:00.000Z",
+          "stop_date": "2026-02-17T15:41:23.000Z",
+          "pi_name": "C. J. Owen",
+          "pi_affiliation": "MSSL-UCL, University College London, UK",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_SWA-EAS-SS"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-RTN-256": {
+          "description": "Solar Orbiter, Level 3, MAG and RPW, Merged magnetic data sampled at 256 Hz - M. Kretzschmar ; T. Horbury ; M. Maksimovic (LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS)",
+          "start_date": "2020-06-15T12:15:14.000Z",
+          "stop_date": "2025-07-05T23:35:02.000Z",
+          "pi_name": "M. Kretzschmar ; T. Horbury ; M. Maksimovic",
+          "pi_affiliation": "LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-RTN-256"
+        },
+        "SOLO_COHO1HR_MERGED_MAG_PLASMA": {
+          "description": "Merged hourly magnetic field, plasma, proton fluxes, and ephermis data of Solar Orbiter - Natalia Papitashvili (NASA/GSFC)",
+          "start_date": "2020-01-01T00:00:00.000Z",
+          "stop_date": "2025-12-31T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_COHO1HR_MERGED_MAG_PLASMA"
+        },
+        "SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-SRF-256": {
+          "description": "Solar Orbiter, Level 3, MAG and RPW, Merged magnetic data sampled at 256 Hz - M. Kretzschmar ; T. Horbury ; M. Maksimovic (LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS)",
+          "start_date": "2020-06-15T12:15:14.000Z",
+          "stop_date": "2025-07-05T23:35:02.000Z",
+          "pi_name": "M. Kretzschmar ; T. Horbury ; M. Maksimovic",
+          "pi_affiliation": "LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-SRF-256"
+        },
+        "SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-RTN-4096": {
+          "description": "Solar Orbiter, Level 3, MAG and RPW, Merged magnetic data sampled at 4096 Hz - M. Kretzschmar ; T. Horbury ; M. Maksimovic (LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS)",
+          "start_date": "2020-06-15T12:15:17.000Z",
+          "stop_date": "2025-07-05T23:34:58.000Z",
+          "pi_name": "M. Kretzschmar ; T. Horbury ; M. Maksimovic",
+          "pi_affiliation": "LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-RTN-4096"
+        },
+        "SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-SRF-4096": {
+          "description": "Solar Orbiter, Level 3, MAG and RPW, Merged magnetic data sampled at 4096 Hz - M. Kretzschmar ; T. Horbury ; M. Maksimovic (LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS)",
+          "start_date": "2020-06-15T12:15:17.000Z",
+          "stop_date": "2025-07-05T23:34:58.000Z",
+          "pi_name": "M. Kretzschmar ; T. Horbury ; M. Maksimovic",
+          "pi_affiliation": "LPC2E, CNRS/UniversitÃ© dâOrlÃ©ans/CNES ;  Blackett Laboratory, Imperial College London ; LIRA, Observatoire de Paris/CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_MULTI-MAG-RPW-SCM-MERGED-SRF-4096"
+        }
+      }
+    },
+    "waves": {
+      "name": "Radio and Plasma Waves",
+      "keywords": [
+        "radio",
+        "wave",
+        "plasma wave"
+      ],
+      "datasets": {
+        "SOLO_L3_RPW-BIA-EFIELD": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 electric field vector - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:13.000Z",
+          "stop_date": "2022-12-01T00:01:17.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-EFIELD"
+        },
+        "SOLO_L3_RPW-TNR-FP": {
+          "description": "Solar Orbiter Radio/Plasma Wave, data from plasma peak tracking L3 - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:49.000Z",
+          "stop_date": "2022-12-29T12:50:23.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-TNR-FP"
+        },
+        "SOLO_L3_RPW-BIA-SCPOT-10-SECONDS": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 spacecraft potential, downsampled - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:10.000Z",
+          "stop_date": "2023-01-01T00:02:20.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-SCPOT-10-SECONDS"
+        },
+        "SOLO_L2_RPW-LFR-SURV-BP2": {
+          "description": "Solar Orbiter Radio and Plasma Wave, Level 2 Low Frequency Receiver (LFR) Basic Parameter Set 2 (BP2) Data in Survey Mode - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:29.000Z",
+          "stop_date": "2025-11-19T00:04:56.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-LFR-SURV-BP2"
+        },
+        "SOLO_L2_RPW-LFR-SURV-BP1": {
+          "description": "Solar Orbiter Radio and Plasma Wave (RPW), Level 2 Low Frequency Receiver (LFR) Basic Parameter Set 1 (BP1) Data in Survey Mode - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:17.000Z",
+          "stop_date": "2025-11-19T00:05:12.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-LFR-SURV-BP1"
+        },
+        "SOLO_L2_RPW-LFR-SURV-ASM": {
+          "description": "Solar Orbiter Radio and Plasma Wave, Level 2 Low Frequency Receiver (LFR) Averaged Spectral Matrix (ASM) Data in Survey Mode",
+          "start_date": "2020-06-15T01:05:14.000Z",
+          "stop_date": "2025-11-19T00:04:56.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-LFR-SURV-ASM"
+        },
+        "SOLO_L3_RPW-BIA-SCPOT": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 spacecraft potential - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:13.000Z",
+          "stop_date": "2023-01-01T00:02:24.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-SCPOT"
+        },
+        "SOLO_L3_RPW-BIA-VHT": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 de Hoffmann-Teller solar wind velocity - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-07-01T00:00:00.000Z",
+          "stop_date": "2020-12-31T11:40:00.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-VHT"
+        },
+        "SOLO_LL02_RPW-SBM2": {
+          "description": "Solar Orbiter Level 2 Low Latency Data from Radio and Plasma Wave (RPW) Selected Burst Mode 2 (SBM2) (for In Situ Type III) - M. Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2021-03-11T08:04:44.000Z",
+          "stop_date": "2021-10-09T07:06:51.000Z",
+          "pi_name": "M. Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_LL02_RPW-SBM2"
+        },
+        "SOLO_L2_RPW-TDS-SURV-HIST2D": {
+          "description": "Solar Orbiter Radio/Plasma Wave, TDS L2 parameters - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:05:19.000Z",
+          "stop_date": "2023-11-12T22:59:27.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-TDS-SURV-HIST2D"
+        },
+        "SOLO_L2_RPW-TDS-SURV-HIST1D": {
+          "description": "Solar Orbiter Radio/Plasma Wave, TDS L2 parameters - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:05:18.000Z",
+          "stop_date": "2023-11-12T23:43:23.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-TDS-SURV-HIST1D"
+        },
+        "SOLO_L2_RPW-LFR-SURV-CWF-E": {
+          "description": "Solar Orbiter Radio and Plasma Waves, Level 2 Low Frequency Reciver (LFR) Continuous Electric Waveform (CWF-E) in Survey Mode - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:13.000Z",
+          "stop_date": "2023-11-13T00:02:58.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-LFR-SURV-CWF-E"
+        },
+        "SOLO_L2_RPW-LFR-SURV-CWF-B": {
+          "description": "Solar Orbiter Radio and Plasma Waves, Level 2 Low Frequency Receiver (LFR) Continuous Magnetic Waveform (CWF-B) in Survey Mode - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:13.000Z",
+          "stop_date": "2025-11-19T00:03:55.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-LFR-SURV-CWF-B"
+        },
+        "SOLO_L2_RPW-TDS-SURV-STAT": {
+          "description": "Solar Orbiter Radio/Plasma Wave, TDS L2R parameters - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:21.000Z",
+          "stop_date": "2023-11-13T00:02:58.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-TDS-SURV-STAT"
+        },
+        "SOLO_L3_RPW-BIA-DENSITY": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 plasma density derived from the spacecraft potential - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:13.000Z",
+          "stop_date": "2022-11-26T00:02:04.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-DENSITY"
+        },
+        "SOLO_L3_RPW-BIA-EFIELD-10-SECONDS": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 electric field vector, downsampled - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:10.000Z",
+          "stop_date": "2022-12-01T00:01:20.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-EFIELD-10-SECONDS"
+        },
+        "SOLO_L2_RPW-HFR-SURV": {
+          "description": "Solar Orbiter Radio/Plasma Wave, HFR L2 parameters - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:49.000Z",
+          "stop_date": "2023-11-13T00:03:11.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L2_RPW-HFR-SURV"
+        },
+        "SOLO_L3_RPW-BIA-DENSITY-10-SECONDS": {
+          "description": "Solar Orbiter Radio/Plasma Wave, LFR L3 plasma density derived from the spacecraft potential, downsampled - M.Maksimovic (LESIA, Observatoire de Paris-CNRS)",
+          "start_date": "2020-06-15T00:00:10.000Z",
+          "stop_date": "2022-11-26T00:02:00.000Z",
+          "pi_name": "M.Maksimovic",
+          "pi_affiliation": "LESIA, Observatoire de Paris-CNRS",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_L3_RPW-BIA-DENSITY-10-SECONDS"
+        }
+      }
+    },
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "SO_AT_DEF": {
+          "description": "SOHO Definitive Attitude Data",
+          "start_date": "1995-05-22T00:05:00.000Z",
+          "stop_date": "2002-09-22T23:55:00.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_AT_DEF"
+        },
+        "SO_OR_PRE": {
+          "description": "Soho Predicted Data Orbit",
+          "start_date": "1995-05-22T00:00:00.000Z",
+          "stop_date": "2026-04-06T23:50:00.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_OR_PRE"
+        },
+        "SO_OR_DEF": {
+          "description": "SOHO Definitive Orbit Data",
+          "start_date": "1995-12-02T00:00:00.000Z",
+          "stop_date": "1997-09-09T23:50:00.000Z",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SO_OR_DEF"
+        },
+        "SOLO_HELIO1HR_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2020-02-11T00:00:00.000Z",
+          "stop_date": "2030-11-19T23:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_HELIO1HR_POSITION"
+        },
+        "SOLO_HELIO1DAY_POSITION": {
+          "description": "Position in heliocentric coordinates from SPDF Helioweb - Natalia Papitashvili (NASA/GSFC/SPDF)",
+          "start_date": "2020-02-11T00:00:00.000Z",
+          "stop_date": "2030-11-17T00:00:00.000Z",
+          "pi_name": "Natalia Papitashvili",
+          "pi_affiliation": "NASA/GSFC/SPDF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesS.html#SOLO_HELIO1DAY_POSITION"
+        }
+      }
+    }
+  },
+  "observatory_group": "Solar Orbiter",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

@@ -1,0 +1,170 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "double",
+      "units": "Tick",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_ID",
+      "type": "double",
+      "units": "",
+      "description": "MAGNETOMETER ID (1-LFM, 2-HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Radial component of the magnetic field, positive in the direction of    \n                        sun to spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Azimuthal component of the magnetic field, positive in the direction    \n                        of planetary orbital motion.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "North/South component of the magnetic field, positive northward.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Magnitude of the averaged magnetic field component vectors.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "Average of the magnetic field magnitudes in.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "Delta",
+      "type": "double",
+      "units": "Degree",
+      "description": "DELTA = ARCSIN(BN/BMAG)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "Lambda",
+      "type": "double",
+      "units": "ASCII_Real",
+      "description": "LAMBDA = 180. - ATAN(BT/-BR)",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS 1",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BT",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS 2",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "RMS_BN",
+      "type": "double",
+      "units": "Nanotesla",
+      "description": "RMS 3",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999999e+10"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "Point",
+      "description": "NUM PTS IN AVG",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "Data Flag",
+      "type": "double",
+      "units": "",
+      "description": "DATA FLAG",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

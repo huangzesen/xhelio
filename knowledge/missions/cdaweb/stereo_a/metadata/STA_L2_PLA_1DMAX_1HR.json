@@ -1,0 +1,172 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "error_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates possible error condition.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "caution_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates how sensitive the density value is to method for determining background correction.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "cycles_den_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates how many 1-min cycles (den) were included in average.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "cycles_vel_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates how many 1-min cycles were included in average.",
+      "fill": "-1.0"
+    },
+    {
+      "name": "attitude_flag_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Indicates when instrument flow angles are not in nominal s/c orientation.",
+      "fill": "-1.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ew_source_flag_1hr",
+      "type": "integer",
+      "units": "",
+      "description": "Source flag for EW data.",
+      "fill": "-1.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "proton_number_density_1hr",
+      "type": "double",
+      "units": "1/cm3",
+      "description": "Proton Number Density. 1D Maxwellian Fit.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_bulk_speed_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Bulk Speed. 1D Maxwellian Fit.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_temperature_1hr",
+      "type": "double",
+      "units": "K",
+      "description": "Proton Temperature. 1D Maxwellian Fit.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_thermal_speed_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Thermal Speed. 1D Maxwellian Fit.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_n_s_flow_angle_inst_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton N/S Flow Angle. 1D Maxwellian Fit. Instrument Coordinates.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_e_w_flow_angle_inst_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton E/W Flow Angle. Instrument Coordinates.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_n_s_flow_angle_HERTN_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton N/S Flow Angle. 1D Maxwellian Fit. HERTN",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_e_w_flow_angle_HERTN_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton E/W Flow Angle. HERTN",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vr_HERTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vr. 1D Maxwellian Fit. HERTN.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vt_HERTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vt. 1D Maxwellian Fit. HERTN.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vn_HERTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vn. 1D Maxwellian Fit. HERTN.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_n_s_flow_angle_RTN_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton N/S Flow Angle. 1D Maxwellian Fit. RTN",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_e_w_flow_angle_RTN_1hr",
+      "type": "double",
+      "units": "deg",
+      "description": "Proton E/W Flow Angle. RTN",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vr_RTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vr. 1D Maxwellian Fit. RTN.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vt_RTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vt. 1D Maxwellian Fit. RTN.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "proton_Vn_RTN_1hr",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton Vn. 1D Maxwellian Fit. RTN.",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2007-02-14T00:00:37.000Z",
+  "stopDate": "2025-06-30T23:00:05.000Z"
+}

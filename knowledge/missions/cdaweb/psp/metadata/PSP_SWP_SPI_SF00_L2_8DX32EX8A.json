@@ -1,0 +1,244 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "MET",
+      "fill": null
+    },
+    {
+      "name": "APID",
+      "type": "integer",
+      "units": "",
+      "description": "APID",
+      "fill": null
+    },
+    {
+      "name": "SEQN",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN",
+      "fill": null
+    },
+    {
+      "name": "SEQN_DELTA",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN_DELTA",
+      "fill": null
+    },
+    {
+      "name": "SEQN_GROUP",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN_GROUP",
+      "fill": null
+    },
+    {
+      "name": "PKT_SIZE",
+      "type": "integer",
+      "units": "",
+      "description": "PKT_SIZE",
+      "fill": null
+    },
+    {
+      "name": "SOURCE_APID",
+      "type": "integer",
+      "units": "",
+      "description": "SOURCE_APID",
+      "fill": null
+    },
+    {
+      "name": "SOURCE_HASH",
+      "type": "integer",
+      "units": "",
+      "description": "SOURCE_HASH",
+      "fill": null
+    },
+    {
+      "name": "COMPR_RATIO",
+      "type": "double",
+      "units": "",
+      "description": "COMPR_RATIO",
+      "fill": null
+    },
+    {
+      "name": "NDAT",
+      "type": "integer",
+      "units": "",
+      "description": "NDAT",
+      "fill": null
+    },
+    {
+      "name": "DATASIZE",
+      "type": "integer",
+      "units": "",
+      "description": "DATASIZE",
+      "fill": null
+    },
+    {
+      "name": "LTCSNNNN_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "LTCSNNNN_BITS",
+      "fill": null
+    },
+    {
+      "name": "ARCH_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "ARCH_BITS",
+      "fill": null
+    },
+    {
+      "name": "MODE2_ORI",
+      "type": "integer",
+      "units": "",
+      "description": "MODE2_ORI",
+      "fill": null
+    },
+    {
+      "name": "MODE2",
+      "type": "integer",
+      "units": "",
+      "description": "MODE2",
+      "fill": null
+    },
+    {
+      "name": "F0",
+      "type": "integer",
+      "units": "",
+      "description": "F0",
+      "fill": null
+    },
+    {
+      "name": "STATUS_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "STATUS_BITS",
+      "fill": null
+    },
+    {
+      "name": "PEAK_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "PEAK_BIN",
+      "fill": null
+    },
+    {
+      "name": "PRODUCT_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "PRODUCT_BITS",
+      "fill": null
+    },
+    {
+      "name": "NUM_TOTAL",
+      "type": "integer",
+      "units": "",
+      "description": "NUM_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "NUM_ACCUM",
+      "type": "integer",
+      "units": "",
+      "description": "NUM_ACCUM",
+      "fill": null
+    },
+    {
+      "name": "TIME_TOTAL",
+      "type": "double",
+      "units": "",
+      "description": "TIME_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "TIME_ACCUM",
+      "type": "double",
+      "units": "",
+      "description": "TIME_ACCUM",
+      "fill": null
+    },
+    {
+      "name": "CNTS",
+      "type": "double",
+      "units": "",
+      "description": "Counts",
+      "fill": "nan"
+    },
+    {
+      "name": "DATA",
+      "type": "double",
+      "units": "",
+      "description": "Data",
+      "fill": "nan",
+      "size": [
+        2048
+      ]
+    },
+    {
+      "name": "GAP",
+      "type": "integer",
+      "units": "",
+      "description": "GAP",
+      "fill": null
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Flag",
+      "fill": "65535.0"
+    },
+    {
+      "name": "EFLUX",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Energy/angle bin",
+      "fill": "nan",
+      "size": [
+        2048
+      ]
+    },
+    {
+      "name": "ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "Energy [NO PLOT]",
+      "fill": "nan",
+      "size": [
+        2048
+      ]
+    },
+    {
+      "name": "THETA",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Elevation Angle in instrument coordinates [NO PLOT]",
+      "fill": "nan",
+      "size": [
+        2048
+      ]
+    },
+    {
+      "name": "PHI",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Azimuth Angle in instrument coordinates [NO PLOT]",
+      "fill": "nan",
+      "size": [
+        2048
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

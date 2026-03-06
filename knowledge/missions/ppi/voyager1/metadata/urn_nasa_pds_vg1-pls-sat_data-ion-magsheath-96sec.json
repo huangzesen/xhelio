@@ -1,0 +1,265 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "CHI2",
+      "type": "double",
+      "units": "",
+      "description": "Chi-square of the fit.",
+      "size": [
+        1
+      ],
+      "fill": "9.99999e+10"
+    },
+    {
+      "name": "IONMASS1",
+      "type": "double",
+      "units": "",
+      "description": "Mass of the first ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "IONCHRG1",
+      "type": "double",
+      "units": "",
+      "description": "Charge of the first ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "DEN1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of the first ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "XDEN1",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the density of the first ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "VR1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Radial component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVR1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the radial component of the velocity vector for  \n                        the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "VT1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Tangential component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVT1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the tangential component of the velocity vector  \n                        for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "VN1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Normal component of the velocity vector for the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVN1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the normal component of the velocity vector for  \n                        the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "WTH1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Thermal speed of the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XWTH1",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the thermal speed of the first ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "IONMASS2",
+      "type": "double",
+      "units": "",
+      "description": "Mass of the second ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "IONCHRG2",
+      "type": "double",
+      "units": "",
+      "description": "Charge of the second ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9"
+    },
+    {
+      "name": "DEN2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Density of the second ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "XDEN2",
+      "type": "double",
+      "units": "COUNT/CM**3",
+      "description": "Standard deviation for the density of the second ion component fit.",
+      "size": [
+        1
+      ],
+      "fill": "-9.9999"
+    },
+    {
+      "name": "VR2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Radial component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVR2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the radial component of the velocity vector for  \n                        the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "VT2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Tangential component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVT2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the tangential component of the velocity vector  \n                        for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "VN2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Normal component of the velocity vector for the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XVN2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the normal component of the velocity vector for  \n                        the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "WTH2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Thermal speed of the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    },
+    {
+      "name": "XWTH2",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Standard deviation for the thermal speed of the second ion species.",
+      "size": [
+        1
+      ],
+      "fill": "-999.9999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

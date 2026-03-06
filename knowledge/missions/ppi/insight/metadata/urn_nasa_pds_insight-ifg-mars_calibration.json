@@ -1,0 +1,154 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MLST",
+      "type": "double",
+      "units": "",
+      "description": "Mars local time represented as decimal SOLs",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "dB1",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction applied to IFG sensor 1 after the raw DN value has been converted \n                       to nT using the model sensor and electronics temperatures.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "dB2",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction applied to IFG sensor 2 after the raw DN value has been converted \n                       to nT using the model sensor and electronics temperatures.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "dB3",
+      "type": "double",
+      "units": "nT",
+      "description": "Correction applied to IFG sensor 3 after the raw DN value has been converted \n                       to nT using the model sensor and electronics temperatures.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelST",
+      "type": "double",
+      "units": "degree",
+      "description": "Value of the actual IFG sensor temperature [SensorT] when available, \n                       otherwise a MLST and UTC dependent model of the IFG sensor temperature [deg C]\n                    \t derived from the measured values from selected time intervals is \n                       provided. The FIR filter applied to the temperature data is longer\n                       than the one applied to the MAG data so there is a roughly two\n                       hour gap in the temperature data whenever the IFG powers on (i.e.\n                       following a spacecraft safing or PAE reset). The value in this column\n                       is used for the MAG calibration since it is available for all samples.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "SensorT",
+      "type": "double",
+      "units": "degree",
+      "description": "IFG sensor temperature [deg C] computed from the value \n                    \t of IFGT_DN in order to provide a comparison with the\n                    \t model sensor temperature.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelET",
+      "type": "double",
+      "units": "degree",
+      "description": "The actual IFG electronics temperature (ET) is only available a few times\n                       per SOL. Since a value is required for every IFG vector for calibration\n                       purposes, a spline fit to the PAE temperature T-0014 is used as a \n                       proxy. T-0014 is sometimes available every minute or so, but is only\n                       infrequently returned at night. The observed values of T-0014 are spline\n                       fit to produce data set that is sampled at 5 minute resolution or better\n                       and then the values between those samples are derived by linear interpolation.\n                    \t This value is given in units of degrees Celsius.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "T0014",
+      "type": "double",
+      "units": "degree",
+      "description": "PDDU AAC (analog acquisition card) AIP (analog input passive) channel 14.  PAE temperature.\n                    \t This channel measures the temperature of the PAE electronics box and is used as modeled a proxy\n                    \t for the IFG sensor temperature.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "EleTemp",
+      "type": "double",
+      "units": "degree",
+      "description": "This column contains the actual measured IFG electronics temperature values that are\n                    \t recieved in the housekeeping data that come down very infrequently in APID 95. A \n                    \t flight software update on 2019-11-08 increased the downlink frequency of this packet\n                    \t to every 1000 seconds.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modelSA",
+      "type": "double",
+      "units": "A",
+      "description": "MLST and UTC dependent model of the fixed solar array current [A]\n                    \t derived from the values of the E-0771 from selected time intervals.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "E0771",
+      "type": "double",
+      "units": "A",
+      "description": "The value of the fixed solar array current [A] in channel E-0771.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "modSACT",
+      "type": "double",
+      "units": "A",
+      "description": "MLST and UTC dependent model of the solar array current [A] total (SACT)\n                    \tderived from the sum of E-0772 and E-0772 from selected time intervals.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "SACT",
+      "type": "double",
+      "units": "A",
+      "description": "The solar array current [A] total (SACT) computed from the sum of E-0772 and E-0972.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

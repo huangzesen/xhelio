@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "RADII",
+      "description": "Column contains spacecraft jovicentric (Jupiter fixed) X position in units of jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "RADII",
+      "description": "Column contains spacecraft jovicentric (Jupiter fixed) Y position in units of jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "RADII",
+      "description": "Column contains spacecraft jovicentric (Jupiter fixed) Z position in units of jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity jovicentric X component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity jovicentric Y component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity jovicentric Z component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "RADII",
+      "description": "Column contains Jupiter to spacecraft range in units of jovian radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "Column contains spacecraft jovicentric latitude (positive northward) in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "DEGREES",
+      "description": "Column contains spacecraft jovicentric east (system III) longitude in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CARTSYS3_TO_SPHSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Cartesian System III to Spherical System III coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_TO_CARTSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Payload (Spacecraft) to Cartesian System III coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_TO_SPHSYS3",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Payload (Spacecraft) to Spherical System III coordinates.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,87 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "attenuator_state",
+      "type": "integer",
+      "units": "",
+      "description": "Attenuator state, 0=error, 1=open, 2=closed, 3=mixed",
+      "fill": "65535.0"
+    },
+    {
+      "name": "f_ion_flux",
+      "type": "double",
+      "units": "#/cm^2/sec/ster/keV",
+      "description": "Differential ion flux in forward look direction (#/cm^2/sec/ster/keV)",
+      "fill": "nan",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "f_ion_flux_tot",
+      "type": "double",
+      "units": "#/cm^2/sec/ster",
+      "description": "Total (integrated) ion flux in forward look direction (#/cm^2/sec/ster)",
+      "fill": "nan"
+    },
+    {
+      "name": "f_elec_flux",
+      "type": "double",
+      "units": "#/cm^2/sec/ster/keV",
+      "description": "Differential electron flux in forward look direction (#/cm^2/sec/ster/keV)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "f_elec_flux_tot",
+      "type": "double",
+      "units": "#/cm^2/sec/ster",
+      "description": "Total (integrated) electron flux in forward look direction (#/cm^2/sec/ster)",
+      "fill": "nan"
+    },
+    {
+      "name": "r_ion_flux",
+      "type": "double",
+      "units": "#/cm^2/sec/ster/keV",
+      "description": "Differential ion flux in reverse look direction (#/cm^2/sec/ster/keV)",
+      "fill": "nan",
+      "size": [
+        28
+      ]
+    },
+    {
+      "name": "r_ion_flux_tot",
+      "type": "double",
+      "units": "#/cm^2/sec/ster",
+      "description": "Total (integrated) ion flux in reverse look direction (#/cm^2/sec/ster)",
+      "fill": "nan"
+    },
+    {
+      "name": "r_elec_flux",
+      "type": "double",
+      "units": "#/cm^2/sec/ster/keV",
+      "description": "Differential electron flux in reverse look direction (#/cm^2/sec/ster/keV)",
+      "fill": "nan",
+      "size": [
+        15
+      ]
+    },
+    {
+      "name": "r_elec_flux_tot",
+      "type": "double",
+      "units": "#/cm^2/sec/ster",
+      "description": "Total (integrated) electron flux in reverse look direction (#/cm^2/sec/ster)",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2014-09-22T19:34:31.000Z",
+  "stopDate": "2022-02-22T15:18:21.000Z"
+}

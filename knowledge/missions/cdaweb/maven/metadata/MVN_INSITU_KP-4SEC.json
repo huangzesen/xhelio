@@ -1,0 +1,1192 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "LPW_Electron_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Electron density (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Electron_density_min",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "---> Electron density min (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Electron_density_max",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "---> Electron density max (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Electron_temperature",
+      "type": "double",
+      "units": "K",
+      "description": "Electron temperature (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Electron_temperature_min",
+      "type": "double",
+      "units": "K",
+      "description": "---> Electron temperature min (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Electron_temperature_max",
+      "type": "double",
+      "units": "K",
+      "description": "---> Electron temperature max (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Spacecraft_potential",
+      "type": "double",
+      "units": "V",
+      "description": "Spacecraft potential (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Spacecraft_potential_min",
+      "type": "double",
+      "units": "V",
+      "description": "---> Spacecraft potential min (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_Spacecraft_potential_max",
+      "type": "double",
+      "units": "V",
+      "description": "---> Spacecraft potential max (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_2_100",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "E-field wave power 2-100 Hz (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_2_100_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> E-field wave power 2-100 Hz data quality (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_100_800",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "E-field wave power 100-800 Hz (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_100_800_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> E-field wave power 100-800 Hz data quality (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_800_1000",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "E-field wave power 800-1000 Hz (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_E_field_wave_power_800_1000_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> E-field wave power 800-1000 Hz data quality (LPW)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_pt1_7",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "EUV irradiance wave power 0.1-7.0 nm bandpass (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_pt1_7_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> EUV irradiance wave power 0.1-7.0 nm data quality (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_17_22",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "EUV irradiance wave power 17-22 nm bandpass (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_17_22_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> EUV irradiance wave power 17-22 nm data quality (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_lyman_alpha",
+      "type": "double",
+      "units": "W/m^2",
+      "description": "EUV irradiance wave power Lyman-alpha bandpass (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LPW_EUV_irradiance_lyman_alpha_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> EUV irradiance wave power Lyman-alpha data quality (LPW-EUV)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Solar wind electron density (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_density_quality",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "---> Solar wind electron density data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "Solar wind electron temperature (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_temperature_quality",
+      "type": "double",
+      "units": "eV",
+      "description": "---> Solar wind electron temperature data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_5_100",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux parallel 5-100 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_5_100_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux parallel 5-100 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_100_500",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux parallel 100-500 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_100_500_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux parallel 100-500 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_500_1000",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux parallel 500-1000 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_parallel_flux_500_1000_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux parallel 500-1000 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_5_100",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux anti-parallel 5-100 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_5_100_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux anti-parallel 5-100 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_100_500",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux anti-parallel 100-500 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_100_500_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux anti-parallel 100-500 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_500_1000",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "Electron energy flux anti-parallel 500-1000 eV (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_anti_parallel_flux_500_1000_data_quality",
+      "type": "double",
+      "units": "eV/(cm^2 s sr)",
+      "description": "---> Electron energy flux anti-parallel 500-1000 eV data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_spectrum_shape",
+      "type": "double",
+      "units": "",
+      "description": "Electron spectrum shape parameter (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWEA_Electron_spectrum_shape_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Electron spectrum shape parameter data quality (SWEA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_Hplus_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Total ion density from onboard moment calculation, assuming 100% protons (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_Hplus_density_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Total ion density data quality (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_Hplus_flow_velocity_MSO",
+      "type": "double",
+      "units": "km_s",
+      "description": "Bulk ion flow velocity XYZ component from onboard moment calculation, assuming 100% protons (SWIA)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SWIA_Hplus_flow_velocity_MSO_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Bulk ion flow velocity XYZ data quality (SWIA)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SWIA_Hplus_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "Scalar ion temperature from onboard moment calculation, assuming 100% protons (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_Hplus_temperature_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Scalar ion temperature data quality (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_dynamic_pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "Ion dynamic pressure computed on ground from density and velocity moments, assuming 100% protons (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SWIA_dynamic_pressure_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Ion dynamic pressure data quality (SWIA)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Quality",
+      "type": "integer",
+      "units": "",
+      "description": "STATIC Data quality",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "STATIC_Hplus_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "H+ density (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_density_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> H+ density data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "O+ density (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_density_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O+ density data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "O2+ density (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_density_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O2+ density data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ temperature (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_temperature_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> H+ temperature data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "O+ temperature (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_temperature_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O+ temperature data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_temperature",
+      "type": "double",
+      "units": "eV",
+      "description": "O2+ temperature (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_temperature_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O2+ temperature data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_flow_velocity_MAVEN_APP",
+      "type": "double",
+      "units": "km/s",
+      "description": "O2+ MAVEN_APP XYZ component of velocity below TBD altitude determined from APID c6 while in Ram or Conic mode (STATIC)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_O2plus_flow_velocity_MAVEN_APP_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O2+ MAVEN_APP XYZ component of velocity data quality (STATIC)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_O2plus_flow_velocity_MSO",
+      "type": "double",
+      "units": "km/s",
+      "description": "O2+ MSO XYZ component of velocity below TBD altitude while in Ram or Conic mode (STATIC)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_O2plus_flow_velocity_MSO_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> O2+ MSO XYZ component of velocity data quality (STATIC)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_Hplus_omni_directional_flux",
+      "type": "double",
+      "units": "(cm^2 s)^-1",
+      "description": "H+ omni-directional flux (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_characteristic_energy",
+      "type": "double",
+      "units": "eV",
+      "description": "H+ characteristic energy (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_characteristic_energy_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> H+ characteristic energy data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_HEplus_omni_directional_flux",
+      "type": "double",
+      "units": "(cm^2 s)^-1",
+      "description": "He+ omni-directional flux (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_HEplus_characteristic_energy",
+      "type": "double",
+      "units": "eV",
+      "description": "He+ characteristic energy (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_HEplus_characteristic_energy_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> He+ characteristic energy data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_omni_directional_flux",
+      "type": "double",
+      "units": "(cm^2 s)^-1",
+      "description": "O+ omni-directional flux (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_characteristic_energy",
+      "type": "double",
+      "units": "eV",
+      "description": "O+ characteristic energy (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Oplus_characteristic_energy_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> O+ characteristic energy data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_omni_directional_flux",
+      "type": "double",
+      "units": "(cm^2 s)^-1",
+      "description": "O2+ omni-directional flux (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_characteristic_energy",
+      "type": "double",
+      "units": "eV",
+      "description": "O2+ characteristic energy (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_O2plus_characteristic_energy_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> O2+ characteristic energy data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_characteristic_direction_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "H+ MSO X-direction of flux above TBD altitude determined from TBD APID while in Pickup and Scan mode (STATIC)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_Hplus_characteristic_angular_width",
+      "type": "double",
+      "units": "deg",
+      "description": "H+ characteristic width (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_Hplus_characteristic_angular_width_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> H+ characteristic width data quality (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_dominant_pickup_ion_characteristic_direction_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "Dominant pickup ion MSO XYZ direction of flux above TBD altitude determined from APID D0 and CE while in Pickup, Eclipse and Protect mode",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "STATIC_dominant_pickup_ion_characteristic_angular_width",
+      "type": "double",
+      "units": "deg",
+      "description": "Dominant pickup ion characteristic angular width (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "STATIC_dominant_pickup_ion_characteristic_angular_width_DQ",
+      "type": "double",
+      "units": "",
+      "description": "---> Dominant pickup ion characteristic angular width DQ (STATIC)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_1F",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Ion energy flux (30-1000 keV), FOV 1-F (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_1F_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Ion energy flux (30-1000 keV), FOV 1-F data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_1R",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Ion energy flux (30-1000 keV), FOV 1-R (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_1R_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Ion energy flux (30-1000 keV), FOV 1-R data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_2F",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Ion energy flux (30-1000 keV), FOV 2-F (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_2F_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Ion energy flux (30-1000 keV), FOV 2-F data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_2R",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Ion energy flux (30-1000 keV), FOV 2-R (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Ion_Energy_Flux_30_1000_FOV_2R_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Ion energy flux (30-1000 keV), FOV 2-R data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_1F",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Electron energy flux (30-300 keV), FOV 1-F (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_1F_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Electron energy flux (30-300 keV), FOV 1-F data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_1R",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Electron energy flux (30-300 keV), FOV 1-R (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_1R_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Electron energy flux (30-300 keV), FOV 1-R data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_2F",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Electron energy flux (30-300 keV), FOV 2-F (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_2F_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Electron energy flux (30-300 keV), FOV 2-F data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_2R",
+      "type": "double",
+      "units": "n/(cm^2 s sr)",
+      "description": "Electron energy flux (30-300 keV), FOV 2-R (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Electron_Energy_Flux_30_300_FOV_2R_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Electron energy flux (30-300 keV), FOV 2-R data quality (SEP)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEP_Look_direction_1F_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "SEP look direction 1-F MSO XYZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SEP_Look_direction_1R_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "SEP look direction 1-R MSO XYZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SEP_Look_direction_2F_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "SEP look direction 2-F MSO XYZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SEP_Look_direction_2R_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "SEP look direction 2-R MSO XYZ",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG_field_MSO",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector component in the XYZ direction in MSO coordinates (MAG)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG_field_MSO_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Magnetic field vector component in MSO coordinates data quality (MAG)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG_field_GEO",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector component in the XYZ direction in GEO coordinates (MAG)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG_field_GEO_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Magnetic field vector component in GEO coordinates data quality (MAG)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAG_field_RMS_deviation",
+      "type": "double",
+      "units": "nT",
+      "description": "Deviations from the mean magnetic field magnitude (MAG)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_field_RMS_deviation_data_quality",
+      "type": "double",
+      "units": "",
+      "description": "---> Deviations from the mean magnetic field magnitude data quality (MAG)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_He_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "He density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_He_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> He density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_O_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "O density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_O_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> O density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_CO_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "CO density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_CO_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> CO density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_N2_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "N2 density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_N2_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> N2 density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_NO_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "NO density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_NO_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> NO density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ar_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ar density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ar_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ar density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_CO2_density",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "CO2 density (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_CO2_density_precision",
+      "type": "double",
+      "units": "%",
+      "description": "---> CO2 density precision (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_32plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 32+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_32plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 32+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_44plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 44+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_44plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 44+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_30plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 30+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_30plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 30+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_16plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 16+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_16plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 16+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_28plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 28+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_28plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 28+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_12plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 12+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_12plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 12+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_17plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 17+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_17plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 17+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_14plus",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Ion density - amu 14+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NGIMS_Ion_density_precision_14plus",
+      "type": "double",
+      "units": "%",
+      "description": "---> Ion density precision - amu 14+ (NGIMS)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_GEO",
+      "type": "double",
+      "units": "km",
+      "description": "XYZ-component of spacecraft position in Mars planetocentric (geographic) GEO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_spacecraft_MSO",
+      "type": "double",
+      "units": "km",
+      "description": "XYZ-component of spacecraft position in MSO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_spacecraft_longitude_GEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft longitude GEO (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_latitude_GEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft latitude GEO (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_sza",
+      "type": "double",
+      "units": "deg",
+      "description": "Spacecraft solar zenith angle (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_local_time",
+      "type": "double",
+      "units": "hours",
+      "description": "Spacecraft local time (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Spacecraft altitude w.r.t. aeroid (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_spacecraft_attitude_GEO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "XYZ-component of spacecraft attitude in GEO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_spacecraft_attitude_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "XYZ-component of spacecraft attitude in MSO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_app_attitude_GEO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "XYZ-component of articulated payload platform (app) attitude in GEO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_app_attitude_MSO",
+      "type": "double",
+      "units": "unit vector",
+      "description": "XYZ-component of articulated payload platform (app) attitude in MSO coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SPICE_Orbit_Number",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit number (SPICE)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "SPICE_Mars_season",
+      "type": "double",
+      "units": "deg",
+      "description": "Mars Season (Ls) (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_Mars_Sun_distance",
+      "type": "double",
+      "units": "AU",
+      "description": "Mars-Sun distance (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_Subsolar_Point_longitude_GEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Subsolar Point longitude GEO (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_Subsolar_Point_latitude_GEO",
+      "type": "double",
+      "units": "deg",
+      "description": "Subsolar Point latitude GEO (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_Sub_Mars_Point_longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Sub-Mars Point on the Sun, Longitude (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SPICE_Sub_Mars_Point_latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Sub-Mars Point on the Sun, Latitude (SPICE)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Rotation_matrix_IAU_MARS_MAVEN_MSO",
+      "type": "double",
+      "units": "",
+      "description": "Rotation matrix (IAU_MARS -> MAVEN_MSO) (SPICE)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Rotation_matrix_SPACECRAFT_MAVEN_MSO",
+      "type": "double",
+      "units": "",
+      "description": "---> Rotation matrix (MAVEN_SPACECRAFT -> MAVEN_MSO) (SPICE)",
+      "fill": "-1e+31",
+      "size": [
+        3,
+        3
+      ]
+    }
+  ],
+  "startDate": "2014-03-18T00:00:00.000Z",
+  "stopDate": "2025-08-14T23:59:52.000Z"
+}

@@ -1,0 +1,156 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "YYYY=4 digit year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATE",
+      "type": "double",
+      "units": "",
+      "description": "DDD=3 digit day of year (e.g. 053)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Universal Time of day represented as milliseconds after 00:00:00.000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "Orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS",
+      "type": "double",
+      "units": "",
+      "description": "Mass number - 16 for O",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "F",
+      "type": "double",
+      "units": "",
+      "description": "Flag -                                     \n                             D single data point flux, density          \n                             A fitted parameters for interval",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Effective number density assuming a 40 eV ion (particles/cm**3)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FLUX",
+      "type": "double",
+      "units": "Particles/(cm**2*s)",
+      "description": "Flux (particles/cm**2/s)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AZ ANG",
+      "type": "double",
+      "units": "Degree",
+      "description": "Azimuth angle of apparent ion flow direction projected into the        \n       ecliptic plane (deg)",
+      "size": [
+        1
+      ],
+      "fill": "999.0"
+    },
+    {
+      "name": "PHASE",
+      "type": "double",
+      "units": "Degree",
+      "description": "Phase shift of signal maximum with respect to that predicted by        \n       velocity vector (deg)",
+      "size": [
+        1
+      ],
+      "fill": "999.0"
+    },
+    {
+      "name": "ERROR",
+      "type": "double",
+      "units": "Degree",
+      "description": "Error in phase shift (deg)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANGATK",
+      "type": "double",
+      "units": "Degree",
+      "description": "Effective angle of attack (deg)",
+      "size": [
+        1
+      ],
+      "fill": "999.0"
+    },
+    {
+      "name": "WP DIR",
+      "type": "double",
+      "units": "Degree",
+      "description": "Direction of drift component perpendicular to (ONMS axis, Z axis)      \n       projected into the ecliptic plane (deg)",
+      "size": [
+        1
+      ],
+      "fill": "999.0"
+    },
+    {
+      "name": "WP XY",
+      "type": "double",
+      "units": "m/s",
+      "description": "Magnitude of drift component (m/s)",
+      "size": [
+        1
+      ],
+      "fill": "1.00e+38"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "",
+      "description": "Fitting parameter",
+      "size": [
+        1
+      ],
+      "fill": "1.00e+38"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

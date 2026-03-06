@@ -1,0 +1,446 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PROTONFLUX1",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "3.0 - 4.6 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX1",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_3.0 - 4.6 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX2",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "4.6 - 6.2 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX2",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_4.6 - 6.2 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX3",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "6.2 - 7.7 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX3",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_6.2 - 7.7 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX4",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "7.7 - 12.8 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX4",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_7.7 - 12.8 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX5",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "12.8 - 17.9 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX5",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_12.8 - 17.9 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX6",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "17.9 - 30.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX6",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_17.9 - 30.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX7",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "30.0 - 48.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX7",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_30.0 - 48.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX8",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "48.0 - 56.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX8",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_48.0 - 56.0 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX9",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "74 -  84 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX9",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_74 -  84 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX10",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "133 - 155 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX10",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_133 - 155 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX11",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "155 - 175 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX11",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_155 - 175 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX12",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "175 - 188 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX12",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_175 - 188 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX13",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "188 - 220 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX13",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_188 - 220 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX14",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "220 - 270 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX14",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_220 - 270 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PROTONFLUX15",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "270 - 346 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_PROTONFLUX15",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_270 - 346 MeV/n Hydrogen flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX1",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "3.0 - 4.6 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX1",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_3.0 - 4.6 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX2",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "4.6 - 6.2 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX2",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_4.6 - 6.2 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX3",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "6.2 - 7.7 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX3",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_6.2 - 7.7 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX4",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "7.7 - 12.8 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX4",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_7.7 - 12.8 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX5",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "12.8 - 17.9 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX5",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_12.8 - 17.9 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX6",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "17.9 - 30.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX6",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_17.9 - 30.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX7",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "30.0 - 48.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX7",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_30.0 - 48.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX8",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "48.0 - 56.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX8",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_48.0 - 56.0 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX9",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "110 - 134 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX9",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_110 - 134 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX10",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "134 - 152 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX10",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_134 - 152 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX11",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "152 - 193 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX11",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_152 - 193 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX12",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "193 - 239 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX12",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_193 - 239 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX13",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "238 - 318 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX13",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_238 - 318 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX14",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "318 - 381 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX14",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_318 - 381 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX15",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "381 - 480 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX15",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_381 - 480 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HELIUMFLUX16",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "480 - 661 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "error_HELIUMFLUX16",
+      "type": "double",
+      "units": "1/(m^2 s sr MeV)",
+      "description": "error_480 - 661 MeV/n Helium flux",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1977-09-08T00:00:00.000Z",
+  "stopDate": "2016-12-13T00:00:00.000Z"
+}

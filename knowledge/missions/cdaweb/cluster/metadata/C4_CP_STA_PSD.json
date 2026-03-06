@@ -1,0 +1,34 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BB_xxyyzz_sr2__C4_CP_STA_PSD",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Power spectrum 8-4000 Hz of the B-field components along the SR2 coordinate axes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27,
+        3
+      ]
+    },
+    {
+      "name": "EE_xxyy_sr2__C4_CP_STA_PSD",
+      "type": "double",
+      "units": "mV^2 m^-2 Hz^-1",
+      "description": "Power spectrum 8-4000 Hz of the E-field components along the SR2 coordinate axes",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        27,
+        2
+      ]
+    }
+  ],
+  "startDate": "2000-10-23T19:11:27.000Z",
+  "stopDate": "2024-09-30T23:43:02.000Z"
+}

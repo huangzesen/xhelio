@@ -1,0 +1,184 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "pos_gse",
+      "type": "double",
+      "units": "RE",
+      "description": "Spacecraft positions in GSE coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_gsm",
+      "type": "double",
+      "units": "RE",
+      "description": "Spacecraft positions in GSM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_sm",
+      "type": "double",
+      "units": "RE",
+      "description": "Spacecraft positions in SM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_rmlatmlt",
+      "type": "double",
+      "units": "",
+      "description": "R, magnetic latitude, and magnetic local time of spacecraft positions (using IGRF model)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_eq",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft positions mapped onto the magnetic equator (using IGRF model)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "pos_iono_north",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic latidue and longitude of spacecraft footprints at 100 km in the northern hemisphere (using IGRF model)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "pos_iono_south",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic latidue and longitude of spacecraft footprints at 100 km in the southern hemisphere (using IGRF model)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "pos_blocal",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field at spacecraft positions, using IGRF model",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_blocal_mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength at spacecraft positions, using IGRF model",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pos_beq",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field at spacecraft positions mapped onto the magnetic equator , using  IGRF model",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "pos_beq_mag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field strength at spacecraft positions mapped onto the magnetic equator , using  IGRF model",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "pos_Lm",
+      "type": "double",
+      "units": "dimensionless",
+      "description": "McIlwain's L parameter for pitch angles of 30, 60, and 90deg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vel_gse",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity in GSE coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vel_gsm",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity in GSM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "vel_sm",
+      "type": "double",
+      "units": "km/s",
+      "description": "Spacecraft velocity in SM coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "spn_num",
+      "type": "integer",
+      "units": "",
+      "description": "Spin number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "man_prep_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for maneuver preparation",
+      "fill": "-128.0"
+    },
+    {
+      "name": "man_on_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for maneuver on/off",
+      "fill": "-128.0"
+    },
+    {
+      "name": "eclipse_flag",
+      "type": "integer",
+      "units": "",
+      "description": "Flag for eclipse",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2017-12-05T00:00:00.000Z",
+  "stopDate": "2026-06-30T00:00:00.000Z"
+}

@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Magnet_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Sector averaged magnet channel flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "Integral_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Sector averaged integral channel flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    },
+    {
+      "name": "Sector_Magnet_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Sectored magnet channel flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        15
+      ]
+    },
+    {
+      "name": "Sector_Integral_Flux",
+      "type": "double",
+      "units": "particles / (s cm^2 sr MeV)",
+      "description": "Sectored integral channel flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16,
+        15
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T12:22:28.000Z",
+  "stopDate": "2021-10-21T16:37:28.000Z"
+}

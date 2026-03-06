@@ -1,0 +1,285 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "Orbit Number",
+      "size": [
+        1
+      ],
+      "fill": "0"
+    },
+    {
+      "name": "TPER",
+      "type": "double",
+      "units": "ms",
+      "description": "Time from periapsis associated with the UADS time tag",
+      "size": [
+        1
+      ],
+      "fill": "0"
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Th universal time in milliseconds assigned to the physical\n       quantities recorded in this record. UT will typically, but not \n       always, lie within plus or minus 6 seconds of the time of day\n       assigned to the time tag of this record. UT should be accurate\n       to within plus or minus 0.1 second",
+      "size": [
+        1
+      ],
+      "fill": "999999999"
+    },
+    {
+      "name": "TOTI",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The total ion density of the plasma in cm-3 and is derived from the\n       FORTRAN expression: TOTI=F1I/(VN*e*Area)\n       where F1I is the first ion current measured with zero retarding\n       potential, VN is the component of ion bulk velocity parallel to the\n       RPA axis derived from the 1st-squares analysis when an analysis was\n       possible, e is the electronic charge, and AREA is the effective area\n       of the RPA collector (= 0.81 cm2). When a 1st-squares analysis is not\n       possible, VN is the component of the spacecraft velocity in ecliptic\n       coordinates parallel to the RPA axis.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "H",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The hydrogen ion density. When the RPA is operating in one of its peaks\n       mode, H+ will be detected and recorded only when its density is greater\n       than approximately 10% of the sum of more massive ion densities. H+ can\n       be the second most abundant ion and still not be recorded when the RPA\n       is operating in its two peaks mode. The uncertainty of the H+ density\n       also depends on its density relative to that of more massive ions. For\n       an H+ density comparable to that of more massive ions, the accuracy\n       should be of the order of 10%. The detection noise level for H+ is\n       estimated at 300 cm-3. Additional discussion of the RPA ion peak\n       detection capability and limitation is given by Miller et al. [1984].",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "O",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The oxygen ion density. It will be detected in the presence of more\n       massive ions only when its density is greater than approximately 10%\n       of the sum of more massive ions. The RPA does not resolve C+, N+, or\n       0+. We have assumed in our least-squares fitting that ([C+] + CN+])/CO+]\n       is constant at 0.07, a value derived from PV ion mass spectrometer\n       results.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "O2",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The O2 ion density.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "CO2",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The carbon dioxide ion density.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "TI",
+      "type": "double",
+      "units": "K",
+      "description": "The ion temperature and is assumed to be the same for all ion masses.\n       It is one of the adjustable variables in the least-squares analysis of\n       ion sweeps.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "VX",
+      "type": "double",
+      "units": "km/s",
+      "description": "The x component of ion bulk velocity. The vector ion bulk velocity\n       is derived from three component velocities parallel to the RPA axis\n       measured in three successive spin periods of the PV spacecraft\n       [Knudsen et al., 1980]. In deriving the vector, it is necessary to\n       assume that the ion bulk velocity is uniform over the region of space\n       traversed by the spacecraft in two spin revolutions of the spacecraft,\n       a distance of about 250 km. The coordinate system in which VX, VY, and\n       VZ are given will be specified when data are submitted.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "VY",
+      "type": "double",
+      "units": "km/s",
+      "description": "The y component of ion bulk velocity",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "VZ",
+      "type": "double",
+      "units": "km/s",
+      "description": "The z component of ion bulk velocity",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "F1E",
+      "type": "double",
+      "units": "A",
+      "description": "The saturation (first) current measured in an ion I-V sweep. The\n       retarding potential is programmed to be slightly negative of plasma\n       potential during this measurement. F1I is measured relative to the\n       ion current measured with the retarding potential equal to 37V\n       positive [Knudsen et al., 1979].",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "BKGI",
+      "type": "double",
+      "units": "A",
+      "description": "The current to the RPA collector measured just before the beginning\n       of an ion sweep with the retarding potential set at approximately\n       +37V relative to plasma potential.",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "VPI",
+      "type": "double",
+      "units": "V",
+      "description": "The value of the spacecraft potential relative to plasma potential \n       that is assumed to exist at the time of the ion sweep. The value\n       is derived by interpolating between values of the spacecraft\n       potential measured in the thermal electron mode.",
+      "size": [
+        1
+      ],
+      "fill": "999.99"
+    },
+    {
+      "name": "TOTE",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The total electron density derived from the thermal electron mode\n       saturation current F1E. The formula used for this present NSSDC\n       submission, in FORTRAN language, is:\n       TOTE = 6.15E9*MAX(0, -3.5E-9 -F1E)**0.847\n       We consider this measure of the total electron density to be\n       approximate and valid only while the PV spacecraft is within the\n       ionosphere.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "TE",
+      "type": "double",
+      "units": "K",
+      "description": "The thermal electron temperature derived using equation (l) in Knudsen\n       et al. [l980]. When the spacecraft is positive relative to plasma\n       potential, a condition existing with the spacecraft in the sun and in\n       a low density plasma, the value of TE is representative of the\n       secondary electrons trapped in the positive spacecraft potential well.",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "FIE",
+      "type": "double",
+      "units": "A",
+      "description": "The saturation electron current measured at the beginning of a thermal\n       electron mode sweep. The front(retarding) grids are at a potential of\n       +6.8 V relative to the spacecraft ground.",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "BKGE",
+      "type": "double",
+      "units": "A",
+      "description": "The current measured by the RPA electrometer at the beginning of the\n       thermal electron mode. The front (retarding) grids of the RPA are held\n       at a potential of -4.6 V during the measurement.",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "VPE",
+      "type": "double",
+      "units": "V",
+      "description": "The spacecraft potential relative to the ambient plasma potential.\n       It is derived from the thermal electron sweep data as described by\n       Knudsen et al. [1980]. When the spacecraft is in the solar wind and\n       exposed to the sun, its potential is typically a few volts positive\n       with respect to the solar wind plasma potential. VPE loses its meaning\n       in this situation.",
+      "size": [
+        1
+      ],
+      "fill": "99.99"
+    },
+    {
+      "name": "N1",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The density of the low temperature Maxwellian electron distribution\n       used to fit the suprathermal electron I-V curve [Knudsen et al., 1985].",
+      "size": [
+        1
+      ],
+      "fill": "999999."
+    },
+    {
+      "name": "T1",
+      "type": "double",
+      "units": "eV",
+      "description": "The temperature of the low temperature Maxwellian electron distribution.",
+      "size": [
+        1
+      ],
+      "fill": "9.99"
+    },
+    {
+      "name": "N2",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The density of the high temperature Maxwellian electron distribution\n       used to fit the suprathermal electron I-V curve [Knudsen et al., 1985]",
+      "size": [
+        1
+      ],
+      "fill": "999.9"
+    },
+    {
+      "name": "T2",
+      "type": "double",
+      "units": "eV",
+      "description": "The temperature of the high temperature Maxwellian electron distribution",
+      "size": [
+        1
+      ],
+      "fill": "999.9"
+    },
+    {
+      "name": "F1P",
+      "type": "double",
+      "units": "A",
+      "description": "The electron current measured by the RPA with zero retarding potential\n       on the retarding grid.",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "BKGP",
+      "type": "double",
+      "units": "A",
+      "description": "The electron current to the RPA with the retarding potential on the\n       retarding grid equal to -58V.",
+      "size": [
+        1
+      ],
+      "fill": "9.99e+00"
+    },
+    {
+      "name": "VPPE",
+      "type": "double",
+      "units": "V",
+      "description": "The spacecraft potential relative to the ambient plasma potential. When\n       the spacecraft is in the solar wind and not in the Venus umbra, the\n       spacecraft is positive, and the potential is inferred from the\n       suprathermal electron I-V curve. When the spacecraft is within the\n       ionosphere or in the Venus umbra, the potential is either estimated or\n       taken from the potential measured in the thermal electron mode.",
+      "size": [
+        1
+      ],
+      "fill": "999.99"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

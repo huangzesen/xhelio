@@ -1,0 +1,35 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "LD1 Rate",
+      "type": "double",
+      "units": "cm**-2 sec**-1 sr**-1",
+      "description": "Column contains average LD1 particle flux.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    },
+    {
+      "name": "Standard Deviation in LD1 Rate",
+      "type": "double",
+      "units": "cm**-2 sec**-1 sr**-1",
+      "description": "Column contains the statistical error associated with the LD1 RATE.",
+      "size": [
+        1
+      ],
+      "fill": "-9.99999e+10"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

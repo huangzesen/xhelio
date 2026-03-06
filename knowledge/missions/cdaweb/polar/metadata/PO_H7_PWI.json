@@ -1,0 +1,220 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Gain1",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 1 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain2",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 2 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "Gain3",
+      "type": "integer",
+      "units": "",
+      "description": "Channel 3 Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "MGain",
+      "type": "integer",
+      "units": "",
+      "description": "M Gain (HFWR)",
+      "fill": "-1.0"
+    },
+    {
+      "name": "HFWR_Ex",
+      "type": "double",
+      "units": "mV/M",
+      "description": "[NO LIST] HFWR Elec Field Antenna Ex (perp and outward in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Ey",
+      "type": "double",
+      "units": "mV/M",
+      "description": "[NO LIST] HFWR Elec Field Antenna Ey (perp and eastward in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Ez",
+      "type": "double",
+      "units": "mV/M",
+      "description": "[NO LIST] HFWR Elec Field Antenna Ez (parallel in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Bx",
+      "type": "double",
+      "units": "nT",
+      "description": "[NO LIST] HFWR Mag Field Antenna Bx (perp and outward in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_By",
+      "type": "double",
+      "units": "nT",
+      "description": "[NO LIST] HFWR Mag Field Antenna By (perp and eastward in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Bz",
+      "type": "double",
+      "units": "nT",
+      "description": "[NO LIST] HFWR Mag Field Antenna Bz (parallel in Local-Field Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Ex",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for Ex components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Ey",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for Ey components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Ez",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for Ez components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Bx",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for Bx components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_By",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for By components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "DATA_Q_Bz",
+      "type": "integer",
+      "units": "(0=OK,1=Other)",
+      "description": "[NO LIST] Data Quality for Bz components(0 = OK, 1 = clipped or questionable)",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Ex_Spec",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "[TEST-DO NOT USE] Ex Spectrogram from 512-element FFT",
+      "fill": "-1.0",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Ey_Spec",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "[TEST-DO NOT USE] Ey Spectrogram from 512-element FFT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Ez_Spec",
+      "type": "double",
+      "units": "(V/m)^2/Hz",
+      "description": "[TEST-DO NOT USE] Ez Spectrogram from 512-element FFT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Bx_Spec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "[TEST-DO NOT USE] Bx Spectrogram from 512-element FFT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_By_Spec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "[TEST-DO NOT USE] By Spectrogram from 512-element FFT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    },
+    {
+      "name": "HFWR_Bz_Spec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "[TEST-DO NOT USE] Bz Spectrogram from 512-element FFT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31744
+      ]
+    }
+  ],
+  "startDate": "1996-03-26T15:38:25.000Z",
+  "stopDate": "1997-09-16T16:52:51.000Z"
+}

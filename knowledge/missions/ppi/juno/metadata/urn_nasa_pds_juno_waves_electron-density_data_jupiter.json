@@ -1,0 +1,241 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MarkedValue",
+      "type": "double",
+      "units": "Hz",
+      "description": "The digitized frequency, done by human user for the purpose\n\t\t\t of finding out the number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field magnitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Fce",
+      "type": "double",
+      "units": "Hz",
+      "description": "Electron cyclotron frequency",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Fci",
+      "type": "double",
+      "units": "Hz",
+      "description": "Ion cyclotron frequency, assumes ions are H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Fpe",
+      "type": "double",
+      "units": "Hz",
+      "description": "Electron plasma frequency",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Fpe_Fce",
+      "type": "double",
+      "units": "",
+      "description": "Ratio between electron plasma and electron cyclotron frequencies",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Fuhr",
+      "type": "double",
+      "units": "Hz",
+      "description": "Upper hybrid resonance frequency",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Flhr",
+      "type": "double",
+      "units": "Hz",
+      "description": "Lower hybrid resonance frequency, assumes ions are H+",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "F_L0",
+      "type": "double",
+      "units": "Hz",
+      "description": "Cutoff of left handed polarized waves",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "F_R0",
+      "type": "double",
+      "units": "Hz",
+      "description": "Cutoff of right handed polarized waves",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "N_e",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Electron Number Density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MarkedType",
+      "type": "double",
+      "units": "",
+      "description": "The type of frequency being digitized",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Feature",
+      "type": "double",
+      "units": "",
+      "description": "The visual feature in the spectrogram used to anchor the measurement.\n            Defined values follow: \n\n            1. \"bottom\"  This denoted the bottom of a feature,usually one extended in\n               frequency, hence, this is the low-frequency cutoff\n\n            2. \"manual\"  The frequency was determined by identifying a feature with\n               the cursor -- no algorithm was used.  In practice, the user draws a box\n               and a horizontal frequency line is selected for the frequencies to be\n               used in that time interval.  Usually, this is used when a cutoff\n               frequency or a peak frequency is weak enough that the bottom/top/peak\n               algorithm has difficulty selecting a feature.\n\n            3. \"manual-diag\" Same as manual, except that the selected frequencies lie\n               along a diagonal of the drawn box.  This works well when there's a steep\n               gradient in frequency but, again, the algorithm has a hard time picking\n               out top/bottom/peak.  \n\n            4. \"peak\"  This is the peak of a narrowband spectral feature.\n\n            5. \"top\" This denoted the top of a feature -- usually one extended in frequency,\n               hence, this is the high-frequency cutoff.\n\n            6. \"relabel\" This is an option that allows the user to re-define a spectral feature,\n              e.g. from fuh to fpe, and is useful when the operator mislabeled the feature to\n              begin with and doesn't want to redo the digitization, or if the user 'guesses'\n              that this must be one characteristic frequency, but after the tool calculates\n              the other frequencies the user realizes a different definition might work better.\n              Alone, it doesn't tell you what visual feature was digitized.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Quality",
+      "type": "double",
+      "units": "",
+      "description": "Currently unused, always set to 'f', may contain a quality rating in future\n            versions of the product.",
+      "size": [
+        1
+      ],
+      "fill": "f"
+    },
+    {
+      "name": "Author",
+      "type": "double",
+      "units": "",
+      "description": "Initials of person who digitized the measurement",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude above the Jupiter 1 bar atmospheric pressure height",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Radius",
+      "type": "double",
+      "units": "Rj",
+      "description": "Radial distance from the center of Jupiter",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Mshell",
+      "type": "double",
+      "units": "",
+      "description": "M-shell location of the data points",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MagLat",
+      "type": "double",
+      "units": "deg",
+      "description": "magnetic latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Jupiter Planetocentric Latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Jovigraphic_latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "latitude in the Jovigraphic coordinate system",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Centrifugal_latitude",
+      "type": "double",
+      "units": "deg",
+      "description": "latitude above Jupiter's centrifugal equator",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hours",
+      "description": "Magnetic Local Time",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LT",
+      "type": "double",
+      "units": "hours",
+      "description": "Solar Local Time on Jupiter",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "WestLong",
+      "type": "double",
+      "units": "deg",
+      "description": "West Longitude",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

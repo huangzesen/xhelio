@@ -1,0 +1,361 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "MET",
+      "fill": null
+    },
+    {
+      "name": "F0",
+      "type": "integer",
+      "units": "",
+      "description": "F0",
+      "fill": null
+    },
+    {
+      "name": "PEAK_BIN",
+      "type": "integer",
+      "units": "",
+      "description": "PEAK_BIN",
+      "fill": null
+    },
+    {
+      "name": "TOT_ACCUM_PERIOD",
+      "type": "integer",
+      "units": "",
+      "description": "TOT_ACCUM_PERIOD",
+      "fill": null
+    },
+    {
+      "name": "NUM_ACCUM",
+      "type": "integer",
+      "units": "",
+      "description": "NUM_ACCUM",
+      "fill": null
+    },
+    {
+      "name": "SMP_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "SMP_BITS",
+      "fill": null
+    },
+    {
+      "name": "ARCH_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "ARCH_BITS",
+      "fill": null
+    },
+    {
+      "name": "LTCSNNNN_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "LTCSNNNN_BITS",
+      "fill": null
+    },
+    {
+      "name": "STATUS_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "STATUS_BITS",
+      "fill": null
+    },
+    {
+      "name": "PRODUCT_BITS",
+      "type": "integer",
+      "units": "",
+      "description": "PRODUCT_BITS",
+      "fill": null
+    },
+    {
+      "name": "MODE2",
+      "type": "integer",
+      "units": "",
+      "description": "MODE2",
+      "fill": null
+    },
+    {
+      "name": "QUALITY_FLAG",
+      "type": "integer",
+      "units": "",
+      "description": "Quality Flag",
+      "fill": "255.0"
+    },
+    {
+      "name": "EFLUX_VS_PA_E",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Pitch-angle and Energy",
+      "fill": "nan",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_PA_E_byE_atP",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Energy at Each Pitch Angle (spectrograms)",
+      "fill": "nan",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_PA_E_atE_byP",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Pitch Angle at Each Energy Level (spectrograms)",
+      "fill": "nan",
+      "size": [
+        12,
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_ENERGY",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Energy",
+      "fill": "nan",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_PH_E",
+      "type": "double",
+      "units": "",
+      "description": "EFLUX_VS_PH_E",
+      "fill": null,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "PHI_ANG",
+      "type": "double",
+      "units": "",
+      "description": "PHI_ANG",
+      "fill": null,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_TH_E",
+      "type": "double",
+      "units": "",
+      "description": "EFLUX_VS_TH_E",
+      "fill": null,
+      "size": [
+        8,
+        32
+      ]
+    },
+    {
+      "name": "THETA_ANG",
+      "type": "double",
+      "units": "",
+      "description": "THETA_ANG",
+      "fill": null,
+      "size": [
+        8,
+        32
+      ]
+    },
+    {
+      "name": "MAGF_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field in Spacecraft Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "MAGF_INST",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field in Instrument Coordinates",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "VALID",
+      "type": "integer",
+      "units": "",
+      "description": "VALID",
+      "fill": null
+    },
+    {
+      "name": "GAP",
+      "type": "integer",
+      "units": "",
+      "description": "GAP",
+      "fill": null
+    },
+    {
+      "name": "INDEX",
+      "type": "integer",
+      "units": "",
+      "description": "INDEX",
+      "fill": null
+    },
+    {
+      "name": "APID",
+      "type": "integer",
+      "units": "",
+      "description": "APID",
+      "fill": null
+    },
+    {
+      "name": "SEQN",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN",
+      "fill": null
+    },
+    {
+      "name": "SEQN_DELTA",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN_DELTA",
+      "fill": null
+    },
+    {
+      "name": "SEQN_GROUP",
+      "type": "integer",
+      "units": "",
+      "description": "SEQN_GROUP",
+      "fill": null
+    },
+    {
+      "name": "PKT_SIZE",
+      "type": "integer",
+      "units": "",
+      "description": "PKT_SIZE",
+      "fill": null
+    },
+    {
+      "name": "SOURCE_APID",
+      "type": "integer",
+      "units": "",
+      "description": "SOURCE_APID",
+      "fill": null
+    },
+    {
+      "name": "SOURCE_HASH",
+      "type": "integer",
+      "units": "",
+      "description": "SOURCE_HASH",
+      "fill": null
+    },
+    {
+      "name": "COMPR_RATIO",
+      "type": "double",
+      "units": "",
+      "description": "COMPR_RATIO",
+      "fill": null
+    },
+    {
+      "name": "NDAT",
+      "type": "integer",
+      "units": "",
+      "description": "NDAT",
+      "fill": null
+    },
+    {
+      "name": "DATASIZE",
+      "type": "integer",
+      "units": "",
+      "description": "DATASIZE",
+      "fill": null
+    },
+    {
+      "name": "MODE2_ORI",
+      "type": "integer",
+      "units": "",
+      "description": "MODE2_ORI",
+      "fill": null
+    },
+    {
+      "name": "NUM_TOTAL",
+      "type": "integer",
+      "units": "",
+      "description": "NUM_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "TIME_TOTAL",
+      "type": "double",
+      "units": "",
+      "description": "TIME_TOTAL",
+      "fill": null
+    },
+    {
+      "name": "TIME_ACCUM",
+      "type": "double",
+      "units": "",
+      "description": "TIME_ACCUM",
+      "fill": null
+    },
+    {
+      "name": "CNTS",
+      "type": "double",
+      "units": "",
+      "description": "CNTS",
+      "fill": null
+    },
+    {
+      "name": "PHI_VS_ENERGY",
+      "type": "double",
+      "units": "",
+      "description": "PHI_VS_ENERGY",
+      "fill": null,
+      "size": [
+        16,
+        32
+      ]
+    },
+    {
+      "name": "EFLUX_VS_PHI",
+      "type": "double",
+      "units": "eV/cm2-s-ster-eV",
+      "description": "Differential Energy Flux vs Phi",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "THETA_VS_ENERGY",
+      "type": "double",
+      "units": "",
+      "description": "THETA_VS_ENERGY",
+      "fill": null,
+      "size": [
+        8,
+        32
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

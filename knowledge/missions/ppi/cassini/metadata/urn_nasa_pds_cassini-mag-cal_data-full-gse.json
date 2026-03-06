@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "BX",
+      "type": "double",
+      "units": "nT",
+      "description": "GSE X component of the magnetic-field component in nT.                  \n      X points from Earth to the Sun.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY",
+      "type": "double",
+      "units": "nT",
+      "description": "GSE Y component of the magnetic field component in nT.                  \n      Y is parallel to the ecliptic plane and perpendicular to the            \n      Earth-Sun line, positive opposite to the direction of the Earth's       \n      motion.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ",
+      "type": "double",
+      "units": "nT",
+      "description": "GSE Z component of the magnetic field component in nT.                  \n      Z is perpendicular to the ecliptic plane.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

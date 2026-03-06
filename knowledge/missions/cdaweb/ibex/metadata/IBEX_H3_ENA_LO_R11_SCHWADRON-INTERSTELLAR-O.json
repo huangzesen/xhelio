@@ -1,0 +1,117 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Orbit_Number",
+      "type": "integer",
+      "units": "#",
+      "description": "Orbit Number",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Good_Time_Number",
+      "type": "integer",
+      "units": "#",
+      "description": "Number of Goodtime Periods",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Good_Time_Start",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time Start, GPS time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_End",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time End, GPS time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_Start_2",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time Start, GPS time 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_End_2",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time End, GPS time 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_Start_3",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time Start, GPS time 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_End_3",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time End, GPS time 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_Start_4",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time Start, GPS time 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_End_4",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time End, GPS time 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_Start_5",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time Start, GPS time 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Good_Time_End_5",
+      "type": "double",
+      "units": "sec",
+      "description": "Good Time End, GPS time 5",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spin_Phase",
+      "type": "double",
+      "units": "Phase Angle, Deg",
+      "description": "Spinphase Degree (at center of bin)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Count_Rate",
+      "type": "double",
+      "units": "Counts/Sec",
+      "description": "Count Rate (counts/sec)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Count_Rate_Un",
+      "type": "double",
+      "units": "Counts/Sec",
+      "description": "Count Rate Uncertainty (counts/sec)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2009-01-21T22:07:15.000Z",
+  "stopDate": "2010-02-25T15:25:34.000Z"
+}

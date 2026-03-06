@@ -1,0 +1,153 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BuSamples",
+      "type": "double",
+      "units": "nT",
+      "description": "BuSamples (as spectrogram vs Time Offsets)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "BvSamples",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BvSamples",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "BwSamples",
+      "type": "double",
+      "units": "nT",
+      "description": "---> BwSamples",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "EuSamples",
+      "type": "double",
+      "units": "V/m",
+      "description": "EuSamples (as spectrogram vs Time Offsets)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "EvSamples",
+      "type": "double",
+      "units": "V/m",
+      "description": "---> EvSamples",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "EwSamples",
+      "type": "double",
+      "units": "V/m",
+      "description": "---> EwSamples",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        208896
+      ]
+    },
+    {
+      "name": "LWEzGainW",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "Attenuator select indicator for W axis (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "LWExEyGainUV",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "---> Attenuator select indicator for U/V axes (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "SCMGain",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "---> Attenuator select indicator for MSC (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BuSpec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "[NOT YET FUNCTIONAL] Bu Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    },
+    {
+      "name": "BvSpec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "---> [NOT YET FUNCTIONAL] Bv Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    },
+    {
+      "name": "BwSpec",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "---> [NOT YET FUNCTIONAL] Bw Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    },
+    {
+      "name": "EuSpec",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "[NOT YET FUNCTIONAL] Eu Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    },
+    {
+      "name": "EvSpec",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "---> [NOT YET FUNCTIONAL] Ev Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    },
+    {
+      "name": "EwSpec",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "---> [NOT YET FUNCTIONAL] Ew Power Spectra",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16384
+      ]
+    }
+  ],
+  "startDate": "2012-09-02T20:03:26.000Z",
+  "stopDate": "2019-07-16T05:38:29.000Z"
+}

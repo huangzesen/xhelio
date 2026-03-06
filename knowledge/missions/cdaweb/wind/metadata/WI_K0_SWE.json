@@ -1,0 +1,128 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SC_pos_gse",
+      "type": "double",
+      "units": "km",
+      "description": "Wind s/c position, 3 comp. in GSE coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_GSM",
+      "type": "double",
+      "units": "km",
+      "description": "Wind s/c position, 3 comp. in GSM coord.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_pos_R",
+      "type": "double",
+      "units": "km",
+      "description": "Wind s/c radial distance to center of Earth, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "QF_V",
+      "type": "integer",
+      "units": "",
+      "description": "Velocity Quality Flag: 0=OK; 2 or 130 = caution; Other values NOT VALID",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "QF_Np",
+      "type": "integer",
+      "units": "",
+      "description": "Proton Density Quality Flag: 0=OK; 2 or 130 = caution; Other values NOT VALID",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "V_GSE",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Velocity in GSE coord., 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_GSM",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Velocity in GSM coord., 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_GSE_p",
+      "type": "double",
+      "units": "",
+      "description": "Ion Bulk Flow vector in GSE coord.,  3 comp. (speed, E/W flow, N/S flow)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "V_GSE_plog",
+      "type": "double",
+      "units": "",
+      "description": "Ion Bulk Flow Speed GSE coord.(log)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "THERMAL_SPD",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar Wind Most Probable Thermal Speed = sqrt(2kT/M), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Solar Wind Proton Number Density, scalar (linear)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Np_l",
+      "type": "double",
+      "units": "#/cc",
+      "description": "Solar Wind Proton Number Density, scalar (log)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Pressure",
+      "type": "double",
+      "units": "nPa",
+      "description": "Ion Dynamic Pressure (derived from mNV^2), scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Alpha_Percent",
+      "type": "double",
+      "units": "%",
+      "description": "Percent of density due to alpha particles",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1994-11-01T12:00:00.000Z",
+  "stopDate": "2026-02-16T23:59:20.000Z"
+}

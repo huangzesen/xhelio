@@ -1,0 +1,113 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Spacecraft Clock",
+      "type": "double",
+      "units": "",
+      "description": "S/C clock counter (mod65536:mod60:fds_line).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG ID",
+      "type": "double",
+      "units": "",
+      "description": "Magnetometer ID (1=LFM, 2=HFM)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft coordinates x-component of the magetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "By",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft coordinates y-component of the magetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Bz",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft coordinates z-component of the magetic field.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "Bmag",
+      "type": "double",
+      "units": "",
+      "description": "Magnitude (sqrt of sum of squares) of the field component averages.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "RMS Bx",
+      "type": "double",
+      "units": "",
+      "description": "Root-mean-square deviation of Bx over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "RMS By",
+      "type": "double",
+      "units": "",
+      "description": "Root-mean-square deviation of By over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "RMS Bz",
+      "type": "double",
+      "units": "",
+      "description": "Root-mean-square deviation of Bz over the averaging interval.",
+      "size": [
+        1
+      ],
+      "fill": "-9.999e+10"
+    },
+    {
+      "name": "NPTS",
+      "type": "double",
+      "units": "POINT",
+      "description": "Number of points in the average.",
+      "size": [
+        1
+      ],
+      "fill": "-999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

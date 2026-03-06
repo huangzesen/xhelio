@@ -1,0 +1,115 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCLK",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft clock count",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TYPE",
+      "type": "double",
+      "units": "",
+      "description": "Telescope ID with which the event            \n                                 is associated.  Range of value: 20 - 28",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E1",
+      "type": "double",
+      "units": "MeV",
+      "description": "Energy (MeV) deposited in the e1 detector",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E2",
+      "type": "double",
+      "units": "MeV",
+      "description": "Energy (MeV) deposited in the e2 detector",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E3",
+      "type": "double",
+      "units": "MeV",
+      "description": "Energy (MeV) deposited in the e3 detector",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "",
+      "description": "Estimated nuclear charge of particle.",
+      "size": [
+        1
+      ],
+      "fill": "99.90"
+    },
+    {
+      "name": "DZ",
+      "type": "double",
+      "units": "",
+      "description": "Difference of 2 calculations of nuclear      \n                                 charge; indicates approximate error in <Z>.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EAVG",
+      "type": "double",
+      "units": "MeV",
+      "description": "Rough estimate of incident energy of         \n                                 particle.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCTHAVG",
+      "type": "double",
+      "units": "",
+      "description": "Rough estimate of secant of                  \n                                 incident angle of particle",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LIVETIME",
+      "type": "double",
+      "units": "SECOND",
+      "description": "livetime (in seconds) appropriate for        \n                                 the event; calculated from the ratio of      \n                                 rates to telemetered events.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "GF",
+      "type": "double",
+      "units": "",
+      "description": "Geometry factor appropriate for the event    \n                                 type.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

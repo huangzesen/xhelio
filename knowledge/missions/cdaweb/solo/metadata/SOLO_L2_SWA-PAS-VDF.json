@@ -1,0 +1,357 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "unrecovered_count",
+      "type": "double",
+      "units": "",
+      "description": "Total counter of unrecovered bins",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "total_count",
+      "type": "double",
+      "units": "",
+      "description": "Total count",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "quality_factor",
+      "type": "double",
+      "units": "",
+      "description": "Quality factor",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "vdf",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf2",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf2_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf2_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf3",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 3",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf3_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf3_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf4",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 4",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf4_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf4_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf5",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 5",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf5_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf5_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf6",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 6",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf6_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf6_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf7",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 7",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf7_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf7_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf8",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 8",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf8_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf8_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf9",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "Distribution function: [Azimuth vs Energy] at elevation 9",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf9_mv",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Movie of above",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    },
+    {
+      "name": "vdf9_spec",
+      "type": "double",
+      "units": "s^3 m^-6",
+      "description": "---> Spectrograms at selected azimuths 1,3,5,7,9,11",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        9,
+        96
+      ]
+    }
+  ],
+  "startDate": "2020-07-07T16:43:06.000Z",
+  "stopDate": "2025-10-31T23:59:54.000Z"
+}

@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MODE_HI",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates mode of the high receiver: 1: Receiver in summed mode (X and Z antenna combined). 2: Receiver in separate mode(only X antenna). 3: Receiver switched mode during averaging period. 4: Receiver mode unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MODE_LO",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates mode of the low receiver: 1: Receiver in summed mode (X and Z antenna combined). 2: Receiver in separate mode (only X antenna). 3: Receiver switched mode during averaging period. 4: Receiver mode unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Column indicates telemetry bit rate: 1: 128 bps. 2: 256 bps. 3: 512 bps. 4: 1024 bps. 5: Bit rate changed during averaging period. 6: Bit rate unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAR AVG E-FIELD",
+      "type": "double",
+      "units": "microVolt/Hz^0.5",
+      "description": "This column consists of 25 Radio Astronomy Receiver (RAR) electric field intensities from both the high and low RAR receivers. These values represent the average intensities over the sampling interval. To reduce the size of the files produced, the UDS files contain 25 frequency channels for the RAR - the upper 12 frequencies of the high receiver, and 13 lower frequencies which are aggregates of the low frequency channels so that they appear in approximately the same logarithmic steps as the high frequency receiver. Since the low frequency receiver steps are linear, there are different numbers of frequency channels that are combined to produce the UDS data. Following is a table giving the approximate center frequency of each UDS channel and the RAR frequencies that were combined to produce it. UDS       center      RAR frequency channel   frequency   channels (kHz)       (kHz) ------------------------------------------ 1            1.25        1.25           Low receiver 2            2.00        2.00 3            2.75        2.75 4            3.50        3.50 5            4.25        4.25 6            5.75        5.00 -  6.5 7            8.00        7.25 -  8.75 8           11.0         9.50 - 12.5 9           14.75       13.25 - 16.25 10           19.25       17.00 - 21.50 11           24.50       22.25 - 26.75 12           31.25       27.50 - 35.00 13           42.50       35.75 - 48.50 14           52.0        52.0            High receiver 15           63.0        63.0 16           81.0        81.0 17          100.0       100.0 18          120.0       120.0 19          148.0       148.0 20          196.0       196.0 21          272.0       272.0 22          387.0       387.0 23          540.0       540.0 24          740.0       740.0 25          940.0       940.0",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DOSE",
+      "type": "double",
+      "units": "uGy/min",
+      "description": "Average dose rate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DOSE_EQ60",
+      "type": "double",
+      "units": "uSv/min",
+      "description": "Average Dose Equivalent Rate (ICRP-60)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "TIME_INTERVAL",
+      "type": "double",
+      "units": "min",
+      "description": "Number of minutes over which the data was collected",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LONGITUDE",
+      "type": "double",
+      "units": "Deg",
+      "description": "Geographic longitude of the International Space Station",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "LATITUDE",
+      "type": "double",
+      "units": "Deg",
+      "description": "Geographic latitude of the International Space Station",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ALTITUDE",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude of the International Space Station",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2010-04-29T03:27:36.000Z",
+  "stopDate": "2018-04-11T23:19:39.000Z"
+}

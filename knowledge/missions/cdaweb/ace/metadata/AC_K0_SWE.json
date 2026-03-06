@@ -1,0 +1,40 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "#/cc",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] Solar Wind Proton Number Density, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] Solar Wind Bulk Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "He_ratio",
+      "type": "double",
+      "units": "%",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] Percent of Helium++ ions to protons",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tpr",
+      "type": "double",
+      "units": "Kelvin",
+      "description": "[PRELIMINARY VALUES - BROWSE USE ONLY] radial component of the proton temperature",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2017-07-01T00:00:00.000Z",
+  "stopDate": "2026-02-12T23:55:00.000Z"
+}

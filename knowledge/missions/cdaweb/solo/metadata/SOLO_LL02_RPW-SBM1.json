@@ -1,0 +1,57 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SBM1_ALGO_STATUS",
+      "type": "integer",
+      "units": "",
+      "description": "SBM1 detection algorithm status",
+      "fill": "255.0"
+    },
+    {
+      "name": "SBM1_TIME",
+      "type": "integer",
+      "units": "",
+      "description": "SBM1 event absolute time",
+      "fill": "4294967295.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "SBM1_QF",
+      "type": "integer",
+      "units": "",
+      "description": "SBM1 event quality factor",
+      "fill": "65535.0"
+    },
+    {
+      "name": "DT1_SBM1",
+      "type": "integer",
+      "units": "",
+      "description": "DT1_SBM1 parameter",
+      "fill": "65535.0"
+    },
+    {
+      "name": "DT2_SBM1",
+      "type": "integer",
+      "units": "",
+      "description": "DT2_SBM1 parameter",
+      "fill": "65535.0"
+    },
+    {
+      "name": "DT3_SBM1",
+      "type": "integer",
+      "units": "",
+      "description": "DT3_SBM1 parameter",
+      "fill": "65535.0"
+    }
+  ],
+  "startDate": "2020-10-05T09:00:01.000Z",
+  "stopDate": "2022-01-08T08:48:38.000Z"
+}

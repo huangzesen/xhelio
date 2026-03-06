@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SECOFDAYOFPERIAPSIS",
+      "type": "double",
+      "units": "SECOND",
+      "description": "Second of day of periapsis, S/C event time, UT. This value can be less than zero or greater than 86,400 if periapsis falls within 1.5 hours of midnight.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DENSITY",
+      "type": "double",
+      "units": "CNT/CM**3",
+      "description": "Log10 of the number density of electrons (Ne)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

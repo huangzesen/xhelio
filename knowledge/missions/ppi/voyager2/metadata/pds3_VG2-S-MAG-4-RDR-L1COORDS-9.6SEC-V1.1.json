@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MAG_ID",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Magnetometer ID.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Radial component of the  magnetic field in Kronographic (L1) coordinates,  positive from Saturn to spacecraft.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BTHETA",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "North/South component of the magnetic field in Kronographic (L1) coordinates, positive southward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPHI",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Azimuthal component of the magnetic field in Kronographic (L1) coordinates, positive eastward.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Magnitude of the averages of the field components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AVG_BMAG",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Average of the field magnitudes.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DELTA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Magnetic latitude, defined as ARCSIN(BTHETA/BMAG).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LAMBDA",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "Magnetic longitude, defined as 180.0 - ARCTAN(BPHI/-BR).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BR",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BR.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BTHETA",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BTHETA.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RMS_BPHI",
+      "type": "double",
+      "units": "NANOTESLA",
+      "description": "Root-mean-square of BPHI.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NPTS",
+      "type": "integer",
+      "units": "N/A",
+      "description": "Number of data points in the averaging window.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

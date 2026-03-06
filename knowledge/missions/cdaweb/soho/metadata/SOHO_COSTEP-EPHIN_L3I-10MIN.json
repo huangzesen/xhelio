@@ -1,0 +1,86 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "status",
+      "type": "integer",
+      "units": "",
+      "description": "Status flag, see TEXT",
+      "fill": "65535.0"
+    },
+    {
+      "name": "accum_time",
+      "type": "double",
+      "units": "s",
+      "description": "Measurement accumulation time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "P_int",
+      "type": "double",
+      "units": "(cm^2 s sr MeV)^-1",
+      "description": "Proton intensity in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "P_sys",
+      "type": "double",
+      "units": "(cm^2 s sr MeV)^-1",
+      "description": "Proton systematic uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "P_stat",
+      "type": "double",
+      "units": "(cm^2 s sr MeV)^-1",
+      "description": "Proton statistical uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "He_int",
+      "type": "double",
+      "units": "(cm^2 s sr MeV/n)^-1",
+      "description": "He intensity in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "He_sys",
+      "type": "double",
+      "units": "(cm^2 s sr MeV/n)^-1",
+      "description": "He systematic uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "He_stat",
+      "type": "double",
+      "units": "(cm^2 s sr MeV/n)^-1",
+      "description": "He statistical uncertainty in 4 energy ranges (4.3-7.8, 7.8-25, 25-40.9, 40.9-53 MeV/n)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1995-12-08T00:00:00.000Z",
+  "stopDate": "2026-02-14T23:50:00.000Z"
+}

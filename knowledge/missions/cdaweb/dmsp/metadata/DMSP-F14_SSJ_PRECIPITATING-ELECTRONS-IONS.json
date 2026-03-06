@@ -1,0 +1,200 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SC_ECI",
+      "type": "double",
+      "units": "km",
+      "description": "Earth Centered Inertial (ECI) spacecraft location (x,y,z) in km.",
+      "fill": "nan",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_GEOCENTRIC_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Geocentric latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_GEOCENTRIC_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Geocentric Longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_GEOCENTRIC_R",
+      "type": "double",
+      "units": "km",
+      "description": "Distance from center of Earth in km.",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Altitude Adjusted Corrected Geomagnetic  Latitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LON",
+      "type": "double",
+      "units": "deg",
+      "description": "Altitude Adjusted Corrected Geomagnetic  Longitude",
+      "fill": "nan"
+    },
+    {
+      "name": "SC_AACGM_LTIME",
+      "type": "double",
+      "units": "hr",
+      "description": "Altitude Adjusted Corrected Geomagnetic Local Time",
+      "fill": "nan"
+    },
+    {
+      "name": "ELE_COUNTS_OBS",
+      "type": "double",
+      "units": "",
+      "description": "Electron counts as observed; no corrections.",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ELE_COUNTS_BKG",
+      "type": "double",
+      "units": "",
+      "description": "Background electron count estimate.",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ELE_DIFF_ENERGY_FLUX",
+      "type": "double",
+      "units": "eV/cm2/delta-eV/ster/s",
+      "description": "Electron differential energy flux (ev/cm2/delta-eV/ster/s).",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ELE_DIFF_ENERGY_FLUX_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in electron differential energy flux (fractional).",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ELE_TOTAL_ENERGY_FLUX",
+      "type": "double",
+      "units": "eV/cm2/ster/s",
+      "description": "Electron total energy flux integrated over energy (eV/cm2/ster/s).",
+      "fill": "nan"
+    },
+    {
+      "name": "ELE_TOTAL_ENERGY_FLUX_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in electron total energy flux integrated over energy (fractional).",
+      "fill": "nan"
+    },
+    {
+      "name": "ELE_AVG_ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "Average electron energy (eV).",
+      "fill": "nan"
+    },
+    {
+      "name": "ELE_AVG_ENERGY_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in average electron energy (fractional).",
+      "fill": "nan"
+    },
+    {
+      "name": "ION_COUNTS_OBS",
+      "type": "double",
+      "units": "",
+      "description": "Ion counts as observed; no corrections.",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ION_COUNTS_BKG",
+      "type": "double",
+      "units": "",
+      "description": "Background ion count estimate.",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ION_DIFF_ENERGY_FLUX",
+      "type": "double",
+      "units": "ev/cm2/delta-eV/ster/s",
+      "description": "Ion differential energy flux (ev/cm2/delta-eV/ster/s).",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ION_DIFF_ENERGY_FLUX_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in ion differential energy flux (fractional).",
+      "fill": "nan",
+      "size": [
+        19
+      ]
+    },
+    {
+      "name": "ION_TOTAL_ENERGY_FLUX",
+      "type": "double",
+      "units": "eV/cm2/ster/s",
+      "description": "Ion total energy flux integrated over energy (eV/cm2/ster/s).",
+      "fill": "nan"
+    },
+    {
+      "name": "ION_TOTAL_ENERGY_FLUX_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in ion total energy flux integrated over energy (fractional).",
+      "fill": "nan"
+    },
+    {
+      "name": "ION_AVG_ENERGY",
+      "type": "double",
+      "units": "eV",
+      "description": "Average ion energy (eV).",
+      "fill": "nan"
+    },
+    {
+      "name": "ION_AVG_ENERGY_STD",
+      "type": "double",
+      "units": "fractional",
+      "description": "Estimated relative uncertainty in ion average energy (fractional).",
+      "fill": "nan"
+    }
+  ],
+  "startDate": "2000-12-28T00:00:00.000Z",
+  "stopDate": "2005-09-29T23:59:59.000Z"
+}

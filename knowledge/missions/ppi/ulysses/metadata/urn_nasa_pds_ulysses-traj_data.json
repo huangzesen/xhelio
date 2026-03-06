@@ -1,0 +1,54 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft distance to Jupiter in Jovian radii.",
+      "size": [
+        1
+      ],
+      "fill": "-999.99999"
+    },
+    {
+      "name": "Lat",
+      "type": "double",
+      "units": "degrees",
+      "description": "Spacecraft latitude (JG System II 1965) in degrees.",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    },
+    {
+      "name": "Lon",
+      "type": "double",
+      "units": "degrees",
+      "description": "Spacecraft W. Longitude (JG System II 1965) in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Loctime",
+      "type": "double",
+      "units": "hours",
+      "description": "Spacecraft local time in decimal hours",
+      "size": [
+        1
+      ],
+      "fill": "-999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

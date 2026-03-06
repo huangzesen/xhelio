@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "M65536",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 65536",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MOD60",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK MOD 60",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDS_LINE",
+      "type": "integer",
+      "units": "TICKS",
+      "description": "S/C CLOCK FDS LINE",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_X",
+      "type": "double",
+      "units": "AU",
+      "description": "Column contains spacecraft heliocentric X position in Heliographic (RTN) coordinates in units of astronomical units.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Y",
+      "type": "double",
+      "units": "AU",
+      "description": "Column contains spacecraft heliocentric Y position in Heliographic (RTN) coordinates in units of astronomical units.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_Z",
+      "type": "double",
+      "units": "AU",
+      "description": "Column contains spacecraft heliocentric Z position in Heliographic (RTN) coordinates in units of astronomical units.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_X",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity heliocentric X component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Y",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity heliocentric Y component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL_Z",
+      "type": "double",
+      "units": "KM/SEC",
+      "description": "Column contains spacecraft velocity heliocentric Z component in units of kilometers/second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_R",
+      "type": "double",
+      "units": "AU",
+      "description": "Column contains Sun to spacecraft range in units of astronomical units.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LAT",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "Column contains spacecraft IHG latitude measured from the solar equatorial plane (positive above the plane) in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_LON",
+      "type": "double",
+      "units": "RADIANS",
+      "description": "Column contains spacecraft IHG longitude (increasing in the direction of planetary orbital motion) in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOLAR_EQUATORIAL_TO_HG",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Solar Equatorial to Heliographic coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HG_TO_EARTHORBTRUE",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Heliographic to Earth Orbit True coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPACECRAFT_TO_HG",
+      "type": "double",
+      "units": "",
+      "description": "This 3x3 array contains the 9 1pe15.8 rotation matrix elements for converting from Payload (Spacecraft) to Heliographic coordinates.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

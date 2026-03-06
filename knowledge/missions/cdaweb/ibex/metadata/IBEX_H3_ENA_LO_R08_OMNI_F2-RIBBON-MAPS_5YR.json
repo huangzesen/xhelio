@@ -1,0 +1,41 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mapnum",
+      "type": "integer",
+      "units": "#",
+      "description": "Sequential number 1 - 22 for six-month maps from IBEX Data Release 16",
+      "fill": "65535.0"
+    },
+    {
+      "name": "Flux5",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 5 ~0.209 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    },
+    {
+      "name": "Flux6",
+      "type": "double",
+      "units": "ENAs/(cm2 s sr keV)",
+      "description": "Differential Flux, Lo Energy Channel 6 ~0.439 keV - mapped",
+      "fill": "-1e+31",
+      "size": [
+        60,
+        30
+      ]
+    }
+  ],
+  "startDate": "2008-12-25T00:00:00.000Z",
+  "stopDate": "2008-12-25T00:00:00.000Z"
+}

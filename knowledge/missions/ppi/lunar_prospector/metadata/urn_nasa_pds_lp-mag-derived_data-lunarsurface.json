@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "Latitude at this grid point (South is negative; North is positive).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "East Longitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "East longitude at this grid point.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Magnetic Field",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field value in nanoTeslas at constant altitude                   \n                          of 37 km.  The last three letters of the file name,                       \n                          before the extension, indicates what is contained in this                 \n                          column (EAS = East field component; NOR = North field                     \n                          component; RAD = Radial field component; TOT = total field).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Data Points in Bin",
+      "type": "double",
+      "units": "",
+      "description": "Number of data points in this latitude/longitude bin.                     \n                          The bin size can be deduced from the difference between                   \n                          successive latitude and longitude values (0.25 degrees                    \n                          by 0.25 degrees for this altitude).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

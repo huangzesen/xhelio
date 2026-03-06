@@ -1,0 +1,326 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Tpar_p_30",
+      "type": "double",
+      "units": "eV",
+      "description": "HOPE proton parallel temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tpar_he_30",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE He+ parallel temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tpar_o_30",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE O+ parallel temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tpar_e_200",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE electron parallel temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_p_30",
+      "type": "double",
+      "units": "eV",
+      "description": "HOPE proton perpendicular temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_he_30",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE He+ perpendicular temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_o_30",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE O+ perpendicular temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_e_200",
+      "type": "double",
+      "units": "eV",
+      "description": "---> HOPE electron perpendicular temperature",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_Tpar_p_30",
+      "type": "double",
+      "units": ".",
+      "description": "HOPE proton Tperp/Tpar",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_Tpar_he_30",
+      "type": "double",
+      "units": ".",
+      "description": "---> HOPE He Tperp/Tpar",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_Tpar_o_30",
+      "type": "double",
+      "units": ".",
+      "description": "---> HOPE Oxygen Tperp/Tpar",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tperp_Tpar_e_30",
+      "type": "double",
+      "units": ".",
+      "description": "---> HOPE electron Tperp/Tpar",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Ion_density",
+      "type": "double",
+      "units": "cm!u-3!n",
+      "description": "HOPE ion partial density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Dens_p_30",
+      "type": "double",
+      "units": "cm!u-3!n",
+      "description": "---> HOPE proton partial density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Dens_he_30",
+      "type": "double",
+      "units": "cm!u-3!n",
+      "description": "---> HOPE He+ partial density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Dens_o_30",
+      "type": "double",
+      "units": "cm!u-3!n",
+      "description": "---> HOPE O+ partial density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Dens_e_200",
+      "type": "double",
+      "units": "cm!u-3!n",
+      "description": "---> HOPE electron partial density",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "he_p_ratio",
+      "type": "double",
+      "units": ".",
+      "description": "HOPE He/p partial density ratio",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "he_o_ratio",
+      "type": "double",
+      "units": ".",
+      "description": "---> HOPE He/Oxygen partial density ratio",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "o_p_ratio",
+      "type": "double",
+      "units": ".",
+      "description": "---> HOPE Oxygen/proton partial density ratio",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "p_T_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Quality Flag for proton temperatures",
+      "fill": "-128.0"
+    },
+    {
+      "name": "he_T_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for He temperatures",
+      "fill": "-128.0"
+    },
+    {
+      "name": "o_T_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for Oxygen temperatures",
+      "fill": "-128.0"
+    },
+    {
+      "name": "e_T_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for electron temperatures",
+      "fill": "-128.0"
+    },
+    {
+      "name": "p_Tperp_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Quality Flag for proton Tperp consistency",
+      "fill": "-128.0"
+    },
+    {
+      "name": "he_Tperp_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for He Tperp consistency",
+      "fill": "-128.0"
+    },
+    {
+      "name": "o_Tperp_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for Oxygen Tperp consistency",
+      "fill": "-128.0"
+    },
+    {
+      "name": "e_Tperp_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for electron Tperp consistency",
+      "fill": "-128.0"
+    },
+    {
+      "name": "p_Dens_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Quality Flag for proton density",
+      "fill": "-128.0"
+    },
+    {
+      "name": "he_Dens_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for He density",
+      "fill": "-128.0"
+    },
+    {
+      "name": "o_Dens_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for Oxygen density",
+      "fill": "-128.0"
+    },
+    {
+      "name": "e_Dens_flag",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "---> Quality Flag for electron density",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Position",
+      "type": "double",
+      "units": "km",
+      "description": "Position of the satellite in geographic coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "L_star",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I",
+      "type": "double",
+      "units": ".",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Position_TT",
+      "type": "double",
+      "units": "km",
+      "description": "Position of the satellite in geographic coordinates",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "L_star_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "L_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_Eq_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "I_TT",
+      "type": "double",
+      "units": ".",
+      "description": "---> Adiabatic invariant (bounce)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "MLT_TT",
+      "type": "double",
+      "units": "Hr",
+      "description": "---> Calculated Magnetic Local Time (hours)",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2012-10-26T00:00:20.000Z",
+  "stopDate": "2019-07-16T16:37:53.000Z"
+}

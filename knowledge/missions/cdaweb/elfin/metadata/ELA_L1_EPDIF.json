@@ -1,0 +1,70 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "ela_pif",
+      "type": "double",
+      "units": "raw counts",
+      "description": "EPD Ion counts/sector [raw data] - all 16 energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pif_8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just bottom eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pif_top8",
+      "type": "double",
+      "units": "raw counts",
+      "description": "---> just top eight energies",
+      "fill": "nan",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "ela_pif_sectnum",
+      "type": "integer",
+      "units": "",
+      "description": "Sector Number",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pif_nspinsinsum",
+      "type": "integer",
+      "units": "",
+      "description": "number of spins in sum",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pif_nsectors",
+      "type": "integer",
+      "units": "",
+      "description": "Number of Sectors",
+      "fill": "-128.0"
+    },
+    {
+      "name": "ela_pif_spinper",
+      "type": "double",
+      "units": "sec",
+      "description": "spinperiod",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2018-12-14T20:30:02.000Z",
+  "stopDate": "2022-09-11T23:42:45.000Z"
+}

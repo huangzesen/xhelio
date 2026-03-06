@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) latitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLongitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HGI longitude",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "BR in RTN (Radial-Tangential-Normal) coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "BT in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN in RTN coordinate system",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ABS_B",
+      "type": "double",
+      "units": "nT",
+      "description": "Field Magnitude Average |B  1/N SUM |B|",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Flow Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elevAngle",
+      "type": "double",
+      "units": "Deg",
+      "description": "Proton flow elevation angle / latitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "azimuthAngle",
+      "type": "double",
+      "units": "Deg",
+      "description": "Proton flow azimuth angle / longitude (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "N/cm3",
+      "description": "Ion Density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "Deg K",
+      "description": "Temperature",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1963-01-01T00:00:00.000Z",
+  "stopDate": "2026-02-02T00:00:00.000Z"
+}

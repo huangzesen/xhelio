@@ -1,0 +1,30 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "HIST2D_TOT_SNAPSHOT",
+      "type": "integer",
+      "units": "",
+      "description": "Total number of snapshots",
+      "fill": "65535.0"
+    },
+    {
+      "name": "HIST2D_COUNTS",
+      "type": "integer",
+      "units": "Counts",
+      "description": "Total number of counts",
+      "fill": "65535.0",
+      "size": [
+        128,
+        128
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T00:05:19.000Z",
+  "stopDate": "2023-11-12T22:59:27.000Z"
+}

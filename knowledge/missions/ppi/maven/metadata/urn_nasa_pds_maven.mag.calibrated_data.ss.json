@@ -1,0 +1,123 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DECIMAL DAY",
+      "type": "double",
+      "units": "",
+      "description": "Decimal day of year.  This column provides a second representation of\nthe sample time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BX SUN-STATE",
+      "type": "double",
+      "units": "",
+      "description": "B-field X-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BY SUN-STATE",
+      "type": "double",
+      "units": "",
+      "description": "B-field Y-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BZ SUN-STATE",
+      "type": "double",
+      "units": "",
+      "description": "B-field Z-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Instrument dynamic range identifier at time of the sample.\nPertains to B components.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "X",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft position X-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Y",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft position Y-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Z",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft position Z-component in Sun-State coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BDX PAYLOAD",
+      "type": "double",
+      "units": "",
+      "description": "B-field X-component dynamic correction in \nPayload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BDY PAYLOAD",
+      "type": "double",
+      "units": "",
+      "description": "B-field Y-component dynamic correction in \nPayload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BDZ PAYLOAD",
+      "type": "double",
+      "units": "",
+      "description": "B-field Z-component dynamic correction in \nPayload coordinate system.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INSTRUMENT RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Instrument dynamic range identifier at time of the sample.\nPertains to B components.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

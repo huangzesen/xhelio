@@ -1,0 +1,682 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Ne_energies",
+      "type": "double",
+      "units": "MeV",
+      "description": "Ne kinetic energies",
+      "fill": "-1.0",
+      "size": [
+        200
+      ]
+    },
+    {
+      "name": "Na_pitchangles",
+      "type": "double",
+      "units": "deg",
+      "description": "Na equatorial pitch angles",
+      "fill": "-1.0",
+      "size": [
+        37
+      ]
+    },
+    {
+      "name": "NL_shells",
+      "type": "double",
+      "units": "",
+      "description": "L-shells",
+      "fill": "-1.0",
+      "size": [
+        47
+      ]
+    },
+    {
+      "name": "intensities",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "[NO PLOTS] Natural logarithms of NL intensities",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE25_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "Natural Log of Proton Intensity at E=26.1 MeV (#25)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE50_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=40.9 MeV (#50)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE75_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=64.0 MeV (#75)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE100_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=100.1 MeV (#100)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE125_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=157 MeV (#125)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE150_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=245 MeV (#150)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_atE175_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=383 MeV (#175)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA5_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "Natural Log of Proton Intensity at PA=10.0 deg (#5)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA10_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=22.5 deg (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA15_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=35.0 deg (#15)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA20_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=47.5 deg (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA25_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=60.0 deg (#25)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA30_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=72.5 deg (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_atPA35_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=85.0 deg (#35)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL5",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "Natural Log of Proton Intensity at L=1.35 (#5)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL10",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=1.6 (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL15",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=1.85 (#15)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL20",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.1 (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL25",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.35 (#25)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL30",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.6 (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL35",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.85 (#35)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL40",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=3.1 (#40)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_byE_byPA_atL45",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=3.35 (#45)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_atE25_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "[MOVIE DISPLAY] Natural Log of Proton Intensity at E=26.1 MeV (#25)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE50_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=40.9 MeV (#50)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE75_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=64.0 MeV (#75)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE100_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=100.1 MeV (#100)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE125_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=157 MeV (#125)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE150_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=245 MeV (#150)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_atE175_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at E=383 MeV (#175)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA5_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "[MOVIE DISPLAY] Natural Log of Proton Intensity at PA=10.0 deg (#5)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA10_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=22.5 deg (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA15_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=35.0 deg (#15)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA20_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=47.5 deg (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA25_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=60.0 deg (#25)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA30_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=72.5 deg (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_atPA35_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at PA=85.0 deg (#35)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL5",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "[MOVIE DISPLAY] Natural Log of Proton Intensity at L=1.35 (#5)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL10",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=1.6 (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL15",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=1.85 (#15)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL20",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.1 (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL25",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.35 (#25)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL30",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.6 (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL35",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=2.85 (#35)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL40",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=3.1 (#40)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "intensities_movie_byE_byPA_atL45",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> Natural Log of Proton Intensity at L=3.35 (#45)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "uncertainties",
+      "type": "double",
+      "units": "log(#protons/cm^2.s.sr.MeV)",
+      "description": "[NO PLOTS] 1-sigma uncertainties for the NL natural logarithms of proton intensity",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_atE50_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "1-sigma uncertainties for the NL natural logarithms of Proton Intensity at E=40.9 MeV (#50)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_atE100_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at E=100.1 MeV (#100)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_atE150_byPA_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at E=245 MeV (#150)",
+      "fill": "-1.0",
+      "size": [
+        37,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_byE_atPA10_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "1-sigma uncertainties for the NL natural logarithms of Proton Intensity at PA=22.5 deg (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_byE_atPA20_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at PA=47.5 deg (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_byE_atPA30_byL",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at PA=72.5 deg (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        47
+      ]
+    },
+    {
+      "name": "uncertainties_byE_byPA_atL10",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "1-sigma uncertainties for the NL natural logarithms of Proton Intensity at L=1.6 (#10)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "uncertainties_byE_byPA_atL20",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at L=2.1 (#20)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "uncertainties_byE_byPA_atL30",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at L=2.6 (#30)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    },
+    {
+      "name": "uncertainties_byE_byPA_atL40",
+      "type": "double",
+      "units": "ln(#protons/cm^2.s.sr.MeV)",
+      "description": "---> 1-sigma uncertainties for the NL natural logarithms of Proton Intensity at L=3.1 (#40)",
+      "fill": "-1.0",
+      "size": [
+        200,
+        37
+      ]
+    }
+  ],
+  "startDate": "2013-10-15T00:00:00.000Z",
+  "stopDate": "2018-05-15T00:00:00.000Z"
+}

@@ -1,0 +1,303 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Image_Counts_Raw",
+      "type": "integer",
+      "units": "Counts",
+      "description": "256 x 256 Visible Image (quasi-logarithmically compressed counts)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Image_Counts_Clean",
+      "type": "integer",
+      "units": "Counts",
+      "description": "256 x 256 Cleaned and Filtered Visible Image (quasi-logarithmically compressed counts)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageO",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) With geographic map overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageP",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageM",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Movie_Image",
+      "type": "integer",
+      "units": "Cleaned UV Intensity in QLC Counts",
+      "description": "Movie display of cleaned UV images in QLC counts",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieO",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieP",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieM",
+      "type": "integer",
+      "units": "QLC Counts",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat",
+      "fill": "255.0",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "IImage_Counts",
+      "type": "double",
+      "units": "kRay",
+      "description": "UV Images in kRay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageO_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) With geographic map overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageP_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_ImageM_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) Azimuthal projection to magnetic LT and invariant lat",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Movie_Image_kRay",
+      "type": "double",
+      "units": "Cleaned UV Intensity in kRay",
+      "description": "Movie display of cleaned UV images in kRay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieO_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) Movie, with geographic grid overlay",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieP_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to geographic (fixed sun orientation)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Mapped_MovieM_kRay",
+      "type": "double",
+      "units": "kRay",
+      "description": "--> (USE SHORT TIME SPANS) Movie, azimuthal projection to magnetic LT and invariant lat",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Filter",
+      "type": "integer",
+      "units": "",
+      "description": "---> Filter number and peak wavelength in Angstroms)",
+      "fill": "-2147483648.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "AltF",
+      "type": "double",
+      "units": "Kilometers",
+      "description": "---> Presumed altitude of emissions, km.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Field_Stop",
+      "type": "integer",
+      "units": "Steps",
+      "description": "---> Field-stop wheel position (1 step = 1.5 degrees)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "PPitch",
+      "type": "integer",
+      "units": "Degrees*10",
+      "description": "---> Platform pointing angle from nadir",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Mirr_Elv",
+      "type": "integer",
+      "units": "Steps",
+      "description": "---> Mirror pointing angle, elevation",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Mirr_Azm",
+      "type": "integer",
+      "units": "Steps",
+      "description": "---> Mirror pointing angle, azimuth",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Geo_Lat",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Geographic latitude grid",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "Geo_Lon",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Geographic longitude grid",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        256,
+        256
+      ]
+    },
+    {
+      "name": "SC_Pos_GCI",
+      "type": "double",
+      "units": "Kilometers",
+      "description": "GCI position vector of Polar spacecraft in kilometers.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_Vel_GCI",
+      "type": "double",
+      "units": "Kilometers/second",
+      "description": "---> GCI velocity vector of Polar spacecraft in km/sec.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SC_SpinV_GCI",
+      "type": "double",
+      "units": "1",
+      "description": "---> GCI spin axis unit vector of Polar spacecraft.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "D_Qual",
+      "type": "integer",
+      "units": "(0=OK)",
+      "description": "Data quality flags",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-11-12T22:41:50.000Z",
+  "stopDate": "2008-04-16T06:27:07.000Z"
+}

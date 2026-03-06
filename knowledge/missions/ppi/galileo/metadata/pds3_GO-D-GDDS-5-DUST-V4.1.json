@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SENSOR_AXIS_ANGLE",
+      "type": "double",
+      "units": "DEGREE",
+      "description": "This is the angle to the sensor axis where zero is along the axis.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DETECTOR_AREA",
+      "type": "double",
+      "units": "SQUARE_CENTIMETER",
+      "description": "The sensitive detector area exposed corresponding to the projected area of the hemispherical detector visible to an incoming particle traveling along a path at the SENSOR AXIS ANGLE.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

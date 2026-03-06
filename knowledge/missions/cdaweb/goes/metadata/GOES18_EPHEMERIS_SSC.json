@@ -1,0 +1,314 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "XYZ_GEO",
+      "type": "double",
+      "units": "RE",
+      "description": "XYZ_GEO",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GM",
+      "type": "double",
+      "units": "RE",
+      "description": "XYZ_GM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSE",
+      "type": "double",
+      "units": "RE",
+      "description": "XYZ_GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_GSM",
+      "type": "double",
+      "units": "RE",
+      "description": "XYZ_GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZ_SM",
+      "type": "double",
+      "units": "RE",
+      "description": "XYZ_SM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GEO_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GEO_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GEO_LCT_T",
+      "type": "double",
+      "units": "hr",
+      "description": "GEO_LCT_T",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GM_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GM_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GM_LCT_T",
+      "type": "double",
+      "units": "hr",
+      "description": "GM_LCT_T",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSE_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSE_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSE_LCT_T",
+      "type": "double",
+      "units": "hr",
+      "description": "GSE_LCT_T",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSM_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "GSM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "GSM_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "SM_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "SM_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SM_LCT_T",
+      "type": "double",
+      "units": "hr",
+      "description": "SM_LCT_T",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "NorthBtrace_GEO_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "NorthBtrace_GEO_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GEO_ARCLEN",
+      "type": "double",
+      "units": "RE",
+      "description": "NorthBtrace_GEO_ARCLEN",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GEO_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "SouthBtrace_GEO_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GEO_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "SouthBtrace_GEO_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GEO_ARCLEN",
+      "type": "double",
+      "units": "RE",
+      "description": "SouthBtrace_GEO_ARCLEN",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "NorthBtrace_GM_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "NorthBtrace_GM_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "NorthBtrace_GM_ARCLEN",
+      "type": "double",
+      "units": "RE",
+      "description": "NorthBtrace_GM_ARCLEN",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GM_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "SouthBtrace_GM_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GM_LON",
+      "type": "double",
+      "units": "Deg",
+      "description": "SouthBtrace_GM_LON",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SouthBtrace_GM_ARCLEN",
+      "type": "double",
+      "units": "RE",
+      "description": "SouthBtrace_GM_ARCLEN",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RADIUS",
+      "type": "double",
+      "units": "RE",
+      "description": "RADIUS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_STRTH",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG_STRTH",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "DNEUTS",
+      "type": "double",
+      "units": "RE",
+      "description": "DNEUTS",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BOW_SHOCK",
+      "type": "double",
+      "units": "RE",
+      "description": "BOW_SHOCK",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_PAUSE",
+      "type": "double",
+      "units": "RE",
+      "description": "MAG_PAUSE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_VALUE",
+      "type": "double",
+      "units": "",
+      "description": "L_VALUE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "INVAR_LAT",
+      "type": "double",
+      "units": "Deg",
+      "description": "INVAR_LAT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_X",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG_X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_Y",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG_Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_Z",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG_Z",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2022-03-18T00:00:00.000Z",
+  "stopDate": "2026-03-03T00:00:00.000Z"
+}

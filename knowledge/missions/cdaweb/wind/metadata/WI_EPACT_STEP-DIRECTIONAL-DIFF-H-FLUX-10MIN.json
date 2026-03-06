@@ -1,0 +1,320 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "energy_min",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy min",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "energy_center",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "energy_max",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy max",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "energy_efficiency_low",
+      "type": "double",
+      "units": "MeV",
+      "description": "H efficiency low",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "energy_efficiency_high",
+      "type": "double",
+      "units": "MeV",
+      "description": "H efficieny high",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "energy_efficiency_avg",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy efficieny avg",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10,
+        2
+      ]
+    },
+    {
+      "name": "flux",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10,
+        2
+      ]
+    },
+    {
+      "name": "flux_sigma",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux sigma",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10,
+        2
+      ]
+    },
+    {
+      "name": "flux_t1_byE_atA",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux for telescope 1 at 8 pitch angles as spectrograms by energy",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "flux_t2_byE_atA",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux for telescope 2 at 8 pitch angles as spectrograms by energy",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "flux_t1_byA_atE",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux for telescope 1 at 10 energies as spectrograms by pitch angle",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "flux_t2_byA_atE",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux for telescope 2 at 10 energies as spectrograms by pitch angle",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "FLUX_T1",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux Telescope 1 (as energy-pitch angle displays)",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "FLUX_T2",
+      "type": "double",
+      "units": "particles/[cm^2*second*steradian*MeV/nucleon]",
+      "description": "H flux Telescope 2 (as energy-pitch angle displays)",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        8,
+        10
+      ]
+    },
+    {
+      "name": "ENERGY_CENTER_T1",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "ENERGY_CENTER_T2",
+      "type": "double",
+      "units": "MeV",
+      "description": "H energy center telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "B",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Btheta",
+      "type": "double",
+      "units": "deg",
+      "description": "Btheta",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Bphi",
+      "type": "double",
+      "units": "deg",
+      "description": "Bphi",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Brms",
+      "type": "double",
+      "units": "nT",
+      "description": "Brms",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Re",
+      "description": "R",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "xyzGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "xyz gse",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3,
+        2
+      ]
+    },
+    {
+      "name": "xyzGSE_T1",
+      "type": "double",
+      "units": "Re",
+      "description": "xyz gse telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "xyzGSE_T2",
+      "type": "double",
+      "units": "Re",
+      "description": "xyz gse telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Vsw",
+      "type": "double",
+      "units": "km per sec",
+      "description": "Vsw",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "velocity",
+      "type": "double",
+      "units": "km per sec",
+      "description": "velocity",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3,
+        2
+      ]
+    },
+    {
+      "name": "velocity_T1",
+      "type": "double",
+      "units": "km per sec",
+      "description": "velocity telescope 1",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "velocity_T2",
+      "type": "double",
+      "units": "km per sec",
+      "description": "velocity telescope 2",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "per cc",
+      "description": "Np",
+      "fill": "-9.98999971057742e+32",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "1994-11-21T00:03:52.000Z",
+  "stopDate": "2026-01-02T15:02:23.000Z"
+}

@@ -1,0 +1,311 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "b3",
+      "type": "double",
+      "units": "nT!u2!n/Hz",
+      "description": "POWER SPECTRAL DENSITY OF B!dparallel!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "bsum",
+      "type": "double",
+      "units": "nT!u2!n/Hz",
+      "description": "SUM OF the THREE MAGNETIC POWER SPECTRAL DENSITIES",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "bsumperp",
+      "type": "double",
+      "units": "nT!u2!n/Hz",
+      "description": "SUM OF TWO PERPENDICULAR MAGNETIC POWER SPECTRAL DENSITIES",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "cohb1_2",
+      "type": "double",
+      "units": "",
+      "description": "COHERENCE BETWEEN B!dperp1!n AND B!dperp2!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "cohb1_3",
+      "type": "double",
+      "units": "",
+      "description": "COHERENCE BETWEEN B!dperp1!n AND B!dpar!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "cohb2_3",
+      "type": "double",
+      "units": "",
+      "description": "COHERENCE BETWEEN B!dperp2!n AND B!dpar!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "ez",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "Power Spectral Density of E!bparallel!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "ezf",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "Power Spectral Density of E!bparallel!n Using Faraday Law",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "e3",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "POWER SPECTRAL DENSITY OF E!dparallel!n",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "eigen",
+      "type": "double",
+      "units": "",
+      "description": "DEGREE OF POLARIZATION OF THE MAGNETIC FIELD FROM EIGENVALUES",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "ellsvd",
+      "type": "double",
+      "units": "",
+      "description": "ELLIPTICITY OF THE MAGNETIC FIELD POLARIZATION",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "esum",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "SUM OF the THREE ELECTRIC POWER SPECTRAL DENSITIES",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "esumperp",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "SUM OF TWO PERPENDICULAR ELECTRIC POWER SPECTRAL DENSITIES",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "esumperpf",
+      "type": "double",
+      "units": "mV!u2!n/m!u2!n/Hz",
+      "description": "Sum of Two Perpendicular Electric Power Spectral Densities Using Faraday Law",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "phpoy1_2_3",
+      "type": "double",
+      "units": "deg",
+      "description": "AZIMUTHAL ANGLE OF THE POYNTING VECTOR",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "poyf1_2_3",
+      "type": "double",
+      "units": "nW/m!u2!n/Hz",
+      "description": "Spectral Density of the Poynting Flux Using Faraday Law",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "thpoyf1_2_3",
+      "type": "double",
+      "units": "deg",
+      "description": "Polar Angle of the Poynting Vector Using Faraday Law",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "phpoyf1_2_3",
+      "type": "double",
+      "units": "deg",
+      "description": "Azimuthal Angle of the Poynting Vector Using Faraday Law",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "phsvd",
+      "type": "double",
+      "units": "deg",
+      "description": "AZIMUTHAL ANGLE OF THE WAVE VECTOR",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "plansvd",
+      "type": "double",
+      "units": "",
+      "description": "PLANARITY OF THE MAGNETIC FIELD POLARIZATION",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "plansvde",
+      "type": "double",
+      "units": "",
+      "description": "ELECTROMAGNETIC PLANARITY",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "polsvd",
+      "type": "double",
+      "units": "",
+      "description": "DEGREE OF MAGNETIC FIELD POLARIZATION IN THE POLARIZATION PLANE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "poy1_2_3",
+      "type": "double",
+      "units": "nW/m!u2!n/Hz",
+      "description": "SPECTRAL DENSITY OF THE POYNTING FLUX",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "thpoy1_2_3",
+      "type": "double",
+      "units": "deg",
+      "description": "POLAR ANGLE OF THE POYNTING VECTOR",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "thsvd",
+      "type": "double",
+      "units": "deg",
+      "description": "POLAR ANGLE OF THE WAVE VECTOR",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "Re",
+      "description": "Radial distance, Re",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MagLat",
+      "type": "double",
+      "units": "deg",
+      "description": "Magnetic Latitude, Deg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT",
+      "type": "double",
+      "units": "hrs",
+      "description": "Magnetic Local Time, Hrs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "L Shell",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Tuvw2fac",
+      "type": "double",
+      "units": "",
+      "description": "Transformation Matrix, UVW->Field-Aligned Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3,
+        3
+      ]
+    },
+    {
+      "name": "Buvw",
+      "type": "double",
+      "units": "nT",
+      "description": "Buvw, nT",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2012-08-31T01:56:16.000Z",
+  "stopDate": "2019-07-16T16:01:11.000Z"
+}

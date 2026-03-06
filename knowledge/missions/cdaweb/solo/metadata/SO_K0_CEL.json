@@ -1,0 +1,43 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SW_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Solar wind speed, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEM_rate_0",
+      "type": "double",
+      "units": "photons/sec/cm^2",
+      "description": "Solar EUV rate - Zero Order, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "SEM_rate_1",
+      "type": "double",
+      "units": "photons/sec/cm^2",
+      "description": "Solar EUV rate - First Order, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Heavy_ion_rate",
+      "type": "double",
+      "units": "",
+      "description": "Heavy ion rate in 2 energy bands (0.1-50 keV/e, 0.02-1 MeV/e)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "1995-12-22T00:00:11.000Z",
+  "stopDate": "2002-01-31T23:51:06.000Z"
+}

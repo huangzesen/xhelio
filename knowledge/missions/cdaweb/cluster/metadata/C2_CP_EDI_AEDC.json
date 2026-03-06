@@ -1,0 +1,64 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "counts_GDU1_PA_90__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU1 PA=90 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_GDU2_PA_90__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU2 PA=90 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_GDU1_PA_180__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU1 PA=180 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_GDU2_PA_0__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU2 PA=0 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_GDU1_PA_0__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU1 PA=0 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "counts_GDU2_PA_180__C2_CP_EDI_AEDC",
+      "type": "integer",
+      "units": "",
+      "description": "Cluster C2, corrected ambient electron counts GDU2 PA=180 degree",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "D1_xyz_gse__C2_CP_EDI_AEDC",
+      "type": "double",
+      "units": "m",
+      "description": "Cluster C2, EDI Detector 1 look direction in GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2004-10-14T00:00:00.000Z",
+  "stopDate": "2023-09-19T11:59:34.000Z"
+}

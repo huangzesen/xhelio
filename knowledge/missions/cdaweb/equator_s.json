@@ -1,0 +1,137 @@
+{
+  "id": "EQUATOR-S",
+  "name": "Equator-S",
+  "keywords": [
+    "eq",
+    "equator-s",
+    "equator_s"
+  ],
+  "profile": {
+    "description": "Equator-S spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "ephemeris": {
+      "name": "Ephemeris and Attitude",
+      "keywords": [
+        "ephemeris",
+        "orbit",
+        "attitude",
+        "position"
+      ],
+      "datasets": {
+        "EQ_PP_AUX": {
+          "description": "Equator-S Auxiliary Data Prime Parameters -  EDC (MPE)",
+          "start_date": "1997-12-16T11:25:00.000Z",
+          "stop_date": "1998-04-30T01:52:44.000Z",
+          "pi_name": "EDC",
+          "pi_affiliation": "MPE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_AUX"
+        }
+      }
+    },
+    "particles": {
+      "name": "Energetic Particles",
+      "keywords": [
+        "particle",
+        "energetic",
+        "cosmic ray"
+      ],
+      "datasets": {
+        "EQ_PP_EPI": {
+          "description": "Equator-S Energetic Particle Instrument Prime Parameters - T. Sanderson (ESTEC)",
+          "start_date": "1997-01-01T00:00:01.000Z",
+          "stop_date": "1998-04-30T01:56:05.000Z",
+          "pi_name": "T. Sanderson",
+          "pi_affiliation": "ESTEC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_EPI"
+        },
+        "EQ_SP_SFD": {
+          "description": "Equator-S Scintillating Fibre Detector Summary Parameters - L. Adams (ESTEC)",
+          "start_date": "1997-12-16T11:26:30.000Z",
+          "stop_date": "1998-04-30T02:30:30.000Z",
+          "pi_name": "L. Adams",
+          "pi_affiliation": "ESTEC",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_SP_SFD"
+        }
+      }
+    },
+    "plasma": {
+      "name": "Plasma and Solar Wind",
+      "keywords": [
+        "plasma",
+        "solar wind",
+        "proton",
+        "density",
+        "velocity",
+        "temperature",
+        "ion",
+        "electron"
+      ],
+      "datasets": {
+        "EQ_PP_PCD": {
+          "description": "Equator-S Potential Control Device Prime Parameters - K. Torkar (IWF)",
+          "start_date": "1997-12-16T00:00:00.000Z",
+          "stop_date": "1998-04-30T01:56:09.000Z",
+          "pi_name": "K. Torkar",
+          "pi_affiliation": "IWF",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_PCD"
+        },
+        "EQ_PP_ICI": {
+          "description": "Equator-S Ion Composition Instrument Prime Parameters.(The raw moments calculated onboard should only be used qualitatively for identifying regions and temporal variations. Quantitative analysis should be done with the final moments generated from telemetered 3D distributions.) - L. Kistler (UNH)",
+          "start_date": "1998-01-21T00:33:11.000Z",
+          "stop_date": "1998-04-28T17:18:29.000Z",
+          "pi_name": "L. Kistler",
+          "pi_affiliation": "UNH",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_ICI"
+        }
+      }
+    },
+    "efield": {
+      "name": "Electric Fields",
+      "keywords": [
+        "electric",
+        "e-field"
+      ],
+      "datasets": {
+        "EQ_PP_EDI": {
+          "description": "Equator-S Electron Drift Instrument Prime Parameters - G. Paschmann (MPE)",
+          "start_date": "1998-03-25T21:53:13.000Z",
+          "stop_date": "1998-04-28T09:25:25.000Z",
+          "pi_name": "G. Paschmann",
+          "pi_affiliation": "MPE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_EDI"
+        }
+      }
+    },
+    "mag": {
+      "name": "Magnetic Fields",
+      "keywords": [
+        "magnetic",
+        "field",
+        "mag",
+        "b-field",
+        "imf",
+        "magnetometer"
+      ],
+      "datasets": {
+        "EQ_PP_MAM": {
+          "description": "Equator-S Fluxgate Magnetometer Prime Parameters - W. Baumjohann (MPE)",
+          "start_date": "1997-12-16T11:25:01.000Z",
+          "stop_date": "1998-04-30T00:00:00.000Z",
+          "pi_name": "W. Baumjohann",
+          "pi_affiliation": "MPE",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesE.html#EQ_PP_MAM"
+        }
+      }
+    }
+  },
+  "observatory_group": "Equator-S",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

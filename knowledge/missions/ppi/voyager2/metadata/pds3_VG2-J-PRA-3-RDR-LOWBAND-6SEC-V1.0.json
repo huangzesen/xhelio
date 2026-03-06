@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DATE",
+      "type": "integer",
+      "units": "N/A",
+      "description": "This column indicates the Spacecraft Event Time (SCET) year, month and day of the sample in years at the start of the first sweep for the record in the format YYMMDD.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SECOND",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "This column indicates seconds of day, to the nearest second, at the start of the sweep.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STATUS_WORD",
+      "type": "integer",
+      "units": "N/A",
+      "description": "This column contains a status word for which the 12 least significant bits have been used, although not all 12 have meaning for PRA low band. Numbering those bits 0 for least significant to 11 for most significant, the bits that have meaning are as follows: bit 0: 15 dB attenuator in use when equal to 1 1: 30 dB attenuator in use when equal to 1 2: 45 dB attenuator in use when equal to 1 9,10 (together): polarization of first channel sampled (1326.0 kHz) according to the scheme: value bit 10 = 0 1 value bit 9 = 0  R L 1  L R Polarization at successively lower frequencies is opposite to the frequency above it, i.e. either a LRLR or an RLRL pattern. Successive 6-second sweeps start on the opposite polarization as the previous sweep as indicated in the status bits. Note that this polarization is the received polarization, not necessarily the emitted polarization. Correct interpretation of the received polarization depends on the antenna plane orientation relative to the radio source. If the status word is zero, any data in that receiver sweep should be discarded.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_CHANNELS",
+      "type": "integer",
+      "units": "MILLIBELL",
+      "description": "This column consists of 70 low band channels ranging from 1326.0 to 1.2 kHz and spaced 19.2 kHz apart. Data are calibrated and given in units of 'milibells' which is 1000 times the log of the received power. Zero milibells corresponds to approximately 1.4 x 10^-21 W m^-2 Hz^-1, however, this value is never seen in practice. The minimum values detected, which includes internal and spacecraft generated noise, are about 2300 to 2400 millibels, or about 3.5 x 10^-19 W m^-2 Hz^-1. Missing or bad data values are set to zero.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

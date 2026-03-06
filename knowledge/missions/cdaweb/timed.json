@@ -1,0 +1,88 @@
+{
+  "id": "TIMED",
+  "name": "TIMED",
+  "keywords": [
+    "timed"
+  ],
+  "profile": {
+    "description": "TIMED spacecraft data from CDAWeb.",
+    "coordinate_systems": [],
+    "typical_cadence": "",
+    "data_caveats": [],
+    "analysis_patterns": []
+  },
+  "instruments": {
+    "imaging_itm": {
+      "name": "ITM Imaging",
+      "keywords": [
+        "imaging",
+        "ionosphere",
+        "thermosphere",
+        "mesosphere"
+      ],
+      "datasets": {
+        "TIMED_WINDVECTORSNCAR_TIDI": {
+          "description": "Zonal and meridional winds at 60 to 180 km, version 0307,  - Timothy Killeen (NCAR)",
+          "start_date": "2002-02-20T00:06:55.000Z",
+          "stop_date": "2020-12-31T23:52:46.000Z",
+          "pi_name": "Timothy Killeen",
+          "pi_affiliation": "NCAR",
+          "doi": "10.48322/9pec-k333",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#TIMED_WINDVECTORSNCAR_TIDI"
+        },
+        "TIMED_L2A_SABER": {
+          "description": "O3, CO2, H2O Mixing Ratios and O, O2, OH, NO Volume Emission Rates, also NMC Neutral Temp., Density, and Pressure, Version 2.0,  - James Russell III (Hampton University)",
+          "start_date": "2002-01-25T01:21:48.000Z",
+          "stop_date": "2026-02-14T00:34:35.000Z",
+          "pi_name": "James Russell III",
+          "pi_affiliation": "Hampton University",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#TIMED_L2A_SABER"
+        },
+        "TIMED_L1BV20_SABER": {
+          "description": "IR Radiances in 10 channels (1.27 to 17ym) from 0 to 150 km, Version 1.07,  - James Russell III (Hampton University)",
+          "start_date": "2002-01-25T01:21:56.000Z",
+          "stop_date": "2026-02-14T00:34:32.000Z",
+          "pi_name": "James Russell III",
+          "pi_affiliation": "Hampton University",
+          "doi": "10.48322/4sth-3w84",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#TIMED_L1BV20_SABER"
+        },
+        "TIMED_EDP_GUVI": {
+          "description": "Electron Density Profiles - Andrew Christensen (Aerospace)",
+          "start_date": "2002-01-07T05:53:28.000Z",
+          "stop_date": "2007-10-04T23:20:59.000Z",
+          "pi_name": "Andrew Christensen",
+          "pi_affiliation": "Aerospace",
+          "doi": "10.48322/pzbn-gq12",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#TIMED_EDP_GUVI"
+        }
+      }
+    },
+    "imaging_sun": {
+      "name": "Solar Imaging",
+      "keywords": [
+        "solar",
+        "coronagraph",
+        "euv",
+        "uv",
+        "x-ray"
+      ],
+      "datasets": {
+        "TIMED_L3A_SEE": {
+          "description": "Solar irradiances 0.1 - 194 nm, Version 11 - Tom Woods (LASP/CU)",
+          "start_date": "2002-01-22T05:10:36.000Z",
+          "stop_date": "2026-02-15T22:26:20.000Z",
+          "pi_name": "Tom Woods",
+          "pi_affiliation": "LASP/CU",
+          "doi": "10.48322/3x4k-mx60",
+          "notes_url": "https://cdaweb.gsfc.nasa.gov/misc/NotesT.html#TIMED_L3A_SEE"
+        }
+      }
+    }
+  },
+  "observatory_group": "TIMED",
+  "_meta": {
+    "generated_at": "2026-02-19T10:20:14Z",
+    "source": "CDAS REST + Master CDF"
+  }
+}

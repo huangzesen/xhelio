@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ORBIT",
+      "type": "integer",
+      "units": "NONE",
+      "description": "PVO Orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PERISEC",
+      "type": "integer",
+      "units": "SECOND",
+      "description": "Seconds after orbital periapsis. Times before periapsis are given negative values.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELE_TEMP",
+      "type": "double",
+      "units": "KELVIN",
+      "description": "Electron temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELE_DEN",
+      "type": "double",
+      "units": "CNTS/CM**3",
+      "description": "Electron density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_VOLTS",
+      "type": "double",
+      "units": "VOLTS",
+      "description": "Spacecraft potential.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

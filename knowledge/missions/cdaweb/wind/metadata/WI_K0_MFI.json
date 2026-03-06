@@ -1,0 +1,120 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BF1",
+      "type": "double",
+      "units": "nT",
+      "description": "Average of the magnitudes",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "RMS",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field, component RMS SQRT(RMSX^2 + RMSY^2 + RMSZ^2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BGSMc",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field - Cartesian GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSMa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic Field - Angular GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSEc",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic Field - Cartesian GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSEa",
+      "type": "double",
+      "units": "",
+      "description": "Magnetic Field - Angular GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DIST",
+      "type": "double",
+      "units": "Re",
+      "description": "Radial distance from the earth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PGSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Wind Position - Cartesian GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "Wind Position - Cartesian GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "DISTV",
+      "type": "double",
+      "units": "Re",
+      "description": "Time axis label: Radial distance from the earth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "PGSMV",
+      "type": "double",
+      "units": "Re",
+      "description": "Time axis label: Wind Position - Cartesian GSM",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PGSEV",
+      "type": "double",
+      "units": "Re",
+      "description": "Time axis label: Wind Position - Cartesian GSE",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2017-07-01T00:00:00.000Z",
+  "stopDate": "2026-02-16T23:58:30.000Z"
+}

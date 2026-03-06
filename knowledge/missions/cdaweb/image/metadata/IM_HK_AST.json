@@ -1,0 +1,250 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BS_QUATQ1",
+      "type": "double",
+      "units": "n/a",
+      "description": "AST-derived quarternion 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_QUATQ2",
+      "type": "double",
+      "units": "n/a",
+      "description": "AST-derived quarternion 2",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_QUATQ3",
+      "type": "double",
+      "units": "n/a",
+      "description": "AST-derived quarternion 3",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_QUATQ4",
+      "type": "double",
+      "units": "n/a",
+      "description": "AST-derived quarternion 4",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ATTUNCX",
+      "type": "double",
+      "units": "urad/ct",
+      "description": "AST Attitude uncertainty about X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ATTUNCY",
+      "type": "double",
+      "units": "urad/ct",
+      "description": "AST Attitude uncertainty about Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ATTUNCZ",
+      "type": "double",
+      "units": "urad/ct",
+      "description": "AST Attitude uncertainty about Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_RMSERR",
+      "type": "double",
+      "units": "urad",
+      "description": "AST RMS star position error",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ANGINCX",
+      "type": "double",
+      "units": "urad",
+      "description": "AST Angular Increment about X",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ANGINCY",
+      "type": "double",
+      "units": "urad",
+      "description": "AST Angular Increment about Y",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ANGINCZ",
+      "type": "double",
+      "units": "urad",
+      "description": "AST Angular Increment about Z",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK2P5Volts",
+      "type": "double",
+      "units": "volts",
+      "description": "Voltage of +5v power supply",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK3M5Volts",
+      "type": "double",
+      "units": "volts",
+      "description": "Minus 5v power supply voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK4P15Volts",
+      "type": "double",
+      "units": "volts",
+      "description": "Plus 15v power supply voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK5M15Volts",
+      "type": "double",
+      "units": "volts",
+      "description": "Minus 15v power supply voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK6P30Volts",
+      "type": "double",
+      "units": "volts",
+      "description": "Plus 30v power supply voltage",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK1HousTmp",
+      "type": "double",
+      "units": "c",
+      "description": "Temperature of AST Housing (c)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK0CCDTmp",
+      "type": "double",
+      "units": "c",
+      "description": "Temperature of charge-coupled-device",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_HK8BiasBrdT",
+      "type": "double",
+      "units": "c",
+      "description": "Temperature of AST Bias Board (c)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_ASTEnabled",
+      "type": "integer",
+      "units": "n/a",
+      "description": "Autonomous Star Tracker Enabled",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_AttOK",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Attitude OK 0=bad,1=ok",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_SyncOK",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Syncronization OK 0=bad,1=ok",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_OpsMode",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Ops Mode 1=boot,2=init,3=standby,4=acq,5=Ftrack,6=Wtrack",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_CalopsOK",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Calops table OK 0=bad,1=ok",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_TDIAct",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Time Delay Imaging Status 0=inactive,1=active",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_TECstate",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST ThermoElectric Cooler state off/cold/cool/warm",
+      "fill": "-128.0"
+    },
+    {
+      "name": "BS_TECCCDtmp",
+      "type": "double",
+      "units": "c",
+      "description": "Temperature of AST TEC CCD (c)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_FOCLNGUSED",
+      "type": "double",
+      "units": "microns",
+      "description": "AST Focal Length Used",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_DFOCLNGEST",
+      "type": "double",
+      "units": "microns",
+      "description": "AST Delta Focal Length Estimate",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BS_INTTIME",
+      "type": "integer",
+      "units": "secs",
+      "description": "AST Center of Integration timestamp",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "BS_StarsIDD",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Stars identified delta",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "BS_STARIDSTG1",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Stars identified in stage 1",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "BS_STARIDSTG2",
+      "type": "integer",
+      "units": "n/a",
+      "description": "AST Stars identified in stage 2",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "BS_PNMGSTAR",
+      "type": "double",
+      "units": "n/a",
+      "description": "AST Predicted #of Guide Stars",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-03-25T21:31:52.000Z",
+  "stopDate": "2005-12-18T07:38:17.000Z"
+}

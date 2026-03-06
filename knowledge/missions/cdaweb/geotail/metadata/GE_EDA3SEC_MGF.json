@@ -1,0 +1,82 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BGSE",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in GSE cartesian coordinates (no Bz offset correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZGSE",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in GSE cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BGSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in GSM coordinates (no Bz offset correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZGSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in GSM cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "BSM",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in SM coordinates (no Bz offset correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZSM",
+      "type": "double",
+      "units": "Re",
+      "description": "Geotail position in SM cartesian coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "XYZstdev",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of sin fitting for magnetic field in sensor coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1993-09-01T09:52:08.000Z",
+  "stopDate": "2006-11-20T23:59:53.000Z"
+}

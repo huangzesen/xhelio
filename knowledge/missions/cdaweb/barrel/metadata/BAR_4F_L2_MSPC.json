@@ -1,0 +1,29 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "0 means no issues",
+      "description": "Data Quality Flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "MSPC",
+      "type": "double",
+      "units": "cnts/keV/sec",
+      "description": "48 standardized channels accumulated for 4 seconds/record",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        48
+      ]
+    }
+  ],
+  "startDate": "2016-08-28T19:40:55.000Z",
+  "stopDate": "2016-08-29T01:51:32.000Z"
+}

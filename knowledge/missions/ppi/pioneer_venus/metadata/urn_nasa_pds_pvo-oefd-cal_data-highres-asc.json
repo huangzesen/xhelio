@@ -1,0 +1,104 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "",
+      "description": "Universal Time given in PDS format: yyyy-mm-ddThh:mm:ss.sss.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E100HZ",
+      "type": "double",
+      "units": "(V/m)**2/Hz",
+      "description": "Wave intensity per Hertz, measured at 100 Hz.\n  The wave intensity is the square of the wave electric field amplitude.  At  \n  a particular frequency the wave intensity (V/M)^2 is measured over the      \n  bandwidth of the filter (30% bandwidth for OEFD).  The bandwidth is         \n  incorporated in order to compare measurements made with this instrument     \n  with other wave measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E730HZ",
+      "type": "double",
+      "units": "(V/m)**2/Hz",
+      "description": "Wave intensity per Hertz, measured at 730 Hz.\n  The wave intensity is the square of the wave electric field amplitude.  At  \n  a particular frequency the wave intensity (V/M)^2 is measured over the      \n  bandwidth of the filter (30% bandwidth for OEFD).  The bandwidth is         \n  incorporated in order to compare measurements made with this instrument     \n  with other wave measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E5.4KHZ",
+      "type": "double",
+      "units": "(V/m)**2/Hz",
+      "description": "Wave intensity per Hertz, measured at        \n  5.4 kHz. The wave intensity is the square of the wave electric field        \n  amplitude.  At a particular frequency the wave intensity (V/M)^2 is         \n  measured over the bandwidth of the filter (30% bandwidth for OEFD).  The    \n  bandwidth is incorporated in order to compare measurements made with this   \n  instrument with other wave measurements, which may have different           \n  bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E30KHZ",
+      "type": "double",
+      "units": "(V/m)**2/Hz",
+      "description": "Wave intensity per Hertz, measured at 30 kHz.\n  The wave intensity is the square of the wave electric field amplitude.  At  \n  a particular frequency the wave intensity (V/M)^2 is measured over the      \n  bandwidth of the filter (30% bandwidth for OEFD).  The bandwidth is         \n  incorporated in order to compare measurements made with this instrument     \n  with other wave measurements, which may have different bandwidths.",
+      "size": [
+        1
+      ],
+      "fill": "1.0e32"
+    },
+    {
+      "name": "E100_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Instantaneous phase angle with respect to the\n  sun of the wave instrument dipole axis for the 100 Hz channel.  The antenna \n  dipole is 267.5 degrees behind the sun-sensor (i.e., the spacecraft must    \n  rotate through 267.5 degrees after the sun pulse time for the dipole axis   \n  to be aligned with the sun).  The phase angle is corrected for differences  \n  between the record time tag and the actual sample time within a data        \n  frame.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E730_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Instantaneous phase angle with respect to the\n  sun of the wave instrument dipole axis for the 730 Hz channel.  The         \n  antenna dipole is 267.5 degrees behind the sun-sensor (i.e., the spacecraft \n  must rotate through 267.5 degrees after the sun pulse time for the dipole   \n  axis to be aligned with the sun).  The phase angle is corrected for         \n  differences between the record time tag and the actual sample time within   \n  a data frame.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E5.4K_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Instantaneous phase angle with respect to the\n  sun of the wave instrument dipole axis for the 5.4 kHz channel.  The        \n  antenna dipole is 267.5 degrees behind the sun-sensor (i.e., the spacecraft \n  must rotate through 267.5 degrees after the sun pulse time for the dipole   \n  axis to be aligned with the sun).  The phase angle is corrected for         \n  differences  between the record time tag and the actual sample time within  \n  a data frame.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    },
+    {
+      "name": "E30K_PH",
+      "type": "double",
+      "units": "deg",
+      "description": "Instantaneous phase angle with respect to the\n  sun of the wave instrument dipole axis for the 30 kHz channel.  The antenna \n  dipole is 267.5 degrees behind the sun-sensor (i.e., the spacecraft must    \n  rotate through 267.5 degrees after the sun pulse time for the dipole axis   \n  to be aligned with the sun).  The phase angle is corrected for differences  \n  between the record time tag and the actual sample time within a data        \n  frame.",
+      "size": [
+        1
+      ],
+      "fill": "999.999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

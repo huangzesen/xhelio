@@ -1,0 +1,1008 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Position_Ion",
+      "type": "double",
+      "units": "km",
+      "description": "Position of the satellite in geographic coordinates (ion timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Position_Ele",
+      "type": "double",
+      "units": "km",
+      "description": "---> Position of the satellite in geographic coordinates (electron timebase)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Calc_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion",
+      "type": "double",
+      "units": "nT",
+      "description": "Model magnetic field strength at magnetic equator (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Model magnetic field strength at magnetic equator (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion",
+      "type": "double",
+      "units": "",
+      "description": "Calculated McIlwains L parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele",
+      "type": "double",
+      "units": "",
+      "description": "---> Calculated McIlwains L parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion",
+      "type": "double",
+      "units": "",
+      "description": "Calculated Roederers L* parameter (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele",
+      "type": "double",
+      "units": "",
+      "description": "---> Calculated Roederers L* parameter (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion",
+      "type": "double",
+      "units": "none",
+      "description": "Adiabatic invariant (bounce) (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce) (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion",
+      "type": "double",
+      "units": "h",
+      "description": "Calculated Magnetic Local Time (ion timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (electron timebase)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ion_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates(ion)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ion_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator(ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ion_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ion_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ion_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ion)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Position_Ele_TT",
+      "type": "double",
+      "units": "km",
+      "description": "[Labels on plots] Position of the satellite in geographic coordinates (ele)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_Calc_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_Eq_Ele_TT",
+      "type": "double",
+      "units": "nT",
+      "description": "---> Calculated magnetic field strength at magnetic equator (ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated McIlwains L parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_star_Ele_TT",
+      "type": "double",
+      "units": "R_E",
+      "description": "---> Calculated Roederers L* parameter (Earths radii, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "I_Ele_TT",
+      "type": "double",
+      "units": "none",
+      "description": "---> Adiabatic invariant (bounce, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MLT_Ele_TT",
+      "type": "double",
+      "units": "h",
+      "description": "---> Calculated Magnetic Local Time (hours, ele)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HOPE_DETECTOR",
+      "type": "double",
+      "units": "",
+      "description": "Detector No.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "HOPE_SECTOR",
+      "type": "double",
+      "units": "",
+      "description": "Sector No.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        16
+      ]
+    },
+    {
+      "name": "FPDU",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "[CreateCDF ONLY] FPDU: Differential directional proton flux ~15-50,000 eV (5 Detectors, 16 Sectors, 72 Energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D1_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FPDU: Detector 1/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D2_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D3_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D4_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D5_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D1_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FPDU: Detector 1/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D2_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D3_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D4_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D5_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D1_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FPDU_D1_PLASMAGRAM] HOPE differential proton flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D2_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FPDU_D2_PLASMAGRAM] HOPE differential proton flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D3_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FPDU_D3_PLASMAGRAM] HOPE differential proton flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D4_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FPDU_D4_PLASMAGRAM] HOPE differential proton flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FPDU_D5_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FPDU_D5_PLASMAGRAM] HOPE differential proton flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "[CreateCDF ONLY] FHeDU: Differential directional helium flux ~15-50,000 eV (5 Detectors, 16 Sectors, 72 Energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D1_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FHeDU: Detector 1/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D2_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D3_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D4_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D5_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D1_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FHeDU: Detector 1/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D2_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D3_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D4_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D5_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D1_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FHEDU_D1_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D2_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FHEDU_D2_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D3_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FHEDU_D3_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D4_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FHEDU_D4_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FHEDU_D5_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FHEDU_D5_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "[CreateCDF ONLY] FODU: Differential directional oxygen flux ~1-50,000 eV (5 Detectors, 16 Sectors, 72 Energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D1_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FODU: Detector 1/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D2_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D3_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D4_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D5_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D1_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FODU: Detector 1/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D2_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D3_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D4_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D5_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D1_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FODU_D1_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D2_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FODU_D2_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D3_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FODU_D3_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D4_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FODU_D4_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FODU_D5_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FODU_D5_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "[CreateCDF ONLY] FEDU: Differential directional electron flux ~15-50,000 eV (5 Detectors, 16 Sectors, 72 Energies)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D1_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FEDU: Detector 1/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D2_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D3_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D4_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D5_BY_ENERGY",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Energies for the selected sector numbers 1,3,5,7,8,10,12,14,16",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D1_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "---> FEDU: Detector 1/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D2_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 2/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D3_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 3/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D4_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 4/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D5_BY_ANGLE",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "-----> Detector 5/Plot: all Sectors for the selected energy channels 1,9,17,25,33,40,48,56,64,72",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D1_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FEDU_D1_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D2_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FEDU_D2_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D3_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FEDU_D3_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D4_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FEDU_D4_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    },
+    {
+      "name": "FEDU_D5_PLASMAGRAM",
+      "type": "double",
+      "units": "s-1 cm-2 ster-1 keV-1",
+      "description": "--> [FEDU_D5_PLASMAGRAM] HOPE differential electron flux all energies, sector 1, selected detectors",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5,
+        16,
+        72
+      ]
+    }
+  ],
+  "startDate": "2012-10-25T00:00:11.000Z",
+  "stopDate": "2019-10-14T13:53:22.000Z"
+}

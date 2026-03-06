@@ -1,0 +1,92 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "CH1",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 1 daily average (raw) count rate (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CH1_ErrorBars",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 1 daily average (raw) count rate (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CH2",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 2 daily average (raw) count rate (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CH2_ErrorBars",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 2 daily average (raw) count rate (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CH3",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 3 daily average (raw) count rate (w/o error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "CH3_ErrorBars",
+      "type": "double",
+      "units": "counts/s",
+      "description": "Channel 3 daily average (raw) count rate (with error bars)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "first_order_flux",
+      "type": "double",
+      "units": "photons cm^-2 s^-1",
+      "description": "First Order Flux at 1 AU (26-34 nm, average of CH1 and CH3)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "central_order_flux",
+      "type": "double",
+      "units": "photons cm^-2 s^-1",
+      "description": "Central Order Flux at 1 AU (0.1 - 50 nm, CH2)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HC_POS",
+      "type": "double",
+      "units": "km",
+      "description": "SOHO Heliocentric location",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HC_R",
+      "type": "double",
+      "units": "km",
+      "description": "SOHO heliocentric distance (km)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "R_AU",
+      "type": "double",
+      "units": "AU",
+      "description": "SOHO heliocentric distance (AU)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1995-01-01T12:00:00.000Z",
+  "stopDate": "2026-02-13T12:00:00.000Z"
+}

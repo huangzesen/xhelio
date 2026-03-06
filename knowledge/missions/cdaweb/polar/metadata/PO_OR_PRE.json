@@ -1,0 +1,212 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "GCI_POS",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GCI_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "J2000 GCI Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSE Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "GSE Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSE_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSE Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS",
+      "type": "double",
+      "units": "km",
+      "description": "GSM Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "GSM Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "GSM_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "GSM Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SUN_VECTOR",
+      "type": "double",
+      "units": "km",
+      "description": "J2000 GCI Sun Position Vector",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_POS",
+      "type": "double",
+      "units": "km",
+      "description": "HEC Cartesian Position (orbit display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_POS_t",
+      "type": "double",
+      "units": "km",
+      "description": "HEC Cartesian Position (time-series display)",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HEC_VEL",
+      "type": "double",
+      "units": "km/sec",
+      "description": "HEC Cartesian Velocity",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "CRN_EARTH",
+      "type": "integer",
+      "units": "",
+      "description": "Carrington Rotation Number",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "LONG_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of the Earth",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_EARTH",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of the Earth",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LONG_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Long of Craft",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LAT_SPACE",
+      "type": "double",
+      "units": "rad",
+      "description": "Heliographic Lat of the Craft",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "EDMLT_TIME",
+      "type": "double",
+      "units": "HOUR",
+      "description": "Calculated EDMLT Time",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "MAG_LATITUDE",
+      "type": "double",
+      "units": "DEG",
+      "description": "MAGNETIC LATITUDE",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "L_SHELL",
+      "type": "double",
+      "units": "Re",
+      "description": "L_SHELL",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ORB_REV_NUM",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Revolution No.",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "NEXT_CROSS",
+      "type": "integer",
+      "units": "",
+      "description": "Next Orbit Crossing",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-02-27T00:00:00.000Z",
+  "stopDate": "2008-06-14T23:59:00.000Z"
+}

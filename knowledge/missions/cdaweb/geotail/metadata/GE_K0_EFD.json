@@ -1,0 +1,90 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Es",
+      "type": "integer",
+      "units": "0.01 mV/m",
+      "description": "Electric Field from spherical  probe, sunwd & duskwd comp",
+      "fill": "-32768.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ss",
+      "type": "integer",
+      "units": "0.01 mV/m",
+      "description": "Deviation of Electric Field from sin wave (sperical probe)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Bs",
+      "type": "integer",
+      "units": "7.03125 nA",
+      "description": "Bias Current from spherical probe",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Vs",
+      "type": "integer",
+      "units": "0.01 V",
+      "description": "GE S/C potential from two spherical probes",
+      "fill": "-32768.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Ew",
+      "type": "integer",
+      "units": "0.01 mV/m",
+      "description": "Electric Field from wire antenna, sunwd & duskwd comp",
+      "fill": "-32768.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "Sw",
+      "type": "integer",
+      "units": "0.01 mV/m",
+      "description": "Deviation of E field from sin wave (wire antenna)",
+      "fill": "-32768.0"
+    },
+    {
+      "name": "Bw",
+      "type": "integer",
+      "units": "7.03125 nA",
+      "description": "Bias current from wire antenna",
+      "fill": "-128.0"
+    },
+    {
+      "name": "Vw",
+      "type": "integer",
+      "units": "0.01 V",
+      "description": "GE S/C potential 2 wire antennas",
+      "fill": "-32768.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "POSITION",
+      "type": "double",
+      "units": "km",
+      "description": "GE position in GSE coord, 3 comp",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "1992-09-08T07:30:05.000Z",
+  "stopDate": "2022-06-27T12:24:42.000Z"
+}

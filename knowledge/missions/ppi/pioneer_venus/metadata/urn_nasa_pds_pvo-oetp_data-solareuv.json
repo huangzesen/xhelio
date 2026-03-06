@@ -1,0 +1,51 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "START_DATE",
+      "type": "double",
+      "units": "",
+      "description": "Start date in the format YYDOY where YY is the 2 digit year and DOY    \n                        is the day-of-year (Jan 1 = 1)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP_DATE",
+      "type": "double",
+      "units": "",
+      "description": "Date in the form YYDOY where YY is the 2 digit year and the DOY        \n                        is the day-of-year (Jan 1 =1).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "START_ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "The start orbit number of the 10 orbit record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "STOP_ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "The last orbit of the 10 orbit record.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

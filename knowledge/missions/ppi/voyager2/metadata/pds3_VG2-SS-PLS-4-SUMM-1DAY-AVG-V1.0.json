@@ -1,0 +1,150 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "DECIMAL YEAR",
+      "type": "double",
+      "units": "",
+      "description": "Decimal year since 1900",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAY OF YEAR",
+      "type": "integer",
+      "units": "",
+      "description": "Day of year, day 1 is January 1",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V2 ANGLE",
+      "type": "double",
+      "units": "",
+      "description": "V2-Sun-Earth angle",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V2 HELIOLATITUDE",
+      "type": "double",
+      "units": "",
+      "description": "V2 heliolatitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH HELIOLATITUDE",
+      "type": "double",
+      "units": "",
+      "description": "Earth heliolatitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V2 HELIOLONGITUDE",
+      "type": "double",
+      "units": "",
+      "description": "V2 heliolongitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH HELIOLONGITUDE",
+      "type": "double",
+      "units": "",
+      "description": "Earth heliolongitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VR",
+      "type": "double",
+      "units": "",
+      "description": "VR (km/s, RTN coordinate system)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VT",
+      "type": "double",
+      "units": "",
+      "description": "Velocity (T)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VN",
+      "type": "double",
+      "units": "",
+      "description": "Velocity (N)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN MOMENT",
+      "type": "double",
+      "units": "",
+      "description": "Den (cm-3, moment)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN FIT",
+      "type": "double",
+      "units": "",
+      "description": "Den (cm-3, fit)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "W MOMENT",
+      "type": "double",
+      "units": "",
+      "description": "W (thermal speed, km/s, moment) T(ev)=0.0052*W*W",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "W FIT",
+      "type": "double",
+      "units": "",
+      "description": "W (thermal speed, km/s, fit) T(ev)=0.0052*W*W",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "R",
+      "type": "double",
+      "units": "",
+      "description": "R (AU, distance from Sun)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

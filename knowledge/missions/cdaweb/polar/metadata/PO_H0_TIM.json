@@ -1,0 +1,260 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Flux_HQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "H+ number flux for 28 energy and 3 selected angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_HVQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "H+ number flux for 6 selected energies and 12 angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_HVQ_all",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "[DO NOT USE] H+ number flux for all energies and all angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_HQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for H+ number flux for 28 energies and 3 selected angle bins - quality flag applied",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_HVQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for H+ number flux for 6 selected energies and 12 angle bins - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_OQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "O+ number flux for 28 energy and 3 selected angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_OVQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "O+ number flux for 6 selected energies and 12 angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_OQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for O+ number flux for 28 energies and 3 selected angle bins - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_OVQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for O+ number flux for 6 selected energies and 12 angle bins  - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_He_1Q",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He+ number flux for 28 energies and 3 selected angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_He_1VQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He+ number flux for 6 selected energies and 12 angle bins  - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_He_1Q",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for He+ number flux for 28 energies and 3 selected angle bins - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_He_1VQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for He+ number flux for 6 selected energies and 12 angle bins - quality flag applied",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_He_2Q",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He++ number flux for 28 energies and 3 selected angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Flux_He_2VQ",
+      "type": "double",
+      "units": "#/(cm^2-s-keV/e-sr)",
+      "description": "He++ number flux for for 28 energy and 12 angle bins - quality flag applied.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_He_2Q",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for He++ number flux for 28 energy and 3 angle bins - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Sigma_He_2VQ",
+      "type": "integer",
+      "units": "% of Flux",
+      "description": "% Sigma for He++ number flux for 6 selected energies and 12 angle bins - quality flag applied.",
+      "fill": "255.0",
+      "size": [
+        28,
+        12
+      ]
+    },
+    {
+      "name": "Energy_Range_ID",
+      "type": "integer",
+      "units": "(0=Full)",
+      "description": "Energy Range Identification:  0: Full energy range;  1: Reduced energy range;  2: Low energy range",
+      "fill": "255.0"
+    },
+    {
+      "name": "Fec",
+      "type": "double",
+      "units": "Counts per spin",
+      "description": "Total counts per spin in the  fast event counter",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Bcr",
+      "type": "double",
+      "units": "Counts per spin",
+      "description": "Total Background counts per spin",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Spins",
+      "type": "integer",
+      "units": "# spins",
+      "description": "Number of spins accumulated for the four ion species",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Energy_status",
+      "type": "integer",
+      "units": "(0=best)",
+      "description": "Energy Resolution Indicators (0=best, 99=invalid energies)",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "PA_status",
+      "type": "integer",
+      "units": "(0=best)",
+      "description": "Pitch Angle Resolution Flags (0=best; >3=smeared PAs; 99=invalid PAs with omnidirec flux in 0-15 deg)",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "Quality",
+      "type": "integer",
+      "units": "(>3 Bad)",
+      "description": "Quality flags for H+, O+, He+, He++ (values 0,1,2=good; 3=adequate; >3 bad/do not use)",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    }
+  ],
+  "startDate": "1996-03-17T00:03:19.000Z",
+  "stopDate": "2004-04-03T09:04:47.000Z"
+}

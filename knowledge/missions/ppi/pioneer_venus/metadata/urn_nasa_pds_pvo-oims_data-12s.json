@@ -1,0 +1,164 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PVO TIME",
+      "type": "double",
+      "units": "",
+      "description": "PVO TIME indicates the time of the sample as a two field value in     \n        the format YYDDD SSSSS.SSS, where YY is the 2-digit year, DDD is the  \n        day-of-year (Jan 1 = 001), and SSSSS.SSS is the second-of-day (space  \n        padded on the left). A value of 99999.999 for FSEC indicates that     \n        the value of FSEC was unavailable. This column can be parsed into its \n        constituent elements using the format I2,I3,X,F9.3",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "PVO orbit number.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "PERISECS",
+      "type": "double",
+      "units": "s",
+      "description": "Seconds after periapsis, negative before periapsis.",
+      "size": [
+        1
+      ],
+      "fill": "99999.99"
+    },
+    {
+      "name": "DEN_1",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 1 AMU particle.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_2",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 2 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_4",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 4 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_8",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 8 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_12",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 12 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_14",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 14 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_16",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 16 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_18",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 18 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_28",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 28 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_30",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 30 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_32",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 32 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    },
+    {
+      "name": "DEN_44",
+      "type": "double",
+      "units": "particles/cm**3",
+      "description": "Number density of 44 AMU particles.",
+      "size": [
+        1
+      ],
+      "fill": "-999999"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

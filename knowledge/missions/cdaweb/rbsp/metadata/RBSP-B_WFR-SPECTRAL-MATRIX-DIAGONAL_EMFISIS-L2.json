@@ -1,0 +1,120 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "BuBu",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "BuBu amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "BvBv",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "---> BvBv amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "BwBw",
+      "type": "double",
+      "units": "nT^2/Hz",
+      "description": "---> BwBw amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "EuEu",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "EuEu amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "EvEv",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "---> EvEv amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "EwEw",
+      "type": "double",
+      "units": "V^2/m^2/Hz",
+      "description": "---> EwEw amplitude",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "WFR_frequencies",
+      "type": "double",
+      "units": "Hz",
+      "description": "WFR frequencies",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "WFR_bandwidth",
+      "type": "double",
+      "units": "Hz",
+      "description": "---> WFR_bandwidth",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        65
+      ]
+    },
+    {
+      "name": "LWEzGainW",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "Attenuator select indicator for W axis (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "LWExEyGainUV",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "---> Attenuator select indicator for U/V axes (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "SCMGain",
+      "type": "integer",
+      "units": "(0=off)",
+      "description": "---> Attenuator select indicator for MSC (0=off)",
+      "fill": "-128.0"
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "---> MET",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "2012-09-01T00:00:04.000Z",
+  "stopDate": "2019-07-16T16:01:11.000Z"
+}

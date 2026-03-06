@@ -1,0 +1,89 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "DATA_QUALITY",
+      "type": "integer",
+      "units": "(0=OK,1=poor)",
+      "description": "DATA_QUALITY (0 = OK, 1 = poor)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "HFWR_Ex16K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 16 kHz Elec Field, Antenna Ex (perp and outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Ey16K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 16 kHz Elec Field, Antenna Ey (perp and eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Ez16K",
+      "type": "double",
+      "units": "mV/m",
+      "description": "HFWR 16 kHz Elec Field, Antenna Ez (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Bx16K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 16 kHz Mag. Field, Antenna Bx (perp and outward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_By16K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 16 kHz Mag. Field, Antenna By (perp and eastward in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HFWR_Bz16K",
+      "type": "double",
+      "units": "nT",
+      "description": "HFWR 16 kHz Mag. Field, Antenna Bz (parallel in Local-Field-Aligned/LFA coords)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Gain1",
+      "type": "integer",
+      "units": "(Gain1)",
+      "description": "HFWR Channel 1 (Ex) Gain (~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Gain2",
+      "type": "integer",
+      "units": "(Gain2)",
+      "description": "HFWR Channel 2 (Ey) Gain (~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "Gain3",
+      "type": "integer",
+      "units": "(Gain3)",
+      "description": "HFWR Channel 3 (Ez) Gain (~2 sec res)",
+      "fill": "-2147483648.0"
+    },
+    {
+      "name": "MGain",
+      "type": "integer",
+      "units": "(X/Y/Z)",
+      "description": "HFWR B Gain (all components, ~2 sec res)",
+      "fill": "-2147483648.0"
+    }
+  ],
+  "startDate": "1996-03-25T00:01:35.000Z",
+  "stopDate": "1997-09-16T09:28:30.000Z"
+}

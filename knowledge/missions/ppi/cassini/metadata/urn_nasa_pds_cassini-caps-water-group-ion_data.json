@@ -1,0 +1,366 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "UTC_Start",
+      "type": "double",
+      "units": "",
+      "description": "Start Time in UTC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UTC_End",
+      "type": "double",
+      "units": "",
+      "description": "Stop Time in UTC",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "sc_krtp_x",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cartesian Spacecraft Position x in J2000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "sc_krtp_y",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cartesian Spacecraft Position y in J2000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "sc_krtp_z",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Cartesian Spacecraft Position z in J2000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "r",
+      "type": "double",
+      "units": "Saturn Radii",
+      "description": "Spacecraft planetocentric range in units of Saturn radii.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "lat",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude (See definition on page 133 of CAPS_PDS_USER_GUIDE_V1_00.PDF).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "local_time",
+      "type": "double",
+      "units": "Hour",
+      "description": "Local Time (See definition on page 133 of CAPS_PDS_USER_GUIDE_V1_00.PDF).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "flow_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "1-D common azimuthal plasma flow speed for all ion species.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_flow_speed",
+      "type": "double",
+      "units": "km/s",
+      "description": "Uncertainty in 1-D common azimuthal plasma flow speed for all ion species.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "H^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in H^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h2_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "H_2^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h2_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in H_2^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "n1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "N^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_n1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in N^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "o1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_o1_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "oh_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "OH^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_oh_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in OH^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h2o_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "H_{2}O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h2o_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in H_{2}O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h3o_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "H_{3}O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h3o_density",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "Uncertainty in H_{3}O^+ number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h1_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "H^+ temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h1_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "Uncertainty in H^+ temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h2_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "H_2^+ temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h2_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "Uncertainty in H_2^+ temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "water_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "Water group temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_water_temperature",
+      "type": "double",
+      "units": "keV",
+      "description": "Uncertainty in water group temperature",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h1_kappa",
+      "type": "double",
+      "units": "",
+      "description": "H^+ kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h1_kappa",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in H^+ kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "h2_kappa",
+      "type": "double",
+      "units": "",
+      "description": "H_2^+ kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_h2_kappa",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in H_2^+ kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "water_kappa",
+      "type": "double",
+      "units": "",
+      "description": "Water group kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_water_kappa",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in water group kappa index",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_shift",
+      "type": "double",
+      "units": "",
+      "description": "TOF shifting parameter",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "err_TOF_shift",
+      "type": "double",
+      "units": "",
+      "description": "Uncertainty in the TOF shifting parameter",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "jgr_flag",
+      "type": "double",
+      "units": "",
+      "description": "Flag indicating whether a data record was included \n                        for analysis (0:excluded, 1:included)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

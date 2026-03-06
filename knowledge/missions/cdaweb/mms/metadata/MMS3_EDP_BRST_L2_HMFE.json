@@ -1,0 +1,29 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms3_edp_hmfe_dsl_brst_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "DC E Field calibrated for SDP and ADP",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "mms3_edp_hmfe_par_epar_brst_l2",
+      "type": "double",
+      "units": "mV/m",
+      "description": "DC E parallel Field from calibrated SDP and ADP",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2015-09-01T12:11:16.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

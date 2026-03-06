@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "fmin",
+      "type": "double",
+      "units": "MHz",
+      "description": "Lowest plasma frequency (-88.88=Insuf. echoes,-99.99=no echoes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fEmax",
+      "type": "double",
+      "units": "MHz",
+      "description": "Max E-region plasma frequency  (-88.88=Insuf. echoes,-99.99=no echoes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "fFmax",
+      "type": "double",
+      "units": "MHz",
+      "description": "Max F-region plasma frequency  (-88.88=Insuf. echoes,-99.99=no echoes)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1992-09-01T00:00:21.000Z",
+  "stopDate": "2001-10-17T23:45:00.000Z"
+}

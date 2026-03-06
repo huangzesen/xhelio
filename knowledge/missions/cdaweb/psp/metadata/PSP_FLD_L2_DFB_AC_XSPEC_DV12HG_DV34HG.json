@@ -1,0 +1,72 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_power_ch1_dV12hg",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "L2 XSpectra Power for channel DV12HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_power_ch2_dV34hg",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "L2 XSpectra Power for channel DV34HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_coh_dV12hg_dV34hg",
+      "type": "double",
+      "units": "",
+      "description": "L2 XSpectra Coherence between channel DV12HG and channel DV34HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_phase_dV12hg_dV34hg",
+      "type": "double",
+      "units": "Degrees",
+      "description": "L2 XSpectra Phase of channel DV34HG relative to channel DV12HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_crossterm_Real_dV12hg_dV34hg",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "L2 XSpectra Real Part of Crossterm (FT_1 x FT_2^*) for channel DV12HG and DV34HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    },
+    {
+      "name": "psp_fld_l2_dfb_ac_xspec_crossterm_Imag_dV12hg_dV34hg",
+      "type": "double",
+      "units": "V^2/Hz",
+      "description": "L2 XSpectra Imag Part of Crossterm (FT_1 x FT_2^*) for channel DV12HG and DV34HG",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        54
+      ]
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

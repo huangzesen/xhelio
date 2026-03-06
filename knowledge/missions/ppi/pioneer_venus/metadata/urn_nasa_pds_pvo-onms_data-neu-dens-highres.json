@@ -1,0 +1,105 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "YEAR",
+      "type": "double",
+      "units": "",
+      "description": "Year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Day of year.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "UT",
+      "type": "double",
+      "units": "ms",
+      "description": "Universal Time of day represented as milliseconds after 00:00:00.000",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT",
+      "type": "double",
+      "units": "",
+      "description": "PVO orbit number",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MASS_NUM",
+      "type": "double",
+      "units": "",
+      "description": "Mass Number:                              \n                        4 for He\n                        14 for N\n                        16 for O\n                        28 for N2\n                        29 for CO\n                        44 for CO2",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FLAG",
+      "type": "double",
+      "units": "",
+      "description": "Flag:                                     \n                        0 for fully corrected                           \n                        1 for preliminary (not fully corrected)                     \n                        2 for mass flagged (problem point; probably wrong)                                   \n                        3 for final density negative (only preliminary density given)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PDENS",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Preliminary density (Particles/cm**3)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FDENS",
+      "type": "double",
+      "units": "Particles/cm**3",
+      "description": "Final corrected density (Particles/cm**3)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ANGATK",
+      "type": "double",
+      "units": "Degree",
+      "description": "Angle of attack (degrees)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PCERR",
+      "type": "double",
+      "units": "",
+      "description": "% error in density, -1 if error > 127%",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "OrbitNumber",
+      "type": "integer",
+      "units": "",
+      "description": "Orbit Number",
+      "fill": "-9.0"
+    },
+    {
+      "name": "electronTemp",
+      "type": "double",
+      "units": "K",
+      "description": "Electron temperature in Kelvin",
+      "fill": "-999.0"
+    },
+    {
+      "name": "plasmaDensity",
+      "type": "double",
+      "units": "cm-3",
+      "description": "Plasma density in cm-3",
+      "fill": "-999.0"
+    },
+    {
+      "name": "satPotential",
+      "type": "double",
+      "units": "Volts",
+      "description": "Satellite potential in Volts",
+      "fill": "-999.0"
+    },
+    {
+      "name": "alt",
+      "type": "double",
+      "units": "km",
+      "description": "Altitude in km",
+      "fill": "-999.0"
+    },
+    {
+      "name": "glat",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Latitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "glon",
+      "type": "double",
+      "units": "deg",
+      "description": "Geographic Longitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "lst",
+      "type": "double",
+      "units": "hr",
+      "description": "Local Solar Time (LST) in hours",
+      "fill": "-999.0"
+    },
+    {
+      "name": "lmt",
+      "type": "double",
+      "units": "hr",
+      "description": "Local Magnetic Time (LMT) in hours",
+      "fill": "-999.0"
+    },
+    {
+      "name": "L",
+      "type": "double",
+      "units": "",
+      "description": "McIllwain L value",
+      "fill": "-999.0"
+    },
+    {
+      "name": "ilat",
+      "type": "double",
+      "units": "deg",
+      "description": "Invariant latitude in degrees",
+      "fill": "-999.0"
+    },
+    {
+      "name": "sza",
+      "type": "double",
+      "units": "hr",
+      "description": "Solar Zenith Angle in degrees",
+      "fill": "-999.0"
+    }
+  ],
+  "startDate": "1981-08-05T20:31:02.000Z",
+  "stopDate": "1983-02-16T13:04:24.000Z"
+}

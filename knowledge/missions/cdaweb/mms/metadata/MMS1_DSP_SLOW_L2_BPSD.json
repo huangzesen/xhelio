@@ -1,0 +1,52 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms1_dsp_bpsd_scm1_slow_l2",
+      "type": "double",
+      "units": "nT^{2}/Hz",
+      "description": "SCM1 component magnetic power spectral density",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        56
+      ]
+    },
+    {
+      "name": "mms1_dsp_bpsd_scm2_slow_l2",
+      "type": "double",
+      "units": "nT^{2}/Hz",
+      "description": "SCM2 component magnetic power spectral density - NO DATA in Slow Survey",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        56
+      ]
+    },
+    {
+      "name": "mms1_dsp_bpsd_scm3_slow_l2",
+      "type": "double",
+      "units": "nT^{2}/Hz",
+      "description": "SCM3 component magnetic power spectral density",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        56
+      ]
+    },
+    {
+      "name": "mms1_dsp_bpsd_omni_slow_l2",
+      "type": "double",
+      "units": "nT^{2}/Hz",
+      "description": "Omni-directional magnetic power spectral density: square root of the sum of the squares of 2 components",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        56
+      ]
+    }
+  ],
+  "startDate": "2015-09-01T00:00:00.000Z",
+  "stopDate": "2026-01-08T23:59:59.000Z"
+}

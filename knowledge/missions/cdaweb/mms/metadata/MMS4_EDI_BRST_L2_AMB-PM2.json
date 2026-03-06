@@ -1,0 +1,381 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "mms4_edi_optics_state_brst_l2",
+      "type": "integer",
+      "units": "",
+      "description": "Optics state",
+      "fill": "255.0"
+    },
+    {
+      "name": "mms4_edi_energy_gdu1_brst_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU1 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms4_edi_energy_gdu2_brst_l2",
+      "type": "integer",
+      "units": "eV",
+      "description": "---> GDU2 energy",
+      "fill": "65535.0"
+    },
+    {
+      "name": "mms4_edi_flux1_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Field-aligned electron flux from channel 1 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux1_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Field-aligned electron flux from channel 1 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux1_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in field-aligned electron flux from channel 1 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux1_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Anti-field-aligned electron flux from channel 1 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux1_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Anti-field-aligned electron flux from channel 1 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux1_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in anti-field-aligned electron flux from channel 1 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Field-aligned electron flux from channel 2 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Field-aligned electron flux from channel 2 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in field-aligned electron flux from channel 2 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Anti-field-aligned electron flux from channel 2 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Anti-field-aligned electron flux from channel 2 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux2_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in anti-field-aligned electron flux from channel 2 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Field-aligned electron flux from channel 3 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Field-aligned electron flux from channel 3 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in field-aligned electron flux from channel 3 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Anti-field-aligned electron flux from channel 3 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Anti-field-aligned electron flux from channel 3 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux3_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in anti-field-aligned electron flux from channel 3 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_0_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Field-aligned electron flux from channel 4 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_0_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Field-aligned electron flux from channel 4 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_0_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in field-aligned electron flux from channel 4 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_180_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "Anti-field-aligned electron flux from channel 4 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_180_brst_l2_noerr",
+      "type": "double",
+      "units": "cm^-2 s^-1",
+      "description": "---> (no error bars displayed) Anti-field-aligned electron flux from channel 4 of both GDUs",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_flux4_180_delta_brst_l2",
+      "type": "double",
+      "units": "cm^-2 s^-2",
+      "description": "---> Error in anti-field-aligned electron flux from channel 4 of both GDUs.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mms4_edi_traj1_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 1 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj1_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 1 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj1_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 1 of both GDUs in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj1_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 1 of both GDUs, in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj2_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 2 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj2_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 2 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj2_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 2 of both GDUs in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj2_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 2 of both GDUs, in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj3_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 3 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj3_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 3 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj3_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 3 of both GDUs in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj3_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 3 of both GDUs, in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj4_dbcs_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 4 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj4_dbcs_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 4 of both GDUs in DBCS coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj4_gse_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of field-aligned electrons from channel 4 of both GDUs in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj4_gse_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "Trajectory of anti-field-aligned electrons from channel 4 of both GDUs, in GSE coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj1_gsm_0_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "[OUTDATED] Trajectory of flux1 0-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "mms4_edi_traj1_gsm_180_brst_l2",
+      "type": "double",
+      "units": "degrees",
+      "description": "[OUTDATED] Trajectory of flux1 180-degree pitch angle electrons in GSM coordinates.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    }
+  ],
+  "startDate": "2016-01-04T22:25:03.000Z",
+  "stopDate": "2020-05-10T09:37:42.000Z"
+}

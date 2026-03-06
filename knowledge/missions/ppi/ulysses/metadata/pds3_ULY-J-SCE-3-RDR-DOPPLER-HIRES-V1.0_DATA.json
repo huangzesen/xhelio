@@ -1,0 +1,42 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "S_BAND",
+      "type": "double",
+      "units": "CYCLES",
+      "description": "Column contains S-band phase or 'Doppler count' in cycles.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "S_3-11X",
+      "type": "double",
+      "units": "HZ",
+      "description": "Column contains S-3/11X differential frequency in hertz.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AGC",
+      "type": "double",
+      "units": "DBM",
+      "description": "Column contains automatic gain control in dBm (decibels to 1 milliwatt).",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

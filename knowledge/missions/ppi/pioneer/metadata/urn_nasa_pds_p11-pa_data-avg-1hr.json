@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "s/c",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft ID\n                        SCID = 'P11' for Pioneer 11",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "",
+      "description": "Integer containing year (19YY).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DOY",
+      "type": "double",
+      "units": "",
+      "description": "Day of year (DDD).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Hr",
+      "type": "double",
+      "units": "hr",
+      "description": "Time of day in hours from 0 to 23.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk velocity.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "N",
+      "type": "double",
+      "units": "",
+      "description": "Number density (#/cc).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "T",
+      "type": "double",
+      "units": "",
+      "description": "Temperature (k).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E/W",
+      "type": "double",
+      "units": "deg",
+      "description": "East-West angle",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "N/S",
+      "type": "double",
+      "units": "deg",
+      "description": "North-South angle",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

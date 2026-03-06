@@ -1,0 +1,36 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Fe_aveQ",
+      "type": "double",
+      "units": "Charge state",
+      "description": "Fe_aveQ.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Qty",
+      "type": "double",
+      "units": "Counts",
+      "description": "Normalized counts for charge state calculation process.",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Fe_Q",
+      "type": "double",
+      "units": "Counts.",
+      "description": "Fe charge state histograms.",
+      "fill": "-1e+31",
+      "size": [
+        21
+      ]
+    }
+  ],
+  "startDate": "2007-01-01T00:00:00.000Z",
+  "stopDate": "2011-07-31T20:00:00.000Z"
+}

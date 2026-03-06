@@ -1,0 +1,88 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Status__C4_PP_STA",
+      "type": "integer",
+      "units": "",
+      "description": "STAFF status",
+      "fill": "255.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "State_wec__C4_PP_STA",
+      "type": "integer",
+      "units": "",
+      "description": "WEC status",
+      "fill": "255.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "B_par_f1__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Par to Bo, Frequency Range 0.3 - 10 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_par_f2__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Par to Bo, Frequency Range 10 - 180 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_par_f3__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Par to Bo, Frequency Range 180 - 4000 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_perp_f1__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Perp to Bo, Frequency Range 0.3 - 10 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_perp_f2__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Perp to Bo, Frequency Range 10 - 180 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "B_perp_f3__C4_PP_STA",
+      "type": "double",
+      "units": "nT^2 Hz^-1",
+      "description": "Magnetic Field Perp to Bo, Frequency Range 180 - 4000 Hz",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_pow_f2__C4_PP_STA",
+      "type": "double",
+      "units": "V^2 m^-2 Hz^-1",
+      "description": "E-field Spectral Density, Frequency Range 10 - 180 Hz from STAFF Spectrum analyser",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "E_pow_f3__C4_PP_STA",
+      "type": "double",
+      "units": "V^2 m^-2 Hz^-1",
+      "description": "E-field Spectral Density, Frequency Range 180 - 4000 Hz from STAFF Spectrum Analyser",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2000-12-09T12:57:44.000Z",
+  "stopDate": "2012-12-31T23:59:45.000Z"
+}

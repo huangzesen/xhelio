@@ -1,0 +1,33 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "END_TIME",
+      "type": "double",
+      "units": "",
+      "description": "Stop time column. This field contains time in PDS format\n    yyyy-mm-ddThh:mm:ss.sssZ. The individual elements of the\n    time field can be read using the format (i4,4(1x,i2),1x,f6.3) yr,\n    mon, day, hr, min, sec.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHANNEL",
+      "type": "double",
+      "units": "",
+      "description": "Column contains name of Low Energy Charged Particle (LECP)\n    channel used to acquire this data.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

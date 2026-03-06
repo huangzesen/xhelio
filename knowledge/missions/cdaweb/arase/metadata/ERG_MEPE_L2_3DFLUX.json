@@ -1,0 +1,199 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "FEDU",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV",
+      "description": "[WILL NOT PLOT] Unidirectional Differential Electron Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 73 keV Unidirectional differential electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 35 keV Unidirectional differential electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 17 keV Unidirectional differential electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 8.4 keV Unidirectional differential electron flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_n",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV",
+      "description": "[WILL NOT PLOT] Unidirectional Differential Electron Flux (before noise correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_n_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 73 keV Unidirectional differential electron flux (before noise correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_n_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 35 keV Unidirectional differential electron flux (before noise correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_n_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 17 keV Unidirectional differential electron flux (before noise correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEDU_n_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 8.4 keV Unidirectional differential electron flux (before noise correction)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEEDU",
+      "type": "double",
+      "units": "keV/s-cm2-sr-keV",
+      "description": "[WILL NOT PLOT] Unidirectional Differential Electron Energy Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "FEEDU_e2",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 73 keV Unidirectional differential electron energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEEDU_e6",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 35 keV Unidirectional differential electron energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEEDU_e10",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 17 keV Unidirectional differential electron energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "FEEDU_e14",
+      "type": "double",
+      "units": "#/s-cm2-sr-keV/q",
+      "description": "---> 8.4 keV Unidirectional differential electron energy flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32,
+        16
+      ]
+    },
+    {
+      "name": "count_raw",
+      "type": "integer",
+      "units": "counts/sample",
+      "description": "[WILL NOT PLOT] Directional electron count (Noise contained)",
+      "fill": "65535.0",
+      "size": [
+        32,
+        16,
+        16
+      ]
+    },
+    {
+      "name": "spin_phase",
+      "type": "integer",
+      "units": "",
+      "description": "Spin phase number",
+      "fill": "-128.0"
+    }
+  ],
+  "startDate": "2017-03-23T00:31:13.000Z",
+  "stopDate": "2025-01-31T22:21:56.000Z"
+}

@@ -1,0 +1,529 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "PE_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of E field in normal mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "PE_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of E field in normal mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "PE_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of E field in normal mode at F2",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "PE_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of E field in burst mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "PE_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of E field in burst mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "PB_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of B field in normal mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "PB_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of B field in normal mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "PB_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of B field in normal mode at F2",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "PB_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of B field in burst mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "PB_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Spectral power of B field in burst mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "NVEC_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F0 in the SCM B1-B2-B3 axis system frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F1 in the SCM B1-B2-B3 axis system frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F2 in the SCM B1-B2-B3 axis system frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in burst mode at F0 in the SCM B1-B2-B3 axis system frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in burst mode at F1 in the SCM B1-B2-B3 axis system frame.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_N_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F0 in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_N_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F1 in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_N_F2_SRF",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in normal mode at F2 in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_B_F0_SRF",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in burst mode at F0 in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22,
+        3
+      ]
+    },
+    {
+      "name": "NVEC_B_F1_SRF",
+      "type": "double",
+      "units": "",
+      "description": "Wave normal vector from magnetic field in burst mode at F1 in spacecraft reference frame (SRF).",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26,
+        3
+      ]
+    },
+    {
+      "name": "ELLIP_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Wave ellipticity from magnetic field in normal mode at F0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "ELLIP_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Wave ellipticity from magnetic field in normal mode at F1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "ELLIP_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Wave ellipticity from magnetic field in normal mode at F2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "ELLIP_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Wave ellipticity from magnetic field in burst mode at F0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "ELLIP_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Wave ellipticity from magnetic field in burst mode at F1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "DOP_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "degree of polarization from magnetic field in normal mode at F0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "DOP_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "degree of polarization from magnetic field in normal mode at F1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "DOP_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "degree of polarization from magnetic field in normal mode at F2",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "DOP_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "degree of polarization from magnetic field in burst mode at F0",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "DOP_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "degree of polarization from magnetic field in burst mode at F1",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "SX_REA_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Real part of the X component of the Poynting vector in normal mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "SX_REA_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Real part of the X component of the Poynting vector in normal mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "SX_REA_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Real part of the X component of the Poynting vector in normal mode at F2",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "SX_REA_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Real part of the X component of the Poynting vector in burst mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "SX_REA_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Real part of the X component of the Poynting vector in burst mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "SX_ARG_N_F0",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(SX)| < pi/4 or 3pi/4 < |ARG(SX)| < pi, bit arg = 1 elsewhere in normal mode at F0",
+      "fill": "255.0",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "SX_ARG_N_F1",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(SX)| < pi/4 or 3pi/4 < |ARG(SX)| < pi, bit arg = 1 elsewhere in normal mode at F1",
+      "fill": "255.0",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "SX_ARG_N_F2",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(SX)| < pi/4 or 3pi/4 < |ARG(SX)| < pi, bit arg = 1 elsewhere in normal mode at F2",
+      "fill": "255.0",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "SX_ARG_B_F0",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(SX)| < pi/4 or 3pi/4 < |ARG(SX)| < pi, bit arg = 1 elsewhere in burst mode at F0",
+      "fill": "255.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "SX_ARG_B_F1",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(SX)| < pi/4 or 3pi/4 < |ARG(SX)| < pi, bit arg = 1 elsewhere in burst mode at F1",
+      "fill": "255.0",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "VPHI_REA_N_F0",
+      "type": "double",
+      "units": "",
+      "description": "Phase velocity estimated from the X projection of Maxwell-Faraday equation in normal mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "VPHI_REA_N_F1",
+      "type": "double",
+      "units": "",
+      "description": "Phase speed from the EM data stream in normal mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "VPHI_REA_N_F2",
+      "type": "double",
+      "units": "",
+      "description": "Phase speed from the EM data stream in normal mode at F2",
+      "fill": "-1e+31",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "VPHI_REA_B_F0",
+      "type": "double",
+      "units": "",
+      "description": "Phase speed from the EM data stream in burst mode at F0",
+      "fill": "-1e+31",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "VPHI_REA_B_F1",
+      "type": "double",
+      "units": "",
+      "description": "Phase speed from the EM data stream in burst mode at F1",
+      "fill": "-1e+31",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "VPHI_ARG_N_F0",
+      "type": "integer",
+      "units": "",
+      "description": "Argument bit = 0 if |ARG(VPHI)| < pi/4 or 3pi/4 < |ARG(VPHI)| < pi, bit arg = 1 elsewhere in normal mode at F0",
+      "fill": "255.0",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "VPHI_ARG_N_F1",
+      "type": "integer",
+      "units": "",
+      "description": "Argument of VPHI in normal mode at F1",
+      "fill": "255.0",
+      "size": [
+        13
+      ]
+    },
+    {
+      "name": "VPHI_ARG_N_F2",
+      "type": "integer",
+      "units": "",
+      "description": "Argument of VPHI in normal mode at F2",
+      "fill": "255.0",
+      "size": [
+        12
+      ]
+    },
+    {
+      "name": "VPHI_ARG_B_F0",
+      "type": "integer",
+      "units": "",
+      "description": "Argument of VPHI in burst mode at F0",
+      "fill": "255.0",
+      "size": [
+        22
+      ]
+    },
+    {
+      "name": "VPHI_ARG_B_F1",
+      "type": "integer",
+      "units": "",
+      "description": "Argument of VPHI in burst mode at F1",
+      "fill": "255.0",
+      "size": [
+        26
+      ]
+    },
+    {
+      "name": "SURVEY_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "LFR survey mode",
+      "fill": "255.0"
+    }
+  ],
+  "startDate": "2020-06-15T00:00:17.000Z",
+  "stopDate": "2025-11-19T00:05:12.000Z"
+}

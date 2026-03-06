@@ -1,0 +1,96 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "N_elec",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "QTN electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_deltalow",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Lower uncertainty associated with QTN electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_deltahigh",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Upper uncertainty associated with QTN electron density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch0",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "QTN electron density at channel 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch0_deltalow",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Lower uncertainty associated with QTN electron density at channel 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch0_deltahigh",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Upper uncertainty associated with QTN electron density at channel 0",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch1",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "QTN electron density at channel 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch1_deltalow",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Lower uncertainty associated with QTN electron density at channel 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "N_elec_ch1_deltahigh",
+      "type": "double",
+      "units": "cm^{-3}",
+      "description": "Upper uncertainty associated with QTN electron density at channel 1",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HEEQ_X",
+      "type": "double",
+      "units": "Rs",
+      "description": "Position vector in HEEQ coordinates (Define Rs = 695700km) (X-component)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HEEQ_Y",
+      "type": "double",
+      "units": "Rs",
+      "description": "Position vector in HEEQ coordinates (Define Rs = 695700km) (Y-component)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "HEEQ_Z",
+      "type": "double",
+      "units": "Rs",
+      "description": "Position vector in HEEQ coordinates (Define Rs = 695700km) (Z-component)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "",
+  "stopDate": ""
+}

@@ -1,0 +1,60 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated with the\n           x,y,z sample in each record. The derived value is created by the \n           following formula:\n           MET + 0.05 * delta_ts + (dt_sample)*(I-1). \n           MET is the mission elapsed time for the entire science packet.\n           delta_ts is the delta time in seconds between the MET and\n           the first sample in the downloaded science packet.\n           dt_sample is the time between samples in seconds and given by \n           dt_sample = 1/sample_rate where sample_rate is the reported \n           sample rate in samples per second.\n           I is the incremental counter for each data sample in the\n           science packet. I=1 is the first sample in the packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACTUAL_RANGE",
+      "type": "double",
+      "units": "",
+      "description": "Actual range used by MAG. =0 1530 nT, =1 51300 nT.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_X",
+      "type": "double",
+      "units": "",
+      "description": "X axis field value in signed integer counts. If DN is \n      greater than 32768 then this value is DN - 65536. DN is the telemetry\n      value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_Y",
+      "type": "double",
+      "units": "",
+      "description": "Y axis field value in signed integer counts. If DN is \n      greater than 32768 then this value is DN - 65536. DN is the telemetry\n      value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SAMPLE_Z",
+      "type": "double",
+      "units": "",
+      "description": "Z axis field value in signed integer counts. If DN is \n      greater than 32768 then this value is DN - 65536. DN is the telemetry\n      value stored in the downloaded packet.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

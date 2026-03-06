@@ -1,0 +1,411 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TARGET",
+      "type": "double",
+      "units": "",
+      "description": "An integer indicating the target of the investigation when this density measurement was taken. The allowed values and the targets they represent are: 0=Saturn, 1=Enceladus, 2=Jupiter, 3=Earth",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_DENSITY",
+      "type": "double",
+      "units": "1/cm**3",
+      "description": "The number of electrons per cubic centimeter calculated either from the value in the electron plasma frequency field according to the well known equation:\n\tn_e = ( f_pe / 8980.0 ) ** 2\nor from the values in the electron cyclotron frequency and upper hybrid freqency fields according to the well known equation:\n\tn_e  = ( f_uh**2 - f_ce**2 ) / 8980.0**2\nwhere n_e is electron density in particles per cubic centimeter, f_pe is the electron plasma frequency, f_ce is the electron cyclotron, and f_uh is the upper hybrid frequency. The frequency values used are determined by the MEASURED_ITEM field.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ERROR_FLAG",
+      "type": "double",
+      "units": "",
+      "description": "An integer indicating the method used for determining the electron density error value. The allowed values and the methods they represent are: 0=automated, 1=manual",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ELECTRON_DENSITY_ERROR",
+      "type": "double",
+      "units": "",
+      "description": "A normalized electron density error value.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FREQ_FCE",
+      "type": "double",
+      "units": "Hz",
+      "description": "Electron cyclotron frequency derived from local magenetic field measurements when available. Values calculated from a model magnetic field are used where measured values are not available.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MEASURED_VALUE",
+      "type": "double",
+      "units": "Hz",
+      "description": "The frenquency value used to derive the electron density field",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MEASURED_ITEM",
+      "type": "double",
+      "units": "",
+      "description": "An integer indicating which frequency value was measured from Cassini Low Rate spectral density data. The allowed values and the frequencies they indicate are: 0=upper hybrid frequency, 1=plasma frequency cutoff.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FREQ_PLASMA",
+      "type": "double",
+      "units": "Hz",
+      "description": "Plasma frequency cutoff. Measured or calculated, as indicated by the measured item field.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FREQ_UPPER_HYBRID",
+      "type": "double",
+      "units": "Hz",
+      "description": "Upper hybrid frequency. Measured or calculated, as indicated by the measured item field.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FREQ_R_EQUALS_ZERO",
+      "type": "double",
+      "units": "Hz",
+      "description": "The R=0 frequency in Hz as calculated from the equations of cold plasma theory using the measured value and the cyclotron frequency.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FREQ_L_EQUALS_ZERO",
+      "type": "double",
+      "units": "Hz",
+      "description": "The L=0 frequency in Hz as calculated from the quations of cold plasma theory using the measured frequency and the cyclotron frequency.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ORBIT_NUMBER",
+      "type": "double",
+      "units": "",
+      "description": "The orbit number.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_RADIUS",
+      "type": "double",
+      "units": "",
+      "description": "The distance of the Cassini spacecraft from the center of Saturn in units of Saturn radii [Rs] where 1 Rs is 60258 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_IAU_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Saturn west longitude based on a longitude system described in Seidelmann et al.:2002, \"Report on the IAU/IAG Working Group on Cartographic Coordinates and Rotational Elements of the Planets and Satellites: 2002\"",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SLS4_S_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "West longitude based on the SLS4 system (south)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SLS4_N_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "West longitude based on the SLS4 system (north)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SLS5_S_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "West longitude based on the SLS5 system (south)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SLS5_N_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "West longitude based on the SLS5 system (north)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_LOCAL_TIME",
+      "type": "double",
+      "units": "hr",
+      "description": "Saturn local time in hours",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_KRONOGRAPHIC_LATITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Saturn latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_MAGNETIC_LATITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Saturn magnetic latitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_L",
+      "type": "double",
+      "units": "",
+      "description": "Saturn L-shell in Rs where 1 Rs is 60268km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_L_OFFSET",
+      "type": "double",
+      "units": "",
+      "description": "Saturn L offset in Rs wher 1 Rs is 60268km and offset is 2293km north",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SOLAR_EQUATORIAL_X",
+      "type": "double",
+      "units": "",
+      "description": "position in the planet->sun plane positive towards the sun in Rs where 1 Rs is 60268km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SOLAR_EQUATORIAL_Y",
+      "type": "double",
+      "units": "",
+      "description": "Z x X in Rs where 1 Rs is 60268km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_SOLAR_EQUATORIAL_Z",
+      "type": "double",
+      "units": "",
+      "description": "position along the northward spin axis of the planet in Rs where 1 Rs is 60268km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SATURN_ALTITUDE",
+      "type": "double",
+      "units": "km",
+      "description": "altitude in km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_ENCOUNTER_NUMBER",
+      "type": "double",
+      "units": "",
+      "description": "An id assigned to each period of close approach to Enceladus",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_RADIUS",
+      "type": "double",
+      "units": "",
+      "description": "The distance from the center of Enceladus in units of Enceladus radii [Renc] where 1 Renc is 252.1 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_COROTATIONAL_X",
+      "type": "double",
+      "units": "",
+      "description": "X component of Enceladus-centered cartesian system with X in direction of Saturn-driven co-rotating plasma, Y intersecting Saturn's rotational axis, and Z parallel to Saturn's rotational axis",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_COROTATIONAL_Y",
+      "type": "double",
+      "units": "",
+      "description": "Y component of Enceladus-centered cartesian system with X in direction of Saturn-driven co-rotating plasma, Y intersecting Saturn's rotational axis, and Z parallel to Saturn's rotational axis",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_COROTATIONAL_Z",
+      "type": "double",
+      "units": "",
+      "description": "Z component of Enceladus-centered cartesian system with X in direction of Saturn-driven co-rotating plasma, Y intersecting Saturn's rotational axis, and Z parallel to Saturn's rotational axis",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_TRUE_ANOMALY",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle between the direction of periapsis and the current position of Enceladus in the Enceladus orbital plane",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ENCELADUS_PERIAPSIS_TIME",
+      "type": "double",
+      "units": "",
+      "description": "Date and time of the most recent Enceladus periapsis",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JUPITER_RADIUS",
+      "type": "double",
+      "units": "",
+      "description": "Radial distance from center of planet to spacecraft in Jupiter radii, 71492 km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JUPITER_SYSTEMIII_LONGITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "System III planetographic longitude",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JUPITER_MAGNETIC_LATITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude relative to nominal magnetic dipole equator",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JUPITER_MAGNETIC_LOCAL_TIME",
+      "type": "double",
+      "units": "hr",
+      "description": "Local time in magnetic coordinates such that 12h occurs at the sub-solar point",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "JUPITER_L",
+      "type": "double",
+      "units": "",
+      "description": "L-shell parameter defined relative to the nominal magnetic dipole, L = r / cos^2(mlat)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "IO_PHASE",
+      "type": "double",
+      "units": "deg",
+      "description": "Angle of Io orbital position in the orbital plane relative to the anti-spacecraft direction",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH_RADIUS",
+      "type": "double",
+      "units": "",
+      "description": "The distance from the center of Earth in units of Earth radii [Re] where 1 Re is 6371 km.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH_MAGNETIC_LATITUDE",
+      "type": "double",
+      "units": "deg",
+      "description": "Latitude relative to nominal magnetic dipole equator",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH_LOCAL_TIME",
+      "type": "double",
+      "units": "hr",
+      "description": "Local time in geographic coordinates such that 12h occurs at the sub-solar point",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EARTH_L",
+      "type": "double",
+      "units": "",
+      "description": "L-shell parameter defined relative to the nominal magnetic dipole, L = r / cos^2(mlat)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,258 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCID",
+      "type": "double",
+      "units": "",
+      "description": "Spacecraft ID\n                        SCID = 'P10x' for Pioneer 10 where 'x' is an\n                        identifier that specifies the processing scheme",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "YRDAY",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing year (19YY) and the day of\n                        year (DDD) in the form (YYDDD.0).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "NSEC",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing time in seconds of day\n                        from 0.0 to 86400.0.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RAD",
+      "type": "double",
+      "units": "km",
+      "description": "Heliocentric distance in kilometers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HLONG",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic longitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HLAT",
+      "type": "double",
+      "units": "deg",
+      "description": "Ecliptic latitude of s/c in degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CHISQ",
+      "type": "double",
+      "units": "",
+      "description": "Formal value of chi-squared from the \n                        least-squares fit software used to calculate \n                        plasma parameters.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BADREC",
+      "type": "double",
+      "units": "",
+      "description": "Data quality index.\n  \n                        ABS( BADREC) < 5.0           Good data\n                        5.0 < ABS( BADREC) < 15.0    Good data\n                        15.0 < ABS( BADREC) < 25.0   Less reliable data\n                        25.0 < ABS( BADREC)          Bad data.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BSCA",
+      "type": "double",
+      "units": "gamma",
+      "description": "Space to hold average of the absolute value of the\n                        interplanetary magnetic field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BMAG",
+      "type": "double",
+      "units": "gamma",
+      "description": "Space to hold average of the magnitude of the\n                        average interplanetary magnetic field. Currently \n                        empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the azimuthal (E/W) angle of the \n                        average interplanetary magnetic field.  Zero \n                        points TOWARDS the sun (?) and positive values \n                        point towards the EAST (?). Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BPOL",
+      "type": "double",
+      "units": "",
+      "description": "Space to hold the polar (N/W) angle of the \n                        average interplanetary magnetic field.  Zero \n                        points TOWARDS the sun (?) and positive values \n                        point towards the NORTH (?).  Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAVGBM",
+      "type": "double",
+      "units": "deg",
+      "description": "RMS dispersion in average of magnitude of B.\n                        Space to hold the RMS dispersion in average of \n                        magnitude of B. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DBMAG",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the RMS dispersion in magnitude of \n                        magnitude of B. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DBAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the RMS dispersion in azimuthal \n                        (E/W) angle of the average interplanetary magnetic\n                        field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DBPOL",
+      "type": "double",
+      "units": "deg",
+      "description": "Space to hold the RMS dispersion in polar (N/S)\n                        angle of the average interplanetary magnetic\n                        field. Currently empty!",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TEM",
+      "type": "double",
+      "units": "deg",
+      "description": "Should be accurate to 20% when T > 10,000 K.\n                        Should be accurate to 40% when 10,000 K > T > \n                        5,000 K. Unreliable when T < 5,000 K.\n                        Solar wind proton temperature.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DEN",
+      "type": "double",
+      "units": "cm/s**3",
+      "description": "Should be accurate to 20% at Pioneer 10 prior to 1992.\n                        Should be accurate to 50% at Pioneer 10 after \n                        1992 (Detector A Total Flux Measurements).\n                        WARNING!  These Pioneer 10 Detector A Total Flux\n                        densities (SCID = 'P10E' or 'P10G') appear to be \n                        50% higher than densities from the other \n                        measurement schemes when solar wind temperatures\n                        are low!\n                        \n                        Solar wind proton number density",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "VEL",
+      "type": "double",
+      "units": "km/s",
+      "description": "Should be accurate to 2-5 km / sec\n                        approximately 200.0 to 1500.0.\n                        Solar wind speed",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Azimuthal (E/W) angle of the solar wind bulk \n                        velocity in the RTN system. Zero points AWAY\n                        from the sun and positive values point towards \n                        the EAST (in the direction of planetary \n                        rotation).\n                        (This is going to change-temp)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "POL",
+      "type": "double",
+      "units": "deg",
+      "description": "Unknown, but may be approximately 3 degrees at\n                        Pioneer 10 prior to 1983. Polar (N/S) angle of \n                        the solar wind bulk velocity in the RTN system. \n                        Zero points AWAY from the sun and positive \n                        values point towards the NORTH.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DTEM",
+      "type": "double",
+      "units": "deg",
+      "description": "Formal value of the uncertainty in proton\n                        temperature (K) calculated by the least squares\n                        fit software.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DDEN",
+      "type": "double",
+      "units": "cm/s**3",
+      "description": "Formal value of the uncertainty in the proton\n                        density calculated by the least squares fit\n                        software.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DVEL",
+      "type": "double",
+      "units": "km/s",
+      "description": "Formal value of the uncertainty in the solar wind\n                        speed calculated by the least squares fit \n                        software.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DAZM",
+      "type": "double",
+      "units": "deg",
+      "description": "Formal value of the uncertainty in the azimuthal\n                        flow angle calculated by the least squares fit\n                        software.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DPOL",
+      "type": "double",
+      "units": "deg",
+      "description": "Formal value of the uncertainty in the polar\n                        flow angle calculated by the least squares fit\n                        software.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DPROC",
+      "type": "double",
+      "units": "",
+      "description": "Real number containing processing date in the \n                        form (YYDDD.0)",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,69 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "TIME_TAG",
+      "type": "double",
+      "units": "",
+      "description": "A derived value for the timetag associated with the \n      data values in each record.\n      The derived value is created by the following formula:\n      MET + 0.05 * delta_ts + 0.5 + (dt_sample)*(i-1)*(num_samples/num_AC).\n      MET is the mission elapsed time for the entire science packet.\n      delta_ts is the time in seconds between the MET and the first sample \n      in the science packet.\n      dt_sample is the time between samples in seconds and is given by\n      dt_sample = 1/sample_rate where sample_rate is the reported sample \n      rate in samples per second.\n      num_samples is number of magnetometer samples.\n      num_AC is the number of logAC values.\n      i is the incremental counter for each of the logAC values. i=1 is the\n      first logAC value in the science packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AC_AXIS",
+      "type": "double",
+      "units": "",
+      "description": "The AC axis selected.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LOG_AC",
+      "type": "double",
+      "units": "",
+      "description": "An 8-bit log AC value generated from the 16-bit AC \n      value. This is done by shifting the 16-bit mantissa left one bit at a \n      time while it does not overflow. The log AC value consists of shift\n      count which is 15 minus the number of shifts (0-15) combined with the\n      four MSBs of the shifted mantissa;  the shift count will be in the \n      four MSBs of the log AC value; the mantissa bits are in the four LSBs.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "AC_COUNT",
+      "type": "double",
+      "units": "",
+      "description": "The calculated AC count value; derived from the LOG_AC \n      value by the following formula:\n      AC_exp = trunc(LOG_AC/16) (exponent value)\n      AC_mant = LOG_AC - 16*AC_exp (mantissa value)\n      CNT_AC = (AC_mant + 0.5)* (2**(AC_exp-4))",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "APP_ID",
+      "type": "double",
+      "units": "",
+      "description": "The Application Process ID of the science packet from\n    which data was extracted. Values for PROBE_HEATER_STATE are N/A when this\n    value is 721, which is an older version of the science packet.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PROBE_HEATER_STATE",
+      "type": "double",
+      "units": "",
+      "description": "The MAG-EPU sensor survival heater request bit at the\n    time of the LOG_AC value. = 0 off, =1 on, =2 N/A.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

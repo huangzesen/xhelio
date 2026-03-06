@@ -1,0 +1,44 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "B_mean__C1_CP_RAP_PAD_L3DD",
+      "type": "double",
+      "units": "nT",
+      "description": "Averaged GSE magnetic field vector",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "PAD_Electron_L_Dif_flux__C1_CP_RAP_PAD_L3DD",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Electron Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        9
+      ]
+    },
+    {
+      "name": "PAD_Electron_L_Dif_flux_SD__C1_CP_RAP_PAD_L3DD",
+      "type": "double",
+      "units": "Particles/(cm^2 s sr keV)",
+      "description": "Standard Deviation of Electron Differential Flux",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        9
+      ]
+    }
+  ],
+  "startDate": "2004-04-20T09:59:58.000Z",
+  "stopDate": "2023-09-18T23:59:41.000Z"
+}

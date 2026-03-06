@@ -1,0 +1,447 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "PACKETID",
+      "type": "integer",
+      "units": "",
+      "description": "Packet ID (DPID), Data Product Identifier High Rate Science - Electron All 3 Electron sensors per record: E060, E180, E300. PACKETID = 142 (0x8E)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PACKET_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "Packet Mode, describes type of data telemetry. -2 = HSK / Housekeeping Engineering (Level 2 only) -1 = HVE / High Voltage Engineering (Level 2 only) 0 = CAL / MCP Calibration Science  (Level 2 only) 1 = LRS / Low Rate Science 2 = HRS / High Rate Science 3 = DRS / DeRived Science from LRS and/or HRS 127 = Unknown 254 = Wrong - but HSK, see below.    (Level 2 only) 255 = Wrong - but HVE, see below.    (Level 2 only) (Note, this could also be calculated via PACKETID.) If you have 254 or 255 then your code is incorrect, check you read a signed byte, rather than unsigned.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "PACKET_SPECIES",
+      "type": "integer",
+      "units": "",
+      "description": "Packet Species, describes type of plasma data. -1 = electrons 0 = ion species 0, SP0 1 = ion species 1, SP1 2 = ion species 2, SP2 3 = ion species 3, SP3 4 = ion species 4, SP4 5 = ion species 5, SP5 6 = ion species 6, SP6 7 = ion species 7, SP7 8 = Sum of SP3, SP4 and SP5 9 = All ions /* or any ion, e.g., TOF and LOG */ 10 = Single ion species derived from TOF data 127 = Unknown 255 = Wrong - but electrons, see below. If you have 255 then your code is incorrect, check you read a signed byte, rather than unsigned.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ACCUMULATION_TIME",
+      "type": "integer",
+      "units": "SECONDS",
+      "description": "Accumulation Time. Number of seconds over which the data in this product was collected (Science Program). Note: Duration of record can be found in S.I. seconds by DIM0_UTC_UPPER - DIM0_UTC_LOWER. Do not confuse this with the ACCUMULATION_TIME object, which is the number of spacecraft clock ticks for accumulation. While 1 tick is approximately 1 second, it is not identical. ACCUMULATION_TIME is left in spacecraft clock ticks to both aid matching with the level 2 data and to help filtering for data taken in a particular mode.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_UNITS",
+      "type": "integer",
+      "units": "",
+      "description": "Data units correspond to: 0 = All counts in the accumulation period 1 = All counts divided by number of views 2 = Counts per second /* S.I. science units: */ 3 = Differential Energy Flux [1/( m^2 sr s     )] 4 = Differential Number Flux [1/( m^2 sr s    J)] 5 = Phase Space Density      [    m^-6   s^3    ] /* Convenient (non-S.I.) science units: */ 6 = Differential Energy Flux [1/(cm^2 sr s     )] 7 = Differential Number Flux [1/(cm^2 sr s  keV)] 8 = Phase Space Density      [   cm^-6   s^3    ] /* As new products are developed this list will increase */ /* If a number is not listed,               */ /*   try a LBL/FMT file from a recent date. */ 255 = Unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOURCE_BACKGROUND",
+      "type": "integer",
+      "units": "",
+      "description": "Source of Background values (see BACKGROUND object) that have been removed from the DATA object. 0 = None: No background has been removed 1 = Background anode (electron sensors only) 2 = Background anode (JADE-I only) 3 = Derived from Background anode : Method 1: Background coefficients are time independent. See file in CALIB directory for description. 4 = Derived from Background anode : Method 2: Background coefficients are per orbit. See file in CALIB directory for description. /* As new background removal methods are developed this list will increase */ 255 = Unknown.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPARE_ZEROS",
+      "type": "integer",
+      "units": "",
+      "description": "Spare Zeroes.  Always zero. PDS3 format required a padding byte, e.g., a 4-byte integer/float will always start on the 1st or 5th or 9th or 13th... byte of the record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOURCE_MAG",
+      "type": "integer",
+      "units": "",
+      "description": "Source of MAG data Except case 0 and 1, PAYLOAD (pl) co-ordinate MAG files were used at 1s (or 2s if no 1s) resolution. 0 = None: No MAG data in this product. 1 = From Juno JADE's Level 2 files. (From spacecraft and therefore uncalibrated.) This is independent to JADE Level 2 version number as it does not change with versions. [Note MAG data in JADE files may be affected by the Juno time stutter.] 3n = Juno's MAG's Level 3 version n calibrated files, e.g., 34 means version 4, so: 30 = From Juno MAG's Level 3 version 00 quicklook payload files. (These are temporary files not in PDS.) 31 = From Juno MAG's Level 3 version 01 calibrated payload files. 32 = From Juno MAG's Level 3 version 02 calibrated payload files. Likewise, 33 to 39 being Level 3 version 3 to 9. 255 = Unknown. If you see a number not listed above, there may be later versions of MAG data - find the latest available LBL file for this product and see what that has listed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOURCE_JADE_METAKERNEL",
+      "type": "integer",
+      "units": "",
+      "description": "The JADE SPICE metakernel used to get the time, position, velocity, orientation and transformation objects in this file.  The metakernel lists the many individual spice kernels used, which are archived by NAIF and not in this PDS volume. The JADE SPICE metakernel may be found in the CALIB directory of this PDS volume, with filenames of: JAD_L30_SPICE_METAKERNEL_nnnnn.TXT where nnnnn is the SOURCE_JADE_METAKERNEL object number (with leading zeros and positive). If any of the kernels within the metakernel are not reconstructed (but reference or predicted) for the time in question, this value will be negative. Within the JADE PDS archive this value should always be positive.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SOURCE_JADE_CALIB",
+      "type": "integer",
+      "units": "",
+      "description": "The JADE calibration files list used to convert the engineering units of Level 2 data to the scientific units in this file.  Similar to the SPICE metakernel list, this lists the many individual calibration files used, each of which may be found in the CALIB directory on this PDS volume. This list may be found in the CALIB directory of this PDS volume, with filenames of: JAD_L30_CALIB_LIST_nnnnn.TXT where nnnnn is the SOURCE_JADE_CALIB object number (with leading zeros and positive). If any of the calibration files listed are not final at the time in question, this value will be negative. (Newer calibration files will have a higher version and simply be listed in a newer SOURCE_JADE_CALIB file.) Within the JADE PDS archive this value should always be positive. However, a version 00 file (for team use or uploaded to JSOC, not PDS) may have negative values with predicted positions/orientations/transformations.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FSW_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "Flight Software version used. Number should be to 2 decimal places, with rounding. e.g., 4.00, 4.10, 4.20. i.e., 4.1999998 means 4.20.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LUT_VERSION",
+      "type": "double",
+      "units": "",
+      "description": "LUT (Look Up Table) Version used on JADE. Number should be to 2 decimal places, with rounding. e.g., 4.00, 4.10, 4.20. i.e., 4.1999998 means 4.20.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LUT_SWEEP_TABLE",
+      "type": "integer",
+      "units": "",
+      "description": "The sweep tables the ion sensor used. A level 2 packet will report this as 0-3, However, it requires 2 packets (a ping and a pong) to make a level 3 record: either 0 and 1, or 2 and 3. Therefore, a value of 1 (= 01) means sweep tables 0 and 1 were used, while a value of 23 means sweep tables 2 and 3 were used. This object can only have the value of 1 or 23.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "FILE_VERSION",
+      "type": "integer",
+      "units": "",
+      "description": "The version number of the file this record came from. e.g., if you loaded file JAD_L30_LRS_ION_ANY_CNT_2016240_V04.DAT then FILE_VERSION = 4. [FILE_VERSION = 0 is never in the PDS, but is used by the JADE team prior to having required calibrations.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_R",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Juno radial distance at time DIM0_UTC, from Jupiter, in units of Jupiter Radii (Rj). (1 Rj = 71492.0 km) [Values may be greater than VALID_MAXIMUM during cruise to Jupiter before primary mission.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_R_UPPER",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Juno radial distance at time DIM0_UTC_UPPER, from Jupiter, in units of Jupiter Radii (Rj). (1 Rj = 71492.0 km) SC_POS_R_UPPER could be smaller or larger than SC_POS_R, depending if moving inbound or outbound. [Values may be greater than VALID_MAXIMUM during cruise to Jupiter before primary mission.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_R_LOWER",
+      "type": "double",
+      "units": "Jupiter Radii",
+      "description": "Juno radial distance at time DIM0_UTC_LOWER, from Jupiter, in units of Jupiter Radii (Rj). (1 Rj = 71492.0 km) SC_POS_R_LOWER could be smaller or larger than SC_POS_R, depending if moving inbound or outbound. [Values may be greater than VALID_MAXIMUM during cruise to Jupiter before primary mission.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LAT",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno Latitude at time DIM0_UTC, in both the IAU_JUPITER and JUNO_JSS frames, in units of degrees. (0 = Equatorial) (JUNO_JSS is a despun version of IAU_JUPITER, hence they have identical latitudes.)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LAT_UPPER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno Latitude at time DIM0_UTC_UPPER, in both the IAU_JUPITER and JUNO_JSS frames, in units of degrees. (0 = Equatorial) SC_POS_LAT_UPPER could be smaller or larger than SC_POS_LAT. (JUNO_JSS is a despun version of IAU_JUPITER, hence they have identical latitudes.)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LAT_LOWER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno Latitude at time DIM0_UTC_LOWER, in both the IAU_JUPITER and JUNO_JSS frames, in units of degrees. (0 = Equatorial) SC_POS_LAT_LOWER could be smaller or larger than SC_POS_LAT. (JUNO_JSS is a despun version of IAU_JUPITER, hence they have identical latitudes.)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LOCAL_TIME",
+      "type": "double",
+      "units": "Hours",
+      "description": "Juno's (jovian) Local Time at time DIM0_UTC, in units of hours. 00 = Midnight 06 = Dawn 12 = Noon 18 = Dusk",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LOCAL_TIME_UPPER",
+      "type": "double",
+      "units": "Hours",
+      "description": "Juno's (jovian) Local Time at time DIM0_UTC_UPPER, in units of hours. 00 = Midnight 06 = Dawn 12 = Noon 18 = Dusk",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_LOCAL_TIME_LOWER",
+      "type": "double",
+      "units": "Hours",
+      "description": "Juno's (jovian) Local Time at time DIM0_UTC_LOWER, in units of hours. 00 = Midnight 06 = Dawn 12 = Noon 18 = Dusk",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_SYSIII_ELONG",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's (jovian) SYSIII (East) Longitude at time DIM0_UTC, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_SYSIII_ELONG_UPPER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's (jovian) SYSIII (East) Longitude at time DIM0_UTC_UPPER, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_SYSIII_ELONG_LOWER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's (jovian) SYSIII (East) Longitude at time DIM0_UTC_LOWER, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_POS_JUPITER_J2000XYZ",
+      "type": "double",
+      "units": "km",
+      "description": "Juno position from Jupiter in J2000 Cartesian co-ordinates [x,y,z] (units km). [Values may be outside of VALID_MIN/MAX range (~140Rj) during cruise to Jupiter before primary mission.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_VEL_JUPITER_J2000XYZ",
+      "type": "double",
+      "units": "km/s",
+      "description": "Juno Velocity with respect to Jupiter in J2000 Cartesian co-ordinates [Vx,Vy,Vz] (units km/s).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_VEL_ANGULAR_J2000XYZ",
+      "type": "double",
+      "units": "radians/s",
+      "description": "Juno Angular Velocity in Cartesian co-ordinates [AVx,AVy,AVz] (units radians/s). (This is calculated with the SPICE ckgpav command where ref=J2000.  SPICE defines it as 'This is the axis about which the reference frame tied to the instrument is rotating in the right-handed sense.')",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_SPIN_PERIOD",
+      "type": "double",
+      "units": "SECONDS",
+      "description": "Juno spin period (seconds). This is not useful during spacecraft maneuvers.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_SPIN_PHASE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's spin phase at time DIM0_UTC, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_SPIN_PHASE_UPPER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's spin phase at time DIM0_UTC_UPPER, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SC_SPIN_PHASE_LOWER",
+      "type": "double",
+      "units": "Degrees",
+      "description": "Juno's spin phase at time DIM0_UTC_LOWER, in units of degrees.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DESPUN_SC_TO_J2000",
+      "type": "double",
+      "units": "",
+      "description": "Rotation matrix from despun spacecraft co-ordinates to J2000. This is a 3x3 matrix, but if read in as a 1x9 stream then the 1D stream is [a,b,c, d,e,f, g,h,i] and the 2D matrix would be [a,b,c d,e,f g,h,i]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "J2000_TO_JSSXYZ",
+      "type": "double",
+      "units": "",
+      "description": "Rotation matrix from J2000 co-ordinates to JSS xyz (JSS = Jupiter-De-Spun-Sun, see SIS for details). This is a 3x3 matrix, but if read in as a 1x9 stream then the 1D stream is [a,b,c, d,e,f, g,h,i] and the 2D matrix would be [a,b,c d,e,f g,h,i]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "J2000_TO_JSSRTP",
+      "type": "double",
+      "units": "",
+      "description": "Rotation matrix from J2000 co-ordinates to JSS RTP, where RTP is Jupiter centered right handed R-Theta-Phi. (JSS = Jupiter-De-Spun-Sun, see SIS for details.) This is a 3x3 matrix, but if read in as a 1x9 stream then the 1D stream is [a,b,c, d,e,f, g,h,i] and the 2D matrix would be [a,b,c d,e,f g,h,i]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MCP_VOLTAGE",
+      "type": "double",
+      "units": "Volts",
+      "description": "MCP Voltages on the three electron sensors, E060, E180 and E300 respectively.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ISSUES",
+      "type": "integer",
+      "units": "",
+      "description": "Issues or potential issues in this data record. These are issues that can be identified within the JADE packet of data itself without any external information. e.g. timing issues due to the MAG time stutter, or any voltage pulsing, would not be included as there are no indicators to them within this JADE packet. [For a more comprehensive list of potential issues from internal and external sources please see the Level 3 data.] Level 2 issues of this JADE packet are flagged by individual bits, and several may be hit.  If no issues are flagged then this 4-byte unsigned integer is zero. A value of 4294967295 is the MISSING_CONSTANT and means that the issue status is currently unknown. All bits at 0 implies all is okay as seen by this packet.  If a bit is set to 1 then that bit is flagged, otherwise it is set to zero and unflagged. The bits are set as followed, grouped in to seriousness: Not very serious issues for doing science: Bit  0 = UTC time is predicted, yet to be finalized. Bit  1 = Position/Orientation values predicted, yet to be finalized.  Level 3 (and above) data only. Bit  2 = TABLES_VERSION object was altered on the ground to accurately reflect a 'commanded parameter update' outside the initial per-orbit commands JADE is returning. [If changed, the original downlinked TABLES_VERSION value can be found by cross- referencing the PARAM_TABLE_VER object in the JAD_L20_HSK_ALL_SHK files.  Note here the PARAM_TABLE_VER value is given as a unsigned integer of Hex Major-Middle-Minor, such that a value of 770 decimal is in hex 0x302, meaning Table Version 3.02 ] Bit  3 = FSW_VERSION 4.00 LRS/CAL Ion Species bug fixed on the ground by adjusting TIMESTAMP_WHOLE, TIMESTAMP_SUB, and ACCUMULATION_TIME based on cross-referencing JADE commanding. Bit  4 = LRS/CAL Ion Species record with unobserved look directions (views) populated using views from neighboring record. See Bit 12 for uncorrected/unpopulated description. (Only possible if ACCUMULATION_TIME = 30.) Bit  5 = TIMESTAMP_WHOLE/SUB adjusted on the ground to mitigate any Juno time stutter affects. [Other TIMESTAMPs are susceptible to the onboard time stutter too, but only the JADE packet TIMESTAMP_WHOLE/SUB is tracked here.] Bit  6 =       Currently unused. Bit  7 = Warning, a leap second occurs during the accumulation period. Data slightly different than expected, but can be used for science with a little extra coding: Bit  8 = ACCUM_TRUNCATION object flagged. Bit  9 = Electron (HRS/LRS/CAL) MAG objects are not tracked, are either zeros or MISSING_CONSTANT. [LRS and CAL did not have MAG objects prior to FSW_VERSION 4.10, therefore those MAG objects here are set to MISSING_CONSTANT when FSW_VERSION < 4.10.] Bit 10 = TIMESTAMP_WHOLE/SUB affected by a Juno onboard time stutter, JADE reported timestamp is likely 1 whole tick too large. [Other TIMESTAMPs are susceptible to the onboard time stutter too, but only the JADE packet TIMESTAMP_WHOLE/SUB is tracked here.] Bit 11 =       Currently unused. Bit 12 = LRS/CAL Ion Species record potentially has unobserved look directions (spin phase sectors or views) present in the data, meaning the record may not contain data for a full 4pi steradians field-of-view. Unobserved look directions have zero counts per view (or counts per second) in the data, although an observed look direction may also have zero counts if no ions were measured. Therefore there is a potential confusion over zero measured counts or simply unmeasured. e.g. if the spin period is 30.7 seconds, then not all of the 78 spin phase sectors will be sampled in 30 seconds. (Unobserved views are only possible if ACCUMULATION_TIME <= 30.) See the JADE SIS for more information. Bit 13 = At least one anode is blanked. See SIS document for further information. Bit 14 = FSW_VERSION 4.00 LRS/CAL Ion Species bug warning: Not fixed as yet - when fixed it will become bit 3 of ISSUES instead. Level 2 data only when FSW_VERSION = 4.00, ACCUMULTION_TIME object is MISSING_CONSTANT. Also, TIMESTAMP_WHOLE:TIMESTAMP_SUB is the end of the packet rather than the usual start, see TIMESTAMP_WHOLE object for more details. [Only affects data from 2015-089 to 2015-115.] Bit 15 = Electron Anodes Reversed. Level 2 data only when FSW_VERSION < 4.10 and only electron packets. Electron anodes are reversed in order and need to be remapped, however electron Spin Phase data (LRS data) cannot be remapped. See the SIS document for more information about this. [Affects all electron data 2011 to 2015-115.] Data very different than expected, may not be suitable for science - use with extreme caution. Bit 16 = Data is not from flight instrument on Juno, see FLIGHT_OR_STL object. Bit 17 = MCP_NOT_AT_COMMANDED object flagged. Electron HRS/CAL/HVE packets use all three electron sensors and therefore have three MCP_NOT_AT_COMMANDED values per packet. Setting this flag means at least one of those three mcps is not at its commanded value. Bit 18 = Data includes some JADE-E300 sensor data. (Only flagged for HRS, LRS, CAL and HVE data.) E300 has a high voltage power supply issue and reported energy steps may be incorrect. If E300 is off but still reported in the data product, it may be zeros of fill values. Bit 19 = Ion packet abruptly truncated. This packet should not be used.  It had an ACCUMULATION_TIME = 1, ACCUM_TRUNCATION = 1 and the DATA object is all zeros, with a timestamp that matches an earlier valid packet that was not truncated and has non-zero DATA. e.g. TOF and LOG example in level 2 data at TIMESTAMP_WHOLE of 495879710 (UTC 2015-261). Bit 20 = MCP Dipping Triggered, in one or more sensors. If the sensor measures excessive counts, it temporarily lowers the MCP voltage to reduce the number of counts and protect the sensor. The MCP_NOT_AT_COMMANDED object is also flagged (Bit 17 in ISSUES) since the MCP is no longer at the commanded voltage. For HRS/CAL/HVE electrons (datasets where multiple sensors are on) it is possible that one sensor has been dipped, but the others are not and still providing good data. (First MCP dip was HRS electrons, 2017-350.) Bit 21 = MCP Dipped sensor's DATA set to fill values. If MCP dipping has triggered (Bit 20 of ISSUES) then:  DATA and BACKGROUND objects (and their *_SIGMAs) have been replaced with MISSING_CONSTANT values. (Never used for Level 2 data, which has the counts as measured in the dipped state.) In addition, Bit 17 of the ISSUES object (i.e. MCP_NOT_AT_COMMANDED object = 1) is set to zero, and, if it exists, the MCP_NOT_AT_COMMANDED object itself is changed (from 1) to be 0 for the offending sensor(s). If the DATA object contains data from multiple sensors (HRS/CAL/HVE electrons) then only the elements of the DATA object for the dipped sensor are set to MISSING_CONSTANT (as identified by the MCP_NOT_AT_COMMANDED value for each sensor (prior to setting them to 0)). [See Bit 22 for a similar flag.] Bit 22 = 1 or more ELC sensor DATA set to fill values. Affects only electron HRS/CAL/HVE products (i.e. products that use multiple sensors), and generally only when starting that mode. When switching to HRS/CAL/HVE from LRS, one JADE-E sensor is already on, and the other(s) have to turn on, then it takes some time for that sensor to reach the commanded voltage. For a given record, MCP_NOT_AT_COMMANDED = 0 for one sensor but is still = 1 for others. That is one sensor is taking valid science but the other(s) are not there yet and for those sensors:  DATA and BACKGROUND objects (and their *_SIGMAs) have been replaced with MISSING_CONSTANT values. (Never used for Level 2 data, which has the counts as measured in the dipped state.) In addition, Bit 17 of the ISSUES object (i.e. MCP_NOT_AT_COMMANDED object = 1) is set to zero, and, if it exists, the MCP_NOT_AT_COMMANDED object itself is changed (from 1) to be 0 for the offending sensor(s). Only the elements of the DATA object for the original MCP_NOT_AT_COMMANDED = 1 sensor(s) (prior to setting them to 0) are set to MISSING_CONSTANT. [Bits 21 and 22 are essentially the same feature caused by an mcp voltage not being at the commanded value, but the reason why this is the case is different.  The treatment is identical for both Bit 21 and Bit 22.] Bit 23 =       Currently unused. Bit 24 =       Currently unused. Bit 25 =       Currently unused. Bit 26 =       Currently unused. Bit 27 =       Currently unused. Bit 28 =       Currently unused. Bit 29 =       Currently unused. Bit 30 =       Currently unused. Bit 31 = Reserved for MISSING_CONSTANT use. Each bit has a decimal value of 2^{bit number}, and the Issues flag is the sum of 2^{flagged bit numbers}. For instance, if this ISSUES flag = 131329, then in binary that value is 00000000000000100000000100000001 showing bits 17, 8 and 0 are flagged. [If a currently unused bit is set, please check the latest LBL file for this product that you can find to see if it now has a definition.]",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIMESTAMP_WHOLE",
+      "type": "integer",
+      "units": "",
+      "description": "Timestamp (Whole Second) of JADE Level 2 packet used to make this Level 3 record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TIMESTAMP_SUB",
+      "type": "integer",
+      "units": "",
+      "description": "Timestamp (Subsecond) of JADE Level 2 packet used to make this Level 3 record.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "DATA: Counts/Second 64 Energy x 48 Look Directions.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DATA_SIGMA",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "DATA_SIGMA 1-sigma uncertainties on values in object DATA, such that true value = DATA +/- DATA_SIGMA. See DATA entry above for size information.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BACKGROUND",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "Background value removed from DATA. If you wish to do your own background removal, add this object to DATA then you can remove a background via your own method. See the SOURCE_BACKGROUND object for the background method used per record. The background values here were generated from a background anode or JADE's own ground method, or are all zeros if no background was removed.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BACKGROUND_SIGMA",
+      "type": "double",
+      "units": "COUNTS/SECOND",
+      "description": "BACKGROUND_SIGMA 1-sigma uncertainties on values in object BACKGROUND, such that true value = BACKGROUND +/- BACKGROUND_SIGMA. See BACKGROUND entry above for size information.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DIM1_E",
+      "type": "double",
+      "units": "eV/q",
+      "description": "1st Dimension of DATA: Energy (center) in eV/q.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DIM2_ELEVATION",
+      "type": "double",
+      "units": "Degrees",
+      "description": "2nd Dimension of DATA: Spacecraft elevation - center value. Spacecraft elevation (degs) is analogous to latitude on a sphere. In spacecraft xyz co-ords: +z is equivalent to elevation = +90 degs -z is equivalent to elevation = -90 degs (The communication dish is directed along +z) xy-plane at z = 0 is equivalent to elevation = 0 Note, 2nd dimension is really look direction which has an elevation and azimuth; hence two objects describe this: DIM2_ELEVATION and DIM2_AZIMUTH_DESPUN.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "DIM2_AZIMUTH_DESPUN",
+      "type": "double",
+      "units": "Degrees",
+      "description": "2nd Dimension of DATA: Despun S/C azimuth - center value. Spacecraft azimuth (degs) is analogous to longitude on a sphere. In spacecraft xyz co-ords: +x is equivalent to azimuth =   0 degs +y is equivalent to azimuth =  90 degs -x is equivalent to azimuth = 180 degs -y is equivalent to azimuth = 270 degs +x is equivalent to azimuth = 360 degs +y is equivalent to azimuth = 450 degs The 'Despun' azimuth angle varies because Juno spins, where azimuth = 0 is defined as +x when spin phase equals zero (e.g., despun x-z plane contains the ECLIPJ2000 north). The relationship between despun azimuth and spin phase is simply: Despun Azimuth = 360 degrees - Spin Phase Note, 2nd dimension is really look direction which has an elevation and azimuth; hence two objects describe this: DIM2_ELEVATION and DIM2_AZIMUTH_DESPUN.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MAG_VECTOR",
+      "type": "double",
+      "units": "nT",
+      "description": "MAG vector in nT, 3 components [X, Y, Z] MAG range is +/- 16 G, hence limits. This xyz coordinate system is despun spacecraft; see the definitions of DIM2_ELEVATION and DIM2_AZIMUTH: +X is when [azimuth, elevation] = [  0,  0] degrees, +Y is when [azimuth, elevation] = [ 90,  0] degrees, +Z is when elevation = 90 degrees.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,24 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Sample_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Universal time of the sample at the spacecraft (UTC, spacecraft event         \n                        time). The time appears as 6 integer columns (year, day of year, hour,        \n                        minute, second, millisecond). Individual elements of the time column are      \n                        separated by a single ASCII space character and have leading zeros            \n                        omitted. The individual elements can be read by using the FORTRAN format      \n                        '(1X,I4,1X,I3,3(1X,I2),1X,I3)' IYR IDOY IHR IMIN ISEC IMSEC",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

@@ -1,0 +1,250 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "heliocentricDistance",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric Distance",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLatitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) latitude of the spacecraft position at the start of data interval",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "heliographicLongitude",
+      "type": "double",
+      "units": "deg",
+      "description": "HelioGraphic Inertial (HGI) longitude of the spacecraft position at the start of data interval",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ABS_B",
+      "type": "double",
+      "units": "nT",
+      "description": "B Field Magnitude (average of fine scale magnitudes)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "F",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnitude of Average Field, sqrt(Bx^2+By^2+Bz^2), nT",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BR",
+      "type": "double",
+      "units": "nT",
+      "description": "BR in RTN (Radial-Tangential-Normal) coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BT",
+      "type": "double",
+      "units": "nT",
+      "description": "BT in RTN coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "BN",
+      "type": "double",
+      "units": "nT",
+      "description": "BN in RTN coordinate system (w/ uncertainty)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "V",
+      "type": "double",
+      "units": "km/s",
+      "description": "Bulk Flow Speed",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elevAngle",
+      "type": "double",
+      "units": "Deg",
+      "description": "THETA - elevation angle of the velocity vector (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "azimuthAngle",
+      "type": "double",
+      "units": "Deg",
+      "description": "PHI - azimuth angle of the velocity vector (RTN)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonDensity",
+      "type": "double",
+      "units": "n/cc",
+      "description": "Proton density",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonTemp",
+      "type": "double",
+      "units": "deg k",
+      "description": "Proton Temperature (calculated from thermal speed width T=60.5*Vth*Vth)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_LECP",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 0.52 - 1.45 energy bins, MeV, LECP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_LECP",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 3.04 - 17.3 energy bins, MeV, LECP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_LECP",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 22.0 - 30.0  energy bins, MeV, LECP",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux1_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 3.000 - 4.600 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux2_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 4.600 - 6.200 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux3_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 6.200 - 7.700 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux4_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 7.700 - 12.800 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux5_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 12.800 - 17.900 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux6_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 17.900 - 30.000 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux7_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 30.000 - 48.000 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux8_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 48.000 - 56.000 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux9_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 75.861 - 82.562 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux10_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 130.339 - 154.217 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux11_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 154.217 - 171.338 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux12_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 171.338 - 193.643 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux13_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 193.643 - 208.152 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux14_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 208.152 - 245.690 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux15_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 245.690 - 272.300 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux16_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 272.300 - 344.010 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux17_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 344.010 - 478.623 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "protonFlux18_CRS",
+      "type": "double",
+      "units": "1/(cm^2 sec ster MeV)",
+      "description": "Proton Flux 478.623 - 598.667 energy bins, MeV, CRS (6-hr)",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1977-01-01T00:00:00.000Z",
+  "stopDate": "2020-12-31T11:00:00.000Z"
+}

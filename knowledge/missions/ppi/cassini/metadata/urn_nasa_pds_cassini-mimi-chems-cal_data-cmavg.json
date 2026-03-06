@@ -1,0 +1,186 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "Purpose",
+      "type": "double",
+      "units": "",
+      "description": "indicates that this row contains science         \n    data",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SCLOCK",
+      "type": "double",
+      "units": "",
+      "description": "start time of the averaging interval as a        \n    spacecraft clock string; SCLOCK values are recorded as P/NNNNNNNNNN.FFF   \n    where P is the partition number, NNNNNNNNNN is roughly the number of      \n    seconds since the start of the partition, and FFF is the number of ticks. \n    Each tick is roughly 1/256 of a second.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Ephemeris_s",
+      "type": "double",
+      "units": "",
+      "description": "start time of the averaging interval in          \n    ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "End_Ephemeris_s",
+      "type": "double",
+      "units": "",
+      "description": "end time of the averaging interval in            \n    ephemeris time (TDB seconds past the J2000 epoch)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Counter",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start_Sector_Sclock_major",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Subsector",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Microsectors_Covered",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Spin_Period_s",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Staring",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Sensor_Bitrate",
+      "type": "double",
+      "units": "",
+      "description": "unused field in this file",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Start",
+      "type": "double",
+      "units": "minutes",
+      "description": "start time of hour-long average",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Stop",
+      "type": "double",
+      "units": "minutes",
+      "description": "end time of hour-long average",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Year",
+      "type": "double",
+      "units": "years",
+      "description": "",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Ave_doy",
+      "type": "double",
+      "units": "days",
+      "description": "start of the hour-long averaging interval        \n    expressed as a fractional day of year",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Radial_Distance",
+      "type": "double",
+      "units": "Saturn radii",
+      "description": "position of Cassini at start of one-hour         \n\tinterval in Saturn radii, where 1 RS = 60268 km",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Latitude",
+      "type": "double",
+      "units": "degrees",
+      "description": "latitude of Cassini at start of                  \n    measurement in the SZS (Saturn Equatorial System) frame",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Local_Time",
+      "type": "double",
+      "units": "hours",
+      "description": "local time of Cassini at the start of the        \n    measurement given in hours and in the SZS system",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

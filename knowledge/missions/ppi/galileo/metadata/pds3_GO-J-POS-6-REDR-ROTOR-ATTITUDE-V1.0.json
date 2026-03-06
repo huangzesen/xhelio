@@ -1,0 +1,132 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ROTOR RIGHT ASCENSION",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor right ascension, EME-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR DECLINATION",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor declination, EME-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR TWIST",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor twist (spin phase) angle, EME-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ROTOR SPIN",
+      "type": "double",
+      "units": "RADIAN",
+      "description": "Rotor spin phase angle, ECL-50 coordinates.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A11",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 1, column 1 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A12",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 1, column 2 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A13",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 1, column 3 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A21",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 2, column 1 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A22",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 2, column 2 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A23",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 2, column 3 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A31",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 3, column 1 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A32",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 3, column 2 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EME50_2_SYS3_A33",
+      "type": "double",
+      "units": "N/A",
+      "description": "Row 3, column 3 value of the EME50->System III rotation matrix.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

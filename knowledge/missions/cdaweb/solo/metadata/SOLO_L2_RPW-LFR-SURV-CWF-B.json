@@ -1,0 +1,39 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "SURVEY_MODE",
+      "type": "integer",
+      "units": "",
+      "description": "LFR survey mode",
+      "fill": "255.0"
+    },
+    {
+      "name": "B",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field values (Bx, By, Bz)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "B_RTN",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field in RTN Coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    }
+  ],
+  "startDate": "2020-06-15T00:00:13.000Z",
+  "stopDate": "2025-11-19T00:03:55.000Z"
+}

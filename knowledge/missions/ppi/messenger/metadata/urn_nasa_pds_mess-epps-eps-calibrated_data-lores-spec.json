@@ -1,0 +1,174 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "ACCUM_TIME",
+      "type": "double",
+      "units": "seconds",
+      "description": "Integration/Accumulation time.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "RADIAL_DIST",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The distance of the spacecraft from Mercury.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSO_LOCAL_TIME",
+      "type": "double",
+      "units": "Fractional Hours",
+      "description": "The Mercury longitude of the spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSO_LATITUDE",
+      "type": "double",
+      "units": "Degrees",
+      "description": "The Mercury latitude of the spacecraft.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_X",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The X position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_Y",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The Y position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MSGR_MSO_Z",
+      "type": "double",
+      "units": "Mercury radii",
+      "description": "The Z position of the spacecraft in the MSO frame.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ION_EVENT_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Ion event hardware count rate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "E_EVENT_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Electron event hardware count rate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "ION_PROCESSED_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Ion event hardware count rate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "E_PROCESSED_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Ion event hardware count rate.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "PILEUP_ION_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Rate of ion events discarded due to pileup\n condition.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "PILEUP_E_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Rate of electron events discarded due to pileup\n condition.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "REJECTED_ION_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Rate of ion events rejected due to negative energy.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "REJECTED_E_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Rate of electron events rejected due to negative\n energy.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    },
+    {
+      "name": "MULTIPLE_HITS_RATE",
+      "type": "double",
+      "units": "counts/sec",
+      "description": "Rate of events discarded due to multiple hits.",
+      "size": [
+        1
+      ],
+      "fill": "-1.0e-38"
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

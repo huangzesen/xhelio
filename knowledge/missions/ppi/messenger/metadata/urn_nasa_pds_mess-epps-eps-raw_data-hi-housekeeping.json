@@ -1,0 +1,321 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "MET",
+      "type": "double",
+      "units": "",
+      "description": "Mission Elapsed Time in seconds at the end of the\n   accumulation.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HVPS_SET",
+      "type": "double",
+      "units": "",
+      "description": "HVPS setting. EPS high voltage level (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIAS_SET",
+      "type": "double",
+      "units": "",
+      "description": "Bias setting. EPS detector bias level (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_0_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 0 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_1_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 1 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_2_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 2 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_3_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 3 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_4_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 4 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_ANODE_5_SET",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight start anode 5 discriminator\n   setting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_START_CFD",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight combined Start Constant Fraction\n   Discriminator settting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TOF_STOP_CFD",
+      "type": "double",
+      "units": "",
+      "description": "Time of flight combined Stop Constant Fraction\n   Discriminator settting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEAVY_ION_0_SET",
+      "type": "double",
+      "units": "",
+      "description": "Heavy ion 0 discriminator settting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HEAVY_ION_1_SET",
+      "type": "double",
+      "units": "",
+      "description": "Heavy ion 1 discriminator settting (0-255).",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ION_FAST_1_3_5",
+      "type": "double",
+      "units": "",
+      "description": "Ion Fast channels, 1,3,5  Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ION_SHAPED_1_3_5",
+      "type": "double",
+      "units": "",
+      "description": "Ion shaped channels 1,3,5 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ION_FAST_7_9_11",
+      "type": "double",
+      "units": "",
+      "description": "Ion fast channels 7,9,11.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "ION_SHAPED_7_9_11",
+      "type": "double",
+      "units": "",
+      "description": "Ion shaped channels 7,9,11 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E_FAST_0_2_4",
+      "type": "double",
+      "units": "",
+      "description": "Electron fast channels 0,2,4 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E_SHAPED_0_2_4",
+      "type": "double",
+      "units": "",
+      "description": "Electron shaped channels 0,2,4 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E_FAST_6_8_10",
+      "type": "double",
+      "units": "",
+      "description": "Electron fast channels 6,8,10 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "E_SHAPED_6_8_10",
+      "type": "double",
+      "units": "",
+      "description": "Electron shaped channels 6,8,10 Discriminator Setting.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CMD_WORD_A",
+      "type": "double",
+      "units": "",
+      "description": "Command word A mirror. A chart matrix describing command\n   word A in EDR SIS document.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "CMD_WORD_B",
+      "type": "double",
+      "units": "",
+      "description": "Command word B mirror. A chart matrix describing command\n   word B in EDR SIS document.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EVENT_PARAM_A",
+      "type": "double",
+      "units": "",
+      "description": "Event parameter A mirror. This parameter contains\n   individual bits that enable/disable energy and ion channels for event\n   processing.  Description of Event Parameter A in EDR SIS document.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EVENT_PARAM_B",
+      "type": "double",
+      "units": "",
+      "description": "Event parameter B mirror.  This parameter contains two\n   3-bit code field that programmably selects the delay taps for energy Fast\n   signals. Description in EDR SIS document.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EVENT_PARAM_C",
+      "type": "double",
+      "units": "",
+      "description": "Event parameter C mirror.  This parameter contains one\n   7-bit field that programmably selects the number of EPS electron events to\n   be discarded per electron event that is placed in the Event FIFO buffer.\n   Description in EDR SIS document.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HVPS_CLOCK_ADJUST",
+      "type": "double",
+      "units": "",
+      "description": "HVPS clock adjust value. Drive for HV supply; since\n   supply does not have a separate ENABLE control line, setting this signal\n   to LOW is the method used to quickly disable the supply.  Differential\n   100khz square-wave signal programmable +/-10% about 100kHz via 256 steps.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BIAS_CLOCK_ADJUST",
+      "type": "double",
+      "units": "",
+      "description": "Bias clock adjust value. Drive for Bias supply; since\n   supply does not have a separate ENABLE control line, setting this signal to\n   LOW is the method used to quickly disable the supply.  Differential 100khz\n   square-wave signal programmable +/-10% about 100kHz via 256 steps.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "LVPS_CONTROL_WORD",
+      "type": "double",
+      "units": "",
+      "description": "LVPS control word.  Echo of the control bit for the LVPS\n   +15V and -15V.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "INVALID_CH_ID_COUNT",
+      "type": "double",
+      "units": "",
+      "description": "Invalid Channel ID count. Accumulation period is N1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "EPS_FIFO_RESET_COUNT",
+      "type": "double",
+      "units": "",
+      "description": "EPS-fifo-reset count.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "I2C_BUS_ERR_COUNT",
+      "type": "double",
+      "units": "",
+      "description": "I2C Bus error count. Accumulation period is N1.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "BUS_READ_VALUE",
+      "type": "double",
+      "units": "",
+      "description": "Value provided by most recent bus read command.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "SPARE",
+      "type": "double",
+      "units": "",
+      "description": "Spare column, unused.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

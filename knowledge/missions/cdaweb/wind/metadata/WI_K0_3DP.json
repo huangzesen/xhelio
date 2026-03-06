@@ -1,0 +1,107 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "sc_position",
+      "type": "double",
+      "units": "km",
+      "description": "Wind s/c position in GSE coords, 3 comp",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "sc_velocity",
+      "type": "double",
+      "units": "km/s",
+      "description": "Wind s/c velocity in GSE coord., 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "elect_flux",
+      "type": "double",
+      "units": "pfu",
+      "description": "Electron Flux at 7 energies (0.1-225 keV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "elect_density",
+      "type": "double",
+      "units": "#/cm^3",
+      "description": "electron density, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elect_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "electron velocity in GSE coord, 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "elect_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "electron temperature, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "elect_qdotb",
+      "type": "double",
+      "units": "eV/cm^2-s",
+      "description": "electron heat flux along magnetic field direction",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ion_flux",
+      "type": "double",
+      "units": "pfu",
+      "description": "Ion flux at 7 energies (.07-400 keV)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "ion_density",
+      "type": "double",
+      "units": "#/cm^3",
+      "description": "ion density, scalar",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ion_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "ion velocity in GSE coord., 3 comp.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "ion_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "ion temperature, scalar",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "2019-01-01T00:00:39.000Z",
+  "stopDate": "2026-02-16T23:59:16.000Z"
+}

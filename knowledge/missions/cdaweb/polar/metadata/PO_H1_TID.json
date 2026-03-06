@@ -1,0 +1,108 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "total_den",
+      "type": "double",
+      "units": "no/cc",
+      "description": "Total Ion Density, available after 07-Dec-1996.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "total_vel",
+      "type": "double",
+      "units": "km/s",
+      "description": "Total Ion Plasma Velocity, Field Aligned, available after 07-Dec-1996",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "total_temp",
+      "type": "double",
+      "units": "eV",
+      "description": "Total Ion Temperature, Parallel and Perpendicular to the Magnetic Field. Available after 07-Dec-1996",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "total_en",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "Total Ion Energy Spectrogram. Available after 07-Dec-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        31
+      ]
+    },
+    {
+      "name": "total_spin",
+      "type": "double",
+      "units": "eV/[cm^2*s*sr*eV]",
+      "description": "Total Ion Spin Angle Spectrogram. Available after 07-Dec-1996.",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        32
+      ]
+    },
+    {
+      "name": "tide_stat",
+      "type": "integer",
+      "units": "TIDE",
+      "description": "TIDE Instrument Status (0-off,1-on,2-standby,3-mirrors stepped)",
+      "fill": "255.0"
+    },
+    {
+      "name": "psi_stat",
+      "type": "integer",
+      "units": "PSI",
+      "description": "PSI Instrument Status (0-off,1-on,2-standby)",
+      "fill": "255.0"
+    },
+    {
+      "name": "sc_pot",
+      "type": "double",
+      "units": "Volts",
+      "description": "Spacecraft Potential (from EFI K0 or a constant value)",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ram_spin",
+      "type": "double",
+      "units": "Deg",
+      "description": "Spacecraft Ram Spin Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "ram_polar",
+      "type": "double",
+      "units": "Deg",
+      "description": "Spacecraft Ram Polar Angle",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_az",
+      "type": "double",
+      "units": "Deg",
+      "description": "Magnetic Field Azimuth",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "mag_el",
+      "type": "double",
+      "units": "Deg",
+      "description": "Magnetic Field Elevation",
+      "fill": "-9.999999848243207e+30"
+    }
+  ],
+  "startDate": "1996-12-08T00:00:00.000Z",
+  "stopDate": "2008-04-16T23:59:45.000Z"
+}

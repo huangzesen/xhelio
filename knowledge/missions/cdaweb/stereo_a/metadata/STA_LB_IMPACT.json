@@ -1,0 +1,669 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "MAGBField",
+      "type": "double",
+      "units": "nT",
+      "description": "Magnetic field vector in STEREO-A Heliocentric Radial Tangential Normal coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Nelectrons",
+      "type": "double",
+      "units": "cnts/s",
+      "description": "Electron number density from SWEA on the STEREO-A spacecraft.",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Ve",
+      "type": "double",
+      "units": "km/s",
+      "description": "Electron velocity from SWEA in STEREO-A HGRTN coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "Pe",
+      "type": "double",
+      "units": "eV/cm^3",
+      "description": "Electron pressure tensor from SWEA in STEREO-A HGRTN coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        6
+      ]
+    },
+    {
+      "name": "He",
+      "type": "double",
+      "units": "eV/cm^2/s",
+      "description": "Electron heat flux from SWEA in STEREO-A HGRTN coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SWEAPAD",
+      "type": "double",
+      "units": "cnts/cm^2/s",
+      "description": "Electron Pitch Angle Distribution in SWEA coordinates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        2,
+        6,
+        2
+      ]
+    },
+    {
+      "name": "STEUns",
+      "type": "double",
+      "units": "cnts/cm^2/s",
+      "description": "Non-solar electron spectrum from STE-U (upstream)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "STEUs",
+      "type": "double",
+      "units": "cnts/cm^2/s",
+      "description": "Solar electron spectrum from STE-U (upstream)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "STED",
+      "type": "double",
+      "units": "cnts/cm^2/s",
+      "description": "Electron spectrum from STE-D (downstream)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "HETLiveTime",
+      "type": "double",
+      "units": "s",
+      "description": "SEP/HET Livetime",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LETLiveTime",
+      "type": "double",
+      "units": "s",
+      "description": "---> SEP/LET Livetime",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "LETTrigRate",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET Number of Front-end Triggers",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETHazRate",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET Number of events with hazard flag",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETAcceptRate",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET Number of accepted events",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETCodeOK",
+      "type": "integer",
+      "units": "",
+      "description": "---> LET Code OK. Internal code check, 1=good, 0=bad",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETHeaterDutyCycle",
+      "type": "integer",
+      "units": "",
+      "description": "---> LET Heater Duty Cycle",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETLeakConv",
+      "type": "integer",
+      "units": "",
+      "description": "---> LET Leakage Current Balance, 1=ok, 0=bad",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETDyThState",
+      "type": "integer",
+      "units": "",
+      "description": "---> LET Dynamic Thresholding State, 0=normal, 1,2,3=higher threshold setting",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "LETMinute",
+      "type": "integer",
+      "units": "",
+      "description": "---> LET Minute Counter - rolls over at 60",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SEPTStatus",
+      "type": "integer",
+      "units": "",
+      "description": "---> SEPT Status Code",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "ISCStatus",
+      "type": "integer",
+      "units": "",
+      "description": "---> Spacecraft Status code",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "InterfaceActive",
+      "type": "integer",
+      "units": "",
+      "description": "---> Instrument Activity Code",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SWEAModeID",
+      "type": "integer",
+      "units": "",
+      "description": "---> SWEA Mode ID",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "STEModeID",
+      "type": "integer",
+      "units": "",
+      "description": "---> STE Mode ID",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "MAGHKP",
+      "type": "integer",
+      "units": "",
+      "description": "---> MAG HKP Status Code",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "HETElectronFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "HET Electron Flux between 0.7 and 4 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "HETProtonFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> HET Proton Flux measured in 3 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HETHeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> HET He Flux measured in 3 energy channels",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HETCNOFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> HET CNO Flux in 2 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HETFeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> HET Fe Flux between 52 and 74 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SITHeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "SIT He Flux in 4 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SITCNOFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> SIT CNO Flux in 4 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SITFeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> SIT Fe Flux in 4 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "LETProtonFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "LET Proton Flux in 4 bins (middle 2 have same energy, but different angular coverage)",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "LET4HeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> LET 4He Flux in 5 bins. Bins 1,2 and 3,4 have same energy coverage but different angular coverage",
+      "fill": "-1e+31",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "LET3HeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> LET 3He Flux in 2 energies (full 260 deg coverage)",
+      "fill": "-1e+31",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "LETCNOFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> LET CNO Flux in 3 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LETFeFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "---> LET Fe Flux in 4 energy bins",
+      "fill": "-1e+31",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SEPTElectronFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "SEPT Electron Flux (see labels for binning)",
+      "fill": "-1e+31",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "SEPTIonFlux",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV/nuc",
+      "description": "SEPT Ion Flux (see labels for binning)",
+      "fill": "-1e+31",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "HETElectronCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "HET Electron Counts (0.7 - 4 MeV)",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "HETProtonCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> HET Proton Counts (in 3 energy bins)",
+      "fill": "4294967295.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "HETCNOCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> HET CNO Counts (in 2 energy bins)",
+      "fill": "4294967295.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "HETFeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> HET Fe Cnts (52 - 74 MeV/nuc)",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SITHeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "SIT He Counts",
+      "fill": "4294967295.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SITCNOCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> SIT CNO Counts",
+      "fill": "4294967295.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SITFeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> SIT Fe Counts",
+      "fill": "4294967295.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "LETProtonCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "LET Proton Counts",
+      "fill": "4294967295.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "LET4HeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET 4He Counts",
+      "fill": "4294967295.0",
+      "size": [
+        5
+      ]
+    },
+    {
+      "name": "LET3HeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET 3He Counts",
+      "fill": "4294967295.0",
+      "size": [
+        2
+      ]
+    },
+    {
+      "name": "LETCNOCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET CNO Counts",
+      "fill": "4294967295.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "LETFeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> LET Fe Counts",
+      "fill": "4294967295.0",
+      "size": [
+        4
+      ]
+    },
+    {
+      "name": "SEPTElectronCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "SEPT Electron Counts",
+      "fill": "4294967295.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "SEPTIonCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "SEPT Ion Counts",
+      "fill": "4294967295.0",
+      "size": [
+        10
+      ]
+    },
+    {
+      "name": "HETHeCnts",
+      "type": "integer",
+      "units": "cnts",
+      "description": "HET He Counts",
+      "fill": "4294967295.0",
+      "size": [
+        3
+      ]
+    },
+    {
+      "name": "SFSEPTElectrons",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "Summary Flux SEPT Electrons from 0.035 to 0.065 MeV summed in all directions",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFHETElectrons",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux HET Electrons from 0.7 to 4 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFSEPTIons1",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux SEPT Ions from 0.137 to 0.623 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFSEPTIons2",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux SEPT Ions from 0.623 to 2.22 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFLETProtons",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux LET Protons from 2.2 to 12 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFHETProtons",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux HET Protons from 13 to 100 MeV",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFSITHe",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux SIT Helium from 0.12 to 1.08 Mev/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFSITCNO",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux SIT CNO from 0.12 to 1.08 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFSITFe",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux SIT Fe from 0.12 to 1.08 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFLETHe",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux LET Helium from 4 to 12 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFLETCNO",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux LET CNO from 4 to 12 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SFLETFe",
+      "type": "double",
+      "units": "1/cm^2-s-ster-MeV",
+      "description": "---> Summary Flux LET Fe from 4 to 12 MeV/nuc",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "SCSEPTElectrons",
+      "type": "integer",
+      "units": "cnts",
+      "description": "Summary Counts SEPT Electrons from 0.035 to 0.065 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCHETElectrons",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts HET Electrons from 0.7 to 4 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCSEPTIons1",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts SEPT Ions from 0.137 to 0.623 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCSEPTIons2",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts SEPT Ions from 0.623 to 2.22 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCLETProtons",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts LET Protons from 2.2 to 12 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCHETProtons",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts HET Protons from 13 to 100 MeV",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCSITHe",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts SIT Helium from 0.12 to 1.08 MeV/nuc",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCSITCNO",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts SIT CNO from 0.12 to 1.08 MeV/nuc",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCSITFe",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts SIT Fe from 0.12 to 1.08 MeV/nuc",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCLETHe",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts LET Helium from 4 to 12 MeV/nuc",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCLETCNO",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts LET CNO from 4 to 12 MeV/nuc",
+      "fill": "4294967295.0"
+    },
+    {
+      "name": "SCLETFe",
+      "type": "integer",
+      "units": "cnts",
+      "description": "---> Summary Counts LET Fe from 4 to 12 MeV/nuc",
+      "fill": "4294967295.0"
+    }
+  ],
+  "startDate": "2007-03-20T17:04:31.000Z",
+  "stopDate": "2026-02-17T16:26:07.000Z"
+}

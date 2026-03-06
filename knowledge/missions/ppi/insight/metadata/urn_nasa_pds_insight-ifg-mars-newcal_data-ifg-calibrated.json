@@ -1,0 +1,120 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "length": 24
+    },
+    {
+      "name": "SCET_UTC",
+      "type": "double",
+      "units": "",
+      "description": "Sample S/C event time UTC in YYYY-MM-DDThh:mm:ss.sss format",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "MLST",
+      "type": "double",
+      "units": "",
+      "description": "Mean local time represented as decimal SOLs with the format SSSS.xxxxxxx where SSSS is the SOL number and xxxxxxx is the fractional SOL.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "TLST",
+      "type": "double",
+      "units": "",
+      "description": "Mars true local time represented as decimal hours (0 - 24)",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "HR_Angle",
+      "type": "double",
+      "units": "Degree",
+      "description": "Solar hour angle in degrees (0-360) with 0 at noon and 90 at dusk.",
+      "size": [
+        1
+      ]
+    },
+    {
+      "name": "Bx_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft mechanical coordinate system Bx component in nT.\n                       This frame is called the INSIGHT Lander Frame in SPICE and\n                       is described in the insight_v02.tf file as:\n                       FRAME_INSIGHT_LANDER = -189001, FRAME_-189001_NAME = INSIGHT_LANDER.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "By_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft mechanical coordinate system By component in nT",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "Bz_SC",
+      "type": "double",
+      "units": "nT",
+      "description": "Spacecraft mechanical coordinate system Bz component in nT",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "B_north",
+      "type": "double",
+      "units": "nT",
+      "description": "B_north (+X) field component [nT] in the Landed Local Vertical, Local Horizontal Coordinate System.\n                       In this frame, +Z points along local gravity vector, +X points towards local North, and +Y points east.\n                       This frame is called the INSIGHT_LL Frame in SPICE and is described in the insight_v02.tf file as:\n                       FRAME_INSIGHT_LL = -189003, FRAME_-189003_NAME = INSIGHT_LL.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "B_east",
+      "type": "double",
+      "units": "nT",
+      "description": "The B_east (+Y) field component [nT] in the INSIGHT_LL frame.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "B_down",
+      "type": "double",
+      "units": "nT",
+      "description": "The B_down (+Z) field component [nT] in the INSIGHT_LL frame.",
+      "size": [
+        1
+      ],
+      "fill": "9999.999"
+    },
+    {
+      "name": "dqf",
+      "type": "double",
+      "units": "",
+      "description": "Data quality flag - See the SIS for details of how to interpret flag values.",
+      "size": [
+        1
+      ]
+    }
+  ],
+  "description": "",
+  "startDate": "",
+  "stopDate": "",
+  "_meta": {
+    "source": "label"
+  }
+}

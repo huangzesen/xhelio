@@ -1,0 +1,185 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "tdisk",
+      "type": "double",
+      "units": "K",
+      "description": "Disk neutral temperature",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "tdisk_north_movie",
+      "type": "double",
+      "units": "K",
+      "description": "---> Movie of Northern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "tdisk_south_movie",
+      "type": "double",
+      "units": "K",
+      "description": "---> Movie of Southern hemisphere images",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "tdisk_unc_sys",
+      "type": "double",
+      "units": "K",
+      "description": "Retrieved Temperature Systematic Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "tdisk_unc_ran",
+      "type": "double",
+      "units": "K",
+      "description": "Retrieved Temperature Random Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "tdisk_unc_mod",
+      "type": "double",
+      "units": "K",
+      "description": "Retrieved Temperature Model Uncertainty",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "effective_altitude",
+      "type": "double",
+      "units": "km",
+      "description": "Retrieved Temperature Effective Altitude",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "dqi",
+      "type": "integer",
+      "units": "0=good",
+      "description": "File-level Data Quality Indicator. 0 indicates good data. See Release Notes for list of other values",
+      "fill": "-999999999.0"
+    },
+    {
+      "name": "tdisk_dqi",
+      "type": "integer",
+      "units": "0=good,15=bad",
+      "description": "[Under development] Pixel-level Data Quality Indicator. 0 = good, 15 = bad data. See Release Notes for list of other values",
+      "fill": "-999999999.0",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "solar_zenith_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Solar Zenith Angle",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "background",
+      "type": "double",
+      "units": "",
+      "description": "Retrieved Temperature Background",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "wavelength_stretch",
+      "type": "double",
+      "units": "angstrom",
+      "description": "Retrieved Temperature Wavelength Stretch",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "wavelength_shift",
+      "type": "double",
+      "units": "angstrom",
+      "description": "Retrieved Temperature Wavelength Shift",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "longitude",
+      "type": "double",
+      "units": "deg",
+      "description": "Longitude",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    },
+    {
+      "name": "vibrational_populations",
+      "type": "double",
+      "units": "",
+      "description": "[NO PLOT] Retrieved Temperature  Vibrational Populations",
+      "fill": "nan",
+      "size": [
+        52,
+        46,
+        7
+      ]
+    },
+    {
+      "name": "emission_angle",
+      "type": "double",
+      "units": "deg",
+      "description": "Emission Angle",
+      "fill": "nan",
+      "size": [
+        52,
+        46
+      ]
+    }
+  ],
+  "startDate": "2018-10-05T06:10:42.000Z",
+  "stopDate": "2025-10-21T18:33:35.000Z"
+}

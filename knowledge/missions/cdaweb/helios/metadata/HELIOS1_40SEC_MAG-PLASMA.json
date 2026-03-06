@@ -1,0 +1,208 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "R_Helio",
+      "type": "double",
+      "units": "AU",
+      "description": "Heliocentric distance (AU)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "ESS_Ang",
+      "type": "double",
+      "units": "degree",
+      "description": "Earth-sun-spacecraft angle (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "clong",
+      "type": "double",
+      "units": "degree",
+      "description": "Carrington longitude (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "clat",
+      "type": "double",
+      "units": "degree",
+      "description": "Carrington/HGI latitude (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "HGIlong",
+      "type": "double",
+      "units": "degree",
+      "description": "HGI Longitude (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_R",
+      "type": "double",
+      "units": "nT",
+      "description": "The HGI \"R\" component of the magnetic field (nT)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_T",
+      "type": "double",
+      "units": "nT",
+      "description": "The HGI \"T\" component of the magnetic field (nT)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_N",
+      "type": "double",
+      "units": "nT",
+      "description": "The HGI \"N\" component of the magnetic field (nT)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp_R",
+      "type": "double",
+      "units": "km/s",
+      "description": "The HGI \"R\" component of the proton velocity  (km/s)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp_T",
+      "type": "double",
+      "units": "km/s",
+      "description": "The HGI \"T\" component of the proton velocity  (km/s)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp_N",
+      "type": "double",
+      "units": "km/s",
+      "description": "The HGI \"N\" component of the proton velocity  (km/s)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "crot",
+      "type": "double",
+      "units": "",
+      "description": "Carrington rotation",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Np",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Proton number density (cm^-3)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton speed  (Km/s)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Tp",
+      "type": "double",
+      "units": "K",
+      "description": "Proton Temperature  (K)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_Azimuth",
+      "type": "double",
+      "units": "degree",
+      "description": "Azimuth of the velocity vector (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_Elev",
+      "type": "double",
+      "units": "degree",
+      "description": "Elevation of the velocity vector (deg)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_x",
+      "type": "double",
+      "units": "nT",
+      "description": "SSE (spacecraft) X component of the magnetic field",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_y",
+      "type": "double",
+      "units": "nT",
+      "description": "SSE (spacecraft) Y component of the magnetic field",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "B_z",
+      "type": "double",
+      "units": "nT",
+      "description": "SSE (spacecraft) Z component of the magnetic field",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "stdev_B_x",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the B_X component over the 40.5 s",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "stdev_B_y",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the B_Y component over the 40.5 s",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "stdev_B_z",
+      "type": "double",
+      "units": "nT",
+      "description": "Standard deviation of the B_Z component over the 40.5 s",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "N_a",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Alpha number density (cm^-3)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "V_a",
+      "type": "double",
+      "units": "km/s",
+      "description": "Alpha speed  (Km/s)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "T_a",
+      "type": "double",
+      "units": "K",
+      "description": "Alpha temperature (K)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Np2",
+      "type": "double",
+      "units": "cm^-3",
+      "description": "Proton density (second instrument)",
+      "fill": "-1e+31"
+    },
+    {
+      "name": "Vp2",
+      "type": "double",
+      "units": "km/s",
+      "description": "Proton speed (second instrument)",
+      "fill": "-1e+31"
+    }
+  ],
+  "startDate": "1974-12-12T01:21:38.000Z",
+  "stopDate": "1985-09-04T09:52:10.000Z"
+}

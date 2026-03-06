@@ -1,0 +1,244 @@
+{
+  "parameters": [
+    {
+      "name": "Time",
+      "type": "isotime",
+      "units": "UTC",
+      "fill": null
+    },
+    {
+      "name": "Proton_DIntn",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Spectrogram-Full List) Proton Diff Intens (no bckgrd subtract), 30 energies 0.5-500 MeV, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Proton_DIntn2",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Stacked time-series) Proton Diff Intens (no bckgrd subtract), 8 energies 0.5-20 MeV, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Proton_DIntn3",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Stacked time-series) Proton Diff Intens (no bckgrd subtract), 8 energies 20-500 MeV, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Proton_DIntn4",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Individual time-series) Proton Diff Intens (no bckgrd subtract), spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Proton_DIntn4_errorbars",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Individual time-series) Proton Diff Intens (no bckgrd subtract), spin-avg, with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "Proton_DIntn_Unc",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "(Individual time-series) Uncertainty, Proton Differential  Intensity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        30
+      ]
+    },
+    {
+      "name": "C_Rate",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "GME/LED C Singles Rate (C<200 ct/sec implies enhanced/variable background <20 MeV/nuc)",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "Alpha_DIntn",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Spectrogram-Full List) Alpha Diff Intens (no bckgrd subtract), 21 energies 1-80 MeV/nuc, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Alpha_DIntn2",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Stacked time-series) Alpha Diff Intens (no bckgrd subtract), 7 energies 1-20 MeV/nuc, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Alpha_DIntn3",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Stacked time-series) Alpha Diff Intens (no bckgrd subtract), 4 energies 20-80 MeV/nuc, spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Alpha_DIntn4",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Individual time-series) Alpha Diff Intens (no bckgrd subtract), spin-avg",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Alpha_DIntn4_errorbars",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Individual time-series) Alpha Diff Intens (no bckgrd subtract), spin-avg, with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Alpha_DIntn_Unc",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV/nuc]",
+      "description": "(Individual time-series) Uncertainty, Alpha Differential Intensity",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        21
+      ]
+    },
+    {
+      "name": "Elec_Intn",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "Electron Intensity, 0.3-18 MeV (no bckgrd subtract), spin-avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Elec_Intn_errorbars",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "Electron Intensity, 0.3-18 MeV (no bckgrd subtract), spin-avg, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Elec_Intn_Unc",
+      "type": "double",
+      "units": "1/[cm**2-s-sr-MeV]",
+      "description": "Unc, Electron Intensity, 0.3-18 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Elec_BackIntn",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "Electron Background Intensity, 0.3-18 MeV, spin-avg",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Elec_BackIntn_errorbars",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "Electron Background Intensity, 0.3-18 MeV, spin-avg, with error bars",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Elec_BackIntn_Unc",
+      "type": "double",
+      "units": "1/[cm2-s-sr-MeV]",
+      "description": "Uncertainty, Electron Background  Intensity 0.3-18 MeV",
+      "fill": "-9.999999848243207e+30"
+    },
+    {
+      "name": "Event_Rates",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "11 I8 GME Event Type Rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "Event_Rates_errorbars",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "11 I8 GME Event Type Rates with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "Event_Rates_Unc",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Uncertainty, 11 GME Event Type Rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        11
+      ]
+    },
+    {
+      "name": "Singles_Rates",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "7 GME Singles Type Rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "Singles_Rates_errorbars",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "7 GME Singles Type Rates with error bars",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    },
+    {
+      "name": "Singles_Rates_Unc",
+      "type": "double",
+      "units": "cts/sec",
+      "description": "Uncertainty, 7 GME Singles Rates",
+      "fill": "-9.999999848243207e+30",
+      "size": [
+        7
+      ]
+    }
+  ],
+  "startDate": "1973-11-01T00:15:00.000Z",
+  "stopDate": "2001-10-26T14:15:00.000Z"
+}
