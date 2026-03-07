@@ -28,8 +28,8 @@ const shortcuts = [
   {
     group: 'Chat Input',
     items: [
-      { keys: ['Enter'], label: 'Send message' },
-      { keys: ['Shift+Enter'], label: 'New line' },
+      { keys: ['Ctrl/⌘+Enter'], label: 'Send message' },
+      { keys: ['Enter'], label: 'New line' },
       { keys: ['↑ / ↓'], label: 'Browse input history' },
       { keys: ['Tab'], label: 'Accept autocomplete' },
       { keys: ['Esc'], label: 'Dismiss autocomplete' },

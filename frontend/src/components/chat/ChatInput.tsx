@@ -204,8 +204,8 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
       return;
     }
 
-    // Enter to submit
-    if (e.key === 'Enter' && !e.shiftKey) {
+    // Ctrl+Enter (or Cmd+Enter on Mac) to submit
+    if (e.key === 'Enter' && (e.ctrlKey || e.metaKey)) {
       e.preventDefault();
       handleSubmit();
       return;
