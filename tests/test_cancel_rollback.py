@@ -3,95 +3,80 @@
 import pytest
 
 
-class TestAnthropicRollback:
-    """Anthropic adapter: messages use role='assistant' with tool_use content blocks,
-    and role='user' with tool_result content blocks."""
+class TestInterfaceStripUnansweredToolCalls:
+    """ChatInterface strips unanswered tool_use from the trailing assistant
+    entry when add_user_message is called — provider-agnostic fix."""
 
-    def test_rollback_strips_last_assistant_turn(self):
-        """After an assistant message with tool_use, rollback removes it."""
-        from agent.llm.anthropic.adapter import AnthropicAdapter
+    def test_user_message_strips_trailing_tool_use(self):
+        """add_user_message auto-strips assistant entry with unanswered tool_use."""
+        from agent.llm.interface import ChatInterface, TextBlock, ToolCallBlock
 
-        adapter = AnthropicAdapter(api_key="fake")
-        chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
+        iface = ChatInterface()
+        iface.add_user_message("hello")
+        iface.add_assistant_message([
+            TextBlock(text="Let me fetch that."),
+            ToolCallBlock(id="tc_001", name="fetch_data", args={"dataset": "ACE_MAG"}),
+        ])
 
-        # Manually inject history: user → assistant (with tool_use)
-        chat._messages = [
-            {"role": "user", "content": "hello"},
-            {"role": "assistant", "content": [
-                {"type": "text", "text": "Let me fetch that."},
-                {"type": "tool_use", "id": "tc_001", "name": "fetch_data",
-                 "input": {"dataset": "ACE_MAG"}},
-            ]},
-        ]
+        # Now a user message arrives (e.g. after cancel)
+        iface.add_user_message("make a white background one")
 
-        chat.rollback_last_turn()
+        roles = [e.role for e in iface.entries]
+        # assistant with tool_use should be gone: user, user
+        assert roles == ["user", "user"]
+        assert isinstance(iface.entries[-1].content[0], TextBlock)
+        assert iface.entries[-1].content[0].text == "make a white background one"
 
-        assert len(chat._messages) == 1
-        assert chat._messages[0]["role"] == "user"
+    def test_user_message_keeps_text_only_assistant(self):
+        """Assistant entries without tool_use are NOT stripped."""
+        from agent.llm.interface import ChatInterface, TextBlock
 
-    def test_rollback_strips_orphaned_tool_results(self):
-        """If tool_results were committed after the assistant turn,
-        rollback removes both the assistant turn AND the orphaned tool_results."""
-        from agent.llm.anthropic.adapter import AnthropicAdapter
+        iface = ChatInterface()
+        iface.add_user_message("hello")
+        iface.add_assistant_message([TextBlock(text="Hi there!")])
 
-        adapter = AnthropicAdapter(api_key="fake")
-        chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
+        iface.add_user_message("follow up")
 
-        chat._messages = [
-            {"role": "user", "content": "hello"},
-            {"role": "assistant", "content": [
-                {"type": "tool_use", "id": "tc_001", "name": "fetch_data",
-                 "input": {"dataset": "ACE_MAG"}},
-            ]},
-            {"role": "user", "content": [
-                {"type": "tool_result", "tool_use_id": "tc_001",
-                 "content": '{"status": "ok"}'},
-            ]},
-        ]
+        roles = [e.role for e in iface.entries]
+        assert roles == ["user", "assistant", "user"]
 
-        chat.rollback_last_turn()
+    def test_strip_preserves_earlier_turns(self):
+        """Only the trailing assistant entry is stripped, not earlier ones."""
+        from agent.llm.interface import ChatInterface, TextBlock, ToolCallBlock
 
-        assert len(chat._messages) == 1
-        assert chat._messages[0]["role"] == "user"
-        assert chat._messages[0]["content"] == "hello"
+        iface = ChatInterface()
+        iface.add_user_message("first")
+        iface.add_assistant_message([TextBlock(text="first reply")])
+        iface.add_user_message("second")
+        iface.add_assistant_message([
+            ToolCallBlock(id="tc_002", name="plot", args={"type": "line"}),
+        ])
 
-    def test_rollback_noop_when_no_assistant_turn(self):
-        """If history has no assistant turn, rollback does nothing."""
-        from agent.llm.anthropic.adapter import AnthropicAdapter
+        iface.add_user_message("third")
 
-        adapter = AnthropicAdapter(api_key="fake")
-        chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
+        roles = [e.role for e in iface.entries]
+        assert roles == ["user", "assistant", "user", "user"]
+        assert iface.entries[-1].content[0].text == "third"
 
-        chat._messages = [
-            {"role": "user", "content": "hello"},
-        ]
+    def test_noop_when_no_trailing_assistant(self):
+        """No crash when history ends with a user entry."""
+        from agent.llm.interface import ChatInterface
 
-        chat.rollback_last_turn()
+        iface = ChatInterface()
+        iface.add_user_message("hello")
+        iface.add_user_message("another")
 
-        assert len(chat._messages) == 1
+        roles = [e.role for e in iface.entries]
+        assert roles == ["user", "user"]
 
-    def test_rollback_preserves_earlier_turns(self):
-        """Only the LAST assistant turn is removed, not earlier ones."""
-        from agent.llm.anthropic.adapter import AnthropicAdapter
+    def test_noop_on_empty_interface(self):
+        """No crash on empty interface."""
+        from agent.llm.interface import ChatInterface
 
-        adapter = AnthropicAdapter(api_key="fake")
-        chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
+        iface = ChatInterface()
+        iface.add_user_message("hello")
 
-        chat._messages = [
-            {"role": "user", "content": "first"},
-            {"role": "assistant", "content": [{"type": "text", "text": "first reply"}]},
-            {"role": "user", "content": "second"},
-            {"role": "assistant", "content": [
-                {"type": "tool_use", "id": "tc_002", "name": "plot",
-                 "input": {"type": "line"}},
-            ]},
-        ]
-
-        chat.rollback_last_turn()
-
-        assert len(chat._messages) == 3
-        assert chat._messages[-1]["role"] == "user"
-        assert chat._messages[-1]["content"] == "second"
+        assert len(iface.entries) == 1
 
 
 class TestGeminiRollback:

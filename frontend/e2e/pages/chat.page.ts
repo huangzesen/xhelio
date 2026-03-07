@@ -61,7 +61,7 @@ export class ChatPage {
   /** Check if the command dropdown is visible */
   async isCommandDropdownVisible() {
     // The command dropdown is a div inside ChatInput that appears when typing '/'
-    return this.page.locator('[data-testid="chat-input"]').locator('..').locator('..').locator('.absolute.bottom-full').isVisible();
+    return this.page.getByTestId('command-dropdown').isVisible();
   }
 
   /** Emit a single SSE event via the mock */
@@ -86,7 +86,7 @@ export class ChatPage {
 
   /** Get the slash command dropdown entries */
   getCommandDropdownItems() {
-    return this.page.locator('.absolute.bottom-full button');
+    return this.page.locator('[data-testid="command-dropdown"] button');
   }
 
   /** Click "New Chat" in the sidebar */

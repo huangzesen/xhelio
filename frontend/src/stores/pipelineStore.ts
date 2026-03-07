@@ -2,6 +2,18 @@ import { create } from 'zustand';
 import type { SavedSessionWithOps, PipelineRecord, PlotlyFigure, ReplayResult } from '../api/types';
 import * as api from '../api/client';
 
+function downloadFile(filename: string, content: string) {
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 interface RenderOption {
   label: string;
   opId: string | null;
@@ -18,6 +30,7 @@ interface PipelineState {
   selectedRenderOpId: string | null;
   replaying: boolean;
   replayResult: ReplayResult | null;
+  generatingScript: boolean;
   loading: boolean;
   error: string | null;
 
@@ -26,6 +39,7 @@ interface PipelineState {
   selectStep: (record: PipelineRecord | null) => void;
   selectRender: (opId: string | null) => Promise<void>;
   replay: (useCache?: boolean) => Promise<void>;
+  generateScript: () => Promise<void>;
   reset: () => void;
 }
 
@@ -58,6 +72,7 @@ export const usePipelineStore = create<PipelineState>((set, get) => ({
   selectedRenderOpId: null,
   replaying: false,
   replayResult: null,
+  generatingScript: false,
   loading: false,
   error: null,
 
@@ -65,7 +80,7 @@ export const usePipelineStore = create<PipelineState>((set, get) => ({
     set({ loading: true, error: null });
     try {
       const sessions = await api.getSavedSessionsWithOps();
-      set({ sessions, loading: false });
+      set({ sessions: Array.isArray(sessions) ? sessions : [], loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }
@@ -89,10 +104,12 @@ export const usePipelineStore = create<PipelineState>((set, get) => ({
         api.getPipelineOperations(sessionId),
         api.getPipelineDAG(sessionId),
       ]);
-      const renderOptions = buildRenderOptions(opsData.pipeline);
+      const safePipeline = Array.isArray(opsData?.pipeline) ? opsData.pipeline : [];
+      const safeAllRecords = Array.isArray(opsData?.all_records) ? opsData.all_records : [];
+      const renderOptions = buildRenderOptions(safePipeline);
       set({
-        pipeline: opsData.pipeline,
-        allRecords: opsData.all_records,
+        pipeline: safePipeline,
+        allRecords: safeAllRecords,
         dagFigure: dagData.figure,
         renderOptions,
         loading: false,
@@ -125,6 +142,21 @@ export const usePipelineStore = create<PipelineState>((set, get) => ({
       set({ replayResult: result, replaying: false });
     } catch (err) {
       set({ error: (err as Error).message, replaying: false });
+    }
+  },
+
+  generateScript: async () => {
+    const { selectedSessionId, selectedRenderOpId } = get();
+    if (!selectedSessionId) return;
+    set({ generatingScript: true, error: null });
+    try {
+      const result = await api.generateSessionScript(selectedSessionId, selectedRenderOpId ?? undefined);
+      for (const [filename, content] of Object.entries(result.files)) {
+        downloadFile(filename, content);
+      }
+      set({ generatingScript: false });
+    } catch (err) {
+      set({ error: (err as Error).message, generatingScript: false });
     }
   },
 

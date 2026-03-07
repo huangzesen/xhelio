@@ -495,6 +495,10 @@ export interface PipelineExecuteResult extends ReplayResult {
   data_labels: string[];
 }
 
+export interface ScriptGenResult {
+  files: Record<string, string>;
+}
+
 // ---- Gallery ----
 
 export interface GalleryItem {

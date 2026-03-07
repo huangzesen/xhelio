@@ -112,7 +112,7 @@ export function DataStore({ sessionId }: Props) {
     const load = async () => {
       try {
         const data = await api.getData(sessionId);
-        if (!cancelled) setEntries(data);
+        if (!cancelled) setEntries(Array.isArray(data) ? data : []);
       } catch {
         // ignore
       }

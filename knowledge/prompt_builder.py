@@ -202,25 +202,41 @@ def _build_spice_prompt() -> str:
     ])
 
 
+# Group -> prompt builder function. Groups not listed here use the default
+# mission-profile prompt builder (_build_mission_prompt). Add entries here
+# when a group needs a specialized prompt.
+_GROUP_PROMPT_BUILDERS: dict[str, callable] = {
+    "spice": lambda mission_id: _build_spice_prompt(),
+}
+
+
 def build_envoy_prompt(mission_id: str) -> str:
     """Generate a rich prompt for a single mission's sub-agent.
 
-    Includes mission overview, dataset discovery instructions,
-    data operations documentation, and workflow instructions.
+    Dispatches by envoy group:
+    - Groups with an entry in _GROUP_PROMPT_BUILDERS get a specialized prompt.
+    - All other groups (cdaweb, ppi) get the default mission-profile prompt.
 
     Args:
-        mission_id: Spacecraft key (e.g., "PSP", "ACE")
+        mission_id: Spacecraft key (e.g., "PSP", "ACE", "SPICE")
 
     Returns:
         A system prompt focused on one mission's data discovery and workflow.
 
     Raises:
-        KeyError: If mission_id is not in the catalog.
+        KeyError: If mission_id is not in the catalog (for non-specialized groups).
     """
-    # SPICE gets its own specialized prompt
-    if mission_id == "SPICE":
-        return _build_spice_prompt()
+    from agent.agent_registry import ENVOY_TOOL_REGISTRY
 
+    group = ENVOY_TOOL_REGISTRY.get_group(mission_id)
+    builder = _GROUP_PROMPT_BUILDERS.get(group)
+    if builder is not None:
+        return builder(mission_id)
+    return _build_mission_prompt(mission_id)
+
+
+def _build_mission_prompt(mission_id: str) -> str:
+    """Build the default mission-profile prompt (used by cdaweb and ppi groups)."""
     # Validate mission exists in catalog (backward compat for KeyError)
     if mission_id not in MISSIONS:
         raise KeyError(mission_id)

@@ -24,7 +24,7 @@ const navItems = [
 export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleActivity, theme, onToggleTheme }: Props) {
   return (
     <header data-testid="app-header" className="bg-panel border-b border-border flex items-center justify-between px-4 h-12 shrink-0">
-      <div className="flex items-center gap-3">
+      <div className="flex items-center gap-3 min-w-0 flex-1 overflow-hidden">
         <Button
           variant="ghost"
           size="icon-sm"
@@ -37,14 +37,14 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
         <HelionLogo size={24} className="text-primary" />
         <span className="font-semibold text-lg text-text hidden sm:inline">XHelio</span>
 
-        <nav className="flex items-center gap-1 ml-4 overflow-x-auto scrollbar-none" aria-label="Main navigation">
+        <nav className="flex items-center gap-1 ml-4 overflow-x-auto scrollbar-none min-w-0" aria-label="Main navigation">
           {navItems.map(({ to, label }) => (
             <NavLink
               key={to}
               to={to}
               end={to === '/'}
               className={({ isActive }) =>
-                `px-3 py-1 rounded-md text-sm transition-colors ${
+                `px-3 py-1 rounded-md text-sm whitespace-nowrap transition-colors ${
                   isActive
                     ? 'bg-primary/15 text-primary font-medium'
                     : 'text-text-muted hover:text-text hover:bg-hover-bg'

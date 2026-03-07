@@ -59,6 +59,20 @@ class TestBuildEnvoyPromptForAgent:
         prompt = build_envoy_prompt("PSP")
         assert "list_parameters" in prompt
 
+    def test_ppi_mission_produces_prompt(self):
+        """PPI missions (ppi group) should produce a valid prompt."""
+        prompt = build_envoy_prompt("JUNO_PPI")
+        assert isinstance(prompt, str)
+        assert len(prompt) > 50
+
+    def test_spice_mission_uses_spice_prompt(self):
+        """SPICE mission (spice group) should use the SPICE-specific prompt."""
+        prompt = build_envoy_prompt("SPICE")
+        assert isinstance(prompt, str)
+        assert len(prompt) > 50
+        # SPICE prompt should mention ephemeris/trajectory concepts
+        assert "ephemeri" in prompt.lower() or "spice" in prompt.lower()
+
     def test_invalid_mission_raises(self):
         with pytest.raises(KeyError):
             build_envoy_prompt("NONEXISTENT")

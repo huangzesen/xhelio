@@ -27,8 +27,6 @@ from agent.tool_handlers.visualization import (
     handle_generate_jsx_component,
     handle_manage_jsx_output,
 )
-from agent.tool_handlers.planning import handle_request_planning
-
 # ── Memory, document, discovery ──
 from agent.tool_handlers.memory import handle_review_memory
 from agent.tool_handlers.document import (
@@ -53,6 +51,7 @@ from agent.tool_handlers.delegation import (
     handle_delegate_to_data_ops,
     handle_delegate_to_data_io,
     handle_delegate_to_insight,
+    handle_delegate_to_planner,
 )
 
 # ── File I/O ──
@@ -98,7 +97,7 @@ TOOL_REGISTRY.update(
         "generate_jsx_component": handle_generate_jsx_component,
         "manage_jsx_output": handle_manage_jsx_output,
         # Planning
-        "request_planning": handle_request_planning,
+        "delegate_to_planner": handle_delegate_to_planner,
         "plan_check": lambda orch, args: orch._handle_plan_check(args),
         # Memory
         "review_memory": handle_review_memory,

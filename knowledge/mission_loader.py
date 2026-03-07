@@ -381,37 +381,6 @@ def get_mission_datasets(mission_id: str) -> list[str]:
     return dataset_ids
 
 
-def enumerate_missions_lightweight() -> list[tuple[str, str, str]]:
-    """Return ``(mission_id, display_name, tool_group)`` for every mission on disk.
-
-    Reads only the ``"id"`` and ``"name"`` fields from each JSON file — no
-    full parse, no cache population, no override application.  Group is
-    derived from the parent directory:
-
-    - ``cdaweb/`` → ``"cdaweb"``
-    - ``ppi/``    → ``"cdaweb"``  (PPI missions use the same discovery/fetch tools)
-
-    Returns:
-        Sorted list of ``(mission_id, display_name, tool_group)`` tuples.
-    """
-    entries: list[tuple[str, str, str]] = []
-    for source_dir in _SOURCE_DIRS:
-        if not source_dir.exists():
-            continue
-        # Both cdaweb and ppi missions use the "cdaweb" tool group
-        group = "cdaweb"
-        for filepath in sorted(source_dir.glob("*.json")):
-            try:
-                with open(filepath, "r", encoding="utf-8") as f:
-                    data = json.load(f)
-                mission_id = data.get("id", filepath.stem.upper())
-                name = data.get("name", mission_id)
-                entries.append((mission_id, name, group))
-            except (json.JSONDecodeError, OSError):
-                continue
-    return entries
-
-
 def clear_cache():
     """Clear the mission cache. Useful for testing."""
     _mission_cache.clear()

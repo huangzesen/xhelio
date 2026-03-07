@@ -4,7 +4,7 @@ import { PipelineDAG } from './PipelineDAG';
 import { StepTable } from './StepTable';
 import { CodeViewer } from './CodeViewer';
 import { PlotFullscreen } from '../plot/PlotFullscreen';
-import { Loader2, Play, RefreshCw, GitBranch, Inbox, ExternalLink, Save, Check, X, ChevronRight, Maximize2 } from 'lucide-react';
+import { Loader2, Play, RefreshCw, GitBranch, Inbox, ExternalLink, Save, Check, X, ChevronRight, Maximize2, FileCode } from 'lucide-react';
 import { PipelineSkeleton } from '../common/Skeleton';
 import * as api from '../../api/client';
 import type { PlotlyFigure } from '../../api/types';
@@ -27,6 +27,8 @@ export function ReplayTab() {
     selectStep,
     selectRender,
     replay,
+    generateScript,
+    generatingScript,
     reset,
   } = usePipelineStore();
 
@@ -138,6 +140,24 @@ export function ReplayTab() {
                 renderOpId={selectedRenderOpId}
                 defaultName={renderOptions.find((o) => o.opId === selectedRenderOpId)?.label ?? 'Untitled'}
               />
+            )}
+
+            {/* Generate Script */}
+            {selectedRenderOpId && (
+              <button
+                onClick={() => generateScript()}
+                disabled={generatingScript}
+                className="w-full flex items-center justify-center gap-2 px-4 py-2 rounded-lg
+                  border border-border text-text hover:bg-hover-bg transition-colors text-sm
+                  disabled:opacity-50"
+              >
+                {generatingScript ? (
+                  <Loader2 size={14} className="animate-spin" />
+                ) : (
+                  <FileCode size={14} />
+                )}
+                {generatingScript ? 'Generating...' : 'Generate Script'}
+              </button>
             )}
           </>
         )}

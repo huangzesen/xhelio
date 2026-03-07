@@ -9,6 +9,18 @@ import type {
 } from '../api/types';
 import * as api from '../api/client';
 
+function downloadFile(filename: string, content: string) {
+  const blob = new Blob([content], { type: 'text/plain' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = filename;
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+  URL.revokeObjectURL(url);
+}
+
 interface SavedPipelineState {
   // List
   pipelines: SavedPipelineIndexEntry[];
@@ -26,6 +38,9 @@ interface SavedPipelineState {
   executing: boolean;
   executeResult: PipelineExecuteResult | null;
 
+  // Script generation
+  generatingScript: boolean;
+
   // Actions
   loadPipelines: () => Promise<void>;
   selectPipeline: (id: string) => Promise<void>;
@@ -35,6 +50,7 @@ interface SavedPipelineState {
   selectStep: (record: PipelineRecord | null) => void;
   updatePipeline: (id: string, updates: { name?: string; description?: string }) => Promise<void>;
   addFeedback: (id: string, comment: string) => Promise<void>;
+  generateScript: (id: string) => Promise<void>;
 }
 
 /** Adapt a SavedPipelineStep into a PipelineRecord for StepTable / CodeViewer reuse. */
@@ -63,6 +79,8 @@ export const useSavedPipelineStore = create<SavedPipelineState>((set, get) => ({
 
   executing: false,
   executeResult: null,
+
+  generatingScript: false,
 
   loadPipelines: async () => {
     set({ loading: true, error: null });
@@ -160,6 +178,19 @@ export const useSavedPipelineStore = create<SavedPipelineState>((set, get) => ({
       }
     } catch (err) {
       set({ error: (err as Error).message });
+    }
+  },
+
+  generateScript: async (id: string) => {
+    set({ generatingScript: true, error: null });
+    try {
+      const result = await api.generatePipelineScript(id);
+      for (const [filename, content] of Object.entries(result.files)) {
+        downloadFile(filename, content);
+      }
+      set({ generatingScript: false });
+    } catch (err) {
+      set({ error: (err as Error).message, generatingScript: false });
     }
   },
 }));

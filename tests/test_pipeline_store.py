@@ -1007,15 +1007,18 @@ class TestDiscardPipelineAction:
         assert result is False
 
     @patch("data_ops.operations_log.get_operations_log")
-    def test_discard_pipeline_in_execute_actions(self, mock_get_log):
-        """discard_pipeline action is handled by _execute_actions."""
+    def test_discard_pipeline_via_tool(self, mock_get_log):
+        """discard_pipeline tool call routes through _tool_discard_pipeline."""
         mock_log = MagicMock()
         mock_log.set_pipeline_status.return_value = True
         mock_get_log.return_value = mock_log
 
         agent = self._make_memory_agent()
-        actions = [{"action": "discard_pipeline", "render_op_id": "s1:op_003"}]
-        executed = agent._execute_actions(actions)
+        agent._executed_actions = []
+        result = agent._tool_discard_pipeline(
+            {"render_op_id": "s1:op_003"}, agent._executed_actions
+        )
 
-        assert len(executed) == 1
-        assert executed[0]["action"] == "discard_pipeline"
+        assert result["status"] == "ok"
+        assert len(agent._executed_actions) == 1
+        assert agent._executed_actions[0]["action"] == "discard_pipeline"

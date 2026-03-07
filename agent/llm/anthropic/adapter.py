@@ -369,25 +369,20 @@ class AnthropicChatSession(ChatSession):
         """Send a user message (str) or tool results (list of ToolResultBlock).
 
         For tool results, ``message`` is a list of ToolResultBlock (canonical).
-        The user message is only committed to interface after a successful API
-        call, preventing duplicate messages on retry.
+        The message is committed to the interface before the API call so that
+        add_user_message can strip unanswered tool_use entries.  On API error
+        the last user entry is reverted via drop_trailing.
         """
-        # Build candidate messages from interface
-        candidate_msgs = to_anthropic(self._interface)
-
+        # Commit to interface first (add_user_message strips unanswered tool_use),
+        # then build API messages from the clean interface.
         if isinstance(message, str):
-            candidate_msgs.append({"role": "user", "content": message})
-            # Commit user message to interface now (will be reverted on error)
             self._interface.add_user_message(message)
         elif isinstance(message, list):
-            # message is a list of ToolResultBlock
             self._interface.add_tool_results(message)
-            # Also add to candidate for API call
-            blocks = [_tool_result_to_dict(b) for b in message]
-            candidate_msgs.append({"role": "user", "content": blocks})
         else:
             raise TypeError(f"Unsupported message type: {type(message)}")
 
+        candidate_msgs = to_anthropic(self._interface)
         clean_messages = _ensure_alternation(candidate_msgs)
         clean_messages = _filter_invalid_tool_results(clean_messages)
         kwargs = self._build_request_kwargs(clean_messages)

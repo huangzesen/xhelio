@@ -80,11 +80,20 @@ export function SessionItem({
 
   return (
     <div className="relative mb-1 group">
-      <button
+      <div
+        role="button"
+        tabIndex={0}
         onClick={() => { if (!isActive && !resuming) onSelect(session.id); }}
-        disabled={resuming}
+        onKeyDown={(e) => {
+          if ((e.key === 'Enter' || e.key === ' ') && !isActive && !resuming) {
+            e.preventDefault();
+            onSelect(session.id);
+          }
+        }}
+        aria-disabled={resuming || undefined}
+        data-testid="session-item"
         className={cn(
-          "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors",
+          "w-full text-left px-3 py-2 rounded-lg text-sm transition-colors cursor-pointer",
           "flex items-start gap-2 hover:bg-hover-bg",
           isActive ? "border-l-3 border-primary bg-primary/10" : "",
           resuming ? "opacity-60 cursor-not-allowed" : ""
@@ -129,7 +138,10 @@ export function SessionItem({
           </div>
         </div>
 
-        <div className="flex items-center shrink-0 opacity-0 group-hover:opacity-100 transition-opacity">
+        <div
+          className="flex items-center shrink-0 opacity-0 group-hover:opacity-100 transition-opacity"
+          onKeyDown={(e) => e.stopPropagation()}
+        >
           <button
             onClick={(e) => {
               e.stopPropagation();
@@ -173,7 +185,7 @@ export function SessionItem({
             <Trash2 size={13} />
           </button>
         </div>
-      </button>
+      </div>
 
       {showMoveMenu && (
         <div 

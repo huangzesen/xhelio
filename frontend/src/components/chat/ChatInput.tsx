@@ -127,6 +127,24 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
     }
   }, [text, isStreaming, activeSessionId]);
 
+  // Global "/" shortcut to focus chat input
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => {
+      if (
+        e.key === '/' &&
+        !e.ctrlKey && !e.metaKey && !e.altKey &&
+        document.activeElement?.tagName !== 'INPUT' &&
+        document.activeElement?.tagName !== 'TEXTAREA' &&
+        document.activeElement?.tagName !== 'SELECT'
+      ) {
+        e.preventDefault();
+        textareaRef.current?.focus();
+      }
+    };
+    window.addEventListener('keydown', handler);
+    return () => window.removeEventListener('keydown', handler);
+  }, []);
+
   const acceptCommand = useCallback((commandName: string) => {
     setText(commandName);
     setCommandMatches([]);
@@ -304,7 +322,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
         <div className="flex-1 relative">
           {/* Command dropdown */}
           {commandMatches.length > 0 && (
-            <div className="absolute bottom-full left-0 w-full mb-1 rounded-lg border border-border bg-panel shadow-lg overflow-hidden z-10">
+            <div data-testid="command-dropdown" className="absolute bottom-full left-0 w-full mb-1 rounded-lg border border-border bg-panel shadow-lg overflow-hidden z-10">
               {commandMatches.map((cmd, i) => (
                 <button
                   key={cmd.name}

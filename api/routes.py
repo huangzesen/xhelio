@@ -340,13 +340,9 @@ async def chat(session_id: str, req: ChatRequest):
 
 @router.post("/sessions/{session_id}/cancel", status_code=202)
 async def cancel(session_id: str):
-    """Cancel an in-flight request and wait for busy to clear."""
+    """Signal cancellation — returns immediately."""
     state = _get_session_or_404(session_id)
     state.agent.request_cancel()
-    for _ in range(50):
-        if not state.busy:
-            return {"status": "cancelled"}
-        await asyncio.sleep(0.1)
     return {"status": "cancel_requested"}
 
 
@@ -2094,6 +2090,30 @@ async def replay_pipeline_endpoint(saved_id: str, req: ReplayRequest = ReplayReq
     return result
 
 
+# ---- Pipeline Script Generation ----
+
+
+@router.get("/pipeline/{saved_id}/script")
+async def generate_session_script(saved_id: str, render_op_id: str | None = None):
+    """Generate a self-contained Python script from a session's pipeline."""
+    from data_ops.pipeline import SavedPipeline
+    from data_ops.script_gen import generate_script
+
+    try:
+        pipeline = SavedPipeline.from_session(saved_id, render_op_id=render_op_id)
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=404, detail=f"Session '{saved_id}' not found"
+        )
+
+    try:
+        files = generate_script(pipeline.to_dict())
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return {"files": files}
+
+
 # ---- Autocomplete + Input history + Token breakdown ----
 
 
@@ -2576,6 +2596,27 @@ async def get_pipeline_dag_saved(pipeline_id: str):
         return _figure_response(fig, pipeline_id)
 
     return await loop.run_in_executor(_thread_pool, _build_dag)
+
+
+@router.get("/pipelines/{pipeline_id}/script")
+async def generate_pipeline_script(pipeline_id: str):
+    """Generate a self-contained Python script from a saved pipeline."""
+    from data_ops.pipeline import SavedPipeline
+    from data_ops.script_gen import generate_script
+
+    try:
+        pipeline = SavedPipeline.load(pipeline_id)
+    except FileNotFoundError:
+        raise HTTPException(
+            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
+        )
+
+    try:
+        files = generate_script(pipeline.to_dict())
+    except ValueError as e:
+        raise HTTPException(status_code=400, detail=str(e))
+
+    return {"files": files}
 
 
 # ---- Asset Management ----

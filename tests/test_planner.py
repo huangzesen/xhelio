@@ -4,7 +4,10 @@ Tests for agent.planner — complexity detection, PlannerAgent, and plan formatt
 Run with: python -m pytest tests/test_planner.py
 """
 
+import threading
+
 import pytest
+from unittest.mock import MagicMock
 
 from agent.planner import (
     format_plan_for_display,
@@ -16,40 +19,46 @@ from datetime import datetime
 
 
 class TestPlannerAgentInterface:
-    """Test PlannerAgent class structure and interface."""
+    """Test PlannerAgent class structure and interface (SubAgent-based)."""
+
+    def _make_agent(self, **kwargs):
+        defaults = dict(
+            adapter=MagicMock(),
+            model_name="test-model",
+            cancel_event=threading.Event(),
+        )
+        defaults.update(kwargs)
+        return PlannerAgent(**defaults)
 
     def test_has_required_methods(self):
         """PlannerAgent should have the expected public methods."""
-        assert hasattr(PlannerAgent, "start_planning")
+        assert hasattr(PlannerAgent, "send")
         assert hasattr(PlannerAgent, "get_token_usage")
-        assert hasattr(PlannerAgent, "reset")
 
-    def test_init_no_chat(self):
-        """PlannerAgent starts with no active chat."""
-        # Use None client — we won't make API calls
-        agent = PlannerAgent(adapter=None, model_name="test-model")
-        assert agent._chat is None
+    def test_is_subagent(self):
+        """PlannerAgent should be a SubAgent subclass."""
+        from agent.sub_agent import SubAgent
+        assert issubclass(PlannerAgent, SubAgent)
+
+    def test_init_sets_agent_id(self):
+        """PlannerAgent should set its agent_id."""
+        agent = self._make_agent()
+        assert agent.agent_id == "PlannerAgent"
         assert agent.model_name == "test-model"
-        assert agent.verbose is False
-        assert agent.tool_executor is None
-        # Only produce_plan schema when no tool_executor
-        assert len(agent._tool_schemas) == 1
-        assert agent._tool_schemas[0].name == "produce_plan"
+
+    def test_init_has_produce_plan_in_schemas(self):
+        """PlannerAgent always includes produce_plan in its tool schemas."""
+        agent = self._make_agent()
+        schema_names = {s.name for s in agent._tool_schemas}
+        assert "produce_plan" in schema_names
 
     def test_get_token_usage_initial(self):
         """Token usage starts at zero."""
-        agent = PlannerAgent(adapter=None, model_name="test-model")
+        agent = self._make_agent()
         usage = agent.get_token_usage()
         assert usage["input_tokens"] == 0
         assert usage["output_tokens"] == 0
         assert usage["thinking_tokens"] == 0
-
-    def test_reset_clears_chat(self):
-        """Reset should clear the chat session."""
-        agent = PlannerAgent(adapter=None, model_name="test-model")
-        agent._chat = "something"
-        agent.reset()
-        assert agent._chat is None
 
 
 class TestTaskRoundField:
@@ -364,33 +373,36 @@ class TestFormatPlanForDisplay:
 class TestPlannerAgentWithTools:
     """Test PlannerAgent tool integration (no API calls needed)."""
 
-    def _dummy_executor(self, tool_name, tool_args):
+    def _dummy_executor(self, tool_name, tool_args, tc_id=None):
         return {"status": "success", "message": "mock"}
+
+    def _make_agent(self, **kwargs):
+        defaults = dict(
+            adapter=MagicMock(),
+            model_name="test-model",
+            tool_executor=self._dummy_executor,
+            cancel_event=threading.Event(),
+        )
+        defaults.update(kwargs)
+        return PlannerAgent(**defaults)
 
     def test_init_with_tool_executor_has_declarations(self):
         """When tool_executor is provided, function declarations should be built."""
-        agent = PlannerAgent(
-            adapter=None,
-            model_name="test-model",
-            tool_executor=self._dummy_executor,
-        )
+        agent = self._make_agent()
         assert agent.tool_executor is not None
         assert len(agent._tool_schemas) > 0
 
-    def test_init_without_tool_executor_only_produce_plan(self):
-        """When tool_executor is None, only produce_plan schema is present."""
-        agent = PlannerAgent(adapter=None, model_name="test-model")
-        assert agent.tool_executor is None
-        assert len(agent._tool_schemas) == 1
-        assert agent._tool_schemas[0].name == "produce_plan"
+    def test_init_without_tool_executor_has_produce_plan(self):
+        """When tool_executor is None, schemas still include PLANNER_TOOLS + produce_plan."""
+        agent = self._make_agent(tool_executor=None)
+        schema_names = {s.name for s in agent._tool_schemas}
+        assert "produce_plan" in schema_names
+        # PLANNER_TOOLS are always included (research + discovery)
+        assert len(agent._tool_schemas) > 1
 
     def test_tool_names_include_research_tools(self):
         """Function declarations should include research, discovery, and produce_plan tools."""
-        agent = PlannerAgent(
-            adapter=None,
-            model_name="test-model",
-            tool_executor=self._dummy_executor,
-        )
+        agent = self._make_agent()
         tool_names = {fd.name for fd in agent._tool_schemas}
         # Research tools
         assert "list_missions" in tool_names
@@ -407,17 +419,13 @@ class TestPlannerAgentWithTools:
 
     def test_tool_names_exclude_routing_and_visualization(self):
         """Function declarations should NOT include routing or visualization tools."""
-        agent = PlannerAgent(
-            adapter=None,
-            model_name="test-model",
-            tool_executor=self._dummy_executor,
-        )
+        agent = self._make_agent()
         tool_names = {fd.name for fd in agent._tool_schemas}
         # Routing tools should NOT be present
         assert "delegate_to_envoy" not in tool_names
         assert "delegate_to_viz" not in tool_names
         assert "delegate_to_data_ops" not in tool_names
-        assert "request_planning" not in tool_names
+        assert "delegate_to_planner" not in tool_names
         # Visualization tools should NOT be present
         assert "plot_data" not in tool_names
         assert "style_plot" not in tool_names
@@ -438,12 +446,3 @@ class TestPlannerAgentWithTools:
         assert "get_dataset_docs" in PLANNER_TOOLS
         assert "search_full_catalog" in PLANNER_TOOLS
 
-    def test_has_parse_or_retry_method(self):
-        """PlannerAgent should have a _parse_or_retry method for JSON retry."""
-        assert hasattr(PlannerAgent, "_parse_or_retry")
-        agent = PlannerAgent(
-            adapter=None,
-            model_name="test-model",
-            tool_executor=self._dummy_executor,
-        )
-        assert callable(agent._parse_or_retry)

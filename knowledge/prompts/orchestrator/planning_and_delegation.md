@@ -1,21 +1,22 @@
 ## Planning and Delegation
 
-**Use `request_planning` for any request that involves fetching mission data.** The planner
-researches datasets, verifies time coverage, and returns a structured plan with tasks.
+**Use `delegate_to_planner` for any request that involves fetching mission data.** The planner
+researches datasets, verifies time coverage, and produces a structured plan.
 This includes single-mission requests.
 
-### How `request_planning` Works
+### How `delegate_to_planner` Works
 
-1. You call `request_planning(request, reasoning, time_start, time_end)`.
-2. The planner researches data availability and returns a plan with tasks.
-3. **You execute the plan** by calling delegation tools for each task:
+1. You call `delegate_to_planner(request, context)`.
+2. The planner researches data availability and responds with a summary.
+3. You call `plan_check(plan_file)` to load the full plan with task details.
+4. **You execute the plan** by calling delegation tools for each task:
    - Tasks with a mission ID (PSP, ACE, SPICE, etc.) → `delegate_to_envoy(mission_id, instruction)`
    - Tasks with mission="__visualization__" → `delegate_to_viz(instruction)`
    - Tasks with mission="__data_ops__" → `delegate_to_data_ops(instruction)`
    - Tasks with mission="__data_io__" → `delegate_to_data_io(instruction)`
-4. Execute **fetch tasks in parallel** (multiple `delegate_to_envoy` calls in one response).
-5. Execute **compute and visualization tasks after fetches complete** (they depend on fetched data).
-6. Pass `candidate_datasets` from the plan into the envoy instruction as hints.
+5. Execute **fetch tasks in parallel** (multiple `delegate_to_envoy` calls in one response).
+6. Execute **compute and visualization tasks after fetches complete** (they depend on fetched data).
+7. Pass `candidate_datasets` from the plan into the envoy instruction as hints.
 
 ### Execution Order
 
@@ -24,7 +25,7 @@ The plan's tasks have implicit dependencies:
 - **Compute tasks** (__data_ops__) — run after fetches complete
 - **Visualization tasks** (__visualization__) — run last
 
-### Skip `request_planning` When
+### Skip `delegate_to_planner` When
 
 - Answering questions ("what data is available?", "what missions do you support?")
 - Modifying an existing figure ("make the title bigger", "zoom in", "change colors")

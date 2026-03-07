@@ -206,6 +206,30 @@ class ChatInterface:
         self._next_id += 1
         return entry
 
+    # -- Sanitization ---------------------------------------------------------
+
+    def _strip_unanswered_tool_calls(self) -> InterfaceEntry | None:
+        """Strip trailing assistant entry if it contains unanswered tool_use.
+
+        When a user message (text) follows an assistant message that has
+        tool_call blocks, the tool calls were never answered — typically
+        because the user cancelled mid-execution.  Providers (Anthropic,
+        MiniMax) reject this as a 400 error.
+
+        Called automatically by add_user_message() so the interface stays
+        valid regardless of which adapter is in use.
+
+        Returns the stripped entry (for event logging), or None.
+        """
+        if not self._entries:
+            return None
+        last = self._entries[-1]
+        if last.role != "assistant":
+            return None
+        if any(isinstance(b, ToolCallBlock) for b in last.content):
+            return self._entries.pop()
+        return None
+
     # -- Add methods ----------------------------------------------------------
 
     def add_system(self, text: str, tools: list[dict] | None = None) -> None:
@@ -224,6 +248,20 @@ class ChatInterface:
         image_bytes: bytes | None = None,
         mime_type: str = "image/png",
     ) -> InterfaceEntry:
+        stripped = self._strip_unanswered_tool_calls()
+        if stripped:
+            tool_names = [
+                b.name for b in stripped.content if isinstance(b, ToolCallBlock)
+            ]
+            try:
+                from agent.event_bus import get_event_bus, DEBUG
+                get_event_bus().emit(
+                    DEBUG,
+                    level="warning",
+                    msg=f"[Interface] Stripped unanswered tool_use from history: {tool_names}",
+                )
+            except (ImportError, AttributeError):
+                pass  # event bus not initialized yet (e.g. during tests)
         blocks: list[ContentBlock] = [TextBlock(text=text)]
         if image_bytes is not None:
             blocks.append(ImageBlock(data=image_bytes, mime_type=mime_type))

@@ -32,7 +32,7 @@ export const useCatalogStore = create<CatalogState>((set) => ({
     set({ loading: true, error: null });
     try {
       const missions = await api.getMissions();
-      set({ missions, loading: false });
+      set({ missions: Array.isArray(missions) ? missions : [], loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }
@@ -50,7 +50,7 @@ export const useCatalogStore = create<CatalogState>((set) => ({
     });
     try {
       const datasets = await api.getDatasets(missionId);
-      set({ datasets, loading: false });
+      set({ datasets: Array.isArray(datasets) ? datasets : [], loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }
@@ -63,7 +63,7 @@ export const useCatalogStore = create<CatalogState>((set) => ({
         api.getParameters(datasetId),
         api.getTimeRange(datasetId),
       ]);
-      set({ parameters: params, timeRange, loading: false });
+      set({ parameters: Array.isArray(params) ? params : [], timeRange, loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }

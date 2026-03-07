@@ -245,7 +245,7 @@ SPICE ephemeris tools are available to both the orchestrator and all envoy agent
 | `delegate_to_data_io` | LLM-driven delegation to the data I/O specialist sub-agent |
 | `delegate_to_viz` | LLM-driven delegation to the visualization sub-agent (backend param selects plotly/matplotlib/jsx) |
 | `delegate_to_insight` | LLM-driven delegation to the insight sub-agent for multimodal plot analysis |
-| `request_planning` | Activate multi-step planning system for complex requests (orchestrator can trigger dynamically) |
+| `delegate_to_planner` | Activate multi-step planning system for complex requests (orchestrator can trigger dynamically) |
 
 ### Pipeline (Live DAG)
 | Tool | Purpose |
@@ -451,7 +451,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - "Compare PSP and ACE" -> `delegate_to_envoy("PSP", ...)` -> `delegate_to_envoy("ACE", ...)` -> `delegate_to_viz(plot both)` — all in one `process_message` call
 - Complex requests use **planning** via the **PlannerAgent**:
   1. **Regex pre-filter**: `is_complex_request()` regex heuristics catch obvious complex cases (free, no API cost) and route directly to planner
-  2. **Orchestrator override**: The orchestrator (with HIGH thinking) can also call `request_planning` tool for complex cases the regex missed
+  2. **Orchestrator override**: The orchestrator (with HIGH thinking) can also call `delegate_to_planner` tool for complex cases the regex missed
   3. PlannerAgent runs **research phase** (tool-calling to search/browse datasets) then **planning phase** (JSON-schema-enforced `produce_plan` call)
   4. Planner returns a **complete plan** with all tasks (fetch, compute, visualization)
   5. Orchestrator **executes** the plan by calling delegation tools: `delegate_to_envoy` for fetch tasks, `delegate_to_data_ops` for compute, `delegate_to_viz` for visualization

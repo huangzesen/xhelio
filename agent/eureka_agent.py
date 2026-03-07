@@ -13,10 +13,9 @@ from __future__ import annotations
 
 import base64
 import json
-import re
 import uuid
 from dataclasses import asdict
-from datetime import datetime, timezone
+from datetime import datetime
 from typing import Any, Dict, List, Optional, TYPE_CHECKING
 
 import config
@@ -25,6 +24,7 @@ from .event_bus import (
     EventBus,
     EUREKA_FINDING,
     EUREKA_SUGGESTION,
+    TEXT_DELTA,
     USER_MESSAGE,
     TOOL_CALL,
     TOOL_RESULT,
@@ -75,6 +75,84 @@ _INTERNAL_TOOL_SCHEMAS = [
         description="Returns this session's previous eureka findings and suggestions. Use this to build on your prior observations.",
         parameters={"type": "object", "properties": {}},
     ),
+    FunctionSchema(
+        name="submit_eureka",
+        description=(
+            "Submit a scientific finding. Call once per finding (max 3 per cycle). "
+            "Each call stores the finding and returns its index for linking suggestions."
+        ),
+        parameters={
+            "type": "object",
+            "properties": {
+                "title": {
+                    "type": "string",
+                    "description": "Short descriptive title of the finding.",
+                },
+                "observation": {
+                    "type": "string",
+                    "description": "What you observed in the data.",
+                },
+                "hypothesis": {
+                    "type": "string",
+                    "description": "A plausible physical explanation.",
+                },
+                "evidence": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "List of evidence strings (data labels, time ranges, visual features).",
+                },
+                "confidence": {
+                    "type": "number",
+                    "description": "Confidence level 0.0-1.0 (minimum 0.3).",
+                },
+                "tags": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Categorization tags (e.g. solar_wind, anomaly, correlation).",
+                },
+            },
+            "required": ["title", "observation"],
+        },
+    ),
+    FunctionSchema(
+        name="submit_suggestion",
+        description=(
+            "Submit an actionable follow-up suggestion. Call exactly 3 times per cycle. "
+            "Categories: fetch new data, run analysis/computation, or create visualization."
+        ),
+        parameters={
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Action type: fetch_data, compute, or visualize.",
+                    "enum": ["fetch_data", "compute", "visualize"],
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description of what to do.",
+                },
+                "details": {
+                    "type": "string",
+                    "description": "Rationale: why this suggestion matters, what it would reveal.",
+                },
+                "parameters": {
+                    "type": "object",
+                    "description": "Action-specific parameters (mission, dataset, timerange, etc.).",
+                },
+                "priority": {
+                    "type": "string",
+                    "description": "Priority level.",
+                    "enum": ["high", "medium", "low"],
+                },
+                "linked_eureka_index": {
+                    "type": "integer",
+                    "description": "0-based index of the eureka finding this relates to. Omit if unlinked.",
+                },
+            },
+            "required": ["action", "description", "details"],
+        },
+    ),
 ]
 
 # Internal tool names for routing
@@ -86,8 +164,8 @@ class EurekaAgent(SubAgent):
 
     Three-phase cycle (think → propose → suggest) runs in a single persistent
     ChatSession via the standard SubAgent tool loop. The LLM calls investigation
-    tools (think), then produces structured JSON output with eurekas and
-    suggestions (propose + suggest).
+    tools (think), then calls submit_eureka/submit_suggestion tools to report
+    findings and suggestions (propose + suggest).
     """
 
     _PARALLEL_SAFE_TOOLS = {
@@ -130,6 +208,8 @@ class EurekaAgent(SubAgent):
         self.eureka_store = EurekaStore()
         self._session_id: str = "unknown"
         self._external_tool_executor = tool_executor
+        self._pending_eurekas: list[dict] = []
+        self._pending_suggestions: list[dict] = []
 
         super().__init__(
             agent_id="EurekaAgent",
@@ -143,35 +223,49 @@ class EurekaAgent(SubAgent):
             memory_scope=memory_scope,
         )
 
-    def _handle_request(self, msg: Message) -> None:
-        """Override to use eureka-specific turn limits and post-process results."""
-        from .loop_guard import LoopGuard
-
-        self._guard = LoopGuard(
-            max_total_calls=get_limit("eureka.max_total_calls"),
-            dup_free_passes=get_limit("sub_agent.dup_free_passes"),
-            dup_hard_block=get_limit("sub_agent.dup_hard_block"),
+    def _get_guard_limits(self) -> tuple[int, int, int]:
+        """Eureka-specific turn limits."""
+        return (
+            get_limit("eureka.max_total_calls"),
+            get_limit("sub_agent.dup_free_passes"),
+            get_limit("sub_agent.dup_hard_block"),
         )
+
+    def _pre_request(self, msg) -> str:
+        """Extract session_id from dict content, reset accumulators."""
+        # Reset per-cycle accumulators
+        self._pending_eurekas = []
+        self._pending_suggestions = []
 
         # Extract session_id and message text from the context dict
         if isinstance(msg.content, dict):
             self._session_id = msg.content.get("session_id", "unknown")
-            content = msg.content.get("message", json.dumps(msg.content))
-        else:
-            content = msg.content
+            return msg.content.get("message", json.dumps(msg.content))
+        return msg.content if isinstance(msg.content, str) else json.dumps(msg.content)
 
-        # Prepend current time (matches SubAgent._handle_request pattern)
-        current_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-        content = f"[Current time: {current_time}]\n\n{content}"
+    def _post_request(self, msg, result: dict) -> None:
+        """Store and emit eureka findings/suggestions, emit final text."""
+        # Store and emit whatever was submitted via tool calls
+        self._store_and_emit({
+            "eurekas": self._pending_eurekas,
+            "suggestions": self._pending_suggestions,
+        })
 
-        response = self._llm_send(content)
-        result = self._process_response(response)
+        if not self._pending_eurekas and not self._pending_suggestions:
+            logger.warning(
+                "[EurekaAgent] Cycle produced 0 findings and 0 suggestions"
+            )
 
-        # Post-process: parse eurekas + suggestions from result text
-        parsed = self._parse_output(result.get("text", ""))
-        self._store_and_emit(parsed)
-
-        self._deliver_result(msg, result)
+        # Emit final text as user-facing commentary
+        final_text = result.get("text", "")
+        if final_text:
+            self._event_bus.emit(
+                TEXT_DELTA,
+                agent="EurekaAgent",
+                level="info",
+                msg=f"[EurekaAgent] {final_text}",
+                data={"text": final_text + "\n\n", "commentary": True},
+            )
 
     def _route_tool(self, name: str, args: dict, tool_call_id=None) -> dict:
         """Route tools: internal tools handled locally, others via orchestrator."""
@@ -185,11 +279,31 @@ class EurekaAgent(SubAgent):
                     return self._tool_read_memories()
                 elif name == "read_eureka_history":
                     return self._tool_read_eureka_history()
+                elif name == "submit_eureka":
+                    return self._tool_submit_eureka(args)
+                elif name == "submit_suggestion":
+                    return self._tool_submit_suggestion(args)
                 return {"status": "error", "message": f"Unknown internal tool: {name}"}
             except Exception as e:
                 return {"status": "error", "message": str(e)}
         # External tools: delegate to orchestrator's tool executor
         return self._external_tool_executor(name, args, tool_call_id)
+
+    # ------------------------------------------------------------------
+    # Output tool handlers (submit_eureka / submit_suggestion)
+    # ------------------------------------------------------------------
+
+    def _tool_submit_eureka(self, args: dict) -> dict:
+        """Accumulate a eureka finding submitted via tool call."""
+        if len(self._pending_eurekas) >= 3:
+            return {"status": "error", "message": "Maximum 3 eurekas per cycle reached."}
+        self._pending_eurekas.append(args)
+        return {"status": "ok", "index": len(self._pending_eurekas) - 1}
+
+    def _tool_submit_suggestion(self, args: dict) -> dict:
+        """Accumulate a suggestion submitted via tool call."""
+        self._pending_suggestions.append(args)
+        return {"status": "ok"}
 
     # ------------------------------------------------------------------
     # Internal tool implementations
@@ -275,50 +389,8 @@ class EurekaAgent(SubAgent):
         return self.eureka_store.get_session_history(self._session_id)
 
     # ------------------------------------------------------------------
-    # Output parsing and storage
+    # Storage and emission
     # ------------------------------------------------------------------
-
-    def _parse_output(self, text: str) -> Dict[str, Any]:
-        """Parse structured JSON (eurekas + suggestions) from LLM text response."""
-        if not text:
-            return {"eurekas": [], "suggestions": []}
-
-        try:
-            # Try to find a JSON object with "eurekas" key
-            match = re.search(
-                r'\{[^{}]*"eurekas"\s*:\s*\[.*?\](?:[^{}]*"suggestions"\s*:\s*\[.*?\])?[^{}]*\}',
-                text,
-                re.DOTALL,
-            )
-            if match:
-                data = json.loads(match.group(0))
-                return {
-                    "eurekas": data.get("eurekas", []),
-                    "suggestions": data.get("suggestions", []),
-                }
-
-            # Try parsing the whole text as JSON
-            data = json.loads(text)
-            if isinstance(data, dict):
-                return {
-                    "eurekas": data.get("eurekas", []),
-                    "suggestions": data.get("suggestions", []),
-                }
-            if isinstance(data, list):
-                return {"eurekas": data, "suggestions": []}
-        except Exception:
-            pass
-
-        # Try to find just an array (backward compat)
-        try:
-            json_match = re.search(r"\[\s*\{.*\}\s*\]", text, re.DOTALL)
-            if json_match:
-                arr = json.loads(json_match.group(0))
-                return {"eurekas": arr, "suggestions": []}
-        except Exception:
-            pass
-
-        return {"eurekas": [], "suggestions": []}
 
     def _store_and_emit(self, parsed: Dict[str, Any]) -> None:
         """Store parsed eurekas and suggestions, emit events."""
@@ -363,7 +435,7 @@ class EurekaAgent(SubAgent):
                     continue
 
                 # Link to the eureka ID by index
-                linked_idx = s.get("linked_eureka_id", 0)
+                linked_idx = s.get("linked_eureka_index") if s.get("linked_eureka_index") is not None else s.get("linked_eureka_id", 0)
                 linked_id = ""
                 if isinstance(linked_idx, int) and 0 <= linked_idx < len(eureka_ids):
                     linked_id = eureka_ids[linked_idx]

@@ -39,6 +39,8 @@ DEFAULTS: dict[str, int] = {
     # Eureka agent (investigation + finding + suggestion cycle)
     "eureka.max_iterations": 10,
     "eureka.max_total_calls": 20,
+    # Memory agent (event inspection + memory CRUD)
+    "memory.max_total_calls": 20,
     # Sub-agent parallel tool execution default timeout (seconds)
     "agent.parallel_tool_timeout": 120,
 }

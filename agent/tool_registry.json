@@ -17,7 +17,7 @@
         "delegate_to_data_ops",
         "delegate_to_data_io",
         "delegate_to_insight",
-        "request_planning",
+        "delegate_to_planner",
         "review_memory",
         "pipeline",
         "list_fetched_data",
@@ -184,9 +184,38 @@
       "get_dataset_docs",
       "search_full_catalog",
       "fetch_data"
-    ]
+    ],
+    "ppi": [
+      "search_datasets",
+      "list_parameters",
+      "browse_datasets",
+      "list_missions",
+      "get_dataset_docs",
+      "search_full_catalog",
+      "fetch_data"
+    ],
+    "spice": []
   },
   "envoy_informed": [],
-  "envoy_group_assignments": {},
+  "envoy_group_assignments": {
+    "CASSINI_PPI": "ppi",
+    "GALILEO": "ppi",
+    "INSIGHT": "ppi",
+    "JUNO_PPI": "ppi",
+    "LRO": "ppi",
+    "LUNAR-PROSPECTOR": "ppi",
+    "MAVEN_PPI": "ppi",
+    "MESSENGER_PPI": "ppi",
+    "MEX": "ppi",
+    "MGS": "ppi",
+    "NEW-HORIZONS_PPI": "ppi",
+    "PIONEER_PPI": "ppi",
+    "PIONEER-VENUS_PPI": "ppi",
+    "ULYSSES_PPI": "ppi",
+    "VEX": "ppi",
+    "VOYAGER1_PPI": "ppi",
+    "VOYAGER2_PPI": "ppi",
+    "SPICE": "spice"
+  },
   "envoy_default_group": "cdaweb"
 }

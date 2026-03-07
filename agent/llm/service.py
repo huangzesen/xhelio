@@ -226,7 +226,7 @@ class LLMService:
             chat._tracked = False
         return chat
 
-    def resume_session(self, saved_state: dict) -> ChatSession:
+    def resume_session(self, saved_state: dict, *, thinking: str = "high") -> ChatSession:
         """Restore a session from a saved state dict."""
         session_id = saved_state.get("session_id", "")
         messages = saved_state.get("messages", [])
@@ -234,22 +234,15 @@ class LLMService:
 
         interface = ChatInterface.from_dict(messages)
 
-        # Determine interaction_id: check metadata first (where core.py stores it),
-        # then fall back to scanning provider_data on assistant messages.
-        interaction_id = metadata.get("interaction_id")
-        if not interaction_id:
-            for entry in reversed(interface.entries):
-                if entry.role == "assistant" and entry.provider_data:
-                    interaction_id = entry.provider_data.get("interaction_id")
-                    if interaction_id:
-                        break
+        # Restore tools from interface so adapters can build provider-specific format
+        tools = FunctionSchema.from_dicts(interface.current_tools)
 
         chat = self._adapter.create_chat(
             model=self._model,
             system_prompt=interface.current_system_prompt or "",
-            tools=None,  # Adapter reconstructs tools from interface.current_tools
+            tools=tools,
             interface=interface,
-            interaction_id=interaction_id,
+            thinking=thinking,
         )
         chat.session_id = session_id or _generate_session_id()
         chat._agent_type = metadata.get("agent_type", "")

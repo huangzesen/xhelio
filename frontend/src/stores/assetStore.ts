@@ -25,7 +25,11 @@ export const useAssetStore = create<AssetState>((set) => ({
     set({ loading: true, error: null });
     try {
       const overview = await api.getAssetOverview();
-      set({ overview, loading: false });
+      const safeOverview = overview ? {
+        ...overview,
+        categories: Array.isArray(overview.categories) ? overview.categories : [],
+      } : null;
+      set({ overview: safeOverview, loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }

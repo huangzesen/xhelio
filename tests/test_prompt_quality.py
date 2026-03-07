@@ -568,7 +568,7 @@ class TestToolAssignmentConsistency:
             "delegate_to_data_ops",
             "delegate_to_data_io",
             "delegate_to_insight",
-            "request_planning",
+            "delegate_to_planner",
         ]
         for tool in forbidden:
             assert f"`{tool}`" not in mission, (

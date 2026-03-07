@@ -37,13 +37,8 @@ def invalidate_system_prompt_cache() -> None:
     _invalidate_prompt_files()
 
 
-def get_system_prompt(gui_mode: bool = False) -> str:
-    """Return the system prompt (static, no date placeholder).
-
-    Args:
-        gui_mode: If True, the orchestrator knows GUI mode is active (passed
-            through to the visualization agent, not appended to orchestrator prompt).
-    """
+def get_system_prompt() -> str:
+    """Return the system prompt (static, no date placeholder)."""
     return _ensure_template()
 
 

@@ -58,6 +58,8 @@ export async function setupMockAPI(page: Page, overrides: ResponseOverrides = {}
   await page.route((url) => isApiRequest(url.toString()), (route) => {
     const url = route.request().url();
     if (!isApiRequest(url)) return route.fallback();
+    const pathname = new URL(url).pathname;
+    console.warn(`[mock-api] Unhandled route: ${route.request().method()} ${pathname}`);
     return route.fulfill(json({}));
   });
 
@@ -123,6 +125,38 @@ export async function setupMockAPI(page: Page, overrides: ResponseOverrides = {}
     })),
   );
 
+  await page.route((url) => new URL(url).pathname === '/api/catalog/missions', (route) =>
+    route.fulfill(json([])),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/gallery', (route) =>
+    route.fulfill(json([])),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/eureka', (route) =>
+    route.fulfill(json([])),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/sessions/saved-with-ops', (route) =>
+    route.fulfill(json([])),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/assets', (route) =>
+    route.fulfill(json({ categories: [], total_bytes: 0, scan_time_ms: 0 })),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/api-key-status', (route) =>
+    route.fulfill(json({ status: 'valid', valid: true, error: null, masked: '****' })),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/models', (route) =>
+    route.fulfill(json({ models: [] })),
+  );
+
+  await page.route((url) => new URL(url).pathname === '/api/eureka/chat/history', (route) =>
+    route.fulfill(json({ messages: [] })),
+  );
+
   // --- Session list endpoint ---
 
   await page.route((url) => new URL(url).pathname === '/api/sessions/saved', (route) =>
@@ -137,6 +171,18 @@ export async function setupMockAPI(page: Page, overrides: ResponseOverrides = {}
 
   await page.route((url) => /^\/api\/sessions\/[^/]+\/events-log$/.test(new URL(url).pathname), (route) =>
     route.fulfill(json({ events: [] })),
+  );
+
+  await page.route((url) => /^\/api\/sessions\/[^/]+\/data$/.test(new URL(url).pathname), (route) =>
+    route.fulfill(json([])),
+  );
+
+  await page.route((url) => /^\/api\/sessions\/[^/]+\/memories\/list$/.test(new URL(url).pathname), (route) =>
+    route.fulfill(json({ memories: [], total: 0, global_enabled: true, stats: null })),
+  );
+
+  await page.route((url) => /^\/api\/sessions\/[^/]+\/memories\/archived$/.test(new URL(url).pathname), (route) =>
+    route.fulfill(json({ memories: [], total: 0 })),
   );
 
   await page.route((url) => /^\/api\/sessions\/[^/]+\/chat$/.test(new URL(url).pathname), (route) =>

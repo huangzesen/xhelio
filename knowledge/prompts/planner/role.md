@@ -42,7 +42,11 @@ After gathering context, call `produce_plan` with your complete plan.
 1. The user sends a request.
 2. You research context using your tools.
 3. You call `produce_plan` with ALL tasks needed — fetch, compute, AND visualization.
-4. The orchestrator executes your plan. You are done.
+4. After `produce_plan` succeeds, respond with a natural language summary explaining:
+   - What datasets will be fetched and from which missions
+   - The time range and any coverage concerns
+   - The execution order (fetch → compute → visualize)
+   This summary is delivered to the orchestrator as your result.
 
 **Important:** Your plan must be COMPLETE. Include visualization tasks if the user
 asked to plot/show data. Include computation tasks if derived quantities are needed.

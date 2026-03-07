@@ -1113,19 +1113,17 @@ Do NOT use for plot modifications (zoom, restyle, add traces) — use the active
             "required": ["request"],
         },
     },
-    # --- request_planning ---
+    # --- delegate_to_planner ---
     {
-        "name": "request_planning",
-        "description": """Research data availability and produce a structured plan for data requests.
+        "name": "delegate_to_planner",
+        "description": """Delegate a complex request to the planning specialist agent. Use this when:
+- The request involves fetching data from multiple missions or datasets
+- The request needs dataset research (checking availability, time coverage)
+- You need a structured plan before executing delegations
 
-The planner searches datasets, verifies time coverage, and returns a plan with tasks.
-YOU must then execute the plan by calling delegation tools for each task:
-- Fetch tasks (mission ID like PSP, ACE) → delegate_to_envoy
-- Compute tasks (__data_ops__) → delegate_to_data_ops
-- Visualization tasks (__visualization__) → delegate_to_viz
-
-Execute fetch tasks IN PARALLEL (multiple delegate_to_envoy calls in one response).
-Execute compute and viz tasks AFTER fetches complete.
+The planner will research datasets, verify time coverage, and produce a plan.
+It will respond with a summary. Then use plan_check to load the full plan
+and execute tasks via delegation tools (delegate_to_envoy, delegate_to_viz, etc.).
 
 Use this as your FIRST action for any request involving fetching mission data.
 Skip this only for: answering questions, modifying existing figures, follow-up
@@ -1137,20 +1135,17 @@ operations on already-loaded data.""",
                     "type": "string",
                     "description": "The full user request to plan",
                 },
-                "reasoning": {
+                "context": {
                     "type": "string",
-                    "description": "Brief explanation of why this request needs planning",
+                    "description": "Additional context (time range, prior session state, etc.)",
                 },
-                "time_start": {
-                    "type": "string",
-                    "description": "Start time in ISO 8601 format. Resolve relative expressions yourself.",
-                },
-                "time_end": {
-                    "type": "string",
-                    "description": "End time in ISO 8601 format. Resolve relative expressions yourself.",
+                "wait": {
+                    "type": "boolean",
+                    "description": "If true, wait for result. If false, fire-and-forget. Default true.",
+                    "default": True,
                 },
             },
-            "required": ["request", "reasoning", "time_start", "time_end"],
+            "required": ["request"],
         },
     },
     # ── Pipeline tool (consolidated) ─────────────────────────────────────

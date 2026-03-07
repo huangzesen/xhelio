@@ -495,8 +495,6 @@ export const useChatStore = create<ChatState>()(
   },
 
   sendMessage: async (sessionId: string, message: string) => {
-    if (get().isCancelling) return;
-
     // Intercept slash commands
     if (message.startsWith('/')) {
       const command = message.slice(1).split(/\s+/)[0].toLowerCase();
@@ -620,13 +618,9 @@ export const useChatStore = create<ChatState>()(
   },
 
   cancelStream: async (sessionId: string) => {
-    set({ isCancelling: true });
-    try {
-      await api.cancelChat(sessionId);
-    } catch {
-      // ignore
-    }
-    // Reset agent message state; EventSource stays open for next turn
+    // Fire-and-forget — don't wait for backend response
+    api.cancelChat(sessionId).catch(() => {});
+    // Immediately reset UI state
     if (_rafHandle) {
       cancelAnimationFrame(_rafHandle);
       _rafHandle = null;

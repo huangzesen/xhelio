@@ -28,7 +28,7 @@ export const useGalleryStore = create<GalleryState>((set, get) => ({
     set({ loading: true, error: null });
     try {
       const items = await api.getGalleryItems();
-      set({ items, loading: false });
+      set({ items: Array.isArray(items) ? items : [], loading: false });
     } catch (err) {
       set({ error: (err as Error).message, loading: false });
     }

@@ -76,6 +76,7 @@ export function SetupScreen({ onComplete }: Props) {
                   onClick={() => setShowKey((v) => !v)}
                   className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text"
                   tabIndex={-1}
+                  aria-label={showKey ? 'Hide API key' : 'Show API key'}
                 >
                   {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>

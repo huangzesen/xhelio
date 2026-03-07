@@ -96,6 +96,7 @@ MEMORY_EXTRACTION_START = "memory_extraction_start"
 MEMORY_EXTRACTION_DONE = "memory_extraction_done"
 MEMORY_EXTRACTION_ERROR = "memory_extraction_error"
 MEMORY_ACTION = "memory_action"
+MEMORY_SUMMARY = "memory_summary"
 
 # Eureka (scientific findings + suggestions)
 EUREKA_EXTRACTION_START = "eureka_extraction_start"
@@ -232,6 +233,7 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     MEMORY_EXTRACTION_DONE: frozenset({"display", "console"}),
     MEMORY_EXTRACTION_ERROR: frozenset({"display", "console"}),
     MEMORY_ACTION: frozenset({"console"}),
+    MEMORY_SUMMARY: frozenset({"display", "console"}),
     PIPELINE_REGISTERED: frozenset({"display", "console"}),
     # Insight
     INSIGHT_RESULT: frozenset({"display", "console"}),

@@ -4,7 +4,7 @@ import { PipelineDAG } from './PipelineDAG';
 import { StepTable } from './StepTable';
 import { CodeViewer } from './CodeViewer';
 import { PlotFullscreen } from '../plot/PlotFullscreen';
-import { ChevronRight, Loader2, Play, ExternalLink, Maximize2, Trash2, Pencil, Check, X, MessageSquare, ChevronDown, Send } from 'lucide-react';
+import { ChevronRight, Loader2, Play, ExternalLink, Maximize2, Trash2, Pencil, Check, X, MessageSquare, ChevronDown, Send, FileCode } from 'lucide-react';
 import { stepToRecord } from '../../stores/savedPipelineStore';
 
 interface Props {
@@ -20,6 +20,8 @@ interface Props {
   onDelete: (id: string) => void;
   onUpdate?: (id: string, updates: { name?: string; description?: string }) => void;
   onFeedback?: (id: string, comment: string) => void;
+  onGenerateScript?: (id: string) => void;
+  generatingScript?: boolean;
 }
 
 export function SavedPipelineDetail({
@@ -35,6 +37,8 @@ export function SavedPipelineDetail({
   onDelete,
   onUpdate,
   onFeedback,
+  onGenerateScript,
+  generatingScript,
 }: Props) {
   // Adapt steps to PipelineRecord for StepTable / CodeViewer reuse
   const records = useMemo(() => detail.steps.map(stepToRecord), [detail.steps]);
@@ -189,6 +193,22 @@ export function SavedPipelineDetail({
           </div>
           {!editing && (
             <div className="shrink-0 flex items-center gap-2">
+              {onGenerateScript && (
+                <button
+                  onClick={() => onGenerateScript(detail.id)}
+                  disabled={generatingScript}
+                  className="flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg text-xs
+                    text-text-muted hover:text-text hover:bg-hover transition-colors
+                    disabled:opacity-50"
+                >
+                  {generatingScript ? (
+                    <Loader2 size={13} className="animate-spin" />
+                  ) : (
+                    <FileCode size={13} />
+                  )}
+                  {generatingScript ? 'Generating...' : 'Generate Script'}
+                </button>
+              )}
               {confirmDelete && (
                 <button
                   onClick={() => setConfirmDelete(false)}

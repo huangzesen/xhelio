@@ -241,6 +241,7 @@ export function SettingsPage() {
                     onClick={() => setShowKey((v) => !v)}
                     className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text"
                     tabIndex={-1}
+                    aria-label={showKey ? 'Hide API key' : 'Show API key'}
                   >
                     {showKey ? <EyeOff size={14} /> : <Eye size={14} />}
                   </button>
@@ -472,7 +473,7 @@ export function SettingsPage() {
                 {mcpStatus && (
                   <div className="space-y-3">
                     {/* Enable/Disable toggle */}
-                    <div className="flex items-center justify-between">
+                    <label className="flex items-center justify-between cursor-pointer">
                       <span className="text-xs text-text-muted">Enable MCP</span>
                       <input
                         type="checkbox"
@@ -491,7 +492,7 @@ export function SettingsPage() {
                         disabled={mcpSaving}
                         className="rounded"
                       />
-                    </div>
+                    </label>
 
                     {/* API Host input */}
                     <div>
@@ -582,7 +583,7 @@ export function SettingsPage() {
                 </select>
               </label>
 
-              <div className="flex items-center justify-between">
+              <label className="flex items-center justify-between cursor-pointer">
                 <span className="text-xs text-text-muted">Parallel Fetch</span>
                 <input
                   type="checkbox"
@@ -590,7 +591,7 @@ export function SettingsPage() {
                   onChange={(e) => setField('parallel_fetch', e.target.checked)}
                   className="rounded"
                 />
-              </div>
+              </label>
 
               <label className="block">
                 <span className="text-xs text-text-muted">Max Workers ({(config.parallel_max_workers as number) ?? 4})</span>
@@ -846,7 +847,7 @@ export function SettingsPage() {
                 const desc = descriptions[`reasoning.${key}`];
                 return (
                   <div key={key}>
-                    <div className="flex items-center justify-between">
+                    <label className="flex items-center justify-between cursor-pointer">
                       <span className="text-xs text-text-muted">{label}</span>
                       <input
                         type="checkbox"
@@ -854,7 +855,7 @@ export function SettingsPage() {
                         onChange={(e) => setNestedField('reasoning', key, e.target.checked)}
                         className="rounded"
                       />
-                    </div>
+                    </label>
                     {desc && (
                       <p className="mt-1 text-xs italic text-text-muted/70 leading-relaxed">{desc}</p>
                     )}

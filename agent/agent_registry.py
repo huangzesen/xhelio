@@ -250,7 +250,8 @@ def register_spice_tools(names: list[str]) -> None:
 
     Adds the tool names to ORCHESTRATOR_TOOLS, ENVOY_TOOLS, and rebuilds
     both call registries. The orchestrator gets SPICE tools directly (no
-    delegation needed). All envoys also get them via the cdaweb group.
+    delegation needed). Only the SPICE envoy gets them injected via the
+    "spice" tool group.
 
     Also adds SPICE tools to EnvoyAgent._PARALLEL_SAFE_TOOLS (all SPICE
     tools are read-only ephemeris lookups, safe to parallelize).
@@ -275,8 +276,8 @@ def register_spice_tools(names: list[str]) -> None:
             )
             AGENT_INFORMED_REGISTRY._registry.setdefault("ctx:envoy", set()).add(name)
 
-    # Add to cdaweb group so all envoys get SPICE tools
-    ENVOY_TOOL_REGISTRY.add_tools_to_group("cdaweb", names)
+    # Add to spice group so only SPICE envoy gets these tools
+    ENVOY_TOOL_REGISTRY.add_tools_to_group("spice", names)
 
     # Add SPICE tools to EnvoyAgent's parallel-safe set
     from .envoy_agent import EnvoyAgent

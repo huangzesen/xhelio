@@ -24,6 +24,8 @@ export function SavedPipelinesTab() {
     selectStep,
     updatePipeline,
     addFeedback,
+    generateScript,
+    generatingScript,
   } = useSavedPipelineStore();
 
   useEffect(() => {
@@ -47,6 +49,8 @@ export function SavedPipelinesTab() {
           onDelete={deletePipeline}
           onUpdate={updatePipeline}
           onFeedback={addFeedback}
+          onGenerateScript={generateScript}
+          generatingScript={generatingScript}
         />
       </div>
     );

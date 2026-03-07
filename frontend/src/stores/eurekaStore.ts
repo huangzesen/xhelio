@@ -87,7 +87,7 @@ export const useEurekaStore = create<EurekaStore>((set, get) => ({
   },
 
   sendChatMessage: async (message: string) => {
-    const sessionId = useSessionStore.getState().sessionId;
+    const sessionId = useSessionStore.getState().activeSessionId;
     if (!sessionId) {
       set({ chatError: 'No active session' });
       return;

@@ -2,31 +2,22 @@
 Planning logic for multi-step task handling.
 
 This module provides:
-- The orchestrator LLM decides when to invoke planning via the request_planning tool
-- PlannerAgent: Chat-based planner with plan-execute-replan loop
+- The orchestrator LLM decides when to invoke planning via the delegate_to_planner tool
+- PlannerAgent: SubAgent-based planner with research tools and produce_plan
 - format_plan_for_display(): Human-readable plan rendering
 """
 
 import json
-from concurrent.futures import ThreadPoolExecutor
-from typing import Optional
-
-from .llm import LLMAdapter, LLMResponse, FunctionSchema
-from .event_bus import get_event_bus, DEBUG, PROGRESS, PLAN_CREATED, LLM_CALL
-from .llm_utils import _LLM_RETRY_TIMEOUT, send_with_timeout, track_llm_usage
-from .token_counter import count_tokens, count_tool_tokens
-from .tasks import Task, TaskPlan, create_task, create_plan
-from .tools import get_function_schemas
-from .tool_loop import run_tool_loop, extract_text_from_response
-from .agent_registry import PLANNER_TOOLS
-from .turn_limits import get_limit
-from knowledge.prompt_builder import build_planner_agent_prompt
-
-from datetime import datetime, timezone
 from typing import TYPE_CHECKING
 
-if TYPE_CHECKING:
-    from .context_tracker import ContextTracker
+from .sub_agent import SubAgent
+from .llm import FunctionSchema
+from .event_bus import get_event_bus, DEBUG
+from .agent_registry import PLANNER_TOOLS
+from .tools import get_function_schemas
+from .tasks import Task, TaskPlan
+
+from knowledge.prompt_builder import build_planner_agent_prompt
 
 
 # Schema for the produce_plan tool — forces the LLM to return a structured
@@ -91,432 +82,108 @@ PRODUCE_PLAN_SCHEMA = FunctionSchema(
 )
 
 
-class PlannerAgent:
-    """Chat-based planner that decomposes complex requests into task batches.
+class PlannerAgent(SubAgent):
+    """Planning agent that decomposes complex requests into task batches.
 
-    Uses a single persistent session with tools. The LLM researches context
-    (list_missions, web_search, list_fetched_data, etc.) and then responds
-    with a JSON plan. If JSON parsing fails, the error is fed back to the
-    same session for retry (up to 2 attempts).
+    Uses research tools (list_missions, search_datasets, browse_datasets,
+    web_search, etc.) to investigate data availability, then calls
+    produce_plan to save a structured plan to disk. The natural language
+    summary is delivered to the orchestrator via the standard SubAgent
+    result flow.
     """
+
+    _PARALLEL_SAFE_TOOLS: set[str] = {
+        "list_missions",
+        "search_datasets",
+        "list_parameters",
+        "browse_datasets",
+        "get_dataset_docs",
+        "search_full_catalog",
+        "list_fetched_data",
+        "web_search",
+    }
 
     def __init__(
         self,
-        adapter: LLMAdapter,
+        adapter,
         model_name: str,
         tool_executor=None,
-        verbose: bool = False,
-        cancel_event=None,
+        *,
         event_bus=None,
-        ctx_tracker: "ContextTracker | None" = None,
+        cancel_event=None,
+        memory_store=None,
+        memory_scope: str = "planner",
         session_id: str | None = None,
     ):
-        self.adapter = adapter
-        self.model_name = model_name
-        self.tool_executor = tool_executor
-        self.verbose = verbose
-        self._cancel_event = cancel_event
-        self._ctx_tracker = ctx_tracker
-        self._session_id = session_id
-        self._orchestrator_inbox = None  # Set by orchestrator when creating planner
-        self._chat = None
-        self._current_system_prompt = ""
-        self._token_usage = {
-            "input_tokens": 0,
-            "output_tokens": 0,
-            "thinking_tokens": 0,
-            "cached_tokens": 0,
-        }
-        self._api_calls = 0
-        self._last_tool_context = "send_message"
+        self._session_id_str = session_id or "default"
 
-        # Token decomposition
-        self._current_system_tokens = 0
-        self._current_tools_tokens = 0
-        self._latest_input_tokens = 0
-        self._timeout_pool = ThreadPoolExecutor(max_workers=1)
-        self._event_bus = event_bus or get_event_bus()
+        # Build tool schemas before super().__init__ so _tool_schemas is set
+        schemas = get_function_schemas(names=PLANNER_TOOLS)
+        schemas.append(PRODUCE_PLAN_SCHEMA)
 
-        # Build FunctionSchema list when tools are available
-        self._tool_schemas: list[FunctionSchema] = []
-        if self.tool_executor is not None:
-            self._tool_schemas = get_function_schemas(names=PLANNER_TOOLS)
-        # Always include produce_plan — it's a planner-internal tool
-        self._tool_schemas.append(PRODUCE_PLAN_SCHEMA)
+        super().__init__(
+            agent_id="PlannerAgent",
+            adapter=adapter,
+            model_name=model_name,
+            tool_executor=self._wrap_tool_executor(tool_executor),
+            tool_schemas=schemas,
+            event_bus=event_bus,
+            cancel_event=cancel_event,
+            memory_store=memory_store,
+            memory_scope=memory_scope,
+        )
 
-    def _make_plan_executor(self):
-        """Wrap the external tool executor to handle produce_plan internally."""
-
-        def executor(tool_name, tool_args):
+    def _wrap_tool_executor(self, external_executor):
+        """Wrap the external executor to handle produce_plan internally."""
+        def executor(tool_name, tool_args, tc_id=None):
             if tool_name == "produce_plan":
-                return {"status": "success", "message": "Plan submitted."}
-            return self.tool_executor(tool_name, tool_args)
-
+                return self._handle_produce_plan(tool_args)
+            if external_executor:
+                return external_executor(tool_name, tool_args, tc_id)
+            return {"status": "error", "message": f"Unknown tool: {tool_name}"}
         return executor
 
-    def save_plan_to_file(self, plan: dict, session_id: str) -> str:
-        """Save plan to filesystem as JSON.
+    def _build_system_prompt(self) -> str:
+        return build_planner_agent_prompt()
 
-        Args:
-            plan: The plan dict from produce_plan.
-            session_id: Current session ID for filename.
-
-        Returns:
-            Path to the saved plan file.
-        """
-        import os
-        from pathlib import Path
-
-        # Save to session-specific file
-        plan_dir = Path(os.environ.get("XHELIO_DATA_DIR", "/tmp/xhelio")) / "plans"
-        plan_dir.mkdir(parents=True, exist_ok=True)
-
-        plan_file = plan_dir / f"{session_id}_plan.json"
-
-        with open(plan_file, "w") as f:
-            json.dump(plan, f, indent=2)
-
-        return str(plan_file)
-
-    def send_to_orchestrator(self, content: str, priority: int = 1):
-        """Send message to orchestrator's inbox.
-
-        Args:
-            content: Message text explaining what was done and recommendations.
-            priority: Message priority (0=user, 1=subagent).
-        """
-        if self._orchestrator_inbox:
-            from .sub_agent import _make_message
-            msg = _make_message(
-                "subagent_result",
-                sender=self.__class__.__name__,
-                content=content,
-            )
-            self._orchestrator_inbox.put((priority, msg.timestamp, msg))
-
-    @staticmethod
-    def _extract_plan_from_collected(collected: dict) -> Optional[dict]:
-        """Extract plan dict from collected produce_plan tool results, if any."""
-        entries = collected.get("produce_plan")
-        if not entries:
-            return None
-        # Use the last produce_plan call's args
-        plan = dict(entries[-1]["args"]) if entries[-1].get("args") else {}
+    def _handle_produce_plan(self, tool_args: dict) -> dict:
+        """Handle the produce_plan tool call -- normalize and save plan to disk."""
+        plan = dict(tool_args)
         # Normalize mission "null"/"none" strings to None
         for task in plan.get("tasks", []):
             mission = task.get("mission")
             if isinstance(mission, str) and mission.lower() in ("null", "none", ""):
                 task["mission"] = None
-        # Warn if planner did not validate time ranges
+
         if not plan.get("time_range_validated"):
-            get_event_bus().emit(
-                DEBUG,
-                agent="PlannerAgent",
-                level="warning",
-                msg="[PlannerAgent] Plan submitted with time_range_validated=false — "
-                "time coverage may not have been checked",
-            )
-        return plan
-
-    def _on_reset(self, chat, failed_message):
-        """Rollback: new chat with last assistant turn dropped."""
-        history = chat.get_history()
-        while history and history[-1].get("role") == "assistant":
-            history.pop()
-
-        get_event_bus().emit(
-            LLM_CALL,
-            agent="PlannerAgent",
-            level="warning",
-            msg=f"[PlannerAgent] Session rollback — new chat ({len(history)} msgs kept)",
-        )
-
-        new_chat = self.adapter.create_chat(
-            model=self.model_name,
-            system_prompt=self._current_system_prompt,
-            tools=self._tool_schemas,
-            thinking="high",
-            history=history,
-        )
-        self._chat = new_chat
-        return (
-            new_chat,
-            "The previous response was lost due to a server error. Please try again.",
-        )
-
-    def _send_with_timeout(self, chat, message) -> LLMResponse:
-        """Send a message to the LLM with periodic warnings and retry on timeout."""
-        return send_with_timeout(
-            chat=chat,
-            message=message,
-            timeout_pool=self._timeout_pool,
-            cancel_event=self._cancel_event,
-            retry_timeout=_LLM_RETRY_TIMEOUT,
-            agent_name="PlannerAgent",
-            logger=None,
-            on_reset=self._on_reset,
-        )
-
-    def _track_usage(self, response: LLMResponse):
-        """Accumulate token usage from an LLMResponse."""
-        token_state = {
-            "input": self._token_usage["input_tokens"],
-            "output": self._token_usage["output_tokens"],
-            "thinking": self._token_usage["thinking_tokens"],
-            "cached": self._token_usage["cached_tokens"],
-            "api_calls": self._api_calls,
-        }
-        track_llm_usage(
-            response=response,
-            token_state=token_state,
-            agent_name="PlannerAgent",
-            last_tool_context=self._last_tool_context,
-            system_tokens=self._current_system_tokens,
-            tools_tokens=self._current_tools_tokens,
-        )
-        self._token_usage["input_tokens"] = token_state["input"]
-        self._token_usage["output_tokens"] = token_state["output"]
-        self._token_usage["thinking_tokens"] = token_state["thinking"]
-        self._token_usage["cached_tokens"] = token_state["cached"]
-        self._api_calls = token_state["api_calls"]
-        self._latest_input_tokens = response.usage.input_tokens
-
-    def _parse_or_retry(
-        self, chat, response: LLMResponse, max_retries: int = 2
-    ) -> Optional[dict]:
-        """Parse JSON from response text with specific error feedback, retrying on failure.
-
-        Validates the response is raw JSON (no fences, no prose). If parsing
-        fails, sends a targeted error message back to the same session so the
-        LLM knows exactly what to fix. Caps retries at max_retries attempts.
-        """
-        for attempt in range(max_retries + 1):
-            text = response.text
-            if not text:
-                error_reason = "Your response was empty. Respond with the plan JSON."
-            else:
-                stripped = text.strip()
-                # Try direct JSON parse
-                try:
-                    data = json.loads(stripped)
-                except json.JSONDecodeError as e:
-                    # Give a specific error depending on the shape of the response
-                    if not stripped.startswith("{"):
-                        error_reason = (
-                            "Your response must be raw JSON starting with `{`. "
-                            "Do not include prose, markdown fences, or any text "
-                            "before or after the JSON object."
-                        )
-                    else:
-                        error_reason = (
-                            f"Your response starts with `{{` but is not valid JSON: {e}"
-                        )
-                    data = None
-                else:
-                    # JSON parsed — validate required fields
-                    missing = [
-                        f
-                        for f in (
-                            "reasoning",
-                            "tasks",
-                            "summary",
-                            "time_range_validated",
-                        )
-                        if f not in data
-                    ]
-                    if missing:
-                        error_reason = f"JSON is valid but missing required field(s): {', '.join(repr(f) for f in missing)}"
-                        data = None
-                    else:
-                        # Normalize mission "null"/"none" strings to None
-                        for task_data in data.get("tasks", []):
-                            mission = task_data.get("mission")
-                            if isinstance(mission, str) and mission.lower() in (
-                                "null",
-                                "none",
-                                "",
-                            ):
-                                task_data["mission"] = None
-                        return data
-
-            # Parse/validation failed — retry or give up
-            if attempt < max_retries:
-                from .truncation import trunc
-
-                self._event_bus.emit(
-                    DEBUG,
-                    agent="PlannerAgent",
-                    level="warning",
-                    msg=f"[PlannerAgent] JSON parse failed (attempt {attempt + 1}/{max_retries + 1}): {error_reason}",
-                )
-                if text:
-                    self._event_bus.emit(
-                        DEBUG,
-                        agent="PlannerAgent",
-                        msg=f"[PlannerAgent] Raw response: {trunc(text.strip(), 'inline.debug')}",
-                    )
-                error_msg = (
-                    f"{error_reason}\n\n"
-                    f"Respond with ONLY the plan JSON object. Required fields: "
-                    f"reasoning, tasks, summary, time_range_validated. No markdown fences, no prose."
-                )
-                self._last_tool_context = f"json_retry_{attempt + 1}"
-                response = self._send_with_timeout(chat, error_msg)
-                self._track_usage(response)
-            else:
-                self._event_bus.emit(
-                    DEBUG,
-                    agent="PlannerAgent",
-                    level="warning",
-                    msg=f"[PlannerAgent] JSON parse failed after {max_retries + 1} attempts: {error_reason}",
-                )
-
-        return None
-
-    def start_planning(self, user_request: str) -> Optional[dict]:
-        """Begin planning by sending the user request to a fresh chat.
-
-        Creates a single session with tools. The LLM can call research tools
-        (list_missions, web_search, list_fetched_data, etc.) during its
-        tool loop, then responds with a JSON plan.
-
-        Args:
-            user_request: The user's original request.
-
-        Returns:
-            Dict with {status, reasoning, tasks, summary} or None on failure.
-        """
-        try:
-            system_prompt = build_planner_agent_prompt()
-            self._current_system_prompt = system_prompt
-
-            self._current_system_tokens = count_tokens(system_prompt)
-            self._current_tools_tokens = count_tool_tokens(self._tool_schemas)
-
-            self._chat = self.adapter.create_chat(
-                model=self.model_name,
-                system_prompt=system_prompt,
-                tools=self._tool_schemas if self._tool_schemas else None,
-                thinking="high",
-            )
-
-            self._event_bus.emit(
-                PROGRESS,
-                agent="PlannerAgent",
-                msg="[Planning] Researching and decomposing request...",
-            )
-
-            # Prepend current time
-            current_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
-            user_request = f"[Current time: {current_time}]\n\n{user_request}"
-
-            self._last_tool_context = "planning_initial"
-            response = self._send_with_timeout(self._chat, user_request)
-            self._track_usage(response)
-
-            # Run tool loop — LLM may call research tools before producing plan
-            collected = {}
-            if self._tool_schemas:
-                executor = (
-                    self._make_plan_executor()
-                    if self.tool_executor
-                    else lambda n, a: (
-                        {"status": "success", "message": "Plan submitted."}
-                        if n == "produce_plan"
-                        else {"status": "error", "message": f"Unknown tool: {n}"}
-                    )
-                )
-                response = run_tool_loop(
-                    chat=self._chat,
-                    response=response,
-                    tool_executor=executor,
-                    adapter=self.adapter,
-                    agent_name="PlannerAgent",
-                    max_total_calls=get_limit("think.max_total_calls"),
-                    max_iterations=get_limit("think.max_iterations"),
-                    track_usage=self._track_usage,
-                    collect_tool_results=collected,
-                    cancel_event=self._cancel_event,
-                    send_fn=lambda msg: self._send_with_timeout(self._chat, msg),
-                    terminal_tools={"produce_plan"},
-                )
-
-            # Check if produce_plan was called during the tool loop
-            result = self._extract_plan_from_collected(collected)
-            if result is None:
-                # Fallback: try parsing text as JSON (backward compat)
-                result = self._parse_or_retry(self._chat, response)
-            if result and self.verbose:
-                self._event_bus.emit(
-                    DEBUG,
-                    agent="PlannerAgent",
-                    msg=f"[PlannerAgent] Round 1: {len(result.get('tasks', []))} tasks",
-                )
-                self._log_plan_details(result, round_num=1)
-
-            # Save plan to filesystem and notify orchestrator
-            if result:
-                plan_file = self.save_plan_to_file(result, self._session_id or "default")
-                self.send_to_orchestrator(
-                    f"Planning complete. Plan saved to {plan_file}. "
-                    f"Use the plan_check tool to review and execute tasks."
-                )
-
-            # Return None - orchestrator will check inbox for message
-            return None
-
-        except Exception as e:
             self._event_bus.emit(
                 DEBUG,
                 agent="PlannerAgent",
                 level="warning",
-                msg=f"[PlannerAgent] Error in start_planning: {e}",
+                msg="[PlannerAgent] Plan submitted with time_range_validated=false",
             )
-            # Notify orchestrator of failure
-            self.send_to_orchestrator(f"Planning failed: {e}")
-            return None
 
-    def _log_plan_details(self, result: dict, round_num: int) -> None:
-        """Log full task details (instructions, candidates, reasoning) for debugging."""
-        if not result:
-            return
-        lines = [f"[PlannerAgent] === Round {round_num} Plan Details ==="]
-        if result.get("reasoning"):
-            lines.append(f"  Reasoning: {result['reasoning']}")
-        for i, task in enumerate(result.get("tasks", []), 1):
-            lines.append(f"  Task {i}:")
-            lines.append(f"    description: {task.get('description', '?')}")
-            lines.append(f"    mission: {task.get('mission', 'null')}")
-            lines.append(f"    instruction: {task.get('instruction', '?')}")
-            candidates = task.get("candidate_datasets")
-            if candidates:
-                lines.append(f"    candidate_datasets: {candidates}")
-        if result.get("summary"):
-            lines.append(f"  Summary: {result['summary']}")
-        self._event_bus.emit(DEBUG, agent="PlannerAgent", msg="\n".join(lines))
-
-    def get_token_usage(self) -> dict:
-        """Return accumulated token usage."""
+        plan_file = self._save_plan_to_file(plan)
         return {
-            "input_tokens": self._token_usage["input_tokens"],
-            "output_tokens": self._token_usage["output_tokens"],
-            "thinking_tokens": self._token_usage["thinking_tokens"],
-            "cached_tokens": self._token_usage["cached_tokens"],
-            "api_calls": self._api_calls,
-            "ctx_system_tokens": self._current_system_tokens,
-            "ctx_tools_tokens": self._current_tools_tokens,
-            "ctx_history_tokens": max(
-                0,
-                self._latest_input_tokens
-                - self._current_system_tokens
-                - self._current_tools_tokens,
-            ),
-            "ctx_total_tokens": self._latest_input_tokens,
+            "status": "success",
+            "message": f"Plan saved to {plan_file}. Summarize the plan for the orchestrator.",
+            "plan_file": plan_file,
+            "task_count": len(plan.get("tasks", [])),
         }
 
-    def reset(self):
-        """Reset the chat session."""
-        self._chat = None
+    def _save_plan_to_file(self, plan: dict) -> str:
+        """Save plan to filesystem as JSON."""
+        import os
+        from pathlib import Path
+
+        plan_dir = Path(os.environ.get("XHELIO_DATA_DIR", "/tmp/xhelio")) / "plans"
+        plan_dir.mkdir(parents=True, exist_ok=True)
+        plan_file = plan_dir / f"{self._session_id_str}_plan.json"
+
+        with open(plan_file, "w") as f:
+            json.dump(plan, f, indent=2)
+
+        return str(plan_file)
 
 
 def format_plan_for_display(plan: "TaskPlan | dict") -> str:

@@ -25,6 +25,7 @@ import type {
   SavedPipelineIndexEntry,
   SavedPipelineDetail,
   PipelineExecuteResult,
+  ScriptGenResult,
   AssetOverview,
   AssetCategory,
   CleanupRequest,
@@ -353,6 +354,18 @@ export function restorePipeline(id: string): Promise<SavedPipelineDetail> {
   return request(`/pipelines/${encodeURIComponent(id)}/restore`, {
     method: 'POST',
   });
+}
+
+export function generatePipelineScript(id: string): Promise<ScriptGenResult> {
+  return request(`/pipelines/${encodeURIComponent(id)}/script`);
+}
+
+export function generateSessionScript(
+  sessionId: string,
+  renderOpId?: string,
+): Promise<ScriptGenResult> {
+  const params = renderOpId ? `?render_op_id=${encodeURIComponent(renderOpId)}` : '';
+  return request(`/pipeline/${encodeURIComponent(sessionId)}/script${params}`);
 }
 
 export function getSavedPipelineDAG(

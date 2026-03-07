@@ -88,7 +88,7 @@ class TestToolNameFiltering:
         assert "delegate_to_viz" in names
         assert "delegate_to_data_ops" in names
         assert "delegate_to_data_io" in names
-        assert "request_planning" in names
+        assert "delegate_to_planner" in names
         # Should include list_fetched_data
         assert "list_fetched_data" in names
         # Should include pipeline and events (consolidated)
@@ -339,38 +339,37 @@ class TestDataOpsAgentImportAndInterface:
         assert hasattr(DataOpsAgent, "status")
 
 
-class TestRequestPlanningTool:
-    """Test that the request_planning tool is properly configured."""
+class TestDelegateToPlannerTool:
+    """Test that the delegate_to_planner tool is properly configured."""
 
     def test_tool_exists(self):
         names = {t["name"] for t in get_tool_schemas()}
-        assert "request_planning" in names
+        assert "delegate_to_planner" in names
 
-    def test_tool_requires_request_reasoning_and_time_start_end(self):
-        tool = next(t for t in get_tool_schemas() if t["name"] == "request_planning")
+    def test_tool_requires_request(self):
+        tool = next(t for t in get_tool_schemas() if t["name"] == "delegate_to_planner")
         assert "request" in tool["parameters"]["properties"]
-        assert "reasoning" in tool["parameters"]["properties"]
-        assert "time_start" in tool["parameters"]["properties"]
-        assert "time_end" in tool["parameters"]["properties"]
-        for field in ["request", "reasoning", "time_start", "time_end"]:
-            assert field in tool["parameters"]["required"]
+        assert "request" in tool["parameters"]["required"]
+        # Optional parameters
+        assert "context" in tool["parameters"]["properties"]
+        assert "wait" in tool["parameters"]["properties"]
 
     def test_tool_in_orchestrator_tools(self):
         names = set(ORCHESTRATOR_TOOLS)
-        assert "request_planning" in names
+        assert "delegate_to_planner" in names
 
     def test_tool_not_in_envoy_agent_tools(self):
         names = set(ENVOY_TOOLS)
-        assert "request_planning" not in names
+        assert "delegate_to_planner" not in names
 
     def test_tool_not_in_viz_agent_tools(self):
         names = set(VIZ_PLOTLY_TOOLS)
-        assert "request_planning" not in names
+        assert "delegate_to_planner" not in names
 
     def test_tool_not_in_dataops_agent_tools(self):
         names = set(DATAOPS_TOOLS)
-        assert "request_planning" not in names
+        assert "delegate_to_planner" not in names
 
     def test_tool_not_in_extraction_agent_tools(self):
         names = set(DATA_IO_TOOLS)
-        assert "request_planning" not in names
+        assert "delegate_to_planner" not in names

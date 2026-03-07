@@ -87,6 +87,20 @@ class FunctionSchema:
             return None
         return [s.to_dict() for s in schemas]
 
+    @classmethod
+    def from_dicts(cls, dicts: list[dict] | None) -> list["FunctionSchema"] | None:
+        """Convert tool dicts (as stored in ChatInterface) back to FunctionSchema objects."""
+        if not dicts:
+            return None
+        return [
+            cls(
+                name=d["name"],
+                description=d.get("description", ""),
+                parameters=d.get("parameters", {}),
+            )
+            for d in dicts
+        ]
+
 
 # ---------------------------------------------------------------------------
 # ChatSession ABC

@@ -107,6 +107,8 @@ class TestToolRegistryJson:
         """MissionToolRegistry loads groups from JSON."""
         groups = ENVOY_TOOL_REGISTRY._group_tools
         assert "cdaweb" in groups
+        assert "ppi" in groups
+        assert "spice" in groups
         assert "base" not in groups  # base is separate
 
     def test_mission_tool_registry_get_group(self):
@@ -119,3 +121,69 @@ class TestToolRegistryJson:
         ace_tools = ENVOY_TOOL_REGISTRY.get_tools("ACE")
         assert "ask_clarification" in ace_tools
         assert "fetch_data" in ace_tools
+
+    def test_mission_tool_registry_ppi_group(self):
+        """PPI missions resolve to 'ppi' group."""
+        assert ENVOY_TOOL_REGISTRY.get_group("JUNO_PPI") == "ppi"
+        assert ENVOY_TOOL_REGISTRY.get_group("VOYAGER1_PPI") == "ppi"
+        assert ENVOY_TOOL_REGISTRY.get_group("GALILEO") == "ppi"
+
+    def test_mission_tool_registry_spice_group(self):
+        """SPICE resolves to 'spice' group."""
+        assert ENVOY_TOOL_REGISTRY.get_group("SPICE") == "spice"
+
+    def test_ppi_envoy_gets_same_tools_as_cdaweb(self):
+        """PPI envoy tools should match CDAWeb envoy tools (for now)."""
+        cdaweb_tools = sorted(ENVOY_TOOL_REGISTRY.get_tools("ACE"))
+        ppi_tools = sorted(ENVOY_TOOL_REGISTRY.get_tools("JUNO_PPI"))
+        assert cdaweb_tools == ppi_tools
+
+    def test_ppi_group_exists(self):
+        """PPI group must exist in envoy_groups."""
+        assert "ppi" in _REGISTRY["envoy_groups"], "envoy_groups missing 'ppi'"
+
+    def test_spice_group_exists(self):
+        """SPICE group must exist in envoy_groups."""
+        assert "spice" in _REGISTRY["envoy_groups"], "envoy_groups missing 'spice'"
+
+    def test_ppi_missions_assigned(self):
+        """All PPI missions must be assigned to 'ppi' group."""
+        assignments = _REGISTRY.get("envoy_group_assignments", {})
+        ppi_missions = [m for m, g in assignments.items() if g == "ppi"]
+        assert len(ppi_missions) >= 17, (
+            f"Expected >= 17 PPI missions, got {len(ppi_missions)}: {ppi_missions}"
+        )
+
+    def test_spice_mission_assigned(self):
+        """SPICE must be assigned to 'spice' group."""
+        assignments = _REGISTRY.get("envoy_group_assignments", {})
+        assert assignments.get("SPICE") == "spice"
+
+    def test_ppi_tools_match_cdaweb(self):
+        """PPI group tools must match CDAWeb group tools (for now)."""
+        groups = _REGISTRY["envoy_groups"]
+        assert groups["ppi"] == groups["cdaweb"], (
+            "PPI and CDAWeb groups should have identical tools"
+        )
+
+    def test_register_spice_tools_targets_spice_group(self):
+        """register_spice_tools should add tools to 'spice' group, not 'cdaweb'."""
+        from agent.agent_registry import register_spice_tools
+
+        fake = ["_test_spice_probe"]
+        cdaweb_before = list(ENVOY_TOOL_REGISTRY._group_tools.get("cdaweb", []))
+        register_spice_tools(fake)
+
+        # Should be in spice group
+        spice_tools = ENVOY_TOOL_REGISTRY._group_tools.get("spice", [])
+        assert "_test_spice_probe" in spice_tools
+
+        # Should NOT be added to cdaweb group
+        cdaweb_after = ENVOY_TOOL_REGISTRY._group_tools.get("cdaweb", [])
+        assert "_test_spice_probe" not in cdaweb_after
+
+        # Cleanup
+        if "_test_spice_probe" in spice_tools:
+            spice_tools.remove("_test_spice_probe")
+        from agent.envoy_agent import EnvoyAgent
+        EnvoyAgent._PARALLEL_SAFE_TOOLS.discard("_test_spice_probe")

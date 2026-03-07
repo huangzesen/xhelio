@@ -11,18 +11,18 @@ User: "What's the difference between RTN and GSE?"
 User: "Vsw = sqrt(Vr²+VT²+VN²) — this is bad practice"
 -> ask_clarification(question="Would you like me to recompute Vsw using only the radial component Vr, or a different formula?", context="You consider the full 3D magnitude inappropriate for solar wind speed here")
 
-### Data requests (use request_planning)
+### Data requests (use delegate_to_planner)
 User: "show me parker magnetic field data"
--> request_planning(request="Show PSP magnetic field data for the last week", reasoning="Data fetch + plot")
+-> delegate_to_planner(request="Show PSP magnetic field data for the last week")
 
 User: "show me ACE magnetic field and plasma data"
--> request_planning(request="Show ACE magnetic field and plasma data for the last week", reasoning="Multi-parameter data fetch + plot")
+-> delegate_to_planner(request="Show ACE magnetic field and plasma data for the last week")
 
 User: "compare ACE and Wind magnetic field, compute magnitude, plot"
--> request_planning(request="Compare ACE and Wind magnetic field, compute magnitudes, plot together", reasoning="Multi-mission + compute + plot")
+-> delegate_to_planner(request="Compare ACE and Wind magnetic field, compute magnitudes, plot together")
 
 User: "Show me electron pitch angle distribution along with Br and |B| for a recent PSP perihelion"
--> request_planning(request="...", reasoning="Multi-dataset fetch + compute + plot, needs time resolution for recent perihelion")
+-> delegate_to_planner(request="Show electron pitch angle distribution along with Br and |B| for a recent PSP perihelion")
 
 User: "zoom in to last 2 days"
 -> {viz_tool}(request="set time range to last 2 days")
@@ -48,9 +48,12 @@ User: "what's wrong with this figure?" (resumed session, plot is restorable)
 User: "check if the data looks right" (plot is active)
 -> delegate_to_insight(request="verify data quality and identify any anomalies or artifacts in the current figure")
 
-### Executing a plan from request_planning
+### Executing a plan from delegate_to_planner
 
-request_planning returns: {{plan: {{tasks: [
+The planner responds with a summary. Call plan_check to load the full plan:
+-> plan_check(plan_file="<path from planner response>")
+
+plan_check returns: {{plan: {{tasks: [
   {{mission: "PSP", instruction: "Fetch mag + SPI + QTN for 2024-06-01 to 2024-07-15", candidate_datasets: [...]}},
   {{mission: "__visualization__", instruction: "Plot magnetic field, proton density, electron density, and heliocentric distance"}}
 ]}}}}

@@ -459,6 +459,64 @@ def handle_delegate_to_data_io(
     )
 
 
+def handle_delegate_to_planner(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+    request = tool_args["request"]
+    context = tool_args.get("context", "")
+    wait = tool_args.get("wait", True)
+    mode_text = " (run in background)" if not wait else ""
+    orch._event_bus.emit(
+        DELEGATION,
+        level="debug",
+        msg=f"[Router] Delegating to Planner specialist{mode_text}",
+    )
+
+    agent = orch._get_or_create_planner_agent()
+    if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
+        return {
+            "status": "error",
+            "message": (
+                "The planner agent is already processing a delegation. "
+                "Wait for it to finish before sending another request."
+            ),
+        }
+
+    full_request = request
+    if context:
+        full_request += f"\n\nContext: {context}"
+
+    # Append tip about session events
+    full_request += (
+        "\n\n[Tip: Call events(action='check') to see what happened "
+        "earlier in this session.]"
+    )
+
+    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
+
+    def _planner_post(result):
+        orch._event_bus.emit(
+            DELEGATION_DONE,
+            level="debug",
+            msg="[Router] Planner specialist finished",
+            data={
+                "status": result.get("status"),
+                "text_preview": result.get("result", "")[:200],
+            },
+        )
+        return result
+
+    return orch._delegate_to_sub_agent(
+        agent,
+        full_request,
+        store_snapshot=orch._store.list_entries(),
+        tool_call_id=tool_call_id,
+        agent_type="planner",
+        agent_name="PlannerAgent",
+        task_summary=request[:200],
+        post_process=_planner_post,
+        wait=wait,
+    )
+
+
 def handle_delegate_to_insight(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     user_request = tool_args["request"]
     extra_context = tool_args.get("context", "")

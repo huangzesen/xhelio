@@ -377,23 +377,49 @@ class SubAgent:
 
     def _handle_request(self, msg: Message) -> None:
         """Send request to LLM, process response with tool calls."""
-        # Fresh loop guard for each new request — persists across
-        # tool-result-triggered _process_response() calls within this request.
+        max_calls, dup_free, dup_hard = self._get_guard_limits()
         self._guard = LoopGuard(
-            max_total_calls=get_limit("sub_agent.max_total_calls"),
-            dup_free_passes=get_limit("sub_agent.dup_free_passes"),
-            dup_hard_block=get_limit("sub_agent.dup_hard_block"),
+            max_total_calls=max_calls,
+            dup_free_passes=dup_free,
+            dup_hard_block=dup_hard,
         )
-        content = (
-            msg.content if isinstance(msg.content, str) else json.dumps(msg.content)
-        )
-        # Prepend current time
+        content = self._pre_request(msg)
         current_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         content = f"[Current time: {current_time}]\n\n{content}"
         response = self._llm_send(content)
         result = self._process_response(response)
+        self._post_request(msg, result)
         self._deliver_result(msg, result)
         self._run_deferred_reviews(msg)
+
+    def _get_guard_limits(self) -> tuple[int, int, int]:
+        """Return (max_total_calls, dup_free_passes, dup_hard_block).
+
+        Override in subclasses for agent-specific limits.
+        """
+        return (
+            get_limit("sub_agent.max_total_calls"),
+            get_limit("sub_agent.dup_free_passes"),
+            get_limit("sub_agent.dup_hard_block"),
+        )
+
+    def _pre_request(self, msg: "Message") -> str:
+        """Transform message content before sending to LLM.
+
+        Called at the start of _handle_request. Override in subclasses
+        to extract metadata from msg.content or reshape the content.
+
+        Returns the content string to send to the LLM.
+        """
+        return msg.content if isinstance(msg.content, str) else json.dumps(msg.content)
+
+    def _post_request(self, msg: "Message", result: dict) -> None:
+        """Called after _process_response, before _deliver_result.
+
+        Override in subclasses for post-processing (e.g., store eureka
+        findings, persist memory actions, emit summaries).
+        """
+        pass
 
     def _handle_cancel(self, msg: Message) -> None:
         """Cancel active tools. Sub-agent stays alive."""

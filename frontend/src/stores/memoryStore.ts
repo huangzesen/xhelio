@@ -83,7 +83,7 @@ export const useMemoryStore = create<MemoryState>((set, get) => ({
     try {
       const data = await api.getMemories(sessionId);
       set({
-        memories: data.memories,
+        memories: Array.isArray(data?.memories) ? data.memories : [],
         globalEnabled: data.global_enabled,
         stats: data.stats,
         loading: false,
@@ -125,7 +125,7 @@ export const useMemoryStore = create<MemoryState>((set, get) => ({
       await api.refreshMemories(sessionId);
       const data = await api.getMemories(sessionId);
       set({
-        memories: data.memories,
+        memories: Array.isArray(data?.memories) ? data.memories : [],
         globalEnabled: data.global_enabled,
         stats: data.stats,
       });
@@ -149,7 +149,7 @@ export const useMemoryStore = create<MemoryState>((set, get) => ({
       // Don't pass type/scope filters to the API — CardList applies them
       // client-side. This avoids stale filter state from debounce delay.
       const data = await api.searchMemories(sessionId, query);
-      set({ searchResults: data.results, searchLoading: false });
+      set({ searchResults: Array.isArray(data?.results) ? data.results : [], searchLoading: false });
     } catch (err) {
       set({ searchLoading: false, error: (err as Error).message });
     }
@@ -195,7 +195,7 @@ export const useMemoryStore = create<MemoryState>((set, get) => ({
     set({ archivedLoading: true });
     try {
       const data = await api.getArchivedMemories(sessionId);
-      set({ archivedMemories: data.archived, archivedLoading: false });
+      set({ archivedMemories: Array.isArray(data?.archived) ? data.archived : [], archivedLoading: false });
     } catch (err) {
       set({ archivedLoading: false, error: (err as Error).message });
     }
@@ -210,7 +210,7 @@ export const useMemoryStore = create<MemoryState>((set, get) => ({
     try {
       const data = await api.getMemoryVersionHistory(sessionId, memoryId);
       set((s) => ({
-        versionHistories: { ...s.versionHistories, [memoryId]: data.versions },
+        versionHistories: { ...s.versionHistories, [memoryId]: Array.isArray(data?.versions) ? data.versions : [] },
         versionLoading: null,
       }));
     } catch (err) {

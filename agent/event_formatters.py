@@ -753,6 +753,13 @@ def _fmt_memory_action(agent: str, data: dict, children: list) -> tuple[str, str
         return (msg, msg)
 
 
+@register("memory_summary")
+def _fmt_memory_summary(agent: str, data: dict, children: list) -> tuple[str, str]:
+    text = data.get("text", data.get("_msg", ""))
+    summary = f"Memory summary: {text[:100]}" if len(text) > 100 else f"Memory summary: {text}"
+    return (summary, text)
+
+
 @register("pipeline_registered")
 def _fmt_pipeline_registered(agent: str, data: dict, children: list) -> tuple[str, str]:
     summary = data.get("_msg", "Pipeline registered")

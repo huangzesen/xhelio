@@ -36,7 +36,7 @@ from .prompts import get_system_prompt
 from .time_utils import parse_time_range, TimeRangeError
 from .tool_timing import ToolTimer, stamp_tool_result
 from .tasks import Task, TaskPlan, TaskStatus, PlanStatus, get_task_store
-from .planner import PlannerAgent, format_plan_for_display
+from .planner import format_plan_for_display
 from .turn_limits import get_limit as get_turn_limit
 from .session import SessionManager
 from .memory import MemoryStore, MEMORY_RELOAD_INTERVAL
@@ -303,6 +303,7 @@ class OrchestratorAgent:
         self._cancel_event = threading.Event()
         self._cancel_holdback = threading.Event()  # When set, hold fire-and-forget results
         self._held_results: list[str] = []  # Results held during cancel
+        self._was_cancelled = False  # Set on cancel, cleared on next process_message
         self._held_results_lock = threading.Lock()
         self._shutdown_event = threading.Event()
         self._text_already_streamed = False  # set by _send_message_streaming
@@ -378,7 +379,7 @@ class OrchestratorAgent:
 
         # Store model name and system prompt for chat creation
         self.model_name = model or config.SMART_MODEL
-        self._system_prompt = get_system_prompt(gui_mode=gui_mode)
+        self._system_prompt = get_system_prompt()
 
         if not defer_chat:
             # Create chat session
@@ -445,8 +446,6 @@ class OrchestratorAgent:
         # SSE event listener (subscribed by api/routes.py when streaming)
         self._sse_listener: SSEEventListener | None = None
 
-        # Cached planner agent
-        self._planner_agent: Optional[PlannerAgent] = None
 
         # Session persistence
         self._session_id: Optional[str] = None
@@ -550,19 +549,16 @@ class OrchestratorAgent:
 
     # ---- Cancellation API ----
 
-    _CANCEL_INJECT_MSG = (
+    _CANCEL_CONTEXT_PREFIX = (
         "[System] The user cancelled the previous operation. "
-        "All in-progress tool calls have been aborted. "
-        "Some background tasks may still be running — do not react to "
-        "their results until the user sends their next input.\n\n"
-        "Respond briefly to acknowledge the cancellation and ask what "
-        "the user would like to do instead."
+        "Some results may have been lost. Continue from here.\n\n"
     )
 
     def request_cancel(self):
         """Signal the agent to stop after the current atomic operation."""
         self._cancel_event.set()
         self._cancel_holdback.set()
+        self._was_cancelled = True
         self._event_bus.emit(DEBUG, level="info", msg="[Cancel] Cancellation requested")
 
     def clear_cancel(self):
@@ -647,8 +643,8 @@ class OrchestratorAgent:
         """Check if all work subagents (excluding Eureka) are idle."""
         with self._sub_agents_lock:
             for agent_id, agent in self._sub_agents.items():
-                if agent_id == "EurekaAgent":
-                    continue  # Eureka runs at CYCLE_END, not part of work cycle
+                if agent_id in ("EurekaAgent", "MemoryAgent"):
+                    continue  # Post-cycle agents, not part of work cycle
                 if not agent.is_idle:
                     return False
         return True
@@ -1086,22 +1082,7 @@ class OrchestratorAgent:
             cached_tokens += retired.get("cached_tokens", 0)
             api_calls += retired["api_calls"]
 
-        # Include usage from planner agent
-        if self._planner_agent:
-            usage = self._planner_agent.get_token_usage()
-            input_tokens += usage["input_tokens"]
-            output_tokens += usage["output_tokens"]
-            thinking_tokens += usage.get("thinking_tokens", 0)
-            cached_tokens += usage.get("cached_tokens", 0)
-
-        # Include usage from memory agent
-        if self._memory_agent:
-            usage = self._memory_agent.get_token_usage()
-            input_tokens += usage["input_tokens"]
-            output_tokens += usage["output_tokens"]
-            thinking_tokens += usage.get("thinking_tokens", 0)
-            cached_tokens += usage.get("cached_tokens", 0)
-            api_calls += usage["api_calls"]
+        # Note: MemoryAgent usage is included via _sub_agents iteration above
 
         return {
             "input_tokens": input_tokens,
@@ -1192,28 +1173,7 @@ class OrchestratorAgent:
                 }
             )
 
-        # Planner agent
-        if self._planner_agent:
-            usage = self._planner_agent.get_token_usage()
-            if usage["api_calls"] > 0 or usage["input_tokens"] > 0:
-                rows.append(
-                    {
-                        "agent": "Planner",
-                        "input": usage["input_tokens"],
-                        "output": usage["output_tokens"],
-                        "thinking": usage.get("thinking_tokens", 0),
-                        "cached": usage.get("cached_tokens", 0),
-                        "calls": usage.get("api_calls", 0),
-                        "ctx_system": usage.get("ctx_system_tokens", 0),
-                        "ctx_tools": usage.get("ctx_tools_tokens", 0),
-                        "ctx_history": usage.get("ctx_history_tokens", 0),
-                        "ctx_total": usage.get("ctx_total_tokens", 0),
-                    }
-                )
-
-        # Memory agent
-        if self._memory_agent:
-            _add("Memory", self._memory_agent.get_token_usage())
+        # Note: MemoryAgent usage is included via _sub_agents iteration above
 
         return rows
 
@@ -2321,6 +2281,20 @@ class OrchestratorAgent:
                         level="error",
                         msg=f"[RunLoop] Error processing message: {e}",
                     )
+                    # Emit CYCLE_END so the frontend clears isStreaming.
+                    # Without this, the UI stays permanently disabled after an error.
+                    self._event_bus.emit(
+                        CYCLE_END,
+                        level="info",
+                        msg="Cycle complete (error recovery)",
+                        data={
+                            "cycle": self._cycle_number,
+                            "turns_in_cycle": 0,
+                            "token_usage": self.get_token_usage(),
+                            "round_token_usage": {},
+                        },
+                    )
+                    self._responded_this_cycle = True  # Prevent infinite wait
 
                 # Drain any additional queued messages and merge user messages
                 queued_user_messages = []
@@ -2387,6 +2361,18 @@ class OrchestratorAgent:
                     except Exception as e:
                         self._text_already_streamed = False
                         self.logger.error(f"[RunLoop] Error: {e}", exc_info=True)
+                        self._event_bus.emit(
+                            CYCLE_END,
+                            level="info",
+                            msg="Cycle complete (error recovery)",
+                            data={
+                                "cycle": self._cycle_number,
+                                "turns_in_cycle": 0,
+                                "token_usage": self.get_token_usage(),
+                                "round_token_usage": {},
+                            },
+                        )
+                        self._responded_this_cycle = True
 
                 # Check if cycle should end: responded + all work subagents idle
                 if self._responded_this_cycle and self._all_work_subagents_idle():
@@ -2557,7 +2543,7 @@ class OrchestratorAgent:
             )
 
             # Build new system prompt with fresh memory
-            base_prompt = get_system_prompt(gui_mode=self.gui_mode)
+            base_prompt = get_system_prompt()
             if memory_section:
                 new_system_prompt = f"{base_prompt}\n\n{memory_section}"
             else:
@@ -3005,30 +2991,35 @@ class OrchestratorAgent:
         except queue.Empty:
             return None
 
-    def _get_or_create_planner_agent(self) -> PlannerAgent:
-        """Get the cached planner agent or create a new one."""
-        if self._planner_agent is None:
-            self._planner_agent = PlannerAgent(
-                adapter=self.adapter,
-                model_name=config.PLANNER_MODEL,
-                tool_executor=lambda name, args, tc_id=None: (
-                    self._execute_tool_for_agent(
-                        name, args, tc_id, agent_type="planner"
-                    )
-                ),
-                verbose=self.verbose,
-                cancel_event=self._cancel_event,
-                event_bus=self._event_bus,
-                ctx_tracker=self._ctx_tracker,
-                session_id=self._session_id,
-            )
-            self._planner_agent._orchestrator_inbox = self._inbox
-            self._event_bus.emit(
-                DEBUG,
-                level="debug",
-                msg=f"[Router] Created PlannerAgent ({config.PLANNER_MODEL})",
-            )
-        return self._planner_agent
+    def _get_or_create_planner_agent(self):
+        """Get the cached planner agent or create a new one. Thread-safe."""
+        agent_id = "PlannerAgent"
+        with self._sub_agents_lock:
+            if agent_id not in self._sub_agents:
+                from .planner import PlannerAgent
+                agent = PlannerAgent(
+                    adapter=self.adapter,
+                    model_name=config.PLANNER_MODEL,
+                    tool_executor=lambda name, args, tc_id=None: (
+                        self._execute_tool_for_agent(
+                            name, args, tc_id, agent_type="planner"
+                        )
+                    ),
+                    event_bus=self._event_bus,
+                    cancel_event=self._cancel_event,
+                    memory_store=self._memory_store,
+                    memory_scope="planner",
+                    session_id=self._session_id,
+                )
+                agent._orchestrator_inbox = self._inbox
+                agent.start()
+                self._sub_agents[agent_id] = agent
+                self._event_bus.emit(
+                    DEBUG,
+                    level="debug",
+                    msg=f"[Router] Created PlannerAgent ({config.PLANNER_MODEL})",
+                )
+            return self._sub_agents[agent_id]
 
     def _process_single_message(self, user_message: str) -> str:
         """Process a single (non-complex) user message.
@@ -3188,19 +3179,14 @@ class OrchestratorAgent:
             self._last_tool_context = "+".join(tool_names)
 
             # Check cancel AFTER tool execution — strip the incomplete
-            # assistant turn and inject cancel context.
+            # assistant turn. Cancel context is prepended to the next user message.
             if self._cancel_event.is_set():
                 if self._chat:
                     self._chat.rollback_last_turn()
                 self._event_bus.emit(
                     DEBUG, level="info", msg="[Cancel] Stopping after tool execution"
                 )
-                try:
-                    cancel_response = self._send_message(self._CANCEL_INJECT_MSG)
-                    self._track_usage(cancel_response)
-                    return cancel_response.text or "Cancelled. What would you like to do?"
-                except Exception:
-                    return "Cancelled. What would you like to do?"
+                return "Cancelled."
 
             self._event_bus.emit(
                 DEBUG,
@@ -3256,7 +3242,7 @@ class OrchestratorAgent:
         memory_section = self._memory_store.format_for_injection(
             scope="generic", include_review_instruction=False
         )
-        base_prompt = get_system_prompt(gui_mode=self.gui_mode)
+        base_prompt = get_system_prompt()
         if memory_section:
             self._system_prompt = f"{base_prompt}\n\n{memory_section}"
         else:
@@ -3326,12 +3312,14 @@ class OrchestratorAgent:
 
     def reset_sub_agents(self) -> None:
         """Invalidate all cached sub-agents so they are recreated with current config."""
-        self._planner_agent = None
         # Stop and clear agents
         with self._sub_agents_lock:
             for agent in self._sub_agents.values():
                 agent.stop(timeout=2.0)
             self._sub_agents.clear()
+        # Clear direct references so _ensure_*_agent() recreates them
+        self._memory_agent = None
+        self._eureka_agent = None
         ENVOY_TOOL_REGISTRY.clear_active()
         # Reset context tracker so recreated agents get full context on first use
         self._ctx_tracker.reset_all()
@@ -3793,10 +3781,8 @@ class OrchestratorAgent:
 
         # Check if any sub-agent would use a stale model (compare what config
         # says now vs what the cached agents were built with)
-        sub_agents_stale = self._planner_agent is not None
-        if not sub_agents_stale:
-            with self._sub_agents_lock:
-                sub_agents_stale = len(self._sub_agents) > 0
+        with self._sub_agents_lock:
+            sub_agents_stale = len(self._sub_agents) > 0
 
         if not (
             adapter_needs_rebuild
@@ -3824,7 +3810,7 @@ class OrchestratorAgent:
                 msg=f"[Config] Hot-reload: Switching viz backend to {target_viz_backend}",
             )
             # Rebuild system prompt (it might have backend-specific instructions)
-            self._system_prompt = get_system_prompt(gui_mode=self.gui_mode)
+            self._system_prompt = get_system_prompt()
 
             # Update the current chat session's prompt if it exists
             if self.chat is not None:
@@ -4009,8 +3995,6 @@ class OrchestratorAgent:
         Shared by _maybe_extract_memories() (periodic) and
         _run_memory_agent_for_pipelines() (on-demand).
         """
-        from .memory import MEMORY_TOKEN_BUDGET
-
         # Detect active scopes from actors
         active_scopes = ["generic"]
         with self._sub_agents_lock:
@@ -4026,84 +4010,14 @@ class OrchestratorAgent:
                     mission_id = key.removeprefix("EnvoyAgent[").rstrip("]")
                     active_scopes.append(f"envoy:{mission_id}")
 
-        # Convert EventBus events to dicts and curate.
-        # All events are passed — build_curated_events handles prioritization
-        # via registry + catch-all, and the token budget caps total size.
-        all_events = self._event_bus.get_events()
-        raw_events = [
-            {"event": ev.type, "agent": ev.agent, "msg": ev.msg, **(ev.data or {})}
-            for ev in all_events
-        ]
-        curated = MemoryAgent.build_curated_events(raw_events)
+        # Collect all console-tagged events (same log the user sees)
+        console_events = self._event_bus.get_events(tags={"console"})
 
-        # Load active memories for active scopes only.
-        # Skip review-type entries but attach their feedback to the target.
-        injected_ids = self._memory_store._last_injected_ids
-        active_memories = []
-        for m in self._memory_store.get_enabled():
-            if m.type == "review":
-                continue
-            if not any(s in m.scopes for s in active_scopes):
-                continue
-            entry = {
-                "id": m.id,
-                "type": m.type,
-                "scopes": m.scopes,
-                "content": m.content,
-                "injected": m.id in injected_ids,
-                "version": m.version,
-                "access_count": m.access_count,
-                "created_at": m.created_at,
-            }
-            # Attach review feedback (recent 10 across version lineage to prevent bias from outdated reviews)
-            reviews = self._memory_store.get_recent_reviews_for_lineage(m.id, n=10)
-            if reviews:
-                entry["reviews"] = []
-                for r in reviews:
-                    agent_tag = next(
-                        (
-                            t
-                            for t in r.tags
-                            if t
-                            and not t.startswith("review:")
-                            and not t.startswith("stars:")
-                        ),
-                        "",
-                    )
-                    entry["reviews"].append(
-                        {
-                            "agent": agent_tag,
-                            "feedback": r.content,
-                            "date": r.created_at,
-                        }
-                    )
-            # Attach version history (previous versions)
-            if m.supersedes:
-                history = []
-                prev_id = m.supersedes
-                seen = set()
-                while prev_id and prev_id not in seen:
-                    seen.add(prev_id)
-                    prev = self._memory_store.get_by_id(prev_id)
-                    if prev is None:
-                        break
-                    history.append(
-                        {
-                            "version": prev.version,
-                            "content": prev.content,
-                            "date": prev.created_at,
-                        }
-                    )
-                    prev_id = prev.supersedes
-                if history:
-                    entry["previous_versions"] = history
-            active_memories.append(entry)
-
+        # MemoryAgent reads ALL memories directly from the store in its
+        # system prompt — no need to build active_memories here.
         return MemoryContext(
-            events=curated,
-            active_memories=active_memories,
+            console_events=console_events,
             active_scopes=active_scopes,
-            token_budget=MEMORY_TOKEN_BUDGET,
             total_memory_tokens=self._memory_store.total_tokens(),
         )
 
@@ -4264,6 +4178,9 @@ class OrchestratorAgent:
                 session_id=session_id,
                 event_bus=bus,
             )
+            self._memory_agent.start()
+            with self._sub_agents_lock:
+                self._sub_agents["MemoryAgent"] = self._memory_agent
         return self._memory_agent
 
     def _ensure_eureka_agent(self) -> "EurekaAgent":
@@ -4486,13 +4403,11 @@ class OrchestratorAgent:
         memory-tagged events from the EventBus, curated into concise summaries.
         Also includes pipeline candidates for the LLM to curate.
         """
-        # Check if there are new memory-relevant events since last extraction
-        from .memory_agent import MEMORY_RELEVANT_TYPES
-
-        memory_events = self._event_bus.get_events(
-            types=MEMORY_RELEVANT_TYPES, since_index=self._last_memory_op_index
+        # Check if there are new console events since last extraction
+        console_events = self._event_bus.get_events(
+            tags={"console"}, since_index=self._last_memory_op_index
         )
-        if not memory_events:
+        if not console_events:
             return  # No new events since last extraction
 
         if not self._memory_lock.acquire(blocking=False):
@@ -4516,7 +4431,7 @@ class OrchestratorAgent:
                         level="info",
                         msg="[Memory] Extraction started",
                         data={
-                            "curated_events": len(context.events),
+                            "console_events": len(context.console_events),
                             "active_scopes": context.active_scopes,
                         },
                     )
@@ -4524,7 +4439,6 @@ class OrchestratorAgent:
                     # Dump memory feed for debugging
                     if session_id:
                         try:
-                            from .memory_agent import CURATED_EVENTS_TOKEN_BUDGET
                             from datetime import datetime as _dt, timezone as _tz
 
                             feed_dir = config.get_data_dir() / "sessions" / session_id
@@ -4532,10 +4446,17 @@ class OrchestratorAgent:
                             feed_payload = {
                                 "timestamp": _dt.now(_tz.utc).isoformat(),
                                 "active_scopes": context.active_scopes,
-                                "token_budget": CURATED_EVENTS_TOKEN_BUDGET,
-                                "curated_events_count": len(context.events),
-                                "curated_events": context.events,
-                                "active_memories_count": len(context.active_memories),
+                                "console_events_count": len(context.console_events),
+                                "console_events": [
+                                    {
+                                        "index": i,
+                                        "type": ev.type,
+                                        "agent": ev.agent,
+                                        "summary": ev.summary,
+                                    }
+                                    for i, ev in enumerate(context.console_events)
+                                ],
+                                "total_memory_tokens": context.total_memory_tokens,
                                 "pipeline_candidates_count": len(
                                     context.pipeline_candidates
                                 ),
@@ -4941,10 +4862,6 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
             "token_usage": usage,
             "model": self.model_name,
         }
-        # Persist Interactions API state for session resume
-        iid = getattr(self.chat, "interaction_id", None)
-        if iid:
-            metadata_updates["interaction_id"] = iid
 
         # Auto-generate a session title after the first round
         if round_count >= 1 and not getattr(self, "_session_title_generated", False):
@@ -4982,9 +4899,8 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         Args:
             session_id: The session to load.
-            skip_interaction_resume: If True, ignore the saved interaction_id and
-                start a fresh chat seeded with client-side history. Used by /fork
-                to create an independent session.
+            skip_interaction_resume: Deprecated — kept for API compatibility.
+                Sessions always create fresh LLM chats seeded with history.
 
         Returns:
             Tuple of (metadata dict, display_log list or None, event_log list or None).
@@ -5000,29 +4916,19 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         ) = self._session_manager.load_session(session_id)
 
         # Build session state dict for service.resume_session()
-        saved_interaction_id = metadata.get("interaction_id")
-        if skip_interaction_resume:
-            saved_interaction_id = None
-
         if history_dicts:
-            # Strip interaction_id from metadata if skipping resume (/fork)
-            resume_metadata = dict(metadata)
-            if skip_interaction_resume:
-                resume_metadata.pop("interaction_id", None)
-
             saved_state = {
                 "session_id": session_id,
                 "messages": history_dicts,
-                "metadata": resume_metadata,
+                "metadata": metadata,
             }
             try:
                 self.chat = self.service.resume_session(saved_state)
                 entry_count = len(self.chat.interface.entries) if hasattr(self.chat, 'interface') else 0
-                resume_method = "Interactions API" if saved_interaction_id else "interface"
                 self._event_bus.emit(
                     DEBUG,
                     level="debug",
-                    msg=f"[Session] Resumed via {resume_method} ({entry_count} entries)",
+                    msg=f"[Session] Resumed ({entry_count} entries)",
                 )
             except Exception as e:
                 self._event_bus.emit(
@@ -5072,7 +4978,6 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
                 agent.stop(timeout=2.0)
             self._sub_agents.clear()
         ENVOY_TOOL_REGISTRY.clear_active()
-        self._planner_agent = None
         self._renderer.reset()
 
         # Defer figure restore — the full Plotly figure is built lazily when
@@ -5464,7 +5369,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         """Process a user message and return the agent's response.
 
         All messages go through the orchestrator LLM, which decides whether to
-        invoke the planner via the ``request_planning`` tool when multi-step
+        invoke the planner via the ``delegate_to_planner`` tool when multi-step
         coordination is needed.
         """
         self.clear_cancel()
@@ -5486,6 +5391,12 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
                 )
                 self._held_results.clear()
             self._cancel_holdback.clear()
+
+        # Prepend cancel context if the previous operation was cancelled
+        cancel_prefix = ""
+        if self._was_cancelled:
+            cancel_prefix = self._CANCEL_CONTEXT_PREFIX
+            self._was_cancelled = False
 
         # If a real user message arrives during Eureka Mode, reset the round counter
         # (eureka-driven synthetic messages are prefixed with "[Eureka Mode]")
@@ -5528,20 +5439,20 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         current_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         augmented = f"[Current time: {current_time}]\n\n{augmented}"
 
-        # Prepend held fire-and-forget results (from cancel period) before user message
-        if held_prefix:
-            augmented = f"{held_prefix}{augmented}"
+        # Prepend cancel context and held results before user message
+        prefix = cancel_prefix + held_prefix
+        if prefix:
+            augmented = f"{prefix}{augmented}"
 
         from .llm_utils import _CancelledDuringLLM
 
         try:
             result = self._process_single_message(augmented)
         except _CancelledDuringLLM:
-            # Cancel fired during an LLM API call (not during tool execution).
-            # Rollback the incomplete turn and return a canned response.
+            # Cancel fired during an LLM API call. Rollback incomplete turn.
             if self._chat:
                 self._chat.rollback_last_turn()
-            result = "Cancelled. What would you like to do?"
+            result = "Cancelled."
         except Exception:
             # Auto-save before re-raising so the session is not lost
             if self._auto_save and self._session_id:
@@ -5591,6 +5502,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         self._control_center.clear()  # Cancel in-flight work, remove all units
         self._cancel_event.clear()
         self._cancel_holdback.clear()
+        self._was_cancelled = False
         with self._held_results_lock:
             self._held_results.clear()
         self.chat = self.adapter.create_chat(
@@ -5607,7 +5519,6 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         ENVOY_TOOL_REGISTRY.clear_active()
         self._dataops_seq = 0
         self._mission_seq = 0
-        self._planner_agent = None
         self._renderer.reset()
 
         # Reset memory turn counter and agent (do NOT clear memory store)
