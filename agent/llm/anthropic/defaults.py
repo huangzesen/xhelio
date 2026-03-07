@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "claude-sonnet-4-20250514",
     "inline_model": "claude-haiku-3-5-20241022",
     "planner_model": "claude-sonnet-4-20250514",
-    "fallback_model": "claude-haiku-3-5-20241022",
     "web_search_provider": "anthropic",
     "vision_provider": "anthropic",
     "thinking_model": "high",

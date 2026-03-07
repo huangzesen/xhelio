@@ -22,7 +22,6 @@ from .event_bus import EventBus, INSIGHT_RESULT, INSIGHT_FEEDBACK
 from .llm import LLMAdapter
 from .llm.minimax.adapter import MiniMaxAdapter
 from .logging import get_logger, log_error
-from .model_fallback import get_active_model
 from knowledge.prompt_builder import build_insight_prompt
 
 
@@ -182,7 +181,7 @@ class InsightAgent(SubAgent):
                 return {"text": analysis_text, "failed": False, "errors": []}
 
             chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=build_insight_prompt(),
                 tools=None,
                 thinking="insight",

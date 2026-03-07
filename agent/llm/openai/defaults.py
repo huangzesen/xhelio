@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "",
     "inline_model": "",
     "planner_model": "",
-    "fallback_model": "",
     "web_search_provider": "openai",
     "vision_provider": "openai",
     "use_responses_api": True,

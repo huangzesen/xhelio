@@ -9,17 +9,14 @@ actual coverage and suggest an alternative — do NOT delegate a fetch that will
 
 **One delegation per mission.** Combine all data needs for a mission into a single `delegate_to_envoy` call. The envoy agent has full domain knowledge and can fetch multiple physical quantities in one session by calling multiple tools in parallel. Splitting the same mission across multiple calls wastes resources (spawns ephemeral overflow agents) and causes duplicate fetches.
 
-### Fire-and-Forget Delegation
+### Async-First Delegation
 
-All delegation tools have a `wait` parameter (default: true):
+All delegation tools have a `wait` parameter. **Default to `wait: false`** to keep the conversation responsive — the user can interact, ask questions, or request more work while sub-agents run in the background.
 
-- **`wait: true`** (default) — Wait for the subagent to complete and return the result. Use when you need the result to proceed.
-- **`wait: false`** — Fire-and-forget. Returns immediately with `status: "pending"`. The request is queued and will execute in the background. **Do not poll for results** — trust that it's processing and move on. Use when:
-  - You want to trigger multiple subagents in parallel without waiting for each
-  - The result isn't needed for your next action
-  - You want to free up your conversation thread while subagents work
+- **`wait: false`** (preferred default) — Fire-and-forget. Returns immediately with `status: "pending"`. The request is queued and will execute in the background. **Do not poll for results** — trust that it's processing and move on. This keeps the conversation thread free so the user can continue interacting.
+- **`wait: true`** — Wait for the subagent to complete and return the result. **Only use when the very next tool call depends on this result.** Examples: fetching data that you will immediately pass to visualization, or extracting a DataFrame that you need the label for right away.
 
-Example:
+Example (async, preferred):
 ```json
 {{
   "mission_id": "PSP",
@@ -28,17 +25,18 @@ Example:
 }}
 ```
 
-**When to use `wait: false`:**
+**Use `wait: false` (default) for:**
+- Any standalone delegation where you don't immediately need the result
 - Initiating multiple independent delegations in parallel
-- Starting background data fetches while you visualize existing data
-- Triggering analysis that the user will check later
+- Starting data fetches, file imports, or analysis while you reply to the user
+- Any delegation where the user will naturally follow up ("show me the data", "plot it")
 
-**When to use `wait: true` (default):**
-- You need the fetched data to decide next steps
-- The result contains labels you need to pass to visualization
-- You're doing sequential operations where each depends on the previous
+**Use `wait: true` only when:**
+- You are chaining operations and the next tool call needs this result (e.g., fetch → plot, extract → visualize)
+- The user explicitly asked for a single end-to-end operation and expects the final result in one response
+- You need specific output (labels, column names) to construct the next delegation
 
-**Check once after fire-and-forget.** When using `wait: false`, call `list_active_work` once to verify the tasks started, then reply to the user with a summary of what's running (agent types, tasks, elapsed time, start timestamp). Do not poll repeatedly — a single check is sufficient.
+**Always tell the user what you did.** After a `wait: false` delegation, immediately reply to the user explaining what you kicked off — what agent is working on what task, and that it's running in the background. Be specific: "I've started fetching PSP magnetic field data for Jan 2024 — this is running in the background. You can ask me to check progress or do something else in the meantime." Do not stay silent after delegating.
 
 **When user asks to check (e.g., "how's it going?", "check the tasks", "any updates?"):** Call `list_active_work` and present a summary including:
 - Agent type and name (e.g., "EnvoyAgent[ACE]")

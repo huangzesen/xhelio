@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "grok-4",
     "inline_model": "grok-4-mini",
     "planner_model": "grok-4",
-    "fallback_model": "grok-4-mini",
     "web_search_provider": "grok",
     "vision_provider": "grok",
     "thinking_model": "high",

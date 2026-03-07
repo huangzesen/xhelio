@@ -97,7 +97,6 @@ from .llm import LLMAdapter, LLMService, ChatSession, LLMResponse, FunctionSchem
 from .logging import get_logger
 
 from .loop_guard import LoopGuard
-from .model_fallback import get_active_model
 from .turn_limits import get_limit
 from .truncation import trunc, trunc_items
 from .llm_utils import send_with_timeout, track_llm_usage, _is_stale_interaction_error
@@ -416,11 +415,10 @@ class SubAgent:
         if ctx_tokens <= 0 or ctx_tokens < ctx_window * 0.8:
             return
 
-        from .model_fallback import get_active_model
-
+        
         def summarizer(text: str) -> str:
             response = self.adapter.generate(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 contents=_COMPACTION_PROMPT + text,
                 temperature=0.1,
                 max_output_tokens=2048,
@@ -445,7 +443,7 @@ class SubAgent:
         """Send a message to the LLM, reusing the persistent chat session."""
         if self._chat is None:
             self._chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=self._build_core_memory(),
                 tools=self._tool_schemas or None,
                 thinking="high",
@@ -482,7 +480,7 @@ class SubAgent:
                 )
                 self._interaction_id = None
                 self._chat = self.adapter.create_chat(
-                    model=get_active_model(self.model_name),
+                    model=self.model_name,
                     system_prompt=self._build_system_prompt(),
                     tools=self._tool_schemas or None,
                     thinking="high",
@@ -545,7 +543,7 @@ class SubAgent:
         )
 
         self._chat = self.adapter.create_chat(
-            model=get_active_model(self.model_name),
+            model=self.model_name,
             system_prompt=self._build_system_prompt(),
             tools=self._tool_schemas or None,
             thinking="high",

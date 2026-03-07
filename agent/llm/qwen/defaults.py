@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "qwen3.5-plus",
     "inline_model": "qwen-flash-2025-07-28",
     "planner_model": "qwen3.5-plus",
-    "fallback_model": "qwen-plus-2025-01-25",
     "web_search_provider": "qwen",
     "vision_provider": "qwen",
     "thinking_model": "default",

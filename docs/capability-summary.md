@@ -51,8 +51,8 @@ agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
   |  - Routes: fetch -> mission agents, compute -> DataOps agent, viz -> visualization agent, analysis -> insight agent
   |  - Complex multi-mission requests -> planner -> sub-agents
   |  - Token usage tracking (input/output/thinking/api_calls, includes all sub-agents)
-  |  - Six model tiers: smart (orchestrator + planner), sub-agent (mission/viz/data), insight, inline (follow-ups, autocomplete), planner, fallback
-  |  - Configurable via ~/.xhelio/config.json (model / sub_agent_model / insight_model / inline_model / planner_model / fallback_model keys)
+  |  - Five model tiers: smart (orchestrator + planner), sub-agent (mission/viz/data), insight, inline (follow-ups, autocomplete), planner
+  |  - Configurable via ~/.xhelio/config.json (model / sub_agent_model / insight_model / inline_model / planner_model keys)
   |  - Thinking levels: HIGH (orchestrator + planner), LOW (all sub-agents), OFF (inline)
   |
   +---> agent/viz_plotly_agent.py     Visualization sub-agent
@@ -588,14 +588,6 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - `run_mission_refresh()` invokes bootstrap to refresh time ranges or rebuild all missions
 - After refresh, clears mission_loader and metadata_client caches
 
-### Automatic Model Fallback (`agent/model_fallback.py`)
-- When any Gemini API call hits a 429 RESOURCE_EXHAUSTED (quota/rate limit), all agents automatically switch to `FALLBACK_MODEL` for the remainder of the session
-- Session-level global flag — once activated, every subsequent `client.chats.create()` and `models.generate_content()` call uses the fallback model
-- The OrchestratorAgent's persistent chat is recreated with the fallback model on first 429 error
-- Sub-agents (Actor subclasses, PlannerAgent, MemoryAgent) use `get_active_model()` at chat/call creation time, so they pick up the fallback automatically
-- Configurable via `fallback_model` in `~/.xhelio/config.json` (default: `gemini-3-flash`)
-- If the fallback model also fails, the error propagates normally (no retry chain)
-
 ### Empty Session Auto-Cleanup
 - On startup, `SessionManager` auto-removes sessions with no chat history and no stored data
 - Prevents clutter from abandoned or crashed sessions
@@ -637,8 +629,7 @@ MINIMAX_API_KEY=<minimax-api-key>      # Optional — for MiniMax provider
       "sub_agent_model": "gemini-3-flash",
       "insight_model": "gemini-3-flash",
       "inline_model": "gemini-2.5-flash-lite",
-      "planner_model": "gemini-3-flash",
-      "fallback_model": "gemini-3-flash"
+      "planner_model": "gemini-3-flash"
     }
   },
   "data_backend": "cdf",

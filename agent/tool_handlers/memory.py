@@ -48,9 +48,7 @@ def handle_review_memory(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     if entry is None or entry.archived:
         return {"status": "error", "message": f"Memory {memory_id} not found"}
     agent_name = reviewer_agent_id or orch._active_agent_name
-    from agent.model_fallback import get_active_model
-
-    model_name = get_active_model(orch.model_name)
+    model_name = orch.model_name
     content = f"{stars}★ {comment.strip()}"
     tags = [f"review:{memory_id}", agent_name, f"stars:{stars}"]
     existing_review = orch._memory_store.get_review_for(memory_id, agent=agent_name)

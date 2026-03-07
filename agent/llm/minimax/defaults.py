@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "MiniMax-M2.5-highspeed",
     "inline_model": "MiniMax-M2.1",
     "planner_model": "MiniMax-M2.5-highspeed",
-    "fallback_model": "MiniMax-M2.5-highspeed",
     "web_search_provider": "minimax",
     "vision_provider": "minimax",
     "thinking_model": "high",

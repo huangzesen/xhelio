@@ -10,7 +10,6 @@ DEFAULTS = {
     "insight_model": "kimi-k2.5",
     "inline_model": "kimi-k2.5",
     "planner_model": "kimi-k2.5",
-    "fallback_model": "kimi-k2.5",
     "web_search_provider": "kimi",
     "vision_provider": "kimi",
     "thinking_model": "default",

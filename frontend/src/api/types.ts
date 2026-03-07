@@ -353,7 +353,6 @@ export interface ProviderConfig {
   insight_model?: string;
   inline_model?: string;
   planner_model?: string;
-  fallback_model?: string;
   web_search_provider?: string | null;
   vision_provider?: string | null;
   rate_limit_interval?: number;

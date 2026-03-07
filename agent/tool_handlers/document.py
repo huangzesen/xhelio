@@ -62,17 +62,13 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
             doc_part = orch.adapter.make_bytes_part(
                 data=file_bytes, mime_type=mime_type
             )
-            from agent.model_fallback import get_active_model
-
             response = orch.adapter.generate_multimodal(
-                model=get_active_model(orch.model_name),
+                model=orch.model_name,
                 contents=[doc_part, extraction_prompt],
             )
         else:
-            from agent.model_fallback import get_active_model
-
             response = orch.adapter.generate(
-                model=get_active_model(orch.model_name),
+                model=orch.model_name,
                 contents=extraction_prompt,
             )
         orch._last_tool_context = "extract_document"

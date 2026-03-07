@@ -214,7 +214,6 @@ All other settings are in `~/.xhelio/config.json` (see `config.template.json` fo
 | `providers.gemini.insight_model` | `"gemini-2.5-flash"` | Model for InsightAgent (multimodal plot analysis) |
 | `providers.gemini.inline_model` | `"gemini-2.5-flash-lite"` | Model for follow-ups, autocomplete |
 | `providers.gemini.planner_model` | `"gemini-3-flash-preview"` | Model for PlannerAgent |
-| `providers.gemini.fallback_model` | `"gemini-2.5-flash"` | Fallback when primary model fails |
 
 ## Memory System
 

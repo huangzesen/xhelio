@@ -8,7 +8,7 @@
   "llm_provider": "gemini",
   "_comment_api_keys": "API keys are ALWAYS read from .env (never from this file). Set the key for your provider: GOOGLE_API_KEY, OPENAI_API_KEY, ANTHROPIC_API_KEY, MINIMAX_API_KEY, GROK_API_KEY, DEEPSEEK_API_KEY, QWEN_API_KEY, KIMI_API_KEY, GLM_API_KEY, or CUSTOM_API_KEY.",
 
-  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model, planner_model, fallback_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
+  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model, planner_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
   "providers": {
     "gemini": {
       "base_url": null,
@@ -17,7 +17,6 @@
       "insight_model": "gemini-2.5-flash",
       "inline_model": "gemini-2.5-flash-lite",
       "planner_model": "gemini-3-flash-preview",
-      "fallback_model": "gemini-2.5-flash",
       "thinking_model": "high",
       "thinking_sub_agent": "low"
     },
@@ -28,8 +27,7 @@
       "sub_agent_model": "",
       "insight_model": "",
       "inline_model": "",
-      "planner_model": "",
-      "fallback_model": ""
+      "planner_model": ""
     },
     "anthropic": {
       "_comment": "Native Anthropic Claude. Web search uses Claude's built-in web_search_20250305 tool.",
@@ -38,8 +36,7 @@
       "sub_agent_model": "claude-sonnet-4-20250514",
       "insight_model": "claude-sonnet-4-20250514",
       "inline_model": "claude-haiku-3-5-20241022",
-      "planner_model": "claude-sonnet-4-20250514",
-      "fallback_model": "claude-haiku-3-5-20241022"
+      "planner_model": "claude-sonnet-4-20250514"
     },
     "minimax": {
       "_comment": "MiniMax via Anthropic-compatible API. Uses MINIMAX_API_KEY env var.",
@@ -48,8 +45,7 @@
       "sub_agent_model": "MiniMax-M2.5-highspeed",
       "insight_model": "MiniMax-M2.5-highspeed",
       "inline_model": "MiniMax-M2.1",
-      "planner_model": "MiniMax-M2.5-highspeed",
-      "fallback_model": "MiniMax-M2.5-highspeed"
+      "planner_model": "MiniMax-M2.5-highspeed"
     },
     "grok": {
       "_comment": "xAI Grok via OpenAI-compatible API. Uses GROK_API_KEY env var.",

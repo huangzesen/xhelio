@@ -18,7 +18,6 @@ import config
 from .llm import LLMAdapter
 from .memory import Memory, MemoryStore, generate_tags, MEMORY_TOKEN_BUDGET
 from .token_counter import count_tokens as estimate_tokens
-from .model_fallback import get_active_model
 from .event_bus import EventBus, get_event_bus, MEMORY_ACTION, TOKEN_USAGE, PIPELINE_REGISTERED
 from .truncation import trunc, trunc_items
 
@@ -476,7 +475,7 @@ class MemoryAgent:
 
         try:
             prompt = self._build_prompt(context)
-            actual_model = get_active_model(self.model_name)
+            actual_model = self.model_name
             response = self.adapter.generate(
                 model=actual_model,
                 contents=prompt,

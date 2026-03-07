@@ -292,7 +292,6 @@ export function SettingsPage() {
               ['insight_model', 'Insight Model (plot analysis)'],
               ['inline_model', 'Inline Model (cheapest)'],
               ['planner_model', 'Planner Model'],
-              ['fallback_model', 'Fallback Model'],
             ] as const).map(([key, label]) => {
               const current = getProviderField(key);
               const inList = availableModels.some((m) => m.id === current);
@@ -324,7 +323,7 @@ export function SettingsPage() {
                       type="text"
                       value={current}
                       onChange={(e) => setProviderField(key, e.target.value)}
-                      placeholder={key === 'planner_model' ? 'defaults to main model' : key === 'insight_model' ? 'defaults to sub-agent model' : key === 'fallback_model' ? 'defaults to sub-agent model' : ''}
+                      placeholder={key === 'planner_model' ? 'defaults to main model' : key === 'insight_model' ? 'defaults to sub-agent model' : ''}
                       className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm font-mono bg-input-bg text-text"
                     />
                   )}

@@ -13,7 +13,6 @@ from typing import Optional
 
 from .llm import LLMAdapter, LLMResponse, FunctionSchema
 from .event_bus import get_event_bus, DEBUG, PROGRESS, PLAN_CREATED, LLM_CALL
-from .model_fallback import get_active_model
 from .llm_utils import _LLM_RETRY_TIMEOUT, send_with_timeout, track_llm_usage
 from .token_counter import count_tokens, count_tool_tokens
 from .tasks import Task, TaskPlan, create_task, create_plan
@@ -233,7 +232,7 @@ class PlannerAgent:
         )
 
         new_chat = self.adapter.create_chat(
-            model=get_active_model(self.model_name),
+            model=self.model_name,
             system_prompt=self._current_system_prompt,
             tools=self._tool_schemas,
             thinking="high",
@@ -395,7 +394,7 @@ class PlannerAgent:
             self._current_tools_tokens = count_tool_tokens(self._tool_schemas)
 
             self._chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=system_prompt,
                 tools=self._tool_schemas if self._tool_schemas else None,
                 thinking="high",

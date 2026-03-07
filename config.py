@@ -192,7 +192,6 @@ SUB_AGENT_MODEL = _provider_get("sub_agent_model")
 INSIGHT_MODEL = _provider_get("insight_model") or SUB_AGENT_MODEL
 INLINE_MODEL = _provider_get("inline_model")
 PLANNER_MODEL = _provider_get("planner_model") or SMART_MODEL
-FALLBACK_MODEL = _provider_get("fallback_model") or SUB_AGENT_MODEL
 DATA_BACKEND = get("data_backend", "cdf")  # "cdf" only
 CATALOG_SEARCH_METHOD = get(
     "catalog_search_method", "semantic"
@@ -273,8 +272,7 @@ def reload_config() -> None:
         SUB_AGENT_MODEL, \
         INSIGHT_MODEL, \
         INLINE_MODEL, \
-        PLANNER_MODEL, \
-        FALLBACK_MODEL
+        PLANNER_MODEL
     global \
         DATA_BACKEND, \
         CATALOG_SEARCH_METHOD, \
@@ -302,7 +300,6 @@ def reload_config() -> None:
     INSIGHT_MODEL = _provider_get("insight_model") or SUB_AGENT_MODEL
     INLINE_MODEL = _provider_get("inline_model")
     PLANNER_MODEL = _provider_get("planner_model") or SMART_MODEL
-    FALLBACK_MODEL = _provider_get("fallback_model") or SUB_AGENT_MODEL
     DATA_BACKEND = get("data_backend", "cdf")
     CATALOG_SEARCH_METHOD = get("catalog_search_method", "semantic")
     PARALLEL_FETCH = get("parallel_fetch", True)

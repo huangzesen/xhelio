@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "glm-4.6v",
     "inline_model": "glm-4.7",
     "planner_model": "glm-5",
-    "fallback_model": "glm-4.7",
     "web_search_provider": "glm",
     "vision_provider": "glm",
     "thinking_model": "default",

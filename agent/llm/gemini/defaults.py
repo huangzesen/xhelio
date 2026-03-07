@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "gemini-3-flash-preview",
     "inline_model": "gemini-2.5-flash-lite",
     "planner_model": "gemini-3-flash-preview",
-    "fallback_model": "gemini-3-flash-preview",
     "web_search_provider": "gemini",
     "vision_provider": "gemini",
     "thinking_model": "high",

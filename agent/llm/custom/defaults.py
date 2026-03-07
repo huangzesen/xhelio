@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "",
     "inline_model": "",
     "planner_model": "",
-    "fallback_model": "",
     "web_search_provider": None,
     "vision_provider": None,
     "thinking_model": "default",

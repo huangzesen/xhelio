@@ -7,7 +7,6 @@ DEFAULTS = {
     "insight_model": "deepseek-chat",
     "inline_model": "deepseek-chat",
     "planner_model": "deepseek-chat",
-    "fallback_model": "deepseek-chat",
     "web_search_provider": None,
     "vision_provider": None,
     "thinking_model": "default",

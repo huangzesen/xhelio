@@ -125,10 +125,6 @@ from .memory_agent import MemoryAgent, MemoryContext
 from .pipeline_store import PipelineStore
 from .context_tracker import ContextTracker
 from .loop_guard import LoopGuard, DupVerdict
-from .model_fallback import (
-    reset_fallback,
-    get_active_model,
-)
 from .llm_utils import (
     _LLM_WARN_INTERVAL,
     _LLM_RETRY_TIMEOUT,
@@ -253,7 +249,7 @@ def _create_llm_service() -> LLMService:
     """Create the LLM service based on config."""
     provider = config.LLM_PROVIDER.lower()
     api_key = get_api_key(provider)
-    model = get_active_model(config.SMART_MODEL)
+    model = config.SMART_MODEL
     return LLMService(
         provider=provider,
         model=model,
@@ -385,9 +381,9 @@ class OrchestratorAgent:
         self._system_prompt = get_system_prompt(gui_mode=gui_mode)
 
         if not defer_chat:
-            # Create chat session (use get_active_model in case fallback was already activated)
+            # Create chat session
             self.chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
                 thinking="high",
@@ -855,7 +851,7 @@ class OrchestratorAgent:
 
         def summarizer(text: str) -> str:
             response = self.adapter.generate(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 contents=_COMPACTION_PROMPT + text,
                 temperature=0.1,
                 max_output_tokens=2048,
@@ -1015,7 +1011,7 @@ class OrchestratorAgent:
         try:
             response = self.adapter.web_search(
                 query=query,
-                model=get_active_model(self.model_name),
+                model=self.model_name,
             )
         except Exception as e:
             return {"status": "error", "message": f"Web search failed: {e}"}
@@ -2572,7 +2568,7 @@ class OrchestratorAgent:
 
             # Create new chat session with canonical interface
             self.chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=new_system_prompt,
                 tools=self._tool_schemas,
                 interface=interface,
@@ -2828,7 +2824,7 @@ class OrchestratorAgent:
         try:
             # Create a fresh chat session for task execution with forced function calling
             task_chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
                 force_tool_call=True,
@@ -3860,7 +3856,7 @@ class OrchestratorAgent:
         # 4. Recreate chat session with preserved interface
         try:
             self.chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
                 thinking="high",
@@ -3874,7 +3870,7 @@ class OrchestratorAgent:
                 msg=f"[Config] Chat recreation with interface failed ({exc}), starting fresh",
             )
             self.chat = self.adapter.create_chat(
-                model=get_active_model(self.model_name),
+                model=self.model_name,
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
                 thinking="high",
@@ -3884,8 +3880,6 @@ class OrchestratorAgent:
         self.reset_sub_agents()
         self._memory_agent = None
 
-        # 8. Reset fallback mode (user explicitly chose new models)
-        reset_fallback()
 
         status_msg = (
             f"[Config] Hot-reloaded: model {current_model} → {target_model}"
@@ -4643,7 +4637,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         try:
             response = self.adapter.generate(
-                model=get_active_model(config.INLINE_MODEL),
+                model=config.INLINE_MODEL,
                 contents=prompt,
                 temperature=0.7,
             )
@@ -4698,7 +4692,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         )
         try:
             response = self.adapter.generate(
-                model=get_active_model(config.INLINE_MODEL),
+                model=config.INLINE_MODEL,
                 contents=prompt,
                 temperature=0.3,
             )
@@ -4759,7 +4753,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         try:
             response = self.adapter.generate(
-                model=get_active_model(config.INLINE_MODEL),
+                model=config.INLINE_MODEL,
                 contents=prompt,
                 temperature=0.5,
                 max_output_tokens=get_limit("output.inline_tokens"),
@@ -5600,7 +5594,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         with self._held_results_lock:
             self._held_results.clear()
         self.chat = self.adapter.create_chat(
-            model=get_active_model(self.model_name),
+            model=self.model_name,
             system_prompt=self._system_prompt,
             tools=self._tool_schemas,
             thinking="high",
