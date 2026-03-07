@@ -11,6 +11,7 @@ in mission agents and visualization in the visualization agent.
 
 from __future__ import annotations
 
+import threading
 from typing import Callable, TYPE_CHECKING
 
 from .llm import LLMAdapter
@@ -50,6 +51,7 @@ class DataOpsAgent(SubAgent):
         memory_store: MemoryStore | None = None,
         memory_scope: str = "",
         active_missions_fn: Callable[[], set[str]] | None = None,
+        cancel_event: threading.Event | None = None,
     ):
         self._active_missions_fn = active_missions_fn
         # Build tool schemas
@@ -65,6 +67,7 @@ class DataOpsAgent(SubAgent):
             event_bus=event_bus,
             memory_store=memory_store,
             memory_scope=memory_scope or "data_ops",
+            cancel_event=cancel_event,
         )
 
     def _get_active_missions(self) -> set[str] | None:

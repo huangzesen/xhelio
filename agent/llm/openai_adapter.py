@@ -24,8 +24,11 @@ from .base import (
     LLMAdapter,
     LLMResponse,
     ToolCall,
+    ToolResultBlock,
     UsageMetadata,
 )
+from .interface import LLMInterface, TextBlock, ToolCallBlock
+from .interface_converters import from_openai, to_openai
 
 logger = get_logger()
 
@@ -229,15 +232,14 @@ def _parse_responses_api_response(raw) -> LLMResponse:
 class OpenAIChatSession(ChatSession):
     """Client-managed chat session for OpenAI-compatible APIs.
 
-    Unlike Gemini's SDK-managed sessions, OpenAI requires the client to
-    maintain and send the full message list on every request.
+    Uses LLMInterface as the single source of truth.
     """
 
     def __init__(
         self,
         client: openai.OpenAI,
         model: str,
-        messages: list[dict],
+        interface: LLMInterface,
         tools: list[dict] | None,
         tool_choice: str | None,
         extra_kwargs: dict,
@@ -245,7 +247,7 @@ class OpenAIChatSession(ChatSession):
     ):
         self._client = client
         self._model = model
-        self._messages = messages
+        self._interface = interface
         self._tools = tools
         self._tool_choice = tool_choice
         self._extra_kwargs = extra_kwargs
@@ -255,29 +257,42 @@ class OpenAIChatSession(ChatSession):
         from agent.llm_utils import get_context_limit
         self._context_window = get_context_limit(model)
 
+    @property
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+        return self._interface
+
     def send(self, message) -> LLMResponse:
         """Send a user message (str) or tool results (list of dicts).
 
-        For tool results, ``message`` is a list of dicts, each built by
-        :meth:`OpenAIAdapter.make_tool_result_message`.
+        For tool results, ``message`` is a list of ToolResultBlock instances
+        built by :meth:`OpenAIAdapter.make_tool_result_message`.
 
-        The user message is only committed to history after a successful API
-        call, preventing duplicate messages on retry.
+        Records user input into the interface BEFORE the API call, then
+        reverts on error. On success, records the assistant response.
         """
-        # Build candidate messages without mutating self._messages
-        candidate = list(self._messages)
+        # 1. Record user input into interface
         if isinstance(message, str):
-            candidate.append({"role": "user", "content": message})
+            self._interface.add_user_message(message)
         elif isinstance(message, dict):
             # Pre-built message (e.g., multimodal from make_multimodal_message)
-            candidate.append(message)
+            text = ""
+            content = message.get("content", "")
+            if isinstance(content, str):
+                text = content
+            elif isinstance(content, list):
+                text = " ".join(
+                    part.get("text", "") for part in content if part.get("type") == "text"
+                )
+            self._interface.add_user_message(text)
         elif isinstance(message, list):
-            # Tool results — each is a dict with role/tool_call_id/content.
-            candidate.extend(message)
+            # Tool results — list of ToolResultBlock instances
+            self._interface.add_tool_results(message)
         else:
             raise TypeError(f"Unsupported message type: {type(message)}")
 
-        # Repair orphaned tool calls before sending to API
+        # 2. Build ephemeral provider messages from interface
+        candidate = to_openai(self._interface)
         candidate = _repair_tool_history(candidate)
 
         kwargs: dict[str, Any] = {
@@ -290,36 +305,35 @@ class OpenAIChatSession(ChatSession):
             kwargs["parallel_tool_calls"] = True
             if self._tool_choice:
                 kwargs["tool_choice"] = self._tool_choice
-        raw = self._client.chat.completions.create(**kwargs)
 
-        # Commit: adopt candidate and append the assistant response
-        self._messages = candidate
-        assistant_msg = self._response_to_message(raw)
-        self._messages.append(assistant_msg)
+        # 3. Make the API call; revert interface on error
+        try:
+            raw = self._client.chat.completions.create(**kwargs)
+        except Exception:
+            self._interface.drop_trailing(lambda e: e.role == "user")
+            raise
+
+        # 4. Record assistant response into interface
+        self._record_assistant_response(raw)
 
         return _parse_response(raw)
 
     def commit_tool_results(self, tool_results: list) -> None:
-        """Append tool results to history without an API call."""
-        for msg in tool_results:
-            if isinstance(msg, dict):
-                self._messages.append(msg)
-
-    def get_history(self) -> list[dict]:
-        """Return the message list for session persistence."""
-        return list(self._messages)
+        """Append tool results to interface without an API call."""
+        if tool_results:
+            self._interface.add_tool_results(tool_results)
 
     def update_tools(self, tools: list[FunctionSchema] | None) -> None:
         """Replace the tool schemas for subsequent calls in this session."""
         self._tools = _build_tools(tools) if tools else None
+        tool_dicts = FunctionSchema.list_to_dicts(tools)
+        self._interface.add_system(
+            self._interface.current_system_prompt or "", tools=tool_dicts,
+        )
 
     def update_system_prompt(self, system_prompt: str) -> None:
         """Replace the system prompt for subsequent calls in this session."""
-        if self._messages and self._messages[0].get("role") == "system":
-            self._messages[0]["content"] = system_prompt
-        else:
-            # Prepend if not present (rare)
-            self._messages.insert(0, {"role": "system", "content": system_prompt})
+        self._interface.add_system(system_prompt, tools=self._interface.current_tools)
 
     def reset(self) -> None:
         """Create a truly fresh session instance while preserving state.
@@ -333,13 +347,45 @@ class OpenAIChatSession(ChatSession):
             new_session = OpenAIChatSession(
                 client=new_client,
                 model=self._model,
-                messages=list(self._messages),
+                interface=self._interface,
                 tools=self._tools,
                 tool_choice=self._tool_choice,
                 extra_kwargs=self._extra_kwargs,
                 client_kwargs=self._client_kwargs,
             )
             self.__dict__.update(new_session.__dict__)
+
+    def _record_assistant_response(self, raw) -> None:
+        """Parse a raw ChatCompletion and record the assistant response into the interface."""
+        choice = raw.choices[0] if raw.choices else None
+        blocks: list = []
+        if choice and choice.message:
+            msg = choice.message
+            if msg.content:
+                blocks.append(TextBlock(text=msg.content))
+            if msg.tool_calls:
+                for tc in msg.tool_calls:
+                    try:
+                        args = json.loads(tc.function.arguments) if tc.function.arguments else {}
+                    except (json.JSONDecodeError, TypeError):
+                        args = {}
+                    blocks.append(ToolCallBlock(id=tc.id, name=tc.function.name, args=args))
+        if not blocks:
+            blocks.append(TextBlock(text=""))
+        usage_dict = {}
+        if raw.usage:
+            details = getattr(raw.usage, "completion_tokens_details", None)
+            usage_dict = {
+                "input_tokens": raw.usage.prompt_tokens or 0,
+                "output_tokens": raw.usage.completion_tokens or 0,
+                "thinking_tokens": getattr(details, "reasoning_tokens", 0) or 0 if details else 0,
+            }
+        self._interface.add_assistant_message(
+            blocks,
+            model=self._model,
+            provider="openai",
+            usage=usage_dict,
+        )
 
     @staticmethod
     def _response_to_message(raw) -> dict:
@@ -368,19 +414,31 @@ class OpenAIChatSession(ChatSession):
         return result
 
     def send_stream(self, message, on_chunk=None) -> LLMResponse:
-        """Send a streaming request. User message committed only after success."""
-        # Build candidate messages without mutating self._messages
-        candidate = list(self._messages)
+        """Send a streaming request.
+
+        Records user input into the interface BEFORE the API call, then
+        reverts on error. On success, records the assistant response.
+        """
+        # 1. Record user input into interface
         if isinstance(message, str):
-            candidate.append({"role": "user", "content": message})
+            self._interface.add_user_message(message)
         elif isinstance(message, dict):
-            candidate.append(message)
+            text = ""
+            content = message.get("content", "")
+            if isinstance(content, str):
+                text = content
+            elif isinstance(content, list):
+                text = " ".join(
+                    part.get("text", "") for part in content if part.get("type") == "text"
+                )
+            self._interface.add_user_message(text)
         elif isinstance(message, list):
-            candidate.extend(message)
+            self._interface.add_tool_results(message)
         else:
             raise TypeError(f"Unsupported message type: {type(message)}")
 
-        # Repair orphaned tool calls before sending to API
+        # 2. Build ephemeral provider messages from interface
+        candidate = to_openai(self._interface)
         candidate = _repair_tool_history(candidate)
 
         kwargs: dict[str, Any] = {
@@ -400,54 +458,59 @@ class OpenAIChatSession(ChatSession):
         _pending_tools = {}
         usage = UsageMetadata()
 
-        stream = self._client.chat.completions.create(**kwargs)
-        for chunk in stream:
-            if not chunk.choices:
-                if chunk.usage:
-                    cached = getattr(chunk.usage, "prompt_tokens_details", None)
-                    cached_tokens = getattr(cached, "cached_tokens", 0) if cached else 0
-                    usage = UsageMetadata(
-                        input_tokens=chunk.usage.prompt_tokens or 0,
-                        output_tokens=chunk.usage.completion_tokens or 0,
-                        thinking_tokens=(
-                            getattr(
-                                getattr(chunk.usage, "completion_tokens_details", None),
-                                "reasoning_tokens",
-                                0,
-                            )
-                            or 0
-                        ),
-                        cached_tokens=cached_tokens,
-                    )
-                continue
-            delta = chunk.choices[0].delta
-            if delta is None:
-                continue
-            if delta.content:
-                text_parts.append(delta.content)
-                if on_chunk:
-                    on_chunk(delta.content)
-            if delta.tool_calls:
-                for tc in delta.tool_calls:
-                    idx = tc.index
-                    if idx not in _pending_tools:
-                        _pending_tools[idx] = {
-                            "id": tc.id or "",
-                            "name": (tc.function.name if tc.function else "") or "",
-                            "args_json": "",
-                        }
-                    if tc.id and not _pending_tools[idx]["id"]:
-                        _pending_tools[idx]["id"] = tc.id
-                    if (
-                        tc.function
-                        and tc.function.name
-                        and not _pending_tools[idx]["name"]
-                    ):
-                        _pending_tools[idx]["name"] = tc.function.name
-                    if tc.function and tc.function.arguments:
-                        _pending_tools[idx]["args_json"] += tc.function.arguments
+        # 3. Stream; revert interface on error
+        try:
+            stream = self._client.chat.completions.create(**kwargs)
+            for chunk in stream:
+                if not chunk.choices:
+                    if chunk.usage:
+                        cached = getattr(chunk.usage, "prompt_tokens_details", None)
+                        cached_tokens = getattr(cached, "cached_tokens", 0) if cached else 0
+                        usage = UsageMetadata(
+                            input_tokens=chunk.usage.prompt_tokens or 0,
+                            output_tokens=chunk.usage.completion_tokens or 0,
+                            thinking_tokens=(
+                                getattr(
+                                    getattr(chunk.usage, "completion_tokens_details", None),
+                                    "reasoning_tokens",
+                                    0,
+                                )
+                                or 0
+                            ),
+                            cached_tokens=cached_tokens,
+                        )
+                    continue
+                delta = chunk.choices[0].delta
+                if delta is None:
+                    continue
+                if delta.content:
+                    text_parts.append(delta.content)
+                    if on_chunk:
+                        on_chunk(delta.content)
+                if delta.tool_calls:
+                    for tc in delta.tool_calls:
+                        idx = tc.index
+                        if idx not in _pending_tools:
+                            _pending_tools[idx] = {
+                                "id": tc.id or "",
+                                "name": (tc.function.name if tc.function else "") or "",
+                                "args_json": "",
+                            }
+                        if tc.id and not _pending_tools[idx]["id"]:
+                            _pending_tools[idx]["id"] = tc.id
+                        if (
+                            tc.function
+                            and tc.function.name
+                            and not _pending_tools[idx]["name"]
+                        ):
+                            _pending_tools[idx]["name"] = tc.function.name
+                        if tc.function and tc.function.arguments:
+                            _pending_tools[idx]["args_json"] += tc.function.arguments
+        except Exception:
+            self._interface.drop_trailing(lambda e: e.role == "user")
+            raise
 
-        # Finalize tool calls
+        # 4. Finalize tool calls
         tool_calls = []
         for idx in sorted(_pending_tools):
             pt = _pending_tools[idx]
@@ -457,24 +520,25 @@ class OpenAIChatSession(ChatSession):
                 args = {}
             tool_calls.append(ToolCall(name=pt["name"], args=args, id=pt["id"]))
 
-        # Commit: adopt candidate and append assistant message to history
-        self._messages = candidate
+        # 5. Record assistant response into interface
         text = "".join(text_parts)
-        assistant_msg = {"role": "assistant"}
+        blocks: list = []
         if text:
-            assistant_msg["content"] = text
-        if tool_calls:
-            assistant_msg["tool_calls"] = [
-                {
-                    "id": tc.id,
-                    "type": "function",
-                    "function": {"name": tc.name, "arguments": json.dumps(tc.args)},
-                }
-                for tc in tool_calls
-            ]
-        if not text and not tool_calls:
-            assistant_msg["content"] = ""
-        self._messages.append(assistant_msg)
+            blocks.append(TextBlock(text=text))
+        for tc in tool_calls:
+            blocks.append(ToolCallBlock(id=tc.id, name=tc.name, args=tc.args))
+        if not blocks:
+            blocks.append(TextBlock(text=""))
+        self._interface.add_assistant_message(
+            blocks,
+            model=self._model,
+            provider="openai",
+            usage={
+                "input_tokens": usage.input_tokens,
+                "output_tokens": usage.output_tokens,
+                "thinking_tokens": usage.thinking_tokens,
+            },
+        )
 
         return LLMResponse(text=text, tool_calls=tool_calls, usage=usage, raw=None)
 
@@ -486,9 +550,10 @@ class OpenAIChatSession(ChatSession):
     def estimate_context_tokens(self) -> int:
         """Estimate total tokens in current context."""
         from agent.token_counter import count_tokens
-        if not self._messages:
+        messages = to_openai(self._interface)
+        if not messages:
             return 0
-        total = count_tokens(json.dumps(self._messages, default=str))
+        total = count_tokens(json.dumps(messages, default=str))
         if self._tools:
             total += count_tokens(json.dumps(self._tools, default=str))
         return total
@@ -505,13 +570,14 @@ class OpenAIChatSession(ChatSession):
             return False
 
         # Separate system message from conversation messages
+        messages = to_openai(self._interface)
         system_msg = None
         conv_start = 0
-        if self._messages and self._messages[0].get("role") == "system":
-            system_msg = self._messages[0]
+        if messages and messages[0].get("role") == "system":
+            system_msg = messages[0]
             conv_start = 1
 
-        conv_messages = self._messages[conv_start:]
+        conv_messages = messages[conv_start:]
         if len(conv_messages) < 8:
             return False
 
@@ -562,7 +628,7 @@ class OpenAIChatSession(ChatSession):
             {"role": "assistant", "content": "Understood. I have the context from the previous conversation."}
         )
         new_messages.extend(recent)
-        self._messages = new_messages
+        self._interface = from_openai(new_messages)
         return True
 
     @staticmethod
@@ -625,6 +691,7 @@ class OpenAIResponsesSession(ChatSession):
         extra_kwargs: dict,
         previous_response_id: str | None = None,
         compact_threshold: int | None = None,
+        interface: LLMInterface | None = None,
     ):
         self._client = client
         self._model = model
@@ -634,6 +701,12 @@ class OpenAIResponsesSession(ChatSession):
         self._extra_kwargs = extra_kwargs
         self._response_id: str | None = previous_response_id
         self._compact_threshold = compact_threshold
+        self._interface = interface or LLMInterface()
+
+    @property
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+        return self._interface
 
     def _convert_input(self, message) -> list[dict]:
         """Convert messages to Responses API input format."""
@@ -830,10 +903,16 @@ class OpenAIAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,  # ignored — Gemini-specific
     ) -> ChatSession:
+        # Create interface if not provided
+        tool_dicts = FunctionSchema.list_to_dicts(tools)
+        if interface is None:
+            interface = LLMInterface()
+            interface.add_system(system_prompt, tools=tool_dicts)
+
         # Check config for whether to use Responses API
         try:
             from config import get as config_get
@@ -850,13 +929,13 @@ class OpenAIAdapter(LLMAdapter):
                 tools,
                 json_schema,
                 force_tool_call,
-                history,
+                interface,
                 thinking,
             )
 
         # Fallback: Chat Completions for compatible providers
         return self._create_completions_session(
-            model, system_prompt, tools, json_schema, force_tool_call, history, thinking
+            model, system_prompt, tools, json_schema, force_tool_call, interface, thinking
         )
 
     def _create_responses_session(
@@ -866,16 +945,13 @@ class OpenAIAdapter(LLMAdapter):
         tools: list[FunctionSchema] | None = None,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
     ) -> OpenAIResponsesSession:
-        # Extract previous_response_id from history if resuming
-        previous_response_id = None
-        if history:
-            for item in history:
-                if isinstance(item, dict) and "_response_id" in item:
-                    previous_response_id = item["_response_id"]
-                    break
+        # Create interface if not provided
+        if interface is None:
+            interface = LLMInterface()
+            interface.add_system(system_prompt, tools=FunctionSchema.list_to_dicts(tools))
 
         openai_tools = _build_tools(tools)
         tool_choice: str | None = None
@@ -913,8 +989,9 @@ class OpenAIAdapter(LLMAdapter):
             tools=openai_tools,
             tool_choice=tool_choice,
             extra_kwargs=extra_kwargs,
-            previous_response_id=previous_response_id,
+            previous_response_id=None,
             compact_threshold=compact_threshold,
+            interface=interface,
         )
 
     def _create_completions_session(
@@ -924,15 +1001,13 @@ class OpenAIAdapter(LLMAdapter):
         tools: list[FunctionSchema] | None = None,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
     ) -> OpenAIChatSession:
-        # Start with system message + any restored history
-        messages: list[dict] = []
-        if system_prompt:
-            messages.append({"role": "system", "content": system_prompt})
-        if history:
-            messages.extend(history)
+        # Create interface if not provided
+        if interface is None:
+            interface = LLMInterface()
+            interface.add_system(system_prompt, tools=FunctionSchema.list_to_dicts(tools))
 
         openai_tools = _build_tools(tools)
         tool_choice: str | None = None
@@ -960,7 +1035,7 @@ class OpenAIAdapter(LLMAdapter):
         return OpenAIChatSession(
             client=self._client,
             model=model,
-            messages=messages,
+            interface=interface,
             tools=openai_tools,
             tool_choice=tool_choice,
             extra_kwargs=extra_kwargs,
@@ -1010,36 +1085,13 @@ class OpenAIAdapter(LLMAdapter):
 
     def make_tool_result_message(
         self, tool_name: str, result: dict, *, tool_call_id: str | None = None
-    ) -> dict:
-        """Build an OpenAI tool-result message dict.
-
-        OpenAI requires ``tool_call_id`` to match the original tool call.
-        If not provided, generates a placeholder ID (may cause issues with
-        some strict providers).
-
-        Returns Responses API format if using Responses API, otherwise
-        returns Chat Completions format.
-        """
-        # Determine if we're using Responses API at call time
-        try:
-            from config import get as config_get
-
-            use_responses = config_get("providers.openai.use_responses_api", True)
-        except ImportError:
-            use_responses = self._use_responses
-
-        # Only use Responses API for actual OpenAI (not compatible providers)
-        if use_responses and not self.base_url:
-            return {
-                "type": "function_call_output",
-                "call_id": tool_call_id or f"call_{uuid.uuid4().hex[:24]}",
-                "output": json.dumps(result, default=str),
-            }
-        return {
-            "role": "tool",
-            "tool_call_id": tool_call_id or f"call_{uuid.uuid4().hex[:24]}",
-            "content": json.dumps(result, default=str),
-        }
+    ) -> ToolResultBlock:
+        """Build a canonical ToolResultBlock."""
+        return ToolResultBlock(
+            id=tool_call_id or f"call_{uuid.uuid4().hex[:24]}",
+            name=tool_name,
+            content=result,
+        )
 
     def make_multimodal_message(
         self, text: str, image_bytes: bytes, mime_type: str = "image/png"

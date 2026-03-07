@@ -92,6 +92,20 @@ Common issues:
 3. If compilation fails, read the error and fix it
 4. Confirm success to the user and describe what was rendered
 
+## Retry Policy
+
+If your component fails to compile, read the esbuild error carefully and fix the issue
+in your next attempt. You have up to **5 retry attempts** for the same visualization
+request before giving up.
+Common failure modes:
+- Missing `export default` statement
+- Importing from blocked packages (only react, recharts allowed)
+- Using blocked browser APIs (fetch, eval, innerHTML, etc.)
+- TypeScript errors in JSX syntax
+- ReferenceError / TypeError from undefined variables
+
+When you hit a repeated error, try a different approach rather than the same fix.
+
 ## Response Style
 
 After each operation:

@@ -176,6 +176,18 @@ For task execution (when instruction starts with 'Execute this task'):
   The y-axis values come from DataFrame column names parsed as floats. If the data has meaningful
   bin labels (pitch angles, frequencies, energies), they will appear on the y-axis automatically.
 
+## Retry Policy
+
+If a tool call fails, analyze the error message carefully and fix the issue in your next attempt.
+You have up to **5 retry attempts** for the same visualization request before giving up.
+Common failure modes:
+- Invalid JSON syntax in figure_json
+- Invalid trace/axis names or references
+- Data labels that don't exist in memory
+- Time ranges outside data bounds
+
+When you hit a repeated error, try a different approach rather than the same fix.
+
 ## Response Style
 
 - Confirm what was done after each operation

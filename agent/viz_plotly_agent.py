@@ -12,6 +12,7 @@ Owns all visualization through tools:
 from __future__ import annotations
 
 import re
+import threading
 from typing import TYPE_CHECKING
 
 from .llm import LLMAdapter
@@ -62,6 +63,7 @@ class VizPlotlyAgent(SubAgent):
         event_bus: EventBus | None = None,
         memory_store: MemoryStore | None = None,
         memory_scope: str = "",
+        cancel_event: threading.Event | None = None,
     ):
         self.gui_mode = gui_mode
 
@@ -78,4 +80,5 @@ class VizPlotlyAgent(SubAgent):
             event_bus=event_bus,
             memory_store=memory_store,
             memory_scope=memory_scope or "visualization",
+            cancel_event=cancel_event,
         )

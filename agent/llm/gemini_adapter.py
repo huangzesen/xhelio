@@ -22,8 +22,10 @@ from .base import (
     LLMAdapter,
     LLMResponse,
     ToolCall,
+    ToolResultBlock,
     UsageMetadata,
 )
+from .interface import LLMInterface
 
 logger = get_logger()
 
@@ -137,9 +139,22 @@ def _thinking_config(level: str) -> types.ThinkingConfig | None:
 class GeminiChatSession(ChatSession):
     """Wraps a ``genai`` chat session."""
 
-    def __init__(self, chat, context_window: int = 0):
+    def __init__(self, chat, context_window: int = 0, interface: LLMInterface | None = None):
         self._chat = chat
         self._context_window_size = context_window
+        self._interface = interface or LLMInterface()
+
+    @property
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+        return self._interface
+
+    def rollback_last_turn(self) -> None:
+        """Cannot rollback server-managed Gemini Chat API history."""
+        logger.warning(
+            "rollback_last_turn() called on server-managed GeminiChatSession "
+            "— history cannot be modified client-side"
+        )
 
     def send(self, message) -> LLMResponse:
         """Send a message (text or list of tool-result Parts) and parse the response."""
@@ -332,6 +347,7 @@ class InteractionsChatSession(ChatSession):
         config_kwargs: dict[str, Any],
         prev_interaction_id: str | None = None,
         context_window: int = 0,
+        interface: LLMInterface | None = None,
     ):
         self._client = client
         self._model = model
@@ -340,11 +356,17 @@ class InteractionsChatSession(ChatSession):
         )
         self._interaction_id: str | None = prev_interaction_id
         self._context_window_size = context_window
+        self._interface = interface or LLMInterface()
         # Pending seed turns from a session resume with full history.
         # If set, prepended to the first send() call as Iterable[TurnParam].
         self._pending_seed_turns: list[dict] | None = None
         # Client-side mirror of conversation history for session fork support
         self._client_history: list[dict] = []
+
+    @property
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+        return self._interface
 
     def send(self, message) -> LLMResponse:
         """Send a message and return the parsed response.
@@ -506,16 +528,36 @@ class InteractionsChatSession(ChatSession):
         if tool_results:
             self._client_history.append({"role": "user", "content": tool_results})
 
+    def rollback_last_turn(self) -> None:
+        """Remove the last model turn and any orphaned function_result messages."""
+        # Strip trailing user messages that are pure function_result containers
+        while self._client_history and self._client_history[-1].get("role") == "user":
+            content = self._client_history[-1].get("content")
+            if isinstance(content, list) and all(
+                isinstance(b, dict) and b.get("type") == "function_result" for b in content
+            ):
+                self._client_history.pop()
+            else:
+                break
+        # Strip the last model turn
+        if self._client_history and self._client_history[-1].get("role") == "model":
+            self._client_history.pop()
+
     def update_tools(self, tools: list[FunctionSchema] | None) -> None:
         """Replace tool schemas for subsequent Interactions API calls."""
         if tools:
             self._config_kwargs["tools"] = _build_interactions_tools(tools)
         else:
             self._config_kwargs.pop("tools", None)
+        tool_dicts = FunctionSchema.list_to_dicts(tools)
+        self._interface.add_system(
+            self._interface.current_system_prompt or "", tools=tool_dicts,
+        )
 
     def update_system_prompt(self, system_prompt: str) -> None:
         """Replace the system prompt for subsequent Interactions API calls."""
         self._config_kwargs["system_instruction"] = system_prompt
+        self._interface.add_system(system_prompt, tools=self._interface.current_tools)
 
     def context_window(self) -> int:
         return self._context_window_size
@@ -648,7 +690,7 @@ class GeminiAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,
     ) -> ChatSession:
@@ -657,13 +699,20 @@ class GeminiAdapter(LLMAdapter):
 
         use_interactions = config_get("use_interactions_api", True)
 
+        # Convert interface to seed turns for history seeding
+        seed_turns: list[dict] | None = None
+        if interface and interface.conversation_entries():
+            from .interface_converters import to_gemini
+            seed_turns = to_gemini(interface)
+
         if use_interactions and not json_schema:
             # Interactions API path — server-side conversation state
             return self._create_interactions_session(
                 model,
                 system_prompt,
                 tools,
-                history=history,
+                seed_turns=seed_turns,
+                interface=interface,
                 thinking=thinking,
                 force_tool_call=force_tool_call,
                 interaction_id=interaction_id,
@@ -711,14 +760,14 @@ class GeminiAdapter(LLMAdapter):
 
         # Create the chat
         create_kwargs: dict[str, Any] = {"model": model, "config": config}
-        if history:
-            create_kwargs["history"] = history
+        # Chat API path is only used for json_schema mode — history seeding
+        # is not meaningful here, so we skip seed_turns.
 
         self._use_interactions = False
         chat = self._client.chats.create(**create_kwargs)
         from agent.llm_utils import get_context_limit
 
-        return GeminiChatSession(chat, context_window=get_context_limit(model))
+        return GeminiChatSession(chat, context_window=get_context_limit(model), interface=interface)
 
     def _create_interactions_session(
         self,
@@ -726,7 +775,8 @@ class GeminiAdapter(LLMAdapter):
         system_prompt: str,
         tools: list[FunctionSchema] | None = None,
         *,
-        history: list[dict] | None = None,
+        seed_turns: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
         force_tool_call: bool = False,
         interaction_id: str | None = None,
@@ -734,7 +784,7 @@ class GeminiAdapter(LLMAdapter):
         """Create an InteractionsChatSession with server-side state.
 
         If ``interaction_id`` is provided, the session resumes from that
-        interaction (server retrieves the history).  If ``history`` is
+        interaction (server retrieves the history).  If ``seed_turns`` is
         provided without an ``interaction_id``, the first call seeds the
         conversation via ``Iterable[TurnParam]``.
         """
@@ -785,25 +835,24 @@ class GeminiAdapter(LLMAdapter):
                 config_kwargs,
                 prev_interaction_id=interaction_id,
                 context_window=ctx_window,
+                interface=interface,
             )
 
-        # If seeding with chat history, convert to TurnParam format for the
-        # first call. The InteractionsChatSession will send this as its first
-        # input and then chain from the returned interaction_id.
+        # If seeding with conversation history, use pre-converted TurnParam
+        # turns for the first call. The InteractionsChatSession will send
+        # this as its first input and then chain from the returned
+        # interaction_id.
         session = InteractionsChatSession(
             self._client,
             model,
             config_kwargs,
             prev_interaction_id=None,
             context_window=ctx_window,
+            interface=interface,
         )
 
-        if history:
-            # Seed history by sending the full history as the first interaction.
-            # Convert Chat API history dicts to TurnParam format.
-            seed_turns = _convert_history_to_turns(history)
-            if seed_turns:
-                session._pending_seed_turns = seed_turns
+        if seed_turns:
+            session._pending_seed_turns = seed_turns
 
         return session
 
@@ -839,20 +888,12 @@ class GeminiAdapter(LLMAdapter):
 
     def make_tool_result_message(
         self, tool_name: str, result: dict, *, tool_call_id: str | None = None
-    ) -> Any:
-        if self._use_interactions:
-            # Interactions API format: FunctionResultContentParam dict.
-            # call_id must match the FunctionCallContent.id from the model's output.
-            return {
-                "type": "function_result",
-                "call_id": tool_call_id or tool_name,
-                "result": json.dumps(result),
-                "name": tool_name,
-            }
-        # Chat API format: Gemini matches by name, ignores tool_call_id.
-        return types.Part.from_function_response(
+    ) -> ToolResultBlock:
+        """Build a canonical ToolResultBlock."""
+        return ToolResultBlock(
+            id=tool_call_id or tool_name,
             name=tool_name,
-            response={"result": result},
+            content=result,
         )
 
     def make_multimodal_message(

@@ -38,6 +38,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
   const cachedCompletions = useRef<string[]>([]);
   const hasSentMessage = useRef(false);
+  const isAutofilled = useRef(false);
   const { activeSessionId } = useSessionStore();
 
   // Load input history on mount
@@ -92,19 +93,39 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   useEffect(() => {
     setGhostText('');
     cachedCompletions.current = [];
+    isAutofilled.current = false;
     setCommandMatches([]);
     setSelectedCommandIndex(0);
   }, [isStreaming, activeSessionId]);
 
-  // Fetch default suggestions when input is empty, session is ready,
+  // Autofill a suggestion when input is empty, session is ready,
   // and user has sent at least one message (skip first interaction)
   useEffect(() => {
-    if (!text.trim() && !isStreaming && activeSessionId && hasSentMessage.current) {
+    if (!text.trim() && !isStreaming && activeSessionId && hasSentMessage.current && !isAutofilled.current) {
       setGhostText('');
       cachedCompletions.current = [];
-      fetchCompletions('');
+      const seq = ++completionSeq.current;
+      const timer = setTimeout(async () => {
+        try {
+          const { completions } = await api.getCompletions(activeSessionId, '');
+          if (seq !== completionSeq.current || !completions.length) return;
+          cachedCompletions.current = completions;
+          const words = completions[0].split(/\s+/);
+          const truncated = words.length > 10
+            ? words.slice(0, 10).join(' ') + '...'
+            : completions[0];
+          setText(truncated);
+          isAutofilled.current = true;
+          requestAnimationFrame(() => {
+            textareaRef.current?.select();
+          });
+        } catch {
+          // ignore
+        }
+      }, 1000);
+      return () => clearTimeout(timer);
     }
-  }, [text, isStreaming, activeSessionId, fetchCompletions]);
+  }, [text, isStreaming, activeSessionId]);
 
   const acceptCommand = useCallback((commandName: string) => {
     setText(commandName);
@@ -133,6 +154,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
     setDraftText('');
     setText('');
     setGhostText('');
+    isAutofilled.current = false;
     setCommandMatches([]);
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
@@ -230,6 +252,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
 
   const handleInput = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
     const newText = e.target.value;
+    isAutofilled.current = false;
     setText(newText);
     setHistoryIndex(-1);
 
@@ -304,7 +327,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
             value={text}
             onChange={handleInput}
             onKeyDown={handleKeyDown}
-            placeholder={ghostText ? '' : 'Ask about spacecraft data, solar events, or missions...'}
+            placeholder=""
             rows={1}
             disabled={disabled || isCancelling}
             className="w-full resize-none rounded-xl border border-border px-4 py-2.5 text-sm

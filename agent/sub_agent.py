@@ -93,7 +93,7 @@ class AgentState(enum.Enum):
     SLEEPING = "sleeping"
 
 
-from .llm import LLMAdapter, ChatSession, LLMResponse, FunctionSchema, ToolCall
+from .llm import LLMAdapter, LLMService, ChatSession, LLMResponse, FunctionSchema, ToolCall
 from .logging import get_logger
 
 from .loop_guard import LoopGuard
@@ -200,10 +200,11 @@ class SubAgent:
     def __init__(
         self,
         agent_id: str,
-        adapter: LLMAdapter,
-        model_name: str,
-        tool_executor: Callable,
+        adapter: LLMAdapter | None = None,
+        model_name: str = "",
+        tool_executor: Callable | None = None,
         *,
+        service: LLMService | None = None,
         system_prompt: str = "",
         tool_schemas: list[FunctionSchema] | None = None,
         event_bus: EventBus | None = None,
@@ -212,7 +213,14 @@ class SubAgent:
         memory_scope: str = "",
     ):
         self.agent_id = agent_id
-        self.adapter = adapter
+        if service is not None:
+            self.service = service
+            self.adapter = service.adapter
+        elif adapter is not None:
+            self.service = None  # type: ignore[assignment]
+            self.adapter = adapter
+        else:
+            raise ValueError("SubAgent requires either service or adapter")
         self.model_name = model_name
         self.tool_executor = tool_executor
         self.system_prompt = system_prompt
@@ -700,9 +708,9 @@ class SubAgent:
             response = self._llm_send(result.tool_results)
 
         final_text = "\n".join(collected_text_parts)
-        # Always pass back the result info - let the orchestrator decide success/failure
-        # based on actual outcomes (output_files, figure created, etc.) not heuristics
-        return {"text": final_text, "failed": False, "errors": collected_errors}
+        has_errors = bool(collected_errors)
+        no_useful_output = not final_text.strip()
+        return {"text": final_text, "failed": has_errors and no_useful_output, "errors": collected_errors}
 
     # ------------------------------------------------------------------
     # Tool execution — shared result container
@@ -1154,12 +1162,12 @@ class SubAgent:
         return msg._reply_value if msg._reply_value is not None else {"text": "", "failed": True, "errors": ["no reply"]}
 
     def _deliver_result(self, msg: Message, result: dict) -> None:
-        """Deliver result to a waiting caller (if any) or send to orchestrator."""
+        """Deliver result to a waiting caller, or notify orchestrator (fire-and-forget)."""
         if msg._reply_event:
             msg._reply_value = result
             msg._reply_event.set()
         else:
-            # Fire-and-forget: send result to orchestrator so user gets notified
+            # Fire-and-forget: notify orchestrator of completion
             text = result.get("text", "")
             if text:
                 self.send_to_orchestrator(text)

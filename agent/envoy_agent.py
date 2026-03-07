@@ -8,6 +8,7 @@ mission's data products without context pollution from other missions.
 
 from __future__ import annotations
 
+import threading
 from typing import TYPE_CHECKING
 
 from .llm import LLMAdapter
@@ -53,6 +54,7 @@ class EnvoyAgent(SubAgent):
         event_bus: EventBus | None = None,
         memory_store: MemoryStore | None = None,
         memory_scope: str = "",
+        cancel_event: threading.Event | None = None,
     ):
         self.mission_id = mission_id
 
@@ -72,6 +74,7 @@ class EnvoyAgent(SubAgent):
             event_bus=event_bus,
             memory_store=memory_store,
             memory_scope=memory_scope or f"envoy:{mission_id}",
+            cancel_event=cancel_event,
         )
 
     def _on_tool_result_hook(

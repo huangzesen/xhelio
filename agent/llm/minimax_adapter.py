@@ -13,6 +13,11 @@ class _RateLimitedSession:
         self._inner = inner
         self._limiter = limiter
 
+    @property
+    def interface(self):
+        """Delegate to inner session's interface."""
+        return self._inner.interface
+
     def send(self, message):
         self._limiter.wait()
         return self._inner.send(message)

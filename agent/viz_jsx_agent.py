@@ -11,6 +11,7 @@ Owns JSX-based visualization through:
 
 from __future__ import annotations
 
+import threading
 from pathlib import Path
 from typing import TYPE_CHECKING
 
@@ -53,6 +54,7 @@ class VizJsxAgent(SubAgent):
         memory_store: MemoryStore | None = None,
         memory_scope: str = "",
         session_dir: Path | None = None,
+        cancel_event: threading.Event | None = None,
     ):
         self.gui_mode = gui_mode
         self.session_dir = session_dir
@@ -70,4 +72,5 @@ class VizJsxAgent(SubAgent):
             event_bus=event_bus,
             memory_store=memory_store,
             memory_scope=memory_scope or "visualization",
+            cancel_event=cancel_event,
         )

@@ -32,8 +32,11 @@ from .base import (
     LLMAdapter,
     LLMResponse,
     ToolCall,
+    ToolResultBlock,
     UsageMetadata,
 )
+from .interface import LLMInterface
+from .interface_converters import from_anthropic, to_anthropic
 
 
 # ---------------------------------------------------------------------------
@@ -153,6 +156,15 @@ def _parse_search_response(raw) -> LLMResponse:
         usage=usage,
         raw=raw,
     )
+
+
+def _tool_result_to_dict(block: ToolResultBlock) -> dict:
+    """Convert a canonical ToolResultBlock to Anthropic tool_result dict."""
+    return {
+        "type": "tool_result",
+        "tool_use_id": block.id,
+        "content": block.content if isinstance(block.content, str) else json.dumps(block.content, default=str),
+    }
 
 
 def _ensure_alternation(messages: list[dict]) -> list[dict]:
@@ -303,7 +315,8 @@ def _response_to_messages(raw) -> list[dict]:
 class AnthropicChatSession(ChatSession):
     """Client-managed chat session for the Anthropic Messages API.
 
-    Maintains a message list and ensures strict user/assistant alternation.
+    Uses LLMInterface as the single source of truth. Rebuilds Anthropic
+    message format from the interface on each API call.
     """
 
     def __init__(
@@ -311,7 +324,7 @@ class AnthropicChatSession(ChatSession):
         client: anthropic.Anthropic,
         model: str,
         system_prompt: str | list[dict],
-        messages: list[dict],
+        interface: LLMInterface,
         tools: list[dict] | None,
         tool_choice: dict | None,
         extra_kwargs: dict,
@@ -320,7 +333,7 @@ class AnthropicChatSession(ChatSession):
         self._client = client
         self._model = model
         self._system = system_prompt
-        self._messages = messages
+        self._interface = interface
         self._tools = tools
         self._tool_choice = tool_choice
         self._extra_kwargs = extra_kwargs
@@ -329,6 +342,11 @@ class AnthropicChatSession(ChatSession):
         # Context window for compaction
         from agent.llm_utils import get_context_limit
         self._context_window = get_context_limit(model)
+
+    @property
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+        return self._interface
 
     def _build_request_kwargs(self, messages: list[dict]) -> dict[str, Any]:
         kwargs: dict[str, Any] = {
@@ -346,61 +364,73 @@ class AnthropicChatSession(ChatSession):
         return kwargs
 
     def send(self, message) -> LLMResponse:
-        """Send a user message (str) or tool results (list of dicts).
+        """Send a user message (str) or tool results (list of ToolResultBlock).
 
-        For tool results, ``message`` is a list of dicts, each built by
-        :meth:`AnthropicAdapter.make_tool_result_message`. These get wrapped
-        in a single user message with all tool_result blocks.
-
-        The user message is only committed to history after a successful API
+        For tool results, ``message`` is a list of ToolResultBlock (canonical).
+        The user message is only committed to interface after a successful API
         call, preventing duplicate messages on retry.
         """
-        # Build candidate messages without mutating self._messages
-        candidate = list(self._messages)
+        # Build candidate messages from interface
+        candidate_msgs = to_anthropic(self._interface)
+
         if isinstance(message, str):
-            candidate.append({"role": "user", "content": message})
-        elif isinstance(message, dict):
-            candidate.append(message)
+            candidate_msgs.append({"role": "user", "content": message})
+            # Commit user message to interface now (will be reverted on error)
+            self._interface.add_user_message(message)
         elif isinstance(message, list):
-            candidate.append({"role": "user", "content": message})
+            # message is a list of ToolResultBlock
+            self._interface.add_tool_results(message)
+            # Also add to candidate for API call
+            blocks = [_tool_result_to_dict(b) for b in message]
+            candidate_msgs.append({"role": "user", "content": blocks})
         else:
             raise TypeError(f"Unsupported message type: {type(message)}")
 
-        clean_messages = _ensure_alternation(candidate)
+        clean_messages = _ensure_alternation(candidate_msgs)
         clean_messages = _filter_invalid_tool_results(clean_messages)
         kwargs = self._build_request_kwargs(clean_messages)
 
         try:
             raw = self._client.messages.create(**kwargs)
         except Exception as api_err:
-            # DEBUG: Save messages on error 2013
-            err_str = str(api_err)
-            if "tool call result does not follow" in err_str or "2013" in err_str:
-                import os
-                import tempfile
-                try:
-                    debug_dir = os.path.join(tempfile.gettempdir(), "xhelio_desync_debug")
-                    os.makedirs(debug_dir, exist_ok=True)
-                    import time as ts
-                    debug_file = os.path.join(debug_dir, f"error_{int(ts.time()*1000)}.json")
-                    with open(debug_file, "w") as f:
-                        json.dump({
-                            "error": err_str,
-                            "candidate_messages": candidate,
-                            "clean_messages": clean_messages,
-                            "kwargs": {k: v for k, v in kwargs.items() if k != "messages"},
-                        }, f, indent=2, default=str)
-                    logger.warning(f"DEBUG: Saved desync error details to {debug_file}")
-                except Exception as debug_err:
-                    logger.warning(f"DEBUG: Failed to save desync info: {debug_err}")
+            # Revert the interface on error - drop the last user entry
+            self._interface.drop_trailing(lambda e: e.role == "user")
             raise
 
-        # Commit: adopt candidate and append the assistant response
-        self._messages = candidate
-        assistant_msgs = _response_to_messages(raw)
-        self._messages.extend(assistant_msgs)
+        # Parse response and add to interface
+        response = _parse_response(raw)
+        # Record assistant response from raw API object (preserves thinking signatures)
+        from .interface import TextBlock, ThinkingBlock, ToolCallBlock
+        assistant_blocks = []
+        for block in raw.content:
+            if block.type == "thinking":
+                sig = getattr(block, "signature", None)
+                pd = {"anthropic": {"signature": sig}} if sig else {}
+                assistant_blocks.append(ThinkingBlock(
+                    text=getattr(block, "thinking", ""),
+                    provider_data=pd,
+                ))
+            elif block.type == "text":
+                assistant_blocks.append(TextBlock(text=block.text))
+            elif block.type == "tool_use":
+                assistant_blocks.append(ToolCallBlock(
+                    id=block.id,
+                    name=block.name,
+                    args=block.input if isinstance(block.input, dict) else {},
+                ))
+        if assistant_blocks:
+            self._interface.add_assistant_message(
+                assistant_blocks,
+                model=self._model,
+                provider="anthropic",
+                usage={
+                    "input_tokens": response.usage.input_tokens,
+                    "output_tokens": response.usage.output_tokens,
+                    "thinking_tokens": response.usage.thinking_tokens,
+                },
+            )
 
-        return _parse_response(raw)
+        return response
 
     def send_stream(
         self,
@@ -408,18 +438,47 @@ class AnthropicChatSession(ChatSession):
         on_chunk: Callable[[str], None] | None = None,
     ) -> LLMResponse:
         """Streaming send. User message committed to history only after success."""
-        # Build candidate messages without mutating self._messages
-        candidate = list(self._messages)
+        from .interface import TextBlock, ThinkingBlock, ToolCallBlock
+
+        # Record user input into interface first
         if isinstance(message, str):
-            candidate.append({"role": "user", "content": message})
+            self._interface.add_user_message(message)
         elif isinstance(message, dict):
-            candidate.append(message)
+            # Multimodal dict — extract text and image for interface recording
+            content = message.get("content", "")
+            image_bytes = None
+            mime_type = "image/png"
+            if isinstance(content, str):
+                text_for_interface = content
+            elif isinstance(content, list):
+                text_parts_input = []
+                for b in content:
+                    if isinstance(b, dict):
+                        if b.get("type") == "text":
+                            text_parts_input.append(b.get("text", ""))
+                        elif b.get("type") == "image" and "source" in b:
+                            src = b["source"]
+                            if src.get("type") == "base64":
+                                import base64 as _b64
+                                image_bytes = _b64.b64decode(src.get("data", ""))
+                                mime_type = src.get("media_type", "image/png")
+                text_for_interface = "\n".join(text_parts_input) if text_parts_input else ""
+            else:
+                text_for_interface = str(content)
+            self._interface.add_user_message(
+                text_for_interface,
+                image_bytes=image_bytes,
+                mime_type=mime_type,
+            )
         elif isinstance(message, list):
-            candidate.append({"role": "user", "content": message})
+            # list of ToolResultBlock
+            self._interface.add_tool_results(message)
         else:
             raise TypeError(f"Unsupported message type: {type(message)}")
 
-        clean_messages = _ensure_alternation(candidate)
+        # Build ephemeral Anthropic messages from interface
+        candidate_msgs = to_anthropic(self._interface)
+        clean_messages = _ensure_alternation(candidate_msgs)
         clean_messages = _filter_invalid_tool_results(clean_messages)
         kwargs = self._build_request_kwargs(clean_messages)
 
@@ -427,61 +486,66 @@ class AnthropicChatSession(ChatSession):
         _pending_tool = None
         _thinking_parts: list[str] = []
 
-        with self._client.messages.stream(**kwargs) as stream:
-            for event in stream:
-                etype = getattr(event, "type", None)
-                if etype == "content_block_start":
-                    block = getattr(event, "content_block", None)
-                    if block and getattr(block, "type", None) == "tool_use":
-                        _pending_tool = {
-                            "id": block.id,
-                            "name": block.name,
-                            "args_json": "",
-                        }
-                    elif block and getattr(block, "type", None) == "thinking":
-                        _thinking_parts = []
-                elif etype == "content_block_delta":
-                    delta = getattr(event, "delta", None)
-                    if delta is None:
-                        continue
-                    dtype = getattr(delta, "type", None)
-                    if dtype == "text_delta":
-                        t = getattr(delta, "text", "")
-                        if t:
-                            text_parts.append(t)
-                            if on_chunk:
-                                on_chunk(t)
-                    elif dtype == "thinking_delta":
-                        t = getattr(delta, "thinking", "")
-                        if t:
-                            _thinking_parts.append(t)
-                    elif dtype == "input_json_delta":
-                        partial = getattr(delta, "partial_json", "")
-                        if partial and _pending_tool is not None:
-                            _pending_tool["args_json"] += partial
-                elif etype == "content_block_stop":
-                    if _thinking_parts:
-                        thoughts.append("".join(_thinking_parts))
-                        _thinking_parts = []
-                    if _pending_tool is not None:
-                        try:
-                            args = (
-                                json.loads(_pending_tool["args_json"])
-                                if _pending_tool["args_json"]
-                                else {}
+        try:
+            with self._client.messages.stream(**kwargs) as stream:
+                for event in stream:
+                    etype = getattr(event, "type", None)
+                    if etype == "content_block_start":
+                        block = getattr(event, "content_block", None)
+                        if block and getattr(block, "type", None) == "tool_use":
+                            _pending_tool = {
+                                "id": block.id,
+                                "name": block.name,
+                                "args_json": "",
+                            }
+                        elif block and getattr(block, "type", None) == "thinking":
+                            _thinking_parts = []
+                    elif etype == "content_block_delta":
+                        delta = getattr(event, "delta", None)
+                        if delta is None:
+                            continue
+                        dtype = getattr(delta, "type", None)
+                        if dtype == "text_delta":
+                            t = getattr(delta, "text", "")
+                            if t:
+                                text_parts.append(t)
+                                if on_chunk:
+                                    on_chunk(t)
+                        elif dtype == "thinking_delta":
+                            t = getattr(delta, "thinking", "")
+                            if t:
+                                _thinking_parts.append(t)
+                        elif dtype == "input_json_delta":
+                            partial = getattr(delta, "partial_json", "")
+                            if partial and _pending_tool is not None:
+                                _pending_tool["args_json"] += partial
+                    elif etype == "content_block_stop":
+                        if _thinking_parts:
+                            thoughts.append("".join(_thinking_parts))
+                            _thinking_parts = []
+                        if _pending_tool is not None:
+                            try:
+                                args = (
+                                    json.loads(_pending_tool["args_json"])
+                                    if _pending_tool["args_json"]
+                                    else {}
+                                )
+                            except json.JSONDecodeError:
+                                args = {}
+                            tool_calls.append(
+                                ToolCall(
+                                    name=_pending_tool["name"],
+                                    args=args,
+                                    id=_pending_tool["id"],
+                                )
                             )
-                        except json.JSONDecodeError:
-                            args = {}
-                        tool_calls.append(
-                            ToolCall(
-                                name=_pending_tool["name"],
-                                args=args,
-                                id=_pending_tool["id"],
-                            )
-                        )
-                        _pending_tool = None
+                            _pending_tool = None
 
-            final_message = stream.get_final_message()
+                final_message = stream.get_final_message()
+        except Exception:
+            # Revert the interface on error — drop the last user entry
+            self._interface.drop_trailing(lambda e: e.role == "user")
+            raise
 
         # Extract usage from final message (includes cache metrics)
         # Same normalisation as _parse_response — see comment there.
@@ -506,10 +570,34 @@ class AnthropicChatSession(ChatSession):
                     usage.input_tokens,
                 )
 
-        # Commit: adopt candidate and append assistant response to history
-        self._messages = candidate
+        # Record assistant response into interface
         if final_message:
-            self._messages.extend(_response_to_messages(final_message))
+            assistant_blocks: list = []
+            for block in final_message.content:
+                if block.type == "thinking":
+                    thinking_text = getattr(block, "thinking", "")
+                    sig = getattr(block, "signature", None)
+                    provider_data = {"anthropic": {"signature": sig}} if sig else {}
+                    assistant_blocks.append(ThinkingBlock(text=thinking_text, provider_data=provider_data))
+                elif block.type == "text":
+                    assistant_blocks.append(TextBlock(text=block.text))
+                elif block.type == "tool_use":
+                    assistant_blocks.append(ToolCallBlock(
+                        id=block.id,
+                        name=block.name,
+                        args=block.input if isinstance(block.input, dict) else {},
+                    ))
+            if assistant_blocks:
+                self._interface.add_assistant_message(
+                    assistant_blocks,
+                    model=self._model,
+                    provider="anthropic",
+                    usage={
+                        "input_tokens": usage.input_tokens,
+                        "output_tokens": usage.output_tokens,
+                        "thinking_tokens": usage.thinking_tokens,
+                    },
+                )
 
         return LLMResponse(
             text="".join(text_parts),
@@ -520,21 +608,23 @@ class AnthropicChatSession(ChatSession):
         )
 
     def commit_tool_results(self, tool_results: list) -> None:
-        """Append tool results to history without an API call."""
+        """Append tool results to interface without an API call."""
         if tool_results:
-            self._messages.append({"role": "user", "content": tool_results})
-
-    def get_history(self) -> list[dict]:
-        """Return the message list for session persistence."""
-        return list(self._messages)
+            # tool_results is a list of ToolResultBlock
+            self._interface.add_tool_results(tool_results)
 
     def update_tools(self, tools: list[FunctionSchema] | None) -> None:
         """Replace the tool schemas for subsequent calls in this session."""
         self._tools = _build_tools(tools, cache_tools=True) if tools else None
+        tool_dicts = FunctionSchema.list_to_dicts(tools)
+        self._interface.add_system(
+            self._interface.current_system_prompt or "", tools=tool_dicts,
+        )
 
     def update_system_prompt(self, system_prompt: str) -> None:
         """Replace the system prompt for subsequent calls in this session."""
         self._system = _build_system_with_cache(system_prompt)
+        self._interface.add_system(system_prompt, tools=self._interface.current_tools)
 
     def reset(self) -> None:
         """Create a truly fresh session instance while preserving state.
@@ -549,7 +639,7 @@ class AnthropicChatSession(ChatSession):
                 client=new_client,
                 model=self._model,
                 system_prompt=self._system,
-                messages=list(self._messages),
+                interface=self._interface,
                 tools=self._tools,
                 tool_choice=self._tool_choice,
                 extra_kwargs=self._extra_kwargs,
@@ -576,8 +666,9 @@ class AnthropicChatSession(ChatSession):
         if self._tools:
             total += count_tokens(json.dumps(self._tools, default=str))
         # Messages
-        if self._messages:
-            total += count_tokens(json.dumps(self._messages, default=str))
+        messages = to_anthropic(self._interface)
+        if messages:
+            total += count_tokens(json.dumps(messages, default=str))
         return total
 
     def compact(self, summarizer: Callable[[str], str]) -> bool:
@@ -588,7 +679,8 @@ class AnthropicChatSession(ChatSession):
 
         Returns True if compaction happened.
         """
-        if len(self._messages) < 8:
+        messages = to_anthropic(self._interface)
+        if len(messages) < 8:
             return False
 
         # Find safe compaction boundary — walk backward keeping last 3 turns.
@@ -599,7 +691,7 @@ class AnthropicChatSession(ChatSession):
             return False
 
         # Format older messages for summarization
-        older = self._messages[:boundary]
+        older = messages[:boundary]
         text_parts = []
         for msg in older:
             role = msg.get("role", "?")
@@ -630,11 +722,15 @@ class AnthropicChatSession(ChatSession):
             return False
 
         # Replace older messages with summary + recent messages
-        recent = self._messages[boundary:]
-        self._messages = [
+        recent = messages[boundary:]
+        new_messages = [
             {"role": "user", "content": f"[Previous conversation summary]\n{summary}"},
             {"role": "assistant", "content": "Understood. I have the context from the previous conversation."},
         ] + recent
+
+        # Rebuild interface from compacted messages
+        system_prompt = self._interface.current_system_prompt
+        self._interface = from_anthropic(new_messages, system_prompt=system_prompt)
 
         return True
 
@@ -645,9 +741,9 @@ class AnthropicChatSession(ChatSession):
         tool_use) and the next user message. Never splits tool_use/tool_result
         pairs.
 
-        Returns the index into self._messages, or None if not enough turns.
+        Returns the index into the messages list, or None if not enough turns.
         """
-        messages = self._messages
+        messages = to_anthropic(self._interface)
         n = len(messages)
 
         # Walk backward counting turn boundaries
@@ -752,13 +848,20 @@ class AnthropicAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,  # ignored — Gemini-specific
     ) -> AnthropicChatSession:
-        messages: list[dict] = []
-        if history:
-            messages.extend(history)
+        # Create interface from scratch or from history
+        if interface is not None:
+            iface = interface
+        else:
+            iface = LLMInterface()
+            tool_dicts = (
+                [{"name": t.name, "description": t.description, "parameters": t.parameters} for t in tools]
+                if tools else None
+            )
+            iface.add_system(system_prompt, tools=tool_dicts)
 
         anthropic_tools = _build_tools(tools, cache_tools=True)
         tool_choice: dict | None = None
@@ -796,7 +899,7 @@ class AnthropicAdapter(LLMAdapter):
             client=self._client,
             model=model,
             system_prompt=_build_system_with_cache(system_prompt),
-            messages=messages,
+            interface=iface,
             tools=anthropic_tools,
             tool_choice=tool_choice,
             extra_kwargs=extra_kwargs,
@@ -850,17 +953,13 @@ class AnthropicAdapter(LLMAdapter):
 
     def make_tool_result_message(
         self, tool_name: str, result: dict, *, tool_call_id: str | None = None
-    ) -> dict:
-        """Build an Anthropic tool_result content block.
-
-        Returns a dict that gets collected into a list and wrapped in a
-        ``{"role": "user", "content": [...]}`` message by the session.
-        """
-        return {
-            "type": "tool_result",
-            "tool_use_id": tool_call_id or f"toolu_{uuid.uuid4().hex[:24]}",
-            "content": json.dumps(result, default=str),
-        }
+    ) -> ToolResultBlock:
+        """Build a canonical ToolResultBlock."""
+        return ToolResultBlock(
+            id=tool_call_id or f"toolu_{uuid.uuid4().hex[:24]}",
+            name=tool_name,
+            content=result,
+        )
 
     def make_multimodal_message(
         self, text: str, image_bytes: bytes, mime_type: str = "image/png"

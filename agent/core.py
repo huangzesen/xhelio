@@ -23,10 +23,7 @@ import config
 from config import get_data_dir, get_api_key
 from .llm import (
     LLMAdapter,
-    GeminiAdapter,
-    OpenAIAdapter,
-    AnthropicAdapter,
-    MiniMaxAdapter,
+    LLMService,
     LLMResponse,
     FunctionSchema,
 )
@@ -129,10 +126,8 @@ from .pipeline_store import PipelineStore
 from .context_tracker import ContextTracker
 from .loop_guard import LoopGuard, DupVerdict
 from .model_fallback import (
-    activate_fallback,
     reset_fallback,
     get_active_model,
-    is_quota_error,
 )
 from .llm_utils import (
     _LLM_WARN_INTERVAL,
@@ -254,18 +249,18 @@ def _extract_turns(history_entries: list, *, max_text: int | None = None) -> lis
     return turns
 
 
-def _create_adapter() -> LLMAdapter:
-    """Create the LLM adapter based on config (llm_provider, llm_base_url, etc.)."""
+def _create_llm_service() -> LLMService:
+    """Create the LLM service based on config."""
     provider = config.LLM_PROVIDER.lower()
     api_key = get_api_key(provider)
-    if provider == "openai":
-        return OpenAIAdapter(api_key=api_key, base_url=config.LLM_BASE_URL)
-    elif provider == "anthropic":
-        return AnthropicAdapter(api_key=api_key, base_url=config.LLM_BASE_URL)
-    elif provider == "minimax":
-        return MiniMaxAdapter(api_key=api_key, base_url=config.LLM_BASE_URL)
-    else:
-        return GeminiAdapter(api_key=api_key)
+    model = get_active_model(config.SMART_MODEL)
+    return LLMService(
+        provider=provider,
+        model=model,
+        api_key=api_key,
+        base_url=config.LLM_BASE_URL,
+    )
+
 
 
 def _sanitize_for_json(obj):
@@ -310,6 +305,9 @@ class OrchestratorAgent:
         self.gui_mode = gui_mode
         self.web_mode = False  # Set True by MCP server to suppress auto-open
         self._cancel_event = threading.Event()
+        self._cancel_holdback = threading.Event()  # When set, hold fire-and-forget results
+        self._held_results: list[str] = []  # Results held during cancel
+        self._held_results_lock = threading.Lock()
         self._shutdown_event = threading.Event()
         self._text_already_streamed = False  # set by _send_message_streaming
         self._intermediate_text_streamed = False  # set by _send_message_streaming
@@ -333,6 +331,12 @@ class OrchestratorAgent:
         self._sub_agents_lock = threading.Lock()
         self._dataops_seq: int = 0  # Counter for ephemeral DataOps agents
         self._mission_seq: int = 0  # Counter for ephemeral Mission agents
+        self._async_delegations: dict[str, float] = {}  # agent_id → start_time
+
+        # Fire-and-forget async delegation tracking: agent_id → start_time
+        # Written by delegation handler threads, read by run_loop thread.
+        self._async_delegations: dict[str, float] = {}
+        self._async_delegations_lock = threading.Lock()
 
         # Turnless orchestrator: shared Condition + Control Center
         # RLock so that has_pending()/drain() can re-acquire inside wait loops
@@ -361,8 +365,9 @@ class OrchestratorAgent:
             SESSION_START, level="info", msg="Initializing OrchestratorAgent"
         )
 
-        # Initialize LLM adapter (wraps all provider SDK calls)
-        self.adapter: LLMAdapter = _create_adapter()
+        # Initialize LLM service (wraps all provider SDK calls)
+        self.service: LLMService = _create_llm_service()
+        self.adapter: LLMAdapter = self.service.adapter  # backward compat
 
         # Discover SPICE tools from MCP server (lazy, non-fatal).
         # Must happen before building tool schemas so the LLM sees them.
@@ -549,9 +554,19 @@ class OrchestratorAgent:
 
     # ---- Cancellation API ----
 
+    _CANCEL_INJECT_MSG = (
+        "[System] The user cancelled the previous operation. "
+        "All in-progress tool calls have been aborted. "
+        "Some background tasks may still be running — do not react to "
+        "their results until the user sends their next input.\n\n"
+        "Respond briefly to acknowledge the cancellation and ask what "
+        "the user would like to do instead."
+    )
+
     def request_cancel(self):
         """Signal the agent to stop after the current atomic operation."""
         self._cancel_event.set()
+        self._cancel_holdback.set()
         self._event_bus.emit(DEBUG, level="info", msg="[Cancel] Cancellation requested")
 
     def clear_cancel(self):
@@ -720,37 +735,30 @@ class OrchestratorAgent:
         We drop the last assistant turn (tool calls), create a new chat,
         and tell the model what it tried and what the results were.
         """
-        # Prefer client-side history (Interactions API) over metadata stubs
-        if hasattr(chat, "get_client_history"):
-            history = chat.get_client_history()
-        else:
-            history = chat.get_history()
+        # Get interface from chat (single source of truth)
+        iface = chat.interface
 
         # Summarize what the model tried (tool calls from the assistant turn)
-        tool_summary = self._summarize_tool_calls(history)
+        history = iface.to_dict()  # For summarization
+        tool_summary = self._summarize_tool_calls_from_interface(iface)
         # Summarize the tool results that were ready but never delivered
         result_summary = self._summarize_tool_results(failed_message)
 
-        # Drop the failed assistant turn
-        while history and history[-1].get("role") == "assistant":
-            history.pop()
-
-        # Drop orphaned tool_result-only user messages (stale tool_call_ids
-        # from prior assistant turns that were already consumed by the LLM)
-        while history and history[-1].get("role") == "user":
-            content = history[-1].get("content")
-            if isinstance(content, list) and all(
-                isinstance(b, dict) and b.get("type") == "tool_result" for b in content
-            ):
-                history.pop()
-            else:
-                break
+        # Drop failed turn: assistant with tool calls + orphaned tool results
+        # Using interface.drop_trailing for clean rollback
+        from agent.llm.interface import ToolResultBlock
+        iface.drop_trailing(lambda e: e.role == "assistant")
+        iface.drop_trailing(
+            lambda e: e.role == "user" and all(
+                isinstance(b, ToolResultBlock) for b in e.content
+            )
+        )
 
         self._event_bus.emit(
             LLM_CALL,
             agent="Orchestrator",
             level="warning",
-            msg=f"[Orchestrator] Session rollback — new chat ({len(history)} msgs kept)",
+            msg=f"[Orchestrator] Session rollback — new chat ({len(iface.entries)} entries kept)",
         )
 
         self.chat = self.adapter.create_chat(
@@ -758,7 +766,7 @@ class OrchestratorAgent:
             system_prompt=self._system_prompt,
             tools=self._tool_schemas,
             thinking="high",
-            history=history,
+            interface=iface,
         )
 
         rollback_msg = (
@@ -788,6 +796,18 @@ class OrchestratorAgent:
                     args_str = ", ".join(f"{k}={repr(v)[:80]}" for k, v in args.items())
                     parts.append(f"- {name}({args_str})")
         return "\n".join(reversed(parts)) if parts else "(no tool calls found)"
+
+    def _summarize_tool_calls_from_interface(self, iface) -> str:
+        """Extract tool call names and args from the last assistant entry in interface."""
+        from agent.llm.interface import ToolCallBlock
+        parts = []
+        last_asst = iface.last_assistant_entry()
+        if last_asst:
+            for block in last_asst.content:
+                if isinstance(block, ToolCallBlock):
+                    args_str = ", ".join(f"{k}={repr(v)[:80]}" for k, v in block.args.items())
+                    parts.append(f"- {block.name}({args_str})")
+        return "\n".join(parts) if parts else "(no tool calls found)"
 
     @staticmethod
     def _summarize_tool_results(message) -> str:
@@ -877,22 +897,9 @@ class OrchestratorAgent:
             )
 
     def _send_message(self, message) -> LLMResponse:
-        """Send a message on self.chat with timeout/retry and model fallback on 429."""
+        """Send a message on self.chat with timeout/retry. 429 errors propagate."""
         self._check_and_compact()
-        try:
-            return self._send_with_timeout(self.chat, message)
-        except Exception as exc:
-            if is_quota_error(exc, adapter=self.adapter) and config.FALLBACK_MODEL:
-                activate_fallback(config.FALLBACK_MODEL)
-                self.chat = self.adapter.create_chat(
-                    model=config.FALLBACK_MODEL,
-                    system_prompt=self._system_prompt,
-                    tools=self._tool_schemas,
-                    thinking="high",
-                )
-                self.model_name = config.FALLBACK_MODEL
-                return self._send_with_timeout(self.chat, message)
-            raise
+        return self._send_with_timeout(self.chat, message)
 
     def _send_message_streaming(self, message) -> LLMResponse:
         """Send a message with streaming text deltas emitted via EventBus.
@@ -916,31 +923,17 @@ class OrchestratorAgent:
                 data={"text": text_delta, "streaming": True},
             )
 
-        try:
-            response = send_with_timeout_stream(
-                chat=self.chat,
-                message=message,
-                timeout_pool=self._timeout_pool,
-                cancel_event=self._cancel_event,
-                retry_timeout=_LLM_RETRY_TIMEOUT,
-                agent_name="Orchestrator",
-                logger=self.logger,
-                on_chunk=_on_chunk,
-                on_reset=self._on_reset,
-            )
-        except Exception as exc:
-            if is_quota_error(exc, adapter=self.adapter) and config.FALLBACK_MODEL:
-                activate_fallback(config.FALLBACK_MODEL)
-                self.chat = self.adapter.create_chat(
-                    model=config.FALLBACK_MODEL,
-                    system_prompt=self._system_prompt,
-                    tools=self._tool_schemas,
-                    thinking="high",
-                )
-                self.model_name = config.FALLBACK_MODEL
-                # Fallback without streaming — non-critical
-                return self._send_with_timeout(self.chat, message)
-            raise
+        response = send_with_timeout_stream(
+            chat=self.chat,
+            message=message,
+            timeout_pool=self._timeout_pool,
+            cancel_event=self._cancel_event,
+            retry_timeout=_LLM_RETRY_TIMEOUT,
+            agent_name="Orchestrator",
+            logger=self.logger,
+            on_chunk=_on_chunk,
+            on_reset=self._on_reset,
+        )
 
         # Mark that text was already streamed so downstream doesn't re-emit
         if response.text:
@@ -2344,7 +2337,9 @@ class OrchestratorAgent:
                         content = extra.content if isinstance(extra.content, str) else str(extra.content)
                         queued_user_messages.append(content)
                     else:
-                        # For non-user messages, break and let main loop handle them
+                        # Non-user message (e.g. subagent_result) — put it back
+                        # so the next iteration of the main loop processes it.
+                        self._put_message(extra, priority=1)
                         break
 
                 # Process merged user messages if any
@@ -2432,6 +2427,19 @@ class OrchestratorAgent:
                         reason=f"cycle {self._cycle_number} complete",
                     )
             elif msg.type == "subagent_result":
+                # Hold fire-and-forget results during cancel
+                if self._cancel_holdback.is_set():
+                    content = msg.content if isinstance(msg.content, str) else str(msg.content)
+                    with self._held_results_lock:
+                        self._held_results.append(
+                            f"[Subagent {msg.sender} completed]: {content}"
+                        )
+                    self._event_bus.emit(
+                        DEBUG, level="info",
+                        msg=f"[Cancel] Holding subagent result from {msg.sender}",
+                    )
+                    continue
+
                 # Subagent sent result - process as new message
                 self._set_state(AgentState.ACTIVE, reason="subagent result")
 
@@ -2455,6 +2463,7 @@ class OrchestratorAgent:
                     response_text = self.process_message(
                         f"[Subagent {msg.sender} completed]: {content}"
                     )
+                    self._responded_this_cycle = True
                     # Emit response
                     self._event_bus.emit(
                         TEXT_DELTA,
@@ -2464,7 +2473,7 @@ class OrchestratorAgent:
                     )
                     # Emit DELEGATION_ASYNC_COMPLETED only for async delegations
                     sender_id = msg.sender
-                    if hasattr(self, '_async_delegations') and sender_id in self._async_delegations:
+                    if sender_id in self._async_delegations:
                         # Calculate duration from stored start time
                         start_time = self._async_delegations.get(sender_id)
                         duration = time.time() - start_time if start_time else 0
@@ -2474,8 +2483,15 @@ class OrchestratorAgent:
                             msg=f"[Router] Background task completed: {sender_id}",
                             data={"agent": sender_id, "duration_seconds": round(duration, 2)},
                         )
-                        # Remove from tracking
-                        del self._async_delegations[sender_id]
+                    # Mark any RUNNING WorkUnit for this agent as completed (C4 fix)
+                    cc = self._control_center
+                    for active in cc.list_active():
+                        if active.get("agent_name") == sender_id:
+                            cc.mark_completed(
+                                active["id"],
+                                {"status": "ok", "result": content[:500]},
+                            )
+                            break
                 except Exception as e:
                     self.logger.error(f"Error processing subagent result: {e}", exc_info=True)
 
@@ -2533,10 +2549,10 @@ class OrchestratorAgent:
             return
 
         try:
-            # Get current conversation history
-            history = self.chat.get_history()
+            # Get canonical interface (works across all providers)
+            interface = self.chat.interface
             self.logger.info(
-                f"[Memory] Hot reload: preserving {len(history)} history entries"
+                f"[Memory] Hot reload: preserving {len(interface.entries)} interface entries"
             )
 
             # Get fresh memory section
@@ -2551,19 +2567,22 @@ class OrchestratorAgent:
             else:
                 new_system_prompt = base_prompt
 
-            # Create new chat session with history and fresh memory
+            # Update system prompt in interface before creating new session
+            interface.add_system(new_system_prompt)
+
+            # Create new chat session with canonical interface
             self.chat = self.adapter.create_chat(
                 model=get_active_model(self.model_name),
                 system_prompt=new_system_prompt,
                 tools=self._tool_schemas,
-                history=history,
+                interface=interface,
                 thinking="high",
             )
 
             self._event_bus.emit(
                 DEBUG,
                 level="info",
-                msg=f"[Memory] Hot reload complete: {len(history)} messages, memory injected",
+                msg=f"[Memory] Hot reload complete: {len(interface.entries)} entries, memory injected",
             )
         except Exception as e:
             self.logger.error(f"[Memory] Hot reload failed: {e}")
@@ -3044,7 +3063,7 @@ class OrchestratorAgent:
                 self._event_bus.emit(
                     DEBUG, level="info", msg="[Cancel] Stopping orchestrator loop"
                 )
-                break
+                return "Request cancelled."
 
             if not response.tool_calls:
                 break
@@ -3153,8 +3172,13 @@ class OrchestratorAgent:
                             f"  {i + 1}. {opt}"
                             for i, opt in enumerate(result["options"])
                         )
-                    clarification_question = question
-                    continue  # Don't return early - let normal flow send tool result
+                    # Pair the tool_use with a tool_result to keep history in sync
+                    clarification_response = self.adapter.make_tool_result_message(
+                        tool_name, result, tool_call_id=tc_id
+                    )
+                    if self.chat and hasattr(self.chat, 'commit_tool_results'):
+                        self.chat.commit_tool_results([clarification_response])
+                    return question
 
                 function_responses.append(
                     self.adapter.make_tool_result_message(
@@ -3166,6 +3190,21 @@ class OrchestratorAgent:
 
             tool_names = [fc.name for fc in function_calls]
             self._last_tool_context = "+".join(tool_names)
+
+            # Check cancel AFTER tool execution — strip the incomplete
+            # assistant turn and inject cancel context.
+            if self._cancel_event.is_set():
+                if self._chat:
+                    self._chat.rollback_last_turn()
+                self._event_bus.emit(
+                    DEBUG, level="info", msg="[Cancel] Stopping after tool execution"
+                )
+                try:
+                    cancel_response = self._send_message(self._CANCEL_INJECT_MSG)
+                    self._track_usage(cancel_response)
+                    return cancel_response.text or "Cancelled. What would you like to do?"
+                except Exception:
+                    return "Cancelled. What would you like to do?"
 
             self._event_bus.emit(
                 DEBUG,
@@ -3325,6 +3364,7 @@ class OrchestratorAgent:
                     event_bus=self._event_bus,
                     memory_store=self._memory_store,
                     memory_scope=f"envoy:{mission_id}",
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3360,6 +3400,7 @@ class OrchestratorAgent:
                 event_bus=self._event_bus,
                 memory_store=self._memory_store,
                 memory_scope=f"envoy:{mission_id}",
+                cancel_event=self._cancel_event,
             )
             agent._orchestrator_inbox = self._inbox
             agent.start()
@@ -3388,6 +3429,7 @@ class OrchestratorAgent:
                     event_bus=self._event_bus,
                     memory_store=self._memory_store,
                     memory_scope="visualization",
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3418,6 +3460,7 @@ class OrchestratorAgent:
                     memory_store=self._memory_store,
                     memory_scope="visualization",
                     session_dir=session_dir,
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3448,6 +3491,7 @@ class OrchestratorAgent:
                     memory_store=self._memory_store,
                     memory_scope="visualization",
                     session_dir=session_dir,
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3486,6 +3530,7 @@ class OrchestratorAgent:
                     memory_store=self._memory_store,
                     memory_scope="data_ops",
                     active_missions_fn=self._get_active_envoy_ids,
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3514,6 +3559,7 @@ class OrchestratorAgent:
                 memory_store=self._memory_store,
                 memory_scope="data_ops",
                 active_missions_fn=self._get_active_envoy_ids,
+                cancel_event=self._cancel_event,
             )
             agent._orchestrator_inbox = self._inbox
             agent.start()
@@ -3574,6 +3620,7 @@ class OrchestratorAgent:
                         )
                     ),
                     event_bus=self._event_bus,
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3599,6 +3646,7 @@ class OrchestratorAgent:
                         )
                     ),
                     event_bus=self._event_bus,
+                    cancel_event=self._cancel_event,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3666,16 +3714,23 @@ class OrchestratorAgent:
         ops_log = self._ops_log
         ops_start_index = len(ops_log.get_records())
 
-        # Handle fire-and-forget delegation
+        # Handle fire-and-forget delegation — start agent but don't wait
         if not wait:
-            # Start the sub-agent in the background (fire-and-forget)
-            # Don't mark as completed - leave as RUNNING so list_active_work shows it
-            agent.send(
-                request, sender="orchestrator", timeout=timeout, wait=False
+            agent.send(request, sender="orchestrator", timeout=timeout, wait=False)
+
+            # Track as async delegation for completion notification
+            self._async_delegations[agent_name or agent.agent_id] = time.time()
+
+            cc.mark_completed(
+                unit.id,
+                {
+                    "status": "queued",
+                    "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
+                },
             )
             return {
-                "status": "pending",
-                "message": f"Delegation to {agent_name or agent.agent_id} pending (fire-and-forget)",
+                "status": "queued",
+                "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
             }
 
         try:
@@ -3724,13 +3779,7 @@ class OrchestratorAgent:
             dict with keys: status, provider_changed, old_model, new_model
         """
         # Determine what the agent currently has vs what config says
-        _ADAPTER_PROVIDER = {
-            GeminiAdapter: "gemini",
-            OpenAIAdapter: "openai",
-            AnthropicAdapter: "anthropic",
-            MiniMaxAdapter: "minimax",
-        }
-        current_provider = _ADAPTER_PROVIDER.get(type(self.adapter), "unknown")
+        current_provider = self.service.provider
         current_base_url = getattr(self.adapter, "base_url", None)
         current_model = self.model_name
 
@@ -3787,17 +3836,18 @@ class OrchestratorAgent:
 
             self._viz_backend = target_viz_backend
 
-        # 2. Extract chat history (only useful if adapter stays the same)
-        history = None
-        if not adapter_needs_rebuild and self.chat is not None:
+        # 2. Extract canonical interface (works across all providers)
+        interface = None
+        if self.chat is not None:
             try:
-                history = self.chat.get_history()
+                interface = self.chat.interface
             except Exception:
                 pass
 
-        # 2. Rebuild adapter if provider/base_url changed
+        # 2b. Rebuild service+adapter if provider/base_url changed
         if adapter_needs_rebuild:
-            self.adapter = _create_adapter()
+            self.service = _create_llm_service()
+            self.adapter = self.service.adapter
             self._event_bus.emit(
                 DEBUG,
                 level="info",
@@ -3807,21 +3857,21 @@ class OrchestratorAgent:
         # 3. Update model name
         self.model_name = target_model
 
-        # 4. Recreate chat session with preserved history
+        # 4. Recreate chat session with preserved interface
         try:
             self.chat = self.adapter.create_chat(
                 model=get_active_model(self.model_name),
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
                 thinking="high",
-                history=history,
+                interface=interface,
             )
         except Exception as exc:
-            # Fall back to fresh chat if history transfer fails
+            # Fall back to fresh chat if interface transfer fails
             self._event_bus.emit(
                 DEBUG,
                 level="warning",
-                msg=f"[Config] Chat recreation with history failed ({exc}), starting fresh",
+                msg=f"[Config] Chat recreation with interface failed ({exc}), starting fresh",
             )
             self.chat = self.adapter.create_chat(
                 model=get_active_model(self.model_name),
@@ -4358,10 +4408,11 @@ class OrchestratorAgent:
                             if hasattr(self, "_inbox") and self._inbox is not None:
                                 from .sub_agent import _make_message
 
-                                self._inbox.put(
+                                self._put_message(
                                     _make_message(
                                         "user_input", "eureka_mode", synthetic_msg
-                                    )
+                                    ),
+                                    priority=0,
                                 )
                             else:
                                 # Fallback: store for process_message to pick up
@@ -4827,10 +4878,11 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         """Persist the current chat history and DataStore to disk."""
         if not self._session_id:
             return
+        # Use interface as single source of truth
         try:
-            history_dicts = self.chat.get_history()
+            interface_dict = self.chat.interface.to_dict()
         except Exception:
-            history_dicts = []
+            interface_dict = []
 
         store = self._store
         usage = self.get_token_usage()
@@ -4840,13 +4892,13 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         bus_user_msgs = self._event_bus.get_events(types={USER_MESSAGE})
 
         # Turn count: prefer EventBus user messages (always available); fall
-        # back to counting "user" roles in chat history for Chat API sessions.
+        # back to counting "user" roles in interface for sessions.
         # Interactions API sessions don't expose full history client-side, so
         # the EventBus count is the primary source.
         turn_count = (
             len(bus_user_msgs)
             if bus_user_msgs
-            else sum(1 for h in history_dicts if h.get("role") == "user")
+            else sum(1 for e in interface_dict if e.get("role") == "user")
         )
 
         # Round count: track orchestrator cycles (round_start → round_end pairs).
@@ -4871,16 +4923,17 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
             )
             if last_text:
                 last_preview = trunc(last_text, "history.error.brief")
-        # Fallback to history if EventBus had no text
+        # Fallback to interface history if EventBus had no text
         if not last_preview:
-            for h in reversed(history_dicts):
+            for h in reversed(interface_dict):
                 if h.get("role") == "user":
-                    parts = h.get("parts", [])
-                    for p in parts:
-                        text = p.get("text", "") if isinstance(p, dict) else ""
-                        if text:
-                            last_preview = trunc(text, "history.error.brief")
-                            break
+                    content = h.get("content", [])
+                    for block in content:
+                        if isinstance(block, dict) and block.get("type") == "text":
+                            text = block.get("text", "")
+                            if text:
+                                last_preview = trunc(text, "history.error.brief")
+                                break
                     if last_preview:
                         break
 
@@ -4914,7 +4967,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         self._session_manager.save_session(
             session_id=self._session_id,
-            chat_history=history_dicts,
+            chat_history=interface_dict,
             data_store=store,
             metadata_updates=metadata_updates,
             figure_state=self._renderer.save_state(),
@@ -4952,82 +5005,51 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
             event_log,
         ) = self._session_manager.load_session(session_id)
 
-        # Extract client history if present (Interactions API sessions)
-        client_history = None
-        if history_dicts:
-            for entry in history_dicts:
-                if isinstance(entry, dict) and "_client_history" in entry:
-                    client_history = entry["_client_history"]
-                    break
-
-        # Restore chat — prefer Interactions API interaction_id if saved
+        # Build session state dict for service.resume_session()
         saved_interaction_id = metadata.get("interaction_id")
         if skip_interaction_resume:
-            saved_interaction_id = None  # Force fresh chat
+            saved_interaction_id = None
 
-        if saved_interaction_id:
+        if history_dicts:
+            # Strip interaction_id from metadata if skipping resume (/fork)
+            resume_metadata = dict(metadata)
+            if skip_interaction_resume:
+                resume_metadata.pop("interaction_id", None)
+
+            saved_state = {
+                "session_id": session_id,
+                "messages": history_dicts,
+                "metadata": resume_metadata,
+            }
             try:
-                self.chat = self.adapter.create_chat(
-                    model=self.model_name,
-                    system_prompt=self._system_prompt,
-                    tools=self._tool_schemas,
-                    thinking="high",
-                    interaction_id=saved_interaction_id,
-                )
+                self.chat = self.service.resume_session(saved_state)
+                entry_count = len(self.chat.interface.entries) if hasattr(self.chat, 'interface') else 0
+                resume_method = "Interactions API" if saved_interaction_id else "interface"
                 self._event_bus.emit(
                     DEBUG,
                     level="debug",
-                    msg=f"[Session] Resumed via Interactions API (id={saved_interaction_id[:12]}...)",
+                    msg=f"[Session] Resumed via {resume_method} ({entry_count} entries)",
                 )
             except Exception as e:
                 self._event_bus.emit(
                     DEBUG,
                     level="warning",
-                    msg=f"[Session] Interactions resume failed: {e}. Falling back to history.",
+                    msg=f"[Session] Resume failed: {e}. Starting fresh.",
                 )
-                saved_interaction_id = None  # fall through to history path
-
-        if not saved_interaction_id:
-            # Fall back to Chat API history restoration or fresh chat
-            # Prefer client_history (Interactions API format) over Chat API history_dicts
-            seed = (
-                client_history
-                if client_history
-                else [
-                    h
-                    for h in (history_dicts or [])
-                    if isinstance(h, dict) and not any(k.startswith("_") for k in h)
-                ]
-            )
-
-            if seed:
-                try:
-                    self.chat = self.adapter.create_chat(
-                        model=self.model_name,
-                        system_prompt=self._system_prompt,
-                        tools=self._tool_schemas,
-                        history=seed,
-                        thinking="high",
-                    )
-                except Exception as e:
-                    self._event_bus.emit(
-                        DEBUG,
-                        level="warning",
-                        msg=f"[Session] Could not restore from client history: {e}. Fresh chat.",
-                    )
-                    self.chat = self.adapter.create_chat(
-                        model=self.model_name,
-                        system_prompt=self._system_prompt,
-                        tools=self._tool_schemas,
-                        thinking="high",
-                    )
-            else:
                 self.chat = self.adapter.create_chat(
                     model=self.model_name,
                     system_prompt=self._system_prompt,
                     tools=self._tool_schemas,
                     thinking="high",
                 )
+        else:
+            # No history — start fresh chat
+            self.chat = self.adapter.create_chat(
+                model=self.model_name,
+                system_prompt=self._system_prompt,
+                tools=self._tool_schemas,
+                thinking="high",
+            )
 
         # Restore DataStore — constructor auto-loads _labels.json (or migrates _index.json)
         self._store = DataStore(data_dir)
@@ -5453,6 +5475,24 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         """
         self.clear_cancel()
 
+        # Drain any held fire-and-forget results from the cancel period.
+        # These are injected BEFORE the user's message so the LLM has context
+        # but the user's intent takes priority (appears last).
+        held_prefix = ""
+        with self._held_results_lock:
+            if self._held_results:
+                logger.debug(
+                    "Draining %d held results from cancel period",
+                    len(self._held_results),
+                )
+                held_prefix = (
+                    "[Background task results received during cancellation]\n"
+                    + "\n".join(self._held_results)
+                    + "\n\n"
+                )
+                self._held_results.clear()
+            self._cancel_holdback.clear()
+
         # If a real user message arrives during Eureka Mode, reset the round counter
         # (eureka-driven synthetic messages are prefixed with "[Eureka Mode]")
         if self._eureka_mode and not user_message.startswith("[Eureka Mode]"):
@@ -5494,12 +5534,20 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         current_time = datetime.now(timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
         augmented = f"[Current time: {current_time}]\n\n{augmented}"
 
+        # Prepend held fire-and-forget results (from cancel period) before user message
+        if held_prefix:
+            augmented = f"{held_prefix}{augmented}"
+
         from .llm_utils import _CancelledDuringLLM
 
         try:
             result = self._process_single_message(augmented)
         except _CancelledDuringLLM:
-            result = "Interrupted by user."
+            # Cancel fired during an LLM API call (not during tool execution).
+            # Rollback the incomplete turn and return a canned response.
+            if self._chat:
+                self._chat.rollback_last_turn()
+            result = "Cancelled. What would you like to do?"
         except Exception:
             # Auto-save before re-raising so the session is not lost
             if self._auto_save and self._session_id:
@@ -5548,6 +5596,9 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         """Reset conversation history, mission agent cache, and sub-agents."""
         self._control_center.clear()  # Cancel in-flight work, remove all units
         self._cancel_event.clear()
+        self._cancel_holdback.clear()
+        with self._held_results_lock:
+            self._held_results.clear()
         self.chat = self.adapter.create_chat(
             model=get_active_model(self.model_name),
             system_prompt=self._system_prompt,

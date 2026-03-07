@@ -111,6 +111,19 @@ receive a new request:
    for.
 4. If the user asks for a completely different plot type or dataset, start fresh.
 
+## Retry Policy
+
+If your script fails, you will see the traceback in stderr. Read the error carefully and
+fix the issue in your next attempt. You have up to **5 retry attempts** for the same
+visualization request before giving up.
+Common failure modes:
+- Wrong column names — use `print(df.columns.tolist())` to check
+- Empty DataFrame — check `print(df.shape)` and `print(df.head())`
+- NaN values — use `df.dropna()` or `np.nanmean()` as appropriate
+- Index/timedelta issues — convert to proper types before operations
+
+When you hit a repeated error, try a different approach rather than the same fix.
+
 ## Response Style
 
 After each operation:

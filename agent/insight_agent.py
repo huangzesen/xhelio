@@ -14,6 +14,8 @@ generic and structured; the user_request steers the response.
 
 from __future__ import annotations
 
+import threading
+
 from .sub_agent import SubAgent, Message
 from .llm_utils import _CancelledDuringLLM, send_with_timeout
 from .event_bus import EventBus, INSIGHT_RESULT, INSIGHT_FEEDBACK
@@ -34,6 +36,7 @@ class InsightAgent(SubAgent):
         tool_executor,
         *,
         event_bus: EventBus | None = None,
+        cancel_event: threading.Event | None = None,
     ):
         super().__init__(
             agent_id="InsightAgent",
@@ -43,6 +46,7 @@ class InsightAgent(SubAgent):
             system_prompt=build_insight_prompt(),
             tool_schemas=[],  # No tools — pure text/image generation
             event_bus=event_bus,
+            cancel_event=cancel_event,
         )
 
     def _is_minimax(self) -> bool:

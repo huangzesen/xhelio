@@ -2,13 +2,11 @@
 
 from __future__ import annotations
 from typing import TYPE_CHECKING
-import time
-
 if TYPE_CHECKING:
     from agent.core import OrchestratorAgent
 
 from agent.sub_agent import AgentState
-from agent.event_bus import DELEGATION, DELEGATION_DONE, DELEGATION_ASYNC_STARTED
+from agent.event_bus import DELEGATION, DELEGATION_DONE
 
 
 def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict:
@@ -21,68 +19,6 @@ def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict
         level="debug",
         msg=f"[Router] Delegating to {mission_id} specialist{mode_text}",
     )
-
-    # Handle fire-and-forget
-    if not wait:
-        # Track this as an async delegation with start time
-        if not hasattr(orch, '_async_delegations'):
-            orch._async_delegations = {}
-        agent_id_for_async = f"EnvoyAgent[{mission_id}]"
-        start_time = time.time()
-        orch._async_delegations[agent_id_for_async] = start_time
-
-        orch._event_bus.emit(
-            DELEGATION_ASYNC_STARTED,
-            level="info",
-            msg=f"[Router] Fire-and-forget: {mission_id} specialist running in background",
-            data={"agent": agent_id_for_async, "start_time": start_time},
-        )
-
-        # Actually start the sub-agent in the background
-        try:
-            primary = orch._get_or_create_envoy_agent(mission_id)
-            if primary.state != AgentState.SLEEPING or primary.inbox.qsize() > 0:
-                agent = orch._create_ephemeral_envoy_agent(mission_id)
-                is_ephemeral = True
-            else:
-                agent = primary
-                is_ephemeral = False
-            full_request = orch._build_envoy_request(mission_id, request, agent=agent)
-            tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-            def _envoy_post(
-                result, _mid=mission_id, _actor_id=agent.agent_id, _eph=is_ephemeral
-            ):
-                result["mission"] = _mid
-                orch._event_bus.emit(
-                    DELEGATION_DONE,
-                    level="debug",
-                    msg=f"[Router] {_mid} specialist finished",
-                    data={
-                        "status": result.get("status"),
-                        "text_preview": result.get("result", "")[:200],
-                    },
-                )
-                if _eph:
-                    orch._cleanup_ephemeral_agent(_actor_id)
-                return result
-
-            return orch._delegate_to_sub_agent(
-                agent,
-                full_request,
-                store_snapshot=orch._store.list_entries(),
-                tool_call_id=tool_call_id,
-                agent_type="envoy",
-                agent_name=agent.agent_id,
-                task_summary=request[:200],
-                post_process=_envoy_post,
-                wait=wait,
-            )
-        except (KeyError, FileNotFoundError):
-            return {
-                "status": "error",
-                "message": f"Unknown mission '{mission_id}'. Check the supported missions table.",
-            }
 
     try:
         primary = orch._get_or_create_envoy_agent(mission_id)
@@ -138,25 +74,6 @@ def handle_delegate_to_viz(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     backend = tool_args.get("backend") or config.PREFER_VIZ_BACKEND
     wait = tool_args.get("wait", True)
     mode_text = " (run in background)" if not wait else ""
-
-    # Track async delegation for fire-and-forget
-    if not wait:
-        if not hasattr(orch, '_async_delegations'):
-            orch._async_delegations = {}
-        if backend == "matplotlib":
-            viz_agent_id = "VizAgent[Mpl]"
-        elif backend == "jsx":
-            viz_agent_id = "VizAgent[JSX]"
-        else:
-            viz_agent_id = "VizAgent[Plotly]"
-        start_time = time.time()
-        orch._async_delegations[viz_agent_id] = start_time
-        orch._event_bus.emit(
-            DELEGATION_ASYNC_STARTED,
-            level="info",
-            msg=f"[Router] Fire-and-forget: {backend} Visualization specialist running in background",
-            data={"agent": viz_agent_id, "start_time": start_time},
-        )
 
     if backend == "matplotlib":
         return _handle_delegate_to_viz_mpl(orch, request, context, wait=wait)
@@ -460,19 +377,6 @@ def handle_delegate_to_data_ops(orch: "OrchestratorAgent", tool_args: dict) -> d
         msg=f"[Router] Delegating to DataOps specialist{mode_text}",
     )
 
-    # Track async delegation for fire-and-forget
-    if not wait:
-        if not hasattr(orch, '_async_delegations'):
-            orch._async_delegations = {}
-        start_time = time.time()
-        orch._async_delegations["DataOpsAgent"] = start_time
-        orch._event_bus.emit(
-            DELEGATION_ASYNC_STARTED,
-            level="info",
-            msg="[Router] Fire-and-forget: DataOps specialist running in background",
-            data={"agent": "DataOpsAgent", "start_time": start_time},
-        )
-
     agent = orch._get_available_dataops_agent()
     is_ephemeral = agent.agent_id != "DataOpsAgent"
     full_request = orch._build_dataops_request(request, context, agent=agent)
@@ -517,19 +421,6 @@ def handle_delegate_to_data_extraction(
         level="debug",
         msg=f"[Router] Delegating to DataExtraction specialist{mode_text}",
     )
-
-    # Track async delegation for fire-and-forget
-    if not wait:
-        if not hasattr(orch, '_async_delegations'):
-            orch._async_delegations = {}
-        start_time = time.time()
-        orch._async_delegations["DataExtractionAgent"] = start_time
-        orch._event_bus.emit(
-            DELEGATION_ASYNC_STARTED,
-            level="info",
-            msg="[Router] Fire-and-forget: DataExtraction specialist running in background",
-            data={"agent": "DataExtractionAgent", "start_time": start_time},
-        )
 
     agent = orch._get_or_create_extraction_agent()
     if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
@@ -578,19 +469,6 @@ def handle_delegate_to_insight(orch: "OrchestratorAgent", tool_args: dict) -> di
         level="debug",
         msg=f"[Router] Delegating to Insight specialist{mode_text}",
     )
-
-    # Track async delegation for fire-and-forget
-    if not wait:
-        if not hasattr(orch, '_async_delegations'):
-            orch._async_delegations = {}
-        start_time = time.time()
-        orch._async_delegations["InsightAgent"] = start_time
-        orch._event_bus.emit(
-            DELEGATION_ASYNC_STARTED,
-            level="info",
-            msg="[Router] Fire-and-forget: Insight specialist running in background",
-            data={"agent": "InsightAgent", "start_time": start_time},
-        )
 
     image_bytes = orch.get_latest_figure_png()
     if image_bytes is None:

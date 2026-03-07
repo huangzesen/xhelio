@@ -10,6 +10,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
+from .interface import LLMInterface, ToolResultBlock
 from .rate_limiter import RateLimiter
 
 
@@ -76,6 +77,16 @@ class FunctionSchema:
     description: str
     parameters: dict
 
+    def to_dict(self) -> dict:
+        return {"name": self.name, "description": self.description, "parameters": self.parameters}
+
+    @staticmethod
+    def list_to_dicts(schemas: list[FunctionSchema] | None) -> list[dict] | None:
+        """Convert a list of FunctionSchema to dicts, or None if empty/None."""
+        if not schemas:
+            return None
+        return [s.to_dict() for s in schemas]
+
 
 # ---------------------------------------------------------------------------
 # ChatSession ABC
@@ -85,21 +96,53 @@ class FunctionSchema:
 class ChatSession(ABC):
     """Abstract multi-turn chat session."""
 
+    # xhelio-assigned session ID, set by LLMService
+    session_id: str = ""
+    # Session metadata for get_state()
+    _agent_type: str = ""
+    _tracked: bool = True
+
+    @property
+    @abstractmethod
+    def interface(self) -> LLMInterface:
+        """The canonical LLMInterface for this session."""
+
     @abstractmethod
     def send(self, message) -> LLMResponse:
         """Send a user message or tool results and return the model response.
 
         ``message`` can be:
         - A string (user text message)
-        - A list of tool-result objects (provider-specific, built via
-          ``LLMAdapter.make_tool_result_message()``)
-        - A multimodal message (provider-specific, built via
-          ``LLMAdapter.make_multimodal_message()``)
+        - A list of ToolResultBlock (canonical tool results)
+        - A multimodal message (built via LLMAdapter.make_multimodal_message())
         """
 
-    @abstractmethod
     def get_history(self) -> list[dict]:
-        """Return serializable conversation history for session persistence."""
+        """Return serializable conversation history (canonical format)."""
+        return self.interface.to_dict()
+
+    def get_state(self) -> dict:
+        """Return the full session state dict.
+
+        Format: {"session_id": str, "messages": [...], "metadata": {...}}
+        """
+        return {
+            "session_id": self.session_id,
+            "messages": self.interface.to_dict(),
+            "metadata": {
+                "agent_type": self._agent_type,
+                "created_at": self.interface.entries[0].timestamp if self.interface.entries else 0.0,
+                "tracked": self._tracked,
+            },
+        }
+
+    def total_usage(self) -> dict:
+        """Sum tokens and count API calls across all messages."""
+        return self.interface.total_usage()
+
+    def usage_by_model(self) -> dict[str, dict]:
+        """Breakdown of usage per model name."""
+        return self.interface.usage_by_model()
 
     def send_stream(
         self,
@@ -128,6 +171,18 @@ class ChatSession(ABC):
 
         Default is a no-op for adapters that don't need it (e.g., server-managed
         history).
+        """
+
+    def rollback_last_turn(self) -> None:
+        """Remove the last assistant/model turn and any trailing tool-result messages.
+
+        Used on cancellation to strip incomplete tool_use/tool_result pairs.
+        Walks backward from the end of history, removing:
+        1. Trailing tool-result messages (role='tool' for OpenAI, or user messages
+           containing only tool_result blocks for Anthropic/Gemini).
+        2. The last assistant/model message.
+
+        Default is a no-op. Override in adapters that manage client-side history.
         """
 
     def update_tools(self, tools: list[FunctionSchema] | None) -> None:
@@ -208,7 +263,7 @@ class LLMAdapter(ABC):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        history: list[dict] | None = None,
+        interface: LLMInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,
     ) -> ChatSession:
@@ -221,7 +276,9 @@ class LLMAdapter(ABC):
             json_schema: If set, enforce JSON output conforming to this schema.
             force_tool_call: If True, force the model to call a tool (Gemini
                 ``mode="ANY"``).
-            history: Previously serialized conversation turns to restore.
+            interface: Previously saved LLMInterface to restore.
+                The session inherits this interface instance and converts
+                it to provider format for the initial API state.
             thinking: Thinking level — ``"low"``, ``"high"``, or ``"default"``
                 (adapter decides).
             interaction_id: Gemini Interactions API session ID for server-side
@@ -248,17 +305,13 @@ class LLMAdapter(ABC):
     @abstractmethod
     def make_tool_result_message(
         self, tool_name: str, result: dict, *, tool_call_id: str | None = None
-    ) -> Any:
-        """Build a provider-specific tool result object.
-
-        Returned value is passed into ``ChatSession.send()`` as part of a list
-        of tool results.
+    ) -> ToolResultBlock:
+        """Build a canonical ToolResultBlock.
 
         Args:
             tool_name: The name of the tool that was called.
             result: The result dict returned by the tool executor.
-            tool_call_id: Provider-assigned tool-call ID from ``ToolCall.id``.
-                Required by OpenAI/Anthropic; ignored by Gemini.
+            tool_call_id: Provider-assigned tool-call ID from ToolCall.id.
         """
 
     @abstractmethod

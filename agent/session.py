@@ -355,6 +355,12 @@ class SessionManager:
             raise FileNotFoundError(f"Session not found: {session_id}")
 
         history = self._read_json(session_dir / "history.json") or []
+        # Legacy format detection: old sessions stored a flat list of entries;
+        # new sessions use {"session_id": ..., "messages": [...], "metadata": {...}}.
+        # Normalize to always return a flat list of entry dicts here (the new
+        # session state wrapper is handled by the caller).
+        if isinstance(history, dict) and "messages" in history:
+            history = history["messages"]
         history = _decode_bytes_fields(history)
         metadata = self._read_json(session_dir / "metadata.json") or {}
         data_dir = session_dir / "data"

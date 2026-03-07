@@ -10,6 +10,8 @@ Uses store_dataframe to create DataFrames and read_document to read
 documents.
 """
 
+import threading
+
 from .llm import LLMAdapter
 from .sub_agent import SubAgent
 from .tools import get_function_schemas
@@ -35,6 +37,7 @@ class DataExtractionAgent(SubAgent):
         tool_executor,
         *,
         event_bus: EventBus | None = None,
+        cancel_event: threading.Event | None = None,
     ):
         tool_schemas = get_function_schemas(names=EXTRACTION_TOOLS)
 
@@ -46,4 +49,5 @@ class DataExtractionAgent(SubAgent):
             system_prompt=build_data_extraction_prompt(),
             tool_schemas=tool_schemas,
             event_bus=event_bus,
+            cancel_event=cancel_event,
         )
