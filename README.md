@@ -60,10 +60,10 @@ XHelio supports 10 LLM providers out of the box. Set `llm_provider` in `~/.xheli
 | **MiniMax** | `minimax` | `MINIMAX_API_KEY` | Anthropic-compatible API |
 | **xAI Grok** | `grok` | `GROK_API_KEY` | OpenAI-compatible API |
 | **DeepSeek** | `deepseek` | `DEEPSEEK_API_KEY` | OpenAI-compatible API |
-| **Alibaba Qwen** | `qwen` | `QWEN_API_KEY` | DashScope OpenAI-compatible API |
+| **Alibaba Qwen** | `qwen` | `QWEN_API_KEY` | OpenAI-compatible API |
 | **Moonshot Kimi** | `kimi` | `KIMI_API_KEY` | OpenAI or Anthropic compatible |
 | **Zhipu GLM** | `glm` | `GLM_API_KEY` | OpenAI-compatible API |
-| **Custom** | `custom` | `CUSTOM_API_KEY` | Any OpenAI-compatible endpoint via `base_url` |
+| **Custom** | `custom` | `CUSTOM_API_KEY` | Any OpenAI- or Anthropic-compatible endpoint via `base_url` + `api_compat` |
 
 Each provider has five model tiers (smart, sub-agent, insight, inline, planner) configured independently. See `config.template.json` for all options.
 
