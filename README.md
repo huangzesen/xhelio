@@ -1,16 +1,16 @@
 # XHelio — Explore Heliosphere!
 
-> Talk to NASA's spacecraft data. Powered by Google Gemini.
+> Talk to NASA's spacecraft data. Supports all major LLM providers.
 
-An autonomous AI agent that replaces complex analysis scripts with a single conversation. Ask for spacecraft data in plain English — the agent navigates NASA's heliophysics archive (70+ missions, 3,000+ datasets, decades of observations), handles the entire data pipeline, and produces interactive visualizations on demand. It eliminates the tooling barrier that normally takes months to overcome: opaque dataset IDs, mission-specific naming conventions, data access protocols, coordinate systems, unit conversions, and multi-panel plot boilerplate.
+An autonomous AI agent that replaces complex analysis scripts with a single conversation. Ask for spacecraft data in plain English — the agent navigates NASA's heliophysics archive (60+ missions, 3,000+ datasets, decades of observations), handles the entire data pipeline, and produces interactive visualizations on demand. It eliminates the tooling barrier that normally takes months to overcome: opaque dataset IDs, mission-specific naming conventions, data access protocols, coordinate systems, unit conversions, and multi-panel plot boilerplate.
 
 ## Quick Start
 
 ### Prerequisites
 
 - Python 3.11+
-- Node.js 18+ (for the SolidJS frontend)
-- A Google Gemini API key
+- Node.js 18+ (for the React frontend)
+- An API key for your preferred LLM provider
 
 ### Setup
 
@@ -22,7 +22,7 @@ source venv/bin/activate  # Windows: venv\Scripts\activate
 pip install -e .
 ```
 
-On first run, you'll be prompted for an API key. Mission data (70+ spacecraft profiles with dataset IDs, parameter metadata, and instrument groupings) is included in the repository — no download step required.
+On first run, you'll be prompted for an API key. Mission data (60+ spacecraft profiles with dataset IDs, parameter metadata, and instrument groupings) is included in the repository — no download step required.
 
 ### Run (Web UI — recommended)
 
@@ -30,7 +30,7 @@ On first run, you'll be prompted for an API key. Mission data (70+ spacecraft pr
 xhelio
 ```
 
-This launches both the FastAPI backend (`:8000`) and the SolidJS frontend (`:5173`), installing frontend npm dependencies automatically on first run. Opens **http://localhost:5173** in your browser. Press `Ctrl+C` to stop both.
+This launches both the FastAPI backend (`:8000`) and the React frontend (`:5173`), installing frontend npm dependencies automatically on first run. Opens **http://localhost:5173** in your browser. Press `Ctrl+C` to stop both.
 
 The web UI provides five pages:
 - **Chat** — Conversational interface with streaming responses, interactive Plotly plots, follow-up suggestions, and example prompts
@@ -48,23 +48,44 @@ xhelio cli --verbose            # Show tool calls and timing
 xhelio mcp                      # MCP server over stdio
 ```
 
+## LLM Providers
+
+XHelio supports 10 LLM providers out of the box. Set `llm_provider` in `~/.xhelio/config.json` and the corresponding API key in `.env`:
+
+| Provider | `llm_provider` | API Key Env Var | Notes |
+|----------|----------------|-----------------|-------|
+| **Google Gemini** | `gemini` (default) | `GOOGLE_API_KEY` | Function calling, extended thinking, vision, web search |
+| **Anthropic Claude** | `anthropic` | `ANTHROPIC_API_KEY` | Extended thinking, vision, built-in web search |
+| **OpenAI / compatible** | `openai` | `OPENAI_API_KEY` | Works with OpenRouter, Ollama, or any OpenAI-compatible endpoint |
+| **MiniMax** | `minimax` | `MINIMAX_API_KEY` | Anthropic-compatible API |
+| **xAI Grok** | `grok` | `GROK_API_KEY` | OpenAI-compatible API |
+| **DeepSeek** | `deepseek` | `DEEPSEEK_API_KEY` | OpenAI-compatible API |
+| **Alibaba Qwen** | `qwen` | `QWEN_API_KEY` | DashScope OpenAI-compatible API |
+| **Moonshot Kimi** | `kimi` | `KIMI_API_KEY` | OpenAI or Anthropic compatible |
+| **Zhipu GLM** | `glm` | `GLM_API_KEY` | OpenAI-compatible API |
+| **Custom** | `custom` | `CUSTOM_API_KEY` | Any OpenAI-compatible endpoint via `base_url` |
+
+Each provider has five model tiers (smart, sub-agent, insight, inline, planner) configured independently. See `config.template.json` for all options.
+
 ## Features
 
-- **70+ spacecraft, 3,000+ datasets** — Parker Solar Probe, Solar Orbiter, ACE, MMS, Wind, DSCOVR, STEREO, Cluster, THEMIS, Van Allen Probes, GOES, Voyager, Cassini, Juno, MAVEN, Ulysses, and more (54 CDAWeb + 17 PDS PPI missions)
+- **60+ spacecraft, 3,000+ datasets** — Parker Solar Probe, Solar Orbiter, ACE, MMS, Wind, DSCOVR, STEREO, Cluster, THEMIS, Van Allen Probes, GOES, Voyager, Cassini, Juno, MAVEN, Ulysses, and more (54 CDAWeb + 17 PDS PPI missions)
 - **Full CDAWeb catalog search** — access any of NASA's 2,000+ heliophysics datasets, not just pre-configured ones
-- **Google Gemini** — powered by Gemini models with function calling, extended thinking, and multimodal vision
+- **10 LLM providers** — Google Gemini, Anthropic Claude, OpenAI, MiniMax, Grok, DeepSeek, Qwen, Kimi, GLM, or any OpenAI-compatible endpoint
 - **Autonomous multi-step planning** — complex requests decomposed into task batches with dynamic replanning
 - **Physics-aware computation** — magnitude, Alfven speed, plasma beta, spectral analysis, wavelets, smoothing, resampling, derivatives — the LLM writes the code in an AST-validated sandbox
 - **SPICE ephemeris** — spacecraft positions, trajectories, coordinate transforms via the `heliospice` package
+- **Three visualization backends** — interactive Plotly (default), publication-quality matplotlib, and React/Recharts JSX dashboards
 - **Cross-mission comparison** — automatically handles different dataset naming conventions, coordinate systems, and cadences
-- **Web search** — find real-time space weather events, ICME catalogs, solar flare lists and feed them into the analysis pipeline (Google Search grounding)
+- **Web search** — find real-time space weather events, ICME catalogs, solar flare lists and feed them into the analysis pipeline
 - **Document ingestion** — upload PDFs or images of data tables, extract structured data via LLM vision
 - **Multimodal plot analysis** — InsightAgent analyzes rendered plots via LLM vision to provide scientific interpretation (feature identification, data quality assessment, coordinate system awareness)
+- **Automated discovery** — EurekaAgent scans session data for scientific findings and suggests follow-up analyses
 - **Long-term memory with consumer-side review** — learns preferences, pitfalls, and scientific discoveries across sessions; consuming agents rate each injected memory after task completion (see [Memory System](#memory-system) below)
-- **Interactive Plotly plots** — zoom, pan, hover tooltips, multi-panel subplots, WebGL for large datasets
 - **Pipeline DAG** — inspect, modify, and re-execute data pipelines with staleness tracking
 - **Saved pipelines** — extract replayable workflows from sessions, parameterized by time range, with family-based dedup and searchable index
 - **Session persistence** — auto-saves every turn, resume with `--continue`
+- **MCP server** — expose XHelio as a tool server for Claude Desktop, Claude Code, Cursor, or any MCP client
 - **PNG/PDF export** — publication-ready static images via kaleido
 
 ## Example Workflows
@@ -92,84 +113,93 @@ The agent searches the web for storm catalogs, identifies the May 2024 event, fe
 > [Upload a PDF table of ICME events from Richardson & Cane catalog]
 > "Extract the events from 2023-2024 and plot their transit speeds as a time series"
 
-LLM vision reads the PDF, the DataIOAgent converts the table to a structured DataFrame, and the VizPlotlyActor renders the result.
+LLM vision reads the PDF, the DataIOAgent converts the table to a structured DataFrame, and the visualization agent renders the result.
 
 ## Architecture
 
-Nine specialized agents, each with domain-specific tools and system prompts:
+Eleven specialized agents, each with domain-specific tools and system prompts:
 
 ```
 User Request
     |
     v
-OrchestratorAgent (Gemini, HIGH thinking)
-    |--- Routing table: 70+ missions × instrument types → specialist selection
+OrchestratorAgent (configurable LLM provider)
+    |--- Routing table: 60+ missions x instrument types -> specialist selection
     |--- Activates PlannerAgent for complex multi-step requests
     |
-    +---> MissionActor (per-spacecraft)      Knows dataset IDs, parameter names,
-    |                                        coordinate systems, time ranges
-    +---> DataOpsActor                      Writes pandas/numpy/scipy/pywt code
-    |                                        in an AST-validated sandbox
-    +---> DataIOAgent                       Converts search results, PDFs,
-    |                                        event catalogs into DataFrames;
-    |                                        loads local files (CSV, JSON, etc.)
-    +---> VizPlotlyActor                          Interactive Plotly figures with
-    |                                        domain-appropriate defaults
-    +---> InsightAgent                      Analyzes rendered plots via
-    |                                        LLM vision (multimodal)
-    +---> PlannerAgent                      Decomposes, executes, observes,
-    |                                        replans (up to 5 rounds)
-    +---> MemoryAgent                       Extracts preferences, pitfalls,
-                                             and summaries across sessions
+    +---> EnvoyAgent (per-spacecraft)         Knows dataset IDs, parameter names,
+    |                                          coordinate systems, time ranges
+    +---> DataOpsAgent                        Writes pandas/numpy/scipy/pywt code
+    |                                          in an AST-validated sandbox
+    +---> DataIOAgent                         Converts search results, PDFs,
+    |                                          event catalogs into DataFrames;
+    |                                          loads local files (CSV, JSON, etc.)
+    +---> VizPlotlyAgent                      Interactive Plotly figures with
+    |                                          domain-appropriate defaults
+    +---> VizMplAgent                         Publication-quality matplotlib plots
+    |                                          with script generation
+    +---> VizJsxAgent                         React/Recharts JSX dashboard
+    |                                          components
+    +---> InsightAgent                        Analyzes rendered plots via
+    |                                          LLM vision (multimodal)
+    +---> PlannerAgent                        Decomposes, executes, observes,
+    |                                          replans (up to 10 rounds)
+    +---> EurekaAgent                         Automated scientific discovery
+    |                                          and follow-up suggestions
+    +---> MemoryAgent                         Extracts preferences, pitfalls,
+                                               and summaries across sessions
 ```
 
-**Data pipeline:** Natural language &rarr; dataset discovery &rarr; data fetch (CDF/PDS) &rarr; pandas DataFrame &rarr; LLM-generated computation &rarr; interactive Plotly plot
+**Data pipeline:** Natural language &rarr; dataset discovery &rarr; data fetch (CDF/PDS) &rarr; pandas DataFrame &rarr; LLM-generated computation &rarr; interactive visualization
 
 **Key design decisions:**
 - **LLM-driven routing** — the orchestrator uses conversation context and a routing table to decide which specialist handles each request. No regex dispatching.
-- **Code generation sandbox** — the LLM writes pandas/numpy/scipy/pywt code for data transformations. All generated code is AST-validated before execution (blocks imports, exec/eval, os/sys access). Visualization uses 2 declarative tools (`render_plotly_json`, `manage_plot`) — no free-form code generation for plots.
-- **Per-mission knowledge base** — 70+ auto-generated mission JSON files (54 CDAWeb + 17 PPI) with instrument groupings, dataset IDs, parameter metadata, and time ranges. CDAWeb and PPI missions with matching stems are deep-merged at load time. The orchestrator sees only a routing table; sub-agents receive rich domain-specific prompts with recommended datasets and analysis patterns.
-- **Three-tier caching** — metadata: memory → local JSON file → Master CDF download. Mission data ships pre-built in the repository; new datasets are auto-cached on first access.
+- **Code generation sandbox** — the LLM writes pandas/numpy/scipy/pywt code for data transformations. All generated code is AST-validated before execution (blocks imports, exec/eval, os/sys access). Visualization uses declarative tools (`render_plotly_json`, `manage_plot`) — no free-form code generation for plots.
+- **Per-mission knowledge base** — 60+ auto-generated mission profiles (54 CDAWeb + 17 PPI) with instrument groupings, dataset IDs, parameter metadata, and time ranges. CDAWeb and PPI missions with matching stems are deep-merged at load time. The orchestrator sees only a routing table; sub-agents receive rich domain-specific prompts with recommended datasets and analysis patterns.
+- **Three-tier caching** — metadata: memory &rarr; local JSON file &rarr; Master CDF download. Mission data ships pre-built in the repository; new datasets are auto-cached on first access.
 
 ## Project Structure
 
 ```
-agent/                  Core agent layer (9 agents + 46 tools)
+agent/                  Core agent layer (11 agents + 41 tools)
   core.py                 OrchestratorAgent — routes, dispatches, plans
   envoy_agent.py          EnvoyAgent — per-spacecraft data fetching
-  data_ops_agent.py       DataOpsActor — pandas/numpy/scipy/pywt computation
-  data_io_agent.py       DataIOAgent — text/PDF to DataFrames, local file import
-  viz_plotly_agent.py  VizPlotlyActor — Plotly rendering
+  data_ops_agent.py       DataOpsAgent — pandas/numpy/scipy/pywt computation
+  data_io_agent.py        DataIOAgent — text/PDF to DataFrames, local file import
+  viz_plotly_agent.py     VizPlotlyAgent — interactive Plotly rendering
+  viz_mpl_agent.py        VizMplAgent — matplotlib script generation
+  viz_jsx_agent.py        VizJsxAgent — React/Recharts JSX components
   insight_agent.py        InsightAgent — multimodal plot analysis via LLM vision
+  eureka_agent.py         EurekaAgent — automated discovery and follow-ups
   planner.py              PlannerAgent — plan-execute-replan loop
   memory_agent.py         MemoryAgent — cross-session memory extraction
-  tools.py                46 tool schemas
+  tools.py                41 tool schemas
   session.py              Session persistence (auto-save every turn)
   memory.py               Long-term memory storage and management
-  llm/                    LLM abstraction layer (Gemini)
+  llm/                    LLM abstraction layer (10 provider adapters)
 
-knowledge/              70+ mission knowledge base + prompt generation
-  missions/cdaweb/*.json  54 CDAWeb mission profiles (auto-generated)
-  missions/ppi/*.json     17 PDS PPI mission profiles (auto-generated)
+knowledge/              60+ mission knowledge base + prompt generation
+  missions/cdaweb/        54 CDAWeb mission profiles (auto-generated)
+  missions/ppi/           17 PDS PPI mission profiles (auto-generated)
   catalog.py              Mission catalog with keyword search
   catalog_search.py       Full CDAWeb + PPI catalog search
   mission_loader.py       Lazy-loading cache and routing table
   prompt_builder.py       Dynamic system prompts per agent type
-  metadata_client.py      3-layer metadata cache (memory → file → Master CDF)
+  metadata_client.py      3-layer metadata cache (memory -> file -> Master CDF)
   bootstrap.py            Mission data auto-download and refresh
 
 data_ops/               pandas-backed data pipeline
-  fetch.py                Data fetching (CDF/PDS) → DataFrames
+  fetch.py                Data fetching (CDF/PDS) -> DataFrames
   store.py                In-memory DataStore singleton
   custom_ops.py           AST-validated sandbox for LLM-generated code
   pipeline.py             Pipeline DAG + SavedPipeline (replayable workflows)
 
 rendering/              Plotly visualization engine
   plotly_renderer.py      Multi-panel figures, WebGL, PNG/PDF export
-  registry.py             2 declarative visualization tools (render_plotly_json, manage_plot)
+  registry.py             Declarative visualization tools
 
 api/                    FastAPI backend (routes, session manager, SSE streaming)
-frontend/               SolidJS frontend (Vite + TypeScript + Tailwind)
+frontend/               React 19 frontend (Vite + TypeScript + Tailwind)
 
 xhelio_cli.py           CLI entry point (xhelio command)
 api_server.py           FastAPI server entry point
@@ -178,7 +208,7 @@ mcp_server.py           MCP server over stdio
 
 ## Mission Data
 
-The repository ships with pre-built mission data for 70+ spacecraft (3,456 JSON files covering 54 CDAWeb and 17 PDS PPI missions). This includes:
+The repository ships with pre-built mission data for 60+ spacecraft (3,456 JSON files covering 54 CDAWeb and 17 PDS PPI missions). This includes:
 
 - **Mission profiles** — instrument groupings, dataset IDs, time ranges, and recommended analysis patterns for each spacecraft
 - **Parameter metadata** — variable names, descriptions, units, and dimensions for every dataset, cached from CDAWeb Master CDF files
@@ -199,21 +229,18 @@ The CI workflow (`.github/workflows/sync-public.yml`) downloads this archive and
 
 ## Configuration
 
-API keys are stored in `.env` at the project root:
-
-| Environment Variable | Default | Description |
-|---|---|---|
-| `GOOGLE_API_KEY` | (required) | Gemini API key |
+API keys are stored in `.env` at the project root (see [LLM Providers](#llm-providers) above for the full list).
 
 All other settings are in `~/.xhelio/config.json` (see `config.template.json` for all options):
 
 | Setting | Default | Description |
 |---|---|---|
-| `providers.gemini.model` | `"gemini-3-flash"` | Model for orchestrator + planner |
-| `providers.gemini.sub_agent_model` | `"gemini-3-flash"` | Model for sub-agents |
-| `providers.gemini.insight_model` | `"gemini-2.5-flash"` | Model for InsightAgent (multimodal plot analysis) |
-| `providers.gemini.inline_model` | `"gemini-2.5-flash-lite"` | Model for follow-ups, autocomplete |
-| `providers.gemini.planner_model` | `"gemini-3-flash-preview"` | Model for PlannerAgent |
+| `llm_provider` | `"gemini"` | Active LLM provider (`gemini`, `anthropic`, `openai`, `minimax`, `grok`, `deepseek`, `qwen`, `kimi`, `glm`, `custom`) |
+| `providers.<name>.model` | varies | Model for orchestrator + planner |
+| `providers.<name>.sub_agent_model` | varies | Model for sub-agents |
+| `providers.<name>.insight_model` | varies | Model for InsightAgent (multimodal) |
+| `providers.<name>.inline_model` | varies | Model for follow-ups, autocomplete |
+| `providers.<name>.planner_model` | varies | Model for PlannerAgent |
 
 ## Memory System
 
@@ -237,10 +264,10 @@ A fifth type, **review**, stores consumer feedback on other memories (see [Consu
 Each memory belongs to one or more scopes: `generic`, `mission:<ID>` (e.g., `mission:PSP`), `visualization`, or `data_ops`. When a sub-agent is activated, only memories matching its scope are injected:
 
 ```
-MissionActor[PSP]      ← receives memories scoped to "mission:PSP" + "generic"
-VizPlotlyActor               ← receives memories scoped to "visualization" + "generic"
-DataOpsActor           ← receives memories scoped to "data_ops" + "generic"
-OrchestratorAgent      ← receives all "generic" memories + session summaries
+EnvoyAgent[PSP]        <- receives memories scoped to "mission:PSP" + "generic"
+VizPlotlyAgent         <- receives memories scoped to "visualization" + "generic"
+DataOpsAgent           <- receives memories scoped to "data_ops" + "generic"
+OrchestratorAgent      <- receives all "generic" memories + session summaries
 ```
 
 Injection is controlled by a global token budget (default 100,000 tokens) to prevent prompt explosion. Memories are added in priority order (preferences, summaries, pitfalls, reflections) until the budget is exhausted.
@@ -261,9 +288,9 @@ After completing a task, each consuming agent is required to review the memories
 
 Most AI memory systems use **write-time importance scoring** (the creator rates a memory when it's created, e.g., [Generative Agents, Park et al. 2023](https://arxiv.org/abs/2304.03442)) or **passive decay signals** (access frequency and recency, e.g., [FadeMem](https://arxiv.org/abs/2601.18642), [Mem0](https://arxiv.org/html/2504.19413v1)). XHelio's approach is different:
 
-1. **Read-time evaluation** — the agent that *uses* a memory rates it after the task, not the agent that *created* it. A pitfall about NaN handling might be rated 5 stars by DataOpsActor but 1 star by VizPlotlyActor.
+1. **Read-time evaluation** — the agent that *uses* a memory rates it after the task, not the agent that *created* it. A pitfall about NaN handling might be rated 5 stars by DataOpsAgent but 1 star by VizPlotlyAgent.
 
-2. **Per-agent reviews** — each agent type gets its own review for the same memory. A MissionActor and a DataOpsActor can independently rate the same pitfall, and both reviews coexist.
+2. **Per-agent reviews** — each agent type gets its own review for the same memory. An EnvoyAgent and a DataOpsAgent can independently rate the same pitfall, and both reviews coexist.
 
 3. **Structured feedback** — reviews include a star rating (1-5) plus a structured comment with labeled sections:
    - *Rating*: why this star count
@@ -292,10 +319,11 @@ Most AI memory systems use **write-time importance scoring** (the creator rates 
 
 ## Tech Stack
 
-- **Google Gemini** — function calling, extended thinking, structured output, and multimodal vision
+- **LLM providers** — Google Gemini, Anthropic Claude, OpenAI, MiniMax, Grok, DeepSeek, Qwen, Kimi, GLM, or any OpenAI-compatible endpoint (10 adapters via `agent/llm/`)
 - **FastAPI + SSE** — backend API with server-sent events for streaming
-- **SolidJS + TypeScript + Vite** — frontend with Tailwind CSS
+- **React 19 + TypeScript + Vite** — frontend with Tailwind CSS
 - **Plotly** — interactive scientific data visualization with WebGL
+- **matplotlib** — publication-quality static plots with script generation
 - **pandas / numpy / scipy / PyWavelets** — data pipeline, computation, spectral analysis, wavelets
 - **heliospice** — SPICE ephemeris for spacecraft positions and coordinate transforms
 - **CDAWeb + PDS PPI** — NASA data archives (CDF file downloads, PDS file archive)
