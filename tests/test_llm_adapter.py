@@ -101,10 +101,10 @@ class TestGeminiAdapterMocked:
 
     @pytest.fixture
     def adapter(self):
-        with patch("agent.llm.gemini_adapter.genai") as mock_genai:
+        with patch("agent.llm.gemini.adapter.genai") as mock_genai:
             mock_client = MagicMock()
             mock_genai.Client.return_value = mock_client
-            from agent.llm.gemini_adapter import GeminiAdapter
+            from agent.llm.gemini.adapter import GeminiAdapter
             a = GeminiAdapter(api_key="test-key")
             a._mock_client = mock_client
             return a
@@ -112,7 +112,7 @@ class TestGeminiAdapterMocked:
     def test_make_tool_result_message_chat_api(self, adapter):
         """make_tool_result_message (Chat API) should delegate to types.Part.from_function_response."""
         adapter._use_interactions = False
-        with patch("agent.llm.gemini_adapter.types") as mock_types:
+        with patch("agent.llm.gemini.adapter.types") as mock_types:
             mock_types.Part.from_function_response.return_value = "mock_part"
             result = adapter.make_tool_result_message("fetch_data", {"status": "success"})
             mock_types.Part.from_function_response.assert_called_once_with(
@@ -161,7 +161,7 @@ class TestGeminiAdapterMocked:
         mock_chat = MagicMock()
         adapter._mock_client.chats.create.return_value = mock_chat
 
-        with patch("agent.llm.gemini_adapter.types") as mock_types, \
+        with patch("agent.llm.gemini.adapter.types") as mock_types, \
              patch("config.get", return_value=False):
             mock_types.GenerateContentConfig.return_value = "config"
             mock_types.Tool.return_value = "tool"
@@ -176,7 +176,7 @@ class TestGeminiAdapterMocked:
                 tools=[FunctionSchema(name="test", description="test", parameters={})],
             )
 
-        from agent.llm.gemini_adapter import GeminiChatSession
+        from agent.llm.gemini.adapter import GeminiChatSession
         assert isinstance(session, GeminiChatSession)
 
     def test_create_chat_interactions_api(self, adapter):
@@ -188,7 +188,7 @@ class TestGeminiAdapterMocked:
                 tools=[FunctionSchema(name="test", description="test", parameters={})],
             )
 
-        from agent.llm.gemini_adapter import InteractionsChatSession
+        from agent.llm.gemini.adapter import InteractionsChatSession
         assert isinstance(session, InteractionsChatSession)
         assert session.interaction_id is None  # No previous interaction
         assert adapter._use_interactions is True
@@ -217,7 +217,7 @@ class TestGeminiAdapterMocked:
 
         adapter._mock_client.models.generate_content.return_value = mock_response
 
-        with patch("agent.llm.gemini_adapter.types") as mock_types:
+        with patch("agent.llm.gemini.adapter.types") as mock_types:
             mock_types.GenerateContentConfig.return_value = "config"
             result = adapter.generate(
                 model="gemini-test",
@@ -241,7 +241,7 @@ class TestParseResponse:
     """Test the _parse_response helper directly."""
 
     def test_text_only(self):
-        from agent.llm.gemini_adapter import _parse_response
+        from agent.llm.gemini.adapter import _parse_response
 
         part = MagicMock()
         part.thought = False
@@ -264,7 +264,7 @@ class TestParseResponse:
         assert resp.thoughts == []
 
     def test_tool_calls(self):
-        from agent.llm.gemini_adapter import _parse_response
+        from agent.llm.gemini.adapter import _parse_response
 
         fc = MagicMock()
         fc.name = "fetch_data"
@@ -299,7 +299,7 @@ class TestParseResponse:
         assert resp.usage.thinking_tokens == 10
 
     def test_thinking_parts(self):
-        from agent.llm.gemini_adapter import _parse_response
+        from agent.llm.gemini.adapter import _parse_response
 
         thought_part = MagicMock()
         thought_part.thought = True
@@ -326,7 +326,7 @@ class TestParseResponse:
         assert resp.thoughts == ["Let me think..."]
 
     def test_empty_response(self):
-        from agent.llm.gemini_adapter import _parse_response
+        from agent.llm.gemini.adapter import _parse_response
 
         raw = MagicMock()
         raw.candidates = []
@@ -346,7 +346,7 @@ class TestParseInteractionResponse:
     """Test the _parse_interaction_response helper directly."""
 
     def test_text_output(self):
-        from agent.llm.gemini_adapter import _parse_interaction_response
+        from agent.llm.gemini.adapter import _parse_interaction_response
 
         text_block = MagicMock(type="text", text="Hello from interactions!")
         interaction = MagicMock()
@@ -366,7 +366,7 @@ class TestParseInteractionResponse:
         assert resp.usage.cached_tokens == 20
 
     def test_function_call_output(self):
-        from agent.llm.gemini_adapter import _parse_interaction_response
+        from agent.llm.gemini.adapter import _parse_interaction_response
 
         fc = MagicMock()
         fc.type = "function_call"
@@ -385,7 +385,7 @@ class TestParseInteractionResponse:
         assert resp.tool_calls[0].id == "call_abc123"
 
     def test_thought_output(self):
-        from agent.llm.gemini_adapter import _parse_interaction_response
+        from agent.llm.gemini.adapter import _parse_interaction_response
 
         summary_text = MagicMock(type="text", text="Let me think about this...")
         thought = MagicMock(type="thought", summary=[summary_text])
@@ -400,7 +400,7 @@ class TestParseInteractionResponse:
         assert resp.thoughts[0] == "Let me think about this..."
 
     def test_mixed_outputs(self):
-        from agent.llm.gemini_adapter import _parse_interaction_response
+        from agent.llm.gemini.adapter import _parse_interaction_response
 
         thought_text = MagicMock(type="text", text="Thinking...")
         thought = MagicMock(type="thought", summary=[thought_text])
@@ -423,7 +423,7 @@ class TestParseInteractionResponse:
         assert resp.text == "Here's what I found"
 
     def test_empty_outputs(self):
-        from agent.llm.gemini_adapter import _parse_interaction_response
+        from agent.llm.gemini.adapter import _parse_interaction_response
 
         interaction = MagicMock()
         interaction.outputs = None
@@ -439,7 +439,7 @@ class TestConvertHistoryToTurns:
     """Test _convert_history_to_turns helper."""
 
     def test_text_parts(self):
-        from agent.llm.gemini_adapter import _convert_history_to_turns
+        from agent.llm.gemini.adapter import _convert_history_to_turns
 
         history = [
             {"role": "user", "parts": [{"text": "Hello"}]},
@@ -453,7 +453,7 @@ class TestConvertHistoryToTurns:
         assert turns[1]["content"] == [{"type": "text", "text": "Hi there!"}]
 
     def test_function_call_and_response(self):
-        from agent.llm.gemini_adapter import _convert_history_to_turns
+        from agent.llm.gemini.adapter import _convert_history_to_turns
 
         history = [
             {
@@ -477,6 +477,14 @@ class TestConvertHistoryToTurns:
         assert turns[1]["content"][0]["name"] == "fetch_data"
 
     def test_empty_history(self):
-        from agent.llm.gemini_adapter import _convert_history_to_turns
+        from agent.llm.gemini.adapter import _convert_history_to_turns
 
         assert _convert_history_to_turns([]) == []
+
+
+def test_adapter_capability_flags():
+    """Each adapter declares its capabilities via class attributes."""
+    from agent.llm.base import LLMAdapter
+    # Base class defaults to False
+    assert LLMAdapter.supports_web_search is False
+    assert LLMAdapter.supports_vision is False

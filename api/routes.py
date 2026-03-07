@@ -1583,6 +1583,119 @@ async def upload_avatar(file: bytes = None):
     return {"status": "not_implemented"}
 
 
+# ---- Provider settings endpoints -----------------------------------------
+
+_KNOWN_PROVIDERS = [
+    "gemini", "anthropic", "openai", "minimax", "grok",
+    "deepseek", "qwen", "kimi", "glm",
+]
+
+
+@router.get("/settings/providers")
+async def get_provider_settings():
+    """Return provider config + API key status for all known providers."""
+    import os
+    import config as cfg
+
+    user_config = cfg._load_config()
+    active_provider = cfg.get("llm_provider", "gemini")
+    providers_config = user_config.get("providers", {})
+
+    result: dict = {
+        "active_provider": active_provider,
+        "providers": {},
+    }
+
+    for name in _KNOWN_PROVIDERS:
+        defaults = cfg._PROVIDER_DEFAULTS.get(name, {})
+        user_overrides = providers_config.get(name, {})
+        merged = {**defaults, **user_overrides}
+
+        api_key_env = merged.get("api_key_env", "")
+        key_set = bool(os.getenv(api_key_env)) if api_key_env else False
+
+        result["providers"][name] = {
+            "config": merged,
+            "api_key_set": key_set,
+            "api_key_env": api_key_env,
+        }
+
+    # Include custom providers from user config
+    for name, conf in providers_config.items():
+        if name not in result["providers"]:
+            api_key_env = conf.get("api_key_env", "")
+            key_set = bool(os.getenv(api_key_env)) if api_key_env else False
+            result["providers"][name] = {
+                "config": conf,
+                "api_key_set": key_set,
+                "api_key_env": api_key_env,
+            }
+
+    return result
+
+
+@router.put("/settings/providers")
+async def update_provider_settings(request: Request):
+    """Save provider config to ~/.xhelio/config.json."""
+    import os
+    import config as cfg
+    from config import CONFIG_PATH, reload_config
+
+    body = await request.json()
+
+    current = {}
+    if CONFIG_PATH.exists():
+        try:
+            current = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            pass
+
+    if "active_provider" in body:
+        current["llm_provider"] = body["active_provider"]
+    if "providers" in body:
+        existing_providers = current.setdefault("providers", {})
+        for name, overrides in body["providers"].items():
+            existing_providers[name] = {**existing_providers.get(name, {}), **overrides}
+
+    CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+    tmp = CONFIG_PATH.with_suffix(".tmp")
+    tmp.write_text(json.dumps(current, indent=2), encoding="utf-8")
+    os.replace(tmp, CONFIG_PATH)
+
+    reload_config()
+    return {"status": "ok"}
+
+
+@router.post("/settings/providers/test")
+async def test_provider_connection(request: Request):
+    """Test a provider connection with a minimal API call."""
+    body = await request.json()
+    provider = body.get("provider", "")
+    api_key = body.get("api_key")
+
+    try:
+        import asyncio
+        import config as cfg
+        defaults = cfg._PROVIDER_DEFAULTS.get(provider, {})
+        model = body.get("model") or defaults.get("model", "")
+        base_url = body.get("base_url") or defaults.get("base_url")
+
+        def _test_sync():
+            from agent.llm.service import LLMService
+            service = LLMService(
+                provider=provider,
+                model=model,
+                api_key=api_key,
+                base_url=base_url,
+            )
+            return service.generate("Say hello in one word.", model=model)
+
+        response = await asyncio.to_thread(_test_sync)
+        return {"status": "ok", "response": response.text[:100]}
+    except Exception as e:
+        return {"status": "error", "message": str(e)}
+
+
 @router.get("/models")
 async def list_models(provider: str = "gemini"):
     """List available models for the given LLM provider.
@@ -2854,7 +2967,7 @@ async def server_status():
 @router.get("/mcp-status")
 async def get_mcp_status():
     """Get MiniMax MCP client status."""
-    from agent.minimax_mcp_client import MiniMaxMCPClient
+    from agent.llm.minimax.mcp_client import MiniMaxMCPClient
 
     return MiniMaxMCPClient.get_status()
 
@@ -2862,7 +2975,7 @@ async def get_mcp_status():
 @router.put("/mcp-config")
 async def update_mcp_config(req: dict):
     """Update MiniMax MCP client config (enabled, api_host)."""
-    from agent.minimax_mcp_client import MiniMaxMCPClient
+    from agent.llm.minimax.mcp_client import MiniMaxMCPClient
 
     if "enabled" in req:
         MiniMaxMCPClient.set_enabled(req["enabled"])
@@ -2875,6 +2988,6 @@ async def update_mcp_config(req: dict):
 @router.get("/mcp-activity")
 async def get_mcp_activity():
     """Get recent MCP tool calls for debugging."""
-    from agent.minimax_mcp_client import MiniMaxMCPClient
+    from agent.llm.minimax.mcp_client import MiniMaxMCPClient
 
     return {"calls": MiniMaxMCPClient.get_activity_log()}

@@ -16,7 +16,7 @@ from google.genai import errors as genai_errors, types
 
 from agent.logging import get_logger
 
-from .base import (
+from ..base import (
     ChatSession,
     FunctionSchema,
     LLMAdapter,
@@ -25,9 +25,11 @@ from .base import (
     ToolResultBlock,
     UsageMetadata,
 )
-from .interface import LLMInterface
+from ..interface import ChatInterface
 
 logger = get_logger()
+
+from .defaults import DEFAULTS  # noqa: F401 — re-exported for consumers
 
 
 # ---------------------------------------------------------------------------
@@ -139,14 +141,14 @@ def _thinking_config(level: str) -> types.ThinkingConfig | None:
 class GeminiChatSession(ChatSession):
     """Wraps a ``genai`` chat session."""
 
-    def __init__(self, chat, context_window: int = 0, interface: LLMInterface | None = None):
+    def __init__(self, chat, context_window: int = 0, interface: ChatInterface | None = None):
         self._chat = chat
         self._context_window_size = context_window
-        self._interface = interface or LLMInterface()
+        self._interface = interface or ChatInterface()
 
     @property
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
         return self._interface
 
     def rollback_last_turn(self) -> None:
@@ -347,7 +349,7 @@ class InteractionsChatSession(ChatSession):
         config_kwargs: dict[str, Any],
         prev_interaction_id: str | None = None,
         context_window: int = 0,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
     ):
         self._client = client
         self._model = model
@@ -356,7 +358,7 @@ class InteractionsChatSession(ChatSession):
         )
         self._interaction_id: str | None = prev_interaction_id
         self._context_window_size = context_window
-        self._interface = interface or LLMInterface()
+        self._interface = interface or ChatInterface()
         # Pending seed turns from a session resume with full history.
         # If set, prepended to the first send() call as Iterable[TurnParam].
         self._pending_seed_turns: list[dict] | None = None
@@ -364,8 +366,8 @@ class InteractionsChatSession(ChatSession):
         self._client_history: list[dict] = []
 
     @property
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
         return self._interface
 
     def send(self, message) -> LLMResponse:
@@ -668,6 +670,9 @@ class InteractionsChatSession(ChatSession):
 class GeminiAdapter(LLMAdapter):
     """Adapter that wraps all ``google-genai`` SDK calls."""
 
+    supports_web_search = True
+    supports_vision = True
+
     def __init__(self, api_key: str, timeout_ms: int = 300_000):
         self._client = genai.Client(
             api_key=api_key,
@@ -690,7 +695,7 @@ class GeminiAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,
     ) -> ChatSession:
@@ -776,7 +781,7 @@ class GeminiAdapter(LLMAdapter):
         tools: list[FunctionSchema] | None = None,
         *,
         seed_turns: list[dict] | None = None,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
         force_tool_call: bool = False,
         interaction_id: str | None = None,

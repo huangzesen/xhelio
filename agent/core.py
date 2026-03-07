@@ -47,7 +47,7 @@ from .viz_plotly_agent import VizPlotlyAgent
 from .viz_mpl_agent import VizMplAgent
 from .viz_jsx_agent import VizJsxAgent
 from .data_ops_agent import DataOpsAgent
-from .data_extraction_agent import DataExtractionAgent
+from .data_io_agent import DataIOAgent
 from .insight_agent import InsightAgent
 from .logging import (
     setup_logging,
@@ -598,7 +598,7 @@ class OrchestratorAgent:
         "delegate_to_envoy",
         "delegate_to_viz",
         "delegate_to_data_ops",
-        "delegate_to_data_extraction",
+        "delegate_to_data_io",
         "delegate_to_insight",
     }
 
@@ -2232,8 +2232,8 @@ class OrchestratorAgent:
             full_request += "\n\n[Tip: Call events(action='check') to see what happened earlier in this session.]"
         return full_request
 
-    def _build_extraction_request(self, request: str, context: str) -> str:
-        """Build a full request string for a DataExtraction delegation."""
+    def _build_data_io_request(self, request: str, context: str) -> str:
+        """Build a full request string for a DataIO delegation."""
         full_request = f"{request}\n\nContext: {context}" if context else request
         return full_request
 
@@ -3606,17 +3606,17 @@ class OrchestratorAgent:
                 msg=f"[Router] Cleaned up ephemeral agent {agent_id}",
             )
 
-    def _get_or_create_extraction_agent(self) -> DataExtractionAgent:
-        """Get the cached extraction agent or create a new one. Thread-safe."""
-        agent_id = "DataExtractionAgent"
+    def _get_or_create_data_io_agent(self) -> DataIOAgent:
+        """Get the cached data I/O agent or create a new one. Thread-safe."""
+        agent_id = "DataIOAgent"
         with self._sub_agents_lock:
             if agent_id not in self._sub_agents:
-                agent = DataExtractionAgent(
+                agent = DataIOAgent(
                     adapter=self.adapter,
                     model_name=config.SUB_AGENT_MODEL,
                     tool_executor=lambda name, args, tc_id=None: (
                         self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="extraction"
+                            name, args, tc_id, agent_type="data_io"
                         )
                     ),
                     event_bus=self._event_bus,
@@ -3628,7 +3628,7 @@ class OrchestratorAgent:
                 self._event_bus.emit(
                     DEBUG,
                     level="debug",
-                    msg="[Router] Created DataExtraction agent",
+                    msg="[Router] Created DataIO agent",
                 )
             return self._sub_agents[agent_id]
 

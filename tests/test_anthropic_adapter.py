@@ -15,7 +15,7 @@ from agent.llm.base import (
     ToolCall,
     UsageMetadata,
 )
-from agent.llm.anthropic_adapter import (
+from agent.llm.anthropic.adapter import (
     AnthropicAdapter,
     AnthropicChatSession,
     _build_tools,
@@ -123,7 +123,7 @@ class TestEnsureAlternation:
 class TestFilterInvalidToolResults:
     def test_invalid_tool_result_replaced_with_text(self):
         """tool_result with non-existent tool_use_id is replaced with explanatory text."""
-        from agent.llm.anthropic_adapter import _filter_invalid_tool_results
+        from agent.llm.anthropic.adapter import _filter_invalid_tool_results
 
         messages = [
             {
@@ -154,7 +154,7 @@ class TestFilterInvalidToolResults:
 
     def test_valid_tool_result_kept_as_is(self):
         """Valid tool_results are kept unchanged."""
-        from agent.llm.anthropic_adapter import _filter_invalid_tool_results
+        from agent.llm.anthropic.adapter import _filter_invalid_tool_results
 
         messages = [
             {
@@ -182,7 +182,7 @@ class TestFilterInvalidToolResults:
 
     def test_mixed_valid_and_invalid(self):
         """Mixed valid and invalid tool_results - valid kept, invalid replaced."""
-        from agent.llm.anthropic_adapter import _filter_invalid_tool_results
+        from agent.llm.anthropic.adapter import _filter_invalid_tool_results
 
         messages = [
             {
@@ -217,7 +217,7 @@ class TestFilterInvalidToolResults:
 
     def test_no_tool_use_in_history(self):
         """When no tool_use in history, all tool_results are invalid."""
-        from agent.llm.anthropic_adapter import _filter_invalid_tool_results
+        from agent.llm.anthropic.adapter import _filter_invalid_tool_results
 
         messages = [
             {"role": "user", "content": "Hello"},
@@ -237,7 +237,7 @@ class TestFilterInvalidToolResults:
 
     def test_preserves_non_tool_result_blocks(self):
         """Non-tool_result blocks in user messages are preserved."""
-        from agent.llm.anthropic_adapter import _filter_invalid_tool_results
+        from agent.llm.anthropic.adapter import _filter_invalid_tool_results
 
         messages = [
             {
@@ -400,7 +400,7 @@ class TestResponseToMessages:
 class TestAnthropicAdapterMocked:
     @pytest.fixture
     def adapter(self):
-        with patch("agent.llm.anthropic_adapter.anthropic") as mock_anthropic:
+        with patch("agent.llm.anthropic.adapter.anthropic") as mock_anthropic:
             mock_client = MagicMock()
             mock_anthropic.Anthropic.return_value = mock_client
             mock_anthropic.RateLimitError = type("RateLimitError", (Exception,), {})

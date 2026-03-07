@@ -50,17 +50,17 @@ EXCLUDE_DIRS = {
     "spikes/",
 }
 
-# GitHub-style colors
+# Distinct colors — avoid similar blues
 COLORS = {
     "Python": "#3572A5",
-    "TypeScript": "#3178C6",
+    "TypeScript": "#F0C040",
     "TSX": "#61DAFB",
-    "CSS": "#563D7C",
-    "YAML": "#CB171E",
-    SKILLS_LANG: "#83CD29",
+    "CSS": "#A855F7",
+    "YAML": "#EF4444",
+    SKILLS_LANG: "#22C55E",
 }
 
-# Stable ordering for consistent stacking
+# Stable ordering for consistent stacking (largest at bottom)
 LANG_ORDER = ["Python", "TypeScript", "TSX", "CSS", "YAML", SKILLS_LANG]
 
 CACHE_FILE = ".loc_history_cache.json"
@@ -282,6 +282,18 @@ def count_loc_parallel(
 # ---------------------------------------------------------------------------
 
 
+def _format_date_label(iso_hour: str) -> str:
+    """Convert '2026-02-14T09' to 'Feb 14'."""
+    try:
+        date_part = iso_hour.split("T")[0]  # '2026-02-14'
+        parts = date_part.split("-")
+        months = ["", "Jan", "Feb", "Mar", "Apr", "May", "Jun",
+                  "Jul", "Aug", "Sep", "Oct", "Nov", "Dec"]
+        return f"{months[int(parts[1])]} {int(parts[2])}"
+    except (IndexError, ValueError):
+        return iso_hour
+
+
 def _aggregate_deltas_6h(
     data: list[dict], series: dict[str, list[int]],
 ) -> tuple[list[str], dict[str, list[int]]]:
@@ -310,18 +322,15 @@ def _aggregate_deltas_6h(
 def build_figure(data: list[dict]) -> go.Figure:
     """Build stacked area (hourly) + stacked bar (6-hour delta) figure."""
     dates = [d["date"] for d in data]
-    x_idx = list(range(len(data)))
-
-    # Build tick values/labels for top panel — ~10-15 evenly spaced points
     n = len(data)
+    x_idx = list(range(n))
+
+    # Build tick values/labels — use readable "Mon DD" format, ~12 ticks
     tick_step = max(1, n // 12)
     tick_vals = list(range(0, n, tick_step))
     if tick_vals[-1] != n - 1:
         tick_vals.append(n - 1)
-    tick_labels = [dates[i] for i in tick_vals]
-
-    # Custom hover text: "YYYY-MM-DDTHH"
-    hover_dates = [dates[i] for i in range(n)]
+    tick_labels = [_format_date_label(dates[i]) for i in tick_vals]
 
     # Collect per-language series
     series: dict[str, list[int]] = {}
@@ -334,27 +343,30 @@ def build_figure(data: list[dict]) -> go.Figure:
     bucket_labels, deltas_6h = _aggregate_deltas_6h(data, series)
     bucket_x = list(range(len(bucket_labels)))
 
-    # Tick labels for the bottom panel
+    # Tick labels for the bottom panel — match top panel density
     nb = len(bucket_labels)
     btick_step = max(1, nb // 12)
     btick_vals = list(range(0, nb, btick_step))
     if btick_vals[-1] != nb - 1:
         btick_vals.append(nb - 1)
-    btick_labels = [bucket_labels[i] for i in btick_vals]
+    btick_labels = [_format_date_label(bucket_labels[i]) for i in btick_vals]
 
     fig = make_subplots(
         rows=2,
         cols=1,
         shared_xaxes=False,
-        vertical_spacing=0.06,
-        row_heights=[0.75, 0.25],
-        subplot_titles=("Lines of Code", "Net Change (6-hour)"),
+        vertical_spacing=0.10,
+        row_heights=[0.65, 0.35],
     )
 
-    # Row 1: stacked area (hourly)
+    # Row 1: stacked area (hourly) with semi-transparent fill
     for lang in LANG_ORDER:
         if lang not in series:
             continue
+        color = COLORS.get(lang, "#888")
+        # Make fill semi-transparent
+        r, g, b = int(color[1:3], 16), int(color[3:5], 16), int(color[5:7], 16)
+        fill_rgba = f"rgba({r},{g},{b},0.65)"
         fig.add_trace(
             go.Scatter(
                 x=x_idx,
@@ -362,71 +374,131 @@ def build_figure(data: list[dict]) -> go.Figure:
                 name=lang,
                 mode="lines",
                 stackgroup="loc",
-                line=dict(width=0.5, color=COLORS.get(lang)),
-                fillcolor=COLORS.get(lang),
-                customdata=hover_dates,
-                hovertemplate="%{customdata}: %{y:,} lines<extra>" + lang + "</extra>",
+                line=dict(width=0.5, color=color),
+                fillcolor=fill_rgba,
+                customdata=[dates[i] for i in range(n)],
+                hovertemplate="%{customdata}: %{y:,}<extra>" + lang + "</extra>",
             ),
             row=1,
             col=1,
         )
 
-    # Row 2: stacked bar (6-hour delta)
+    # Row 2: stacked bar (6-hour delta) with semi-transparent bars
     for lang in LANG_ORDER:
         if lang not in deltas_6h:
             continue
+        color = COLORS.get(lang, "#888")
+        r, g, b = int(color[1:3], 16), int(color[3:5], 16), int(color[5:7], 16)
+        bar_rgba = f"rgba({r},{g},{b},0.75)"
         fig.add_trace(
             go.Bar(
                 x=bucket_x,
                 y=deltas_6h[lang],
                 name=lang,
-                marker_color=COLORS.get(lang),
+                marker_color=bar_rgba,
+                marker_line_width=0,
                 showlegend=False,
                 customdata=bucket_labels,
-                hovertemplate="%{customdata}: %{y:+,} lines<extra>" + lang + "</extra>",
+                hovertemplate="%{customdata}: %{y:+,}<extra>" + lang + "</extra>",
             ),
             row=2,
             col=1,
         )
 
+    # 3-day rolling average of total delta (window=12 buckets of 6h = 3 days)
+    total_deltas = [
+        sum(deltas_6h[lang][i] for lang in deltas_6h)
+        for i in range(len(bucket_x))
+    ]
+    window = 12  # 3 days / 6 hours
+    rolling_avg = []
+    for i in range(len(total_deltas)):
+        start = max(0, i - window + 1)
+        rolling_avg.append(sum(total_deltas[start:i + 1]) / (i - start + 1))
+    fig.add_trace(
+        go.Scatter(
+            x=bucket_x,
+            y=rolling_avg,
+            name="3-day avg",
+            mode="lines",
+            line=dict(color="rgba(0,0,0,0.5)", width=2, dash="dot"),
+            showlegend=True,
+            hovertemplate="%{y:+,.0f}<extra>3-day avg</extra>",
+        ),
+        row=2,
+        col=1,
+    )
+
     total_loc = sum(data[-1].get(lang, 0) for lang in LANG_ORDER) if data else 0
-    date_range = f"{dates[0]} — {dates[-1]}" if dates else ""
+    start_label = _format_date_label(dates[0]) if dates else ""
+    end_label = _format_date_label(dates[-1]) if dates else ""
 
     fig.update_layout(
         title=dict(
             text=(
-                f"xhelio LOC History ({date_range}) — "
-                f"{total_loc:,} total lines, {n} hourly snapshots"
+                f"<b>xhelio</b> — {total_loc:,} lines of code"
+                f"<br><span style='font-size:13px;color:#666'>"
+                f"{start_label} – {end_label} 2026 · {n} snapshots</span>"
             ),
             x=0.5,
+            font=dict(size=18),
         ),
         template="plotly_white",
         barmode="relative",
         legend=dict(
             orientation="h",
-            yanchor="bottom",
-            y=1.02,
+            yanchor="top",
+            y=-0.02,
             xanchor="center",
             x=0.5,
+            font=dict(size=11),
         ),
         hovermode="x unified",
-        width=1100,
-        height=700,
-        margin=dict(t=100),
+        width=1200,
+        height=750,
+        margin=dict(t=80, b=60, l=60, r=30),
+        plot_bgcolor="rgba(0,0,0,0)",
+        paper_bgcolor="white",
     )
 
-    # Top panel tick labels
+    # Top panel axes
     fig.update_xaxes(
-        tickvals=tick_vals, ticktext=tick_labels, row=1, col=1,
+        tickvals=tick_vals,
+        ticktext=tick_labels,
+        tickangle=0,
+        tickfont=dict(size=10),
+        showgrid=False,
+        row=1, col=1,
     )
-    # Bottom panel tick labels (independent axis)
-    fig.update_xaxes(
-        tickvals=btick_vals, ticktext=btick_labels, row=2, col=1,
+    fig.update_yaxes(
+        title_text="Lines of Code",
+        title_font=dict(size=11),
+        tickfont=dict(size=10),
+        gridcolor="rgba(0,0,0,0.06)",
+        row=1, col=1,
     )
 
-    fig.update_yaxes(title_text="Lines", row=1, col=1)
-    fig.update_yaxes(title_text="Delta", row=2, col=1)
-    fig.update_xaxes(title_text="Time", row=2, col=1)
+    # Bottom panel axes
+    fig.update_xaxes(
+        tickvals=btick_vals,
+        ticktext=btick_labels,
+        tickangle=0,
+        tickfont=dict(size=10),
+        showgrid=False,
+        title_text="",
+        row=2, col=1,
+    )
+    fig.update_yaxes(
+        title_text="6h Delta",
+        title_font=dict(size=11),
+        tickfont=dict(size=10),
+        gridcolor="rgba(0,0,0,0.06)",
+        dtick=1000,
+        zeroline=True,
+        zerolinecolor="rgba(0,0,0,0.15)",
+        zerolinewidth=1,
+        row=2, col=1,
+    )
 
     return fig
 

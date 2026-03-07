@@ -335,19 +335,19 @@ def build_insight_feedback_prompt() -> str:
 
 
 # ---------------------------------------------------------------------------
-# Data extraction sub-agent prompt builder
+# Data I/O sub-agent prompt builder
 # ---------------------------------------------------------------------------
 
 
-def build_data_extraction_prompt() -> str:
-    """Generate the system prompt for the DataExtraction sub-agent.
+def build_data_io_prompt() -> str:
+    """Generate the system prompt for the DataIO sub-agent.
 
     Returns:
-        System prompt string for the DataExtractionAgent.
+        System prompt string for the DataIOAgent.
     """
     return assemble(
         [
-            "extraction/full.md",
+            "data_io/full.md",
             "_shared/async_tools.md",
             "_shared/final_summary.md",
         ]

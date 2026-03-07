@@ -977,7 +977,7 @@ Actions:
 Do NOT delegate:
 - Data fetching (use delegate_to_envoy — fetching requires mission-specific knowledge)
 - Visualization requests (use the active visualization agent)
-- Creating datasets from text/search results (use delegate_to_data_extraction)
+- Creating datasets from text/search results (use delegate_to_data_io)
 - Dataset search or parameter listing (handle directly or use delegate_to_envoy)
 - Data export to CSV — only do this when explicitly requested by the user
 
@@ -1005,25 +1005,64 @@ The DataOps agent can see all data currently in memory via list_fetched_data."""
         },
     },
     {
-        "name": "delegate_to_data_extraction",
-        "description": """Delegate text-to-DataFrame conversion to the DataExtraction specialist agent. Use this when:
+        "name": "load_file",
+        "description": """Load a local data file (CSV, JSON, Parquet, Excel) into the data store.
+
+Use this when:
+- The user provides a file path to tabular data
+- A collaborator sent a data file that needs to be loaded for analysis
+- Importing external datasets to combine with archive data
+
+Supports: CSV, TSV, JSON (records or table format), Parquet, Excel (.xlsx/.xls).
+Auto-detects datetime index columns for timeseries data.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "file_path": {
+                    "type": "string",
+                    "description": "Absolute path to the data file",
+                },
+                "output_label": {
+                    "type": "string",
+                    "description": "Label for the loaded dataset (e.g., 'psp_fitted_velocities_e22')",
+                },
+                "time_column": {
+                    "type": "string",
+                    "description": "Column name to use as datetime index. Auto-detected if omitted.",
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description of the data",
+                },
+                "units": {
+                    "type": "string",
+                    "description": "Units string (e.g., 'km/s', 'nT')",
+                },
+            },
+            "required": ["file_path", "output_label"],
+        },
+    },
+    {
+        "name": "delegate_to_data_io",
+        "description": """Delegate data I/O tasks to the DataIO specialist agent. Use this when:
+- The user wants to load a local file (CSV, JSON, Parquet, Excel) into the data store
 - The user wants to turn unstructured text into a plottable dataset (event lists, search results, catalogs)
 - The user wants to extract data tables from a document (PDF or image)
 - You have Google Search results with dates and values that should become a DataFrame
-- The user says "create a dataset from..." or "make a timeline of..."
+- The user says "load this file", "create a dataset from..." or "make a timeline of..."
 
 Do NOT delegate:
 - Data fetching from CDAWeb (use delegate_to_envoy)
 - Data transformations on existing in-memory data (use delegate_to_data_ops)
 - Visualization requests (use the active visualization agent)
 
-The DataExtraction agent can read documents (read_document), create DataFrames (store_dataframe), and see what data is in memory (list_fetched_data).""",
+The DataIO agent can load files (load_file), read documents (read_document), create DataFrames (store_dataframe), and see what data is in memory (list_fetched_data).""",
         "parameters": {
             "type": "object",
             "properties": {
                 "request": {
                     "type": "string",
-                    "description": "What to extract and store (e.g., 'Create a DataFrame from these X-class flares: [dates and values]. Label it xclass_flares_2024.')",
+                    "description": "What to load/extract and store (e.g., 'Load /data/psp_fits.csv as psp_fitted_velocities', 'Create a DataFrame from these X-class flares: [dates and values]. Label it xclass_flares_2024.')",
                 },
                 "context": {
                     "type": "string",

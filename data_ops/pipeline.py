@@ -52,7 +52,7 @@ _PIPELINE_VERSION = 1
 _PRESENTATION_TOOLS = frozenset({"render_plotly_json", "generate_mpl_script", "generate_jsx_component"})
 _SKIP_TOOLS = frozenset({"manage_plot"})
 _RELEVANT_TOOLS = frozenset({
-    "fetch_data", "custom_operation", "store_dataframe",
+    "fetch_data", "custom_operation", "store_dataframe", "load_file",
     "render_plotly_json", "generate_mpl_script", "generate_jsx_component",
 })
 

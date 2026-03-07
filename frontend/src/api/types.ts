@@ -342,6 +342,41 @@ export interface DataEntrySummary {
 
 export type AppConfig = Record<string, unknown>;
 
+// ---- Provider Settings ----
+
+export interface ProviderConfig {
+  api_compat?: string;
+  base_url?: string | null;
+  api_key_env?: string;
+  model?: string;
+  sub_agent_model?: string;
+  insight_model?: string;
+  inline_model?: string;
+  planner_model?: string;
+  fallback_model?: string;
+  web_search_provider?: string | null;
+  vision_provider?: string | null;
+  rate_limit_interval?: number;
+  [key: string]: unknown;
+}
+
+export interface ProviderInfo {
+  config: ProviderConfig;
+  api_key_set: boolean;
+  api_key_env: string;
+}
+
+export interface ProviderSettingsResponse {
+  active_provider: string;
+  providers: Record<string, ProviderInfo>;
+}
+
+export interface ProviderTestResult {
+  status: 'ok' | 'error';
+  response?: string;
+  message?: string;
+}
+
 // ---- Memory ----
 
 export interface ReviewTierStats {

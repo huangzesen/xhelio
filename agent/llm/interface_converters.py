@@ -1,8 +1,8 @@
-"""Converters between canonical LLMInterface and provider-specific formats.
+"""Converters between canonical ChatInterface and provider-specific formats.
 
 Naming convention:
 - to_<provider>(iface) -> provider message list
-- from_<provider>(messages, ...) -> LLMInterface
+- from_<provider>(messages, ...) -> ChatInterface
 """
 
 from __future__ import annotations
@@ -13,7 +13,7 @@ from typing import Any
 from .interface import (
     ContentBlock,
     ImageBlock,
-    LLMInterface,
+    ChatInterface,
     TextBlock,
     ThinkingBlock,
     ToolCallBlock,
@@ -26,7 +26,7 @@ from .interface import (
 # ---------------------------------------------------------------------------
 
 
-def to_anthropic(iface: LLMInterface) -> list[dict]:
+def to_anthropic(iface: ChatInterface) -> list[dict]:
     """Convert canonical interface to Anthropic message list.
     System entries excluded (Anthropic passes system separately).
     """
@@ -73,9 +73,9 @@ def _to_anthropic_block(block: ContentBlock) -> dict:
     raise ValueError(f"Unknown block type: {type(block)}")
 
 
-def from_anthropic(messages: list[dict], system_prompt: str | None = None) -> LLMInterface:
+def from_anthropic(messages: list[dict], system_prompt: str | None = None) -> ChatInterface:
     """Convert Anthropic message list to canonical interface."""
-    iface = LLMInterface()
+    iface = ChatInterface()
     if system_prompt:
         iface.add_system(system_prompt)
     for msg in messages:
@@ -128,7 +128,7 @@ def _from_anthropic_block(b: dict) -> ContentBlock:
 # ---------------------------------------------------------------------------
 
 
-def to_openai(iface: LLMInterface) -> list[dict]:
+def to_openai(iface: ChatInterface) -> list[dict]:
     """Convert canonical interface to OpenAI Chat Completions message list.
     System entries become role=system.  Tool results become separate role=tool messages.
     """
@@ -181,9 +181,9 @@ def _to_openai_block(block: ContentBlock) -> dict:
     return {"type": "text", "text": str(block)}
 
 
-def from_openai(messages: list[dict]) -> LLMInterface:
+def from_openai(messages: list[dict]) -> ChatInterface:
     """Convert OpenAI message list to canonical interface."""
-    iface = LLMInterface()
+    iface = ChatInterface()
     for msg in messages:
         role = msg.get("role", "")
         content = msg.get("content", "")
@@ -224,7 +224,7 @@ def _from_openai_block(b: dict) -> ContentBlock:
 # ---------------------------------------------------------------------------
 
 
-def to_gemini(iface: LLMInterface) -> list[dict]:
+def to_gemini(iface: ChatInterface) -> list[dict]:
     """Convert canonical interface to Gemini Interactions TurnParam list.
     System entries excluded (Gemini uses system_instruction parameter).
     """
@@ -260,9 +260,9 @@ def _to_gemini_block(block: ContentBlock) -> dict:
     return {"type": "text", "text": str(block)}
 
 
-def from_gemini(turns: list[dict], system_prompt: str | None = None) -> LLMInterface:
+def from_gemini(turns: list[dict], system_prompt: str | None = None) -> ChatInterface:
     """Convert Gemini TurnParam list to canonical interface."""
-    iface = LLMInterface()
+    iface = ChatInterface()
     if system_prompt:
         iface.add_system(system_prompt)
     for turn in turns:

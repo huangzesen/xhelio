@@ -4,7 +4,7 @@ Provides a provider-agnostic representation of the full program-LLM
 interaction.  This is the single source of truth for conversation history.
 Adapters rebuild provider-specific message formats from this on each API call.
 
-Each LLMInterface instance is owned by one agent thread.  Not thread-safe.
+Each ChatInterface instance is owned by one agent thread.  Not thread-safe.
 Do not share across threads.
 """
 
@@ -163,11 +163,11 @@ class InterfaceEntry:
 
 
 # ---------------------------------------------------------------------------
-# LLMInterface
+# ChatInterface
 # ---------------------------------------------------------------------------
 
 
-class LLMInterface:
+class ChatInterface:
     """Append-only log of canonical LLM interaction entries.
 
     Single source of truth for conversation history.  Adapters rebuild
@@ -377,7 +377,7 @@ class LLMInterface:
         return [e.to_dict() for e in self._entries]
 
     @classmethod
-    def from_dict(cls, data: list[dict]) -> LLMInterface:
+    def from_dict(cls, data: list[dict]) -> ChatInterface:
         iface = cls()
         for d in data:
             entry = InterfaceEntry.from_dict(d)

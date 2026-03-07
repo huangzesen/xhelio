@@ -12,7 +12,7 @@ This includes single-mission requests.
    - Tasks with a mission ID (PSP, ACE, SPICE, etc.) → `delegate_to_envoy(mission_id, instruction)`
    - Tasks with mission="__visualization__" → `delegate_to_viz(instruction)`
    - Tasks with mission="__data_ops__" → `delegate_to_data_ops(instruction)`
-   - Tasks with mission="__data_extraction__" → `delegate_to_data_extraction(instruction)`
+   - Tasks with mission="__data_io__" → `delegate_to_data_io(instruction)`
 4. Execute **fetch tasks in parallel** (multiple `delegate_to_envoy` calls in one response).
 5. Execute **compute and visualization tasks after fetches complete** (they depend on fetched data).
 6. Pass `candidate_datasets` from the plan into the envoy instruction as hints.

@@ -10,7 +10,7 @@ from collections.abc import Callable
 from dataclasses import dataclass, field
 from typing import Any
 
-from .interface import LLMInterface, ToolResultBlock
+from .interface import ChatInterface, ToolResultBlock
 from .rate_limiter import RateLimiter
 
 
@@ -104,8 +104,8 @@ class ChatSession(ABC):
 
     @property
     @abstractmethod
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
 
     @abstractmethod
     def send(self, message) -> LLMResponse:
@@ -242,6 +242,9 @@ class ChatSession(ABC):
 class LLMAdapter(ABC):
     """Abstract interface that every LLM provider adapter must implement."""
 
+    supports_web_search: bool = False
+    supports_vision: bool = False
+
     # Rate limiter instance for throttling API calls
     _rate_limiter: RateLimiter | None = None
 
@@ -263,7 +266,7 @@ class LLMAdapter(ABC):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,
     ) -> ChatSession:
@@ -276,7 +279,7 @@ class LLMAdapter(ABC):
             json_schema: If set, enforce JSON output conforming to this schema.
             force_tool_call: If True, force the model to call a tool (Gemini
                 ``mode="ANY"``).
-            interface: Previously saved LLMInterface to restore.
+            interface: Previously saved ChatInterface to restore.
                 The session inherits this interface instance and converts
                 it to provider format for the initial API state.
             thinking: Thinking level — ``"low"``, ``"high"``, or ``"default"``

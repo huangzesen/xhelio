@@ -2,7 +2,7 @@
 
 import pytest
 from unittest.mock import MagicMock, patch
-from agent.llm.gemini_adapter import InteractionsChatSession
+from agent.llm.gemini.adapter import InteractionsChatSession
 
 
 class FakeInteraction:
@@ -143,7 +143,7 @@ class TestClientSideHistoryToolResults:
 class TestSeedTurnsFromClientHistory:
     def test_interactions_session_receives_history_as_seed_turns(self):
         """InteractionsChatSession should receive history and convert to seed turns."""
-        from agent.llm.gemini_adapter import _convert_history_to_turns
+        from agent.llm.gemini.adapter import _convert_history_to_turns
 
         # Simulate what happens in create_chat when history is provided
         client_history = [

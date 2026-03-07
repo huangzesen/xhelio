@@ -15,7 +15,7 @@
         "delegate_to_envoy",
         "delegate_to_viz",
         "delegate_to_data_ops",
-        "delegate_to_data_extraction",
+        "delegate_to_data_io",
         "delegate_to_insight",
         "request_planning",
         "review_memory",
@@ -144,8 +144,9 @@
         "manage_jsx_output"
       ]
     },
-    "extraction": {
+    "data_io": {
       "call": [
+        "load_file",
         "store_dataframe",
         "read_document",
         "ask_clarification",

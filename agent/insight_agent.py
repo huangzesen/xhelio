@@ -20,7 +20,7 @@ from .sub_agent import SubAgent, Message
 from .llm_utils import _CancelledDuringLLM, send_with_timeout
 from .event_bus import EventBus, INSIGHT_RESULT, INSIGHT_FEEDBACK
 from .llm import LLMAdapter
-from .llm.minimax_adapter import MiniMaxAdapter
+from .llm.minimax.adapter import MiniMaxAdapter
 from .logging import get_logger, log_error
 from .model_fallback import get_active_model
 from knowledge.prompt_builder import build_insight_prompt
@@ -59,7 +59,7 @@ class InsightAgent(SubAgent):
         """Analyze an image via MiniMax MCP understand_image tool."""
         import tempfile
         import os
-        from .minimax_mcp_client import get_minimax_mcp_client
+        from .llm.minimax.mcp_client import get_minimax_mcp_client
 
         ext = {
             "image/png": ".png",

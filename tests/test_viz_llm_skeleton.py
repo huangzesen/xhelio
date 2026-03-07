@@ -28,7 +28,7 @@ pytestmark = [
 @pytest.fixture(scope="module")
 def adapter():
     """Create a GeminiAdapter with the real API key."""
-    from agent.llm.gemini_adapter import GeminiAdapter
+    from agent.llm.gemini.adapter import GeminiAdapter
 
     return GeminiAdapter(api_key=os.environ["GOOGLE_API_KEY"])
 

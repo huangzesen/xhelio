@@ -14,7 +14,7 @@ from .base import (
     LLMAdapter,
     LLMResponse,
 )
-from .interface import LLMInterface, ToolResultBlock
+from .interface import ChatInterface, ToolResultBlock
 
 def _generate_session_id() -> str:
     """Generate a unique xhelio session ID."""
@@ -42,31 +42,137 @@ class LLMService:
         model: str,
         api_key: str | None = None,
         base_url: str | None = None,
+        provider_config: dict | None = None,
     ) -> None:
         self._provider = provider.lower()
         self._model = model
-        self._adapter = self._create_adapter(api_key, base_url)
+        self._config = provider_config or {}
+        self._adapter = self._create_adapter(self._provider, api_key, base_url)
         self._sessions: dict[str, ChatSession] = {}
+        self._secondary_adapters: dict[str, tuple[LLMAdapter, str] | None] = {}
 
-    def _create_adapter(self, api_key: str | None, base_url: str | None) -> LLMAdapter:
+    def _create_adapter(self, provider: str, api_key: str | None, base_url: str | None) -> LLMAdapter:
         # Build kwargs, omitting None values so adapters fall back to env vars
         key_kw: dict = {"api_key": api_key} if api_key is not None else {}
         url_kw: dict = {"base_url": base_url} if base_url is not None else {}
 
-        if self._provider == "gemini":
-            from .gemini_adapter import GeminiAdapter
+        p = provider.lower()
+        if p == "gemini":
+            from .gemini.adapter import GeminiAdapter
             return GeminiAdapter(**key_kw)
-        elif self._provider == "anthropic":
-            from .anthropic_adapter import AnthropicAdapter
+        elif p == "anthropic":
+            from .anthropic.adapter import AnthropicAdapter
             return AnthropicAdapter(**key_kw, **url_kw)
-        elif self._provider == "openai":
-            from .openai_adapter import OpenAIAdapter
+        elif p == "openai":
+            from .openai.adapter import OpenAIAdapter
             return OpenAIAdapter(**key_kw, **url_kw)
-        elif self._provider == "minimax":
-            from .minimax_adapter import MiniMaxAdapter
+        elif p == "minimax":
+            from .minimax.adapter import MiniMaxAdapter
             return MiniMaxAdapter(**key_kw, **url_kw)
+        elif p == "grok":
+            from .grok.adapter import GrokAdapter
+            return GrokAdapter(**key_kw)
+        elif p == "deepseek":
+            from .deepseek.adapter import DeepSeekAdapter
+            return DeepSeekAdapter(**key_kw)
+        elif p == "qwen":
+            from .qwen.adapter import QwenAdapter
+            return QwenAdapter(**key_kw)
+        elif p == "kimi":
+            from .kimi.adapter import create_kimi_adapter
+            defaults = self._get_provider_defaults(p)
+            compat = defaults.get("api_compat", "openai") if defaults else "openai"
+            return create_kimi_adapter(**key_kw, api_compat=compat, **url_kw)
+        elif p == "glm":
+            from .glm.adapter import GLMAdapter
+            return GLMAdapter(**key_kw)
+        elif p == "custom":
+            from .custom.adapter import create_custom_adapter
+            defaults = self._get_provider_defaults(p)
+            compat = defaults.get("api_compat", "openai") if defaults else "openai"
+            ws = defaults.get("supports_web_search", False) if defaults else False
+            vis = defaults.get("supports_vision", False) if defaults else False
+            return create_custom_adapter(
+                **key_kw, api_compat=compat, supports_web_search=ws,
+                supports_vision=vis, **url_kw,
+            )
         else:
-            raise ValueError(f"Unknown provider: {self._provider!r}")
+            raise ValueError(f"Unknown provider: {provider!r}")
+
+    # --- Capability routing ---
+
+    def web_search(self, query: str) -> LLMResponse:
+        """Web search — routed to configured web_search_provider."""
+        adapter, model = self._resolve_capability_adapter("web_search_provider")
+        if adapter is None:
+            return LLMResponse(text="")
+        return adapter.web_search(query, model=model)
+
+    def make_multimodal_message(
+        self, text: str, image_bytes: bytes, mime_type: str = "image/png"
+    ) -> dict | None:
+        """Vision — routed to configured vision_provider."""
+        adapter, _ = self._resolve_capability_adapter("vision_provider")
+        if adapter is None:
+            return None
+        return adapter.make_multimodal_message(text, image_bytes, mime_type)
+
+    def _resolve_capability_adapter(
+        self, config_key: str
+    ) -> tuple[LLMAdapter | None, str]:
+        """Resolve the adapter for a capability. Returns (adapter, model) or (None, "")."""
+        provider_name = self._config.get(config_key)
+        if provider_name is None:
+            return None, ""
+        if provider_name == self._provider:
+            return self._adapter, self._model
+        return self._get_secondary_adapter(provider_name)
+
+    def _get_secondary_adapter(
+        self, provider_name: str
+    ) -> tuple[LLMAdapter | None, str]:
+        """Lazy-init a secondary adapter for capability delegation."""
+        if provider_name in self._secondary_adapters:
+            cached = self._secondary_adapters[provider_name]
+            if cached is None:
+                return None, ""
+            return cached  # (adapter, model) tuple
+
+        import os
+        from agent.logging import get_logger
+        logger = get_logger()
+
+        defaults = self._get_provider_defaults(provider_name)
+        if not defaults:
+            logger.warning("Unknown provider %r for capability delegation", provider_name)
+            self._secondary_adapters[provider_name] = None
+            return None, ""
+
+        api_key_env = defaults.get("api_key_env", "")
+        api_key = os.getenv(api_key_env) if api_key_env else None
+        if not api_key:
+            logger.warning(
+                "API key %s not set for %s — capability disabled",
+                api_key_env, provider_name,
+            )
+            self._secondary_adapters[provider_name] = None
+            return None, ""
+
+        try:
+            adapter = self._create_adapter(provider_name, api_key, defaults.get("base_url"))
+            model = defaults.get("model", "")
+            self._secondary_adapters[provider_name] = (adapter, model)
+            return adapter, model
+        except Exception as e:
+            logger.warning("Failed to create %s adapter: %s", provider_name, e)
+            self._secondary_adapters[provider_name] = None
+            return None, ""
+
+    @staticmethod
+    def _get_provider_defaults(provider_name: str) -> dict | None:
+        """Get DEFAULTS for a provider, reusing config's pre-loaded cache."""
+        import config as cfg
+        return cfg._PROVIDER_DEFAULTS.get(provider_name)
 
     @property
     def adapter(self) -> LLMAdapter:
@@ -126,7 +232,7 @@ class LLMService:
         messages = saved_state.get("messages", [])
         metadata = saved_state.get("metadata", {})
 
-        interface = LLMInterface.from_dict(messages)
+        interface = ChatInterface.from_dict(messages)
 
         # Determine interaction_id: check metadata first (where core.py stores it),
         # then fall back to scanning provider_data on assistant messages.

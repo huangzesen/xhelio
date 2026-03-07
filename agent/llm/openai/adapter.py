@@ -18,7 +18,7 @@ import openai
 
 from agent.logging import get_logger
 
-from .base import (
+from ..base import (
     ChatSession,
     FunctionSchema,
     LLMAdapter,
@@ -27,10 +27,12 @@ from .base import (
     ToolResultBlock,
     UsageMetadata,
 )
-from .interface import LLMInterface, TextBlock, ToolCallBlock
-from .interface_converters import from_openai, to_openai
+from ..interface import ChatInterface, TextBlock, ToolCallBlock
+from ..interface_converters import from_openai, to_openai
 
 logger = get_logger()
+
+from .defaults import DEFAULTS  # noqa: F401 — re-exported for consumers
 
 
 # ---------------------------------------------------------------------------
@@ -232,14 +234,14 @@ def _parse_responses_api_response(raw) -> LLMResponse:
 class OpenAIChatSession(ChatSession):
     """Client-managed chat session for OpenAI-compatible APIs.
 
-    Uses LLMInterface as the single source of truth.
+    Uses ChatInterface as the single source of truth.
     """
 
     def __init__(
         self,
         client: openai.OpenAI,
         model: str,
-        interface: LLMInterface,
+        interface: ChatInterface,
         tools: list[dict] | None,
         tool_choice: str | None,
         extra_kwargs: dict,
@@ -258,8 +260,8 @@ class OpenAIChatSession(ChatSession):
         self._context_window = get_context_limit(model)
 
     @property
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
         return self._interface
 
     def send(self, message) -> LLMResponse:
@@ -691,7 +693,7 @@ class OpenAIResponsesSession(ChatSession):
         extra_kwargs: dict,
         previous_response_id: str | None = None,
         compact_threshold: int | None = None,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
     ):
         self._client = client
         self._model = model
@@ -701,11 +703,11 @@ class OpenAIResponsesSession(ChatSession):
         self._extra_kwargs = extra_kwargs
         self._response_id: str | None = previous_response_id
         self._compact_threshold = compact_threshold
-        self._interface = interface or LLMInterface()
+        self._interface = interface or ChatInterface()
 
     @property
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
         return self._interface
 
     def _convert_input(self, message) -> list[dict]:
@@ -876,6 +878,9 @@ class OpenAIResponsesSession(ChatSession):
 class OpenAIAdapter(LLMAdapter):
     """Adapter that wraps the ``openai`` SDK for OpenAI and compatible APIs."""
 
+    supports_web_search = True
+    supports_vision = True
+
     def __init__(
         self,
         api_key: str,
@@ -903,14 +908,14 @@ class OpenAIAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,  # ignored — Gemini-specific
     ) -> ChatSession:
         # Create interface if not provided
         tool_dicts = FunctionSchema.list_to_dicts(tools)
         if interface is None:
-            interface = LLMInterface()
+            interface = ChatInterface()
             interface.add_system(system_prompt, tools=tool_dicts)
 
         # Check config for whether to use Responses API
@@ -945,12 +950,12 @@ class OpenAIAdapter(LLMAdapter):
         tools: list[FunctionSchema] | None = None,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
     ) -> OpenAIResponsesSession:
         # Create interface if not provided
         if interface is None:
-            interface = LLMInterface()
+            interface = ChatInterface()
             interface.add_system(system_prompt, tools=FunctionSchema.list_to_dicts(tools))
 
         openai_tools = _build_tools(tools)
@@ -1001,12 +1006,12 @@ class OpenAIAdapter(LLMAdapter):
         tools: list[FunctionSchema] | None = None,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
     ) -> OpenAIChatSession:
         # Create interface if not provided
         if interface is None:
-            interface = LLMInterface()
+            interface = ChatInterface()
             interface.add_system(system_prompt, tools=FunctionSchema.list_to_dicts(tools))
 
         openai_tools = _build_tools(tools)

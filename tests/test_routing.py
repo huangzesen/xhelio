@@ -12,7 +12,7 @@ from agent.tools import get_tool_schemas
 from agent.agent_registry import (
     ENVOY_TOOLS,
     DATAOPS_TOOLS,
-    EXTRACTION_TOOLS,
+    DATA_IO_TOOLS,
     VIZ_PLOTLY_TOOLS,
     ORCHESTRATOR_TOOLS,
     PLANNER_TOOLS,
@@ -33,7 +33,7 @@ class TestToolNameFiltering:
         assert "delegate_to_envoy" in names
         assert "delegate_to_viz" in names
         assert "delegate_to_data_ops" in names
-        assert "delegate_to_data_extraction" in names
+        assert "delegate_to_data_io" in names
         assert "delegate_to_insight" in names
         assert "get_dataset_docs" in names
         assert "read_document" in names
@@ -87,7 +87,7 @@ class TestToolNameFiltering:
         assert "delegate_to_envoy" in names
         assert "delegate_to_viz" in names
         assert "delegate_to_data_ops" in names
-        assert "delegate_to_data_extraction" in names
+        assert "delegate_to_data_io" in names
         assert "request_planning" in names
         # Should include list_fetched_data
         assert "list_fetched_data" in names
@@ -197,101 +197,101 @@ class TestDelegateToDataOpsTool:
         assert "delegate_to_data_ops" not in names
 
 
-class TestDataExtractionCategories:
-    """Test DataExtractionAgent tool filtering."""
+class TestDataIOCategories:
+    """Test DataIOAgent tool filtering."""
 
-    def test_extraction_agent_gets_store_dataframe(self):
-        tools = get_tool_schemas(names=EXTRACTION_TOOLS)
+    def test_data_io_agent_gets_store_dataframe(self):
+        tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
         assert "store_dataframe" in names
 
-    def test_extraction_agent_gets_read_document(self):
-        tools = get_tool_schemas(names=EXTRACTION_TOOLS)
+    def test_data_io_agent_gets_read_document(self):
+        tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
         assert "read_document" in names
 
-    def test_extraction_agent_gets_list_fetched_data(self):
-        tools = get_tool_schemas(names=EXTRACTION_TOOLS)
+    def test_data_io_agent_gets_list_fetched_data(self):
+        tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
         assert "list_fetched_data" in names
 
-    def test_extraction_agent_gets_ask_clarification(self):
-        tools = get_tool_schemas(names=EXTRACTION_TOOLS)
+    def test_data_io_agent_gets_ask_clarification(self):
+        tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
         assert "ask_clarification" in names
 
-    def test_extraction_agent_excludes_fetch(self):
-        names = set(EXTRACTION_TOOLS)
+    def test_data_io_agent_excludes_fetch(self):
+        names = set(DATA_IO_TOOLS)
         assert "fetch_data" not in names
 
-    def test_extraction_agent_excludes_compute(self):
-        names = set(EXTRACTION_TOOLS)
+    def test_data_io_agent_excludes_compute(self):
+        names = set(DATA_IO_TOOLS)
         assert "custom_operation" not in names
         assert "describe_data" not in names
         assert "save_data" not in names
 
-    def test_extraction_agent_excludes_routing(self):
-        names = set(EXTRACTION_TOOLS)
+    def test_data_io_agent_excludes_routing(self):
+        names = set(DATA_IO_TOOLS)
         assert "delegate_to_envoy" not in names
         assert "delegate_to_viz" not in names
 
-    def test_extraction_agent_excludes_visualization(self):
-        names = set(EXTRACTION_TOOLS)
+    def test_data_io_agent_excludes_visualization(self):
+        names = set(DATA_IO_TOOLS)
         assert "plot_data" not in names
         assert "style_plot" not in names
         assert "manage_plot" not in names
 
 
-class TestDelegateToDataExtractionTool:
-    """Test that the delegate_to_data_extraction tool is properly configured."""
+class TestDelegateToDataIOTool:
+    """Test that the delegate_to_data_io tool is properly configured."""
 
     def test_tool_exists(self):
         names = {t["name"] for t in get_tool_schemas()}
-        assert "delegate_to_data_extraction" in names
+        assert "delegate_to_data_io" in names
 
     def test_tool_requires_request(self):
         tool = next(
-            t for t in get_tool_schemas() if t["name"] == "delegate_to_data_extraction"
+            t for t in get_tool_schemas() if t["name"] == "delegate_to_data_io"
         )
         assert "request" in tool["parameters"]["properties"]
         assert "request" in tool["parameters"]["required"]
 
     def test_tool_has_optional_context(self):
         tool = next(
-            t for t in get_tool_schemas() if t["name"] == "delegate_to_data_extraction"
+            t for t in get_tool_schemas() if t["name"] == "delegate_to_data_io"
         )
         assert "context" in tool["parameters"]["properties"]
 
     def test_tool_not_in_extraction_agent_tools(self):
-        names = set(EXTRACTION_TOOLS)
-        assert "delegate_to_data_extraction" not in names
+        names = set(DATA_IO_TOOLS)
+        assert "delegate_to_data_io" not in names
 
 
-class TestDataExtractionAgentImportAndInterface:
-    """Verify DataExtractionAgent has the correct Agent interface."""
+class TestDataIOAgentImportAndInterface:
+    """Verify DataIOAgent has the correct Agent interface."""
 
     def test_import(self):
-        from agent.data_extraction_agent import DataExtractionAgent
+        from agent.data_io_agent import DataIOAgent
 
-        assert DataExtractionAgent is not None
+        assert DataIOAgent is not None
 
-    def test_send_method_exists_data_extraction(self):
-        from agent.data_extraction_agent import DataExtractionAgent
+    def test_send_method_exists_data_io(self):
+        from agent.data_io_agent import DataIOAgent
 
-        assert hasattr(DataExtractionAgent, "send")
+        assert hasattr(DataIOAgent,"send")
 
     def test_get_token_usage_method_exists(self):
-        from agent.data_extraction_agent import DataExtractionAgent
+        from agent.data_io_agent import DataIOAgent
 
-        assert hasattr(DataExtractionAgent, "get_token_usage")
-        assert callable(getattr(DataExtractionAgent, "get_token_usage"))
+        assert hasattr(DataIOAgent,"get_token_usage")
+        assert callable(getattr(DataIOAgent,"get_token_usage"))
 
     def test_start_stop_status_methods_exist(self):
-        from agent.data_extraction_agent import DataExtractionAgent
+        from agent.data_io_agent import DataIOAgent
 
-        assert hasattr(DataExtractionAgent, "start")
-        assert hasattr(DataExtractionAgent, "stop")
-        assert hasattr(DataExtractionAgent, "status")
+        assert hasattr(DataIOAgent,"start")
+        assert hasattr(DataIOAgent,"stop")
+        assert hasattr(DataIOAgent,"status")
 
 
 class TestEnvoyAgentImportAndInterface:
@@ -372,5 +372,5 @@ class TestRequestPlanningTool:
         assert "request_planning" not in names
 
     def test_tool_not_in_extraction_agent_tools(self):
-        names = set(EXTRACTION_TOOLS)
+        names = set(DATA_IO_TOOLS)
         assert "request_planning" not in names

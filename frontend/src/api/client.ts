@@ -30,6 +30,9 @@ import type {
   CleanupRequest,
   CleanupResponse,
   EurekaEntry,
+  ProviderSettingsResponse,
+  ProviderConfig,
+  ProviderTestResult,
 } from './types';
 
 const BASE = '/api';
@@ -433,6 +436,34 @@ export function updateApiKey(provider: string, key: string): Promise<ApiKeyUpdat
   return request('/api-key', {
     method: 'PUT',
     body: JSON.stringify({ provider, key }),
+  });
+}
+
+// ---- Provider Settings ----
+
+export function getProviderSettings(): Promise<ProviderSettingsResponse> {
+  return request('/settings/providers');
+}
+
+export function updateProviderSettings(body: {
+  active_provider?: string;
+  providers?: Record<string, Partial<ProviderConfig>>;
+}): Promise<{ status: string }> {
+  return request('/settings/providers', {
+    method: 'PUT',
+    body: JSON.stringify(body),
+  });
+}
+
+export function testProviderConnection(body: {
+  provider: string;
+  api_key?: string;
+  model?: string;
+  base_url?: string;
+}): Promise<ProviderTestResult> {
+  return request('/settings/providers/test', {
+    method: 'POST',
+    body: JSON.stringify(body),
   });
 }
 

@@ -12,13 +12,13 @@ from .base import (
     ChatSession,
     FunctionSchema,
 )
-from .interface import ToolResultBlock
+from .interface import ChatInterface, ToolResultBlock
 from .service import LLMService
+from .rate_limiter import RateLimiter
 
 # Concrete adapters — prefer LLMService for new code; these re-exports
 # exist for tests and scripts that construct adapters directly.
-from .gemini_adapter import GeminiAdapter
-from .openai_adapter import OpenAIAdapter
-from .anthropic_adapter import AnthropicAdapter
-from .minimax_adapter import MiniMaxAdapter
-from .rate_limiter import RateLimiter
+from .gemini.adapter import GeminiAdapter
+from .openai.adapter import OpenAIAdapter
+from .anthropic.adapter import AnthropicAdapter
+from .minimax.adapter import MiniMaxAdapter

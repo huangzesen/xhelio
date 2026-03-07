@@ -131,7 +131,7 @@ IMPORTANT: Always state the exact label(s) so downstream agents can reference th
 
 Do NOT attempt to fetch new data — fetching is handled by envoy agents.
 Do NOT attempt to plot data — plotting is handled by the visualization agent.
-Do NOT attempt to create DataFrames from text — that is handled by the DataExtraction agent.
+Do NOT attempt to create DataFrames from text — that is handled by the DataIO agent.
 
 ## Memory Reviews
 

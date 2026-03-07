@@ -26,7 +26,7 @@ from agent.logging import get_logger
 
 logger = get_logger()
 
-from .base import (
+from ..base import (
     ChatSession,
     FunctionSchema,
     LLMAdapter,
@@ -35,8 +35,10 @@ from .base import (
     ToolResultBlock,
     UsageMetadata,
 )
-from .interface import LLMInterface
-from .interface_converters import from_anthropic, to_anthropic
+from ..interface import ChatInterface
+from ..interface_converters import from_anthropic, to_anthropic
+
+from .defaults import DEFAULTS  # noqa: F401 — re-exported for consumers
 
 
 # ---------------------------------------------------------------------------
@@ -315,7 +317,7 @@ def _response_to_messages(raw) -> list[dict]:
 class AnthropicChatSession(ChatSession):
     """Client-managed chat session for the Anthropic Messages API.
 
-    Uses LLMInterface as the single source of truth. Rebuilds Anthropic
+    Uses ChatInterface as the single source of truth. Rebuilds Anthropic
     message format from the interface on each API call.
     """
 
@@ -324,7 +326,7 @@ class AnthropicChatSession(ChatSession):
         client: anthropic.Anthropic,
         model: str,
         system_prompt: str | list[dict],
-        interface: LLMInterface,
+        interface: ChatInterface,
         tools: list[dict] | None,
         tool_choice: dict | None,
         extra_kwargs: dict,
@@ -344,8 +346,8 @@ class AnthropicChatSession(ChatSession):
         self._context_window = get_context_limit(model)
 
     @property
-    def interface(self) -> LLMInterface:
-        """The canonical LLMInterface for this session."""
+    def interface(self) -> ChatInterface:
+        """The canonical ChatInterface for this session."""
         return self._interface
 
     def _build_request_kwargs(self, messages: list[dict]) -> dict[str, Any]:
@@ -400,7 +402,7 @@ class AnthropicChatSession(ChatSession):
         # Parse response and add to interface
         response = _parse_response(raw)
         # Record assistant response from raw API object (preserves thinking signatures)
-        from .interface import TextBlock, ThinkingBlock, ToolCallBlock
+        from ..interface import TextBlock, ThinkingBlock, ToolCallBlock
         assistant_blocks = []
         for block in raw.content:
             if block.type == "thinking":
@@ -438,7 +440,7 @@ class AnthropicChatSession(ChatSession):
         on_chunk: Callable[[str], None] | None = None,
     ) -> LLMResponse:
         """Streaming send. User message committed to history only after success."""
-        from .interface import TextBlock, ThinkingBlock, ToolCallBlock
+        from ..interface import TextBlock, ThinkingBlock, ToolCallBlock
 
         # Record user input into interface first
         if isinstance(message, str):
@@ -800,6 +802,9 @@ class AnthropicChatSession(ChatSession):
 class AnthropicAdapter(LLMAdapter):
     """Adapter that wraps the ``anthropic`` SDK for Claude models."""
 
+    supports_web_search = True
+    supports_vision = True
+
     def __init__(
         self,
         api_key: str,
@@ -848,7 +853,7 @@ class AnthropicAdapter(LLMAdapter):
         *,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
-        interface: LLMInterface | None = None,
+        interface: ChatInterface | None = None,
         thinking: str = "default",
         interaction_id: str | None = None,  # ignored — Gemini-specific
     ) -> AnthropicChatSession:
@@ -856,7 +861,7 @@ class AnthropicAdapter(LLMAdapter):
         if interface is not None:
             iface = interface
         else:
-            iface = LLMInterface()
+            iface = ChatInterface()
             tool_dicts = (
                 [{"name": t.name, "description": t.description, "parameters": t.parameters} for t in tools]
                 if tools else None

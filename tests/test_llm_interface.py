@@ -1,9 +1,9 @@
-"""Tests for the canonical LLMInterface layer."""
+"""Tests for the canonical ChatInterface layer."""
 
 import time
 import pytest
 from agent.llm.interface import (
-    LLMInterface,
+    ChatInterface,
     InterfaceEntry,
     TextBlock,
     ToolCallBlock,
@@ -108,29 +108,29 @@ class TestInterfaceEntry:
         assert restored.to_dict() == d
 
 
-class TestLLMInterface:
+class TestChatInterface:
     def test_add_system_prompt(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("You are helpful.")
         assert len(iface.entries) == 1
         assert iface.entries[0].role == "system"
         assert iface.entries[0].content[0].text == "You are helpful."
 
     def test_add_system_dedup(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("A")
         iface.add_system("A")
         assert len(iface.entries) == 1
 
     def test_add_system_changed(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("A")
         iface.add_system("B")
         assert len(iface.entries) == 2
         assert iface.entries[1].content[0].text == "B"
 
     def test_current_system_prompt(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         assert iface.current_system_prompt is None
         iface.add_system("A")
         assert iface.current_system_prompt == "A"
@@ -139,13 +139,13 @@ class TestLLMInterface:
         assert iface.current_system_prompt == "B"
 
     def test_add_user_text(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("hello")
         assert iface.entries[0].role == "user"
         assert iface.entries[0].content == [TextBlock(text="hello")]
 
     def test_add_user_multimodal(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("describe", image_bytes=b"\x89PNG", mime_type="image/png")
         blocks = iface.entries[0].content
         assert len(blocks) == 2
@@ -153,7 +153,7 @@ class TestLLMInterface:
         assert isinstance(blocks[1], ImageBlock)
 
     def test_add_assistant_message(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         blocks = [
             ThinkingBlock(text="think"),
             TextBlock(text="answer"),
@@ -164,7 +164,7 @@ class TestLLMInterface:
         assert len(iface.entries[0].content) == 3
 
     def test_add_tool_results(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_tool_results([
             ToolResultBlock(id="c1", name="fetch", content={"data": [1, 2]}),
         ])
@@ -172,7 +172,7 @@ class TestLLMInterface:
         assert isinstance(iface.entries[0].content[0], ToolResultBlock)
 
     def test_sequential_ids(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("a")
         iface.add_assistant_message([TextBlock(text="b")])
         iface.add_user_message("c")
@@ -181,7 +181,7 @@ class TestLLMInterface:
         assert iface.entries[2].id == 2
 
     def test_truncate_basic(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         for i in range(10):
             iface.add_user_message(f"message {i}")
         iface.truncate(max_entries=5)
@@ -190,7 +190,7 @@ class TestLLMInterface:
         assert iface.entries[4].content[0].text == "message 4"
 
     def test_truncate_preserves_system(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("system prompt")
         for i in range(10):
             iface.add_user_message(f"msg {i}")
@@ -199,7 +199,7 @@ class TestLLMInterface:
         assert iface.entries[0].role == "system"
 
     def test_truncate_keeps_recent(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         for i in range(10):
             iface.add_user_message(f"msg {i}")
         iface.truncate(max_entries=3, keep_recent=3)
@@ -208,7 +208,7 @@ class TestLLMInterface:
         assert len(iface.entries) >= 3
 
     def test_to_dict_and_back(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         iface.add_user_message("hi")
         iface.add_assistant_message([
@@ -220,7 +220,7 @@ class TestLLMInterface:
         ])
 
         d = iface.to_dict()
-        restored = LLMInterface.from_dict(d)
+        restored = ChatInterface.from_dict(d)
 
         assert restored.current_system_prompt == "sys"
         assert len(restored.entries) == len(iface.entries)
@@ -228,7 +228,7 @@ class TestLLMInterface:
         assert restored.entries[3].content[0].content == "ok"
 
     def test_to_messages_basic(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("hello")
         msgs = iface.to_messages()
         assert len(msgs) == 1
@@ -298,7 +298,7 @@ class TestSystemEntryWithTools:
     """Test system entries carry tools alongside system prompt."""
 
     def test_add_system_with_tools(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         tools = [{"name": "fetch", "description": "Fetch data", "parameters": {}}]
         iface.add_system("You are helpful.", tools=tools)
         entry = iface.entries[0]
@@ -309,14 +309,14 @@ class TestSystemEntryWithTools:
         assert d["tools"] == tools
 
     def test_add_system_dedup_with_same_tools(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         tools = [{"name": "fetch", "description": "Fetch", "parameters": {}}]
         iface.add_system("A", tools=tools)
         iface.add_system("A", tools=tools)
         assert len(iface.entries) == 1
 
     def test_add_system_emits_on_tool_change(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         tools1 = [{"name": "fetch", "description": "Fetch", "parameters": {}}]
         tools2 = [{"name": "fetch", "description": "Fetch", "parameters": {}},
                   {"name": "plot", "description": "Plot", "parameters": {}}]
@@ -327,7 +327,7 @@ class TestSystemEntryWithTools:
 
     def test_system_entry_to_dict_format(self):
         """System entries use 'system' and 'tools' keys, not 'content'."""
-        iface = LLMInterface()
+        iface = ChatInterface()
         tools = [{"name": "fn", "description": "d", "parameters": {}}]
         iface.add_system("prompt", tools=tools)
         d = iface.entries[0].to_dict()
@@ -336,12 +336,12 @@ class TestSystemEntryWithTools:
         assert d["role"] == "system"
 
     def test_system_roundtrip(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         tools = [{"name": "fn", "description": "d", "parameters": {"x": {"type": "int"}}}]
         iface.add_system("prompt", tools=tools)
         iface.add_user_message("hi")
         data = iface.to_dict()
-        restored = LLMInterface.from_dict(data)
+        restored = ChatInterface.from_dict(data)
         assert restored.current_system_prompt == "prompt"
         assert restored.current_tools == tools
 
@@ -350,7 +350,7 @@ class TestAddAssistantMessageExtended:
     """Test add_assistant_message records model, provider, usage."""
 
     def test_add_with_model_and_usage(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message(
             [TextBlock(text="hi")],
             model="gemini-3-flash-preview",
@@ -364,14 +364,14 @@ class TestAddAssistantMessageExtended:
 
     def test_add_without_new_fields_still_works(self):
         """Backward compat: existing calls without model/usage still work."""
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([TextBlock(text="hi")])
         entry = iface.entries[0]
         assert entry.model is None
         assert entry.usage == {}
 
     def test_roundtrip_with_model_and_usage(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message(
             [TextBlock(text="answer")],
             model="claude-sonnet-4-20250514",
@@ -380,21 +380,21 @@ class TestAddAssistantMessageExtended:
             usage={"input_tokens": 500, "output_tokens": 200, "thinking_tokens": 100},
         )
         data = iface.to_dict()
-        restored = LLMInterface.from_dict(data)
+        restored = ChatInterface.from_dict(data)
         assert restored.entries[0].model == "claude-sonnet-4-20250514"
         assert restored.entries[0].usage["input_tokens"] == 500
 
 
 class TestUsageHelpers:
-    """Test total_usage() and usage_by_model() on LLMInterface."""
+    """Test total_usage() and usage_by_model() on ChatInterface."""
 
     def test_total_usage_empty(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         usage = iface.total_usage()
         assert usage == {"input_tokens": 0, "output_tokens": 0, "thinking_tokens": 0, "calls": 0}
 
     def test_total_usage_sums_across_messages(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message(
             [TextBlock(text="a")], model="m1", provider="p",
             usage={"input_tokens": 100, "output_tokens": 50, "thinking_tokens": 10},
@@ -411,7 +411,7 @@ class TestUsageHelpers:
         assert usage["calls"] == 2
 
     def test_usage_by_model(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message(
             [TextBlock(text="a")], model="gemini-flash", provider="gemini",
             usage={"input_tokens": 100, "output_tokens": 50, "thinking_tokens": 0},
@@ -437,11 +437,11 @@ class TestChatSessionABC:
     def test_interface_property_required(self):
         """ChatSession subclass must provide interface."""
         from agent.llm.base import ChatSession
-        from agent.llm.interface import LLMInterface
+        from agent.llm.interface import ChatInterface
 
         class GoodSession(ChatSession):
             def __init__(self):
-                self._iface = LLMInterface()
+                self._iface = ChatInterface()
             def send(self, message):
                 pass
             @property
@@ -449,16 +449,16 @@ class TestChatSessionABC:
                 return self._iface
 
         s = GoodSession()
-        assert isinstance(s.interface, LLMInterface)
+        assert isinstance(s.interface, ChatInterface)
         assert s.get_history() == []  # empty interface
 
     def test_get_history_returns_canonical(self):
         from agent.llm.base import ChatSession
-        from agent.llm.interface import LLMInterface, TextBlock
+        from agent.llm.interface import ChatInterface, TextBlock
 
         class TestSession(ChatSession):
             def __init__(self):
-                self._iface = LLMInterface()
+                self._iface = ChatInterface()
                 self._iface.add_system("sys")
                 self._iface.add_user_message("hi")
             def send(self, message):
@@ -478,11 +478,11 @@ class TestChatSessionState:
 
     def test_session_has_id(self):
         from agent.llm.base import ChatSession
-        from agent.llm.interface import LLMInterface, TextBlock
+        from agent.llm.interface import ChatInterface, TextBlock
 
         class TestSession(ChatSession):
             def __init__(self):
-                self._iface = LLMInterface()
+                self._iface = ChatInterface()
                 self.session_id = "xh_test123"
                 self._model = "test-model"
                 self._provider = "test"
@@ -498,11 +498,11 @@ class TestChatSessionState:
 
     def test_get_state_format(self):
         from agent.llm.base import ChatSession
-        from agent.llm.interface import LLMInterface, TextBlock
+        from agent.llm.interface import ChatInterface, TextBlock
 
         class TestSession(ChatSession):
             def __init__(self):
-                self._iface = LLMInterface()
+                self._iface = ChatInterface()
                 self.session_id = "xh_test456"
                 self._agent_type = "envoy"
                 self._tracked = True
@@ -532,11 +532,11 @@ class TestChatSessionState:
 
     def test_total_usage_delegates(self):
         from agent.llm.base import ChatSession
-        from agent.llm.interface import LLMInterface, TextBlock
+        from agent.llm.interface import ChatInterface, TextBlock
 
         class TestSession(ChatSession):
             def __init__(self):
-                self._iface = LLMInterface()
+                self._iface = ChatInterface()
                 self.session_id = "xh_test"
                 self._agent_type = ""
                 self._tracked = True
@@ -562,9 +562,9 @@ class TestAdapterRecordsUsage:
     def test_anthropic_send_records_metadata(self):
         """Anthropic send() should record model/provider/usage on assistant entry."""
         from unittest.mock import MagicMock, patch
-        from agent.llm.anthropic_adapter import AnthropicAdapter
+        from agent.llm.anthropic.adapter import AnthropicAdapter
 
-        with patch("agent.llm.anthropic_adapter.anthropic") as mock_sdk:
+        with patch("agent.llm.anthropic.adapter.anthropic") as mock_sdk:
             mock_client = MagicMock()
             mock_sdk.Anthropic.return_value = mock_client
 
@@ -598,7 +598,7 @@ class TestAdapterRecordsUsage:
     def test_openai_completions_records_metadata(self):
         """OpenAI ChatCompletions session records model/provider/usage on assistant entry."""
         from unittest.mock import MagicMock, patch
-        from agent.llm.openai_adapter import OpenAIChatSession
+        from agent.llm.openai.adapter import OpenAIChatSession
 
         # Build a mock OpenAI ChatCompletion response
         mock_msg = MagicMock()
@@ -618,7 +618,7 @@ class TestAdapterRecordsUsage:
         # Create a session directly with a mock client
         mock_client = MagicMock()
         mock_client.chat.completions.create.return_value = mock_raw
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         session = OpenAIChatSession(
             client=mock_client,

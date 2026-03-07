@@ -34,7 +34,7 @@ class WorkUnit:
 
     id: str
     kind: str  # "delegation", "planner"
-    agent_type: str  # "envoy", "data_ops", "data_extraction", "viz", "planner"
+    agent_type: str  # "envoy", "data_ops", "data_io", "viz", "planner"
     agent_name: str  # "EnvoyAgent[ACE]", "DataOpsAgent", etc.
     task_summary: str  # Human-readable summary
     status: WorkStatus

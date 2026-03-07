@@ -17,7 +17,7 @@ import threading
 from datetime import datetime, timedelta
 from typing import Any
 
-from .event_bus import get_event_bus, DEBUG
+from agent.event_bus import get_event_bus, DEBUG
 
 # Activity log for debugging - last 50 calls
 _ACTIVITY_LOG: list[dict[str, Any]] = []

@@ -92,7 +92,7 @@ The agent searches the web for storm catalogs, identifies the May 2024 event, fe
 > [Upload a PDF table of ICME events from Richardson & Cane catalog]
 > "Extract the events from 2023-2024 and plot their transit speeds as a time series"
 
-LLM vision reads the PDF, the DataExtractionActor converts the table to a structured DataFrame, and the VizPlotlyActor renders the result.
+LLM vision reads the PDF, the DataIOAgent converts the table to a structured DataFrame, and the VizPlotlyActor renders the result.
 
 ## Architecture
 
@@ -110,8 +110,9 @@ OrchestratorAgent (Gemini, HIGH thinking)
     |                                        coordinate systems, time ranges
     +---> DataOpsActor                      Writes pandas/numpy/scipy/pywt code
     |                                        in an AST-validated sandbox
-    +---> DataExtractionActor               Converts search results, PDFs,
-    |                                        event catalogs into DataFrames
+    +---> DataIOAgent                       Converts search results, PDFs,
+    |                                        event catalogs into DataFrames;
+    |                                        loads local files (CSV, JSON, etc.)
     +---> VizPlotlyActor                          Interactive Plotly figures with
     |                                        domain-appropriate defaults
     +---> InsightAgent                      Analyzes rendered plots via
@@ -137,7 +138,7 @@ agent/                  Core agent layer (9 agents + 46 tools)
   core.py                 OrchestratorAgent — routes, dispatches, plans
   envoy_agent.py          EnvoyAgent — per-spacecraft data fetching
   data_ops_agent.py       DataOpsActor — pandas/numpy/scipy/pywt computation
-  data_extraction_agent.py DataExtractionActor — text/PDF to DataFrames
+  data_io_agent.py       DataIOAgent — text/PDF to DataFrames, local file import
   viz_plotly_agent.py  VizPlotlyActor — Plotly rendering
   insight_agent.py        InsightAgent — multimodal plot analysis via LLM vision
   planner.py              PlannerAgent — plan-execute-replan loop

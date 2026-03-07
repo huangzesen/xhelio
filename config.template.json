@@ -4,9 +4,9 @@
   "_comment_data_dir": "Base directory for all agent state (logs, sessions, memory, caches). Override with XHELIO_DIR env var (highest priority) or this key. Default: ~/.xhelio",
   "data_dir": null,
 
-  "_comment_llm_provider": "LLM provider: 'gemini', 'openai', 'anthropic', or 'minimax'. Flip this to switch — model names are stored per-provider in the 'providers' section below.",
+  "_comment_llm_provider": "LLM provider: 'gemini', 'openai', 'anthropic', 'minimax', 'grok', 'deepseek', 'qwen', 'kimi', 'glm', or 'custom'. Flip this to switch — model names are stored per-provider in the 'providers' section below.",
   "llm_provider": "gemini",
-  "_comment_api_keys": "API keys are ALWAYS read from .env (never from this file). Set the key for your provider: GOOGLE_API_KEY, OPENAI_API_KEY, ANTHROPIC_API_KEY, or MINIMAX_API_KEY.",
+  "_comment_api_keys": "API keys are ALWAYS read from .env (never from this file). Set the key for your provider: GOOGLE_API_KEY, OPENAI_API_KEY, ANTHROPIC_API_KEY, MINIMAX_API_KEY, GROK_API_KEY, DEEPSEEK_API_KEY, QWEN_API_KEY, KIMI_API_KEY, GLM_API_KEY, or CUSTOM_API_KEY.",
 
   "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model, planner_model, fallback_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
   "providers": {
@@ -50,6 +50,36 @@
       "inline_model": "MiniMax-M2.1",
       "planner_model": "MiniMax-M2.5-highspeed",
       "fallback_model": "MiniMax-M2.5-highspeed"
+    },
+    "grok": {
+      "_comment": "xAI Grok via OpenAI-compatible API. Uses GROK_API_KEY env var.",
+      "model": "grok-4",
+      "sub_agent_model": "grok-4",
+      "inline_model": "grok-4-mini"
+    },
+    "deepseek": {
+      "_comment": "DeepSeek via OpenAI-compatible API. Uses DEEPSEEK_API_KEY env var. No web search or vision.",
+      "model": "deepseek-chat",
+      "sub_agent_model": "deepseek-chat",
+      "inline_model": "deepseek-chat"
+    },
+    "qwen": {
+      "_comment": "Alibaba Qwen via DashScope OpenAI-compatible API. Uses QWEN_API_KEY env var.",
+      "model": "qwen3.5-plus",
+      "sub_agent_model": "qwen3.5-plus",
+      "inline_model": "qwen-flash-2025-07-28"
+    },
+    "kimi": {
+      "_comment": "Moonshot Kimi. Supports both OpenAI and Anthropic compat (set api_compat). Uses KIMI_API_KEY env var.",
+      "model": "kimi-k2.5",
+      "sub_agent_model": "kimi-k2.5",
+      "inline_model": "kimi-k2.5"
+    },
+    "glm": {
+      "_comment": "Zhipu GLM via OpenAI-compatible API. Uses GLM_API_KEY env var.",
+      "model": "glm-5",
+      "sub_agent_model": "glm-5",
+      "inline_model": "glm-4.7"
     }
   },
 

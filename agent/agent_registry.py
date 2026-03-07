@@ -70,9 +70,9 @@ DATAOPS_TOOLS: list[str] = list(_REGISTRY["agents"]["dataops"]["call"])
 DATAOPS_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["dataops"]["informed"])
 PLANNER_TOOLS: list[str] = list(_REGISTRY["agents"]["planner"]["call"])
 PLANNER_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["planner"]["informed"])
-EXTRACTION_TOOLS: list[str] = list(_REGISTRY["agents"]["extraction"]["call"])
-EXTRACTION_INFORMED_TOOLS: list[str] = list(
-    _REGISTRY["agents"]["extraction"]["informed"]
+DATA_IO_TOOLS: list[str] = list(_REGISTRY["agents"]["data_io"]["call"])
+DATA_IO_INFORMED_TOOLS: list[str] = list(
+    _REGISTRY["agents"]["data_io"]["informed"]
 )
 EUREKA_TOOLS: list[str] = list(_REGISTRY["agents"]["eureka"]["call"])
 EUREKA_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["eureka"]["informed"])
@@ -100,7 +100,7 @@ for _json_name, _ctx_key in [
     ("viz_jsx", "ctx:viz_jsx"),
     ("dataops", "ctx:dataops"),
     ("planner", "ctx:planner"),
-    ("extraction", "ctx:extraction"),
+    ("data_io", "ctx:data_io"),
     ("eureka", "ctx:eureka"),
 ]:
     _cfg = _REGISTRY["agents"][_json_name]
@@ -127,9 +127,9 @@ _INFORMED_DEFAULTS: list[tuple[str, frozenset[str], list[str]]] = [
     ("ctx:dataops", AGENT_CALL_REGISTRY["ctx:dataops"], DATAOPS_INFORMED_TOOLS),
     ("ctx:planner", AGENT_CALL_REGISTRY["ctx:planner"], PLANNER_INFORMED_TOOLS),
     (
-        "ctx:extraction",
-        AGENT_CALL_REGISTRY["ctx:extraction"],
-        EXTRACTION_INFORMED_TOOLS,
+        "ctx:data_io",
+        AGENT_CALL_REGISTRY["ctx:data_io"],
+        DATA_IO_INFORMED_TOOLS,
     ),
     (
         "ctx:eureka",

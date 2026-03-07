@@ -15,7 +15,7 @@ from agent.llm.base import (
     ToolCall,
     UsageMetadata,
 )
-from agent.llm.openai_adapter import (
+from agent.llm.openai.adapter import (
     OpenAIAdapter,
     OpenAIChatSession,
     _build_tools,
@@ -196,7 +196,7 @@ class TestParseResponse:
 class TestOpenAIAdapterMocked:
     @pytest.fixture
     def adapter(self):
-        with patch("agent.llm.openai_adapter.openai") as mock_openai:
+        with patch("agent.llm.openai.adapter.openai") as mock_openai:
             mock_client = MagicMock()
             mock_openai.OpenAI.return_value = mock_client
             mock_openai.RateLimitError = type("RateLimitError", (Exception,), {})
@@ -207,7 +207,7 @@ class TestOpenAIAdapterMocked:
             return a
 
     def test_constructor_sets_base_url(self):
-        with patch("agent.llm.openai_adapter.openai") as mock_openai:
+        with patch("agent.llm.openai.adapter.openai") as mock_openai:
             mock_openai.OpenAI.return_value = MagicMock()
             OpenAIAdapter(api_key="key", base_url="https://custom.api/v1")
             mock_openai.OpenAI.assert_called_once_with(
@@ -217,7 +217,7 @@ class TestOpenAIAdapterMocked:
             )
 
     def test_constructor_no_base_url(self):
-        with patch("agent.llm.openai_adapter.openai") as mock_openai:
+        with patch("agent.llm.openai.adapter.openai") as mock_openai:
             mock_openai.OpenAI.return_value = MagicMock()
             OpenAIAdapter(api_key="key")
             mock_openai.OpenAI.assert_called_once_with(

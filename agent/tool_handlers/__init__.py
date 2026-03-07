@@ -51,9 +51,12 @@ from agent.tool_handlers.delegation import (
     handle_delegate_to_envoy,
     handle_delegate_to_viz,
     handle_delegate_to_data_ops,
-    handle_delegate_to_data_extraction,
+    handle_delegate_to_data_io,
     handle_delegate_to_insight,
 )
+
+# ── File I/O ──
+from agent.tool_handlers.file_io import handle_load_file
 
 # ── Data ops ──
 from agent.tool_handlers.data_ops import (
@@ -115,8 +118,10 @@ TOOL_REGISTRY.update(
         "delegate_to_envoy": handle_delegate_to_envoy,
         "delegate_to_viz": handle_delegate_to_viz,
         "delegate_to_data_ops": handle_delegate_to_data_ops,
-        "delegate_to_data_extraction": handle_delegate_to_data_extraction,
+        "delegate_to_data_io": handle_delegate_to_data_io,
         "delegate_to_insight": handle_delegate_to_insight,
+        # File I/O
+        "load_file": handle_load_file,
         # Data ops
         "fetch_data": handle_fetch_data,
         "list_fetched_data": handle_list_fetched_data,

@@ -10,8 +10,8 @@ from unittest.mock import MagicMock, patch
 
 from agent.llm.base import LLMResponse
 from agent.llm import MiniMaxAdapter
-from agent.minimax_mcp_client import MiniMaxMCPClient, get_minimax_mcp_client
-import agent.minimax_mcp_client as _mcp_mod
+from agent.llm.minimax.mcp_client import MiniMaxMCPClient, get_minimax_mcp_client
+import agent.llm.minimax.mcp_client as _mcp_mod
 
 
 @pytest.fixture(autouse=True)
@@ -24,7 +24,7 @@ def _reset_mcp_singleton():
 
 class TestMiniMaxAdapter:
     def test_constructor_sets_minimax_base_url(self):
-        with patch("agent.llm.anthropic_adapter.anthropic") as mock_anthropic:
+        with patch("agent.llm.anthropic.adapter.anthropic") as mock_anthropic:
             mock_client = MagicMock()
             mock_anthropic.Anthropic.return_value = mock_client
 
@@ -66,7 +66,7 @@ class TestMiniMaxAdapter:
         with (
             patch("config._provider_get", return_value=True),
             patch(
-                "agent.minimax_mcp_client.get_minimax_mcp_client",
+                "agent.llm.minimax.mcp_client.get_minimax_mcp_client",
                 return_value=mock_client,
             ),
         ):
@@ -81,7 +81,7 @@ class TestMiniMaxAdapter:
         with (
             patch("config._provider_get", return_value=True),
             patch(
-                "agent.minimax_mcp_client.get_minimax_mcp_client",
+                "agent.llm.minimax.mcp_client.get_minimax_mcp_client",
                 side_effect=RuntimeError("no uvx"),
             ),
         ):
@@ -98,7 +98,7 @@ class TestMiniMaxAdapter:
         with (
             patch("config._provider_get", return_value=True),
             patch(
-                "agent.minimax_mcp_client.get_minimax_mcp_client",
+                "agent.llm.minimax.mcp_client.get_minimax_mcp_client",
                 return_value=mock_client,
             ),
         ):
@@ -115,7 +115,7 @@ class TestMiniMaxAdapter:
         with (
             patch("config._provider_get", return_value=True),
             patch(
-                "agent.minimax_mcp_client.get_minimax_mcp_client",
+                "agent.llm.minimax.mcp_client.get_minimax_mcp_client",
                 return_value=mock_client,
             ),
         ):

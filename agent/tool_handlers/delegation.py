@@ -409,7 +409,7 @@ def handle_delegate_to_data_ops(orch: "OrchestratorAgent", tool_args: dict) -> d
     )
 
 
-def handle_delegate_to_data_extraction(
+def handle_delegate_to_data_io(
     orch: "OrchestratorAgent", tool_args: dict
 ) -> dict:
     request = tool_args["request"]
@@ -419,26 +419,26 @@ def handle_delegate_to_data_extraction(
     orch._event_bus.emit(
         DELEGATION,
         level="debug",
-        msg=f"[Router] Delegating to DataExtraction specialist{mode_text}",
+        msg=f"[Router] Delegating to DataIO specialist{mode_text}",
     )
 
-    agent = orch._get_or_create_extraction_agent()
+    agent = orch._get_or_create_data_io_agent()
     if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
         return {
             "status": "error",
             "message": (
-                "The data extraction agent is already processing a delegation. "
+                "The data I/O agent is already processing a delegation. "
                 "Wait for it to finish before sending another request."
             ),
         }
-    full_request = orch._build_extraction_request(request, context)
+    full_request = orch._build_data_io_request(request, context)
     tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
 
-    def _extraction_post(result):
+    def _data_io_post(result):
         orch._event_bus.emit(
             DELEGATION_DONE,
             level="debug",
-            msg="[Router] DataExtraction specialist finished",
+            msg="[Router] DataIO specialist finished",
             data={
                 "status": result.get("status"),
                 "text_preview": result.get("result", "")[:200],
@@ -451,10 +451,10 @@ def handle_delegate_to_data_extraction(
         full_request,
         store_snapshot=orch._store.list_entries(),
         tool_call_id=tool_call_id,
-        agent_type="extraction",
-        agent_name="DataExtractionAgent",
+        agent_type="data_io",
+        agent_name="DataIOAgent",
         task_summary=request[:200],
-        post_process=_extraction_post,
+        post_process=_data_io_post,
         wait=wait,
     )
 

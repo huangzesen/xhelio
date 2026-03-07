@@ -73,11 +73,12 @@ agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
   |                               System prompt with computation patterns + code guidelines
   |                               No fetch or plot tools — operates on in-memory data
   |
-  +---> agent/data_extraction_agent.py  DataExtraction sub-agent (text-to-DataFrame)
-  |       DataExtractionActor     Focused Gemini session for unstructured-to-structured conversion
+  +---> agent/data_io_agent.py       DataIO sub-agent (text-to-DataFrame + local file import)
+  |       DataIOAgent              Focused Gemini session for data extraction and file loading
   |       Inbox queue + main loop Persistent actor with dedicated thread
-  |                               Tools: store_dataframe, read_document, ask_clarification
-  |                               Turns search results, documents, event lists into DataFrames
+  |                               Tools: store_dataframe, load_file, read_document, ask_clarification
+  |                               Turns search results, documents, event lists into DataFrames;
+  |                               loads local CSV/JSON/Excel/Parquet/CDF files
   |
   +---> agent/envoy_agent.py      Envoy sub-agents (fetch-only tools)
   |       EnvoyAgent              Focused Gemini session per spacecraft mission
@@ -241,7 +242,7 @@ SPICE ephemeris tools are available to both the orchestrator and all envoy agent
 |------|---------|
 | `delegate_to_envoy` | LLM-driven delegation to a mission specialist sub-agent |
 | `delegate_to_data_ops` | LLM-driven delegation to the data ops specialist sub-agent |
-| `delegate_to_data_extraction` | LLM-driven delegation to the data extraction specialist sub-agent |
+| `delegate_to_data_io` | LLM-driven delegation to the data I/O specialist sub-agent |
 | `delegate_to_viz` | LLM-driven delegation to the visualization sub-agent (backend param selects plotly/matplotlib/jsx) |
 | `delegate_to_insight` | LLM-driven delegation to the insight sub-agent for multimodal plot analysis |
 | `request_planning` | Activate multi-step planning system for complex requests (orchestrator can trigger dynamically) |
@@ -284,8 +285,8 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 
 ### OrchestratorAgent (agent/core.py)
 - Sees tools: discovery, conversation, routing, document, spice, pipeline + `list_fetched_data` extra
-- Routes: data fetching -> EnvoyAgent, computation -> DataOpsActor, text-to-data -> DataExtractionActor, visualization -> VizPlotlyActor, plot analysis -> InsightActor
-- Handles multi-step plans with mission-tagged task dispatch (`__data_ops__`, `__data_extraction__`, `__visualization__`)
+- Routes: data fetching -> EnvoyAgent, computation -> DataOpsActor, text-to-data/file-import -> DataIOAgent, visualization -> VizPlotlyActor, plot analysis -> InsightActor
+- Handles multi-step plans with mission-tagged task dispatch (`__data_ops__`, `__data_io__`, `__visualization__`)
 
 ### EnvoyAgent (agent/envoy_agent.py)
 - Sees tools: discovery, data_ops_fetch, conversation + `list_fetched_data` extra
@@ -306,12 +307,13 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 - System prompt with computation patterns and code guidelines
 - No fetch tools — operates on already-fetched data in memory
 
-### DataExtractionActor (agent/data_extraction_agent.py)
-- Sees tools: data_extraction (`store_dataframe`), document (`read_document`), conversation (`ask_clarification`) + `list_fetched_data` extra
+### DataIOAgent (agent/data_io_agent.py)
+- Sees tools: data_io (`store_dataframe`, `load_file`), document (`read_document`), conversation (`ask_clarification`) + `list_fetched_data` extra
 - Singleton, cached per session
-- System prompt with extraction patterns, DataFrame creation guidelines, and document reading workflow
+- System prompt with extraction patterns, DataFrame creation guidelines, file loading workflow, and document reading workflow
 - Turns unstructured text (search results, document tables, event catalogs) into structured DataFrames
-- No fetch, compute, or plot tools — creates data from text only
+- Loads local files (CSV, JSON, Excel, Parquet, CDF) into the DataStore
+- No fetch, compute, or plot tools — creates/imports data only
 
 ### VizPlotlyActor (agent/viz_plotly_agent.py)
 - Sees tools: `render_plotly_json` + `manage_plot` + `list_fetched_data` (3 tools total)
@@ -421,18 +423,18 @@ Each `DataEntry` has an `is_timeseries` boolean (default `True`) that controls h
 Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedicated thread, and a persistent LLM session.
 
 - **`SubAgent` base class** (`agent/sub_agent.py`): `Message` dataclass + `SubAgent` class with inbox, main loop thread, active tool tracking, and event bus integration. Tools run synchronously (blocking). When the LLM emits multiple tool calls in a single response and all are in `_PARALLEL_SAFE_TOOLS`, they execute concurrently via ThreadPoolExecutor; otherwise sequentially.
-- **Sub-agent actors**: `EnvoyAgent`, `VizPlotlyActor`, `DataOpsActor`, `DataExtractionActor`, `InsightActor` — each extends `Actor` with specialized prompt builders and tool schemas.
+- **Sub-agent actors**: `EnvoyAgent`, `VizPlotlyActor`, `DataOpsActor`, `DataIOAgent`, `InsightActor` — each extends `Actor` with specialized prompt builders and tool schemas.
 - **Delegation**: Delegation tools (`delegate_to_envoy`, `delegate_to_viz`, etc.) use `_get_or_create_*_agent()` + `_delegate_to_sub_agent()`. Agents persist across delegations, preserving LLM context.
 - **Serialization**: Each actor has one thread reading from its inbox — multiple requests to the same mission actor queue naturally without locks.
 
 ### LLM-Driven Routing (`agent/core.py`, `agent/envoy_agent.py`, `agent/data_ops_agent.py`, `agent/viz_plotly_agent.py`)
-- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_extraction` (text-to-DataFrame), `delegate_to_viz` (visualization), or `delegate_to_insight` (multimodal plot analysis) tools. No regex-based routing — the LLM uses conversation context and the routing table to decide.
+- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_io` (text-to-DataFrame, file import), `delegate_to_viz` (visualization), or `delegate_to_insight` (multimodal plot analysis) tools. No regex-based routing — the LLM uses conversation context and the routing table to decide.
 - **Mission sub-agents**: Each spacecraft has a data fetching specialist with rich system prompt (recommended datasets, analysis patterns). Agents are cached per session. Sub-agents have **fetch-only tools** (discovery, data_ops_fetch, conversation) — no compute, plot, or routing tools.
 - **DataOps sub-agent**: Data transformation specialist with `custom_operation`, `describe_data`, `save_data` + `list_fetched_data`. System prompt includes computation patterns and code guidelines. Singleton, cached per session.
-- **DataExtraction sub-agent**: Text-to-DataFrame specialist with `store_dataframe`, `read_document`, `ask_clarification` + `list_fetched_data`. System prompt includes extraction patterns and DataFrame creation guidelines. Singleton, cached per session.
+- **DataIO sub-agent**: Text-to-DataFrame and file import specialist with `store_dataframe`, `load_file`, `read_document`, `ask_clarification` + `list_fetched_data`. System prompt includes extraction patterns, DataFrame creation guidelines, and file loading workflow. Singleton, cached per session.
 - **Visualization sub-agent**: Visualization specialist with `render_plotly_json` + `manage_plot` + `list_fetched_data` tools. Owns all visualization operations (plotting, export, reset, zoom, traces). The LLM provides Plotly figure JSON with `data_label` placeholders, and the system fills in actual data arrays.
-- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `spice`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["discovery", "web_search", "conversation", "routing", "document", "memory", "data_export", "spice", "pipeline", "pipeline_ops"]` + `list_fetched_data` extra. EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataExtractionActor sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizPlotlyActor sees `["visualization"]` + `list_fetched_data`, `manage_plot` extras → `render_plotly_json` + `manage_plot` + `list_fetched_data`.
-- **Post-delegation flow**: After `delegate_to_envoy` returns data labels, the orchestrator uses `delegate_to_data_ops` for computation, `delegate_to_data_extraction` for text-to-DataFrame conversion, `delegate_to_viz` to visualize results, and optionally `delegate_to_insight` for scientific interpretation of the rendered plot.
+- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `spice`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["discovery", "web_search", "conversation", "routing", "document", "memory", "data_export", "spice", "pipeline", "pipeline_ops"]` + `list_fetched_data` extra. EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataIOAgent sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizPlotlyActor sees `["visualization"]` + `list_fetched_data`, `manage_plot` extras → `render_plotly_json` + `manage_plot` + `list_fetched_data`.
+- **Post-delegation flow**: After `delegate_to_envoy` returns data labels, the orchestrator uses `delegate_to_data_ops` for computation, `delegate_to_data_io` for text-to-DataFrame conversion or file import, `delegate_to_viz` to visualize results, and optionally `delegate_to_insight` for scientific interpretation of the rendered plot.
 - **Slim orchestrator**: System prompt contains a routing table (mission names + capabilities), orchestrator rules, error recovery patterns, and delegation instructions. Dataset IDs and analysis tips live in mission sub-agents.
 - **Gemini context caching**: When using Gemini, the orchestrator creates an explicit context cache containing the full system prompt (with mission catalog) + tool schemas (~38K tokens). This exceeds the 32K threshold for Gemini's cached content API, giving a 75% discount on cached input tokens. The cache is created once per session (24h TTL). Non-Gemini providers use the slim prompt without caching.
 - **Per-agent session history** (`ctx:` tags): Sub-agents get fresh blank chats per delegation and have no awareness of prior session activity. To fix this, the EventBus `DEFAULT_TAGS` registry includes `ctx:mission`, `ctx:viz`, `ctx:dataops`, `ctx:planner`, and `ctx:orchestrator` tags on relevant event types (data fetches, computes, renders, errors, sub-agent tool calls). At delegation time, `_build_agent_history(agent_type)` queries `get_events(tags={"ctx:{type}"})`, formats events into concise one-line summaries, and injects the result as "Session history (what happened earlier)" before the memory context. This gives agents awareness of prior fetches, failed operations, and rendered plots without replaying the full conversation. The `ctx:mission` tag covers all mission agents (one shared history for cross-mission comparison scenarios). The `ctx:viz` and `ctx:dataops` tags filter `SUB_AGENT_TOOL`/`SUB_AGENT_ERROR` events by agent name to show only that agent's prior tool calls. The `ctx:orchestrator` tag (on 9 event types: `SUB_AGENT_TOOL`, `SUB_AGENT_ERROR`, `DATA_FETCHED`, `DATA_COMPUTED`, `RENDER_EXECUTED`, `CUSTOM_OP_FAILURE`, `FETCH_ERROR`, `RENDER_ERROR`, `PLOT_ACTION`) gives the orchestrator and planner a terse status-only view of sub-agent activity (e.g. `[PSP_Agent] fetch_data: ok`, `Fetched: ACE.Bmag`). `DELEGATION`/`DELEGATION_DONE` are excluded from `ctx:orchestrator` because the orchestrator sees these as its own tool calls in chat history.
@@ -457,12 +459,12 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
   7. Compute and visualization tasks execute **after** fetches complete (dependency order)
   8. If the planner fails, falls back to direct orchestrator execution
   9. See planning flow details in `knowledge/prompts/planner/` (planner prompt sections)
-- Tasks are tagged with `mission="__visualization__"` for visualization dispatch, `mission="__data_ops__"` for compute dispatch, `mission="__data_extraction__"` for text-to-DataFrame dispatch
+- Tasks are tagged with `mission="__visualization__"` for visualization dispatch, `mission="__data_ops__"` for compute dispatch, `mission="__data_io__"` for text-to-DataFrame/file-import dispatch
 
 ### Thinking Levels
 - Controlled via `create_chat(thinking="high"|"low"|"default")` in the adapter layer
 - **HIGH**: Orchestrator (`agent/core.py`) and PlannerAgent (`agent/planner.py`) — deep reasoning for routing decisions and plan decomposition
-- **LOW**: EnvoyAgent, VizPlotlyActor, DataOpsActor, DataExtractionActor, InsightActor — fast execution with minimal thinking overhead
+- **LOW**: EnvoyAgent, VizPlotlyActor, DataOpsActor, DataIOAgent, InsightActor — fast execution with minimal thinking overhead
 - **OFF**: Inline tier (follow-up suggestions, ghost text autocomplete) — cheapest/fastest model, no thinking
 - Thinking tokens tracked separately in `get_token_usage()` across all agents
 - Verbose mode logs full thoughts to terminal/file, plus 500-char tagged previews for web UI via `agent/thinking.py` utilities
@@ -471,7 +473,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 ### Async Delegation (`agent/async_delegation.py`)
 - **Config**: `reasoning.async_delegation` (default: `false`)
 - When enabled, eligible `delegate_to_*` calls launch sub-agents on daemon threads and return immediately with `{"status": "pending_async"}`
-- **Eligible tools**: `delegate_to_envoy`, `delegate_to_data_ops`, `delegate_to_data_extraction`
+- **Eligible tools**: `delegate_to_envoy`, `delegate_to_data_ops`, `delegate_to_data_io`
 - **Not eligible** (shared state): `delegate_to_viz` (PlotlyRenderer), `delegate_to_insight` (image export)
 - **Freeze/wake pattern**: If the LLM produces no tool calls but async delegations are pending, the orchestrator freezes (zero LLM cost) until at least one completes, then wakes with results
 - `DelegationManager` coordinates via `threading.Condition` for efficient blocking
@@ -613,7 +615,7 @@ Each provider implements `adapter.web_search()` using its native search capabili
 - **MiniMax**: MCP `web_search` via `minimax-coding-plan-mcp` subprocess (enabled by default)
 - **No search backend available**: Warning logged, error returned to LLM — agent continues without search
 - Returns grounded text with source URLs
-- Search results can be turned into plottable datasets via the `store_dataframe` tool (google_search → delegate_to_data_extraction → store_dataframe → plot)
+- Search results can be turned into plottable datasets via the `store_dataframe` tool (google_search → delegate_to_data_io → store_dataframe → plot)
 
 ## Configuration
 

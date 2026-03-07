@@ -89,6 +89,12 @@ _PROVIDER_ENV_KEYS = {
     "openai": "OPENAI_API_KEY",
     "anthropic": "ANTHROPIC_API_KEY",
     "minimax": "MINIMAX_API_KEY",
+    "grok": "GROK_API_KEY",
+    "deepseek": "DEEPSEEK_API_KEY",
+    "qwen": "QWEN_API_KEY",
+    "kimi": "KIMI_API_KEY",
+    "glm": "GLM_API_KEY",
+    "custom": "CUSTOM_API_KEY",
 }
 
 
@@ -109,68 +115,38 @@ def get_api_key(provider: str | None = None) -> str | None:
 
 
 # ---- Per-provider defaults ---------------------------------------------------
-# Hardcoded defaults per provider. Used as final fallback when neither the
-# providers.<active>.key nor a top-level key is set in config.json.
-_PROVIDER_DEFAULTS = {
-    "gemini": {
-        "model": "gemini-3-flash-preview",
-        "sub_agent_model": "gemini-3-flash-preview",
-        "insight_model": "gemini-3-flash-preview",
-        "inline_model": "gemini-2.5-flash-lite",
-        "planner_model": "gemini-3-flash-preview",
-        "fallback_model": "gemini-3-flash-preview",
-        "base_url": None,
-        "thinking_model": "high",
-        "thinking_sub_agent": "high",
-        "thinking_insight": "low",
-        "web_search": True,
-        "rate_limit_interval": 0,
-    },
-    "openai": {
-        "model": "",
-        "sub_agent_model": "",
-        "insight_model": "",
-        "inline_model": "",
-        "planner_model": "",
-        "fallback_model": "",
-        "base_url": "",
-        "use_responses_api": True,
-        "compact_threshold": 100000,
-        "thinking_model": "high",
-        "thinking_sub_agent": "low",
-        "thinking_insight": "low",
-        "web_search": False,
-        "rate_limit_interval": 0,
-    },
-    "anthropic": {
-        "model": "claude-sonnet-4-20250514",
-        "sub_agent_model": "claude-sonnet-4-20250514",
-        "insight_model": "claude-sonnet-4-20250514",
-        "inline_model": "claude-haiku-3-5-20241022",
-        "planner_model": "claude-sonnet-4-20250514",
-        "fallback_model": "claude-haiku-3-5-20241022",
-        "base_url": None,
-        "thinking_model": "high",
-        "thinking_sub_agent": "low",
-        "thinking_insight": "low",
-        "web_search": False,
-        "rate_limit_interval": 0,
-    },
-    "minimax": {
-        "model": "MiniMax-M2.5-highspeed",
-        "sub_agent_model": "MiniMax-M2.5-highspeed",
-        "insight_model": "MiniMax-M2.5-highspeed",
-        "inline_model": "MiniMax-M2.1",
-        "planner_model": "MiniMax-M2.5-highspeed",
-        "fallback_model": "MiniMax-M2.5-highspeed",
-        "base_url": "https://api.minimaxi.com/anthropic",
-        "thinking_model": "high",
-        "thinking_sub_agent": "low",
-        "thinking_insight": "low",
-        "web_search": True,
-        "rate_limit_interval": 2.0,
-    },
-}
+# Imported from each provider's adapter module (DEFAULTS dict).
+# Used as final fallback when neither the providers.<active>.key nor a
+# top-level key is set in config.json.
+
+def _build_provider_defaults() -> dict:
+    """Build provider defaults by loading each provider's defaults.py directly.
+
+    Uses importlib.util to load defaults.py files without triggering their
+    package __init__.py (which would import adapter modules and their SDKs).
+    """
+    import importlib.util
+    from pathlib import Path
+
+    defaults = {}
+    llm_dir = Path(__file__).parent / "agent" / "llm"
+    providers = ["gemini", "anthropic", "openai", "minimax", "grok", "deepseek", "qwen", "kimi", "glm", "custom"]
+
+    for name in providers:
+        defaults_file = llm_dir / name / "defaults.py"
+        if not defaults_file.exists():
+            continue
+        spec = importlib.util.spec_from_file_location(
+            f"_provider_defaults.{name}", defaults_file
+        )
+        if spec and spec.loader:
+            mod = importlib.util.module_from_spec(spec)
+            spec.loader.exec_module(mod)
+            defaults[name] = getattr(mod, "DEFAULTS", {})
+
+    return defaults
+
+_PROVIDER_DEFAULTS = _build_provider_defaults()
 
 
 # Legacy top-level key names → provider section key names

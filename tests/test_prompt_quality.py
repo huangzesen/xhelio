@@ -24,7 +24,7 @@ from knowledge.prompt_builder import (
     build_viz_plotly_prompt,
     build_insight_prompt,
     build_insight_feedback_prompt,
-    build_data_extraction_prompt,
+    build_data_io_prompt,
     build_inline_completion_prompt,
     build_system_prompt_agent_specific,
     build_planner_prompt_agent_specific,
@@ -36,7 +36,7 @@ from agent.agent_registry import (
     VIZ_PLOTLY_TOOLS,
     DATAOPS_TOOLS,
     PLANNER_TOOLS,
-    EXTRACTION_TOOLS,
+    DATA_IO_TOOLS,
 )
 
 # ---------------------------------------------------------------------------
@@ -81,7 +81,7 @@ def _get_all_prompts() -> dict[str, str]:
     _PROMPT_CACHE["viz"] = build_viz_plotly_prompt()
     _PROMPT_CACHE["insight"] = build_insight_prompt()
     _PROMPT_CACHE["insight_feedback"] = build_insight_feedback_prompt()
-    _PROMPT_CACHE["extraction"] = build_data_extraction_prompt()
+    _PROMPT_CACHE["data_io"] = build_data_io_prompt()
     _PROMPT_CACHE["inline"] = build_inline_completion_prompt("Show me")
 
     return _PROMPT_CACHE
@@ -193,12 +193,12 @@ class TestToolReferenceIntegrity:
                 f"DataOps prompt references `{ref}` but it's not in TOOLS"
             )
 
-    def test_extraction_tool_refs_exist(self):
+    def test_data_io_tool_refs_exist(self):
         prompts = _get_all_prompts()
-        refs = _extract_backtick_tool_refs(prompts["extraction"])
+        refs = _extract_backtick_tool_refs(prompts["data_io"])
         for ref in refs:
             assert ref in ALL_TOOL_NAMES, (
-                f"Extraction prompt references `{ref}` but it's not in TOOLS"
+                f"Data I/O prompt references `{ref}` but it's not in TOOLS"
             )
 
     def test_registry_tools_exist_in_tools_list(self):
@@ -210,7 +210,7 @@ class TestToolReferenceIntegrity:
             VIZ_PLOTLY_TOOLS,
             DATAOPS_TOOLS,
             PLANNER_TOOLS,
-            EXTRACTION_TOOLS,
+            DATA_IO_TOOLS,
         ]:
             all_registry_tools.update(tool_list)
 
@@ -416,7 +416,7 @@ class TestTokenBudgets:
         sub_agents = [
             "dataops",
             "viz",
-            "extraction",
+            "data_io",
             "insight",
             "insight_feedback",
         ]
@@ -539,7 +539,7 @@ class TestStructuralConsistency:
             "dataops",
             "viz",
             "insight",
-            "extraction",
+            "data_io",
         ]
         for name in identity_prompts:
             text = prompts[name]
@@ -566,7 +566,7 @@ class TestToolAssignmentConsistency:
             "delegate_to_envoy",
             "delegate_to_viz",
             "delegate_to_data_ops",
-            "delegate_to_data_extraction",
+            "delegate_to_data_io",
             "delegate_to_insight",
             "request_planning",
         ]

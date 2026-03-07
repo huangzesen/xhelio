@@ -59,12 +59,12 @@ def test_llm_adapter_has_rate_limiter():
 
 def test_minimax_adapter_uses_base_rate_limiter():
     """MiniMaxAdapter should use base class rate limiter, not custom."""
-    from agent.llm.minimax_adapter import MiniMaxAdapter
+    from agent.llm.minimax.adapter import MiniMaxAdapter
     from agent.llm.base import LLMAdapter
 
     # MiniMaxAdapter should inherit rate limiter from base
     assert issubclass(MiniMaxAdapter, LLMAdapter)
     # Rate limiter should come from base, not be custom implementation
     # Check that _RateLimiter class doesn't exist in minimax_adapter module
-    import agent.llm.minimax_adapter as mm_module
+    import agent.llm.minimax.adapter as mm_module
     assert not hasattr(mm_module, '_RateLimiter'), "Should not have custom _RateLimiter"

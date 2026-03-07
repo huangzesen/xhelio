@@ -449,7 +449,7 @@ register_fallback(
         "category": CATEGORY_CONFIG,
         "default_value": "https://api.minimax.chat",
         "trigger_condition": "When config.get('minimax_api_host') unavailable",
-        "code_location": "agent/minimax_mcp_client.py:21",
+        "code_location": "agent/llm/minimax/mcp_client.py:21",
         "is_legacy": False,
     }
 )
@@ -646,7 +646,7 @@ register_fallback(
         "category": CATEGORY_CONFIG,
         "default_value": 3,
         "trigger_condition": "When compacting older messages",
-        "code_location": "agent/llm/anthropic_adapter.py:compact, agent/llm/openai_adapter.py:compact",
+        "code_location": "agent/llm/anthropic/adapter.py:compact, agent/llm/openai/adapter.py:compact",
         "is_legacy": False,
     }
 )

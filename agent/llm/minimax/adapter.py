@@ -1,9 +1,11 @@
 from agent.logging import get_logger
-from .anthropic_adapter import AnthropicAdapter
-from .base import LLMResponse
-from .rate_limiter import RateLimiter
+from ..anthropic.adapter import AnthropicAdapter
+from ..base import LLMResponse
+from ..rate_limiter import RateLimiter
 
 logger = get_logger()
+
+from .defaults import DEFAULTS  # noqa: F401 — re-exported for consumers
 
 
 class _RateLimitedSession:
@@ -54,6 +56,9 @@ class _RateLimitedSession:
 
 
 class MiniMaxAdapter(AnthropicAdapter):
+    supports_web_search = True
+    supports_vision = True
+
     def __init__(
         self, api_key: str, *, base_url: str | None = None, timeout_ms: int = 300_000
     ):
@@ -92,7 +97,7 @@ class MiniMaxAdapter(AnthropicAdapter):
         if self._rate_limiter:
             self._rate_limiter.wait()
         try:
-            from agent.minimax_mcp_client import get_minimax_mcp_client
+            from .mcp_client import get_minimax_mcp_client
 
             client = get_minimax_mcp_client()
             result = client.call_tool("web_search", {"query": query})

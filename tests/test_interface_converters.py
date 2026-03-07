@@ -1,8 +1,8 @@
-"""Tests for LLMInterface <-> provider format converters."""
+"""Tests for ChatInterface <-> provider format converters."""
 
 import json
 from agent.llm.interface import (
-    LLMInterface,
+    ChatInterface,
     TextBlock,
     ToolCallBlock,
     ToolResultBlock,
@@ -14,14 +14,14 @@ from agent.llm.interface import (
 class TestAnthropicConverter:
     def test_user_text(self):
         from agent.llm.interface_converters import to_anthropic
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("hello")
         msgs = to_anthropic(iface)
         assert msgs == [{"role": "user", "content": "hello"}]
 
     def test_assistant_with_tool_call(self):
         from agent.llm.interface_converters import to_anthropic
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([
             TextBlock(text="I'll fetch"),
             ToolCallBlock(id="toolu_123", name="fetch", args={"ds": "ACE"}),
@@ -33,7 +33,7 @@ class TestAnthropicConverter:
 
     def test_tool_results(self):
         from agent.llm.interface_converters import to_anthropic
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_tool_results([
             ToolResultBlock(id="toolu_123", name="fetch", content='{"ok":true}'),
         ])
@@ -44,7 +44,7 @@ class TestAnthropicConverter:
 
     def test_thinking_with_signature(self):
         from agent.llm.interface_converters import to_anthropic
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([
             ThinkingBlock(text="reasoning", provider_data={"anthropic": {"signature": "sig"}}),
             TextBlock(text="answer"),
@@ -54,7 +54,7 @@ class TestAnthropicConverter:
 
     def test_system_excluded(self):
         from agent.llm.interface_converters import to_anthropic
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         iface.add_user_message("hi")
         msgs = to_anthropic(iface)
@@ -83,7 +83,7 @@ class TestAnthropicConverter:
 class TestOpenAIConverter:
     def test_system_included(self):
         from agent.llm.interface_converters import to_openai
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         iface.add_user_message("hi")
         msgs = to_openai(iface)
@@ -92,7 +92,7 @@ class TestOpenAIConverter:
 
     def test_tool_call(self):
         from agent.llm.interface_converters import to_openai
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([
             TextBlock(text="calling"),
             ToolCallBlock(id="call_abc", name="fn", args={"x": 1}),
@@ -105,7 +105,7 @@ class TestOpenAIConverter:
 
     def test_tool_results_become_separate_messages(self):
         from agent.llm.interface_converters import to_openai
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_tool_results([
             ToolResultBlock(id="call_abc", name="fn", content={"ok": True}),
             ToolResultBlock(id="call_def", name="fn2", content="done"),
@@ -136,21 +136,21 @@ class TestOpenAIConverter:
 class TestGeminiConverter:
     def test_user_text(self):
         from agent.llm.interface_converters import to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_user_message("hello")
         turns = to_gemini(iface)
         assert turns == [{"role": "user", "content": [{"type": "text", "text": "hello"}]}]
 
     def test_assistant_role_becomes_model(self):
         from agent.llm.interface_converters import to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([TextBlock(text="hi")])
         turns = to_gemini(iface)
         assert turns[0]["role"] == "model"
 
     def test_tool_call(self):
         from agent.llm.interface_converters import to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([
             ToolCallBlock(id="fc_1", name="fetch", args={"ds": "ACE"}),
         ])
@@ -159,7 +159,7 @@ class TestGeminiConverter:
 
     def test_tool_results(self):
         from agent.llm.interface_converters import to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_tool_results([
             ToolResultBlock(id="fc_1", name="fetch", content={"status": "ok"}),
         ])
@@ -169,7 +169,7 @@ class TestGeminiConverter:
 
     def test_system_excluded(self):
         from agent.llm.interface_converters import to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         iface.add_user_message("hi")
         turns = to_gemini(iface)
@@ -196,7 +196,7 @@ class TestGeminiConverter:
 class TestCrossProviderRoundtrip:
     def test_canonical_to_all_providers(self):
         from agent.llm.interface_converters import to_anthropic, to_openai, to_gemini
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_system("sys")
         iface.add_user_message("fetch ACE data")
         iface.add_assistant_message([
@@ -218,13 +218,13 @@ class TestCrossProviderRoundtrip:
         assert len(gemini) == 4    # no system
 
     def test_provider_data_survives_roundtrip(self):
-        iface = LLMInterface()
+        iface = ChatInterface()
         iface.add_assistant_message([
             ThinkingBlock(text="reasoning", provider_data={"anthropic": {"signature": "sig_xyz"}}),
             TextBlock(text="answer"),
         ])
         saved = iface.to_dict()
-        restored = LLMInterface.from_dict(saved)
+        restored = ChatInterface.from_dict(saved)
         thinking = restored.entries[0].content[0]
         assert isinstance(thinking, ThinkingBlock)
         assert thinking.provider_data["anthropic"]["signature"] == "sig_xyz"

@@ -24,7 +24,7 @@ export function friendlyAgentName(agentId: string): string {
     orchestrator: 'Orchestrator',
     VizAgent: 'Visualization',  // backward compat for old sessions
     DataOpsAgent: 'Data Ops',
-    DataExtractionAgent: 'Extraction',
+    DataIOAgent: 'Data I/O',
     InsightAgent: 'Insight',
     Memory: 'Memory',
     Discovery: 'Discovery',

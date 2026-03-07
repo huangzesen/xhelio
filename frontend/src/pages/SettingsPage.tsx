@@ -218,7 +218,7 @@ export function SettingsPage() {
             {/* API Key */}
             <div className="space-y-2">
               <span className="text-xs text-text-muted block">
-                {activeProvider === 'gemini' ? 'Gemini' : activeProvider === 'openai' ? 'OpenAI' : activeProvider === 'minimax' ? 'MiniMax' : 'Anthropic'} API Key
+                {{ gemini: 'Gemini', openai: 'OpenAI', anthropic: 'Anthropic', minimax: 'MiniMax', grok: 'Grok', deepseek: 'DeepSeek', qwen: 'Qwen', kimi: 'Kimi', glm: 'GLM', custom: 'Custom' }[activeProvider] ?? activeProvider} API Key
               </span>
               {keyStatus?.configured && (
                 <div className="text-xs text-text-muted">
@@ -231,7 +231,7 @@ export function SettingsPage() {
                     type={showKey ? 'text' : 'password'}
                     value={newKey}
                     onChange={(e) => { setNewKey(e.target.value); setKeyResult(null); }}
-                    placeholder={keyStatus?.configured ? 'Enter new key to update' : activeProvider === 'gemini' ? 'AIza...' : activeProvider === 'openai' ? 'sk-...' : activeProvider === 'minimax' ? 'eyJ...' : 'sk-ant-...'}
+                    placeholder={keyStatus?.configured ? 'Enter new key to update' : 'Enter API key'}
                     className="block w-full rounded-lg border border-border px-3 py-2 pr-9 text-sm
                       bg-input-bg text-text placeholder:text-text-muted/50
                       focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
@@ -277,6 +277,12 @@ export function SettingsPage() {
                 <option value="openai">OpenAI</option>
                 <option value="anthropic">Anthropic</option>
                 <option value="minimax">MiniMax</option>
+                <option value="grok">Grok (xAI)</option>
+                <option value="deepseek">DeepSeek</option>
+                <option value="qwen">Qwen (Alibaba)</option>
+                <option value="kimi">Kimi (Moonshot)</option>
+                <option value="glm">GLM (Zhipu AI)</option>
+                <option value="custom">Custom</option>
               </select>
             </label>
 
@@ -370,14 +376,14 @@ export function SettingsPage() {
             </div>
             )}
 
-            {(activeProvider === 'openai' || activeProvider === 'anthropic') && (
+            {(['openai', 'anthropic', 'custom'].includes(activeProvider)) && (
             <label className="block">
-              <span className="text-xs text-text-muted">Base URL</span>
+              <span className="text-xs text-text-muted">Base URL {activeProvider === 'custom' && <span className="text-status-error-text">(required)</span>}</span>
               <input
                 type="text"
                 value={getProviderField('base_url') || ''}
                 onChange={(e) => setProviderField('base_url', e.target.value)}
-                placeholder={activeProvider === 'anthropic' ? 'https://api.anthropic.com' : 'https://api.openai.com/v1'}
+                placeholder={activeProvider === 'anthropic' ? 'https://api.anthropic.com' : activeProvider === 'custom' ? 'https://your-endpoint.com/v1' : 'https://api.openai.com/v1'}
                 className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm font-mono bg-input-bg text-text"
               />
             </label>

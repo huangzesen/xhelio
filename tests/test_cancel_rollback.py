@@ -9,7 +9,7 @@ class TestAnthropicRollback:
 
     def test_rollback_strips_last_assistant_turn(self):
         """After an assistant message with tool_use, rollback removes it."""
-        from agent.llm.anthropic_adapter import AnthropicAdapter
+        from agent.llm.anthropic.adapter import AnthropicAdapter
 
         adapter = AnthropicAdapter(api_key="fake")
         chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
@@ -32,7 +32,7 @@ class TestAnthropicRollback:
     def test_rollback_strips_orphaned_tool_results(self):
         """If tool_results were committed after the assistant turn,
         rollback removes both the assistant turn AND the orphaned tool_results."""
-        from agent.llm.anthropic_adapter import AnthropicAdapter
+        from agent.llm.anthropic.adapter import AnthropicAdapter
 
         adapter = AnthropicAdapter(api_key="fake")
         chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
@@ -57,7 +57,7 @@ class TestAnthropicRollback:
 
     def test_rollback_noop_when_no_assistant_turn(self):
         """If history has no assistant turn, rollback does nothing."""
-        from agent.llm.anthropic_adapter import AnthropicAdapter
+        from agent.llm.anthropic.adapter import AnthropicAdapter
 
         adapter = AnthropicAdapter(api_key="fake")
         chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
@@ -72,7 +72,7 @@ class TestAnthropicRollback:
 
     def test_rollback_preserves_earlier_turns(self):
         """Only the LAST assistant turn is removed, not earlier ones."""
-        from agent.llm.anthropic_adapter import AnthropicAdapter
+        from agent.llm.anthropic.adapter import AnthropicAdapter
 
         adapter = AnthropicAdapter(api_key="fake")
         chat = adapter.create_chat(model="claude-sonnet-4-20250514", system_prompt="test")
@@ -98,7 +98,7 @@ class TestGeminiRollback:
     """Gemini adapter: uses role='model' (not 'assistant') and _client_history."""
 
     def test_rollback_strips_last_model_turn(self):
-        from agent.llm.gemini_adapter import GeminiAdapter
+        from agent.llm.gemini.adapter import GeminiAdapter
 
         adapter = GeminiAdapter(api_key="fake")
         chat = adapter.create_chat(model="gemini-2.5-flash", system_prompt="test")
@@ -117,7 +117,7 @@ class TestGeminiRollback:
         assert chat._client_history[0]["role"] == "user"
 
     def test_rollback_strips_orphaned_tool_results(self):
-        from agent.llm.gemini_adapter import GeminiAdapter
+        from agent.llm.gemini.adapter import GeminiAdapter
 
         adapter = GeminiAdapter(api_key="fake")
         chat = adapter.create_chat(model="gemini-2.5-flash", system_prompt="test")
@@ -143,7 +143,7 @@ class TestOpenAIRollback:
     """OpenAI adapter: tool results are separate messages with role='tool'."""
 
     def test_rollback_strips_assistant_and_tool_messages(self):
-        from agent.llm.openai_adapter import OpenAIAdapter
+        from agent.llm.openai.adapter import OpenAIAdapter
 
         adapter = OpenAIAdapter(api_key="fake", base_url="http://fake")
         chat = adapter.create_chat(model="gpt-4o", system_prompt="test")
@@ -163,7 +163,7 @@ class TestOpenAIRollback:
         assert chat._messages[0]["role"] == "user"
 
     def test_rollback_strips_multiple_tool_results(self):
-        from agent.llm.openai_adapter import OpenAIAdapter
+        from agent.llm.openai.adapter import OpenAIAdapter
 
         adapter = OpenAIAdapter(api_key="fake", base_url="http://fake")
         chat = adapter.create_chat(model="gpt-4o", system_prompt="test")

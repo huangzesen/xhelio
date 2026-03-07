@@ -59,7 +59,7 @@ function delegationBadge(name: string): string | null {
   if (name === 'delegate_to_envoy') return 'Envoy';
   if (name === 'delegate_to_viz') return 'Viz';
   if (name === 'delegate_to_data_ops') return 'DataOps';
-  if (name === 'delegate_to_data_extraction') return 'Extract';
+  if (name === 'delegate_to_data_io') return 'Data I/O';
   return null;
 }
 
