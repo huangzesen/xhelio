@@ -11,6 +11,7 @@ import { AssetsPage } from './pages/AssetsPage';
 import { EurekaPage } from './pages/EurekaPage';
 import { SettingsLayout } from './pages/settings';
 import { ApiKeysSection } from './pages/settings/ApiKeysSection';
+import { ModelsSection } from './pages/settings/ModelsSection';
 import { WorkbenchSection } from './pages/settings/WorkbenchSection';
 import { DataSection } from './pages/settings/DataSection';
 import { AdvancedSection } from './pages/settings/AdvancedSection';
@@ -339,6 +340,7 @@ export default function App() {
           <Route path="/settings" element={<SettingsLayout />}>
             <Route index element={<Navigate to="/settings/api-keys" replace />} />
             <Route path="api-keys" element={<ApiKeysSection />} />
+            <Route path="models" element={<ModelsSection />} />
             <Route path="workbench" element={<WorkbenchSection />} />
             <Route path="data" element={<DataSection />} />
             <Route path="advanced" element={<AdvancedSection />} />

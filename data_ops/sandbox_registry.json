@@ -97,6 +97,13 @@
       "required": false,
       "description": "Python package for querying astronomical databases (SIMBAD, VizieR, NED, etc.)",
       "catalog_submodules": "['astroquery.simbad', 'astroquery.vizier', 'astroquery.ned', 'astroquery.heasarc', 'astroquery.jplhorizons', 'astroquery.lcogt', 'astroquery.ipac', 'astroquery.utils']"
+    },
+    {
+      "import_path": "sunkit_magex",
+      "sandbox_alias": "magex",
+      "required": false,
+      "description": "Modern SunPy-affiliated package for coronal magnetic field extrapolation (PFSS, NLFF). Provides tools for modeling magnetic fields from photospheric magnetograms.",
+      "catalog_submodules": []
     }
   ],
   "builtins": {
