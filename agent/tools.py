@@ -131,6 +131,111 @@ Do NOT guess when the user is unhappy — ask what they want instead.""",
             "required": ["question"],
         },
     },
+    {
+        "name": "ask_user_permission",
+        "description": """Ask the user for explicit permission before taking a potentially dangerous or irreversible action.
+This tool BLOCKS until the user responds with approve or deny.
+
+Use this before:
+- Installing Python packages (pip install)
+- Modifying the sandbox configuration (adding packages to the computation environment)
+- Any action that writes to disk or modifies system state beyond normal session data
+
+Present clear descriptions of what will happen and why. The user sees the exact command.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "description": "Short action name (e.g., 'install_package', 'modify_sandbox')",
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Human-readable description of what will happen and why",
+                },
+                "command": {
+                    "type": "string",
+                    "description": "The exact command or operation to be executed (shown to user for review)",
+                },
+            },
+            "required": ["action", "description", "command"],
+        },
+    },
+    {
+        "name": "install_package",
+        "description": """Install a Python package via pip and add it to the computation sandbox.
+
+BEFORE calling this tool:
+1. Use web_search to research the correct pip package name and import path
+2. Verify the package name, import path, and sandbox alias
+
+This tool automatically asks the user for permission before installing.
+After successful installation, the package becomes available to data_ops and viz agents.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "pip_name": {
+                    "type": "string",
+                    "description": "Package name for pip install (e.g., 'scikit-learn')",
+                },
+                "import_path": {
+                    "type": "string",
+                    "description": "Python import path (e.g., 'sklearn')",
+                },
+                "sandbox_alias": {
+                    "type": "string",
+                    "description": "Alias in the sandbox namespace (e.g., 'sklearn')",
+                },
+                "description": {
+                    "type": "string",
+                    "description": "What this package does and why it is needed",
+                },
+                "catalog_submodules": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Submodules to catalog for function search (e.g., ['sklearn.decomposition'])",
+                },
+            },
+            "required": ["pip_name", "import_path", "sandbox_alias", "description"],
+        },
+    },
+    {
+        "name": "manage_sandbox_packages",
+        "description": """Manage packages in the computation sandbox used by data_ops and viz agents.
+
+- action="list": Show all currently available packages in the sandbox.
+- action="add": Add an already-installed package to the sandbox. Requires user permission since it modifies the sandbox configuration on disk.
+
+Use this when a sub-agent reports needing a package that is already installed but not in the sandbox.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["add", "list"],
+                    "description": "Action to perform",
+                },
+                "import_path": {
+                    "type": "string",
+                    "description": "Python import path (for 'add' action, e.g., 'sklearn')",
+                },
+                "sandbox_alias": {
+                    "type": "string",
+                    "description": "Alias in sandbox namespace (for 'add' action)",
+                },
+                "description": {
+                    "type": "string",
+                    "description": "Package description (for 'add' action)",
+                },
+                "catalog_submodules": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Submodules to catalog for function search (for 'add' action)",
+                },
+            },
+            "required": ["action"],
+        },
+    },
     # --- Data Operations Tools ---
     {
         "name": "fetch_data",
@@ -1401,6 +1506,83 @@ Actions:
                 },
             },
             "required": [],
+        },
+    },
+    {
+        "name": "add_envoy",
+        "description": """Introspect a Python package to begin creating a new envoy agent. Returns the package's public API surface for review.
+
+Use when the user wants to add a new package-based envoy (e.g., "add pfsspy as an envoy"). After reviewing the API with the user, call save_envoy to persist.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "package_name": {
+                    "type": "string",
+                    "description": "Python import path (e.g., 'pfsspy', 'sunpy.map')",
+                },
+            },
+            "required": ["package_name"],
+        },
+    },
+    {
+        "name": "save_envoy",
+        "description": "Save a finalized package envoy definition after discussing with the user. Call after add_envoy and user confirmation.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "envoy_id": {"type": "string", "description": "Unique ID (e.g., 'PFSS')"},
+                "envoy_name": {"type": "string", "description": "Human-readable name"},
+                "description": {"type": "string", "description": "What this envoy does"},
+                "imports": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "import_path": {"type": "string"},
+                            "sandbox_alias": {"type": "string"},
+                        },
+                        "required": ["import_path", "sandbox_alias"],
+                    },
+                    "description": "Packages to pre-import in sandbox",
+                },
+                "functions": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "name": {"type": "string"},
+                            "description": {"type": "string"},
+                            "module": {"type": "string"},
+                            "signature": {"type": "string"},
+                            "parameters": {"type": "object"},
+                        },
+                        "required": ["name", "description", "signature"],
+                    },
+                    "description": "Functions to document for the LLM",
+                },
+                "keywords": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Search keywords for this envoy",
+                },
+            },
+            "required": ["envoy_id", "imports", "functions"],
+        },
+    },
+    {
+        "name": "list_envoys",
+        "description": "List all user-defined package envoys with their imports and function counts.",
+        "parameters": {"type": "object", "properties": {}},
+    },
+    {
+        "name": "remove_envoy",
+        "description": "Remove a user-defined package envoy by ID. Deletes the envoy definition and stops any running agent.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "envoy_id": {"type": "string", "description": "ID of the envoy to remove"},
+            },
+            "required": ["envoy_id"],
         },
     },
 ]

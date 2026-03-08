@@ -103,6 +103,13 @@ class TestToolRegistryJson:
         assert AGENT_CALL_REGISTRY
         assert ENVOY_BASE_TOOLS
 
+    def test_orchestrator_has_permission_and_package_tools(self):
+        """Orchestrator call list includes permission and package management tools."""
+        orch_tools = _REGISTRY["agents"]["orchestrator"]["call"]
+        assert "ask_user_permission" in orch_tools
+        assert "install_package" in orch_tools
+        assert "manage_sandbox_packages" in orch_tools
+
     def test_mission_tool_registry_loads_groups(self):
         """MissionToolRegistry loads groups from JSON."""
         groups = ENVOY_TOOL_REGISTRY._group_tools

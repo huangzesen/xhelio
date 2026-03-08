@@ -119,6 +119,7 @@ from .event_bus import (
     SESSION_TITLE,
     AGENT_STATE_CHANGE,
     INSIGHT_FEEDBACK,
+    PERMISSION_REQUEST,
 )
 from .control_center import ControlCenter
 from .memory_agent import MemoryAgent, MemoryContext
@@ -511,6 +512,10 @@ class OrchestratorAgent:
         # Thread pool for timeout-wrapped Gemini calls
         self._timeout_pool = ThreadPoolExecutor(max_workers=1)
 
+        # Permission gate: request_id -> {"event": threading.Event, "approved": None}
+        self._permission_gate: dict[str, dict] = {}
+        self._permission_lock = threading.Lock()
+
     # ---- Thread-local agent identity (safe for async delegation) ----
 
     @property
@@ -528,6 +533,14 @@ class OrchestratorAgent:
     @_current_agent_type.setter
     def _current_agent_type(self, value: str) -> None:
         self._tls.current_agent_type = value
+
+    @property
+    def _current_envoy_sandbox_imports(self) -> list[dict] | None:
+        return getattr(self._tls, "envoy_sandbox_imports", None)
+
+    @_current_envoy_sandbox_imports.setter
+    def _current_envoy_sandbox_imports(self, value: list[dict] | None) -> None:
+        self._tls.envoy_sandbox_imports = value
 
     # ---- SSE event listener management ----
 
@@ -2193,6 +2206,62 @@ class OrchestratorAgent:
         full_request = f"{request}\n\nContext: {context}" if context else request
         return full_request
 
+    # ---- Permission gate (blocking approval from user) ----
+
+    def request_permission(self, request_id: str, action: str, description: str, command: str, timeout: float = 300.0) -> dict:
+        """Block until user approves/denies an action. Called from tool handler thread.
+
+        Args:
+            request_id: Unique ID for this permission request.
+            action: Short action name (e.g., 'install_package').
+            description: Human-readable description.
+            command: Exact command to execute (shown to user).
+            timeout: Max seconds to wait (default 5 minutes).
+
+        Returns:
+            {"approved": bool, "reason": str}
+        """
+        gate = {"event": threading.Event(), "approved": None, "reason": ""}
+        with self._permission_lock:
+            self._permission_gate[request_id] = gate
+
+        # Emit SSE event to frontend
+        self._event_bus.emit(
+            PERMISSION_REQUEST,
+            level="info",
+            msg=f"[Permission] Requesting: {action}",
+            data={
+                "request_id": request_id,
+                "action": action,
+                "description": description,
+                "command": command,
+            },
+        )
+
+        # Block until user responds or timeout
+        gate["event"].wait(timeout=timeout)
+
+        with self._permission_lock:
+            self._permission_gate.pop(request_id, None)
+
+        if gate["approved"] is None:
+            return {"approved": False, "reason": "timeout"}
+        return {"approved": gate["approved"], "reason": gate.get("reason", "")}
+
+    def set_permission_response(self, request_id: str, approved: bool) -> bool:
+        """Unblock a pending permission request. Called from API layer.
+
+        Returns True if the request_id was found and unblocked.
+        """
+        with self._permission_lock:
+            gate = self._permission_gate.get(request_id)
+        if gate is None:
+            return False
+        gate["approved"] = approved
+        gate["reason"] = "approved" if approved else "denied"
+        gate["event"].set()
+        return True
+
     # ---- Turnless orchestrator: input queue and control center tools ----
 
     def push_input(self, message: str) -> None:
@@ -2785,6 +2854,25 @@ class OrchestratorAgent:
         finally:
             self._current_agent_type = prev_agent_type
 
+    def _execute_tool_for_agent_with_sandbox(
+        self,
+        tool_name: str,
+        tool_args: dict,
+        tool_call_id: str | None = None,
+        *,
+        agent_type: str = "",
+        sandbox_imports: list[dict] | None = None,
+    ) -> dict:
+        """Execute a tool for an agent, with optional sandbox imports injection."""
+        prev_imports = self._current_envoy_sandbox_imports
+        self._current_envoy_sandbox_imports = sandbox_imports
+        try:
+            return self._execute_tool_for_agent(
+                tool_name, tool_args, tool_call_id, agent_type=agent_type
+            )
+        finally:
+            self._current_envoy_sandbox_imports = prev_imports
+
     def _execute_task(self, task: Task) -> str:
         """Execute a single task and return the result.
 
@@ -3336,19 +3424,28 @@ class OrchestratorAgent:
         agent_id = f"EnvoyAgent[{mission_id}]"
         with self._sub_agents_lock:
             if agent_id not in self._sub_agents:
+                # Load sandbox config for package envoys
+                sandbox_config = None
+                from knowledge.mission_loader import load_mission as _load_mission
+                mission_data = _load_mission(mission_id.lower())
+                if mission_data and mission_data.get("type") == "package":
+                    sandbox_config = mission_data.get("sandbox")
+
                 agent = EnvoyAgent(
                     mission_id=mission_id,
                     adapter=self.adapter,
                     model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="envoy"
+                    tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
+                        self._execute_tool_for_agent_with_sandbox(
+                            name, args, tc_id, agent_type="envoy",
+                            sandbox_imports=_sc.get("imports") if _sc else None,
                         )
                     ),
                     event_bus=self._event_bus,
                     memory_store=self._memory_store,
                     memory_scope=f"envoy:{mission_id}",
                     cancel_event=self._cancel_event,
+                    sandbox_config=sandbox_config,
                 )
                 agent._orchestrator_inbox = self._inbox
                 agent.start()
@@ -3373,18 +3470,30 @@ class OrchestratorAgent:
             seq = self._mission_seq
             self._mission_seq = seq + 1
             ephemeral_id = f"EnvoyAgent[{mission_id}]#{seq}"
+
+            # Load sandbox config for package envoys
+            sandbox_config = None
+            from knowledge.mission_loader import load_mission as _load_mission
+            mission_data = _load_mission(mission_id.lower())
+            if mission_data and mission_data.get("type") == "package":
+                sandbox_config = mission_data.get("sandbox")
+
             agent = EnvoyAgent(
                 mission_id=mission_id,
                 adapter=self.adapter,
                 model_name=config.SUB_AGENT_MODEL,
-                tool_executor=lambda name, args, tc_id=None: (
-                    self._execute_tool_for_agent(name, args, tc_id, agent_type="envoy")
+                tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
+                    self._execute_tool_for_agent_with_sandbox(
+                        name, args, tc_id, agent_type="envoy",
+                        sandbox_imports=_sc.get("imports") if _sc else None,
+                    )
                 ),
                 agent_id=ephemeral_id,
                 event_bus=self._event_bus,
                 memory_store=self._memory_store,
                 memory_scope=f"envoy:{mission_id}",
                 cancel_event=self._cancel_event,
+                sandbox_config=sandbox_config,
             )
             agent._orchestrator_inbox = self._inbox
             agent.start()
@@ -4784,6 +4893,10 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         # Start writing structured event log to disk
         self._start_event_log_writer()
 
+        # Register user-defined package envoys into the 'package' group
+        from .agent_registry import register_package_envoys
+        register_package_envoys()
+
         self._event_bus.emit(
             DEBUG, level="debug", msg=f"[Session] Started: {self._session_id}"
         )
@@ -5025,6 +5138,10 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         # Start writing structured event log (append mode — resumes keep adding)
         self._start_event_log_writer()
+
+        # Register user-defined package envoys into the 'package' group
+        from .agent_registry import register_package_envoys
+        register_package_envoys()
 
         self._event_bus.emit(
             DEBUG, level="debug", msg=f"[Session] Loaded: {session_id}"

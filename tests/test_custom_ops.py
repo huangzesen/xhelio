@@ -20,6 +20,16 @@ from data_ops.custom_ops import (
 )
 
 
+class TestReloadSandboxRegistry:
+    def test_reload_sandbox_registry(self):
+        """reload_sandbox_registry() rebuilds derived constants."""
+        from data_ops import custom_ops
+
+        old_module_names = frozenset(custom_ops._MODULE_NAMES)
+        custom_ops.reload_sandbox_registry()
+        assert custom_ops._MODULE_NAMES == old_module_names
+
+
 def _make_time(n=100, start="2024-01-01", cadence_s=60):
     """Create a DatetimeIndex with fixed cadence."""
     return pd.date_range(start, periods=n, freq=f"{cadence_s}s")

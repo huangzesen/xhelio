@@ -54,8 +54,19 @@ from agent.tool_handlers.delegation import (
     handle_delegate_to_planner,
 )
 
+# ── Envoy management ──
+from agent.tool_handlers.envoy_management import (
+    handle_add_envoy,
+    handle_save_envoy,
+    handle_list_envoys,
+    handle_remove_envoy,
+)
+
 # ── File I/O ──
 from agent.tool_handlers.file_io import handle_load_file
+from agent.tool_handlers.permission import handle_ask_user_permission
+from agent.tool_handlers.package_install import handle_install_package
+from agent.tool_handlers.sandbox_packages import handle_manage_sandbox_packages
 
 # ── Data ops ──
 from agent.tool_handlers.data_ops import (
@@ -83,6 +94,9 @@ TOOL_REGISTRY.update(
     {
         # Session
         "ask_clarification": handle_ask_clarification,
+        "ask_user_permission": handle_ask_user_permission,
+        "install_package": handle_install_package,
+        "manage_sandbox_packages": handle_manage_sandbox_packages,
         "get_session_assets": handle_get_session_assets,
         "restore_plot": handle_restore_plot,
         "events": handle_events,
@@ -132,5 +146,10 @@ TOOL_REGISTRY.update(
         "merge_datasets": handle_merge_datasets,
         # Pipeline
         "pipeline": handle_pipeline,
+        # Envoy management
+        "add_envoy": handle_add_envoy,
+        "save_envoy": handle_save_envoy,
+        "list_envoys": handle_list_envoys,
+        "remove_envoy": handle_remove_envoy,
     }
 )

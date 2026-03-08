@@ -2,6 +2,8 @@
 
 import asyncio
 import json
+import os
+import re
 import shutil
 import time
 import uuid
@@ -9,7 +11,7 @@ from concurrent.futures import ThreadPoolExecutor
 from pathlib import Path
 
 import config
-from fastapi import APIRouter, HTTPException, Query, Request
+from fastapi import APIRouter, HTTPException, Query, Request, UploadFile, File as FastAPIFile
 from fastapi.responses import FileResponse
 from sse_starlette.sse import EventSourceResponse
 
@@ -26,6 +28,7 @@ from .models import (
     GallerySaveRequest,
     InputHistoryEntry,
     MissionInfo,
+    PermissionResponse,
     PipelineFeedbackRequest,
     RenameSessionRequest,
     ReplayRequest,
@@ -335,6 +338,94 @@ async def chat(session_id: str, req: ChatRequest):
     return {"status": "queued"}
 
 
+# ---- File Upload ----
+
+# 50 MB limit
+_MAX_UPLOAD_BYTES = 50 * 1024 * 1024
+
+_ALLOWED_EXTENSIONS = {
+    # Tabular data (load_file)
+    ".csv", ".tsv", ".json", ".parquet", ".xlsx", ".xls",
+    # Documents (read_document)
+    ".pdf", ".png", ".jpg", ".jpeg", ".gif", ".webp", ".bmp", ".tiff",
+}
+
+
+@router.post("/sessions/{session_id}/upload")
+async def upload_file(session_id: str, file: UploadFile = FastAPIFile(...)):
+    """Upload a file and inject a message to trigger DataIOAgent.
+
+    Saves the file to ~/.xhelio/uploads/<session_id>/ and pushes a message
+    into the agent's input queue instructing it to load the file.
+    """
+    state = _get_session_or_404(session_id)
+    state.touch()
+    ext = os.path.splitext(file.filename or "")[1].lower()
+    if ext not in _ALLOWED_EXTENSIONS:
+        raise HTTPException(
+            status_code=400,
+            detail=f"Unsupported file type '{ext}'. Allowed: {sorted(_ALLOWED_EXTENSIONS)}",
+        )
+
+    # Read content in chunks with size limit
+    chunks: list[bytes] = []
+    total = 0
+    while chunk := await file.read(65536):
+        total += len(chunk)
+        if total > _MAX_UPLOAD_BYTES:
+            raise HTTPException(
+                status_code=413,
+                detail=f"File too large. Maximum: {_MAX_UPLOAD_BYTES} bytes.",
+            )
+        chunks.append(chunk)
+    content = b"".join(chunks)
+
+    if len(content) == 0:
+        raise HTTPException(status_code=400, detail="File is empty.")
+
+    # Save to uploads directory
+    upload_dir = config.get_data_dir() / "uploads" / session_id
+    upload_dir.mkdir(parents=True, exist_ok=True)
+
+    # Sanitize filename — basename only, keep alphanumeric/dot/dash/underscore
+    raw = os.path.basename(file.filename or "upload")
+    safe_name = re.sub(r'[^\w.\-]', '_', raw)
+    if not safe_name or safe_name.startswith('.'):
+        safe_name = 'upload' + safe_name
+    dest = upload_dir / safe_name
+
+    # Avoid overwriting: append counter if file exists
+    counter = 1
+    stem, suffix = os.path.splitext(safe_name)
+    while dest.exists():
+        dest = upload_dir / f"{stem}_{counter}{suffix}"
+        counter += 1
+
+    dest.write_bytes(content)
+
+    # Build a natural-language message for the agent
+    size_kb = len(content) / 1024
+    size_str = f"{size_kb:.1f} KB" if size_kb < 1024 else f"{size_kb / 1024:.1f} MB"
+    agent_message = (
+        f"I've uploaded a file: {file.filename} ({size_str}). "
+        f"The file is saved at: {dest}"
+    )
+
+    # Lazy-start the persistent event loop
+    if state._loop_thread is None or not state._loop_thread.is_alive():
+        loop = asyncio.get_running_loop()
+        session_manager.start_loop(state, loop)
+
+    # Push the message into the agent's input queue
+    state.agent.push_input(agent_message)
+
+    return {
+        "status": "uploaded",
+        "filename": dest.name,
+        "size": len(content),
+    }
+
+
 # ---- Cancel ----
 
 
@@ -344,6 +435,19 @@ async def cancel(session_id: str):
     state = _get_session_or_404(session_id)
     state.agent.request_cancel()
     return {"status": "cancel_requested"}
+
+
+# ---- Permission response ----
+
+
+@router.post("/sessions/{session_id}/permission-response")
+async def permission_response(session_id: str, req: PermissionResponse):
+    """Respond to a permission request from the agent."""
+    state = _get_session_or_404(session_id)
+    found = state.agent.set_permission_response(req.request_id, req.approved)
+    if not found:
+        raise HTTPException(404, f"Permission request {req.request_id} not found or expired")
+    return {"status": "ok"}
 
 
 # ---- Session-lifetime SSE event stream (turnless mode) ----

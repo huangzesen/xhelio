@@ -70,13 +70,97 @@ CATALOGED_SUBMODULES: list[str] = [
 ]
 
 
-def validate_code(code: str, require_result: bool = True) -> list[str]:
+def reload_sandbox_registry() -> None:
+    """Reload sandbox_registry.json and rebuild all derived constants.
+
+    Called after install_package or manage_sandbox_packages modifies the JSON.
+    """
+    global SANDBOX_REGISTRY, _SAFE_BUILTINS, _DANGEROUS_BUILTINS
+    global _BLOCKED_ATTRS_ANY, _BLOCKED_ATTRS_MODULE, _MODULE_NAMES
+    global _ALLOWED_NAMES, CATALOGED_SUBMODULES
+
+    SANDBOX_REGISTRY = _load_sandbox_registry()
+
+    _SAFE_BUILTINS = frozenset(SANDBOX_REGISTRY["builtins"]["safe"])
+    _DANGEROUS_BUILTINS = frozenset(SANDBOX_REGISTRY["builtins"]["dangerous"])
+
+    _BLOCKED_ATTRS_ANY = frozenset(
+        attr
+        for category, items in SANDBOX_REGISTRY["blocked_attrs"]["any_object"].items()
+        if category != "_comment"
+        for attr in items
+    )
+    _BLOCKED_ATTRS_MODULE = frozenset(
+        attr
+        for category, items in SANDBOX_REGISTRY["blocked_attrs"]["module_only"].items()
+        if category != "_comment"
+        for attr in items
+    )
+    _MODULE_NAMES = frozenset(
+        {"pd", "np", "xr"}
+        | {pkg["sandbox_alias"] for pkg in SANDBOX_REGISTRY["packages"]}
+    )
+    _ALLOWED_NAMES = frozenset(_MODULE_NAMES | {"df", "result"})
+    CATALOGED_SUBMODULES = [
+        submod
+        for pkg in SANDBOX_REGISTRY["packages"]
+        for submod in pkg["catalog_submodules"]
+    ]
+
+
+def add_package_to_registry(
+    import_path: str,
+    sandbox_alias: str,
+    description: str,
+    catalog_submodules: list[str] | None = None,
+    required: bool = False,
+) -> None:
+    """Add a package to sandbox_registry.json and hot-reload.
+
+    Args:
+        import_path: Python import path (e.g., 'sklearn').
+        sandbox_alias: Alias in sandbox namespace (e.g., 'sklearn').
+        description: Package description.
+        catalog_submodules: Submodules to catalog for function search.
+        required: Whether the package is required (True) or optional (False).
+    """
+    registry_path = Path(__file__).parent / "sandbox_registry.json"
+    with open(registry_path, "r") as f:
+        data = json.load(f)
+
+    # Check if already registered
+    for pkg in data["packages"]:
+        if pkg["import_path"] == import_path:
+            return  # Already registered
+
+    data["packages"].append({
+        "import_path": import_path,
+        "sandbox_alias": sandbox_alias,
+        "required": required,
+        "description": description,
+        "catalog_submodules": catalog_submodules or [],
+    })
+
+    with open(registry_path, "w") as f:
+        json.dump(data, f, indent=2)
+        f.write("\n")
+
+    reload_sandbox_registry()
+
+
+def validate_code(
+    code: str,
+    require_result: bool = True,
+    extra_module_names: frozenset[str] | None = None,
+) -> list[str]:
     """Validate pandas code for safety using AST analysis.
 
     Args:
         code: Python code string to validate.
         require_result: If True (default), require ``result = ...`` assignment.
             Set to False for code that mutates objects in place (e.g., Plotly figures).
+        extra_module_names: Additional module aliases (from per-envoy sandbox
+            imports) to include in module-level attribute blocking.
 
     Returns:
         List of violation descriptions. Empty list means code is safe.
@@ -91,6 +175,9 @@ def validate_code(code: str, require_result: bool = True) -> list[str]:
 
     blocked_any = (_BLOCKED_ATTRS_ANY - allowed) | extra
     blocked_module = _BLOCKED_ATTRS_MODULE - allowed
+
+    # Effective module names: static registry + per-envoy extras
+    effective_module_names = _MODULE_NAMES | extra_module_names if extra_module_names else _MODULE_NAMES
 
     violations = []
 
@@ -124,7 +211,7 @@ def validate_code(code: str, require_result: bool = True) -> list[str]:
             elif node.attr in blocked_module:
                 # Only block when receiver is a known module name
                 if (isinstance(node.value, ast.Name)
-                        and node.value.id in _MODULE_NAMES):
+                        and node.value.id in effective_module_names):
                     violations.append(
                         f"Module-level '{node.value.id}.{node.attr}' is not "
                         f"allowed (code execution / deserialization)"
@@ -153,12 +240,17 @@ def validate_code(code: str, require_result: bool = True) -> list[str]:
     return violations
 
 
-def _build_sandbox_namespace() -> dict:
+def _build_sandbox_namespace(extra_imports: list[dict] | None = None) -> dict:
     """Build the sandbox namespace with all allowed scientific packages.
 
     Core packages (pd, np, xr) are always present. Additional packages
     are loaded from the registry — required packages raise on import
     failure, optional packages are silently skipped.
+
+    Args:
+        extra_imports: Optional list of per-envoy package dicts, each with
+            ``import_path`` and ``sandbox_alias`` keys.  Missing packages
+            are silently skipped (all are optional).
     """
     ns: dict = {
         "pd": pd, "np": np, "xr": xr,
@@ -174,6 +266,14 @@ def _build_sandbox_namespace() -> dict:
         except ImportError:
             if pkg["required"]:
                 raise
+    # Per-envoy extra imports (all optional — user-specified packages)
+    if extra_imports:
+        import importlib as _il
+        for pkg in extra_imports:
+            try:
+                ns[pkg["sandbox_alias"]] = _il.import_module(pkg["import_path"])
+            except ImportError:
+                pass
     return ns
 
 
@@ -275,6 +375,7 @@ def execute_multi_source_operation(
     sources: dict[str, pd.DataFrame | xr.DataArray],
     code: str,
     source_timeseries: dict[str, bool] | None = None,
+    extra_imports: list[dict] | None = None,
 ) -> pd.DataFrame | xr.DataArray:
     """Execute validated pandas/xarray code with multiple sources.
 
@@ -299,7 +400,7 @@ def execute_multi_source_operation(
         RuntimeError: If code execution fails.
         ValueError: If result is not a valid type or missing time axis.
     """
-    namespace = _build_sandbox_namespace()
+    namespace = _build_sandbox_namespace(extra_imports=extra_imports)
     first_df_key = None
     for key, data in sources.items():
         if isinstance(data, xr.DataArray):
@@ -417,6 +518,7 @@ def run_multi_source_operation(
     sources: dict[str, pd.DataFrame | xr.DataArray],
     code: str,
     source_timeseries: dict[str, bool] | None = None,
+    extra_imports: list[dict] | None = None,
 ) -> tuple[pd.DataFrame | xr.DataArray, list[str]]:
     """Validate code, execute with multiple sources, then validate result.
 
@@ -436,17 +538,18 @@ def run_multi_source_operation(
         ValueError: If code validation fails or result is invalid.
         RuntimeError: If execution fails.
     """
-    violations = validate_code(code)
+    extra_names = frozenset(p["sandbox_alias"] for p in extra_imports) if extra_imports else None
+    violations = validate_code(code, extra_module_names=extra_names)
     if violations:
         raise ValueError(
             "Code validation failed:\n" + "\n".join(f"  - {v}" for v in violations)
         )
-    result = execute_multi_source_operation(sources, code, source_timeseries=source_timeseries)
+    result = execute_multi_source_operation(sources, code, source_timeseries=source_timeseries, extra_imports=extra_imports)
     warnings = validate_result(result, sources)
     return result, warnings
 
 
-def execute_custom_operation(df: pd.DataFrame, code: str) -> pd.DataFrame:
+def execute_custom_operation(df: pd.DataFrame, code: str, extra_imports: list[dict] | None = None) -> pd.DataFrame:
     """Execute validated pandas code in a restricted namespace.
 
     Args:
@@ -464,13 +567,13 @@ def execute_custom_operation(df: pd.DataFrame, code: str) -> pd.DataFrame:
     if not isinstance(df.index, pd.DatetimeIndex):
         df.index = pd.to_datetime(df.index)
 
-    namespace = _build_sandbox_namespace()
+    namespace = _build_sandbox_namespace(extra_imports=extra_imports)
     namespace["df"] = df
     result = _execute_in_sandbox(code, namespace)
     return _validate_result(result)
 
 
-def run_custom_operation(df: pd.DataFrame, code: str) -> pd.DataFrame:
+def run_custom_operation(df: pd.DataFrame, code: str, extra_imports: list[dict] | None = None) -> pd.DataFrame:
     """Validate and execute a custom pandas operation.
 
     Convenience function that combines validation and execution.
@@ -486,15 +589,16 @@ def run_custom_operation(df: pd.DataFrame, code: str) -> pd.DataFrame:
         ValueError: If validation fails or result is invalid.
         RuntimeError: If execution fails.
     """
-    violations = validate_code(code)
+    extra_names = frozenset(p["sandbox_alias"] for p in extra_imports) if extra_imports else None
+    violations = validate_code(code, extra_module_names=extra_names)
     if violations:
         raise ValueError(
             "Code validation failed:\n" + "\n".join(f"  - {v}" for v in violations)
         )
-    return execute_custom_operation(df, code)
+    return execute_custom_operation(df, code, extra_imports=extra_imports)
 
 
-def execute_dataframe_creation(code: str) -> pd.DataFrame:
+def execute_dataframe_creation(code: str, extra_imports: list[dict] | None = None) -> pd.DataFrame:
     """Execute validated pandas code to create a DataFrame from scratch.
 
     Unlike execute_custom_operation(), there is no input DataFrame — the code
@@ -511,12 +615,12 @@ def execute_dataframe_creation(code: str) -> pd.DataFrame:
         RuntimeError: If code execution fails.
         ValueError: If result is not a DataFrame/Series/DataArray.
     """
-    namespace = _build_sandbox_namespace()
+    namespace = _build_sandbox_namespace(extra_imports=extra_imports)
     result = _execute_in_sandbox(code, namespace)
     return _validate_result(result)
 
 
-def run_dataframe_creation(code: str) -> pd.DataFrame:
+def run_dataframe_creation(code: str, extra_imports: list[dict] | None = None) -> pd.DataFrame:
     """Validate and execute code that creates a DataFrame from scratch.
 
     Convenience function that combines validation and execution.
@@ -531,9 +635,10 @@ def run_dataframe_creation(code: str) -> pd.DataFrame:
         ValueError: If validation fails or result is invalid.
         RuntimeError: If execution fails.
     """
-    violations = validate_code(code)
+    extra_names = frozenset(p["sandbox_alias"] for p in extra_imports) if extra_imports else None
+    violations = validate_code(code, extra_module_names=extra_names)
     if violations:
         raise ValueError(
             "Code validation failed:\n" + "\n".join(f"  - {v}" for v in violations)
         )
-    return execute_dataframe_creation(code)
+    return execute_dataframe_creation(code, extra_imports=extra_imports)

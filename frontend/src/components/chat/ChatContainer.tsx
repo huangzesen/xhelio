@@ -39,9 +39,9 @@ export function ChatContainer() {
     return () => useLoadingStateStore.getState().unsubscribeSSE();
   }, [fetchLoadingState]);
 
-  const handleSend = (message: string) => {
+  const handleSend = (message: string, files?: File[]) => {
     if (!activeSessionId) return;
-    sendMessage(activeSessionId, message);
+    sendMessage(activeSessionId, message, files);
   };
 
   const handleCancel = () => {

@@ -112,6 +112,21 @@ you can adapt its code to the current data labels (rename df_SUFFIX variables).
 When you do, include the library ID in your description, e.g.:
   description: "Compute magnitude [from a1b2c3d4]"
 
+## Package Restrictions
+
+You can ONLY use packages available in the sandbox namespace. Do NOT use import statements — they are blocked by the sandbox validator and will cause an error.
+
+Currently available packages:
+- **Core** (always present): `pd` (pandas), `np` (numpy), `xr` (xarray)
+- **Scientific** (always present): `scipy`, `pywt` (PyWavelets)
+- **Optional** (available if installed): `numba`, `sklearn`, `statsmodels`, `astropy`, `lmfit`, `sympy`, `mpl_cm`
+
+If your computation requires a package not listed above, STOP and report it clearly in your response:
+"I need package X (import path: Y) for this computation because Z."
+The orchestrator will handle installation and sandbox registration.
+
+Do NOT attempt to work around the restriction by reimplementing library functionality — request the package instead.
+
 ## Code Guidelines
 
 - Always assign to `result` — must be DataFrame/Series with DatetimeIndex

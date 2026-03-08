@@ -11,6 +11,7 @@
         "get_dataset_docs",
         "search_full_catalog",
         "ask_clarification",
+        "ask_user_permission",
         "get_session_assets",
         "delegate_to_envoy",
         "delegate_to_viz",
@@ -26,7 +27,13 @@
         "restore_plot",
         "events_admin",
         "list_active_work",
-        "cancel_work"
+        "cancel_work",
+        "install_package",
+        "manage_sandbox_packages",
+        "add_envoy",
+        "save_envoy",
+        "list_envoys",
+        "remove_envoy"
       ],
       "informed": [
         "render_plotly_json",
@@ -194,7 +201,15 @@
       "search_full_catalog",
       "fetch_data"
     ],
-    "spice": []
+    "spice": [],
+    "package": [
+      "custom_operation",
+      "describe_data",
+      "preview_data",
+      "store_dataframe",
+      "search_function_docs",
+      "get_function_docs"
+    ]
   },
   "envoy_informed": [],
   "envoy_group_assignments": {

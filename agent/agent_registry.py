@@ -352,6 +352,17 @@ class EnvoyToolRegistry:
             self._active_missions.add(mission_id)
             return True
 
+    def register_mission(self, mission_id: str, group: str) -> None:
+        """Register a mission into a tool group. Skips if already assigned."""
+        with self._lock:
+            if mission_id not in self._mission_to_group:
+                self._mission_to_group[mission_id] = group
+
+    def unregister_mission(self, mission_id: str) -> None:
+        """Remove a mission from the group registry."""
+        with self._lock:
+            self._mission_to_group.pop(mission_id, None)
+
     def clear_active(self) -> None:
         """Reset the active missions set. Called on agent teardown."""
         with self._lock:
@@ -360,3 +371,16 @@ class EnvoyToolRegistry:
 
 # Module-level singleton
 ENVOY_TOOL_REGISTRY = EnvoyToolRegistry()
+
+
+def register_package_envoys() -> None:
+    """Auto-register all type:package missions into the 'package' envoy group.
+
+    Called at startup after mission catalog is loaded. Safe to call multiple
+    times — skips missions already assigned.
+    """
+    from knowledge.catalog import MISSIONS
+
+    for mission_id, info in MISSIONS.items():
+        if isinstance(info, dict) and info.get("type") == "package":
+            ENVOY_TOOL_REGISTRY.register_mission(mission_id, "package")

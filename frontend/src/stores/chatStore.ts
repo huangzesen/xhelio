@@ -28,8 +28,17 @@ interface ChatState {
   roundMarkers: RoundMarker[];
   roundTokenUsage: Record<string, number> | null;
   planData: import('../api/client').PlanData | null;
+  pendingPermissions: Array<{
+    id: string;
+    requestId: string;
+    action: string;
+    description: string;
+    command: string;
+    timestamp: number;
+    responded: boolean;
+  }>;
 
-  sendMessage: (sessionId: string, message: string) => Promise<void>;
+  sendMessage: (sessionId: string, message: string, files?: File[]) => Promise<void>;
   cancelStream: (sessionId: string) => Promise<void>;
   regenerateLastResponse: (sessionId: string) => Promise<void>;
   rebuildFromEventLog: (events: SessionEventRecord[], sessionId?: string) => void;
@@ -385,6 +394,25 @@ function handleSSEEvent(
       break;
     }
 
+    case 'permission_request': {
+      const ev = event as { request_id: string; action: string; description: string; command: string };
+      set((s) => ({
+        pendingPermissions: [
+          ...s.pendingPermissions,
+          {
+            id: uid(),
+            requestId: ev.request_id,
+            action: ev.action,
+            description: ev.description,
+            command: ev.command,
+            timestamp: Date.now(),
+            responded: false,
+          },
+        ],
+      }));
+      break;
+    }
+
     case 'error': {
       if (_rafHandle) {
         cancelAnimationFrame(_rafHandle);
@@ -437,6 +465,7 @@ export const useChatStore = create<ChatState>()(
   roundMarkers: [],
   roundTokenUsage: null,
   planData: null,
+  pendingPermissions: [],
 
   ensureSubscribed: (sessionId: string) => {
     if (_eventSource && _subscribedSessionId === sessionId) return;
@@ -494,7 +523,9 @@ export const useChatStore = create<ChatState>()(
     }
   },
 
-  sendMessage: async (sessionId: string, message: string) => {
+  sendMessage: async (sessionId: string, message: string, files?: File[]) => {
+    if (get().isCancelling) return;
+
     // Intercept slash commands
     if (message.startsWith('/')) {
       const command = message.slice(1).split(/\s+/)[0].toLowerCase();
@@ -554,10 +585,14 @@ export const useChatStore = create<ChatState>()(
       return;
     }
 
+    const fileInfo = files?.length
+      ? '\n' + files.map((f) => `[Attached: ${f.name}]`).join('\n')
+      : '';
+
     const userMsg: ChatMessage = {
       id: uid(),
       role: 'user',
-      content: message,
+      content: message + fileInfo,
       timestamp: Date.now(),
     };
 
@@ -569,13 +604,38 @@ export const useChatStore = create<ChatState>()(
     // Ensure persistent EventSource is connected
     get().ensureSubscribed(sessionId);
 
+    // Upload files first so they exist on disk before the agent processes the message.
+    // Each upload also injects its own agent message via push_input on the backend.
+    if (files?.length) {
+      for (const file of files) {
+        try {
+          await api.uploadFile(sessionId, file);
+        } catch (err) {
+          set((s) => ({
+            messages: [
+              ...s.messages,
+              {
+                id: uid(),
+                role: 'system' as const,
+                content: `Failed to upload ${file.name}: ${(err as Error).message}`,
+                timestamp: Date.now(),
+              },
+            ],
+          }));
+        }
+      }
+    }
+
+    // If only files (no text), send a default message
+    const chatMessage = message || `Please load ${files?.length === 1 ? 'this file' : 'these files'}.`;
+
     // Fire-and-forget POST — run_loop() will process it.
     // Multiple messages can be queued while the agent is working.
     try {
       await fetch(`/api/sessions/${sessionId}/chat`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ message }),
+        body: JSON.stringify({ message: chatMessage }),
       });
     } catch (err) {
       // POST failed — no round_start/round_end will arrive, so clear streaming directly.
@@ -826,6 +886,7 @@ export const useChatStore = create<ChatState>()(
       roundMarkers: [],
       roundTokenUsage: null,
       planData: null,
+      pendingPermissions: [],
     });
   },
 

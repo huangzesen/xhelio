@@ -16,6 +16,11 @@ class FollowUpRequest(BaseModel):
     count: int = Field(default=3, ge=1, le=5, description="Number of suggestions to generate")
 
 
+class PermissionResponse(BaseModel):
+    request_id: str
+    approved: bool
+
+
 # ---- Responses ----
 
 class SessionInfo(BaseModel):

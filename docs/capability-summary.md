@@ -294,8 +294,9 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 - Rich system prompt with recommended datasets and analysis patterns
 - **Two-mode operation**: when planner provides `candidate_datasets`, inspects candidates via `list_parameters` and selects best dataset/parameters autonomously; otherwise executes exact instructions directly
 - Handles all-NaN fallback: skips empty parameters, tries next candidate dataset
-- No compute tools — reports fetched data labels to orchestrator
+- No compute tools (for mission envoys) — reports fetched data labels to orchestrator
 - See planning flow below (§ Planning Pipeline)
+- **Package envoys** (type: "package"): user-defined envoys wrapping Python packages with sandboxed execution. See § User-Defined Package Envoys below
 
 ### DataOpsActor (agent/data_ops_agent.py)
 - Sees tools: data_ops_compute (`custom_operation`, `describe_data`, `save_data`), function_docs (`search_function_docs`, `get_function_docs`), conversation + `list_fetched_data` extra
@@ -491,6 +492,18 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - **Calibration exclusion lists**: Per-mission `_calibration_exclude.json` files filter out calibration, housekeeping, and ephemeris datasets from browse results. Uses glob patterns and exact IDs.
 - **Auto-generation**: `scripts/generate_mission_data.py` queries CDAS REST API for catalog + Master CDF for parameters. Use `--create-new` to create skeleton JSON files for new missions.
 - **Loader**: `knowledge/mission_loader.py` provides in-memory cache, routing table, and dataset access. Routing table derives capabilities from instrument keywords (magnetic field, plasma, energetic particles, electric field, radio/plasma waves, geomagnetic indices, ephemeris, composition, coronagraph, imaging).
+
+### User-Defined Package Envoys
+
+Users can create custom envoys that wrap Python packages into sandboxed tool-equipped agents.
+
+- **Creation flow**: User requests → `add_envoy` introspects package API → LLM proposes functions → user confirms → `save_envoy` persists to `knowledge/missions/packages/`
+- **Management tools**: `add_envoy` (introspect), `save_envoy` (persist), `list_envoys` (list all), `remove_envoy` (delete)
+- **Execution**: Package envoys use `custom_operation` with per-envoy pre-imported namespaces (defined in JSON `sandbox.imports`)
+- **Tool group**: `"package"` envoy group provides `custom_operation`, `describe_data`, `preview_data`, `store_dataframe`, `search_function_docs`, `get_function_docs`
+- **System prompt**: Auto-generated from the envoy JSON — lists available packages, functions with signatures, and instructs the LLM to use `custom_operation`
+- **Persistence**: JSON files in `knowledge/missions/packages/`, auto-loaded on startup via `register_package_envoys()`
+- **Sandbox safety**: Same AST-validated sandbox as DataOps — no file I/O, no imports, no exec/eval
 
 ### Long-term Memory (`agent/memory.py`)
 - Cross-session memory that persists user preferences, session summaries, operational pitfalls, and reflections

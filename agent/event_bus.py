@@ -123,6 +123,10 @@ WORK_REGISTERED = "work_registered"
 WORK_CANCELLED = "work_cancelled"
 USER_AMENDMENT = "user_amendment"
 
+# Permission system (synchronous user approval)
+PERMISSION_REQUEST = "permission_request"
+PERMISSION_RESPONSE = "permission_response"
+
 # Context compaction (message-level)
 CONTEXT_COMPACTION = "context_compaction"
 
@@ -212,6 +216,8 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     WORK_REGISTERED: frozenset({"display", "console"}),
     WORK_CANCELLED: frozenset({"display", "memory", "console"}),
     USER_AMENDMENT: frozenset({"display", "memory", "console"}),
+    PERMISSION_REQUEST: frozenset({"display", "console"}),
+    PERMISSION_RESPONSE: frozenset({"console"}),
     SUB_AGENT_TOOL: frozenset({"console"}),
     SUB_AGENT_ERROR: frozenset({"memory", "console"}),
     # Planning
@@ -902,6 +908,15 @@ class SSEEventListener:
                             "description": event.data.get("description", ""),
                         }
                     )
+                    sent_typed = True
+                elif event.type == PERMISSION_REQUEST:
+                    self._callback({
+                        "type": "permission_request",
+                        "request_id": event.data.get("request_id", ""),
+                        "action": event.data.get("action", ""),
+                        "description": event.data.get("description", ""),
+                        "command": event.data.get("command", ""),
+                    })
                     sent_typed = True
                 elif event.type in (PLAN_CREATED, PLAN_TASK, PLAN_COMPLETED):
                     from agent.planner import format_plan_structured

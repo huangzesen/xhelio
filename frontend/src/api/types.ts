@@ -132,6 +132,14 @@ export interface SSEEurekaFindingEvent {
   status: 'proposed' | 'reviewed' | 'confirmed' | 'rejected';
 }
 
+export interface SSEPermissionRequestEvent {
+  type: 'permission_request';
+  request_id: string;
+  action: string;
+  description: string;
+  command: string;
+}
+
 export interface SSEMplImageEvent {
   type: 'mpl_image';
   available: boolean;
@@ -162,7 +170,8 @@ export type SSEEvent =
   | SSEMemoryUpdateEvent
   | SSEInsightResultEvent
   | SSEPlanUpdateEvent
-  | SSEEurekaFindingEvent;
+  | SSEEurekaFindingEvent
+  | SSEPermissionRequestEvent;
 
 // ---- Catalog SSE Events ----
 

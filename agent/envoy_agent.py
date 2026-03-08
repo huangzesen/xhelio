@@ -55,8 +55,10 @@ class EnvoyAgent(SubAgent):
         memory_store: MemoryStore | None = None,
         memory_scope: str = "",
         cancel_event: threading.Event | None = None,
+        sandbox_config: dict | None = None,
     ):
         self.mission_id = mission_id
+        self.sandbox_config = sandbox_config
 
         # Resolve tool set from per-mission registry (group-based)
         tool_list = ENVOY_TOOL_REGISTRY.get_tools(mission_id)

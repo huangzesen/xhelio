@@ -33,9 +33,10 @@ _MISSIONS_DIR = Path(__file__).parent / "missions"
 # Source-specific subdirectories
 _CDAWEB_DIR = _MISSIONS_DIR / "cdaweb"
 _PPI_DIR = _MISSIONS_DIR / "ppi"
+_PACKAGES_DIR = _MISSIONS_DIR / "packages"
 
 # All source directories to scan for mission JSONs
-_SOURCE_DIRS = [_CDAWEB_DIR, _PPI_DIR]
+_SOURCE_DIRS = [_CDAWEB_DIR, _PPI_DIR, _PACKAGES_DIR]
 
 # Module-level cache: mission_id (lowercase) -> parsed dict
 _mission_cache: dict[str, dict] = {}

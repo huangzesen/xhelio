@@ -78,6 +78,8 @@ class TestToolNameFiltering:
             "list_fetched_data",
             "review_memory",
             "events",
+            "describe_data",
+            "preview_data",
         }
 
     def test_orchestrator_tools(self):
@@ -91,9 +93,13 @@ class TestToolNameFiltering:
         assert "delegate_to_planner" in names
         # Should include list_fetched_data
         assert "list_fetched_data" in names
-        # Should include pipeline and events (consolidated)
+        # Should include pipeline and events_admin (consolidated)
         assert "pipeline" in names
-        assert "events" in names
+        assert "events_admin" in names
+        # Should include permission and package management tools
+        assert "ask_user_permission" in names
+        assert "install_package" in names
+        assert "manage_sandbox_packages" in names
         # Should NOT include data_ops (delegated to sub-agents)
         assert "fetch_data" not in names
         assert "custom_operation" not in names

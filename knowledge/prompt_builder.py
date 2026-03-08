@@ -202,11 +202,56 @@ def _build_spice_prompt() -> str:
     ])
 
 
+def _build_package_prompt(mission_id: str) -> str:
+    """Generate the system prompt for a package envoy agent."""
+    mission_data = load_mission(mission_id)
+    if mission_data is None:
+        raise KeyError(f"Package envoy '{mission_id}' not found")
+
+    sandbox = mission_data.get("sandbox", {})
+    imports = sandbox.get("imports", [])
+    functions = sandbox.get("functions", [])
+
+    # Build package list
+    package_lines = []
+    for imp in imports:
+        package_lines.append(f"- `{imp['sandbox_alias']}` → `{imp['import_path']}`")
+    package_list = "\n".join(package_lines) if package_lines else "*(none)*"
+
+    # Build function list
+    func_lines = []
+    for fn in functions:
+        func_lines.append(f"### `{fn['signature']}`\n\n{fn['description']}")
+        if fn.get("parameters"):
+            params = [f"- `{k}` ({v.get('type', 'any')}): {v.get('description', '')}"
+                      for k, v in fn["parameters"].items()]
+            func_lines.append("\nParameters:\n" + "\n".join(params))
+        func_lines.append("")
+    function_list = "\n".join(func_lines) if func_lines else "*(none defined)*"
+
+    # Example call from first function
+    example_call = functions[0]["signature"] if functions else "package.function(args)"
+
+    prompt = assemble(
+        ["envoy_package/full.md"],
+        envoy_name=mission_data.get("name", mission_id),
+        description=mission_data.get("profile", {}).get("description", ""),
+        package_list=package_list,
+        function_list=function_list,
+        example_call=example_call,
+    )
+
+    # Append shared sections
+    shared = assemble(["_shared/async_tools.md", "_shared/final_summary.md"])
+    return prompt + "\n\n" + shared
+
+
 # Group -> prompt builder function. Groups not listed here use the default
 # mission-profile prompt builder (_build_mission_prompt). Add entries here
 # when a group needs a specialized prompt.
 _GROUP_PROMPT_BUILDERS: dict[str, callable] = {
     "spice": lambda mission_id: _build_spice_prompt(),
+    "package": _build_package_prompt,
 }
 
 
@@ -488,6 +533,7 @@ def build_system_prompt_agent_specific(include_catalog: bool = False) -> str:
             "orchestrator/delegation_rule.md",
             "orchestrator/clarification.md",
             "orchestrator/planning_and_delegation.md",
+            "orchestrator/permissions.md",
             "orchestrator/examples.md",
             "orchestrator/follow_up_routing.md",
         ],
@@ -541,6 +587,7 @@ def build_system_prompt(include_catalog: bool = False) -> str:
             "orchestrator/delegation_rule.md",
             "orchestrator/clarification.md",
             "orchestrator/planning_and_delegation.md",
+            "orchestrator/permissions.md",
             "orchestrator/examples.md",
             "orchestrator/follow_up_routing.md",
         ],

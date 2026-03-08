@@ -363,10 +363,12 @@ def handle_custom_operation(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         source_ts = {k: False for k in source_ts}
 
     try:
+        extra_imports = getattr(orch, '_current_envoy_sandbox_imports', None)
         op_result, warnings = run_multi_source_operation(
             sources,
             tool_args["code"],
             source_timeseries=source_ts,
+            extra_imports=extra_imports,
         )
     except (ValueError, RuntimeError) as e:
         prefix = "Validation" if isinstance(e, ValueError) else "Execution"
@@ -529,7 +531,8 @@ def handle_custom_operation(orch: "OrchestratorAgent", tool_args: dict) -> dict:
 
 def handle_store_dataframe(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     try:
-        result_df = run_dataframe_creation(tool_args["code"])
+        extra_imports = getattr(orch, '_current_envoy_sandbox_imports', None)
+        result_df = run_dataframe_creation(tool_args["code"], extra_imports=extra_imports)
     except (ValueError, RuntimeError) as e:
         prefix = "Validation" if isinstance(e, ValueError) else "Execution"
         err_msg = f"{prefix} error: {e}"

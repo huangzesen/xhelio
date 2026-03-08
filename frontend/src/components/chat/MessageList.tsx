@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { ChatMessage } from './ChatMessage';
 import { ToolCallGroup } from './ToolCallGroup';
 import { TypingIndicator } from './TypingIndicator';
+import { PermissionRequest } from './PermissionRequest';
 import { PlotlyFigure } from '../plot/PlotlyFigure';
 import { PlotThumbnail } from '../plot/PlotThumbnail';
 import { PlotFullscreen } from '../plot/PlotFullscreen';
@@ -57,6 +58,7 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
   const [viewerIndex, setViewerIndex] = useState<number | null>(null);
   const [mplViewerIndex, setMplViewerIndex] = useState<number | null>(null);
   const [loadingThumbnails, setLoadingThumbnails] = useState<Set<string>>(new Set());
+  const pendingPermissions = useChatStore((s) => s.pendingPermissions);
   const roundMarkers = useChatStore((s) => s.roundMarkers);
   const memoryEvents = useChatStore((s) => s.memoryEvents);
   const commentaryText = useChatStore((s) => s.commentaryText);
@@ -477,6 +479,18 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
             </motion.div>
           )}
         </AnimatePresence>
+
+        {pendingPermissions.map((perm) => (
+          <PermissionRequest
+            key={perm.id}
+            id={perm.id}
+            requestId={perm.requestId}
+            action={perm.action}
+            description={perm.description}
+            command={perm.command}
+            responded={perm.responded}
+          />
+        ))}
 
         <div ref={bottomRef} />
       </div>

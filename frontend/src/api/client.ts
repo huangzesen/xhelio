@@ -112,6 +112,18 @@ export function cancelChat(sessionId: string): Promise<{ status: string }> {
   return request(`/sessions/${sessionId}/cancel`, { method: 'POST' });
 }
 
+export async function respondToPermission(
+  sessionId: string,
+  requestId: string,
+  approved: boolean,
+): Promise<void> {
+  await request(`/sessions/${sessionId}/permission-response`, {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ request_id: requestId, approved }),
+  });
+}
+
 // ---- Commands ----
 
 export function executeCommand(sessionId: string, command: string): Promise<CommandResponse> {
@@ -609,4 +621,31 @@ export async function fetchEurekaChatHistory(limit = 50): Promise<import('./type
     `/eureka/chat/history?limit=${limit}`
   );
   return data.messages;
+}
+
+// ---- File Upload ----
+
+export interface UploadResult {
+  status: string;
+  filename: string;
+  size: number;
+}
+
+export async function uploadFile(
+  sessionId: string,
+  file: File,
+): Promise<UploadResult> {
+  const form = new FormData();
+  form.append('file', file);
+
+  const res = await fetch(`${BASE}/sessions/${sessionId}/upload`, {
+    method: 'POST',
+    body: form,
+    // Do NOT set Content-Type — browser sets multipart boundary automatically
+  });
+  if (!res.ok) {
+    const body = await res.json().catch(() => ({ detail: res.statusText }));
+    throw new Error(body.detail || `Upload failed: HTTP ${res.status}`);
+  }
+  return res.json();
 }

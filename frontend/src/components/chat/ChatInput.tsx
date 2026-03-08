@@ -1,5 +1,5 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
-import { Send, Square, Loader2 } from 'lucide-react';
+import { Send, Square, Loader2, Paperclip, X } from 'lucide-react';
 import * as api from '../../api/client';
 import { useSessionStore } from '../../stores/sessionStore';
 
@@ -18,7 +18,7 @@ const SLASH_COMMANDS = [
 ];
 
 interface Props {
-  onSend: (message: string) => void;
+  onSend: (message: string, files?: File[]) => void;
   onCancel: () => void;
   isStreaming: boolean;
   isCancelling: boolean;
@@ -33,6 +33,9 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   const [draftText, setDraftText] = useState('');
   const [commandMatches, setCommandMatches] = useState<typeof SLASH_COMMANDS>([]);
   const [selectedCommandIndex, setSelectedCommandIndex] = useState(0);
+  const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
   const textareaRef = useRef<HTMLTextAreaElement>(null);
   const completionSeq = useRef(0);
   const debounceRef = useRef<ReturnType<typeof setTimeout>>(undefined);
@@ -153,9 +156,57 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
     textareaRef.current?.focus();
   }, []);
 
+  const dragCounter = useRef(0);
+
+  const handleDragOver = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+  }, []);
+
+  const handleDragEnter = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounter.current++;
+    setIsDragging(true);
+  }, []);
+
+  const handleDragLeave = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounter.current--;
+    if (dragCounter.current === 0) setIsDragging(false);
+  }, []);
+
+  const ALLOWED_EXTENSIONS = new Set([
+    '.csv','.tsv','.json','.parquet','.xlsx','.xls',
+    '.pdf','.png','.jpg','.jpeg','.gif','.webp','.bmp','.tiff',
+  ]);
+
+  const handleDrop = useCallback((e: React.DragEvent) => {
+    e.preventDefault();
+    dragCounter.current = 0;
+    setIsDragging(false);
+    const dropped = Array.from(e.dataTransfer.files).filter((f) => {
+      const ext = '.' + f.name.split('.').pop()?.toLowerCase();
+      return ALLOWED_EXTENSIONS.has(ext);
+    });
+    if (dropped.length > 0) {
+      setAttachedFiles((prev) => [...prev, ...dropped]);
+    }
+  }, []);
+
+  const handleFileSelect = useCallback((e: React.ChangeEvent<HTMLInputElement>) => {
+    const selected = e.target.files;
+    if (!selected) return;
+    setAttachedFiles((prev) => [...prev, ...Array.from(selected)]);
+    // Reset so the same file can be re-selected
+    e.target.value = '';
+  }, []);
+
+  const removeFile = useCallback((index: number) => {
+    setAttachedFiles((prev) => prev.filter((_, i) => i !== index));
+  }, []);
+
   const handleSubmit = useCallback(() => {
     const trimmed = text.trim();
-    if (!trimmed || disabled) return;
+    if ((!trimmed && attachedFiles.length === 0) || disabled) return;
 
     // If command dropdown is open, accept the selected command instead of submitting
     if (commandMatches.length > 0) {
@@ -163,7 +214,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
       return;
     }
 
-    onSend(trimmed);
+    onSend(trimmed, attachedFiles.length > 0 ? attachedFiles : undefined);
     hasSentMessage.current = true;
     // Save to history
     api.addInputHistory(trimmed).catch(() => {});
@@ -171,13 +222,14 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
     setHistoryIndex(-1);
     setDraftText('');
     setText('');
+    setAttachedFiles([]);
     setGhostText('');
     isAutofilled.current = false;
     setCommandMatches([]);
     if (textareaRef.current) {
       textareaRef.current.style.height = 'auto';
     }
-  }, [text, disabled, onSend, commandMatches, selectedCommandIndex, acceptCommand]);
+  }, [text, disabled, onSend, attachedFiles, commandMatches, selectedCommandIndex, acceptCommand]);
 
   const handleKeyDown = (e: React.KeyboardEvent) => {
     // Command dropdown navigation
@@ -317,9 +369,57 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   };
 
   return (
-    <div className="border-t border-border bg-panel px-4 py-3">
+    <div
+      className={`border-t border-border bg-panel px-4 py-3 transition-colors ${isDragging ? 'bg-primary/5 border-primary' : ''}`}
+      onDragOver={handleDragOver}
+      onDragEnter={handleDragEnter}
+      onDragLeave={handleDragLeave}
+      onDrop={handleDrop}
+    >
+      <input
+        ref={fileInputRef}
+        type="file"
+        multiple
+        accept=".csv,.tsv,.json,.parquet,.xlsx,.xls,.pdf,.png,.jpg,.jpeg,.gif,.webp,.bmp,.tiff"
+        className="hidden"
+        onChange={handleFileSelect}
+      />
       <div className="flex items-end gap-2 max-w-3xl mx-auto">
+        <button
+          onClick={() => fileInputRef.current?.click()}
+          disabled={disabled || isCancelling || isStreaming}
+          className="p-2.5 rounded-xl text-text-muted hover:text-text hover:bg-surface-elevated
+            transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
+          aria-label="Attach file"
+        >
+          <Paperclip size={18} />
+        </button>
         <div className="flex-1 relative">
+          {/* Attached files badges */}
+          {attachedFiles.length > 0 && (
+            <div className="flex flex-wrap gap-1.5 mb-1.5">
+              {attachedFiles.map((f, i) => (
+                <span
+                  key={`${f.name}-${i}`}
+                  className="inline-flex items-center gap-1 px-2 py-0.5 rounded-md
+                    bg-surface-elevated text-xs text-text-muted border border-border"
+                >
+                  <Paperclip size={12} />
+                  <span className="max-w-[150px] truncate">{f.name}</span>
+                  <span className="text-[10px] opacity-60">
+                    {f.size < 1024 ? `${f.size} B` : f.size < 1048576 ? `${(f.size / 1024).toFixed(0)} KB` : `${(f.size / 1048576).toFixed(1)} MB`}
+                  </span>
+                  <button
+                    onClick={() => removeFile(i)}
+                    className="ml-0.5 p-0.5 rounded hover:bg-border transition-colors"
+                    aria-label={`Remove ${f.name}`}
+                  >
+                    <X size={10} />
+                  </button>
+                </span>
+              ))}
+            </div>
+          )}
           {/* Command dropdown */}
           {commandMatches.length > 0 && (
             <div data-testid="command-dropdown" className="absolute bottom-full left-0 w-full mb-1 rounded-lg border border-border bg-panel shadow-lg overflow-hidden z-10">
@@ -393,7 +493,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
             <button
               data-testid="chat-send-btn"
               onClick={handleSubmit}
-              disabled={!text.trim() || disabled}
+              disabled={(!text.trim() && attachedFiles.length === 0) || disabled}
               className="p-2.5 rounded-xl bg-primary text-white hover:bg-primary-dark
                 transition-colors disabled:opacity-40 disabled:cursor-not-allowed shrink-0"
               aria-label="Send message"
