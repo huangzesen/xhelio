@@ -1,21 +1,8 @@
 import { useState, useRef, useCallback, useEffect } from 'react';
 import { Send, Square, Loader2, Paperclip, X } from 'lucide-react';
 import * as api from '../../api/client';
+import type { SlashCommandInfo } from '../../api/client';
 import { useSessionStore } from '../../stores/sessionStore';
-
-const SLASH_COMMANDS = [
-  { name: '/fork', description: 'Fork session with independent history and fresh agents' },
-  { name: '/branch', description: 'Fork into a new session branch' },
-  { name: '/help', description: 'Show available commands' },
-  { name: '/status', description: 'Session info: model, tokens, data' },
-  { name: '/data', description: 'List data entries in memory' },
-  { name: '/figure', description: 'Figure availability status' },
-  { name: '/reset', description: 'Reset session' },
-  { name: '/sessions', description: 'List saved sessions' },
-  { name: '/retry', description: 'Retry failed plan task' },
-  { name: '/cancel', description: 'Cancel current plan' },
-  { name: '/errors', description: 'Show recent error logs' },
-];
 
 interface Props {
   onSend: (message: string, files?: File[]) => void;
@@ -31,7 +18,8 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   const [history, setHistory] = useState<string[]>([]);
   const [historyIndex, setHistoryIndex] = useState(-1);
   const [draftText, setDraftText] = useState('');
-  const [commandMatches, setCommandMatches] = useState<typeof SLASH_COMMANDS>([]);
+  const [slashCommands, setSlashCommands] = useState<SlashCommandInfo[]>([]);
+  const [commandMatches, setCommandMatches] = useState<SlashCommandInfo[]>([]);
   const [selectedCommandIndex, setSelectedCommandIndex] = useState(0);
   const [attachedFiles, setAttachedFiles] = useState<File[]>([]);
   const [isDragging, setIsDragging] = useState(false);
@@ -44,11 +32,12 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
   const isAutofilled = useRef(false);
   const { activeSessionId } = useSessionStore();
 
-  // Load input history on mount
+  // Load input history and slash commands on mount
   useEffect(() => {
     api.getInputHistory()
       .then(({ history: h }) => setHistory(h))
       .catch(() => {});
+    api.getCommands().then(setSlashCommands).catch(() => {});
   }, []);
 
   // Try to match current text against cached completions
@@ -210,7 +199,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
 
     // If command dropdown is open, accept the selected command instead of submitting
     if (commandMatches.length > 0) {
-      acceptCommand(commandMatches[selectedCommandIndex].name);
+      acceptCommand(`/${commandMatches[selectedCommandIndex].name}`);
       return;
     }
 
@@ -246,7 +235,7 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
       }
       if (e.key === 'Tab') {
         e.preventDefault();
-        acceptCommand(commandMatches[selectedCommandIndex].name);
+        acceptCommand(`/${commandMatches[selectedCommandIndex].name}`);
         return;
       }
       if (e.key === 'Escape') {
@@ -332,8 +321,8 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
       cachedCompletions.current = [];
       if (debounceRef.current) clearTimeout(debounceRef.current);
 
-      const matches = SLASH_COMMANDS.filter(
-        (c) => c.name.startsWith(newText.toLowerCase()),
+      const matches = slashCommands.filter(
+        (c) => `/${c.name}`.startsWith(newText.toLowerCase()),
       );
       setCommandMatches(matches);
       setSelectedCommandIndex(0);
@@ -428,12 +417,12 @@ export function ChatInput({ onSend, onCancel, isStreaming, isCancelling, disable
                   key={cmd.name}
                   onMouseDown={(e) => {
                     e.preventDefault();
-                    acceptCommand(cmd.name);
+                    acceptCommand(`/${cmd.name}`);
                   }}
                   className={`w-full flex items-center gap-3 px-3 py-2 text-sm text-left transition-colors
                     ${i === selectedCommandIndex ? 'bg-surface-elevated text-text' : 'text-text-muted hover:bg-surface-elevated/50'}`}
                 >
-                  <code className="text-primary font-medium shrink-0">{cmd.name}</code>
+                  <code className="text-primary font-medium shrink-0">/{cmd.name}</code>
                   <span className="text-text-muted text-xs truncate">{cmd.description}</span>
                 </button>
               ))}

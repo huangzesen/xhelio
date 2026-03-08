@@ -373,6 +373,27 @@ class EnvoyToolRegistry:
 ENVOY_TOOL_REGISTRY = EnvoyToolRegistry()
 
 
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _AgentCallRegistryAdapter:
+    name = "agents.tool_access"
+    description = "Per-agent-context tool call permissions"
+
+    def get(self, key: str):
+        return AGENT_CALL_REGISTRY.get(key)
+
+    def list_all(self) -> dict:
+        return dict(AGENT_CALL_REGISTRY)
+
+
+AGENT_CALL_PROTOCOL_REGISTRY = _AgentCallRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(AGENT_CALL_PROTOCOL_REGISTRY)
+
+
 def register_package_envoys() -> None:
     """Auto-register all type:package missions into the 'package' envoy group.
 

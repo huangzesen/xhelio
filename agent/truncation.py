@@ -232,3 +232,55 @@ try:
     reload()
 except Exception:
     pass  # config may not be loadable yet (e.g., during testing)
+
+
+# ---------------------------------------------------------------------------
+# Registry protocol adapters
+# ---------------------------------------------------------------------------
+
+from typing import Any
+
+from agent.registry_protocol import register_registry
+
+
+class _TextTruncationRegistry:
+    """Registry adapter exposing text truncation limits."""
+
+    name = "truncation.text"
+    description = "Named character limits for text truncation"
+
+    def get(self, key: str) -> Any:
+        try:
+            return get_limit(key)
+        except KeyError:
+            return None
+
+    def list_all(self) -> dict[str, Any]:
+        merged = dict(DEFAULTS)
+        merged.update(_text_overrides)
+        return merged
+
+
+class _ItemTruncationRegistry:
+    """Registry adapter exposing item-count truncation limits."""
+
+    name = "truncation.items"
+    description = "Named item-count limits for list truncation"
+
+    def get(self, key: str) -> Any:
+        try:
+            return get_item_limit(key)
+        except KeyError:
+            return None
+
+    def list_all(self) -> dict[str, Any]:
+        merged = dict(ITEM_DEFAULTS)
+        merged.update(_item_overrides)
+        return merged
+
+
+TEXT_REGISTRY = _TextTruncationRegistry()
+ITEM_REGISTRY = _ItemTruncationRegistry()
+
+register_registry(TEXT_REGISTRY)
+register_registry(ITEM_REGISTRY)

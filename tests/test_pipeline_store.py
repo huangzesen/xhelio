@@ -610,12 +610,13 @@ class TestMemoryAgentPipelineCuration:
     """Tests for MemoryAgent._execute_register_pipeline()."""
 
     def _make_memory_agent(self, pipeline_store, session_id="test_session"):
-        """Create a MemoryAgent with mocked adapter and memory store."""
-        adapter = MagicMock()
+        """Create a MemoryAgent with mocked service and memory store."""
+        svc = MagicMock()
+        svc.get_adapter.return_value = MagicMock()
+        svc.provider = "gemini"
         memory_store = MagicMock()
         return MemoryAgent(
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
             memory_store=memory_store,
             pipeline_store=pipeline_store,
             session_id=session_id,
@@ -976,11 +977,12 @@ class TestDiscardPipelineAction:
     """Tests for the discard_pipeline action in MemoryAgent."""
 
     def _make_memory_agent(self, session_id="test_session"):
-        adapter = MagicMock()
+        svc = MagicMock()
+        svc.get_adapter.return_value = MagicMock()
+        svc.provider = "gemini"
         memory_store = MagicMock()
         return MemoryAgent(
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
             memory_store=memory_store,
             pipeline_store=None,
             session_id=session_id,

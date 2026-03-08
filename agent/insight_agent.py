@@ -19,8 +19,6 @@ import threading
 from .sub_agent import SubAgent, Message
 from .llm_utils import _CancelledDuringLLM, send_with_timeout
 from .event_bus import EventBus, INSIGHT_RESULT, INSIGHT_FEEDBACK
-from .llm import LLMAdapter
-from .llm.minimax.adapter import MiniMaxAdapter
 from .logging import get_logger, log_error
 from knowledge.prompt_builder import build_insight_prompt
 
@@ -30,8 +28,7 @@ class InsightAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         event_bus: EventBus | None = None,
@@ -39,8 +36,8 @@ class InsightAgent(SubAgent):
     ):
         super().__init__(
             agent_id="InsightAgent",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="insight",
             tool_executor=tool_executor,
             system_prompt=build_insight_prompt(),
             tool_schemas=[],  # No tools — pure text/image generation
@@ -49,8 +46,8 @@ class InsightAgent(SubAgent):
         )
 
     def _is_minimax(self) -> bool:
-        """Check if the active adapter is MiniMax."""
-        return isinstance(self.adapter, MiniMaxAdapter)
+        """Check if the active provider is MiniMax."""
+        return self._provider == "minimax"
 
     def _mcp_understand_image(
         self, prompt_text: str, image_bytes: bytes, mime_type: str = "image/png"
@@ -180,14 +177,15 @@ class InsightAgent(SubAgent):
                 )
                 return {"text": analysis_text, "failed": False, "errors": []}
 
-            chat = self.adapter.create_chat(
+            adapter = self.service.get_adapter(self._provider)
+            chat = adapter.create_chat(
                 model=self.model_name,
                 system_prompt=build_insight_prompt(),
                 tools=None,
                 thinking="insight",
             )
 
-            multimodal_msg = self.adapter.make_multimodal_message(
+            multimodal_msg = adapter.make_multimodal_message(
                 text=prompt_text,
                 image_bytes=image_bytes,
                 mime_type=mime_type,

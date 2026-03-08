@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { User, Bot, Brain, Terminal, ChevronRight, ChevronDown, Eye, CheckCircle, AlertTriangle } from 'lucide-react';
 import { MarkdownRenderer } from '../common/MarkdownRenderer';
 import { MessageActions } from './MessageActions';
@@ -10,31 +11,30 @@ interface Props {
   onRegenerate?: () => void;
 }
 
-const relativeTimeFormatter = new Intl.RelativeTimeFormat('en', { numeric: 'auto' });
-
-function getRelativeTimeString(timestamp: number): string {
+function getRelativeTimeString(timestamp: number, locale: string): string {
+  const formatter = new Intl.RelativeTimeFormat(locale, { numeric: 'auto' });
   const now = Date.now();
   const diffInSeconds = Math.floor((timestamp - now) / 1000);
   const absDiff = Math.abs(diffInSeconds);
 
-  if (absDiff < 60) return 'just now';
-  
+  if (absDiff < 60) return formatter.format(0, 'second');
+
   const diffInMinutes = Math.floor(diffInSeconds / 60);
-  if (Math.abs(diffInMinutes) < 60) return relativeTimeFormatter.format(diffInMinutes, 'minute');
-  
+  if (Math.abs(diffInMinutes) < 60) return formatter.format(diffInMinutes, 'minute');
+
   const diffInHours = Math.floor(diffInMinutes / 60);
-  if (Math.abs(diffInHours) < 24) return relativeTimeFormatter.format(diffInHours, 'hour');
-  
+  if (Math.abs(diffInHours) < 24) return formatter.format(diffInHours, 'hour');
+
   const diffInDays = Math.floor(diffInHours / 24);
-  return relativeTimeFormatter.format(diffInDays, 'day');
+  return formatter.format(diffInDays, 'day');
 }
 
-function formatAbsoluteTime(timestamp: number): string {
+function formatAbsoluteTime(timestamp: number, locale: string): string {
   const date = new Date(timestamp);
   const now = new Date();
   const isToday = date.toDateString() === now.toDateString();
-  
-  return new Intl.DateTimeFormat('en', {
+
+  return new Intl.DateTimeFormat(locale, {
     month: isToday ? undefined : 'short',
     day: isToday ? undefined : 'numeric',
     hour: 'numeric',
@@ -43,23 +43,25 @@ function formatAbsoluteTime(timestamp: number): string {
 }
 
 export function ChatMessage({ message, isQueued, onRegenerate }: Props) {
+  const { i18n } = useTranslation();
+  const locale = i18n.language;
   const isUser = message.role === 'user';
   const isThinking = message.role === 'thinking';
   const [expanded, setExpanded] = useState(false);
   const [isHovered, setIsHovered] = useState(false);
-  const [relativeTime, setRelativeTime] = useState(getRelativeTimeString(message.timestamp));
+  const [relativeTime, setRelativeTime] = useState(getRelativeTimeString(message.timestamp, locale));
 
   useEffect(() => {
     if (!isHovered) return;
     const interval = setInterval(() => {
-      setRelativeTime(getRelativeTimeString(message.timestamp));
+      setRelativeTime(getRelativeTimeString(message.timestamp, locale));
     }, 30000);
     return () => clearInterval(interval);
-  }, [isHovered, message.timestamp]);
+  }, [isHovered, message.timestamp, locale]);
 
   const handleMouseEnter = () => {
     setIsHovered(true);
-    setRelativeTime(getRelativeTimeString(message.timestamp));
+    setRelativeTime(getRelativeTimeString(message.timestamp, locale));
   };
 
   const handleMouseLeave = () => {
@@ -72,7 +74,7 @@ export function ChatMessage({ message, isQueued, onRegenerate }: Props) {
         ${isHovered ? 'opacity-100' : 'opacity-0'} 
         ${isUser ? 'text-left' : 'text-right'}`}
     >
-      {relativeTime} • {formatAbsoluteTime(message.timestamp)}
+      {relativeTime} • {formatAbsoluteTime(message.timestamp, locale)}
     </div>
   );
 

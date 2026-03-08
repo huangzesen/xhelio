@@ -1,13 +1,12 @@
 import { Brain, Star, Zap } from 'lucide-react';
 import type { MemoryEntry, MemoryStats } from '../../api/types';
-
-const TYPES = ['preference', 'pitfall', 'summary', 'reflection'] as const;
+import { MEMORY_TYPES, MEMORY_TYPE_COLORS } from '../../constants/memoryTypes';
 
 const typeStyles: Record<string, { badge: string; bar: string; label: string }> = {
-  preference: { badge: 'bg-badge-blue-bg text-badge-blue-text', bar: 'bg-blue-500', label: 'Pref' },
-  pitfall:    { badge: 'bg-badge-red-bg text-badge-red-text',   bar: 'bg-red-500',  label: 'Pitf' },
-  summary:    { badge: 'bg-badge-green-bg text-badge-green-text', bar: 'bg-green-500', label: 'Summ' },
-  reflection: { badge: 'bg-badge-purple-bg text-badge-purple-text', bar: 'bg-purple-500', label: 'Refl' },
+  preference: { badge: MEMORY_TYPE_COLORS.preference.badge, bar: 'bg-blue-500', label: 'Pref' },
+  pitfall:    { badge: MEMORY_TYPE_COLORS.pitfall.badge,    bar: 'bg-red-500',  label: 'Pitf' },
+  summary:    { badge: MEMORY_TYPE_COLORS.summary.badge,    bar: 'bg-green-500', label: 'Summ' },
+  reflection: { badge: MEMORY_TYPE_COLORS.reflection.badge, bar: 'bg-purple-500', label: 'Refl' },
 };
 
 function gaugeColor(ratio: number): string {
@@ -44,7 +43,7 @@ export function MemoryStatsBar({ stats, totalMemories, memories, ratingTier, onR
   const avgRating = totalReviews > 0 ? weightedStars / totalReviews : 0;
 
   // Per-type token segments
-  const segments = TYPES.map((type) => {
+  const segments = MEMORY_TYPES.map((type) => {
     const tokens = stats.type_tokens[type] ?? 0;
     return { type, tokens };
   });
@@ -157,7 +156,7 @@ export function MemoryStatsBar({ stats, totalMemories, memories, ratingTier, onR
 
       {/* Type count breakdown */}
       <div className="bg-surface-elevated border border-border rounded-lg p-3 flex items-center gap-2 flex-wrap">
-        {TYPES.map((type) => {
+        {MEMORY_TYPES.map((type) => {
           const count = stats.type_counts[type] ?? 0;
           return (
             <span

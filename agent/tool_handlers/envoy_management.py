@@ -175,6 +175,8 @@ def handle_remove_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     envoy_id = tool_args.get("envoy_id", "")
     if not envoy_id:
         return {"status": "error", "message": "envoy_id is required"}
+    if not re.match(r'^[a-zA-Z0-9_-]+$', envoy_id):
+        return {"status": "error", "message": "envoy_id must contain only letters, digits, underscores, and hyphens"}
 
     pkg_dir = _get_package_envoy_dir()
     file_path = pkg_dir / f"{envoy_id.lower()}.json"

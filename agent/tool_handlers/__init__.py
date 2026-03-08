@@ -94,7 +94,6 @@ TOOL_REGISTRY.update(
     {
         # Session
         "ask_clarification": handle_ask_clarification,
-        "ask_user_permission": handle_ask_user_permission,
         "install_package": handle_install_package,
         "manage_sandbox_packages": handle_manage_sandbox_packages,
         "get_session_assets": handle_get_session_assets,
@@ -153,3 +152,29 @@ TOOL_REGISTRY.update(
         "remove_envoy": handle_remove_envoy,
     }
 )
+
+# Merge decorator-registered handlers (modules must be imported above so
+# decorators execute at import time before this line runs).
+from .decorator import get_all_handlers
+TOOL_REGISTRY.update(get_all_handlers())
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _ToolHandlerRegistryAdapter:
+    name = "tools.handlers"
+    description = "Tool name to Python handler function dispatch"
+
+    def get(self, key: str):
+        return TOOL_REGISTRY.get(key)
+
+    def list_all(self) -> dict:
+        return dict(TOOL_REGISTRY)
+
+
+TOOL_HANDLER_REGISTRY = _ToolHandlerRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(TOOL_HANDLER_REGISTRY)

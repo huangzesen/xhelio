@@ -35,17 +35,25 @@ def memory_store(tmp_dir):
     return MemoryStore(path=tmp_dir / "memory.json")
 
 
-@pytest.fixture
-def agent(memory_store):
-    """Provide a MemoryAgent (SubAgent) with mock adapter, started and stopped."""
+def _make_mock_service():
+    """Create a mock LLMService for testing."""
     adapter = MagicMock()
-    # Mock create_chat to return a mock ChatSession
     mock_chat = MagicMock()
     mock_chat.context_window.return_value = 0  # skip compaction
     adapter.create_chat.return_value = mock_chat
+    svc = MagicMock()
+    svc.get_adapter.return_value = adapter
+    svc.provider = "gemini"
+    svc.make_tool_result.side_effect = adapter.make_tool_result_message
+    return svc
+
+
+@pytest.fixture
+def agent(memory_store):
+    """Provide a MemoryAgent (SubAgent) with mock service, started and stopped."""
+    svc = _make_mock_service()
     a = MemoryAgent(
-        adapter=adapter,
-        model_name="test-model",
+        service=svc,
         memory_store=memory_store,
         verbose=False,
         session_id="test-session",

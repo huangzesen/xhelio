@@ -1,14 +1,12 @@
 import { useEffect, useRef, useCallback } from 'react';
 import { Search, X, ArrowUp, ArrowDown } from 'lucide-react';
 import type { MemoryStats } from '../../api/types';
+import { MEMORY_TYPES } from '../../constants/memoryTypes';
 
-const typeLabels = ['All', 'Preference', 'Pitfall', 'Summary', 'Reflection'] as const;
+const typeLabels = ['All', ...MEMORY_TYPES.map((t) => t[0].toUpperCase() + t.slice(1))] as const;
 const typeValues: Record<string, string | null> = {
   All: null,
-  Preference: 'preference',
-  Pitfall: 'pitfall',
-  Summary: 'summary',
-  Reflection: 'reflection',
+  ...Object.fromEntries(MEMORY_TYPES.map((t) => [t[0].toUpperCase() + t.slice(1), t])),
 };
 
 const sortOptions: { label: string; value: 'recency' | 'rating' | 'access_count' | 'reviews' }[] = [

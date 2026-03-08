@@ -1,20 +1,27 @@
 {
   "version": 1,
-
   "packages": [
     {
       "import_path": "scipy",
       "sandbox_alias": "scipy",
       "required": true,
       "description": "Scientific computing (signal, FFT, interpolation, stats, integration)",
-      "catalog_submodules": ["scipy.signal", "scipy.fft", "scipy.interpolate", "scipy.stats", "scipy.integrate"]
+      "catalog_submodules": [
+        "scipy.signal",
+        "scipy.fft",
+        "scipy.interpolate",
+        "scipy.stats",
+        "scipy.integrate"
+      ]
     },
     {
       "import_path": "pywt",
       "sandbox_alias": "pywt",
       "required": true,
       "description": "Wavelet transforms",
-      "catalog_submodules": ["pywt"]
+      "catalog_submodules": [
+        "pywt"
+      ]
     },
     {
       "import_path": "numba",
@@ -28,28 +35,40 @@
       "sandbox_alias": "sklearn",
       "required": false,
       "description": "Machine learning (clustering, PCA, regression, classification)",
-      "catalog_submodules": ["sklearn.decomposition", "sklearn.cluster", "sklearn.preprocessing"]
+      "catalog_submodules": [
+        "sklearn.decomposition",
+        "sklearn.cluster",
+        "sklearn.preprocessing"
+      ]
     },
     {
       "import_path": "statsmodels",
       "sandbox_alias": "statsmodels",
       "required": false,
       "description": "Statistical models (ARIMA, seasonal decomposition, Granger causality)",
-      "catalog_submodules": ["statsmodels.tsa.stattools", "statsmodels.tsa.seasonal"]
+      "catalog_submodules": [
+        "statsmodels.tsa.stattools",
+        "statsmodels.tsa.seasonal"
+      ]
     },
     {
       "import_path": "astropy",
       "sandbox_alias": "astropy",
       "required": false,
       "description": "Astronomy (units, constants, coordinate transforms)",
-      "catalog_submodules": ["astropy.units", "astropy.constants"]
+      "catalog_submodules": [
+        "astropy.units",
+        "astropy.constants"
+      ]
     },
     {
       "import_path": "lmfit",
       "sandbox_alias": "lmfit",
       "required": false,
       "description": "Curve fitting with constraints and model building",
-      "catalog_submodules": ["lmfit"]
+      "catalog_submodules": [
+        "lmfit"
+      ]
     },
     {
       "import_path": "sympy",
@@ -64,67 +83,191 @@
       "required": false,
       "description": "Matplotlib colormaps (for colormap extraction only, no plotting)",
       "catalog_submodules": []
+    },
+    {
+      "import_path": "pfsspy",
+      "sandbox_alias": "pfsspy",
+      "required": false,
+      "description": "Potential Field Source Surface (PFSS) modeling package for solar physics. Used to compute coronal magnetic field solutions from magnetogram data. Essential for tracing solar wind flux roots and understanding the heliospheric magnetic field topology.",
+      "catalog_submodules": []
+    },
+    {
+      "import_path": "astroquery",
+      "sandbox_alias": "astroquery",
+      "required": false,
+      "description": "Python package for querying astronomical databases (SIMBAD, VizieR, NED, etc.)",
+      "catalog_submodules": "['astroquery.simbad', 'astroquery.vizier', 'astroquery.ned', 'astroquery.heasarc', 'astroquery.jplhorizons', 'astroquery.lcogt', 'astroquery.ipac', 'astroquery.utils']"
     }
   ],
-
   "builtins": {
     "safe": [
-      "abs", "bool", "dict", "enumerate", "float", "int", "len", "list",
-      "max", "min", "print", "range", "round", "sorted", "str", "sum",
-      "tuple", "zip", "True", "False", "None", "isinstance"
+      "abs",
+      "bool",
+      "dict",
+      "enumerate",
+      "float",
+      "int",
+      "len",
+      "list",
+      "max",
+      "min",
+      "print",
+      "range",
+      "round",
+      "sorted",
+      "str",
+      "sum",
+      "tuple",
+      "zip",
+      "True",
+      "False",
+      "None",
+      "isinstance"
     ],
     "dangerous": [
-      "exec", "eval", "compile", "open", "__import__", "getattr", "setattr",
-      "delattr", "globals", "locals", "vars", "dir", "breakpoint", "exit",
-      "quit", "input", "memoryview", "classmethod", "staticmethod", "super",
-      "property", "type"
+      "exec",
+      "eval",
+      "compile",
+      "open",
+      "__import__",
+      "getattr",
+      "setattr",
+      "delattr",
+      "globals",
+      "locals",
+      "vars",
+      "dir",
+      "breakpoint",
+      "exit",
+      "quit",
+      "input",
+      "memoryview",
+      "classmethod",
+      "staticmethod",
+      "super",
+      "property",
+      "type"
     ]
   },
-
   "blocked_attrs": {
     "any_object": {
       "_comment": "Blocked on ALL objects regardless of receiver type",
       "pandas_io": [
-        "read_csv", "read_excel", "read_json", "read_html", "read_xml",
-        "read_parquet", "read_feather", "read_orc", "read_stata", "read_sas",
-        "read_spss", "read_pickle", "read_table", "read_fwf", "read_clipboard",
-        "read_sql", "read_sql_table", "read_sql_query", "read_gbq", "read_hdf",
-        "to_pickle", "to_csv", "to_excel", "to_json", "to_html", "to_xml",
-        "to_parquet", "to_feather", "to_orc", "to_stata", "to_hdf"
+        "read_csv",
+        "read_excel",
+        "read_json",
+        "read_html",
+        "read_xml",
+        "read_parquet",
+        "read_feather",
+        "read_orc",
+        "read_stata",
+        "read_sas",
+        "read_spss",
+        "read_pickle",
+        "read_table",
+        "read_fwf",
+        "read_clipboard",
+        "read_sql",
+        "read_sql_table",
+        "read_sql_query",
+        "read_gbq",
+        "read_hdf",
+        "to_pickle",
+        "to_csv",
+        "to_excel",
+        "to_json",
+        "to_html",
+        "to_xml",
+        "to_parquet",
+        "to_feather",
+        "to_orc",
+        "to_stata",
+        "to_hdf"
       ],
       "numpy_io": [
-        "save", "savez", "savez_compressed", "loadtxt", "savetxt",
-        "genfromtxt", "fromfile", "tofile", "memmap"
+        "save",
+        "savez",
+        "savez_compressed",
+        "loadtxt",
+        "savetxt",
+        "genfromtxt",
+        "fromfile",
+        "tofile",
+        "memmap"
       ],
       "xarray_io": [
-        "open_dataset", "open_dataarray", "open_mfdataset", "open_zarr",
-        "load_dataset", "load_dataarray"
+        "open_dataset",
+        "open_dataarray",
+        "open_mfdataset",
+        "open_zarr",
+        "load_dataset",
+        "load_dataarray"
       ],
-      "system": ["system", "popen"],
-      "pandas_internal": ["io"],
-      "ctypes": ["ctypeslib"],
+      "system": [
+        "system",
+        "popen"
+      ],
+      "pandas_internal": [
+        "io"
+      ],
+      "ctypes": [
+        "ctypeslib"
+      ],
       "sklearn_io": [
-        "fetch_openml", "fetch_california_housing", "fetch_covtype",
-        "fetch_kddcup99", "fetch_lfw_pairs", "fetch_lfw_people",
-        "fetch_olivetti_faces", "fetch_rcv1", "fetch_species_distributions",
-        "fetch_20newsgroups", "fetch_20newsgroups_vectorized",
-        "load_iris", "load_digits", "load_wine", "load_breast_cancer",
-        "load_diabetes", "load_linnerud", "load_sample_images",
-        "load_svmlight_file", "dump_svmlight_file"
+        "fetch_openml",
+        "fetch_california_housing",
+        "fetch_covtype",
+        "fetch_kddcup99",
+        "fetch_lfw_pairs",
+        "fetch_lfw_people",
+        "fetch_olivetti_faces",
+        "fetch_rcv1",
+        "fetch_species_distributions",
+        "fetch_20newsgroups",
+        "fetch_20newsgroups_vectorized",
+        "load_iris",
+        "load_digits",
+        "load_wine",
+        "load_breast_cancer",
+        "load_diabetes",
+        "load_linnerud",
+        "load_sample_images",
+        "load_svmlight_file",
+        "dump_svmlight_file"
       ],
       "astropy_io": [
-        "download_file", "download_files_in_parallel",
-        "get_readable_fileobj", "get_pkg_data_filename"
+        "download_file",
+        "download_files_in_parallel",
+        "get_readable_fileobj",
+        "get_pkg_data_filename"
       ],
-      "matplotlib_io": ["savefig", "show"],
-      "numba_ffi": ["cffi_support", "extending"],
-      "serialization": ["dumps", "loads"]
+      "matplotlib_io": [
+        "savefig",
+        "show"
+      ],
+      "numba_ffi": [
+        "cffi_support",
+        "extending"
+      ],
+      "serialization": [
+        "dumps",
+        "loads"
+      ]
     },
     "module_only": {
       "_comment": "Blocked only when receiver is a known module name (pd, np, etc.). Legitimate as DataFrame/DataArray methods.",
-      "code_execution": ["eval", "query"],
-      "deserialization": ["load"],
-      "callable_wrapping": ["frompyfunc", "vectorize"]
+      "code_execution": [
+        "eval",
+        "query"
+      ],
+      "deserialization": [
+        "load"
+      ],
+      "callable_wrapping": [
+        "frompyfunc",
+        "vectorize"
+      ]
     }
   }
 }

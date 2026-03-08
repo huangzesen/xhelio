@@ -280,6 +280,28 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     BOOTSTRAP_PROGRESS: frozenset(),
 }
 
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _EventTagsRegistryAdapter:
+    name = "events.infrastructure_tags"
+    description = "Per-event-type routing to infrastructure sinks"
+
+    def get(self, key: str):
+        return INFRASTRUCTURE_TAGS.get(key)
+
+    def list_all(self) -> dict:
+        return dict(INFRASTRUCTURE_TAGS)
+
+
+EVENT_TAGS_REGISTRY = _EventTagsRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(EVENT_TAGS_REGISTRY)
+
+
 # ---- Context visibility classes ----
 
 # Events every agent should see (user intent, errors, state changes)

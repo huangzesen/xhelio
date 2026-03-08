@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useTranslation } from 'react-i18next';
 import { HelionLogo } from './HelionLogo';
 import { updateApiKey } from '../../api/client';
 import { Loader2, Eye, EyeOff, ExternalLink, CheckCircle2, XCircle } from 'lucide-react';
@@ -8,6 +9,7 @@ interface Props {
 }
 
 export function SetupScreen({ onComplete }: Props) {
+  const { t } = useTranslation('setup');
   const [key, setKey] = useState('');
   const [showKey, setShowKey] = useState(false);
   const [saving, setSaving] = useState(false);
@@ -40,9 +42,9 @@ export function SetupScreen({ onComplete }: Props) {
           {/* Logo + Welcome */}
           <div className="flex flex-col items-center gap-3 mb-8">
             <HelionLogo size={48} className="text-primary" />
-            <h1 className="text-xl font-semibold text-text">Welcome to xhelio</h1>
+            <h1 className="text-xl font-semibold text-text">{t('welcome')}</h1>
             <p className="text-sm text-text-muted text-center leading-relaxed">
-              To get started, enter your Google Gemini API key.
+              {t('getStarted')}
               <br />
               <a
                 href="https://ai.google.dev/"
@@ -50,7 +52,7 @@ export function SetupScreen({ onComplete }: Props) {
                 rel="noopener noreferrer"
                 className="inline-flex items-center gap-1 text-primary hover:underline mt-1"
               >
-                Get an API key <ExternalLink size={12} />
+                {t('getApiKey')} <ExternalLink size={12} />
               </a>
             </p>
           </div>
@@ -58,14 +60,14 @@ export function SetupScreen({ onComplete }: Props) {
           {/* Form */}
           <form onSubmit={handleSubmit} className="space-y-4">
             <label className="block">
-              <span className="text-xs text-text-muted">Gemini API Key</span>
+              <span className="text-xs text-text-muted">{t('apiKeyLabel')}</span>
               <div className="mt-1 relative">
                 <input
                   data-testid="setup-api-key-input"
                   type={showKey ? 'text' : 'password'}
                   value={key}
                   onChange={(e) => { setKey(e.target.value); setResult(null); }}
-                  placeholder="AIza..."
+                  placeholder={t('apiKeyPlaceholder')}
                   autoFocus
                   className="block w-full rounded-lg border border-border px-3 py-2.5 pr-10 text-sm
                     bg-input-bg text-text placeholder:text-text-muted/50
@@ -76,7 +78,7 @@ export function SetupScreen({ onComplete }: Props) {
                   onClick={() => setShowKey((v) => !v)}
                   className="absolute right-2.5 top-1/2 -translate-y-1/2 text-text-muted hover:text-text"
                   tabIndex={-1}
-                  aria-label={showKey ? 'Hide API key' : 'Show API key'}
+                  aria-label={showKey ? t('hideApiKey') : t('showApiKey')}
                 >
                   {showKey ? <EyeOff size={16} /> : <Eye size={16} />}
                 </button>
@@ -93,12 +95,12 @@ export function SetupScreen({ onComplete }: Props) {
                 {result.valid ? (
                   <>
                     <CheckCircle2 size={16} className="mt-0.5 shrink-0" />
-                    <span>API key is valid. Starting up...</span>
+                    <span>{t('keyValid')}</span>
                   </>
                 ) : (
                   <>
                     <XCircle size={16} className="mt-0.5 shrink-0" />
-                    <span>Invalid API key{result.error ? `: ${result.error}` : ''}</span>
+                    <span>{result.error ? t('keyInvalidWithError', { error: result.error }) : t('keyInvalid')}</span>
                   </>
                 )}
               </div>
@@ -117,7 +119,7 @@ export function SetupScreen({ onComplete }: Props) {
               ) : result?.valid ? (
                 <CheckCircle2 size={16} />
               ) : null}
-              {saving ? 'Validating...' : result?.valid ? 'Saved' : 'Save & Continue'}
+              {saving ? t('validating') : result?.valid ? t('saved') : t('saveAndContinue')}
             </button>
           </form>
         </div>

@@ -642,3 +642,27 @@ def run_dataframe_creation(code: str, extra_imports: list[dict] | None = None) -
             "Code validation failed:\n" + "\n".join(f"  - {v}" for v in violations)
         )
     return execute_dataframe_creation(code, extra_imports=extra_imports)
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _SandboxProtocolRegistryAdapter:
+    name = "sandbox.packages"
+    description = "Allowed packages and security policy for code sandbox"
+
+    def get(self, key: str):
+        for pkg in SANDBOX_REGISTRY.get("packages", []):
+            if pkg.get("sandbox_alias") == key:
+                return pkg
+        return None
+
+    def list_all(self) -> dict:
+        return {pkg["sandbox_alias"]: pkg for pkg in SANDBOX_REGISTRY.get("packages", [])}
+
+
+SANDBOX_PROTOCOL_REGISTRY = _SandboxProtocolRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(SANDBOX_PROTOCOL_REGISTRY)

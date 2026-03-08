@@ -385,6 +385,97 @@ export interface ProviderTestResult {
   message?: string;
 }
 
+// ---- API Key Management ----
+
+export interface ApiKeyEntry {
+  name: string;
+  provider: string | null;
+  masked: string | null;
+  configured: boolean;
+}
+
+export interface ApiKeysResponse {
+  keys: ApiKeyEntry[];
+}
+
+// ---- Model Combos ----
+
+export interface ModelCombo {
+  name: string;
+  provider: string;
+  models: {
+    model: string;
+    sub_agent_model: string;
+    insight_model: string;
+    inline_model: string;
+    planner_model: string | null;
+  };
+  web_search_provider: string | null;
+  vision_provider: string | null;
+  thinking?: {
+    model?: string;
+    sub_agent?: string;
+    insight?: string;
+  };
+  base_url?: string | null;
+  api_compat?: string | null;
+}
+
+export interface CombosConfig {
+  active: string | null;
+  saved: Record<string, ModelCombo>;
+}
+
+// ---- Agent Workbench ----
+
+export interface AgentTypeInfo {
+  id: string;
+  name: string;
+  icon: string;
+  group: string;
+  description: string;
+}
+
+export interface AgentGroupInfo {
+  id: string;
+  name: string;
+  order: number;
+}
+
+export interface AgentTypesResponse {
+  agents: AgentTypeInfo[];
+  groups: AgentGroupInfo[];
+}
+
+/** Per-agent configuration in the workbench. null = use preset default. */
+export interface AgentStationConfig {
+  provider: string;
+  model: string;
+  base_url?: string | null;
+  /** Provider-specific fields */
+  thinking?: string;        // Gemini: off/low/high
+  api_compat?: string;      // Custom: openai/anthropic/gemini
+  rate_limit_interval?: number; // MiniMax
+}
+
+export interface WorkbenchConfig {
+  preset: string | null;
+  agents: Record<string, AgentStationConfig | null>;
+  capabilities: {
+    web_search: string | null;
+    vision: string | null;
+  };
+}
+
+export interface PresetConfig {
+  name: string;
+  agents: Record<string, AgentStationConfig>;
+  capabilities: {
+    web_search: string | null;
+    vision: string | null;
+  };
+}
+
 // ---- Memory ----
 
 export interface ReviewTierStats {

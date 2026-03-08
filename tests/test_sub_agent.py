@@ -63,13 +63,24 @@ def _make_adapter(responses=None):
 
     adapter.create_chat = MagicMock(side_effect=create_chat_fn)
     adapter.make_tool_result_message = MagicMock(
-        side_effect=lambda name, result, tool_call_id=None: {
+        side_effect=lambda name, result, tool_call_id=None, **kwargs: {
             "tool_name": name,
             "result": result,
             "tool_call_id": tool_call_id,
         }
     )
     return adapter
+
+
+def _make_mock_service(adapter=None):
+    """Create a mock LLMService wrapping a mock adapter."""
+    if adapter is None:
+        adapter = _make_adapter()
+    svc = MagicMock()
+    svc.get_adapter.return_value = adapter
+    svc.provider = "gemini"
+    svc.make_tool_result.side_effect = lambda name, result, **kw: adapter.make_tool_result_message(name, result, **kw)
+    return svc
 
 
 def _make_tool_executor(results=None):
@@ -94,14 +105,16 @@ def _make_agent(
 ):
     """Create an SubAgent with mocked dependencies."""
     adapter = _make_adapter(responses)
+    svc = _make_mock_service(adapter)
     executor = _make_tool_executor(tool_results)
     bus = event_bus if event_bus is not None else EventBus(session_id="test")
 
     agent = SubAgent(
         agent_id=agent_id,
-        adapter=adapter,
-        model_name="test-model",
+        service=svc,
+        agent_type="test",
         tool_executor=executor,
+        model_name="test-model",
         system_prompt="You are a test agent.",
         tool_schemas=tool_schemas or [],
         event_bus=bus,
@@ -216,11 +229,12 @@ class TestMessageHandling:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="order_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=slow_executor,
             tool_schemas=[
                 FunctionSchema(name="test_tool", description="T", parameters={}),
@@ -306,10 +320,11 @@ class TestAsyncTools:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         agent = SubAgent(
             agent_id="blocking_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=slow_executor,
             event_bus=bus,
         )
@@ -340,11 +355,12 @@ class TestAsyncTools:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="strip_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=capturing_executor,
             event_bus=bus,
             tool_schemas=[
@@ -455,11 +471,12 @@ class TestHooks:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = InterceptSubAgent(
             agent_id="intercept_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(tool_results),
             tool_schemas=[
                 FunctionSchema(
@@ -505,11 +522,12 @@ class TestParallelToolExecution:
             _PARALLEL_SAFE_TOOLS = {"tool_a", "tool_b"}
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = ParallelAgent(
             agent_id="parallel_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(results_map),
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -553,11 +571,12 @@ class TestParallelToolExecution:
             _PARALLEL_SAFE_TOOLS = {"safe_tool"}  # unsafe_tool not in set
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = MixedAgent(
             agent_id="mixed_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=order_executor,
             tool_schemas=[
                 FunctionSchema(name="safe_tool", description="S", parameters={}),
@@ -586,11 +605,12 @@ class TestParallelToolExecution:
             _PARALLEL_SAFE_TOOLS = {"tool_a"}
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = ParallelAgent(
             agent_id="single_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(),
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -630,11 +650,12 @@ class TestParallelToolExecution:
             _PARALLEL_SAFE_TOOLS = {"tool_a"}
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = ParallelAgent(
             agent_id="dup_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=counting_executor,
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -670,11 +691,12 @@ class TestParallelToolExecution:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = InterceptAgent(
             agent_id="hook_parallel",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(),
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -707,11 +729,12 @@ class TestParallelToolExecution:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = ParallelAgent(
             agent_id="leak_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(),
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -749,11 +772,12 @@ class TestParallelToolExecution:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = TrackingAgent(
             agent_id="hook_track",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(),
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -791,11 +815,12 @@ class TestParallelToolExecution:
 
         # Default SubAgent has empty _PARALLEL_SAFE_TOOLS
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="seq_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=order_executor,
             tool_schemas=[
                 FunctionSchema(name="tool_a", description="A", parameters={}),
@@ -903,10 +928,11 @@ class TestAgentState:
 
         bus = EventBus(session_id="test")
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         agent = SubAgent(
             agent_id="idle_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=slow_executor,
             event_bus=bus,
         )
@@ -935,10 +961,11 @@ class TestAgentState:
 
         bus = EventBus(session_id="test")
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         agent = SubAgent(
             agent_id="wake_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=slow_executor,
             event_bus=bus,
         )
@@ -975,10 +1002,11 @@ class TestAgentState:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         agent = ParallelAgent(
             agent_id="parallel_state_test",
-            adapter=adapter,
-            model_name="test",
+            service=svc,
+            agent_type="test",
             tool_executor=_make_tool_executor(),
             tool_schemas=[
                 FunctionSchema(name="test_tool", description="T", parameters={}),
@@ -1091,11 +1119,12 @@ class TestSyncToolExecution:
             return {"status": "success", "labels": ["test_data"]}
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="test_sync",
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
+            agent_type="test",
             tool_executor=tracking_executor,
             system_prompt="test",
             tool_schemas=[
@@ -1123,6 +1152,7 @@ class TestSyncToolExecution:
         ]
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
 
         dispatch_called = []
@@ -1133,8 +1163,8 @@ class TestSyncToolExecution:
 
         agent = SubAgent(
             agent_id="test_blocking",
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
+            agent_type="test",
             tool_executor=tracking_executor,
             system_prompt="test",
             tool_schemas=[
@@ -1171,11 +1201,12 @@ class TestSyncToolExecution:
             return {"status": "success"}
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="test_multi",
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
+            agent_type="test",
             tool_executor=executor,
             system_prompt="test",
             tool_schemas=[
@@ -1211,11 +1242,12 @@ class TestSyncToolExecution:
             raise ValueError("data not found")
 
         adapter = _make_adapter(responses)
+        svc = _make_mock_service(adapter)
         bus = EventBus(session_id="test")
         agent = SubAgent(
             agent_id="test_err",
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
+            agent_type="test",
             tool_executor=failing_executor,
             system_prompt="test",
             tool_schemas=[

@@ -105,8 +105,7 @@ class PlannerAgent(SubAgent):
 
     def __init__(
         self,
-        adapter,
-        model_name: str,
+        service,
         tool_executor=None,
         *,
         event_bus=None,
@@ -123,8 +122,8 @@ class PlannerAgent(SubAgent):
 
         super().__init__(
             agent_id="PlannerAgent",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="planner",
             tool_executor=self._wrap_tool_executor(tool_executor),
             tool_schemas=schemas,
             event_bus=event_bus,

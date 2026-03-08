@@ -47,5 +47,32 @@ TOOLS = [
 # Build lookup dict for fast access
 _TOOL_MAP = {t["name"]: t for t in TOOLS}
 
+# Canonical set of all rendering/presentation tool names.
+# Import this instead of hardcoding tool name lists.
+RENDER_TOOL_NAMES: frozenset[str] = frozenset({
+    "render_plotly_json",
+    "generate_mpl_script",
+    "generate_jsx_component",
+})
 
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _RenderingRegistryAdapter:
+    name = "rendering.tools"
+    description = "Visualization tool schemas for render/manage operations"
+
+    def get(self, key: str):
+        return _TOOL_MAP.get(key)
+
+    def list_all(self) -> dict:
+        return dict(_TOOL_MAP)
+
+
+RENDERING_REGISTRY = _RenderingRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(RENDERING_REGISTRY)
 

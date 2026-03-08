@@ -17,6 +17,7 @@ export function subscribeToSession(
     'text_delta', 'tool_call', 'tool_result', 'plot', 'thinking',
     'round_start', 'round_end', 'error', 'log_line', 'memory_update', 'mpl_image', 'session_title',
     'queued', 'insight_result', 'insight_feedback', 'token_usage', 'plan_update',
+    'permission_request', 'jsx_component',
   ];
   for (const type of types) {
     es.addEventListener(type, (e) => {

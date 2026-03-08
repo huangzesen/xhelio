@@ -11,7 +11,8 @@ interface Props {
 
 /** Extract mission-level scope from a dataset ID (e.g. "AC_H2_MFI" → "ACE", "PSP_FLD_L2_MAG_RTN" → "PSP") */
 function extractScope(dataset: string): string {
-  // Common prefixes that map to mission names
+  // Common CDAWeb dataset ID prefixes → mission names.
+  // TODO: derive from catalog API (would need a new endpoint mapping prefixes to missions).
   const prefixMap: Record<string, string> = {
     AC: 'ACE',
     WI: 'WIND',

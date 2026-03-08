@@ -23,6 +23,7 @@ from __future__ import annotations
 from datetime import datetime, timezone
 
 from data_ops.pipeline import topological_sort_steps
+from rendering.registry import RENDER_TOOL_NAMES
 
 
 # ---------------------------------------------------------------------------
@@ -56,8 +57,7 @@ def generate_script(pipeline_data: dict) -> dict[str, str]:
     ]
     render_steps = [
         s for s in sorted_steps
-        if s["tool"] in ("render_plotly_json", "generate_mpl_script",
-                         "generate_jsx_component")
+        if s["tool"] in RENDER_TOOL_NAMES
     ]
 
     # Detect backend

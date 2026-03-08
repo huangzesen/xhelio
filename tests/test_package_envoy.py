@@ -234,7 +234,9 @@ class TestSandboxConfigThreading:
         """EnvoyAgent should accept and store sandbox_config."""
         from agent.envoy_agent import EnvoyAgent
 
-        adapter = MagicMock()
+        svc = MagicMock()
+        svc.get_adapter.return_value = MagicMock()
+        svc.provider = "gemini"
         sandbox = {
             "imports": [{"import_path": "math", "sandbox_alias": "math"}],
             "functions": [],
@@ -246,8 +248,7 @@ class TestSandboxConfigThreading:
                     mock_reg.get_tools.return_value = ["custom_operation"]
                     agent = EnvoyAgent(
                         mission_id="TEST_PKG",
-                        adapter=adapter,
-                        model_name="test-model",
+                        service=svc,
                         tool_executor=lambda *a, **kw: {},
                         sandbox_config=sandbox,
                     )
@@ -258,7 +259,9 @@ class TestSandboxConfigThreading:
         """EnvoyAgent sandbox_config defaults to None for mission envoys."""
         from agent.envoy_agent import EnvoyAgent
 
-        adapter = MagicMock()
+        svc = MagicMock()
+        svc.get_adapter.return_value = MagicMock()
+        svc.provider = "gemini"
 
         with patch("agent.envoy_agent.build_envoy_prompt", return_value="test prompt"):
             with patch("agent.envoy_agent.get_function_schemas", return_value=[]):
@@ -266,8 +269,7 @@ class TestSandboxConfigThreading:
                     mock_reg.get_tools.return_value = ["search_datasets"]
                     agent = EnvoyAgent(
                         mission_id="ACE",
-                        adapter=adapter,
-                        model_name="test-model",
+                        service=svc,
                         tool_executor=lambda *a, **kw: {},
                     )
         assert agent.sandbox_config is None
@@ -397,6 +399,15 @@ class TestEnvoyManagementTools:
         with patch("agent.tool_handlers.envoy_management._get_package_envoy_dir", return_value=tmp_path):
             result = handle_remove_envoy(orch, {"envoy_id": "NONEXISTENT"})
         assert result["status"] == "error"
+
+    def test_remove_envoy_rejects_malicious_id(self):
+        """remove_envoy should reject IDs with path traversal characters."""
+        from agent.tool_handlers.envoy_management import handle_remove_envoy
+
+        orch = MagicMock()
+        for bad_id in ["../../etc/passwd", "foo;rm -rf /", "test/../../../.env", "id with spaces"]:
+            result = handle_remove_envoy(orch, {"envoy_id": bad_id})
+            assert result["status"] == "error", f"Expected error for envoy_id={bad_id!r}"
 
     def test_list_envoys_empty(self, tmp_path):
         """list_envoys returns empty when no envoys exist."""

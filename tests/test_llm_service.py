@@ -31,12 +31,12 @@ class TestLLMServiceInit:
         with pytest.raises(ValueError, match="Unknown provider"):
             LLMService(provider="unknown", model="m")
 
-    def test_adapter_property(self):
+    def test_get_adapter_returns_primary(self):
         with patch("agent.llm.gemini.adapter.GeminiAdapter") as mock_cls:
             mock_adapter = MagicMock()
             mock_cls.return_value = mock_adapter
             svc = LLMService(provider="gemini", model="m")
-            assert svc.adapter is mock_adapter
+            assert svc.get_adapter("gemini") is mock_adapter
 
 
 class TestLLMServiceCreateSession:
@@ -98,3 +98,86 @@ class TestLLMServiceMakeToolResult:
             result = svc.make_tool_result("fn", {"ok": True}, tool_call_id="c1")
             assert isinstance(result, ToolResultBlock)
             assert result.name == "fn"
+
+
+class TestGetAdapter:
+    def test_primary_adapter_cached(self):
+        """Primary adapter is returned for primary provider."""
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            mock_adapter = MagicMock()
+            mock_create.return_value = mock_adapter
+            svc = LLMService(provider="gemini", model="test-model", api_key="fake")
+            assert svc.get_adapter("gemini") is mock_adapter
+            assert svc.get_adapter("gemini") is mock_adapter
+            mock_create.assert_called_once()
+
+    def test_secondary_adapter_created_on_demand(self):
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            primary = MagicMock()
+            secondary = MagicMock()
+            mock_create.side_effect = [primary, secondary]
+            svc = LLMService(provider="gemini", model="test-model", api_key="fake")
+
+            with patch('agent.llm.service.get_api_key', return_value="fake-key"):
+                result = svc.get_adapter("anthropic")
+            assert result is secondary
+            assert svc.get_adapter("anthropic") is secondary
+
+    def test_missing_api_key_raises(self):
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            mock_create.return_value = MagicMock()
+            svc = LLMService(provider="gemini", model="test-model", api_key="fake")
+
+            with patch('agent.llm.service.get_api_key', return_value=None):
+                with pytest.raises(RuntimeError, match="API key"):
+                    svc.get_adapter("anthropic")
+
+    def test_no_adapter_property(self):
+        """The old escape hatch 'adapter' property must not exist."""
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            mock_create.return_value = MagicMock()
+            svc = LLMService(provider="gemini", model="test-model", api_key="fake")
+            assert not hasattr(svc, 'adapter')
+            assert not hasattr(svc, 'primary_adapter')
+            # Use get_adapter() instead
+            assert svc.get_adapter("gemini") is mock_create.return_value
+
+    def test_adapter_cache_keyed_by_provider_and_base_url(self):
+        """Same provider with different base_urls gets separate adapters."""
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            primary = MagicMock()
+            custom_url = MagicMock()
+            mock_create.side_effect = [primary, custom_url]
+            svc = LLMService(provider="openai", model="gpt-4o", api_key="fake")
+
+            # Primary adapter (base_url=None)
+            assert svc.get_adapter("openai") is primary
+
+            # Same provider, different base_url — new adapter
+            with patch('agent.llm.service.get_api_key', return_value="fake-key"):
+                result = svc.get_adapter("openai", base_url="https://vllm.local/v1")
+            assert result is custom_url
+            assert result is not primary
+
+            # Both are cached independently
+            assert svc.get_adapter("openai") is primary
+            assert svc.get_adapter("openai", base_url="https://vllm.local/v1") is custom_url
+
+    def test_adapter_cache_tuple_keys(self):
+        """Internal cache uses (provider, base_url) tuple keys."""
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            mock_adapter = MagicMock()
+            mock_create.return_value = mock_adapter
+            svc = LLMService(provider="gemini", model="m", api_key="fake")
+            # Cache should use tuple key
+            assert ("gemini", None) in svc._adapters
+            assert svc._adapters[("gemini", None)] is mock_adapter
+
+    def test_base_url_stored_on_service(self):
+        """LLMService stores base_url for primary adapter lookup."""
+        with patch.object(LLMService, '_create_adapter') as mock_create:
+            mock_create.return_value = MagicMock()
+            svc = LLMService(provider="openai", model="m", api_key="fake",
+                             base_url="https://custom.api/v1")
+            assert svc._base_url == "https://custom.api/v1"
+            assert ("openai", "https://custom.api/v1") in svc._adapters

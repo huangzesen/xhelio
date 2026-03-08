@@ -1713,3 +1713,27 @@ def register_dynamic_tools(tools: list[dict]) -> None:
 
     if added:
         FULL_TOOL_REFERENCE = _build_full_tool_reference()
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _ToolSchemaRegistryAdapter:
+    name = "tools.schemas"
+    description = "LLM function-calling JSON schemas for all tools"
+
+    def get(self, key: str):
+        for t in TOOLS:
+            if t["name"] == key:
+                return t
+        return None
+
+    def list_all(self) -> dict:
+        return {t["name"]: t for t in TOOLS}
+
+
+TOOL_SCHEMA_REGISTRY = _ToolSchemaRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(TOOL_SCHEMA_REGISTRY)

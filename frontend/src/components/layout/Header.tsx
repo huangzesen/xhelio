@@ -1,4 +1,5 @@
 import { NavLink } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 import { PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Sun, Moon } from 'lucide-react';
 import { HelionLogo } from '../common/HelionLogo';
 import { Button } from '@/components/ui/button';
@@ -12,16 +13,18 @@ interface Props {
   onToggleTheme: () => void;
 }
 
-const navItems = [
-  { to: '/', label: 'Chat' },
-  { to: '/data', label: 'Data Tools' },
-  { to: '/pipeline', label: 'Pipeline' },
-  { to: '/memory', label: 'Memory' },
-  { to: '/eureka', label: 'Eureka' },
-  { to: '/settings', label: 'Settings' },
-];
-
 export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleActivity, theme, onToggleTheme }: Props) {
+  const { t } = useTranslation('common');
+
+  const navItems = [
+    { to: '/', label: t('nav.chat') },
+    { to: '/data', label: t('nav.dataTools') },
+    { to: '/pipeline', label: t('nav.pipeline') },
+    { to: '/memory', label: t('nav.memory') },
+    { to: '/eureka', label: t('nav.eureka') },
+    { to: '/settings', label: t('nav.settings') },
+  ];
+
   return (
     <header data-testid="app-header" className="bg-panel border-b border-border flex items-center justify-between px-4 h-12 shrink-0">
       <div className="flex items-center gap-3 min-w-0 flex-1 overflow-hidden">
@@ -30,7 +33,7 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
           size="icon-sm"
           onClick={onToggleSidebar}
           className=""
-          aria-label="Toggle sidebar"
+          aria-label={t('aria.toggleSidebar')}
         >
           {sidebarOpen ? <PanelLeftClose size={18} /> : <PanelLeftOpen size={18} />}
         </Button>
@@ -62,7 +65,7 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
           variant="ghost"
           size="icon-sm"
           onClick={onToggleTheme}
-          aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+          aria-label={theme === 'dark' ? t('aria.switchToLightMode') : t('aria.switchToDarkMode')}
         >
           {theme === 'dark' ? <Sun size={18} /> : <Moon size={18} />}
         </Button>
@@ -70,7 +73,7 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
           variant="ghost"
           size="icon-sm"
           onClick={onToggleActivity}
-          aria-label="Toggle activity panel"
+          aria-label={t('aria.toggleActivityPanel')}
         >
           {activityOpen ? <PanelRightClose size={18} /> : <PanelRightOpen size={18} />}
         </Button>

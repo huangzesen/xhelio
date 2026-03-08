@@ -11,7 +11,6 @@ from __future__ import annotations
 import threading
 from typing import TYPE_CHECKING
 
-from .llm import LLMAdapter
 from .sub_agent import SubAgent
 from .event_bus import EventBus
 from .tools import get_function_schemas
@@ -46,8 +45,7 @@ class EnvoyAgent(SubAgent):
     def __init__(
         self,
         mission_id: str,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         agent_id: str | None = None,
@@ -68,8 +66,8 @@ class EnvoyAgent(SubAgent):
 
         super().__init__(
             agent_id=agent_id or f"EnvoyAgent[{mission_id}]",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="envoy",
             tool_executor=tool_executor,
             system_prompt=build_envoy_prompt(mission_id),
             tool_schemas=tool_schemas,

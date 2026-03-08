@@ -30,7 +30,7 @@ from .event_bus import (
     TOOL_RESULT,
     RENDER_EXECUTED,
 )
-from .llm import LLMAdapter, FunctionSchema
+from .llm import FunctionSchema
 from .logging import get_logger
 from .sub_agent import SubAgent, Message
 from .turn_limits import get_limit
@@ -182,8 +182,7 @@ class EurekaAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         event_bus: EventBus | None = None,
@@ -213,8 +212,8 @@ class EurekaAgent(SubAgent):
 
         super().__init__(
             agent_id="EurekaAgent",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="eureka",
             tool_executor=self._route_tool,
             system_prompt=build_eureka_prompt(),
             tool_schemas=all_schemas,

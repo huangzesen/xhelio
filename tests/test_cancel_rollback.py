@@ -183,11 +183,15 @@ class TestSendCancelAware:
         cancel = threading.Event()
         adapter = MagicMock()
         adapter.create_chat.return_value = MagicMock()
+        svc = MagicMock()
+        svc.get_adapter.return_value = adapter
+        svc.provider = "gemini"
+        svc.make_tool_result.side_effect = adapter.make_tool_result_message
 
         agent = SubAgent(
             agent_id="TestAgent",
-            adapter=adapter,
-            model_name="test-model",
+            service=svc,
+            agent_type="test",
             tool_executor=lambda *a, **kw: {},
             system_prompt="test",
             cancel_event=cancel,
@@ -230,12 +234,15 @@ class TestSubAgentCancelRollback:
         chat.commit_tool_results = MagicMock()
 
         adapter = MagicMock()
+        svc = MagicMock()
+        svc.get_adapter.return_value = adapter
+        svc.provider = "gemini"
+        svc.make_tool_result.side_effect = adapter.make_tool_result_message
 
         with patch("agent.envoy_agent.build_envoy_prompt", return_value="test prompt"):
             agent = EnvoyAgent(
                 mission_id="TEST",
-                adapter=adapter,
-                model_name="test",
+                service=svc,
                 tool_executor=lambda *a, **kw: {},
                 cancel_event=cancel,
             )

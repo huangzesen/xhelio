@@ -1,6 +1,7 @@
 import { Highlight, themes } from 'prism-react-renderer';
 import type { PipelineRecord } from '../../api/types';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
+import { TOOL_COLORS, RENDER_TOOL_NAMES } from '../../constants/toolColors';
 
 interface Props {
   record: PipelineRecord;
@@ -8,20 +9,10 @@ interface Props {
   onNavigate: (record: PipelineRecord) => void;
 }
 
-const toolColor: Record<string, string> = {
-  fetch_data: 'bg-badge-blue-bg text-badge-blue-text',
-  custom_operation: 'bg-badge-orange-bg text-badge-orange-text',
-  render_plotly_json: 'bg-badge-pink-bg text-badge-pink-text',
-  generate_mpl_script: 'bg-badge-pink-bg text-badge-pink-text',
-  generate_jsx_component: 'bg-badge-pink-bg text-badge-pink-text',
-  manage_plot: 'bg-badge-gray-bg text-badge-gray-text',
-  store_dataframe: 'bg-badge-teal-bg text-badge-teal-text',
-};
-
 export function CodeViewer({ record, allRecords, onNavigate }: Props) {
   // Get compute steps for prev/next navigation
   const computeSteps = allRecords.filter(
-    (r) => r.tool === 'custom_operation' || r.tool === 'render_plotly_json' || r.tool === 'generate_mpl_script' || r.tool === 'generate_jsx_component'
+    (r) => r.tool === 'custom_operation' || RENDER_TOOL_NAMES.has(r.tool)
   );
   const currentIdx = computeSteps.findIndex((r) => r.id === record.id);
   const hasPrev = currentIdx > 0;
@@ -44,7 +35,7 @@ export function CodeViewer({ record, allRecords, onNavigate }: Props) {
         <div className="flex items-center gap-2">
           <span className="font-mono text-sm text-text">{record.id}</span>
           <span className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
-            toolColor[record.tool] ?? 'bg-badge-gray-bg text-badge-gray-text'
+            TOOL_COLORS[record.tool] ?? 'bg-badge-gray-bg text-badge-gray-text'
           }`}>
             {record.tool}
           </span>

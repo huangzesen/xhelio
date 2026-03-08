@@ -18,13 +18,23 @@ from agent.tasks import Task, TaskPlan, TaskStatus, PlanStatus, create_task, cre
 from datetime import datetime
 
 
+def _make_mock_service():
+    """Create a mock LLMService for testing."""
+    svc = MagicMock()
+    svc.get_adapter.return_value = MagicMock()
+    svc.provider = "gemini"
+    svc.make_tool_result.side_effect = lambda name, result, **kw: {
+        "tool_name": name, "result": result,
+    }
+    return svc
+
+
 class TestPlannerAgentInterface:
     """Test PlannerAgent class structure and interface (SubAgent-based)."""
 
     def _make_agent(self, **kwargs):
         defaults = dict(
-            adapter=MagicMock(),
-            model_name="test-model",
+            service=_make_mock_service(),
             cancel_event=threading.Event(),
         )
         defaults.update(kwargs)
@@ -44,7 +54,6 @@ class TestPlannerAgentInterface:
         """PlannerAgent should set its agent_id."""
         agent = self._make_agent()
         assert agent.agent_id == "PlannerAgent"
-        assert agent.model_name == "test-model"
 
     def test_init_has_produce_plan_in_schemas(self):
         """PlannerAgent always includes produce_plan in its tool schemas."""
@@ -378,8 +387,7 @@ class TestPlannerAgentWithTools:
 
     def _make_agent(self, **kwargs):
         defaults = dict(
-            adapter=MagicMock(),
-            model_name="test-model",
+            service=_make_mock_service(),
             tool_executor=self._dummy_executor,
             cancel_event=threading.Event(),
         )

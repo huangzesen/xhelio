@@ -927,3 +927,24 @@ def _fmt_eureka_finding(agent: str, data: dict, children: list) -> tuple[str, st
     summary = f"[Eureka] {title} (confidence: {confidence})"
     details = f"Title: {title}\nObservation: {data.get('observation', '')}\nHypothesis: {data.get('hypothesis', '')}\nConfidence: {confidence}"
     return (summary, details)
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _EventFormatterRegistryAdapter:
+    name = "events.formatters"
+    description = "Per-event-type formatter functions for EventBus.span()"
+
+    def get(self, key: str):
+        return FORMATTERS.get(key)
+
+    def list_all(self) -> dict:
+        return dict(FORMATTERS)
+
+
+EVENT_FORMATTER_REGISTRY = _EventFormatterRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(EVENT_FORMATTER_REGISTRY)

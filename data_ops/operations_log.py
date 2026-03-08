@@ -15,6 +15,8 @@ from datetime import datetime, timezone
 from pathlib import Path
 from typing import Any, Optional
 
+from rendering.registry import RENDER_TOOL_NAMES
+
 
 def _resolve_producer_from(
     rec: dict,
@@ -283,10 +285,8 @@ class OperationsLog:
         # were current when it ran.
         contributes_to: dict[str, set[str]] = {}
 
-        _RENDER_TOOLS = {"render_plotly_json", "generate_mpl_script", "generate_jsx_component"}
-
         for rec in reversed(records):
-            if rec["tool"] in _RENDER_TOOLS and rec["status"] == "success":
+            if rec["tool"] in RENDER_TOOL_NAMES and rec["status"] == "success":
                 product_id = rec["id"]
                 selected_ids.add(product_id)
                 contributes_to.setdefault(product_id, set()).add(product_id)
@@ -312,7 +312,7 @@ class OperationsLog:
         # ── Product families: group renders by input label set ──────────
         render_records = [
             r for r in records
-            if r["tool"] in _RENDER_TOOLS and r["status"] == "success"
+            if r["tool"] in RENDER_TOOL_NAMES and r["status"] == "success"
         ]
         # family key → list of render records in chronological order
         families: dict[frozenset[str], list[dict]] = {}
@@ -375,8 +375,7 @@ class OperationsLog:
         render_rec = rec_by_id.get(render_op_id)
         if render_rec is None:
             return []
-        _RENDER_TOOLS_STATE = {"render_plotly_json", "generate_mpl_script", "generate_jsx_component"}
-        if render_rec["tool"] not in _RENDER_TOOLS_STATE or render_rec["status"] != "success":
+        if render_rec["tool"] not in RENDER_TOOL_NAMES or render_rec["status"] != "success":
             return []
 
         # Build last_producer using only records *before* the render.
@@ -545,11 +544,10 @@ class OperationsLog:
         Returns:
             List of matching render operation records (copies).
         """
-        _RENDER_TOOLS_OPS = {"render_plotly_json", "generate_mpl_script", "generate_jsx_component"}
         with self._lock:
             return [
                 dict(rec) for rec in self._records
-                if rec["tool"] in _RENDER_TOOLS_OPS
+                if rec["tool"] in RENDER_TOOL_NAMES
                 and rec["status"] == "success"
                 and rec.get("pipeline_status", "fresh") == status
             ]

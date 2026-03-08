@@ -3,13 +3,7 @@ import { Archive, ChevronDown, ChevronUp, Loader2 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { expandCollapse } from '../common/MotionPresets';
 import { useMemoryStore } from '../../stores/memoryStore';
-
-const typeColor: Record<string, string> = {
-  preference: 'bg-badge-blue-bg text-badge-blue-text',
-  pitfall: 'bg-badge-red-bg text-badge-red-text',
-  summary: 'bg-badge-green-bg text-badge-green-text',
-  reflection: 'bg-badge-purple-bg text-badge-purple-text',
-};
+import { MEMORY_TYPE_COLORS } from '../../constants/memoryTypes';
 
 function formatDate(iso: string): string {
   try {
@@ -102,7 +96,7 @@ export function ArchiveBrowser({ sessionId }: Props) {
                       <div className="flex items-center gap-1.5 mb-1.5">
                         <span
                           className={`px-1.5 py-0.5 rounded text-[10px] font-medium ${
-                            typeColor[m.type] ?? 'bg-badge-gray-bg text-badge-gray-text'
+                            MEMORY_TYPE_COLORS[m.type]?.badge ?? 'bg-badge-gray-bg text-badge-gray-text'
                           }`}
                         >
                           {m.type}

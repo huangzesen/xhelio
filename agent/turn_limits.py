@@ -89,3 +89,35 @@ try:
     reload()
 except Exception:
     pass  # config may not be loadable yet (e.g., during testing)
+
+
+# ---------------------------------------------------------------------------
+# Registry protocol adapter
+# ---------------------------------------------------------------------------
+
+from typing import Any
+
+from agent.registry_protocol import register_registry
+
+
+class _TurnLimitsRegistry:
+    """Registry adapter exposing turn limits."""
+
+    name = "turn_limits"
+    description = "Named integer limits for agent loop iterations"
+
+    def get(self, key: str) -> Any:
+        try:
+            return get_limit(key)
+        except KeyError:
+            return None
+
+    def list_all(self) -> dict[str, Any]:
+        merged = dict(DEFAULTS)
+        merged.update(_overrides)
+        return merged
+
+
+TURN_LIMITS_REGISTRY = _TurnLimitsRegistry()
+
+register_registry(TURN_LIMITS_REGISTRY)

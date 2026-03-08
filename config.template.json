@@ -79,6 +79,9 @@
     }
   },
 
+  "_comment_agent_models": "Per-agent provider and model override. Format: 'provider/model'. Any agent not listed uses the tier default from the active provider section above. Supported agent types: orchestrator, planner, viz_plotly, viz_mpl, viz_jsx, data_ops, data_io, envoy, insight, memory, eureka.",
+  "agent_models": {},
+
   "_comment_data_backend": "Data backend. Only 'cdf' (CDAWeb REST + cdflib) is supported.",
   "data_backend": "cdf",
 
@@ -104,9 +107,8 @@
   "_comment_memory_reload": "Memory hot reload: restart chat session with fresh LTM every N rounds (0 to disable).",
   "memory_reload_interval": 5,
 
-  "_comment_eureka": "Eureka discovery: EurekaAgent scans session data for scientific findings and suggests follow-up actions. eureka_enabled: master switch. eureka_model: null means use orchestrator model. eureka_mode: when true, suggestions are automatically executed as synthetic user messages. eureka_max_rounds: safety limit on consecutive eureka-driven rounds before auto-pause. eureka_extraction_interval: run every N user turns.",
+  "_comment_eureka": "Eureka discovery: EurekaAgent scans session data for scientific findings and suggests follow-up actions. eureka_enabled: master switch. eureka_mode: when true, suggestions are automatically executed as synthetic user messages. eureka_max_rounds: safety limit on consecutive eureka-driven rounds before auto-pause. eureka_extraction_interval: run every N user turns. To override the eureka model, use agent_models.eureka.",
   "eureka_enabled": true,
-  "eureka_model": null,
   "eureka_mode": false,
   "eureka_max_rounds": 5,
   "eureka_extraction_interval": 2,

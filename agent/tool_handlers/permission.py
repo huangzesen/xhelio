@@ -4,10 +4,13 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 from uuid import uuid4
 
+from agent.tool_handlers.decorator import tool_handler
+
 if TYPE_CHECKING:
     from agent.core import OrchestratorAgent
 
 
+@tool_handler("ask_user_permission")
 def handle_ask_user_permission(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     """Block until user approves or denies the requested action."""
     action = tool_args.get("action", "unknown")

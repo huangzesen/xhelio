@@ -16,7 +16,6 @@ from dataclasses import dataclass, field
 from typing import Optional
 
 import config
-from .llm import LLMAdapter
 from .memory import Memory, MemoryStore, generate_tags, MEMORY_TOKEN_BUDGET
 from .sub_agent import SubAgent, Message
 from .event_bus import EventBus, SessionEvent, get_event_bus, MEMORY_ACTION, MEMORY_SUMMARY, PIPELINE_REGISTERED
@@ -72,8 +71,7 @@ class MemoryAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         memory_store: MemoryStore,
         verbose: bool = False,
         session_id: str = "",
@@ -95,8 +93,8 @@ class MemoryAgent(SubAgent):
 
         super().__init__(
             agent_id="MemoryAgent",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="memory",
             tool_executor=self._route_tool,
             system_prompt="",  # Built dynamically in _pre_request
             tool_schemas=get_memory_tools(),
@@ -136,7 +134,7 @@ class MemoryAgent(SubAgent):
         # memories which change between cycles. MemoryAgent doesn't need
         # cross-cycle persistent context.
         self._chat = None
-        self.system_prompt = self._build_system_prompt(context)
+        self.system_prompt = self._build_memory_system_prompt(context)
 
         return self._build_user_message(context)
 
@@ -213,7 +211,7 @@ class MemoryAgent(SubAgent):
     # Prompt building
     # ------------------------------------------------------------------
 
-    def _build_system_prompt(self, context: MemoryContext) -> str:
+    def _build_memory_system_prompt(self, context: MemoryContext) -> str:
         """Build the system prompt with role, rules, and ALL current memories."""
         sections = []
 

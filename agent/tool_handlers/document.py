@@ -56,20 +56,21 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
                 "Describe any visual elements briefly."
             )
 
-        if hasattr(orch.adapter, "make_bytes_part") and hasattr(
-            orch.adapter, "generate_multimodal"
+        adapter = orch.service.get_adapter(orch.service.provider)
+        if hasattr(adapter, "make_bytes_part") and hasattr(
+            adapter, "generate_multimodal"
         ):
-            doc_part = orch.adapter.make_bytes_part(
+            doc_part = adapter.make_bytes_part(
                 data=file_bytes, mime_type=mime_type
             )
-            response = orch.adapter.generate_multimodal(
+            response = adapter.generate_multimodal(
                 model=orch.model_name,
                 contents=[doc_part, extraction_prompt],
             )
         else:
-            response = orch.adapter.generate(
+            response = orch.service.generate(
+                prompt=extraction_prompt,
                 model=orch.model_name,
-                contents=extraction_prompt,
             )
         orch._last_tool_context = "extract_document"
         orch._track_usage(response)

@@ -1,13 +1,7 @@
 import { useMemo } from 'react';
 import Plot from 'react-plotly.js';
 import type { MemoryEntry } from '../../api/types';
-
-const typeColorMap: Record<string, string> = {
-  preference: '#3b82f6',
-  pitfall: '#ef4444',
-  summary: '#22c55e',
-  reflection: '#a855f7',
-};
+import { MEMORY_TYPE_COLORS } from '../../constants/memoryTypes';
 
 interface Props {
   memories: MemoryEntry[];
@@ -34,7 +28,7 @@ export function MemoryTimeline({ memories }: Props) {
       type: 'scatter' as const,
       name: type.charAt(0).toUpperCase() + type.slice(1),
       marker: {
-        color: typeColorMap[type] ?? '#6b7280',
+        color: MEMORY_TYPE_COLORS[type]?.hex ?? '#6b7280',
         size: entries.map((m) => Math.min(Math.max(m.access_count * 2 + 6, 6), 20)),
         opacity: 0.8,
       },

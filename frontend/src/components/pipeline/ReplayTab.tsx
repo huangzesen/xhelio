@@ -8,6 +8,7 @@ import { Loader2, Play, RefreshCw, GitBranch, Inbox, ExternalLink, Save, Check, 
 import { PipelineSkeleton } from '../common/Skeleton';
 import * as api from '../../api/client';
 import type { PlotlyFigure } from '../../api/types';
+import { RENDER_TOOL_NAMES } from '../../constants/toolColors';
 
 export function ReplayTab() {
   const {
@@ -68,7 +69,7 @@ export function ReplayTab() {
               <div>Operations: <span className="font-mono text-text">{pipeline.length}</span></div>
               <div>
                 Renders: <span className="font-mono text-text">
-                  {pipeline.filter((r) => ['render_plotly_json', 'generate_mpl_script', 'generate_jsx_component'].includes(r.tool)).length}
+                  {pipeline.filter((r) => RENDER_TOOL_NAMES.has(r.tool)).length}
                 </span>
               </div>
             </div>

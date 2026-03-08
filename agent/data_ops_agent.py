@@ -14,7 +14,6 @@ from __future__ import annotations
 import threading
 from typing import Callable, TYPE_CHECKING
 
-from .llm import LLMAdapter
 from .sub_agent import SubAgent
 from .tools import get_function_schemas
 from .event_bus import EventBus
@@ -42,8 +41,7 @@ class DataOpsAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         agent_id: str = "DataOpsAgent",
@@ -59,8 +57,8 @@ class DataOpsAgent(SubAgent):
 
         super().__init__(
             agent_id=agent_id,
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="data_ops",
             tool_executor=tool_executor,
             system_prompt=build_data_ops_prompt(),
             tool_schemas=tool_schemas,

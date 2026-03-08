@@ -6,25 +6,7 @@ import { VersionHistory } from './VersionHistory';
 import { StarRating } from './ReviewList';
 import { parseReviewStars, parseReviewComment, parseReviewAgent, avgReviewStars } from './reviewUtils';
 import type { MemoryEntry } from '../../api/types';
-
-const typeColor: Record<string, { border: string; badge: string }> = {
-  preference: {
-    border: 'border-l-[color:var(--badge-blue-bg,#3b82f6)]',
-    badge: 'bg-badge-blue-bg text-badge-blue-text',
-  },
-  pitfall: {
-    border: 'border-l-[color:var(--badge-red-bg,#ef4444)]',
-    badge: 'bg-badge-red-bg text-badge-red-text',
-  },
-  summary: {
-    border: 'border-l-[color:var(--badge-green-bg,#22c55e)]',
-    badge: 'bg-badge-green-bg text-badge-green-text',
-  },
-  reflection: {
-    border: 'border-l-[color:var(--badge-purple-bg,#a855f7)]',
-    badge: 'bg-badge-purple-bg text-badge-purple-text',
-  },
-};
+import { MEMORY_TYPE_COLORS } from '../../constants/memoryTypes';
 
 const defaultColor = {
   border: 'border-l-[color:var(--badge-gray-bg,#6b7280)]',
@@ -77,7 +59,7 @@ interface Props {
 }
 
 export function MemoryCard({ entry, sessionId, reviews = [], ratingTier = 'recent' }: Props) {
-  const colors = typeColor[entry.type] ?? defaultColor;
+  const colors = MEMORY_TYPE_COLORS[entry.type] ?? defaultColor;
   const [historyOpen, setHistoryOpen] = useState(false);
   const [reviewOpen, setReviewOpen] = useState(false);
   const hasHistory = entry.supersedes !== '';

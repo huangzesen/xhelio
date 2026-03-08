@@ -39,6 +39,7 @@ import pandas as pd
 from agent.event_bus import get_event_bus, DEBUG
 from agent.logging import get_logger
 from data_ops.operations_log import OperationsLog, _lookup_with_suffix_fallback
+from rendering.registry import RENDER_TOOL_NAMES
 
 
 # ---------------------------------------------------------------------------
@@ -49,12 +50,11 @@ _PIPELINES_DIR_NAME = "pipelines"
 _INDEX_FILENAME = "_index.json"
 _PIPELINE_VERSION = 1
 
-_PRESENTATION_TOOLS = frozenset({"render_plotly_json", "generate_mpl_script", "generate_jsx_component"})
+_PRESENTATION_TOOLS = RENDER_TOOL_NAMES
 _SKIP_TOOLS = frozenset({"manage_plot"})
 _RELEVANT_TOOLS = frozenset({
     "fetch_data", "custom_operation", "store_dataframe", "load_file",
-    "render_plotly_json", "generate_mpl_script", "generate_jsx_component",
-})
+}) | RENDER_TOOL_NAMES
 
 # Keys to strip from fetch_data args (time injected at execution)
 _FETCH_TIME_KEYS = frozenset({

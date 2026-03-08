@@ -13,7 +13,6 @@ and read_document for document reading.
 
 import threading
 
-from .llm import LLMAdapter
 from .sub_agent import SubAgent
 from .tools import get_function_schemas
 from .event_bus import EventBus
@@ -33,8 +32,7 @@ class DataIOAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         event_bus: EventBus | None = None,
@@ -44,8 +42,8 @@ class DataIOAgent(SubAgent):
 
         super().__init__(
             agent_id="DataIOAgent",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="data_io",
             tool_executor=tool_executor,
             system_prompt=build_data_io_prompt(),
             tool_schemas=tool_schemas,

@@ -1,6 +1,7 @@
 import { create } from 'zustand';
 import type { SavedSessionWithOps, PipelineRecord, PlotlyFigure, ReplayResult } from '../api/types';
 import * as api from '../api/client';
+import { RENDER_TOOL_NAMES } from '../constants/toolColors';
 
 function downloadFile(filename: string, content: string) {
   const blob = new Blob([content], { type: 'text/plain' });
@@ -46,7 +47,7 @@ interface PipelineState {
 function buildRenderOptions(pipeline: PipelineRecord[]): RenderOption[] {
   const options: RenderOption[] = [{ label: 'All (latest)', opId: null }];
   for (const r of pipeline) {
-    if (!['render_plotly_json', 'generate_mpl_script', 'generate_jsx_component'].includes(r.tool) || r.status !== 'success') continue;
+    if (!RENDER_TOOL_NAMES.has(r.tool) || r.status !== 'success') continue;
     const inputsStr = (Array.isArray(r.inputs) && r.inputs.length > 0) ? r.inputs.join(', ') : 'no inputs';
     const sc = r.state_count ?? 1;
     const si = r.state_index ?? 0;

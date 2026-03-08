@@ -22,7 +22,6 @@ from typing import Callable, Optional
 import config
 from config import get_data_dir, get_api_key
 from .llm import (
-    LLMAdapter,
     LLMService,
     LLMResponse,
     FunctionSchema,
@@ -123,6 +122,7 @@ from .event_bus import (
 )
 from .control_center import ControlCenter
 from .memory_agent import MemoryAgent, MemoryContext
+from .memory_hooks import MemoryHooks, candidates_from_log
 from .pipeline_store import PipelineStore
 from .context_tracker import ContextTracker
 from .loop_guard import LoopGuard, DupVerdict
@@ -134,9 +134,12 @@ from .llm_utils import (
     send_with_timeout_stream,
     _CancelledDuringLLM,
     execute_tools_batch,
-    track_llm_usage,
     build_outcome_summary,
 )
+from .token_tracker import TokenTracker
+from .inline_completions import InlineCompletions
+from .delegation import DelegationBus
+from .eureka_hooks import EurekaHooks
 from rendering.plotly_renderer import PlotlyRenderer
 from knowledge.catalog import search_by_keywords
 from knowledge.catalog_search import search_catalog as search_full_catalog
@@ -170,18 +173,8 @@ from .agent_registry import (
 _USER_ROLES = {"user"}
 _AGENT_ROLES = {"model", "assistant"}
 
-# Context compaction prompt (shared with sub_agent.py)
-_COMPACTION_PROMPT = (
-    "Summarize the following conversation history concisely for an AI agent "
-    "that needs to continue the session. Preserve:\n"
-    "- ALL errors, failures, and their details verbatim\n"
-    "- Key decisions and user preferences\n"
-    "- Data that was fetched/computed and current state\n"
-    "- Tool calls that produced important results\n\n"
-    "Drop thinking blocks and routine acknowledgments. "
-    "Output ONLY the summary, no commentary.\n\n"
-    "Conversation history:\n"
-)
+# Context compaction prompt (shared with sub_agent.py via llm_session_mixin)
+from agent.llm_session_mixin import COMPACTION_PROMPT as _COMPACTION_PROMPT
 
 
 def _extract_turns(history_entries: list, *, max_text: int | None = None) -> list[str]:
@@ -251,11 +244,13 @@ def _create_llm_service() -> LLMService:
     provider = config.LLM_PROVIDER.lower()
     api_key = get_api_key(provider)
     model = config.SMART_MODEL
+    caps = config.resolve_capabilities()
     return LLMService(
         provider=provider,
         model=model,
         api_key=api_key,
         base_url=config.LLM_BASE_URL,
+        provider_config=caps,
     )
 
 
@@ -273,6 +268,12 @@ def _sanitize_for_json(obj):
     if isinstance(obj, (list, tuple)):
         return [_sanitize_for_json(v) for v in obj]
     return obj
+
+
+_PIPELINE_INVALIDATING_TOOLS = frozenset({
+    "fetch_data", "custom_operation", "store_dataframe",
+    "render_plotly_json", "manage_plot",
+})
 
 
 class OrchestratorAgent:
@@ -324,17 +325,15 @@ class OrchestratorAgent:
         # Disk-backed data store (created at start_session / load_session)
         self._store: DataStore | None = None
 
-        # Sub-agents: agent_id → SubAgent
-        self._sub_agents: dict[str, SubAgent] = {}
-        self._sub_agents_lock = threading.Lock()
-        self._dataops_seq: int = 0  # Counter for ephemeral DataOps agents
-        self._mission_seq: int = 0  # Counter for ephemeral Mission agents
-        self._async_delegations: dict[str, float] = {}  # agent_id → start_time
+        # Delegation subsystem (sub-agent lifecycle + dispatch)
+        self._delegation = DelegationBus(ctx=self)
+        # Compatibility aliases — existing code references these directly
+        self._sub_agents = self._delegation._agents
+        self._sub_agents_lock = self._delegation._lock
 
         # Fire-and-forget async delegation tracking: agent_id → start_time
         # Written by delegation handler threads, read by run_loop thread.
         self._async_delegations: dict[str, float] = {}
-        self._async_delegations_lock = threading.Lock()
 
         # Turnless orchestrator: shared Condition + Control Center
         # RLock so that has_pending()/drain() can re-acquire inside wait loops
@@ -365,8 +364,6 @@ class OrchestratorAgent:
 
         # Initialize LLM service (wraps all provider SDK calls)
         self.service: LLMService = _create_llm_service()
-        self.adapter: LLMAdapter = self.service.adapter  # backward compat
-
         # Discover SPICE tools from MCP server (lazy, non-fatal).
         # Must happen before building tool schemas so the LLM sees them.
         self._ensure_spice_tools()
@@ -384,11 +381,12 @@ class OrchestratorAgent:
 
         if not defer_chat:
             # Create chat session
-            self.chat = self.adapter.create_chat(
-                model=self.model_name,
+            self.chat = self.service.create_session(
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
+                model=self.model_name,
                 thinking="high",
+                tracked=False,
             )
         else:
             # Chat will be created by load_session() or _send_message()
@@ -404,11 +402,7 @@ class OrchestratorAgent:
         )
 
         # Token usage tracking
-        self._total_input_tokens = 0
-        self._total_output_tokens = 0
-        self._total_thinking_tokens = 0
-        self._total_cached_tokens = 0
-        self._api_calls = 0
+        self._orch_tracker = TokenTracker("OrchestratorAgent")
         self._last_tool_context = "send_message"
         self._round_start_tokens: dict | None = None  # snapshot at CYCLE_START
 
@@ -419,7 +413,6 @@ class OrchestratorAgent:
         self._system_prompt_tokens = 0
         self._tools_tokens = 0
         self._token_decomp_dirty = True
-        self._latest_input_tokens = 0
 
         # Thread-local storage for per-thread agent identity (async delegation)
         self._tls = threading.local()
@@ -432,14 +425,10 @@ class OrchestratorAgent:
         self._invalid_tool_counts: dict[str, int] = {}
 
         # Inline model token usage (tracked separately for breakdown)
-        self._inline_input_tokens = 0
-        self._inline_output_tokens = 0
-        self._inline_thinking_tokens = 0
-        self._inline_cached_tokens = 0
-        self._inline_api_calls = 0
+        self._inline_tracker = TokenTracker("Inline")
 
-        # Retired ephemeral agent token usage (preserved after cleanup)
-        self._retired_agent_usage: list[dict] = []
+        # Retired ephemeral agent token usage — alias into delegation bus
+        self._retired_agent_usage = self._delegation._retired_usage
 
         # Current plan being executed (if any) — either TaskPlan (old loop) or dict (new research-only)
         self._current_plan: Optional[TaskPlan | dict] = None
@@ -468,35 +457,24 @@ class OrchestratorAgent:
             # Update existing chat session if already created
             if self.chat is not None:
                 self.chat.update_system_prompt(self._system_prompt)
-        # Listen for memory mutations to refresh core memory
-        self._event_bus.subscribe(self._on_memory_mutated)
-        self._memory_agent: Optional[MemoryAgent] = None
+        # Memory hooks (extraction, hot reload, pipeline curation)
+        self._memory_hooks = MemoryHooks(self)
+        self._event_bus.subscribe(self._memory_hooks.on_memory_mutated)
 
-        # Eureka discovery (Step 2) and Eureka Mode
-        self._eureka_lock = threading.Lock()
-        self._eureka_agent: Optional["EurekaAgent"] = None
-        self._eureka_turn_counter: int = 0
-        self._eureka_mode: bool = config.get("eureka_mode", False)
-        self._eureka_round_counter: int = 0
-        self._eureka_pending_suggestion = None
+        # Eureka discovery + insight review (extracted to EurekaHooks)
+        self._eureka_hooks = EurekaHooks(
+            ctx=self, eureka_mode=config.get("eureka_mode", False)
+        )
 
         # Pipeline template index (searchable metadata for saved templates)
         self._pipeline_store = PipelineStore()
 
-        # Periodic memory extraction (mirrors discovery pattern)
-        self._memory_turn_counter = 0
-        self._last_memory_op_index = 0
-        self._memory_lock = threading.Lock()
-
-        # Inline completion circuit breaker: disable after repeated failures
-        self._inline_fail_count: int = 0
-        self._inline_disabled_until: float = 0.0
-
-        # Insight review iteration counter (reset per user turn)
-        self._insight_review_iter: int = 0
-
-        # Latest rendered PNG bytes (set by Plotly and matplotlib handlers)
-        self._latest_render_png: bytes | None = None
+        # Inline completions (follow-ups, session titles, autocomplete)
+        self._inline = InlineCompletions(
+            service=self.service,
+            inline_tracker=self._inline_tracker,
+            event_bus=self._event_bus,
+        )
 
         # Cached pipeline DAG (invalidated when new ops are recorded)
         self._pipeline = None
@@ -654,13 +632,7 @@ class OrchestratorAgent:
 
     def _all_work_subagents_idle(self) -> bool:
         """Check if all work subagents (excluding Eureka) are idle."""
-        with self._sub_agents_lock:
-            for agent_id, agent in self._sub_agents.items():
-                if agent_id in ("EurekaAgent", "MemoryAgent"):
-                    continue  # Post-cycle agents, not part of work cycle
-                if not agent.is_idle:
-                    return False
-        return True
+        return self._delegation.all_work_subagents_idle()
 
     @property
     def memory_store(self) -> MemoryStore:
@@ -681,53 +653,12 @@ class OrchestratorAgent:
         """Accumulate token usage from an LLMResponse."""
         if self._token_decomp_dirty:
             self._update_token_decomposition()
-        token_state = {
-            "input": self._total_input_tokens,
-            "output": self._total_output_tokens,
-            "thinking": self._total_thinking_tokens,
-            "cached": self._total_cached_tokens,
-            "api_calls": self._api_calls,
-        }
-        track_llm_usage(
-            response=response,
-            token_state=token_state,
-            agent_name="OrchestratorAgent",
+        self._orch_tracker.track(
+            response,
             last_tool_context=self._last_tool_context,
             system_tokens=self._system_prompt_tokens,
             tools_tokens=self._tools_tokens,
         )
-        self._total_input_tokens = token_state["input"]
-        self._total_output_tokens = token_state["output"]
-        self._total_thinking_tokens = token_state["thinking"]
-        self._total_cached_tokens = token_state["cached"]
-        self._api_calls = token_state["api_calls"]
-        self._latest_input_tokens = response.usage.input_tokens
-
-    def _track_inline_usage(self, response: LLMResponse):
-        """Track token usage from inline model calls (follow-ups, titles, completions).
-
-        Tokens are accumulated in separate inline counters so they appear as
-        their own row in the breakdown, while still being emitted via EventBus
-        for the overall session totals.
-        """
-        token_state = {
-            "input": self._inline_input_tokens,
-            "output": self._inline_output_tokens,
-            "thinking": self._inline_thinking_tokens,
-            "cached": self._inline_cached_tokens,
-            "api_calls": self._inline_api_calls,
-        }
-        track_llm_usage(
-            response=response,
-            token_state=token_state,
-            agent_name="Inline",
-            last_tool_context=self._last_tool_context,
-        )
-        self._inline_input_tokens = token_state["input"]
-        self._inline_output_tokens = token_state["output"]
-        self._inline_thinking_tokens = token_state["thinking"]
-        self._inline_cached_tokens = token_state["cached"]
-        self._inline_api_calls = token_state["api_calls"]
 
     def _on_reset(self, chat, failed_message):
         """Rollback reset: new chat, drop failed turn, inject context about what happened.
@@ -766,11 +697,12 @@ class OrchestratorAgent:
             msg=f"[Orchestrator] Session rollback — new chat ({len(iface.entries)} entries kept)",
         )
 
-        self.chat = self.adapter.create_chat(
-            model=self.model_name,
+        self.chat = self.service.create_session(
             system_prompt=self._system_prompt,
             tools=self._tool_schemas,
+            model=self.model_name,
             thinking="high",
+            tracked=False,
             interface=iface,
         )
 
@@ -787,20 +719,8 @@ class OrchestratorAgent:
     @staticmethod
     def _summarize_tool_calls(history: list[dict]) -> str:
         """Extract tool call names and args from the last assistant turn."""
-        parts = []
-        for msg in reversed(history):
-            if msg.get("role") != "assistant":
-                break
-            content = msg.get("content")
-            if not isinstance(content, list):
-                continue
-            for block in content:
-                if isinstance(block, dict) and block.get("type") == "tool_use":
-                    name = block.get("name", "?")
-                    args = block.get("input", {})
-                    args_str = ", ".join(f"{k}={repr(v)[:80]}" for k, v in args.items())
-                    parts.append(f"- {name}({args_str})")
-        return "\n".join(reversed(parts)) if parts else "(no tool calls found)"
+        from agent.llm_session_mixin import summarize_tool_calls
+        return summarize_tool_calls(history)
 
     def _summarize_tool_calls_from_interface(self, iface) -> str:
         """Extract tool call names and args from the last assistant entry in interface."""
@@ -817,35 +737,8 @@ class OrchestratorAgent:
     @staticmethod
     def _summarize_tool_results(message) -> str:
         """Extract tool result summaries from the message that failed to send."""
-        if isinstance(message, str):
-            return message[:500]
-        parts = []
-        items = message if isinstance(message, list) else [message]
-        for item in items:
-            if not isinstance(item, dict):
-                continue
-            content = item.get("content", item)
-            if isinstance(content, str):
-                parts.append(f"- {content[:300]}")
-            elif isinstance(content, list):
-                for block in content:
-                    if isinstance(block, dict):
-                        if block.get("type") == "tool_result":
-                            tool_id = block.get("tool_use_id", "?")
-                            text = block.get("content", "")
-                            if isinstance(text, str):
-                                parts.append(f"- [{tool_id}]: {text[:300]}")
-                            elif isinstance(text, list):
-                                # Content blocks inside tool_result
-                                for sub in text:
-                                    if (
-                                        isinstance(sub, dict)
-                                        and sub.get("type") == "text"
-                                    ):
-                                        parts.append(
-                                            f"- [{tool_id}]: {sub.get('text', '')[:300]}"
-                                        )
-        return "\n".join(parts) if parts else "(tool results not available)"
+        from agent.llm_session_mixin import summarize_tool_results
+        return summarize_tool_results(message)
 
     def _check_and_compact(self) -> None:
         """Check context usage and compact messages if nearing the limit."""
@@ -859,31 +752,18 @@ class OrchestratorAgent:
             return
 
         def summarizer(text: str) -> str:
-            response = self.adapter.generate(
+            response = self.service.generate(
+                prompt=_COMPACTION_PROMPT + text,
                 model=self.model_name,
-                contents=_COMPACTION_PROMPT + text,
                 temperature=0.1,
                 max_output_tokens=2048,
+                tracked=False,
             )
             # Track token cost
-            token_state = {
-                "input": self._total_input_tokens,
-                "output": self._total_output_tokens,
-                "thinking": self._total_thinking_tokens,
-                "cached": self._total_cached_tokens,
-                "api_calls": self._api_calls,
-            }
-            track_llm_usage(
-                response=response,
-                token_state=token_state,
-                agent_name="OrchestratorAgent",
+            self._orch_tracker.track(
+                response,
                 last_tool_context="context_compaction",
             )
-            self._total_input_tokens = token_state["input"]
-            self._total_output_tokens = token_state["output"]
-            self._total_thinking_tokens = token_state["thinking"]
-            self._total_cached_tokens = token_state["cached"]
-            self._api_calls = token_state["api_calls"]
 
             return response.text.strip() if response and response.text else ""
 
@@ -1018,18 +898,15 @@ class OrchestratorAgent:
     def _web_search(self, query: str) -> dict:
         """Execute a web search query via the active LLM provider's native API."""
         try:
-            response = self.adapter.web_search(
+            response = self.service.web_search(
                 query=query,
-                model=self.model_name,
             )
         except Exception as e:
             return {"status": "error", "message": f"Web search failed: {e}"}
 
         if not response.text:
             # Distinguish "not configured" vs "call failed with empty response"
-            provider = getattr(
-                self.adapter, "provider_name", type(self.adapter).__name__
-            )
+            provider = self.service.provider
             return {
                 "status": "error",
                 "message": (
@@ -1043,27 +920,12 @@ class OrchestratorAgent:
         self._last_tool_context = "web_search"
         # Track web search tokens without decomposition — web search is a
         # separate LLM call with no system prompt or tool schemas.
-        token_state = {
-            "input": self._total_input_tokens,
-            "output": self._total_output_tokens,
-            "thinking": self._total_thinking_tokens,
-            "cached": self._total_cached_tokens,
-            "api_calls": self._api_calls,
-        }
-        track_llm_usage(
-            response=response,
-            token_state=token_state,
-            agent_name="OrchestratorAgent",
+        self._orch_tracker.track(
+            response,
             last_tool_context="web_search",
             system_tokens=0,
             tools_tokens=0,
         )
-        self._total_input_tokens = token_state["input"]
-        self._total_output_tokens = token_state["output"]
-        self._total_thinking_tokens = token_state["thinking"]
-        self._total_cached_tokens = token_state["cached"]
-        self._api_calls = token_state["api_calls"]
-        self._latest_input_tokens = response.usage.input_tokens
 
         sources_text = self._extract_grounding_sources(response)
 
@@ -1071,11 +933,13 @@ class OrchestratorAgent:
 
     def get_token_usage(self) -> dict:
         """Return cumulative token usage for this session (including sub-agents)."""
-        input_tokens = self._total_input_tokens + self._inline_input_tokens
-        output_tokens = self._total_output_tokens + self._inline_output_tokens
-        thinking_tokens = self._total_thinking_tokens + self._inline_thinking_tokens
-        cached_tokens = self._total_cached_tokens + self._inline_cached_tokens
-        api_calls = self._api_calls + self._inline_api_calls
+        orch = self._orch_tracker.get_usage()
+        inl = self._inline_tracker.get_usage()
+        input_tokens = orch["input_tokens"] + inl["input_tokens"]
+        output_tokens = orch["output_tokens"] + inl["output_tokens"]
+        thinking_tokens = orch["thinking_tokens"] + inl["thinking_tokens"]
+        cached_tokens = orch["cached_tokens"] + inl["cached_tokens"]
+        api_calls = orch["api_calls"] + inl["api_calls"]
 
         # Include usage from all sub-agent-based sub-agents
         with self._sub_agents_lock:
@@ -1132,37 +996,23 @@ class OrchestratorAgent:
                 )
 
         # Orchestrator's own usage
-        _add(
-            "Orchestrator",
-            {
-                "input_tokens": self._total_input_tokens,
-                "output_tokens": self._total_output_tokens,
-                "thinking_tokens": self._total_thinking_tokens,
-                "cached_tokens": self._total_cached_tokens,
-                "api_calls": self._api_calls,
-                "ctx_system_tokens": self._system_prompt_tokens,
-                "ctx_tools_tokens": self._tools_tokens,
-                "ctx_history_tokens": max(
-                    0,
-                    self._latest_input_tokens
-                    - self._system_prompt_tokens
-                    - self._tools_tokens,
-                ),
-                "ctx_total_tokens": self._latest_input_tokens,
-            },
-        )
+        orch = self._orch_tracker.get_usage()
+        latest_input = self._orch_tracker.latest_input_tokens
+        orch.update({
+            "ctx_system_tokens": self._system_prompt_tokens,
+            "ctx_tools_tokens": self._tools_tokens,
+            "ctx_history_tokens": max(
+                0,
+                latest_input
+                - self._system_prompt_tokens
+                - self._tools_tokens,
+            ),
+            "ctx_total_tokens": latest_input,
+        })
+        _add("Orchestrator", orch)
 
         # Inline model usage (follow-ups, session titles, completions)
-        _add(
-            "Inline",
-            {
-                "input_tokens": self._inline_input_tokens,
-                "output_tokens": self._inline_output_tokens,
-                "thinking_tokens": self._inline_thinking_tokens,
-                "cached_tokens": self._inline_cached_tokens,
-                "api_calls": self._inline_api_calls,
-            },
-        )
+        _add("Inline", self._inline_tracker.get_usage())
 
         # Sub-agent-based sub-agents
         with self._sub_agents_lock:
@@ -1388,7 +1238,7 @@ class OrchestratorAgent:
                     figure.write_image(
                         buf, format="png", width=1100, height=600, scale=2
                     )
-                    self._latest_render_png = buf.getvalue()
+                    self._eureka_hooks.latest_render_png = buf.getvalue()
                 except Exception as e:
                     get_logger().warning(
                         f"Failed to cache Plotly PNG for insight review: {e}"
@@ -1406,8 +1256,8 @@ class OrchestratorAgent:
             json_path.write_text(_json.dumps(fig_json, default=str))
 
             png_path = plotly_dir / f"{op_id}.png"
-            if self._latest_render_png:
-                png_path.write_bytes(self._latest_render_png)
+            if self._eureka_hooks.latest_render_png:
+                png_path.write_bytes(self._eureka_hooks.latest_render_png)
             elif figure is not None:
                 import io as _io
 
@@ -1418,7 +1268,7 @@ class OrchestratorAgent:
                     )
                     png_bytes = buf.getvalue()
                     png_path.write_bytes(png_bytes)
-                    self._latest_render_png = png_bytes
+                    self._eureka_hooks.latest_render_png = png_bytes
                 except Exception:
                     pass
 
@@ -1595,7 +1445,7 @@ class OrchestratorAgent:
             # Cache rendered PNG for InsightAgent (auto-review + manual delegation)
             if result.output_path:
                 try:
-                    self._latest_render_png = Path(result.output_path).read_bytes()
+                    self._eureka_hooks.latest_render_png = Path(result.output_path).read_bytes()
                 except Exception as e:
                     get_logger().warning(
                         f"Failed to cache matplotlib PNG for insight review: {e}"
@@ -1753,7 +1603,7 @@ class OrchestratorAgent:
                         )
                         # Cache rendered PNG for InsightAgent
                         try:
-                            self._latest_render_png = output_path.read_bytes()
+                            self._eureka_hooks.latest_render_png = output_path.read_bytes()
                         except Exception as e:
                             get_logger().warning(
                                 f"Failed to cache matplotlib rerun PNG: {e}"
@@ -2122,89 +1972,16 @@ class OrchestratorAgent:
         )
         return result
 
-    # ---- Delegation infrastructure ----
+    # ---- Delegation infrastructure (delegated to DelegationBus) ----
 
     def _build_envoy_request(self, mission_id: str, request: str, agent=None) -> str:
-        """Build a full request string for an envoy delegation."""
-        agent_id = agent.agent_id if agent else f"EnvoyAgent[{mission_id}]"
-        store = self._store
-        entries = store.list_entries()
-        if entries:
-            new_entries, removed_labels, store_hash = self._ctx_tracker.get_store_delta(
-                agent_id, entries
-            )
-            if new_entries or removed_labels:
-                labels = [
-                    f"  - {e['label']} ({e['num_points']} pts, {e['time_min']} to {e['time_max']})"
-                    for e in new_entries
-                ]
-                if new_entries and not removed_labels:
-                    request += (
-                        "\n\nNew data added to memory:\n"
-                        + "\n".join(labels)
-                        + "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                    )
-                elif removed_labels and not new_entries:
-                    request += (
-                        "\n\nData removed from memory: "
-                        + ", ".join(removed_labels)
-                        + "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                    )
-                else:
-                    request += "\n\nData store updated:\n" + "\n".join(labels)
-                    if removed_labels:
-                        request += "\nRemoved: " + ", ".join(removed_labels)
-                    request += "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                self._ctx_tracker.record(
-                    agent_id, store_entries=entries, store_hash=store_hash
-                )
-            # else: store unchanged — skip injection (agent already has it)
-        if not (agent and agent._interaction_id):
-            request += "\n\n[Tip: Call events(action='check') to see what happened earlier in this session.]"
-        return request
+        return self._delegation.build_envoy_request(mission_id, request, agent=agent)
 
     def _build_dataops_request(self, request: str, context: str, agent=None) -> str:
-        """Build a full request string for a DataOps delegation."""
-        import json
-
-        _agent_id = agent.agent_id if agent else "DataOpsAgent"
-        full_request = f"{request}\n\nContext: {context}" if context else request
-        store = self._store
-        entries = store.list_entries()
-        if entries:
-            new_entries, removed_labels, store_hash = self._ctx_tracker.get_store_delta(
-                _agent_id, entries
-            )
-            if new_entries or removed_labels:
-                store_text = json.dumps(new_entries, indent=2, default=str)
-                if new_entries and not removed_labels:
-                    full_request += (
-                        "\n\nNew data added to memory:\n```json\n"
-                        + store_text
-                        + "\n```"
-                    )
-                elif removed_labels and not new_entries:
-                    full_request += "\n\nData removed from memory: " + ", ".join(
-                        removed_labels
-                    )
-                else:
-                    full_request += (
-                        "\n\nData store updated:\n```json\n" + store_text + "\n```"
-                    )
-                    if removed_labels:
-                        full_request += "\nRemoved: " + ", ".join(removed_labels)
-                self._ctx_tracker.record(
-                    _agent_id, store_entries=entries, store_hash=store_hash
-                )
-            # else: store unchanged — skip injection
-        if not (agent and agent._interaction_id):
-            full_request += "\n\n[Tip: Call events(action='check') to see what happened earlier in this session.]"
-        return full_request
+        return self._delegation.build_dataops_request(request, context, agent=agent)
 
     def _build_data_io_request(self, request: str, context: str) -> str:
-        """Build a full request string for a DataIO delegation."""
-        full_request = f"{request}\n\nContext: {context}" if context else request
-        return full_request
+        return self._delegation.build_data_io_request(request, context)
 
     # ---- Permission gate (blocking approval from user) ----
 
@@ -2466,10 +2243,10 @@ class OrchestratorAgent:
                     if MEMORY_RELOAD_INTERVAL > 0:
                         self._rounds_since_last_reload += 1
                         if self._rounds_since_last_reload >= MEMORY_RELOAD_INTERVAL:
-                            self._trigger_memory_hot_reload()
+                            self._memory_hooks.trigger_hot_reload()
                             self._rounds_since_last_reload = 0
                     # Trigger memory extraction at cycle end
-                    self._maybe_extract_memories()
+                    self._memory_hooks.maybe_extract()
                     # Trigger Eureka discovery at cycle end
                     if config.get("eureka_enabled", True):
                         self._maybe_extract_eurekas()
@@ -2569,10 +2346,10 @@ class OrchestratorAgent:
                     if MEMORY_RELOAD_INTERVAL > 0:
                         self._rounds_since_last_reload += 1
                         if self._rounds_since_last_reload >= MEMORY_RELOAD_INTERVAL:
-                            self._trigger_memory_hot_reload()
+                            self._memory_hooks.trigger_hot_reload()
                             self._rounds_since_last_reload = 0
                     # Trigger memory extraction at cycle end
-                    self._maybe_extract_memories()
+                    self._memory_hooks.maybe_extract()
                     # Trigger Eureka discovery at cycle end
                     if config.get("eureka_enabled", True):
                         self._maybe_extract_eurekas()
@@ -2593,55 +2370,9 @@ class OrchestratorAgent:
     def _trigger_memory_hot_reload(self) -> None:
         """Hot reload: restart chat session with fresh LTM injection.
 
-        Called every N rounds to refresh the LLM context with latest memories.
+        Forwarded to :pyattr:`_memory_hooks`.
         """
-        if not self.chat:
-            self.logger.debug("[Memory] No chat session to reload")
-            return
-
-        try:
-            # Get canonical interface (works across all providers)
-            interface = self.chat.interface
-            self.logger.info(
-                f"[Memory] Hot reload: preserving {len(interface.entries)} interface entries"
-            )
-
-            # Get fresh memory section
-            memory_section = self._memory_store.format_for_injection(
-                scope="generic", include_review_instruction=False
-            )
-
-            # Build new system prompt with fresh memory
-            base_prompt = get_system_prompt()
-            if memory_section:
-                new_system_prompt = f"{base_prompt}\n\n{memory_section}"
-            else:
-                new_system_prompt = base_prompt
-
-            # Update system prompt in interface before creating new session
-            interface.add_system(new_system_prompt)
-
-            # Create new chat session with canonical interface
-            self.chat = self.adapter.create_chat(
-                model=self.model_name,
-                system_prompt=new_system_prompt,
-                tools=self._tool_schemas,
-                interface=interface,
-                thinking="high",
-            )
-
-            self._event_bus.emit(
-                DEBUG,
-                level="info",
-                msg=f"[Memory] Hot reload complete: {len(interface.entries)} entries, memory injected",
-            )
-        except Exception as e:
-            self.logger.error(f"[Memory] Hot reload failed: {e}")
-            self._event_bus.emit(
-                DEBUG,
-                level="error",
-                msg=f"[Memory] Hot reload failed: {e}",
-            )
+        self._memory_hooks.trigger_hot_reload()
 
     def _handle_list_active_work(self, tool_args: dict) -> dict:
         """Tool handler: list all running work units."""
@@ -2753,13 +2484,6 @@ class OrchestratorAgent:
                 )
 
             # Invalidate cached pipeline when data-producing tools run
-            _PIPELINE_INVALIDATING_TOOLS = {
-                "fetch_data",
-                "custom_operation",
-                "store_dataframe",
-                "render_plotly_json",
-                "manage_plot",
-            }
             if is_success and tool_name in _PIPELINE_INVALIDATING_TOOLS:
                 self._invalidate_pipeline()
 
@@ -2830,13 +2554,6 @@ class OrchestratorAgent:
                     },
                 )
 
-            _PIPELINE_INVALIDATING_TOOLS = {
-                "fetch_data",
-                "custom_operation",
-                "store_dataframe",
-                "render_plotly_json",
-                "manage_plot",
-            }
             if is_success and tool_name in _PIPELINE_INVALIDATING_TOOLS:
                 self._invalidate_pipeline()
 
@@ -2897,12 +2614,13 @@ class OrchestratorAgent:
 
         try:
             # Create a fresh chat session for task execution with forced function calling
-            task_chat = self.adapter.create_chat(
-                model=self.model_name,
+            task_chat = self.service.create_session(
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
+                model=self.model_name,
                 force_tool_call=True,
                 thinking="low",
+                tracked=False,
             )
             task_prompt = (
                 f"Execute this task: {task.instruction}\n\n"
@@ -2988,7 +2706,7 @@ class OrchestratorAgent:
                         )
 
                     function_responses.append(
-                        self.adapter.make_tool_result_message(
+                        self.service.make_tool_result(
                             tool_name, result, tool_call_id=fc.id
                         )
                     )
@@ -3080,42 +2798,14 @@ class OrchestratorAgent:
             return None
 
     def _get_or_create_planner_agent(self):
-        """Get the cached planner agent or create a new one. Thread-safe."""
-        agent_id = "PlannerAgent"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                from .planner import PlannerAgent
-                agent = PlannerAgent(
-                    adapter=self.adapter,
-                    model_name=config.PLANNER_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="planner"
-                        )
-                    ),
-                    event_bus=self._event_bus,
-                    cancel_event=self._cancel_event,
-                    memory_store=self._memory_store,
-                    memory_scope="planner",
-                    session_id=self._session_id,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created PlannerAgent ({config.PLANNER_MODEL})",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_planner_agent()
 
     def _process_single_message(self, user_message: str) -> str:
         """Process a single (non-complex) user message.
 
         Uses the Control Center for async delegation tracking.
         """
-        self._insight_review_iter = 0
-        self._latest_render_png = None
+        self._eureka_hooks.reset_per_message()
         self._event_bus.emit(
             DEBUG, level="debug", msg="[LLM] Sending message to model..."
         )
@@ -3233,7 +2923,7 @@ class OrchestratorAgent:
                 if result.get("status") == "clarification_needed":
                     # ALWAYS send tool result to LLM first (fixes history desync)
                     function_responses.append(
-                        self.adapter.make_tool_result_message(
+                        self.service.make_tool_result(
                             tool_name, result, tool_call_id=tc_id
                         )
                     )
@@ -3248,7 +2938,7 @@ class OrchestratorAgent:
                             for i, opt in enumerate(result["options"])
                         )
                     # Pair the tool_use with a tool_result to keep history in sync
-                    clarification_response = self.adapter.make_tool_result_message(
+                    clarification_response = self.service.make_tool_result(
                         tool_name, result, tool_call_id=tc_id
                     )
                     if self.chat and hasattr(self.chat, 'commit_tool_results'):
@@ -3256,7 +2946,7 @@ class OrchestratorAgent:
                     return question
 
                 function_responses.append(
-                    self.adapter.make_tool_result_message(
+                    self.service.make_tool_result(
                         tool_name, result, tool_call_id=tc_id
                     )
                 )
@@ -3315,549 +3005,55 @@ class OrchestratorAgent:
         return text
 
     def _get_active_envoy_ids(self) -> set[str]:
-        """Return set of active mission IDs from current actors. Thread-safe."""
-        with self._sub_agents_lock:
-            return {
-                k.removeprefix("EnvoyAgent[").rstrip("]")
-                for k in self._sub_agents
-                if k.startswith("EnvoyAgent[")
-            }
+        """Return set of active mission IDs from current agents. Thread-safe."""
+        return self._delegation.get_active_envoy_ids()
 
     def _on_memory_mutated(self, event: SessionEvent) -> None:
-        """Event bus listener: refresh core memory when long-term memory changes."""
-        if event.type != MEMORY_EXTRACTION_DONE:
-            return
-        memory_section = self._memory_store.format_for_injection(
-            scope="generic", include_review_instruction=False
-        )
-        base_prompt = get_system_prompt()
-        if memory_section:
-            self._system_prompt = f"{base_prompt}\n\n{memory_section}"
-        else:
-            self._system_prompt = base_prompt
-        if self.chat is not None:
-            self.chat.update_system_prompt(self._system_prompt)
+        """Event bus listener: forwarded to :pyattr:`_memory_hooks`."""
+        self._memory_hooks.on_memory_mutated(event)
 
     @staticmethod
     def _wrap_delegation_result(sub_result, store_snapshot=None) -> dict:
-        """Convert an agent send result into a tool result dict.
-
-        Success is determined by actual output, not by error heuristics.
-        If the agent produced meaningful output (text or files), it's a success
-        even if there were transient errors during retries. The LLM sees both
-        the result and any errors in the text.
-
-        Args:
-            sub_result: Dict from agent's _handle_request ({text, failed, errors}).
-            store_snapshot: Optional list of store entry summaries to include,
-                so the orchestrator LLM sees concrete data state after delegation.
-        """
-        if isinstance(sub_result, dict):
-            text = sub_result.get("text", "")
-            failed = sub_result.get("failed", False)
-            errors = sub_result.get("errors", [])
-            output_files = sub_result.get("output_files", [])
-        else:
-            # Legacy: plain string (shouldn't happen, but be safe)
-            text = str(sub_result)
-            failed = False
-            errors = []
-            output_files = []
-
-        # Check for actual success: has meaningful output (text or output_files)
-        # Even if there were errors during retries, if we got output, it's a success
-        has_output = bool(text.strip()) or bool(output_files)
-        has_critical_errors = failed and errors
-
-        if has_critical_errors and not has_output:
-            # Failed with no output - true failure
-            error_summary = "; ".join(errors[-get_item_limit("items.error_summary") :])
-            result = {
-                "status": "error",
-                "message": f"Sub-agent failed. Errors: {error_summary}",
-                "result": text,
-            }
-        else:
-            # Has output (possibly with some errors during retries) - success
-            # The LLM will see both the result and any errors in the text
-            result = {"status": "success", "result": text}
-
-        if output_files:
-            result["output_files"] = output_files
-
-        if store_snapshot is not None:
-            result["data_in_memory"] = [
-                {
-                    "label": e["label"],
-                    "columns": e.get("columns", []),
-                    "shape": e.get("shape", ""),
-                    "units": e.get("units", ""),
-                    "num_points": e.get("num_points", 0),
-                }
-                for e in store_snapshot
-            ]
-        return result
+        return DelegationBus.wrap_delegation_result(sub_result, store_snapshot)
 
     def reset_sub_agents(self) -> None:
         """Invalidate all cached sub-agents so they are recreated with current config."""
-        # Stop and clear agents
-        with self._sub_agents_lock:
-            for agent in self._sub_agents.values():
-                agent.stop(timeout=2.0)
-            self._sub_agents.clear()
+        self._delegation.reset()
         # Clear direct references so _ensure_*_agent() recreates them
-        self._memory_agent = None
-        self._eureka_agent = None
-        ENVOY_TOOL_REGISTRY.clear_active()
-        # Reset context tracker so recreated agents get full context on first use
-        self._ctx_tracker.reset_all()
-        self._event_bus.emit(
-            DEBUG,
-            level="debug",
-            msg="[Config] Sub-agents invalidated after config reload",
-        )
+        self._memory_hooks._agent = None
+        self._eureka_hooks.eureka_agent = None
 
-    # ---- Agent-based sub-agent management ----
+    # ---- Agent-based sub-agent management (delegated to DelegationBus) ----
 
     def _get_or_create_envoy_agent(self, mission_id: str) -> EnvoyAgent:
-        """Get the persistent envoy agent, creating it on first use."""
-        agent_id = f"EnvoyAgent[{mission_id}]"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                # Load sandbox config for package envoys
-                sandbox_config = None
-                from knowledge.mission_loader import load_mission as _load_mission
-                mission_data = _load_mission(mission_id.lower())
-                if mission_data and mission_data.get("type") == "package":
-                    sandbox_config = mission_data.get("sandbox")
-
-                agent = EnvoyAgent(
-                    mission_id=mission_id,
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
-                        self._execute_tool_for_agent_with_sandbox(
-                            name, args, tc_id, agent_type="envoy",
-                            sandbox_imports=_sc.get("imports") if _sc else None,
-                        )
-                    ),
-                    event_bus=self._event_bus,
-                    memory_store=self._memory_store,
-                    memory_scope=f"envoy:{mission_id}",
-                    cancel_event=self._cancel_event,
-                    sandbox_config=sandbox_config,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created {mission_id} envoy agent ({config.SUB_AGENT_MODEL})",
-                )
-                if ENVOY_TOOL_REGISTRY.mark_active(mission_id):
-                    from .agent_registry import AGENT_INFORMED_REGISTRY
-
-                    for tool_name in ENVOY_TOOL_REGISTRY.get_tools(mission_id):
-                        AGENT_INFORMED_REGISTRY._registry.setdefault(
-                            "ctx:orchestrator", set()
-                        ).add(tool_name)
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_envoy_agent(mission_id)
 
     def _create_ephemeral_envoy_agent(self, mission_id: str) -> EnvoyAgent:
-        """Create an ephemeral overflow envoy agent for parallel delegation."""
-        with self._sub_agents_lock:
-            seq = self._mission_seq
-            self._mission_seq = seq + 1
-            ephemeral_id = f"EnvoyAgent[{mission_id}]#{seq}"
-
-            # Load sandbox config for package envoys
-            sandbox_config = None
-            from knowledge.mission_loader import load_mission as _load_mission
-            mission_data = _load_mission(mission_id.lower())
-            if mission_data and mission_data.get("type") == "package":
-                sandbox_config = mission_data.get("sandbox")
-
-            agent = EnvoyAgent(
-                mission_id=mission_id,
-                adapter=self.adapter,
-                model_name=config.SUB_AGENT_MODEL,
-                tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
-                    self._execute_tool_for_agent_with_sandbox(
-                        name, args, tc_id, agent_type="envoy",
-                        sandbox_imports=_sc.get("imports") if _sc else None,
-                    )
-                ),
-                agent_id=ephemeral_id,
-                event_bus=self._event_bus,
-                memory_store=self._memory_store,
-                memory_scope=f"envoy:{mission_id}",
-                cancel_event=self._cancel_event,
-                sandbox_config=sandbox_config,
-            )
-            agent._orchestrator_inbox = self._inbox
-            agent.start()
-            self._sub_agents[ephemeral_id] = agent
-        self._event_bus.emit(
-            DEBUG,
-            level="debug",
-            msg=f"[Router] Created ephemeral envoy agent {ephemeral_id}",
-        )
-        return agent
+        return self._delegation.create_ephemeral_envoy_agent(mission_id)
 
     def _get_or_create_viz_plotly_agent(self) -> VizPlotlyAgent:
-        """Get the cached Plotly viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[Plotly]"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                agent = VizPlotlyAgent(
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_plotly"
-                        )
-                    ),
-                    gui_mode=self.gui_mode,
-                    event_bus=self._event_bus,
-                    memory_store=self._memory_store,
-                    memory_scope="visualization",
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created Plotly Visualization agent ({config.SUB_AGENT_MODEL})",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_viz_plotly_agent()
 
     def _get_or_create_viz_mpl_agent(self) -> VizMplAgent:
-        """Get the cached MPL viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[Mpl]"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                session_dir = self._session_manager.base_dir / self._session_id
-                agent = VizMplAgent(
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_mpl"
-                        )
-                    ),
-                    gui_mode=self.gui_mode,
-                    event_bus=self._event_bus,
-                    memory_store=self._memory_store,
-                    memory_scope="visualization",
-                    session_dir=session_dir,
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created MPL Visualization agent ({config.SUB_AGENT_MODEL})",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_viz_mpl_agent()
 
     def _get_or_create_viz_jsx_agent(self) -> VizJsxAgent:
-        """Get the cached JSX viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[JSX]"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                session_dir = self._session_manager.base_dir / self._session_id
-                agent = VizJsxAgent(
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_jsx"
-                        )
-                    ),
-                    gui_mode=self.gui_mode,
-                    event_bus=self._event_bus,
-                    memory_store=self._memory_store,
-                    memory_scope="visualization",
-                    session_dir=session_dir,
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created JSX Visualization agent ({config.SUB_AGENT_MODEL})",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_viz_jsx_agent()
 
     def _get_available_dataops_agent(self) -> DataOpsAgent:
-        """Get an idle DataOps agent or create a new ephemeral one.
-
-        Priority: (1) idle primary agent, (2) create primary if it doesn't
-        exist, (3) create an ephemeral overflow instance.  Ephemeral agents
-        are cleaned up after their delegation completes.
-        """
-        primary_id = "DataOpsAgent"
-        with self._sub_agents_lock:
-            if primary_id in self._sub_agents:
-                agent = self._sub_agents[primary_id]
-                if agent.state == AgentState.SLEEPING and agent.inbox.qsize() == 0:
-                    return agent
-            else:
-                # Create the primary (persistent) agent
-                agent = DataOpsAgent(
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="dataops"
-                        )
-                    ),
-                    event_bus=self._event_bus,
-                    memory_store=self._memory_store,
-                    memory_scope="data_ops",
-                    active_missions_fn=self._get_active_envoy_ids,
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[primary_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg="[Router] Created DataOps agent",
-                )
-                return agent
-
-            # Primary is busy — create an ephemeral overflow instance
-            seq = self._dataops_seq
-            self._dataops_seq = seq + 1
-            ephemeral_id = f"DataOpsAgent#{seq}"
-            agent = DataOpsAgent(
-                adapter=self.adapter,
-                model_name=config.SUB_AGENT_MODEL,
-                tool_executor=lambda name, args, tc_id=None: (
-                    self._execute_tool_for_agent(
-                        name, args, tc_id, agent_type="dataops"
-                    )
-                ),
-                agent_id=ephemeral_id,
-                event_bus=self._event_bus,
-                memory_store=self._memory_store,
-                memory_scope="data_ops",
-                active_missions_fn=self._get_active_envoy_ids,
-                cancel_event=self._cancel_event,
-            )
-            agent._orchestrator_inbox = self._inbox
-            agent.start()
-            self._sub_agents[ephemeral_id] = agent
-            self._event_bus.emit(
-                DEBUG,
-                level="debug",
-                msg=f"[Router] Created ephemeral DataOps agent {ephemeral_id}",
-            )
-            return agent
+        return self._delegation.get_available_dataops_agent()
 
     def _cleanup_ephemeral_agent(self, agent_id: str) -> None:
-        """Shut down and remove an ephemeral agent from the registry.
-
-        Preserves the agent's token usage in ``_retired_agent_usage`` so it
-        is still included in ``get_token_usage()`` and
-        ``get_token_usage_breakdown()`` after the agent is removed.
-        """
-        with self._sub_agents_lock:
-            agent = self._sub_agents.pop(agent_id, None)
-        if agent:
-            # Preserve token usage before stopping the agent
-            usage = agent.get_token_usage()
-            if usage.get("api_calls", 0) > 0:
-                self._retired_agent_usage.append(
-                    {
-                        "agent": agent_id,
-                        "input_tokens": usage["input_tokens"],
-                        "output_tokens": usage["output_tokens"],
-                        "thinking_tokens": usage.get("thinking_tokens", 0),
-                        "cached_tokens": usage.get("cached_tokens", 0),
-                        "api_calls": usage["api_calls"],
-                        "ctx_system_tokens": usage.get("ctx_system_tokens", 0),
-                        "ctx_tools_tokens": usage.get("ctx_tools_tokens", 0),
-                        "ctx_history_tokens": usage.get("ctx_history_tokens", 0),
-                        "ctx_total_tokens": usage.get("ctx_total_tokens", 0),
-                    }
-                )
-            agent.stop()
-            self._ctx_tracker.reset(agent_id)
-            self._event_bus.emit(
-                DEBUG,
-                level="debug",
-                msg=f"[Router] Cleaned up ephemeral agent {agent_id}",
-            )
+        self._delegation.cleanup_ephemeral(agent_id)
 
     def _get_or_create_data_io_agent(self) -> DataIOAgent:
-        """Get the cached data I/O agent or create a new one. Thread-safe."""
-        agent_id = "DataIOAgent"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                agent = DataIOAgent(
-                    adapter=self.adapter,
-                    model_name=config.SUB_AGENT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="data_io"
-                        )
-                    ),
-                    event_bus=self._event_bus,
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg="[Router] Created DataIO agent",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_data_io_agent()
 
     def _get_or_create_insight_agent(self) -> InsightAgent:
-        """Get the cached insight agent or create a new one. Thread-safe."""
-        agent_id = "InsightAgent"
-        with self._sub_agents_lock:
-            if agent_id not in self._sub_agents:
-                agent = InsightAgent(
-                    adapter=self.adapter,
-                    model_name=config.INSIGHT_MODEL,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        self._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_plotly"
-                        )
-                    ),
-                    event_bus=self._event_bus,
-                    cancel_event=self._cancel_event,
-                )
-                agent._orchestrator_inbox = self._inbox
-                agent.start()
-                self._sub_agents[agent_id] = agent
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created Insight agent ({config.INSIGHT_MODEL})",
-                )
-            return self._sub_agents[agent_id]
+        return self._delegation.get_or_create_insight_agent()
 
-    def _delegate_to_sub_agent(
-        self,
-        agent: SubAgent,
-        request,
-        timeout: float = 300.0,
-        wait: bool = True,
-        store_snapshot=None,
-        tool_call_id: str | None = None,
-        agent_type: str = "",
-        agent_name: str = "",
-        task_summary: str = "",
-        post_process: Callable | None = None,
-        post_complete: Callable | None = None,
-    ) -> dict:
-        """Dispatch delegation synchronously — blocks until the sub-agent finishes.
-
-        Called from ``execute_tools_batch``'s ThreadPoolExecutor worker threads,
-        so multiple delegations in the same LLM turn still run in parallel.
-        Results are returned directly with proper tool_call_id pairing (no
-        stale IDs, no pending_async).
-
-        Args:
-            agent: The target Agent instance.
-            request: String or dict payload for the agent.
-            timeout: Max seconds to wait.
-            store_snapshot: Optional list of store entries to include in result.
-            tool_call_id: LLM tool_call_id for result mapping (unused now but
-                kept for API compatibility with callers).
-            agent_type: Agent type for ControlCenter tracking.
-            agent_name: Agent name for ControlCenter tracking.
-            task_summary: Human-readable summary for ControlCenter.
-            post_process: Optional callable(result) -> result to run after
-                delegation completes.
-            post_complete: Optional callable(result) to run after processing.
-                For non-critical work (e.g. PNG export).
-        """
-        cc = self._control_center
-        summary = task_summary or (
-            request[:200] if isinstance(request, str) else str(request)[:200]
-        )
-        # Capture the full request for observability
-        request_str = request if isinstance(request, str) else str(request)
-        unit = cc.register(
-            kind="delegation",
-            agent_type=agent_type,
-            agent_name=agent_name or agent.agent_id,
-            task_summary=summary,
-            request=request_str,
-            tool_call_id=tool_call_id,
-        )
-
-        # Capture operation log index before the delegation starts so we can
-        # collect only the operations produced by this delegation.
-        ops_log = self._ops_log
-        ops_start_index = len(ops_log.get_records())
-
-        # Handle fire-and-forget delegation — start agent but don't wait
-        if not wait:
-            agent.send(request, sender="orchestrator", timeout=timeout, wait=False)
-
-            # Track as async delegation for completion notification
-            self._async_delegations[agent_name or agent.agent_id] = time.time()
-
-            cc.mark_completed(
-                unit.id,
-                {
-                    "status": "queued",
-                    "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
-                },
-            )
-            return {
-                "status": "queued",
-                "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
-            }
-
-        try:
-            result = agent.send(
-                request, sender="orchestrator", timeout=timeout, wait=wait
-            )
-
-            wrapped = self._wrap_delegation_result(
-                result, store_snapshot=store_snapshot
-            )
-            if post_process is not None:
-                wrapped = post_process(wrapped)
-
-            # Build operation log from records added during this delegation
-            all_records = ops_log.get_records()
-            operation_log = all_records[ops_start_index:]
-
-            cc.mark_completed(unit.id, wrapped, operation_log=operation_log)
-
-            # Fire-and-forget callback after marking complete
-            if post_complete is not None:
-                try:
-                    post_complete(wrapped)
-                except Exception as pc_err:
-                    get_logger().debug(f"post_complete callback failed: {pc_err}")
-
-            return wrapped
-        except Exception as e:
-            error_msg = str(e)
-            cc.mark_failed(unit.id, error_msg)
-            return {
-                "status": "error",
-                "message": f"Delegation failed: {error_msg}",
-            }
+    def _delegate_to_sub_agent(self, agent, request, **kwargs) -> dict:
+        return self._delegation.delegate_to_sub_agent(agent, request, **kwargs)
 
     def hot_reload_config(self) -> dict:
         """Hot-reload agent to match current config module-level constants.
@@ -3873,7 +3069,7 @@ class OrchestratorAgent:
         """
         # Determine what the agent currently has vs what config says
         current_provider = self.service.provider
-        current_base_url = getattr(self.adapter, "base_url", None)
+        current_base_url = getattr(self.service.get_adapter(self.service.provider), "base_url", None)
         current_model = self.model_name
 
         target_provider = config.LLM_PROVIDER.lower()
@@ -3938,7 +3134,6 @@ class OrchestratorAgent:
         # 2b. Rebuild service+adapter if provider/base_url changed
         if adapter_needs_rebuild:
             self.service = _create_llm_service()
-            self.adapter = self.service.adapter
             self._event_bus.emit(
                 DEBUG,
                 level="info",
@@ -3950,11 +3145,12 @@ class OrchestratorAgent:
 
         # 4. Recreate chat session with preserved interface
         try:
-            self.chat = self.adapter.create_chat(
-                model=self.model_name,
+            self.chat = self.service.create_session(
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
+                model=self.model_name,
                 thinking="high",
+                tracked=False,
                 interface=interface,
             )
         except Exception as exc:
@@ -3964,17 +3160,25 @@ class OrchestratorAgent:
                 level="warning",
                 msg=f"[Config] Chat recreation with interface failed ({exc}), starting fresh",
             )
-            self.chat = self.adapter.create_chat(
-                model=self.model_name,
+            self.chat = self.service.create_session(
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
+                model=self.model_name,
                 thinking="high",
+                tracked=False,
             )
 
-        # 5. Clear all cached sub-agents and memory agent
+        # 5. Clear all cached sub-agents, memory agent, and eureka agent
         self.reset_sub_agents()
-        self._memory_agent = None
+        self._memory_hooks._agent = None
+        self._eureka_hooks._agent = None
 
+        # 6. Recreate inline completions (picks up new service/adapter)
+        self._inline = InlineCompletions(
+            service=self.service,
+            inline_tracker=self._inline_tracker,
+            event_bus=self._event_bus,
+        )
 
         status_msg = (
             f"[Config] Hot-reloaded: model {current_model} → {target_model}"
@@ -3994,850 +3198,113 @@ class OrchestratorAgent:
         }
 
     def _build_insight_context(self) -> str:
-        """Build data context string for the InsightAgent.
-
-        Gathers renderer state (trace labels, panel count) and store entries
-        (label, num_points, time range, units, columns) for the context.
-        """
-        lines = []
-
-        # Renderer state
-        state = self._renderer.get_current_state()
-        if state.get("traces"):
-            lines.append(f"Traces on plot: {state['traces']}")
-        if state.get("num_panels"):
-            lines.append(f"Number of panels: {state['num_panels']}")
-        if not state.get("traces") and self._latest_render_png is not None:
-            lines.append("Visualization: matplotlib (static PNG)")
-
-        # Store entries
-        entries = self._store.list_entries()
-        if entries:
-            lines.append("\nData in memory:")
-            for e in entries:
-                parts = [f"  - {e['label']}"]
-                if e.get("num_points"):
-                    parts.append(f"{e['num_points']} pts")
-                if e.get("units"):
-                    parts.append(f"units={e['units']}")
-                if e.get("time_min") and e.get("time_max"):
-                    parts.append(f"range={e['time_min']} to {e['time_max']}")
-                if e.get("columns"):
-                    cols = e["columns"]
-                    if len(cols) <= 5:
-                        parts.append(f"columns={cols}")
-                    else:
-                        parts.append(
-                            f"columns=[{cols[0]}, ..., {cols[-1]}] ({len(cols)} cols)"
-                        )
-                lines.append(", ".join(parts))
-
-        return "\n".join(lines) if lines else "No data context available."
+        """Build data context string for the InsightAgent (forwarded to EurekaHooks)."""
+        return self._eureka_hooks.build_insight_context()
 
     def _sync_insight_review(self) -> dict | None:
-        """Synchronous InsightAgent figure review after a successful render.
-
-        Exports the current figure to PNG, gathers context, and dispatches
-        a synchronous review via agent.send(). Blocks until the
-        review completes, then returns the result.
-
-        Returns:
-            The review result dict, or None if the review was skipped
-            (disabled, iteration cap, no figure, etc.).
-        """
-        if not config.INSIGHT_FEEDBACK:
-            return None
-
-        if self._insight_review_iter >= config.INSIGHT_FEEDBACK_MAX_ITERS:
-            return None
-
-        image_bytes = self.get_latest_figure_png()
-        if image_bytes is None:
-            return None
-
-        agent = self._get_or_create_insight_agent()
-        data_context = self._build_insight_context()
-
-        user_msgs = self._event_bus.get_events(types={USER_MESSAGE})
-        user_request = (
-            user_msgs[-1].data.get("text", user_msgs[-1].msg) if user_msgs else ""
-        )
-
-        self._insight_review_iter += 1
-
-        review_instruction = (
-            f'Review this figure for correctness and quality against the user\'s original request: "{user_request}"\n\n'
-            "Check: (1) Does it show the requested datasets/parameters and time range? "
-            "(2) Are axis labels, units, title, and legend correct? "
-            "(3) Are traces distinguishable and scales appropriate? "
-            "(4) Do value ranges look physically reasonable?\n\n"
-            "Start your response with VERDICT: PASS or VERDICT: NEEDS_IMPROVEMENT, "
-            "then explain. If NEEDS_IMPROVEMENT, list specific actionable suggestions as bullet points (max 5)."
-        )
-        result = agent.send(
-            {
-                "action": "review",
-                "image_bytes": image_bytes,
-                "data_context": data_context,
-                "user_request": review_instruction,
-            },
-            sender="orchestrator",
-            timeout=180,
-        )
-
-        passed = result.get("passed", True)
-        review_text = result.get("text", "")
-        verdict = "PASS" if passed else "NEEDS_IMPROVEMENT"
-        self._event_bus.emit(
-            INSIGHT_FEEDBACK,
-            agent="InsightAgent",
-            msg=f"[Figure Auto-Review — {verdict}]\n{review_text}",
-            data={"verdict": verdict, "text": review_text},
-        )
-        return result
+        """Synchronous InsightAgent figure review (forwarded to EurekaHooks)."""
+        return self._eureka_hooks.sync_insight_review()
 
     # ---- Long-term memory (end-of-session) ----
 
     def _build_memory_context(self) -> MemoryContext:
-        """Build a MemoryContext from the current session state.
-
-        Shared by _maybe_extract_memories() (periodic) and
-        _run_memory_agent_for_pipelines() (on-demand).
-        """
-        # Detect active scopes from actors
-        active_scopes = ["generic"]
-        with self._sub_agents_lock:
-            if (
-                "VizAgent[Plotly]" in self._sub_agents
-                or "VizAgent[Mpl]" in self._sub_agents
-            ):
-                active_scopes.append("visualization")
-            if "DataOpsAgent" in self._sub_agents:
-                active_scopes.append("data_ops")
-            for key in self._sub_agents:
-                if key.startswith("EnvoyAgent["):
-                    mission_id = key.removeprefix("EnvoyAgent[").rstrip("]")
-                    active_scopes.append(f"envoy:{mission_id}")
-
-        # Collect all console-tagged events (same log the user sees)
-        console_events = self._event_bus.get_events(tags={"console"})
-
-        # MemoryAgent reads ALL memories directly from the store in its
-        # system prompt — no need to build active_memories here.
-        return MemoryContext(
-            console_events=console_events,
-            active_scopes=active_scopes,
-            total_memory_tokens=self._memory_store.total_tokens(),
-        )
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        return self._memory_hooks.build_context()
 
     def _enumerate_pipeline_candidates(self) -> list[dict]:
-        """Identify ALL fresh (unprocessed) pipelines across all sessions.
-
-        Scans the current in-memory log and all past sessions'
-        ``operations.json`` files for render ops with ``pipeline_status``
-        == ``"fresh"`` (or absent).  The MemoryAgent sees every fresh
-        pipeline and decides each one — register or discard.
-        """
-        candidates = []
-
-        # ── Current session ──
-        ops_log = self._ops_log
-        candidates.extend(self._candidates_from_log(ops_log))
-
-        # ── Past sessions ──
-        sessions_dir = config.get_data_dir() / "sessions"
-        current_sid = self._session_id or ""
-        if sessions_dir.exists():
-            for sdir in sorted(
-                sessions_dir.iterdir(), key=lambda p: p.stat().st_mtime, reverse=True
-            ):
-                if not sdir.is_dir():
-                    continue
-                if sdir.name == current_sid:
-                    continue  # already scanned above
-                ops_file = sdir / "operations.json"
-                if not ops_file.exists():
-                    continue
-                try:
-                    past_log = OperationsLog(session_id=sdir.name)
-                    past_log.load_from_file(ops_file)
-                    past_candidates = self._candidates_from_log(past_log)
-                    if past_candidates:
-                        candidates.extend(past_candidates)
-                except Exception:
-                    continue  # skip corrupt files
-
-        return candidates
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        return self._memory_hooks.enumerate_pipeline_candidates()
 
     @staticmethod
     def _candidates_from_log(ops_log) -> list[dict]:
-        """Extract fresh pipeline candidates from a single OperationsLog.
-
-        Returns rich per-step detail for each candidate so the LLM can make
-        informed registration decisions.  Only render ops with
-        ``pipeline_status`` == ``"fresh"`` (or absent) are included.
-        """
-        from data_ops.pipeline import is_vanilla
-        from knowledge.mission_prefixes import (
-            match_dataset_to_mission,
-            get_canonical_id,
-        )
-
-        records = ops_log.get_records()
-
-        render_ops = [
-            r
-            for r in records
-            if r["tool"] == "render_plotly_json"
-            and r["status"] == "success"
-            and r.get("pipeline_status", "fresh") == "fresh"
-        ]
-
-        if not render_ops:
-            return []
-
-        candidates = []
-        all_labels = {
-            l for r in records if r["status"] == "success" for l in r.get("outputs", [])
-        }
-
-        for render in render_ops:
-            render_id = render["id"]
-            sub_dag = ops_log.get_state_pipeline(render_id, all_labels)
-
-            # Build step-like dicts for is_vanilla check
-            step_dicts = [
-                {"tool": op["tool"], "params": op.get("args", {})} for op in sub_dag
-            ]
-
-            # Auto-extract scopes from dataset IDs
-            missions_set: set[str] = set()
-            steps = []
-            for op in sub_dag:
-                tool = op["tool"]
-                args = op.get("args", {})
-                output_label = op.get("outputs", [""])[0] if op.get("outputs") else ""
-                step: dict = {"tool": tool}
-
-                if tool == "fetch_data":
-                    ds = args.get("dataset_id", "")
-                    param = args.get("parameter_id", "")
-                    step["dataset_id"] = ds
-                    step["parameter_id"] = param
-                    if output_label:
-                        step["output_label"] = output_label
-                    if ds:
-                        stem, _ = match_dataset_to_mission(ds)
-                        if stem:
-                            missions_set.add(get_canonical_id(stem))
-
-                elif tool in ("custom_operation", "store_dataframe"):
-                    if args.get("code"):
-                        step["code"] = args["code"]
-                    if args.get("description"):
-                        step["description"] = args["description"]
-                    if args.get("units"):
-                        step["units"] = args["units"]
-                    if output_label:
-                        step["output_label"] = output_label
-
-                elif tool == "render_plotly_json":
-                    step["inputs"] = list(op.get("inputs", []))
-                    # figure_json intentionally omitted — too large
-
-                elif tool == "manage_plot":
-                    step["action"] = args.get("action", "")
-                    for k in ("plot_id", "title", "subplot"):
-                        if args.get(k):
-                            step[k] = args[k]
-
-                else:
-                    if output_label:
-                        step["output_label"] = output_label
-
-                steps.append(step)
-
-            scopes = sorted(f"mission:{m}" for m in missions_set)
-
-            candidates.append(
-                {
-                    "render_op_id": render_id,
-                    "step_count": len(sub_dag),
-                    "is_vanilla": is_vanilla(step_dicts),
-                    "scopes": scopes,
-                    "steps": steps,
-                }
-            )
-
-        return candidates
+        """Forwarded to :func:`memory_hooks.candidates_from_log`."""
+        return candidates_from_log(ops_log)
 
     def _ensure_memory_agent(self, session_id: str = "", bus=None) -> MemoryAgent:
-        """Lazily create or return the existing MemoryAgent."""
-        if bus is None:
-            bus = self._event_bus
-        if session_id == "":
-            session_id = self._session_id or ""
-        if self._memory_agent is None:
-            self._memory_agent = MemoryAgent(
-                adapter=self.adapter,
-                model_name=config.SMART_MODEL,
-                memory_store=self._memory_store,
-                pipeline_store=self._pipeline_store,
-                verbose=self.verbose,
-                session_id=session_id,
-                event_bus=bus,
-            )
-            self._memory_agent.start()
-            with self._sub_agents_lock:
-                self._sub_agents["MemoryAgent"] = self._memory_agent
-        return self._memory_agent
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        return self._memory_hooks.ensure_agent(session_id=session_id, bus=bus)
 
-    def _ensure_eureka_agent(self) -> "EurekaAgent":
-        """Lazily create or return the existing EurekaAgent (SubAgent)."""
-        if self._eureka_agent is None:
-            from .eureka_agent import EurekaAgent
-
-            eureka_model = config.get("eureka_model", None) or config.SMART_MODEL
-            self._eureka_agent = EurekaAgent(
-                adapter=self.adapter,
-                model_name=eureka_model,
-                tool_executor=lambda name, args, tc_id=None: (
-                    self._execute_tool_for_agent(name, args, tc_id, agent_type="eureka")
-                ),
-                event_bus=self._event_bus,
-                memory_store=self._memory_store,
-                memory_scope="eureka",
-                orchestrator_ref=self,
-            )
-            self._eureka_agent.start()
-            with self._sub_agents_lock:
-                self._sub_agents["EurekaAgent"] = self._eureka_agent
-        return self._eureka_agent
+    def _ensure_eureka_agent(self):
+        """Lazily create or return the existing EurekaAgent (forwarded to EurekaHooks)."""
+        return self._eureka_hooks.ensure_eureka_agent()
 
     def _build_eureka_context(self) -> dict:
-        """Build context dict for Eureka discovery."""
-        user_msgs = self._event_bus.get_events(types={USER_MESSAGE})
-        return {
-            "session_id": self._session_id or "unknown",
-            "data_store_keys": [e["label"] for e in self._store.list_entries()]
-            if self._store
-            else [],
-            "has_figure": self._renderer.get_figure() is not None,
-            "recent_messages": [m.msg for m in user_msgs[-5:]],
-        }
+        """Build context dict for Eureka discovery (forwarded to EurekaHooks)."""
+        return self._eureka_hooks.build_eureka_context()
 
     def _format_eureka_suggestion_as_user_msg(self, suggestion) -> str:
-        """Convert a EurekaSuggestion into a natural-language user message."""
-        parts = [f"[Eureka Mode] {suggestion.description}"]
-        if suggestion.rationale:
-            parts.append(f"Rationale: {suggestion.rationale}")
-        if suggestion.parameters:
-            import json as _json
-
-            parts.append(f"Parameters: {_json.dumps(suggestion.parameters)}")
-        return "\n".join(parts)
+        """Format eureka suggestion as user message (forwarded to EurekaHooks)."""
+        return self._eureka_hooks.format_eureka_suggestion_as_user_msg(suggestion)
 
     def _maybe_extract_eurekas(self) -> None:
-        """Trigger async Eureka extraction on a daemon thread.
-
-        Uses EurekaAgent.send() via the SubAgent inbox pattern.
-        Lock prevents concurrent extractions. After the agent returns,
-        if Eureka Mode is ON, queues the top suggestion for execution.
-        """
-        if not self._eureka_lock.acquire(blocking=False):
-            return
-
-        try:
-            agent = self._ensure_eureka_agent()
-            context = self._build_eureka_context()
-        except Exception as e:
-            self.logger.warning(f"Eureka setup failed: {e}")
-            self._eureka_lock.release()
-            return
-
-        from .event_bus import (
-            EUREKA_EXTRACTION_START,
-            EUREKA_EXTRACTION_DONE,
-            EUREKA_EXTRACTION_ERROR,
-            set_event_bus,
-        )
-
-        bus = self._event_bus
-
-        def _run():
-            set_event_bus(bus)
-            try:
-                bus.emit(EUREKA_EXTRACTION_START, agent="Eureka", level="info")
-                # Build the context message for the SubAgent
-                msg_content = agent.build_context_message(context)
-                result = agent.send(
-                    msg_content, sender="orchestrator", timeout=120.0
-                )
-
-                if result.get("failed"):
-                    bus.emit(
-                        EUREKA_EXTRACTION_ERROR,
-                        agent="Eureka",
-                        level="warning",
-                        data={"error": result.get("text", "unknown error")},
-                    )
-                else:
-                    # Count findings from the store for this session
-                    session_id = context.get("session_id", "unknown")
-                    findings = agent.eureka_store.list(session_id=session_id)
-                    suggestions = agent.eureka_store.list_suggestions(
-                        session_id=session_id, status="proposed"
-                    )
-                    bus.emit(
-                        EUREKA_EXTRACTION_DONE,
-                        agent="Eureka",
-                        level="info",
-                        data={
-                            "n_findings": len(findings),
-                            "n_suggestions": len(suggestions),
-                        },
-                    )
-
-                    # If Eureka Mode is ON, inject the top suggestion as
-                    # a synthetic user message into the orchestrator inbox
-                    if self._eureka_mode and suggestions:
-                        eureka_max_rounds = config.get("eureka_max_rounds", 5)
-                        if self._eureka_round_counter >= eureka_max_rounds:
-                            self._eureka_mode = False
-                            self._eureka_round_counter = 0
-                            bus.emit(
-                                DEBUG,
-                                agent="Eureka",
-                                level="info",
-                                msg=f"[Eureka Mode] Paused: reached max rounds ({eureka_max_rounds})",
-                            )
-                        else:
-                            suggestion = suggestions[0]
-                            self._eureka_pending_suggestion = suggestion
-                            synthetic_msg = self._format_eureka_suggestion_as_user_msg(
-                                suggestion
-                            )
-                            self._eureka_round_counter += 1
-                            # Mark suggestion as approved
-                            from .eureka_store import EurekaStore
-
-                            EurekaStore().update_suggestion_status(
-                                suggestion.id, "executed"
-                            )
-                            # Inject into orchestrator inbox if running in turnless mode
-                            if hasattr(self, "_inbox") and self._inbox is not None:
-                                from .sub_agent import _make_message
-
-                                self._put_message(
-                                    _make_message(
-                                        "user_input", "eureka_mode", synthetic_msg
-                                    ),
-                                    priority=0,
-                                )
-                            else:
-                                # Fallback: store for process_message to pick up
-                                self._eureka_pending_suggestion = suggestion
-
-            except Exception as e:
-                self.logger.warning(f"Eureka extraction failed: {e}")
-                bus.emit(
-                    EUREKA_EXTRACTION_ERROR,
-                    agent="Eureka",
-                    level="warning",
-                    data={"error": str(e)},
-                )
-            finally:
-                self._eureka_lock.release()
-
-        t = threading.Thread(target=_run, daemon=True)
-        t.start()
+        """Trigger async Eureka extraction (forwarded to EurekaHooks)."""
+        self._eureka_hooks.maybe_extract_eurekas()
 
     def _run_memory_agent_for_pipelines(self) -> list[dict]:
-        """Force a Memory Agent run focused on pipeline curation.
-
-        Builds context with pipeline candidates from the current session,
-        runs the Memory Agent synchronously, and returns pipeline actions.
-        """
-        context = self._build_memory_context()
-        context.pipeline_candidates = self._enumerate_pipeline_candidates()
-
-        if not context.pipeline_candidates:
-            return []  # Nothing to curate
-
-        agent = self._ensure_memory_agent()
-
-        self._event_bus.emit(
-            MEMORY_EXTRACTION_START,
-            agent="Memory",
-            level="info",
-            msg="[Memory] Pipeline curation started",
-            data={"pipeline_candidates": len(context.pipeline_candidates)},
-        )
-
-        try:
-            executed = agent.run(context)
-            # Persist ops log so pipeline_status changes are saved to disk
-            self._persist_operations_log()
-            pipeline_actions = [
-                a
-                for a in (executed or [])
-                if a.get("action") in ("register_pipeline", "discard_pipeline")
-            ]
-            return pipeline_actions
-        except Exception as e:
-            self._event_bus.emit(
-                MEMORY_EXTRACTION_ERROR,
-                agent="Memory",
-                level="warning",
-                msg=f"[Memory] Pipeline curation failed: {e}",
-            )
-            return []
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        return self._memory_hooks.run_for_pipelines()
 
     def _persist_operations_log(self) -> None:
-        """Save the current operations log to the session directory on disk."""
-        if not self._session_id:
-            return
-        try:
-            session_dir = config.get_data_dir() / "sessions" / self._session_id
-            session_dir.mkdir(parents=True, exist_ok=True)
-            self._ops_log.save_to_file(session_dir / "operations.json")
-        except Exception:
-            pass  # Best-effort persistence
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        self._memory_hooks.persist_operations_log()
 
     def _maybe_extract_memories(self) -> None:
-        """Trigger async memory extraction with full session context.
-
-        Runs on a daemon thread using SMART_MODEL.
-        Lock prevents concurrent extractions. The MemoryAgent sees
-        memory-tagged events from the EventBus, curated into concise summaries.
-        Also includes pipeline candidates for the LLM to curate.
-        """
-        # Check if there are new console events since last extraction
-        console_events = self._event_bus.get_events(
-            tags={"console"}, since_index=self._last_memory_op_index
-        )
-        if not console_events:
-            return  # No new events since last extraction
-
-        if not self._memory_lock.acquire(blocking=False):
-            return  # Another extraction already running
-
-        try:
-            context = self._build_memory_context()
-            context.pipeline_candidates = self._enumerate_pipeline_candidates()
-
-            self._last_memory_op_index = len(self._event_bus._events)
-
-            session_id = self._session_id or ""
-            bus = self._event_bus  # capture before thread (ContextVar won't propagate)
-
-            def _run():
-                set_event_bus(bus)  # propagate session bus to daemon thread
-                try:
-                    bus.emit(
-                        MEMORY_EXTRACTION_START,
-                        agent="Memory",
-                        level="info",
-                        msg="[Memory] Extraction started",
-                        data={
-                            "console_events": len(context.console_events),
-                            "active_scopes": context.active_scopes,
-                        },
-                    )
-
-                    # Dump memory feed for debugging
-                    if session_id:
-                        try:
-                            from datetime import datetime as _dt, timezone as _tz
-
-                            feed_dir = config.get_data_dir() / "sessions" / session_id
-                            feed_dir.mkdir(parents=True, exist_ok=True)
-                            feed_payload = {
-                                "timestamp": _dt.now(_tz.utc).isoformat(),
-                                "active_scopes": context.active_scopes,
-                                "console_events_count": len(context.console_events),
-                                "console_events": [
-                                    {
-                                        "index": i,
-                                        "type": ev.type,
-                                        "agent": ev.agent,
-                                        "summary": ev.summary,
-                                    }
-                                    for i, ev in enumerate(context.console_events)
-                                ],
-                                "total_memory_tokens": context.total_memory_tokens,
-                                "pipeline_candidates_count": len(
-                                    context.pipeline_candidates
-                                ),
-                            }
-                            (feed_dir / "memory_feed.json").write_text(
-                                json.dumps(feed_payload, indent=2, default=str)
-                            )
-                        except Exception:
-                            pass  # Debug dump — never break extraction
-
-                    agent = self._ensure_memory_agent(session_id=session_id, bus=bus)
-                    executed = agent.run(context)
-
-                    # Persist ops log so pipeline_status changes are saved to disk
-                    self._persist_operations_log()
-
-                    # Tally actions by type
-                    counts = {}
-                    for action in executed or []:
-                        atype = action.get("action", "unknown")
-                        counts[atype] = counts.get(atype, 0) + 1
-
-                    bus.emit(
-                        MEMORY_EXTRACTION_DONE,
-                        agent="Memory",
-                        level="info",
-                        msg=f"[Memory] Extraction complete: {counts}"
-                        if counts
-                        else "[Memory] Extraction complete: no changes",
-                        data={"actions": counts},
-                    )
-                except Exception as e:
-                    bus.emit(
-                        MEMORY_EXTRACTION_ERROR,
-                        agent="Memory",
-                        level="warning",
-                        msg=f"[Memory] Extraction failed: {e}",
-                    )
-                finally:
-                    self._memory_lock.release()
-
-            t = threading.Thread(target=_run, daemon=True)
-            t.start()
-        except Exception:
-            self._memory_lock.release()
+        """Forwarded to :pyattr:`_memory_hooks`."""
+        self._memory_hooks.maybe_extract()
 
     def generate_follow_ups(self, max_suggestions: int = 3) -> list[str]:
         """Generate contextual follow-up suggestions based on the conversation.
 
-        Uses a lightweight single-shot Gemini call (Flash model) to produce
-        2-3 short, actionable follow-up questions the user might ask next.
-
-        Returns:
-            List of suggestion strings, or [] on any failure.
+        Delegates to InlineCompletions.
         """
         try:
             history = self.chat.get_history()
         except Exception:
             return []
-
-        # Build context from last 6 turns
-        turns = _extract_turns(
-            history[-get_item_limit("items.follow_up_turns") :]
-        )  # default 300 from registry
-
-        if not turns:
-            return []
-
-        conversation_text = "\n".join(turns)
-
-        # DataStore context
         store = self._store
         labels = [e["label"] for e in store.list_entries()]
-        data_context = (
-            f"Data in memory: {', '.join(labels)}"
-            if labels
-            else "No data in memory yet."
-        )
-
         has_plot = self._renderer.get_figure() is not None
-        plot_context = (
-            "A plot is currently displayed." if has_plot else "No plot is displayed."
+        return self._inline.generate_follow_ups(
+            chat_history=history,
+            store_labels=labels,
+            has_plot=has_plot,
+            max_suggestions=max_suggestions,
         )
-
-        prompt = f"""Based on this conversation, suggest {max_suggestions} short follow-up questions the user might ask next.
-
-{conversation_text}
-
-{data_context}
-{plot_context}
-
-Respond with a JSON array of strings only (no markdown fencing). Each suggestion should be:
-- A natural, conversational question (max 12 words)
-- Actionable — something the agent can actually do
-- Different from what was already asked
-- Related to the current context (data, plots, missions)
-
-Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Export the plot as PDF"]"""
-
-        try:
-            response = self.adapter.generate(
-                model=config.INLINE_MODEL,
-                contents=prompt,
-                temperature=0.7,
-            )
-            self._last_tool_context = "follow_up_suggestions"
-            self._track_inline_usage(response)
-
-            text = (response.text or "").strip()
-            if text.startswith("```"):
-                text = text.split("\n", 1)[-1]
-                if text.endswith("```"):
-                    text = text[:-3].strip()
-
-            import json
-
-            suggestions = json.loads(text)
-            if isinstance(suggestions, list):
-                return [s for s in suggestions if isinstance(s, str)][:max_suggestions]
-        except Exception as e:
-            self._event_bus.emit(
-                DEBUG, level="debug", msg=f"[FollowUp] Generation failed: {e}"
-            )
-
-        return []
 
     def generate_session_title(self) -> Optional[str]:
-        """Generate a short title from the first exchange via INLINE_MODEL."""
-        # Try chat history first (works for Chat API / Anthropic)
+        """Generate a short title from the first exchange. Delegates to InlineCompletions."""
         try:
             history = self.chat.get_history()
         except Exception:
             history = []
-        turns = _extract_turns(history[:4], max_text=500)
-
-        # Fallback: EventBus (works for Interactions API / OpenAI Responses API)
-        if not turns:
-            events = self._event_bus.get_events(types={USER_MESSAGE, AGENT_RESPONSE})
-            for ev in events[:4]:
-                text = (ev.data or {}).get("text", ev.msg)
-                if text:
-                    label = "User" if ev.type == USER_MESSAGE else "Agent"
-                    turns.append(f"{label}: {text[:500]}")
-
-        if not turns:
-            return None
-
-        conversation_text = "\n".join(turns)
-        prompt = (
-            "Generate a concise title (3-7 words) for this conversation. "
-            "Summarize the user's main intent. Use plain English.\n\n"
-            f"{conversation_text}\n\n"
-            "Respond with ONLY the title text, no quotes, no punctuation at the end."
+        events = self._event_bus.get_events(types={USER_MESSAGE, AGENT_RESPONSE})
+        return self._inline.generate_session_title(
+            chat_history=history,
+            event_bus_events=events,
         )
-        try:
-            response = self.adapter.generate(
-                model=config.INLINE_MODEL,
-                contents=prompt,
-                temperature=0.3,
-            )
-            self._last_tool_context = "session_title"
-            self._track_inline_usage(response)
-            text = (response.text or "").strip().strip("\"'")
-            if text and len(text) <= 100:
-                return text
-        except Exception as e:
-            self._event_bus.emit(
-                DEBUG, level="debug", msg=f"[SessionTitle] Generation failed: {e}"
-            )
-        return None
 
     def generate_inline_completions(
         self, partial: str, max_completions: int = 3
     ) -> list[str]:
-        """Complete the user's partial input using the LLM.
-
-        Returns full sentences that start with or continue from *partial*.
-        Uses the cheapest model for low latency.
-
-        Circuit breaker: after 5 consecutive parse failures, disables inline
-        completions for 60 seconds to avoid burning API calls on models that
-        consistently return malformed JSON.
-        """
-        # Circuit breaker: skip if disabled due to repeated failures
-        if time.time() < self._inline_disabled_until:
-            return []
-
-        from knowledge.prompt_builder import build_inline_completion_prompt
-
+        """Complete the user's partial input. Delegates to InlineCompletions."""
         try:
             history = self.chat.get_history()
         except Exception:
             history = []
-
-        # Last 4 turns for context
-        turns = _extract_turns(
-            (history or [])[-get_item_limit("items.inline_turns") :],
-            max_text=get_limit("context.turn_text.inline"),
-        )
-
         store = self._store
         labels = [e["label"] for e in store.list_entries()]
-
-        prompt = build_inline_completion_prompt(
-            partial,
-            conversation_context="\n".join(turns),
-            memory_section=self._memory_store.format_for_injection(
-                scope="generic",
-                include_summaries=True,
-                include_review_instruction=False,
-            ),
-            data_labels=labels,
+        memory_section = self._memory_store.format_for_injection(
+            scope="generic",
+            include_summaries=True,
+            include_review_instruction=False,
+        )
+        return self._inline.generate_inline_completions(
+            partial=partial,
+            chat_history=history,
+            store_labels=labels,
+            memory_section=memory_section,
             max_completions=max_completions,
         )
-
-        try:
-            response = self.adapter.generate(
-                model=config.INLINE_MODEL,
-                contents=prompt,
-                temperature=0.5,
-                max_output_tokens=get_limit("output.inline_tokens"),
-            )
-            self._last_tool_context = "inline_completion"
-            self._track_inline_usage(response)
-
-            text = (response.text or "").strip()
-            if text.startswith("```"):
-                text = text.split("\n", 1)[-1]
-                if text.endswith("```"):
-                    text = text[:-3].strip()
-
-            import json
-
-            completions = json.loads(text)
-            if isinstance(completions, list):
-                # Return full completions — the frontend caches them
-                # and matches as the user types, stripping the prefix
-                # itself for ghost text display
-                valid = []
-                for c in completions:
-                    if (
-                        isinstance(c, str)
-                        and c.startswith(partial)
-                        and len(c) > len(partial)
-                        and len(c) <= 120
-                    ):
-                        valid.append(c)
-                if valid:
-                    self._inline_fail_count = 0
-                    return valid[:max_completions]
-
-            # Parsed OK but no valid completions — not a parse failure
-            return []
-        except Exception as e:
-            self._inline_fail_count += 1
-            if self._inline_fail_count >= 5:
-                self._inline_disabled_until = time.time() + 60
-                self._event_bus.emit(
-                    DEBUG,
-                    level="warning",
-                    msg=f"[InlineComplete] {self._inline_fail_count} consecutive failures, "
-                    f"disabling for 60s",
-                )
-                self._inline_fail_count = 0
-            else:
-                self._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[InlineComplete] Generation failed ({self._inline_fail_count}/5): {e}",
-                )
-
-        return []
 
     # ---- Session persistence ----
 
@@ -5049,19 +3516,21 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
                     level="warning",
                     msg=f"[Session] Resume failed: {e}. Starting fresh.",
                 )
-                self.chat = self.adapter.create_chat(
-                    model=self.model_name,
+                self.chat = self.service.create_session(
                     system_prompt=self._system_prompt,
                     tools=self._tool_schemas,
+                    model=self.model_name,
                     thinking="high",
+                    tracked=False,
                 )
         else:
             # No history — start fresh chat
-            self.chat = self.adapter.create_chat(
-                model=self.model_name,
+            self.chat = self.service.create_session(
                 system_prompt=self._system_prompt,
                 tools=self._tool_schemas,
+                model=self.model_name,
                 thinking="high",
+                tracked=False,
             )
 
         # Restore DataStore — constructor auto-loads _labels.json (or migrates _index.json)
@@ -5123,11 +3592,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         # counters with the saved total — new API calls will accumulate on top.
         saved_usage = metadata.get("token_usage", {})
         if saved_usage:
-            self._total_input_tokens = saved_usage.get("input_tokens", 0)
-            self._total_output_tokens = saved_usage.get("output_tokens", 0)
-            self._total_thinking_tokens = saved_usage.get("thinking_tokens", 0)
-            self._total_cached_tokens = saved_usage.get("cached_tokens", 0)
-            self._api_calls = saved_usage.get("api_calls", 0)
+            self._orch_tracker.restore(saved_usage)
 
         # Restore cycle counter from previous session runs
         saved_round_count = metadata.get("round_count", 0)
@@ -5199,8 +3664,8 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         2. Plotly renderer export -- works if figure is in memory (including deferred restore)
         3. Disk files (mpl_outputs/, plotly_outputs/) -- always works after reload
         """
-        if self._latest_render_png is not None:
-            return self._latest_render_png
+        if self._eureka_hooks.latest_render_png is not None:
+            return self._eureka_hooks.latest_render_png
 
         self._restore_deferred_figure()
         figure = self._renderer.get_figure()
@@ -5211,7 +3676,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
                 buf = io.BytesIO()
                 figure.write_image(buf, format="png", width=1100, height=600, scale=2)
                 png_bytes = buf.getvalue()
-                self._latest_render_png = png_bytes
+                self._eureka_hooks.latest_render_png = png_bytes
                 return png_bytes
             except Exception:
                 pass
@@ -5221,7 +3686,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         if latest_png is not None:
             try:
                 png_bytes = latest_png.read_bytes()
-                self._latest_render_png = png_bytes
+                self._eureka_hooks.latest_render_png = png_bytes
                 return png_bytes
             except Exception:
                 pass
@@ -5517,9 +3982,7 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
 
         # If a real user message arrives during Eureka Mode, reset the round counter
         # (eureka-driven synthetic messages are prefixed with "[Eureka Mode]")
-        if self._eureka_mode and not user_message.startswith("[Eureka Mode]"):
-            self._eureka_round_counter = 0
-            self._eureka_pending_suggestion = None
+        self._eureka_hooks.reset_eureka_on_user_message(user_message)
 
         # Re-set ContextVar so executor threads inherit the correct OperationsLog
         if hasattr(self, "_ops_log"):
@@ -5622,35 +4085,23 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         self._was_cancelled = False
         with self._held_results_lock:
             self._held_results.clear()
-        self.chat = self.adapter.create_chat(
-            model=self.model_name,
+        self.chat = self.service.create_session(
             system_prompt=self._system_prompt,
             tools=self._tool_schemas,
+            model=self.model_name,
             thinking="high",
+            tracked=False,
         )
         self._current_plan = None
-        with self._sub_agents_lock:
-            for agent in self._sub_agents.values():
-                agent.stop(timeout=2.0)
-            self._sub_agents.clear()
-        ENVOY_TOOL_REGISTRY.clear_active()
-        self._dataops_seq = 0
-        self._mission_seq = 0
+        self._delegation.reset_full()
         self._renderer.reset()
 
-        # Reset memory turn counter and agent (do NOT clear memory store)
-        self._memory_agent = None
-        self._memory_turn_counter = 0
-        self._last_memory_op_index = 0
-        self._inline_fail_count = 0
-        self._inline_disabled_until = 0.0
+        # Reset memory hooks (do NOT clear memory store)
+        self._memory_hooks.reset()
+        self._inline.reset()
 
         # Reset eureka agent and mode (agent already stopped via _sub_agents.clear())
-        self._eureka_agent = None
-        self._eureka_turn_counter = 0
-        self._eureka_mode = config.get("eureka_mode", False)
-        self._eureka_round_counter = 0
-        self._eureka_pending_suggestion = None
+        self._eureka_hooks.reset()
 
         # Close the event log writer and token log listener before clearing events
         if self._event_log_writer is not None:

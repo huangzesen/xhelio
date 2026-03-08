@@ -15,7 +15,6 @@ import threading
 from pathlib import Path
 from typing import TYPE_CHECKING
 
-from .llm import LLMAdapter
 from .sub_agent import SubAgent
 from .tools import get_function_schemas
 from .event_bus import EventBus
@@ -52,8 +51,7 @@ class VizMplAgent(SubAgent):
 
     def __init__(
         self,
-        adapter: LLMAdapter,
-        model_name: str,
+        service,
         tool_executor,
         *,
         gui_mode: bool = False,
@@ -71,8 +69,8 @@ class VizMplAgent(SubAgent):
 
         super().__init__(
             agent_id="VizAgent[Mpl]",
-            adapter=adapter,
-            model_name=model_name,
+            service=service,
+            agent_type="viz_mpl",
             tool_executor=tool_executor,
             system_prompt=build_viz_mpl_prompt(gui_mode=gui_mode),
             tool_schemas=tool_schemas,

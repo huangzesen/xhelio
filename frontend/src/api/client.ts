@@ -34,6 +34,8 @@ import type {
   ProviderSettingsResponse,
   ProviderConfig,
   ProviderTestResult,
+  ApiKeysResponse,
+  AgentTypesResponse,
 } from './types';
 
 const BASE = '/api';
@@ -112,6 +114,8 @@ export function cancelChat(sessionId: string): Promise<{ status: string }> {
   return request(`/sessions/${sessionId}/cancel`, { method: 'POST' });
 }
 
+// ---- Permission ----
+
 export async function respondToPermission(
   sessionId: string,
   requestId: string,
@@ -125,6 +129,15 @@ export async function respondToPermission(
 }
 
 // ---- Commands ----
+
+export interface SlashCommandInfo {
+  name: string;
+  description: string;
+}
+
+export function getCommands(): Promise<SlashCommandInfo[]> {
+  return request('/commands');
+}
 
 export function executeCommand(sessionId: string, command: string): Promise<CommandResponse> {
   return request(`/sessions/${sessionId}/command`, {
@@ -457,11 +470,35 @@ export function getApiKeyStatus(provider: string = 'gemini'): Promise<ApiKeyStat
   return request(`/api-key-status?provider=${encodeURIComponent(provider)}`);
 }
 
-export function updateApiKey(provider: string, key: string): Promise<ApiKeyUpdateResult> {
+export function updateApiKey(provider: string, key: string, name?: string): Promise<ApiKeyUpdateResult> {
   return request('/api-key', {
     method: 'PUT',
-    body: JSON.stringify({ provider, key }),
+    body: JSON.stringify({ provider, key, ...(name ? { name } : {}) }),
   });
+}
+
+export function listApiKeys(): Promise<ApiKeysResponse> {
+  return request('/api-keys');
+}
+
+export function deleteApiKey(name: string): Promise<{ status: string; name: string }> {
+  return request(`/api-key?name=${encodeURIComponent(name)}`, { method: 'DELETE' });
+}
+
+// ---- Providers ----
+
+export interface ProviderInfo {
+  id: string;
+  name: string;
+  supports_base_url?: boolean;
+}
+
+export function getProviders(): Promise<ProviderInfo[]> {
+  return request('/providers');
+}
+
+export function getAgentTypes(): Promise<AgentTypesResponse> {
+  return request('/agent-types');
 }
 
 // ---- Provider Settings ----

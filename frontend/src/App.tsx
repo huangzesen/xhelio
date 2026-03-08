@@ -1,14 +1,19 @@
 import { useEffect, useState, useMemo, useCallback } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { Routes, Route, Navigate } from 'react-router-dom';
 import { Header } from './components/layout/Header';
 import { ChatPage } from './pages/ChatPage';
 import { DataToolsPage } from './pages/DataToolsPage';
-import { SettingsPage } from './pages/SettingsPage';
 import { PipelinePage } from './pages/PipelinePage';
 import { GalleryPage } from './pages/GalleryPage';
 import { MemoryPage } from './pages/MemoryPage';
 import { AssetsPage } from './pages/AssetsPage';
 import { EurekaPage } from './pages/EurekaPage';
+import { SettingsLayout } from './pages/settings';
+import { ApiKeysSection } from './pages/settings/ApiKeysSection';
+import { WorkbenchSection } from './pages/settings/WorkbenchSection';
+import { DataSection } from './pages/settings/DataSection';
+import { AdvancedSection } from './pages/settings/AdvancedSection';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
 import { CommandPalette } from './components/common/CommandPalette';
 import { KeyboardShortcuts } from './components/common/KeyboardShortcuts';
@@ -31,6 +36,7 @@ export default function App() {
   const [shortcutsOpen, setShortcutsOpen] = useState(false);
   const { theme, toggleTheme } = useTheme();
 
+  const { t } = useTranslation('common');
   const { activeSessionId, createSession, loadSavedSessions } = useSessionStore();
 
   const handleCommandPalette = useCallback(() => {
@@ -278,7 +284,7 @@ export default function App() {
       <div data-testid="app-loading" className="h-full flex items-center justify-center bg-surface">
         <div className="flex flex-col items-center gap-3 text-text-muted">
           <Loader2 size={32} className="animate-spin text-primary" />
-          <span className="text-sm">Connecting to server...</span>
+          <span className="text-sm">{t('loading.connectingToServer')}</span>
         </div>
       </div>
     );
@@ -298,11 +304,11 @@ export default function App() {
     return (
       <div data-testid="app-error" className="h-full flex items-center justify-center bg-surface">
         <div className="text-center max-w-md px-6">
-          <div className="text-status-error-text text-lg font-semibold mb-2">Connection Error</div>
+          <div className="text-status-error-text text-lg font-semibold mb-2">{t('error.connectionError')}</div>
           <p className="text-sm text-text-muted mb-4">{error}</p>
           <p className="text-xs text-text-muted">
-            Make sure the API server is running:{' '}
-            <code className="bg-code-bg text-text-inverted px-1.5 py-0.5 rounded text-xs">python api_server.py</code>
+            {t('error.serverInstructions')}{' '}
+            <code className="bg-code-bg text-text-inverted px-1.5 py-0.5 rounded text-xs">{t('error.serverCommand')}</code>
           </p>
         </div>
       </div>
@@ -330,8 +336,14 @@ export default function App() {
           <Route path="/gallery" element={<GalleryPage />} />
           <Route path="/memory" element={<MemoryPage />} />
           <Route path="/eureka" element={<EurekaPage />} />
-          <Route path="/settings" element={<SettingsPage />} />
-          <Route path="/settings/assets" element={<AssetsPage />} />
+          <Route path="/settings" element={<SettingsLayout />}>
+            <Route index element={<Navigate to="/settings/api-keys" replace />} />
+            <Route path="api-keys" element={<ApiKeysSection />} />
+            <Route path="workbench" element={<WorkbenchSection />} />
+            <Route path="data" element={<DataSection />} />
+            <Route path="advanced" element={<AdvancedSection />} />
+            <Route path="assets" element={<AssetsPage />} />
+          </Route>
         </Routes>
         </main>
       </ErrorBoundary>

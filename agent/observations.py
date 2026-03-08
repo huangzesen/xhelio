@@ -274,3 +274,24 @@ def _error_observation(tool_name: str, tool_args: dict, result: dict) -> str:
 
     hint = _ERROR_HINTS.get(tool_name, "Consider a different approach or different parameters.")
     return f"FAILED: {msg}. Consider: {hint}"
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _ObservationRegistryAdapter:
+    name = "observations"
+    description = "Per-tool observation generators for LLM feedback"
+
+    def get(self, key: str):
+        return _TOOL_HANDLERS.get(key)
+
+    def list_all(self) -> dict:
+        return dict(_TOOL_HANDLERS)
+
+
+OBSERVATION_REGISTRY = _ObservationRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(OBSERVATION_REGISTRY)

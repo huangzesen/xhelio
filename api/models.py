@@ -112,6 +112,7 @@ class ConfigUpdate(BaseModel):
 class ApiKeyUpdate(BaseModel):
     key: str = Field(..., min_length=1)
     provider: str = "gemini"
+    name: str | None = None
 
 
 # ---- Memory ----

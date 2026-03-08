@@ -15,6 +15,7 @@ from fastapi import APIRouter, HTTPException, Query, Request, UploadFile, File a
 from fastapi.responses import FileResponse
 from sse_starlette.sse import EventSourceResponse
 
+from rendering.registry import RENDER_TOOL_NAMES
 from .models import (
     ApiKeyUpdate,
     ChatRequest,
@@ -165,9 +166,8 @@ async def list_saved_sessions_with_ops():
         try:
             ops = json.loads(ops_file.read_text(encoding="utf-8"))
             op_count = len(ops) if isinstance(ops, list) else 0
-            _RENDER_TOOLS = {"render_plotly_json", "generate_mpl_script", "generate_jsx_component"}
             has_renders = (
-                any(r.get("tool") in _RENDER_TOOLS for r in ops)
+                any(r.get("tool") in RENDER_TOOL_NAMES for r in ops)
                 if isinstance(ops, list)
                 else False
             )
@@ -503,20 +503,32 @@ async def cancel_work_unit(session_id: str, unit_id: str):
 
 # ---- Slash commands ----
 
-_COMMAND_HELP_TABLE = """\
-| Command | Description |
-|---------|-------------|
-| `/help` | Show this command list |
-| `/status` | Session info: model, tokens, data count, plan status |
-| `/data` | List data entries in memory |
-| `/figure` | Figure availability status |
-| `/branch` | Fork session into a new branch |
-| `/reset` | Delete current session and create a new one |
-| `/sessions` | List saved sessions |
-| `/retry` | Retry the first failed plan task |
-| `/cancel` | Cancel the current plan |
-| `/errors` | Show recent error logs |
-"""
+# Single source of truth for all slash commands.
+# Frontend fetches this via GET /commands.
+_COMMANDS = [
+    {"name": "help", "description": "Show this command list"},
+    {"name": "status", "description": "Session info: model, tokens, data count, plan status"},
+    {"name": "data", "description": "List data entries in memory"},
+    {"name": "figure", "description": "Figure availability status"},
+    {"name": "fork", "description": "Fork session with independent history and fresh agents"},
+    {"name": "branch", "description": "Fork session into a new branch"},
+    {"name": "reset", "description": "Delete current session and create a new one"},
+    {"name": "sessions", "description": "List saved sessions"},
+    {"name": "errors", "description": "Show recent error logs"},
+]
+
+
+def _build_help_table() -> str:
+    lines = ["| Command | Description |", "|---------|-------------|"]
+    for c in _COMMANDS:
+        lines.append(f"| `/{c['name']}` | {c['description']} |")
+    return "\n".join(lines)
+
+
+@router.get("/commands")
+async def list_commands():
+    """List available slash commands (used by frontend for autocomplete)."""
+    return _COMMANDS
 
 
 @router.post("/sessions/{session_id}/command")
@@ -525,7 +537,7 @@ async def execute_command(session_id: str, req: CommandRequest):
     cmd = req.command.lower().strip()
 
     if cmd == "help":
-        return CommandResponse(command=cmd, content=_COMMAND_HELP_TABLE).model_dump()
+        return CommandResponse(command=cmd, content=_build_help_table()).model_dump()
 
     # All other commands need a valid session
     state = _get_session_or_404(session_id)
@@ -1607,6 +1619,26 @@ async def get_config():
         else:
             merged_providers[prov] = prov_vals
     cfg = {**defaults, **loaded, "providers": merged_providers}
+    # Migrate old combos config to workbench presets if needed
+    from config import _migrate_combos_to_presets
+
+    if _migrate_combos_to_presets(cfg):
+        # Save migration result to disk
+        import json as _json
+
+        config_path = Path.home() / ".xhelio" / "config.json"
+        if config_path.exists():
+            existing = _json.loads(config_path.read_text())
+        else:
+            existing = {}
+        # Merge migration results
+        existing["presets"] = cfg.get("presets", {})
+        existing["workbench"] = cfg.get("workbench", {})
+        config_path.parent.mkdir(parents=True, exist_ok=True)
+        tmp = config_path.with_suffix(".tmp")
+        tmp.write_text(_json.dumps(existing, indent=2))
+        tmp.rename(config_path)
+        config.reload_config()
     # Remove any accidental secrets
     for key in ("api_key", "google_api_key", "llm_api_key"):
         cfg.pop(key, None)
@@ -1644,7 +1676,7 @@ async def update_config(req: ConfigUpdate):
     # Deep merge
     def _merge(base, update):
         for k, v in update.items():
-            if isinstance(v, dict) and isinstance(base.get(k), dict):
+            if isinstance(v, dict) and v and isinstance(base.get(k), dict):
                 _merge(base[k], v)
             else:
                 base[k] = v
@@ -1685,10 +1717,19 @@ async def upload_avatar(file: bytes = None):
 
 # ---- Provider settings endpoints -----------------------------------------
 
-_KNOWN_PROVIDERS = [
-    "gemini", "anthropic", "openai", "minimax", "grok",
-    "deepseek", "qwen", "kimi", "glm",
-]
+@router.get("/providers")
+async def list_providers():
+    """List available LLM providers (used by frontend settings page)."""
+    return [{"id": p["id"], "name": p["name"], "supports_base_url": p.get("supports_base_url", False)} for p in config.PROVIDERS]
+
+
+@router.get("/agent-types")
+async def list_agent_types():
+    """Return agent type metadata for the workbench UI."""
+    return {
+        "agents": config.AGENT_TYPES,
+        "groups": config.AGENT_GROUPS,
+    }
 
 
 @router.get("/settings/providers")
@@ -1706,7 +1747,7 @@ async def get_provider_settings():
         "providers": {},
     }
 
-    for name in _KNOWN_PROVIDERS:
+    for name in config.PROVIDER_IDS:
         defaults = cfg._PROVIDER_DEFAULTS.get(name, {})
         user_overrides = providers_config.get(name, {})
         merged = {**defaults, **user_overrides}
@@ -1877,8 +1918,8 @@ async def update_api_key(req: ApiKeyUpdate):
 
     env_path = Path(__file__).resolve().parent.parent / ".env"
 
-    # Get the env var name for the specified provider
-    env_key = _PROVIDER_ENV_KEYS.get(req.provider, "GOOGLE_API_KEY")
+    # Get the env var name: use explicit name if provided, else look up by provider
+    env_key = req.name if req.name else _PROVIDER_ENV_KEYS.get(req.provider, "GOOGLE_API_KEY")
 
     # Write key to .env
     dotenv_set_key(str(env_path), env_key, req.key)
@@ -1910,6 +1951,47 @@ async def update_api_key(req: ApiKeyUpdate):
         "error": error_msg,
         "masked": masked,
     }
+
+
+@router.get("/api-keys")
+async def list_api_keys():
+    """List all API keys from .env with masked values."""
+    from config import list_all_api_keys, _PROVIDER_ENV_KEYS
+
+    keys = list_all_api_keys()
+
+    # Ensure all known providers appear even if not in .env
+    existing_names = {k["name"] for k in keys}
+    for provider, env_name in _PROVIDER_ENV_KEYS.items():
+        if env_name not in existing_names:
+            keys.append({
+                "name": env_name,
+                "provider": provider,
+                "masked": None,
+                "configured": False,
+            })
+
+    return {"keys": keys}
+
+
+@router.delete("/api-key")
+async def delete_api_key(name: str):
+    """Remove an API key from .env."""
+    from dotenv import set_key as dotenv_set_key
+    from config import reload_config
+
+    # Only allow deleting env vars that look like API keys
+    if not name.endswith("_KEY"):
+        raise HTTPException(status_code=400, detail="Can only delete env vars ending with _KEY")
+
+    env_path = Path(__file__).resolve().parent.parent / ".env"
+    if not env_path.exists():
+        raise HTTPException(status_code=404, detail=".env file not found")
+
+    # Write empty value to effectively remove
+    dotenv_set_key(str(env_path), name, "")
+    reload_config()
+    return {"status": "deleted", "name": name}
 
 
 # ---- Memory CRUD ----
@@ -2899,34 +2981,6 @@ async def list_eurekas(session_id: str | None = None, status: str | None = None)
     return {"eurekas": [asdict(e) for e in entries]}
 
 
-@router.get("/eureka/{eureka_id}")
-async def get_eureka(eureka_id: str):
-    """Get a single eureka by ID."""
-    from agent.eureka_store import EurekaStore
-    from dataclasses import asdict
-
-    store = EurekaStore()
-    entry = store.get(eureka_id)
-    if entry is None:
-        raise HTTPException(status_code=404, detail="Eureka not found")
-    return asdict(entry)
-
-
-@router.patch("/eureka/{eureka_id}")
-async def update_eureka(eureka_id: str, body: dict):
-    """Update eureka status."""
-    from agent.eureka_store import EurekaStore
-
-    status = body.get("status")
-    if status not in ("proposed", "reviewed", "confirmed", "rejected"):
-        raise HTTPException(status_code=400, detail="Invalid status")
-    store = EurekaStore()
-    ok = store.update_status(eureka_id, status)
-    if not ok:
-        raise HTTPException(status_code=404, detail="Eureka not found")
-    return {"ok": True}
-
-
 @router.get("/eureka/suggestions")
 async def list_eureka_suggestions(
     session_id: str | None = None, status: str | None = None
@@ -2952,6 +3006,34 @@ async def update_eureka_suggestion(suggestion_id: str, body: dict):
     ok = store.update_suggestion_status(suggestion_id, status)
     if not ok:
         raise HTTPException(status_code=404, detail="Suggestion not found")
+    return {"ok": True}
+
+
+@router.get("/eureka/{eureka_id}")
+async def get_eureka(eureka_id: str):
+    """Get a single eureka by ID."""
+    from agent.eureka_store import EurekaStore
+    from dataclasses import asdict
+
+    store = EurekaStore()
+    entry = store.get(eureka_id)
+    if entry is None:
+        raise HTTPException(status_code=404, detail="Eureka not found")
+    return asdict(entry)
+
+
+@router.patch("/eureka/{eureka_id}")
+async def update_eureka(eureka_id: str, body: dict):
+    """Update eureka status."""
+    from agent.eureka_store import EurekaStore
+
+    status = body.get("status")
+    if status not in ("proposed", "reviewed", "confirmed", "rejected"):
+        raise HTTPException(status_code=400, detail="Invalid status")
+    store = EurekaStore()
+    ok = store.update_status(eureka_id, status)
+    if not ok:
+        raise HTTPException(status_code=404, detail="Eureka not found")
     return {"ok": True}
 
 

@@ -526,18 +526,6 @@ register_fallback(
 
 register_fallback(
     {
-        "name": "eureka.model",
-        "description": "EurekaAgent model — falls back to config.SMART_MODEL",
-        "category": CATEGORY_CONFIG,
-        "default_value": None,
-        "trigger_condition": "When eureka_model is null in config",
-        "code_location": "agent/core.py:_ensure_eureka_agent",
-        "is_legacy": False,
-    }
-)
-
-register_fallback(
-    {
         "name": "eureka.max_rounds",
         "description": "Maximum consecutive eureka-driven rounds before auto-pause",
         "category": CATEGORY_CONFIG,
@@ -680,4 +668,26 @@ __all__ = [
     "get_fallbacks_by_category",
     "get_all_fallbacks",
     "is_legacy",
+    "FALLBACK_REGISTRY",
 ]
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _FallbackRegistryAdapter:
+    name = "fallbacks"
+    description = "Central catalog of all fallback mechanisms"
+
+    def get(self, key: str):
+        return get_fallback(key)
+
+    def list_all(self) -> dict:
+        return get_all_fallbacks()
+
+
+FALLBACK_REGISTRY = _FallbackRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(FALLBACK_REGISTRY)

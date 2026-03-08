@@ -5,6 +5,7 @@ See docs/plans/2026-03-06-llm-service-design.md for design rationale.
 
 from __future__ import annotations
 
+import threading
 import uuid
 from typing import Any
 
@@ -15,6 +16,7 @@ from .base import (
     LLMResponse,
 )
 from .interface import ChatInterface, ToolResultBlock
+from config import get_api_key
 
 def _generate_session_id() -> str:
     """Generate a unique xhelio session ID."""
@@ -46,10 +48,12 @@ class LLMService:
     ) -> None:
         self._provider = provider.lower()
         self._model = model
+        self._base_url = base_url
         self._config = provider_config or {}
-        self._adapter = self._create_adapter(self._provider, api_key, base_url)
+        self._adapters: dict[tuple[str, str | None], LLMAdapter] = {}
+        self._adapter_lock = threading.Lock()
+        self._adapters[(self._provider, base_url)] = self._create_adapter(self._provider, api_key, base_url)
         self._sessions: dict[str, ChatSession] = {}
-        self._secondary_adapters: dict[str, tuple[LLMAdapter, str] | None] = {}
 
     def _create_adapter(self, provider: str, api_key: str | None, base_url: str | None) -> LLMAdapter:
         # Build kwargs, omitting None values so adapters fall back to env vars
@@ -99,85 +103,84 @@ class LLMService:
         else:
             raise ValueError(f"Unknown provider: {provider!r}")
 
+    # --- Adapter cache ---
+
+    def get_adapter(self, provider: str, base_url: str | None = None) -> LLMAdapter:
+        """Return cached adapter for *provider* + *base_url*, creating one on demand.
+
+        The cache is keyed by ``(provider, base_url)`` so the same provider
+        with different base URLs (e.g. OpenRouter vs local vLLM) gets separate
+        adapter instances.
+
+        Raises RuntimeError if the API key for *provider* is not configured.
+        """
+        provider = provider.lower()
+        cache_key = (provider, base_url)
+
+        # Fast path — no lock needed for reads of an already-cached adapter
+        if cache_key in self._adapters:
+            return self._adapters[cache_key]
+        if base_url is None and (provider, None) in self._adapters:
+            return self._adapters[(provider, None)]
+
+        # Slow path — lock to prevent duplicate adapter creation
+        with self._adapter_lock:
+            # Double-check after acquiring lock
+            if cache_key in self._adapters:
+                return self._adapters[cache_key]
+            if base_url is None and (provider, None) in self._adapters:
+                return self._adapters[(provider, None)]
+
+            # Need to create a new adapter — check API key first
+            api_key = get_api_key(provider)
+            if api_key is None:
+                raise RuntimeError(
+                    f"API key for provider {provider!r} is not configured. "
+                    f"Set the appropriate environment variable or .env entry."
+                )
+
+            # For on-demand adapters without explicit base_url, check provider defaults
+            effective_base_url = base_url
+            if effective_base_url is None:
+                defaults = self._get_provider_defaults(provider)
+                effective_base_url = defaults.get("base_url") if defaults else None
+            adapter = self._create_adapter(provider, api_key, effective_base_url)
+            self._adapters[cache_key] = adapter
+            return adapter
+
     # --- Capability routing ---
 
     def web_search(self, query: str) -> LLMResponse:
         """Web search — routed to configured web_search_provider."""
-        adapter, model = self._resolve_capability_adapter("web_search_provider")
-        if adapter is None:
+        provider_name = self._config.get("web_search_provider")
+        if provider_name is None:
             return LLMResponse(text="")
+        try:
+            adapter = self.get_adapter(provider_name)
+        except RuntimeError:
+            return LLMResponse(text="")
+        defaults = self._get_provider_defaults(provider_name)
+        model = defaults.get("model", "") if defaults else ""
         return adapter.web_search(query, model=model)
 
     def make_multimodal_message(
         self, text: str, image_bytes: bytes, mime_type: str = "image/png"
     ) -> dict | None:
         """Vision — routed to configured vision_provider."""
-        adapter, _ = self._resolve_capability_adapter("vision_provider")
-        if adapter is None:
+        provider_name = self._config.get("vision_provider")
+        if provider_name is None:
+            return None
+        try:
+            adapter = self.get_adapter(provider_name)
+        except RuntimeError:
             return None
         return adapter.make_multimodal_message(text, image_bytes, mime_type)
-
-    def _resolve_capability_adapter(
-        self, config_key: str
-    ) -> tuple[LLMAdapter | None, str]:
-        """Resolve the adapter for a capability. Returns (adapter, model) or (None, "")."""
-        provider_name = self._config.get(config_key)
-        if provider_name is None:
-            return None, ""
-        if provider_name == self._provider:
-            return self._adapter, self._model
-        return self._get_secondary_adapter(provider_name)
-
-    def _get_secondary_adapter(
-        self, provider_name: str
-    ) -> tuple[LLMAdapter | None, str]:
-        """Lazy-init a secondary adapter for capability delegation."""
-        if provider_name in self._secondary_adapters:
-            cached = self._secondary_adapters[provider_name]
-            if cached is None:
-                return None, ""
-            return cached  # (adapter, model) tuple
-
-        import os
-        from agent.logging import get_logger
-        logger = get_logger()
-
-        defaults = self._get_provider_defaults(provider_name)
-        if not defaults:
-            logger.warning("Unknown provider %r for capability delegation", provider_name)
-            self._secondary_adapters[provider_name] = None
-            return None, ""
-
-        api_key_env = defaults.get("api_key_env", "")
-        api_key = os.getenv(api_key_env) if api_key_env else None
-        if not api_key:
-            logger.warning(
-                "API key %s not set for %s — capability disabled",
-                api_key_env, provider_name,
-            )
-            self._secondary_adapters[provider_name] = None
-            return None, ""
-
-        try:
-            adapter = self._create_adapter(provider_name, api_key, defaults.get("base_url"))
-            model = defaults.get("model", "")
-            self._secondary_adapters[provider_name] = (adapter, model)
-            return adapter, model
-        except Exception as e:
-            logger.warning("Failed to create %s adapter: %s", provider_name, e)
-            self._secondary_adapters[provider_name] = None
-            return None, ""
 
     @staticmethod
     def _get_provider_defaults(provider_name: str) -> dict | None:
         """Get DEFAULTS for a provider, reusing config's pre-loaded cache."""
         import config as cfg
         return cfg._PROVIDER_DEFAULTS.get(provider_name)
-
-    @property
-    def adapter(self) -> LLMAdapter:
-        """Direct adapter access (escape hatch for incremental migration)."""
-        return self._adapter
 
     @property
     def provider(self) -> str:
@@ -201,13 +204,17 @@ class LLMService:
         interaction_id: str | None = None,
         json_schema: dict | None = None,
         force_tool_call: bool = False,
+        provider: str | None = None,
+        interface: "ChatInterface | None" = None,
     ) -> ChatSession:
         """Start a new multi-turn conversation.
 
         Returns a ChatSession with a .session_id assigned.
+        If *interface* is provided, restores an existing conversation history.
         """
+        adapter = self.get_adapter(provider) if provider else self.get_adapter(self._provider, self._base_url)
         session_model = model or self._model
-        chat = self._adapter.create_chat(
+        chat = adapter.create_chat(
             model=session_model,
             system_prompt=system_prompt,
             tools=tools,
@@ -215,6 +222,7 @@ class LLMService:
             interaction_id=interaction_id,
             json_schema=json_schema,
             force_tool_call=force_tool_call,
+            interface=interface,
         )
         if tracked:
             chat.session_id = _generate_session_id()
@@ -237,7 +245,7 @@ class LLMService:
         # Restore tools from interface so adapters can build provider-specific format
         tools = FunctionSchema.from_dicts(interface.current_tools)
 
-        chat = self._adapter.create_chat(
+        chat = self.get_adapter(self._provider, self._base_url).create_chat(
             model=self._model,
             system_prompt=interface.current_system_prompt or "",
             tools=tools,
@@ -267,14 +275,16 @@ class LLMService:
         json_schema: dict | None = None,
         max_output_tokens: int | None = None,
         tracked: bool = True,
+        provider: str | None = None,
     ) -> LLMResponse:
         """Single-turn generation.
 
         If tracked=True (default): logs usage event.
         If tracked=False: fire-and-forget, no logging.
         """
+        adapter = self.get_adapter(provider) if provider else self.get_adapter(self._provider, self._base_url)
         gen_model = model or self._model
-        response = self._adapter.generate(
+        response = adapter.generate(
             model=gen_model,
             contents=prompt,
             system_prompt=system_prompt,
@@ -282,15 +292,35 @@ class LLMService:
             json_schema=json_schema,
             max_output_tokens=max_output_tokens,
         )
-        # TODO: emit usage tracking event when tracked=True
+        if tracked and response.usage:
+            from agent.event_bus import get_event_bus, TOKEN_USAGE
+            usage = response.usage
+            get_event_bus().emit(
+                TOKEN_USAGE,
+                agent="generate",
+                level="debug",
+                msg=(
+                    f"[Tokens] generate in:{usage.input_tokens} "
+                    f"out:{usage.output_tokens} think:{usage.thinking_tokens}"
+                ),
+                data={
+                    "agent_name": "generate",
+                    "input_tokens": usage.input_tokens,
+                    "output_tokens": usage.output_tokens,
+                    "thinking_tokens": usage.thinking_tokens,
+                    "cached_tokens": usage.cached_tokens,
+                },
+            )
         return response
 
     # --- Tool results ---
 
     def make_tool_result(
         self, tool_name: str, result: dict, *, tool_call_id: str | None = None,
+        provider: str | None = None,
     ) -> ToolResultBlock:
         """Build a canonical ToolResultBlock."""
-        return self._adapter.make_tool_result_message(
+        adapter = self.get_adapter(provider) if provider else self.get_adapter(self._provider, self._base_url)
+        return adapter.make_tool_result_message(
             tool_name, result, tool_call_id=tool_call_id,
         )

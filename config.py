@@ -84,28 +84,66 @@ LLM_PROVIDER = get(
     "llm_provider", "gemini"
 )  # "gemini", "openai", "anthropic", "minimax"
 
-_PROVIDER_ENV_KEYS = {
-    "gemini": "GOOGLE_API_KEY",
-    "openai": "OPENAI_API_KEY",
-    "anthropic": "ANTHROPIC_API_KEY",
-    "minimax": "MINIMAX_API_KEY",
-    "grok": "GROK_API_KEY",
-    "deepseek": "DEEPSEEK_API_KEY",
-    "qwen": "QWEN_API_KEY",
-    "kimi": "KIMI_API_KEY",
-    "glm": "GLM_API_KEY",
-    "custom": "CUSTOM_API_KEY",
-}
+# Single source of truth for all LLM providers.
+PROVIDERS = [
+    {"id": "gemini", "name": "Gemini", "env_key": "GOOGLE_API_KEY"},
+    {"id": "openai", "name": "OpenAI", "env_key": "OPENAI_API_KEY", "supports_base_url": True},
+    {"id": "anthropic", "name": "Anthropic", "env_key": "ANTHROPIC_API_KEY", "supports_base_url": True},
+    {"id": "minimax", "name": "MiniMax", "env_key": "MINIMAX_API_KEY"},
+    {"id": "grok", "name": "Grok", "env_key": "GROK_API_KEY"},
+    {"id": "deepseek", "name": "DeepSeek", "env_key": "DEEPSEEK_API_KEY"},
+    {"id": "qwen", "name": "Qwen", "env_key": "QWEN_API_KEY"},
+    {"id": "kimi", "name": "Kimi", "env_key": "KIMI_API_KEY"},
+    {"id": "glm", "name": "GLM", "env_key": "GLM_API_KEY"},
+    {"id": "custom", "name": "CustomBot", "env_key": "CUSTOM_API_KEY"},
+]
+
+# Derived lookups
+PROVIDER_IDS: list[str] = [p["id"] for p in PROVIDERS]
+_PROVIDER_ENV_KEYS: dict[str, str] = {p["id"]: p["env_key"] for p in PROVIDERS}
+
+# Agent type registry — single source of truth for all configurable agent types.
+# Frontend fetches this via GET /agent-types to build the workbench UI.
+AGENT_TYPES = [
+    {"id": "orchestrator", "name": "Orchestrator", "icon": "🎯", "group": "brain",
+     "description": "Routes requests to sub-agents"},
+    {"id": "planner", "name": "Planner", "icon": "📋", "group": "brain",
+     "description": "Multi-step plan generation"},
+    {"id": "viz_plotly", "name": "Plotly Viz", "icon": "📊", "group": "visualization",
+     "description": "Interactive Plotly visualizations"},
+    {"id": "viz_mpl", "name": "Matplotlib", "icon": "📈", "group": "visualization",
+     "description": "Static publication-quality plots"},
+    {"id": "viz_jsx", "name": "JSX Viz", "icon": "⚛️", "group": "visualization",
+     "description": "React component visualizations"},
+    {"id": "data_ops", "name": "Data Ops", "icon": "🔧", "group": "data",
+     "description": "Data transformation and computation"},
+    {"id": "data_io", "name": "Data I/O", "icon": "📥", "group": "data",
+     "description": "Structured data extraction and file import"},
+    {"id": "envoy", "name": "Envoy", "icon": "🛰️", "group": "specialists",
+     "description": "Per-mission data discovery and fetch"},
+    {"id": "insight", "name": "Insight", "icon": "🔍", "group": "specialists",
+     "description": "Multimodal plot analysis"},
+    {"id": "eureka", "name": "Eureka", "icon": "💡", "group": "specialists",
+     "description": "Automated discovery and insight"},
+    {"id": "memory", "name": "Memory", "icon": "🧠", "group": "specialists",
+     "description": "Long-term memory extraction"},
+]
+
+AGENT_TYPE_IDS = [a["id"] for a in AGENT_TYPES]
+
+AGENT_GROUPS = [
+    {"id": "brain", "name": "Brain", "order": 0},
+    {"id": "visualization", "name": "Visualization", "order": 1},
+    {"id": "data", "name": "Data", "order": 2},
+    {"id": "specialists", "name": "Specialists", "order": 3},
+]
 
 
 def get_api_key(provider: str | None = None) -> str | None:
     """Return the API key for the given provider.
 
-    Each provider uses its own env var:
-      gemini    → GOOGLE_API_KEY
-      openai    → OPENAI_API_KEY
-      anthropic → ANTHROPIC_API_KEY
-      minimax   → MINIMAX_API_KEY
+    Reads the environment variable mapped in PROVIDERS (e.g. GOOGLE_API_KEY
+    for gemini, OPENAI_API_KEY for openai, etc.).
     """
     p = (provider or LLM_PROVIDER).lower()
     env_key = _PROVIDER_ENV_KEYS.get(p)
@@ -130,9 +168,7 @@ def _build_provider_defaults() -> dict:
 
     defaults = {}
     llm_dir = Path(__file__).parent / "agent" / "llm"
-    providers = ["gemini", "anthropic", "openai", "minimax", "grok", "deepseek", "qwen", "kimi", "glm", "custom"]
-
-    for name in providers:
+    for name in PROVIDER_IDS:
         defaults_file = llm_dir / name / "defaults.py"
         if not defaults_file.exists():
             continue
@@ -192,6 +228,180 @@ SUB_AGENT_MODEL = _provider_get("sub_agent_model")
 INSIGHT_MODEL = _provider_get("insight_model") or SUB_AGENT_MODEL
 INLINE_MODEL = _provider_get("inline_model")
 PLANNER_MODEL = _provider_get("planner_model") or SMART_MODEL
+
+
+def resolve_agent_model(agent_type: str) -> tuple[str, str, str | None]:
+    """Resolve provider, model, and base_url for a given agent type.
+
+    Resolution order:
+    1. workbench.agents[agent_type] (per-agent override)
+    2. presets[workbench.preset].agents[agent_type] (active preset)
+    3. Legacy agent_models[agent_type] ("provider/model" format)
+    4. Tier-based defaults (LLM_PROVIDER + tier model)
+
+    Returns:
+        (provider, model, base_url) tuple
+    """
+    # 1. Workbench per-agent override
+    wb = get("workbench", {})
+    if isinstance(wb, dict):
+        agent_cfg = wb.get("agents", {}).get(agent_type)
+        if isinstance(agent_cfg, dict) and agent_cfg.get("provider") and agent_cfg.get("model"):
+            return (
+                agent_cfg["provider"],
+                agent_cfg["model"],
+                agent_cfg.get("base_url"),
+            )
+
+    # 2. Active preset
+    if isinstance(wb, dict):
+        preset_name = wb.get("preset")
+        if preset_name:
+            presets = get("presets", {})
+            if isinstance(presets, dict):
+                preset = presets.get(preset_name)
+                if isinstance(preset, dict):
+                    agent_cfg = preset.get("agents", {}).get(agent_type)
+                    if isinstance(agent_cfg, dict) and agent_cfg.get("provider") and agent_cfg.get("model"):
+                        return (
+                            agent_cfg["provider"],
+                            agent_cfg["model"],
+                            agent_cfg.get("base_url"),
+                        )
+
+    # 3. Legacy agent_models override ("provider/model" format)
+    agent_models = get("agent_models", {})
+    if isinstance(agent_models, dict):
+        value = agent_models.get(agent_type)
+        if value and isinstance(value, str):
+            if "/" not in value:
+                raise ValueError(
+                    f"agent_models[{agent_type}] = {value!r} — expected 'provider/model' format"
+                )
+            provider, model = value.split("/", 1)
+            return (provider, model, None)
+
+    # 4. Tier-based defaults
+    _tier_map = {
+        "orchestrator": SMART_MODEL,
+        "planner": PLANNER_MODEL,
+        "insight": INSIGHT_MODEL,
+    }
+    model = _tier_map.get(agent_type, SUB_AGENT_MODEL)
+    return (LLM_PROVIDER, model, None)
+
+
+def resolve_capabilities() -> dict:
+    """Resolve web_search_provider and vision_provider from workbench config.
+
+    For each capability, checks workbench.capabilities first, then falls back
+    to provider-level config. "own" resolves to the orchestrator's actual
+    provider (from workbench, not the global LLM_PROVIDER).
+    """
+    # Start with provider-level defaults
+    result = {
+        "web_search_provider": _provider_get("web_search_provider"),
+        "vision_provider": _provider_get("vision_provider"),
+    }
+
+    # Override with workbench capabilities (per-capability, not all-or-nothing)
+    wb = get("workbench", {})
+    if isinstance(wb, dict):
+        caps = wb.get("capabilities", {})
+        if isinstance(caps, dict):
+            for cap_key, result_key in [
+                ("web_search", "web_search_provider"),
+                ("vision", "vision_provider"),
+            ]:
+                val = caps.get(cap_key)
+                if val is None:
+                    continue  # Not set — keep provider-level default
+                if val == "own":
+                    # Resolve to orchestrator's actual provider
+                    orch_provider, _, _ = resolve_agent_model("orchestrator")
+                    val = orch_provider
+                result[result_key] = val if val != "disabled" else None
+
+    return result
+
+
+def _migrate_combos_to_presets(cfg: dict) -> bool:
+    """Migrate old combos config to workbench presets format.
+
+    Returns True if migration was performed and config was modified.
+    """
+    if "workbench" in cfg:
+        return False  # Already migrated
+
+    combos = cfg.get("combos")
+    has_combos = isinstance(combos, dict) and combos.get("saved")
+    has_agent_models = isinstance(cfg.get("agent_models"), dict) and cfg.get("agent_models")
+
+    if not has_combos and not has_agent_models:
+        return False
+
+    # Convert each combo to a preset
+    presets = {}
+    for key, combo in (combos.get("saved", {}).items() if has_combos else []):
+        if not isinstance(combo, dict):
+            continue
+        provider = combo.get("provider", "gemini")
+        models = combo.get("models", {})
+
+        # Map old model tiers to per-agent configs
+        agents = {}
+        tier_to_agents = {
+            "model": ["orchestrator"],
+            "sub_agent_model": ["viz_plotly", "viz_mpl", "viz_jsx", "data_ops", "data_io", "envoy"],
+            "insight_model": ["insight", "eureka"],
+            "inline_model": ["memory"],
+            "planner_model": ["planner"],
+        }
+        for tier, agent_types in tier_to_agents.items():
+            model_name = models.get(tier) or models.get("model", "")
+            for at in agent_types:
+                agents[at] = {
+                    "provider": provider,
+                    "model": model_name,
+                    "base_url": combo.get("base_url"),
+                }
+
+        presets[key] = {
+            "name": combo.get("name", key),
+            "agents": agents,
+            "capabilities": {
+                "web_search": combo.get("web_search_provider"),
+                "vision": combo.get("vision_provider"),
+            },
+        }
+
+    # Set up workbench from active combo
+    active = combos.get("active") if has_combos else None
+    cfg["presets"] = presets
+    cfg["workbench"] = {
+        "preset": active if active in presets else None,
+        "agents": {},
+        "capabilities": {
+            "web_search": None,
+            "vision": None,
+        },
+    }
+
+    # Also migrate agent_models overrides
+    agent_models = cfg.get("agent_models", {})
+    if isinstance(agent_models, dict):
+        for agent_type, value in agent_models.items():
+            if isinstance(value, str) and "/" in value:
+                p, m = value.split("/", 1)
+                cfg["workbench"]["agents"][agent_type] = {
+                    "provider": p,
+                    "model": m,
+                    "base_url": None,
+                }
+
+    return True
+
+
 DATA_BACKEND = get("data_backend", "cdf")  # "cdf" only
 CATALOG_SEARCH_METHOD = get(
     "catalog_search_method", "semantic"
@@ -256,6 +466,35 @@ CONFIG_DESCRIPTIONS: dict[str, str] = {
     "providers.anthropic.rate_limit_interval": "Minimum seconds between API calls to Anthropic. Default: 0 (disabled).",
     "providers.minimax.rate_limit_interval": "Minimum seconds between API calls to MiniMax. Prevents 500 errors from rate limiting. Default: 2.0s.",
 }
+
+
+def list_all_api_keys() -> list[dict]:
+    """List all API key entries from .env with masked values."""
+    from dotenv import dotenv_values
+
+    env_path = Path(__file__).resolve().parent / ".env"
+    if not env_path.exists():
+        return []
+
+    env_vars = dotenv_values(str(env_path))
+    keys = []
+
+    # Known provider mapping (reverse of _PROVIDER_ENV_KEYS)
+    env_to_provider = {v: k for k, v in _PROVIDER_ENV_KEYS.items()}
+
+    for name, value in env_vars.items():
+        if not name.endswith("_KEY"):
+            continue
+        configured = bool(value and value.strip())
+        masked = f"...{value.strip()[-4:]}" if configured and len(value.strip()) >= 4 else ("...****" if configured else None)
+        keys.append({
+            "name": name,
+            "provider": env_to_provider.get(name),
+            "masked": masked,
+            "configured": configured,
+        })
+
+    return keys
 
 
 def reload_config() -> None:
@@ -330,3 +569,27 @@ def reload_config() -> None:
         _reload_turn_limits()
     except ImportError:
         pass
+
+
+# =============================================================================
+# Registry protocol adapter
+# =============================================================================
+
+
+class _ProviderRegistryAdapter:
+    name = "llm.providers"
+    description = "Supported LLM providers with API key env vars"
+
+    def get(self, key: str):
+        for p in PROVIDERS:
+            if p["id"] == key:
+                return p
+        return None
+
+    def list_all(self) -> dict:
+        return {p["id"]: p for p in PROVIDERS}
+
+
+PROVIDER_REGISTRY = _ProviderRegistryAdapter()
+from agent.registry_protocol import register_registry  # noqa: E402
+register_registry(PROVIDER_REGISTRY)

@@ -53,20 +53,10 @@ from .event_bus import (
 from .tool_timing import ToolTimer, stamp_tool_result
 
 # ---------------------------------------------------------------------------
-# Context compaction prompt
+# Context compaction prompt (shared with core.py via llm_session_mixin)
 # ---------------------------------------------------------------------------
 
-_COMPACTION_PROMPT = (
-    "Summarize the following conversation history concisely for an AI agent "
-    "that needs to continue the session. Preserve:\n"
-    "- ALL errors, failures, and their details verbatim\n"
-    "- Key decisions and user preferences\n"
-    "- Data that was fetched/computed and current state\n"
-    "- Tool calls that produced important results\n\n"
-    "Drop thinking blocks and routine acknowledgments. "
-    "Output ONLY the summary, no commentary.\n\n"
-    "Conversation history:\n"
-)
+from agent.llm_session_mixin import COMPACTION_PROMPT as _COMPACTION_PROMPT
 
 
 # ---------------------------------------------------------------------------
@@ -199,11 +189,11 @@ class SubAgent:
     def __init__(
         self,
         agent_id: str,
-        adapter: LLMAdapter | None = None,
-        model_name: str = "",
+        service: LLMService,
+        agent_type: str,
         tool_executor: Callable | None = None,
         *,
-        service: LLMService | None = None,
+        model_name: str = "",
         system_prompt: str = "",
         tool_schemas: list[FunctionSchema] | None = None,
         event_bus: EventBus | None = None,
@@ -212,15 +202,13 @@ class SubAgent:
         memory_scope: str = "",
     ):
         self.agent_id = agent_id
-        if service is not None:
-            self.service = service
-            self.adapter = service.adapter
-        elif adapter is not None:
-            self.service = None  # type: ignore[assignment]
-            self.adapter = adapter
-        else:
-            raise ValueError("SubAgent requires either service or adapter")
-        self.model_name = model_name
+        self.service = service
+        self.agent_type = agent_type
+
+        # Resolve provider/model from config
+        import config as _config
+        self._provider, resolved_model, self._base_url = _config.resolve_agent_model(agent_type)
+        self.model_name = model_name or resolved_model
         self.tool_executor = tool_executor
         self.system_prompt = system_prompt
 
@@ -351,6 +339,13 @@ class SubAgent:
                     f"[{self.agent_id}] Unhandled error in message handler: {e}",
                     exc_info=True,
                 )
+                # Emit to EventBus so the error is visible in session diagnostics
+                self._event_bus.emit(
+                    DEBUG,
+                    agent=self.agent_id,
+                    level="error",
+                    msg=f"[{self.agent_id}] Unhandled error: {e}",
+                )
                 # If the message has a reply channel, unblock the caller
                 if msg._reply_event:
                     msg._reply_value = {
@@ -443,7 +438,7 @@ class SubAgent:
 
         
         def summarizer(text: str) -> str:
-            response = self.adapter.generate(
+            response = self.service.get_adapter(self._provider, self._base_url).generate(
                 model=self.model_name,
                 contents=_COMPACTION_PROMPT + text,
                 temperature=0.1,
@@ -468,7 +463,7 @@ class SubAgent:
     def _llm_send(self, message: Any) -> LLMResponse:
         """Send a message to the LLM, reusing the persistent chat session."""
         if self._chat is None:
-            self._chat = self.adapter.create_chat(
+            self._chat = self.service.get_adapter(self._provider, self._base_url).create_chat(
                 model=self.model_name,
                 system_prompt=self._build_core_memory(),
                 tools=self._tool_schemas or None,
@@ -505,7 +500,7 @@ class SubAgent:
                     msg=f"[{self.agent_id}] Stale interaction — starting fresh session",
                 )
                 self._interaction_id = None
-                self._chat = self.adapter.create_chat(
+                self._chat = self.service.get_adapter(self._provider, self._base_url).create_chat(
                     model=self.model_name,
                     system_prompt=self._build_system_prompt(),
                     tools=self._tool_schemas or None,
@@ -536,44 +531,44 @@ class SubAgent:
 
         Same strategy as OrchestratorAgent._on_reset — drop the failed
         assistant turn, tell the model what it tried and what the results were.
+        Uses ChatInterface for clean history manipulation instead of raw dicts.
         """
-        # Prefer client-side history (Interactions API) over metadata stubs
-        if hasattr(chat, "get_client_history"):
-            history = chat.get_client_history()
-        else:
-            history = chat.get_history()
+        from agent.llm_session_mixin import summarize_tool_calls, summarize_tool_results
+        from agent.llm.interface import ToolResultBlock
 
-        from .core import OrchestratorAgent
-        tool_summary = OrchestratorAgent._summarize_tool_calls(history)
-        result_summary = OrchestratorAgent._summarize_tool_results(failed_message)
+        # Get interface from chat (single source of truth)
+        iface = chat.interface
 
-        while history and history[-1].get("role") == "assistant":
-            history.pop()
+        # Summarize what the model tried (tool calls from the last assistant turn)
+        history = iface.to_dict()  # For summarization via dict-based helper
+        tool_summary = summarize_tool_calls(history)
+        # Summarize the tool results that were ready but never delivered
+        result_summary = summarize_tool_results(failed_message)
 
-        # Drop orphaned tool_result-only user messages (stale tool_call_ids)
-        while history and history[-1].get("role") == "user":
-            content = history[-1].get("content")
-            if isinstance(content, list) and all(
-                isinstance(b, dict) and b.get("type") == "tool_result"
-                for b in content
-            ):
-                history.pop()
-            else:
-                break
+        # Drop failed turn: assistant with tool calls + orphaned tool results
+        # Using interface.drop_trailing for clean rollback
+        iface.drop_trailing(lambda e: e.role == "assistant")
+        iface.drop_trailing(
+            lambda e: e.role == "user" and all(
+                isinstance(b, ToolResultBlock) for b in e.content
+            )
+        )
 
         self._event_bus.emit(
             LLM_CALL,
             agent=self.agent_id,
             level="warning",
-            msg=f"[{self.agent_id}] Session rollback — new chat ({len(history)} msgs kept)",
+            msg=f"[{self.agent_id}] Session rollback — new chat ({len(iface.entries)} entries kept)",
         )
 
-        self._chat = self.adapter.create_chat(
-            model=self.model_name,
+        self._chat = self.service.create_session(
             system_prompt=self._build_system_prompt(),
             tools=self._tool_schemas or None,
+            model=self.model_name,
             thinking="high",
-            history=history,
+            tracked=False,
+            provider=self._provider,
+            interface=iface,
         )
 
         rollback_msg = (
@@ -781,8 +776,9 @@ class SubAgent:
                 "_duplicate_warning": verdict.warning,
                 "message": f"Execution skipped — duplicate call #{verdict.count}",
             }
-            msg = self.adapter.make_tool_result_message(
+            msg = self.service.make_tool_result(
                 tc.name, result, tool_call_id=tc_id,
+                provider=self._provider,
             )
             return msg, False, ""
 
@@ -814,8 +810,9 @@ class SubAgent:
             if verdict.warning and isinstance(result, dict):
                 result["_duplicate_warning"] = verdict.warning
 
-            result_msg = self.adapter.make_tool_result_message(
+            result_msg = self.service.make_tool_result(
                 tc.name, result, tool_call_id=tc_id,
+                provider=self._provider,
             )
 
             # Emit tool result event for console/event log
@@ -869,8 +866,9 @@ class SubAgent:
         except Exception as e:
             err_result = {"status": "error", "message": str(e)}
             stamp_tool_result(err_result, timer.elapsed_ms)
-            result_msg = self.adapter.make_tool_result_message(
+            result_msg = self.service.make_tool_result(
                 tc.name, err_result, tool_call_id=tc_id,
+                provider=self._provider,
             )
             collected_errors.append(f"{tc.name}: {e}")
             self._event_bus.emit(
@@ -959,8 +957,9 @@ class SubAgent:
                     "_duplicate_warning": verdict.warning,
                     "message": f"Execution skipped — duplicate call #{verdict.count}",
                 }
-                tool_results.append((i, self.adapter.make_tool_result_message(
+                tool_results.append((i, self.service.make_tool_result(
                     tc.name, result, tool_call_id=tc_id,
+                    provider=self._provider,
                 )))
             else:
                 to_execute.append((i, tc, args))
@@ -1084,8 +1083,9 @@ class SubAgent:
             tc_id = getattr(tc, "id", None)
             if i in results_map:
                 result = results_map[i]
-                tool_results.append((i, self.adapter.make_tool_result_message(
+                tool_results.append((i, self.service.make_tool_result(
                     tc.name, result, tool_call_id=tc_id,
+                    provider=self._provider,
                 )))
                 # Track dict-level errors
                 if isinstance(result, dict) and result.get("status") == "error":
@@ -1103,8 +1103,9 @@ class SubAgent:
             elif i in errors_map:
                 err_msg = errors_map[i]
                 err_result = {"status": "error", "message": err_msg}
-                tool_results.append((i, self.adapter.make_tool_result_message(
+                tool_results.append((i, self.service.make_tool_result(
                     tc.name, err_result, tool_call_id=tc_id,
+                    provider=self._provider,
                 )))
                 collected_errors.append(f"{tc.name}: {err_msg}")
                 self._event_bus.emit(
@@ -1291,10 +1292,11 @@ class SubAgent:
                             tc.name, args, getattr(tc, "id", None)
                         )
                         tool_results.append(
-                            self.adapter.make_tool_result_message(
+                            self.service.make_tool_result(
                                 tc.name,
                                 result,
                                 tool_call_id=getattr(tc, "id", None),
+                                provider=self._provider,
                             )
                         )
                 if not tool_results:
