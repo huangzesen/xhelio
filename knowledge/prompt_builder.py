@@ -61,8 +61,6 @@ SHARED_DOMAIN = [
     "_shared/time_range_handling.md",
     "_shared/temporal_context.md",
     "_shared/commentary.md",
-    "_shared/creating_datasets.md",
-    "_shared/pipeline_confirmation.md",
     "_shared/response_style.md",
 ]
 
@@ -544,6 +542,8 @@ def build_system_prompt_agent_specific(include_catalog: bool = False) -> str:
             "orchestrator/permissions.md",
             "orchestrator/examples.md",
             "orchestrator/follow_up_routing.md",
+            "_shared/creating_datasets.md",
+            "_shared/pipeline_confirmation.md",
         ],
         viz_tool=viz_tool,
     )
@@ -598,6 +598,8 @@ def build_system_prompt(include_catalog: bool = False) -> str:
             "orchestrator/permissions.md",
             "orchestrator/examples.md",
             "orchestrator/follow_up_routing.md",
+            "_shared/creating_datasets.md",
+            "_shared/pipeline_confirmation.md",
         ],
         viz_tool=viz_tool,
     )

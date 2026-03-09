@@ -369,16 +369,11 @@ Returns a unique data ID (e.g., 'a3f7c2e1_1') in the response. Use this ID in al
     },
     {
         "name": "plan_check",
-        "description": "Load and review a saved plan from filesystem. Use this after receiving a planning complete message to retrieve the plan details.",
+        "description": "Load the plan saved by the planner for the current session. Call this after delegate_to_planner completes to retrieve the full task list. Takes no arguments.",
         "parameters": {
             "type": "object",
-            "properties": {
-                "plan_file": {
-                    "type": "string",
-                    "description": "Path to the plan JSON file (provided by planner)."
-                }
-            },
-            "required": ["plan_file"]
+            "properties": {},
+            "required": []
         },
     },
     {
@@ -1237,7 +1232,7 @@ Do NOT use for plot modifications (zoom, restyle, add traces) — use the active
 - You need a structured plan before executing delegations
 
 The planner will research datasets, verify time coverage, and produce a plan.
-It will respond with a summary. Then use plan_check to load the full plan
+It will respond with a summary. Then use plan_check() (no arguments) to load the full plan
 and execute tasks via delegation tools (delegate_to_envoy, delegate_to_viz, etc.).
 
 Use this as your FIRST action for any request involving fetching mission data.

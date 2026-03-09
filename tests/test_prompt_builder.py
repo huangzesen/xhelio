@@ -573,11 +573,14 @@ class TestSharedDomainKnowledge:
         assert "## Time Range Handling" in o
         assert "## Time Range Handling" in p
 
-    def test_both_contain_creating_datasets(self):
+    def test_orchestrator_contains_creating_datasets(self):
         o = build_system_prompt()
-        p = build_planner_agent_prompt()
         assert "Creating Datasets" in o
-        assert "Creating Datasets" in p
+
+    def test_planner_does_not_contain_creating_datasets(self):
+        """creating_datasets is orchestrator-only — planner doesn't need it."""
+        p = build_planner_agent_prompt()
+        assert "Creating Datasets" not in p
 
 
 class TestBuildDataOpsPrompt:

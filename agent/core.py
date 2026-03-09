@@ -3873,22 +3873,18 @@ plt.close("all")
         }
 
     def _handle_plan_check(self, tool_args: dict) -> dict:
-        """Handler for the plan_check tool."""
-        plan_file = tool_args.get("plan_file")
-        if not plan_file:
-            return {
-                "status": "error",
-                "message": "plan_file is required"
-            }
+        """Handler for the plan_check tool.
 
-        plan_path = Path(plan_file)
-        if not plan_path.exists():
-            # LLM may strip the directory — resolve bare filenames against plans dir
-            plan_path = get_data_dir() / "plans" / Path(plan_file).name
+        Loads the plan file for the current session.  The filename is
+        deterministic: ``{session_id}_plan.json`` inside the plans dir.
+        No arguments needed — the LLM no longer has to relay the path.
+        """
+        plan_dir = get_data_dir() / "plans"
+        plan_path = plan_dir / f"{self._session_id}_plan.json"
         if not plan_path.exists():
             return {
                 "status": "error",
-                "message": f"Plan file not found: {plan_file}"
+                "message": f"No plan found for this session (looked for {plan_path.name})"
             }
 
         with open(plan_path) as f:

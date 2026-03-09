@@ -191,7 +191,7 @@ select, input[type="text"], input[type="number"], input[type="date"], textarea {
 
 /* ── Eureka Mode ─────────────────────────────── */
 
-/* Accent shift: brighter golden-yellow to stand out from the base amber primary */
+/* Accent shift: vivid golden-yellow */
 .eureka-active {
   --color-primary: #e5a100;
   --color-primary-dark: #c78b00;
@@ -205,36 +205,114 @@ select, input[type="text"], input[type="number"], input[type="date"], textarea {
   --color-accent: #facc15;
 }
 
-/* Header glow bar when eureka is active */
+/* Header: dramatic golden underglow when eureka is active */
 .eureka-active [data-testid="app-header"] {
-  border-bottom-color: transparent;
-  box-shadow: 0 1px 8px 0 rgba(234, 179, 8, 0.25);
+  border-bottom-color: rgba(251, 191, 36, 0.4);
+  box-shadow:
+    0 1px 12px 0 rgba(234, 179, 8, 0.35),
+    0 4px 24px -4px rgba(251, 191, 36, 0.25),
+    inset 0 -1px 0 0 rgba(251, 191, 36, 0.15);
+  animation: eureka-header-glow 3s ease-in-out infinite;
 }
 
-/* Sparkles icon: persistent glow + breathing pulse */
+@keyframes eureka-header-glow {
+  0%, 100% {
+    box-shadow:
+      0 1px 12px 0 rgba(234, 179, 8, 0.3),
+      0 4px 24px -4px rgba(251, 191, 36, 0.2),
+      inset 0 -1px 0 0 rgba(251, 191, 36, 0.1);
+  }
+  50% {
+    box-shadow:
+      0 1px 16px 0 rgba(234, 179, 8, 0.5),
+      0 4px 32px -4px rgba(251, 191, 36, 0.35),
+      inset 0 -1px 0 0 rgba(251, 191, 36, 0.25);
+  }
+}
+
+/* Sparkles icon: intense glow + breathing pulse */
 .eureka-glow {
-  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.7));
+  filter:
+    drop-shadow(0 0 8px rgba(251, 191, 36, 0.9))
+    drop-shadow(0 0 20px rgba(251, 191, 36, 0.5));
   animation: eureka-breathe 2.5s ease-in-out infinite;
 }
 
-/* Bloom: one-shot expand on toggle */
+/* Bloom: dramatic burst on toggle activation */
 .eureka-bloom {
-  animation: eureka-bloom 350ms ease-out;
+  animation: eureka-bloom 500ms ease-out;
 }
 
 @keyframes eureka-breathe {
-  0%, 100% { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5)); }
-  50%      { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9)); }
+  0%, 100% {
+    filter:
+      drop-shadow(0 0 6px rgba(251, 191, 36, 0.7))
+      drop-shadow(0 0 14px rgba(251, 191, 36, 0.3));
+  }
+  50% {
+    filter:
+      drop-shadow(0 0 12px rgba(251, 191, 36, 1))
+      drop-shadow(0 0 28px rgba(251, 191, 36, 0.6));
+  }
 }
 
 @keyframes eureka-bloom {
-  0%   { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5)); transform: scale(1); }
-  40%  { filter: drop-shadow(0 0 18px rgba(251, 191, 36, 1)); transform: scale(1.25); }
-  100% { filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.7)); transform: scale(1); }
+  0% {
+    filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5));
+    transform: scale(1);
+  }
+  30% {
+    filter:
+      drop-shadow(0 0 30px rgba(251, 191, 36, 1))
+      drop-shadow(0 0 60px rgba(251, 191, 36, 0.7));
+    transform: scale(1.5);
+  }
+  60% {
+    filter:
+      drop-shadow(0 0 20px rgba(251, 191, 36, 0.9))
+      drop-shadow(0 0 40px rgba(251, 191, 36, 0.4));
+    transform: scale(0.9);
+  }
+  100% {
+    filter:
+      drop-shadow(0 0 8px rgba(251, 191, 36, 0.9))
+      drop-shadow(0 0 20px rgba(251, 191, 36, 0.5));
+    transform: scale(1);
+  }
+}
+
+/* Header shimmer sweep on activation */
+.eureka-header-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+.eureka-header-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(251, 191, 36, 0.15) 25%,
+    rgba(251, 191, 36, 0.35) 50%,
+    rgba(251, 191, 36, 0.15) 75%,
+    transparent 100%
+  );
+  transform: translateX(-100%);
+  animation: eureka-shimmer 600ms ease-out forwards;
+  pointer-events: none;
+  z-index: 50;
+}
+
+@keyframes eureka-shimmer {
+  0%   { transform: translateX(-100%); }
+  100% { transform: translateX(100%); opacity: 0; }
 }
 
 /* Respect reduced-motion preference */
 @media (prefers-reduced-motion: reduce) {
   .eureka-glow { animation: none; }
   .eureka-bloom { animation: none; }
+  .eureka-active [data-testid="app-header"] { animation: none; }
+  .eureka-header-shimmer::after { animation: none; display: none; }
 }

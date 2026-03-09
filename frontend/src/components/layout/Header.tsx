@@ -22,7 +22,9 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
   const eurekaMode = (config.eureka_mode as boolean) ?? false;
   const [eurekaSaving, setEurekaSaving] = useState(false);
   const [blooming, setBlooming] = useState(false);
+  const [shimmering, setShimmering] = useState(false);
   const bloomTimer = useRef<ReturnType<typeof setTimeout>>();
+  const shimmerTimer = useRef<ReturnType<typeof setTimeout>>();
 
   // Sync .eureka-active class on <html> with eureka mode state
   useEffect(() => {
@@ -40,11 +42,14 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
     updateConfig({ eureka_mode: newValue });
     setEurekaSaving(true);
 
-    // Trigger bloom on activation
+    // Trigger bloom + header shimmer on activation
     if (newValue) {
       setBlooming(true);
+      setShimmering(true);
       clearTimeout(bloomTimer.current);
-      bloomTimer.current = setTimeout(() => setBlooming(false), 400);
+      clearTimeout(shimmerTimer.current);
+      bloomTimer.current = setTimeout(() => setBlooming(false), 550);
+      shimmerTimer.current = setTimeout(() => setShimmering(false), 700);
     }
 
     try {
@@ -67,7 +72,7 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
   ];
 
   return (
-    <header data-testid="app-header" className="bg-panel border-b border-border flex items-center justify-between px-4 h-12 shrink-0">
+    <header data-testid="app-header" className={`bg-panel border-b border-border flex items-center justify-between px-4 h-12 shrink-0 transition-shadow duration-500 ${shimmering ? 'eureka-header-shimmer' : ''}`}>
       <div className="flex items-center gap-3 min-w-0 flex-1 overflow-hidden">
         <Button
           variant="ghost"

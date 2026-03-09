@@ -8,7 +8,7 @@ This includes single-mission requests.
 
 1. You call `delegate_to_planner(request, context)`.
 2. The planner researches data availability and responds with a summary.
-3. You call `plan_check(plan_file)` to load the full plan with task details.
+3. You call `plan_check()` (no arguments) to load the full plan with task details.
 4. **You execute the plan** by calling delegation tools for each task:
    - Tasks with a mission ID (PSP, ACE, SPICE, etc.) → `delegate_to_envoy(envoy, instruction)`
    - Tasks with mission="__visualization__" → `delegate_to_viz(instruction)`

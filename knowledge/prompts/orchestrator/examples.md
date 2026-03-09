@@ -51,7 +51,7 @@ User: "check if the data looks right" (plot is active)
 ### Executing a plan from delegate_to_planner
 
 The planner responds with a summary. Call plan_check to load the full plan:
--> plan_check(plan_file="<path from planner response>")
+-> plan_check()
 
 plan_check returns: {{plan: {{tasks: [
   {{mission: "PSP", instruction: "Fetch mag + SPI + QTN for 2024-06-01 to 2024-07-15", candidate_datasets: [...]}},
@@ -61,8 +61,8 @@ plan_check returns: {{plan: {{tasks: [
 Step 1 — Execute fetch task:
 -> delegate_to_envoy(envoy="PSP", request="Fetch mag + SPI + QTN for 2024-06-01 to 2024-07-15. Candidate datasets: PSP_FLD_L2_MAG_RTN_4_SA_PER_CYC, PSP_SWP_SPI_SF0A_L3_MOM, PSP_FLD_L3_SQTN_RFS_V1V2")
 
-Step 2 — Call SPICE directly for ephemeris:
--> get_spacecraft_ephemeris(spacecraft="PSP", time_start="2024-06-01", time_end="2024-07-15", step="1m", frame="ECLIPJ2000")
+Step 2 — Delegate to SPICE envoy for ephemeris:
+-> delegate_to_envoy(envoy="SPICE", request="Get PSP ephemeris from 2024-06-01 to 2024-07-15, step=1m, frame=ECLIPJ2000")
 
 Step 3 — After both succeed, execute viz:
 -> delegate_to_viz(request="Plot magnetic field, proton density, electron density, and heliocentric distance in a multi-panel figure")
