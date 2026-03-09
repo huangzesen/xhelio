@@ -227,6 +227,30 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
     return map;
   }, [rounds, roundTokenUsage]);
 
+  const timelineItems = useMemo(() => {
+    const items: Array<
+      | { type: 'message'; msg: ChatMessageType; index: number }
+      | { type: 'permission'; perm: (typeof pendingPermissions)[number] }
+    > = [];
+
+    let permIdx = 0;
+    const sortedPerms = [...pendingPermissions].sort((a, b) => a.timestamp - b.timestamp);
+
+    for (let i = 0; i < visibleMessages.length; i++) {
+      while (permIdx < sortedPerms.length && sortedPerms[permIdx].timestamp <= visibleMessages[i].timestamp) {
+        items.push({ type: 'permission', perm: sortedPerms[permIdx] });
+        permIdx++;
+      }
+      items.push({ type: 'message', msg: visibleMessages[i], index: i });
+    }
+    while (permIdx < sortedPerms.length) {
+      items.push({ type: 'permission', perm: sortedPerms[permIdx] });
+      permIdx++;
+    }
+
+    return items;
+  }, [visibleMessages, pendingPermissions]);
+
   // Collect orphan rounds: rounds with events but no user messages
   const orphanRounds = useMemo(
     () => rounds.filter(
@@ -270,7 +294,33 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
     <div data-testid="message-list" ref={scrollContainerRef} className="relative flex-1 overflow-y-auto overflow-x-hidden px-4 py-4" role="log" aria-live="polite">
       <div className="max-w-3xl mx-auto space-y-5">
         <AnimatePresence mode="popLayout">
-          {visibleMessages.map((msg, i) => {
+          {timelineItems.map((item) => {
+            if (item.type === 'permission') {
+              return (
+                <motion.div
+                  key={`perm-${item.perm.id}`}
+                  variants={fadeSlideIn}
+                  initial="hidden"
+                  animate="visible"
+                  exit="exit"
+                  layout
+                  className="min-w-0"
+                >
+                  <PermissionRequest
+                    id={item.perm.id}
+                    requestId={item.perm.requestId}
+                    action={item.perm.action}
+                    description={item.perm.description}
+                    command={item.perm.command}
+                    responded={item.perm.responded}
+                    decision={item.perm.decision}
+                  />
+                </motion.div>
+              );
+            }
+
+            const msg = item.msg;
+            const i = item.index;
             const isMplPlot = msg.role === 'plot' && !!msg.mplImageUrl;
             const isJsxComponent = msg.role === 'plot' && !!msg.jsxScriptId;
             const isInlinePlot = msg.role === 'plot' && msg.figure && !isMplPlot && !isJsxComponent;
@@ -480,18 +530,6 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
           )}
         </AnimatePresence>
 
-        {pendingPermissions.map((perm) => (
-          <PermissionRequest
-            key={perm.id}
-            id={perm.id}
-            requestId={perm.requestId}
-            action={perm.action}
-            description={perm.description}
-            command={perm.command}
-            responded={perm.responded}
-          />
-        ))}
-
         <div ref={bottomRef} />
       </div>
 
@@ -503,8 +541,9 @@ export function MessageList({ messages, toolEvents, isStreaming, onRegenerate }:
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: 10 }}
             onClick={scrollToBottom}
-            className="sticky bottom-4 left-1/2 -translate-x-1/2 flex items-center gap-1.5 px-4 py-2 rounded-full
-              bg-primary text-white text-sm font-medium shadow-lg hover:bg-primary-dark transition-colors z-10"
+            className="sticky bottom-2 mx-auto flex items-center gap-1.5 px-3 py-1.5 rounded-full
+              bg-primary/90 backdrop-blur-sm text-white text-xs font-medium shadow-md
+              hover:bg-primary transition-colors z-10 w-fit"
           >
             <ArrowDown size={14} />
             New messages below

@@ -2,7 +2,7 @@
 """
 Generate enriched mission profile descriptions using Gemini + web search.
 
-Reads each mission JSON from knowledge/missions/, extracts dataset info,
+Reads each mission JSON from knowledge/envoys/, extracts dataset info,
 uses Gemini with Google Search grounding to research mission context, and
 writes a ~2000-token summary into the profile.description field.
 
@@ -27,7 +27,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "missions" / "cdaweb"
+MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "envoys" / "cdaweb"
 DEFAULT_MODEL = "gemini-2.5-flash"
 PLACEHOLDER_SUFFIX = "data from CDAWeb."
 RATE_LIMIT_DELAY = 4  # seconds between API calls

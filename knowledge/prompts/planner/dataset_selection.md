@@ -11,12 +11,13 @@ as recommendations in your plan.** Every fetch task SHOULD have a `candidate_dat
 list with 1-3 verified dataset IDs. This gives the envoy a head start and saves a
 round of discovery.
 
-1. Call `search_datasets(query)` or `browse_datasets(mission)` to find datasets —
-   both return `start_date` and `stop_date` for each dataset.
+1. Call `envoy_query(envoy="X")` to see a mission's instruments and datasets, or
+   `envoy_query(search="keyword")` to search across all envoys — results include
+   `start_date` and `stop_date` for each dataset.
 2. Identify datasets that match the requested physical quantities AND cover the time range.
 3. If multiple datasets match, pick the best (highest cadence, most complete coverage)
    and include 1-3 as `candidate_datasets`.
-4. If you called `list_parameters(dataset_id)` to confirm a dataset has the right
+4. If you used `envoy_query(envoy="X", path="...")` to confirm a dataset has the right
    parameters, definitely include it.
 
 These are **recommendations, not mandates** — the envoy has final authority on dataset
@@ -30,8 +31,8 @@ many options and you can't narrow down), describe only the physical quantity and
 ### Time coverage is critical
 
 Before including a dataset (or even a mission) in your plan, you MUST verify it has
-data for the requested time range. Both `search_datasets` and `browse_datasets` return
-`start_date` and `stop_date` for every dataset.
+data for the requested time range. `envoy_query` results include `start_date` and
+`stop_date` for every dataset.
 
 **Rules:**
 - If a dataset's stop_date is BEFORE the requested start date, do NOT include it.

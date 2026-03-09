@@ -161,6 +161,7 @@ export function CommandPalette({ open, onOpenChange, theme, onToggleTheme, onOpe
                   key={s.id}
                   onSelect={() => runAction(() => {
                     navigate('/');
+                    useSessionStore.getState().resumeSession(s.id);
                   })}
                 >
                   <MessageSquare size={16} />

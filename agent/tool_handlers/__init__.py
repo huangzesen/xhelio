@@ -12,12 +12,10 @@ TOOL_REGISTRY: dict[str, ToolHandler] = {}
 # ── Session, visualization, planning ──
 from agent.tool_handlers.session import (
     handle_ask_clarification,
-    handle_get_session_assets,
-    handle_restore_plot,
+    handle_manage_session_assets,
     handle_events,
     handle_events_admin,
-    handle_list_active_work,
-    handle_cancel_work,
+    handle_manage_workers,
 )
 from agent.tool_handlers.visualization import (
     handle_render_plotly_json,
@@ -43,6 +41,7 @@ from agent.tool_handlers.discovery import (
     handle_search_full_catalog,
     handle_web_search,
 )
+from agent.tool_handlers.envoy_query import handle_envoy_query
 
 # ── Delegation ──
 from agent.tool_handlers.delegation import (
@@ -54,30 +53,22 @@ from agent.tool_handlers.delegation import (
     handle_delegate_to_planner,
 )
 
-# ── Envoy management ──
-from agent.tool_handlers.envoy_management import (
-    handle_add_envoy,
-    handle_save_envoy,
-    handle_list_envoys,
-    handle_remove_envoy,
-)
-
 # ── File I/O ──
 from agent.tool_handlers.file_io import handle_load_file
 from agent.tool_handlers.permission import handle_ask_user_permission
 from agent.tool_handlers.package_install import handle_install_package
 from agent.tool_handlers.sandbox_packages import handle_manage_sandbox_packages
+from agent.tool_handlers.sandbox import handle_run_code
+from agent.tool_handlers.manage_envoy import handle_manage_envoy
 
 # ── Data ops ──
 from agent.tool_handlers.data_ops import (
     handle_fetch_data,
     handle_list_fetched_data,
-    handle_custom_operation,
-    handle_store_dataframe,
+    handle_list_assets,
     handle_describe_data,
     handle_preview_data,
-    handle_save_data,
-    handle_merge_datasets,
+    handle_manage_data,
 )
 
 # ── Pipeline ──
@@ -96,12 +87,10 @@ TOOL_REGISTRY.update(
         "ask_clarification": handle_ask_clarification,
         "install_package": handle_install_package,
         "manage_sandbox_packages": handle_manage_sandbox_packages,
-        "get_session_assets": handle_get_session_assets,
-        "restore_plot": handle_restore_plot,
+        "manage_session_assets": handle_manage_session_assets,
         "events": handle_events,
         "events_admin": handle_events_admin,
-        "list_active_work": handle_list_active_work,
-        "cancel_work": handle_cancel_work,
+        "manage_workers": handle_manage_workers,
         # Visualization
         "render_plotly_json": handle_render_plotly_json,
         "manage_plot": handle_manage_plot,
@@ -126,6 +115,7 @@ TOOL_REGISTRY.update(
         "get_dataset_docs": handle_get_dataset_docs,
         "search_full_catalog": handle_search_full_catalog,
         "web_search": handle_web_search,
+        "envoy_query": handle_envoy_query,
         # Delegation
         "delegate_to_envoy": handle_delegate_to_envoy,
         "delegate_to_viz": handle_delegate_to_viz,
@@ -137,19 +127,15 @@ TOOL_REGISTRY.update(
         # Data ops
         "fetch_data": handle_fetch_data,
         "list_fetched_data": handle_list_fetched_data,
-        "custom_operation": handle_custom_operation,
-        "store_dataframe": handle_store_dataframe,
+        "list_assets": handle_list_assets,
+        "run_code": handle_run_code,
         "describe_data": handle_describe_data,
         "preview_data": handle_preview_data,
-        "save_data": handle_save_data,
-        "merge_datasets": handle_merge_datasets,
+        "manage_data": handle_manage_data,
         # Pipeline
         "pipeline": handle_pipeline,
         # Envoy management
-        "add_envoy": handle_add_envoy,
-        "save_envoy": handle_save_envoy,
-        "list_envoys": handle_list_envoys,
-        "remove_envoy": handle_remove_envoy,
+        "manage_envoy": handle_manage_envoy,
     }
 )
 

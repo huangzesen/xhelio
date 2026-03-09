@@ -403,27 +403,32 @@ async def upload_file(session_id: str, file: UploadFile = FastAPIFile(...)):
 
     dest.write_bytes(content)
 
-    # Build a natural-language message for the agent
-    size_kb = len(content) / 1024
-    size_str = f"{size_kb:.1f} KB" if size_kb < 1024 else f"{size_kb / 1024:.1f} MB"
-    agent_message = (
-        f"I've uploaded a file: {file.filename} ({size_str}). "
-        f"The file is saved at: {dest}"
+    # Register in the session's asset registry (pure I/O, no LLM turn)
+    asset = state.agent._asset_registry.register_file(
+        filename=file.filename or safe_name,
+        path=dest,
+        size_bytes=len(content),
+        mime_type=file.content_type or "",
     )
-
-    # Lazy-start the persistent event loop
-    if state._loop_thread is None or not state._loop_thread.is_alive():
-        loop = asyncio.get_running_loop()
-        session_manager.start_loop(state, loop)
-
-    # Push the message into the agent's input queue
-    state.agent.push_input(agent_message)
 
     return {
         "status": "uploaded",
+        "asset_id": asset.asset_id,
         "filename": dest.name,
         "size": len(content),
     }
+
+
+# ---- Assets ----
+
+
+@router.get("/sessions/{session_id}/assets")
+async def get_assets(session_id: str, kind: str | None = None):
+    """List session assets (data, files, figures)."""
+    state = _get_session_or_404(session_id)
+    if not hasattr(state.agent, "_asset_registry"):
+        return []
+    return state.agent._asset_registry.list_assets(kind=kind)
 
 
 # ---- Cancel ----
@@ -1620,9 +1625,16 @@ async def get_config():
             merged_providers[prov] = prov_vals
     cfg = {**defaults, **loaded, "providers": merged_providers}
     # Migrate old combos config to workbench presets if needed
-    from config import _migrate_combos_to_presets
+    from config import _migrate_combos_to_presets, _migrate_inline_model_to_agent, _ensure_default_preset
 
+    migrated = False
     if _migrate_combos_to_presets(cfg):
+        migrated = True
+    if _migrate_inline_model_to_agent(cfg):
+        migrated = True
+    if _ensure_default_preset(cfg):
+        migrated = True
+    if migrated:
         # Save migration result to disk
         import json as _json
 

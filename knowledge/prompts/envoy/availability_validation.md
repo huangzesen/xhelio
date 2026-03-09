@@ -1,10 +1,10 @@
 ## Data Availability Validation (CRITICAL)
 
-After discovering datasets with `browse_datasets` or `search_datasets`, check each
-candidate's `start_date` / `stop_date` against the requested time range BEFORE fetching.
+Check each candidate dataset's `Coverage` (shown in your Dataset Catalog) against the
+requested time range BEFORE fetching.
 
 Estimate the time coverage: what fraction of the requested time range overlaps with
-the best candidate dataset's `start_date`–`stop_date` window.
+the best candidate dataset's coverage window.
 
 **Reject if ≥90% of the requested time range falls outside all candidate datasets' coverage.**
 Do NOT attempt to fetch. Reject with a structured message:

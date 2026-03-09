@@ -130,7 +130,7 @@ def handle_modify_pipeline_node(orch: "OrchestratorAgent", tool_args: dict) -> d
 
     elif action == "insert_after":
         after_id = tool_args.get("after_id", "")
-        tool_type = tool_args.get("tool", "custom_operation")
+        tool_type = tool_args.get("tool", "run_code")
         params = tool_args.get("params", {})
         output_label = tool_args.get("output_label", "")
         if not after_id:
@@ -171,7 +171,7 @@ def handle_modify_pipeline_node(orch: "OrchestratorAgent", tool_args: dict) -> d
         node = pipeline.get_node(node_id)
         if node is None:
             return {"status": "error", "message": f"Node '{node_id}' not found"}
-        if node.tool != "custom_operation":
+        if node.tool != "run_code":
             return {
                 "status": "error",
                 "message": f"Node '{node_id}' is not a compute node (tool={node.tool})",
@@ -210,7 +210,7 @@ def handle_modify_pipeline_node(orch: "OrchestratorAgent", tool_args: dict) -> d
         node = pipeline.get_node(node_id)
         if node is None:
             return {"status": "error", "message": f"Node '{node_id}' not found"}
-        if node.tool != "custom_operation":
+        if node.tool != "run_code":
             return {
                 "status": "error",
                 "message": f"Node '{node_id}' is not a compute node (tool={node.tool})",
@@ -355,9 +355,9 @@ def handle_run_pipeline(orch: "OrchestratorAgent", tool_args: dict) -> dict:
             mission_id = get_canonical_id(stem) if stem else "UNKNOWN"
             target: tuple[str, str | None] = ("mission", mission_id)
 
-        elif tool in ("custom_operation", "store_dataframe"):
+        elif tool == "run_code":
             step_args = dict(params)
-            if tool == "custom_operation":
+            if tool == "run_code":
                 source_labels = [
                     step_to_label[sid]
                     for sid in step.get("inputs", [])

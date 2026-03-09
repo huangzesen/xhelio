@@ -34,7 +34,7 @@ from knowledge.mission_prefixes import match_dataset_to_mission
 
 
 # Constants — this script is CDAWeb-specific
-MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "missions" / "cdaweb"
+MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "envoys" / "cdaweb"
 DEFAULT_WORKERS = 10
 
 # CDAS REST metadata (fetched once, shared across threads)

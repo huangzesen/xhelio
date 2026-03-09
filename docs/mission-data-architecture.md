@@ -5,7 +5,7 @@ How mission data is structured, generated, loaded, searched, and overridden.
 ## Directory Layout
 
 ```
-knowledge/missions/
+knowledge/envoys/
   cdaweb/                          ← CDAWeb missions (auto-generated)
     {stem}.json                    ← Mission JSON (id, name, keywords, instruments, datasets)
     {stem}/metadata/{DATASET}.json ← Per-dataset metadata cache (parameters, dates)
@@ -17,7 +17,7 @@ knowledge/missions/
     {stem}/metadata/_index.json
 ```
 
-No data lives at the top level of `missions/` — only `cdaweb/` and `ppi/` subdirectories.
+No data lives at the top level of `envoys/` — only kind subdirectories (`cdaweb/`, `ppi/`, etc.).
 
 ## Mission JSON Structure
 

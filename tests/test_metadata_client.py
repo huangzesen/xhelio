@@ -126,7 +126,7 @@ class TestLocalFirstCacheBehavior:
 
     def test_local_cache_avoids_network(self, tmp_path):
         """When local cache exists, no network request is made."""
-        fake_cdaweb = tmp_path / "missions" / "cdaweb"
+        fake_cdaweb = tmp_path / "envoys" / "cdaweb"
         psp_metadata = fake_cdaweb / "psp" / "metadata"
         psp_metadata.mkdir(parents=True)
 

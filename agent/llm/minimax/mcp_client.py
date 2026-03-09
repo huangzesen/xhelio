@@ -166,9 +166,7 @@ class MiniMaxMCPClient:
             except Exception:
                 pass
         if not api_host:
-            raise RuntimeError(
-                "MiniMax API host not configured. Please set minimax_mcp.api_host in config.json."
-            )
+            api_host = "https://api.minimaxi.com"
 
         env = {**os.environ, "MINIMAX_API_KEY": api_key, "MINIMAX_API_HOST": api_host}
 

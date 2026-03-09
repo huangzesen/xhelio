@@ -4,6 +4,7 @@ import { Button } from '@/components/ui/button';
 import Plot from 'react-plotly.js';
 import { applyDarkTheme, getPlotTitle } from './plotUtils';
 import type { PlotlyFigure } from '../../api/types';
+import { useIsDark } from '../../hooks/useTheme';
 
 interface Props {
   figures: PlotlyFigure[];
@@ -18,7 +19,7 @@ export function PlotFullscreen({ figures, currentIndex, onNavigate, onClose }: P
   const [plotHeight, setPlotHeight] = useState(window.innerHeight - TOP_BAR_HEIGHT);
 
   const figure = figures[currentIndex];
-  const isDark = document.documentElement.classList.contains('dark');
+  const isDark = useIsDark();
   const title = getPlotTitle(figure);
   const hasPrev = currentIndex > 0;
   const hasNext = currentIndex < figures.length - 1;

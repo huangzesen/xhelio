@@ -39,7 +39,7 @@ from knowledge.mission_prefixes import (
 
 
 # Missions directory — this script is CDAWeb-specific
-MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "missions" / "cdaweb"
+MISSIONS_DIR = Path(__file__).parent.parent / "knowledge" / "envoys" / "cdaweb"
 
 
 def fetch_catalog() -> list[dict]:

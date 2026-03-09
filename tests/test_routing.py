@@ -102,7 +102,7 @@ class TestToolNameFiltering:
         assert "manage_sandbox_packages" in names
         # Should NOT include data_ops (delegated to sub-agents)
         assert "fetch_data" not in names
-        assert "custom_operation" not in names
+        assert "run_code" not in names
         # Should NOT include visualization
         assert "plot_data" not in names
 
@@ -110,7 +110,7 @@ class TestToolNameFiltering:
         dataops_tools = get_tool_schemas(names=DATAOPS_TOOLS)
         names = {t["name"] for t in dataops_tools}
         # Should include compute tools
-        assert "custom_operation" in names
+        assert "run_code" in names
         assert "describe_data" in names
         # Should include list_fetched_data
         assert "list_fetched_data" in names
@@ -118,9 +118,9 @@ class TestToolNameFiltering:
         assert "ask_clarification" in names
         # Should NOT include fetch (mission-specific)
         assert "fetch_data" not in names
-        # Should NOT include save_data (data_export, orchestrator only)
-        assert "save_data" not in names
-        # Should NOT include store_dataframe (moved to data_extraction)
+        # Should include manage_data (merged save + merge)
+        assert "manage_data" in names
+        # Should NOT include store_dataframe (removed)
         assert "store_dataframe" not in names
         # Should NOT include routing or visualization
         assert "delegate_to_envoy" not in names
@@ -206,10 +206,10 @@ class TestDelegateToDataOpsTool:
 class TestDataIOCategories:
     """Test DataIOAgent tool filtering."""
 
-    def test_data_io_agent_gets_store_dataframe(self):
+    def test_data_io_agent_gets_run_code(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
-        assert "store_dataframe" in names
+        assert "run_code" in names
 
     def test_data_io_agent_gets_read_document(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
@@ -233,6 +233,7 @@ class TestDataIOCategories:
     def test_data_io_agent_excludes_compute(self):
         names = set(DATA_IO_TOOLS)
         assert "custom_operation" not in names
+        assert "store_dataframe" not in names
         assert "describe_data" not in names
         assert "save_data" not in names
 

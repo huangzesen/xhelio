@@ -34,7 +34,7 @@ TEXTS_CACHE = get_data_dir() / "catalog_embed_texts.npy"
 CACHE_TTL_SECONDS = 24 * 60 * 60  # 24 hours
 
 # PPI mission JSONs directory
-_PPI_DIR = Path(__file__).parent / "missions" / "ppi"
+_PPI_DIR = Path(__file__).parent / "envoys" / "ppi"
 
 # Lazy state for semantic search
 _fastembed_available = None  # None = not checked yet
@@ -124,7 +124,7 @@ def _fetch_from_cdas_rest() -> list[dict]:
 def _get_ppi_entries() -> list[dict]:
     """Build catalog entries from local PPI mission JSON files.
 
-    Walks knowledge/missions/ppi/*.json and extracts dataset IDs and
+    Walks knowledge/envoys/ppi/*.json and extracts dataset IDs and
     descriptions from each mission's instruments.
     """
     if not _PPI_DIR.exists():

@@ -11,8 +11,7 @@ import { AssetsPage } from './pages/AssetsPage';
 import { EurekaPage } from './pages/EurekaPage';
 import { SettingsLayout } from './pages/settings';
 import { ApiKeysSection } from './pages/settings/ApiKeysSection';
-import { ModelsSection } from './pages/settings/ModelsSection';
-import { WorkbenchSection } from './pages/settings/WorkbenchSection';
+import { ModelsPage } from './pages/settings/models';
 import { DataSection } from './pages/settings/DataSection';
 import { AdvancedSection } from './pages/settings/AdvancedSection';
 import { ErrorBoundary } from './components/common/ErrorBoundary';
@@ -21,6 +20,7 @@ import { KeyboardShortcuts } from './components/common/KeyboardShortcuts';
 import { SetupScreen } from './components/common/SetupScreen';
 import { useSessionStore } from './stores/sessionStore';
 import { useChatStore } from './stores/chatStore';
+import { useSettingsStore } from './stores/settingsStore';
 import { useTheme } from './hooks/useTheme';
 import { useKeyboardShortcuts } from './hooks/useKeyboardShortcuts';
 import * as api from './api/client';
@@ -69,6 +69,9 @@ export default function App() {
         const status = await api.getStatus();
         if (cancelled) return;
 
+        // Load config early so Header can read eureka_mode, etc.
+        useSettingsStore.getState().loadConfig().catch(() => {});
+
         // If no API key is configured, show setup screen
         if (!status.api_key_configured) {
           setNeedsSetup(true);
@@ -81,7 +84,8 @@ export default function App() {
         if (persistedId) {
           try {
             const detail = await api.getSession(persistedId);
-            // Session still alive — refresh token usage from backend
+            // Session still alive — refresh model and token usage from backend
+            useSessionStore.setState({ model: detail.model });
             useSessionStore.getState().setTokenUsage(detail.token_usage ?? {});
             // If session is still busy from a previous in-flight request
             // (e.g. browser refresh mid-stream), cancel it so the user can
@@ -175,6 +179,7 @@ export default function App() {
               const info = await api.resumeSession(persistedId);
               if (cancelled) return;
               useSessionStore.getState().setActiveSessionId(info.session_id);
+              useSessionStore.setState({ model: info.model });
               useSessionStore.getState().setTokenUsage({});
               // Rebuild UI from event log
               const eventLog = info.event_log || [];
@@ -340,8 +345,7 @@ export default function App() {
           <Route path="/settings" element={<SettingsLayout />}>
             <Route index element={<Navigate to="/settings/api-keys" replace />} />
             <Route path="api-keys" element={<ApiKeysSection />} />
-            <Route path="models" element={<ModelsSection />} />
-            <Route path="workbench" element={<WorkbenchSection />} />
+            <Route path="models" element={<ModelsPage />} />
             <Route path="data" element={<DataSection />} />
             <Route path="advanced" element={<AdvancedSection />} />
             <Route path="assets" element={<AssetsPage />} />

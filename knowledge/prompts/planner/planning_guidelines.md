@@ -1,9 +1,9 @@
 ## Planning Guidelines
 
 1. **Verify data availability BEFORE emitting the plan.** You MUST check date ranges
-   (from `search_datasets` or `browse_datasets`) for every mission in your plan. If a dataset's
-   stop_date is before the requested start date, do NOT create a task for it. Always include
-   the verified dataset IDs in `candidate_datasets`.
+   (from `envoy_query`) for every mission in your plan. If a dataset's stop_date is before
+   the requested start date, do NOT create a task for it. Always include the verified
+   dataset IDs in `candidate_datasets`.
 2. **One task per mission.** Combine ALL data needs for the same mission into a single task.
    The envoy agent can fetch multiple physical quantities in one session.
    Example: "Fetch magnetic field vector, solar wind speed, and electron pitch angle distribution for <time range>" (mission: "PSP")

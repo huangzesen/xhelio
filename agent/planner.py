@@ -93,12 +93,8 @@ class PlannerAgent(SubAgent):
     """
 
     _PARALLEL_SAFE_TOOLS: set[str] = {
-        "list_missions",
-        "search_datasets",
-        "list_parameters",
-        "browse_datasets",
+        "envoy_query",
         "get_dataset_docs",
-        "search_full_catalog",
         "list_fetched_data",
         "web_search",
     }

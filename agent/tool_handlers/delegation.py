@@ -10,7 +10,7 @@ from agent.event_bus import DELEGATION, DELEGATION_DONE
 
 
 def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    mission_id = tool_args["mission_id"]
+    mission_id = tool_args.get("envoy") if tool_args.get("envoy") is not None else tool_args.get("mission_id")
     request = tool_args["request"]
     wait = tool_args.get("wait", True)
     mode_text = " (run in background)" if not wait else ""
@@ -53,7 +53,7 @@ def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict
             full_request,
             store_snapshot=orch._store.list_entries(),
             tool_call_id=tool_call_id,
-            agent_type="envoy",
+            agent_type=f"envoy:{mission_id}",
             agent_name=agent.agent_id,
             task_summary=request[:200],
             post_process=_envoy_post,

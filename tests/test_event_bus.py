@@ -484,7 +484,7 @@ class TestOperationsLogListener:
             "status": "success",
         })
         ops_log.record.assert_called_once_with(
-            tool="custom_operation",
+            tool="run_code",
             args={"description": "magnitude", "code": "np.sqrt(x)"},
             outputs=["Bmag"],
             inputs=["AC_H2_MFI.BGSEc"],
@@ -536,7 +536,7 @@ class TestOperationsLogListener:
             "status": "success",
         })
         ops_log.record.assert_called_once()
-        assert ops_log.record.call_args.kwargs["tool"] == "store_dataframe"
+        assert ops_log.record.call_args.kwargs["tool"] == "run_code"
 
     def test_records_mpl_render_executed(self):
         ops_log = MagicMock()
@@ -739,11 +739,11 @@ class TestAgentToolRegistry:
     """Smoke tests for AGENT_CALL_REGISTRY and AGENT_INFORMED_REGISTRY."""
 
     def test_call_registry_has_expected_keys(self):
-        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:extraction", "ctx:eureka"}
+        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:data_io", "ctx:eureka"}
         assert set(AGENT_CALL_REGISTRY.keys()) == expected_keys
 
     def test_informed_registry_has_expected_keys(self):
-        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:extraction", "ctx:eureka"}
+        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:data_io", "ctx:eureka"}
         assert set(AGENT_INFORMED_REGISTRY.keys()) == expected_keys
 
     def test_call_registry_values_are_nonempty_frozensets(self):
@@ -772,8 +772,8 @@ class TestAgentToolRegistry:
         assert "fetch_data" in AGENT_CALL_REGISTRY["ctx:envoy"]
         # render_plotly_json should be in viz (call)
         assert "render_plotly_json" in AGENT_CALL_REGISTRY["ctx:viz_plotly"]
-        # custom_operation should be in dataops (call)
-        assert "custom_operation" in AGENT_CALL_REGISTRY["ctx:dataops"]
+        # run_code should be in dataops (call)
+        assert "run_code" in AGENT_CALL_REGISTRY["ctx:dataops"]
         # list_fetched_data should be in all agents (call)
         for ctx in AGENT_CALL_REGISTRY:
             assert "list_fetched_data" in AGENT_CALL_REGISTRY[ctx], (
@@ -791,10 +791,10 @@ class TestAgentToolRegistry:
             )
 
     def test_informed_tools_for_viz(self):
-        """VizAgent should be informed about fetch_data and custom_operation."""
+        """VizAgent should be informed about fetch_data and run_code."""
         viz_informed = AGENT_INFORMED_REGISTRY.get("ctx:viz_plotly")
         assert "fetch_data" in viz_informed
-        assert "custom_operation" in viz_informed
+        assert "run_code" in viz_informed
 
     def test_informed_tools_for_dataops(self):
         """DataOpsAgent should be informed about fetch_data."""

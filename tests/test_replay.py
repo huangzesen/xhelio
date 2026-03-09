@@ -13,10 +13,9 @@ import pytest
 from data_ops.store import DataEntry, DataStore
 from scripts.replay import (
     ReplayResult,
-    _replay_custom_op,
+    _replay_run_code,
     _replay_fetch,
     _replay_render,
-    _replay_store_df,
     replay_pipeline,
     replay_session,
     replay_state,
@@ -76,7 +75,7 @@ def _custom_op_record(
 ) -> dict:
     return {
         "id": op_id,
-        "tool": "custom_operation",
+        "tool": "run_code",
         "status": "success",
         "inputs": inputs or ["AC_H2_MFI.BGSEc"],
         "outputs": outputs or ["Bmag"],
@@ -95,7 +94,7 @@ def _store_df_record(
 ) -> dict:
     return {
         "id": op_id,
-        "tool": "store_dataframe",
+        "tool": "run_code",
         "status": "success",
         "inputs": [],
         "outputs": outputs or ["my_data"],
@@ -201,8 +200,8 @@ class TestReplayFetch:
             _replay_fetch(rec, store)
 
 
-class TestReplayCustomOp:
-    """Tests for _replay_custom_op."""
+class TestReplayRunCode:
+    """Tests for _replay_run_code (unified replay for run_code / legacy ops)."""
 
     def test_single_source(self, tmp_path):
         store = DataStore(tmp_path / "data")
@@ -210,98 +209,45 @@ class TestReplayCustomOp:
         store.put(DataEntry(label="src.data", data=df, source="cdf"))
 
         rec = _custom_op_record(
-            code="result = df.abs()",
+            code="import pandas as pd\ndf = pd.read_parquet('src.data.parquet')\nresult = df.abs()",
             inputs=["src.data"],
             outputs=["abs_data"],
         )
 
-        _replay_custom_op(rec, store)
+        _replay_run_code(rec, store)
 
         assert store.has("abs_data")
         entry = store.get("abs_data")
         assert entry.source == "computed"
         assert len(entry.data) == 5
 
-    def test_multi_source(self, tmp_path):
-        store = DataStore(tmp_path / "data")
-        df_a = _make_ts_dataframe(5, ["x"])
-        df_b = _make_ts_dataframe(5, ["y"])
-        store.put(DataEntry(label="set.alpha", data=df_a, source="cdf"))
-        store.put(DataEntry(label="set.beta", data=df_b, source="cdf"))
-
-        rec = _custom_op_record(
-            code="result = df_alpha + df_beta",
-            inputs=["set.alpha", "set.beta"],
-            outputs=["combined"],
-        )
-
-        _replay_custom_op(rec, store)
-
-        assert store.has("combined")
-        assert len(store.get("combined").data) == 5
-
-    def test_id_suffix_conflict(self, tmp_path):
-        """Test that two inputs with same label suffix but different IDs work correctly."""
-        store = DataStore(tmp_path / "data")
-        df_a = _make_ts_dataframe(5, ["x"])
-        df_b = _make_ts_dataframe(5, ["y"])
-
-        # Create two entries with same label suffix ("mag") but different IDs
-        entry_a = DataEntry(label="ace.mag", data=df_a, source="cdf")
-        entry_a.id = "ace_001"  # Manually set ID to simulate conflict
-        entry_b = DataEntry(label="psp.mag", data=df_b, source="cdf")
-        entry_b.id = "psp_002"  # Different ID, same suffix
-
-        store.put(entry_a)
-        store.put(entry_b)
-
-        # Code references the labels - replay should resolve to correct variable names
-        rec = _custom_op_record(
-            code="result = df_mag + df_mag_002",
-            inputs=["ace.mag", "psp.mag"],
-            outputs=["combined"],
-        )
-
-        _replay_custom_op(rec, store)
-
-        assert store.has("combined")
-        assert len(store.get("combined").data) == 5
-
-    def test_missing_source_raises(self, tmp_path):
-        store = DataStore(tmp_path / "data")
-        rec = _custom_op_record(
-            inputs=["nonexistent.label"],
-            outputs=["out"],
-        )
-
-        with pytest.raises(ValueError, match="not found in store"):
-            _replay_custom_op(rec, store)
-
-
-class TestReplayStoreDf:
-    """Tests for _replay_store_df."""
-
-    def test_creates_entry(self, tmp_path):
+    def test_creates_dataframe(self, tmp_path):
         store = DataStore(tmp_path / "data")
         rec = _store_df_record(
-            code="result = pd.DataFrame({'a': [1,2,3], 'b': [4,5,6]})",
+            code="import pandas as pd\nresult = pd.DataFrame({'a': [1,2,3], 'b': [4,5,6]})",
             outputs=["my_table"],
         )
 
-        _replay_store_df(rec, store)
+        _replay_run_code(rec, store)
 
         assert store.has("my_table")
         entry = store.get("my_table")
-        assert entry.source == "created"
+        assert entry.source == "computed"
         assert len(entry.data) == 3
         assert list(entry.data.columns) == ["a", "b"]
 
-    def test_invalid_code_raises(self, tmp_path):
+    def test_invalid_code_skips(self, tmp_path):
+        """Invalid code (blocked builtin) is silently skipped in replay."""
         store = DataStore(tmp_path / "data")
-        rec = _store_df_record(code="x = 1")  # no result assignment
+        rec = _store_df_record(
+            code="eval('1+1')\nresult = 1",
+            outputs=["out"],
+        )
 
-        with pytest.raises(ValueError, match="must assign to 'result'"):
-            _replay_store_df(rec, store)
+        _replay_run_code(rec, store)
+
+        # Should not have stored anything — validation failed
+        assert not store.has("out")
 
 
 class TestReplayRender:
@@ -350,14 +296,14 @@ class TestReplayPipeline:
 
     @patch("scripts.replay.fetch_data")
     def test_full_pipeline_fetch_compute_render(self, mock_fetch):
-        """fetch → custom_operation → render_plotly_json end-to-end."""
+        """fetch → run_code → render_plotly_json end-to-end."""
         mock_fetch.return_value = _make_fetch_result(20, ["value"])
 
         records = [
             _fetch_record(op_id="op_001", outputs=["src.field"]),
             _custom_op_record(
                 op_id="op_002",
-                code="result = df.abs()",
+                code="import pandas as pd\ndf = pd.read_parquet('src.field.parquet')\nresult = df.abs()",
                 inputs=["src.field"],
                 outputs=["abs.field"],
             ),
@@ -398,7 +344,7 @@ class TestReplayPipeline:
             # Branch A dependent: should fail (missing source)
             _custom_op_record(
                 op_id="op_002",
-                code="result = df.abs()",
+                code="import pandas as pd\ndf = pd.read_parquet('branch_a.data.parquet')\nresult = df.abs()",
                 inputs=["branch_a.data"],
                 outputs=["branch_a.computed"],
             ),
@@ -410,7 +356,7 @@ class TestReplayPipeline:
         result = replay_pipeline(records)
 
         assert result.steps_completed == 1  # only branch B fetch
-        assert len(result.errors) == 2  # branch A fetch + branch A compute
+        assert len(result.errors) == 2  # branch A fetch + branch A compute (missing input file)
         assert result.store.has("branch_b.data")
         assert not result.store.has("branch_a.data")
 

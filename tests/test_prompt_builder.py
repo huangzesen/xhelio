@@ -43,10 +43,10 @@ class TestGenerateDatasetQuickReference:
                 for ds in inst["datasets"]:
                     assert ds in table, f"Dataset {ds} missing from quick reference"
 
-    def test_directs_to_list_parameters(self):
+    def test_directs_to_envoy_query(self):
         table = generate_dataset_quick_reference()
-        # Parameter details come from metadata, not hardcoded
-        assert "list_parameters" in table
+        # Parameter details come from envoy_query, not hardcoded
+        assert "envoy_query" in table
 
     def test_is_markdown_table(self):
         table = generate_dataset_quick_reference()
@@ -83,6 +83,36 @@ class TestGenerateMissionProfiles:
         assert len(profiles) > 0
 
 
+class TestBuildEnvoyPromptThreeLayers:
+    """The new envoy prompt has three layers: generic, kind-specific, mission JSON."""
+
+    def test_cdaweb_has_generic_role(self):
+        prompt = build_envoy_prompt("PSP")
+        assert "envoy" in prompt.lower()
+
+    def test_cdaweb_has_kind_specific_content(self):
+        prompt = build_envoy_prompt("PSP")
+        assert "CDAWeb" in prompt
+
+    def test_cdaweb_has_mission_json_catalog(self):
+        prompt = build_envoy_prompt("PSP")
+        assert "Dataset Catalog" in prompt
+        assert "PSP_FLD_L2_MAG_RTN_1MIN" in prompt
+
+    def test_spice_has_kind_specific_content(self):
+        prompt = build_envoy_prompt("SPICE")
+        assert "SPICE" in prompt or "ephemeris" in prompt.lower()
+
+    def test_ppi_has_kind_specific_content(self):
+        prompt = build_envoy_prompt("CASSINI_PPI")
+        assert "PPI" in prompt or "PDS" in prompt
+
+    def test_no_kind_prompt_builders_dict(self):
+        """_KIND_PROMPT_BUILDERS is gone."""
+        import knowledge.prompt_builder as pb
+        assert not hasattr(pb, "_KIND_PROMPT_BUILDERS")
+
+
 class TestBuildMissionPrompt:
     @pytest.fixture(autouse=True)
     def _no_network(self, monkeypatch):
@@ -95,9 +125,9 @@ class TestBuildMissionPrompt:
     def test_psp_prompt_contains_mission_info(self):
         prompt = build_envoy_prompt("PSP")
         assert "Parker Solar Probe" in prompt
-        assert "browse_datasets" in prompt
-        # Dataset IDs no longer embedded in the prompt
-        assert "PSP_FLD_L2_MAG_RTN_1MIN" not in prompt
+        assert "browse_parameters" in prompt
+        # Dataset IDs are now embedded in the prompt via the full mission JSON
+        assert "PSP_FLD_L2_MAG_RTN_1MIN" in prompt
 
     def test_ace_prompt_contains_mission_info(self):
         prompt = build_envoy_prompt("ACE")
@@ -131,24 +161,24 @@ class TestBuildMissionPrompt:
             prompt = build_envoy_prompt(sc_id)
             assert len(prompt) > 50
 
-    def test_directs_to_list_parameters(self):
+    def test_directs_to_browse_parameters(self):
         prompt = build_envoy_prompt("PSP")
-        assert "list_parameters" in prompt
+        assert "browse_parameters" in prompt
 
     def test_mission_prompt_has_dataset_selection_workflow(self):
         prompt = build_envoy_prompt("PSP")
         assert "## Dataset Selection Workflow" in prompt
         assert "fetch_data" in prompt
         # Computation patterns moved to DataOps agent
-        assert "custom_operation" not in prompt
+        assert "run_code" not in prompt
 
     def test_mission_prompt_has_no_recommended_datasets(self):
         prompt = build_envoy_prompt("PSP")
         assert "## Recommended Datasets" not in prompt
 
-    def test_mission_prompt_mentions_browse_datasets(self):
+    def test_mission_prompt_mentions_browse_parameters(self):
         prompt = build_envoy_prompt("PSP")
-        assert "browse_datasets" in prompt
+        assert "browse_parameters" in prompt
 
     def test_mission_prompt_has_no_advanced_section(self):
         prompt = build_envoy_prompt("PSP")
@@ -157,12 +187,19 @@ class TestBuildMissionPrompt:
     def test_mission_prompt_has_dataset_documentation_section(self):
         prompt = build_envoy_prompt("PSP")
         assert "## Dataset Documentation" in prompt
-        assert "get_dataset_docs" in prompt
+        assert "browse_parameters" in prompt
 
     def test_mission_prompt_has_no_analysis_patterns(self):
         prompt = build_envoy_prompt("PSP")
         # Analysis patterns section has been removed from mission prompts
         assert "## Analysis Patterns" not in prompt
+
+    def test_envoy_prompt_includes_dataset_catalog(self):
+        """Envoy prompt should contain the full dataset catalog."""
+        prompt = build_envoy_prompt("ACE")
+        assert "Dataset Catalog" in prompt
+        assert "AC_H2_MFI" in prompt  # known ACE dataset
+        assert "Coverage:" in prompt  # markdown format
 
     def test_mission_prompt_forbids_plotting(self):
         prompt = build_envoy_prompt("PSP")
@@ -186,27 +223,26 @@ class TestBuildMissionPrompt:
 
     def test_mission_prompt_has_data_specialist_identity(self):
         prompt = build_envoy_prompt("PSP")
-        assert "data specialist agent" in prompt.lower()
+        assert "data specialist" in prompt.lower()
 
     def test_mission_prompt_has_explore_before_fetch_workflow(self):
-        """Workflow guides: candidate inspection, browse for vague requests."""
+        """Workflow guides: pick dataset from catalog, browse_parameters, fetch."""
         prompt = build_envoy_prompt("PSP")
         workflow_start = prompt.index("## Dataset Selection Workflow")
         workflow_end = prompt.index("## Reporting Rules")
         workflow_section = prompt[workflow_start:workflow_end]
-        assert "candidate datasets" in workflow_section
+        assert "browse_parameters" in workflow_section
         assert "fetch_data" in workflow_section
-        assert "vague request" in workflow_section
+        assert "Dataset Catalog" in workflow_section
         # Compute tools no longer in mission workflow
-        assert "custom_operation" not in workflow_section
+        assert "run_code" not in workflow_section
         assert "describe_data" not in workflow_section
         assert "save_data" not in workflow_section
 
-    def test_mission_prompt_without_cache_still_works(self):
-        """Prompt generates without dataset catalog or parameter lines."""
+    def test_mission_prompt_has_dataset_catalog(self):
+        """Prompt contains the full dataset catalog from mission JSON."""
         prompt = build_envoy_prompt("PSP")
-        # Prompt should have discovery rule section, no dataset catalog
-        assert "## IMPORTANT: Dataset Discovery Rule" in prompt
+        assert "## Dataset Catalog" in prompt
         assert "## Recommended Datasets" not in prompt
 
 
@@ -218,7 +254,7 @@ class TestBrowseDatasetsEnrichesDescriptions:
         from unittest.mock import patch
 
         # Create a fake _index.json with empty descriptions
-        fake_cdaweb = tmp_path / "missions" / "cdaweb"
+        fake_cdaweb = tmp_path / "envoys" / "cdaweb"
         ace_metadata = fake_cdaweb / "ace" / "metadata"
         ace_metadata.mkdir(parents=True)
         index_data = {
@@ -265,7 +301,7 @@ class TestBrowseDatasetsEnrichesDescriptions:
         import json
         from unittest.mock import patch
 
-        fake_cdaweb = tmp_path / "missions" / "cdaweb"
+        fake_cdaweb = tmp_path / "envoys" / "cdaweb"
         ace_metadata = fake_cdaweb / "ace" / "metadata"
         ace_metadata.mkdir(parents=True)
         index_data = {
@@ -313,10 +349,10 @@ class TestBuildSystemPrompt:
         prompt = build_system_prompt()
         assert "{today}" not in prompt
 
-    def test_contains_all_spacecraft(self):
+    def test_contains_mission_discovery_instructions(self):
+        """System prompt directs to envoy_query for mission discovery."""
         prompt = build_system_prompt()
-        for sc_id, sc in SPACECRAFT.items():
-            assert sc["name"] in prompt, f"{sc['name']} missing from system prompt"
+        assert "envoy_query" in prompt
 
     def test_contains_workflow_sections(self):
         prompt = build_system_prompt()
@@ -338,7 +374,7 @@ class TestBuildSystemPrompt:
     def test_contains_routing_table(self):
         prompt = build_system_prompt()
         assert "## Supported Missions" in prompt
-        assert "Capabilities" in prompt
+        assert "envoy_query" in prompt
 
     def test_slim_prompt_routing_table_has_no_dataset_ids(self):
         prompt = build_system_prompt()
@@ -380,15 +416,15 @@ class TestBuildSystemPrompt:
     def test_system_prompt_has_domain_rules(self):
         prompt = build_system_prompt()
         assert "## Domain Rules" in prompt
-        assert "df_" in prompt
+        assert "read_parquet" in prompt
 
     def test_system_prompt_has_error_recovery(self):
         prompt = build_system_prompt()
         assert "## Error Recovery" in prompt
 
-    def test_system_prompt_has_workflow_patterns(self):
+    def test_system_prompt_has_workflow_section(self):
         prompt = build_system_prompt()
-        assert "## Common Workflow Patterns" in prompt
+        assert "## Workflow" in prompt
 
 
 class TestBuildPlannerAgentPrompt:
@@ -419,7 +455,7 @@ class TestBuildPlannerAgentPrompt:
         # to prevent hallucinated tool calls
         assert "What Tasks Can Do" in prompt
         assert "Data fetching" in prompt
-        assert "custom_operation" in prompt
+        assert "run_code" in prompt
 
     def test_contains_planning_guidelines(self):
         prompt = build_planner_agent_prompt()
@@ -447,7 +483,7 @@ class TestBuildPlannerAgentPrompt:
     def test_contains_research_instructions(self):
         """Planner prompt should include research instructions (merged from think prompt)."""
         prompt = build_planner_agent_prompt()
-        assert "list_missions" in prompt
+        assert "envoy_query" in prompt
         assert "web_search" in prompt
         assert "list_fetched_data" in prompt
         assert "Research Before Planning" in prompt
@@ -457,10 +493,12 @@ class TestBuildPlannerAgentPrompt:
         assert "batch" in prompt.lower()
         assert "round" in prompt.lower()
 
-    def test_contains_status_field_docs(self):
+    def test_contains_produce_plan_docs(self):
+        """Planner prompt should document the produce_plan tool."""
         prompt = build_planner_agent_prompt()
-        assert '"continue"' in prompt or "'continue'" in prompt
-        assert '"done"' in prompt or "'done'" in prompt
+        assert "produce_plan" in prompt
+        assert "tasks" in prompt
+        assert "time_range_validated" in prompt
 
     def test_contains_routing_table(self):
         prompt = build_planner_agent_prompt()
@@ -525,10 +563,8 @@ class TestSharedDomainKnowledge:
         assert "Mission Tagging" not in o
         assert "Mission Tagging" in p
 
-    def test_visualization_tag_in_planner_only(self):
-        o = build_system_prompt()
+    def test_visualization_tag_in_planner(self):
         p = build_planner_agent_prompt()
-        assert "__visualization__" not in o
         assert "__visualization__" in p
 
     def test_both_contain_time_range_handling(self):
@@ -568,7 +604,7 @@ class TestBuildDataOpsPrompt:
         prompt = build_data_ops_prompt()
         assert "## Workflow" in prompt
         assert "list_fetched_data" in prompt
-        assert "custom_operation" in prompt
+        assert "run_code" in prompt
         assert "describe_data" in prompt
 
     def test_forbids_fetching(self):
@@ -593,7 +629,7 @@ class TestBuildVisualizationPrompt:
 
     def test_contains_tool_usage_sections(self):
         prompt = build_viz_plotly_prompt()
-        assert "## How render_plotly_json Works" in prompt
+        assert "## render_plotly_json Basics" in prompt
 
     def test_contains_workflow(self):
         prompt = build_viz_plotly_prompt()

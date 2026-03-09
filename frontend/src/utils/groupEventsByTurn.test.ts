@@ -40,8 +40,8 @@ describe('groupEventsByTurn', () => {
     const tools = [
       toolEvt('call', 'fetch_data', 150),
       toolEvt('result', 'fetch_data', 180),
-      toolEvt('call', 'custom_operation', 350),
-      toolEvt('result', 'custom_operation', 380),
+      toolEvt('call', 'run_code', 350),
+      toolEvt('result', 'run_code', 380),
     ];
 
     const groups = groupEventsByTurn(messages, tools, []);
@@ -53,7 +53,7 @@ describe('groupEventsByTurn', () => {
 
     expect(groups[1].userMessages[0].content).toBe('second question');
     expect(groups[1].toolEvents).toHaveLength(2);
-    expect(groups[1].toolEvents[0].tool_name).toBe('custom_operation');
+    expect(groups[1].toolEvents[0].tool_name).toBe('run_code');
   });
 
   it('assigns memory events to the correct turn', () => {
@@ -348,7 +348,7 @@ describe('groupEventsByRound with markers', () => {
     ];
     const tools = [
       toolEvt('call', 'fetch_data', 1500),
-      toolEvt('call', 'custom_operation', 3500),
+      toolEvt('call', 'run_code', 3500),
     ];
     const markers: RoundMarker[] = [
       marker('end', 2000),
@@ -381,7 +381,7 @@ describe('groupEventsByRound with markers', () => {
     ];
     const tools = [
       toolEvt('call', 'fetch_data', 1500),
-      toolEvt('call', 'custom_operation', 3500),
+      toolEvt('call', 'run_code', 3500),
     ];
     const markers: RoundMarker[] = [
       marker('start', 900),
@@ -427,8 +427,8 @@ describe('groupEventsByRound with markers', () => {
     const tools = [
       toolEvt('call', 'fetch_data', 1200),
       toolEvt('result', 'fetch_data', 1800),
-      toolEvt('call', 'custom_operation', 3200),
-      toolEvt('result', 'custom_operation', 3800),
+      toolEvt('call', 'run_code', 3200),
+      toolEvt('result', 'run_code', 3800),
     ];
     const markers: RoundMarker[] = [
       marker('start', 900),
@@ -441,6 +441,6 @@ describe('groupEventsByRound with markers', () => {
     expect(groups[0].toolEvents).toHaveLength(2);
     expect(groups[0].toolEvents[0].tool_name).toBe('fetch_data');
     expect(groups[1].toolEvents).toHaveLength(2);
-    expect(groups[1].toolEvents[0].tool_name).toBe('custom_operation');
+    expect(groups[1].toolEvents[0].tool_name).toBe('run_code');
   });
 });

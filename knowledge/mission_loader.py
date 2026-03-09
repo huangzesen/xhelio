@@ -1,7 +1,7 @@
 """
 Per-mission JSON loader with caching.
 
-Loads mission data from knowledge/missions/*.json files.
+Loads mission data from knowledge/envoys/*/*.json files.
 Provides a clean API for accessing mission metadata, routing tables,
 and dataset information without loading everything into memory upfront.
 
@@ -27,16 +27,12 @@ def _emit_debug(
     get_event_bus().emit(DEBUG, agent=agent, level=level, msg=msg)
 
 
-# Directory containing per-mission JSON files
-_MISSIONS_DIR = Path(__file__).parent / "missions"
+# Directory containing per-envoy-kind subdirectories (cdaweb/, ppi/, spice/, ...)
+_ENVOYS_DIR = Path(__file__).parent / "envoys"
+_MISSIONS_DIR = _ENVOYS_DIR  # backward-compatible alias
 
-# Source-specific subdirectories
-_CDAWEB_DIR = _MISSIONS_DIR / "cdaweb"
-_PPI_DIR = _MISSIONS_DIR / "ppi"
-_PACKAGES_DIR = _MISSIONS_DIR / "packages"
-
-# All source directories to scan for mission JSONs
-_SOURCE_DIRS = [_CDAWEB_DIR, _PPI_DIR, _PACKAGES_DIR]
+# All source directories to scan for mission JSONs (auto-discovered)
+_SOURCE_DIRS = [d for d in sorted(_ENVOYS_DIR.iterdir()) if d.is_dir()] if _ENVOYS_DIR.exists() else []
 
 # Module-level cache: mission_id (lowercase) -> parsed dict
 _mission_cache: dict[str, dict] = {}

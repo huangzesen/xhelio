@@ -138,8 +138,8 @@ export function DataStore({ sessionId }: Props) {
 
       {entries.length > 0 && (
         <div className="space-y-1.5 max-h-60 overflow-y-auto mt-1">
-          {entries.map((e) => (
-            <DataEntryCard key={e.id || e.label} e={e} />
+          {entries.map((e, i) => (
+            <DataEntryCard key={e.id || `${e.label}-${i}`} e={e} />
           ))}
         </div>
       )}

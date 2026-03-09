@@ -375,8 +375,13 @@ class InteractionsChatSession(ChatSession):
 
         ``message`` can be:
         - A string (user text message)
+        - A list of ToolResultBlock (tool results from make_tool_result)
         - A list of ``FunctionResultContentParam`` dicts (tool results)
         """
+        # Record tool results in canonical interface (matches Anthropic/OpenAI)
+        if isinstance(message, list) and message and isinstance(message[0], ToolResultBlock):
+            self._interface.add_tool_results(message)
+
         converted_input = self._convert_input(message)
 
         # If we have pending seed turns (session resume with history but no
@@ -416,6 +421,10 @@ class InteractionsChatSession(ChatSession):
         Function call deltas arrive atomically (full args in one event),
         so no incremental merging is needed.
         """
+        # Record tool results in canonical interface (matches Anthropic/OpenAI)
+        if isinstance(message, list) and message and isinstance(message[0], ToolResultBlock):
+            self._interface.add_tool_results(message)
+
         converted_input = self._convert_input(message)
 
         if self._pending_seed_turns is not None:
@@ -624,6 +633,7 @@ class InteractionsChatSession(ChatSession):
 
         Handles:
         - str → wrapped as ``[{"type": "text", "text": ...}]``
+        - list of ToolResultBlock → converted to FunctionResultContentParam dicts
         - list of FunctionResultContentParam dicts → passed as-is
         - list of Part objects (legacy Chat API format) → converted to
           FunctionResultContentParam dicts
@@ -636,12 +646,25 @@ class InteractionsChatSession(ChatSession):
             if message and isinstance(message[0], dict) and "type" in message[0]:
                 return message
 
-            # Check if these are Chat API Part objects (fallback conversion)
             converted = []
             for item in message:
                 if isinstance(item, dict) and "type" in item:
                     converted.append(item)
+                elif isinstance(item, ToolResultBlock):
+                    # Canonical ToolResultBlock from make_tool_result()
+                    content = item.content
+                    converted.append(
+                        {
+                            "type": "function_result",
+                            "call_id": item.id,
+                            "result": json.dumps(content, default=str)
+                            if not isinstance(content, str)
+                            else content,
+                            "name": item.name,
+                        }
+                    )
                 elif hasattr(item, "function_response") and item.function_response:
+                    # Legacy Chat API Part objects
                     fr = item.function_response
                     converted.append(
                         {
@@ -653,6 +676,22 @@ class InteractionsChatSession(ChatSession):
                             "name": fr.name,
                         }
                     )
+                elif hasattr(item, "inline_data") and item.inline_data:
+                    # Legacy Chat API Part with image data
+                    import base64
+
+                    converted.append(
+                        {
+                            "type": "inline_data",
+                            "data": base64.b64encode(item.inline_data.data).decode(
+                                "ascii"
+                            ),
+                            "mime_type": item.inline_data.mime_type,
+                        }
+                    )
+                elif hasattr(item, "text") and item.text is not None:
+                    # Legacy Chat API Part with text
+                    converted.append({"type": "text", "text": item.text})
                 else:
                     # Unknown item type — pass through and let the API handle it
                     converted.append(item)

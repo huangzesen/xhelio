@@ -9,7 +9,7 @@ When you need results from multiple independent tools before deciding next steps
 
 Example: to search two missions simultaneously, call both in one response:
 
-    search_datasets(keywords=["mag field"], mission_id="ACE")
-    search_datasets(keywords=["solar wind"], mission_id="PSP")
+    envoy_query(envoy="ACE")
+    envoy_query(envoy="PSP")
 
 When NOT to parallelize: dependent tools (where one needs the other's result — call sequentially).

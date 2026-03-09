@@ -111,6 +111,60 @@ export function AdvancedSection() {
         </label>
       </div>
 
+      {/* Eureka subsection */}
+      <div className="space-y-4">
+        <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider">
+          {t('advanced.eureka', 'Eureka Discovery')}
+        </h3>
+
+        <div>
+          <label className="flex items-center justify-between cursor-pointer">
+            <span className="text-xs text-text-muted">{t('advanced.eurekaEnabled', 'Enable Eureka Discovery')}</span>
+            <input
+              type="checkbox"
+              checked={(config.eureka_enabled as boolean) ?? true}
+              onChange={(e) => setField('eureka_enabled', e.target.checked)}
+              className="rounded"
+            />
+          </label>
+          {descriptions['eureka_enabled'] && (
+            <p className="mt-1 text-xs italic text-text-muted/70 leading-relaxed">{descriptions['eureka_enabled']}</p>
+          )}
+        </div>
+
+        <div>
+          <label className="flex items-center justify-between cursor-pointer">
+            <span className="text-xs text-text-muted">{t('advanced.eurekaMode', 'Eureka Mode (auto-execute suggestions)')}</span>
+            <input
+              type="checkbox"
+              checked={(config.eureka_mode as boolean) ?? false}
+              onChange={(e) => setField('eureka_mode', e.target.checked)}
+              className="rounded"
+            />
+          </label>
+          {descriptions['eureka_mode'] && (
+            <p className="mt-1 text-xs italic text-text-muted/70 leading-relaxed">{descriptions['eureka_mode']}</p>
+          )}
+        </div>
+
+        {(config.eureka_mode as boolean) && (
+          <label className="block">
+            <span className="text-xs text-text-muted">{t('advanced.eurekaMaxRounds', 'Max consecutive Eureka rounds')}</span>
+            <input
+              type="number"
+              min={1}
+              max={50}
+              value={(config.eureka_max_rounds as number) ?? 5}
+              onChange={(e) => setField('eureka_max_rounds', parseInt(e.target.value) || 5)}
+              className="mt-1 block w-full rounded-lg border border-border px-3 py-2 text-sm bg-input-bg text-text focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
+            />
+            {descriptions['eureka_max_rounds'] && (
+              <p className="mt-1.5 text-xs italic text-text-muted/70 leading-relaxed">{descriptions['eureka_max_rounds']}</p>
+            )}
+          </label>
+        )}
+      </div>
+
       {/* Reasoning subsection */}
       <div className="space-y-4">
         <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider">{t('advanced.reasoning')}</h3>

@@ -664,6 +664,7 @@ export async function fetchEurekaChatHistory(limit = 50): Promise<import('./type
 
 export interface UploadResult {
   status: string;
+  asset_id: string;
   filename: string;
   size: number;
 }

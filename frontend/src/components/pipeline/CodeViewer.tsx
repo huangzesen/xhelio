@@ -12,7 +12,7 @@ interface Props {
 export function CodeViewer({ record, allRecords, onNavigate }: Props) {
   // Get compute steps for prev/next navigation
   const computeSteps = allRecords.filter(
-    (r) => r.tool === 'custom_operation' || RENDER_TOOL_NAMES.has(r.tool)
+    (r) => r.tool === 'run_code' || RENDER_TOOL_NAMES.has(r.tool)
   );
   const currentIdx = computeSteps.findIndex((r) => r.id === record.id);
   const hasPrev = currentIdx > 0;
@@ -26,7 +26,7 @@ export function CodeViewer({ record, allRecords, onNavigate }: Props) {
     (typeof rawFigure === 'string' ? rawFigure : rawFigure ? JSON.stringify(rawFigure, null, 2) : null) ??
     JSON.stringify(record.args, null, 2);
 
-  const isCode = record.tool === 'custom_operation';
+  const isCode = record.tool === 'run_code';
 
   return (
     <div className="min-w-0">

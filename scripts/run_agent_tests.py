@@ -294,8 +294,8 @@ def test_3_compute_save(results: TestResults):
     r = send("Compute a 1-hour running average of the ACE magnetic field magnitude")
     text = resp_text(r)
     results.check(
-        "custom_operation tool called",
-        has_tool(r, "custom_operation") or has_tool(r, "delegate_to_envoy"),
+        "run_code tool called",
+        has_tool(r, "run_code") or has_tool(r, "delegate_to_envoy"),
         f"tools: {tool_names(r)}",
     )
     results.check(
@@ -515,7 +515,7 @@ def test_6_multivar_pad_analysis(results: TestResults):
     results.check(
         "Visualization or computation tool invoked",
         any(t in tools for t in ["delegate_to_viz", "plot_data",
-                                  "delegate_to_data_ops", "custom_operation"]),
+                                  "delegate_to_data_ops", "run_code"]),
         f"tools: {tools}",
     )
     results.check(

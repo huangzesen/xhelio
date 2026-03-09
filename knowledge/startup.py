@@ -17,7 +17,7 @@ def get_mission_status() -> dict:
     Returns:
         Dict with keys: mission_count, mission_names, total_datasets, oldest_date.
     """
-    missions_dir = Path(__file__).parent / "missions"
+    missions_dir = Path(__file__).parent / "envoys"
     # Scan both cdaweb/ and ppi/ subdirectories
     mission_files = sorted(
         list((missions_dir / "cdaweb").glob("*.json"))
@@ -208,7 +208,7 @@ def run_background_load() -> None:
     try:
         loading.update(phase=LoadingPhase.CHECKING, pct=0, message="Checking mission data...")
 
-        missions_dir = Path(__file__).parent / "missions"
+        missions_dir = Path(__file__).parent / "envoys"
         cdaweb_exists = any((missions_dir / "cdaweb").glob("*.json"))
         ppi_exists = any((missions_dir / "ppi").glob("*.json"))
 

@@ -53,7 +53,7 @@ def generate_script(pipeline_data: dict) -> dict[str, str]:
     fetch_steps = [s for s in sorted_steps if s["tool"] == "fetch_data"]
     transform_steps = [
         s for s in sorted_steps
-        if s["tool"] in ("custom_operation", "store_dataframe")
+        if s["tool"] == "run_code"
     ]
     render_steps = [
         s for s in sorted_steps
@@ -251,7 +251,7 @@ def _build_transform_function(transform_steps: list[dict],
         lines.append("")
         lines.append(f"    # {desc}")
 
-        if tool == "custom_operation":
+        if tool == "run_code":
             # Resolve input label
             input_ids = step.get("inputs", [])
             if input_ids:
@@ -269,15 +269,6 @@ def _build_transform_function(transform_steps: list[dict],
                 lines.append(f"    {code_line}")
 
             # Store result
-            lines.append(f"    if isinstance(result, pd.Series):")
-            lines.append(f"        result = result.to_frame()")
-            lines.append(f"    data[\"{output_label}\"] = result")
-
-        elif tool == "store_dataframe":
-            # store_dataframe creates from scratch
-            for code_line in code.splitlines():
-                lines.append(f"    {code_line}")
-
             lines.append(f"    if isinstance(result, pd.Series):")
             lines.append(f"        result = result.to_frame()")
             lines.append(f"    data[\"{output_label}\"] = result")

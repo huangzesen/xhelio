@@ -440,7 +440,7 @@ class TestPlannerAgentWithTools:
         assert "manage_plot" not in tool_names
         # Fetch / compute tools should NOT be present
         assert "fetch_data" not in tool_names
-        assert "custom_operation" not in tool_names
+        assert "run_code" not in tool_names
 
     def test_planner_tools_constant(self):
         """PLANNER_TOOLS should include research and discovery tools."""

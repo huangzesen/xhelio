@@ -53,7 +53,7 @@ _PIPELINE_VERSION = 1
 _PRESENTATION_TOOLS = RENDER_TOOL_NAMES
 _SKIP_TOOLS = frozenset({"manage_plot"})
 _RELEVANT_TOOLS = frozenset({
-    "fetch_data", "custom_operation", "store_dataframe", "load_file",
+    "fetch_data", "run_code", "load_file",
 }) | RENDER_TOOL_NAMES
 
 # Keys to strip from fetch_data args (time injected at execution)
@@ -150,14 +150,14 @@ def topological_sort_steps(steps: list[dict]) -> list[dict]:
 def is_vanilla(steps: list[dict]) -> bool:
     """Return True if pipeline is vanilla (no transforms, <3 fetches).
 
-    A vanilla pipeline has zero custom_operation/store_dataframe steps AND
+    A vanilla pipeline has zero run_code steps AND
     fewer than 3 fetch_data steps.  These are trivial fetch-and-render
     workflows that add noise to the search index.
     """
     fetch_count = 0
     for step in steps:
         tool = step.get("tool", "")
-        if tool in ("custom_operation", "store_dataframe"):
+        if tool == "run_code":
             return False
         if tool == "fetch_data":
             fetch_count += 1
@@ -173,7 +173,7 @@ def appropriation_fingerprint(steps: list[dict]) -> str:
     The fingerprint is computed from:
     - Tool name
     - dataset_id / parameter_id (for fetches)
-    - code and units (for compute / store_dataframe)
+    - code and units (for run_code)
     - Canonical (position-based) input references
 
     Excluded: time ranges, descriptions, presentation steps, output_labels.
@@ -212,7 +212,7 @@ def appropriation_fingerprint(steps: list[dict]) -> str:
             for key in ("dataset_id", "parameter_id"):
                 if key in params:
                     canon[key] = params[key]
-        elif tool in ("custom_operation", "store_dataframe"):
+        elif tool == "run_code":
             for key in ("code", "units"):
                 if key in params:
                     canon[key] = params[key]
@@ -244,8 +244,7 @@ class NodeType(Enum):
 
 _TOOL_TO_NODE_TYPE = {
     "fetch_data": NodeType.FETCH,
-    "custom_operation": NodeType.COMPUTE,
-    "store_dataframe": NodeType.CREATE,
+    "run_code": NodeType.COMPUTE,
     "render_plotly_json": NodeType.RENDER,
     "generate_mpl_script": NodeType.RENDER,
     "generate_jsx_component": NodeType.RENDER,
@@ -680,7 +679,7 @@ class Pipeline:
             Dict with execution summary: executed, skipped, errors, backdated.
         """
         from scripts.replay import (
-            _replay_fetch, _replay_custom_op, _replay_store_df, _replay_render,
+            _replay_fetch, _replay_run_code, _replay_render,
         )
 
         stale_ids = self.get_stale_nodes()
@@ -734,10 +733,8 @@ class Pipeline:
             try:
                 if node.tool == "fetch_data":
                     _replay_fetch(record, store, cache_store=cache_store)
-                elif node.tool == "custom_operation":
-                    _replay_custom_op(record, store)
-                elif node.tool == "store_dataframe":
-                    _replay_store_df(record, store)
+                elif node.tool == "run_code":
+                    _replay_run_code(record, store)
                 elif node.tool == "render_plotly_json":
                     fig = _replay_render(record, store)
                     if fig is not None and renderer is not None:
@@ -852,8 +849,7 @@ class Pipeline:
 
         _TOOL_DISPLAY = {
             "fetch_data": "fetch",
-            "custom_operation": "compute",
-            "store_dataframe": "create",
+            "run_code": "compute",
             "render_plotly_json": "render",
             "generate_mpl_script": "render",
             "generate_jsx_component": "render",
@@ -872,7 +868,7 @@ class Pipeline:
         }
 
         # Extract code and description for compute nodes
-        if node.tool == "custom_operation":
+        if node.tool == "run_code":
             detail["code"] = node.params.get("code", "")
             detail["description"] = node.params.get("description", "")
 
@@ -882,8 +878,7 @@ class Pipeline:
         """Compact summary for LLM consumption."""
         _TOOL_DISPLAY = {
             "fetch_data": "fetch",
-            "custom_operation": "compute",
-            "store_dataframe": "create",
+            "run_code": "compute",
             "render_plotly_json": "render",
             "generate_mpl_script": "render",
             "generate_jsx_component": "render",
@@ -905,7 +900,7 @@ class Pipeline:
                 summary["parameter"] = node.params.get("parameter_id", "")
                 tr = node.params.get("time_range_resolved") or node.params.get("time_range", "")
                 summary["time_range"] = tr
-            elif node.tool == "custom_operation":
+            elif node.tool == "run_code":
                 code = node.params.get("code", "")
                 # Show first line of code as preview
                 first_line = code.split("\n")[0] if code else ""
@@ -1130,19 +1125,12 @@ class SavedPipeline:
                 }
                 step_description = f"Fetch {args.get('dataset_id', '?')}.{args.get('parameter_id', '?')}"
 
-            elif tool == "custom_operation":
+            elif tool == "run_code":
                 clean_args = {}
                 for k in ("code", "description", "units"):
                     if k in args:
                         clean_args[k] = args[k]
-                step_description = args.get("description", "Custom operation")
-
-            elif tool == "store_dataframe":
-                clean_args = {}
-                for k in ("code", "description", "units"):
-                    if k in args:
-                        clean_args[k] = args[k]
-                step_description = args.get("description", "Create DataFrame")
+                step_description = args.get("description", "Run code")
 
             elif tool == "render_plotly_json":
                 fig_json = args.get("figure_json", {})
@@ -1232,9 +1220,9 @@ class SavedPipeline:
                 if not param_id:
                     issues.append(f"Step {step['step_id']}: fetch_data missing parameter_id")
 
-        # 4. AST safety for custom_operation code
+        # 4. AST safety for run_code code
         for step in steps:
-            if step["tool"] == "custom_operation":
+            if step["tool"] == "run_code":
                 code = step["params"].get("code", "")
                 if code:
                     try:
@@ -1407,8 +1395,7 @@ class SavedPipeline:
         from scripts.replay import (
             ReplayResult,
             _replay_fetch,
-            _replay_custom_op,
-            _replay_store_df,
+            _replay_run_code,
             _replay_render,
         )
         from data_ops.store import DataStore
@@ -1441,10 +1428,8 @@ class SavedPipeline:
 
                 if tool == "fetch_data":
                     _replay_fetch(record, store)
-                elif tool == "custom_operation":
-                    _replay_custom_op(record, store)
-                elif tool == "store_dataframe":
-                    _replay_store_df(record, store)
+                elif tool == "run_code":
+                    _replay_run_code(record, store)
                 elif tool == "render_plotly_json":
                     fig = _replay_render(record, store)
                     if fig is not None:
@@ -1498,7 +1483,7 @@ class SavedPipeline:
             # Inject time range
             params["time_range_resolved"] = [time_start, time_end]
 
-        elif tool == "custom_operation":
+        elif tool == "run_code":
             # source_labels are reconstructed from input step_ids
             params["source_labels"] = input_labels
 

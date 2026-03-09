@@ -22,7 +22,7 @@ def test_reset_clears_agents():
     bus = _make_bus()
     mock_agent = MagicMock()
     bus._agents["test"] = mock_agent
-    with patch("agent.agent_registry.ENVOY_TOOL_REGISTRY", MagicMock()):
+    with patch("agent.envoy_kinds.registry.ENVOY_KIND_REGISTRY", MagicMock()):
         bus.reset()
     assert len(bus._agents) == 0
     mock_agent.stop.assert_called_once_with(timeout=2.0)
@@ -120,7 +120,7 @@ def test_reset_full_clears_counters():
     bus._dataops_seq = 5
     bus._mission_seq = 3
     bus._agents["test"] = MagicMock()
-    with patch("agent.agent_registry.ENVOY_TOOL_REGISTRY", MagicMock()):
+    with patch("agent.envoy_kinds.registry.ENVOY_KIND_REGISTRY", MagicMock()):
         bus.reset_full()
     assert len(bus._agents) == 0
     assert bus._dataops_seq == 0

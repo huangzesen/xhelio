@@ -16,7 +16,7 @@ Always verify delegation success by checking:
 1. **From subagent's reply**: Look for success indicators like "Done", "created plot", "loaded data", stored labels, etc.
 
 2. **Using your tools** to verify actual state:
-   - For plots: use `get_session_assets` to check if a figure was created
+   - For plots: use `manage_session_assets` to check if a figure was created
    - For data: use `list_fetched_data` to check what's in the data store
    - For events: use `events` to see what tools were called
 

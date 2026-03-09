@@ -16,12 +16,11 @@ def handle_ask_clarification(orch: "OrchestratorAgent", tool_args: dict) -> dict
     }
 
 
-def handle_get_session_assets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_manage_session_assets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+    action = tool_args.get("action", "status")
+    if action == "restore_plot":
+        return orch._handle_restore_plot()
     return orch._handle_get_session_assets()
-
-
-def handle_restore_plot(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    return orch._handle_restore_plot()
 
 
 def handle_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
@@ -85,9 +84,8 @@ def _handle_peek_details(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     return feed.peek_details(tool_args.get("event_ids", []))
 
 
-def handle_list_active_work(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_manage_workers(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+    action = tool_args.get("action", "list")
+    if action == "cancel":
+        return orch._handle_cancel_work(tool_args)
     return orch._handle_list_active_work(tool_args)
-
-
-def handle_cancel_work(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    return orch._handle_cancel_work(tool_args)

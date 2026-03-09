@@ -7,14 +7,9 @@ import { TokenUsage } from '../common/TokenUsage';
 import { DataStore } from '../common/DataStore';
 import { PlanStatus } from '../chat/PlanStatus';
 import { useSessionStore } from '../../stores/sessionStore';
+import { useSettingsStore } from '../../stores/settingsStore';
+import type { PresetConfig, WorkbenchConfig } from '../../api/types';
 import * as api from '../../api/client';
-
-interface ModelTiers {
-  smart: string;
-  subAgent: string;
-  insight: string;
-  inline: string;
-}
 
 interface Props {
   model: string;
@@ -37,7 +32,7 @@ function toolColor(name: string): string {
   if (name === 'fetch_data' || name === 'list_fetched_data' || name === 'preview_data')
     return 'text-badge-teal-text';
   // Computation / custom ops — orange
-  if (name === 'custom_operation' || name === 'store_dataframe')
+  if (name === 'run_code')
     return 'text-badge-orange-text';
   // Rendering / visualization — pink
   if (name === 'render_plotly_json' || name === 'manage_plot')
@@ -389,9 +384,17 @@ function ActivityTab({
 export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLines, memoryEvents, commentaryEvents, roundMarkers, isStreaming }: Props) {
   const { activeSessionId } = useSessionStore();
   const roundTokenUsageLive = useChatStore((s) => s.roundTokenUsage);
-  const [tiers, setTiers] = useState<ModelTiers | null>(null);
-  const [provider, setProvider] = useState<string | null>(null);
   const [vizBackend, setVizBackend] = useState<string | null>(null);
+
+  // Derive combo name reactively from settings store
+  const settingsConfig = useSettingsStore((s) => s.config);
+  const comboName = (() => {
+    const wb = settingsConfig.workbench as WorkbenchConfig | undefined;
+    const presetKey = wb?.preset;
+    if (!presetKey) return null;
+    const presets = (settingsConfig.presets ?? {}) as Record<string, PresetConfig>;
+    return presets[presetKey]?.name ?? null;
+  })();
   const [activeTab, setActiveTab] = useState<'activity' | 'console'>('activity');
   const [consoleFilter, setConsoleFilter] = useState('');
   const [levelFilter, setLevelFilter] = useState<'all' | 'error' | 'warning' | 'info'>('all');
@@ -408,19 +411,33 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
 
   useEffect(() => {
     api.getConfig().then((cfg) => {
-      const prov = (cfg.llm_provider as string) || 'gemini';
-      setProvider(prov);
       setVizBackend((cfg.prefer_viz_backend as string) || 'matplotlib');
-      const providers = (cfg.providers ?? {}) as Record<string, Record<string, unknown>>;
-      const p = providers[prov] ?? {};
-      setTiers({
-        smart: (p.model as string) || '',
-        subAgent: (p.sub_agent_model as string) || '',
-        insight: (p.insight_model as string) || '',
-        inline: (p.inline_model as string) || '',
-      });
+      // Seed settings store so combo name is available immediately
+      if (!useSettingsStore.getState().config.workbench) {
+        useSettingsStore.setState({ config: cfg });
+      }
     }).catch(() => {});
   }, []);
+
+  // Derive tiers from active preset (reactive), falling back to legacy provider config
+  const derivedTiers = (() => {
+    const wb = settingsConfig.workbench as WorkbenchConfig | undefined;
+    const presetKey = wb?.preset;
+    if (presetKey) {
+      const presets = (settingsConfig.presets ?? {}) as Record<string, PresetConfig>;
+      const preset = presets[presetKey];
+      if (preset?.agents) {
+        const a = preset.agents as Record<string, { provider?: string; model?: string }>;
+        return {
+          smart: a.orchestrator?.model || '',
+          subAgent: a.data_ops?.model || '',
+          insight: a.insight?.model || '',
+          inline: a.inline?.model || '',
+        };
+      }
+    }
+    return null;
+  })();
 
   const filteredLogLines = useMemo(() => {
     let lines = logLines;
@@ -495,10 +512,10 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
             </span>
           </div>
         )}
-        {provider && (
+        {comboName && (
           <div className="flex justify-between text-xs text-text-muted mt-0.5">
-            <span>Provider</span>
-            <span className="font-mono text-text capitalize">{provider}</span>
+            <span>Combo</span>
+            <span className="font-mono text-text">{comboName}</span>
           </div>
         )}
         {vizBackend && (
@@ -509,7 +526,7 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
         )}
 
         {/* Models collapsible section */}
-        {(model || tiers) && (
+        {(model || derivedTiers) && (
           <details open={modelsOpen} className="mt-1">
             <summary 
               className="text-xs text-text-muted cursor-pointer flex items-center gap-1 list-none hover:text-text"
@@ -522,24 +539,24 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
             <div className="ml-4 space-y-0.5 mt-1 text-xs text-text-muted">
               <div className="flex justify-between">
                 <span>Main</span>
-                <span className="font-mono text-text">{tiers?.smart || model}</span>
+                <span className="font-mono text-text">{derivedTiers?.smart || model}</span>
               </div>
-              {tiers?.subAgent && tiers.subAgent !== tiers.smart && (
+              {derivedTiers?.subAgent && derivedTiers.subAgent !== derivedTiers.smart && (
                 <div className="flex justify-between">
                   <span>Sub-agent</span>
-                  <span className="font-mono text-text">{tiers.subAgent}</span>
+                  <span className="font-mono text-text">{derivedTiers.subAgent}</span>
                 </div>
               )}
-              {tiers?.insight && tiers.insight !== tiers.subAgent && (
+              {derivedTiers?.insight && derivedTiers.insight !== derivedTiers.subAgent && (
                 <div className="flex justify-between">
                   <span>Insight</span>
-                  <span className="font-mono text-text">{tiers.insight}</span>
+                  <span className="font-mono text-text">{derivedTiers.insight}</span>
                 </div>
               )}
-              {tiers?.inline && (
+              {derivedTiers?.inline && (
                 <div className="flex justify-between">
                   <span>Inline</span>
-                  <span className="font-mono text-text">{tiers.inline}</span>
+                  <span className="font-mono text-text">{derivedTiers.inline}</span>
                 </div>
               )}
             </div>

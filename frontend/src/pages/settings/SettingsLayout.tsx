@@ -1,5 +1,5 @@
 import { NavLink, Outlet } from 'react-router-dom';
-import { Key, Layers, FlaskConical, Search, Settings, Save, Loader2, Check } from 'lucide-react';
+import { Key, Layers, Search, Settings, Save, Loader2, Check } from 'lucide-react';
 import { useSettingsStore } from '../../stores/settingsStore';
 import { useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,6 @@ export function SettingsLayout() {
   const NAV_ITEMS = [
     { to: '/settings/api-keys', icon: Key, label: t('nav.apiKeys') },
     { to: '/settings/models', icon: Layers, label: t('nav.models') },
-    { to: '/settings/workbench', icon: FlaskConical, label: t('nav.workbench') },
     { to: '/settings/data', icon: Search, label: t('nav.data') },
     { to: '/settings/advanced', icon: Settings, label: t('nav.advanced') },
   ];

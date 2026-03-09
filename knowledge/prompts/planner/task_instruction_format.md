@@ -3,7 +3,7 @@
 Every fetch instruction MUST list ALL physical quantities needed from that mission and the time range.
 Combine multiple data types into one instruction when they come from the same mission.
 Do NOT include specific parameter names — the envoy agent selects parameters.
-Every custom_operation instruction MUST include the exact source_labels (array of label strings).
+Every run_code instruction MUST include the exact inputs (array of label strings).
 Every visualization instruction MUST start with "{viz_instruction_prefix} ...".
 
 Example instructions:

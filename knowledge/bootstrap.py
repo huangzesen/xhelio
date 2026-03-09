@@ -12,7 +12,7 @@ Also provides ``refresh_time_ranges()`` which updates start/stop dates
 for both CDAWeb (via CDAS REST API) and PPI missions (via Metadex).
 
 This module is lazy-imported by mission_loader.load_all_missions() only
-when no *.json files are found in knowledge/missions/cdaweb/.
+when no *.json files are found in knowledge/envoys/cdaweb/.
 """
 
 import json
@@ -42,8 +42,8 @@ from .mission_prefixes import (
 
 
 # Constants
-MISSIONS_DIR = Path(__file__).parent / "missions" / "cdaweb"
-PPI_DIR = Path(__file__).parent / "missions" / "ppi"
+MISSIONS_DIR = Path(__file__).parent / "envoys" / "cdaweb"
+PPI_DIR = Path(__file__).parent / "envoys" / "ppi"
 DEFAULT_WORKERS = max(1, (os.cpu_count() or 4) - 2)
 MAX_RETRIES = 2
 
@@ -226,7 +226,7 @@ def populate_ppi_missions(only_stems: set[str] | None = None, progress_callback=
 
     Fetches all data collections from the Metadex Solr API in a single
     HTTP call, groups by mission, and writes mission JSONs to
-    knowledge/missions/ppi/{stem}.json.
+    knowledge/envoys/ppi/{stem}.json.
 
     No parallel fetching needed — Metadex returns everything in one
     response (no HAPI server dependency).
@@ -670,7 +670,7 @@ def _merge_dataset_info(metadata_info: dict, cdaweb_entry: dict | None = None) -
 
     Only stores lightweight catalog info (description, dates, PI, DOI).
     Full parameter details stay in the per-dataset metadata cache files at
-    knowledge/missions/{mission}/metadata/{dataset_id}.json — loaded on demand
+    knowledge/envoys/{source}/{mission}/metadata/{dataset_id}.json — loaded on demand
     by metadata_client.py when the agent needs them.
 
     Args:

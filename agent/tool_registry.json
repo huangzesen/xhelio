@@ -4,15 +4,9 @@
     "orchestrator": {
       "call": [
         "web_search",
-        "list_missions",
-        "search_datasets",
-        "list_parameters",
-        "browse_datasets",
-        "get_dataset_docs",
-        "search_full_catalog",
         "ask_clarification",
         "ask_user_permission",
-        "get_session_assets",
+        "manage_session_assets",
         "delegate_to_envoy",
         "delegate_to_viz",
         "delegate_to_data_ops",
@@ -22,46 +16,25 @@
         "review_memory",
         "pipeline",
         "list_fetched_data",
-        "merge_datasets",
+        "list_assets",
         "preview_data",
-        "restore_plot",
+        "manage_data",
+        "manage_workers",
         "events_admin",
-        "list_active_work",
-        "cancel_work",
         "install_package",
         "manage_sandbox_packages",
-        "add_envoy",
-        "save_envoy",
-        "list_envoys",
-        "remove_envoy",
         "plan_check",
-        "save_data"
+        "envoy_query",
+        "manage_envoy"
       ],
       "informed": [
         "render_plotly_json",
         "manage_plot",
         "generate_mpl_script",
         "generate_jsx_component",
-        "custom_operation",
+        "run_code",
         "fetch_data"
       ]
-    },
-    "envoy": {
-      "call": [
-        "list_missions",
-        "search_datasets",
-        "list_parameters",
-        "browse_datasets",
-        "get_dataset_docs",
-        "search_full_catalog",
-        "fetch_data",
-        "ask_clarification",
-        "get_session_assets",
-        "list_fetched_data",
-        "review_memory",
-        "events"
-      ],
-      "informed": []
     },
     "viz_plotly": {
       "call": [
@@ -75,8 +48,7 @@
       ],
       "informed": [
         "fetch_data",
-        "custom_operation",
-        "store_dataframe"
+        "run_code"
       ]
     },
     "viz_mpl": {
@@ -91,8 +63,7 @@
       ],
       "informed": [
         "fetch_data",
-        "custom_operation",
-        "store_dataframe"
+        "run_code"
       ]
     },
     "viz_jsx": {
@@ -107,24 +78,22 @@
       ],
       "informed": [
         "fetch_data",
-        "custom_operation",
-        "store_dataframe"
+        "run_code"
       ]
     },
     "dataops": {
       "call": [
-        "custom_operation",
+        "run_code",
         "describe_data",
         "preview_data",
-        "merge_datasets",
+        "manage_data",
         "ask_clarification",
-        "get_session_assets",
+        "manage_session_assets",
         "list_fetched_data",
         "search_function_docs",
         "get_function_docs",
         "review_memory",
-        "events",
-        "save_data"
+        "events"
       ],
       "informed": [
         "fetch_data"
@@ -132,20 +101,14 @@
     },
     "planner": {
       "call": [
-        "list_missions",
         "web_search",
-        "search_datasets",
-        "list_parameters",
-        "browse_datasets",
-        "get_dataset_docs",
-        "search_full_catalog",
         "list_fetched_data",
-        "events_admin"
+        "events_admin",
+        "envoy_query"
       ],
       "informed": [
         "fetch_data",
-        "custom_operation",
-        "store_dataframe",
+        "run_code",
         "render_plotly_json",
         "manage_plot",
         "generate_mpl_script",
@@ -157,10 +120,10 @@
     "data_io": {
       "call": [
         "load_file",
-        "store_dataframe",
+        "run_code",
         "read_document",
         "ask_clarification",
-        "get_session_assets",
+        "manage_session_assets",
         "list_fetched_data",
         "review_memory",
         "events"
@@ -177,63 +140,5 @@
       ],
       "informed": []
     }
-  },
-  "envoy_groups": {
-    "base": [
-      "ask_clarification",
-      "get_session_assets",
-      "list_fetched_data",
-      "review_memory",
-      "events"
-    ],
-    "cdaweb": [
-      "search_datasets",
-      "list_parameters",
-      "browse_datasets",
-      "list_missions",
-      "get_dataset_docs",
-      "search_full_catalog",
-      "fetch_data"
-    ],
-    "ppi": [
-      "search_datasets",
-      "list_parameters",
-      "browse_datasets",
-      "list_missions",
-      "get_dataset_docs",
-      "search_full_catalog",
-      "fetch_data"
-    ],
-    "spice": [],
-    "package": [
-      "custom_operation",
-      "describe_data",
-      "preview_data",
-      "store_dataframe",
-      "search_function_docs",
-      "get_function_docs"
-    ]
-  },
-  "envoy_informed": [],
-  "envoy_group_assignments": {
-    "CASSINI_PPI": "ppi",
-    "GALILEO": "ppi",
-    "INSIGHT": "ppi",
-    "JUNO_PPI": "ppi",
-    "LRO": "ppi",
-    "LUNAR-PROSPECTOR": "ppi",
-    "MAVEN_PPI": "ppi",
-    "MESSENGER_PPI": "ppi",
-    "MEX": "ppi",
-    "MGS": "ppi",
-    "NEW-HORIZONS_PPI": "ppi",
-    "PIONEER_PPI": "ppi",
-    "PIONEER-VENUS_PPI": "ppi",
-    "ULYSSES_PPI": "ppi",
-    "VEX": "ppi",
-    "VOYAGER1_PPI": "ppi",
-    "VOYAGER2_PPI": "ppi",
-    "SPICE": "spice"
-  },
-  "envoy_default_group": "cdaweb"
+  }
 }

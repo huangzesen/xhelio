@@ -65,6 +65,7 @@ export default function JsxComponent({ sessionId, scriptId }: JsxComponentProps)
   // Listen for resize messages from the iframe
   useEffect(() => {
     function handleMessage(event: MessageEvent) {
+      if (event.origin !== 'null' && event.origin !== window.location.origin) return;
       if (event.data?.type === 'xhelio-resize' && typeof event.data.height === 'number') {
         setHeight(Math.max(100, Math.min(event.data.height + 16, 2000)));
       }

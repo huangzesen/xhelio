@@ -220,7 +220,7 @@ Users get a working system immediately after cloning — no first-run download s
 After regenerating mission data (via `scripts/generate_mission_data.py`), update the cache archive that the public mirror sync uses:
 
 ```bash
-cd knowledge/missions
+cd knowledge/envoys
 COPYFILE_DISABLE=1 tar czf /tmp/missions-cache.tar.gz .
 gh release upload missions-cache /tmp/missions-cache.tar.gz --clobber --repo huangzesen/xhelio-dev
 ```

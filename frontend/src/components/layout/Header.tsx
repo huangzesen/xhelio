@@ -1,8 +1,11 @@
+import { useState, useCallback } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Sun, Moon } from 'lucide-react';
+import { PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Sun, Moon, Sparkles, Loader2 } from 'lucide-react';
 import { HelionLogo } from '../common/HelionLogo';
 import { Button } from '@/components/ui/button';
+import { useSettingsStore } from '../../stores/settingsStore';
+import * as api from '../../api/client';
 
 interface Props {
   sidebarOpen: boolean;
@@ -15,6 +18,23 @@ interface Props {
 
 export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleActivity, theme, onToggleTheme }: Props) {
   const { t } = useTranslation('common');
+  const { config, updateConfig } = useSettingsStore();
+  const eurekaMode = (config.eureka_mode as boolean) ?? false;
+  const [eurekaSaving, setEurekaSaving] = useState(false);
+
+  const toggleEurekaMode = useCallback(async () => {
+    const newValue = !eurekaMode;
+    updateConfig({ eureka_mode: newValue });
+    setEurekaSaving(true);
+    try {
+      await api.updateConfig({ eureka_mode: newValue });
+    } catch {
+      // Revert on failure
+      updateConfig({ eureka_mode: !newValue });
+    } finally {
+      setEurekaSaving(false);
+    }
+  }, [eurekaMode, updateConfig]);
 
   const navItems = [
     { to: '/', label: t('nav.chat') },
@@ -45,7 +65,7 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
             <NavLink
               key={to}
               to={to}
-              end={to === '/'}
+              end
               className={({ isActive }) =>
                 `px-3 py-1 rounded-md text-sm whitespace-nowrap transition-colors ${
                   isActive
@@ -61,6 +81,17 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
       </div>
 
       <div className="flex items-center gap-1">
+        <Button
+          variant="ghost"
+          size="icon-sm"
+          onClick={toggleEurekaMode}
+          disabled={eurekaSaving}
+          aria-label={eurekaMode ? 'Disable Eureka Mode' : 'Enable Eureka Mode'}
+          title={eurekaMode ? 'Eureka Mode: ON' : 'Eureka Mode: OFF'}
+          className={eurekaMode ? 'text-amber-400 hover:text-amber-300' : ''}
+        >
+          {eurekaSaving ? <Loader2 size={18} className="animate-spin" /> : <Sparkles size={18} />}
+        </Button>
         <Button
           variant="ghost"
           size="icon-sm"

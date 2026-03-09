@@ -304,7 +304,7 @@ def _populate_metadata_from_label(dataset_id: str, label: dict) -> None:
     if not mission_stem:
         return
 
-    missions_dir = Path(__file__).resolve().parent.parent / "knowledge" / "missions"
+    missions_dir = Path(__file__).resolve().parent.parent / "knowledge" / "envoys"
     metadata_dir = missions_dir / "ppi" / mission_stem / "metadata"
     metadata_dir.mkdir(parents=True, exist_ok=True)
 
@@ -513,7 +513,7 @@ def _get_pds3_slot(dataset_id: str) -> str | None:
     if not mission_stem:
         return None
 
-    missions_dir = Path(__file__).resolve().parent.parent / "knowledge" / "missions"
+    missions_dir = Path(__file__).resolve().parent.parent / "knowledge" / "envoys"
     mission_json = missions_dir / "ppi" / f"{mission_stem}.json"
     if not mission_json.exists():
         return None

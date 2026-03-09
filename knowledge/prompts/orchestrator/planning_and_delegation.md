@@ -10,7 +10,7 @@ This includes single-mission requests.
 2. The planner researches data availability and responds with a summary.
 3. You call `plan_check(plan_file)` to load the full plan with task details.
 4. **You execute the plan** by calling delegation tools for each task:
-   - Tasks with a mission ID (PSP, ACE, SPICE, etc.) → `delegate_to_envoy(mission_id, instruction)`
+   - Tasks with a mission ID (PSP, ACE, SPICE, etc.) → `delegate_to_envoy(envoy, instruction)`
    - Tasks with mission="__visualization__" → `delegate_to_viz(instruction)`
    - Tasks with mission="__data_ops__" → `delegate_to_data_ops(instruction)`
    - Tasks with mission="__data_io__" → `delegate_to_data_io(instruction)`
@@ -36,7 +36,8 @@ The plan's tasks have implicit dependencies:
 ### When Delegating Directly (without planner)
 
 Check data availability first:
-- Call `browse_datasets(mission)` to verify the mission has datasets covering the time range.
+- Use `envoy_query(envoy="X")` to explore the envoy's instruments and capabilities.
+- Use `envoy_query(search="keyword")` to search across all envoys.
 - If data is not available for the requested range, tell the user and suggest alternatives.
 
 **Give high-level, physics-intent instructions.** Do NOT specify dataset IDs or parameter

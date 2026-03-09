@@ -184,13 +184,13 @@ class TestSessionManager:
         assert rest.units == orig.units
         assert rest.description == orig.description
         assert rest.source == orig.source
-        pd.testing.assert_frame_equal(orig.data, rest.data)
+        pd.testing.assert_frame_equal(orig.data, rest.data, check_freq=False)
 
         # Check vector entry
         orig_v = store.get("AC_H2_MFI.BGSEc")
         rest_v = restored_store.get("AC_H2_MFI.BGSEc")
         assert rest_v is not None
-        pd.testing.assert_frame_equal(orig_v.data, rest_v.data)
+        pd.testing.assert_frame_equal(orig_v.data, rest_v.data, check_freq=False)
 
     def test_save_updates_metadata(self, sm, tmp_dir):
         """save_session merges metadata_updates into metadata.json."""
@@ -351,7 +351,7 @@ class TestDataStorePersistence:
         assert len(store2) == 1
         entry = store2.get("DS/PARAM:special*chars")
         assert entry is not None
-        pd.testing.assert_frame_equal(df, entry.data)
+        pd.testing.assert_frame_equal(df, entry.data, check_freq=False)
 
     def test_corrupted_labels_json(self, tmp_dir):
         """Corrupted _labels.json causes json.JSONDecodeError on construction."""

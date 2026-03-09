@@ -95,7 +95,7 @@ def candidates_from_log(ops_log) -> list[dict]:
                     if stem:
                         missions_set.add(get_canonical_id(stem))
 
-            elif tool in ("custom_operation", "store_dataframe"):
+            elif tool in ("run_code",):
                 if args.get("code"):
                     step["code"] = args["code"]
                 if args.get("description"):

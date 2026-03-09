@@ -98,13 +98,13 @@ class DelegationBus:
 
     def reset(self) -> None:
         """Stop and remove all sub-agents."""
-        from .agent_registry import ENVOY_TOOL_REGISTRY
+        from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
         with self._lock:
             for agent in self._agents.values():
                 agent.stop(timeout=2.0)
             self._agents.clear()
-        ENVOY_TOOL_REGISTRY.clear_active()
+        ENVOY_KIND_REGISTRY.clear_active()
         self._ctx._ctx_tracker.reset_all()
         self._ctx._event_bus.emit(
             DEBUG,
@@ -118,9 +118,9 @@ class DelegationBus:
             for agent in self._agents.values():
                 agent.stop(timeout=2.0)
             self._agents.clear()
-        from .agent_registry import ENVOY_TOOL_REGISTRY
+        from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
-        ENVOY_TOOL_REGISTRY.clear_active()
+        ENVOY_KIND_REGISTRY.clear_active()
         self._dataops_seq = 0
         self._mission_seq = 0
         self._retired_usage.clear()
@@ -182,27 +182,18 @@ class DelegationBus:
         ctx = self._ctx
         with self._lock:
             if agent_id not in self._agents:
-                # Load sandbox config for package envoys
-                sandbox_config = None
-                from knowledge.mission_loader import load_mission as _load_mission
-                mission_data = _load_mission(mission_id.lower())
-                if mission_data and mission_data.get("type") == "package":
-                    sandbox_config = mission_data.get("sandbox")
-
                 agent = EnvoyAgent(
                     mission_id=mission_id,
                     service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
-                        ctx._execute_tool_for_agent_with_sandbox(
-                            name, args, tc_id, agent_type="envoy",
-                            sandbox_imports=_sc.get("imports") if _sc else None,
+                    tool_executor=lambda name, args, tc_id=None, _mid=mission_id: (
+                        ctx._execute_tool_for_agent(
+                            name, args, tc_id, agent_type=f"envoy:{_mid}",
                         )
                     ),
                     event_bus=ctx._event_bus,
                     memory_store=ctx._memory_store,
                     memory_scope=f"envoy:{mission_id}",
                     cancel_event=ctx._cancel_event,
-                    sandbox_config=sandbox_config,
                 )
                 agent._orchestrator_inbox = ctx._inbox
                 agent.start()
@@ -212,11 +203,11 @@ class DelegationBus:
                     level="debug",
                     msg=f"[Router] Created {mission_id} envoy agent",
                 )
-                from .agent_registry import ENVOY_TOOL_REGISTRY
-                if ENVOY_TOOL_REGISTRY.mark_active(mission_id):
+                from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
+                if ENVOY_KIND_REGISTRY.mark_active(mission_id):
                     from .agent_registry import AGENT_INFORMED_REGISTRY
 
-                    for tool_name in ENVOY_TOOL_REGISTRY.get_tools(mission_id):
+                    for tool_name in ENVOY_KIND_REGISTRY.get_tool_names(mission_id):
                         AGENT_INFORMED_REGISTRY._registry.setdefault(
                             "ctx:orchestrator", set()
                         ).add(tool_name)
@@ -230,20 +221,12 @@ class DelegationBus:
             self._mission_seq = seq + 1
             ephemeral_id = f"EnvoyAgent[{mission_id}]#{seq}"
 
-            # Load sandbox config for package envoys
-            sandbox_config = None
-            from knowledge.mission_loader import load_mission as _load_mission
-            mission_data = _load_mission(mission_id.lower())
-            if mission_data and mission_data.get("type") == "package":
-                sandbox_config = mission_data.get("sandbox")
-
             agent = EnvoyAgent(
                 mission_id=mission_id,
                 service=ctx.service,
-                tool_executor=lambda name, args, tc_id=None, _sc=sandbox_config: (
-                    ctx._execute_tool_for_agent_with_sandbox(
-                        name, args, tc_id, agent_type="envoy",
-                        sandbox_imports=_sc.get("imports") if _sc else None,
+                tool_executor=lambda name, args, tc_id=None, _mid=mission_id: (
+                    ctx._execute_tool_for_agent(
+                        name, args, tc_id, agent_type=f"envoy:{_mid}",
                     )
                 ),
                 agent_id=ephemeral_id,
@@ -251,7 +234,6 @@ class DelegationBus:
                 memory_store=ctx._memory_store,
                 memory_scope=f"envoy:{mission_id}",
                 cancel_event=ctx._cancel_event,
-                sandbox_config=sandbox_config,
             )
             agent._orchestrator_inbox = ctx._inbox
             agent.start()

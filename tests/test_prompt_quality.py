@@ -338,11 +338,11 @@ class TestForbiddenPatterns:
             matches = list(re.finditer(r"\bhelion\b", lower))
             assert not matches, f"Prompt '{name}' contains old project name 'Helion'"
 
-    def test_no_custom_operation_in_mission_prompt(self):
-        """Mission prompts should not reference custom_operation (moved to DataOps)."""
+    def test_no_run_code_in_mission_prompt(self):
+        """Mission prompts should not reference run_code (moved to DataOps)."""
         prompts = _get_all_prompts()
-        assert "custom_operation" not in prompts["mission_psp"], (
-            "Mission (PSP) prompt references custom_operation — should be DataOps only"
+        assert "run_code" not in prompts["mission_psp"], (
+            "Mission (PSP) prompt references run_code — should be DataOps only"
         )
 
     def test_no_dataset_ids_in_routing_table(self):
@@ -411,10 +411,10 @@ class TestTokenBudgets:
         """Non-mission sub-agent prompts should be under 5000 tokens.
 
         Mission prompts include per-mission dataset catalogs and are larger.
+        DataOps is excluded — it can grow large due to the saved operations library.
         """
         prompts = _get_all_prompts()
         sub_agents = [
-            "dataops",
             "viz",
             "data_io",
             "insight",
@@ -425,6 +425,14 @@ class TestTokenBudgets:
             assert tokens < 5000, (
                 f"Sub-agent prompt '{name}' is {tokens} tokens (limit: 5000)"
             )
+
+    def test_dataops_under_25k_tokens(self):
+        """DataOps prompt can be large due to the saved operations library."""
+        prompts = _get_all_prompts()
+        tokens = self._count_tokens(prompts["dataops"])
+        assert tokens < 25000, (
+            f"DataOps prompt is {tokens} tokens (limit: 25000)"
+        )
 
     def test_mission_sub_agent_under_20k_tokens(self):
         """Mission sub-agent prompts include dataset catalogs — budget is higher."""
@@ -516,8 +524,16 @@ class TestStructuralConsistency:
         like {SPACECRAFT} and {suffix} in SPICE labeling conventions.
         """
         prompts = _get_all_prompts()
-        # Allowed: runtime placeholders + documentation template variables
-        allowed = {"today", "SPACECRAFT", "suffix"}
+        # Allowed: runtime placeholders + documentation template variables +
+        # Python code example variables (appear in f-string-like code snippets
+        # in the dataops prompt's computation patterns and ops library)
+        allowed = {
+            "today", "SPACECRAFT", "suffix",
+            # Python variable names in code examples
+            "n_points", "n_points_orig", "n_windows", "nperseg", "noverlap",
+            "window_size", "window_width_decades", "half_window_indices",
+            "window_10min", "window_30min", "time_start", "time_end",
+        }
 
         for name, text in prompts.items():
             # Remove {{...}} patterns first (JSON template syntax)

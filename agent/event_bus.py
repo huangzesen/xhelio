@@ -343,8 +343,8 @@ ROUTING_ONLY_EVENTS: frozenset[str] = frozenset(
 _EVENT_TOOL_LINKS: dict[str, frozenset[str]] = {
     DATA_FETCHED: frozenset({"fetch_data", "list_fetched_data"}),
     FETCH_ERROR: frozenset({"fetch_data", "list_fetched_data"}),
-    DATA_COMPUTED: frozenset({"custom_operation", "list_fetched_data"}),
-    DATA_CREATED: frozenset({"store_dataframe", "list_fetched_data"}),
+    DATA_COMPUTED: frozenset({"run_code", "list_fetched_data"}),
+    DATA_CREATED: frozenset({"run_code", "list_fetched_data"}),
     RENDER_EXECUTED: frozenset({"render_plotly_json", "manage_plot"}),
     MPL_RENDER_EXECUTED: frozenset({"generate_mpl_script", "manage_mpl_output"}),
     JSX_RENDER_EXECUTED: frozenset({"generate_jsx_component", "manage_jsx_output"}),
@@ -1003,6 +1003,20 @@ class SSEEventListener:
                         }
                     )
                     sent_typed = True
+                elif event.type == USER_MESSAGE:
+                    # Forward synthetic user messages (e.g. Eureka Mode injections)
+                    # to the chat UI. Regular user messages are added client-side
+                    # by sendMessage(), so only forward server-injected ones.
+                    text = event.data.get("text", event.msg)
+                    if text.startswith("[eureka]") or text.startswith("[Eureka Mode]"):
+                        self._callback(
+                            {
+                                "type": "user_message",
+                                "text": text,
+                                "level": event.level,
+                            }
+                        )
+                        sent_typed = True
                 elif event.type == SESSION_TITLE:
                     self._callback(
                         {
@@ -1066,7 +1080,7 @@ class OperationsLogListener:
                 )
             elif event.type == DATA_COMPUTED:
                 ops_log.record(
-                    tool="custom_operation",
+                    tool="run_code",
                     args=d.get("args", {}),
                     outputs=d.get("outputs", []),
                     inputs=d.get("inputs", []),
@@ -1075,7 +1089,7 @@ class OperationsLogListener:
                 )
             elif event.type == DATA_CREATED:
                 ops_log.record(
-                    tool="store_dataframe",
+                    tool="run_code",
                     args=d.get("args", {}),
                     outputs=d.get("outputs", []),
                     status=d.get("status", "success"),

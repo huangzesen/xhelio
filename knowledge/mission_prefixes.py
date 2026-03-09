@@ -28,7 +28,7 @@ PRIMARY_MISSIONS = [
 
 
 # Comprehensive map of CDAWeb dataset ID prefixes to (mission_stem, instrument_hint).
-# mission_stem is the lowercase JSON filename in knowledge/missions/.
+# mission_stem is the lowercase JSON filename in knowledge/envoys/.
 # instrument_hint is an optional instrument key within the mission JSON.
 #
 # Sorted: longer prefixes first within each mission group.

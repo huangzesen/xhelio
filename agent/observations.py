@@ -85,7 +85,7 @@ def _obs_search_datasets(args: dict, result: dict) -> str:
     return f"Found {count} matching dataset(s) for '{query}'."
 
 
-def _obs_custom_operation(args: dict, result: dict) -> str:
+def _obs_run_code(args: dict, result: dict) -> str:
     label = result.get("label", "result")
     num_points = result.get("num_points")
     units = result.get("units", "")
@@ -197,7 +197,17 @@ def register_spice_tool_names(names: list[str]) -> None:
     _SPICE_TOOLS.update(names)
 
 
-def _obs_list_active_work(args: dict, result: dict) -> str:
+def _obs_manage_workers(args: dict, result: dict) -> str:
+    action = args.get("action", "list")
+    if action == "cancel":
+        status = result.get("status", "unknown")
+        if status == "error":
+            return f"Cancel failed: {result.get('message', 'unknown error')}"
+        cancelled = result.get("cancelled")
+        if cancelled is not None:
+            return f"Cancelled {cancelled} work unit(s)."
+        return "Work unit cancelled." if status == "ok" else f"Cancel result: {status}."
+    # list
     units = result.get("work_units", [])
     if not units:
         return "No active work units."
@@ -209,25 +219,14 @@ def _obs_list_active_work(args: dict, result: dict) -> str:
     return f"{len(units)} active: {', '.join(descs)}."
 
 
-def _obs_cancel_work(args: dict, result: dict) -> str:
-    status = result.get("status", "unknown")
-    if status == "error":
-        return f"Cancel failed: {result.get('message', 'unknown error')}"
-    cancelled = result.get("cancelled")
-    if cancelled is not None:
-        return f"Cancelled {cancelled} work unit(s)."
-    return "Work unit cancelled." if status == "ok" else f"Cancel result: {status}."
-
-
 _TOOL_HANDLERS = {
     "fetch_data": _obs_fetch_data,
     "search_datasets": _obs_search_datasets,
-    "custom_operation": _obs_custom_operation,
+    "run_code": _obs_run_code,
     "render_plotly_json": _obs_render_plotly,
     "manage_plot": _obs_manage_plot,
     "list_fetched_data": _obs_list_fetched_data,
-    "list_active_work": _obs_list_active_work,
-    "cancel_work": _obs_cancel_work,
+    "manage_workers": _obs_manage_workers,
 }
 
 
@@ -240,7 +239,7 @@ _ERROR_HINTS = {
         "Try search_datasets to find the correct dataset/parameter ID, "
         "or check the time range."
     ),
-    "custom_operation": (
+    "run_code": (
         "Check variable names with list_fetched_data. "
         "Verify the code syntax and ensure referenced columns exist."
     ),

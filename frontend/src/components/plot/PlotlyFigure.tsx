@@ -4,6 +4,7 @@ import { applyDarkTheme, getPlotTitle, countPanels } from './plotUtils';
 import type { PlotlyFigure as PlotlyFigureType } from '../../api/types';
 import { motion } from 'framer-motion';
 import { Download, Maximize2 } from 'lucide-react';
+import { useIsDark } from '../../hooks/useTheme';
 
 interface Props {
   figure: PlotlyFigureType;
@@ -12,7 +13,7 @@ interface Props {
 }
 
 export function PlotlyFigure({ figure, isPrimary = false, onOpenFullscreen }: Props) {
-  const isDark = document.documentElement.classList.contains('dark');
+  const isDark = useIsDark();
   const title = getPlotTitle(figure);
   const panelCount = countPanels(figure.layout);
 

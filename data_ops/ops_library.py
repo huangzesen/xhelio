@@ -1,7 +1,7 @@
 """
 Persistent library of successful custom operations.
 
-Saves non-trivial (5+ line) custom_operation code to a JSON file so the LLM
+Saves non-trivial (5+ line) run_code code to a JSON file so the LLM
 can reuse proven transformations in future sessions.  Deduplicates by
 normalized description, tracks usage counts, and evicts least-used entries
 when the library hits a configurable cap.

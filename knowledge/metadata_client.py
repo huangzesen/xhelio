@@ -6,12 +6,12 @@ Fetches parameter info dynamically and filters to 1D plottable parameters
 
 Uses a three-layer resolution strategy:
 1. In-memory cache (fastest)
-2. Local file cache in knowledge/missions/*/metadata/ (instant, no network)
+2. Local file cache in knowledge/envoys/*/metadata/ (instant, no network)
 3. Master CDF skeleton file (network fallback)
 
 Supports local file cache: if a dataset's info response is saved in
-knowledge/missions/{mission}/metadata/{dataset_id}.json, it is loaded instantly
-without a network request.
+knowledge/envoys/{source}/{mission}/metadata/{dataset_id}.json, it is loaded
+instantly without a network request.
 """
 
 import fnmatch
@@ -31,16 +31,16 @@ _info_cache: dict[str, dict] = {}
 # Cache for CDAWeb Notes HTML pages (keyed by base URL, e.g., NotesA.html)
 _notes_cache: dict[str, str] = {}
 
-# Directory containing per-mission folders with metadata cache files
-_MISSIONS_DIR = Path(__file__).parent / "missions"
-_SOURCE_DIRS = [_MISSIONS_DIR / "cdaweb", _MISSIONS_DIR / "ppi"]
+# Directory containing per-envoy-kind subdirectories with metadata cache files
+_ENVOYS_DIR = Path(__file__).parent / "envoys"
+_SOURCE_DIRS = [d for d in sorted(_ENVOYS_DIR.iterdir()) if d.is_dir()] if _ENVOYS_DIR.exists() else []
 
 
 def _find_local_cache(dataset_id: str) -> Optional[Path]:
     """Scan mission subfolders for a locally cached metadata file.
 
-    Checks knowledge/missions/{source}/*/metadata/{dataset_id}.json across
-    all source directories (cdaweb/, ppi/).
+    Checks knowledge/envoys/{source}/*/metadata/{dataset_id}.json across
+    all source directories.
 
     Args:
         dataset_id: Dataset ID (CDAWeb or PDS URN).
@@ -287,7 +287,7 @@ def get_dataset_info(dataset_id: str, use_cache: bool = True) -> dict:
 
     Checks three sources in order:
     1. In-memory cache (fastest)
-    2. Local file cache in knowledge/missions/*/metadata/ (instant, no network)
+    2. Local file cache in knowledge/envoys/*/metadata/ (instant, no network)
     3. Master CDF skeleton file (network fallback)
 
     After loading from source 2 or 3, any dataset-level override from
@@ -374,7 +374,7 @@ def _build_pds_metadata_stub(dataset_id: str) -> dict | None:
         return None
 
     # Search PPI mission JSON for this dataset
-    ppi_dir = _MISSIONS_DIR / "ppi"
+    ppi_dir = _ENVOYS_DIR / "ppi"
     mission_json = ppi_dir / f"{mission_stem}.json"
     if not mission_json.exists():
         return None
@@ -433,7 +433,7 @@ def _save_to_local_cache(dataset_id: str, info: dict) -> None:
         from .mission_prefixes import match_dataset_to_mission
         mission_stem, _ = match_dataset_to_mission(dataset_id)
         if mission_stem:
-            metadata_dir = _MISSIONS_DIR / "ppi" / mission_stem / "metadata"
+            metadata_dir = _ENVOYS_DIR / "ppi" / mission_stem / "metadata"
             metadata_dir.mkdir(parents=True, exist_ok=True)
             cache_file = metadata_dir / cache_filename
             try:
@@ -448,7 +448,7 @@ def _save_to_local_cache(dataset_id: str, info: dict) -> None:
         return
 
     # For CDAWeb IDs, scan cdaweb/ subdirectory
-    cdaweb_dir = _MISSIONS_DIR / "cdaweb"
+    cdaweb_dir = _ENVOYS_DIR / "cdaweb"
     if not cdaweb_dir.exists():
         return
     for mission_dir in cdaweb_dir.iterdir():

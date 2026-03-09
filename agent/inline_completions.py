@@ -41,10 +41,14 @@ class InlineCompletions:
         service: LLMService,
         inline_tracker: TokenTracker,
         event_bus: EventBus,
+        provider: str | None = None,
+        model: str | None = None,
     ) -> None:
         self._service = service
         self._tracker = inline_tracker
         self._event_bus = event_bus
+        self._provider = provider
+        self._model = model or config.INLINE_MODEL
         self._fail_count: int = 0
         self._disabled_until: float = 0.0
         self._last_tool_context: str = ""
@@ -105,7 +109,8 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         try:
             response = self._service.generate(
                 prompt=prompt,
-                model=config.INLINE_MODEL,
+                model=self._model,
+                provider=self._provider,
                 temperature=0.7,
                 tracked=False,
             )
@@ -161,7 +166,8 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         try:
             response = self._service.generate(
                 prompt=prompt,
-                model=config.INLINE_MODEL,
+                model=self._model,
+                provider=self._provider,
                 temperature=0.3,
                 tracked=False,
             )
@@ -215,7 +221,8 @@ Example: ["Compare this with solar wind speed", "Zoom in to January 10-15", "Exp
         try:
             response = self._service.generate(
                 prompt=prompt,
-                model=config.INLINE_MODEL,
+                model=self._model,
+                provider=self._provider,
                 temperature=0.5,
                 max_output_tokens=get_limit("output.inline_tokens"),
                 tracked=False,

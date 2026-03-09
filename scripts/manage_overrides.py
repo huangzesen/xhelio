@@ -24,13 +24,13 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 from knowledge.mission_loader import (
     _get_overrides_dir,
     _load_override,
-    _CDAWEB_DIR,
+    _ENVOYS_DIR,
 )
 
 
 def _load_base(stem: str) -> dict | None:
     """Load the raw base mission JSON (no overrides applied)."""
-    filepath = _CDAWEB_DIR / f"{stem}.json"
+    filepath = _ENVOYS_DIR / "cdaweb" / f"{stem}.json"
     if not filepath.exists():
         return None
     with open(filepath, "r", encoding="utf-8") as f:

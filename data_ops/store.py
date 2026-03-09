@@ -21,7 +21,7 @@ import os
 import shutil
 import threading
 import time as _time
-from dataclasses import dataclass
+from dataclasses import dataclass, field
 from pathlib import Path
 from typing import Optional
 
@@ -54,7 +54,7 @@ class DataEntry:
     """
 
     label: str
-    data: pd.DataFrame | xr.DataArray
+    data: pd.DataFrame | xr.DataArray | dict | str | bytes | None = None
     units: str = ""
     description: str = ""
     source: str = "computed"
@@ -66,17 +66,61 @@ class DataEntry:
     array_shape: str = ""
     comment: str = ""
 
+    # Lazy-loading support (not part of public API)
+    _data_path: Path | None = field(default=None, init=False, repr=False)
+    _data_format: str = field(default="", init=False, repr=False)
+    _data_loaded: bool = field(default=True, init=False, repr=False)
+    _data_loader: object = field(default=None, init=False, repr=False)
+
+    def __post_init__(self):
+        if self.data is not None:
+            self._data_loaded = True
+
+    def __getattribute__(self, name):
+        if name == "data":
+            loaded = object.__getattribute__(self, "_data_loaded")
+            if not loaded:
+                loader = object.__getattribute__(self, "_data_loader")
+                path = object.__getattribute__(self, "_data_path")
+                fmt = object.__getattribute__(self, "_data_format")
+                if loader and path:
+                    data = loader(path, fmt)
+                    object.__setattr__(self, "data", data)
+                    object.__setattr__(self, "_data_loaded", True)
+        return object.__getattribute__(self, name)
+
     @property
     def is_xarray(self) -> bool:
         """True if this entry stores an xarray DataArray (3D+ data)."""
         return isinstance(self.data, xr.DataArray)
 
     @property
+    def data_type(self) -> str:
+        """Return a string tag for the type of data stored."""
+        d = self.data
+        if isinstance(d, pd.DataFrame):
+            return "dataframe"
+        if isinstance(d, xr.DataArray):
+            return "xarray"
+        if isinstance(d, dict):
+            return "dict"
+        if isinstance(d, str):
+            return "text"
+        if isinstance(d, bytes):
+            return "bytes"
+        if d is None:
+            return "none"
+        return "unknown"
+
+    @property
     def columns(self) -> list:
         """Column names (for DataFrames). Empty list for xarray."""
         if self.is_xarray:
             return []
-        return list(self.data.columns)
+        d = self.data
+        if isinstance(d, pd.DataFrame):
+            return list(d.columns)
+        return []
 
     @property
     def time(self) -> np.ndarray:
@@ -99,7 +143,9 @@ class DataEntry:
         """Return a compact summary dict suitable for LLM responses."""
         if self.is_xarray:
             return self._summary_xarray()
-        return self._summary_dataframe()
+        if isinstance(self.data, pd.DataFrame):
+            return self._summary_dataframe()
+        return self._summary_generic()
 
     def _summary_dataframe(self) -> dict:
         """Summary for DataFrame-backed entries."""
@@ -222,6 +268,31 @@ class DataEntry:
         # Per-entry memory usage
         result["memory_bytes"] = int(da.nbytes)
 
+        if self.metadata:
+            result["metadata"] = self.metadata
+        return result
+
+    def _summary_generic(self) -> dict:
+        """Summary for non-DataFrame/non-xarray entries (dict, str, bytes, etc.)."""
+        result = {
+            "id": self.id,
+            "label": self.label,
+            "data_type": self.data_type,
+            "units": self.units,
+            "description": self.description,
+            "source": self.source,
+            "time_range": self.time_range,
+            "physical_quantity": self.physical_quantity,
+            "array_shape": self.array_shape,
+            "comment": self.comment,
+        }
+        if isinstance(self.data, dict):
+            result["num_keys"] = len(self.data)
+            result["keys"] = list(self.data.keys())[:20]
+        elif isinstance(self.data, str):
+            result["length"] = len(self.data)
+        elif isinstance(self.data, bytes):
+            result["length"] = len(self.data)
         if self.metadata:
             result["metadata"] = self.metadata
         return result
@@ -402,24 +473,7 @@ class DataStore:
             computing_flag.touch()
 
             # Write data file (atomic via tmp + rename)
-            if entry.is_xarray:
-                fmt = "netcdf"
-                data_file = entry_dir / "data.nc"
-                tmp_file = entry_dir / "data.nc.tmp"
-                encoding = {}
-                if "time" in entry.data.dims:
-                    encoding["time"] = {
-                        "units": "seconds since 1970-01-01",
-                        "dtype": "float64",
-                    }
-                entry.data.to_netcdf(str(tmp_file), encoding=encoding)
-                os.replace(tmp_file, data_file)
-            else:
-                fmt = "pickle"
-                data_file = entry_dir / "data.pkl"
-                tmp_file = entry_dir / "data.pkl.tmp"
-                entry.data.to_pickle(str(tmp_file))
-                os.replace(tmp_file, data_file)
+            fmt, data_file = self._save_data(entry, entry_dir)
 
             # Write minimal meta.json
             meta = {
@@ -435,12 +489,15 @@ class DataStore:
                 "array_shape": entry.array_shape,
                 "comment": entry.comment,
             }
-            if not entry.is_xarray:
+            meta["data_type"] = entry.data_type
+            if isinstance(entry.data, pd.DataFrame):
                 meta["columns"] = list(entry.data.columns)
-            if entry.is_xarray:
+                meta["memory_bytes"] = int(entry.data.memory_usage(deep=True).sum())
+            elif isinstance(entry.data, xr.DataArray):
                 meta["memory_bytes"] = int(entry.data.nbytes)
             else:
-                meta["memory_bytes"] = int(entry.data.memory_usage(deep=True).sum())
+                # dict, str, bytes, etc.
+                meta["memory_bytes"] = 0
             if entry.metadata is not None:
                 meta["metadata"] = entry.metadata
             self._write_meta(entry_dir, meta)
@@ -730,6 +787,90 @@ class DataStore:
 
     # ---- Internal helpers ----
 
+    def _save_data(self, entry: DataEntry, entry_dir: Path) -> tuple[str, Path]:
+        """Save entry data to disk, returning (format_string, data_file_path)."""
+        data = entry.data
+        if isinstance(data, xr.DataArray):
+            fmt = "netcdf"
+            data_file = entry_dir / "data.nc"
+            tmp_file = entry_dir / "data.nc.tmp"
+            encoding = {}
+            if "time" in data.dims:
+                encoding["time"] = {
+                    "units": "seconds since 1970-01-01",
+                    "dtype": "float64",
+                }
+            data.to_netcdf(str(tmp_file), encoding=encoding)
+        elif isinstance(data, pd.DataFrame):
+            fmt = "parquet"
+            data_file = entry_dir / "data.parquet"
+            tmp_file = entry_dir / "data.parquet.tmp"
+            data.to_parquet(str(tmp_file))
+        elif isinstance(data, dict):
+            fmt = "json"
+            data_file = entry_dir / "data.json"
+            tmp_file = entry_dir / "data.json.tmp"
+            with open(tmp_file, "w", encoding="utf-8") as f:
+                json.dump(data, f, indent=2, default=str)
+        elif isinstance(data, str):
+            fmt = "text"
+            data_file = entry_dir / "data.txt"
+            tmp_file = entry_dir / "data.txt.tmp"
+            with open(tmp_file, "w", encoding="utf-8") as f:
+                f.write(data)
+        elif isinstance(data, bytes):
+            fmt = "bytes"
+            data_file = entry_dir / "data.bin"
+            tmp_file = entry_dir / "data.bin.tmp"
+            with open(tmp_file, "wb") as f:
+                f.write(data)
+        else:
+            import pickle
+            fmt = "pickle"
+            data_file = entry_dir / "data.pkl"
+            tmp_file = entry_dir / "data.pkl.tmp"
+            with open(tmp_file, "wb") as f:
+                pickle.dump(data, f)
+        os.replace(tmp_file, data_file)
+        return fmt, data_file
+
+    def _load_data(self, entry_dir: Path, fmt: str):
+        """Load data from disk based on format string."""
+        if fmt == "netcdf":
+            data_path = entry_dir / "data.nc"
+            if not data_path.exists():
+                return None
+            return xr.open_dataarray(data_path).load()
+        elif fmt == "parquet":
+            data_path = entry_dir / "data.parquet"
+            if not data_path.exists():
+                return None
+            return pd.read_parquet(data_path)
+        elif fmt == "json":
+            data_path = entry_dir / "data.json"
+            if not data_path.exists():
+                return None
+            with open(data_path, "r", encoding="utf-8") as f:
+                return json.load(f)
+        elif fmt == "text":
+            data_path = entry_dir / "data.txt"
+            if not data_path.exists():
+                return None
+            with open(data_path, "r", encoding="utf-8") as f:
+                return f.read()
+        elif fmt == "bytes":
+            data_path = entry_dir / "data.bin"
+            if not data_path.exists():
+                return None
+            with open(data_path, "rb") as f:
+                return f.read()
+        else:
+            # Legacy pickle format
+            data_path = entry_dir / "data.pkl"
+            if not data_path.exists():
+                return None
+            return pd.read_pickle(data_path)
+
     def _write_meta(self, entry_dir: Path, meta: dict) -> None:
         """Atomically write meta.json."""
         tmp = entry_dir / "meta.json.tmp"
@@ -749,28 +890,17 @@ class DataStore:
             return None
 
     def _load_entry(self, entry_id: str, h: str) -> Optional[DataEntry]:
-        """Load a DataEntry from its hash folder."""
+        """Load a DataEntry from its hash folder (lazy — data loads on first access)."""
         entry_dir = self._data_dir / h
         meta = self._read_meta(entry_dir)
         if meta is None:
             return None
 
         fmt = meta.get("format", "pickle")
-        if fmt == "netcdf":
-            data_path = entry_dir / "data.nc"
-            if not data_path.exists():
-                return None
-            data = xr.open_dataarray(data_path).load()
-        else:
-            data_path = entry_dir / "data.pkl"
-            if not data_path.exists():
-                return None
-            data = pd.read_pickle(data_path)
 
-        return DataEntry(
+        entry = DataEntry(
             id=entry_id,
             label=meta.get("label", ""),
-            data=data,
             units=meta.get("units", ""),
             description=meta.get("description", ""),
             source=meta.get("source", "computed"),
@@ -781,6 +911,12 @@ class DataStore:
             array_shape=meta.get("array_shape", ""),
             comment=meta.get("comment", ""),
         )
+        # Set up lazy loading — data will be loaded on first .data access
+        entry._data_path = entry_dir
+        entry._data_format = fmt
+        entry._data_loaded = False
+        entry._data_loader = self._load_data
+        return entry
 
     def _compute_stats_async(self, entry_id: str, h: str) -> None:
         """Compute full statistics and update meta.json, then remove .computing flag."""
@@ -807,6 +943,9 @@ class DataStore:
     def _build_stats(self, entry: DataEntry) -> dict:
         """Extract statistics from a DataEntry for persisting in meta.json."""
         stats: dict = {}
+        # Non-DataFrame/xarray types have no statistical summary
+        if entry.data_type not in ("dataframe", "xarray"):
+            return stats
         if entry.is_xarray:
             da = entry.data
             dims = dict(da.sizes)

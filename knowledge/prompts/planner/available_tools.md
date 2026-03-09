@@ -1,12 +1,10 @@
 ## Your Tools (for research before planning)
 
-- list_missions(): List available missions and their capabilities
+- envoy_query(): List all available envoys with their capabilities
+- envoy_query(envoy="PSP"): See an envoy's instruments, datasets, and capabilities
+- envoy_query(envoy="PSP", path="instruments.FIELDS/MAG"): Drill into specific instruments or datasets
+- envoy_query(search="(?i)magnetic.*parker"): Search across all envoys by regex
 - web_search(query): Search the web for event dates, context, or domain knowledge
-- search_datasets(query): Search for datasets by keyword. Returns matching datasets with start_date and stop_date — use these to verify time coverage.
-- browse_datasets(mission): List all datasets for a mission with descriptions, start_date, stop_date, and parameter count. Use this to verify data availability before planning.
-- list_parameters(dataset_id): List available parameters in a dataset
-- get_dataset_docs(dataset_id): Get detailed documentation for a dataset
-- search_full_catalog(query): Full-text search across all datasets in the catalog
 - list_fetched_data(): Check what data is already loaded in memory. Call ONCE — returns 0 entries for new requests (normal). Do NOT repeat.
 - events(action): Check session history
 

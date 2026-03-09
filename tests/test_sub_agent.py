@@ -1188,7 +1188,7 @@ class TestSyncToolExecution:
     def test_multiple_tools_all_execute_inline(self):
         """Multiple tools in same response all execute inline."""
         tc1 = ToolCall(name="list_fetched_data", args={}, id="tc_1")
-        tc2 = ToolCall(name="custom_operation", args={"code": "df+1"}, id="tc_2")
+        tc2 = ToolCall(name="run_code", args={"code": "df+1"}, id="tc_2")
         first_response = LLMResponse(text=None, tool_calls=[tc1, tc2])
         responses = [
             LLMResponse(text="All done"),
@@ -1216,7 +1216,7 @@ class TestSyncToolExecution:
                     parameters={"type": "object", "properties": {}},
                 ),
                 FunctionSchema(
-                    name="custom_operation",
+                    name="run_code",
                     description="Compute",
                     parameters={"type": "object", "properties": {}},
                 ),
@@ -1228,7 +1228,7 @@ class TestSyncToolExecution:
         result = agent._process_response(first_response)
 
         assert "list_fetched_data" in inline_calls
-        assert "custom_operation" in inline_calls
+        assert "run_code" in inline_calls
 
     def test_tool_error_handled(self):
         """Errors from tools should be caught and recorded."""

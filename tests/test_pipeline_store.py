@@ -52,7 +52,7 @@ def _make_pipeline(
             },
             {
                 "step_id": "s002",
-                "tool": "custom_operation",
+                "tool": "run_code",
                 "params": {"code": "result = df.pow(2).sum(axis=1).pow(0.5).to_frame('magnitude')"},
                 "phase": "appropriation",
             },
@@ -151,7 +151,7 @@ class TestRegister:
             },
             {
                 "step_id": "s003",
-                "tool": "custom_operation",
+                "tool": "run_code",
                 "params": {"code": "result = df.mean()"},
                 "inputs": ["s001", "s002"],
                 "phase": "appropriation",
@@ -186,7 +186,7 @@ class TestRegister:
             },
             {
                 "step_id": "s002",
-                "tool": "custom_operation",
+                "tool": "run_code",
                 "params": {"code": "result = df.std()"},
                 "inputs": ["s001"],
                 "phase": "appropriation",
@@ -249,12 +249,12 @@ class TestSearch:
     def test_search_no_query_returns_all(self, store):
         steps_a = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json", "params": {"figure_json": {}}, "inputs": ["s002"], "phase": "presentation"},
         ]
         steps_b = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.std()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.std()"}, "inputs": ["s001"], "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json", "params": {"figure_json": {}}, "inputs": ["s002"], "phase": "presentation"},
         ]
         store.register(_make_pipeline(pipeline_id="pl_aaa00001", name="Pipeline A", steps=steps_a))
@@ -281,7 +281,7 @@ class TestSearch:
         for i in range(10):
             steps = [
                 {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-                {"step_id": "s002", "tool": "custom_operation", "params": {"code": f"result = df + {i}"}, "inputs": ["s001"], "phase": "appropriation"},
+                {"step_id": "s002", "tool": "run_code", "params": {"code": f"result = df + {i}"}, "inputs": ["s001"], "phase": "appropriation"},
                 {"step_id": "s003", "tool": "render_plotly_json", "params": {"figure_json": {}}, "inputs": ["s002"], "phase": "presentation"},
             ]
             store.register(_make_pipeline(
@@ -315,7 +315,7 @@ class TestContextInjection:
         for i in range(20):
             steps = [
                 {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-                {"step_id": "s002", "tool": "custom_operation", "params": {"code": f"result = df + {i}"}, "inputs": ["s001"], "phase": "appropriation"},
+                {"step_id": "s002", "tool": "run_code", "params": {"code": f"result = df + {i}"}, "inputs": ["s001"], "phase": "appropriation"},
                 {"step_id": "s003", "tool": "render_plotly_json", "params": {"figure_json": {}}, "inputs": ["s002"], "phase": "presentation"},
             ]
             store.register(_make_pipeline(
@@ -410,15 +410,15 @@ class TestIsVanilla:
     def test_fetch_plus_compute_not_vanilla(self):
         steps = [
             {"step_id": "s001", "tool": "fetch_data", "params": {}, "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "x=1"}, "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "x=1"}, "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json", "params": {}, "phase": "presentation"},
         ]
         assert is_vanilla(steps) is False
 
-    def test_fetch_plus_store_dataframe_not_vanilla(self):
+    def test_fetch_plus_run_code_not_vanilla(self):
         steps = [
             {"step_id": "s001", "tool": "fetch_data", "params": {}, "phase": "appropriation"},
-            {"step_id": "s002", "tool": "store_dataframe", "params": {"code": "x=1"}, "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "x=1"}, "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json", "params": {}, "phase": "presentation"},
         ]
         assert is_vanilla(steps) is False
@@ -430,7 +430,7 @@ class TestAppropriationFingerprint:
     def test_deterministic(self):
         steps = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
         ]
         fp1 = appropriation_fingerprint(steps)
         fp2 = appropriation_fingerprint(steps)
@@ -440,29 +440,29 @@ class TestAppropriationFingerprint:
     def test_different_step_ids_same_structure(self):
         steps_a = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
         ]
         steps_b = [
             {"step_id": "s010", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s011", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s010"], "phase": "appropriation"},
+            {"step_id": "s011", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s010"], "phase": "appropriation"},
         ]
         assert appropriation_fingerprint(steps_a) == appropriation_fingerprint(steps_b)
 
     def test_different_code_different_hash(self):
         steps_a = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
         ]
         steps_b = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.std()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.std()"}, "inputs": ["s001"], "phase": "appropriation"},
         ]
         assert appropriation_fingerprint(steps_a) != appropriation_fingerprint(steps_b)
 
     def test_presentation_steps_excluded(self):
         base = [
             {"step_id": "s001", "tool": "fetch_data", "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
+            {"step_id": "s002", "tool": "run_code", "params": {"code": "result = df.mean()"}, "inputs": ["s001"], "phase": "appropriation"},
         ]
         with_render = base + [
             {"step_id": "s003", "tool": "render_plotly_json", "params": {"figure_json": {"data": []}}, "inputs": ["s002"], "phase": "presentation"},
@@ -495,7 +495,7 @@ class TestVanillaFilter:
 
     def test_non_vanilla_pipeline_registered(self, store):
         """Non-vanilla pipeline → registered, store has 1 active entry."""
-        pipeline = _make_pipeline()  # default has custom_operation
+        pipeline = _make_pipeline()  # default has run_code
         result = store.register(pipeline)
         assert result is not None
         assert len(store.get_active()) == 1
@@ -510,7 +510,7 @@ class TestFamilyDedup:
             {"step_id": "s001", "tool": "fetch_data",
              "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"},
              "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation",
+            {"step_id": "s002", "tool": "run_code",
              "params": {"code": "result = df.pow(2).sum(axis=1).pow(0.5).to_frame('magnitude')"},
              "inputs": ["s001"], "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json",
@@ -544,7 +544,7 @@ class TestFamilyDedup:
             {"step_id": "s001", "tool": "fetch_data",
              "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"},
              "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation",
+            {"step_id": "s002", "tool": "run_code",
              "params": {"code": "result = df.mean()"},
              "inputs": ["s001"], "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json",
@@ -555,7 +555,7 @@ class TestFamilyDedup:
             {"step_id": "s001", "tool": "fetch_data",
              "params": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"},
              "inputs": [], "phase": "appropriation"},
-            {"step_id": "s002", "tool": "custom_operation",
+            {"step_id": "s002", "tool": "run_code",
              "params": {"code": "result = df.std()"},
              "inputs": ["s001"], "phase": "appropriation"},
             {"step_id": "s003", "tool": "render_plotly_json",
@@ -781,12 +781,12 @@ class TestEnumeratePipelineCandidates:
     @patch("config.get_data_dir")
     @patch("data_ops.operations_log.get_operations_log")
     def test_rich_step_fields(self, mock_get_log, mock_data_dir, tmp_path):
-        """Pipeline with custom_operation → step has code, description fields."""
+        """Pipeline with run_code → step has code, description fields."""
         mock_data_dir.return_value = tmp_path
         records = [
             {"id": "op_001", "tool": "fetch_data", "status": "success",
              "args": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"}, "outputs": ["AC_H2_MFI.BGSEc"]},
-            {"id": "op_002", "tool": "custom_operation", "status": "success",
+            {"id": "op_002", "tool": "run_code", "status": "success",
              "args": {"description": "compute magnitude", "code": "df['Bmag'] = np.sqrt(df['Bx']**2)"}, "outputs": ["magnitude"]},
             {"id": "op_003", "tool": "render_plotly_json", "status": "success",
              "args": {}, "outputs": [], "inputs": ["AC_H2_MFI.BGSEc", "magnitude"]},
@@ -811,7 +811,7 @@ class TestEnumeratePipelineCandidates:
         assert fetch_step["output_label"] == "AC_H2_MFI.BGSEc"
 
         custom_step = cand["steps"][1]
-        assert custom_step["tool"] == "custom_operation"
+        assert custom_step["tool"] == "run_code"
         assert custom_step["description"] == "compute magnitude"
         assert custom_step["code"] == "df['Bmag'] = np.sqrt(df['Bx']**2)"
         assert custom_step["output_label"] == "magnitude"

@@ -4,7 +4,7 @@ Static mission/instrument catalog with keyword matching.
 Provides fast local lookup to map natural language queries to CDAWeb dataset IDs.
 Parameter metadata is fetched separately via Master CDF files.
 
-Data is loaded from per-mission JSON files in knowledge/missions/.
+Data is loaded from per-mission JSON files in knowledge/envoys/.
 """
 
 import re

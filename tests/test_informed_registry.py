@@ -87,12 +87,12 @@ class TestInformedRegistryAdd:
 class TestInformedRegistryDrop:
     def test_drop_informed_tool(self):
         reg = InformedRegistry()
-        # custom_operation is an informed-only tool for viz
-        assert "custom_operation" in reg.get("ctx:viz_plotly")
-        ok, err = reg.drop("ctx:viz_plotly", "custom_operation", "not useful")
+        # run_code is an informed-only tool for viz
+        assert "run_code" in reg.get("ctx:viz_plotly")
+        ok, err = reg.drop("ctx:viz_plotly", "run_code", "not useful")
         assert ok is True
         assert err == ""
-        assert "custom_operation" not in reg.get("ctx:viz_plotly")
+        assert "run_code" not in reg.get("ctx:viz_plotly")
 
     def test_cannot_drop_call_tool(self):
         reg = InformedRegistry()
@@ -127,7 +127,7 @@ class TestInformedRegistryChangelog:
 
     def test_changelog_recorded_on_drop(self):
         reg = InformedRegistry()
-        reg.drop("ctx:viz_plotly", "custom_operation", "test reason")
+        reg.drop("ctx:viz_plotly", "run_code", "test reason")
         assert len(reg._changelog) == 1
         entry = reg._changelog[0]
         assert entry["action"] == "drop"
@@ -137,7 +137,7 @@ class TestInformedRegistrySaveLoad:
     def test_save_and_load_roundtrip(self, tmp_path):
         reg1 = InformedRegistry()
         reg1.add("ctx:viz_plotly", "web_search", "search logs are useful")
-        reg1.drop("ctx:viz_plotly", "custom_operation", "too noisy")
+        reg1.drop("ctx:viz_plotly", "run_code", "too noisy")
 
         path = tmp_path / "informed_tools.json"
         reg1.save(path)
@@ -155,10 +155,10 @@ class TestInformedRegistrySaveLoad:
 
         # web_search should be present (added as override)
         assert "web_search" in reg2.get("ctx:viz_plotly")
-        # custom_operation was dropped but load is additive on defaults,
+        # run_code was dropped but load is additive on defaults,
         # so it reappears (load only adds overrides, doesn't remove)
         # This is by design — drop is session-local
-        assert "custom_operation" in reg2.get("ctx:viz_plotly")
+        assert "run_code" in reg2.get("ctx:viz_plotly")
 
     def test_save_only_overrides(self, tmp_path):
         """save() should only persist tools beyond the call tools (overrides only)."""

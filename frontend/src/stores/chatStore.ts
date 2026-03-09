@@ -36,6 +36,7 @@ interface ChatState {
     command: string;
     timestamp: number;
     responded: boolean;
+    decision?: 'approved' | 'denied';
   }>;
 
   sendMessage: (sessionId: string, message: string, files?: File[]) => Promise<void>;
@@ -105,7 +106,7 @@ function flushTextBuffer(
 function handleSSEEvent(
   event: SSEEvent,
   set: (fn: (s: ChatState) => Partial<ChatState>) => void,
-  get: () => ChatState,
+  _get: () => ChatState,
   sessionId: string,
 ) {
   switch (event.type) {
@@ -197,7 +198,9 @@ function handleSSEEvent(
       break;
 
     case 'plot': {
+      const capturedSessionId = sessionId;
       api.getFigure(sessionId).then(({ figure, figure_url }) => {
+        if (_subscribedSessionId !== capturedSessionId) return;
         set((s) => ({
           figureJson: figure,
           messages: [
@@ -209,6 +212,7 @@ function handleSSEEvent(
               timestamp: Date.now(),
               figure: figure ?? undefined,
               figure_url,
+              thumbnailSessionId: capturedSessionId,
             },
           ],
         }));
@@ -284,7 +288,7 @@ function handleSSEEvent(
       break;
 
     case 'plan_update':
-      set({ planData: (event as SSEPlanUpdateEvent).plan });
+      set(() => ({ planData: (event as SSEPlanUpdateEvent).plan }));
       break;
 
     case 'insight_result':
@@ -318,6 +322,23 @@ function handleSSEEvent(
         }));
       }
       break;
+
+    case 'user_message': {
+      // Server-injected user messages (e.g. Eureka Mode suggestions)
+      const text = (event as { text: string }).text;
+      set((s) => ({
+        messages: [
+          ...s.messages,
+          {
+            id: uid(),
+            role: 'user' as const,
+            content: text,
+            timestamp: Date.now(),
+          },
+        ],
+      }));
+      break;
+    }
 
     case 'eureka_finding': {
       const { type: _, ...eureka } = event;
@@ -369,26 +390,18 @@ function handleSSEEvent(
       _currentAgentMsgId = null;
       _currentAgentText = '';
       _textBuffer = '';
-      // Attach pending status text to the round end marker
-      if (_pendingStatusText) {
-        set((s) => {
-          const markers = [...s.roundMarkers];
-          const last = markers[markers.length - 1];
-          if (last && last.type === 'end') {
-            markers[markers.length - 1] = { ...last, statusText: _pendingStatusText! };
-          }
-          return { roundMarkers: markers };
-        });
-        _pendingStatusText = null;
-      }
+      const rtUsage = (event as { round_token_usage: Record<string, number> }).round_token_usage;
+      const statusText = _pendingStatusText;
+      _pendingStatusText = null;
       set((s) => ({
         isStreaming: false,
         commentaryText: null,
-        roundTokenUsage: (event as { round_token_usage: Record<string, number> }).round_token_usage,
+        roundTokenUsage: rtUsage,
         roundMarkers: [...s.roundMarkers, {
-          type: 'end',
+          type: 'end' as const,
           timestamp: ts,
-          roundTokenUsage: (event as { round_token_usage: Record<string, number> }).round_token_usage,
+          roundTokenUsage: rtUsage,
+          ...(statusText ? { statusText } : {}),
         }],
       }));
       break;
@@ -396,20 +409,33 @@ function handleSSEEvent(
 
     case 'permission_request': {
       const ev = event as { request_id: string; action: string; description: string; command: string };
-      set((s) => ({
-        pendingPermissions: [
-          ...s.pendingPermissions,
-          {
-            id: uid(),
-            requestId: ev.request_id,
-            action: ev.action,
-            description: ev.description,
-            command: ev.command,
-            timestamp: Date.now(),
-            responded: false,
-          },
-        ],
-      }));
+      set((s) => {
+        if (s.pendingPermissions.some((p) => p.requestId === ev.request_id)) {
+          return {};
+        }
+        return {
+          pendingPermissions: [
+            ...s.pendingPermissions,
+            {
+              id: uid(),
+              requestId: ev.request_id,
+              action: ev.action,
+              description: ev.description,
+              command: ev.command,
+              timestamp: Date.now(),
+              responded: false,
+            },
+          ],
+        };
+      });
+      break;
+    }
+
+    case 'token_usage': {
+      const usage = (event as { token_usage?: Record<string, number> }).token_usage;
+      if (usage) {
+        useSessionStore.getState().setTokenUsage(usage);
+      }
       break;
     }
 
@@ -479,6 +505,16 @@ export const useChatStore = create<ChatState>()(
       clearTimeout(_reconnectTimer);
       _reconnectTimer = null;
     }
+
+    // Reset streaming state from previous session
+    if (_rafHandle) {
+      cancelAnimationFrame(_rafHandle);
+      _rafHandle = null;
+    }
+    _currentAgentMsgId = null;
+    _currentAgentText = '';
+    _textBuffer = '';
+    _pendingStatusText = null;
 
     _subscribedSessionId = sessionId;
     _eventSource = subscribeToSession(
@@ -668,7 +704,7 @@ export const useChatStore = create<ChatState>()(
     }
     if (lastUserIdx < 0) return;
 
-    const lastUserMessage = messages[lastUserIdx].content;
+    const lastUserMessage = messages[lastUserIdx].content.replace(/\n\[Attached: [^\]]+\]/g, '');
     // Remove everything after (and including any agent response to) the last user message
     const trimmed = messages.slice(0, lastUserIdx);
     set({ messages: trimmed, toolEvents: [] });
@@ -699,6 +735,7 @@ export const useChatStore = create<ChatState>()(
     const memoryEvents: MemoryEvent[] = [];
     const commentaryEvents: CommentaryEvent[] = [];
     const roundMarkers: RoundMarker[] = [];
+    const pendingPermissions: ChatState['pendingPermissions'] = [];
 
     for (const ev of events) {
       const rawTs = new Date(ev.ts).getTime();
@@ -855,6 +892,22 @@ export const useChatStore = create<ChatState>()(
         });
       }
 
+      // Permission requests
+      if (ev.type === 'permission_request') {
+        const reqId = ev.data?.request_id as string;
+        if (reqId && !pendingPermissions.some(p => p.requestId === reqId)) {
+          pendingPermissions.push({
+            id: uid(),
+            requestId: reqId,
+            action: (ev.data?.action as string) || '',
+            description: (ev.data?.description as string) || '',
+            command: (ev.data?.command as string) || '',
+            timestamp: ts,
+            responded: (ev.data?.responded as boolean) ?? false,
+          });
+        }
+      }
+
       // Log lines (requires "console" tag — matches SSEEventListener)
       if (ev.tags?.includes('console')) {
         logLines.push({
@@ -866,7 +919,7 @@ export const useChatStore = create<ChatState>()(
       }
     }
 
-    set({ messages, toolEvents, logLines: logLines.slice(-200), memoryEvents, commentaryEvents, roundMarkers });
+    set({ messages, toolEvents, logLines: logLines.slice(-200), memoryEvents, commentaryEvents, roundMarkers, pendingPermissions });
   },
 
   clearChat: () => {
@@ -900,7 +953,7 @@ export const useChatStore = create<ChatState>()(
         // as clickable previews after a page refresh instead of blank messages.
         messages: state.messages.map((m) => {
           if (!m.figure) return m;
-          const sessionId = m.thumbnailSessionId || useSessionStore.getState().activeSessionId;
+          const sessionId = m.thumbnailSessionId;
           return {
             ...m,
             figure: undefined,
@@ -913,6 +966,7 @@ export const useChatStore = create<ChatState>()(
         memoryEvents: state.memoryEvents,
         commentaryEvents: state.commentaryEvents,
         roundMarkers: state.roundMarkers,
+        pendingPermissions: state.pendingPermissions,
         // Don't persist figureJson — it can be multiple MB of data arrays
         // figureJson: state.figureJson,
       }),

@@ -11,22 +11,24 @@ interface PermissionRequestProps {
   description: string;
   command: string;
   responded: boolean;
+  decision?: 'approved' | 'denied';
 }
 
 export function PermissionRequest(props: PermissionRequestProps) {
   const sessionId = useSessionStore((s) => s.activeSessionId);
   const [responding, setResponding] = useState(false);
-  const [decision, setDecision] = useState<'approved' | 'denied' | null>(null);
+  const [localDecision, setLocalDecision] = useState<'approved' | 'denied' | null>(null);
+  const decision = localDecision ?? (props.responded ? (props.decision ?? 'approved') : null);
 
   const handleRespond = async (approved: boolean) => {
     if (!sessionId || props.responded || responding) return;
     setResponding(true);
     try {
       await api.respondToPermission(sessionId, props.requestId, approved);
-      setDecision(approved ? 'approved' : 'denied');
+      setLocalDecision(approved ? 'approved' : 'denied');
       useChatStore.setState((s) => ({
         pendingPermissions: s.pendingPermissions.map((p) =>
-          p.id === props.id ? { ...p, responded: true } : p,
+          p.id === props.id ? { ...p, responded: true, decision: approved ? 'approved' as const : 'denied' as const } : p,
         ),
       }));
     } catch (err) {

@@ -113,6 +113,17 @@ export interface SSEInsightResultEvent {
   level: string;
 }
 
+export interface SSEInsightFeedbackEvent {
+  type: 'insight_feedback';
+  text: string;
+  level: string;
+}
+
+export interface SSETokenUsageEvent {
+  type: 'token_usage';
+  token_usage: Record<string, number>;
+}
+
 export interface SSEPlanUpdateEvent {
   type: 'plan_update';
   plan: import('./client').PlanData;
@@ -171,7 +182,9 @@ export type SSEEvent =
   | SSEInsightResultEvent
   | SSEPlanUpdateEvent
   | SSEEurekaFindingEvent
-  | SSEPermissionRequestEvent;
+  | SSEPermissionRequestEvent
+  | SSEInsightFeedbackEvent
+  | SSETokenUsageEvent;
 
 // ---- Catalog SSE Events ----
 

@@ -24,7 +24,7 @@ from knowledge.mission_loader import (
     update_mission_override,
     load_mission,
     clear_cache,
-    _CDAWEB_DIR,
+    _ENVOYS_DIR,
     _SOURCE_DIRS,
 )
 from knowledge.metadata_client import (
@@ -322,8 +322,12 @@ class TestLoadMissionWithOverrides:
 
     def _find_any_mission_stem(self) -> str | None:
         """Return the stem of any mission JSON on disk, or None."""
-        files = sorted(_CDAWEB_DIR.glob("*.json"))
-        return files[0].stem if files else None
+        for kind_dir in sorted(_ENVOYS_DIR.iterdir()):
+            if kind_dir.is_dir():
+                files = sorted(kind_dir.glob("*.json"))
+                if files:
+                    return files[0].stem
+        return None
 
     def test_load_mission_applies_override(self, tmp_path, monkeypatch):
         stem = self._find_any_mission_stem()
@@ -368,9 +372,16 @@ class TestLoadMissionWithOverrides:
         )
         # No override file created — tmp_path is empty
 
-        # Load the raw JSON for comparison
-        with open(_CDAWEB_DIR / f"{stem}.json", "r") as f:
-            raw = json.load(f)
+        # Load the raw JSON for comparison — find the file in any kind dir
+        raw = None
+        for kind_dir in sorted(_ENVOYS_DIR.iterdir()):
+            if kind_dir.is_dir():
+                path = kind_dir / f"{stem}.json"
+                if path.exists():
+                    with open(path, "r") as f:
+                        raw = json.load(f)
+                    break
+        assert raw is not None, f"Could not find {stem}.json in any kind dir"
 
         mission = load_mission(stem)
         assert mission["name"] == raw["name"]

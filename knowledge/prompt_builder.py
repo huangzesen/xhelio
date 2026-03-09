@@ -124,7 +124,7 @@ def generate_dataset_quick_reference() -> str:
         for inst_id, inst in sc["instruments"].items():
             dtype = classify_instrument_type(inst["keywords"]).capitalize()
             for ds in inst["datasets"]:
-                lines.append(f"| {name} | {ds} | {dtype} | use list_parameters |")
+                lines.append(f"| {name} | {ds} | {dtype} | use envoy_query to explore |")
     return "\n".join(lines)
 
 
@@ -159,8 +159,12 @@ def generate_mission_profiles() -> str:
             continue
         lines = [f"### {sc['name']} ({mission_id})"]
         lines.append(f"{profile['description']}")
-        lines.append(f"- Coordinates: {', '.join(profile['coordinate_systems'])}")
-        lines.append(f"- Typical cadence: {profile['typical_cadence']}")
+        coords = profile.get('coordinate_systems', [])
+        if coords:
+            lines.append(f"- Coordinates: {', '.join(coords)}")
+        cadence = profile.get('typical_cadence')
+        if cadence:
+            lines.append(f"- Typical cadence: {cadence}")
         if profile.get("data_caveats"):
             lines.append("- Caveats: " + "; ".join(profile["data_caveats"]))
         if profile.get("analysis_patterns"):
@@ -193,148 +197,152 @@ def _build_shared_domain_knowledge() -> str:
 # ---------------------------------------------------------------------------
 
 
-def _build_spice_prompt() -> str:
-    """Generate the system prompt for the SPICE ephemeris envoy agent."""
-    return assemble([
-        "envoy_spice/full.md",
-        "_shared/async_tools.md",
-        "_shared/final_summary.md",
-    ])
+# ---------------------------------------------------------------------------
+# Envoy prompt builder — three-layer assembly
+# ---------------------------------------------------------------------------
 
-
-def _build_package_prompt(mission_id: str) -> str:
-    """Generate the system prompt for a package envoy agent."""
-    mission_data = load_mission(mission_id)
-    if mission_data is None:
-        raise KeyError(f"Package envoy '{mission_id}' not found")
-
-    sandbox = mission_data.get("sandbox", {})
-    imports = sandbox.get("imports", [])
-    functions = sandbox.get("functions", [])
-
-    # Build package list
-    package_lines = []
-    for imp in imports:
-        package_lines.append(f"- `{imp['sandbox_alias']}` → `{imp['import_path']}`")
-    package_list = "\n".join(package_lines) if package_lines else "*(none)*"
-
-    # Build function list
-    func_lines = []
-    for fn in functions:
-        func_lines.append(f"### `{fn['signature']}`\n\n{fn['description']}")
-        if fn.get("parameters"):
-            params = [f"- `{k}` ({v.get('type', 'any')}): {v.get('description', '')}"
-                      for k, v in fn["parameters"].items()]
-            func_lines.append("\nParameters:\n" + "\n".join(params))
-        func_lines.append("")
-    function_list = "\n".join(func_lines) if func_lines else "*(none defined)*"
-
-    # Example call from first function
-    example_call = functions[0]["signature"] if functions else "package.function(args)"
-
-    prompt = assemble(
-        ["envoy_package/full.md"],
-        envoy_name=mission_data.get("name", mission_id),
-        description=mission_data.get("profile", {}).get("description", ""),
-        package_list=package_list,
-        function_list=function_list,
-        example_call=example_call,
-    )
-
-    # Append shared sections
-    shared = assemble(["_shared/async_tools.md", "_shared/final_summary.md"])
-    return prompt + "\n\n" + shared
-
-
-# Group -> prompt builder function. Groups not listed here use the default
-# mission-profile prompt builder (_build_mission_prompt). Add entries here
-# when a group needs a specialized prompt.
-_GROUP_PROMPT_BUILDERS: dict[str, callable] = {
-    "spice": lambda mission_id: _build_spice_prompt(),
-    "package": _build_package_prompt,
+# Per-kind prompt configuration. Controls which template directory to use
+# and how to render the mission JSON.
+_KIND_PROMPT_CONFIG: dict[str, dict] = {
+    "cdaweb": {
+        "template_dir": "envoy_cdaweb",
+        "compress_json": False,
+    },
+    "ppi": {
+        "template_dir": "envoy_ppi",
+        "compress_json": False,
+    },
+    "spice": {
+        "template_dir": "envoy_spice",
+        "compress_json": True,
+    },
+}
+_DEFAULT_PROMPT_CONFIG: dict = {
+    "template_dir": None,  # No kind-specific template
+    "compress_json": False,
 }
 
 
 def build_envoy_prompt(mission_id: str) -> str:
-    """Generate a rich prompt for a single mission's sub-agent.
+    """Generate the system prompt for an envoy agent.
 
-    Dispatches by envoy group:
-    - Groups with an entry in _GROUP_PROMPT_BUILDERS get a specialized prompt.
-    - All other groups (cdaweb, ppi) get the default mission-profile prompt.
+    Three layers assembled in order:
+    1. Generic envoy role (knowledge/prompts/envoy/generic_role.md)
+    2. Kind-specific prompt (knowledge/prompts/envoy_{kind}/role.md)
+    3. Mission JSON rendered as markdown (profile + dataset catalog)
+
+    Plus shared sections (async tools, final summary) at the end.
 
     Args:
-        mission_id: Spacecraft key (e.g., "PSP", "ACE", "SPICE")
+        mission_id: Mission key (e.g., "PSP", "ACE", "SPICE")
 
     Returns:
-        A system prompt focused on one mission's data discovery and workflow.
+        Complete system prompt string.
 
     Raises:
-        KeyError: If mission_id is not in the catalog (for non-specialized groups).
+        KeyError: If mission_id has no JSON data.
     """
-    from agent.agent_registry import ENVOY_TOOL_REGISTRY
+    from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
-    group = ENVOY_TOOL_REGISTRY.get_group(mission_id)
-    builder = _GROUP_PROMPT_BUILDERS.get(group)
-    if builder is not None:
-        return builder(mission_id)
-    return _build_mission_prompt(mission_id)
+    kind = ENVOY_KIND_REGISTRY.get_kind(mission_id)
+    kind_config = _KIND_PROMPT_CONFIG.get(kind)
+    if kind_config is None:
+        # Auto-detect runtime kind template
+        from .prompt_loader import _PROMPTS_DIR
+        if (_PROMPTS_DIR / f"envoy_{kind}").exists():
+            kind_config = {"template_dir": f"envoy_{kind}", "compress_json": False}
+        else:
+            kind_config = _DEFAULT_PROMPT_CONFIG
 
+    # Layer 1: Generic envoy role
+    generic_role = load_section("envoy/generic_role.md")
 
-def _build_mission_prompt(mission_id: str) -> str:
-    """Build the default mission-profile prompt (used by cdaweb and ppi groups)."""
-    # Validate mission exists in catalog (backward compat for KeyError)
-    if mission_id not in MISSIONS:
+    # Layer 2: Kind-specific prompt
+    template_dir = kind_config.get("template_dir")
+    if template_dir:
+        kind_prompt = load_section(f"{template_dir}/role.md")
+    else:
+        kind_prompt = ""
+
+    # Layer 3: Mission JSON as markdown
+    # Validate mission exists (backward compat for KeyError)
+    if mission_id not in MISSIONS and mission_id != "SPICE":
         raise KeyError(mission_id)
 
-    mission = load_mission(mission_id)
+    try:
+        mission = load_mission(mission_id)
+    except Exception:
+        # SPICE or other kinds may not have mission JSON
+        mission = {"name": mission_id, "profile": {}, "instruments": {}}
+
     profile = mission.get("profile", {})
 
-    # Build the dynamic mission overview section
     overview_lines = []
     if profile:
-        overview_lines.append("## Mission Overview")
-        overview_lines.append(profile.get("description", ""))
-        overview_lines.append(
-            f"- Coordinate system(s): {', '.join(profile.get('coordinate_systems', []))}"
-        )
-        overview_lines.append(
-            f"- Typical cadence: {profile.get('typical_cadence', 'varies')}"
-        )
+        overview_lines.append(f"## Mission: {mission.get('name', mission_id)}")
+        if profile.get("description"):
+            overview_lines.append(profile["description"])
+        coords = profile.get("coordinate_systems", [])
+        if coords:
+            overview_lines.append(f"- Coordinate system(s): {', '.join(coords)}")
+        cadence = profile.get("typical_cadence")
+        if cadence:
+            overview_lines.append(f"- Typical cadence: {cadence}")
         if profile.get("data_caveats"):
-            overview_lines.append(
-                "- Data caveats: " + "; ".join(profile["data_caveats"])
-            )
+            overview_lines.append("- Data caveats: " + "; ".join(profile["data_caveats"]))
         overview_lines.append("")
     mission_overview = "\n".join(overview_lines)
 
-    # Assemble static sections from markdown files
-    static_sections = assemble(
-        [
-            "envoy/role.md",
-        ],
-        mission_name=mission["name"],
-        mission_id=mission_id,
-    )
+    compress = kind_config.get("compress_json", False)
+    dataset_catalog = _mission_to_markdown(mission, simplified=compress)
 
-    body_sections = assemble(
-        [
-            "envoy/discovery_rule.md",
-            "envoy/dataset_docs.md",
-            "envoy/cdaweb_conventions.md",
-            "envoy/selection_workflow.md",
-            "envoy/availability_validation.md",
-            "envoy/reporting_results.md",
-            "envoy/spice_tools.md",
-            "_shared/async_tools.md",
-            "_shared/final_summary.md",
-        ]
-    )
+    # Shared tail sections
+    tail = assemble([
+        "_shared/async_tools.md",
+        "_shared/final_summary.md",
+    ])
 
-    parts = [static_sections]
+    # Assemble all layers
+    parts = [generic_role]
+    if kind_prompt:
+        parts.append(kind_prompt)
     if mission_overview:
         parts.append(mission_overview)
-    parts.append(body_sections)
+    parts.append(dataset_catalog)
+    parts.append(tail)
+
     return "\n\n".join(parts)
+
+
+def _mission_to_markdown(mission: dict, *, simplified: bool = False) -> str:
+    """Convert a mission JSON dict to a readable markdown dataset catalog.
+
+    Args:
+        mission: Full mission dict from load_mission().
+        simplified: If True, omit PI, DOI, and truncate long descriptions.
+            Use for orchestrator tool results where brevity matters.
+    """
+    lines = ["## Dataset Catalog", ""]
+    for inst_name, inst_data in sorted(mission.get("instruments", {}).items()):
+        lines.append(f"### {inst_name}")
+        if inst_data.get("keywords"):
+            lines.append(f"Keywords: {', '.join(inst_data['keywords'])}")
+        lines.append("")
+        for ds_id, ds_info in sorted(inst_data.get("datasets", {}).items()):
+            desc = ds_info.get("description", "")
+            start = ds_info.get("start_date", "?")
+            stop = ds_info.get("stop_date", "?")
+            lines.append(f"- **{ds_id}**: {desc}")
+            lines.append(f"  Coverage: {start} to {stop}")
+            if not simplified:
+                if ds_info.get("pi_name"):
+                    lines.append(f"  PI: {ds_info['pi_name']}")
+                if ds_info.get("doi"):
+                    lines.append(f"  DOI: {ds_info['doi']}")
+        lines.append("")
+    return "\n".join(lines)
+
+
 
 
 # ---------------------------------------------------------------------------
@@ -489,8 +497,8 @@ def _build_catalog_section(include_catalog: bool) -> str:
 ## Full Mission Catalog
 
 The following catalog lists every dataset available for each mission, grouped by
-instrument. Use this to route requests without calling search_datasets — you already
-know what exists. Delegate to the envoy agent with the appropriate mission_id.
+instrument. Use this to route requests without calling envoy_query — you already
+know what exists. Delegate to the envoy agent with the appropriate envoy name.
 
 {generate_mission_profiles()}
 """

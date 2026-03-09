@@ -134,7 +134,7 @@
   "_comment_turn_limits": "Override agent loop limits. Keys: orchestrator.max_iterations (200), orchestrator.max_total_calls (400), orchestrator.dup_free_passes (2), orchestrator.dup_hard_block (8), orchestrator.task.max_iterations (10), orchestrator.task.max_total_calls (20), sub_agent.max_iterations (20), sub_agent.max_total_calls (40), sub_agent.dup_free_passes (3), sub_agent.dup_hard_block (10), sub_agent.task.max_iterations (12), sub_agent.task.max_total_calls (25), think.max_iterations (12), think.max_total_calls (25), planner.max_rounds (10). See agent/turn_limits.py DEFAULTS for the full list.",
   "turn_limits": {},
 
-  "_comment_sandbox": "Sandbox permissions for custom_operation code validation. allowed_attrs: attribute names to permit even if they appear in the default blocklist (e.g. [\"eval\", \"query\"]). extra_blocked_attrs: additional attribute names to block beyond the defaults. See data_ops/custom_ops.py for the default blocklists.",
+  "_comment_sandbox": "Sandbox permissions for run_code validation. allowed_attrs: attribute names to permit even if they appear in the default blocklist (e.g. [\"eval\", \"query\"]). extra_blocked_attrs: additional attribute names to block beyond the defaults. See data_ops/sandbox.py and data_ops/sandbox_blocklist.json for the blocklists.",
   "sandbox": {
     "allowed_attrs": [],
     "extra_blocked_attrs": []

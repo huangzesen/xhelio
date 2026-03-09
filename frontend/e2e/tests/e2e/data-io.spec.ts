@@ -46,8 +46,7 @@ Please extract this into a DataFrame and store it as "icme_events".`;
     const response = await sendAndGetText(page, icmeText, DATA_TIMEOUT);
 
     const activityText = await getActivityPanelText(page);
-    const hasStoreCall = activityText.includes('store_dataframe') ||
-      activityText.includes('custom_operation');
+    const hasStoreCall = activityText.includes('run_code');
 
     if (!hasStoreCall) {
       recordIssue({

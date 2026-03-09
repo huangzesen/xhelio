@@ -101,6 +101,81 @@ Returns: contact info, resource URL, documentation text, full parameter list (na
         },
     },
     {
+        "name": "envoy_query",
+        "description": """Query envoy capabilities. Navigate the envoy tree layer by layer, or search across envoys using regex.
+
+Without arguments: lists all available envoys with summaries.
+With envoy only: shows that envoy's top-level structure (instruments, functions, etc.).
+With envoy + path: drills into the envoy's JSON tree using dot-separated path (e.g., "instruments.FIELDS/MAG.datasets.PSP_FLD_L2_MAG_RTN_1MIN").
+With search: finds matching entries by regex across all string values in envoy trees.
+
+Examples:
+  envoy_query()                                           → list all envoys
+  envoy_query(envoy="PSP")                                → PSP overview + instruments
+  envoy_query(envoy="PSP", path="instruments.FIELDS/MAG") → FIELDS/MAG datasets
+  envoy_query(search="(?i)magnetic.*1.min")                → find datasets matching regex
+  envoy_query(envoy="PSP", search="(?i)sweap")             → search within PSP only""",
+        "parameters": {
+            "envoy": {
+                "type": "string",
+                "description": "Envoy ID (e.g., 'PSP', 'ACE', 'PFSS', 'CASSINI_PPI'). Omit to list all envoys.",
+            },
+            "path": {
+                "type": "string",
+                "description": "Dot-separated path into the envoy's JSON tree. Mirrors the JSON structure exactly. Use envoy_query(envoy=X) first to see available paths.",
+            },
+            "search": {
+                "type": "string",
+                "description": "Regex pattern to search across all string values. Returns matching envoy + path pairs. Can combine with envoy to scope the search.",
+            },
+        },
+        "required": [],
+        "category": "discovery",
+    },
+    {
+        "name": "manage_envoy",
+        "description": """Create or remove envoy kinds at runtime.
+
+Use 'create' to generate a new envoy kind from a Python package or MCP server.
+Use 'remove' to delete a runtime-created envoy kind.
+
+The orchestrator should research the package first (via run_code), discuss tool
+design with the user, then call this with finalized tool definitions.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["create", "remove"],
+                    "description": "Action to perform",
+                },
+                "kind": {
+                    "type": "string",
+                    "description": "Kind name (lowercase, e.g., 'pfss')",
+                },
+                "envoy_id": {
+                    "type": "string",
+                    "description": "Envoy ID (uppercase, e.g., 'PFSS')",
+                },
+                "source": {
+                    "type": "string",
+                    "description": "Package name or MCP server name (for create)",
+                },
+                "source_type": {
+                    "type": "string",
+                    "enum": ["package", "mcp"],
+                    "description": "Source type (for create)",
+                },
+                "tools": {
+                    "type": "array",
+                    "description": "Tool definitions (for create). Each item: {name, description, parameters, handler_code}",
+                    "items": {"type": "object"},
+                },
+            },
+            "required": ["action", "kind", "envoy_id"],
+        },
+    },
+    {
         "name": "ask_clarification",
         "description": """Ask the user a clarifying question when the request is ambiguous or the user's intent is unclear. Use this when:
 - Multiple datasets could match the request
@@ -274,8 +349,23 @@ Returns a unique data ID (e.g., 'a3f7c2e1_1') in the response. Use this ID in al
     },
     {
         "name": "list_fetched_data",
-        "description": "Show all timeseries currently held in memory. Returns data IDs, labels, shapes, units, and time ranges. Use the 'id' field to reference data in other tools.",
+        "description": "Show all data currently held in memory. Returns data IDs, labels, shapes, units, and time ranges. This is the ONLY way to discover what data is available before plotting or analysis. Use the returned 'id' field to reference data in describe_data and preview_data.",
         "parameters": {"type": "object", "properties": {}, "required": []},
+    },
+    {
+        "name": "list_assets",
+        "description": "List all session assets: fetched data, uploaded files, and rendered figures. Filter by kind to narrow results. Use this to discover what's available in the current session.",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "kind": {
+                    "type": "string",
+                    "enum": ["data", "file", "figure"],
+                    "description": "Filter by asset kind. Omit to list all kinds.",
+                },
+            },
+            "required": [],
+        },
     },
     {
         "name": "plan_check",
@@ -292,120 +382,51 @@ Returns a unique data ID (e.g., 'a3f7c2e1_1') in the response. Use this ID in al
         },
     },
     {
-        "name": "custom_operation",
-        "description": """Apply a pandas/numpy/xarray/scipy/pywt operation to in-memory data. This is the universal compute tool — use it for ALL data transformations after fetching data with fetch_data.
+        "name": "run_code",
+        "description": """Execute Python code in a sandboxed environment. This is the universal compute tool — use it for ALL data transformations, analysis, and computation.
 
-The code must:
-- Assign the result to `result` (DataFrame/Series with DatetimeIndex, or xarray DataArray with 'time' dim). When `force_timeseries` is false, result can have any index type.
-- Use only sandbox variables, `pd` (pandas), `np` (numpy), `xr` (xarray), `scipy` (full scipy), `pywt` (PyWavelets), and optional: `numba`, `sklearn`, `statsmodels`, `astropy`, `lmfit`, `sympy`, `mpl_cm` (matplotlib colormaps) — no imports, no file I/O
+The sandbox allows:
+- Full imports: pandas, numpy, xarray, scipy, pywt, sklearn, statsmodels, astropy, etc.
+- File I/O within the sandbox directory (read/write parquet, CSV, JSON, text files)
+- Print output (captured and returned)
+- Assigning to `result` variable (optionally stored back to the data store)
 
-Each source becomes a named variable in the sandbox:
-- 2D data (DataFrame): `df_<SUFFIX>` where SUFFIX is the part after the last '.' (e.g., 'DATASET.BR' → df_BR)
-- 3D+ data (xarray DataArray): `da_<SUFFIX>` (e.g., 'DATASET.EFLUX_VS_PA_E' → da_EFLUX_VS_PA_E)
-- If label has no '.', the full label is used as suffix
-- The first DataFrame source is also aliased as `df` for backward compatibility
-- When multiple sources have the same suffix, ID-based disambiguation is added (e.g., df_BR_1, df_BR_2)
+The sandbox blocks:
+- os, subprocess, shutil, sys, signal, socket, http, ctypes, threading
+- eval(), exec(), compile(), __import__()
 
-The result can be a DataFrame (with DatetimeIndex) OR an xarray DataArray (with 'time' dim). DataArray results are stored as-is — useful for intermediate xarray→xarray operations or for 2D spectrograms.
+Input data from the store is staged as files in the sandbox directory:
+- DataFrames → `<label>.parquet` (read with `pd.read_parquet('<label>.parquet')`)
+- xarray DataArrays → `<label>.nc` (read with `xr.open_dataarray('<label>.nc')`)
+- Dicts → `<label>.json`
+- Strings → `<label>.txt`
+- Bytes → `<label>.bin`
 
-Set `force_timeseries: false` when the operation produces non-timeseries output from timeseries input — e.g., power spectral density (Welch), histograms, correlation matrices, statistical summaries. This skips the DatetimeIndex enforcement so results with frequency/bin/category indices are accepted.
+**Saving to the data store:** To persist computed results so they can be plotted or used by other tools, assign your output to the `result` variable AND set the `store_as` parameter. The `result` can be any type (DataFrame, dict, string, etc.). The data will be stored under the `store_as` label and available via `list_fetched_data`. Without `store_as`, results are NOT saved.
 
-xarray operations (DataArray sources — check storage_type in fetch_data response):
-- Slice 3D to 2D: `result = da_EFLUX_VS_PA_E.isel(dim1=0)`
-- Average over a dim: `result = da_EFLUX_VS_PA_E.mean(dim='dim1')`
-- IMPORTANT: When producing a DataFrame for heatmap/spectrogram plotting, use meaningful column names
-  (e.g., pitch angle values, energy bins) — NOT generic indices ('0', '1', '2').
-- For log-scale spectrograms: apply np.log10 here — the viz agent CANNOT apply log scaling.
-
-Use `search_function_docs` and `get_function_docs` to look up unfamiliar scipy/pywt APIs before writing code.
-
-Do NOT call this tool when the request cannot be expressed as a pandas/numpy operation (e.g., "email me the data", "upload to server"). Instead, explain to the user what is and isn't possible.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "source_ids": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "Data IDs (from list_fetched_data) of source timeseries in memory. Each becomes a sandbox variable: df_<SUFFIX> (DataFrame) or da_<SUFFIX> (xarray DataArray) where SUFFIX is derived from the source label's suffix. First DataFrame also available as 'df'. For single-source ops, pass one-element array.",
-                },
-                "source_labels": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "DEPRECATED: Use source_ids instead. Labels of source timeseries in memory (for backward compatibility).",
-                },
-                "code": {
-                    "type": "string",
-                    "description": "Python code using df/da_ variables, pd (pandas), np (numpy), xr (xarray), scipy (full scipy), pywt (PyWavelets), and optional: numba, sklearn, statsmodels, astropy, lmfit, sympy, mpl_cm. Must assign to 'result'.",
-                },
-                "output_label": {
-                    "type": "string",
-                    "description": "Label for the result (e.g., 'B_normalized', 'B_clipped')",
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Human-readable description of the operation",
-                },
-                "units": {
-                    "type": "string",
-                    "description": "Physical units of the result (e.g., 'nT', 'km/s', 'nT/s', 'cm^-3'). If omitted, inherits from source. Set explicitly when the operation changes dimensions (e.g., derivative adds '/s', multiply changes units, normalize produces dimensionless '').",
-                },
-                "force_timeseries": {
-                    "type": "boolean",
-                    "description": "When true (default), results from timeseries sources must have a DatetimeIndex. Set to false for operations that produce non-timeseries output from timeseries input (e.g., PSD/Welch, histograms, correlation matrices).",
-                },
-            },
-            "required": ["source_ids", "code", "output_label", "description"],
-        },
-    },
-    {
-        "name": "store_dataframe",
-        "description": """Create a new DataFrame from scratch and store it in memory. Use this when:
-- You have text data (event lists, search results, catalogs) that should become a plottable dataset
-- The user wants to manually define data points (e.g., from a table in a paper or website)
-- You need to create a dataset that doesn't come from CDAWeb
-
-The code must:
-- Use only `pd` (pandas) and `np` (numpy) — no imports, no file I/O, no `df` variable
-- Assign the result to `result` (must be a DataFrame or Series with DatetimeIndex)
-- Create a DatetimeIndex from dates using pd.to_datetime() and .set_index()
-
-Examples:
-- Event catalog:
-  ```
-  dates = ['2024-01-01', '2024-02-15', '2024-05-10']
-  values = [5.2, 7.8, 6.1]
-  result = pd.DataFrame({'x_class_flux': values}, index=pd.to_datetime(dates))
-  ```
-- Numeric timeseries:
-  ```
-  result = pd.DataFrame({'value': [1.0, 2.5, 3.0]}, index=pd.date_range('2024-01-01', periods=3, freq='D'))
-  ```
-- Event catalog with string columns:
-  ```
-  dates = pd.to_datetime(['2024-01-10', '2024-03-22'])
-  result = pd.DataFrame({'class': ['X1.5', 'X2.1'], 'region': ['AR3555', 'AR3590']}, index=dates)
-  ```""",
+For standalone computations (no input data), omit `inputs`. For fire-and-forget execution (just print output), omit `store_as`.""",
         "parameters": {
             "type": "object",
             "properties": {
                 "code": {
                     "type": "string",
-                    "description": "Python code using pd (pandas) and np (numpy) that constructs data and assigns to 'result'. Must produce a DataFrame with DatetimeIndex.",
+                    "description": "Python code to execute. Assign to `result` if storing output.",
                 },
-                "output_label": {
+                "inputs": {
+                    "type": "array",
+                    "items": {"type": "string"},
+                    "description": "Store labels/IDs to stage as files in the sandbox directory.",
+                },
+                "store_as": {
                     "type": "string",
-                    "description": "Label for the stored dataset (e.g., 'xclass_flares_2024', 'cme_catalog')",
+                    "description": "Label to save the `result` variable under in the data store. The stored data becomes available for plotting and other tools via `list_fetched_data`. Required for persisting computed results — without this, nothing is saved.",
                 },
                 "description": {
                     "type": "string",
-                    "description": "Human-readable description of the dataset",
-                },
-                "units": {
-                    "type": "string",
-                    "description": "Optional units for the data columns (e.g., 'W/m²', 'km/s')",
+                    "description": "What this code does (human-readable).",
                 },
             },
-            "required": ["code", "output_label", "description"],
+            "required": ["code", "description"],
         },
     },
     # --- Function Documentation Tools ---
@@ -540,50 +561,38 @@ This is useful for spotting trends, gaps, or anomalies without reading the full 
         },
     },
     {
-        "name": "save_data",
-        "description": """Export an in-memory timeseries to a CSV file.
+        "name": "manage_data",
+        "description": """Manage in-memory data: merge time ranges or export to file.
 
-ONLY use this when the user explicitly asks to save, export, or download data.
-Do NOT use this proactively after computations — data stays in memory for plotting.
+action='merge': Merge multiple time ranges of the same data product into one dataset.
+Only works for entries with the same hash prefix. Use list_fetched_data to find datasets
+with the same label but different time ranges.
 
-The CSV file has a datetime column (ISO 8601 UTC) followed by data columns.
-If no filename is given, one is auto-generated from the label.""",
+action='save': Export an in-memory timeseries to CSV (or NetCDF for xarray).
+ONLY use when the user explicitly asks to save/export/download data.""",
         "parameters": {
             "type": "object",
             "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["merge", "save"],
+                    "description": "Action to perform.",
+                },
                 "data_id": {
                     "type": "string",
-                    "description": "Data ID (from list_fetched_data) of the data to export. Use this instead of label for precise reference.",
+                    "description": "For save: data ID to export.",
                 },
-                "label": {
-                    "type": "string",
-                    "description": "Label of the data in memory to export. For backward compatibility — prefer data_id for precise reference.",
-                },
-                "filename": {
-                    "type": "string",
-                    "description": "Output filename (e.g., 'ace_mag.csv'). '.csv' is appended if missing. Default: auto-generated from label.",
-                },
-            },
-            "required": ["data_id"],
-        },
-    },
-    {
-        "name": "merge_datasets",
-        "description": """Merge multiple time ranges of the same data product into one dataset.
-
-Only works for entries with the same hash prefix (same data product from the same source).
-Use list_fetched_data to find datasets with the same label but different time ranges.
-The merged result combines all time ranges, sorts by time, and removes duplicates.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
                 "data_ids": {
                     "type": "array",
                     "items": {"type": "string"},
-                    "description": "List of data IDs (from list_fetched_data) to merge. Must all be the same data product.",
+                    "description": "For merge: list of data IDs to merge. Must all be the same data product.",
+                },
+                "filename": {
+                    "type": "string",
+                    "description": "For save: output filename. Auto-generated from label if omitted.",
                 },
             },
-            "required": ["data_ids"],
+            "required": ["action"],
         },
     },
     # --- Visualization ---
@@ -683,20 +692,24 @@ Use action parameter to select the operation.""",
     },
     # --- Session Assets ---
     {
-        "name": "get_session_assets",
-        "description": "Get a snapshot of all session assets and their status: "
-        "plot (active/restorable/none), data entries (loaded vs deferred), "
-        "and operation count. Orchestrator and planner see this automatically; "
-        "other agents can call this for on-demand status.",
-        "parameters": {"type": "object", "properties": {}, "required": []},
-    },
-    {
-        "name": "restore_plot",
-        "description": "Restore a deferred plot from a resumed session. "
-        "When session context shows the plot as 'restorable', "
-        "call this before delegate_to_insight or other plot-dependent tools. "
+        "name": "manage_session_assets",
+        "description": "Manage session assets (plot, data, operations). "
+        "action='status' (default): snapshot of plot state (active/restorable/none), "
+        "data entries (loaded vs deferred), and operation count. "
+        "action='restore_plot': restore a deferred plot from a resumed session — "
+        "call this before delegate_to_insight when session context shows 'restorable'. "
         "No-op if already active.",
-        "parameters": {"type": "object", "properties": {}, "required": []},
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["status", "restore_plot"],
+                    "description": "Action to perform. Default: 'status'.",
+                },
+            },
+            "required": [],
+        },
     },
     # --- Full Catalog Search ---
     {
@@ -824,7 +837,7 @@ Do NOT delegate:
 - Requests to plot already-loaded data — use the active visualization agent
 - General questions about capabilities
 
-You can call delegate_to_envoy multiple times with the same mission_id in parallel — if the
+You can call delegate_to_envoy multiple times with the same envoy in parallel — if the
 primary agent is busy, an ephemeral overflow agent handles the request concurrently. However,
 combining related requests into one call is often more efficient because the envoy agent has
 full context of all sub-tasks.
@@ -833,9 +846,9 @@ The specialist will search datasets, fetch data, run computations, and report ba
         "parameters": {
             "type": "object",
             "properties": {
-                "mission_id": {
+                "envoy": {
                     "type": "string",
-                    "description": "Spacecraft mission ID from the supported missions table (e.g., 'PSP', 'ACE', 'SolO', 'OMNI', 'WIND', 'DSCOVR', 'MMS', 'STEREO_A').",
+                    "description": "Envoy ID (e.g., 'PSP', 'ACE', 'SolO', 'OMNI', 'WIND', 'DSCOVR', 'MMS', 'STEREO_A', 'PFSS').",
                 },
                 "request": {
                     "type": "string",
@@ -847,7 +860,7 @@ The specialist will search datasets, fetch data, run computations, and report ba
                     "default": True
                 },
             },
-            "required": ["mission_id", "request"],
+            "required": ["envoy", "request"],
         },
     },
     {
@@ -901,12 +914,10 @@ The specialist has access to all visualization methods and can see what data is 
         "name": "generate_mpl_script",
         "description": """Generate and execute a matplotlib script to create a visualization.
 
-Write a standard matplotlib script. The following are ALREADY available — do NOT import them:
-- `plt` (matplotlib.pyplot)
-- `np` (numpy)
-- `pd` (pandas)
+Write a standard matplotlib script. Inside the script, these are PRE-IMPORTED (do NOT import them):
+- `plt` (matplotlib.pyplot), `np` (numpy), `pd` (pandas)
 
-Helper functions available:
+Inside the script, these helper functions are available (NOT separate tools — only usable within this script):
 - `load_data(label)` → pd.DataFrame — Load data by label from memory
 - `load_meta(label)` → dict — Load metadata (units, description, etc.)
 - `available_labels()` → list[str] — List all available data labels
@@ -921,7 +932,6 @@ IMPORTANT:
 
 Example:
 ```python
-# Load data
 df = load_data("AC_H2_MFI.Magnitude")
 meta = load_meta("AC_H2_MFI.Magnitude")
 
@@ -976,12 +986,12 @@ Actions:
         "name": "generate_jsx_component",
         "description": """Generate and compile a React/Recharts JSX component for interactive visualization.
 
-Write a React component using Recharts. The following are available:
+Write a React component using Recharts. Inside the component, the following are available:
 - All Recharts components (LineChart, BarChart, AreaChart, ScatterChart, ComposedChart,
   PieChart, RadarChart, ResponsiveContainer, XAxis, YAxis, CartesianGrid, Tooltip, Legend, etc.)
 - React hooks (useState, useEffect, useMemo, useCallback, useRef)
 
-Data access hooks (pre-injected — do NOT import these):
+Inside the component, these data hooks are available (NOT separate tools — only usable within component code):
 - `useData(label)` → array of row objects with `_time` (ISO string) or `_index` plus column values
 - `useAllLabels()` → string array of all available data labels
 
@@ -1161,7 +1171,7 @@ Do NOT delegate:
 - Data transformations on existing in-memory data (use delegate_to_data_ops)
 - Visualization requests (use the active visualization agent)
 
-The DataIO agent can load files (load_file), read documents (read_document), create DataFrames (store_dataframe), and see what data is in memory (list_fetched_data).""",
+The DataIO agent can load files (load_file), read documents (read_document), create DataFrames (run_code with store_as), and see what data is in memory (list_fetched_data).""",
         "parameters": {
             "type": "object",
             "properties": {
@@ -1189,7 +1199,7 @@ The DataIO agent can load files (load_file), read documents (read_document), cre
         "name": "delegate_to_insight",
         "description": """Delegate a plot analysis request to the Insight specialist. The Insight agent receives a high-resolution PNG of the current figure along with data context (labels, units, time ranges).
 
-Requires an active plot. If the plot is restorable (resumed session), call restore_plot first.
+Requires an active plot. If the plot is restorable (resumed session), call manage_session_assets(action="restore_plot") first.
 
 The `request` parameter controls what the Insight agent focuses on — phrase it as a specific question or task:
 - Scientific interpretation: "Analyze this figure and identify solar wind features and ICME signatures"
@@ -1464,125 +1474,38 @@ Actions:
     },
     # --- Control center (turnless orchestrator) ---
     {
-        "name": "list_active_work",
+        "name": "manage_workers",
         "description": (
-            "List all currently running background work units (sub-agent delegations, "
-            "planner tasks, etc.). Returns: id, kind, agent_type, agent_name, task_summary, "
-            "request (the original prompt), elapsed time, and started_at timestamp. "
-            "Use this to understand what is in flight before deciding "
-            "whether to cancel, wait, or launch new work."
-        ),
-        "parameters": {
-            "type": "object",
-            "properties": {},
-            "required": [],
-        },
-    },
-    {
-        "name": "cancel_work",
-        "description": (
-            "Cancel one or more running work units. Provide either a specific unit_id "
-            "(from list_active_work), an agent_type to cancel all of that type, or set "
-            "cancel_all to true to cancel everything. Cancelled work stops as soon as "
-            "possible (after the current atomic operation completes)."
+            "Manage running background work units (sub-agent delegations, planner tasks). "
+            "action='list' (default): list all running units with id, kind, agent_type, "
+            "agent_name, task_summary, request, elapsed time, and started_at. "
+            "action='cancel': cancel work by unit_id, agent_type, or cancel_all."
         ),
         "parameters": {
             "type": "object",
             "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["list", "cancel"],
+                    "description": "Action to perform. Default: 'list'.",
+                },
                 "unit_id": {
                     "type": "string",
-                    "description": "Specific work unit ID to cancel (from list_active_work).",
+                    "description": "For cancel: specific work unit ID to cancel.",
                 },
                 "agent_type": {
                     "type": "string",
                     "description": (
-                        "Cancel all units of this agent type. "
+                        "For cancel: cancel all units of this agent type. "
                         "One of: mission, data_ops, data_extraction, viz, planner."
                     ),
                 },
                 "cancel_all": {
                     "type": "boolean",
-                    "description": "If true, cancel ALL running work units.",
+                    "description": "For cancel: if true, cancel ALL running work units.",
                 },
             },
             "required": [],
-        },
-    },
-    {
-        "name": "add_envoy",
-        "description": """Introspect a Python package to begin creating a new envoy agent. Returns the package's public API surface for review.
-
-Use when the user wants to add a new package-based envoy (e.g., "add pfsspy as an envoy"). After reviewing the API with the user, call save_envoy to persist.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "package_name": {
-                    "type": "string",
-                    "description": "Python import path (e.g., 'pfsspy', 'sunpy.map')",
-                },
-            },
-            "required": ["package_name"],
-        },
-    },
-    {
-        "name": "save_envoy",
-        "description": "Save a finalized package envoy definition after discussing with the user. Call after add_envoy and user confirmation.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "envoy_id": {"type": "string", "description": "Unique ID (e.g., 'PFSS')"},
-                "envoy_name": {"type": "string", "description": "Human-readable name"},
-                "description": {"type": "string", "description": "What this envoy does"},
-                "imports": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "import_path": {"type": "string"},
-                            "sandbox_alias": {"type": "string"},
-                        },
-                        "required": ["import_path", "sandbox_alias"],
-                    },
-                    "description": "Packages to pre-import in sandbox",
-                },
-                "functions": {
-                    "type": "array",
-                    "items": {
-                        "type": "object",
-                        "properties": {
-                            "name": {"type": "string"},
-                            "description": {"type": "string"},
-                            "module": {"type": "string"},
-                            "signature": {"type": "string"},
-                            "parameters": {"type": "object"},
-                        },
-                        "required": ["name", "description", "signature"],
-                    },
-                    "description": "Functions to document for the LLM",
-                },
-                "keywords": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "Search keywords for this envoy",
-                },
-            },
-            "required": ["envoy_id", "imports", "functions"],
-        },
-    },
-    {
-        "name": "list_envoys",
-        "description": "List all user-defined package envoys with their imports and function counts.",
-        "parameters": {"type": "object", "properties": {}},
-    },
-    {
-        "name": "remove_envoy",
-        "description": "Remove a user-defined package envoy by ID. Deletes the envoy definition and stops any running agent.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "envoy_id": {"type": "string", "description": "ID of the envoy to remove"},
-            },
-            "required": ["envoy_id"],
         },
     },
 ]

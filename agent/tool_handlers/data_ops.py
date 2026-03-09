@@ -1,14 +1,13 @@
 from __future__ import annotations
-from typing import TYPE_CHECKING, Any
+from typing import TYPE_CHECKING
 from datetime import datetime
 
 import numpy as np
 import pandas as pd
 import xarray as xr
 from config import DATA_BACKEND
-from data_ops.store import DataEntry, build_source_map, describe_sources, generate_id
+from data_ops.store import DataEntry, generate_id
 from data_ops.fetch import fetch_data
-from data_ops.custom_ops import run_multi_source_operation, run_dataframe_creation
 from knowledge.metadata_client import (
     validate_dataset_id,
     validate_parameter_id,
@@ -17,9 +16,6 @@ from knowledge.metadata_client import (
 from agent.event_bus import (
     DEBUG,
     DATA_FETCHED,
-    DATA_COMPUTED,
-    DATA_CREATED,
-    CUSTOM_OP_FAILURE,
 )
 from agent.truncation import get_item_limit
 
@@ -214,8 +210,8 @@ def handle_fetch_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         response = {"status": "success", **entry.summary()}
         response["note"] = (
             f"This is a {fetched_data.ndim}D variable with dims {dict(fetched_data.sizes)}. "
-            f"Use custom_operation with xarray syntax (da_{tool_args['parameter_id']}) "
-            f"to slice/reduce it to a 2D DataFrame before plotting."
+            f"Use run_code to read the data (xr.open_dataarray('{tool_args.get('label', 'data')}.nc')) "
+            f"and slice/reduce it to a 2D DataFrame before plotting."
         )
 
         n_points = n_time
@@ -334,250 +330,10 @@ def handle_list_fetched_data(orch: "OrchestratorAgent", tool_args: dict) -> dict
     return {"status": "success", "entries": entries, "count": len(entries)}
 
 
-def handle_custom_operation(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    if "output_label" not in tool_args and "label" in tool_args:
-        tool_args["output_label"] = tool_args.pop("label")
-
-    store = orch._store
-    ids_or_labels = tool_args.get("source_ids") or tool_args.get("source_labels", [])
-    if not ids_or_labels:
-        return {"status": "error", "message": "source_ids or source_labels is required"}
-
-    sources, err = build_source_map(store, ids_or_labels)
-    if err:
-        return {"status": "error", "message": err}
-
-    has_df_alias = any(not isinstance(v, xr.DataArray) for v in sources.values())
-    df_extra = ["df"] if has_df_alias else []
-
-    source_ts = {}
-    for key in ids_or_labels:
-        entry = store.get(key)
-        if entry is not None:
-            suffix = entry.label.rsplit(".", 1)[-1]
-            prefix = "da" if entry.is_xarray else "df"
-            var_name = f"{prefix}_{suffix}"
-            source_ts[var_name] = entry.is_timeseries
-
-    if not tool_args.get("force_timeseries", True):
-        source_ts = {k: False for k in source_ts}
-
-    try:
-        extra_imports = getattr(orch, '_current_envoy_sandbox_imports', None)
-        op_result, warnings = run_multi_source_operation(
-            sources,
-            tool_args["code"],
-            source_timeseries=source_ts,
-            extra_imports=extra_imports,
-        )
-    except (ValueError, RuntimeError) as e:
-        prefix = "Validation" if isinstance(e, ValueError) else "Execution"
-        err_msg = f"{prefix} error: {e}"
-        var_names = list(sources.keys()) + df_extra
-        if "NameError" in str(e) or "is not defined" in str(e):
-            err_msg += f". Available sandbox variables: {var_names}"
-        orch._event_bus.emit(
-            CUSTOM_OP_FAILURE,
-            agent="orchestrator",
-            level="warning",
-            msg=f"[DataOps] custom_operation error: {err_msg}",
-            data={
-                "args": {
-                    "source_ids": ids_or_labels,
-                    "code": tool_args["code"],
-                    "output_label": tool_args.get("output_label", ""),
-                },
-                "inputs": ids_or_labels,
-                "outputs": [],
-                "status": "error",
-                "error": err_msg,
-            },
-        )
-        return {
-            "status": "error",
-            "message": err_msg,
-            "available_variables": var_names,
-            "source_info": describe_sources(store, ids_or_labels),
-        }
-
-    first_entry = store.get(ids_or_labels[0])
-    units = tool_args.get("units", first_entry.units if first_entry else "")
-    desc = tool_args.get(
-        "description", f"Custom operation on {', '.join(str(k) for k in ids_or_labels)}"
-    )
-    if isinstance(op_result, xr.DataArray):
-        result_is_ts = "time" in op_result.dims
-    else:
-        result_is_ts = isinstance(op_result.index, pd.DatetimeIndex)
-
-    ncols = len(op_result.columns) if hasattr(op_result, "columns") else 1
-    array_shape = "scalar" if ncols == 1 else f"vector[{ncols}]"
-
-    entry = DataEntry(
-        label=tool_args["output_label"],
-        data=op_result,
-        units=units,
-        description=desc,
-        source="computed",
-        is_timeseries=result_is_ts,
-        array_shape=array_shape,
-        comment=tool_args.get("description", ""),
-    )
-    entry.id = generate_id(store, source_ids=ids_or_labels, code=tool_args["code"])
-    store.put(entry)
-    orch._event_bus.emit(
-        DATA_COMPUTED,
-        agent="orchestrator",
-        msg=f"[DataOps] custom_operation -> '{tool_args['output_label']}'",
-        data={
-            "args": {
-                "source_ids": ids_or_labels,
-                "code": tool_args["code"],
-                "output_label": tool_args["output_label"],
-                "description": desc,
-                "units": units,
-            },
-            "inputs": ids_or_labels,
-            "outputs": [entry.id],
-        },
-    )
-
-    try:
-        import re as _re_lib
-        from data_ops.ops_library import get_ops_library
-
-        lib = get_ops_library()
-        code = tool_args["code"]
-        ref_match = _re_lib.search(r"\[from ([a-f0-9]{8})\]", desc)
-        if ref_match:
-            lib.record_reuse(ref_match.group(1))
-        line_count = sum(
-            1 for line in code.replace(";", "\n").split("\n") if line.strip()
-        )
-        if line_count >= 5:
-            # Resolve to separate IDs and labels from the store
-            resolved_ids = []
-            resolved_labels = []
-            for key in ids_or_labels:
-                src_entry = store.get(key)
-                if src_entry:
-                    resolved_ids.append(src_entry.id)
-                    resolved_labels.append(src_entry.label)
-                else:
-                    resolved_ids.append(key)
-                    resolved_labels.append(key)
-            lib.add_or_update(
-                description=desc,
-                code=code,
-                source_ids=resolved_ids,
-                source_labels=resolved_labels,
-                units=units,
-                session_id=orch._session_id or "",
-            )
-    except Exception:
-        orch._event_bus.emit(
-            DEBUG, level="debug", msg="[OpsLibrary] Failed to save operation"
-        )
-
-    for w in warnings:
-        orch._event_bus.emit(DEBUG, level="debug", msg=f"[DataOpsValidation] {w}")
-
-    is_xr_result = isinstance(op_result, xr.DataArray)
-    n_points = op_result.sizes["time"] if is_xr_result else len(op_result)
-    if n_points == 0:
-        warnings.append(
-            "Result has 0 data points — possible time range mismatch or all-NaN input"
-        )
-        orch._event_bus.emit(
-            DEBUG,
-            level="warning",
-            msg=f"[DataOps] custom_operation produced 0 points for '{tool_args['output_label']}'",
-        )
-    elif is_xr_result:
-        if np.all(np.isnan(op_result.values)):
-            warnings.append(
-                "Result is entirely NaN — check source data overlap and computation logic"
-            )
-            orch._event_bus.emit(
-                DEBUG,
-                level="warning",
-                msg=f"[DataOps] custom_operation produced all-NaN for '{tool_args['output_label']}'",
-            )
-    elif op_result.isna().all(axis=None):
-        warnings.append(
-            "Result is entirely NaN — check source data overlap and computation logic"
-        )
-        orch._event_bus.emit(
-            DEBUG,
-            level="warning",
-            msg=f"[DataOps] custom_operation produced all-NaN for '{tool_args['output_label']}'",
-        )
-
-    orch._event_bus.emit(
-        DEBUG,
-        level="debug",
-        msg=f"[DataOps] Custom operation -> '{tool_args['output_label']}' ({n_points} points)",
-    )
-    result = {
-        "status": "success",
-        **entry.summary(),
-        "source_info": describe_sources(store, ids_or_labels),
-        "available_variables": list(sources.keys()) + df_extra,
-    }
-    if warnings:
-        result["warnings"] = warnings
-    return result
-
-
-def handle_store_dataframe(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    try:
-        extra_imports = getattr(orch, '_current_envoy_sandbox_imports', None)
-        result_df = run_dataframe_creation(tool_args["code"], extra_imports=extra_imports)
-    except (ValueError, RuntimeError) as e:
-        prefix = "Validation" if isinstance(e, ValueError) else "Execution"
-        err_msg = f"{prefix} error: {e}"
-        orch._event_bus.emit(
-            DATA_CREATED,
-            agent="orchestrator",
-            level="warning",
-            msg=f"[DataOps] store_dataframe error: {err_msg}",
-            data={
-                "args": {
-                    "code": tool_args["code"],
-                    "output_label": tool_args.get("output_label", ""),
-                },
-                "outputs": [],
-                "status": "error",
-                "error": err_msg,
-            },
-        )
-        return {"status": "error", "message": err_msg}
-    entry = DataEntry(
-        label=tool_args["output_label"],
-        data=result_df,
-        units=tool_args.get("units", ""),
-        description=tool_args.get("description", "Created from code"),
-        source="created",
-        is_timeseries=isinstance(result_df.index, pd.DatetimeIndex),
-    )
-    store = orch._store
-    entry.id = generate_id(store, output_label=tool_args["output_label"])
-    store.put(entry)
-    orch._event_bus.emit(
-        DATA_CREATED,
-        agent="orchestrator",
-        msg=f"[DataOps] Created DataFrame -> '{tool_args['output_label']}' ({len(result_df)} points)",
-        data={
-            "args": {
-                "code": tool_args["code"],
-                "output_label": tool_args["output_label"],
-                "description": tool_args.get("description", "Created from code"),
-                "units": tool_args.get("units", ""),
-            },
-            "outputs": [entry.id],
-        },
-    )
-    return {"status": "success", **entry.summary()}
+def handle_list_assets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+    kind = tool_args.get("kind")
+    assets = orch._asset_registry.list_assets(kind=kind)
+    return {"status": "success", "assets": assets, "count": len(assets)}
 
 
 def handle_describe_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
@@ -861,13 +617,25 @@ def handle_preview_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     return result
 
 
-def handle_save_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_manage_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+    action = tool_args.get("action", "")
+    if action == "merge":
+        return _handle_merge_datasets(orch, tool_args)
+    elif action == "save":
+        return _handle_save_data(orch, tool_args)
+    return {"status": "error", "message": f"Unknown manage_data action: {action!r}. Use 'merge' or 'save'."}
+
+
+def _handle_save_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     store = orch._store
-    entry = store.get(tool_args["label"])
+    key = tool_args.get("data_id") or tool_args.get("label")
+    if not key:
+        return {"status": "error", "message": "Missing required parameter: data_id"}
+    entry = store.get(key)
     if entry is None:
         return {
             "status": "error",
-            "message": f"Label '{tool_args['label']}' not found in memory",
+            "message": f"Data '{key}' not found in memory",
         }
 
     from pathlib import Path
@@ -941,7 +709,7 @@ def handle_save_data(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     }
 
 
-def handle_merge_datasets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def _handle_merge_datasets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     """Merge multiple datasets into one."""
     store = orch._store
     ids = tool_args.get("data_ids", [])

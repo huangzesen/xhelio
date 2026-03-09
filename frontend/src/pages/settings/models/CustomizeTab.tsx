@@ -1,7 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react';
-import { useSettingsStore } from '../../stores/settingsStore';
-import { getAgentTypes, listApiKeys, listModels, getProviders } from '../../api/client';
-import type { ModelInfo, ProviderInfo } from '../../api/client';
+import { useSettingsStore } from '../../../stores/settingsStore';
+import { getAgentTypes, listApiKeys, listModels, getProviders } from '../../../api/client';
+import type { ModelInfo, ProviderInfo } from '../../../api/client';
 import type {
   AgentTypeInfo,
   AgentGroupInfo,
@@ -9,7 +9,11 @@ import type {
   WorkbenchConfig,
   PresetConfig,
   ApiKeyEntry,
-} from '../../api/types';
+} from '../../../api/types';
+import {
+  COMBO_NAME_SUGGESTIONS,
+  slugify,
+} from '../../../constants/builtinPresets';
 import {
   Loader2,
   ChevronDown,
@@ -18,28 +22,6 @@ import {
   Save,
 } from 'lucide-react';
 import { useTranslation } from 'react-i18next';
-
-// ---- Constants ----
-
-const PRESET_NAME_SUGGESTIONS = [
-  'Speedy Gonzales',
-  'Big Brain',
-  'Frankenstein',
-  'Budget Wizard',
-  'Pocket Rocket',
-  'The Overachiever',
-  'Lazy Sunday',
-  'Mad Scientist',
-  'Swiss Army Knife',
-  'Turbo Nerd',
-];
-
-function slugify(name: string): string {
-  return name
-    .toLowerCase()
-    .replace(/[^a-z0-9]+/g, '-')
-    .replace(/^-|-$/g, '');
-}
 
 // ---- Helper: resolve effective config for an agent ----
 
@@ -78,7 +60,7 @@ function isCustomized(
 
 // ---- Main Component ----
 
-export function WorkbenchSection() {
+export function CustomizeTab() {
   const { t } = useTranslation(['settings']);
   const { config, updateConfig } = useSettingsStore();
 
@@ -133,7 +115,6 @@ export function WorkbenchSection() {
     const configured = apiKeys
       .filter((k) => k.configured && k.provider)
       .map((k) => k.provider!);
-    // Deduplicate
     return [...new Set(configured)];
   }, [apiKeys]);
 
@@ -211,13 +192,6 @@ export function WorkbenchSection() {
 
   // ---- Preset handlers ----
 
-  const handleLoadPreset = useCallback(
-    (presetSlug: string | null) => {
-      updateWorkbench({ preset: presetSlug, agents: {} });
-    },
-    [updateWorkbench],
-  );
-
   const handleSaveAsPreset = useCallback(() => {
     if (!saveAsName.trim()) return;
     const slug = slugify(saveAsName.trim());
@@ -261,12 +235,16 @@ export function WorkbenchSection() {
       if (list) {
         list.push(agent);
       } else {
-        // Unknown group — create it
         map.set(agent.group, [agent]);
       }
     }
     return map;
   }, [agents, groups]);
+
+  // Check if any agents have overrides
+  const hasOverrides = workbench && Object.keys(workbench.agents || {}).some(
+    (k) => workbench.agents[k] != null,
+  );
 
   // ---- Render ----
 
@@ -279,167 +257,153 @@ export function WorkbenchSection() {
   }
 
   return (
-    <div className="space-y-6 pt-4 max-w-4xl">
-      {/* Header */}
-      <div>
-        <h2 className="text-lg font-semibold text-text">{t('workbench.title')}</h2>
-        <p className="text-sm text-text-muted mt-1">{t('workbench.description')}</p>
-      </div>
-
-      {/* Preset Selector */}
-      <div className="flex items-center gap-3">
-        <label className="text-sm font-medium text-text">{t('workbench.preset')}</label>
-        <select
-          value={workbench?.preset || ''}
-          onChange={(e) => handleLoadPreset(e.target.value || null)}
-          className="px-3 py-1.5 rounded-lg bg-panel border border-border text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-        >
-          <option value="">{t('workbench.noPresets')}</option>
-          {Object.entries(presets).map(([slug, preset]) => (
-            <option key={slug} value={slug}>
-              {preset.name}
-            </option>
-          ))}
-        </select>
-        <button
-          onClick={() => setShowSaveAs(true)}
-          className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-text hover:bg-hover-bg transition-colors"
-        >
-          <Save size={14} />
-          {t('workbench.saveAs')}
-        </button>
-        {/* Reset All — clears per-agent overrides, reverts to preset defaults */}
-        {workbench && Object.keys(workbench.agents || {}).length > 0 && (
-          <button
-            onClick={() => updateWorkbench({ ...workbench, agents: {} })}
-            className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-text-muted hover:text-text hover:bg-hover-bg transition-colors"
-          >
-            <RotateCcw size={14} />
-            {t('workbench.resetAll', 'Reset All')}
-          </button>
-        )}
-      </div>
-
-      {/* Save As Dialog */}
-      {showSaveAs && (
-        <div className="p-4 rounded-lg bg-panel border border-border space-y-3">
+    <div className="space-y-8">
+      {/* Per-Agent Fine-Tuning */}
+      <section className="space-y-4">
+        <div className="flex items-center justify-between">
+          <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+            Per-Agent Fine-Tuning
+          </h3>
           <div className="flex items-center gap-2">
-            <input
-              type="text"
-              value={saveAsName}
-              onChange={(e) => setSaveAsName(e.target.value)}
-              placeholder={t('workbench.presetName')}
-              className="flex-1 px-3 py-1.5 rounded-lg bg-surface border border-border text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
-              onKeyDown={(e) => {
-                if (e.key === 'Enter') handleSaveAsPreset();
-                if (e.key === 'Escape') setShowSaveAs(false);
-              }}
-              autoFocus
-            />
             <button
-              onClick={handleSaveAsPreset}
-              disabled={!saveAsName.trim()}
-              className="px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              onClick={() => setShowSaveAs(true)}
+              className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-text hover:bg-hover-bg transition-colors"
             >
-              {t('workbench.saveAs')}
+              <Save size={14} />
+              Save As...
             </button>
-            <button
-              onClick={() => { setShowSaveAs(false); setSaveAsName(''); }}
-              className="p-1.5 rounded-lg text-text-muted hover:text-text hover:bg-hover-bg transition-colors"
-            >
-              <X size={16} />
-            </button>
-          </div>
-          <div className="flex flex-wrap gap-1.5">
-            {PRESET_NAME_SUGGESTIONS.map((name) => (
+            {hasOverrides && (
               <button
-                key={name}
-                onClick={() => setSaveAsName(name)}
-                className="px-2 py-0.5 rounded-full text-xs bg-badge-gray-bg text-badge-gray-text hover:opacity-80 transition-opacity"
+                onClick={() => updateWorkbench({ agents: {} })}
+                className="flex items-center gap-1.5 px-3 py-1.5 rounded-lg border border-border text-sm text-text-muted hover:text-text hover:bg-hover-bg transition-colors"
               >
-                {name}
+                <RotateCcw size={14} />
+                Reset All
               </button>
-            ))}
+            )}
           </div>
         </div>
-      )}
 
-      {/* Station Cards by Group */}
-      {groups.map((group) => {
-        const groupAgents = groupedAgents.get(group.id);
-        if (!groupAgents || groupAgents.length === 0) return null;
-        return (
-          <div key={group.id} className="space-y-2">
-            <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-              {group.name}
-            </h3>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
-              {groupAgents.map((agent) => {
-                const effective = resolveAgentConfig(agent.id, workbench, presets, config);
-                const customized = isCustomized(agent.id, workbench);
-                const isExpanded = expandedAgent === agent.id;
+        {/* Save As Dialog */}
+        {showSaveAs && (
+          <div className="p-4 rounded-lg bg-panel border border-border space-y-3">
+            <div className="flex items-center gap-2">
+              <input
+                type="text"
+                value={saveAsName}
+                onChange={(e) => setSaveAsName(e.target.value)}
+                placeholder="Preset name"
+                className="flex-1 px-3 py-1.5 rounded-lg bg-surface border border-border text-text text-sm focus:outline-none focus:ring-2 focus:ring-primary/50"
+                onKeyDown={(e) => {
+                  if (e.key === 'Enter') handleSaveAsPreset();
+                  if (e.key === 'Escape') setShowSaveAs(false);
+                }}
+                autoFocus
+              />
+              <button
+                onClick={handleSaveAsPreset}
+                disabled={!saveAsName.trim()}
+                className="px-3 py-1.5 rounded-lg bg-primary text-white text-sm font-medium hover:bg-primary/90 disabled:opacity-50 disabled:cursor-not-allowed transition-colors"
+              >
+                Save
+              </button>
+              <button
+                onClick={() => { setShowSaveAs(false); setSaveAsName(''); }}
+                className="p-1.5 rounded-lg text-text-muted hover:text-text hover:bg-hover-bg transition-colors"
+              >
+                <X size={16} />
+              </button>
+            </div>
+            <div className="flex flex-wrap gap-1.5">
+              {COMBO_NAME_SUGGESTIONS.map((name) => (
+                <button
+                  key={name}
+                  onClick={() => setSaveAsName(name)}
+                  className="px-2 py-0.5 rounded-full text-xs bg-badge-gray-bg text-badge-gray-text hover:opacity-80 transition-opacity"
+                >
+                  {name}
+                </button>
+              ))}
+            </div>
+          </div>
+        )}
 
-                if (isExpanded) {
+        {/* Station Cards by Group */}
+        {groups.map((group) => {
+          const groupAgents = groupedAgents.get(group.id);
+          if (!groupAgents || groupAgents.length === 0) return null;
+          return (
+            <div key={group.id} className="space-y-2">
+              <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+                {group.name}
+              </h4>
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
+                {groupAgents.map((agent) => {
+                  const effective = resolveAgentConfig(agent.id, workbench, presets, config);
+                  const customized = isCustomized(agent.id, workbench);
+                  const isExpanded = expandedAgent === agent.id;
+
+                  if (isExpanded) {
+                    return (
+                      <StationCardExpanded
+                        key={agent.id}
+                        agent={agent}
+                        station={effective}
+                        customized={customized}
+                        configuredProviders={configuredProviders}
+                        providerNameMap={providerNameMap}
+                        modelCache={modelCache}
+                        loadingModels={loadingModels}
+                        onFetchModels={fetchModelsForProvider}
+                        onUpdate={(station) => updateAgentStation(agent.id, station)}
+                        onReset={() => updateAgentStation(agent.id, null)}
+                        onClose={() => setExpandedAgent(null)}
+                        t={t}
+                      />
+                    );
+                  }
+
                   return (
-                    <StationCardExpanded
+                    <StationCardCollapsed
                       key={agent.id}
                       agent={agent}
                       station={effective}
                       customized={customized}
-                      configuredProviders={configuredProviders}
                       providerNameMap={providerNameMap}
-                      modelCache={modelCache}
-                      loadingModels={loadingModels}
-                      onFetchModels={fetchModelsForProvider}
-                      onUpdate={(station) => updateAgentStation(agent.id, station)}
-                      onReset={() => updateAgentStation(agent.id, null)}
-                      onClose={() => setExpandedAgent(null)}
-                      t={t}
+                      onClick={() => setExpandedAgent(agent.id)}
                     />
                   );
-                }
-
-                return (
-                  <StationCardCollapsed
-                    key={agent.id}
-                    agent={agent}
-                    station={effective}
-                    customized={customized}
-                    providerNameMap={providerNameMap}
-                    onClick={() => setExpandedAgent(agent.id)}
-                    t={t}
-                  />
-                );
-              })}
+                })}
+              </div>
             </div>
-          </div>
-        );
-      })}
+          );
+        })}
 
-      {/* Capability Cards */}
-      <div className="space-y-2">
-        <h3 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
-          {t('workbench.capabilities')}
-        </h3>
-        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
-          <CapabilityCard
-            label={t('workbench.webSearch')}
-            value={workbench?.capabilities?.web_search ?? null}
-            configuredProviders={configuredProviders}
-            providerNameMap={providerNameMap}
-            onChange={(v) => updateCapability('web_search', v)}
-            t={t}
-          />
-          <CapabilityCard
-            label={t('workbench.vision')}
-            value={workbench?.capabilities?.vision ?? null}
-            configuredProviders={configuredProviders}
-            providerNameMap={providerNameMap}
-            onChange={(v) => updateCapability('vision', v)}
-            t={t}
-          />
+        {/* Capability Cards */}
+        <div className="space-y-2">
+          <h4 className="text-xs font-semibold text-text-muted uppercase tracking-wider">
+            Capabilities
+          </h4>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+            <CapabilityCard
+              label="Web Search"
+              value={workbench?.capabilities?.web_search ?? null}
+              configuredProviders={configuredProviders}
+              providerNameMap={providerNameMap}
+              onChange={(v) => updateCapability('web_search', v)}
+              t={t}
+            />
+            <CapabilityCard
+              label="Vision"
+              value={workbench?.capabilities?.vision ?? null}
+              configuredProviders={configuredProviders}
+              providerNameMap={providerNameMap}
+              onChange={(v) => updateCapability('vision', v)}
+              t={t}
+            />
+          </div>
         </div>
-      </div>
+      </section>
     </div>
   );
 }
@@ -452,14 +416,12 @@ function StationCardCollapsed({
   customized,
   providerNameMap,
   onClick,
-  t: _t,
 }: {
   agent: AgentTypeInfo;
   station: AgentStationConfig | null;
   customized: boolean;
   providerNameMap: Record<string, string>;
   onClick: () => void;
-  t: (key: string) => string;
 }) {
   const providerLabel = station
     ? providerNameMap[station.provider] || station.provider

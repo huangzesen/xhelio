@@ -96,7 +96,6 @@ from .event_bus import (
     LLM_RESPONSE,
     FETCH_ERROR,
     HIGH_NAN,
-    CUSTOM_OP_FAILURE,
     RECOVERY,
     RENDER_ERROR,
     TOOL_ERROR,
@@ -153,21 +152,13 @@ from data_ops.store import (
     set_store,
     DataStore,
     DataEntry,
-    build_source_map,
-    describe_sources,
 )
 from data_ops.fetch import fetch_data
-from data_ops.custom_ops import (
-    run_custom_operation,
-    run_multi_source_operation,
-    run_dataframe_creation,
-)
 from data_ops.operations_log import set_operations_log, OperationsLog
+from data_ops.asset_registry import AssetRegistry
 
-from .agent_registry import (
-    ORCHESTRATOR_TOOLS,
-    ENVOY_TOOL_REGISTRY,
-)
+from .agent_registry import ORCHESTRATOR_TOOLS
+from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
 # Roles that map to "user" or "assistant/model" across all LLM adapters
 _USER_ROLES = {"user"}
@@ -240,16 +231,18 @@ def _extract_turns(history_entries: list, *, max_text: int | None = None) -> lis
 
 
 def _create_llm_service() -> LLMService:
-    """Create the LLM service based on config."""
-    provider = config.LLM_PROVIDER.lower()
+    """Create the LLM service based on config.
+
+    Uses resolve_agent_model so the active workbench preset is respected.
+    """
+    provider, model, base_url = config.resolve_agent_model("orchestrator")
     api_key = get_api_key(provider)
-    model = config.SMART_MODEL
     caps = config.resolve_capabilities()
     return LLMService(
         provider=provider,
         model=model,
         api_key=api_key,
-        base_url=config.LLM_BASE_URL,
+        base_url=base_url or config.LLM_BASE_URL,
         provider_config=caps,
     )
 
@@ -271,7 +264,7 @@ def _sanitize_for_json(obj):
 
 
 _PIPELINE_INVALIDATING_TOOLS = frozenset({
-    "fetch_data", "custom_operation", "store_dataframe",
+    "fetch_data", "run_code",
     "render_plotly_json", "manage_plot",
 })
 
@@ -365,7 +358,7 @@ class OrchestratorAgent:
         # Initialize LLM service (wraps all provider SDK calls)
         self.service: LLMService = _create_llm_service()
         # Discover SPICE tools from MCP server (lazy, non-fatal).
-        # Must happen before building tool schemas so the LLM sees them.
+        # Registers tools for envoy agents only — orchestrator delegates.
         self._ensure_spice_tools()
 
         # Build tool schemas for the orchestrator
@@ -376,7 +369,9 @@ class OrchestratorAgent:
         self._tool_schemas = list(self._all_tool_schemas)
 
         # Store model name and system prompt for chat creation
-        self.model_name = model or config.SMART_MODEL
+        if not model:
+            _, model, _ = config.resolve_agent_model("orchestrator")
+        self.model_name = model
         self._system_prompt = get_system_prompt()
 
         if not defer_chat:
@@ -470,10 +465,13 @@ class OrchestratorAgent:
         self._pipeline_store = PipelineStore()
 
         # Inline completions (follow-ups, session titles, autocomplete)
+        _inline_provider, _inline_model, _ = config.resolve_agent_model("inline")
         self._inline = InlineCompletions(
             service=self.service,
             inline_tracker=self._inline_tracker,
             event_bus=self._event_bus,
+            provider=_inline_provider,
+            model=_inline_model,
         )
 
         # Cached pipeline DAG (invalidated when new ops are recorded)
@@ -511,14 +509,6 @@ class OrchestratorAgent:
     @_current_agent_type.setter
     def _current_agent_type(self, value: str) -> None:
         self._tls.current_agent_type = value
-
-    @property
-    def _current_envoy_sandbox_imports(self) -> list[dict] | None:
-        return getattr(self._tls, "envoy_sandbox_imports", None)
-
-    @_current_envoy_sandbox_imports.setter
-    def _current_envoy_sandbox_imports(self, value: list[dict] | None) -> None:
-        self._tls.envoy_sandbox_imports = value
 
     # ---- SSE event listener management ----
 
@@ -1276,6 +1266,18 @@ class OrchestratorAgent:
             if png_path.exists():
                 result["output_files"].append(str(png_path))
 
+            # Register figure in the asset registry
+            if hasattr(self, "_asset_registry"):
+                thumbnail = str(png_path) if png_path.exists() else None
+                fig_asset = self._asset_registry.register_figure(
+                    fig_json=fig_json,
+                    trace_labels=list(entry_map.keys()),
+                    panel_count=result.get("panels", 1),
+                    op_id=op_id,
+                    thumbnail_path=thumbnail,
+                )
+                result["asset_id"] = fig_asset.asset_id
+
             if not json_path.is_file() or json_path.stat().st_size == 0:
                 result["status"] = "error"
                 result["message"] = (
@@ -1382,51 +1384,123 @@ class OrchestratorAgent:
 
         description = tool_args.get("description", "Matplotlib plot")
 
-        # Resolve session data directory and labels index
-        session_dir = self._session_manager.base_dir / self._session_id
-        data_dir = session_dir / "data"
+        # 1. Extract data labels from user script
+        from rendering.mpl_sandbox import extract_data_labels
 
-        # Try new _ids.json first, fall back to _labels.json for backward compat
-        ids_path = data_dir / "_ids.json"
-        labels_path = data_dir / "_labels.json"
+        data_labels = extract_data_labels(code)
 
-        if not ids_path.exists() and not labels_path.exists():
-            return {
-                "status": "error",
-                "message": "No data in session. Fetch data first before generating a plot.",
-            }
+        # 2. Stage data + metadata into sandbox dir
+        from agent.tool_handlers.sandbox import _stage_entry, _stage_meta
 
-        import json as _json
+        session_dir = Path(self._session_dir)
+        sandbox_dir = session_dir / "sandbox"
+        sandbox_dir.mkdir(parents=True, exist_ok=True)
 
-        if ids_path.exists():
-            labels_index = _json.loads(ids_path.read_text())
-        else:
-            labels_index = _json.loads(labels_path.read_text())
+        for label in data_labels:
+            entry = self._store.get(label)
+            if entry is not None:
+                _stage_entry(entry, sandbox_dir)
+                _stage_meta(entry, sandbox_dir)
 
-        # Generate script_id
+        # available_labels() returns all store labels (without staging their data)
+        all_labels = [e["label"] for e in self._store.list_entries()]
+
+        # 3. Generate script_id and output path
         from datetime import datetime as _dt
         import secrets
 
         script_id = _dt.now().strftime("%Y%m%d_%H%M%S") + "_" + secrets.token_hex(3)
-
-        # Execute script in sandbox
-        from rendering.mpl_sandbox import run_mpl_script
-
         output_dir = session_dir / "mpl_outputs"
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index=labels_index,
-            script_id=script_id,
-            timeout=60.0,
-        )
+        output_dir.mkdir(parents=True, exist_ok=True)
+        output_path = output_dir / f"{script_id}.png"
 
-        if result.success:
-            # Record in operations log
-            from rendering.mpl_sandbox import extract_data_labels as _extract_mpl_labels
+        # 4. Build preamble + epilogue
+        import json as _json
+        labels_json = _json.dumps(all_labels)
 
-            _mpl_labels_used = _extract_mpl_labels(code)
+        preamble = f'''import warnings
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import json
+
+warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
+
+_OUTPUT_PATH = {repr(str(output_path))}
+_STAGED_LABELS = json.loads({repr(labels_json)})
+
+def load_data(label):
+    """Load a DataFrame from staged data by label."""
+    path = f"{{label}}.parquet"
+    import os
+    if not os.path.exists(path):
+        raise KeyError(f"Label '{{label}}' not found. Available labels: {{available_labels()}}")
+    return pd.read_parquet(path)
+
+def load_meta(label):
+    """Load metadata dict for a label."""
+    path = f"{{label}}.meta.json"
+    import os
+    if not os.path.exists(path):
+        return {{}}
+    with open(path) as f:
+        return json.load(f)
+
+def available_labels():
+    """Return all available data labels."""
+    return _STAGED_LABELS
+
+# === User script starts below ===
+'''
+
+        epilogue = f'''
+
+# === Auto-generated epilogue ===
+plt.savefig(_OUTPUT_PATH, dpi=150, bbox_inches="tight")
+plt.close("all")
+'''
+
+        wrapped_code = preamble + code + epilogue
+
+        # 5. Validate via blocklist
+        from data_ops.sandbox import validate_code_blocklist
+
+        violations = validate_code_blocklist(code)
+        if violations:
+            return {
+                "status": "error",
+                "message": "Script validation failed:\n" + "\n".join(f"  - {v}" for v in violations),
+            }
+
+        # 6. Save wrapped script to mpl_scripts/
+        scripts_dir = session_dir / "mpl_scripts"
+        scripts_dir.mkdir(parents=True, exist_ok=True)
+        script_path = scripts_dir / f"{script_id}.py"
+        script_path.write_text(wrapped_code, encoding="utf-8")
+
+        # 7. Execute via sandbox
+        from data_ops.sandbox import execute_sandboxed
+
+        try:
+            stdout_output, _ = execute_sandboxed(
+                wrapped_code,
+                work_dir=sandbox_dir,
+                timeout=60,
+            )
+        except TimeoutError as e:
+            return {
+                "status": "error",
+                "script_id": script_id,
+                "message": f"Script execution timed out: {e}",
+                "script_path": str(script_path),
+            }
+
+        # 8. Check if output PNG was created
+        if output_path.exists() and output_path.stat().st_size > 0:
+            # Success path
+            _mpl_labels_used = data_labels
             self._event_bus.emit(
                 MPL_RENDER_EXECUTED,
                 agent="VizAgent[Mpl]",
@@ -1434,45 +1508,34 @@ class OrchestratorAgent:
                 data={
                     "script_id": script_id,
                     "description": description,
-                    "output_path": result.output_path,
-                    "script_path": result.script_path,
+                    "output_path": str(output_path),
+                    "script_path": str(script_path),
                     "args": {"script": code, "description": description},
                     "inputs": _mpl_labels_used,
                     "outputs": [],
                     "status": "success",
                 },
             )
-            # Cache rendered PNG for InsightAgent (auto-review + manual delegation)
-            if result.output_path:
-                try:
-                    self._eureka_hooks.latest_render_png = Path(result.output_path).read_bytes()
-                except Exception as e:
-                    get_logger().warning(
-                        f"Failed to cache matplotlib PNG for insight review: {e}"
-                    )
+            # Cache rendered PNG for InsightAgent
+            try:
+                self._eureka_hooks.latest_render_png = output_path.read_bytes()
+            except Exception as e:
+                get_logger().warning(
+                    f"Failed to cache matplotlib PNG for insight review: {e}"
+                )
 
             response = {
                 "status": "success",
                 "script_id": script_id,
-                "output_path": result.output_path,
+                "output_path": str(output_path),
+                "output_files": [str(output_path)],
                 "message": f"Matplotlib plot saved successfully. Script ID: {script_id}",
             }
 
-            # Verify output PNG exists and is non-empty
-            if result.output_path:
-                output_path = Path(result.output_path)
-                response["output_files"] = [str(output_path)]
-                if not output_path.is_file() or output_path.stat().st_size == 0:
-                    response["status"] = "error"
-                    response["message"] = (
-                        f"Script executed but output PNG is missing or empty: {output_path}. "
-                        "Check stderr for rendering errors."
-                    )
+            if stdout_output and stdout_output.strip():
+                response["stdout"] = stdout_output
 
-            if result.stdout.strip():
-                response["stdout"] = result.stdout
-
-            # Auto-review via InsightAgent (same as Plotly render path)
+            # Auto-review via InsightAgent
             review = self._sync_insight_review()
             if review is not None and not review.get("failed", False):
                 passed = review.get("passed", True)
@@ -1491,16 +1554,15 @@ class OrchestratorAgent:
 
             return response
         else:
+            # Failure path
             response = {
                 "status": "error",
                 "script_id": script_id,
                 "message": "Script execution failed. See stderr for details.",
-                "stderr": result.stderr,
+                "stderr": stdout_output or "",
             }
-            if result.stdout.strip():
-                response["stdout"] = result.stdout
-            if result.script_path:
-                response["script_path"] = result.script_path
+            if script_path:
+                response["script_path"] = str(script_path)
             return response
 
     def _handle_manage_mpl_output(self, tool_args: dict) -> dict:
@@ -1555,74 +1617,72 @@ class OrchestratorAgent:
             if not script_file.exists():
                 return {"status": "error", "message": f"Script not found: {script_id}"}
 
-            # Read and re-execute the saved script directly (it's already wrapped)
-            import subprocess as _sp
-            from rendering.mpl_sandbox import (
-                _find_python,
-                MplSandboxResult,
-                extract_data_labels as _extract_mpl_labels,
-            )
-            import tempfile
+            # Read the saved script (already has preamble/epilogue baked in)
+            saved_script = script_file.read_text(encoding="utf-8")
 
-            python_exe = _find_python()
+            # Re-stage all data into sandbox
+            from agent.tool_handlers.sandbox import _stage_entry, _stage_meta
+            from rendering.mpl_sandbox import extract_data_labels as _extract_mpl_labels
+
+            sandbox_dir = Path(self._session_dir) / "sandbox"
+            sandbox_dir.mkdir(parents=True, exist_ok=True)
+
+            _rerun_labels = _extract_mpl_labels(saved_script)
+            for label in _rerun_labels:
+                entry = self._store.get(label)
+                if entry is not None:
+                    _stage_entry(entry, sandbox_dir)
+                    _stage_meta(entry, sandbox_dir)
+
+            # Execute via sandbox
+            from data_ops.sandbox import execute_sandboxed
+
             output_path = outputs_dir / f"{script_id}.png"
-            env = {
-                "PATH": __import__("os").environ.get("PATH", "/usr/bin:/bin"),
-                "HOME": __import__("os").environ.get("HOME", "/tmp"),
-                "PYTHONPATH": str(Path(__file__).resolve().parent.parent),
-            }
-            with tempfile.TemporaryDirectory(prefix="mpl_") as mpl_config:
-                env["MPLCONFIGDIR"] = mpl_config
+            try:
+                stdout_output, _ = execute_sandboxed(
+                    saved_script,
+                    work_dir=sandbox_dir,
+                    timeout=60,
+                )
+            except TimeoutError:
+                return {"status": "error", "message": "Script timed out during rerun"}
+
+            if output_path.exists() and output_path.stat().st_size > 0:
+                self._event_bus.emit(
+                    MPL_RENDER_EXECUTED,
+                    agent="VizAgent[Mpl]",
+                    msg=f"[MplViz] Script re-executed: {script_id}",
+                    data={
+                        "script_id": script_id,
+                        "description": f"Rerun of {script_id}",
+                        "args": {
+                            "script": saved_script,
+                            "description": f"Rerun of {script_id}",
+                        },
+                        "inputs": _rerun_labels,
+                        "outputs": [],
+                        "status": "success",
+                    },
+                )
+                # Cache rendered PNG for InsightAgent
                 try:
-                    proc = _sp.run(
-                        [python_exe, str(script_file)],
-                        capture_output=True,
-                        text=True,
-                        timeout=60.0,
-                        env=env,
-                        cwd=str(Path(__file__).resolve().parent.parent),
+                    self._eureka_hooks.latest_render_png = output_path.read_bytes()
+                except Exception as e:
+                    get_logger().warning(
+                        f"Failed to cache matplotlib rerun PNG: {e}"
                     )
-                    if proc.returncode == 0 and output_path.exists():
-                        _rerun_code = script_file.read_text(encoding="utf-8")
-                        _rerun_labels = _extract_mpl_labels(_rerun_code)
-                        self._event_bus.emit(
-                            MPL_RENDER_EXECUTED,
-                            agent="VizAgent[Mpl]",
-                            msg=f"[MplViz] Script re-executed: {script_id}",
-                            data={
-                                "script_id": script_id,
-                                "description": f"Rerun of {script_id}",
-                                "args": {
-                                    "script": _rerun_code,
-                                    "description": f"Rerun of {script_id}",
-                                },
-                                "inputs": _rerun_labels,
-                                "outputs": [],
-                                "status": "success",
-                            },
-                        )
-                        # Cache rendered PNG for InsightAgent
-                        try:
-                            self._eureka_hooks.latest_render_png = output_path.read_bytes()
-                        except Exception as e:
-                            get_logger().warning(
-                                f"Failed to cache matplotlib rerun PNG: {e}"
-                            )
-                        return {
-                            "status": "success",
-                            "script_id": script_id,
-                            "message": "Script re-executed successfully",
-                        }
-                    return {
-                        "status": "error",
-                        "stderr": proc.stderr,
-                        "stdout": proc.stdout,
-                    }
-                except _sp.TimeoutExpired:
-                    return {
-                        "status": "error",
-                        "message": "Script timed out during rerun",
-                    }
+                return {
+                    "status": "success",
+                    "script_id": script_id,
+                    "output_path": str(output_path),
+                    "output_files": [str(output_path)],
+                    "message": "Script re-executed successfully",
+                }
+            return {
+                "status": "error",
+                "stderr": stdout_output or "",
+                "message": "Script re-execution failed",
+            }
 
         elif action == "delete":
             script_id = tool_args.get("script_id")
@@ -1865,11 +1925,11 @@ class OrchestratorAgent:
     _spice_tools_ready = False
 
     def _ensure_spice_tools(self) -> None:
-        """Lazily connect the SPICE MCP client and register discovered tools.
+        """Lazily connect the SPICE MCP client and register tools for envoys.
 
-        Called once before the first SPICE tool dispatch. Discovers tool
-        schemas from the MCP server, registers them into tools.py and
-        agent_registry.py so the LLM sees them and dispatch works.
+        Discovers tool schemas from the MCP server and registers them for
+        envoy agents. The orchestrator does not call SPICE tools directly —
+        it delegates to envoys via delegate_to_envoy.
         """
         if OrchestratorAgent._spice_tools_ready:
             return
@@ -1908,6 +1968,37 @@ class OrchestratorAgent:
         # Register into TOOL_REGISTRY (handlers)
         register_spice_handlers(names)
 
+        # Register into all envoy kind modules (cdaweb, ppi, spice)
+        from agent.tool_handlers import TOOL_REGISTRY
+        spice_handlers = {n: TOOL_REGISTRY[n] for n in names if n in TOOL_REGISTRY}
+        for kind in ("cdaweb", "ppi", "spice"):
+            ENVOY_KIND_REGISTRY.add_tools_to_kind(kind, schemas, spice_handlers)
+
+        # Generate SPICE envoy JSON for envoy_query discovery
+        try:
+            import heliospice
+            from knowledge.generate_envoy_json import from_mcp
+            from knowledge.mission_loader import _ENVOYS_DIR
+
+            package_info = {
+                "name": "heliospice",
+                "version": heliospice.__version__,
+                "doc": heliospice.__doc__ or "",
+                "supported_missions": heliospice.list_supported_missions(),
+                "coordinate_frames": heliospice.list_frames_with_descriptions(),
+            }
+            from_mcp(
+                tool_schemas=schemas,
+                package_info=package_info,
+                envoy_id="SPICE",
+                output_dir=_ENVOYS_DIR / "spice",
+            )
+            # Clear mission cache so load_mission("SPICE") picks up the new file
+            from knowledge.mission_loader import clear_cache
+            clear_cache()
+        except Exception as e:
+            logger.warning("Failed to generate SPICE envoy JSON: %s", e)
+
         OrchestratorAgent._spice_tools_ready = True
         self._event_bus.emit(
             DEBUG,
@@ -1935,8 +2026,14 @@ class OrchestratorAgent:
         # ── Permission check ──
         from agent.agent_registry import AGENT_CALL_REGISTRY
 
-        agent_ctx = f"ctx:{self._current_agent_type}"
-        allowed = AGENT_CALL_REGISTRY.get(agent_ctx, frozenset())
+        # Per-mission permission gate for envoys
+        if self._current_agent_type.startswith("envoy:"):
+            mission_id = self._current_agent_type.split(":", 1)[1]
+            from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
+            allowed = frozenset(ENVOY_KIND_REGISTRY.get_tool_names(mission_id))
+        else:
+            agent_ctx = f"ctx:{self._current_agent_type}"
+            allowed = AGENT_CALL_REGISTRY.get(agent_ctx, frozenset())
         if tool_name not in allowed:
             # Track repeated invalid-tool rejections per agent type
             key = f"{self._current_agent_type}:{tool_name}"
@@ -2571,25 +2668,6 @@ class OrchestratorAgent:
         finally:
             self._current_agent_type = prev_agent_type
 
-    def _execute_tool_for_agent_with_sandbox(
-        self,
-        tool_name: str,
-        tool_args: dict,
-        tool_call_id: str | None = None,
-        *,
-        agent_type: str = "",
-        sandbox_imports: list[dict] | None = None,
-    ) -> dict:
-        """Execute a tool for an agent, with optional sandbox imports injection."""
-        prev_imports = self._current_envoy_sandbox_imports
-        self._current_envoy_sandbox_imports = sandbox_imports
-        try:
-            return self._execute_tool_for_agent(
-                tool_name, tool_args, tool_call_id, agent_type=agent_type
-            )
-        finally:
-            self._current_envoy_sandbox_imports = prev_imports
-
     def _execute_task(self, task: Task) -> str:
         """Execute a single task and return the result.
 
@@ -2959,8 +3037,8 @@ class OrchestratorAgent:
             # Check cancel AFTER tool execution — strip the incomplete
             # assistant turn. Cancel context is prepended to the next user message.
             if self._cancel_event.is_set():
-                if self._chat:
-                    self._chat.rollback_last_turn()
+                if self.chat:
+                    self.chat.rollback_last_turn()
                 self._event_bus.emit(
                     DEBUG, level="info", msg="[Cancel] Stopping after tool execution"
                 )
@@ -3072,9 +3150,9 @@ class OrchestratorAgent:
         current_base_url = getattr(self.service.get_adapter(self.service.provider), "base_url", None)
         current_model = self.model_name
 
-        target_provider = config.LLM_PROVIDER.lower()
-        target_base_url = config.LLM_BASE_URL
-        target_model = config.SMART_MODEL
+        # Use resolve_agent_model so the active preset is respected
+        target_provider, target_model, target_base_url_resolved = config.resolve_agent_model("orchestrator")
+        target_base_url = target_base_url_resolved or config.LLM_BASE_URL
 
         target_viz_backend = config.PREFER_VIZ_BACKEND
 
@@ -3172,12 +3250,17 @@ class OrchestratorAgent:
         self.reset_sub_agents()
         self._memory_hooks._agent = None
         self._eureka_hooks._agent = None
+        # Sync eureka mode flag from config (may have been toggled via UI)
+        self._eureka_hooks.eureka_mode = config.get("eureka_mode", False)
 
         # 6. Recreate inline completions (picks up new service/adapter)
+        _inline_provider, _inline_model, _ = config.resolve_agent_model("inline")
         self._inline = InlineCompletions(
             service=self.service,
             inline_tracker=self._inline_tracker,
             event_bus=self._event_bus,
+            provider=_inline_provider,
+            model=_inline_model,
         )
 
         status_msg = (
@@ -3350,8 +3433,11 @@ class OrchestratorAgent:
 
         # Create disk-backed DataStore for this session
         session_dir = self._session_manager.base_dir / self._session_id
+        self._session_dir = session_dir
+        (session_dir / "sandbox").mkdir(exist_ok=True)
         self._store = DataStore(session_dir / "data")
         set_store(self._store)
+        self._asset_registry = AssetRegistry(session_dir, self._store)
 
         # Create a fresh OperationsLog scoped to this session
         self._ops_log = OperationsLog(session_id=self._session_id)
@@ -3360,9 +3446,8 @@ class OrchestratorAgent:
         # Start writing structured event log to disk
         self._start_event_log_writer()
 
-        # Register user-defined package envoys into the 'package' group
-        from .agent_registry import register_package_envoys
-        register_package_envoys()
+        # Push kind handlers into global TOOL_REGISTRY for dispatch
+        ENVOY_KIND_REGISTRY.register_handlers_globally()
 
         self._event_bus.emit(
             DEBUG, level="debug", msg=f"[Session] Started: {self._session_id}"
@@ -3456,6 +3541,9 @@ class OrchestratorAgent:
                     data={"name": session_name},
                 )
 
+        if hasattr(self, "_asset_registry"):
+            self._asset_registry.save()
+
         self._session_manager.save_session(
             session_id=self._session_id,
             chat_history=interface_dict,
@@ -3534,8 +3622,11 @@ class OrchestratorAgent:
             )
 
         # Restore DataStore — constructor auto-loads _labels.json (or migrates _index.json)
+        self._session_dir = data_dir.parent
+        (self._session_dir / "sandbox").mkdir(exist_ok=True)
         self._store = DataStore(data_dir)
         set_store(self._store)
+        self._asset_registry = AssetRegistry(self._session_dir, self._store)
         self._event_bus.emit(
             DEBUG,
             level="debug",
@@ -3559,7 +3650,7 @@ class OrchestratorAgent:
             for agent in self._sub_agents.values():
                 agent.stop(timeout=2.0)
             self._sub_agents.clear()
-        ENVOY_TOOL_REGISTRY.clear_active()
+        ENVOY_KIND_REGISTRY.clear_active()
         self._renderer.reset()
 
         # Defer figure restore — the full Plotly figure is built lazily when
@@ -3604,9 +3695,8 @@ class OrchestratorAgent:
         # Start writing structured event log (append mode — resumes keep adding)
         self._start_event_log_writer()
 
-        # Register user-defined package envoys into the 'package' group
-        from .agent_registry import register_package_envoys
-        register_package_envoys()
+        # Push kind handlers into global TOOL_REGISTRY for dispatch
+        ENVOY_KIND_REGISTRY.register_handlers_globally()
 
         self._event_bus.emit(
             DEBUG, level="debug", msg=f"[Session] Loaded: {session_id}"
@@ -4030,8 +4120,8 @@ class OrchestratorAgent:
             result = self._process_single_message(augmented)
         except _CancelledDuringLLM:
             # Cancel fired during an LLM API call. Rollback incomplete turn.
-            if self._chat:
-                self._chat.rollback_last_turn()
+            if self.chat:
+                self.chat.rollback_last_turn()
             result = "Cancelled."
         except Exception:
             # Auto-save before re-raising so the session is not lost

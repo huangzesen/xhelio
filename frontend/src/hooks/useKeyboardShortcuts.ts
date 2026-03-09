@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 interface ShortcutHandlers {
   onToggleSidebar?: () => void;
@@ -10,56 +10,24 @@ interface ShortcutHandlers {
 }
 
 export function useKeyboardShortcuts(handlers: ShortcutHandlers) {
+  const handlersRef = useRef(handlers);
+  handlersRef.current = handlers;
+
   useEffect(() => {
     function handleKeyDown(e: KeyboardEvent) {
       const meta = e.metaKey || e.ctrlKey;
       const target = e.target as HTMLElement;
       const isInput = target.tagName === 'INPUT' || target.tagName === 'TEXTAREA' || target.tagName === 'SELECT';
 
-      // Cmd+B — toggle sidebar
-      if (meta && e.key === 'b') {
-        e.preventDefault();
-        handlers.onToggleSidebar?.();
-        return;
-      }
-
-      // Cmd+\ — toggle activity panel
-      if (meta && e.key === '\\') {
-        e.preventDefault();
-        handlers.onToggleActivity?.();
-        return;
-      }
-
-      // Cmd+N — new chat
-      if (meta && e.key === 'n') {
-        e.preventDefault();
-        handlers.onNewChat?.();
-        return;
-      }
-
-      // Cmd+K — command palette
-      if (meta && e.key === 'k') {
-        e.preventDefault();
-        handlers.onCommandPalette?.();
-        return;
-      }
-
-      // Cmd+? — keyboard shortcuts help
-      if (meta && e.key === '?') {
-        e.preventDefault();
-        handlers.onShortcutsHelp?.();
-        return;
-      }
-
-      // / — focus chat input (only when not already in an input)
-      if (e.key === '/' && !isInput) {
-        e.preventDefault();
-        handlers.onFocusInput?.();
-        return;
-      }
+      if (meta && e.key === 'b') { e.preventDefault(); handlersRef.current.onToggleSidebar?.(); return; }
+      if (meta && e.key === '\\') { e.preventDefault(); handlersRef.current.onToggleActivity?.(); return; }
+      if (meta && e.key === 'n') { e.preventDefault(); handlersRef.current.onNewChat?.(); return; }
+      if (meta && e.key === 'k') { e.preventDefault(); handlersRef.current.onCommandPalette?.(); return; }
+      if (meta && e.key === '?') { e.preventDefault(); handlersRef.current.onShortcutsHelp?.(); return; }
+      if (e.key === '/' && !isInput) { e.preventDefault(); handlersRef.current.onFocusInput?.(); return; }
     }
 
     document.addEventListener('keydown', handleKeyDown);
     return () => document.removeEventListener('keydown', handleKeyDown);
-  }, [handlers]);
+  }, []); // eslint-disable-line react-hooks/exhaustive-deps -- handlers accessed via ref
 }

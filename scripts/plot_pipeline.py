@@ -27,8 +27,7 @@ from data_ops.operations_log import OperationsLog
 # ── Colors & display names ──────────────────────────────────────────────
 TOOL_STYLE = {
     "fetch_data":        {"color": "#4C78A8", "symbol": "diamond", "label": "fetch"},
-    "custom_operation":  {"color": "#F58518", "symbol": "square",  "label": "compute"},
-    "store_dataframe":   {"color": "#72B7B2", "symbol": "square",  "label": "create"},
+    "run_code":          {"color": "#F58518", "symbol": "square",  "label": "compute"},
     "render_plotly_json": {"color": "#E45756", "symbol": "circle",  "label": "plot"},
     "manage_plot":       {"color": "#BAB0AC", "symbol": "circle",  "label": "export"},
     "generate_mpl_script": {"color": "#54A24B", "symbol": "square",  "label": "mpl"},
@@ -37,8 +36,7 @@ TOOL_STYLE = {
 # Dimmed variants for orphan nodes (not connected to the final plot)
 TOOL_STYLE_ORPHAN = {
     "fetch_data":        {"color": "#B8C9DD", "symbol": "diamond", "label": "fetch"},
-    "custom_operation":  {"color": "#F5C68A", "symbol": "square",  "label": "compute"},
-    "store_dataframe":   {"color": "#B5DAD6", "symbol": "square",  "label": "create"},
+    "run_code":          {"color": "#F5C68A", "symbol": "square",  "label": "compute"},
     "render_plotly_json": {"color": "#F0ABAA", "symbol": "circle",  "label": "plot"},
     "manage_plot":       {"color": "#D5D0CD", "symbol": "circle",  "label": "export"},
     "generate_mpl_script": {"color": "#A8D08D", "symbol": "square",  "label": "mpl"},

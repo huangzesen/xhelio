@@ -1,6 +1,6 @@
 # Capability Summary
 
-Current state of the XHelio project as of February 2026.
+Current state of the XHelio project as of March 2026.
 
 ## What It Does
 
@@ -172,13 +172,18 @@ agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
 ### Dataset Discovery
 | Tool | Purpose |
 |------|---------|
+| `envoy_query` | Unified envoy capability discovery. Three modes: list all envoys (no args), navigate envoy JSON tree (envoy + path), regex search across envoy trees (search). Replaces the 5 old discovery tools at the orchestrator level. |
+| `get_dataset_docs` | Fetch CDAWeb documentation for a dataset (instrument info, coordinates, PI contact) |
+| `google_search` | Web search — each provider uses its native search capability (Gemini: Google Search grounding, OpenAI: search model, Anthropic: web_search tool, MiniMax: MCP web_search) |
+
+**Envoy-internal discovery tools** (available inside envoy agents only, not at orchestrator level):
+| Tool | Purpose |
+|------|---------|
 | `search_datasets` | Keyword search across spacecraft/instruments (local catalog). Returns datasets with start_date/stop_date time coverage. |
 | `browse_datasets` | Browse all science datasets for a mission (filtered by calibration exclusion lists) |
 | `list_parameters` | List plottable parameters for a dataset (Master CDF / local cache) |
-| `get_dataset_docs` | Fetch CDAWeb documentation for a dataset (instrument info, coordinates, PI contact) |
 | `list_missions` | List all known spacecraft missions with capabilities |
 | `search_full_catalog` | Search full CDAWeb catalog (2000+ datasets, CDAS REST primary) by keyword |
-| `google_search` | Web search — each provider uses its native search capability (Gemini: Google Search grounding, OpenAI: search model, Anthropic: web_search tool, MiniMax: MCP web_search) |
 
 ### Visualization
 | Tool | Purpose |
@@ -221,7 +226,7 @@ The viz agent uses `render_plotly_json` and `manage_plot` for all visualization 
 
 ### SPICE Ephemeris
 
-SPICE ephemeris tools are available to both the orchestrator and all envoy agents directly — no delegation needed. The orchestrator calls them directly for ephemeris requests, while envoys can use them alongside data fetching for positional context (e.g., heliocentric distance).
+SPICE ephemeris tools are available to the orchestrator and all envoy agents (cdaweb, ppi, spice) directly — no delegation needed. The orchestrator calls them directly for ephemeris requests, while envoys can use them alongside data fetching for positional context (e.g., heliocentric distance). SPICE envoy JSON is auto-generated from heliospice MCP introspection at startup via `knowledge/generate_envoy_json.from_mcp()`. Per-mission permission gating ensures each envoy kind only sees the SPICE missions relevant to its domain.
 
 | Tool | Purpose |
 |------|---------|
@@ -294,9 +299,10 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 - Rich system prompt with recommended datasets and analysis patterns
 - **Two-mode operation**: when planner provides `candidate_datasets`, inspects candidates via `list_parameters` and selects best dataset/parameters autonomously; otherwise executes exact instructions directly
 - Handles all-NaN fallback: skips empty parameters, tries next candidate dataset
-- No compute tools (for mission envoys) — reports fetched data labels to orchestrator
+- No compute tools — reports fetched data labels to orchestrator
 - See planning flow below (§ Planning Pipeline)
-- **Package envoys** (type: "package"): user-defined envoys wrapping Python packages with sandboxed execution. See § User-Defined Package Envoys below
+- **Three envoy kinds** (cdaweb, ppi, spice): each kind has its own tool set, prompt templates, and permission rules defined in `agent/envoy_kinds/`. Tool schemas are resolved from `ENVOY_KIND_REGISTRY` at agent creation time. SPICE tools are injected into all envoy kinds via `register_spice_tools()` in `agent/agent_registry.py`, with per-mission permission gating so each envoy only sees SPICE missions relevant to its domain.
+- **Envoy JSON** lives in `knowledge/envoys/{cdaweb,ppi,spice}/`. SPICE envoy JSON is auto-generated from heliospice MCP introspection via `knowledge/generate_envoy_json.from_mcp()`.
 
 ### DataOpsActor (agent/data_ops_agent.py)
 - Sees tools: data_ops_compute (`custom_operation`, `describe_data`, `save_data`), function_docs (`search_function_docs`, `get_function_docs`), conversation + `list_fetched_data` extra
@@ -339,7 +345,7 @@ Mission JSON files are auto-generated: 54 CDAWeb missions from CDAS REST API + M
 
 ### Full CDAWeb Catalog Access (2000+ datasets)
 
-All CDAWeb datasets are searchable via the `search_full_catalog` tool. New missions can be added by creating a JSON file in `knowledge/missions/cdaweb/` via `scripts/generate_mission_data.py --create-new`. The shared prefix map in `knowledge/mission_prefixes.py` maps dataset ID prefixes to mission identifiers.
+All CDAWeb datasets are searchable via the `search_full_catalog` tool. New missions can be added by creating a JSON file in `knowledge/envoys/cdaweb/` via `scripts/generate_mission_data.py --create-new`. The shared prefix map in `knowledge/mission_prefixes.py` maps dataset ID prefixes to mission identifiers.
 
 ## Time Range Parsing
 
@@ -429,12 +435,12 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - **Serialization**: Each actor has one thread reading from its inbox — multiple requests to the same mission actor queue naturally without locks.
 
 ### LLM-Driven Routing (`agent/core.py`, `agent/envoy_agent.py`, `agent/data_ops_agent.py`, `agent/viz_plotly_agent.py`)
-- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_io` (text-to-DataFrame, file import), `delegate_to_viz` (visualization), or `delegate_to_insight` (multimodal plot analysis) tools. No regex-based routing — the LLM uses conversation context and the routing table to decide.
+- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_io` (text-to-DataFrame, file import), `delegate_to_viz` (visualization), or `delegate_to_insight` (multimodal plot analysis) tools. The orchestrator discovers envoy capabilities via `envoy_query` (list, navigate, search) before delegating. No regex-based routing — the LLM uses conversation context and the routing table to decide.
 - **Mission sub-agents**: Each spacecraft has a data fetching specialist with rich system prompt (recommended datasets, analysis patterns). Agents are cached per session. Sub-agents have **fetch-only tools** (discovery, data_ops_fetch, conversation) — no compute, plot, or routing tools.
 - **DataOps sub-agent**: Data transformation specialist with `custom_operation`, `describe_data`, `save_data` + `list_fetched_data`. System prompt includes computation patterns and code guidelines. Singleton, cached per session.
 - **DataIO sub-agent**: Text-to-DataFrame and file import specialist with `store_dataframe`, `load_file`, `read_document`, `ask_clarification` + `list_fetched_data`. System prompt includes extraction patterns, DataFrame creation guidelines, and file loading workflow. Singleton, cached per session.
 - **Visualization sub-agent**: Visualization specialist with `render_plotly_json` + `manage_plot` + `list_fetched_data` tools. Owns all visualization operations (plotting, export, reset, zoom, traces). The LLM provides Plotly figure JSON with `data_label` placeholders, and the system fills in actual data arrays.
-- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `spice`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["discovery", "web_search", "conversation", "routing", "document", "memory", "data_export", "spice", "pipeline", "pipeline_ops"]` + `list_fetched_data` extra. EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataIOAgent sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizPlotlyActor sees `["visualization"]` + `list_fetched_data`, `manage_plot` extras → `render_plotly_json` + `manage_plot` + `list_fetched_data`.
+- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `spice`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["web_search", "conversation", "routing", "document", "memory", "data_export", "spice", "pipeline", "pipeline_ops"]` + `list_fetched_data`, `envoy_query` extras (discovery tools like `search_datasets`, `browse_datasets`, `list_parameters`, `list_missions`, `search_full_catalog` are envoy-internal only). EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataIOAgent sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizPlotlyActor sees `["visualization"]` + `list_fetched_data`, `manage_plot` extras → `render_plotly_json` + `manage_plot` + `list_fetched_data`.
 - **Post-delegation flow**: After `delegate_to_envoy` returns data labels, the orchestrator uses `delegate_to_data_ops` for computation, `delegate_to_data_io` for text-to-DataFrame conversion or file import, `delegate_to_viz` to visualize results, and optionally `delegate_to_insight` for scientific interpretation of the rendered plot.
 - **Slim orchestrator**: System prompt contains a routing table (mission names + capabilities), orchestrator rules, error recovery patterns, and delegation instructions. Dataset IDs and analysis tips live in mission sub-agents.
 - **Gemini context caching**: When using Gemini, the orchestrator creates an explicit context cache containing the full system prompt (with mission catalog) + tool schemas (~38K tokens). This exceeds the 32K threshold for Gemini's cached content API, giving a 75% discount on cached input tokens. The cache is created once per session (24h TTL). Non-Gemini providers use the slim prompt without caching.
@@ -449,7 +455,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 
 ### Multi-Step Requests (Planning)
 - Simple requests are handled by the orchestrator's conversation loop (up to 10 iterations, with consecutive delegation error guard)
-- "Compare PSP and ACE" -> `delegate_to_envoy("PSP", ...)` -> `delegate_to_envoy("ACE", ...)` -> `delegate_to_viz(plot both)` — all in one `process_message` call
+- "Compare PSP and ACE" -> `delegate_to_envoy(envoy="PSP", ...)` -> `delegate_to_envoy(envoy="ACE", ...)` -> `delegate_to_viz(plot both)` — all in one `process_message` call
 - Complex requests use **planning** via the **PlannerAgent**:
   1. **Regex pre-filter**: `is_complex_request()` regex heuristics catch obvious complex cases (free, no API cost) and route directly to planner
   2. **Orchestrator override**: The orchestrator (with HIGH thinking) can also call `delegate_to_planner` tool for complex cases the regex missed
@@ -481,29 +487,17 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - Each completed delegation includes a **structured operation log** built from EventBus events (tool calls, fetch results, errors) — the orchestrator sees step-by-step what the sub-agent did
 - Thread-local `_active_agent_name` and `_current_agent_type` via `threading.local()` ensure concurrent sub-agents don't interfere with each other's identity tracking
 
-### Per-Mission JSON Knowledge (`knowledge/missions/cdaweb/*.json`, `knowledge/missions/ppi/*.json`)
-- **54 CDAWeb + 17 PPI mission JSON files**, auto-generated from CDAS REST API + Master CDF metadata (CDAWeb) and Metadex Solr (PPI). Deep-merged at load time for overlapping missions. Profiles include instrument groupings, dataset parameters, and time ranges.
+### Per-Mission JSON Knowledge (`knowledge/envoys/{cdaweb,ppi,spice}/*.json`)
+- **54 CDAWeb + 17 PPI + SPICE mission JSON files**. CDAWeb and PPI missions are auto-generated from CDAS REST API + Master CDF metadata (CDAWeb) and Metadex Solr (PPI). Deep-merged at load time for overlapping missions. SPICE envoy JSON is auto-generated from heliospice MCP introspection at startup via `knowledge/generate_envoy_json.from_mcp()`. Profiles include instrument groupings, dataset parameters, and time ranges.
 - **Shared prefix map**: `knowledge/mission_prefixes.py` maps CDAWeb dataset ID prefixes to mission identifiers (40+ mission groups).
 - **CDAWeb InstrumentType grouping**: `knowledge/cdaweb_metadata.py` fetches the CDAWeb REST API to get authoritative InstrumentType per dataset (18+ categories like "Magnetic Fields (space)", "Plasma and Solar Wind"). Bootstrap uses this to group datasets into meaningful instrument categories with keywords, instead of dumping everything into "General".
 - **Full catalog search**: `knowledge/catalog_search.py` provides `search_full_catalog` tool — searches all CDAWeb + PPI datasets by keyword, with 24-hour local cache for CDAWeb data.
 - **Master CDF metadata**: `knowledge/master_cdf.py` downloads CDF skeleton files from CDAWeb and extracts parameter metadata (names, types, units, fill values, sizes). Cached to `~/.xhelio/master_cdfs/`. Used as the network source for parameter metadata.
 - **3-layer metadata resolution**: `knowledge/metadata_client.py` resolves dataset metadata through: in-memory cache → local file cache → Master CDF download. Master CDF results are persisted to the local file cache for subsequent use.
-- **Recommended datasets**: All datasets in the instrument section are shown as recommended. Additional datasets are discoverable via `browse_datasets`.
+- **Recommended datasets**: All datasets in the instrument section are shown as recommended. Additional datasets are discoverable via `browse_datasets` (envoy-internal) or `envoy_query` (orchestrator-level navigation/search).
 - **Calibration exclusion lists**: Per-mission `_calibration_exclude.json` files filter out calibration, housekeeping, and ephemeris datasets from browse results. Uses glob patterns and exact IDs.
 - **Auto-generation**: `scripts/generate_mission_data.py` queries CDAS REST API for catalog + Master CDF for parameters. Use `--create-new` to create skeleton JSON files for new missions.
 - **Loader**: `knowledge/mission_loader.py` provides in-memory cache, routing table, and dataset access. Routing table derives capabilities from instrument keywords (magnetic field, plasma, energetic particles, electric field, radio/plasma waves, geomagnetic indices, ephemeris, composition, coronagraph, imaging).
-
-### User-Defined Package Envoys
-
-Users can create custom envoys that wrap Python packages into sandboxed tool-equipped agents.
-
-- **Creation flow**: User requests → `add_envoy` introspects package API → LLM proposes functions → user confirms → `save_envoy` persists to `knowledge/missions/packages/`
-- **Management tools**: `add_envoy` (introspect), `save_envoy` (persist), `list_envoys` (list all), `remove_envoy` (delete)
-- **Execution**: Package envoys use `custom_operation` with per-envoy pre-imported namespaces (defined in JSON `sandbox.imports`)
-- **Tool group**: `"package"` envoy group provides `custom_operation`, `describe_data`, `preview_data`, `store_dataframe`, `search_function_docs`, `get_function_docs`
-- **System prompt**: Auto-generated from the envoy JSON — lists available packages, functions with signatures, and instructs the LLM to use `custom_operation`
-- **Persistence**: JSON files in `knowledge/missions/packages/`, auto-loaded on startup via `register_package_envoys()`
-- **Sandbox safety**: Same AST-validated sandbox as DataOps — no file I/O, no imports, no exec/eval
 
 ### Long-term Memory (`agent/memory.py`)
 - Cross-session memory that persists user preferences, session summaries, operational pitfalls, and reflections
@@ -736,7 +730,7 @@ heliospice-mcp -v                   # With verbose logging
 python -m heliospice.server         # Alternative invocation
 ```
 
-Standalone SPICE ephemeris server — no LLM needed. Eight tools for spacecraft positions, trajectories, velocities, distances, coordinate transforms, and kernel management. Kernels auto-downloaded from NAIF. Installed via `pip install heliospice[mcp]`. Configure via `.mcp.json`.
+Standalone SPICE ephemeris server — no LLM needed. Eight tools for spacecraft positions, trajectories, velocities, distances, coordinate transforms, and kernel management. Kernels auto-downloaded from NAIF. Installed via `pip install heliospice[mcp]`. Configure via `.mcp.json`. At xhelio startup, `knowledge/generate_envoy_json.from_mcp()` introspects the heliospice MCP server to auto-generate SPICE envoy JSON in `knowledge/envoys/spice/`, keeping tool schemas in sync with the installed heliospice version.
 
 ### CLI Commands
 

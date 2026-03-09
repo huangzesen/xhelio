@@ -43,6 +43,8 @@ export function Sidebar({
   } = useProjectStore();
   const liveTokenUsage = useSessionStore((s) => s.tokenUsage);
 
+  const sessionIds = useMemo(() => savedSessions.map(s => s.id).join(','), [savedSessions]);
+
   // Prune orphaned entries from sessionProjectMap on load
   useEffect(() => {
     if (savedSessions.length > 0) {
@@ -50,7 +52,7 @@ export function Sidebar({
       if (activeSessionId) allValidIds.push(activeSessionId);
       pruneOrphanedSessions(allValidIds);
     }
-  }, [savedSessions.length, activeSessionId, pruneOrphanedSessions]);
+  }, [sessionIds, activeSessionId, pruneOrphanedSessions, savedSessions]);
 
   // Auto-assign new session to active project
   useEffect(() => {

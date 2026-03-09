@@ -19,7 +19,7 @@ from knowledge.mission_loader import (
     get_mission_datasets,
     get_mission_ids,
     clear_cache,
-    _CDAWEB_DIR,
+    _ENVOYS_DIR,
 )
 from knowledge.catalog import (
     SPACECRAFT,
@@ -44,8 +44,12 @@ def fresh_cache():
 
 
 def _all_mission_jsons() -> list[Path]:
-    """Discover all CDAWeb mission JSON files on disk."""
-    return sorted(_CDAWEB_DIR.glob("*.json"))
+    """Discover all envoy JSON files on disk."""
+    jsons = []
+    for kind_dir in sorted(_ENVOYS_DIR.iterdir()):
+        if kind_dir.is_dir():
+            jsons.extend(kind_dir.glob("*.json"))
+    return sorted(jsons)
 
 
 def _all_mission_ids() -> list[str]:

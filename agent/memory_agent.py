@@ -351,7 +351,7 @@ Consolidation policy — BE CONSERVATIVE:
                         parts.append(f"{ds}.{param}" if param else ds)
                         if label:
                             parts.append(f'-> "{label}"')
-                    elif tool in ("custom_operation", "store_dataframe"):
+                    elif tool == "run_code":
                         desc = step.get("description", "")
                         code = step.get("code", "")
                         label = step.get("output_label", "")

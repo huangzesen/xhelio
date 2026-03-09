@@ -17,6 +17,7 @@ const RECHARTS_VERSION = '2.15.3';
  * @returns Complete HTML string for use as iframe srcDoc
  */
 export function buildIframeHtml(bundleCode: string, dataJson: string): string {
+  const safeDataJson = dataJson.replace(/<\/(script)/gi, '<\\/$1');
   return `<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -54,7 +55,7 @@ export function buildIframeHtml(bundleCode: string, dataJson: string): string {
 
   <!-- Data injection -->
   <script>
-    window.__XHELIO_DATA__ = ${dataJson};
+    window.__XHELIO_DATA__ = ${safeDataJson};
   </script>
 
   <!-- React + ReactDOM from CDN -->

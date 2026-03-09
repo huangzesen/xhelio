@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from 'react';
-import { MessageSquare, Trash2, Pencil, Pin, FolderOpen, MoreVertical } from 'lucide-react';
+import { MessageSquare, Trash2, Pencil, Pin, FolderOpen, MoreVertical, X } from 'lucide-react';
 import type { SavedSessionInfo } from '../../api/types';
 import type { Project } from '../../stores/projectStore';
 import { cn } from '@/lib/utils';
@@ -35,6 +35,7 @@ export function SessionItem({
   const [editingId, setEditingId] = useState<string | null>(null);
   const [editValue, setEditValue] = useState('');
   const [showMoveMenu, setShowMoveMenu] = useState(false);
+  const [confirmDelete, setConfirmDelete] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
   const menuRef = useRef<HTMLDivElement>(null);
 
@@ -44,6 +45,12 @@ export function SessionItem({
       inputRef.current.select();
     }
   }, [editingId]);
+
+  useEffect(() => {
+    if (!confirmDelete) return;
+    const timer = setTimeout(() => setConfirmDelete(false), 3000);
+    return () => clearTimeout(timer);
+  }, [confirmDelete]);
 
   useEffect(() => {
     function handleClickOutside(event: MouseEvent) {
@@ -172,18 +179,42 @@ export function SessionItem({
           >
             <FolderOpen size={13} />
           </button>
-          <button
-            onClick={(e) => {
-              e.stopPropagation();
-              if (confirm('Delete this session?')) {
-                onDelete(session.id);
-              }
-            }}
-            className="p-1 rounded hover:bg-hover-danger-bg text-text-muted hover:text-status-error-text transition-colors"
-            title="Delete session"
-          >
-            <Trash2 size={13} />
-          </button>
+          {confirmDelete ? (
+            <>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  onDelete(session.id);
+                  setConfirmDelete(false);
+                }}
+                className="p-1 rounded bg-status-error-bg text-status-error-text hover:bg-red-600 hover:text-white transition-colors text-[11px] font-medium"
+                title="Confirm delete"
+              >
+                Delete
+              </button>
+              <button
+                onClick={(e) => {
+                  e.stopPropagation();
+                  setConfirmDelete(false);
+                }}
+                className="p-1 rounded hover:bg-hover-bg text-text-muted hover:text-text transition-colors"
+                title="Cancel"
+              >
+                <X size={13} />
+              </button>
+            </>
+          ) : (
+            <button
+              onClick={(e) => {
+                e.stopPropagation();
+                setConfirmDelete(true);
+              }}
+              className="p-1 rounded hover:bg-hover-danger-bg text-text-muted hover:text-status-error-text transition-colors"
+              title="Delete session"
+            >
+              <Trash2 size={13} />
+            </button>
+          )}
         </div>
       </div>
 

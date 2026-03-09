@@ -27,10 +27,10 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
 import plotly.graph_objects as go
 
-from data_ops.custom_ops import run_dataframe_creation, run_multi_source_operation
+from data_ops.sandbox import execute_sandboxed, validate_code_blocklist
 from data_ops.fetch import fetch_data
 from data_ops.operations_log import OperationsLog
-from data_ops.store import DataEntry, DataStore, build_source_map
+from data_ops.store import DataEntry, DataStore
 from agent.logging import get_logger
 from rendering.plotly_renderer import RenderResult, fill_figure_data
 
@@ -96,10 +96,8 @@ def replay_pipeline(
         try:
             if tool == "fetch_data":
                 _replay_fetch(rec, store, cache_store=cache_store)
-            elif tool == "custom_operation":
-                _replay_custom_op(rec, store)
-            elif tool == "store_dataframe":
-                _replay_store_df(rec, store)
+            elif tool == "run_code":
+                _replay_run_code(rec, store)
             elif tool == "render_plotly_json":
                 fig = _replay_render(rec, store)
                 if fig is not None:
@@ -333,66 +331,56 @@ def _replay_fetch(
         store.put(entry)
 
 
-def _replay_custom_op(rec: dict, store: DataStore) -> None:
-    """Replay a custom_operation."""
+def _replay_run_code(rec: dict, store: DataStore) -> None:
+    """Replay a run_code record.
+
+    Stages input entries as files in a temp sandbox dir, executes via the
+    blocklist sandbox, and stores outputs back into the replay store.
+    """
+    import tempfile
+    import pandas as pd
+    import xarray as xr
+
     args = rec["args"]
     code = args["code"]
     source_labels = rec.get("inputs", [])
 
-    sources, err = build_source_map(store, source_labels)
-    if err is not None:
-        raise ValueError(f"Cannot build source map: {err}")
+    with tempfile.TemporaryDirectory(prefix="replay_sandbox_") as sandbox_dir:
+        sandbox_path = Path(sandbox_dir)
 
-    # Build source_timeseries map from store entries
-    # Must match the variable naming logic in build_source_map (store.py)
-    source_ts: dict[str, bool] = {}
-    used_names: set[str] = set()
-    for label in source_labels:
-        entry = store.get(label)
-        if entry is not None:
-            suffix = entry.label.rsplit(".", 1)[-1]
-            prefix = "da" if entry.is_xarray else "df"
-            var_name = f"{prefix}_{suffix}"
-            # Handle naming conflicts same as build_source_map
-            if var_name in used_names:
-                id_suffix = entry.id.rsplit("_", 1)[-1]
-                var_name = f"{prefix}_{suffix}_{id_suffix}"
-            used_names.add(var_name)
-            source_ts[var_name] = entry.is_timeseries
+        # Stage input entries as files (same as handle_run_code)
+        for label in source_labels:
+            entry = store.get(label)
+            if entry is None or entry.data is None:
+                continue
+            from agent.tool_handlers.sandbox import _stage_entry
+            _stage_entry(entry, sandbox_path)
 
-    result_data, _warnings = run_multi_source_operation(
-        sources, code, source_timeseries=source_ts,
-    )
+        violations = validate_code_blocklist(code)
+        if violations:
+            logger.warning("Replay: code validation failed: %s", violations)
+            return
+
+        stdout, result_data = execute_sandboxed(code, sandbox_path, timeout=60)
+
+    # If code produced a traceback and no result, raise so callers can detect errors
+    if result_data is None and stdout and "Traceback" in stdout:
+        raise RuntimeError(f"Sandbox code failed:\n{stdout.strip()}")
 
     for label in rec.get("outputs", []):
-        import xarray as xr
+        if result_data is None:
+            continue
+        is_ts = False
+        if isinstance(result_data, pd.DataFrame):
+            is_ts = isinstance(result_data.index, pd.DatetimeIndex)
+        elif isinstance(result_data, xr.DataArray):
+            is_ts = "time" in result_data.dims
         entry = DataEntry(
             label=label,
             data=result_data,
             units=args.get("units", ""),
             description=args.get("description", ""),
             source="computed",
-            is_timeseries=not isinstance(result_data, xr.DataArray) or "time" in result_data.dims,
-        )
-        store.put(entry)
-
-
-def _replay_store_df(rec: dict, store: DataStore) -> None:
-    """Replay a store_dataframe operation."""
-    args = rec["args"]
-    code = args["code"]
-
-    result_data = run_dataframe_creation(code)
-
-    for label in rec.get("outputs", []):
-        import pandas as pd
-        is_ts = isinstance(result_data.index, pd.DatetimeIndex)
-        entry = DataEntry(
-            label=label,
-            data=result_data,
-            units=args.get("units", ""),
-            description=args.get("description", ""),
-            source="created",
             is_timeseries=is_ts,
         )
         store.put(entry)

@@ -329,8 +329,7 @@ class EurekaAgent(SubAgent):
         relevant_types = {USER_MESSAGE, TOOL_CALL, TOOL_RESULT, RENDER_EXECUTED}
         target_tools = {
             "fetch_data",
-            "custom_operation",
-            "store_dataframe",
+            "run_code",
             "render_plotly_json",
             "manage_plot",
             "delegate_to_envoy",

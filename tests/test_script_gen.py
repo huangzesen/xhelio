@@ -48,13 +48,13 @@ def _make_fetch_step(step_id: str, dataset_id: str, parameter_id: str,
     return step
 
 
-def _make_custom_op_step(step_id: str, code: str, inputs: list[str],
-                         output_label: str, description: str = "Custom operation",
+def _make_run_code_step(step_id: str, code: str, inputs: list[str],
+                        output_label: str, description: str = "Run code",
                          **overrides) -> dict:
     step = {
         "step_id": step_id,
         "phase": "appropriation",
-        "tool": "custom_operation",
+        "tool": "run_code",
         "params": {"code": code, "description": description},
         "inputs": inputs,
         "output_label": output_label,
@@ -69,7 +69,7 @@ def _make_store_step(step_id: str, code: str, output_label: str,
     step = {
         "step_id": step_id,
         "phase": "appropriation",
-        "tool": "store_dataframe",
+        "tool": "run_code",
         "params": {"code": code, "description": description},
         "inputs": [],
         "output_label": output_label,
@@ -219,11 +219,11 @@ class TestFetchStepGeneration:
 class TestTransformStepGeneration:
     """Tests for transform step code generation."""
 
-    def test_custom_operation(self):
-        """custom_operation inlines code with df input and result output."""
+    def test_run_code(self):
+        """run_code inlines code with df input and result output."""
         steps = [
             _make_fetch_step("s001", "AC_H2_MFI", "BGSEc", "ace_bfield"),
-            _make_custom_op_step(
+            _make_run_code_step(
                 "s002",
                 "result = df['Bx'] ** 2 + df['By'] ** 2",
                 ["s001"],
@@ -241,8 +241,8 @@ class TestTransformStepGeneration:
         assert 'data["b_magnitude"] = result' in script
         assert "isinstance(result, pd.Series)" in script
 
-    def test_store_dataframe(self):
-        """store_dataframe inlines code without df input."""
+    def test_store_dataframe_step(self):
+        """run_code (store) inlines code without df input."""
         steps = [
             _make_store_step(
                 "s001",
@@ -258,7 +258,7 @@ class TestTransformStepGeneration:
         assert "def transform(" in script
         assert "result = pd.DataFrame({'x': [1, 2, 3]})" in script
         assert 'data["synthetic_data"] = result' in script
-        # store_dataframe should NOT have df = data[...] line
+        # run_code (store mode) should NOT have df = data[...] line
         assert 'df = data["' not in script
 
     def test_no_transform_steps_skips_function(self):
@@ -478,7 +478,7 @@ class TestEdgeCases:
         """Generated script compiles as valid Python."""
         steps = [
             _make_fetch_step("s001", "AC_H2_MFI", "BGSEc", "ace_bfield"),
-            _make_custom_op_step(
+            _make_run_code_step(
                 "s002", "result = df * 2", ["s001"], "doubled",
             ),
             _make_plotly_step("s003", {
@@ -590,7 +590,7 @@ class TestEdgeCases:
         """Generated script must not import any xhelio modules."""
         steps = [
             _make_fetch_step("s001", "AC_H2_MFI", "BGSEc", "ace_bfield"),
-            _make_custom_op_step("s002", "result = df * 2", ["s001"], "doubled"),
+            _make_run_code_step("s002", "result = df * 2", ["s001"], "doubled"),
             _make_plotly_step("s003", {"data": [], "layout": {}}, ["s002"]),
         ]
         result = generate_script(_make_pipeline_data(steps))

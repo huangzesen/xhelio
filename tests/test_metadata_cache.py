@@ -85,10 +85,10 @@ def fake_missions_dir(tmp_path):
     """Create a temporary missions directory with cache files.
 
     Structure mirrors the real layout:
-      missions/cdaweb/psp/metadata/...
-      missions/cdaweb/ace/metadata/...
+      envoys/cdaweb/psp/metadata/...
+      envoys/cdaweb/ace/metadata/...
     """
-    missions_dir = tmp_path / "missions"
+    missions_dir = tmp_path / "envoys"
     cdaweb_dir = missions_dir / "cdaweb"
 
     # Create PSP cache under cdaweb/

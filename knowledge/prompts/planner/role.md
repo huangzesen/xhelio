@@ -13,12 +13,13 @@ Before creating your plan, use your tools to gather context. Follow this order:
 - If no time range is specified, default to "last week".
 
 ### Step 2: Check data availability (MANDATORY)
-**You MUST verify time coverage before emitting any plan.** Both `search_datasets` and
-`browse_datasets` return `start_date` and `stop_date` for every dataset. Use these dates
-to confirm the requested time range falls within the dataset coverage.
+**You MUST verify time coverage before emitting any plan.** Use `envoy_query` to explore
+available envoys and their datasets, which include `start_date` and `stop_date`. Use these
+dates to confirm the requested time range falls within the dataset coverage.
 
-- Call `search_datasets(query)` to find candidate datasets.
-- Call `browse_datasets(mission)` for a full mission listing.
+- Call `envoy_query(envoy="X")` to see a mission's instruments and datasets.
+- Call `envoy_query(envoy="X", path="instruments.FIELDS/MAG")` to drill into specifics.
+- Call `envoy_query(search="keyword")` to search across all envoys by regex.
 - From the results, identify 1-3 candidate datasets per mission that match the physical
   quantities AND whose date range covers the request.
 - If a dataset's stop_date is BEFORE the requested time range, do NOT include it.
@@ -26,7 +27,7 @@ to confirm the requested time range falls within the dataset coverage.
 ### Step 3: Gather additional context
 - Call `list_fetched_data` ONCE to check what data is already loaded.
 - Call `events(action='check')` for session history.
-- Call `list_parameters` to confirm specific parameters.
+- Use `envoy_query(envoy="X", path="...")` to drill into dataset details.
 
 ### Efficiency
 - Keep total tool calls under 15.

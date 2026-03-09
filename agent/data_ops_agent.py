@@ -3,7 +3,7 @@ Data operations agent for transformations and analysis.
 
 The LLM explores data structure, researches function APIs via
 search_function_docs/get_function_docs, and writes computation code via
-custom_operation — all within a single persistent session.
+run_code — all within a single persistent session.
 
 The orchestrator delegates computation requests here, keeping fetching
 in mission agents and visualization in the visualization agent.
@@ -36,7 +36,7 @@ class DataOpsAgent(SubAgent):
     _PARALLEL_SAFE_TOOLS = {
         "describe_data", "preview_data", "list_fetched_data",
         "search_function_docs", "get_function_docs",
-        "get_session_assets", "review_memory", "events",
+        "manage_session_assets", "review_memory", "events",
     }
 
     def __init__(

@@ -101,6 +101,18 @@ export function TokenUsage({ usage }: Props) {
   const { activeSessionId } = useSessionStore();
   const isStreaming = useChatStore((s) => s.isStreaming);
 
+  // Fetch token usage on mount / session change so resumed sessions show data
+  useEffect(() => {
+    if (!activeSessionId) return;
+    api.getSession(activeSessionId)
+      .then((detail) => {
+        if (detail.token_usage) {
+          useSessionStore.getState().setTokenUsage(detail.token_usage);
+        }
+      })
+      .catch(() => {});
+  }, [activeSessionId]);
+
   // Poll token usage from the session detail while streaming
   useEffect(() => {
     if (!isStreaming || !activeSessionId) return;

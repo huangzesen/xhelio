@@ -100,7 +100,7 @@ class TestSearchDatasetsObservation:
         assert "broader" in obs.lower() or "different" in obs.lower()
 
 
-class TestCustomOperationObservation:
+class TestRunCodeObservation:
     def test_success(self):
         result = {
             "status": "success",
@@ -108,14 +108,14 @@ class TestCustomOperationObservation:
             "num_points": 10000,
             "units": "nT",
         }
-        obs = generate_observation("custom_operation", {}, result)
+        obs = generate_observation("run_code", {}, result)
         assert "Bmag" in obs
         assert "10,000" in obs
         assert "nT" in obs
 
     def test_error(self):
         result = {"status": "error", "message": "NameError: 'Bx' not defined"}
-        obs = generate_observation("custom_operation", {}, result)
+        obs = generate_observation("run_code", {}, result)
         assert "FAILED" in obs
         assert "list_fetched_data" in obs
 
@@ -239,9 +239,9 @@ class TestErrorReflectionHints:
         obs = generate_observation("fetch_data", {}, result)
         assert "search_datasets" in obs
 
-    def test_custom_operation_hint(self):
+    def test_run_code_hint(self):
         result = {"status": "error", "message": "syntax error"}
-        obs = generate_observation("custom_operation", {}, result)
+        obs = generate_observation("run_code", {}, result)
         assert "list_fetched_data" in obs
 
     def test_delegation_hint(self):

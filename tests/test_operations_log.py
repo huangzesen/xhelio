@@ -37,8 +37,8 @@ class TestOperationsLog:
     def test_id_auto_increments(self):
         log = OperationsLog()
         r1 = log.record(tool="fetch_data", args={}, outputs=["a"])
-        r2 = log.record(tool="custom_operation", args={}, outputs=["b"])
-        r3 = log.record(tool="store_dataframe", args={}, outputs=["c"])
+        r2 = log.record(tool="run_code", args={}, outputs=["b"])
+        r3 = log.record(tool="run_code", args={}, outputs=["c"])
         assert r1["id"] == "op_001"
         assert r2["id"] == "op_002"
         assert r3["id"] == "op_003"
@@ -46,7 +46,7 @@ class TestOperationsLog:
     def test_record_with_inputs_and_error(self):
         log = OperationsLog()
         rec = log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "bad code"},
             inputs=["AC_H2_MFI.BGSEc"],
             outputs=[],
@@ -94,7 +94,7 @@ class TestOperationsLog:
             outputs=["AC_H2_MFI.BGSEc"],
         )
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "result = df.mean()", "output_label": "mean"},
             inputs=["AC_H2_MFI.BGSEc"],
             outputs=["mean"],
@@ -108,7 +108,7 @@ class TestOperationsLog:
             data = json.load(f)
         assert len(data) == 2
         assert data[0]["tool"] == "fetch_data"
-        assert data[1]["tool"] == "custom_operation"
+        assert data[1]["tool"] == "run_code"
 
         # Load into a fresh log
         log2 = OperationsLog()
@@ -138,7 +138,7 @@ class TestOperationsLog:
         records = [
             {"id": "op_001", "tool": "fetch_data", "args": {}, "outputs": ["a"],
              "inputs": [], "status": "success", "error": None, "timestamp": "2026-01-01T00:00:00+00:00"},
-            {"id": "op_002", "tool": "custom_operation", "args": {}, "outputs": ["b"],
+            {"id": "op_002", "tool": "run_code", "args": {}, "outputs": ["b"],
              "inputs": ["a"], "status": "success", "error": None, "timestamp": "2026-01-01T00:01:00+00:00"},
         ]
         log = OperationsLog()
@@ -189,7 +189,7 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={"dataset_id": "AC_H2_MFI"}, outputs=["Bx"])
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "mag = ..."},
             inputs=["Bx"],
             outputs=["Bmag"],
@@ -202,26 +202,26 @@ class TestGetPipeline:
         )
         pipeline = log.get_pipeline({"Bx", "Bmag"})
         tools = [r["tool"] for r in pipeline]
-        assert tools == ["fetch_data", "custom_operation", "render_plotly_json"]
+        assert tools == ["fetch_data", "run_code", "render_plotly_json"]
 
     def test_superseded_computation_keeps_last(self):
         """When a label is produced twice, only the last producer is kept."""
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "wrong"},
             inputs=["Bx"],
             outputs=["Bmag"],
         )
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "correct"},
             inputs=["Bx"],
             outputs=["Bmag"],
         )
         pipeline = log.get_pipeline({"Bx", "Bmag"})
-        # Should have fetch + last custom_operation only
+        # Should have fetch + last run_code only
         assert len(pipeline) == 2
         assert pipeline[0]["tool"] == "fetch_data"
         assert pipeline[1]["args"]["code"] == "correct"
@@ -247,7 +247,7 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "bad"},
             inputs=["Bx"],
             outputs=[],
@@ -255,7 +255,7 @@ class TestGetPipeline:
             error="Execution error",
         )
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "good"},
             inputs=["Bx"],
             outputs=["Bmag"],
@@ -269,14 +269,14 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(
-            tool="custom_operation", args={"code": "B = f(A)"}, inputs=["A"], outputs=["B"]
+            tool="run_code", args={"code": "B = f(A)"}, inputs=["A"], outputs=["B"]
         )
         log.record(
-            tool="custom_operation", args={"code": "C = f(B)"}, inputs=["B"], outputs=["C"]
+            tool="run_code", args={"code": "C = f(B)"}, inputs=["B"], outputs=["C"]
         )
         pipeline = log.get_pipeline({"C"})
         tools = [r["tool"] for r in pipeline]
-        assert tools == ["fetch_data", "custom_operation", "custom_operation"]
+        assert tools == ["fetch_data", "run_code", "run_code"]
         assert pipeline[0]["outputs"] == ["A"]
         assert pipeline[1]["outputs"] == ["B"]
         assert pipeline[2]["outputs"] == ["C"]
@@ -380,7 +380,7 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(
-            tool="custom_operation", args={}, inputs=["A"], outputs=["B"]
+            tool="run_code", args={}, inputs=["A"], outputs=["B"]
         )
         # Final labels don't include A or B, but render needs B
         log.record(
@@ -394,7 +394,7 @@ class TestGetPipeline:
         # Should include fetch(A), compute(B), render — because render references B
         tools = [r["tool"] for r in pipeline]
         assert "fetch_data" in tools
-        assert "custom_operation" in tools
+        assert "run_code" in tools
         assert "render_plotly_json" in tools
 
     def test_dedup_does_not_shadow_real_fetch(self):
@@ -407,14 +407,14 @@ class TestGetPipeline:
             outputs=["Bx"],
         )
         log.record(
-            tool="custom_operation",
+            tool="run_code",
             args={"code": "mag"},
             inputs=["Bx"],
             outputs=["Bmag"],
         )
         pipeline = log.get_pipeline({"Bx", "Bmag"})
         tools = [r["tool"] for r in pipeline]
-        assert tools == ["fetch_data", "custom_operation"]
+        assert tools == ["fetch_data", "run_code"]
         # The fetch in the pipeline is the real one, not the dedup
         assert pipeline[0]["args"].get("already_loaded") is None
 
@@ -424,7 +424,7 @@ class TestGetPipeline:
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(tool="fetch_data", args={}, outputs=["B"])
         log.record(
-            tool="custom_operation", args={}, inputs=["A", "B"], outputs=["C"]
+            tool="run_code", args={}, inputs=["A", "B"], outputs=["C"]
         )
         pipeline = log.get_pipeline({"A", "B", "C"})
         ids = [r["id"] for r in pipeline]
@@ -435,7 +435,7 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         log.record(
-            tool="custom_operation", args={}, inputs=["Bx"], outputs=["Bmag"]
+            tool="run_code", args={}, inputs=["Bx"], outputs=["Bmag"]
         )
         log.record(
             tool="render_plotly_json", args={}, inputs=["Bmag"], outputs=[]
@@ -464,10 +464,10 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(
-            tool="custom_operation", args={}, inputs=["A"], outputs=["B"]
+            tool="run_code", args={}, inputs=["A"], outputs=["B"]
         )
         log.record(
-            tool="custom_operation", args={}, inputs=["B"], outputs=["C"]
+            tool="run_code", args={}, inputs=["B"], outputs=["C"]
         )
         log.record(
             tool="render_plotly_json", args={}, inputs=["C"], outputs=[]
@@ -482,7 +482,7 @@ class TestGetPipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(
-            tool="custom_operation", args={}, inputs=["A"], outputs=["B"]
+            tool="run_code", args={}, inputs=["A"], outputs=["B"]
         )
         pipeline = log.get_pipeline({"A", "B"})
         for rec in pipeline:
@@ -510,7 +510,7 @@ class TestGetPipelineMermaid:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         log.record(
-            tool="custom_operation", args={}, inputs=["Bx"], outputs=["Bmag"]
+            tool="run_code", args={}, inputs=["Bx"], outputs=["Bmag"]
         )
         log.record(
             tool="render_plotly_json", args={}, inputs=["Bmag"], outputs=[]
@@ -542,7 +542,7 @@ class TestGetPipelineMermaid:
         log.record(tool="fetch_data", args={}, outputs=["A"])
         log.record(tool="fetch_data", args={}, outputs=["B"])
         log.record(
-            tool="custom_operation", args={}, inputs=["A", "B"], outputs=["C"]
+            tool="run_code", args={}, inputs=["A", "B"], outputs=["C"]
         )
         mermaid = log.get_pipeline_mermaid({"A", "B", "C"})
         assert "op_001 -->|A| op_003" in mermaid
@@ -557,7 +557,7 @@ class TestInputProducers:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         rec = log.record(
-            tool="custom_operation", args={}, inputs=["Bx"], outputs=["Bmag"]
+            tool="run_code", args={}, inputs=["Bx"], outputs=["Bmag"]
         )
         assert rec["input_producers"] == {"Bx": "op_001"}
 
@@ -709,7 +709,7 @@ class TestGetStatePipeline:
         log = OperationsLog()
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
         log.record(
-            tool="custom_operation", args={}, inputs=["Bx"], outputs=["Bmag"]
+            tool="run_code", args={}, inputs=["Bx"], outputs=["Bmag"]
         )
         log.record(
             tool="render_plotly_json", args={"figure_json": {}},
@@ -886,7 +886,7 @@ class TestScopedIds:
         """Scoped IDs survive save/load roundtrip."""
         log = OperationsLog(session_id="s1")
         log.record(tool="fetch_data", args={}, outputs=["a"])
-        log.record(tool="custom_operation", args={}, inputs=["a"], outputs=["b"])
+        log.record(tool="run_code", args={}, inputs=["a"], outputs=["b"])
 
         path = tmp_path / "operations.json"
         log.save_to_file(path)
@@ -901,11 +901,11 @@ class TestScopedIds:
         """get_pipeline works with scoped IDs."""
         log = OperationsLog(session_id="s1")
         log.record(tool="fetch_data", args={}, outputs=["Bx"])
-        log.record(tool="custom_operation", args={}, inputs=["Bx"], outputs=["Bmag"])
+        log.record(tool="run_code", args={}, inputs=["Bx"], outputs=["Bmag"])
         log.record(tool="render_plotly_json", args={}, inputs=["Bmag"], outputs=[])
         pipeline = log.get_pipeline({"Bx", "Bmag"})
         tools = [r["tool"] for r in pipeline]
-        assert tools == ["fetch_data", "custom_operation", "render_plotly_json"]
+        assert tools == ["fetch_data", "run_code", "render_plotly_json"]
         assert pipeline[0]["id"] == "s1:op_001"
         assert pipeline[2]["contributes_to"] == ["s1:op_003"]
 

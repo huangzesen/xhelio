@@ -15,6 +15,76 @@ _LOCAL_CONFIG_PATH = Path(__file__).resolve().parent / "config.json"
 _user_config: dict = {}
 
 
+def _ensure_default_preset(cfg: dict) -> bool:
+    """Create a default preset from current provider/model config if none exists.
+
+    Called from GET /config after module globals are initialized.
+    Returns True if a preset was created.
+    """
+    wb = cfg.get("workbench")
+    if isinstance(wb, dict) and wb.get("preset"):
+        return False  # Already has an active preset
+
+    # Build a preset from current resolve_agent_model for each agent type
+    provider = cfg.get("llm_provider", "gemini")
+    # Find display name from PROVIDERS list
+    provider_name = provider.capitalize()
+    for p in PROVIDERS:
+        if p["id"] == provider:
+            provider_name = p["name"]
+            break
+
+    agents: dict = {}
+    for agent_info in AGENT_TYPES:
+        agent_id = agent_info["id"]
+        a_provider, a_model, a_base_url = resolve_agent_model(agent_id)
+        entry: dict = {"provider": a_provider, "model": a_model}
+        if a_base_url:
+            entry["base_url"] = a_base_url
+        agents[agent_id] = entry
+
+    preset_slug = f"default-{provider}"
+    preset = {
+        "name": provider_name,
+        "agents": agents,
+        "capabilities": resolve_capabilities(),
+    }
+
+    presets = cfg.setdefault("presets", {})
+    presets[preset_slug] = preset
+    wb = cfg.setdefault("workbench", {})
+    wb["preset"] = preset_slug
+    wb.setdefault("agents", {})
+    return True
+
+
+def _migrate_inline_model_to_agent(cfg: dict) -> bool:
+    """Migrate presets with inline_model field to agents.inline entry.
+
+    Returns True if migration was performed.
+    """
+    presets = cfg.get("presets")
+    if not isinstance(presets, dict):
+        return False
+
+    changed = False
+    for _key, preset in presets.items():
+        if not isinstance(preset, dict):
+            continue
+        inline_model = preset.pop("inline_model", None)
+        if not inline_model:
+            continue
+        agents = preset.setdefault("agents", {})
+        if "inline" not in agents:
+            # Infer provider from orchestrator entry
+            orch = agents.get("orchestrator", {})
+            provider = orch.get("provider", cfg.get("llm_provider", "gemini"))
+            agents["inline"] = {"provider": provider, "model": inline_model}
+            changed = True
+
+    return changed
+
+
 def _load_config() -> dict:
     # Project-local config.json as base, user home config overlaid on top
     merged: dict = {}
@@ -25,6 +95,22 @@ def _load_config() -> dict:
                     merged.update(json.load(f))
             except (json.JSONDecodeError, OSError):
                 pass
+
+    # Run migrations on loaded config
+    needs_save = False
+    needs_save |= _migrate_inline_model_to_agent(merged)
+
+    if needs_save and CONFIG_PATH.exists():
+        try:
+            existing = json.loads(CONFIG_PATH.read_text(encoding="utf-8"))
+        except (json.JSONDecodeError, OSError):
+            existing = {}
+        existing["presets"] = merged.get("presets", {})
+        CONFIG_PATH.parent.mkdir(parents=True, exist_ok=True)
+        tmp = CONFIG_PATH.with_suffix(".tmp")
+        tmp.write_text(json.dumps(existing, indent=2), encoding="utf-8")
+        tmp.rename(CONFIG_PATH)
+
     return merged
 
 
@@ -127,6 +213,8 @@ AGENT_TYPES = [
      "description": "Automated discovery and insight"},
     {"id": "memory", "name": "Memory", "icon": "🧠", "group": "specialists",
      "description": "Long-term memory extraction"},
+    {"id": "inline", "name": "Inline", "icon": "⚡", "group": "brain",
+     "description": "Autocomplete, session titles, cheapest model"},
 ]
 
 AGENT_TYPE_IDS = [a["id"] for a in AGENT_TYPES]
@@ -286,6 +374,7 @@ def resolve_agent_model(agent_type: str) -> tuple[str, str, str | None]:
         "orchestrator": SMART_MODEL,
         "planner": PLANNER_MODEL,
         "insight": INSIGHT_MODEL,
+        "inline": INLINE_MODEL,
     }
     model = _tier_map.get(agent_type, SUB_AGENT_MODEL)
     return (LLM_PROVIDER, model, None)
@@ -354,7 +443,7 @@ def _migrate_combos_to_presets(cfg: dict) -> bool:
             "model": ["orchestrator"],
             "sub_agent_model": ["viz_plotly", "viz_mpl", "viz_jsx", "data_ops", "data_io", "envoy"],
             "insight_model": ["insight", "eureka"],
-            "inline_model": ["memory"],
+            "inline_model": ["inline", "memory"],
             "planner_model": ["planner"],
         }
         for tier, agent_types in tier_to_agents.items():

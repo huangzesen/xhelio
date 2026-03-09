@@ -10,8 +10,7 @@ Run with: python -m pytest tests/test_envoy_agent.py
 import pytest
 from knowledge.catalog import SPACECRAFT
 from knowledge.prompt_builder import build_envoy_prompt
-from agent.tools import get_tool_schemas
-from agent.agent_registry import ENVOY_TOOLS
+from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
 
 class TestBuildEnvoyPromptForAgent:
@@ -40,8 +39,8 @@ class TestBuildEnvoyPromptForAgent:
         prompt = build_envoy_prompt("PSP")
         assert "Parker Solar Probe" in prompt
         assert "PSP_FLD_L2_MAG_RTN_1MIN" in prompt
-        # Should NOT mention other missions
-        assert "AC_H2_MFI" not in prompt
+        # The dataset catalog section should only list PSP datasets, not other missions' catalogs
+        assert "## Mission: ACE" not in prompt
         assert "OMNI_HRO_1MIN" not in prompt
 
     def test_ace_prompt_is_focused(self):
@@ -49,24 +48,25 @@ class TestBuildEnvoyPromptForAgent:
         # ACE name may be "ACE" or "Advanced Composition Explorer"
         assert "ACE" in prompt
         assert "AC_H2_MFI" in prompt
-        assert "PSP_FLD_L2_MAG_RTN_1MIN" not in prompt
+        # The dataset catalog section should only list ACE datasets
+        assert "## Mission: Parker Solar Probe" not in prompt
 
     def test_prompt_contains_data_specialist_identity(self):
         prompt = build_envoy_prompt("PSP")
-        assert "data specialist agent" in prompt.lower()
+        assert "data specialist" in prompt.lower()
 
-    def test_prompt_directs_to_list_parameters(self):
+    def test_prompt_directs_to_browse_parameters(self):
         prompt = build_envoy_prompt("PSP")
-        assert "list_parameters" in prompt
+        assert "browse_parameters" in prompt
 
     def test_ppi_mission_produces_prompt(self):
-        """PPI missions (ppi group) should produce a valid prompt."""
+        """PPI missions (ppi kind) should produce a valid prompt."""
         prompt = build_envoy_prompt("JUNO_PPI")
         assert isinstance(prompt, str)
         assert len(prompt) > 50
 
     def test_spice_mission_uses_spice_prompt(self):
-        """SPICE mission (spice group) should use the SPICE-specific prompt."""
+        """SPICE mission (spice kind) should use the SPICE-specific prompt."""
         prompt = build_envoy_prompt("SPICE")
         assert isinstance(prompt, str)
         assert len(prompt) > 50
@@ -89,38 +89,44 @@ class TestEnvoyAgentToolFiltering:
         "plot_computed_data",
     }
 
-    def test_envoy_tools_exclude_plotting(self):
-        envoy_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in envoy_tools}
+    def test_cdaweb_envoy_tools_exclude_plotting(self):
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
         assert names.isdisjoint(self.PLOTTING_TOOLS), (
             f"Mission sub-agents should not have plotting tools, found: {names & self.PLOTTING_TOOLS}"
         )
 
-    def test_envoy_tools_include_fetch(self):
-        envoy_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in envoy_tools}
-        assert "fetch_data" in names
+    def test_cdaweb_envoy_tools_include_fetch(self):
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
+        assert "fetch_data_cdaweb" in names
         assert "list_fetched_data" in names
 
-    def test_envoy_tools_exclude_compute(self):
+    def test_ppi_envoy_tools_include_fetch(self):
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("JUNO_PPI"))
+        assert "fetch_data_ppi" in names
+        assert "list_fetched_data" in names
+
+    def test_cdaweb_envoy_tools_exclude_compute(self):
         """EnvoyAgent no longer has compute tools — those moved to DataOpsAgent."""
-        envoy_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in envoy_tools}
-        assert "custom_operation" not in names
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
+        assert "run_code" not in names
         assert "describe_data" not in names
         assert "save_data" not in names
 
     def test_envoy_tools_include_discovery(self):
-        envoy_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in envoy_tools}
-        assert "search_datasets" in names
-        assert "list_parameters" in names
-        assert "get_dataset_docs" in names
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
+        assert "browse_parameters" in names
 
     def test_envoy_tools_include_conversation(self):
-        envoy_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in envoy_tools}
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
         assert "ask_clarification" in names
+
+    def test_cdaweb_does_not_have_ppi_tools(self):
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
+        assert "fetch_data_ppi" not in names
+
+    def test_ppi_does_not_have_cdaweb_tools(self):
+        names = set(ENVOY_KIND_REGISTRY.get_tool_names("JUNO_PPI"))
+        assert "fetch_data_cdaweb" not in names
 
 
 class TestEnvoyAgentImport:

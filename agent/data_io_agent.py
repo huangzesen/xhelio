@@ -7,7 +7,7 @@ Loads local files and turns unstructured text into structured DataFrames. Handle
 - Tables extracted from documents (PDF, images)
 - Any text-to-DataFrame conversion
 
-Uses load_file for tabular imports, store_dataframe for text-to-DataFrame,
+Uses load_file for tabular imports, run_code (with store_as) for text-to-DataFrame,
 and read_document for document reading.
 """
 
@@ -26,7 +26,7 @@ class DataIOAgent(SubAgent):
     _has_deferred_reviews = True
 
     _PARALLEL_SAFE_TOOLS = {
-        "list_fetched_data", "get_session_assets",
+        "list_fetched_data", "manage_session_assets",
         "review_memory", "events",
     }
 

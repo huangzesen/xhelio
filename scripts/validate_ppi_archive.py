@@ -25,7 +25,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 
-_PPI_DIR = Path(__file__).resolve().parent.parent / "knowledge" / "missions" / "ppi"
+_PPI_DIR = Path(__file__).resolve().parent.parent / "knowledge" / "envoys" / "ppi"
 
 
 def _collect_datasets(mission_filter: str | None, dataset_filter: str | None):

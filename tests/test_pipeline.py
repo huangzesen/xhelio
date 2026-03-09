@@ -36,12 +36,12 @@ def _fetch_record(op_id, dataset_id, parameter_id, time_range, output_label):
 
 
 def _compute_record(op_id, code, input_labels, output_label, input_producers=None):
-    """Create a synthetic custom_operation record."""
+    """Create a synthetic run_code record."""
     if input_producers is None:
         input_producers = {}
     return {
         "id": op_id,
-        "tool": "custom_operation",
+        "tool": "run_code",
         "status": "success",
         "inputs": input_labels,
         "outputs": [output_label],
@@ -96,7 +96,7 @@ def _simple_pipeline_records():
     return [
         _fetch_record("op_001", "DS1", "P1", "2024-01-01 to 2024-01-31", "A.field"),
         _compute_record(
-            "op_002", "result = df_field.apply(np.linalg.norm, axis=1)",
+            "op_002", "import pandas as pd\nimport numpy as np\ndf = pd.read_parquet('A.field.parquet')\nresult = df.apply(np.linalg.norm, axis=1)",
             ["A.field"], "A.magnitude",
             input_producers={"A.field": "op_001"},
         ),
@@ -141,12 +141,12 @@ def _multi_branch_records():
     return [
         _fetch_record("op_001", "DS1", "P1", "2024-01-01 to 2024-01-31", "A.field"),
         _compute_record(
-            "op_002", "result = df_field.apply(np.linalg.norm, axis=1)",
+            "op_002", "import pandas as pd\nimport numpy as np\ndf = pd.read_parquet('A.field.parquet')\nresult = df.apply(np.linalg.norm, axis=1)",
             ["A.field"], "A.magnitude",
             input_producers={"A.field": "op_001"},
         ),
         _compute_record(
-            "op_003", "result = df_field.rolling(10).mean()",
+            "op_003", "import pandas as pd\ndf = pd.read_parquet('A.field.parquet')\nresult = df.rolling(10).mean()",
             ["A.field"], "A.smoothed",
             input_producers={"A.field": "op_001"},
         ),
@@ -425,8 +425,8 @@ class TestMutation:
         pipe = Pipeline.from_records(_simple_pipeline_records())
         new_id = pipe.insert_node(
             after_id="op_002",
-            tool="custom_operation",
-            params={"code": "result = df_magnitude.rolling(10).mean()"},
+            tool="run_code",
+            params={"code": "import pandas as pd\ndf = pd.read_parquet('A.magnitude.parquet')\nresult = df.rolling(10).mean()"},
             output_label="A.smoothed",
         )
         assert new_id in pipe
@@ -447,7 +447,7 @@ class TestMutation:
     def test_insert_node_nonexistent(self):
         pipe = Pipeline.from_records(_simple_pipeline_records())
         with pytest.raises(KeyError):
-            pipe.insert_node("op_999", "custom_operation", {}, "X.out")
+            pipe.insert_node("op_999", "run_code", {}, "X.out")
 
 
 # ===========================================================================
@@ -484,7 +484,7 @@ class TestExecution:
         store = self._make_store_with_data()
 
         # Update compute code to something simple
-        pipe._nodes["op_002"].params["code"] = "result = df_field.sum(axis=1)"
+        pipe._nodes["op_002"].params["code"] = "import pandas as pd\ndf = pd.read_parquet('A.field.parquet')\nresult = df.sum(axis=1)"
         pipe._nodes["op_002"].state = NodeState.STALE
 
         result = pipe.execute_stale(store)
@@ -514,7 +514,7 @@ class TestExecution:
         store = self._make_store_with_data()
 
         # Execute compute to get initial data + hash
-        pipe._nodes["op_002"].params["code"] = "result = df_field.sum(axis=1)"
+        pipe._nodes["op_002"].params["code"] = "import pandas as pd\ndf = pd.read_parquet('A.field.parquet')\nresult = df.sum(axis=1)"
         pipe._nodes["op_002"].state = NodeState.STALE
         pipe.execute_stale(store)
 
@@ -528,7 +528,7 @@ class TestExecution:
         pipe = Pipeline.from_records(_simple_pipeline_records())
         store = self._make_store_with_data()
 
-        pipe._nodes["op_002"].params["code"] = "result = df_field.sum(axis=1)"
+        pipe._nodes["op_002"].params["code"] = "import pandas as pd\ndf = pd.read_parquet('A.field.parquet')\nresult = df.sum(axis=1)"
         pipe._nodes["op_002"].state = NodeState.STALE
 
         calls = []
@@ -645,12 +645,12 @@ class TestNodeDetail:
         assert detail is not None
         assert detail["id"] == "op_002"
         assert detail["type"] == "compute"
-        assert detail["tool"] == "custom_operation"
+        assert detail["tool"] == "run_code"
         assert detail["state"] == "clean"
         assert detail["inputs"] == ["A.field"]
         assert detail["outputs"] == ["A.magnitude"]
         # Full code should be present (not truncated)
-        assert detail["code"] == "result = df_field.apply(np.linalg.norm, axis=1)"
+        assert detail["code"] == "import pandas as pd\nimport numpy as np\ndf = pd.read_parquet('A.field.parquet')\nresult = df.apply(np.linalg.norm, axis=1)"
         assert detail["description"] == "test compute"
         # Full params dict should be present
         assert "code" in detail["params"]

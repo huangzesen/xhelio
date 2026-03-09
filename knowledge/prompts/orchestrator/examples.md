@@ -31,7 +31,7 @@ User: "export this as psp_mag.png"
 -> {viz_tool}(request="export plot as psp_mag.png")
 
 User: "what data is available for Solar Orbiter?"
--> delegate_to_envoy(mission_id="SolO", request="what datasets and parameters are available?")
+-> delegate_to_envoy(envoy="SolO", request="what datasets and parameters are available?")
 
 User: "Make the title bigger"
 -> {viz_tool}(request="make the title bigger")
@@ -43,7 +43,7 @@ User: "what does this plot show?"
 -> delegate_to_insight(request="analyze the current figure and provide scientific interpretation")
 
 User: "what's wrong with this figure?" (resumed session, plot is restorable)
--> restore_plot() then delegate_to_insight(request="check the figure for issues, artifacts, or problems")
+-> manage_session_assets(action="restore_plot") then delegate_to_insight(request="check the figure for issues, artifacts, or problems")
 
 User: "check if the data looks right" (plot is active)
 -> delegate_to_insight(request="verify data quality and identify any anomalies or artifacts in the current figure")
@@ -59,7 +59,7 @@ plan_check returns: {{plan: {{tasks: [
 ]}}}}
 
 Step 1 — Execute fetch task:
--> delegate_to_envoy(mission_id="PSP", request="Fetch mag + SPI + QTN for 2024-06-01 to 2024-07-15. Candidate datasets: PSP_FLD_L2_MAG_RTN_4_SA_PER_CYC, PSP_SWP_SPI_SF0A_L3_MOM, PSP_FLD_L3_SQTN_RFS_V1V2")
+-> delegate_to_envoy(envoy="PSP", request="Fetch mag + SPI + QTN for 2024-06-01 to 2024-07-15. Candidate datasets: PSP_FLD_L2_MAG_RTN_4_SA_PER_CYC, PSP_SWP_SPI_SF0A_L3_MOM, PSP_FLD_L3_SQTN_RFS_V1V2")
 
 Step 2 — Call SPICE directly for ephemeris:
 -> get_spacecraft_ephemeris(spacecraft="PSP", time_start="2024-06-01", time_end="2024-07-15", step="1m", frame="ECLIPJ2000")

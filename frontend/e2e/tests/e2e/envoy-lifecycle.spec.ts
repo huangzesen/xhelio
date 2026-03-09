@@ -122,7 +122,7 @@ test.describe('@e2e Envoy Lifecycle (Package Envoy)', () => {
     console.log('[ENVOY TEST 3] list_envoys response:', response.substring(0, 500));
   });
 
-  test('4. Use package envoy — run sandboxed code via custom_operation', async ({ page }) => {
+  test('4. Use package envoy — run sandboxed code via run_code', async ({ page }) => {
     test.setTimeout(WORKFLOW_TIMEOUT);
     await initApp(page);
 
@@ -133,11 +133,11 @@ test.describe('@e2e Envoy Lifecycle (Package Envoy)', () => {
     );
 
     const activityText = await getActivityPanelText(page);
-    if (!activityText.includes('custom_operation')) {
+    if (!activityText.includes('run_code')) {
       recordIssue({
         feature: 'envoy',
         severity: 'major',
-        title: 'custom_operation not called via package envoy',
+        title: 'run_code not called via package envoy',
         detail: `Activity panel: ${activityText.substring(0, 500)}`,
       });
     }
@@ -148,12 +148,12 @@ test.describe('@e2e Envoy Lifecycle (Package Envoy)', () => {
       recordIssue({
         feature: 'envoy',
         severity: 'critical',
-        title: 'custom_operation execution error in package envoy',
+        title: 'run_code execution error in package envoy',
         detail: `Response: ${response.substring(0, 500)}`,
       });
     }
 
-    console.log('[ENVOY TEST 4] envoy custom_operation:', response.substring(0, 500));
+    console.log('[ENVOY TEST 4] envoy run_code:', response.substring(0, 500));
   });
 
   test('5. Remove envoy — clean up test envoy', async ({ page }) => {

@@ -94,7 +94,7 @@ class OperationsLog:
         """Append an operation record and return it.
 
         Args:
-            tool: Tool name (e.g. "fetch_data", "custom_operation").
+            tool: Tool name (e.g. "fetch_data", "run_code").
             args: Tool-specific arguments dict.
             outputs: Labels produced by this operation.
             inputs: Labels consumed by this operation.
@@ -442,8 +442,7 @@ class OperationsLog:
 
         _TOOL_DISPLAY = {
             "fetch_data": "fetch",
-            "custom_operation": "compute",
-            "store_dataframe": "create",
+            "run_code": "compute",
             "render_plotly_json": "plot",
             "generate_mpl_script": "mpl_plot",
             "generate_jsx_component": "jsx_plot",

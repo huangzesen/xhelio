@@ -23,7 +23,7 @@ export function SetupScreen({ onComplete }: Props) {
     setResult(null);
 
     try {
-      const res = await updateApiKey(key.trim());
+      const res = await updateApiKey('gemini', key.trim());
       setResult({ valid: res.valid, error: res.error });
       if (res.valid) {
         setTimeout(() => onComplete(), 1200);

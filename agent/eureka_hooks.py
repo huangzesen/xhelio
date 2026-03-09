@@ -255,7 +255,7 @@ class EurekaHooks:
 
     def format_eureka_suggestion_as_user_msg(self, suggestion) -> str:
         """Convert a EurekaSuggestion into a natural-language user message."""
-        parts = [f"[Eureka Mode] {suggestion.description}"]
+        parts = [f"[eureka] {suggestion.description}"]
         if suggestion.rationale:
             parts.append(f"Rationale: {suggestion.rationale}")
         if suggestion.parameters:
@@ -399,6 +399,6 @@ class EurekaHooks:
 
     def reset_eureka_on_user_message(self, user_message: str) -> None:
         """Reset eureka round counter when a real (non-eureka) user message arrives."""
-        if self._mode and not user_message.startswith("[Eureka Mode]"):
+        if self._mode and not user_message.startswith("[eureka]"):
             self._round_counter = 0
             self._pending_suggestion = None

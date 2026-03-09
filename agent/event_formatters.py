@@ -152,13 +152,13 @@ def _fmt_data_computed(agent: str, data: dict, children: list) -> tuple[str, str
     error = data.get("error")
 
     if error or status == "error":
-        summary = f"custom_operation FAILED: {error or 'unknown error'}"
+        summary = f"run_code FAILED: {error or 'unknown error'}"
         code = args.get("code", "")
         sources = data.get("inputs", [])
         details = f"Error: {error}\nCode: {code}\nSources: {', '.join(str(s) for s in sources)}"
         return (summary, details)
 
-    parts = [f"custom_operation -> {label}"]
+    parts = [f"run_code -> {label}"]
     info = []
     if data.get("n_pts"):
         info.append(f"{data['n_pts']} pts")
@@ -188,7 +188,7 @@ def _fmt_data_created(agent: str, data: dict, children: list) -> tuple[str, str]
     label = _first_output(data)
     n_pts = data.get("n_pts", "")
     pts_info = f": {n_pts} pts" if n_pts else ""
-    summary = f"store_dataframe -> {label}{pts_info}"
+    summary = f"run_code -> {label}{pts_info}"
 
     detail_lines = [f"Label: {label}"]
     if args.get("code"):
@@ -300,7 +300,7 @@ def _fmt_custom_op_failure(agent: str, data: dict, children: list) -> tuple[str,
     error = data.get("error", "unknown")
     code = args.get("code", "")
     sources = data.get("inputs", [])
-    summary = f"custom_operation FAILED: {error}"
+    summary = f"run_code FAILED: {error}"
     detail_lines = [f"Error: {error}"]
     if code:
         detail_lines.append(f"Code: {code}")

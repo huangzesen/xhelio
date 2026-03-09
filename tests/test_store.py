@@ -199,7 +199,7 @@ class TestDataStore:
         got = store.get("A")
         assert got is not None
         assert got.label == "A"
-        pd.testing.assert_frame_equal(got.data, entry.data)
+        pd.testing.assert_frame_equal(got.data, entry.data, check_freq=False)
         assert store.get("B") is None
 
     def test_has(self, tmp_path):
@@ -399,7 +399,7 @@ class TestPersistence:
         assert store2.has(label)
         got = store2.get(label)
         assert got.label == label
-        pd.testing.assert_frame_equal(got.data, entry.data)
+        pd.testing.assert_frame_equal(got.data, entry.data, check_freq=False)
 
 
 # ---------------------------------------------------------------------------
@@ -711,6 +711,113 @@ class TestMergeEntries:
         store.put(e2)
         with pytest.raises(ValueError, match="same data product"):
             store.merge_entries([e1.id, e2.id])
+
+
+class TestMultiTypeDataEntry:
+    """DataStore should accept dict, str, and bytes data types."""
+
+    def test_store_dict_entry(self, tmp_path):
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(
+            label="pfss_result",
+            data={"grid_shape": (30, 180, 360), "br_range": [-2.5, 2.5]},
+            description="PFSS computation output",
+        )
+        store.put(entry)
+        loaded = store.get("pfss_result")
+        assert loaded is not None
+        assert loaded.data == {"grid_shape": [30, 180, 360], "br_range": [-2.5, 2.5]}
+
+    def test_store_string_entry(self, tmp_path):
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(
+            label="analysis_log",
+            data="PFSS computation completed successfully.\nGrid: 30x180x360",
+            description="Log output",
+        )
+        store.put(entry)
+        loaded = store.get("analysis_log")
+        assert loaded is not None
+        assert loaded.data == "PFSS computation completed successfully.\nGrid: 30x180x360"
+
+    def test_store_bytes_entry(self, tmp_path):
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(
+            label="test_image",
+            data=b"\x89PNG\r\n\x1a\n" + b"\x00" * 100,
+            description="Test image",
+        )
+        store.put(entry)
+        loaded = store.get("test_image")
+        assert loaded is not None
+        assert loaded.data == entry.data
+
+    def test_data_type_property(self):
+        assert DataEntry(label="a", data=pd.DataFrame()).data_type == "dataframe"
+        assert DataEntry(label="b", data={"k": 1}).data_type == "dict"
+        assert DataEntry(label="c", data="hello").data_type == "text"
+        assert DataEntry(label="d", data=b"\x00").data_type == "bytes"
+
+    def test_summary_dict_entry(self, tmp_path):
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(label="d", data={"x": 1}, description="dict data")
+        store.put(entry)
+        loaded = store.get("d")
+        s = loaded.summary()
+        assert s["label"] == "d"
+        assert s["data_type"] == "dict"
+
+    def test_summary_text_entry(self, tmp_path):
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(label="t", data="hello world", description="text")
+        store.put(entry)
+        loaded = store.get("t")
+        s = loaded.summary()
+        assert s["label"] == "t"
+        assert s["data_type"] == "text"
+        assert s["length"] == 11
+
+
+class TestLazyLoading:
+    def test_lazy_loading(self, tmp_path):
+        """DataEntry should load data lazily from disk."""
+        store = DataStore(tmp_path / "data")
+        df = pd.DataFrame(
+            {"Bx": [1.0, 2.0, 3.0]},
+            index=pd.date_range("2026-01-01", periods=3, freq="h"),
+        )
+        entry = DataEntry(label="test.lazy", data=df, units="nT")
+        store.put(entry)
+
+        # Clear cache — force next get() to load from disk
+        store._cache.clear()
+
+        loaded = store.get("test.lazy")
+        # Data should NOT be loaded yet (lazy)
+        assert loaded._data_path is not None
+        assert loaded._data_loaded is False
+
+        # Accessing .data triggers the load
+        actual = loaded.data
+        assert len(actual) == 3
+        assert loaded._data_loaded is True
+
+    def test_lazy_dict_entry(self, tmp_path):
+        """Lazy loading should work for dict entries too."""
+        store = DataStore(tmp_path / "data")
+        entry = DataEntry(label="lazy_dict", data={"x": 1, "y": 2})
+        store.put(entry)
+        store._cache.clear()
+
+        loaded = store.get("lazy_dict")
+        assert loaded._data_loaded is False
+        assert loaded.data == {"x": 1, "y": 2}
+        assert loaded._data_loaded is True
+
+    def test_eager_entry_has_data_loaded_true(self):
+        """In-memory entries should have _data_loaded=True."""
+        entry = DataEntry(label="eager", data=pd.DataFrame({"v": [1]}))
+        assert entry._data_loaded is True
 
 
 class TestPersistence:

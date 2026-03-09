@@ -1,19 +1,12 @@
 """Tests for rendering/mpl_sandbox.py — AST validation and subprocess execution."""
 
 import json
-import pickle
 import textwrap
-from pathlib import Path
 
 import pandas as pd
 import pytest
 
-from rendering.mpl_sandbox import (
-    validate_mpl_script,
-    build_script_wrapper,
-    run_mpl_script,
-    MplSandboxResult,
-)
+from rendering.mpl_sandbox import validate_mpl_script
 
 
 # ---- AST Validation Tests ----
@@ -181,299 +174,191 @@ class TestValidateMplScript:
         assert violations == []
 
 
-# ---- Script Wrapper Tests ----
+# ---- Script Execution Tests (new flow: _stage_entry + execute_sandboxed) ----
 
 
-class TestBuildScriptWrapper:
-    """Test the script wrapper builder."""
+class TestMplScriptExecution:
+    """Test the new mpl script execution flow using run_code sandbox."""
 
-    def test_wrapper_includes_preamble(self, tmp_path):
-        code = "fig, ax = plt.subplots()"
-        data_dir = tmp_path / "data"
-        output_path = tmp_path / "output.png"
-        labels_index = {"label1": "abc123"}
+    def _build_preamble(self, staged_labels, output_path):
+        """Build the matplotlib preamble (same as _handle_generate_mpl_script)."""
+        labels_json = json.dumps(staged_labels)
+        return f'''import warnings
+import matplotlib
+matplotlib.use("Agg")
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+import json
 
-        wrapped = build_script_wrapper(code, data_dir, output_path, labels_index)
+warnings.filterwarnings("ignore", category=UserWarning, module="matplotlib")
 
-        assert "matplotlib.use(\"Agg\")" in wrapped
-        assert "import matplotlib.pyplot as plt" in wrapped
-        assert "import numpy as np" in wrapped
-        assert "import pandas as pd" in wrapped
-        assert "def load_data" in wrapped
-        assert "def load_meta" in wrapped
-        assert "def available_labels" in wrapped
+_OUTPUT_PATH = {repr(str(output_path))}
+_STAGED_LABELS = json.loads({repr(labels_json)})
 
-    def test_wrapper_includes_user_code(self, tmp_path):
-        code = "fig, ax = plt.subplots()\nax.plot([1, 2, 3])"
-        wrapped = build_script_wrapper(
-            code, tmp_path, tmp_path / "out.png", {}
-        )
-        assert "fig, ax = plt.subplots()" in wrapped
-        assert "ax.plot([1, 2, 3])" in wrapped
+def load_data(label):
+    path = f"{{label}}.parquet"
+    import os
+    if not os.path.exists(path):
+        raise KeyError(f"Label '{{label}}' not found. Available labels: {{available_labels()}}")
+    return pd.read_parquet(path)
 
-    def test_wrapper_includes_epilogue(self, tmp_path):
-        code = "plt.plot([1, 2, 3])"
-        wrapped = build_script_wrapper(
-            code, tmp_path, tmp_path / "out.png", {}
-        )
-        assert "plt.savefig" in wrapped
-        assert 'plt.close("all")' in wrapped
+def load_meta(label):
+    path = f"{{label}}.meta.json"
+    import os
+    if not os.path.exists(path):
+        return {{}}
+    with open(path) as f:
+        return json.load(f)
 
-    def test_wrapper_data_dir_path(self, tmp_path):
-        code = "pass"
-        data_dir = tmp_path / "my_data"
-        wrapped = build_script_wrapper(
-            code, data_dir, tmp_path / "out.png", {}
-        )
-        assert str(data_dir) in wrapped
+def available_labels():
+    return _STAGED_LABELS
 
-    def test_wrapper_labels_index(self, tmp_path):
-        code = "pass"
-        labels = {"AC_H2_MFI.Magnitude": "abc12345", "PSP_Bmag": "def67890"}
-        wrapped = build_script_wrapper(
-            code, tmp_path, tmp_path / "out.png", labels
-        )
-        assert "AC_H2_MFI.Magnitude" in wrapped
-        assert "abc12345" in wrapped
+# === User script starts below ===
+'''
 
+    def _build_epilogue(self):
+        return '''
 
-# ---- Script Execution Tests ----
-
-
-class TestRunMplScript:
-    """Test full script execution in subprocess."""
+# === Auto-generated epilogue ===
+plt.savefig(_OUTPUT_PATH, dpi=150, bbox_inches="tight")
+plt.close("all")
+'''
 
     def test_simple_plot_produces_png(self, tmp_path):
-        """A simple matplotlib script should produce a PNG file."""
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        labels_index = {}
-        (data_dir / "_labels.json").write_text("{}")
+        """A simple plot should produce a PNG file."""
+        from data_ops.sandbox import execute_sandboxed
 
-        code = textwrap.dedent("""\
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
+
+        user_code = textwrap.dedent("""\
             fig, ax = plt.subplots(figsize=(6, 4))
             ax.plot([1, 2, 3, 4], [10, 20, 25, 30])
             ax.set_title("Simple Test")
         """)
 
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index=labels_index,
-            script_id="test_001",
-        )
+        wrapped = self._build_preamble([], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
 
-        assert result.success, f"Script failed: {result.stderr}"
-        assert result.output_path is not None
-        assert Path(result.output_path).exists()
-        assert result.exit_code == 0
-        # Verify it's a PNG (starts with PNG magic bytes)
-        with open(result.output_path, "rb") as f:
-            magic = f.read(8)
-        assert magic[:4] == b"\x89PNG"
+        assert output_path.exists()
+        with open(output_path, "rb") as f:
+            magic = f.read(4)
+        assert magic == b"\x89PNG"
 
-    def test_script_with_print_captures_stdout(self, tmp_path):
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        (data_dir / "_labels.json").write_text("{}")
+    @staticmethod
+    def _stage_df(label: str, df: "pd.DataFrame", sandbox_dir, **meta_fields):
+        """Stage a DataFrame as parquet + meta.json (mirrors _stage_entry/_stage_meta)."""
+        df.to_parquet(sandbox_dir / f"{label}.parquet")
+        meta = {"label": label}
+        meta.update(meta_fields)
+        (sandbox_dir / f"{label}.meta.json").write_text(json.dumps(meta, default=str))
 
-        code = textwrap.dedent("""\
-            print("Hello from script")
-            fig, ax = plt.subplots()
-            ax.plot([1, 2], [3, 4])
-        """)
+    def test_load_data_reads_staged_parquet(self, tmp_path):
+        """load_data() should read parquet files staged as .parquet."""
+        from data_ops.sandbox import execute_sandboxed
 
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_print",
-        )
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
 
-        assert result.success
-        assert "Hello from script" in result.stdout
-
-    def test_script_with_error_returns_stderr(self, tmp_path):
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        (data_dir / "_labels.json").write_text("{}")
-
-        code = "raise ValueError('intentional error')"
-
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_error",
-        )
-
-        assert not result.success
-        assert "ValueError" in result.stderr
-        assert "intentional error" in result.stderr
-        assert result.exit_code != 0
-
-    def test_validation_failure_returns_violations(self, tmp_path):
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-
-        code = "import socket\nimport subprocess"
-
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_blocked",
-        )
-
-        assert not result.success
-        assert "validation failed" in result.stderr.lower()
-        assert "socket" in result.stderr
-
-    def test_timeout_enforcement(self, tmp_path):
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        (data_dir / "_labels.json").write_text("{}")
-
-        code = textwrap.dedent("""\
-            import time
-            time.sleep(10)
-            fig, ax = plt.subplots()
-            ax.plot([1], [1])
-        """)
-
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_timeout",
-            timeout=2.0,
-        )
-
-        assert not result.success
-        assert "timed out" in result.stderr.lower()
-
-    def test_script_saves_to_mpl_scripts_dir(self, tmp_path):
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        (data_dir / "_labels.json").write_text("{}")
-
-        code = "fig, ax = plt.subplots()\nax.plot([1], [1])"
-
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_save",
-        )
-
-        assert result.script_path is not None
-        script_path = Path(result.script_path)
-        assert script_path.exists()
-        assert script_path.name == "test_save.py"
-        assert script_path.parent.name == "mpl_scripts"
-
-    def test_load_data_helper(self, tmp_path):
-        """Test that the load_data() helper can read pickled DataFrames."""
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-
-        # Create a mock data entry
-        hash_dir = data_dir / "abcd1234"
-        hash_dir.mkdir()
+        # Create and stage data
         df = pd.DataFrame(
             {"value": [10.0, 20.0, 30.0]},
             index=pd.date_range("2024-01-01", periods=3, freq="h"),
         )
-        df.to_pickle(hash_dir / "data.pkl")
-        meta = {"label": "TEST.Value", "units": "nT"}
-        (hash_dir / "meta.json").write_text(json.dumps(meta))
+        self._stage_df("TEST.Value", df, sandbox_dir, units="nT")
 
-        labels_index = {"TEST.Value": "abcd1234"}
-        (data_dir / "_labels.json").write_text(json.dumps(labels_index))
-
-        code = textwrap.dedent("""\
-            labels = available_labels()
-            print(f"Labels: {labels}")
+        user_code = textwrap.dedent("""\
             df = load_data("TEST.Value")
             print(f"Shape: {df.shape}")
             print(f"Columns: {list(df.columns)}")
-            meta = load_meta("TEST.Value")
-            print(f"Units: {meta.get('units', 'unknown')}")
             fig, ax = plt.subplots()
             ax.plot(df.index, df["value"])
         """)
 
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index=labels_index,
-            script_id="test_load_data",
-        )
+        wrapped = self._build_preamble(["TEST.Value"], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
 
-        assert result.success, f"Script failed: {result.stderr}"
-        assert "TEST.Value" in result.stdout
-        assert "Shape: (3, 1)" in result.stdout
-        assert "Units: nT" in result.stdout
+        assert output_path.exists()
+        assert "Shape: (3, 1)" in output
+        assert "value" in output
 
-    def test_load_data_missing_label_error(self, tmp_path):
-        """Test that load_data() raises a clear error for missing labels."""
-        data_dir = tmp_path / "data"
-        data_dir.mkdir()
-        output_dir = tmp_path / "mpl_outputs"
-        (data_dir / "_labels.json").write_text("{}")
+    def test_load_meta_reads_staged_metadata(self, tmp_path):
+        """load_meta() should read .meta.json files staged as .meta.json."""
+        from data_ops.sandbox import execute_sandboxed
 
-        code = textwrap.dedent("""\
-            df = load_data("NONEXISTENT")
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
+
+        df = pd.DataFrame({"x": [1.0]}, index=pd.date_range("2024-01-01", periods=1))
+        self._stage_df("TEST.X", df, sandbox_dir, units="km/s", description="test data")
+
+        user_code = textwrap.dedent("""\
+            meta = load_meta("TEST.X")
+            print(f"Units: {meta.get('units', 'unknown')}")
+            print(f"Desc: {meta.get('description', 'none')}")
+            fig, ax = plt.subplots()
+            ax.plot([1], [1])
         """)
 
-        result = run_mpl_script(
-            code=code,
-            data_dir=data_dir,
-            output_dir=output_dir,
-            labels_index={},
-            script_id="test_missing",
-        )
+        wrapped = self._build_preamble(["TEST.X"], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
 
-        assert not result.success
-        assert "NONEXISTENT" in result.stderr
-        assert "not found" in result.stderr.lower()
+        assert "Units: km/s" in output
+        assert "Desc: test data" in output
 
+    def test_available_labels_returns_staged(self, tmp_path):
+        """available_labels() should return the list of staged labels."""
+        from data_ops.sandbox import execute_sandboxed
 
-class TestMplSandboxResult:
-    """Test the MplSandboxResult dataclass."""
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
 
-    def test_default_values(self):
-        result = MplSandboxResult(success=False)
-        assert result.success is False
-        assert result.output_path is None
-        assert result.stdout == ""
-        assert result.stderr == ""
-        assert result.script_path is None
-        assert result.exit_code == -1
+        user_code = textwrap.dedent("""\
+            labels = available_labels()
+            print(f"Labels: {labels}")
+            fig, ax = plt.subplots()
+            ax.plot([1], [1])
+        """)
 
-    def test_success_result(self):
-        result = MplSandboxResult(
-            success=True,
-            output_path="/tmp/out.png",
-            stdout="OK",
-            stderr="",
-            script_path="/tmp/script.py",
-            exit_code=0,
-        )
-        assert result.success is True
-        assert result.output_path == "/tmp/out.png"
-        assert result.exit_code == 0
+        wrapped = self._build_preamble(["A.x", "B.y"], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
+
+        assert "A.x" in output
+        assert "B.y" in output
+
+    def test_load_data_missing_label_error(self, tmp_path):
+        """load_data() should raise KeyError for missing labels."""
+        from data_ops.sandbox import execute_sandboxed
+
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
+
+        user_code = 'df = load_data("NONEXISTENT")'
+
+        wrapped = self._build_preamble([], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
+
+        # execute_sandboxed captures exceptions in stdout
+        assert "NONEXISTENT" in output
+        assert "not found" in output.lower() or "KeyError" in output
+
+    def test_script_with_error_returns_traceback(self, tmp_path):
+        """Script errors should appear in output."""
+        from data_ops.sandbox import execute_sandboxed
+
+        sandbox_dir = tmp_path / "sandbox"
+        sandbox_dir.mkdir()
+        output_path = tmp_path / "output.png"
+
+        user_code = "raise ValueError('intentional error')"
+        wrapped = self._build_preamble([], output_path) + user_code + self._build_epilogue()
+        output, _ = execute_sandboxed(wrapped, work_dir=sandbox_dir)
+
+        assert "ValueError" in output
+        assert "intentional error" in output

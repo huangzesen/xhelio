@@ -45,7 +45,7 @@ interface MemoryState {
   loadVersionHistory: (sessionId: string, memoryId: string) => Promise<void>;
 }
 
-export const useMemoryStore = create<MemoryState>((set, get) => ({
+export const useMemoryStore = create<MemoryState>((set, _get) => ({
   memories: [],
   globalEnabled: true,
   loading: false,

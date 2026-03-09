@@ -71,7 +71,7 @@ def mock_session(tmp_data_dir):
         {
             "id": "op_002",
             "timestamp": "2026-01-01T00:00:01+00:00",
-            "tool": "custom_operation",
+            "tool": "run_code",
             "status": "success",
             "inputs": ["AC_H2_MFI.BGSEc"],
             "outputs": ["Bmag"],
@@ -153,7 +153,7 @@ def sample_pipeline_data():
             {
                 "step_id": "s002",
                 "phase": "appropriation",
-                "tool": "custom_operation",
+                "tool": "run_code",
                 "params": {
                     "code": "result = (df_BGSEc ** 2).sum(axis=1) ** 0.5",
                     "description": "Compute B magnitude",
@@ -295,7 +295,7 @@ class TestExtraction:
 
         # Step 2: compute
         s2 = pipeline.steps[1]
-        assert s2["tool"] == "custom_operation"
+        assert s2["tool"] == "run_code"
         assert s2["phase"] == "appropriation"
         assert "code" in s2["params"]
         assert s2["output_label"] == "Bmag"
@@ -512,7 +512,7 @@ class TestValidation:
         sample_pipeline_data["steps"].append({
             "step_id": "s004",
             "phase": "appropriation",
-            "tool": "custom_operation",
+            "tool": "run_code",
             "params": {"code": "result = df", "description": "bad"},
             "inputs": ["s003"],  # s003 is presentation
             "output_label": "bad_output",
@@ -527,7 +527,7 @@ class TestValidation:
         sample_pipeline_data["steps"].append({
             "step_id": "s004",
             "phase": "appropriation",
-            "tool": "custom_operation",
+            "tool": "run_code",
             "params": {
                 "code": "result = df_BGSEc * 2",
                 "description": "orphan op",
@@ -557,7 +557,7 @@ class TestMutation:
         pipeline = SavedPipeline(sample_pipeline_data)
         new_step = {
             "phase": "appropriation",
-            "tool": "custom_operation",
+            "tool": "run_code",
             "params": {
                 "code": "result = df_BGSEc.rolling(10).mean()",
                 "description": "Smoothed B",
@@ -575,7 +575,7 @@ class TestMutation:
         pipeline = SavedPipeline(sample_pipeline_data)
         new_step = {
             "phase": "appropriation",
-            "tool": "custom_operation",
+            "tool": "run_code",
             "params": {
                 "code": "result = df_BGSEc.rolling(10).mean()",
                 "description": "Smoothed B",
@@ -784,13 +784,13 @@ class TestBuildReplayRecord:
 
     def test_compute_record(self, sample_pipeline_data):
         pipeline = SavedPipeline(sample_pipeline_data)
-        step = pipeline.steps[1]  # custom_operation
+        step = pipeline.steps[1]  # run_code
         step_to_label = {"s001": "AC_H2_MFI.BGSEc", "s002": "Bmag"}
 
         record = pipeline._build_replay_record(
             step, step_to_label, "2025-06-01", "2025-06-07"
         )
-        assert record["tool"] == "custom_operation"
+        assert record["tool"] == "run_code"
         assert record["inputs"] == ["AC_H2_MFI.BGSEc"]
         assert record["outputs"] == ["Bmag"]
 

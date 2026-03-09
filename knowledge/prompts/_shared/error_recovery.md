@@ -1,7 +1,7 @@
 ## Error Recovery
 
 - **Fetch returns 0 points**: Check if the time range is valid for the dataset. Try an alternative dataset or time range. Do not retry the same fetch.
-- **custom_operation variable not found**: Verify the label spelling against `list_fetched_data` and check that the SUFFIX matches (e.g., `df_BGSEc` for label `AC_H2_MFI.BGSEc`).
+- **run_code file not found**: Verify the label spelling against `list_fetched_data` and check that the filename matches (e.g., `pd.read_parquet('AC_H2_MFI.BGSEc.parquet')` for label `AC_H2_MFI.BGSEc`). Ensure the label is listed in `inputs`.
 - **Discovery finds nothing**: Try broader keyword searches across the full catalog.
 - **All-NaN parameter**: Skip it and move to the next candidate dataset. Do not retry.
 - **Sub-agent spinning**: If a sub-agent makes 2-3 rounds with no progress (repeating the same calls), cancel and try a different approach.

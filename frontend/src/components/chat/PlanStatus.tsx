@@ -84,7 +84,7 @@ export function PlanStatus({ sessionId, isStreaming }: Props) {
     };
     poll();
     // Poll less frequently when SSE is active — it's just a fallback
-    const interval = setInterval(poll, isStreaming ? 5000 : 5000);
+    const interval = setInterval(poll, isStreaming ? 15000 : 5000);
     return () => { cancelled = true; clearInterval(interval); };
   }, [sessionId, isStreaming]);
 
