@@ -3883,6 +3883,9 @@ plt.close("all")
 
         plan_path = Path(plan_file)
         if not plan_path.exists():
+            # LLM may strip the directory — resolve bare filenames against plans dir
+            plan_path = get_data_dir() / "plans" / Path(plan_file).name
+        if not plan_path.exists():
             return {
                 "status": "error",
                 "message": f"Plan file not found: {plan_file}"

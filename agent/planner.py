@@ -168,10 +168,9 @@ class PlannerAgent(SubAgent):
 
     def _save_plan_to_file(self, plan: dict) -> str:
         """Save plan to filesystem as JSON."""
-        import os
-        from pathlib import Path
+        from config import get_data_dir
 
-        plan_dir = Path(os.environ.get("XHELIO_DATA_DIR", "/tmp/xhelio")) / "plans"
+        plan_dir = get_data_dir() / "plans"
         plan_dir.mkdir(parents=True, exist_ok=True)
         plan_file = plan_dir / f"{self._session_id_str}_plan.json"
 

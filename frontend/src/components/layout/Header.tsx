@@ -1,4 +1,4 @@
-import { useState, useCallback } from 'react';
+import { useState, useCallback, useEffect, useRef } from 'react';
 import { NavLink } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { PanelLeftClose, PanelLeftOpen, PanelRightClose, PanelRightOpen, Sun, Moon, Sparkles, Loader2 } from 'lucide-react';
@@ -21,11 +21,32 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
   const { config, updateConfig } = useSettingsStore();
   const eurekaMode = (config.eureka_mode as boolean) ?? false;
   const [eurekaSaving, setEurekaSaving] = useState(false);
+  const [blooming, setBlooming] = useState(false);
+  const bloomTimer = useRef<ReturnType<typeof setTimeout>>();
+
+  // Sync .eureka-active class on <html> with eureka mode state
+  useEffect(() => {
+    const root = document.documentElement;
+    if (eurekaMode) {
+      root.classList.add('eureka-active');
+    } else {
+      root.classList.remove('eureka-active');
+    }
+    return () => root.classList.remove('eureka-active');
+  }, [eurekaMode]);
 
   const toggleEurekaMode = useCallback(async () => {
     const newValue = !eurekaMode;
     updateConfig({ eureka_mode: newValue });
     setEurekaSaving(true);
+
+    // Trigger bloom on activation
+    if (newValue) {
+      setBlooming(true);
+      clearTimeout(bloomTimer.current);
+      bloomTimer.current = setTimeout(() => setBlooming(false), 400);
+    }
+
     try {
       await api.updateConfig({ eureka_mode: newValue });
     } catch {
@@ -90,7 +111,10 @@ export function Header({ sidebarOpen, activityOpen, onToggleSidebar, onToggleAct
           title={eurekaMode ? 'Eureka Mode: ON' : 'Eureka Mode: OFF'}
           className={eurekaMode ? 'text-amber-400 hover:text-amber-300' : ''}
         >
-          {eurekaSaving ? <Loader2 size={18} className="animate-spin" /> : <Sparkles size={18} />}
+          {eurekaSaving
+            ? <Loader2 size={18} className="animate-spin" />
+            : <Sparkles size={18} className={`${eurekaMode ? 'eureka-glow' : ''} ${blooming ? 'eureka-bloom' : ''}`} />
+          }
         </Button>
         <Button
           variant="ghost"

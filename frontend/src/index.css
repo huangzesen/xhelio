@@ -188,3 +188,53 @@ select, input[type="text"], input[type="number"], input[type="date"], textarea {
   left: 0;
   top: 0;
 }
+
+/* ── Eureka Mode ─────────────────────────────── */
+
+/* Accent shift: brighter golden-yellow to stand out from the base amber primary */
+.eureka-active {
+  --color-primary: #e5a100;
+  --color-primary-dark: #c78b00;
+  --color-primary-light: #fde68a;
+  --color-accent: #e5a100;
+}
+.eureka-active.dark {
+  --color-primary: #facc15;
+  --color-primary-dark: #eab308;
+  --color-primary-light: #fef08a;
+  --color-accent: #facc15;
+}
+
+/* Header glow bar when eureka is active */
+.eureka-active [data-testid="app-header"] {
+  border-bottom-color: transparent;
+  box-shadow: 0 1px 8px 0 rgba(234, 179, 8, 0.25);
+}
+
+/* Sparkles icon: persistent glow + breathing pulse */
+.eureka-glow {
+  filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.7));
+  animation: eureka-breathe 2.5s ease-in-out infinite;
+}
+
+/* Bloom: one-shot expand on toggle */
+.eureka-bloom {
+  animation: eureka-bloom 350ms ease-out;
+}
+
+@keyframes eureka-breathe {
+  0%, 100% { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5)); }
+  50%      { filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.9)); }
+}
+
+@keyframes eureka-bloom {
+  0%   { filter: drop-shadow(0 0 4px rgba(251, 191, 36, 0.5)); transform: scale(1); }
+  40%  { filter: drop-shadow(0 0 18px rgba(251, 191, 36, 1)); transform: scale(1.25); }
+  100% { filter: drop-shadow(0 0 6px rgba(251, 191, 36, 0.7)); transform: scale(1); }
+}
+
+/* Respect reduced-motion preference */
+@media (prefers-reduced-motion: reduce) {
+  .eureka-glow { animation: none; }
+  .eureka-bloom { animation: none; }
+}
