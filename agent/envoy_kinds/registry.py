@@ -8,129 +8,14 @@ from typing import TYPE_CHECKING, Callable
 if TYPE_CHECKING:
     pass
 
-# Mission → kind mapping. Missions not listed here default to DEFAULT_KIND.
-MISSION_KINDS: dict[str, str] = {
-    "CASSINI_PPI": "ppi",
-    "GALILEO": "ppi",
-    "INSIGHT": "ppi",
-    "JUNO_PPI": "ppi",
-    "LRO": "ppi",
-    "LUNAR-PROSPECTOR": "ppi",
-    "MAVEN_PPI": "ppi",
-    "MESSENGER_PPI": "ppi",
-    "MEX": "ppi",
-    "MGS": "ppi",
-    "NEW-HORIZONS_PPI": "ppi",
-    "PIONEER_PPI": "ppi",
-    "PIONEER-VENUS_PPI": "ppi",
-    "ULYSSES_PPI": "ppi",
-    "VEX": "ppi",
-    "VOYAGER1_PPI": "ppi",
-    "VOYAGER2_PPI": "ppi",
-    "SPICE": "spice",
-}
-DEFAULT_KIND = "cdaweb"
-
-
-class _KnowledgeStub:
-    """Minimal stand-in for the ``knowledge`` package.
-
-    Inserted into ``sys.modules["knowledge"]`` during early bootstrap to
-    break the circular import chain:
-    ``agent_registry → knowledge.__init__ → metadata_client → event_bus → agent_registry``
-
-    On first attribute access (e.g., ``from knowledge import load_mission``),
-    the stub replaces itself with the real ``knowledge`` module by executing
-    ``knowledge/__init__.py`` normally.
-    """
-
-    def __init__(self, path: str, init_file: str):
-        import importlib.util
-        self.__path__ = [path]
-        self.__file__ = init_file
-        self.__package__ = "knowledge"
-        self.__name__ = "knowledge"
-        # Set __spec__ so the import machinery treats this as a valid package
-        self.__spec__ = importlib.util.spec_from_file_location(
-            "knowledge",
-            init_file,
-            submodule_search_locations=[path],
-        )
-        self.__loader__ = self.__spec__.loader if self.__spec__ else None
-        self._is_stub = True
-        self._replacing = False
-
-    def _replace(self):
-        """Execute the real __init__.py, replacing this stub in sys.modules."""
-        if self._replacing:
-            return  # Prevent re-entrant replacement
-        self._replacing = True
-        import importlib
-        import importlib.util
-        import sys
-        spec = importlib.util.spec_from_file_location(
-            "knowledge",
-            self.__file__,
-            submodule_search_locations=self.__path__,
-        )
-        if spec and spec.loader:
-            real_mod = importlib.util.module_from_spec(spec)
-            sys.modules["knowledge"] = real_mod
-            spec.loader.exec_module(real_mod)
-
-    def __getattr__(self, name: str):
-        # The import machinery probes dunder attrs (__spec__, __loader__, etc.)
-        # before the module is fully initialized. Let those raise AttributeError
-        # so import doesn't break, UNLESS someone is doing a real import like
-        # `from knowledge import load_mission`.
-        if name.startswith("__") and name.endswith("__"):
-            raise AttributeError(name)
-        self._replace()
-        import sys
-        real = sys.modules.get("knowledge")
-        if real is not self:
-            return getattr(real, name)
-        raise AttributeError(name)
+# Mission → kind mapping. Empty — no prebuilt kinds.
+MISSION_KINDS: dict[str, str] = {}
+DEFAULT_KIND = ""  # No default — must be explicitly registered
 
 
 def _load_kind_module(kind: str):
-    """Lazily import a kind module by name from knowledge.envoys.
-
-    Bootstraps parent packages minimally to avoid triggering
-    knowledge/__init__.py's heavy imports (which cause circular deps
-    when called during agent_registry init).
-    """
+    """Import a kind module from knowledge.envoys."""
     import importlib
-    import importlib.util
-    import sys
-    from pathlib import Path
-
-    _knowledge_dir = Path(__file__).resolve().parent.parent.parent / "knowledge"
-
-    # Ensure 'knowledge' is in sys.modules — but if it hasn't been imported
-    # yet, register a lazy stub instead of executing __init__.py (which
-    # triggers metadata_client → event_bus → agent_registry circular dep).
-    # The stub auto-replaces on first real attribute access.
-    if "knowledge" not in sys.modules:
-        stub = _KnowledgeStub(
-            str(_knowledge_dir),
-            str(_knowledge_dir / "__init__.py"),
-        )
-        sys.modules["knowledge"] = stub
-
-    # knowledge.envoys is lightweight — safe to import normally.
-    if "knowledge.envoys" not in sys.modules:
-        envoys_dir = _knowledge_dir / "envoys"
-        spec = importlib.util.spec_from_file_location(
-            "knowledge.envoys",
-            envoys_dir / "__init__.py",
-            submodule_search_locations=[str(envoys_dir)],
-        )
-        if spec and spec.loader:
-            mod = importlib.util.module_from_spec(spec)
-            sys.modules["knowledge.envoys"] = mod
-            spec.loader.exec_module(mod)
-
     module_name = f"knowledge.envoys.{kind}"
     try:
         return importlib.import_module(module_name)
@@ -147,8 +32,11 @@ class EnvoyKindRegistry:
         self._active_missions: set[str] = set()
 
     def get_kind(self, mission_id: str) -> str:
-        """Resolve the kind for a mission. Defaults to DEFAULT_KIND."""
-        return self._mission_kinds.get(mission_id, DEFAULT_KIND)
+        """Resolve the kind for a mission."""
+        kind = self._mission_kinds.get(mission_id)
+        if kind is None:
+            raise KeyError(f"No envoy kind registered for '{mission_id}'")
+        return kind
 
     def get_function_schemas(self, mission_id: str) -> list:
         """Return FunctionSchema objects for LLM adapters."""
@@ -221,30 +109,16 @@ class EnvoyKindRegistry:
         with self._lock:
             self._active_missions.clear()
 
-    def add_tools_to_kind(self, kind: str, tools: list[dict], handlers: dict) -> None:
-        """Dynamically add tools to a kind (used by SPICE MCP discovery)."""
-        with self._lock:
-            mod = _load_kind_module(kind)
-            existing_names = {t["name"] for t in mod.TOOLS}
-            for tool in tools:
-                if tool["name"] not in existing_names:
-                    mod.TOOLS.append(tool)
-                    existing_names.add(tool["name"])
-            mod.HANDLERS.update(handlers)
-
     def register_handlers_globally(self) -> None:
-        """Push all kind handlers into the global TOOL_REGISTRY.
-
-        Call this once at startup so _execute_tool can dispatch kind tools
-        without special-casing. Auto-discovers kind directories from disk.
-        """
+        """Push all kind handlers into the global TOOL_REGISTRY."""
         from agent.tool_handlers import TOOL_REGISTRY
-        from knowledge.mission_loader import _ENVOYS_DIR
+        from pathlib import Path
         import logging
         logger = logging.getLogger("xhelio")
-        if not _ENVOYS_DIR.exists():
+        envoys_dir = Path(__file__).resolve().parent.parent.parent / "knowledge" / "envoys"
+        if not envoys_dir.exists():
             return
-        for kind_dir in _ENVOYS_DIR.iterdir():
+        for kind_dir in envoys_dir.iterdir():
             if not kind_dir.is_dir() or kind_dir.name.startswith("_"):
                 continue
             kind_name = kind_dir.name
@@ -259,16 +133,14 @@ def _discover_runtime_kinds(envoys_dir=None) -> dict[str, str]:
     """Scan knowledge/envoys/ for runtime-created kinds.
 
     Returns a dict of envoy_id → kind for any kind directory that has
-    both __init__.py and a .json file with an "id" field.
-    Prebuilt kinds (cdaweb, ppi, spice) are skipped since they are
-    already in MISSION_KINDS.
+    a kind.json manifest (new codegen path) or __init__.py + .json (legacy).
     """
     import json
+    import logging
     from pathlib import Path
+    logger = logging.getLogger("xhelio")
+
     if envoys_dir is None:
-        # Compute directly instead of importing from knowledge.mission_loader
-        # to avoid circular import: event_bus → agent_registry → here →
-        # knowledge.__init__ → metadata_client → event_bus
         envoys_dir = Path(__file__).resolve().parent.parent.parent / "knowledge" / "envoys"
 
     discovered: dict[str, str] = {}
@@ -278,12 +150,27 @@ def _discover_runtime_kinds(envoys_dir=None) -> dict[str, str]:
     for kind_dir in envoys_dir.iterdir():
         if not kind_dir.is_dir() or kind_dir.name.startswith("_"):
             continue
-        # Skip prebuilt kinds
-        if kind_dir.name in ("cdaweb", "ppi", "spice"):
+
+        manifest_path = kind_dir / "kind.json"
+        if manifest_path.exists():
+            try:
+                manifest = json.loads(manifest_path.read_text())
+                envoy_id = manifest.get("envoy_id", "")
+                if not envoy_id or envoy_id in MISSION_KINDS:
+                    continue
+                # Regenerate .py files if missing (restart recovery)
+                if not (kind_dir / "__init__.py").exists():
+                    from agent.envoy_kinds.codegen import generate_kind_files
+                    generate_kind_files(kind_dir, manifest)
+                    logger.info("Regenerated .py files for runtime kind %s", kind_dir.name)
+                discovered[envoy_id] = kind_dir.name
+            except Exception as e:
+                logger.warning("Failed to load runtime kind %s: %s", kind_dir.name, e)
             continue
+
+        # Legacy fallback: __init__.py + *.json with "id" field
         if not (kind_dir / "__init__.py").exists():
             continue
-        # Look for JSON files that define envoy IDs
         for json_file in kind_dir.glob("*.json"):
             try:
                 data = json.loads(json_file.read_text())

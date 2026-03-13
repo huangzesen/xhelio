@@ -746,7 +746,7 @@ class GeminiAdapter(LLMAdapter):
         # Convert interface to seed turns for history seeding
         seed_turns: list[dict] | None = None
         if interface and interface.conversation_entries():
-            from .interface_converters import to_gemini
+            from ..interface_converters import to_gemini
             seed_turns = to_gemini(interface)
 
         if use_interactions and not json_schema:
@@ -769,18 +769,15 @@ class GeminiAdapter(LLMAdapter):
 
         # Only send thinking_config for Gemini 3+ models.
         # Per-call `thinking` param indicates the tier: "high" = smart model
-        # (orchestrator/planner), "low" = sub-agent. Config overrides per tier.
+        # (orchestrator), "low" = sub-agent. Config overrides per tier.
         if _supports_thinking(model):
             from config import (
                 GEMINI_THINKING_MODEL,
                 GEMINI_THINKING_SUB_AGENT,
-                GEMINI_THINKING_INSIGHT,
             )
 
             if thinking in ("high", "default"):
                 effective = GEMINI_THINKING_MODEL
-            elif thinking == "insight":
-                effective = GEMINI_THINKING_INSIGHT
             else:
                 effective = GEMINI_THINKING_SUB_AGENT
             tc = _thinking_config(effective)
@@ -847,13 +844,10 @@ class GeminiAdapter(LLMAdapter):
             from config import (
                 GEMINI_THINKING_MODEL,
                 GEMINI_THINKING_SUB_AGENT,
-                GEMINI_THINKING_INSIGHT,
             )
 
             if thinking in ("high", "default"):
                 effective = GEMINI_THINKING_MODEL
-            elif thinking == "insight":
-                effective = GEMINI_THINKING_INSIGHT
             else:
                 effective = GEMINI_THINKING_SUB_AGENT
             if effective != "off":
@@ -987,6 +981,14 @@ class GeminiAdapter(LLMAdapter):
             config=config,
         )
         return _parse_response(raw)
+
+    def generate_vision(
+        self, question: str, image_bytes: bytes, *, model: str = "",
+        mime_type: str = "image/png",
+    ) -> LLMResponse:
+        """One-shot vision via Gemini's multimodal API."""
+        contents = self.make_multimodal_message(question, image_bytes, mime_type)
+        return self.generate_multimodal(model=model, contents=contents)
 
     @staticmethod
     def make_bytes_part(data: bytes, mime_type: str) -> Any:

@@ -1,10 +1,8 @@
 """Delegation subsystem — manages sub-agent lifecycle and dispatch.
 
-Extracted from OrchestratorAgent to reduce the size of core.py.
 The ``DelegationBus`` owns the sub-agent registry (``_agents`` dict),
 ephemeral agent counters, retired usage tracking, and all factory +
-dispatch methods.  It receives the orchestrator (or any object that
-satisfies the implicit DelegationContext interface) as ``ctx``.
+dispatch methods.  It receives a ``SessionContext`` as ``ctx``.
 """
 
 from __future__ import annotations
@@ -13,47 +11,56 @@ import json
 import queue
 import time
 import threading
+import uuid
 from typing import Callable, TYPE_CHECKING
 
 import config
-from .sub_agent import SubAgent, AgentState
+from .base_agent import BaseAgent, AgentState
 from .envoy_agent import EnvoyAgent
-from .viz_plotly_agent import VizPlotlyAgent
-from .viz_mpl_agent import VizMplAgent
-from .viz_jsx_agent import VizJsxAgent
+from .viz_agent import VizAgent
+from .viz_backends import VIZ_BACKENDS
 from .data_ops_agent import DataOpsAgent
 from .data_io_agent import DataIOAgent
-from .insight_agent import InsightAgent
 from .truncation import get_item_limit
 from .event_bus import DEBUG
 from .logging import get_logger
 
 if TYPE_CHECKING:
-    from .core import OrchestratorAgent
+    from .session_context import SessionContext
+
+
+# ---------------------------------------------------------------------------
+# Agent ID constants — single source of truth for agent registry keys
+# ---------------------------------------------------------------------------
+
+AGENT_ID_DATAOPS = "DataOpsAgent"
+AGENT_ID_DATA_IO = "DataIOAgent"
+AGENT_ID_EUREKA = "EurekaAgent"
+AGENT_ID_MEMORY = "MemoryAgent"
 
 
 class DelegationBus:
     """Manages sub-agent creation, delegation dispatch, and cleanup.
 
     Args:
-        ctx: The OrchestratorAgent instance (used to access service,
-             event_bus, store, renderer, etc.).
+        ctx: The SessionContext instance (shared resource pool for all agents).
     """
 
-    def __init__(self, ctx: "OrchestratorAgent"):
+    def __init__(self, ctx: "SessionContext"):
         self._ctx = ctx
-        self._agents: dict[str, SubAgent] = {}
+        self._agents: dict[str, BaseAgent] = {}
         self._lock = threading.Lock()
         self._dataops_seq: int = 0
         self._mission_seq: int = 0
         self._retired_usage: list[dict] = []
+        self._async_delegations: dict[str, float] = {}
 
     # ------------------------------------------------------------------
     # State accessors (used by orchestrator for token tracking, etc.)
     # ------------------------------------------------------------------
 
     @property
-    def agents(self) -> dict[str, SubAgent]:
+    def agents(self) -> dict[str, BaseAgent]:
         """Direct access to the agents dict (caller must hold lock if mutating)."""
         return self._agents
 
@@ -73,7 +80,7 @@ class DelegationBus:
         """Check if all work subagents (excluding Eureka/Memory) are idle."""
         with self._lock:
             for agent_id, agent in self._agents.items():
-                if agent_id in ("EurekaAgent", "MemoryAgent"):
+                if agent_id in (AGENT_ID_EUREKA, AGENT_ID_MEMORY):
                     continue  # Post-cycle agents, not part of work cycle
                 if not agent.is_idle:
                     return False
@@ -101,22 +108,36 @@ class DelegationBus:
         from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
         with self._lock:
-            for agent in self._agents.values():
-                agent.stop(timeout=2.0)
+            for agent_id, agent in list(self._agents.items()):
+                try:
+                    agent.stop(timeout=2.0)
+                except Exception as e:
+                    get_logger().warning(
+                        "Agent %s stop failed during reset: %s", agent_id, e
+                    )
             self._agents.clear()
         ENVOY_KIND_REGISTRY.clear_active()
-        self._ctx._ctx_tracker.reset_all()
-        self._ctx._event_bus.emit(
-            DEBUG,
-            level="debug",
-            msg="[Config] Sub-agents invalidated after config reload",
-        )
+        sctx = self._ctx
+        orch_state = sctx.agent_state.get("orchestrator") if sctx else None
+        if orch_state and orch_state.ctx_tracker:
+            orch_state.ctx_tracker.reset_all()
+        if sctx and sctx.event_bus:
+            sctx.event_bus.emit(
+                DEBUG,
+                level="debug",
+                msg="[Config] Sub-agents invalidated after config reload",
+            )
 
     def reset_full(self) -> None:
         """Full reset including sequence counters (used by new-session)."""
         with self._lock:
-            for agent in self._agents.values():
-                agent.stop(timeout=2.0)
+            for agent_id, agent in list(self._agents.items()):
+                try:
+                    agent.stop(timeout=2.0)
+                except Exception as e:
+                    get_logger().warning(
+                        "Agent %s stop failed during reset_full: %s", agent_id, e
+                    )
             self._agents.clear()
         from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
 
@@ -124,6 +145,7 @@ class DelegationBus:
         self._dataops_seq = 0
         self._mission_seq = 0
         self._retired_usage.clear()
+        self._async_delegations.clear()
 
     def stop_all(self) -> None:
         """Stop and clear all agents (used during shutdown)."""
@@ -160,14 +182,18 @@ class DelegationBus:
                     }
                 )
             agent.stop()
-            self._ctx._ctx_tracker.reset(agent_id)
-            self._ctx._event_bus.emit(
-                DEBUG,
-                level="debug",
-                msg=f"[Router] Cleaned up ephemeral agent {agent_id}",
-            )
+            sctx = self._ctx
+            orch_state = sctx.agent_state.get("orchestrator") if sctx else None
+            if orch_state and orch_state.ctx_tracker:
+                orch_state.ctx_tracker.reset(agent_id)
+            if sctx and sctx.event_bus:
+                sctx.event_bus.emit(
+                    DEBUG,
+                    level="debug",
+                    msg=f"[Router] Cleaned up ephemeral agent {agent_id}",
+                )
 
-    def register_agent(self, agent_id: str, agent: SubAgent) -> None:
+    def register_agent(self, agent_id: str, agent: BaseAgent) -> None:
         """Register an externally-created agent (e.g. MemoryAgent, EurekaAgent)."""
         with self._lock:
             self._agents[agent_id] = agent
@@ -176,163 +202,97 @@ class DelegationBus:
     # Factory methods
     # ------------------------------------------------------------------
 
+    def _get_session_ctx(self):
+        """Return the SessionContext (self._ctx IS the SessionContext now)."""
+        return self._ctx
+
     def get_or_create_envoy_agent(self, mission_id: str) -> EnvoyAgent:
         """Get the persistent envoy agent, creating it on first use."""
         agent_id = f"EnvoyAgent[{mission_id}]"
-        ctx = self._ctx
+        sctx = self._get_session_ctx()
         with self._lock:
             if agent_id not in self._agents:
+                from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
+                kind_info = ENVOY_KIND_REGISTRY.get_kind(mission_id)
+                kind_name = kind_info.get("kind", mission_id) if kind_info else mission_id
+
                 agent = EnvoyAgent(
-                    mission_id=mission_id,
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None, _mid=mission_id: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type=f"envoy:{_mid}",
-                        )
-                    ),
-                    event_bus=ctx._event_bus,
-                    memory_store=ctx._memory_store,
-                    memory_scope=f"envoy:{mission_id}",
-                    cancel_event=ctx._cancel_event,
+                    kind=kind_name,
+                    instance_id=mission_id,
+                    service=sctx.service,
+                    session_ctx=sctx,
+                    tool_schemas=[],
+                    system_prompt=f"You are the {mission_id} envoy specialist.",
+                    event_bus=sctx.event_bus,
+                    cancel_event=self._ctx.cancel_event,
                 )
-                agent._orchestrator_inbox = ctx._inbox
                 agent.start()
                 self._agents[agent_id] = agent
-                ctx._event_bus.emit(
+                sctx.event_bus.emit(
                     DEBUG,
                     level="debug",
                     msg=f"[Router] Created {mission_id} envoy agent",
                 )
-                from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
                 if ENVOY_KIND_REGISTRY.mark_active(mission_id):
-                    from .agent_registry import AGENT_INFORMED_REGISTRY
+                    from .agent_registry import AGENT_INFORMED_REGISTRY, CTX_ORCHESTRATOR
 
                     for tool_name in ENVOY_KIND_REGISTRY.get_tool_names(mission_id):
                         AGENT_INFORMED_REGISTRY._registry.setdefault(
-                            "ctx:orchestrator", set()
+                            CTX_ORCHESTRATOR, set()
                         ).add(tool_name)
             return self._agents[agent_id]
 
     def create_ephemeral_envoy_agent(self, mission_id: str) -> EnvoyAgent:
         """Create an ephemeral overflow envoy agent for parallel delegation."""
-        ctx = self._ctx
+        sctx = self._get_session_ctx()
         with self._lock:
             seq = self._mission_seq
             self._mission_seq = seq + 1
             ephemeral_id = f"EnvoyAgent[{mission_id}]#{seq}"
 
+            from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
+            kind_info = ENVOY_KIND_REGISTRY.get_kind(mission_id)
+            kind_name = kind_info.get("kind", mission_id) if kind_info else mission_id
+
             agent = EnvoyAgent(
-                mission_id=mission_id,
-                service=ctx.service,
-                tool_executor=lambda name, args, tc_id=None, _mid=mission_id: (
-                    ctx._execute_tool_for_agent(
-                        name, args, tc_id, agent_type=f"envoy:{_mid}",
-                    )
-                ),
-                agent_id=ephemeral_id,
-                event_bus=ctx._event_bus,
-                memory_store=ctx._memory_store,
-                memory_scope=f"envoy:{mission_id}",
-                cancel_event=ctx._cancel_event,
+                kind=kind_name,
+                instance_id=mission_id,
+                service=sctx.service,
+                session_ctx=sctx,
+                tool_schemas=[],
+                system_prompt=f"You are the {mission_id} envoy specialist.",
+                event_bus=sctx.event_bus,
+                cancel_event=self._ctx.cancel_event,
             )
-            agent._orchestrator_inbox = ctx._inbox
             agent.start()
             self._agents[ephemeral_id] = agent
-        ctx._event_bus.emit(
+        sctx.event_bus.emit(
             DEBUG,
             level="debug",
             msg=f"[Router] Created ephemeral envoy agent {ephemeral_id}",
         )
         return agent
 
-    def get_or_create_viz_plotly_agent(self) -> VizPlotlyAgent:
-        """Get the cached Plotly viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[Plotly]"
-        ctx = self._ctx
+    def get_or_create_viz_agent(self, backend: str) -> VizAgent:
+        """Get the cached viz agent for this backend or create a new one. Thread-safe."""
+        cfg = VIZ_BACKENDS[backend]
+        agent_id = cfg["agent_id"]
+        sctx = self._get_session_ctx()
         with self._lock:
             if agent_id not in self._agents:
-                agent = VizPlotlyAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_plotly"
-                        )
-                    ),
-                    gui_mode=ctx.gui_mode,
-                    event_bus=ctx._event_bus,
-                    memory_store=ctx._memory_store,
-                    memory_scope="visualization",
-                    cancel_event=ctx._cancel_event,
+                agent = VizAgent(
+                    backend=backend,
+                    service=sctx.service,
+                    session_ctx=sctx,
+                    event_bus=sctx.event_bus,
+                    cancel_event=self._ctx.cancel_event,
                 )
-                agent._orchestrator_inbox = ctx._inbox
                 agent.start()
                 self._agents[agent_id] = agent
-                ctx._event_bus.emit(
+                sctx.event_bus.emit(
                     DEBUG,
                     level="debug",
-                    msg="[Router] Created Plotly Visualization agent",
-                )
-            return self._agents[agent_id]
-
-    def get_or_create_viz_mpl_agent(self) -> VizMplAgent:
-        """Get the cached MPL viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[Mpl]"
-        ctx = self._ctx
-        with self._lock:
-            if agent_id not in self._agents:
-                session_dir = ctx._session_manager.base_dir / ctx._session_id
-                agent = VizMplAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_mpl"
-                        )
-                    ),
-                    gui_mode=ctx.gui_mode,
-                    event_bus=ctx._event_bus,
-                    memory_store=ctx._memory_store,
-                    memory_scope="visualization",
-                    session_dir=session_dir,
-                    cancel_event=ctx._cancel_event,
-                )
-                agent._orchestrator_inbox = ctx._inbox
-                agent.start()
-                self._agents[agent_id] = agent
-                ctx._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg="[Router] Created MPL Visualization agent",
-                )
-            return self._agents[agent_id]
-
-    def get_or_create_viz_jsx_agent(self) -> VizJsxAgent:
-        """Get the cached JSX viz agent or create a new one. Thread-safe."""
-        agent_id = "VizAgent[JSX]"
-        ctx = self._ctx
-        with self._lock:
-            if agent_id not in self._agents:
-                session_dir = ctx._session_manager.base_dir / ctx._session_id
-                agent = VizJsxAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_jsx"
-                        )
-                    ),
-                    gui_mode=ctx.gui_mode,
-                    event_bus=ctx._event_bus,
-                    memory_store=ctx._memory_store,
-                    memory_scope="visualization",
-                    session_dir=session_dir,
-                    cancel_event=ctx._cancel_event,
-                )
-                agent._orchestrator_inbox = ctx._inbox
-                agent.start()
-                self._agents[agent_id] = agent
-                ctx._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg="[Router] Created JSX Visualization agent",
+                    msg=f"[Router] Created {backend} visualization agent",
                 )
             return self._agents[agent_id]
 
@@ -343,8 +303,8 @@ class DelegationBus:
         exist, (3) create an ephemeral overflow instance.  Ephemeral agents
         are cleaned up after their delegation completes.
         """
-        primary_id = "DataOpsAgent"
-        ctx = self._ctx
+        primary_id = AGENT_ID_DATAOPS
+        sctx = self._get_session_ctx()
         with self._lock:
             if primary_id in self._agents:
                 agent = self._agents[primary_id]
@@ -353,22 +313,14 @@ class DelegationBus:
             else:
                 # Create the primary (persistent) agent
                 agent = DataOpsAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="dataops"
-                        )
-                    ),
-                    event_bus=ctx._event_bus,
-                    memory_store=ctx._memory_store,
-                    memory_scope="data_ops",
-                    active_missions_fn=self.get_active_envoy_ids,
-                    cancel_event=ctx._cancel_event,
+                    service=sctx.service,
+                    session_ctx=sctx,
+                    event_bus=sctx.event_bus,
+                    cancel_event=self._ctx.cancel_event,
                 )
-                agent._orchestrator_inbox = ctx._inbox
                 agent.start()
                 self._agents[primary_id] = agent
-                ctx._event_bus.emit(
+                sctx.event_bus.emit(
                     DEBUG,
                     level="debug",
                     msg="[Router] Created DataOps agent",
@@ -378,25 +330,16 @@ class DelegationBus:
             # Primary is busy — create an ephemeral overflow instance
             seq = self._dataops_seq
             self._dataops_seq = seq + 1
-            ephemeral_id = f"DataOpsAgent#{seq}"
+            ephemeral_id = f"{AGENT_ID_DATAOPS}#{seq}"
             agent = DataOpsAgent(
-                service=ctx.service,
-                tool_executor=lambda name, args, tc_id=None: (
-                    ctx._execute_tool_for_agent(
-                        name, args, tc_id, agent_type="dataops"
-                    )
-                ),
-                agent_id=ephemeral_id,
-                event_bus=ctx._event_bus,
-                memory_store=ctx._memory_store,
-                memory_scope="data_ops",
-                active_missions_fn=self.get_active_envoy_ids,
-                cancel_event=ctx._cancel_event,
+                service=sctx.service,
+                session_ctx=sctx,
+                event_bus=sctx.event_bus,
+                cancel_event=self._ctx.cancel_event,
             )
-            agent._orchestrator_inbox = ctx._inbox
             agent.start()
             self._agents[ephemeral_id] = agent
-            ctx._event_bus.emit(
+            sctx.event_bus.emit(
                 DEBUG,
                 level="debug",
                 msg=f"[Router] Created ephemeral DataOps agent {ephemeral_id}",
@@ -405,85 +348,82 @@ class DelegationBus:
 
     def get_or_create_data_io_agent(self) -> DataIOAgent:
         """Get the cached data I/O agent or create a new one. Thread-safe."""
-        agent_id = "DataIOAgent"
-        ctx = self._ctx
+        agent_id = AGENT_ID_DATA_IO
+        sctx = self._get_session_ctx()
         with self._lock:
             if agent_id not in self._agents:
                 agent = DataIOAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="data_io"
-                        )
-                    ),
-                    event_bus=ctx._event_bus,
-                    cancel_event=ctx._cancel_event,
+                    service=sctx.service,
+                    session_ctx=sctx,
+                    event_bus=sctx.event_bus,
+                    cancel_event=self._ctx.cancel_event,
                 )
-                agent._orchestrator_inbox = ctx._inbox
                 agent.start()
                 self._agents[agent_id] = agent
-                ctx._event_bus.emit(
+                sctx.event_bus.emit(
                     DEBUG,
                     level="debug",
                     msg="[Router] Created DataIO agent",
                 )
             return self._agents[agent_id]
 
-    def get_or_create_insight_agent(self) -> InsightAgent:
-        """Get the cached insight agent or create a new one. Thread-safe."""
-        agent_id = "InsightAgent"
-        ctx = self._ctx
-        with self._lock:
-            if agent_id not in self._agents:
-                agent = InsightAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="viz_plotly"
-                        )
-                    ),
-                    event_bus=ctx._event_bus,
-                    cancel_event=ctx._cancel_event,
-                )
-                agent._orchestrator_inbox = ctx._inbox
-                agent.start()
-                self._agents[agent_id] = agent
-                ctx._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg="[Router] Created Insight agent",
-                )
-            return self._agents[agent_id]
+    # ------------------------------------------------------------------
+    # Store-delta formatting
+    # ------------------------------------------------------------------
 
-    def get_or_create_planner_agent(self):
-        """Get the cached planner agent or create a new one. Thread-safe."""
-        agent_id = "PlannerAgent"
-        ctx = self._ctx
-        with self._lock:
-            if agent_id not in self._agents:
-                from .planner import PlannerAgent
-                agent = PlannerAgent(
-                    service=ctx.service,
-                    tool_executor=lambda name, args, tc_id=None: (
-                        ctx._execute_tool_for_agent(
-                            name, args, tc_id, agent_type="planner"
-                        )
-                    ),
-                    event_bus=ctx._event_bus,
-                    cancel_event=ctx._cancel_event,
-                    memory_store=ctx._memory_store,
-                    memory_scope="planner",
-                    session_id=ctx._session_id,
+    @staticmethod
+    def format_store_delta(
+        ctx_tracker, agent_id: str, entries: list[dict], fmt: str = "json"
+    ) -> str:
+        """Compute store delta for *agent_id* and return formatted injection text.
+
+        Args:
+            ctx_tracker: The ``ContextTracker`` instance.
+            agent_id: Sub-agent identifier used for delta tracking.
+            entries: Current store entries (from ``store.list_entries()``).
+            fmt: ``"json"`` wraps new-entry metadata in a ```json code block;
+                 ``"text"`` uses a plain-text bullet list.
+
+        Returns:
+            A string to append to the delegation request (empty if no delta).
+        """
+        new_entries, removed_labels, store_hash = ctx_tracker.get_store_delta(
+            agent_id, entries
+        )
+        if not new_entries and not removed_labels:
+            return ""
+
+        # Format the "added" portion according to *fmt*
+        if fmt == "json":
+            added_block = (
+                "```json\n" + json.dumps(new_entries, indent=2, default=str) + "\n```"
+                if new_entries
+                else ""
+            )
+        else:  # "text"
+            added_block = (
+                "\n".join(
+                    f"  - {e['label']} ({e['num_points']} pts, "
+                    f"{e['time_min']} to {e['time_max']})"
+                    for e in new_entries
                 )
-                agent._orchestrator_inbox = ctx._inbox
-                agent.start()
-                self._agents[agent_id] = agent
-                ctx._event_bus.emit(
-                    DEBUG,
-                    level="debug",
-                    msg=f"[Router] Created PlannerAgent ({config.PLANNER_MODEL})",
-                )
-            return self._agents[agent_id]
+                if new_entries
+                else ""
+            )
+
+        # Compose the full delta text
+        if new_entries and not removed_labels:
+            text = "\n\nNew data added to memory:\n" + added_block
+        elif removed_labels and not new_entries:
+            text = "\n\nData removed from memory: " + ", ".join(removed_labels)
+        else:
+            text = "\n\nData store updated:\n" + added_block
+            if removed_labels:
+                text += "\nRemoved: " + ", ".join(removed_labels)
+
+        # Record the new baseline so subsequent calls see no delta
+        ctx_tracker.record(agent_id, store_entries=entries, store_hash=store_hash)
+        return text
 
     # ------------------------------------------------------------------
     # Request builders
@@ -491,77 +431,38 @@ class DelegationBus:
 
     def build_envoy_request(self, mission_id: str, request: str, agent=None) -> str:
         """Build a full request string for an envoy delegation."""
-        ctx = self._ctx
+        sctx = self._get_session_ctx()
         agent_id = agent.agent_id if agent else f"EnvoyAgent[{mission_id}]"
-        store = ctx._store
+        store = sctx.store
         entries = store.list_entries()
         if entries:
-            new_entries, removed_labels, store_hash = ctx._ctx_tracker.get_store_delta(
-                agent_id, entries
+            _orch_state = sctx.agent_state.get("orchestrator") if sctx else None
+            _ctx_tracker = _orch_state.ctx_tracker if _orch_state else None
+            delta_text = self.format_store_delta(
+                _ctx_tracker, agent_id, entries, fmt="text"
             )
-            if new_entries or removed_labels:
-                labels = [
-                    f"  - {e['label']} ({e['num_points']} pts, {e['time_min']} to {e['time_max']})"
-                    for e in new_entries
-                ]
-                if new_entries and not removed_labels:
-                    request += (
-                        "\n\nNew data added to memory:\n"
-                        + "\n".join(labels)
-                        + "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                    )
-                elif removed_labels and not new_entries:
-                    request += (
-                        "\n\nData removed from memory: "
-                        + ", ".join(removed_labels)
-                        + "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                    )
-                else:
-                    request += "\n\nData store updated:\n" + "\n".join(labels)
-                    if removed_labels:
-                        request += "\nRemoved: " + ", ".join(removed_labels)
-                    request += "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
-                ctx._ctx_tracker.record(
-                    agent_id, store_entries=entries, store_hash=store_hash
-                )
-            # else: store unchanged — skip injection (agent already has it)
+            if delta_text:
+                request += delta_text
+                request += "\nDo NOT re-fetch data that is already in memory with a matching label and time range."
         if not (agent and agent._interaction_id):
             request += "\n\n[Tip: Call events(action='check') to see what happened earlier in this session.]"
         return request
 
     def build_dataops_request(self, request: str, context: str, agent=None) -> str:
         """Build a full request string for a DataOps delegation."""
-        ctx = self._ctx
-        _agent_id = agent.agent_id if agent else "DataOpsAgent"
+        sctx = self._get_session_ctx()
+        _agent_id = agent.agent_id if agent else AGENT_ID_DATAOPS
         full_request = f"{request}\n\nContext: {context}" if context else request
-        store = ctx._store
+        store = sctx.store
         entries = store.list_entries()
         if entries:
-            new_entries, removed_labels, store_hash = ctx._ctx_tracker.get_store_delta(
-                _agent_id, entries
+            _orch_state = sctx.agent_state.get("orchestrator") if sctx else None
+            _ctx_tracker = _orch_state.ctx_tracker if _orch_state else None
+            delta_text = self.format_store_delta(
+                _ctx_tracker, _agent_id, entries, fmt="json"
             )
-            if new_entries or removed_labels:
-                store_text = json.dumps(new_entries, indent=2, default=str)
-                if new_entries and not removed_labels:
-                    full_request += (
-                        "\n\nNew data added to memory:\n```json\n"
-                        + store_text
-                        + "\n```"
-                    )
-                elif removed_labels and not new_entries:
-                    full_request += "\n\nData removed from memory: " + ", ".join(
-                        removed_labels
-                    )
-                else:
-                    full_request += (
-                        "\n\nData store updated:\n```json\n" + store_text + "\n```"
-                    )
-                    if removed_labels:
-                        full_request += "\nRemoved: " + ", ".join(removed_labels)
-                ctx._ctx_tracker.record(
-                    _agent_id, store_entries=entries, store_hash=store_hash
-                )
-            # else: store unchanged — skip injection
+            if delta_text:
+                full_request += delta_text
         if not (agent and agent._interaction_id):
             full_request += "\n\n[Tip: Call events(action='check') to see what happened earlier in this session.]"
         return full_request
@@ -641,7 +542,7 @@ class DelegationBus:
 
     def delegate_to_sub_agent(
         self,
-        agent: SubAgent,
+        agent: BaseAgent,
         request,
         timeout: float = 300.0,
         wait: bool = True,
@@ -665,51 +566,40 @@ class DelegationBus:
             request: String or dict payload for the agent.
             timeout: Max seconds to wait.
             store_snapshot: Optional list of store entries to include in result.
-            tool_call_id: LLM tool_call_id for result mapping (unused now but
-                kept for API compatibility with callers).
-            agent_type: Agent type for ControlCenter tracking.
-            agent_name: Agent name for ControlCenter tracking.
-            task_summary: Human-readable summary for ControlCenter.
+            tool_call_id: LLM tool_call_id for result mapping.
+            agent_type: Agent type for work tracking.
+            agent_name: Agent name for work tracking.
+            task_summary: Human-readable summary for work tracking.
             post_process: Optional callable(result) -> result to run after
                 delegation completes.
             post_complete: Optional callable(result) to run after processing.
                 For non-critical work (e.g. PNG export).
         """
-        ctx = self._ctx
-        cc = ctx._control_center
+        sctx = self._get_session_ctx()
+        wt = sctx.work_tracker if sctx else None
         summary = task_summary or (
             request[:200] if isinstance(request, str) else str(request)[:200]
         )
-        # Capture the full request for observability
-        request_str = request if isinstance(request, str) else str(request)
-        unit = cc.register(
-            kind="delegation",
-            agent_type=agent_type,
-            agent_name=agent_name or agent.agent_id,
-            task_summary=summary,
-            request=request_str,
-            tool_call_id=tool_call_id,
-        )
+        work_id = f"wu_{uuid.uuid4().hex[:8]}"
 
-        # Capture operation log index before the delegation starts so we can
-        # collect only the operations produced by this delegation.
-        ops_log = ctx._ops_log
-        ops_start_index = len(ops_log.get_records())
+        if wt is not None:
+            cancel_event = self._ctx.cancel_event or threading.Event()
+            wt.register(
+                work_id=work_id,
+                agent_id=agent_name or agent.agent_id,
+                description=summary,
+                cancel_event=cancel_event,
+            )
 
         # Handle fire-and-forget delegation — start agent but don't wait
         if not wait:
             agent.send(request, sender="orchestrator", timeout=timeout, wait=False)
 
             # Track as async delegation for completion notification
-            ctx._async_delegations[agent_name or agent.agent_id] = time.time()
+            self._async_delegations[agent_name or agent.agent_id] = time.time()
 
-            cc.mark_completed(
-                unit.id,
-                {
-                    "status": "queued",
-                    "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
-                },
-            )
+            if wt is not None:
+                wt.mark_completed(work_id)
             return {
                 "status": "queued",
                 "message": f"Delegation to {agent_name or agent.agent_id} started (fire-and-forget)",
@@ -723,14 +613,12 @@ class DelegationBus:
             wrapped = self.wrap_delegation_result(
                 result, store_snapshot=store_snapshot
             )
-            if post_process is not None:
-                wrapped = post_process(wrapped)
-
-            # Build operation log from records added during this delegation
-            all_records = ops_log.get_records()
-            operation_log = all_records[ops_start_index:]
-
-            cc.mark_completed(unit.id, wrapped, operation_log=operation_log)
+            try:
+                if post_process is not None:
+                    wrapped = post_process(wrapped)
+            finally:
+                if wt is not None:
+                    wt.mark_completed(work_id)
 
             # Fire-and-forget callback after marking complete
             if post_complete is not None:
@@ -742,7 +630,8 @@ class DelegationBus:
             return wrapped
         except Exception as e:
             error_msg = str(e)
-            cc.mark_failed(unit.id, error_msg)
+            if wt is not None:
+                wt.mark_failed(work_id, error_msg)
             return {
                 "status": "error",
                 "message": f"Delegation failed: {error_msg}",

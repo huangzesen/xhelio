@@ -1,10 +1,7 @@
-import { useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Orbit, Sun, Zap, Globe, Telescope, Satellite } from 'lucide-react';
 import { HelionLogo } from '../common/HelionLogo';
 import { fadeSlideIn, stagger } from '../common/MotionPresets';
-import { useCatalogStore } from '../../stores/catalogStore';
-
 const EXAMPLES = [
   {
     icon: Orbit,
@@ -43,12 +40,6 @@ interface Props {
 }
 
 export function ExamplePrompts({ onSelect }: Props) {
-  const { missions, loadMissions } = useCatalogStore();
-
-  useEffect(() => {
-    if (missions.length === 0) loadMissions();
-  }, [missions.length, loadMissions]);
-
   return (
     <div data-testid="example-prompts" className="flex-1 flex flex-col items-center justify-center px-6 pb-4 overflow-y-auto">
       <motion.div
@@ -95,25 +86,6 @@ export function ExamplePrompts({ onSelect }: Props) {
             </motion.button>
           ))}
         </motion.div>
-
-        {/* Spacecraft showcase */}
-        {missions.length > 0 && (
-          <motion.div variants={fadeSlideIn} className="text-center">
-            <p className="text-xs text-text-muted mb-2">
-              {missions.length} supported spacecraft
-            </p>
-            <div className="flex flex-wrap justify-center gap-2 max-w-lg">
-              {missions.map((m) => (
-                <span
-                  key={m.id}
-                  className="px-2 py-0.5 rounded-full text-[11px] bg-surface-elevated text-text-muted border border-border"
-                >
-                  {m.name}
-                </span>
-              ))}
-            </div>
-          </motion.div>
-        )}
 
         {/* Keyboard hint */}
         <motion.div variants={fadeSlideIn} className="mt-6 text-center">

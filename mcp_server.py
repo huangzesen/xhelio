@@ -58,8 +58,7 @@ mcp = FastMCP(
         "XHelio is an AI-powered natural language interface for heliophysics "
         "and scientific data. Use the 'chat' tool to send natural language "
         "requests about scientific data visualization and analysis. The agent "
-        "supports 52 missions from NASA CDAWeb including PSP, Solar "
-        "Orbiter, ACE, Wind, MMS, THEMIS, and more. It can fetch data, compute "
+        "can fetch data from heliophysics missions, compute "
         "derived quantities, and render interactive Plotly plots. When a plot is "
         "produced, it will be returned as a PNG image alongside the text response."
     ),

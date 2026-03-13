@@ -13,7 +13,6 @@ export interface BuiltinPreset {
     sub_agent_model: string;
     insight_model: string;
     inline_model: string;
-    planner_model: string;
   };
   capabilities: {
     web_search: string | null;
@@ -29,14 +28,13 @@ export interface BuiltinPreset {
 
 // Tier → agent type mapping (single source of truth)
 export const TIER_AGENT_MAP: Record<string, string[]> = {
-  model: ['orchestrator'],
-  planner_model: ['planner'],
+  model: ['orchestrator', 'planner'],
   insight_model: ['insight'],
   sub_agent_model: ['viz_plotly', 'viz_mpl', 'viz_jsx', 'data_ops', 'data_io', 'envoy', 'eureka', 'memory'],
   inline_model: ['inline'],  // Autocomplete, session titles
 };
 
-export const MODEL_TIER_KEYS = ['model', 'sub_agent_model', 'insight_model', 'inline_model', 'planner_model'] as const;
+export const MODEL_TIER_KEYS = ['model', 'sub_agent_model', 'insight_model', 'inline_model'] as const;
 
 // All 10 supported providers
 export const PROVIDERS = [
@@ -70,7 +68,6 @@ export const BUILTIN_PRESETS: BuiltinPreset[] = [
       sub_agent_model: 'gemini-2.5-flash',
       insight_model: 'gemini-2.5-flash',
       inline_model: 'gemini-2.5-flash-lite',
-      planner_model: 'gemini-2.5-flash',
     },
     capabilities: { web_search: 'own', vision: 'own' },
     extras: { thinking: { model: 'low', sub_agent: 'low', insight: 'low' } },
@@ -86,7 +83,6 @@ export const BUILTIN_PRESETS: BuiltinPreset[] = [
       sub_agent_model: 'gpt-4.1-mini',
       insight_model: 'gpt-4.1-mini',
       inline_model: 'gpt-4.1-nano',
-      planner_model: 'gpt-4.1',
     },
     capabilities: { web_search: null, vision: 'own' },
   },
@@ -101,7 +97,6 @@ export const BUILTIN_PRESETS: BuiltinPreset[] = [
       sub_agent_model: 'claude-haiku-4-5-20251001',
       insight_model: 'claude-sonnet-4-20250514',
       inline_model: 'claude-haiku-4-5-20251001',
-      planner_model: 'claude-sonnet-4-20250514',
     },
     capabilities: { web_search: null, vision: 'own' },
   },
@@ -116,7 +111,6 @@ export const BUILTIN_PRESETS: BuiltinPreset[] = [
       sub_agent_model: 'MiniMax-M2.5-Highspeed',
       insight_model: 'MiniMax-M2.5-Highspeed',
       inline_model: 'MiniMax-M2.5-Highspeed',
-      planner_model: 'MiniMax-M2.5-Highspeed',
     },
     capabilities: { web_search: 'own', vision: 'own' },
     extras: { base_url: 'https://api.minimaxi.com/anthropic', rate_limit_interval: 2 },
@@ -132,7 +126,6 @@ export const BUILTIN_PRESETS: BuiltinPreset[] = [
       sub_agent_model: 'deepseek-chat',
       insight_model: 'deepseek-chat',
       inline_model: 'deepseek-chat',
-      planner_model: 'deepseek-chat',
     },
     capabilities: { web_search: null, vision: null },
   },

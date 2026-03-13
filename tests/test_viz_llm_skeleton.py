@@ -36,9 +36,9 @@ def adapter():
 @pytest.fixture(scope="module")
 def viz_system_prompt():
     """The actual visualization agent system prompt."""
-    from knowledge.prompt_builder import build_viz_plotly_prompt
+    from knowledge.prompt_builder import build_viz_prompt
 
-    return build_viz_plotly_prompt(gui_mode=False)
+    return build_viz_prompt("viz_plotly", gui_mode=False)
 
 
 @pytest.fixture(scope="module")
@@ -60,7 +60,7 @@ def render_tool_schema():
 
 @pytest.fixture(scope="module")
 def fake_data_listing():
-    """Simulate the output of list_fetched_data for 6 timeseries entries."""
+    """Simulate the output of assets(action='list') for 6 timeseries entries."""
     labels = {
         "AC_H2_MFI.Bmag": {"units": "nT", "desc": "ACE B magnitude"},
         "AC_H2_SWE.Np": {"units": "cm⁻³", "desc": "ACE proton density"},

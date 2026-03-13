@@ -117,6 +117,11 @@ export function ChatPage({ sidebarOpen, activityOpen }: Props) {
           useChatStore.setState({ messages: restoredMessages });
         }
 
+        // Hydrate plan status from backend (in-memory, not in event log)
+        api.getPlanStatus(sess.activeSessionId).then(({ plan }) => {
+          useChatStore.setState({ planData: plan });
+        }).catch(() => {});
+
         // Check if rebuildFromEventLog already created inline plot messages
         // (from per-render thumbnails). Only fall back to single thumbnail
         // if no plots were created (backward compat for old sessions).

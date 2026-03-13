@@ -1,5 +1,5 @@
 """
-Shared LLM utilities used by OrchestratorAgent, Actor, and PlannerAgent.
+Shared LLM utilities used by BaseAgent and its subclasses.
 
 All functions are stateless (operate on passed-in state dicts,
 event bus, etc.).
@@ -332,19 +332,17 @@ def _is_retryable_api_error(exc: Exception) -> bool:
     return False
 
 
-def send_with_timeout(
-    chat,
-    message,
+def _send_with_retry(
+    submit_fn,
     timeout_pool: ThreadPoolExecutor,
     cancel_event: threading.Event | None,
     retry_timeout: float,
     agent_name: str,
-    logger,
     on_reset=None,
     max_retries: int | None = None,
     reset_threshold: int | None = None,
 ) -> LLMResponse:
-    """Send a message to the LLM with periodic warnings and retry on timeout.
+    """Core retry loop for LLM API calls — used by both send and stream paths.
 
     Two recovery mechanisms:
     1. Retry up to *max_retries* attempts (default ``_LLM_MAX_RETRIES``).
@@ -353,6 +351,12 @@ def send_with_timeout(
        creates a new chat with the last assistant turn dropped, then continue
        retrying with the new session.
 
+    Args:
+        submit_fn: Callable that takes (chat, message) and returns the Future
+            result by calling ``timeout_pool.submit(...)`` internally. Must also
+            accept updated (chat, message) after a reset. Returns a callable
+            ``() -> Future``, plus mutable ``chat`` and ``message`` via closure.
+
     ``on_reset(chat, message)`` must return ``(new_chat, new_message)``.
     """
     if max_retries is None:
@@ -360,12 +364,14 @@ def send_with_timeout(
     if reset_threshold is None:
         reset_threshold = _SESSION_RESET_THRESHOLD
 
+    # submit_fn is a mutable-state closure: submit_fn() -> Future
+    # It also exposes .chat and .message for reset, and .update(chat, msg).
     last_exc = None
     consecutive_errors = 0
-    _bad_request_reset_done = False  # only reset once for bad-request errors
-    _desync_reset_done = False  # only reset once for history desync errors
+    _bad_request_reset_done = False
+    _desync_reset_done = False
     for attempt in range(1 + max_retries):
-        future: Future = timeout_pool.submit(chat.send, message)
+        future: Future = submit_fn()
         t0 = time.monotonic()
         try:
             while True:
@@ -406,9 +412,10 @@ def send_with_timeout(
             if attempt < max_retries:
                 if consecutive_errors >= reset_threshold and on_reset:
                     try:
-                        chat, message = on_reset(chat, message)
-                    except Exception:
-                        pass  # rollback failed — continue with existing chat
+                        new_chat, new_msg = on_reset(submit_fn.chat, submit_fn.message)
+                        submit_fn.update(new_chat, new_msg)
+                    except Exception as reset_err:
+                        _logger.warning("[%s] Session reset failed after timeout: %s", agent_name, reset_err)
                     consecutive_errors = 0
                 get_event_bus().emit(
                     LLM_CALL,
@@ -426,7 +433,6 @@ def send_with_timeout(
         except _CancelledDuringLLM:
             raise
         except Exception as exc:
-            # History desync (400): reset session once, then give up
             if _is_history_desync_error(exc) and on_reset and not _desync_reset_done:
                 _desync_reset_done = True
                 get_event_bus().emit(
@@ -435,15 +441,15 @@ def send_with_timeout(
                     level="warning",
                     msg=f"[{agent_name}] History desync detected (tool results don't match tool calls), resetting session: {exc}",
                 )
-                _save_reset_snapshot(chat, agent_name, "desync")
+                _save_reset_snapshot(submit_fn.chat, agent_name, "desync")
                 try:
-                    chat, message = on_reset(chat, message)
+                    new_chat, new_msg = on_reset(submit_fn.chat, submit_fn.message)
+                    submit_fn.update(new_chat, new_msg)
                 except Exception:
-                    raise exc  # reset failed — surface original error
+                    raise exc
                 consecutive_errors = 0
                 last_exc = exc
                 continue
-            # Precondition failed (400): corrupted server-side session, reset immediately
             if _is_precondition_error(exc) and on_reset:
                 get_event_bus().emit(
                     LLM_CALL,
@@ -452,14 +458,13 @@ def send_with_timeout(
                     msg=f"[{agent_name}] Precondition check failed (corrupted session state), resetting: {exc}",
                 )
                 try:
-                    chat, message = on_reset(chat, message)
+                    new_chat, new_msg = on_reset(submit_fn.chat, submit_fn.message)
+                    submit_fn.update(new_chat, new_msg)
                 except Exception:
-                    raise exc  # reset failed — surface original error
+                    raise exc
                 consecutive_errors = 0
                 last_exc = exc
                 continue
-            # Broad catch: any 400 Bad Request (corrupted history, protocol
-            # violation, misleading error messages) — reset once, then give up.
             if _is_bad_request_error(exc) and on_reset and not _bad_request_reset_done:
                 _bad_request_reset_done = True
                 get_event_bus().emit(
@@ -468,9 +473,10 @@ def send_with_timeout(
                     level="warning",
                     msg=f"[{agent_name}] Bad request (likely corrupted history), resetting session: {exc}",
                 )
-                _save_reset_snapshot(chat, agent_name, "bad_request")
+                _save_reset_snapshot(submit_fn.chat, agent_name, "bad_request")
                 try:
-                    chat, message = on_reset(chat, message)
+                    new_chat, new_msg = on_reset(submit_fn.chat, submit_fn.message)
+                    submit_fn.update(new_chat, new_msg)
                 except Exception:
                     raise exc
                 consecutive_errors = 0
@@ -481,9 +487,10 @@ def send_with_timeout(
                 delay = _API_ERROR_RETRY_DELAYS[min(attempt, len(_API_ERROR_RETRY_DELAYS) - 1)]
                 if consecutive_errors >= reset_threshold and on_reset:
                     try:
-                        chat, message = on_reset(chat, message)
-                    except Exception:
-                        pass  # rollback failed — continue with existing chat
+                        new_chat, new_msg = on_reset(submit_fn.chat, submit_fn.message)
+                        submit_fn.update(new_chat, new_msg)
+                    except Exception as reset_err:
+                        _logger.warning("[%s] Session reset failed after API error: %s", agent_name, reset_err)
                     consecutive_errors = 0
                 get_event_bus().emit(
                     LLM_CALL,
@@ -497,6 +504,47 @@ def send_with_timeout(
             raise
 
     raise last_exc
+
+
+class _SubmitFn:
+    """Mutable callable that wraps chat.send or chat.send_stream for _send_with_retry."""
+
+    __slots__ = ("chat", "message", "_pool", "_method", "_extra_args")
+
+    def __init__(self, pool, chat, message, method: str, extra_args: tuple = ()):
+        self._pool = pool
+        self.chat = chat
+        self.message = message
+        self._method = method
+        self._extra_args = extra_args
+
+    def __call__(self) -> Future:
+        fn = getattr(self.chat, self._method)
+        return self._pool.submit(fn, self.message, *self._extra_args)
+
+    def update(self, chat, message):
+        self.chat = chat
+        self.message = message
+
+
+def send_with_timeout(
+    chat,
+    message,
+    timeout_pool: ThreadPoolExecutor,
+    cancel_event: threading.Event | None,
+    retry_timeout: float,
+    agent_name: str,
+    logger,
+    on_reset=None,
+    max_retries: int | None = None,
+    reset_threshold: int | None = None,
+) -> LLMResponse:
+    """Send a message to the LLM with periodic warnings and retry on timeout."""
+    submit_fn = _SubmitFn(timeout_pool, chat, message, "send")
+    return _send_with_retry(
+        submit_fn, timeout_pool, cancel_event, retry_timeout,
+        agent_name, on_reset, max_retries, reset_threshold,
+    )
 
 
 def send_with_timeout_stream(
@@ -515,150 +563,13 @@ def send_with_timeout_stream(
     """Like ``send_with_timeout`` but uses ``chat.send_stream()`` for incremental text.
 
     ``on_chunk`` is called from the thread-pool thread as text deltas arrive.
-    Since ``EventBus.emit()`` is thread-safe, callers can safely emit events
-    from within ``on_chunk``.
     """
-    if max_retries is None:
-        max_retries = _LLM_MAX_RETRIES
-    if reset_threshold is None:
-        reset_threshold = _SESSION_RESET_THRESHOLD
-
-    last_exc = None
-    consecutive_errors = 0
-    _bad_request_reset_done = False  # only reset once for bad-request errors
-    _desync_reset_done = False  # only reset once for history desync errors
-    for attempt in range(1 + max_retries):
-        future: Future = timeout_pool.submit(chat.send_stream, message, on_chunk)
-        t0 = time.monotonic()
-        try:
-            while True:
-                if cancel_event and cancel_event.is_set():
-                    future.cancel()
-                    get_event_bus().emit(
-                        DEBUG,
-                        agent=agent_name,
-                        level="info",
-                        msg=f"[{agent_name}] LLM call cancelled by user",
-                    )
-                    raise _CancelledDuringLLM()
-
-                elapsed = time.monotonic() - t0
-                remaining = retry_timeout - elapsed
-                if remaining <= 0:
-                    break
-                wait = min(_LLM_WARN_INTERVAL, remaining)
-                try:
-                    result = future.result(timeout=wait)
-                    consecutive_errors = 0
-                    return result
-                except TimeoutError:
-                    elapsed = time.monotonic() - t0
-                    if elapsed >= retry_timeout:
-                        break
-                    get_event_bus().emit(
-                        LLM_CALL,
-                        agent=agent_name,
-                        level="warning",
-                        msg=f"[{agent_name}] LLM API not responding after {elapsed:.0f}s (attempt {attempt + 1})...",
-                    )
-
-            elapsed = time.monotonic() - t0
-            future.cancel()
-            last_exc = TimeoutError(f"LLM API call timed out after {elapsed:.0f}s")
-            consecutive_errors += 1
-            if attempt < max_retries:
-                if consecutive_errors >= reset_threshold and on_reset:
-                    try:
-                        chat, message = on_reset(chat, message)
-                    except Exception:
-                        pass  # rollback failed — continue with existing chat
-                    consecutive_errors = 0
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="warning",
-                    msg=f"[{agent_name}] LLM API timed out after {elapsed:.0f}s, retrying ({attempt + 1}/{max_retries})...",
-                )
-            else:
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="error",
-                    msg=f"[{agent_name}] LLM API timed out after {elapsed:.0f}s, no retries left",
-                )
-        except _CancelledDuringLLM:
-            raise
-        except Exception as exc:
-            # History desync (400): reset session once, then give up
-            if _is_history_desync_error(exc) and on_reset and not _desync_reset_done:
-                _desync_reset_done = True
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="warning",
-                    msg=f"[{agent_name}] History desync detected (tool results don't match tool calls), resetting session: {exc}",
-                )
-                _save_reset_snapshot(chat, agent_name, "desync")
-                try:
-                    chat, message = on_reset(chat, message)
-                except Exception:
-                    raise exc  # reset failed — surface original error
-                consecutive_errors = 0
-                last_exc = exc
-                continue
-            # Precondition failed (400): corrupted server-side session, reset immediately
-            if _is_precondition_error(exc) and on_reset:
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="warning",
-                    msg=f"[{agent_name}] Precondition check failed (corrupted session state), resetting: {exc}",
-                )
-                try:
-                    chat, message = on_reset(chat, message)
-                except Exception:
-                    raise exc  # reset failed — surface original error
-                consecutive_errors = 0
-                last_exc = exc
-                continue
-            # Broad catch: any 400 Bad Request — reset once, then give up.
-            if _is_bad_request_error(exc) and on_reset and not _bad_request_reset_done:
-                _bad_request_reset_done = True
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="warning",
-                    msg=f"[{agent_name}] Bad request (likely corrupted history), resetting session: {exc}",
-                )
-                _save_reset_snapshot(chat, agent_name, "bad_request")
-                try:
-                    chat, message = on_reset(chat, message)
-                except Exception:
-                    raise exc
-                consecutive_errors = 0
-                last_exc = exc
-                continue
-            if _is_retryable_api_error(exc) and attempt < max_retries:
-                consecutive_errors += 1
-                delay = _API_ERROR_RETRY_DELAYS[min(attempt, len(_API_ERROR_RETRY_DELAYS) - 1)]
-                if consecutive_errors >= reset_threshold and on_reset:
-                    try:
-                        chat, message = on_reset(chat, message)
-                    except Exception:
-                        pass  # rollback failed — continue with existing chat
-                    consecutive_errors = 0
-                get_event_bus().emit(
-                    LLM_CALL,
-                    agent=agent_name,
-                    level="warning",
-                    msg=f"[{agent_name}] API server error, retrying in {delay}s ({attempt + 1}/{max_retries})...",
-                )
-                last_exc = exc
-                time.sleep(delay)
-                continue
-            raise
-
-    raise last_exc
+    extra_args = (on_chunk,) if on_chunk is not None else ()
+    submit_fn = _SubmitFn(timeout_pool, chat, message, "send_stream", extra_args)
+    return _send_with_retry(
+        submit_fn, timeout_pool, cancel_event, retry_timeout,
+        agent_name, on_reset, max_retries, reset_threshold,
+    )
 
 
 def track_llm_usage(
@@ -672,7 +583,7 @@ def track_llm_usage(
 ):
     """Accumulate token usage from an LLMResponse and emit via EventBus.
 
-    Shared implementation used by OrchestratorAgent, Actor, and PlannerAgent.
+    Shared implementation used by BaseAgent and its subclasses.
 
     Args:
         response: The LLMResponse to extract usage from.

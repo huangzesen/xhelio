@@ -25,7 +25,7 @@ class TestToolRegistryJson:
         """tool_registry.json is valid JSON."""
         path = Path(__file__).parent.parent / "agent" / "tool_registry.json"
         data = json.loads(path.read_text())
-        assert data["version"] == 1
+        assert data["version"] == 2
 
     def test_agents_section_exists(self):
         """Agents section is present and non-empty."""
@@ -61,25 +61,28 @@ class TestToolRegistryJson:
                 f"AGENT_CALL_REGISTRY missing '{ctx_key}'"
             )
 
-    def test_envoy_call_registry_from_kinds(self):
-        """ctx:envoy should exist and contain kind-derived tools."""
-        envoy_tools = AGENT_CALL_REGISTRY.get("ctx:envoy")
-        assert envoy_tools is not None
-        assert "browse_parameters" in envoy_tools
-        assert "fetch_data_cdaweb" in envoy_tools
-        assert "fetch_data_ppi" in envoy_tools
-        assert "list_fetched_data" in envoy_tools
+    def test_envoy_call_registry_exists(self):
+        """ctx:envoy should exist (may be empty when no kind modules exist)."""
+        assert "ctx:envoy" in AGENT_CALL_REGISTRY
 
     def test_derived_constants_not_empty(self):
         """Derived Python constants are non-empty."""
         assert AGENT_CALL_REGISTRY
 
-    def test_orchestrator_has_permission_and_package_tools(self):
-        """Orchestrator call list includes permission and package management tools."""
+    def test_orchestrator_has_permission_tool(self):
+        """Orchestrator call list includes permission tool."""
         orch_tools = _REGISTRY["agents"]["orchestrator"]["call"]
-        assert "ask_user_permission" in orch_tools
-        assert "install_package" in orch_tools
-        assert "manage_sandbox_packages" in orch_tools
+        assert "xhelio__ask_user_permission" in orch_tools
+        # Package management moved to sub-agents
+        assert "xhelio__install_package" not in orch_tools
+        assert "xhelio__manage_sandbox_packages" not in orch_tools
+
+    def test_subagents_have_package_management(self):
+        """DataOps and DataIO have manage_sandbox_packages."""
+        assert "xhelio__manage_sandbox_packages" in _REGISTRY["agents"]["dataops"]["call"]
+        assert "xhelio__manage_sandbox_packages" in _REGISTRY["agents"]["data_io"]["call"]
+        # Orchestrator sees it as informed
+        assert "xhelio__manage_sandbox_packages" in _REGISTRY["agents"]["orchestrator"]["informed"]
 
     def test_envoy_sections_removed_from_json(self):
         """Old envoy sections should no longer exist in tool_registry.json."""
@@ -90,65 +93,85 @@ class TestToolRegistryJson:
         assert "envoy" not in _REGISTRY.get("agents", {})
 
 
-class TestEnvoyKindRegistry:
-    """Tests for the envoy kind registry (replaces old group tests)."""
+class TestToolNamespacing:
+    """Tests for xhelio__ tool name prefix convention."""
 
-    def test_kind_registry_resolves_cdaweb(self):
-        """Default missions resolve to 'cdaweb' kind."""
-        assert ENVOY_KIND_REGISTRY.get_kind("ACE") == "cdaweb"
-        assert ENVOY_KIND_REGISTRY.get_kind("WIND") == "cdaweb"
+    def test_all_xhelio_tools_have_prefix(self):
+        """Every xhelio-native tool name starts with 'xhelio__'."""
+        from agent.tool_handlers import TOOL_REGISTRY
 
-    def test_kind_registry_resolves_ppi(self):
-        """PPI missions resolve to 'ppi' kind."""
-        assert ENVOY_KIND_REGISTRY.get_kind("JUNO_PPI") == "ppi"
-        assert ENVOY_KIND_REGISTRY.get_kind("VOYAGER1_PPI") == "ppi"
-        assert ENVOY_KIND_REGISTRY.get_kind("GALILEO") == "ppi"
+        for name in TOOL_REGISTRY:
+            # Envoy-namespaced tools use kind:tool_name format
+            if ":" in name:
+                continue
+            assert name.startswith("xhelio__"), (
+                f"Tool {name!r} missing xhelio__ prefix"
+            )
 
-    def test_kind_registry_resolves_spice(self):
-        """SPICE resolves to 'spice' kind."""
-        assert ENVOY_KIND_REGISTRY.get_kind("SPICE") == "spice"
+    def test_tool_schemas_have_prefix(self):
+        """Every tool schema in tools.py has xhelio__ prefix."""
+        for tool in tools.TOOLS:
+            name = tool["name"]
+            assert name.startswith("xhelio__"), (
+                f"tools.py schema {name!r} missing xhelio__ prefix"
+            )
 
-    def test_cdaweb_tools(self):
-        """CDAWeb envoys get fetch_data_cdaweb + browse_parameters."""
-        names = ENVOY_KIND_REGISTRY.get_tool_names("ACE")
-        assert "fetch_data_cdaweb" in names
-        assert "browse_parameters" in names
-        assert "ask_clarification" in names
+    def test_registry_json_call_tools_have_prefix(self):
+        """Every tool in tool_registry.json call lists has xhelio__ prefix."""
+        for agent_name, cfg in _REGISTRY["agents"].items():
+            for tool_name in cfg["call"]:
+                if ":" in tool_name:
+                    continue
+                assert tool_name.startswith("xhelio__"), (
+                    f"agents.{agent_name}.call: {tool_name!r} missing prefix"
+                )
 
-    def test_ppi_tools(self):
-        """PPI envoys get fetch_data_ppi + browse_parameters."""
-        names = ENVOY_KIND_REGISTRY.get_tool_names("JUNO_PPI")
-        assert "fetch_data_ppi" in names
-        assert "browse_parameters" in names
+    def test_registry_json_informed_tools_have_prefix(self):
+        """Every tool in tool_registry.json informed lists has xhelio__ prefix."""
+        for agent_name, cfg in _REGISTRY["agents"].items():
+            for tool_name in cfg["informed"]:
+                if ":" in tool_name:
+                    continue
+                assert tool_name.startswith("xhelio__"), (
+                    f"agents.{agent_name}.informed: {tool_name!r} missing prefix"
+                )
 
-    def test_cdaweb_and_ppi_have_different_fetch_tools(self):
-        """CDAWeb and PPI envoys should have kind-specific fetch tools."""
-        cdaweb_names = set(ENVOY_KIND_REGISTRY.get_tool_names("ACE"))
-        ppi_names = set(ENVOY_KIND_REGISTRY.get_tool_names("JUNO_PPI"))
-        assert "fetch_data_cdaweb" in cdaweb_names
-        assert "fetch_data_cdaweb" not in ppi_names
-        assert "fetch_data_ppi" in ppi_names
-        assert "fetch_data_ppi" not in cdaweb_names
 
-    def test_ppi_missions_registered(self):
-        """All expected PPI missions should resolve to 'ppi' kind."""
-        from agent.envoy_kinds.registry import MISSION_KINDS
-        ppi_missions = [m for m, k in MISSION_KINDS.items() if k == "ppi"]
-        assert len(ppi_missions) >= 17, (
-            f"Expected >= 17 PPI missions, got {len(ppi_missions)}: {ppi_missions}"
-        )
+class TestToolPermissions:
+    """Tests for the tool permission registry."""
 
-    def test_register_spice_tools_updates_call_registry(self):
-        """register_spice_tools should add tools to ORCHESTRATOR_TOOLS and call registry."""
-        from agent.agent_registry import register_spice_tools, ORCHESTRATOR_TOOLS
+    def test_permissions_exist_for_all_agents(self):
+        """Every agent should have a permissions entry for 'assets'."""
+        for agent_name, cfg in _REGISTRY["agents"].items():
+            perms = cfg.get("permissions", {})
+            assert "xhelio__assets" in perms, f"{agent_name} missing assets permissions"
 
-        fake = ["_test_spice_probe"]
-        register_spice_tools(fake)
+    def test_orchestrator_has_all_actions(self):
+        perms = _REGISTRY["agents"]["orchestrator"]["permissions"]["xhelio__assets"]
+        assert set(perms) == {"list", "status", "restore_plot"}
 
-        assert "_test_spice_probe" in ORCHESTRATOR_TOOLS
-        assert "_test_spice_probe" in AGENT_CALL_REGISTRY["ctx:orchestrator"]
+    def test_viz_agents_list_only(self):
+        for agent in ("viz_plotly", "viz_mpl", "viz_jsx"):
+            perms = _REGISTRY["agents"][agent]["permissions"]["xhelio__assets"]
+            assert perms == ["list"], f"{agent} should only have list"
 
-        # Cleanup
-        ORCHESTRATOR_TOOLS.remove("_test_spice_probe")
-        from agent.envoy_agent import EnvoyAgent
-        EnvoyAgent._PARALLEL_SAFE_TOOLS.discard("_test_spice_probe")
+    def test_dataops_has_list_and_status(self):
+        perms = _REGISTRY["agents"]["dataops"]["permissions"]["xhelio__assets"]
+        assert set(perms) == {"list", "status"}
+
+    def test_permissions_loaded_into_python(self):
+        """AGENT_PERMISSIONS should be populated from JSON."""
+        from agent.agent_registry import AGENT_PERMISSIONS
+        assert "ctx:orchestrator" in AGENT_PERMISSIONS
+        assert AGENT_PERMISSIONS["ctx:viz_plotly"]["xhelio__assets"] == ["list"]
+
+    def test_schema_filtering(self):
+        """get_tool_schemas_for_agent should filter enum by permissions."""
+        from agent.tools import get_tool_schemas_for_agent
+        viz_schemas = get_tool_schemas_for_agent(["xhelio__assets"], "ctx:viz_plotly")
+        action_enum = viz_schemas[0]["parameters"]["properties"]["action"]["enum"]
+        assert action_enum == ["list"]
+
+        orch_schemas = get_tool_schemas_for_agent(["xhelio__assets"], "ctx:orchestrator")
+        action_enum = orch_schemas[0]["parameters"]["properties"]["action"]["enum"]
+        assert set(action_enum) == {"list", "status", "restore_plot"}

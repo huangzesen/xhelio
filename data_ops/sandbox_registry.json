@@ -104,6 +104,27 @@
       "required": false,
       "description": "Modern SunPy-affiliated package for coronal magnetic field extrapolation (PFSS, NLFF). Provides tools for modeling magnetic fields from photospheric magnetograms.",
       "catalog_submodules": []
+    },
+    {
+      "import_path": "lxml",
+      "sandbox_alias": "lxml",
+      "required": false,
+      "description": "Install lxml package for XML parsing in SunPy",
+      "catalog_submodules": []
+    },
+    {
+      "import_path": "zeep",
+      "sandbox_alias": "zeep",
+      "required": false,
+      "description": "Install zeep package for SOAP client in SunPy",
+      "catalog_submodules": []
+    },
+    {
+      "import_path": "drms",
+      "sandbox_alias": "drms",
+      "required": false,
+      "description": "Install drms package for JSOC/HMI data access",
+      "catalog_submodules": []
     }
   ],
   "builtins": {

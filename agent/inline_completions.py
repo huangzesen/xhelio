@@ -1,7 +1,4 @@
-"""Inline completion generation — follow-ups, session titles, autocomplete.
-
-Extracted from OrchestratorAgent to reduce god-object complexity.
-"""
+"""Inline completion generation — follow-ups, session titles, autocomplete."""
 from __future__ import annotations
 
 import json

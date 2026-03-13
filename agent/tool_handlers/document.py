@@ -4,10 +4,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from agent.core import OrchestratorAgent
+    from agent.tool_caller import ToolCaller
+    from agent.tool_context import ToolContext
 
 
-def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_read_document(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     from pathlib import Path
 
     file_path = tool_args["file_path"]
@@ -33,6 +34,12 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
             "message": f"Unsupported file format '{ext}'. Supported: {supported}",
         }
 
+    if ctx.service is None:
+        return {
+            "status": "error",
+            "message": "Document reading requires an LLM service (not available in replay mode).",
+        }
+
     try:
         import shutil
 
@@ -56,7 +63,7 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
                 "Describe any visual elements briefly."
             )
 
-        adapter = orch.service.get_adapter(orch.service.provider)
+        adapter = ctx.service.get_adapter(ctx.service.provider)
         if hasattr(adapter, "make_bytes_part") and hasattr(
             adapter, "generate_multimodal"
         ):
@@ -64,17 +71,14 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
                 data=file_bytes, mime_type=mime_type
             )
             response = adapter.generate_multimodal(
-                model=orch.model_name,
+                model=ctx.model_name,
                 contents=[doc_part, extraction_prompt],
             )
         else:
-            response = orch.service.generate(
+            response = ctx.service.generate(
                 prompt=extraction_prompt,
-                model=orch.model_name,
+                model=ctx.model_name,
             )
-        orch._last_tool_context = "extract_document"
-        orch._track_usage(response)
-
         full_text = response.text or ""
 
         from config import get_data_dir
@@ -96,11 +100,12 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         out_path = folder / f"{stem}.md"
         out_path.write_text(full_text, encoding="utf-8")
         from agent.event_bus import DEBUG
-        orch._event_bus.emit(
-            DEBUG,
-            level="debug",
-            msg=f"[Document] Saved to {folder} ({len(full_text)} chars)",
-        )
+        if ctx.event_bus is not None:
+            ctx.event_bus.emit(
+                DEBUG,
+                level="debug",
+                msg=f"[Document] Saved to {folder} ({len(full_text)} chars)",
+            )
 
         from agent.truncation import get_limit
 
@@ -123,31 +128,38 @@ def handle_read_document(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         return {"status": "error", "message": f"Document reading failed: {e}"}
 
 
-def handle_search_function_docs(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    from knowledge.function_catalog import search_functions
+def handle_function_docs(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
+    action = tool_args.get("action")
 
-    query = tool_args["query"]
-    package = tool_args.get("package")
-    results = search_functions(query, package=package)
-    return {
-        "status": "success",
-        "query": query,
-        "count": len(results),
-        "functions": results,
-    }
+    if action == "search":
+        from knowledge.function_catalog import search_functions
 
-
-def handle_get_function_docs(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    from knowledge.function_catalog import get_function_docstring
-
-    package = tool_args.get("package")
-    function_name = tool_args.get("function_name")
-    if not package or not function_name:
+        query = tool_args.get("query")
+        if not query:
+            return {"status": "error", "message": "'query' is required for search"}
+        package = tool_args.get("package")
+        results = search_functions(query, package=package)
         return {
-            "status": "error",
-            "message": "Both 'package' (e.g. 'scipy.signal') and 'function_name' are required",
+            "status": "success",
+            "query": query,
+            "count": len(results),
+            "functions": results,
         }
-    result = get_function_docstring(package, function_name)
-    if "error" in result:
-        return {"status": "error", "message": result["error"]}
-    return {"status": "success", **result}
+
+    elif action == "get":
+        from knowledge.function_catalog import get_function_docstring
+
+        package = tool_args.get("package")
+        function_name = tool_args.get("function_name")
+        if not package or not function_name:
+            return {
+                "status": "error",
+                "message": "Both 'package' (e.g. 'scipy.signal') and 'function_name' are required for get",
+            }
+        result = get_function_docstring(package, function_name)
+        if "error" in result:
+            return {"status": "error", "message": result["error"]}
+        return {"status": "success", **result}
+
+    else:
+        return {"status": "error", "message": f"Unknown action: {action}. Use 'search' or 'get'."}

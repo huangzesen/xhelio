@@ -73,7 +73,7 @@ CATALOGED_SUBMODULES: list[str] = [
 def reload_sandbox_registry() -> None:
     """Reload sandbox_registry.json and rebuild all derived constants.
 
-    Called after install_package or manage_sandbox_packages modifies the JSON.
+    Called after manage_sandbox_packages modifies the JSON.
     """
     global SANDBOX_REGISTRY, _SAFE_BUILTINS, _DANGEROUS_BUILTINS
     global _BLOCKED_ATTRS_ANY, _BLOCKED_ATTRS_MODULE, _MODULE_NAMES

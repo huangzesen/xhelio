@@ -122,35 +122,6 @@ class TestAgentToolExecution:
         agent._event_bus = MagicMock()
         return agent
 
-    def test_search_datasets_tool(self):
-        """Test that search_datasets calls catalog.search_by_keywords."""
-        with patch("knowledge.catalog.search_by_keywords") as mock_search:
-            mock_search.return_value = {
-                "mission": "PSP",
-                "mission_name": "Parker Solar Probe",
-                "instrument": "FIELDS/MAG",
-                "instrument_name": "FIELDS Magnetometer",
-                "datasets": ["PSP_FLD_L2_MAG_RTN_1MIN"],
-            }
-
-            agent = self._make_agent()
-            result = agent._execute_tool("search_datasets", {"query": "parker magnetic"})
-
-            mock_search.assert_called_once_with("parker magnetic")
-            assert result["mission"] == "PSP"
-
-    def test_list_parameters_tool(self):
-        """Test that list_parameters returns CDF variables."""
-        mock_vars = [
-            {"name": "Magnitude", "units": "nT", "size": [1], "description": ""},
-        ]
-        with patch("data_ops.fetch_cdf.list_cdf_variables", return_value=mock_vars) as mock_list:
-            agent = self._make_agent()
-            result = agent._execute_tool("list_parameters", {"dataset_id": "AC_H2_MFI"})
-
-            mock_list.assert_called_once_with("AC_H2_MFI")
-            assert len(result["parameters"]) == 1
-
     def test_ask_clarification_tool(self):
         """Test that ask_clarification returns question data."""
         agent = self._make_agent()
@@ -163,97 +134,6 @@ class TestAgentToolExecution:
         assert result["status"] == "clarification_needed"
         assert result["question"] == "Which parameter?"
         assert result["options"] == ["Magnitude", "Vector"]
-
-
-class TestValidateTimeRange:
-    """Test _validate_time_range auto-clamping logic."""
-
-    @pytest.fixture
-    def agent(self):
-        """Create a minimal OrchestratorAgent instance for testing."""
-        from agent.core import OrchestratorAgent
-        a = OrchestratorAgent.__new__(OrchestratorAgent)
-        a.verbose = False
-        a._renderer = None
-        return a
-
-    def _dt(self, s):
-        """Shorthand for naive datetime."""
-        return datetime.fromisoformat(s)
-
-    def test_fully_within_range_returns_none(self, agent):
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = {"start": "2020-01-01", "stop": "2025-01-01"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("2024-01-01"), self._dt("2024-02-01")
-            )
-            assert result is None
-
-    def test_metadata_failure_returns_none(self, agent):
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = None
-            result = agent._validate_time_range(
-                "TEST", self._dt("2024-01-01"), self._dt("2024-02-01")
-            )
-            assert result is None
-
-    def test_request_after_stop_returns_error(self, agent):
-        """'Last week' when dataset ends months ago → error (no overlap)."""
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = {"start": "2020-01-01", "stop": "2025-06-15"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("2026-01-01"), self._dt("2026-01-08")
-            )
-            assert result is not None
-            assert result["error"] is True
-            assert "No data available" in result["note"]
-
-    def test_request_before_start_returns_error(self, agent):
-        """Request for 1990 when dataset starts in 2018 → error (no overlap)."""
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = {"start": "2018-08-12", "stop": "2025-06-15"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("1990-01-01"), self._dt("1990-02-01")
-            )
-            assert result is not None
-            assert result["error"] is True
-            assert "No data available" in result["note"]
-
-    def test_partial_overlap_clamps_start(self, agent):
-        """Request starts before available → clamps start."""
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = {"start": "2020-01-01", "stop": "2025-06-15"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("2019-06-01"), self._dt("2020-06-01")
-            )
-            assert result is not None
-            assert result["start"] == self._dt("2020-01-01")
-            assert result["end"] == self._dt("2020-06-01")
-            assert "Clamped" in result["note"]
-
-    def test_partial_overlap_clamps_end(self, agent):
-        """Request ends after available → clamps end."""
-        with patch("agent.core.get_dataset_time_range") as mock:
-            mock.return_value = {"start": "2020-01-01", "stop": "2025-06-15"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("2025-05-01"), self._dt("2026-01-01")
-            )
-            assert result is not None
-            assert result["start"] == self._dt("2025-05-01")
-            assert result["end"] == self._dt("2025-06-15")
-            assert "Clamped" in result["note"]
-
-    def test_request_after_stop_with_long_duration_returns_error(self, agent):
-        """If requested range is entirely after available data, return error."""
-        with patch("agent.core.get_dataset_time_range") as mock:
-            # Dataset covers only 6 months, but requesting 2 years after stop
-            mock.return_value = {"start": "2025-01-01", "stop": "2025-06-15"}
-            result = agent._validate_time_range(
-                "TEST", self._dt("2026-01-01"), self._dt("2028-01-01")
-            )
-            assert result is not None
-            assert result["error"] is True
-            assert "No data available" in result["note"]
 
 
 class TestSanitizeForJson:

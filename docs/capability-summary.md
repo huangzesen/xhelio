@@ -23,11 +23,8 @@ api_server.py + frontend/  (FastAPI backend + React SPA)
 main.py  (readline CLI, --verbose/--model flags, token usage on exit)
   |  - Commands: quit, reset, status, retry, cancel, errors, sessions, capabilities, help
   |  - Flags: --continue/-c (resume latest), --session/-s ID (resume specific)
-  |  - Flags: --refresh (update time ranges), --refresh-full (rebuild all),
-  |           --refresh-all (rebuild all missions from CDAWeb)
   |  - Single-command mode: python main.py "request"
   |  - Auto-saves session every turn; checks for incomplete plans on startup
-  |  - Mission data menu on startup (interactive refresh prompt)
   |
   v
 mcp_server.py  (MCP server over stdio, for Claude Desktop / Claude Code / Cursor)
@@ -37,35 +34,22 @@ mcp_server.py  (MCP server over stdio, for Claude Desktop / Claude Code / Cursor
   |  - Lazy agent init, web_mode=True (suppresses auto-open)
   |
   v
-heliospice-mcp  (Standalone SPICE ephemeris MCP server, from heliospice package)
-  |  - No LLM needed — lightweight SPICE wrapper
-  |  - Tools: get_spacecraft_position, get_spacecraft_trajectory,
-  |           get_spacecraft_velocity, compute_distance, transform_coordinates,
-  |           list_spice_missions, list_coordinate_frames, manage_kernels
-  |  - Flags: --verbose
-  |  - Auto-downloads NAIF kernels on first use
-  |  - Installed via: pip install heliospice[mcp]
-  |
-  v
 agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
   |  - Routes: fetch -> mission agents, compute -> DataOps agent, viz -> visualization agent, analysis -> insight agent
   |  - Complex multi-mission requests -> planner -> sub-agents
   |  - Token usage tracking (input/output/thinking/api_calls, includes all sub-agents)
-  |  - Five model tiers: smart (orchestrator + planner), sub-agent (mission/viz/data), insight, inline (follow-ups, autocomplete), planner
-  |  - Configurable via ~/.xhelio/config.json (model / sub_agent_model / insight_model / inline_model / planner_model keys)
+  |  - Four model tiers: smart (orchestrator + planner), sub-agent (mission/viz/data), insight, inline (follow-ups, autocomplete)
+  |  - Configurable via ~/.xhelio/config.json (model / sub_agent_model / inline_model keys)
   |  - Thinking levels: HIGH (orchestrator + planner), LOW (all sub-agents), OFF (inline)
   |
-  +---> agent/viz_plotly_agent.py     Visualization sub-agent
-  |       VizPlotlyActor             Focused Gemini session for all visualization
+  +---> agent/viz_agent.py            Visualization sub-agent
+  |       VizAgent                   Unified visualization specialist (Plotly/matplotlib/JSX)
   |       render_plotly_json()       Create/update plots via Plotly figure JSON with data_label placeholders
   |       list_fetched_data()        Discover available data in memory
   |       Inbox queue + main loop    Persistent actor with dedicated thread
-  |                                  System prompt with Plotly JSON examples
+  |                                  System prompt with visualization examples per backend
   |
-  +---> agent/insight_agent.py     Insight sub-agent (multimodal plot analysis)
-  |       InsightActor              Receives rendered PNG + data context
-  |       analyze_plot()            Single LLM call with vision (no tool loop)
-  |                                  Returns scientific interpretation
+  |  (InsightAgent deleted — vision is now an intrinsic tool on BaseAgent)
   |
   +---> agent/data_ops_agent.py   DataOps sub-agent (compute/describe/export tools)
   |       DataOpsActor            Focused Gemini session for data transformations
@@ -80,11 +64,11 @@ agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
   |                               Turns search results, documents, event lists into DataFrames;
   |                               loads local CSV/JSON/Excel/Parquet/CDF files
   |
-  +---> agent/envoy_agent.py      Envoy sub-agents (fetch-only tools)
-  |       EnvoyAgent              Focused Gemini session per spacecraft mission
+  +---> agent/envoy_agent.py      Envoy sub-agents (dynamic, per-mission)
+  |       EnvoyAgent              Focused LLM session per spacecraft mission
   |       Inbox queue + main loop Persistent actor with dedicated thread
-  |                               Two-mode task prompt: candidate inspection vs direct fetch
-  |                               Rich system prompt with recommended datasets + analysis patterns
+  |                               No envoys currently registered — infrastructure intact
+  |                               Envoys are added dynamically at runtime via manage_envoy
   |                               No compute or plot tools — reports fetched labels to orchestrator
   |
   +---> agent/prompts.py           System prompt wrapper (lazy-cached, thread-safe)
@@ -122,68 +106,33 @@ agent/core.py  OrchestratorAgent  (LLM-driven orchestrator)
   |       prompt_loader.py         Loads and LRU-caches prompt sections from knowledge/prompts/*.md
   |       prompts/                 53 markdown files organized by agent type (_shared/, orchestrator/, planner/, etc.)
   |       function_catalog.py      Auto-generated searchable catalog of scipy/pywt functions (search + docstring retrieval)
-  |       missions/cdaweb/*.json   Per-mission JSON files (54 CDAWeb, auto-generated from CDAS REST)
-  |       missions/ppi/*.json      Per-mission JSON files (17 PPI, auto-generated from Metadex)
-  |       mission_loader.py        Lazy-loading cache, routing table, dataset access (deep-merges CDAWeb + PPI)
-  |       mission_prefixes.py      Shared CDAWeb dataset ID prefix map (40+ missions)
-  |       cdaweb_metadata.py       CDAWeb REST API client — InstrumentType-based grouping
-  |       catalog_search.py        Full dataset catalog fetch/cache/search (CDAWeb + PPI)
+  |       envoys/                  Empty directory — scan target for runtime envoy kinds
   |       catalog.py               Thin routing layer (loads from JSON, backward-compat SPACECRAFT dict)
-  |       prompt_builder.py        (see above — assembly manifests for all agent prompts)
-  |       metadata_client.py       Dataset metadata (3-layer cache: memory → file → Master CDF)
-  |       master_cdf.py            Master CDF skeleton download + parameter metadata extraction
   |       startup.py               Mission data startup: status check, interactive refresh menu, CLI flag resolution
-  |       bootstrap.py             Mission JSON auto-generation from CDAS REST + Master CDF
   |
   +---> data_ops/                 Python-side data pipeline (pandas-backed)
-  |       fetch.py                  Data fetching via CDF backend
-  |       fetch_cdf.py              CDF data fetching + Master CDF-based variable listing
   |       store.py                  In-memory DataStore singleton (label -> DataEntry w/ DataFrame)
   |       custom_ops.py             AST-validated sandboxed executor for LLM-generated pandas/numpy code
-  |       pipeline.py               Pipeline DAG (live session) + SavedPipeline (extracted replayable) + is_vanilla/appropriation_fingerprint
-  |
-  +---> agent/pipeline_store.py  PipelineStore — searchable index of non-trivial saved pipelines
-  |       PipelineEntry             Metadata record (name, tags, datasets, missions, family_id, variant_ids)
-  |       register()                Vanilla filter + family-based dedup (same data logic → one entry)
-  |       search()                  Embedding-based or tag-based search with mission/dataset pre-filtering
+  |       dag.py                    PipelineDAG — networkx-backed directed acyclic graph for pipeline tracking
   |
   +---> rendering/                Plotly-based visualization engine
   |       plotly_renderer.py        Fills data_label placeholders in LLM-generated Plotly JSON, multi-panel, PNG/PDF export via kaleido
   |       registry.py               Tool registry (2 declarative tools) — single source of truth for viz capabilities
   |
-  +---> heliospice (external package, pip install heliospice[mcp])
-  |       missions.py               NAIF ID registry + fuzzy mission name resolution
-  |       kernel_manager.py          Thread-safe kernel download, cache, load/unload (singleton)
-  |       ephemeris.py               get_position, get_trajectory, get_state (SpiceyPy under lock)
-  |       frames.py                  Coordinate frame transforms (SPICE pxform + manual RTN)
-  |       server.py                  MCP server (heliospice-mcp CLI)
-  |
   +---> scripts/                  Tooling
-          generate_mission_data.py  Auto-populate JSON from CDAS REST + Master CDF
-          fetch_metadata_cache.py   Download metadata cache (Master CDF)
           agent_server.py           TCP socket server for multi-turn agent testing
           run_agent_tests.py        Integration test suite (6 scenarios)
           regression_test_20260207.py  Regression tests from 2026-02-07 session
           stress_test.py            Stress testing
 ```
 
-## Tools (45 tool schemas)
+## Tools (33 tool schemas)
 
 ### Dataset Discovery
 | Tool | Purpose |
 |------|---------|
-| `envoy_query` | Unified envoy capability discovery. Three modes: list all envoys (no args), navigate envoy JSON tree (envoy + path), regex search across envoy trees (search). Replaces the 5 old discovery tools at the orchestrator level. |
-| `get_dataset_docs` | Fetch CDAWeb documentation for a dataset (instrument info, coordinates, PI contact) |
+| `envoy_query` | Generic envoy capability discovery. Three modes: list all envoys (no args), navigate envoy JSON tree (envoy + path), regex search across envoy trees (search). Currently returns empty results — no envoys registered. |
 | `google_search` | Web search — each provider uses its native search capability (Gemini: Google Search grounding, OpenAI: search model, Anthropic: web_search tool, MiniMax: MCP web_search) |
-
-**Envoy-internal discovery tools** (available inside envoy agents only, not at orchestrator level):
-| Tool | Purpose |
-|------|---------|
-| `search_datasets` | Keyword search across spacecraft/instruments (local catalog). Returns datasets with start_date/stop_date time coverage. |
-| `browse_datasets` | Browse all science datasets for a mission (filtered by calibration exclusion lists) |
-| `list_parameters` | List plottable parameters for a dataset (Master CDF / local cache) |
-| `list_missions` | List all known spacecraft missions with capabilities |
-| `search_full_catalog` | Search full CDAWeb catalog (2000+ datasets, CDAS REST primary) by keyword |
 
 ### Visualization
 | Tool | Purpose |
@@ -224,19 +173,6 @@ The viz agent uses `render_plotly_json` and `manage_plot` for all visualization 
 |------|---------|
 | `review_memory` | Rate how useful an injected operational memory was (1-5 stars + structured fields: rating, criticism, suggestion, comment). Called by sub-agents after completing their main task. |
 
-### SPICE Ephemeris
-
-SPICE ephemeris tools are available to the orchestrator and all envoy agents (cdaweb, ppi, spice) directly — no delegation needed. The orchestrator calls them directly for ephemeris requests, while envoys can use them alongside data fetching for positional context (e.g., heliocentric distance). SPICE envoy JSON is auto-generated from heliospice MCP introspection at startup via `knowledge/generate_envoy_json.from_mcp()`. Per-mission permission gating ensures each envoy kind only sees the SPICE missions relevant to its domain.
-
-| Tool | Purpose |
-|------|---------|
-| `get_spacecraft_ephemeris` | Get position/velocity at a single time or as a timeseries |
-| `compute_distance` | Compute distance between two bodies over a time range |
-| `transform_coordinates` | Transform 3D vector between frames (J2000, ECLIPJ2000, RTN, etc.) |
-| `list_spice_missions` | List all supported SPICE missions with NAIF IDs |
-| `list_coordinate_frames` | List available coordinate frames with descriptions |
-| `manage_kernels` | Check kernel status, download, load, or purge kernels |
-
 ### Conversation
 | Tool | Purpose |
 |------|---------|
@@ -245,11 +181,11 @@ SPICE ephemeris tools are available to the orchestrator and all envoy agents (cd
 ### Routing
 | Tool | Purpose |
 |------|---------|
-| `delegate_to_envoy` | LLM-driven delegation to a mission specialist sub-agent |
+| `delegate_to_envoy` | LLM-driven delegation to a mission specialist sub-agent (envoy list dynamically injected into schema at runtime) |
 | `delegate_to_data_ops` | LLM-driven delegation to the data ops specialist sub-agent |
 | `delegate_to_data_io` | LLM-driven delegation to the data I/O specialist sub-agent |
 | `delegate_to_viz` | LLM-driven delegation to the visualization sub-agent (backend param selects plotly/matplotlib/jsx) |
-| `delegate_to_insight` | LLM-driven delegation to the insight sub-agent for multimodal plot analysis |
+| ~~`delegate_to_insight`~~ | Deleted — replaced by intrinsic `vision` tool on BaseAgent |
 | `delegate_to_planner` | Activate multi-step planning system for complex requests (orchestrator can trigger dynamically) |
 
 ### Pipeline (Live DAG)
@@ -259,26 +195,12 @@ SPICE ephemeris tools are available to the orchestrator and all envoy agents (cd
 | `pipeline(action="modify")` | Mutate the DAG: `sub_action` selects `update_params`, `remove`, `insert_after`, `apply_library_op` (reuse saved code), `save_to_library` (curate code). Marks affected nodes stale. |
 | `pipeline(action="execute")` | Re-run stale/pending nodes with backdating (skip descendants if output unchanged). Optional `use_cache` flag. |
 
-The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `OperationsLog` and cached on the orchestrator. It provides an abstract operation layer the agent can inspect, modify, and re-execute — enabling workflows like "change the time range and re-run everything downstream" or "insert a smoothing step before the plot." Asset-centric design (nodes = data artifacts), lazy staleness (mutations mark stale but don't recompute until triggered), and backdating (unchanged outputs skip descendants). The ops library integration (`data_ops/ops_library.py`) allows saving compute node code for reuse and applying library entries to pipeline nodes.
+The pipeline DAG (`data_ops/dag.py`) is a graph-native, networkx-backed directed acyclic graph that records every pipeline operation as a node with automatic edge creation from label flow (producer → consumer). It tracks operations across all agent boundaries — both orchestrator and sub-agent tool executions emit pipeline events via the EventBus, which the `PipelineDAGListener` routes to `PipelineDAG.add_node()`. Persists as `pipeline.json` in the session directory.
 
-### Pipeline (Saved / Replayable)
-| Tool | Purpose |
-|------|---------|
-| `pipeline(action="save")` | Extract a replayable pipeline from the current session's operations log. Saves to `~/.xhelio/pipelines/` and registers in PipelineStore. |
-| `pipeline(action="run")` | Replay a saved pipeline with a new time range. Loads by `pl_` ID from disk — works regardless of store registration. |
-| `pipeline(action="search")` | Search saved pipelines by query text, mission, or dataset. Delegates to PipelineStore semantic search. |
-
-**Two-tier pipeline system:**
-
-1. **Session replay DAG** (raw) — the chronological operations log (`operations.json`). Every tool call the user made during a conversation. Intertwined, messy, contains failures and exploratory dead-ends.
-
-2. **SavedPipeline** (extracted) — a clean, replayable DAG extracted from the session replay. Steps are classified into **appropriation** (fetch + transform, chainable) and **presentation** (render, terminal). Each pipeline is parameterized by time range and can be replayed without an LLM.
-
-**PipelineStore** (`agent/pipeline_store.py`) manages a searchable metadata index on top of saved pipeline files:
-
-- **Vanilla filter**: Simple pipelines (<3 fetches, no transforms) are still saved to disk but not registered in the store — they won't appear in search results or context injection. These are trivial fetch-and-render workflows that add noise.
-- **Family-based dedup**: Pipelines with identical appropriation phases (same fetches and transforms, different visualizations) are grouped under a single "family" entry using SHA-256 fingerprinting. The fingerprint uses canonical position-based step IDs so different session-specific `s001`-style IDs produce the same hash for identical structure. Each family entry tracks all variant `pl_` IDs.
-- **Schema v2**: `PipelineEntry` includes `family_id` (64-char SHA-256 hex) and `variant_ids` (list of all `pl_` IDs sharing the family). Migration from v1 is automatic.
+**`run_code` strict contract:**
+- **Input isolation**: Only data listed in `inputs` is staged as files in a fresh temporary directory per execution. Undeclared data is not accessible.
+- **Multi-output**: The `outputs` parameter maps store labels to variable names (e.g., `outputs={"Bmag": "result", "Bangle": "angle"}`). Each output is written independently.
+- **No implicit state**: Each execution is fully isolated — no shared state between calls.
 
 ### Event Feed (Pull-Based Session Context)
 | Tool | Purpose |
@@ -289,20 +211,17 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 ## Sub-Agent Architecture (9 agents)
 
 ### OrchestratorAgent (agent/core.py)
-- Sees tools: discovery, conversation, routing, document, spice, pipeline + `list_fetched_data` extra
-- Routes: data fetching -> EnvoyAgent, computation -> DataOpsActor, text-to-data/file-import -> DataIOAgent, visualization -> VizPlotlyActor, plot analysis -> InsightActor
+- Sees tools: discovery, conversation, routing, document, pipeline + `list_fetched_data` extra
+- Routes: data fetching -> EnvoyAgent, computation -> DataOpsActor, text-to-data/file-import -> DataIOAgent, visualization -> VizAgent, plot analysis -> InsightActor
 - Handles multi-step plans with mission-tagged task dispatch (`__data_ops__`, `__data_io__`, `__visualization__`)
 
 ### EnvoyAgent (agent/envoy_agent.py)
-- Sees tools: discovery, data_ops_fetch, conversation + `list_fetched_data` extra
-- One agent per spacecraft, cached per session
-- Rich system prompt with recommended datasets and analysis patterns
-- **Two-mode operation**: when planner provides `candidate_datasets`, inspects candidates via `list_parameters` and selects best dataset/parameters autonomously; otherwise executes exact instructions directly
-- Handles all-NaN fallback: skips empty parameters, tries next candidate dataset
-- No compute tools — reports fetched data labels to orchestrator
-- See planning flow below (§ Planning Pipeline)
-- **Three envoy kinds** (cdaweb, ppi, spice): each kind has its own tool set, prompt templates, and permission rules defined in `agent/envoy_kinds/`. Tool schemas are resolved from `ENVOY_KIND_REGISTRY` at agent creation time. SPICE tools are injected into all envoy kinds via `register_spice_tools()` in `agent/agent_registry.py`, with per-mission permission gating so each envoy only sees SPICE missions relevant to its domain.
-- **Envoy JSON** lives in `knowledge/envoys/{cdaweb,ppi,spice}/`. SPICE envoy JSON is auto-generated from heliospice MCP introspection via `knowledge/generate_envoy_json.from_mcp()`.
+- No envoys currently registered. The envoy infrastructure (EnvoyAgent, kind registry, delegation) is intact but empty.
+- Envoys are added dynamically at runtime via `manage_envoy` (temporarily removed from orchestrator tool set).
+- Each envoy kind has its own tool set, prompt templates, and permission rules defined in `knowledge/envoys/{kind}/`.
+- `delegate_to_envoy` schema dynamically injects the current envoy list at runtime.
+- One agent per spacecraft, cached per session.
+- No compute tools — reports fetched data labels to orchestrator.
 
 ### DataOpsActor (agent/data_ops_agent.py)
 - Sees tools: data_ops_compute (`custom_operation`, `describe_data`, `save_data`), function_docs (`search_function_docs`, `get_function_docs`), conversation + `list_fetched_data` extra
@@ -322,30 +241,33 @@ The pipeline DAG (`data_ops/pipeline.py`) is constructed on-demand from the `Ope
 - Loads local files (CSV, JSON, Excel, Parquet, CDF) into the DataStore
 - No fetch, compute, or plot tools — creates/imports data only
 
-### VizPlotlyActor (agent/viz_plotly_agent.py)
-- Sees tools: `render_plotly_json` + `manage_plot` + `list_fetched_data` (3 tools total)
+### VizAgent (agent/viz_agent.py)
+- Unified visualization specialist parameterized by `VIZ_BACKENDS` config dict
+- Plotly backend: `render_plotly_json` + `manage_plot` + `list_fetched_data`
+- Matplotlib backend: `generate_mpl_script` + `manage_mpl_output` + `list_fetched_data`
+- JSX backend: `generate_jsx_component` + `manage_jsx_output` + `list_fetched_data`
 - `render_plotly_json`: LLM provides Plotly figure JSON with `data_label` placeholders; system fills in actual data
-- The viz agent owns all visualization: `render_plotly_json` + `manage_plot` + `list_fetched_data`
+- The viz agent owns all visualization operations for the active backend
 
-### InsightActor (agent/insight_agent.py)
-- No tools — uses single multimodal LLM call (vision) via `analyze_plot()`
-- Receives rendered PNG of the current plot + data context (store entries, trace labels, units, time ranges)
-- Returns structured scientific analysis: overview, notable features, data quality, coordinate system awareness, interpretation, suggestions
-- System prompt from `build_insight_prompt()` in `knowledge/prompt_builder.py`
-- Singleton, cached per session
-- Triggered via `delegate_to_insight` routing tool (requires an active plot)
-- Image exported at `scale=2` (higher than thumbnails) so LLM can read axis labels
-- **Automatic Figure Feedback** (`review_figure()`): opt-in via `reasoning.insight_feedback: true` in config. After every successful `render_plotly_json`, exports the figure to PNG, gathers user request + data context + conversation history, and sends to InsightActor for quality review. Returns PASS/NEEDS_IMPROVEMENT verdict with suggestions. Feedback is injected into the tool result so the orchestrator LLM can act on it (fix/re-render). Uses `build_insight_feedback_prompt()` (review-focused, not scientific analysis). Emits `INSIGHT_FEEDBACK` events (display + memory + console). Adds ~4-9s per render. Default off.
+### Intrinsic Tools (agent/base_agent.py)
+
+All agents inherit two intrinsic tools from BaseAgent (opt-out available):
+
+- **`vision`** — Analyze an image file using the model's vision capability. Takes `image_path` + `question`, reads the file, and calls `LLMService.generate_vision()`. MIME type auto-detected from extension. No `xhelio__` prefix.
+- **`web_search`** — Search the web for real-world context. Takes `query`, calls `LLMService.web_search()`. No `xhelio__` prefix.
+
+Three-tier tool model:
+1. **Intrinsic tools** (BaseAgent, no prefix, only need LLMService) — `vision`, `web_search`
+2. **Orchestrator-private tools** (OrchestratorAgent._local_tools, xhelio policy)
+3. **Tool server tools** (MCP-exposable, domain state) — all `xhelio__` prefixed tools
+
+MemoryAgent opts out of intrinsic tools.
+
+- **Automatic Figure Feedback** (`sync_insight_review()` in `eureka_hooks.py`): opt-in via `reasoning.insight_feedback: true` in config. After every successful `render_plotly_json`, exports the figure to PNG and calls `LLMService.generate_vision()` directly for quality review. Returns PASS/NEEDS_IMPROVEMENT verdict. Emits `INSIGHT_FEEDBACK` events (display + memory + console). Default off.
 
 ## Supported Spacecraft
 
-### Primary Missions (54 CDAWeb + 17 PPI)
-
-Mission JSON files are auto-generated: 54 CDAWeb missions from CDAS REST API + Master CDF metadata via `scripts/generate_mission_data.py`, plus 17 PPI missions from Metadex Solr via `scripts/generate_ppi_missions.py`. CDAWeb and PPI missions with matching stems are deep-merged at load time. Key missions include PSP, Solar Orbiter, ACE, OMNI, Wind, DSCOVR, MMS, STEREO-A, Cluster, THEMIS, Van Allen Probes, GOES, Voyager 1/2, Ulysses, Cassini, Juno, and more.
-
-### Full CDAWeb Catalog Access (2000+ datasets)
-
-All CDAWeb datasets are searchable via the `search_full_catalog` tool. New missions can be added by creating a JSON file in `knowledge/envoys/cdaweb/` via `scripts/generate_mission_data.py --create-new`. The shared prefix map in `knowledge/mission_prefixes.py` maps dataset ID prefixes to mission identifiers.
+No mission data is currently bundled. CDAWeb and PPI mission data have been removed. New mission support will be added via standalone MCP packages (`cdawebmcp`, `ppimcp`) registered as envoy kinds through `manage_envoy`.
 
 ## Time Range Parsing
 
@@ -371,15 +293,14 @@ All times are UTC. Outputs `TimeRange` objects with `start`/`end` datetimes.
 - `DataEntry` wraps a `pd.DataFrame` (DatetimeIndex + float64 columns) or `xr.DataArray`.
 - `DataStore` is a singleton dict keyed by label. The LLM chains tools automatically: fetch -> custom_operation -> plot.
 - `custom_ops.py`: AST-validated, sandboxed executor for LLM-generated pandas/numpy/scipy/pywt code. Replaces all hardcoded compute functions — the LLM writes the code directly. Sandbox includes `pd`, `np`, `xr`, `scipy` (full scipy), and `pywt` (PyWavelets).
-- Data fetching uses the CDF backend exclusively — downloads CDF files from CDAWeb REST API, caches locally, reads with cdflib. Errors propagate directly for the agent to learn from.
+- Data fetching infrastructure has been removed — will be re-added via MCP-backed envoys.
 
-### Saved Pipelines & PipelineStore
-- **SavedPipeline** (`data_ops/pipeline.py`): Extracted replayable workflows from session operations logs. Each is a clean DAG with appropriation (fetch + transform) and presentation (render) phases. Saved as `~/.xhelio/pipelines/{pl_id}.json`, indexed in `_index.json`.
-- **PipelineStore** (`agent/pipeline_store.py`): Searchable metadata index (`~/.xhelio/pipeline_store.json`). Built on `VersionedStore` for versioning, archival, and embedding-based search.
-- **Extraction flow**: Session ops log → `SavedPipeline.from_session()` → `pipeline.save()` (disk) → `pipeline_store.register()` (search index, with vanilla filter and family dedup).
-- **Vanilla detection** (`is_vanilla()`): Pipelines with <3 fetches and no transforms are trivial — saved to disk but not registered in store.
-- **Family fingerprinting** (`appropriation_fingerprint()`): SHA-256 hash of the appropriation phase with canonical step IDs. Pipelines with identical data logic but different visualizations share one store entry, with all variant `pl_` IDs tracked in `variant_ids`.
-- **Replay**: `SavedPipeline.execute(time_start, time_end)` replays with a new time range — no LLM needed. Loads by `pl_` ID from disk (unaffected by store registration).
+### PipelineDAG (`data_ops/dag.py`)
+- **Graph-native**: networkx `DiGraph` with thread-safe access (`threading.Lock`). Nodes are operations, edges represent data flow via label ownership.
+- **Automatic edges**: When a node declares `inputs=["label"]`, an edge is created from the producer of that label to the consumer. Label ownership is updated on success.
+- **Cross-agent tracking**: Tool handlers emit pipeline events (`DATA_COMPUTED`, `RENDER_EXECUTED`, etc.) directly. The `PipelineDAGListener` (subscribed in `session_lifecycle.py`) routes pipeline-tagged events to `dag.add_node_auto()`.
+- **Query API**: `predecessors()`, `successors()`, `ancestors()`, `descendants()`, `roots()`, `leaves()`, `path()`, `producer_of()`, `consumers_of()`, `topological_order()`, `subgraph()`.
+- **Persistence**: Atomic save to `pipeline.json` in session directory. `PipelineDAG.load()` restores from disk.
 
 ### Timeseries vs General Data Mode (`DataEntry.is_timeseries`)
 Each `DataEntry` has an `is_timeseries` boolean (default `True`) that controls how data is described, computed on, and rendered.
@@ -387,7 +308,7 @@ Each `DataEntry` has an `is_timeseries` boolean (default `True`) that controls h
 **How mode is set** — inferred from index type, not explicitly specified:
 | Storage path | Mode | How determined |
 |---|---|---|
-| `fetch_data` (CDF/PDS) | Always `True` | Fetched data always has DatetimeIndex |
+| `fetch_data` (CDF) | Always `True` | Fetched data always has DatetimeIndex |
 | `custom_operation` | Inferred | `isinstance(result.index, pd.DatetimeIndex)` or `"time" in da.dims` for xarray |
 | `store_dataframe` | Inferred | `isinstance(result_df.index, pd.DatetimeIndex)` |
 
@@ -430,19 +351,19 @@ Each `DataEntry` has an `is_timeseries` boolean (default `True`) that controls h
 Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedicated thread, and a persistent LLM session.
 
 - **`SubAgent` base class** (`agent/sub_agent.py`): `Message` dataclass + `SubAgent` class with inbox, main loop thread, active tool tracking, and event bus integration. Tools run synchronously (blocking). When the LLM emits multiple tool calls in a single response and all are in `_PARALLEL_SAFE_TOOLS`, they execute concurrently via ThreadPoolExecutor; otherwise sequentially.
-- **Sub-agent actors**: `EnvoyAgent`, `VizPlotlyActor`, `DataOpsActor`, `DataIOAgent`, `InsightActor` — each extends `Actor` with specialized prompt builders and tool schemas.
+- **Sub-agent actors**: `EnvoyAgent`, `VizAgent`, `DataOpsActor`, `DataIOAgent` — each extends `BaseAgent` with specialized prompt builders and tool schemas.
 - **Delegation**: Delegation tools (`delegate_to_envoy`, `delegate_to_viz`, etc.) use `_get_or_create_*_agent()` + `_delegate_to_sub_agent()`. Agents persist across delegations, preserving LLM context.
 - **Serialization**: Each actor has one thread reading from its inbox — multiple requests to the same mission actor queue naturally without locks.
 
-### LLM-Driven Routing (`agent/core.py`, `agent/envoy_agent.py`, `agent/data_ops_agent.py`, `agent/viz_plotly_agent.py`)
-- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_io` (text-to-DataFrame, file import), `delegate_to_viz` (visualization), or `delegate_to_insight` (multimodal plot analysis) tools. The orchestrator discovers envoy capabilities via `envoy_query` (list, navigate, search) before delegating. No regex-based routing — the LLM uses conversation context and the routing table to decide.
-- **Mission sub-agents**: Each spacecraft has a data fetching specialist with rich system prompt (recommended datasets, analysis patterns). Agents are cached per session. Sub-agents have **fetch-only tools** (discovery, data_ops_fetch, conversation) — no compute, plot, or routing tools.
+### LLM-Driven Routing (`agent/core.py`, `agent/envoy_agent.py`, `agent/data_ops_agent.py`, `agent/viz_agent.py`)
+- **Routing**: The OrchestratorAgent (LLM) decides whether to handle a request directly or delegate via `delegate_to_envoy` (fetching), `delegate_to_data_ops` (computation), `delegate_to_data_io` (text-to-DataFrame, file import), `delegate_to_viz` (visualization), tools. The orchestrator uses the intrinsic `vision` tool directly for plot analysis. The orchestrator can discover envoy capabilities via `envoy_query` (list, navigate, search) before delegating. No regex-based routing — the LLM uses conversation context to decide.
+- **Mission sub-agents**: No envoys currently registered. When envoys are added via `manage_envoy`, each spacecraft gets a data fetching specialist. Agents are cached per session. Sub-agents have **fetch-only tools** (discovery, data_ops_fetch, conversation) — no compute, plot, or routing tools.
 - **DataOps sub-agent**: Data transformation specialist with `custom_operation`, `describe_data`, `save_data` + `list_fetched_data`. System prompt includes computation patterns and code guidelines. Singleton, cached per session.
 - **DataIO sub-agent**: Text-to-DataFrame and file import specialist with `store_dataframe`, `load_file`, `read_document`, `ask_clarification` + `list_fetched_data`. System prompt includes extraction patterns, DataFrame creation guidelines, and file loading workflow. Singleton, cached per session.
 - **Visualization sub-agent**: Visualization specialist with `render_plotly_json` + `manage_plot` + `list_fetched_data` tools. Owns all visualization operations (plotting, export, reset, zoom, traces). The LLM provides Plotly figure JSON with `data_label` placeholders, and the system fills in actual data arrays.
-- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `spice`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["web_search", "conversation", "routing", "document", "memory", "data_export", "spice", "pipeline", "pipeline_ops"]` + `list_fetched_data`, `envoy_query` extras (discovery tools like `search_datasets`, `browse_datasets`, `list_parameters`, `list_missions`, `search_full_catalog` are envoy-internal only). EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataIOAgent sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizPlotlyActor sees `["visualization"]` + `list_fetched_data`, `manage_plot` extras → `render_plotly_json` + `manage_plot` + `list_fetched_data`.
-- **Post-delegation flow**: After `delegate_to_envoy` returns data labels, the orchestrator uses `delegate_to_data_ops` for computation, `delegate_to_data_io` for text-to-DataFrame conversion or file import, `delegate_to_viz` to visualize results, and optionally `delegate_to_insight` for scientific interpretation of the rendered plot.
-- **Slim orchestrator**: System prompt contains a routing table (mission names + capabilities), orchestrator rules, error recovery patterns, and delegation instructions. Dataset IDs and analysis tips live in mission sub-agents.
+- **Tool separation**: Tools have a `category` field (`discovery`, `visualization`, `data_ops`, `data_ops_fetch`, `data_ops_compute`, `data_extraction`, `function_docs`, `conversation`, `routing`, `document`, `data_export`, `memory`, `web_search`, `pipeline`, `pipeline_ops`). `get_tool_schemas(categories=..., extra_names=...)` filters tools by category. Orchestrator sees `["web_search", "conversation", "routing", "document", "memory", "data_export", "pipeline", "pipeline_ops"]` + `list_fetched_data`, `envoy_query` extras (discovery tools are envoy-internal only). EnvoyAgent sees `["discovery", "data_ops_fetch", "conversation"]` + `list_fetched_data` extra. DataOpsActor sees `["data_ops_compute", "conversation"]` + `list_fetched_data`, `search_function_docs`, `get_function_docs` extras. DataIOAgent sees `["data_extraction", "document", "conversation"]` + `list_fetched_data` extra. VizAgent sees tools per active backend: Plotly → `render_plotly_json` + `manage_plot` + `list_fetched_data`; matplotlib → `generate_mpl_script` + `manage_mpl_output` + `list_fetched_data`; JSX → `generate_jsx_component` + `manage_jsx_output` + `list_fetched_data`.
+- **Post-delegation flow**: After `delegate_to_envoy` returns data labels, the orchestrator uses `delegate_to_data_ops` for computation, `delegate_to_data_io` for text-to-DataFrame conversion or file import, `delegate_to_viz` to visualize results, and optionally `vision` for scientific interpretation of the rendered plot.
+- **Slim orchestrator**: System prompt contains orchestrator rules, error recovery patterns, and delegation instructions.
 - **Gemini context caching**: When using Gemini, the orchestrator creates an explicit context cache containing the full system prompt (with mission catalog) + tool schemas (~38K tokens). This exceeds the 32K threshold for Gemini's cached content API, giving a 75% discount on cached input tokens. The cache is created once per session (24h TTL). Non-Gemini providers use the slim prompt without caching.
 - **Per-agent session history** (`ctx:` tags): Sub-agents get fresh blank chats per delegation and have no awareness of prior session activity. To fix this, the EventBus `DEFAULT_TAGS` registry includes `ctx:mission`, `ctx:viz`, `ctx:dataops`, `ctx:planner`, and `ctx:orchestrator` tags on relevant event types (data fetches, computes, renders, errors, sub-agent tool calls). At delegation time, `_build_agent_history(agent_type)` queries `get_events(tags={"ctx:{type}"})`, formats events into concise one-line summaries, and injects the result as "Session history (what happened earlier)" before the memory context. This gives agents awareness of prior fetches, failed operations, and rendered plots without replaying the full conversation. The `ctx:mission` tag covers all mission agents (one shared history for cross-mission comparison scenarios). The `ctx:viz` and `ctx:dataops` tags filter `SUB_AGENT_TOOL`/`SUB_AGENT_ERROR` events by agent name to show only that agent's prior tool calls. The `ctx:orchestrator` tag (on 9 event types: `SUB_AGENT_TOOL`, `SUB_AGENT_ERROR`, `DATA_FETCHED`, `DATA_COMPUTED`, `RENDER_EXECUTED`, `CUSTOM_OP_FAILURE`, `FETCH_ERROR`, `RENDER_ERROR`, `PLOT_ACTION`) gives the orchestrator and planner a terse status-only view of sub-agent activity (e.g. `[PSP_Agent] fetch_data: ok`, `Fetched: ACE.Bmag`). `DELEGATION`/`DELEGATION_DONE` are excluded from `ctx:orchestrator` because the orchestrator sees these as its own tool calls in chat history.
 - **Message-level context compaction**: For client-side history adapters (Anthropic, OpenAI Chat Completions), the full message list is resent every call. When estimated context tokens reach 80% of the model's context window, the `_check_and_compact()` method triggers compaction:
@@ -455,7 +376,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 
 ### Multi-Step Requests (Planning)
 - Simple requests are handled by the orchestrator's conversation loop (up to 10 iterations, with consecutive delegation error guard)
-- "Compare PSP and ACE" -> `delegate_to_envoy(envoy="PSP", ...)` -> `delegate_to_envoy(envoy="ACE", ...)` -> `delegate_to_viz(plot both)` — all in one `process_message` call
+- Multi-mission comparisons use sequential `delegate_to_envoy` calls for each mission, then `delegate_to_viz` — all in one `process_message` call
 - Complex requests use **planning** via the **PlannerAgent**:
   1. **Regex pre-filter**: `is_complex_request()` regex heuristics catch obvious complex cases (free, no API cost) and route directly to planner
   2. **Orchestrator override**: The orchestrator (with HIGH thinking) can also call `delegate_to_planner` tool for complex cases the regex missed
@@ -471,7 +392,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 ### Thinking Levels
 - Controlled via `create_chat(thinking="high"|"low"|"default")` in the adapter layer
 - **HIGH**: Orchestrator (`agent/core.py`) and PlannerAgent (`agent/planner.py`) — deep reasoning for routing decisions and plan decomposition
-- **LOW**: EnvoyAgent, VizPlotlyActor, DataOpsActor, DataIOAgent, InsightActor — fast execution with minimal thinking overhead
+- **LOW**: EnvoyAgent, VizAgent, DataOpsActor, DataIOAgent, InsightActor — fast execution with minimal thinking overhead
 - **OFF**: Inline tier (follow-up suggestions, ghost text autocomplete) — cheapest/fastest model, no thinking
 - Thinking tokens tracked separately in `get_token_usage()` across all agents
 - Verbose mode logs full thoughts to terminal/file, plus 500-char tagged previews for web UI via `agent/thinking.py` utilities
@@ -481,23 +402,11 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - **Config**: `reasoning.async_delegation` (default: `false`)
 - When enabled, eligible `delegate_to_*` calls launch sub-agents on daemon threads and return immediately with `{"status": "pending_async"}`
 - **Eligible tools**: `delegate_to_envoy`, `delegate_to_data_ops`, `delegate_to_data_io`
-- **Not eligible** (shared state): `delegate_to_viz` (PlotlyRenderer), `delegate_to_insight` (image export)
+- **Not eligible** (shared state): `delegate_to_viz` (PlotlyRenderer)
 - **Freeze/wake pattern**: If the LLM produces no tool calls but async delegations are pending, the orchestrator freezes (zero LLM cost) until at least one completes, then wakes with results
 - `DelegationManager` coordinates via `threading.Condition` for efficient blocking
 - Each completed delegation includes a **structured operation log** built from EventBus events (tool calls, fetch results, errors) — the orchestrator sees step-by-step what the sub-agent did
 - Thread-local `_active_agent_name` and `_current_agent_type` via `threading.local()` ensure concurrent sub-agents don't interfere with each other's identity tracking
-
-### Per-Mission JSON Knowledge (`knowledge/envoys/{cdaweb,ppi,spice}/*.json`)
-- **54 CDAWeb + 17 PPI + SPICE mission JSON files**. CDAWeb and PPI missions are auto-generated from CDAS REST API + Master CDF metadata (CDAWeb) and Metadex Solr (PPI). Deep-merged at load time for overlapping missions. SPICE envoy JSON is auto-generated from heliospice MCP introspection at startup via `knowledge/generate_envoy_json.from_mcp()`. Profiles include instrument groupings, dataset parameters, and time ranges.
-- **Shared prefix map**: `knowledge/mission_prefixes.py` maps CDAWeb dataset ID prefixes to mission identifiers (40+ mission groups).
-- **CDAWeb InstrumentType grouping**: `knowledge/cdaweb_metadata.py` fetches the CDAWeb REST API to get authoritative InstrumentType per dataset (18+ categories like "Magnetic Fields (space)", "Plasma and Solar Wind"). Bootstrap uses this to group datasets into meaningful instrument categories with keywords, instead of dumping everything into "General".
-- **Full catalog search**: `knowledge/catalog_search.py` provides `search_full_catalog` tool — searches all CDAWeb + PPI datasets by keyword, with 24-hour local cache for CDAWeb data.
-- **Master CDF metadata**: `knowledge/master_cdf.py` downloads CDF skeleton files from CDAWeb and extracts parameter metadata (names, types, units, fill values, sizes). Cached to `~/.xhelio/master_cdfs/`. Used as the network source for parameter metadata.
-- **3-layer metadata resolution**: `knowledge/metadata_client.py` resolves dataset metadata through: in-memory cache → local file cache → Master CDF download. Master CDF results are persisted to the local file cache for subsequent use.
-- **Recommended datasets**: All datasets in the instrument section are shown as recommended. Additional datasets are discoverable via `browse_datasets` (envoy-internal) or `envoy_query` (orchestrator-level navigation/search).
-- **Calibration exclusion lists**: Per-mission `_calibration_exclude.json` files filter out calibration, housekeeping, and ephemeris datasets from browse results. Uses glob patterns and exact IDs.
-- **Auto-generation**: `scripts/generate_mission_data.py` queries CDAS REST API for catalog + Master CDF for parameters. Use `--create-new` to create skeleton JSON files for new missions.
-- **Loader**: `knowledge/mission_loader.py` provides in-memory cache, routing table, and dataset access. Routing table derives capabilities from instrument keywords (magnetic field, plasma, energetic particles, electric field, radio/plasma waves, geomagnetic indices, ephemeris, composition, coronagraph, imaging).
 
 ### Long-term Memory (`agent/memory.py`)
 - Cross-session memory that persists user preferences, session summaries, operational pitfalls, and reflections
@@ -546,7 +455,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 ### MemoryAgent (`agent/memory_agent.py`)
 - **Periodic extraction**: Triggered every N user turns (default 2) by `_maybe_extract_memories()` in `core.py`. Runs async on a daemon thread using INLINE_MODEL. Queries EventBus for memory-tagged events since last extraction (incremental slicing). Lock prevents concurrent extractions. Flushes to disk after each extraction.
 - **Single LLM call per extraction**: Curates EventBus events via `build_curated_events()` into a chronological timeline (conversation turns, data ops, routing, errors interleaved), then analyzes via single LLM call. Extracts preferences, session summaries, and pitfalls (with multi-scope support), uses tag-based dedup against existing memories. Actions: add/edit/drop only — reviews are handled by sub-agents directly via `review_memory` tool. The agent's own review is injected into the memory prompt for consolidation decisions. DataOps-only missions are filtered from extraction to avoid noise.
-- **Pipeline registration**: MemoryAgent also curates pipeline candidates via LLM-judged registration. Pipeline candidates from session scans are routed through the MemoryAgent for quality assessment before being registered in PipelineStore.
+- **Pipeline registration**: Stubbed pending DAG-native reimplementation.
 - **Two-phase consolidation** (conservative policy — when memory count exceeds budget):
   - Phase A — Rule-based pre-filter (no LLM): archives excess summaries, low-confidence (<0.3), old unaccessed (>30 days, access_count=0), tag-overlap dedup (≥80% Jaccard)
   - Phase B — Per-group LLM merge: groups remaining memories by (type, frozenset(scopes)), sends over-budget groups to LLM for merging
@@ -555,7 +464,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 - All exceptions caught — never breaks the main agent flow
 
 
-- **VersionedStore** (`agent/versioned_store.py`): Base class providing versioned JSON persistence with schema migration, used by MemoryStore and PipelineStore.
+- **VersionedStore** (`agent/versioned_store.py`): Base class providing versioned JSON persistence with schema migration, used by MemoryStore.
 
 - `SessionManager` saves and restores chat history + DataStore across process restarts
 - Storage layout: `~/.xhelio/sessions/{session_id}/` with `metadata.json`, `history.json`, and `data/*.pkl`
@@ -570,7 +479,7 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 ### Auto-Clamping Time Ranges
 - `_validate_time_range()` in `agent/core.py` auto-adjusts requested time ranges to fit dataset availability windows
 - Handles partial overlaps (clamps to available range) and full mismatches (informs user of available range)
-- Fail-open: if metadata call fails (Master CDF), proceeds without validation
+- Fail-open: if metadata call fails, proceeds without validation
 
 ### Default Plot Styling
 - `_DEFAULT_LAYOUT` in `rendering/plotly_renderer.py` sets explicit white backgrounds (`paper_bgcolor`, `plot_bgcolor`) and dark font color
@@ -589,22 +498,16 @@ Each sub-agent is a persistent **Actor** with an inbox (`queue.Queue`), a dedica
 
 ### Mission Data Startup (`knowledge/startup.py`)
 - Shared startup logic used by `main.py` and the API server
-- `get_mission_status()` scans mission JSONs and reports count, datasets, last refresh date
-- `show_mission_menu()` presents interactive refresh options on startup
-- `resolve_refresh_flags()` maps CLI flags (`--refresh`, `--refresh-full`, `--refresh-all`) to actions
-- `run_mission_refresh()` invokes bootstrap to refresh time ranges or rebuild all missions
-- After refresh, clears mission_loader and metadata_client caches
+- Currently minimal — no mission data is bundled
+- Will be re-enabled when MCP-backed envoys are registered
 
 ### Empty Session Auto-Cleanup
 - On startup, `SessionManager` auto-removes sessions with no chat history and no stored data
 - Prevents clutter from abandoned or crashed sessions
 - Session save is skipped when there's nothing to persist
 
-### First-Run Full Download
-- On first run (no mission JSONs exist), `ensure_missions_populated()` calls `populate_missions()` which downloads the full CDAWeb catalog + Master CDF parameter metadata (~5-10 minutes, one-time)
-- Subsequent startups are instant (JSON files already exist)
-- Two refresh paths: `--refresh` (lightweight time-range update) and `--refresh-full` (destructive rebuild)
-- Shows progress via tqdm in terminal, logger-based progress in web UI live log
+### First-Run Setup
+- No mission data download required — envoys are registered dynamically at runtime via `manage_envoy`
 
 ### Web Search (`google_search` tool)
 Each provider implements `adapter.web_search()` using its native search capability:
@@ -635,8 +538,7 @@ MINIMAX_API_KEY=<minimax-api-key>      # Optional — for MiniMax provider
       "model": "gemini-3-flash",
       "sub_agent_model": "gemini-3-flash",
       "insight_model": "gemini-3-flash",
-      "inline_model": "gemini-2.5-flash-lite",
-      "planner_model": "gemini-3-flash"
+      "inline_model": "gemini-2.5-flash-lite"
     }
   },
   "data_backend": "cdf",
@@ -657,9 +559,6 @@ python main.py --continue    # Resume most recent session
 python main.py --session ID  # Resume specific session by ID
 python main.py -m MODEL      # Specify Gemini model (overrides .env)
 python main.py "request"     # Single-command mode (non-interactive, exits after response)
-python main.py --refresh     # Refresh dataset time ranges (fast — start/stop dates only)
-python main.py --refresh-full  # Full rebuild of all mission data
-python main.py --refresh-all   # Full rebuild of all missions (same as --refresh-full)
 ```
 
 ### React Frontend + FastAPI Backend
@@ -680,7 +579,7 @@ Five-page SPA with client-side routing (`react-router-dom`):
 - Input history with arrow key navigation
 - LLM ghost-text autocomplete (debounced, Tab to accept, Esc to dismiss)
 - Plan status display with retry/cancel controls
-- Color-coded tool events by category (data, compute, viz, spice, catalog)
+- Color-coded tool events by category (data, compute, viz, catalog)
 - Expandable token usage with per-agent breakdown and data store stats
 - Export session to Markdown with figure thumbnails (dropdown: embed as base64 or local path)
 
@@ -692,8 +591,8 @@ Five-page SPA with client-side routing (`react-router-dom`):
 - Memory manager: global toggle, type-tagged list, delete selected, clear all
 
 **Pipeline Page** (`/pipeline`):
-- Session selector (sessions with operations.json)
-- Interactive DAG visualization via Plotly (from `scripts/plot_pipeline.py`)
+- Session selector (sessions with pipeline.json)
+- Interactive DAG visualization via Plotly
 - Step table with tool badge colors and click-to-select
 - Code viewer with Python syntax highlighting (`prism-react-renderer`)
 - Prev/Next navigation for compute steps
@@ -721,16 +620,6 @@ python mcp_server.py -m MODEL     # Override LLM model
 ```
 
 Exposes the agent as three MCP tools (`chat`, `reset_session`, `get_status`) over stdio transport. Any MCP-compatible client can connect — Claude Desktop, Claude Code, Cursor, etc. The `chat` tool returns text plus a PNG image when a plot is produced.
-
-### SPICE MCP Server (heliospice)
-
-```bash
-heliospice-mcp                      # Start SPICE MCP server (stdio)
-heliospice-mcp -v                   # With verbose logging
-python -m heliospice.server         # Alternative invocation
-```
-
-Standalone SPICE ephemeris server — no LLM needed. Eight tools for spacecraft positions, trajectories, velocities, distances, coordinate transforms, and kernel management. Kernels auto-downloaded from NAIF. Installed via `pip install heliospice[mcp]`. Configure via `.mcp.json`. At xhelio startup, `knowledge/generate_envoy_json.from_mcp()` introspects the heliospice MCP server to auto-generate SPICE envoy JSON in `knowledge/envoys/spice/`, keeping tool schemas in sync with the installed heliospice version.
 
 ### CLI Commands
 
@@ -786,7 +675,6 @@ No filter logic changes needed. The `tagged()` helper returns `{"log_tag": tag}`
 python -m pytest tests/test_store.py tests/test_custom_ops.py   # Data ops tests
 python -m pytest tests/test_session.py                           # Session persistence tests
 python -m pytest tests/test_memory.py tests/test_memory_agent.py # Memory + MemoryAgent tests
-# SPICE tests are now in the heliospice repo
 python -m pytest tests/                                          # All tests
 ```
 
@@ -795,8 +683,8 @@ python -m pytest tests/                                          # All tests
 ```
 google-genai>=1.60.0    # Gemini API (via agent/llm/gemini_adapter.py)
 python-dotenv>=1.0.0    # .env loading
-requests>=2.28.0        # HTTP calls (CDAS REST, Master CDF, CDF downloads)
-cdflib>=1.3.0           # CDF file reading (Master CDF metadata, data files)
+requests>=2.28.0        # HTTP calls
+cdflib>=1.3.0           # CDF file reading
 numpy>=1.24.0           # Array operations
 scipy>=1.10.0           # Signal processing, FFT, interpolation, statistics
 PyWavelets>=1.8.0       # Wavelet transforms (CWT, DWT, packets)
@@ -808,5 +696,4 @@ tqdm>=4.60.0            # Progress bars for bootstrap/data downloads
 pytest>=7.0.0           # Test framework
 minimax-coding-plan-mcp # MiniMax MCP server for web search + image understanding (via uvx)
 mcp>=1.26.0             # MCP server (stdio transport for Claude Desktop / Claude Code)
-heliospice[mcp]>=0.1.0  # SPICE ephemeris + MCP server (auto-managed kernels, wraps SpiceyPy)
 ```

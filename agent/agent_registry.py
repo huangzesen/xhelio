@@ -30,7 +30,7 @@ _REGISTRY_PATH = Path(__file__).parent / "tool_registry.json"
 def _load_registry() -> dict:
     """Load and validate the tool registry JSON at import time."""
     data = json.loads(_REGISTRY_PATH.read_text())
-    if data.get("version") != 1:
+    if data.get("version") not in (1, 2):
         raise ValueError(f"tool_registry.json: unknown version {data.get('version')}")
     for name, cfg in data.get("agents", {}).items():
         if not isinstance(cfg.get("call"), list) or not isinstance(
@@ -56,16 +56,28 @@ ORCHESTRATOR_INFORMED_TOOLS: list[str] = list(
 def _collect_envoy_tools() -> list[str]:
     """Collect all tool names across all envoy kinds for permission gating.
 
-    Uses _load_kind_module() which bootstraps knowledge.envoys without
-    triggering knowledge/__init__.py's heavy imports.
+    Discovers kinds dynamically from knowledge/envoys/ directories that
+    contain an __init__.py. Uses _load_kind_module() which bootstraps
+    knowledge.envoys without triggering knowledge/__init__.py's heavy imports.
     """
+    from pathlib import Path
     from agent.envoy_kinds.registry import _load_kind_module
 
+    envoys_dir = Path(__file__).resolve().parent.parent / "knowledge" / "envoys"
     all_tools: set[str] = set()
-    for kind in ("cdaweb", "ppi", "spice"):
-        mod = _load_kind_module(kind)
-        all_tools.update(t["name"] for t in mod.TOOLS)
-        all_tools.update(mod.GLOBAL_TOOLS)
+    if not envoys_dir.exists():
+        return list(all_tools)
+    for kind_dir in sorted(envoys_dir.iterdir()):
+        if not kind_dir.is_dir() or kind_dir.name.startswith("_"):
+            continue
+        if not (kind_dir / "__init__.py").exists():
+            continue
+        try:
+            mod = _load_kind_module(kind_dir.name)
+            all_tools.update(t["name"] for t in mod.TOOLS)
+            all_tools.update(mod.GLOBAL_TOOLS)
+        except (ValueError, ImportError):
+            continue
     return list(all_tools)
 
 
@@ -81,15 +93,28 @@ VIZ_JSX_TOOLS: list[str] = list(_REGISTRY["agents"]["viz_jsx"]["call"])
 VIZ_JSX_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["viz_jsx"]["informed"])
 DATAOPS_TOOLS: list[str] = list(_REGISTRY["agents"]["dataops"]["call"])
 DATAOPS_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["dataops"]["informed"])
-PLANNER_TOOLS: list[str] = list(_REGISTRY["agents"]["planner"]["call"])
-PLANNER_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["planner"]["informed"])
 DATA_IO_TOOLS: list[str] = list(_REGISTRY["agents"]["data_io"]["call"])
 DATA_IO_INFORMED_TOOLS: list[str] = list(
     _REGISTRY["agents"]["data_io"]["informed"]
 )
 EUREKA_TOOLS: list[str] = list(_REGISTRY["agents"]["eureka"]["call"])
 EUREKA_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["eureka"]["informed"])
+MEMORY_TOOLS: list[str] = list(_REGISTRY["agents"]["memory"]["call"])
+MEMORY_INFORMED_TOOLS: list[str] = list(_REGISTRY["agents"]["memory"]["informed"])
 
+
+
+# ── Context tag constants — single source of truth for ctx:* strings ──
+
+CTX_ORCHESTRATOR = "ctx:orchestrator"
+CTX_ENVOY = "ctx:envoy"
+CTX_VIZ_PLOTLY = "ctx:viz_plotly"
+CTX_VIZ_MPL = "ctx:viz_mpl"
+CTX_VIZ_JSX = "ctx:viz_jsx"
+CTX_DATAOPS = "ctx:dataops"
+CTX_DATA_IO = "ctx:data_io"
+CTX_EUREKA = "ctx:eureka"
+CTX_MEMORY = "ctx:memory"
 
 
 # ── Derived registries ──
@@ -103,51 +128,52 @@ def _resolve_tools(tools: list[str]) -> frozenset[str]:
 # Tools the agent can CALL (for tool schema injection and permission gate)
 AGENT_CALL_REGISTRY: dict[str, frozenset[str]] = {}
 for _json_name, _ctx_key in [
-    ("orchestrator", "ctx:orchestrator"),
-    ("viz_plotly", "ctx:viz_plotly"),
-    ("viz_mpl", "ctx:viz_mpl"),
-    ("viz_jsx", "ctx:viz_jsx"),
-    ("dataops", "ctx:dataops"),
-    ("planner", "ctx:planner"),
-    ("data_io", "ctx:data_io"),
-    ("eureka", "ctx:eureka"),
+    ("orchestrator", CTX_ORCHESTRATOR),
+    ("viz_plotly", CTX_VIZ_PLOTLY),
+    ("viz_mpl", CTX_VIZ_MPL),
+    ("viz_jsx", CTX_VIZ_JSX),
+    ("dataops", CTX_DATAOPS),
+    ("data_io", CTX_DATA_IO),
+    ("eureka", CTX_EUREKA),
+    ("memory", CTX_MEMORY),
 ]:
     _cfg = _REGISTRY["agents"][_json_name]
     AGENT_CALL_REGISTRY[_ctx_key] = frozenset(_cfg["call"])
 
 # Envoy call registry built from kind modules (not JSON)
-AGENT_CALL_REGISTRY["ctx:envoy"] = frozenset(ENVOY_TOOLS)
+AGENT_CALL_REGISTRY[CTX_ENVOY] = frozenset(ENVOY_TOOLS)
+
+# Action-level permissions per tool (e.g. assets → ["list", "status"])
+AGENT_PERMISSIONS: dict[str, dict[str, list[str]]] = {}
+for _json_name, _ctx_key in [
+    ("orchestrator", CTX_ORCHESTRATOR),
+    ("viz_plotly", CTX_VIZ_PLOTLY),
+    ("viz_mpl", CTX_VIZ_MPL),
+    ("viz_jsx", CTX_VIZ_JSX),
+    ("dataops", CTX_DATAOPS),
+    ("data_io", CTX_DATA_IO),
+    ("eureka", CTX_EUREKA),
+    ("memory", CTX_MEMORY),
+]:
+    _cfg = _REGISTRY["agents"][_json_name]
+    _perms = _cfg.get("permissions", {})
+    if _perms:
+        AGENT_PERMISSIONS[_ctx_key] = _perms
 
 
 # ── Mutable InformedRegistry ──
 
 # Static defaults for informed tools (call tools + informed-only tools)
 _INFORMED_DEFAULTS: list[tuple[str, frozenset[str], list[str]]] = [
-    (
-        "ctx:orchestrator",
-        AGENT_CALL_REGISTRY["ctx:orchestrator"],
-        ORCHESTRATOR_INFORMED_TOOLS,
-    ),
-    ("ctx:envoy", AGENT_CALL_REGISTRY["ctx:envoy"], ENVOY_INFORMED_TOOLS),
-    (
-        "ctx:viz_plotly",
-        AGENT_CALL_REGISTRY["ctx:viz_plotly"],
-        VIZ_PLOTLY_INFORMED_TOOLS,
-    ),
-    ("ctx:viz_mpl", AGENT_CALL_REGISTRY["ctx:viz_mpl"], VIZ_MPL_INFORMED_TOOLS),
-    ("ctx:viz_jsx", AGENT_CALL_REGISTRY["ctx:viz_jsx"], VIZ_JSX_INFORMED_TOOLS),
-    ("ctx:dataops", AGENT_CALL_REGISTRY["ctx:dataops"], DATAOPS_INFORMED_TOOLS),
-    ("ctx:planner", AGENT_CALL_REGISTRY["ctx:planner"], PLANNER_INFORMED_TOOLS),
-    (
-        "ctx:data_io",
-        AGENT_CALL_REGISTRY["ctx:data_io"],
-        DATA_IO_INFORMED_TOOLS,
-    ),
-    (
-        "ctx:eureka",
-        AGENT_CALL_REGISTRY["ctx:eureka"],
-        EUREKA_INFORMED_TOOLS,
-    ),
+    (CTX_ORCHESTRATOR, AGENT_CALL_REGISTRY[CTX_ORCHESTRATOR], ORCHESTRATOR_INFORMED_TOOLS),
+    (CTX_ENVOY, AGENT_CALL_REGISTRY[CTX_ENVOY], ENVOY_INFORMED_TOOLS),
+    (CTX_VIZ_PLOTLY, AGENT_CALL_REGISTRY[CTX_VIZ_PLOTLY], VIZ_PLOTLY_INFORMED_TOOLS),
+    (CTX_VIZ_MPL, AGENT_CALL_REGISTRY[CTX_VIZ_MPL], VIZ_MPL_INFORMED_TOOLS),
+    (CTX_VIZ_JSX, AGENT_CALL_REGISTRY[CTX_VIZ_JSX], VIZ_JSX_INFORMED_TOOLS),
+    (CTX_DATAOPS, AGENT_CALL_REGISTRY[CTX_DATAOPS], DATAOPS_INFORMED_TOOLS),
+    (CTX_DATA_IO, AGENT_CALL_REGISTRY[CTX_DATA_IO], DATA_IO_INFORMED_TOOLS),
+    (CTX_EUREKA, AGENT_CALL_REGISTRY[CTX_EUREKA], EUREKA_INFORMED_TOOLS),
+    (CTX_MEMORY, AGENT_CALL_REGISTRY[CTX_MEMORY], MEMORY_INFORMED_TOOLS),
 ]
 
 
@@ -256,24 +282,6 @@ class InformedRegistry:
 # Module-level singleton (replaces the old frozen dict)
 AGENT_INFORMED_REGISTRY = InformedRegistry()
 
-
-def register_spice_tools(names: list[str]) -> None:
-    """Register dynamically discovered SPICE tool names for envoy agents.
-
-    SPICE tools are envoy-only — the orchestrator delegates to envoys for
-    SPICE work rather than calling SPICE tools directly.
-
-    Safe to call multiple times — skips names already present.
-    """
-    # Update the informed registry so log routing picks up the new tools.
-    with AGENT_INFORMED_REGISTRY._lock:
-        for name in names:
-            AGENT_INFORMED_REGISTRY._registry.setdefault("ctx:envoy", set()).add(name)
-
-    # Add SPICE tools to EnvoyAgent's parallel-safe set
-    from .envoy_agent import EnvoyAgent
-
-    EnvoyAgent._PARALLEL_SAFE_TOOLS.update(names)
 
 
 

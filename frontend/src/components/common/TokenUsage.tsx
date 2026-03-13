@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import type { TokenBreakdown, AgentUsageRow } from '../../api/types';
 import * as api from '../../api/client';
 import { useSessionStore } from '../../stores/sessionStore';
@@ -114,19 +114,43 @@ export function TokenUsage({ usage }: Props) {
   }, [activeSessionId]);
 
   // Poll token usage from the session detail while streaming
+  const wasStreaming = useRef(false);
   useEffect(() => {
-    if (!isStreaming || !activeSessionId) return;
-    const interval = setInterval(async () => {
-      try {
-        const detail = await api.getSession(activeSessionId);
-        if (detail.token_usage) {
-          useSessionStore.getState().setTokenUsage(detail.token_usage);
+    if (!activeSessionId) return;
+    if (isStreaming) {
+      wasStreaming.current = true;
+      const interval = setInterval(async () => {
+        try {
+          const detail = await api.getSession(activeSessionId);
+          if (detail.token_usage) {
+            useSessionStore.getState().setTokenUsage(detail.token_usage);
+          }
+        } catch {
+          // ignore
         }
-      } catch {
-        // ignore
-      }
-    }, 3000);
-    return () => clearInterval(interval);
+      }, 3000);
+      return () => clearInterval(interval);
+    }
+    // Streaming just ended — do a delayed poll to capture post-cycle agent
+    // usage (memory, eureka agents run after round_end).
+    if (wasStreaming.current) {
+      wasStreaming.current = false;
+      const timer = setTimeout(async () => {
+        try {
+          const [detail, bd] = await Promise.all([
+            api.getSession(activeSessionId),
+            api.getTokenBreakdown(activeSessionId),
+          ]);
+          if (detail.token_usage) {
+            useSessionStore.getState().setTokenUsage(detail.token_usage);
+          }
+          if (bd) setBreakdown(bd);
+        } catch {
+          // ignore
+        }
+      }, 5000);
+      return () => clearTimeout(timer);
+    }
   }, [isStreaming, activeSessionId]);
 
   // Fetch breakdown on mount and when total changes

@@ -2,7 +2,7 @@
 
 Usage:
     @tool_handler("my_tool_name")
-    def handle_my_tool(orch, args):
+    def handle_my_tool(ctx, args, caller):
         return {"result": "ok"}
 
 All decorated handlers are collected in _HANDLERS and can be

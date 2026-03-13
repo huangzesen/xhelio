@@ -14,8 +14,6 @@ from agent.logging import get_logger
 class LoadingPhase(Enum):
     NOT_STARTED = "not_started"
     CHECKING = "checking"
-    BOOTSTRAPPING_CDAWEB = "bootstrapping_cdaweb"
-    BOOTSTRAPPING_PPI = "bootstrapping_ppi"
     LOADING_JSON = "loading_json"
     COMPLETE = "complete"
     FAILED = "failed"

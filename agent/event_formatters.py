@@ -54,6 +54,8 @@ def _default_formatter(agent: str, data: dict, children: list) -> tuple[str, str
 
 def _first_output(data: dict) -> str:
     outputs = data.get("outputs", [])
+    if isinstance(outputs, dict):
+        return str(next(iter(outputs))) if outputs else "(no label)"
     return str(outputs[0]) if outputs else "(no label)"
 
 
@@ -96,19 +98,11 @@ def _fmt_data_fetched(agent: str, data: dict, children: list) -> tuple[str, str]
     error = data.get("error")
 
     if error or status == "error":
-        summary = f"fetch_data FAILED: {error or 'unknown error'}"
-        details = f"Error: {error}\nDataset: {args.get('dataset_id', '(unknown dataset)')}\nParameter: {args.get('parameter_id', '(unknown parameter)')}"
+        summary = f"data fetch FAILED: {error or 'unknown error'}"
+        details = f"Error: {error}\nLabel: {label or '(unknown)'}"
         return (summary, details)
 
-    if args.get("already_loaded"):
-        n_pts = data.get("n_pts", "")
-        pts_info = f" ({n_pts} pts)" if n_pts else ""
-        summary = f"fetch_data -> {label}: already loaded{pts_info}"
-        details = f"Label: {label}\nTime range: {args.get('time_start', '(unknown)')} to {args.get('time_end', '(unknown)')}"
-        return (summary, details)
-
-    # Normal fetch
-    parts = [f"fetch_data -> {label}"]
+    parts = [f"data_fetched -> {label}"]
     info_parts = []
     if data.get("n_pts"):
         info_parts.append(f"{data['n_pts']} pts")
@@ -128,10 +122,7 @@ def _fmt_data_fetched(agent: str, data: dict, children: list) -> tuple[str, str]
         parts.append(": " + ", ".join(info_parts))
     summary = "".join(parts)
 
-    # Details
     detail_lines = [f"Label: {label}"]
-    detail_lines.append(f"Dataset: {args.get('dataset_id', '(unknown dataset)')}")
-    detail_lines.append(f"Parameter: {args.get('parameter_id', '(unknown parameter)')}")
     if time_start:
         detail_lines.append(f"Time: {time_start} to {time_end}")
     if data.get("nan_pct") is not None:
@@ -387,34 +378,6 @@ def _fmt_tool_error_log(agent: str, data: dict, children: list) -> tuple[str, st
     return (summary, summary)
 
 
-# =====================================================================
-# Sub-agent tool events
-# =====================================================================
-
-@register("sub_agent_tool")
-def _fmt_sub_agent_tool(agent: str, data: dict, children: list) -> tuple[str, str]:
-    tool_name = data.get("tool_name", "(unknown tool)")
-    result = data.get("tool_result", {})
-    status = "ok"
-    brief = ""
-    if isinstance(result, dict):
-        if result.get("status") == "error":
-            status = "error"
-            brief = str(result.get("message", ""))
-        else:
-            status = result.get("status", "ok")
-            # Include brief result info for actionable summaries
-            if result.get("label"):
-                brief = str(result["label"])
-            elif result.get("labels"):
-                brief = ", ".join(str(l) for l in result["labels"][:3])
-            if result.get("num_points"):
-                brief = f"{brief}, {result['num_points']} pts" if brief else f"{result['num_points']} pts"
-    summary = f"[{agent}] {tool_name} → {status}"
-    if brief:
-        summary += f" ({brief})"
-    details = f"Agent: {agent}\nTool: {tool_name}\nArgs: {data.get('tool_args', {})}"
-    return (summary, details)
 
 
 @register("sub_agent_error")
@@ -483,73 +446,6 @@ def _fmt_delegation_async_completed(agent: str, data: dict, children: list) -> t
 # =====================================================================
 # Data source sub-events (children of DATA_FETCHED span)
 # =====================================================================
-
-@register("cdf_file_query")
-def _fmt_cdf_file_query(agent: str, data: dict, children: list) -> tuple[str, str]:
-    n = data.get("file_count", data.get("n_files", "?"))
-    dataset_id = data.get("dataset_id", "?")
-    summary = f"Found {n} files for {dataset_id}"
-    details = f"Dataset: {dataset_id}\nFiles found: {n}"
-    return (summary, details)
-
-
-@register("cdf_cache_hit")
-def _fmt_cdf_cache_hit(agent: str, data: dict, children: list) -> tuple[str, str]:
-    filename = data.get("filename", "?")
-    summary = f"Cache hit: {filename}"
-    details = f"Cached file: {filename}"
-    return (summary, details)
-
-
-@register("cdf_download")
-def _fmt_cdf_download(agent: str, data: dict, children: list) -> tuple[str, str]:
-    filename = data.get("filename", "(unknown file)")
-    size_mb = data.get("size_mb", "")
-    if size_mb:
-        summary = f"Downloaded {filename} ({size_mb} MB)"
-    else:
-        summary = f"Downloaded {filename}"
-    detail_lines = [f"File: {filename}"]
-    if size_mb:
-        detail_lines.append(f"Size: {size_mb} MB")
-    details = "\n".join(detail_lines)
-    return (summary, details)
-
-
-@register("cdf_download_warn")
-def _fmt_cdf_download_warn(agent: str, data: dict, children: list) -> tuple[str, str]:
-    mb = data.get("mb", data.get("size_mb", "(unknown)"))
-    n_files = data.get("n_files", "(unknown)")
-    summary = f"Large download: {mb} MB ({n_files} files)"
-    details = f"Files: {n_files}\nTotal size: {mb} MB"
-    return (summary, details)
-
-
-@register("cdf_metadata_sync")
-def _fmt_cdf_metadata_sync(agent: str, data: dict, children: list) -> tuple[str, str]:
-    result = data.get("result", data.get("_msg", "?"))
-    summary = f"Metadata sync: {result}"
-    details = f"Result: {result}"
-    return (summary, details)
-
-
-@register("ppi_fetch")
-def _fmt_ppi_fetch(agent: str, data: dict, children: list) -> tuple[str, str]:
-    desc = data.get("description", data.get("_msg", "?"))
-    summary = f"PPI: {desc}"
-    details = f"Description: {desc}"
-    return (summary, details)
-
-
-@register("fetch_error")
-def _fmt_fetch_error(agent: str, data: dict, children: list) -> tuple[str, str]:
-    error = data.get("error", data.get("_msg", "unknown"))
-    summary = f"fetch_data FAILED: {error}"
-    details = f"Error: {error}"
-    if data.get("dataset_id"):
-        details += f"\nDataset: {data['dataset_id']}"
-    return (summary, details)
-
 
 @register("high_nan")
 def _fmt_high_nan(agent: str, data: dict, children: list) -> tuple[str, str]:
@@ -726,6 +622,14 @@ def _fmt_memory_extraction_error(agent: str, data: dict, children: list) -> tupl
     return (summary, f"Error: {error}")
 
 
+@register("memory_injected")
+def _fmt_memory_injected(agent: str, data: dict, children: list) -> tuple[str, str]:
+    count = data.get("memory_count", 0)
+    scope = data.get("scope", "?")
+    summary = f"Memory refreshed: {count} memories injected (scope={scope})"
+    return (summary, summary)
+
+
 @register("memory_action")
 def _fmt_memory_action(agent: str, data: dict, children: list) -> tuple[str, str]:
     action = data.get("action", "(unknown action)")
@@ -770,13 +674,6 @@ def _fmt_pipeline_registered(agent: str, data: dict, children: list) -> tuple[st
 # Insight
 # =====================================================================
 
-@register("insight_result")
-def _fmt_insight_result(agent: str, data: dict, children: list) -> tuple[str, str]:
-    text = data.get("text", data.get("_msg", ""))
-    summary = f"Insight: {text}"
-    return (summary, text)
-
-
 @register("insight_feedback")
 def _fmt_insight_feedback(agent: str, data: dict, children: list) -> tuple[str, str]:
     passed = data.get("passed", True)
@@ -800,39 +697,6 @@ def _fmt_context_compaction(agent: str, data: dict, children: list) -> tuple[str
     summary = f"Context compacted: {before}\u2192{after}/{window} tokens"
     details = f"Agent: {agent}\nBefore: {before} tokens\nAfter: {after} tokens\nContext window: {window} tokens"
     return (summary, details)
-
-
-# =====================================================================
-# Knowledge / Bootstrap
-# =====================================================================
-
-@register("catalog_search")
-def _fmt_catalog_search(agent: str, data: dict, children: list) -> tuple[str, str]:
-    query = data.get("query", data.get("_msg", "?"))
-    n = data.get("n_results", "")
-    if n:
-        summary = f"Catalog search: {query} -> {n} results"
-    else:
-        summary = f"Catalog search: {query}"
-    details = f"Query: {query}"
-    if n:
-        details += f"\nResults: {n}"
-    return (summary, details)
-
-
-@register("metadata_fetch")
-def _fmt_metadata_fetch(agent: str, data: dict, children: list) -> tuple[str, str]:
-    dataset_id = data.get("dataset_id", data.get("_msg", "?"))
-    summary = f"Metadata fetch: {dataset_id}"
-    details = f"Dataset: {dataset_id}"
-    return (summary, details)
-
-
-@register("bootstrap_progress")
-def _fmt_bootstrap_progress(agent: str, data: dict, children: list) -> tuple[str, str]:
-    msg = data.get("_msg", "")
-    summary = f"Bootstrap: {msg}" if msg else "Bootstrap progress"
-    return (summary, msg or summary)
 
 
 # =====================================================================

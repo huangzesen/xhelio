@@ -1,7 +1,7 @@
 """Tests for priority message queue in orchestrator."""
 import queue
 import time
-from agent.sub_agent import _make_message
+from agent.base_agent import _make_message
 
 
 def test_priority_queue_user_first():
@@ -42,12 +42,11 @@ def test_priority_queue_fifo_subagent():
     assert msg3.sender == "envoy3"
 
 
-def test_run_loop_uses_priority_get():
-    """Run loop should use priority-aware message retrieval."""
+def test_orchestrator_has_inbox():
+    """OrchestratorAgent should have an inbox for message passing."""
     from agent.core import OrchestratorAgent
 
-    assert hasattr(OrchestratorAgent, '_get_message')
-    assert hasattr(OrchestratorAgent, '_put_message')
+    assert hasattr(OrchestratorAgent, '_handle_message')
 
 
 def test_run_loop_handles_subagent_result():

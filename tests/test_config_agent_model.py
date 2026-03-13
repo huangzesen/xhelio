@@ -12,18 +12,6 @@ class TestResolveAgentModel:
         assert model == config.SMART_MODEL
         assert base_url is None
 
-    def test_default_planner_uses_planner_model(self):
-        provider, model, base_url = config.resolve_agent_model("planner")
-        assert provider == config.LLM_PROVIDER
-        assert model == config.PLANNER_MODEL
-        assert base_url is None
-
-    def test_default_insight_uses_insight_model(self):
-        provider, model, base_url = config.resolve_agent_model("insight")
-        assert provider == config.LLM_PROVIDER
-        assert model == config.INSIGHT_MODEL
-        assert base_url is None
-
     def test_default_sub_agent_uses_sub_agent_model(self):
         for agent_type in ("viz_plotly", "viz_mpl", "viz_jsx", "data_ops", "data_io", "envoy", "memory", "eureka"):
             provider, model, base_url = config.resolve_agent_model(agent_type)

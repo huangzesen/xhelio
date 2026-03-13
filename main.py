@@ -721,7 +721,7 @@ def print_welcome():
     print("=" * 60)
     print()
     print("I can help you explore and visualize scientific data")
-    print("from heliophysics missions via CDAWeb.")
+    print("from heliophysics missions.")
     print()
     print("Examples:")
     print("  'Show me ACE magnetic field data for last week'")

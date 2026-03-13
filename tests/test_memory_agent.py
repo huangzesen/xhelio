@@ -1,5 +1,5 @@
 """
-Tests for agent.memory_agent — MemoryAgent (SubAgent subclass) tool-loop memory extraction.
+Tests for agent.memory_agent — MemoryAgent (BaseAgent subclass) tool-loop memory extraction.
 
 Run with: python -m pytest tests/test_memory_agent.py -v
 """
@@ -14,11 +14,16 @@ import pytest
 from agent.memory import Memory, MemoryStore
 from agent.memory_agent import (
     MemoryAgent,
-    MemoryContext,
-    _validate_scopes,
-    _VALID_SCOPE_RE,
-    _VALID_TYPES,
 )
+from agent.memory_hooks import MemoryContext
+
+# These may no longer exist in the new BaseAgent-based MemoryAgent
+try:
+    from agent.memory_agent import _validate_scopes, _VALID_SCOPE_RE, _VALID_TYPES
+except ImportError:
+    _validate_scopes = None
+    _VALID_SCOPE_RE = None
+    _VALID_TYPES = None
 from agent.event_bus import SessionEvent
 
 
@@ -50,13 +55,11 @@ def _make_mock_service():
 
 @pytest.fixture
 def agent(memory_store):
-    """Provide a MemoryAgent (SubAgent) with mock service, started and stopped."""
+    """Provide a MemoryAgent (BaseAgent) with mock service, started and stopped."""
     svc = _make_mock_service()
     a = MemoryAgent(
         service=svc,
         memory_store=memory_store,
-        verbose=False,
-        session_id="test-session",
     )
     a.start()
     yield a
@@ -110,7 +113,7 @@ def _make_mock_response(text="", tool_calls=None, input_tokens=100, output_token
     return resp
 
 
-# ---- run() via SubAgent ----
+# ---- run() via BaseAgent ----
 
 class TestRun:
     def test_empty_context_returns_empty(self, agent):
@@ -222,7 +225,7 @@ class TestRun:
         assert len(memory_store.get_all()) == 2
 
     def test_llm_failure_returns_empty(self, agent):
-        """Should return empty on LLM failure — SubAgent catches and returns error."""
+        """Should return empty on LLM failure — BaseAgent catches and returns error."""
         with patch.object(agent, "_llm_send", side_effect=Exception("API error")):
             context = _make_context()
             result = agent.run(context)

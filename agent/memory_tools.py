@@ -13,25 +13,6 @@ def get_memory_tools() -> list[FunctionSchema]:
     """Return the list of tools available to the memory agent."""
     return [
         FunctionSchema(
-            name="get_event_details",
-            description=(
-                "Get full details of a session event by its index number. "
-                "Use this to drill into errors, tool results, data operations, "
-                "or any event where the summary alone is not sufficient to "
-                "understand what happened."
-            ),
-            parameters={
-                "type": "object",
-                "properties": {
-                    "event_index": {
-                        "type": "integer",
-                        "description": "Zero-based index of the event to inspect.",
-                    },
-                },
-                "required": ["event_index"],
-            },
-        ),
-        FunctionSchema(
             name="add_memory",
             description=(
                 "Add a new long-term memory entry. Content format depends on "

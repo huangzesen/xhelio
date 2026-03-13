@@ -46,11 +46,9 @@
       "model": "主模型（编排器 + 规划器）",
       "sub_agent_model": "子代理模型（任务 / 可视化 / 数据）",
       "insight_model": "洞察模型（图表分析）",
-      "inline_model": "内联模型（最低成本）",
-      "planner_model": "规划器模型"
+      "inline_model": "内联模型（最低成本）"
     },
     "placeholders": {
-      "planner_model": "默认使用主模型",
       "insight_model": "默认使用子代理模型"
     },
     "gemini": {
@@ -95,6 +93,9 @@
     "matplotlib": "Matplotlib（静态 / 出版质量）",
     "jsx": "JSX / Recharts（仪表板）",
     "maxPlotPoints": "最大绘图点数",
+    "sandbox": "沙箱",
+    "autoInstall": "自动安装包",
+    "autoInstallDescription": "代理安装 Python 包时跳过权限确认",
     "missionData": "任务数据",
     "catalogStatus": "目录状态",
     "noMissionData": "未找到任务数据。点击\"重建 CDAWeb\"或\"重建 PPI\"下载。",
@@ -108,7 +109,7 @@
     "rebuildPpi": "重建 PPI",
     "diskAssets": "磁盘资源",
     "diskAssetManagement": "磁盘资源管理",
-    "diskAssetDescription": "监控和清理缓存的数据文件、会话和 SPICE 内核"
+    "diskAssetDescription": "监控和清理缓存的数据文件和会话"
   },
   "advanced": {
     "title": "高级",
@@ -117,7 +118,6 @@
     "memoryTokenBudget": "记忆 Token 预算",
     "opsLibraryMaxEntries": "操作库最大条目数",
     "memoryExtractionInterval": "记忆提取间隔",
-    "memoryHotReload": "记忆热重载",
     "rounds": "轮",
     "reasoning": "推理",
     "observationSummaries": "观察摘要",

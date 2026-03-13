@@ -827,8 +827,6 @@ class AnthropicAdapter(LLMAdapter):
             tier = config._provider_get("thinking_model", "high")
         elif thinking == "low":
             tier = config._provider_get("thinking_sub_agent", "low")
-        elif thinking == "insight":
-            tier = config._provider_get("thinking_insight", "low")
         else:
             return None
 
@@ -1016,6 +1014,36 @@ class AnthropicAdapter(LLMAdapter):
         except Exception as e:
             logger.warning("Anthropic web search failed: %s", e)
             return LLMResponse(text="")
+
+    def generate_vision(
+        self, question: str, image_bytes: bytes, *, model: str = "",
+        mime_type: str = "image/png",
+    ) -> LLMResponse:
+        """One-shot vision via Anthropic's multimodal API."""
+        import base64
+        b64 = base64.b64encode(image_bytes).decode("utf-8")
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {
+                        "type": "image",
+                        "source": {
+                            "type": "base64",
+                            "media_type": mime_type,
+                            "data": b64,
+                        },
+                    },
+                    {"type": "text", "text": question},
+                ],
+            }
+        ]
+        raw = self._client.messages.create(
+            model=model,
+            max_tokens=1024,
+            messages=messages,
+        )
+        return _parse_response(raw)
 
     # -- Convenience properties ------------------------------------------------
 

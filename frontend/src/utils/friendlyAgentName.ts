@@ -8,7 +8,7 @@
  * added to the backend, add a mapping here for a friendlier display name.
  */
 export function friendlyAgentName(agentId: string): string {
-  // Strip /Think suffix for display (e.g., "PlannerAgent/Think" → "PlannerAgent")
+  // Strip /Think suffix for display (e.g., "VizAgent[Plotly]/Think" → "VizAgent[Plotly]")
   const baseName = agentId.replace(/\/Think$/, '');
   const thinkSuffix = baseName !== agentId ? ' (Think)' : '';
 
@@ -17,13 +17,23 @@ export function friendlyAgentName(agentId: string): string {
   const seqMatch = baseName.match(/#(\d+)$/);
   const seqSuffix = seqMatch ? ` #${seqMatch[1]}` : '';
 
+  // Strip :<hex> hash suffix from new-style IDs (e.g., "orchestrator:aa2b87" → "orchestrator")
+  const withoutHash = withoutSeq.replace(/:[0-9a-f]{4,8}$/, '');
+
   // EnvoyAgent[PSP] → Envoy [PSP]
-  const missionMatch = withoutSeq.match(/^EnvoyAgent\[(.+)]$/);
+  const missionMatch = withoutHash.match(/^EnvoyAgent\[(.+)]$/);
   if (missionMatch) return `Envoy [${missionMatch[1]}]${seqSuffix}${thinkSuffix}`;
 
   // VizAgent[Plotly] → Visualization [Plotly], VizAgent[Mpl] → Visualization [Mpl]
-  const vizMatch = withoutSeq.match(/^VizAgent\[(.+)]$/);
+  const vizMatch = withoutHash.match(/^VizAgent\[(.+)]$/);
   if (vizMatch) return `Visualization [${vizMatch[1]}]${seqSuffix}${thinkSuffix}`;
+
+  // New-style viz IDs: "viz:plotly" → Visualization [Plotly]
+  const newVizMatch = withoutHash.match(/^viz:(.+)$/);
+  if (newVizMatch) {
+    const backend = newVizMatch[1].charAt(0).toUpperCase() + newVizMatch[1].slice(1);
+    return `Visualization [${backend}]${seqSuffix}${thinkSuffix}`;
+  }
 
   const MAP: Record<string, string> = {
     orchestrator: 'Orchestrator',
@@ -33,10 +43,12 @@ export function friendlyAgentName(agentId: string): string {
     InsightAgent: 'Insight',
     Memory: 'Memory',
     Discovery: 'Discovery',
-    PlannerAgent: 'Planner',
-    SpiceMCP: 'SPICE',
+    data_ops: 'Data Ops',
+    data_io: 'Data I/O',
+    memory: 'Memory',
+    eureka: 'Discovery',
   };
-  const friendly = MAP[withoutSeq];
+  const friendly = MAP[withoutHash];
   if (friendly) return `${friendly}${seqSuffix}${thinkSuffix}`;
 
   return agentId; // fallback: show raw ID

@@ -21,7 +21,7 @@ def _ensure_template() -> str:
     if _SYSTEM_PROMPT_TEMPLATE is None:
         with _template_lock:
             if _SYSTEM_PROMPT_TEMPLATE is None:
-                _SYSTEM_PROMPT_TEMPLATE = build_system_prompt(include_catalog=False)
+                _SYSTEM_PROMPT_TEMPLATE = build_system_prompt()
     return _SYSTEM_PROMPT_TEMPLATE
 
 

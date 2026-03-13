@@ -5,12 +5,9 @@ import type {
   SessionEventRecord,
   ServerStatus,
   PlotlyFigure,
-  MissionInfo,
-  DatasetInfo,
-  ParameterInfo,
-  TimeRange,
   DataPreview,
   DataEntrySummary,
+  SessionAsset,
   AppConfig,
   MemoryEntry,
   MemoryStats,
@@ -21,7 +18,6 @@ import type {
   TokenBreakdown,
   CommandResponse,
   GalleryItem,
-  ValidationOverview,
   SavedPipelineIndexEntry,
   SavedPipelineDetail,
   PipelineExecuteResult,
@@ -36,6 +32,7 @@ import type {
   ProviderTestResult,
   ApiKeysResponse,
   AgentTypesResponse,
+  PlanData,
 } from './types';
 
 const BASE = '/api';
@@ -152,26 +149,16 @@ export function getData(sessionId: string): Promise<DataEntrySummary[]> {
   return request(`/sessions/${sessionId}/data`);
 }
 
-export function fetchData(
-  sessionId: string,
-  datasetId: string,
-  parameterId: string,
-  timeMin: string,
-  timeMax: string,
-): Promise<DataEntrySummary> {
-  return request(`/sessions/${sessionId}/fetch-data`, {
-    method: 'POST',
-    body: JSON.stringify({
-      dataset_id: datasetId,
-      parameter_id: parameterId,
-      time_min: timeMin,
-      time_max: timeMax,
-    }),
-  });
-}
 
 export function getDataPreview(sessionId: string, label: string): Promise<DataPreview> {
   return request(`/sessions/${sessionId}/data/${encodeURIComponent(label)}/preview`);
+}
+
+// ---- Session Assets ----
+
+export function getSessionAssets(sessionId: string, kind?: string): Promise<SessionAsset[]> {
+  const params = kind ? `?kind=${encodeURIComponent(kind)}` : '';
+  return request(`/sessions/${sessionId}/assets${params}`);
 }
 
 // ---- Figure ----
@@ -190,44 +177,8 @@ export function getRenderThumbnailUrl(sessionId: string, opId: string): string {
 
 // ---- Plan ----
 
-export interface PlanStep {
-  title: string;
-  details: string;
-  status: 'pending' | 'in_progress' | 'completed' | 'failed' | 'skipped';
-  mission: string | null;
-  round: number;
-  error?: string;
-  candidate_datasets?: string[];
-}
-
-export interface PlanData {
-  total_steps: number;
-  progress: string;
-  steps: PlanStep[];
-  summary?: string;
-  reasoning?: string;
-}
-
 export function getPlanStatus(sessionId: string): Promise<{ plan: PlanData | null }> {
   return request(`/sessions/${sessionId}/plan`);
-}
-
-// ---- Catalog ----
-
-export function getMissions(): Promise<MissionInfo[]> {
-  return request('/catalog/missions');
-}
-
-export function getDatasets(missionId: string): Promise<DatasetInfo[]> {
-  return request(`/catalog/missions/${encodeURIComponent(missionId)}/datasets`);
-}
-
-export function getParameters(datasetId: string): Promise<ParameterInfo[]> {
-  return request(`/catalog/datasets/${encodeURIComponent(datasetId)}/parameters`);
-}
-
-export function getTimeRange(datasetId: string): Promise<TimeRange> {
-  return request(`/catalog/datasets/${encodeURIComponent(datasetId)}/time-range`);
 }
 
 // ---- Config ----
@@ -444,12 +395,6 @@ export function deleteGalleryItem(id: string): Promise<void> {
 
 export function replayGalleryItem(id: string): Promise<ReplayResult> {
   return request(`/gallery/${encodeURIComponent(id)}/replay`, { method: 'POST' });
-}
-
-// ---- Validation ----
-
-export function getValidationOverview(): Promise<ValidationOverview> {
-  return request('/validation/overview');
 }
 
 // ---- API Key ----

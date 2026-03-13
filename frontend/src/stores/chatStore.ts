@@ -1,6 +1,6 @@
 import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
-import type { ChatMessage, ToolEvent, LogLine, MemoryEvent, CommentaryEvent, PlotlyFigure, SessionEventRecord, SSEEvent, SSEPlanUpdateEvent } from '../api/types';
+import type { ChatMessage, ToolEvent, LogLine, MemoryEvent, CommentaryEvent, PlotlyFigure, SessionEventRecord, SSEEvent, PlanData, PlanWireData } from '../api/types';
 import { subscribeToSession } from '../api/sse';
 import * as api from '../api/client';
 import { useSessionStore } from './sessionStore';
@@ -27,7 +27,7 @@ interface ChatState {
   storageWarning: boolean;
   roundMarkers: RoundMarker[];
   roundTokenUsage: Record<string, number> | null;
-  planData: import('../api/client').PlanData | null;
+  planData: PlanData | null;
   pendingPermissions: Array<{
     id: string;
     requestId: string;
@@ -62,6 +62,8 @@ let _currentAgentMsgId: string | null = null;
 let _currentAgentText = '';
 let _textBuffer = '';
 let _rafHandle: number | null = null;
+// Track message_seq from backend to detect new LLM responses within a round
+let _currentMessageSeq: number | null = null;
 // Pending status text (system-generated fallback when LLM produces no text)
 let _pendingStatusText: string | null = null;
 // Reconnect timer
@@ -111,7 +113,7 @@ function handleSSEEvent(
 ) {
   switch (event.type) {
     case 'text_delta': {
-      const ev = event as { text: string; commentary?: boolean; agent?: string; generated?: boolean };
+      const ev = event as { text: string; commentary?: boolean; agent?: string; generated?: boolean; message_seq?: number };
       if (ev.commentary) {
         // Commentary: update live line (replace previous) and append to events
         const text = ev.text.replace(/\n+$/, '');
@@ -135,6 +137,20 @@ function handleSSEEvent(
         break;
       }
       // Regular text delta — clear commentary line and accumulate into agent message
+      // Detect new LLM response within the same round via message_seq
+      if (ev.message_seq !== undefined && ev.message_seq !== _currentMessageSeq) {
+        // Flush any pending text from the previous message before starting a new one
+        if (_currentAgentMsgId && _textBuffer) {
+          if (_rafHandle) {
+            cancelAnimationFrame(_rafHandle);
+            _rafHandle = null;
+          }
+          flushTextBuffer(set, _currentAgentMsgId);
+        }
+        _currentMessageSeq = ev.message_seq;
+        _currentAgentMsgId = null;
+        _currentAgentText = '';
+      }
       // Lazily allocate an agent message ID for this turn
       if (!_currentAgentMsgId) {
         _currentAgentMsgId = uid();
@@ -287,10 +303,6 @@ function handleSSEEvent(
       }));
       break;
 
-    case 'plan_update':
-      set(() => ({ planData: (event as SSEPlanUpdateEvent).plan }));
-      break;
-
     case 'insight_result':
       if ((event as { level: string }).level !== 'debug') {
         set((s) => ({
@@ -316,6 +328,7 @@ function handleSSEEvent(
               id: uid(),
               role: 'insight_feedback' as const,
               content: (event as { text: string }).text,
+              passed: (event as { passed?: boolean }).passed ?? true,
               timestamp: Date.now(),
             },
           ],
@@ -323,15 +336,15 @@ function handleSSEEvent(
       }
       break;
 
-    case 'user_message': {
-      // Server-injected user messages (e.g. Eureka Mode suggestions)
+    case 'eureka_inject': {
+      // Eureka Mode auto-follow-up — show as a distinct eureka message in chat
       const text = (event as { text: string }).text;
       set((s) => ({
         messages: [
           ...s.messages,
           {
             id: uid(),
-            role: 'user' as const,
+            role: 'eureka' as const,
             content: text,
             timestamp: Date.now(),
           },
@@ -350,6 +363,11 @@ function handleSSEEvent(
       useSessionStore.getState().loadSavedSessions();
       break;
 
+    case 'agent_response':
+      // No-op during live streaming — text already delivered via text_delta.
+      // This event is persisted to the event log for session reload reconstruction.
+      break;
+
     case 'round_start': {
       const serverTs = (event as { ts?: string }).ts;
       const ts = serverTs ? new Date(serverTs).getTime() : Date.now();
@@ -363,6 +381,7 @@ function handleSSEEvent(
       _currentAgentMsgId = null;
       _currentAgentText = '';
       _textBuffer = '';
+      _currentMessageSeq = null;
       _pendingStatusText = null;
       set((s) => ({
         isStreaming: true,
@@ -383,13 +402,17 @@ function handleSSEEvent(
       if (_textBuffer && _currentAgentMsgId) {
         flushTextBuffer(set, _currentAgentMsgId);
       }
-      useSessionStore.getState().setTokenUsage((event as { token_usage: Record<string, number> }).token_usage);
+      const roundUsage = (event as { token_usage?: Record<string, number> }).token_usage;
+      if (roundUsage) {
+        useSessionStore.getState().setTokenUsage(roundUsage);
+      }
       useSessionStore.getState().loadSavedSessions();
       { const sid = useSessionStore.getState().activeSessionId;
         if (sid) useMemoryStore.getState().loadMemories(sid); }
       _currentAgentMsgId = null;
       _currentAgentText = '';
       _textBuffer = '';
+      _currentMessageSeq = null;
       const rtUsage = (event as { round_token_usage: Record<string, number> }).round_token_usage;
       const statusText = _pendingStatusText;
       _pendingStatusText = null;
@@ -431,6 +454,32 @@ function handleSSEEvent(
       break;
     }
 
+    case 'plan_update': {
+      const ev = event as { action: string; plan: PlanWireData | null };
+      if (ev.action === 'drop') {
+        set(() => ({ planData: null }));
+      } else if (ev.plan) {
+        const steps = (ev.plan.tasks ?? []).map((t) => ({
+          title: t.description || '',
+          details: t.instruction || '',
+          status: t.status || 'pending',
+          mission: t.mission,
+          note: t.note,
+        }));
+        const done = steps.filter((s) => s.status === 'completed').length;
+        set(() => ({
+          planData: {
+            total_steps: steps.length,
+            progress: `${done}/${steps.length} completed`,
+            summary: ev.plan!.summary || '',
+            reasoning: ev.plan!.reasoning || '',
+            steps,
+          },
+        }));
+      }
+      break;
+    }
+
     case 'token_usage': {
       const usage = (event as { token_usage?: Record<string, number> }).token_usage;
       if (usage) {
@@ -469,6 +518,7 @@ function handleSSEEvent(
       _currentAgentMsgId = null;
       _currentAgentText = '';
       _textBuffer = '';
+      _currentMessageSeq = null;
       _pendingStatusText = null;
       break;
     }
@@ -514,6 +564,7 @@ export const useChatStore = create<ChatState>()(
     _currentAgentMsgId = null;
     _currentAgentText = '';
     _textBuffer = '';
+    _currentMessageSeq = null;
     _pendingStatusText = null;
 
     _subscribedSessionId = sessionId;
@@ -552,6 +603,7 @@ export const useChatStore = create<ChatState>()(
     _currentAgentMsgId = null;
     _currentAgentText = '';
     _textBuffer = '';
+    _currentMessageSeq = null;
     _pendingStatusText = null;
     if (_reconnectTimer) {
       clearTimeout(_reconnectTimer);
@@ -724,6 +776,7 @@ export const useChatStore = create<ChatState>()(
     _currentAgentMsgId = null;
     _currentAgentText = '';
     _textBuffer = '';
+    _currentMessageSeq = null;
     _pendingStatusText = null;
     set({ isStreaming: false, isCancelling: false, commentaryText: null });
   },
@@ -736,6 +789,31 @@ export const useChatStore = create<ChatState>()(
     const commentaryEvents: CommentaryEvent[] = [];
     const roundMarkers: RoundMarker[] = [];
     const pendingPermissions: ChatState['pendingPermissions'] = [];
+    let planData: PlanData | null = null;
+
+    // Check if this event log has agent_response events (new format)
+    const hasAgentResponses = events.some((e) => e.type === 'agent_response');
+
+    // Fallback: accumulate text_delta events into agent messages
+    // when no agent_response events exist (legacy sessions)
+    let pendingTextChunks: string[] = [];
+    let pendingTextTs = 0;
+    let lastMessageSeq: number | null = null;
+
+    const flushPendingText = () => {
+      if (pendingTextChunks.length > 0) {
+        const content = pendingTextChunks.join('');
+        if (content.trim()) {
+          messages.push({
+            id: uid(),
+            role: 'agent',
+            content,
+            timestamp: pendingTextTs,
+          });
+        }
+        pendingTextChunks = [];
+      }
+    };
 
     for (const ev of events) {
       const rawTs = new Date(ev.ts).getTime();
@@ -743,6 +821,7 @@ export const useChatStore = create<ChatState>()(
 
       // Chat messages
       if (ev.type === 'user_message') {
+        if (!hasAgentResponses) flushPendingText();
         messages.push({
           id: uid(),
           role: 'user',
@@ -764,6 +843,16 @@ export const useChatStore = create<ChatState>()(
             timestamp: ts,
           });
         }
+      } else if (ev.type === 'text_delta' && !hasAgentResponses && !ev.data?.commentary && !ev.data?.generated) {
+        // Fallback: reconstruct agent messages from text_delta events
+        const seq = ev.data?.message_seq as number | undefined;
+        if (seq !== undefined && seq !== lastMessageSeq) {
+          flushPendingText();
+          lastMessageSeq = seq;
+        }
+        const text = (ev.data?.text as string) || ev.msg;
+        if (pendingTextChunks.length === 0) pendingTextTs = ts;
+        pendingTextChunks.push(text);
       } else if (ev.type === 'thinking' && ev.tags?.includes('display')) {
         messages.push({
           id: uid(),
@@ -789,6 +878,7 @@ export const useChatStore = create<ChatState>()(
           id: uid(),
           role: 'insight_feedback',
           content: (ev.data?.text as string) || ev.msg,
+          passed: (ev.data?.passed as boolean) ?? true,
           timestamp: ts,
         });
       }
@@ -861,8 +951,9 @@ export const useChatStore = create<ChatState>()(
         roundMarkers.push({ type: 'end', timestamp: ts });
       }
 
-      // Tool events
+      // Tool events (also act as message boundaries for text_delta fallback)
       if (ev.type === 'tool_call' || ev.type === 'tool_started') {
+        if (!hasAgentResponses) flushPendingText();
         toolEvents.push({
           id: uid(),
           type: 'call',
@@ -908,6 +999,31 @@ export const useChatStore = create<ChatState>()(
         }
       }
 
+      // Plan updates — keep the last plan state
+      if (ev.type === 'plan_update') {
+        const action = ev.data?.action as string;
+        if (action === 'drop') {
+          planData = null;
+        } else if (ev.data?.plan) {
+          const plan = ev.data.plan as PlanWireData;
+          const steps = (plan.tasks ?? []).map((t) => ({
+            title: t.description || '',
+            details: t.instruction || '',
+            status: t.status || 'pending',
+            mission: t.mission,
+            note: t.note,
+          }));
+          const done = steps.filter((s) => s.status === 'completed').length;
+          planData = {
+            total_steps: steps.length,
+            progress: `${done}/${steps.length} completed`,
+            summary: plan.summary || '',
+            reasoning: plan.reasoning || '',
+            steps,
+          };
+        }
+      }
+
       // Log lines (requires "console" tag — matches SSEEventListener)
       if (ev.tags?.includes('console')) {
         logLines.push({
@@ -919,7 +1035,10 @@ export const useChatStore = create<ChatState>()(
       }
     }
 
-    set({ messages, toolEvents, logLines: logLines.slice(-200), memoryEvents, commentaryEvents, roundMarkers, pendingPermissions });
+    // Flush any remaining text_delta accumulation (legacy sessions)
+    if (!hasAgentResponses) flushPendingText();
+
+    set({ messages, toolEvents, logLines: logLines.slice(-200), memoryEvents, commentaryEvents, roundMarkers, pendingPermissions, planData });
   },
 
   clearChat: () => {

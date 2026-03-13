@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useTranslation } from 'react-i18next';
-import { User, Bot, Brain, Terminal, ChevronRight, ChevronDown, Eye, CheckCircle, AlertTriangle } from 'lucide-react';
+import { User, Bot, Brain, Terminal, ChevronRight, ChevronDown, Eye, CheckCircle, AlertTriangle, Sparkles } from 'lucide-react';
 import { MarkdownRenderer } from '../common/MarkdownRenderer';
 import { MessageActions } from './MessageActions';
 import type { ChatMessage as ChatMessageType } from '../../api/types';
@@ -129,7 +129,7 @@ export function ChatMessage({ message, isQueued, onRegenerate }: Props) {
   }
 
   if (message.role === 'insight_feedback') {
-    const passed = message.content.includes('VERDICT: PASS');
+    const passed = message.passed ?? message.content.includes('VERDICT: PASS');
     return (
       <div 
         className="flex gap-3"
@@ -178,6 +178,26 @@ export function ChatMessage({ message, isQueued, onRegenerate }: Props) {
               <MessageActions content={message.content} />
             </div>
           )}
+        </div>
+      </div>
+    );
+  }
+
+  if (message.role === 'eureka') {
+    return (
+      <div
+        className="flex gap-3 flex-row-reverse"
+        onMouseEnter={handleMouseEnter}
+        onMouseLeave={handleMouseLeave}
+      >
+        <div className="w-7 h-7 rounded-full flex items-center justify-center shrink-0 bg-amber-500/20 text-amber-400">
+          <Sparkles size={14} />
+        </div>
+        <div className="max-w-[80%] min-w-0 flex flex-col">
+          {timestampEl}
+          <div className="rounded-xl px-4 py-2.5 text-sm bg-amber-500/10 border border-amber-500/20 text-text rounded-br-sm overflow-hidden wrap-anywhere">
+            <p className="whitespace-pre-wrap">{message.content}</p>
+          </div>
         </div>
       </div>
     );

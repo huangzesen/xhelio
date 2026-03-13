@@ -176,6 +176,22 @@ class LLMService:
             return None
         return adapter.make_multimodal_message(text, image_bytes, mime_type)
 
+    def generate_vision(self, question: str, image_bytes: bytes, mime_type: str = "image/png") -> LLMResponse:
+        """One-shot vision: send image + question, get text response.
+
+        Routes to the configured vision_provider.
+        """
+        provider_name = self._config.get("vision_provider")
+        if provider_name is None:
+            return LLMResponse(text="")
+        try:
+            adapter = self.get_adapter(provider_name)
+        except RuntimeError:
+            return LLMResponse(text="")
+        defaults = self._get_provider_defaults(provider_name)
+        model = defaults.get("model", "") if defaults else ""
+        return adapter.generate_vision(question, image_bytes, model=model, mime_type=mime_type)
+
     @staticmethod
     def _get_provider_defaults(provider_name: str) -> dict | None:
         """Get DEFAULTS for a provider, reusing config's pre-loaded cache."""

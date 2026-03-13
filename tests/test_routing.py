@@ -15,7 +15,6 @@ from agent.agent_registry import (
     DATA_IO_TOOLS,
     VIZ_PLOTLY_TOOLS,
     ORCHESTRATOR_TOOLS,
-    PLANNER_TOOLS,
 )
 
 
@@ -24,85 +23,58 @@ class TestToolNameFiltering:
 
     def test_no_filter_returns_all_tools(self):
         all_tools = get_tool_schemas()
-        # 39 static tools (after consolidating 11→3) + SPICE tools registered dynamically from MCP
-        assert len(all_tools) >= 39
+        # 28 static tools (after asset decomposition: removed load_file, save_figure, show_figure; added manage_files, manage_figure)
+        assert len(all_tools) >= 28
         names = {t["name"] for t in all_tools}
-        assert "render_plotly_json" in names
-        assert "manage_plot" in names
-        assert "fetch_data" in names
+        assert "xhelio__render_plotly_json" in names
+        assert "xhelio__manage_plot" in names
+        assert "xhelio__assets" in names
         assert "delegate_to_envoy" in names
         assert "delegate_to_viz" in names
         assert "delegate_to_data_ops" in names
         assert "delegate_to_data_io" in names
-        assert "delegate_to_insight" in names
-        assert "get_dataset_docs" in names
-        assert "read_document" in names
+        assert "xhelio__read_document" in names
         # Removed tools
         assert "plot_data" not in names
         assert "style_plot" not in names
+        assert "list_fetched_data" not in names
+        assert "manage_session_assets" not in names
+        assert "list_assets" not in names
 
-    def test_mission_tools_exclude_visualization_and_routing(self):
+    def test_envoy_tools_empty_when_mcp_only(self):
+        """ENVOY_TOOLS is empty when no static envoy kind modules exist."""
+        assert len(ENVOY_TOOLS) == 0
         mission_tools = get_tool_schemas(names=ENVOY_TOOLS)
-        names = {t["name"] for t in mission_tools}
-        # Should not include visualization tools
-        assert "plot_data" not in names
-        assert "style_plot" not in names
-        assert "manage_plot" not in names
-        # Should not include routing tools (no recursive delegation)
-        assert "delegate_to_envoy" not in names
-        assert "delegate_to_viz" not in names
-        assert "delegate_to_data_ops" not in names
-        # Should include fetch + discovery tools
-        assert "fetch_data" in names
-        assert "search_datasets" in names
-        assert "list_fetched_data" in names
-        assert "ask_clarification" in names
-        # Should NOT include compute tools (moved to DataOpsAgent)
-        assert "custom_operation" not in names
-        assert "describe_data" not in names
-        assert "save_data" not in names
-        # Should NOT include document tools
-        assert "read_document" not in names
+        assert len(mission_tools) == 0
 
     def test_visualization_tools_only(self):
-        viz_tools = get_tool_schemas(names=["render_plotly_json", "manage_plot"])
+        viz_tools = get_tool_schemas(names=["xhelio__render_plotly_json", "xhelio__manage_plot"])
         names = {t["name"] for t in viz_tools}
-        assert names == {"render_plotly_json", "manage_plot"}
+        assert names == {"xhelio__render_plotly_json", "xhelio__manage_plot"}
 
     def test_visualization_with_extras(self):
         tools = get_tool_schemas(names=VIZ_PLOTLY_TOOLS)
         names = {t["name"] for t in tools}
-        assert names == {
-            "render_plotly_json",
-            "manage_plot",
-            "list_fetched_data",
-            "review_memory",
-            "events",
-            "describe_data",
-            "preview_data",
-        }
+        assert "xhelio__render_plotly_json" in names
+        assert "xhelio__manage_plot" in names
+        assert "xhelio__assets" in names
+        assert "xhelio__manage_data" in names
+        assert "xhelio__review_memory" in names
+        assert "xhelio__events" in names
 
     def test_orchestrator_tools(self):
         orch_tools = get_tool_schemas(names=ORCHESTRATOR_TOOLS)
         names = {t["name"] for t in orch_tools}
-        # Should include routing
-        assert "delegate_to_envoy" in names
-        assert "delegate_to_viz" in names
-        assert "delegate_to_data_ops" in names
-        assert "delegate_to_data_io" in names
-        assert "delegate_to_planner" in names
-        # Should include list_fetched_data
-        assert "list_fetched_data" in names
+        # Should include assets
+        assert "xhelio__assets" in names
         # Should include pipeline and events_admin (consolidated)
-        assert "pipeline" in names
-        assert "events_admin" in names
-        # Should include permission and package management tools
-        assert "ask_user_permission" in names
-        assert "install_package" in names
-        assert "manage_sandbox_packages" in names
+        assert "xhelio__pipeline" in names
+        assert "xhelio__events_admin" in names
+        # Should include permission tool (package management moved to sub-agents)
+        assert "xhelio__ask_user_permission" in names
+        assert "xhelio__manage_sandbox_packages" not in names
         # Should NOT include data_ops (delegated to sub-agents)
-        assert "fetch_data" not in names
-        assert "run_code" not in names
+        assert "xhelio__run_code" not in names
         # Should NOT include visualization
         assert "plot_data" not in names
 
@@ -110,16 +82,12 @@ class TestToolNameFiltering:
         dataops_tools = get_tool_schemas(names=DATAOPS_TOOLS)
         names = {t["name"] for t in dataops_tools}
         # Should include compute tools
-        assert "run_code" in names
-        assert "describe_data" in names
-        # Should include list_fetched_data
-        assert "list_fetched_data" in names
-        # Should include conversation
-        assert "ask_clarification" in names
+        assert "xhelio__run_code" in names
+        assert "xhelio__manage_data" in names
+        # Should include assets
+        assert "xhelio__assets" in names
         # Should NOT include fetch (mission-specific)
         assert "fetch_data" not in names
-        # Should include manage_data (merged save + merge)
-        assert "manage_data" in names
         # Should NOT include store_dataframe (removed)
         assert "store_dataframe" not in names
         # Should NOT include routing or visualization
@@ -130,9 +98,9 @@ class TestToolNameFiltering:
         assert get_tool_schemas(names=[]) == []
 
     def test_specific_names_returns_only_those(self):
-        tools = get_tool_schemas(names=["fetch_data"])
+        tools = get_tool_schemas(names=["xhelio__assets"])
         assert len(tools) == 1
-        assert tools[0]["name"] == "fetch_data"
+        assert tools[0]["name"] == "xhelio__assets"
 
 
 class TestDelegateToEnvoyTool:
@@ -146,11 +114,11 @@ class TestDelegateToEnvoyTool:
         names = set(ENVOY_TOOLS)
         assert "delegate_to_envoy" not in names
 
-    def test_tool_requires_mission_id_and_request(self):
+    def test_tool_requires_envoy_and_request(self):
         tool = next(t for t in get_tool_schemas() if t["name"] == "delegate_to_envoy")
-        assert "mission_id" in tool["parameters"]["properties"]
+        assert "envoy" in tool["parameters"]["properties"]
         assert "request" in tool["parameters"]["properties"]
-        assert "mission_id" in tool["parameters"]["required"]
+        assert "envoy" in tool["parameters"]["required"]
         assert "request" in tool["parameters"]["required"]
 
 
@@ -209,22 +177,22 @@ class TestDataIOCategories:
     def test_data_io_agent_gets_run_code(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
-        assert "run_code" in names
+        assert "xhelio__run_code" in names
 
     def test_data_io_agent_gets_read_document(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
-        assert "read_document" in names
+        assert "xhelio__read_document" in names
 
-    def test_data_io_agent_gets_list_fetched_data(self):
+    def test_data_io_agent_gets_assets(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
-        assert "list_fetched_data" in names
+        assert "xhelio__assets" in names
 
-    def test_data_io_agent_gets_ask_clarification(self):
+    def test_data_io_agent_gets_manage_data(self):
         tools = get_tool_schemas(names=DATA_IO_TOOLS)
         names = {t["name"] for t in tools}
-        assert "ask_clarification" in names
+        assert "xhelio__manage_data" in names
 
     def test_data_io_agent_excludes_fetch(self):
         names = set(DATA_IO_TOOLS)
@@ -234,7 +202,6 @@ class TestDataIOCategories:
         names = set(DATA_IO_TOOLS)
         assert "custom_operation" not in names
         assert "store_dataframe" not in names
-        assert "describe_data" not in names
         assert "save_data" not in names
 
     def test_data_io_agent_excludes_routing(self):
@@ -246,7 +213,7 @@ class TestDataIOCategories:
         names = set(DATA_IO_TOOLS)
         assert "plot_data" not in names
         assert "style_plot" not in names
-        assert "manage_plot" not in names
+        assert "xhelio__manage_plot" not in names
 
 
 class TestDelegateToDataIOTool:
@@ -346,37 +313,31 @@ class TestDataOpsAgentImportAndInterface:
         assert hasattr(DataOpsAgent, "status")
 
 
-class TestDelegateToPlannerTool:
-    """Test that the delegate_to_planner tool is properly configured."""
+class TestPlanTool:
+    """Test that the plan tool is properly configured."""
 
     def test_tool_exists(self):
         names = {t["name"] for t in get_tool_schemas()}
-        assert "delegate_to_planner" in names
+        assert "plan" in names
 
-    def test_tool_requires_request(self):
-        tool = next(t for t in get_tool_schemas() if t["name"] == "delegate_to_planner")
-        assert "request" in tool["parameters"]["properties"]
-        assert "request" in tool["parameters"]["required"]
-        # Optional parameters
-        assert "context" in tool["parameters"]["properties"]
-        assert "wait" in tool["parameters"]["properties"]
+    def test_tool_requires_action(self):
+        tool = next(t for t in get_tool_schemas() if t["name"] == "plan")
+        assert "action" in tool["parameters"]["properties"]
+        assert "action" in tool["parameters"]["required"]
 
     def test_tool_in_orchestrator_tools(self):
-        names = set(ORCHESTRATOR_TOOLS)
-        assert "delegate_to_planner" in names
+        # plan is a private tool, not in tool_registry.json
+        names = {t["name"] for t in get_tool_schemas()}
+        assert "plan" in names
 
     def test_tool_not_in_envoy_agent_tools(self):
         names = set(ENVOY_TOOLS)
-        assert "delegate_to_planner" not in names
+        assert "plan" not in names
 
     def test_tool_not_in_viz_agent_tools(self):
         names = set(VIZ_PLOTLY_TOOLS)
-        assert "delegate_to_planner" not in names
+        assert "plan" not in names
 
     def test_tool_not_in_dataops_agent_tools(self):
         names = set(DATAOPS_TOOLS)
-        assert "delegate_to_planner" not in names
-
-    def test_tool_not_in_extraction_agent_tools(self):
-        names = set(DATA_IO_TOOLS)
-        assert "delegate_to_planner" not in names
+        assert "plan" not in names

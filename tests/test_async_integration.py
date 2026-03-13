@@ -1,7 +1,7 @@
 """Integration test for async message flow."""
 import queue
 import time
-from agent.sub_agent import _make_message
+from agent.base_agent import _make_message
 
 
 def test_full_priority_flow():

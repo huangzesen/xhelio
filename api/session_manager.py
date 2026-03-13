@@ -6,13 +6,13 @@ from datetime import datetime, timezone
 from typing import Optional
 
 from data_ops.store import set_store
-from data_ops.operations_log import (
-    OperationsLog,
-    get_operations_log,
-    set_operations_log,
-)
-from agent.sub_agent import AgentState
+from agent.base_agent import AgentState
 from agent.event_bus import set_event_bus
+from agent.session_persistence import (
+    start_session as _start_session,
+    save_session as _save_session,
+    load_session as _load_session,
+)
 
 
 class SessionState:
@@ -21,7 +21,7 @@ class SessionState:
     def __init__(self, session_id: str, agent: "OrchestratorAgent"):
         self.session_id = session_id
         self.agent = agent
-        self.ops_log = OperationsLog()
+        self.ops_log = None  # Pipeline tracking now uses PipelineDAG
         self.created_at = datetime.now(timezone.utc)
         self.last_active = self.created_at
         self._busy_lock = threading.Lock()
@@ -31,8 +31,8 @@ class SessionState:
 
     @property
     def store(self):
-        """The session's DataStore, owned by the agent."""
-        return self.agent._store
+        """The session's DataStore, via SessionContext."""
+        return self.agent.session_ctx.store
 
     @property
     def busy(self) -> bool:
@@ -54,9 +54,9 @@ class SessionState:
 class APISessionManager:
     """Manages multiple concurrent agent sessions.
 
-    Each session owns its own OrchestratorAgent, DataStore, and OperationsLog.
-    The DataStore is owned by the agent (disk-backed, shared across threads).
-    The OperationsLog is set via module-level global for the session context.
+    Each session owns its own OrchestratorAgent and DataStore.
+    The DataStore is owned by SessionContext (disk-backed, shared across threads).
+    Pipeline operations are tracked via PipelineDAG on the SessionContext.
     """
 
     def __init__(self, max_sessions: int = 10, idle_timeout_seconds: float = 3600):
@@ -81,7 +81,7 @@ class APISessionManager:
 
         agent = create_agent(verbose=False)
         # Start a disk session so auto-save works after each process_message()
-        session_id = agent.start_session()
+        session_id = _start_session(agent)
         state = SessionState(session_id, agent)
         with self._lock:
             self._sessions[session_id] = state
@@ -94,7 +94,7 @@ class APISessionManager:
     def start_loop(self, state: SessionState, loop: asyncio.AbstractEventLoop) -> None:
         """Start the persistent event loop for a turnless session.
 
-        Creates a SessionSSEBridge and launches run_loop() in a daemon thread.
+        Creates a SessionSSEBridge and launches _run_loop() in a daemon thread.
         Safe to call multiple times — no-ops if loop is already running.
         """
         if state._loop_thread is not None and state._loop_thread.is_alive():
@@ -106,7 +106,7 @@ class APISessionManager:
         state.agent.subscribe_sse(state.sse_bridge.callback)
 
         def _run():
-            self.run_in_session_context(state, state.agent.run_loop)
+            self.run_in_session_context(state, state.agent._run_loop)
 
         t = threading.Thread(
             target=_run,
@@ -123,7 +123,7 @@ class APISessionManager:
             return False
         # Shut down persistent event loop if running
         try:
-            state.agent.shutdown_loop()
+            state.agent.stop()
         except Exception:
             pass
         if state._loop_thread is not None:
@@ -132,14 +132,11 @@ class APISessionManager:
             state.agent.unsubscribe_sse()
             state.sse_bridge.close()
             state.sse_bridge = None
-        # Flush any in-memory memories/discoveries to disk
+        # Flush any in-memory memories to disk
         try:
-            state.agent._memory_store.save()
-        except Exception:
-            pass
-        # Best-effort cleanup
-        try:
-            state.agent._cleanup_caches()
+            ms = state.agent.session_ctx.memory_store
+            if ms is not None:
+                ms.save()
         except Exception:
             pass
         return True
@@ -151,17 +148,15 @@ class APISessionManager:
     # ---- Scoped execution ----
 
     def run_in_session_context(self, session: SessionState, fn, *args, **kwargs):
-        """Run *fn* in a context where get_store() and get_operations_log()
-        resolve to this session's instances.
+        """Run *fn* in a context where get_store() resolves to this session's instance.
 
-        The DataStore is owned by the agent (disk-backed, thread-safe).
+        The DataStore is owned by SessionContext (disk-backed, thread-safe).
         set_store() is called so that any code still using get_store()
         (e.g. sub-agents, data_ops) sees the right store.
         """
         # Set module-level globals for this thread
         set_store(session.store)
-        set_operations_log(session.ops_log)
-        set_event_bus(session.agent._event_bus)
+        set_event_bus(session.agent.session_ctx.event_bus)
         return fn(*args, **kwargs)
 
     # ---- Idle cleanup ----
@@ -189,6 +184,11 @@ class APISessionManager:
                     if idle > self.idle_timeout_seconds and not state.busy:
                         to_remove.append(sid)
             for sid in to_remove:
+                # Re-check busy state — session may have become active
+                with self._lock:
+                    state = self._sessions.get(sid)
+                    if state is None or state.busy:
+                        continue
                 self.delete_session(sid)
 
     # ---- Resume saved session ----
@@ -198,7 +198,7 @@ class APISessionManager:
     ) -> tuple[SessionState, dict, list[dict] | None, list[dict] | None]:
         """Resume a saved session from disk into a new API session.
 
-        Creates a fresh agent, calls agent.load_session() to restore chat
+        Creates a fresh agent, calls load_session() to restore chat
         history + DataStore + operations log, then wraps in a SessionState.
 
         Returns (state, metadata, display_log, event_log).
@@ -219,15 +219,10 @@ class APISessionManager:
 
         # load_session restores chat history, DataStore, ops log, figure state
         # and sets _auto_save=True so subsequent saves go to the same directory
-        metadata, display_log, event_log = agent.load_session(session_id)
+        metadata, display_log, event_log = _load_session(agent, session_id)
 
         # Use the original disk session ID so auto-saves write back to the same directory
         state = SessionState(session_id, agent)
-
-        # Copy the restored ops log from the agent's context
-        from data_ops.operations_log import get_operations_log
-
-        state.ops_log = get_operations_log()
 
         with self._lock:
             self._sessions[session_id] = state
@@ -261,7 +256,9 @@ class APISessionManager:
             raise ValueError(f"Session {session_id} not found in active sessions")
 
         # 1. Force-save the source session to disk
-        self.run_in_session_context(source, source.agent.save_session)
+        self.run_in_session_context(
+            source, lambda: _save_session(source.agent)
+        )
 
         # 2. Copy session directory with a new proper ID
         from agent.session import SessionManager as SM
@@ -286,20 +283,19 @@ class APISessionManager:
         meta["name"] = f"Fork of {original_name}"
         # Clear interaction_id so load_session uses client history instead
         meta.pop("interaction_id", None)
-        meta_path.write_text(json.dumps(meta, indent=2))
+        tmp = meta_path.with_suffix(".tmp")
+        tmp.write_text(json.dumps(meta, indent=2))
+        tmp.replace(meta_path)
 
         # 4. Resume with fresh chat (skip_interaction_resume=True)
         from agent.core import create_agent
 
         agent = create_agent(verbose=False, defer_chat=True)
-        metadata, display_log, event_log = agent.load_session(
-            new_id, skip_interaction_resume=True
+        metadata, display_log, event_log = _load_session(
+            agent, new_id, skip_interaction_resume=True
         )
 
         state = SessionState(new_id, agent)
-        from data_ops.operations_log import get_operations_log
-
-        state.ops_log = get_operations_log()
 
         with self._lock:
             self._sessions[new_id] = state
@@ -311,9 +307,8 @@ class APISessionManager:
     def reload_config_for_sessions(self) -> dict:
         """Hot-reload all active sessions after config changes.
 
-        Each agent compares its own cached state (adapter type, model name)
-        against the current config values. If nothing diverges for an agent,
-        it's a no-op. Busy sessions are skipped.
+        Not yet implemented on the BaseAgent architecture — reports all
+        sessions as unchanged.
 
         Returns:
             dict with keys: reloaded, skipped, failed, unchanged (counts).
@@ -321,36 +316,28 @@ class APISessionManager:
         with self._lock:
             sessions = list(self._sessions.items())
 
-        reloaded = 0
-        skipped = 0
-        failed = 0
-        unchanged = 0
-
-        for sid, state in sessions:
-            if state.busy:
-                skipped += 1
-                continue
-            try:
-                result = state.agent.hot_reload_config()
-                if result["status"] == "unchanged":
-                    unchanged += 1
-                else:
-                    reloaded += 1
-            except Exception:
-                failed += 1
+        # hot_reload_config not yet implemented on BaseAgent architecture.
+        unchanged = len(sessions)
 
         return {
-            "reloaded": reloaded,
-            "skipped": skipped,
-            "failed": failed,
+            "reloaded": 0,
+            "skipped": 0,
+            "failed": 0,
             "unchanged": unchanged,
         }
 
     # ---- Shutdown ----
 
     def shutdown(self) -> None:
-        """Delete all sessions (called on server shutdown)."""
+        """Save and tear down all sessions (called on server shutdown)."""
         with self._lock:
+            states = list(self._sessions.values())
             session_ids = list(self._sessions.keys())
+        # Save each session to disk before tearing down
+        for state in states:
+            try:
+                self.run_in_session_context(state, _save_session, state.agent)
+            except Exception:
+                pass  # Best-effort save on shutdown
         for sid in session_ids:
             self.delete_session(sid)

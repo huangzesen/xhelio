@@ -1,148 +1,97 @@
-import { useEffect, useState } from 'react';
-import * as api from '../../api/client';
-import type { PlanData } from '../../api/client';
-import { useChatStore } from '../../stores/chatStore';
-import { ClipboardList, ChevronRight, ChevronDown } from 'lucide-react';
+import { useState } from 'react';
+import { CheckCircle2, Circle, Clock, ChevronDown, ChevronRight, ListChecks } from 'lucide-react';
+import type { PlanData, PlanStep } from '../../api/types';
 
-interface Props {
-  sessionId: string;
-  isStreaming: boolean;
+interface PlanStatusProps {
+  plan: PlanData;
 }
 
-const STATUS_ICON: Record<string, string> = {
-  pending: '○',
-  in_progress: '◉',
-  completed: '✓',
-  failed: '✗',
-  skipped: '–',
+const STATUS_ICONS: Record<string, typeof Circle> = {
+  pending: Circle,
+  in_progress: Clock,
+  completed: CheckCircle2,
 };
 
-const STATUS_COLOR: Record<string, string> = {
-  pending: 'opacity-50',
-  in_progress: 'text-blue-400',
+const STATUS_COLORS: Record<string, string> = {
+  pending: 'text-text-muted',
+  in_progress: 'text-yellow-400',
   completed: 'text-green-400',
+  skipped: 'text-text-muted/50',
   failed: 'text-red-400',
-  skipped: 'opacity-40',
 };
 
-function StepRow({ step, index }: { step: api.PlanStep; index: number }) {
+function StepRow({ step, index }: { step: PlanStep; index: number }) {
   const [expanded, setExpanded] = useState(false);
-  const icon = STATUS_ICON[step.status] || '~';
-  const color = STATUS_COLOR[step.status] || '';
-  const missionTag = step.mission ? `[${step.mission}] ` : '';
+  const Icon = STATUS_ICONS[step.status] || Circle;
+  const color = STATUS_COLORS[step.status] || 'text-text-muted';
+  const hasDetails = !!(step.details || step.note || step.mission);
 
   return (
-    <div className="text-[11px]">
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex items-start gap-1.5 w-full text-left hover:opacity-80 transition-opacity"
+    <div className="group">
+      <div
+        className={`flex items-start gap-2 py-1 px-1 rounded text-xs ${hasDetails ? 'cursor-pointer hover:bg-surface-elevated/50' : ''}`}
+        onClick={() => hasDetails && setExpanded(!expanded)}
       >
-        <span className="shrink-0 w-3 text-center pt-px">
-          {expanded ? <ChevronDown size={10} /> : <ChevronRight size={10} />}
-        </span>
-        <span className={`shrink-0 ${color}`}>{icon}</span>
-        <span className="text-status-info-text">
-          <span className="opacity-50">{index + 1}. </span>
-          {missionTag && <span className="font-medium">{missionTag}</span>}
+        <Icon size={14} className={`mt-0.5 shrink-0 ${color}`} />
+        <span className={`flex-1 ${step.status === 'completed' ? 'line-through text-text-muted' : 'text-text'}`}>
+          <span className="text-text-muted mr-1">{index + 1}.</span>
           {step.title}
         </span>
-      </button>
-
-      {expanded && (
-        <div className="ml-7 mt-1 mb-1 pl-2 border-l border-status-info-border/40 text-[10px] text-status-info-text opacity-70 space-y-1">
-          <div className="whitespace-pre-wrap">{step.details}</div>
-          {step.candidate_datasets && step.candidate_datasets.length > 0 && (
-            <div className="opacity-60">
-              Datasets: {step.candidate_datasets.join(', ')}
-            </div>
-          )}
-          {step.error && (
-            <div className="text-red-400">Error: {step.error}</div>
-          )}
+        {hasDetails && (
+          expanded
+            ? <ChevronDown size={12} className="mt-0.5 text-text-muted shrink-0" />
+            : <ChevronRight size={12} className="mt-0.5 text-text-muted shrink-0 opacity-0 group-hover:opacity-100" />
+        )}
+      </div>
+      {expanded && hasDetails && (
+        <div className="ml-6 pl-2 border-l border-border text-xs text-text-muted space-y-0.5 pb-1">
+          {step.details && <div>{step.details}</div>}
+          {step.mission && <div className="text-accent/80">Mission: {step.mission}</div>}
+          {step.note && <div className="italic">Note: {step.note}</div>}
         </div>
       )}
     </div>
   );
 }
 
-export function PlanStatus({ sessionId, isStreaming }: Props) {
-  // SSE-driven plan data (instant)
-  const ssePlan = useChatStore((s) => s.planData);
-  // Polling fallback (for session resume / initial load)
-  const [polledPlan, setPolledPlan] = useState<PlanData | null>(null);
-  const [expanded, setExpanded] = useState(false);
+export function PlanStatus({ plan }: PlanStatusProps) {
+  const [collapsed, setCollapsed] = useState(false);
 
-  useEffect(() => {
-    let cancelled = false;
-    const poll = async () => {
-      try {
-        const { plan: data } = await api.getPlanStatus(sessionId);
-        if (!cancelled) setPolledPlan(data);
-      } catch {
-        // ignore
-      }
-    };
-    poll();
-    // Poll less frequently when SSE is active — it's just a fallback
-    const interval = setInterval(poll, isStreaming ? 15000 : 5000);
-    return () => { cancelled = true; clearInterval(interval); };
-  }, [sessionId, isStreaming]);
-
-  // SSE data takes priority over polled data
-  const plan = ssePlan ?? polledPlan;
-
-  if (!plan) return null;
-
-  // Group steps by round
-  const rounds = new Map<number, { step: api.PlanStep; globalIndex: number }[]>();
-  plan.steps.forEach((step, i) => {
-    const r = step.round || 0;
-    if (!rounds.has(r)) rounds.set(r, []);
-    rounds.get(r)!.push({ step, globalIndex: i });
-  });
-  const hasRounds = rounds.size > 1 || (rounds.size === 1 && !rounds.has(0));
+  const done = plan.steps.filter((s) => s.status === 'completed').length;
+  const total = plan.total_steps;
+  const pct = total > 0 ? Math.round((done / total) * 100) : 0;
 
   return (
-    <div className="bg-status-info-bg border border-status-info-border rounded-lg px-3 py-2 text-xs space-y-1">
+    <div className="rounded-lg border border-border bg-surface p-2 text-xs">
       {/* Header */}
-      <button
-        onClick={() => setExpanded(!expanded)}
-        className="flex items-center gap-2 w-full text-left text-status-info-text font-medium hover:opacity-80 transition-opacity"
+      <div
+        className="flex items-center gap-2 cursor-pointer select-none"
+        onClick={() => setCollapsed(!collapsed)}
       >
-        <ClipboardList size={14} className="shrink-0" />
-        <span className="truncate">Plan Active</span>
-        <span className="ml-auto text-[10px] opacity-70 shrink-0">{plan.progress}</span>
-        {expanded
-          ? <ChevronDown size={14} className="shrink-0" />
-          : <ChevronRight size={14} className="shrink-0" />
-        }
-      </button>
-
-      {/* Summary */}
-      <div className="text-status-info-text opacity-80 text-[11px]">
-        Plan: {plan.total_steps} steps
+        <ListChecks size={14} className="text-accent shrink-0" />
+        <span className="font-medium text-text flex-1 truncate">
+          {plan.summary || 'Plan'}
+        </span>
+        <span className="text-text-muted shrink-0">{plan.progress}</span>
+        {collapsed
+          ? <ChevronRight size={14} className="text-text-muted shrink-0" />
+          : <ChevronDown size={14} className="text-text-muted shrink-0" />}
       </div>
 
-      {/* Steps */}
-      {expanded && (
-        <div className="border-t border-status-info-border/40 pt-1 mt-1 space-y-1">
-          {hasRounds
-            ? [...rounds.entries()].sort(([a], [b]) => a - b).map(([roundNum, entries]) => (
-                <div key={roundNum}>
-                  {roundNum > 0 && (
-                    <div className="text-[10px] text-status-info-text opacity-50 font-medium mt-1">
-                      Round {roundNum}
-                    </div>
-                  )}
-                  {entries.map(({ step, globalIndex }) => (
-                    <StepRow key={globalIndex} step={step} index={globalIndex} />
-                  ))}
-                </div>
-              ))
-            : plan.steps.map((step, i) => (
-                <StepRow key={i} step={step} index={i} />
-              ))
-          }
+      {/* Progress bar */}
+      <div className="mt-1.5 h-1 rounded-full bg-surface-elevated overflow-hidden">
+        <div
+          className="h-full rounded-full bg-accent transition-all duration-300"
+          style={{ width: `${pct}%` }}
+        />
+      </div>
+
+      {/* Steps list */}
+      {!collapsed && (
+        <div className="mt-2 space-y-0">
+          {plan.steps.map((step, i) => (
+            <StepRow key={i} step={step} index={i} />
+          ))}
         </div>
       )}
     </div>

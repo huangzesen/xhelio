@@ -24,7 +24,7 @@ DEFAULTS: dict[str, int] = {
     # Orchestrator duplicate call cooldown
     "orchestrator.dup_free_passes": 2,
     "orchestrator.dup_hard_block": 8,
-    # Sub-agent conversational (SubAgent._handle_request)
+    # Sub-agent conversational (BaseAgent._handle_request)
     "sub_agent.max_iterations": 20,
     "sub_agent.max_total_calls": 40,
     # Sub-agent duplicate call cooldown
@@ -33,7 +33,7 @@ DEFAULTS: dict[str, int] = {
     # Sub-agent task execution
     "sub_agent.task.max_iterations": 12,
     "sub_agent.task.max_total_calls": 25,
-    # Think phase (shared by viz, dataops, planner)
+    # Think phase (shared by viz, dataops)
     "think.max_iterations": 12,
     "think.max_total_calls": 25,
     # Eureka agent (investigation + finding + suggestion cycle)

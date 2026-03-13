@@ -84,31 +84,6 @@ export function AdvancedSection() {
           )}
         </label>
 
-        <label className="block">
-          <span className="text-xs text-text-muted">{t('advanced.memoryHotReload')}</span>
-          <div className="flex items-center gap-3 mt-1">
-            <input
-              type="checkbox"
-              checked={(config.memory_reload_interval as number) !== 0}
-              onChange={(e) => setField('memory_reload_interval', e.target.checked ? 5 : 0)}
-              className="rounded"
-            />
-            <span className="text-sm text-text">{t('common:actions.enable')}</span>
-            <input
-              type="number"
-              min={1}
-              max={20}
-              value={(config.memory_reload_interval as number) ?? 5}
-              onChange={(e) => setField('memory_reload_interval', parseInt(e.target.value) || 5)}
-              disabled={(config.memory_reload_interval as number) === 0}
-              className="w-20 rounded-lg border border-border px-2 py-1 text-sm bg-input-bg text-text disabled:opacity-50 focus:outline-none focus:ring-2 focus:ring-primary/30 focus:border-primary"
-            />
-            <span className="text-xs text-text-muted">{t('advanced.rounds')}</span>
-          </div>
-          {descriptions['memory_reload_interval'] && (
-            <p className="mt-1.5 text-xs italic text-text-muted/70 leading-relaxed">{descriptions['memory_reload_interval']}</p>
-          )}
-        </label>
       </div>
 
       {/* Eureka subsection */}

@@ -300,6 +300,16 @@ class TestSessionManager:
         assert (sm.base_dir / "auto_created").exists()
         assert (sm.base_dir / "auto_created" / "metadata.json").exists()
 
+    def test_get_tmp_dir(self, sm):
+        """Session tmp dir is created on demand and scoped to session."""
+        session_id = sm.create_session()
+        tmp_dir = sm.get_tmp_dir(session_id)
+        assert tmp_dir.exists()
+        assert tmp_dir.name == "tmp"
+        assert tmp_dir.parent.name == session_id
+        # Calling again returns same path
+        assert sm.get_tmp_dir(session_id) == tmp_dir
+
     def test_first_save_creates_initial_metadata(self, sm, tmp_dir):
         """First save_session creates metadata.json with default fields."""
         sid = sm.generate_session_id()

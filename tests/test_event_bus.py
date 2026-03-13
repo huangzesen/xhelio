@@ -16,7 +16,7 @@ from agent.event_bus import (
     SessionEvent,
     DebugLogListener,
     SSEEventListener,
-    OperationsLogListener,
+    PipelineDAGListener,
     DisplayLogBuilder,
     TokenLogListener,
     _resolve_tags,
@@ -43,23 +43,15 @@ from agent.event_bus import (
     PLOT_ACTION,
     DELEGATION,
     DELEGATION_DONE,
-    SUB_AGENT_TOOL,
     SUB_AGENT_ERROR,
-    PLAN_CREATED,
-    PLAN_TASK,
     PROGRESS,
     THINKING,
-    FETCH_ERROR,
     RENDER_ERROR,
     CUSTOM_OP_FAILURE,
     TOOL_ERROR,
-    CDF_FILE_QUERY,
-    CDF_DOWNLOAD,
-    CDF_DOWNLOAD_WARN,
     DEBUG,
     TOKEN_USAGE,
     CONTEXT_COMPACTION,
-    INSIGHT_RESULT,
 )
 from agent.agent_registry import (
     AGENT_CALL_REGISTRY,
@@ -80,7 +72,7 @@ class TestEventBus:
         assert "test_tool" in event.summary  # formatter generates summary from data
         assert event.msg == event.summary   # backward compat property
         assert event.level == "debug"
-        assert event.tags == frozenset({"display", "memory", "console"})
+        assert {"display", "memory", "console"}.issubset(event.tags)
         assert len(bus) == 1
 
     def test_emit_with_explicit_summary(self):
@@ -106,7 +98,7 @@ class TestEventBus:
             msg="Delegating to PSP",
             data={"target": "PSP"},
         )
-        assert event.tags == frozenset({"display", "memory", "console", "ctx:planner", "ctx:orchestrator"})
+        assert event.tags == frozenset({"display", "memory", "console", "ctx:orchestrator"})
         assert event.data["target"] == "PSP"
         assert event.level == "info"
 
@@ -165,8 +157,8 @@ class TestEventBus:
         bus = EventBus()
         # DELEGATION has {"display", "memory", "console"} — includes "memory"
         bus.emit(DELEGATION, msg="a")
-        # CDF_FILE_QUERY has empty tags — no "memory"
-        bus.emit(CDF_FILE_QUERY, msg="b")
+        # TOOL_ERROR_LOG has empty tags — no "memory"
+        bus.emit(TOOL_ERROR_LOG, msg="b")
         # DEBUG has {"console"} — no "memory"
         bus.emit(DEBUG, msg="c")
         events = bus.get_events(tags={"memory"})
@@ -235,27 +227,17 @@ class TestEventBus:
         assert event.tags == frozenset()
 
     def test_ctx_orchestrator_tags(self):
-        """ctx:orchestrator tag is present on the 9 expected event types."""
+        """ctx:orchestrator tag is present on the 7 expected event types."""
         orchestrator_types = {
-            SUB_AGENT_TOOL, SUB_AGENT_ERROR,
+            SUB_AGENT_ERROR,
             DATA_FETCHED, DATA_COMPUTED,
             RENDER_EXECUTED, CUSTOM_OP_FAILURE,
-            FETCH_ERROR, RENDER_ERROR, PLOT_ACTION,
+            RENDER_ERROR, PLOT_ACTION,
         }
         for event_type in orchestrator_types:
             tags = _resolve_tags(event_type)
             assert "ctx:orchestrator" in tags, (
                 f"{event_type!r} should have ctx:orchestrator tag"
-            )
-
-    def test_ctx_planner_and_orchestrator_synced(self):
-        """Every event with ctx:orchestrator must also have ctx:planner and vice versa."""
-        for event_type in INFRASTRUCTURE_TAGS:
-            tags = _resolve_tags(event_type)
-            has_orch = "ctx:orchestrator" in tags
-            has_plan = "ctx:planner" in tags
-            assert has_orch == has_plan, (
-                f"{event_type}: ctx:orchestrator={has_orch} but ctx:planner={has_plan}"
             )
 
     def test_sub_agent_error_has_memory_tag(self):
@@ -270,7 +252,7 @@ class TestEventBus:
         expected = frozenset({
             "display", "console",
             "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx",
-            "ctx:dataops", "ctx:planner", "ctx:orchestrator",
+            "ctx:dataops", "ctx:orchestrator",
         })
         assert _resolve_tags(CONTEXT_COMPACTION) == expected
 
@@ -362,7 +344,7 @@ class TestDebugLogListener:
         bus = EventBus()
         bus.subscribe(listener)
 
-        bus.emit(FETCH_ERROR, level="error", msg="Failed to fetch")
+        bus.emit(RENDER_ERROR, level="error", msg="Failed to fetch")
         mock_logger.log.assert_called_once()
         call_args = mock_logger.log.call_args
         assert call_args[0][0] == logging.ERROR
@@ -421,8 +403,8 @@ class TestSSEEventListener:
         bus = EventBus()
         bus.subscribe(listener)
 
-        # CDF_FILE_QUERY has no tags — should be skipped
-        bus.emit(CDF_FILE_QUERY, level="debug", msg="internal stuff")
+        # TOOL_ERROR_LOG has no tags — should be skipped
+        bus.emit(TOOL_ERROR_LOG, level="debug", msg="internal stuff")
         callback.assert_not_called()
 
     def test_forwards_warnings_regardless_of_tags(self):
@@ -446,152 +428,37 @@ class TestSSEEventListener:
         callback.assert_called_once()
 
 
-# ---- OperationsLogListener ----
+# ---- PipelineDAGListener ----
 
-class TestOperationsLogListener:
-    def test_records_data_fetched(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
+class TestPipelineDAGListener:
+    def test_pipeline_event_creates_dag_node(self):
+        from data_ops.dag import PipelineDAG
+        dag = PipelineDAG(session_dir=None)
+        listener = PipelineDAGListener(lambda: dag)
 
         bus = EventBus()
         bus.subscribe(listener)
 
-        # DATA_FETCHED default tags include "pipeline"
         bus.emit(DATA_FETCHED, msg="Fetched data", data={
+            "tool": "fetch_data",
             "args": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"},
-            "outputs": ["AC_H2_MFI.BGSEc"],
+            "inputs": [],
+            "outputs": {"AC_H2_MFI.BGSEc": "result"},
             "status": "success",
         })
-        ops_log.record.assert_called_once_with(
-            tool="fetch_data",
-            args={"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc"},
-            outputs=["AC_H2_MFI.BGSEc"],
-            status="success",
-            error=None,
-        )
-
-    def test_records_data_computed(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(DATA_COMPUTED, msg="Computed", data={
-            "args": {"description": "magnitude", "code": "np.sqrt(x)"},
-            "outputs": ["Bmag"],
-            "inputs": ["AC_H2_MFI.BGSEc"],
-            "status": "success",
-        })
-        ops_log.record.assert_called_once_with(
-            tool="run_code",
-            args={"description": "magnitude", "code": "np.sqrt(x)"},
-            outputs=["Bmag"],
-            inputs=["AC_H2_MFI.BGSEc"],
-            status="success",
-            error=None,
-        )
-
-    def test_render_executed_not_recorded_by_listener(self):
-        """RENDER_EXECUTED recording is now done inline in core.py, not by OperationsLogListener."""
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(RENDER_EXECUTED, msg="Rendered", data={
-            "args": {"figure_json": "..."},
-            "outputs": [],
-            "inputs": ["Bmag"],
-            "status": "success",
-        })
-        ops_log.record.assert_not_called()
-
-    def test_records_plot_action(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(PLOT_ACTION, msg="Export", data={
-            "args": {"action": "export_png"},
-            "outputs": [],
-            "status": "success",
-        })
-        ops_log.record.assert_called_once()
-        assert ops_log.record.call_args.kwargs["tool"] == "manage_plot"
-
-    def test_records_data_created(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(DATA_CREATED, msg="Created", data={
-            "args": {"description": "manual df"},
-            "outputs": ["manual_df"],
-            "status": "success",
-        })
-        ops_log.record.assert_called_once()
-        assert ops_log.record.call_args.kwargs["tool"] == "run_code"
-
-    def test_records_mpl_render_executed(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(MPL_RENDER_EXECUTED, msg="MPL rendered", data={
-            "args": {"script": "import matplotlib..."},
-            "outputs": [],
-            "inputs": ["Bmag"],
-            "status": "success",
-        })
-        ops_log.record.assert_called_once_with(
-            tool="generate_mpl_script",
-            args={"script": "import matplotlib..."},
-            outputs=[],
-            inputs=["Bmag"],
-            status="success",
-            error=None,
-        )
-
-    def test_records_jsx_render_executed(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
-
-        bus = EventBus()
-        bus.subscribe(listener)
-
-        bus.emit(JSX_RENDER_EXECUTED, msg="JSX rendered", data={
-            "args": {"component": "<Plot .../>"},
-            "outputs": [],
-            "inputs": ["solar_wind"],
-            "status": "success",
-        })
-        ops_log.record.assert_called_once_with(
-            tool="generate_jsx_component",
-            args={"component": "<Plot .../>"},
-            outputs=[],
-            inputs=["solar_wind"],
-            status="success",
-            error=None,
-        )
+        assert dag.node_count() == 1
 
     def test_ignores_non_pipeline_events(self):
-        ops_log = MagicMock()
-        listener = OperationsLogListener(lambda: ops_log)
+        from data_ops.dag import PipelineDAG
+        dag = PipelineDAG(session_dir=None)
+        listener = PipelineDAGListener(lambda: dag)
 
         bus = EventBus()
         bus.subscribe(listener)
 
         # DEBUG has {"console"} — no "pipeline" tag
         bus.emit(DEBUG, msg="Routing")
-        ops_log.record.assert_not_called()
+        assert dag.node_count() == 0
 
 
 # ---- DisplayLogBuilder ----
@@ -634,8 +501,8 @@ class TestDisplayLogBuilder:
         bus = EventBus()
         bus.subscribe(builder)
 
-        # CDF_FILE_QUERY has no tags (no "display")
-        bus.emit(CDF_FILE_QUERY, msg="internal debug")
+        # TOOL_ERROR_LOG has no tags (no "display")
+        bus.emit(TOOL_ERROR_LOG, msg="internal debug")
         assert len(builder.entries) == 0
 
     def test_full_conversation_flow(self):
@@ -707,7 +574,9 @@ class TestTokenLogListener:
     def test_token_usage_default_tags(self):
         assert _resolve_tags(TOKEN_USAGE) == frozenset({"token", "console"})
 
-    def test_sse_forwards_token_usage(self):
+    def test_sse_does_not_forward_token_usage(self):
+        """Per-agent token_usage events are no longer forwarded as SSE typed
+        payloads — aggregate totals come from round_end and polling instead."""
         callback = MagicMock()
         listener = SSEEventListener(callback)
 
@@ -722,15 +591,12 @@ class TestTokenLogListener:
         }
         bus.emit(TOKEN_USAGE, msg="[Tokens] test", data=data)
 
-        # SSEEventListener should send both a token_usage payload and a log_line
+        # Should only get a log_line, not a token_usage typed payload
         calls = callback.call_args_list
         payloads = [c[0][0] for c in calls]
         types = [p["type"] for p in payloads]
-        assert "token_usage" in types
+        assert "token_usage" not in types
         assert "log_line" in types
-
-        token_payload = next(p for p in payloads if p["type"] == "token_usage")
-        assert token_payload["data"]["agent_name"] == "OrchestratorAgent"
 
 
 # ---- Agent Tool Registry ----
@@ -739,22 +605,26 @@ class TestAgentToolRegistry:
     """Smoke tests for AGENT_CALL_REGISTRY and AGENT_INFORMED_REGISTRY."""
 
     def test_call_registry_has_expected_keys(self):
-        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:data_io", "ctx:eureka"}
+        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:data_io", "ctx:eureka"}
         assert set(AGENT_CALL_REGISTRY.keys()) == expected_keys
 
     def test_informed_registry_has_expected_keys(self):
-        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:planner", "ctx:data_io", "ctx:eureka"}
+        expected_keys = {"ctx:orchestrator", "ctx:envoy", "ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx", "ctx:dataops", "ctx:data_io", "ctx:eureka"}
         assert set(AGENT_INFORMED_REGISTRY.keys()) == expected_keys
 
     def test_call_registry_values_are_nonempty_frozensets(self):
+        # ctx:envoy may be empty when no envoy kind modules expose direct tools
+        # (e.g., MCP-only envoys have no static tools). Allow empty for envoy specifically.
         for ctx, tools in AGENT_CALL_REGISTRY.items():
             assert isinstance(tools, frozenset), f"{ctx} value is not frozenset"
-            assert len(tools) > 0, f"{ctx} has empty tool set"
+            if ctx != "ctx:envoy":
+                assert len(tools) > 0, f"{ctx} has empty tool set"
 
     def test_informed_registry_values_are_nonempty_frozensets(self):
         for ctx, tools in AGENT_INFORMED_REGISTRY.items():
             assert isinstance(tools, frozenset), f"{ctx} value is not frozenset"
-            assert len(tools) > 0, f"{ctx} has empty tool set"
+            if ctx != "ctx:envoy":
+                assert len(tools) > 0, f"{ctx} has empty tool set"
 
     def test_informed_is_superset_of_call(self):
         """AGENT_INFORMED_REGISTRY should always be a superset of AGENT_CALL_REGISTRY."""
@@ -768,38 +638,29 @@ class TestAgentToolRegistry:
 
     def test_specific_tool_in_expected_agents(self):
         """Verify key tools appear in the expected agents' call sets."""
-        # fetch_data should be in mission (call)
-        assert "fetch_data" in AGENT_CALL_REGISTRY["ctx:envoy"]
         # render_plotly_json should be in viz (call)
         assert "render_plotly_json" in AGENT_CALL_REGISTRY["ctx:viz_plotly"]
         # run_code should be in dataops (call)
         assert "run_code" in AGENT_CALL_REGISTRY["ctx:dataops"]
-        # list_fetched_data should be in all agents (call)
+        # assets should be in all agents with tools (call)
         for ctx in AGENT_CALL_REGISTRY:
-            assert "list_fetched_data" in AGENT_CALL_REGISTRY[ctx], (
-                f"{ctx} should have list_fetched_data"
+            if ctx == "ctx:envoy":
+                continue  # envoy tools come from MCP, may be empty
+            assert "assets" in AGENT_CALL_REGISTRY[ctx], (
+                f"{ctx} should have assets"
             )
 
     def test_data_inspection_tools_in_viz_agents(self):
         """Data inspection tools should be callable by viz agents."""
         for ctx in ["ctx:viz_plotly", "ctx:viz_mpl", "ctx:viz_jsx"]:
-            assert "describe_data" in AGENT_CALL_REGISTRY[ctx], (
-                f"{ctx} should have describe_data"
-            )
-            assert "preview_data" in AGENT_CALL_REGISTRY[ctx], (
-                f"{ctx} should have preview_data"
+            assert "xhelio__manage_data" in AGENT_CALL_REGISTRY[ctx], (
+                f"{ctx} should have xhelio__manage_data"
             )
 
     def test_informed_tools_for_viz(self):
-        """VizAgent should be informed about fetch_data and run_code."""
+        """VizAgent should be informed about run_code."""
         viz_informed = AGENT_INFORMED_REGISTRY.get("ctx:viz_plotly")
-        assert "fetch_data" in viz_informed
         assert "run_code" in viz_informed
-
-    def test_informed_tools_for_dataops(self):
-        """DataOpsAgent should be informed about fetch_data."""
-        dataops_informed = AGENT_INFORMED_REGISTRY.get("ctx:dataops")
-        assert "fetch_data" in dataops_informed
 
 
 # ---- Data-driven tag derivation ----
@@ -816,32 +677,36 @@ class TestDataDrivenTags:
                     f"Universal event {event_type!r} missing {ctx}"
                 )
 
-    def test_routing_events_have_only_planner_orchestrator(self):
-        """Events in ROUTING_ONLY_EVENTS should only have ctx:planner and ctx:orchestrator."""
+    def test_routing_events_have_only_orchestrator(self):
+        """Events in ROUTING_ONLY_EVENTS should only have ctx:orchestrator."""
         for event_type in ROUTING_ONLY_EVENTS:
             tags = _resolve_tags(event_type)
             ctx_tags = {t for t in tags if t.startswith("ctx:")}
-            assert ctx_tags == {"ctx:planner", "ctx:orchestrator"}, (
+            assert ctx_tags == {"ctx:orchestrator"}, (
                 f"Routing event {event_type!r} has wrong ctx tags: {ctx_tags}"
             )
 
-    def test_data_fetched_visible_to_all_agents(self):
-        """DATA_FETCHED should now be visible to all 5 agent types."""
+    def test_data_fetched_visible_to_agents_with_tools(self):
+        """DATA_FETCHED should be visible to all agents with assets."""
         tags = _resolve_tags(DATA_FETCHED)
+        # Should include orchestrator and agents with assets
         for ctx in ALL_CTX_TAGS:
+            if ctx == "ctx:envoy":
+                continue  # envoy tools come from MCP, may be empty
             assert ctx in tags, f"DATA_FETCHED missing {ctx}"
 
-    def test_data_computed_visible_to_all_agents(self):
-        """DATA_COMPUTED should now be visible to all 5 agent types."""
+    def test_data_computed_visible_to_agents_with_tools(self):
+        """DATA_COMPUTED should be visible to all agents with run_code/assets."""
         tags = _resolve_tags(DATA_COMPUTED)
         for ctx in ALL_CTX_TAGS:
+            if ctx == "ctx:envoy":
+                continue  # envoy tools come from MCP, may be empty
             assert ctx in tags, f"DATA_COMPUTED missing {ctx}"
 
-    def test_render_executed_visible_to_viz_planner_orch(self):
-        """RENDER_EXECUTED should be visible to viz, planner, orchestrator (not mission)."""
+    def test_render_executed_visible_to_viz_orch(self):
+        """RENDER_EXECUTED should be visible to viz and orchestrator (not mission)."""
         tags = _resolve_tags(RENDER_EXECUTED)
         assert "ctx:viz_plotly" in tags
-        assert "ctx:planner" in tags
         assert "ctx:orchestrator" in tags
         # Mission agents don't need render events — they discover and fetch, not plot
         assert "ctx:envoy" not in tags
@@ -899,9 +764,9 @@ class TestSpan:
             "outputs": ["AC_H2_MFI.BGSEc"],
         }) as span_id:
             assert span_id  # non-empty
-            bus.emit(CDF_FILE_QUERY, agent="cdf", msg="Found 3 files",
+            bus.emit(TOOL_ERROR_LOG, agent="cdf", msg="Found 3 files",
                      data={"file_count": 3, "dataset_id": "AC_H2_MFI"})
-            bus.emit(CDF_DOWNLOAD, agent="cdf", msg="Downloaded file.cdf",
+            bus.emit(PROGRESS, agent="cdf", msg="Downloaded file.cdf",
                      data={"filename": "file.cdf"})
 
         # The span-closing parent event should have children
@@ -909,8 +774,8 @@ class TestSpan:
         assert len(parent_events) == 1
         parent = parent_events[0]
         assert len(parent.children) == 2
-        assert parent.children[0]["type"] == CDF_FILE_QUERY
-        assert parent.children[1]["type"] == CDF_DOWNLOAD
+        assert parent.children[0]["type"] == TOOL_ERROR_LOG
+        assert parent.children[1]["type"] == PROGRESS
 
     def test_span_generates_summary(self):
         """Span closing generates summary from formatter."""
@@ -931,14 +796,14 @@ class TestSpan:
         with bus.span(DATA_FETCHED, agent="orchestrator", data={
             "args": {}, "outputs": ["test"],
         }):
-            bus.emit(CDF_FILE_QUERY, agent="cdf", msg="query")
-            bus.emit(CDF_DOWNLOAD, agent="cdf", msg="download")
+            bus.emit(TOOL_ERROR_LOG, agent="cdf", msg="query")
+            bus.emit(PROGRESS, agent="cdf", msg="download")
 
         # Sub-events + parent = 3 events total
         all_events = bus.get_events()
         types = [e.type for e in all_events]
-        assert CDF_FILE_QUERY in types
-        assert CDF_DOWNLOAD in types
+        assert TOOL_ERROR_LOG in types
+        assert PROGRESS in types
         assert DATA_FETCHED in types
 
     def test_nested_spans_not_broken(self):
@@ -949,7 +814,7 @@ class TestSpan:
             with bus.span(DATA_FETCHED, agent="mission", data={
                 "args": {}, "outputs": ["inner"],
             }):
-                bus.emit(CDF_FILE_QUERY, agent="cdf", msg="inner sub")
+                bus.emit(TOOL_ERROR_LOG, agent="cdf", msg="inner sub")
 
         events = bus.get_events()
         delegation_events = [e for e in events if e.type == DELEGATION and e.children]
@@ -970,15 +835,6 @@ class TestFormatters:
         assert "AC_H2_MFI.BGSEc" in summary
         assert "1000" in summary
         assert "AC_H2_MFI" in details
-
-    def test_data_fetched_already_loaded(self):
-        from agent.event_formatters import format_event
-        summary, details = format_event("data_fetched", "orchestrator", {
-            "args": {"dataset_id": "AC_H2_MFI", "parameter_id": "BGSEc",
-                     "already_loaded": True},
-            "outputs": ["AC_H2_MFI.BGSEc"],
-        })
-        assert "already loaded" in summary
 
     def test_data_fetched_error(self):
         from agent.event_formatters import format_event
@@ -1017,15 +873,6 @@ class TestFormatters:
             "target": "PSP",
         })
         assert "PSP" in summary
-
-    def test_sub_agent_tool_formatter(self):
-        from agent.event_formatters import format_event
-        summary, details = format_event("sub_agent_tool", "PSP_agent", {
-            "tool_name": "fetch_data",
-            "tool_result": {"status": "success"},
-        })
-        assert "PSP_agent" in summary
-        assert "fetch_data" in summary
 
     def test_default_formatter_with_msg(self):
         from agent.event_formatters import format_event

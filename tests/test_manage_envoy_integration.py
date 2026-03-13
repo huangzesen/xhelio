@@ -1,4 +1,5 @@
 """Integration test: create a runtime envoy and verify it works through the full path."""
+import json
 import shutil
 import sys
 from pathlib import Path
@@ -11,21 +12,40 @@ from agent.envoy_kinds.registry import EnvoyKindRegistry, _load_kind_module
 
 @pytest.fixture
 def temp_kind(tmp_path):
-    """Create a temp kind in knowledge/envoys/ and clean up after."""
-    from agent.tool_handlers.manage_envoy import _ENVOYS_DIR
+    """Create a temp kind in knowledge/envoys/ using codegen and clean up after."""
+    from agent.tool_handlers.manage_envoy import _ENVOYS_DIR, _DEFAULT_GLOBAL_TOOLS
+    from agent.envoy_kinds.codegen import generate_kind_files
+
     kind_dir = _ENVOYS_DIR / "_test_integration"
     kind_dir.mkdir(parents=True, exist_ok=True)
-    (kind_dir / "__init__.py").write_text(
-        "TOOLS = [{'name': 'test_tool', 'description': 'test', 'parameters': {'type': 'object', 'properties': {}}}]\n"
-        "HANDLERS = {'test_tool': lambda orch, args: {'status': 'success'}}\n"
-        "GLOBAL_TOOLS = ['ask_clarification']\n"
-    )
-    (kind_dir / "handlers.py").write_text("")
+
+    manifest = {
+        "kind": "_test_integration",
+        "envoy_id": "_TEST_INT",
+        "source": "test",
+        "source_type": "package",
+        "global_tools": ["ask_clarification"],
+        "tools": [
+            {
+                "name": "test_tool",
+                "description": "test",
+                "parameters": {"type": "object", "properties": {}},
+                "handler_code": (
+                    "def test_tool(**kwargs):\n"
+                    "    return {'status': 'success'}\n"
+                ),
+            }
+        ],
+    }
+    (kind_dir / "kind.json").write_text(json.dumps(manifest, indent=2))
+    generate_kind_files(kind_dir, manifest)
+
     yield kind_dir
     # Cleanup
     if kind_dir.exists():
         shutil.rmtree(kind_dir)
     sys.modules.pop("knowledge.envoys._test_integration", None)
+    sys.modules.pop("knowledge.envoys._test_integration.handlers", None)
 
 
 def test_runtime_envoy_full_cycle(temp_kind):

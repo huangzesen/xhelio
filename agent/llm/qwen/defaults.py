@@ -4,13 +4,10 @@ DEFAULTS = {
     "api_key_env": "QWEN_API_KEY",
     "model": "qwen3.5-plus",
     "sub_agent_model": "qwen3.5-plus",
-    "insight_model": "qwen3.5-plus",
     "inline_model": "qwen-flash-2025-07-28",
-    "planner_model": "qwen3.5-plus",
     "web_search_provider": "qwen",
     "vision_provider": "qwen",
     "thinking_model": "default",
     "thinking_sub_agent": "default",
-    "thinking_insight": "default",
     "rate_limit_interval": 0,
 }

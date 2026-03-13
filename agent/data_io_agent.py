@@ -1,52 +1,39 @@
-"""
-Data I/O agent.
+"""DataIOAgent — structured data extraction and local file import (BaseAgent subclass)."""
 
-Loads local files and turns unstructured text into structured DataFrames. Handles:
-- File imports (CSV, JSON, Parquet, Excel via load_file)
-- Event catalogs, ICME lists, flare lists from search results
-- Tables extracted from documents (PDF, images)
-- Any text-to-DataFrame conversion
+from __future__ import annotations
 
-Uses load_file for tabular imports, run_code (with store_as) for text-to-DataFrame,
-and read_document for document reading.
-"""
+from typing import TYPE_CHECKING
+from uuid import uuid4
 
-import threading
+from .base_agent import BaseAgent
 
-from .sub_agent import SubAgent
-from .tools import get_function_schemas
-from .event_bus import EventBus
-from .agent_registry import DATA_IO_TOOLS
-from knowledge.prompt_builder import build_data_io_prompt
+if TYPE_CHECKING:
+    from .llm import LLMService
+    from .session_context import SessionContext
 
 
-class DataIOAgent(SubAgent):
-    """A SubAgent specialized for file I/O and converting unstructured text to DataFrames."""
+class DataIOAgent(BaseAgent):
+    """Data I/O agent for structured extraction and file import."""
 
-    _has_deferred_reviews = True
-
-    _PARALLEL_SAFE_TOOLS = {
-        "list_fetched_data", "manage_session_assets",
-        "review_memory", "events",
-    }
+    agent_type = "data_io"
 
     def __init__(
         self,
-        service,
-        tool_executor,
-        *,
-        event_bus: EventBus | None = None,
-        cancel_event: threading.Event | None = None,
+        service: LLMService,
+        session_ctx: SessionContext | None = None,
+        **kwargs,
     ):
-        tool_schemas = get_function_schemas(names=DATA_IO_TOOLS)
+        system_prompt = "You are a data I/O specialist."
+        try:
+            from knowledge.prompt_builder import build_data_io_system_prompt
+            system_prompt = build_data_io_system_prompt()
+        except (ImportError, AttributeError):
+            pass
 
         super().__init__(
-            agent_id="DataIOAgent",
+            agent_id=f"data_io:{uuid4().hex[:6]}",
             service=service,
-            agent_type="data_io",
-            tool_executor=tool_executor,
-            system_prompt=build_data_io_prompt(),
-            tool_schemas=tool_schemas,
-            event_bus=event_bus,
-            cancel_event=cancel_event,
+            system_prompt=system_prompt,
+            session_ctx=session_ctx,
+            **kwargs,
         )

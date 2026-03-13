@@ -22,6 +22,10 @@ export function DataSection() {
   const { config, updateConfig } = useSettingsStore();
   const descriptions = (config._descriptions as Record<string, string>) ?? {};
   const setField = (key: string, value: unknown) => updateConfig({ [key]: value });
+  const setNestedField = (parent: string, key: string, value: unknown) => {
+    const current = (config[parent] as Record<string, unknown>) ?? {};
+    updateConfig({ [parent]: { ...current, [key]: value } });
+  };
 
   const [missionStatus, setMissionStatus] = useState<MissionStatus | null>(null);
   const [activeAction, setActiveAction] = useState<CatalogAction | null>(null);
@@ -164,6 +168,24 @@ export function DataSection() {
             <p className="mt-1.5 text-xs italic text-text-muted/70 leading-relaxed">{descriptions['max_plot_points']}</p>
           )}
         </label>
+      </div>
+
+      {/* Sandbox subsection */}
+      <div className="space-y-4">
+        <h3 className="text-sm font-medium text-text-muted uppercase tracking-wider">{t('data.sandbox')}</h3>
+
+        <div>
+          <label className="flex items-center justify-between cursor-pointer">
+            <span className="text-xs text-text-muted">{t('data.autoInstall')}</span>
+            <input
+              type="checkbox"
+              checked={((config.sandbox as Record<string, unknown>)?.auto_install as boolean) ?? false}
+              onChange={(e) => setNestedField('sandbox', 'auto_install', e.target.checked)}
+              className="rounded"
+            />
+          </label>
+          <p className="mt-1.5 text-xs italic text-text-muted/70 leading-relaxed">{t('data.autoInstallDescription')}</p>
+        </div>
       </div>
 
       {/* Mission Data subsection */}

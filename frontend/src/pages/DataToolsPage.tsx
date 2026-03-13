@@ -1,4 +1,3 @@
-import { CatalogBrowser } from '../components/data/CatalogBrowser';
 import { DataTable } from '../components/data/DataTable';
 import { DataPreview } from '../components/data/DataPreview';
 import { MemoryManager } from '../components/data/MemoryManager';
@@ -20,7 +19,6 @@ export function DataToolsPage() {
       <div className="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-2 gap-4">
         {/* Left column */}
         <div className="space-y-4">
-          <CatalogBrowser sessionId={activeSessionId} />
           <MemoryManager sessionId={activeSessionId} />
         </div>
 

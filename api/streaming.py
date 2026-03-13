@@ -63,8 +63,12 @@ class SessionSSEBridge:
     def callback(self, event: dict) -> None:
         """Thread-safe callback invoked by the agent from a worker thread."""
         with self._lock:
-            for q in self._subscribers:
+            subscribers = list(self._subscribers)
+        for q in subscribers:
+            try:
                 self._loop.call_soon_threadsafe(q.put_nowait, event)
+            except Exception:
+                pass  # Queue full or closed — skip
 
     def subscribe(self) -> asyncio.Queue[dict | None]:
         """Create a new subscriber queue. Returns a queue that yields events."""

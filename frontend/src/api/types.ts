@@ -14,7 +14,6 @@ export interface SessionInfo {
 export interface SessionDetail extends SessionInfo {
   token_usage: Record<string, number>;
   data_entries: number;
-  plan_status: string | null;
 }
 
 export interface SavedSessionInfo {
@@ -116,17 +115,32 @@ export interface SSEInsightResultEvent {
 export interface SSEInsightFeedbackEvent {
   type: 'insight_feedback';
   text: string;
+  passed: boolean;
   level: string;
+}
+
+/** Raw plan wire format from the backend (before transformation to PlanData). */
+export interface PlanWireData {
+  tasks: Array<{
+    description: string;
+    instruction: string;
+    status: string;
+    mission?: string | null;
+    note?: string;
+  }>;
+  summary?: string;
+  reasoning?: string;
+}
+
+export interface SSEPlanUpdateEvent {
+  type: 'plan_update';
+  action: 'create' | 'update' | 'drop';
+  plan: PlanWireData | null;
 }
 
 export interface SSETokenUsageEvent {
   type: 'token_usage';
   token_usage: Record<string, number>;
-}
-
-export interface SSEPlanUpdateEvent {
-  type: 'plan_update';
-  plan: import('./client').PlanData;
 }
 
 export interface SSEEurekaFindingEvent {
@@ -165,6 +179,12 @@ export interface SSEJsxComponentEvent {
   description: string;
 }
 
+export interface SSEAgentResponseEvent {
+  type: 'agent_response';
+  text: string;
+  generated?: boolean;
+}
+
 export type SSEEvent =
   | SSEToolCallEvent
   | SSEToolResultEvent
@@ -180,11 +200,12 @@ export type SSEEvent =
   | SSELogLineEvent
   | SSEMemoryUpdateEvent
   | SSEInsightResultEvent
-  | SSEPlanUpdateEvent
   | SSEEurekaFindingEvent
   | SSEPermissionRequestEvent
   | SSEInsightFeedbackEvent
-  | SSETokenUsageEvent;
+  | SSETokenUsageEvent
+  | SSEPlanUpdateEvent
+  | SSEAgentResponseEvent;
 
 // ---- Catalog SSE Events ----
 
@@ -235,13 +256,32 @@ export interface SessionEventRecord {
   tags: string[];
 }
 
+// ---- Plan ----
+
+export interface PlanStep {
+  title: string;
+  details: string;
+  status: string;
+  mission?: string | null;
+  note?: string;
+}
+
+export interface PlanData {
+  total_steps: number;
+  progress: string;
+  summary: string;
+  reasoning: string;
+  steps: PlanStep[];
+}
+
 // ---- Frontend-only ----
 
 export interface ChatMessage {
   id: string;
-  role: 'user' | 'agent' | 'thinking' | 'plot' | 'system' | 'insight' | 'insight_feedback';
+  role: 'user' | 'agent' | 'thinking' | 'plot' | 'system' | 'insight' | 'insight_feedback' | 'eureka';
   content: string;
   timestamp: number;
+  passed?: boolean;
   figure?: PlotlyFigure;
   figure_url?: string;
   /** Pre-rendered PNG thumbnail URL (used during session resume for instant preview). */
@@ -305,32 +345,6 @@ export interface PlotlyFigure {
   layout: Partial<Plotly.Layout>;
 }
 
-// ---- Catalog ----
-
-export interface MissionInfo {
-  id: string;
-  name: string;
-}
-
-export interface DatasetInfo {
-  id: string;
-  name: string;
-  description?: string;
-}
-
-export interface ParameterInfo {
-  name: string;
-  description: string;
-  units: string;
-  size: number;
-  dataset_id: string;
-}
-
-export interface TimeRange {
-  start: string | null;
-  stop: string | null;
-}
-
 // ---- Data ----
 
 export interface DataPreview {
@@ -360,6 +374,16 @@ export interface DataEntrySummary {
   comment?: string;
 }
 
+// ---- Session Assets ----
+
+export interface SessionAsset {
+  asset_id: string;
+  kind: 'data' | 'file' | 'figure';
+  name: string;
+  created_at: string;
+  metadata: Record<string, unknown>;
+}
+
 // ---- Config ----
 
 export type AppConfig = Record<string, unknown>;
@@ -374,7 +398,6 @@ export interface ProviderConfig {
   sub_agent_model?: string;
   insight_model?: string;
   inline_model?: string;
-  planner_model?: string;
   web_search_provider?: string | null;
   vision_provider?: string | null;
   rate_limit_interval?: number;
@@ -421,7 +444,6 @@ export interface ModelCombo {
     sub_agent_model: string;
     insight_model: string;
     inline_model: string;
-    planner_model: string | null;
   };
   web_search_provider: string | null;
   vision_provider: string | null;
@@ -621,42 +643,6 @@ export interface GalleryItem {
   render_op_id: string;
   created_at: string;
   thumbnail: string;
-}
-
-// ---- Validation ----
-
-export interface ValidationRecord {
-  version: number;
-  source_file: string;
-  validated_at: string;
-  source_url: string;
-  discrepancy_count: number;
-}
-
-export interface DatasetValidation {
-  dataset_id: string;
-  validated: boolean;
-  validation_count: number;
-  phantom_count: number;
-  undocumented_count: number;
-  phantom_params: string[];
-  undocumented_params: string[];
-  validations: ValidationRecord[];
-}
-
-export interface MissionValidation {
-  mission_stem: string;
-  display_name: string;
-  dataset_count: number;
-  validated_count: number;
-  issue_count: number;
-  total_phantom: number;
-  total_undocumented: number;
-  datasets: DatasetValidation[];
-}
-
-export interface ValidationOverview {
-  missions: MissionValidation[];
 }
 
 // ---- Asset Management ----

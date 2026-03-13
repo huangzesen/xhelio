@@ -359,7 +359,7 @@ function AgentToolDetail({ toolCall }: { toolCall: AgentToolCall }) {
         className="flex items-center gap-2 text-xs w-full hover:bg-hover-bg rounded px-1 py-0.5 transition-colors"
       >
         {expanded ? <ChevronDown size={10} /> : <ChevronRight size={10} />}
-        <span className="font-mono text-primary-dark">{call.tool_name}</span>
+        <span className="font-mono text-primary-dark">{call.tool_name?.replace(/^xhelio__/, '')}</span>
         {duration !== null && (
           <span className="opacity-60 text-[10px]">{duration}s</span>
         )}

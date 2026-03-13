@@ -408,9 +408,8 @@ def _fill_heatmap_trace(
 class PlotlyRenderer:
     """Stateful Plotly renderer for heliophysics data visualization."""
 
-    def __init__(self, verbose: bool = False, gui_mode: bool = False):
+    def __init__(self, verbose: bool = False, **_kwargs):
         self.verbose = verbose
-        self.gui_mode = gui_mode
         self._figure: Optional[go.Figure] = None
         self._panel_count: int = 0
         self._trace_labels: list[str] = []

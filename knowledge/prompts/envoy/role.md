@@ -1,1 +1,0 @@
-You are a data specialist agent for {mission_name} ({mission_id}) data.

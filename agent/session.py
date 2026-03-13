@@ -198,8 +198,7 @@ class SessionManager:
             figure_state: Optional renderer state dict from
                 ``PlotlyRenderer.save_state()``.
             figure_obj: Optional Plotly Figure object for thumbnail export.
-            operations: Optional list of operation records from
-                ``OperationsLog.get_records()``.
+            operations: Optional list of operation records (legacy, now None).
             display_log: Optional list of display log entries
                 (role/content/timestamp dicts for UI replay).
         """
@@ -250,9 +249,7 @@ class SessionManager:
         elif not figure_state and thumb_path.exists():
             thumb_path.unlink()
 
-        # Save operations log
-        if operations is not None:
-            self._write_json(session_dir / "operations.json", operations)
+        # Operations log is now saved via PipelineDAG.save() — no separate file needed
 
         # Generate per-render thumbnails (one PNG per render_plotly_json op)
         if operations is not None and data_store is not None:
@@ -280,7 +277,7 @@ class SessionManager:
         """
         render_ops = [
             op for op in operations
-            if op.get("tool") == "render_plotly_json"
+            if op.get("tool") == "xhelio__render_plotly_json"
             and op.get("status") == "success"
             and op.get("id")
         ]
@@ -322,11 +319,16 @@ class SessionManager:
                 if figure is None:
                     continue
 
+                tmp_path = thumb_path.with_suffix(".png.tmp")
                 figure.write_image(
-                    str(thumb_path), format="png",
+                    str(tmp_path), format="png",
                     width=800, height=400, scale=1,
                 )
+                tmp_path.replace(thumb_path)
             except Exception:
+                # Clean up partial tmp file on failure
+                tmp_path = thumb_dir / f"{op_id}.png.tmp"
+                tmp_path.unlink(missing_ok=True)
                 pass  # best-effort — skip failures silently
 
     def load_session(self, session_id: str) -> tuple[list[dict], Path, dict, Optional[dict], Optional[list[dict]], Optional[list[dict]], Optional[list[dict]]]:
@@ -365,7 +367,7 @@ class SessionManager:
         metadata = self._read_json(session_dir / "metadata.json") or {}
         data_dir = session_dir / "data"
         figure_state = self._read_json(session_dir / "figure.json")
-        operations = self._read_json(session_dir / "operations.json")
+        operations = None  # Pipeline tracking now uses pipeline.json via PipelineDAG
         display_log = self._read_json(session_dir / "display_log.json")
 
         # Load structured event log (JSONL format, may not exist for old sessions)
@@ -415,6 +417,21 @@ class SessionManager:
         if not sessions:
             return None
         return sessions[0]["id"]
+
+    def get_tmp_dir(self, session_id: str) -> Path:
+        """Return the session-scoped temp directory, creating it if needed.
+
+        Files written here are cleaned up when the session is deleted.
+
+        Args:
+            session_id: Session identifier.
+
+        Returns:
+            Path to {base_dir}/{session_id}/tmp/
+        """
+        tmp_dir = self.base_dir / session_id / "tmp"
+        tmp_dir.mkdir(parents=True, exist_ok=True)
+        return tmp_dir
 
     # ---- Internal helpers ----
 

@@ -1,7 +1,8 @@
 """Tests for MemoryHooks."""
 
+import threading
 from unittest.mock import MagicMock, patch
-from agent.memory_hooks import MemoryHooks, candidates_from_log
+from agent.memory_hooks import MemoryHooks
 
 
 def test_initial_state():
@@ -11,28 +12,48 @@ def test_initial_state():
     assert hooks._last_op_index == 0
 
 
-def test_candidates_from_log_none():
-    """candidates_from_log handles None input gracefully."""
-    result = candidates_from_log(None)
-    assert result == []
+def test_enumerate_pipeline_candidates_from_dag():
+    """enumerate_pipeline_candidates returns candidates from a populated DAG."""
+    from data_ops.dag import PipelineDAG
+
+    dag = PipelineDAG()
+    dag.add_node(
+        op_id="op_000", tool="fetch_data", agent="orchestrator",
+        args={"dataset": "AC_H2_MFI"}, inputs=[],
+        outputs={"AC_H2_MFI.BGSEc": "mag field"}, status="success",
+    )
+    dag.add_node(
+        op_id="op_001", tool="render_plotly_json", agent="viz",
+        args={"description": "plot"}, inputs=["AC_H2_MFI.BGSEc"],
+        outputs={}, status="success",
+    )
+
+    ctx = MagicMock()
+    ctx.dag = dag
+    ctx.session_id = "test123"
+    ctx.memory_store = MagicMock()
+    ctx.memory_store.total_tokens.return_value = 0
+
+    hooks = MemoryHooks(ctx)
+    candidates = hooks.enumerate_pipeline_candidates()
+
+    assert len(candidates) == 1
+    c = candidates[0]
+    assert c["session_id"] == "test123"
+    assert c["node_count"] == 2
+    assert len(c["sources"]) == 1
+    assert c["sources"][0]["tool"] == "fetch_data"
+    assert c["sink"]["tool"] == "render_plotly_json"
 
 
-def test_candidates_from_log_empty():
-    """candidates_from_log handles an empty ops log."""
-    mock_log = MagicMock()
-    mock_log.get_records.return_value = []
-    result = candidates_from_log(mock_log)
-    assert result == []
+def test_enumerate_pipeline_candidates_empty_dag():
+    """enumerate_pipeline_candidates returns [] when DAG is empty."""
+    ctx = MagicMock()
+    ctx.dag = MagicMock()
+    ctx.dag.node_count.return_value = 0
 
-
-def test_candidates_from_log_no_render_ops():
-    """candidates_from_log skips non-render operations."""
-    mock_log = MagicMock()
-    mock_log.get_records.return_value = [
-        {"tool": "fetch_data", "status": "success", "outputs": ["label1"], "id": "1"},
-    ]
-    result = candidates_from_log(mock_log)
-    assert result == []
+    hooks = MemoryHooks(ctx)
+    assert hooks.enumerate_pipeline_candidates() == []
 
 
 def test_on_memory_mutated_ignores_wrong_event():
@@ -135,10 +156,9 @@ def test_run_for_pipelines_no_candidates():
     ctx = MagicMock()
     ctx._event_bus.get_events.return_value = []
     ctx._memory_store.total_tokens.return_value = 0
-    ctx._sub_agents = {}
-    ctx._sub_agents_lock = MagicMock()
-    ctx._sub_agents_lock.__enter__ = MagicMock(return_value=None)
-    ctx._sub_agents_lock.__exit__ = MagicMock(return_value=False)
+    ctx._delegation = MagicMock()
+    ctx._delegation.lock = threading.Lock()
+    ctx._delegation.agents = {}
     ctx._ops_log = MagicMock()
     ctx._ops_log.get_records.return_value = []
     ctx._session_id = "test-session"

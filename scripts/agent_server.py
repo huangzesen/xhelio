@@ -216,22 +216,6 @@ def _handle_send(agent, message: str, verbose: bool) -> dict:
 
     tool_log = []
 
-    # Monkey-patch _execute_tool_safe to track tool calls
-    original_execute = agent._execute_tool_safe
-
-    def tracking_execute(name, args):
-        start = time.time()
-        result = original_execute(name, args)
-        tool_log.append({
-            "name": name,
-            "args": _sanitize_args(args),
-            "elapsed": round(time.time() - start, 3),
-            "status": result.get("status"),
-        })
-        return result
-
-    agent._execute_tool_safe = tracking_execute
-
     try:
         start = time.time()
 
@@ -246,12 +230,16 @@ def _handle_send(agent, message: str, verbose: bool) -> dict:
             verbose_log = ""
 
         elapsed = round(time.time() - start, 2)
-        tokens = agent.get_token_usage()
+        from agent.token_tracking import get_token_usage as _get_token_usage
+        tokens = _get_token_usage(agent)
 
         # Generate follow-up suggestions
         follow_ups = []
         try:
-            follow_ups = agent.generate_follow_ups()
+            _orch = agent.session_ctx.agent_state.get("orchestrator")
+            inline = _orch.inline if _orch else None
+            if inline is not None:
+                follow_ups = inline.generate_follow_ups(2)
         except Exception:
             pass
 
@@ -259,7 +247,7 @@ def _handle_send(agent, message: str, verbose: bool) -> dict:
         # Skip if figure JSON would be too large (>50MB = likely high-cadence data)
         figure_json = None
         try:
-            fig = agent.get_figure()
+            fig = agent.session_ctx.renderer.get_figure()
             if fig is not None:
                 raw = fig.to_json()
                 if len(raw) < 50_000_000:  # 50MB limit
@@ -289,8 +277,6 @@ def _handle_send(agent, message: str, verbose: bool) -> dict:
             "figure_json": None,
             "error": str(e),
         }
-    finally:
-        agent._execute_tool_safe = original_execute
 
 
 def _sanitize_args(args: dict) -> dict:

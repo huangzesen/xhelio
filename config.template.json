@@ -8,7 +8,7 @@
   "llm_provider": "gemini",
   "_comment_api_keys": "API keys are ALWAYS read from .env (never from this file). Set the key for your provider: GOOGLE_API_KEY, OPENAI_API_KEY, ANTHROPIC_API_KEY, MINIMAX_API_KEY, GROK_API_KEY, DEEPSEEK_API_KEY, QWEN_API_KEY, KIMI_API_KEY, GLM_API_KEY, or CUSTOM_API_KEY.",
 
-  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model, planner_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
+  "_comment_providers": "Per-provider settings. Each section has: model tiers (model, sub_agent_model, insight_model, inline_model), base_url (for OpenAI-compatible endpoints), and provider-specific settings (e.g. thinking levels for Gemini). Only the active provider's section is used. Top-level model keys (if present) override the provider section for backward compatibility. insight_model defaults to sub_agent_model if not set.",
   "providers": {
     "gemini": {
       "base_url": null,
@@ -16,7 +16,6 @@
       "sub_agent_model": "gemini-2.5-flash",
       "insight_model": "gemini-2.5-flash",
       "inline_model": "gemini-2.5-flash-lite",
-      "planner_model": "gemini-3-flash-preview",
       "thinking_model": "high",
       "thinking_sub_agent": "low"
     },
@@ -26,8 +25,7 @@
       "model": "",
       "sub_agent_model": "",
       "insight_model": "",
-      "inline_model": "",
-      "planner_model": ""
+      "inline_model": ""
     },
     "anthropic": {
       "_comment": "Native Anthropic Claude. Web search uses Claude's built-in web_search_20250305 tool.",
@@ -35,8 +33,7 @@
       "model": "claude-sonnet-4-20250514",
       "sub_agent_model": "claude-sonnet-4-20250514",
       "insight_model": "claude-sonnet-4-20250514",
-      "inline_model": "claude-haiku-3-5-20241022",
-      "planner_model": "claude-sonnet-4-20250514"
+      "inline_model": "claude-haiku-3-5-20241022"
     },
     "minimax": {
       "_comment": "MiniMax via Anthropic-compatible API. Uses MINIMAX_API_KEY env var.",
@@ -44,8 +41,7 @@
       "model": "MiniMax-M2.5-highspeed",
       "sub_agent_model": "MiniMax-M2.5-highspeed",
       "insight_model": "MiniMax-M2.5-highspeed",
-      "inline_model": "MiniMax-M2.1",
-      "planner_model": "MiniMax-M2.5-highspeed"
+      "inline_model": "MiniMax-M2.1"
     },
     "grok": {
       "_comment": "xAI Grok via OpenAI-compatible API. Uses GROK_API_KEY env var.",
@@ -104,9 +100,6 @@
   "_comment_memory": "Memory extraction: a MemoryAgent sees full session context (conversation, ops, events) and outputs add/edit/drop actions on scoped memories. memory_extraction_interval: trigger every N user turns (0 to disable). Runs async on a daemon thread using inline_model.",
   "memory_extraction_interval": 2,
 
-  "_comment_memory_reload": "Memory hot reload: restart chat session with fresh LTM every N rounds (0 to disable).",
-  "memory_reload_interval": 5,
-
   "_comment_eureka": "Eureka discovery: EurekaAgent scans session data for scientific findings and suggests follow-up actions. eureka_enabled: master switch. eureka_mode: when true, suggestions are automatically executed as synthetic user messages. eureka_max_rounds: safety limit on consecutive eureka-driven rounds before auto-pause. eureka_extraction_interval: run every N user turns. To override the eureka model, use agent_models.eureka.",
   "eureka_enabled": true,
   "eureka_mode": false,
@@ -134,10 +127,11 @@
   "_comment_turn_limits": "Override agent loop limits. Keys: orchestrator.max_iterations (200), orchestrator.max_total_calls (400), orchestrator.dup_free_passes (2), orchestrator.dup_hard_block (8), orchestrator.task.max_iterations (10), orchestrator.task.max_total_calls (20), sub_agent.max_iterations (20), sub_agent.max_total_calls (40), sub_agent.dup_free_passes (3), sub_agent.dup_hard_block (10), sub_agent.task.max_iterations (12), sub_agent.task.max_total_calls (25), think.max_iterations (12), think.max_total_calls (25), planner.max_rounds (10). See agent/turn_limits.py DEFAULTS for the full list.",
   "turn_limits": {},
 
-  "_comment_sandbox": "Sandbox permissions for run_code validation. allowed_attrs: attribute names to permit even if they appear in the default blocklist (e.g. [\"eval\", \"query\"]). extra_blocked_attrs: additional attribute names to block beyond the defaults. See data_ops/sandbox.py and data_ops/sandbox_blocklist.json for the blocklists.",
+  "_comment_sandbox": "Sandbox permissions for run_code validation. allowed_attrs: attribute names to permit even if they appear in the default blocklist (e.g. [\"eval\", \"query\"]). extra_blocked_attrs: additional attribute names to block beyond the defaults. auto_install: when true, agents can install packages without asking the user (default false). See THREAT_CATEGORIES in data_ops/sandbox.py for the blocklist.",
   "sandbox": {
     "allowed_attrs": [],
-    "extra_blocked_attrs": []
+    "extra_blocked_attrs": [],
+    "auto_install": false
   },
 
   "_comment_interactions_api": "Use Gemini Interactions API for server-side conversation state. Eliminates quadratic context growth where a 39-turn session consumed 4.6M input tokens. With Interactions API, each call sends only the new input (~17-22K tokens constant). Falls back to Chat API if interactions fail. Only used with Gemini provider.",
@@ -146,13 +140,6 @@
   "_comment_truncation": "Override truncation limits. Keys are named limits defined in agent/truncation.py. Values are integers (char count for text, item count for items). Set to 0 to disable truncation for that key. Text limits include: console.* (display), history.* (event feed), memory.* (extraction), context.* (LLM context: context.document=50000, context.dataset_docs=4000, context.turn_text=300, context.discovery_search=500, context.param_description=60, context.mission_example=57, context.task_outcome_error=100, context.session_preview=40), output.* (output tokens: output.reflection_tokens=100, output.inline_tokens=100). Item limits include: items.parameters=10, items.catalog_functions=8, items.check_events=200, items.query_event_log=100, items.data_preview_rows=50, items.data_sample_points=20, items.follow_up_turns=6, items.inline_turns=4, items.sessions_shown=10, items.api_data_preview=10, items.api_input_history=200. See agent/truncation.py DEFAULTS and ITEM_DEFAULTS for the full list.",
   "truncation": {},
   "truncation_items": {},
-
-  "_comment_spice": "SPICE ephemeris settings. kernel_dir: override kernel cache location (default: {data_dir}/spice_kernels). auto_download: fetch kernels from NAIF on first use. max_cache_gb: soft limit on kernel cache size.",
-  "spice": {
-    "kernel_dir": null,
-    "auto_download": true,
-    "max_cache_gb": 5.0
-  },
 
   "_comment_minimax_mcp": "MiniMax MCP server settings. enabled: whether MCP tools are available. api_host: https://api.minimaxi.com (China) or https://api.minimax.io (International).",
   "minimax_mcp": {

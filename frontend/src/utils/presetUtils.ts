@@ -36,7 +36,7 @@ export function expandBuiltinPreset(
       station.base_url = builtin.extras.base_url;
     }
     if (builtin.extras?.thinking) {
-      if (tierKey === 'model' || tierKey === 'planner_model') {
+      if (tierKey === 'model') {
         station.thinking = builtin.extras.thinking.model || 'off';
       } else if (tierKey === 'insight_model') {
         station.thinking = builtin.extras.thinking.insight || 'off';
@@ -78,7 +78,6 @@ export function deriveTierSummary(
     sub_agent_model: preset.agents?.viz_plotly?.model || preset.agents?.data_ops?.model || '',
     insight_model: preset.agents?.insight?.model || '',
     inline_model: preset.agents?.inline?.model || '',
-    planner_model: preset.agents?.planner?.model || '',
   };
 
   return { provider, tiers };

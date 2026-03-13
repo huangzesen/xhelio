@@ -3,55 +3,86 @@
 from __future__ import annotations
 from typing import TYPE_CHECKING
 if TYPE_CHECKING:
-    from agent.core import OrchestratorAgent
+    from agent.tool_caller import ToolCaller
+    from agent.tool_context import ToolContext
 
-from agent.sub_agent import AgentState
+from agent.base_agent import AgentState
+from agent.tool_caller import OrchestratorState
+
+_EMPTY_ORCH = OrchestratorState()
+from agent.delegation import AGENT_ID_DATAOPS, AGENT_ID_DATA_IO
 from agent.event_bus import DELEGATION, DELEGATION_DONE
 
 
-def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    mission_id = tool_args.get("envoy") if tool_args.get("envoy") is not None else tool_args.get("mission_id")
-    request = tool_args["request"]
-    wait = tool_args.get("wait", True)
-    mode_text = " (run in background)" if not wait else ""
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg=f"[Router] Delegating to {mission_id} specialist{mode_text}",
-    )
+# ---------------------------------------------------------------------------
+# Shared helpers
+# ---------------------------------------------------------------------------
 
-    try:
-        primary = orch._get_or_create_envoy_agent(mission_id)
-        if primary.state != AgentState.SLEEPING or primary.inbox.qsize() > 0:
-            agent = orch._create_ephemeral_envoy_agent(mission_id)
-            is_ephemeral = True
-        else:
-            agent = primary
-            is_ephemeral = False
-        full_request = orch._build_envoy_request(mission_id, request, agent=agent)
-        tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
+def _make_done_callback(ctx: "ToolContext", label: str, *, ephemeral_id: str | None = None):
+    """Create a post-delegation callback that emits DELEGATION_DONE.
 
-        def _envoy_post(
-            result, _mid=mission_id, _actor_id=agent.agent_id, _eph=is_ephemeral
-        ):
-            result["mission"] = _mid
-            orch._event_bus.emit(
+    Args:
+        ctx: The orchestrator context.
+        label: Human-readable label for the log message.
+        ephemeral_id: If provided, clean up this ephemeral agent after completion.
+    """
+    def _post(result):
+        if ctx.event_bus is not None:
+            ctx.event_bus.emit(
                 DELEGATION_DONE,
                 level="debug",
-                msg=f"[Router] {_mid} specialist finished",
+                msg=f"[Router] {label} specialist finished",
                 data={
                     "status": result.get("status"),
                     "text_preview": result.get("result", "")[:200],
                 },
             )
-            if _eph:
-                orch._cleanup_ephemeral_agent(_actor_id)
-            return result
+        if ephemeral_id is not None:
+            ctx.delegation.cleanup_ephemeral(ephemeral_id)
+        return result
+    return _post
 
-        return orch._delegate_to_sub_agent(
+
+# ---------------------------------------------------------------------------
+# Handlers
+# ---------------------------------------------------------------------------
+
+def handle_delegate_to_envoy(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
+    mission_id = tool_args.get("envoy") if tool_args.get("envoy") is not None else tool_args.get("mission_id")
+    request = tool_args["request"]
+    wait = tool_args.get("wait", True)
+    mode_text = " (run in background)" if not wait else ""
+    if ctx.event_bus is not None:
+        ctx.event_bus.emit(
+            DELEGATION,
+            level="debug",
+            msg=f"[Router] Delegating to {mission_id} specialist{mode_text}",
+        )
+
+    try:
+        primary = ctx.delegation.get_or_create_envoy_agent(mission_id)
+        if primary.state != AgentState.SLEEPING or primary.inbox.qsize() > 0:
+            agent = ctx.delegation.create_ephemeral_envoy_agent(mission_id)
+            is_ephemeral = True
+        else:
+            agent = primary
+            is_ephemeral = False
+        full_request = ctx.delegation.build_envoy_request(mission_id, request, agent=agent)
+        tool_call_id = caller.tool_call_id if caller else None
+
+        base_post = _make_done_callback(
+            ctx, mission_id,
+            ephemeral_id=agent.agent_id if is_ephemeral else None,
+        )
+
+        def _envoy_post(result, _mid=mission_id):
+            result["mission"] = _mid
+            return base_post(result)
+
+        return ctx.delegation.delegate_to_sub_agent(
             agent,
             full_request,
-            store_snapshot=orch._store.list_entries(),
+            store_snapshot=ctx.store.list_entries(),
             tool_call_id=tool_call_id,
             agent_type=f"envoy:{mission_id}",
             agent_name=agent.agent_id,
@@ -59,370 +90,122 @@ def handle_delegate_to_envoy(orch: "OrchestratorAgent", tool_args: dict) -> dict
             post_process=_envoy_post,
             wait=wait,
         )
-    except (KeyError, FileNotFoundError):
+    except (KeyError, FileNotFoundError, NotImplementedError):
         return {
             "status": "error",
             "message": f"Unknown mission '{mission_id}'. Check the supported missions table.",
         }
 
 
-def handle_delegate_to_viz(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_delegate_to_viz(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     import config
+
+    from agent.delegation import DelegationBus
+    from agent.viz_backends import VIZ_BACKENDS
 
     request = tool_args["request"]
     context = tool_args.get("context", "")
     backend = tool_args.get("backend") or config.PREFER_VIZ_BACKEND
     wait = tool_args.get("wait", True)
-    mode_text = " (run in background)" if not wait else ""
 
-    if backend == "matplotlib":
-        return _handle_delegate_to_viz_mpl(orch, request, context, wait=wait)
-    elif backend == "jsx":
-        return _handle_delegate_to_viz_jsx(orch, request, context, wait=wait)
-    else:
-        return _handle_delegate_to_viz_plotly(orch, request, context, wait=wait)
+    if backend not in VIZ_BACKENDS:
+        return {"status": "error", "message": f"Unknown viz backend: {backend!r}. Available: {', '.join(VIZ_BACKENDS)}"}
 
+    cfg = VIZ_BACKENDS[backend]
+    agent_id = cfg["agent_id"]
 
-def _handle_delegate_to_viz_plotly(
-    orch: "OrchestratorAgent", request: str, context: str, wait: bool = True
-) -> dict:
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg="[Router] Delegating to Visualization specialist",
-    )
-
-    req_lower = request.lower()
-    if "export" in req_lower or ".png" in req_lower or ".pdf" in req_lower:
-        import re as _re
-
-        fn_match = _re.search(r"[\w.-]+\.(?:png|pdf|svg)", request, _re.IGNORECASE)
-        filename = fn_match.group(0) if fn_match else "output.png"
-        fmt = "pdf" if filename.endswith(".pdf") else "png"
-        result = orch._renderer.export(filename, format=fmt)
-        if (
-            result.get("status") == "success"
-            and not orch.gui_mode
-            and not orch.web_mode
-        ):
-            try:
-                import os, platform, subprocess
-
-                fp = result["filepath"]
-                if platform.system() == "Darwin":
-                    subprocess.Popen(["open", fp])
-                elif platform.system() == "Windows":
-                    os.startfile(fp)
-                else:
-                    subprocess.Popen(["xdg-open", fp])
-            except Exception:
-                pass
-        return {
-            "status": "success",
-            "result": f"Exported plot to {result.get('filepath', filename)}",
-        }
+    if ctx.event_bus is not None:
+        ctx.event_bus.emit(
+            DELEGATION,
+            level="debug",
+            msg=f"[Router] Delegating to {backend} visualization specialist",
+        )
 
     full_request = f"{request}\n\nContext: {context}" if context else request
 
-    _viz_agent_id = "VizAgent[Plotly]"
-    store = orch._store
+    store = ctx.store
     entries = store.list_entries()
     if entries:
-        import json
-
-        new_entries, removed_labels, store_hash = orch._ctx_tracker.get_store_delta(
-            _viz_agent_id, entries
-        )
-        if new_entries or removed_labels:
-            store_text = json.dumps(new_entries, indent=2, default=str)
-            if new_entries and not removed_labels:
-                full_request += (
-                    "\n\nNew data added to memory:\n```json\n" + store_text + "\n```"
-                )
-            elif removed_labels and not new_entries:
-                full_request += "\n\nData removed from memory: " + ", ".join(
-                    removed_labels
-                )
-            else:
-                full_request += (
-                    "\n\nData store updated:\n```json\n" + store_text + "\n```"
-                )
-                if removed_labels:
-                    full_request += "\nRemoved: " + ", ".join(removed_labels)
-            orch._ctx_tracker.record(
-                _viz_agent_id, store_entries=entries, store_hash=store_hash
+        _orch_state = ctx.agent_state.get("orchestrator", _EMPTY_ORCH)
+        if _orch_state.ctx_tracker is not None:
+            delta_text = DelegationBus.format_store_delta(
+                _orch_state.ctx_tracker, agent_id, entries, fmt="json"
             )
+            if delta_text:
+                full_request += delta_text
 
-    state = orch._renderer.get_current_state()
-    if state["has_plot"]:
-        if state.get("figure_json"):
-            import json
-
-            fig_json_str = json.dumps(state["figure_json"], indent=2)
-            plot_repr = fig_json_str
-        else:
-            plot_repr = str(state.get("traces", ""))
-        if orch._ctx_tracker.is_changed(_viz_agent_id, "plot", plot_repr):
-            if state.get("figure_json"):
-                full_request += (
-                    f"\n\nCurrently displayed: {state['traces']}"
-                    f"\n\nCurrent figure_json (modify this, don't rebuild from scratch):\n{fig_json_str}"
-                )
-            else:
-                full_request += f"\n\nCurrently displayed: {state['traces']}"
-            orch._ctx_tracker.record(_viz_agent_id, plot=plot_repr)
-        else:
-            full_request += (
-                f"\n\nPlot unchanged, currently displayed: {state['traces']}"
-            )
-    else:
-        full_request += "\n\nNo plot currently displayed."
-
-    agent = orch._get_or_create_viz_plotly_agent()
+    agent = ctx.delegation.get_or_create_viz_agent(backend)
     if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
         return {
             "status": "error",
             "message": (
-                "The visualization agent is already processing a delegation. "
+                f"The {backend} visualization agent is already processing a delegation. "
                 "Wait for it to finish before sending another request."
             ),
         }
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
+    tool_call_id = caller.tool_call_id if caller else None
 
-    def _viz_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] Plotly Visualization specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
+    return ctx.delegation.delegate_to_sub_agent(
         agent,
         full_request,
-        store_snapshot=orch._store.list_entries(),
+        store_snapshot=ctx.store.list_entries(),
         tool_call_id=tool_call_id,
-        agent_type="viz_plotly",
-        agent_name="VizAgent[Plotly]",
+        agent_type=cfg["agent_type"],
+        agent_name=agent_id,
         task_summary=request[:200],
-        post_process=_viz_post,
+        post_process=_make_done_callback(ctx, f"{backend} visualization"),
         wait=wait,
     )
 
 
-def _handle_delegate_to_viz_mpl(
-    orch: "OrchestratorAgent", request: str, context: str, wait: bool = True
-) -> dict:
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg="[Router] Delegating to MPL Visualization specialist",
-    )
-
-    full_request = f"{request}\n\nContext: {context}" if context else request
-
-    _mpl_agent_id = "VizAgent[Mpl]"
-    store = orch._store
-    entries = store.list_entries()
-    if entries:
-        import json
-
-        new_entries, removed_labels, store_hash = orch._ctx_tracker.get_store_delta(
-            _mpl_agent_id, entries
-        )
-        if new_entries or removed_labels:
-            store_text = json.dumps(new_entries, indent=2, default=str)
-            if new_entries and not removed_labels:
-                full_request += (
-                    "\n\nNew data added to memory:\n```json\n" + store_text + "\n```"
-                )
-            elif removed_labels and not new_entries:
-                full_request += "\n\nData removed from memory: " + ", ".join(
-                    removed_labels
-                )
-            else:
-                full_request += (
-                    "\n\nData store updated:\n```json\n" + store_text + "\n```"
-                )
-                if removed_labels:
-                    full_request += "\nRemoved: " + ", ".join(removed_labels)
-            orch._ctx_tracker.record(
-                _mpl_agent_id, store_entries=entries, store_hash=store_hash
-            )
-
-    agent = orch._get_or_create_viz_mpl_agent()
-    if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
-        return {
-            "status": "error",
-            "message": (
-                "The MPL visualization agent is already processing a delegation. "
-                "Wait for it to finish before sending another request."
-            ),
-        }
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-    def _mpl_viz_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] MPL Visualization specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
-        agent,
-        full_request,
-        store_snapshot=orch._store.list_entries(),
-        tool_call_id=tool_call_id,
-        agent_type="viz_mpl",
-        agent_name="VizAgent[Mpl]",
-        task_summary=request[:200],
-        post_process=_mpl_viz_post,
-        wait=wait,
-    )
-
-
-def _handle_delegate_to_viz_jsx(
-    orch: "OrchestratorAgent", request: str, context: str, wait: bool = True
-) -> dict:
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg="[Router] Delegating to JSX Visualization specialist",
-    )
-
-    full_request = f"{request}\n\nContext: {context}" if context else request
-
-    _jsx_agent_id = "VizAgent[JSX]"
-    store = orch._store
-    entries = store.list_entries()
-    if entries:
-        import json
-
-        new_entries, removed_labels, store_hash = orch._ctx_tracker.get_store_delta(
-            _jsx_agent_id, entries
-        )
-        if new_entries or removed_labels:
-            store_text = json.dumps(new_entries, indent=2, default=str)
-            if new_entries and not removed_labels:
-                full_request += (
-                    "\n\nNew data added to memory:\n```json\n" + store_text + "\n```"
-                )
-            elif removed_labels and not new_entries:
-                full_request += "\n\nData removed from memory: " + ", ".join(
-                    removed_labels
-                )
-            else:
-                full_request += (
-                    "\n\nData store updated:\n```json\n" + store_text + "\n```"
-                )
-                if removed_labels:
-                    full_request += "\nRemoved: " + ", ".join(removed_labels)
-            orch._ctx_tracker.record(
-                _jsx_agent_id, store_entries=entries, store_hash=store_hash
-            )
-
-    agent = orch._get_or_create_viz_jsx_agent()
-    if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
-        return {
-            "status": "error",
-            "message": (
-                "The JSX visualization agent is already processing a delegation. "
-                "Wait for it to finish before sending another request."
-            ),
-        }
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-    def _jsx_viz_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] JSX Visualization specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
-        agent,
-        full_request,
-        store_snapshot=orch._store.list_entries(),
-        tool_call_id=tool_call_id,
-        agent_type="viz_jsx",
-        agent_name="VizAgent[JSX]",
-        task_summary=request[:200],
-        post_process=_jsx_viz_post,
-        wait=wait,
-    )
-
-
-def handle_delegate_to_data_ops(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_delegate_to_data_ops(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     request = tool_args["request"]
     context = tool_args.get("context", "")
     wait = tool_args.get("wait", True)
     mode_text = " (run in background)" if not wait else ""
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg=f"[Router] Delegating to DataOps specialist{mode_text}",
-    )
-
-    agent = orch._get_available_dataops_agent()
-    is_ephemeral = agent.agent_id != "DataOpsAgent"
-    full_request = orch._build_dataops_request(request, context, agent=agent)
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-    def _dataops_post(result, _actor_id=agent.agent_id, _eph=is_ephemeral):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
+    if ctx.event_bus is not None:
+        ctx.event_bus.emit(
+            DELEGATION,
             level="debug",
-            msg="[Router] DataOps specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
+            msg=f"[Router] Delegating to DataOps specialist{mode_text}",
         )
-        if _eph:
-            orch._cleanup_ephemeral_agent(_actor_id)
-        return result
 
-    return orch._delegate_to_sub_agent(
+    agent = ctx.delegation.get_available_dataops_agent()
+    is_ephemeral = agent.agent_id != AGENT_ID_DATAOPS
+    full_request = ctx.delegation.build_dataops_request(request, context, agent=agent)
+    tool_call_id = caller.tool_call_id if caller else None
+
+    return ctx.delegation.delegate_to_sub_agent(
         agent,
         full_request,
-        store_snapshot=orch._store.list_entries(),
+        store_snapshot=ctx.store.list_entries(),
         tool_call_id=tool_call_id,
         agent_type="dataops",
         agent_name=agent.agent_id,
         task_summary=request[:200],
-        post_process=_dataops_post,
+        post_process=_make_done_callback(
+            ctx, "DataOps",
+            ephemeral_id=agent.agent_id if is_ephemeral else None,
+        ),
         wait=wait,
     )
 
 
 def handle_delegate_to_data_io(
-    orch: "OrchestratorAgent", tool_args: dict
+    ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None,
 ) -> dict:
     request = tool_args["request"]
     context = tool_args.get("context", "")
     wait = tool_args.get("wait", True)
     mode_text = " (run in background)" if not wait else ""
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg=f"[Router] Delegating to DataIO specialist{mode_text}",
-    )
+    if ctx.event_bus is not None:
+        ctx.event_bus.emit(
+            DELEGATION,
+            level="debug",
+            msg=f"[Router] Delegating to DataIO specialist{mode_text}",
+        )
 
-    agent = orch._get_or_create_data_io_agent()
+    agent = ctx.delegation.get_or_create_data_io_agent()
     if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
         return {
             "status": "error",
@@ -431,154 +214,17 @@ def handle_delegate_to_data_io(
                 "Wait for it to finish before sending another request."
             ),
         }
-    full_request = orch._build_data_io_request(request, context)
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
+    full_request = ctx.delegation.build_data_io_request(request, context)
+    tool_call_id = caller.tool_call_id if caller else None
 
-    def _data_io_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] DataIO specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
+    return ctx.delegation.delegate_to_sub_agent(
         agent,
         full_request,
-        store_snapshot=orch._store.list_entries(),
+        store_snapshot=ctx.store.list_entries(),
         tool_call_id=tool_call_id,
         agent_type="data_io",
-        agent_name="DataIOAgent",
+        agent_name=AGENT_ID_DATA_IO,
         task_summary=request[:200],
-        post_process=_data_io_post,
-        wait=wait,
-    )
-
-
-def handle_delegate_to_planner(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    request = tool_args["request"]
-    context = tool_args.get("context", "")
-    wait = tool_args.get("wait", True)
-    mode_text = " (run in background)" if not wait else ""
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg=f"[Router] Delegating to Planner specialist{mode_text}",
-    )
-
-    agent = orch._get_or_create_planner_agent()
-    if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
-        return {
-            "status": "error",
-            "message": (
-                "The planner agent is already processing a delegation. "
-                "Wait for it to finish before sending another request."
-            ),
-        }
-
-    full_request = request
-    if context:
-        full_request += f"\n\nContext: {context}"
-
-    # Append tip about session events
-    full_request += (
-        "\n\n[Tip: Call events(action='check') to see what happened "
-        "earlier in this session.]"
-    )
-
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-    def _planner_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] Planner specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
-        agent,
-        full_request,
-        store_snapshot=orch._store.list_entries(),
-        tool_call_id=tool_call_id,
-        agent_type="planner",
-        agent_name="PlannerAgent",
-        task_summary=request[:200],
-        post_process=_planner_post,
-        wait=wait,
-    )
-
-
-def handle_delegate_to_insight(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    user_request = tool_args["request"]
-    extra_context = tool_args.get("context", "")
-    wait = tool_args.get("wait", True)
-    mode_text = " (run in background)" if not wait else ""
-    orch._event_bus.emit(
-        DELEGATION,
-        level="debug",
-        msg=f"[Router] Delegating to Insight specialist{mode_text}",
-    )
-
-    image_bytes = orch.get_latest_figure_png()
-    if image_bytes is None:
-        return {
-            "status": "error",
-            "message": "No figure available. Create a plot first, or the session's figure files may have been deleted.",
-        }
-
-    _insight_agent_id = "InsightAgent"
-    data_context = orch._build_insight_context()
-    if extra_context:
-        data_context += f"\n\nAdditional context: {extra_context}"
-    if not orch._ctx_tracker.is_changed(_insight_agent_id, "session", data_context):
-        data_context = "[Data context unchanged from previous analysis.]"
-    else:
-        orch._ctx_tracker.record(_insight_agent_id, session=data_context)
-
-    agent = orch._get_or_create_insight_agent()
-    if agent.state != AgentState.SLEEPING or agent.inbox.qsize() > 0:
-        return {
-            "status": "error",
-            "message": (
-                "The insight agent is already processing a delegation. "
-                "Wait for it to finish before sending another request."
-            ),
-        }
-    tool_call_id = getattr(orch._tls, "current_tool_call_id", None)
-
-    def _insight_post(result):
-        orch._event_bus.emit(
-            DELEGATION_DONE,
-            level="debug",
-            msg="[Router] Insight specialist finished",
-            data={
-                "status": result.get("status"),
-                "text_preview": result.get("result", "")[:200],
-            },
-        )
-        return result
-
-    return orch._delegate_to_sub_agent(
-        agent,
-        {
-            "action": "analyze",
-            "image_bytes": image_bytes,
-            "data_context": data_context,
-            "user_request": user_request,
-        },
-        tool_call_id=tool_call_id,
-        agent_type="insight",
-        agent_name="InsightAgent",
-        task_summary=user_request[:200],
-        post_process=_insight_post,
+        post_process=_make_done_callback(ctx, "DataIO"),
         wait=wait,
     )

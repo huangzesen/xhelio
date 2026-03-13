@@ -1150,6 +1150,30 @@ class OpenAIAdapter(LLMAdapter):
             logger.warning("Web search failed for openai: %s", e)
             return LLMResponse(text="")
 
+    def generate_vision(
+        self, question: str, image_bytes: bytes, *, model: str = "",
+        mime_type: str = "image/png",
+    ) -> LLMResponse:
+        """One-shot vision via OpenAI's multimodal API."""
+        import base64
+        b64 = base64.b64encode(image_bytes).decode("utf-8")
+        data_url = f"data:{mime_type};base64,{b64}"
+        messages = [
+            {
+                "role": "user",
+                "content": [
+                    {"type": "image_url", "image_url": {"url": data_url}},
+                    {"type": "text", "text": question},
+                ],
+            }
+        ]
+        raw = self._client.chat.completions.create(
+            model=model,
+            messages=messages,
+            max_tokens=1024,
+        )
+        return _parse_response(raw)
+
     # -- Convenience properties ------------------------------------------------
 
     @property

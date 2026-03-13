@@ -35,7 +35,7 @@ def temp_prompts_dir(tmp_path):
 
 class TestManageEnvoyCreate:
     def test_create_writes_kind_module(self, mock_orch, temp_prompts_dir, monkeypatch):
-        """Test that create writes __init__.py and handlers.py to the real envoys dir.
+        """Test that create writes kind.json, __init__.py, and handlers.py.
 
         Uses the real knowledge/envoys/ directory so importlib can validate the module.
         Cleans up after itself.
@@ -58,21 +58,28 @@ class TestManageEnvoyCreate:
                         "description": "Compute PFSS solution",
                         "parameters": {"type": "object", "properties": {}},
                         "handler_code": (
-                            "def handle_compute_pfss(orch, tool_args):\n"
+                            "def compute_pfss(**kwargs):\n"
                             "    return {'status': 'success'}\n"
                         ),
                     }
                 ],
             })
             assert result["status"] == "success"
+            assert (kind_dir / "kind.json").exists()
             assert (kind_dir / "__init__.py").exists()
             assert (kind_dir / "handlers.py").exists()
+            # Verify kind.json is valid and contains the manifest
+            manifest = json.loads((kind_dir / "kind.json").read_text())
+            assert manifest["kind"] == "_test_pfss"
+            assert manifest["envoy_id"] == "_TEST_PFSS"
+            assert len(manifest["tools"]) == 1
         finally:
             # Cleanup
             import shutil, sys
             if kind_dir.exists():
                 shutil.rmtree(kind_dir)
             sys.modules.pop("knowledge.envoys._test_pfss", None)
+            sys.modules.pop("knowledge.envoys._test_pfss.handlers", None)
             from agent.envoy_kinds.registry import ENVOY_KIND_REGISTRY
             ENVOY_KIND_REGISTRY.unregister_mission("_TEST_PFSS")
 

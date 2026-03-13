@@ -1,14 +1,12 @@
 import { useEffect, useRef, useState, useMemo } from 'react';
-import { Activity, Brain, Cpu, Terminal, Search, X, ChevronDown, ChevronRight, Layers, Copy, Check, ArrowDown, Zap, Database, ClipboardList } from 'lucide-react';
+import { Activity, Brain, Cpu, Terminal, Search, X, ChevronDown, ChevronRight, Layers, Copy, Check, ArrowDown, Zap, ListChecks } from 'lucide-react';
 import type { ChatMessage, ToolEvent, LogLine, MemoryEvent, CommentaryEvent } from '../../api/types';
 import { groupEventsByRound, type ThinkingEvent } from '../../utils/groupEventsByTurn';
 import { useChatStore, type RoundMarker } from '../../stores/chatStore';
 import { TokenUsage } from '../common/TokenUsage';
-import { DataStore } from '../common/DataStore';
+import { AssetsPanel } from '../common/AssetsPanel';
 import { PlanStatus } from '../chat/PlanStatus';
 import { useSessionStore } from '../../stores/sessionStore';
-import { useSettingsStore } from '../../stores/settingsStore';
-import type { PresetConfig, WorkbenchConfig } from '../../api/types';
 import * as api from '../../api/client';
 
 interface Props {
@@ -28,23 +26,19 @@ function toolColor(name: string): string {
   // Delegation / routing — purple
   if (name.startsWith('delegate_to'))
     return 'text-badge-purple-text';
-  // Data fetching — teal
-  if (name === 'fetch_data' || name === 'list_fetched_data' || name === 'preview_data')
+  // Data operations — teal
+  if (name === 'xhelio__assets' || name === 'xhelio__manage_data' || name === 'xhelio__manage_files')
     return 'text-badge-teal-text';
   // Computation / custom ops — orange
-  if (name === 'run_code')
+  if (name === 'xhelio__run_code')
     return 'text-badge-orange-text';
   // Rendering / visualization — pink
-  if (name === 'render_plotly_json' || name === 'manage_plot')
+  if (name === 'xhelio__render_plotly_json' || name === 'xhelio__manage_plot' || name === 'xhelio__manage_figure')
     return 'text-badge-pink-text';
   // Catalog / discovery — blue
   if (name === 'search_datasets' || name === 'browse_datasets' || name === 'list_parameters'
     || name === 'search_full_catalog' || name === 'get_dataset_docs')
     return 'text-badge-blue-text';
-  // SPICE / ephemeris — green
-  if (name.startsWith('get_spacecraft') || name.startsWith('compute_distance')
-    || name === 'transform_coordinates' || name.startsWith('list_spice') || name === 'list_coordinate_frames')
-    return 'text-badge-green-text';
   // Default — muted
   return 'text-text-muted';
 }
@@ -68,7 +62,6 @@ function logTagColor(tag: string): string {
   if (t === 'dataops' || t === 'export') return 'text-badge-orange-text';
   if (t === 'session' || t === 'sessiontitle') return 'text-badge-teal-text';
   if (t === 'tool' || t.startsWith('tool:')) return 'text-text-muted';
-  if (t === 'planner' || t === 'plan') return 'text-badge-purple-text';
   if (t === 'memory' || t === 'memoryagent') return 'text-badge-green-text';
   if (t === 'followup' || t === 'inlinecomplete') return 'text-badge-gray-text';
   if (t === 'warning' || t === 'error' || t === 'critical') return 'text-status-error-text';
@@ -138,19 +131,32 @@ function HighlightedText({ text, search }: { text: string; search: string }) {
   );
 }
 
+/** Strip the xhelio__ namespace prefix from tool names for display. */
+function displayToolName(name: string): string {
+  return name.replace(/^xhelio__/, '');
+}
+
+/** Strip xhelio__ prefixes and agent hash suffixes from log line text for display. */
+function cleanLogText(text: string): string {
+  return text
+    .replace(/\bxhelio__/g, '')
+    .replace(/\b([a-z_]+):[0-9a-f]{4,8}\b/g, '$1');
+}
+
 /** Render a single tool/memory event row (shared by grouped and ungrouped views). */
 function EventRow({ evt }: { evt: ToolEvent }) {
+  const name = displayToolName(evt.tool_name);
   return (
     <div className="text-xs font-mono bg-surface-elevated text-text-muted rounded px-2 py-1.5 min-w-0 overflow-hidden">
       {evt.type === 'call' ? (
         <div className="min-w-0">
           <span className="text-badge-blue-text">CALL</span>{' '}
-          {delegationBadge(evt.tool_name) && (
+          {delegationBadge(name) && (
             <span className="text-badge-purple-text opacity-75 mr-1">
-              [{delegationBadge(evt.tool_name)}]
+              [{delegationBadge(name)}]
             </span>
           )}
-          <span className={toolColor(evt.tool_name)}>{evt.tool_name}</span>
+          <span className={toolColor(name)}>{name}</span>
           {evt.tool_args && Object.keys(evt.tool_args).length > 0 && (
             <div className="text-text-muted mt-0.5 truncate opacity-70">
               {JSON.stringify(evt.tool_args)}
@@ -162,7 +168,7 @@ function EventRow({ evt }: { evt: ToolEvent }) {
           <span className={evt.status === 'success' ? 'text-status-success-text' : 'text-status-error-text'}>
             {evt.status === 'success' ? 'OK' : 'ERR'}
           </span>{' '}
-          <span className={toolColor(evt.tool_name)}>{evt.tool_name}</span>
+          <span className={toolColor(name)}>{name}</span>
         </span>
       )}
     </div>
@@ -384,17 +390,11 @@ function ActivityTab({
 export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLines, memoryEvents, commentaryEvents, roundMarkers, isStreaming }: Props) {
   const { activeSessionId } = useSessionStore();
   const roundTokenUsageLive = useChatStore((s) => s.roundTokenUsage);
+  const planData = useChatStore((s) => s.planData);
+  const [tiers, setTiers] = useState<{ smart: string; subAgent: string; insight: string; inline: string } | null>(null);
+  const [provider, setProvider] = useState<string | null>(null);
+  const [comboName, setComboName] = useState<string | null>(null);
   const [vizBackend, setVizBackend] = useState<string | null>(null);
-
-  // Derive combo name reactively from settings store
-  const settingsConfig = useSettingsStore((s) => s.config);
-  const comboName = (() => {
-    const wb = settingsConfig.workbench as WorkbenchConfig | undefined;
-    const presetKey = wb?.preset;
-    if (!presetKey) return null;
-    const presets = (settingsConfig.presets ?? {}) as Record<string, PresetConfig>;
-    return presets[presetKey]?.name ?? null;
-  })();
   const [activeTab, setActiveTab] = useState<'activity' | 'console'>('activity');
   const [consoleFilter, setConsoleFilter] = useState('');
   const [levelFilter, setLevelFilter] = useState<'all' | 'error' | 'warning' | 'info'>('all');
@@ -407,37 +407,46 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
   const [modelsOpen, setModelsOpen] = useCollapsibleState('models', false);
   const [tokenUsageOpen, setTokenUsageOpen] = useCollapsibleState('token-usage', true);
   const [dataStoreOpen, setDataStoreOpen] = useCollapsibleState('data-store', true);
-  const [planStatusOpen, setPlanStatusOpen] = useCollapsibleState('plan-status', false);
+  const [planOpen, setPlanOpen] = useCollapsibleState('plan', true);
 
   useEffect(() => {
     api.getConfig().then((cfg) => {
+      const prov = (cfg.llm_provider as string) || 'gemini';
+      setProvider(prov);
       setVizBackend((cfg.prefer_viz_backend as string) || 'matplotlib');
-      // Seed settings store so combo name is available immediately
-      if (!useSettingsStore.getState().config.workbench) {
-        useSettingsStore.setState({ config: cfg });
+
+      // Try active preset first, fall back to legacy provider config
+      const wb = cfg.workbench as Record<string, unknown> | undefined;
+      const presetKey = wb?.preset as string | undefined;
+      if (presetKey) {
+        const presets = (cfg.presets ?? {}) as Record<string, Record<string, unknown>>;
+        const preset = presets[presetKey];
+        if (preset?.name) {
+          setComboName(preset.name as string);
+        }
+        if (preset?.agents) {
+          const a = preset.agents as Record<string, { provider?: string; model?: string }>;
+          setTiers({
+            smart: a.orchestrator?.model || '',
+            subAgent: a.data_ops?.model || '',
+            insight: a.insight?.model || '',
+            inline: a.inline?.model || '',
+          });
+          return;
+        }
       }
+
+      // Legacy provider config fallback
+      const providers = (cfg.providers ?? {}) as Record<string, Record<string, unknown>>;
+      const p = providers[prov] ?? {};
+      setTiers({
+        smart: (p.model as string) || '',
+        subAgent: (p.sub_agent_model as string) || '',
+        insight: (p.insight_model as string) || '',
+        inline: (p.inline_model as string) || '',
+      });
     }).catch(() => {});
   }, []);
-
-  // Derive tiers from active preset (reactive), falling back to legacy provider config
-  const derivedTiers = (() => {
-    const wb = settingsConfig.workbench as WorkbenchConfig | undefined;
-    const presetKey = wb?.preset;
-    if (presetKey) {
-      const presets = (settingsConfig.presets ?? {}) as Record<string, PresetConfig>;
-      const preset = presets[presetKey];
-      if (preset?.agents) {
-        const a = preset.agents as Record<string, { provider?: string; model?: string }>;
-        return {
-          smart: a.orchestrator?.model || '',
-          subAgent: a.data_ops?.model || '',
-          insight: a.insight?.model || '',
-          inline: a.inline?.model || '',
-        };
-      }
-    }
-    return null;
-  })();
 
   const filteredLogLines = useMemo(() => {
     let lines = logLines;
@@ -512,6 +521,12 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
             </span>
           </div>
         )}
+        {provider && (
+          <div className="flex justify-between text-xs text-text-muted mt-0.5">
+            <span>Provider</span>
+            <span className="font-mono text-text capitalize">{provider}</span>
+          </div>
+        )}
         {comboName && (
           <div className="flex justify-between text-xs text-text-muted mt-0.5">
             <span>Combo</span>
@@ -526,9 +541,9 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
         )}
 
         {/* Models collapsible section */}
-        {(model || derivedTiers) && (
+        {(model || tiers) && (
           <details open={modelsOpen} className="mt-1">
-            <summary 
+            <summary
               className="text-xs text-text-muted cursor-pointer flex items-center gap-1 list-none hover:text-text"
               onClick={(e) => { e.preventDefault(); setModelsOpen(!modelsOpen); }}
             >
@@ -539,24 +554,24 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
             <div className="ml-4 space-y-0.5 mt-1 text-xs text-text-muted">
               <div className="flex justify-between">
                 <span>Main</span>
-                <span className="font-mono text-text">{derivedTiers?.smart || model}</span>
+                <span className="font-mono text-text">{tiers?.smart || model}</span>
               </div>
-              {derivedTiers?.subAgent && derivedTiers.subAgent !== derivedTiers.smart && (
+              {tiers?.subAgent && tiers.subAgent !== tiers.smart && (
                 <div className="flex justify-between">
                   <span>Sub-agent</span>
-                  <span className="font-mono text-text">{derivedTiers.subAgent}</span>
+                  <span className="font-mono text-text">{tiers.subAgent}</span>
                 </div>
               )}
-              {derivedTiers?.insight && derivedTiers.insight !== derivedTiers.subAgent && (
+              {tiers?.insight && tiers.insight !== tiers.subAgent && (
                 <div className="flex justify-between">
                   <span>Insight</span>
-                  <span className="font-mono text-text">{derivedTiers.insight}</span>
+                  <span className="font-mono text-text">{tiers.insight}</span>
                 </div>
               )}
-              {derivedTiers?.inline && (
+              {tiers?.inline && (
                 <div className="flex justify-between">
                   <span>Inline</span>
-                  <span className="font-mono text-text">{derivedTiers.inline}</span>
+                  <span className="font-mono text-text">{tiers.inline}</span>
                 </div>
               )}
             </div>
@@ -578,7 +593,7 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
           </div>
         </details>
 
-        {/* Data Store collapsible section */}
+        {/* Assets collapsible section */}
         {activeSessionId && (
           <details open={dataStoreOpen} className="mt-2">
             <summary
@@ -586,31 +601,34 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
               onClick={(e) => { e.preventDefault(); setDataStoreOpen(!dataStoreOpen); }}
             >
               <ChevronDown size={12} className={`transition-transform ${dataStoreOpen ? '' : '-rotate-90'}`} />
-              <Database size={12} />
-              <span className="font-medium">Data Store</span>
+              <Layers size={12} />
+              <span className="font-medium">Assets</span>
             </summary>
             <div className="ml-4 mt-1">
-              <DataStore sessionId={activeSessionId} />
+              <AssetsPanel sessionId={activeSessionId} />
             </div>
           </details>
         )}
 
-        {/* Plan Status collapsible section */}
-        {activeSessionId && (
-          <details open={planStatusOpen} className="mt-2">
-            <summary
-              className="text-xs text-text-muted cursor-pointer flex items-center gap-1 list-none hover:text-text"
-              onClick={(e) => { e.preventDefault(); setPlanStatusOpen(!planStatusOpen); }}
-            >
-              <ChevronDown size={12} className={`transition-transform ${planStatusOpen ? '' : '-rotate-90'}`} />
-              <ClipboardList size={12} />
-              <span className="font-medium">Plan Status</span>
-            </summary>
-            <div className="ml-4 mt-1">
-              <PlanStatus sessionId={activeSessionId} isStreaming={isStreaming} />
-            </div>
-          </details>
-        )}
+        {/* Plan collapsible section */}
+        <details open={planOpen} className="mt-2">
+          <summary
+            className="text-xs text-text-muted cursor-pointer flex items-center gap-1 list-none hover:text-text"
+            onClick={(e) => { e.preventDefault(); setPlanOpen(!planOpen); }}
+          >
+            <ChevronDown size={12} className={`transition-transform ${planOpen ? '' : '-rotate-90'}`} />
+            <ListChecks size={12} />
+            <span className="font-medium">Plan</span>
+          </summary>
+          <div className="ml-4 mt-1">
+            {planData ? (
+              <PlanStatus plan={planData} />
+            ) : (
+              <div className="text-xs text-text-muted italic">No active plan</div>
+            )}
+          </div>
+        </details>
+
       </div>
 
       {/* Tabs */}
@@ -715,7 +733,7 @@ export function ActivityPanel({ model, tokenUsage, messages, toolEvents, logLine
               {filteredLogLines.map((line) => {
                 const match = LOG_TAG_RE.exec(line.text);
                 const tag = match?.[1] ?? null;
-                const rest = match ? line.text.slice(match[0].length) : line.text;
+                const rest = cleanLogText(match ? line.text.slice(match[0].length) : line.text);
                 const dot = levelDotColor(line.level);
                 const hasDetails = !!line.details && line.details !== line.text;
                 const isExpanded = expandedLogIds.has(line.id);

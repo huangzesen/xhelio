@@ -1,5 +1,5 @@
 import { useState, useEffect, useCallback, useMemo } from 'react';
-import { Brain, ShieldCheck, Star } from 'lucide-react';
+import { Brain, Star } from 'lucide-react';
 import { useSessionStore } from '../stores/sessionStore';
 import { useMemoryStore } from '../stores/memoryStore';
 import { MemoryStatsBar } from '../components/memory/MemoryStatsBar';
@@ -8,12 +8,11 @@ import { MemoryCardList } from '../components/memory/MemoryCardList';
 import { MemoryTimeline } from '../components/memory/MemoryTimeline';
 import { ArchiveBrowser } from '../components/memory/ArchiveBrowser';
 import { MemoryDashboardSkeleton } from '../components/memory/MemoryDashboardSkeleton';
-import { ValidationViewer } from '../components/memory/ValidationViewer';
 import { RecentReviews } from '../components/memory/RecentReviews';
 
 export function MemoryPage() {
   const activeSessionId = useSessionStore((s) => s.activeSessionId);
-  const [activeTab, setActiveTab] = useState<'memories' | 'reviews' | 'validation'>('memories');
+  const [activeTab, setActiveTab] = useState<'memories' | 'reviews'>('memories');
   const {
     memories,
     globalEnabled,
@@ -74,11 +73,7 @@ export function MemoryPage() {
         {/* Header */}
         <div className="flex items-center justify-between mb-4">
           <h1 className="text-xl font-semibold text-text">
-            {activeTab === 'memories'
-              ? 'Agent Memory'
-              : activeTab === 'reviews'
-                ? 'Agent Reviews'
-                : 'Data Validation'}
+            {activeTab === 'memories' ? 'Agent Memory' : 'Agent Reviews'}
           </h1>
           {activeTab === 'memories' && activeSessionId && (
             <div className="flex items-center gap-2">
@@ -125,21 +120,7 @@ export function MemoryPage() {
               <span className="text-[10px] text-text-muted">({reviewCount})</span>
             )}
           </button>
-          <button
-            onClick={() => setActiveTab('validation')}
-            className={`flex items-center gap-1.5 px-4 py-2 text-xs font-medium transition-colors ${
-              activeTab === 'validation'
-                ? 'text-text border-b-2 border-accent'
-                : 'text-text-muted hover:text-text'
-            }`}
-          >
-            <ShieldCheck size={14} />
-            Validation
-          </button>
         </div>
-
-        {/* Validation tab (session-independent) */}
-        {activeTab === 'validation' && <ValidationViewer />}
 
         {/* Reviews tab */}
         {activeTab === 'reviews' && (

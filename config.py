@@ -193,8 +193,6 @@ _PROVIDER_ENV_KEYS: dict[str, str] = {p["id"]: p["env_key"] for p in PROVIDERS}
 AGENT_TYPES = [
     {"id": "orchestrator", "name": "Orchestrator", "icon": "🎯", "group": "brain",
      "description": "Routes requests to sub-agents"},
-    {"id": "planner", "name": "Planner", "icon": "📋", "group": "brain",
-     "description": "Multi-step plan generation"},
     {"id": "viz_plotly", "name": "Plotly Viz", "icon": "📊", "group": "visualization",
      "description": "Interactive Plotly visualizations"},
     {"id": "viz_mpl", "name": "Matplotlib", "icon": "📈", "group": "visualization",
@@ -207,8 +205,6 @@ AGENT_TYPES = [
      "description": "Structured data extraction and file import"},
     {"id": "envoy", "name": "Envoy", "icon": "🛰️", "group": "specialists",
      "description": "Per-mission data discovery and fetch"},
-    {"id": "insight", "name": "Insight", "icon": "🔍", "group": "specialists",
-     "description": "Multimodal plot analysis"},
     {"id": "eureka", "name": "Eureka", "icon": "💡", "group": "specialists",
      "description": "Automated discovery and insight"},
     {"id": "memory", "name": "Memory", "icon": "🧠", "group": "specialists",
@@ -308,14 +304,11 @@ def _provider_get(key: str, default=None):
 
 
 # ---- Model tier constants ------------------------------------------------
-# Four tiers: smart (orchestrator + planner), sub-agent, insight (multimodal
-# plot analysis), inline (cheapest).
+# Three tiers: smart (orchestrator), sub-agent, inline (cheapest).
 LLM_BASE_URL = _provider_get("base_url")
 SMART_MODEL = _provider_get("model")
 SUB_AGENT_MODEL = _provider_get("sub_agent_model")
-INSIGHT_MODEL = _provider_get("insight_model") or SUB_AGENT_MODEL
 INLINE_MODEL = _provider_get("inline_model")
-PLANNER_MODEL = _provider_get("planner_model") or SMART_MODEL
 
 
 def resolve_agent_model(agent_type: str) -> tuple[str, str, str | None]:
@@ -372,8 +365,6 @@ def resolve_agent_model(agent_type: str) -> tuple[str, str, str | None]:
     # 4. Tier-based defaults
     _tier_map = {
         "orchestrator": SMART_MODEL,
-        "planner": PLANNER_MODEL,
-        "insight": INSIGHT_MODEL,
         "inline": INLINE_MODEL,
     }
     model = _tier_map.get(agent_type, SUB_AGENT_MODEL)
@@ -442,9 +433,7 @@ def _migrate_combos_to_presets(cfg: dict) -> bool:
         tier_to_agents = {
             "model": ["orchestrator"],
             "sub_agent_model": ["viz_plotly", "viz_mpl", "viz_jsx", "data_ops", "data_io", "envoy"],
-            "insight_model": ["insight", "eureka"],
             "inline_model": ["inline", "memory"],
-            "planner_model": ["planner"],
         }
         for tier, agent_types in tier_to_agents.items():
             model_name = models.get(tier) or models.get("model", "")
@@ -491,10 +480,6 @@ def _migrate_combos_to_presets(cfg: dict) -> bool:
     return True
 
 
-DATA_BACKEND = get("data_backend", "cdf")  # "cdf" only
-CATALOG_SEARCH_METHOD = get(
-    "catalog_search_method", "semantic"
-)  # "semantic" or "substring"
 PARALLEL_FETCH = get("parallel_fetch", True)
 PARALLEL_MAX_WORKERS = get("parallel_max_workers", 4)
 MAX_PLOT_POINTS = get("max_plot_points", 10_000)
@@ -511,26 +496,23 @@ PIPELINE_CONFIRMATION = get("reasoning.pipeline_confirmation", True)
 
 # ---- Gemini-specific settings ------------------------------------------------
 # Thinking levels for Gemini 3+ models. Ignored for Gemini < 3.
-# "model" = orchestrator + planner (smart tier), "sub_agent" = mission/viz agents.
+# "model" = orchestrator (smart tier), "sub_agent" = mission/viz agents.
 # Values: "off", "low", "high".
 GEMINI_THINKING_MODEL = _provider_get("thinking_model", "high")
 GEMINI_THINKING_SUB_AGENT = _provider_get("thinking_sub_agent", "high")
-GEMINI_THINKING_INSIGHT = _provider_get("thinking_insight", "low")
 
 
 # ---- Setting descriptions (single source of truth for UI) --------------------
 # Keys match config.json keys. Nested keys use dot notation (e.g. "reasoning.show_thinking").
 CONFIG_DESCRIPTIONS: dict[str, str] = {
-    # Data & Search
-    "catalog_search_method": "Dataset search algorithm: 'semantic' uses AI embeddings, 'substring' uses simple text matching.",
-    "parallel_fetch": "Download multiple CDF files and run tool calls concurrently.",
-    "parallel_max_workers": "Maximum concurrent threads per pool when parallel fetch is enabled.",
+    # Data & Parallel Execution
+    "parallel_fetch": "Run tool calls concurrently when safe.",
+    "parallel_max_workers": "Maximum concurrent threads per pool for parallel tool execution.",
     "max_plot_points": "Maximum points per trace before stride-decimation. Larger datasets plot every Nth point to keep rendering fast.",
     "prefer_viz_backend": "Visualization backend. 'matplotlib' (static/publication-quality, default), 'plotly' (interactive), or 'jsx' (rich dashboards).",
     # Memory
     "memory_token_budget": "Global token cap for all memory injection. Sub-agents get 1/4 each.",
     "memory_extraction_interval": "Extract memories every N user rounds. Set to 0 to disable.",
-    "memory_reload_interval": "Hot reload: restart chat session with fresh LTM every N rounds. Set to 0 to disable.",
     "ops_library_max_entries": "Saved operations in custom_ops library. Least-used entries evicted when full.",
     # Reasoning
     "reasoning.observation_summaries": "Inject human-readable summaries into tool results for better LLM reasoning.",
@@ -598,12 +580,8 @@ def reload_config() -> None:
     global \
         SMART_MODEL, \
         SUB_AGENT_MODEL, \
-        INSIGHT_MODEL, \
-        INLINE_MODEL, \
-        PLANNER_MODEL
+        INLINE_MODEL
     global \
-        DATA_BACKEND, \
-        CATALOG_SEARCH_METHOD, \
         PARALLEL_FETCH, \
         PARALLEL_MAX_WORKERS, \
         MAX_PLOT_POINTS, \
@@ -614,7 +592,7 @@ def reload_config() -> None:
         INSIGHT_FEEDBACK, \
         INSIGHT_FEEDBACK_MAX_ITERS
     global PIPELINE_CONFIRMATION
-    global GEMINI_THINKING_MODEL, GEMINI_THINKING_SUB_AGENT, GEMINI_THINKING_INSIGHT
+    global GEMINI_THINKING_MODEL, GEMINI_THINKING_SUB_AGENT
 
     load_dotenv(override=True)
 
@@ -625,11 +603,7 @@ def reload_config() -> None:
     LLM_BASE_URL = _provider_get("base_url")
     SMART_MODEL = _provider_get("model")
     SUB_AGENT_MODEL = _provider_get("sub_agent_model")
-    INSIGHT_MODEL = _provider_get("insight_model") or SUB_AGENT_MODEL
     INLINE_MODEL = _provider_get("inline_model")
-    PLANNER_MODEL = _provider_get("planner_model") or SMART_MODEL
-    DATA_BACKEND = get("data_backend", "cdf")
-    CATALOG_SEARCH_METHOD = get("catalog_search_method", "semantic")
     PARALLEL_FETCH = get("parallel_fetch", True)
     PARALLEL_MAX_WORKERS = get("parallel_max_workers", 4)
     MAX_PLOT_POINTS = get("max_plot_points", 10_000)
@@ -641,7 +615,6 @@ def reload_config() -> None:
     PIPELINE_CONFIRMATION = get("reasoning.pipeline_confirmation", True)
     GEMINI_THINKING_MODEL = _provider_get("thinking_model", "high")
     GEMINI_THINKING_SUB_AGENT = _provider_get("thinking_sub_agent", "high")
-    GEMINI_THINKING_INSIGHT = _provider_get("thinking_insight", "low")
 
     # Reload truncation overrides from config
     try:

@@ -1,6 +1,6 @@
-"""Shared LLM session behavior used by both OrchestratorAgent and SubAgent.
+"""Shared LLM session behavior used by BaseAgent and its subclasses.
 
-Extracted to eliminate duplication between core.py and sub_agent.py.
+Provides context compaction prompts and session management utilities.
 """
 from __future__ import annotations
 

@@ -8,8 +8,6 @@ import {
   HardDrive,
   Loader2,
   RefreshCw,
-  Satellite,
-  Server,
   Trash2,
 } from 'lucide-react';
 import {
@@ -31,33 +29,12 @@ const CATEGORY_META: Record<
   string,
   { label: string; slug: string; icon: typeof Database; color: string; barColor: string }
 > = {
-  cdf_cache: {
-    label: 'CDF Cache',
-    slug: 'cdf-cache',
-    icon: Database,
-    color: 'text-badge-blue-text',
-    barColor: 'bg-badge-blue-text',
-  },
-  ppi_cache: {
-    label: 'PPI Cache',
-    slug: 'ppi-cache',
-    icon: Server,
-    color: 'text-badge-purple-text',
-    barColor: 'bg-badge-purple-text',
-  },
   sessions: {
     label: 'Sessions',
     slug: 'sessions',
     icon: HardDrive,
     color: 'text-badge-teal-text',
     barColor: 'bg-badge-teal-text',
-  },
-  spice_kernels: {
-    label: 'SPICE Kernels',
-    slug: 'spice-kernels',
-    icon: Satellite,
-    color: 'text-badge-orange-text',
-    barColor: 'bg-badge-orange-text',
   },
 };
 
@@ -280,7 +257,7 @@ function SubRow({
       {isSession && (
         <>
           <td className="px-3 py-2 text-right tabular-nums text-text-muted">
-            {sub.round_count != null ? sub.round_count : '\u2014'}
+            {sub.turn_count != null ? sub.turn_count : '\u2014'}
           </td>
           <td className="px-3 py-2 text-left text-text-muted truncate max-w-[140px] hidden md:table-cell" title={sub.session_name ?? ''}>
             {sub.session_name || ''}

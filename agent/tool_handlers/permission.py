@@ -7,11 +7,12 @@ from uuid import uuid4
 from agent.tool_handlers.decorator import tool_handler
 
 if TYPE_CHECKING:
-    from agent.core import OrchestratorAgent
+    from agent.tool_caller import ToolCaller
+    from agent.tool_context import ToolContext
 
 
-@tool_handler("ask_user_permission")
-def handle_ask_user_permission(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+@tool_handler("xhelio__ask_user_permission")
+def handle_ask_user_permission(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     """Block until user approves or denies the requested action."""
     action = tool_args.get("action", "unknown")
     description = tool_args.get("description", "")
@@ -24,7 +25,7 @@ def handle_ask_user_permission(orch: "OrchestratorAgent", tool_args: dict) -> di
         }
 
     request_id = f"perm-{uuid4().hex[:12]}"
-    result = orch.request_permission(
+    result = ctx.request_permission(
         request_id=request_id,
         action=action,
         description=description,

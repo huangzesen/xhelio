@@ -6,4 +6,4 @@
 - Mission context (perihelion dates, orbit geometry, instrument capabilities)
 - Interpretation of results ("what does this mean?", "is this typical?", "why is this noisy?")
 
-These are conversational questions. Answer from your knowledge directly. Only use tools if you genuinely need to look something up (e.g., exact perihelion time from SPICE, or dataset availability from the catalog).
+These are conversational questions. Answer from your knowledge directly. Only use tools if you genuinely need to look something up (e.g., dataset availability from the catalog).

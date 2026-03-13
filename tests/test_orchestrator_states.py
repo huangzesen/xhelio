@@ -16,7 +16,7 @@ from unittest.mock import MagicMock, patch
 
 import pytest
 
-from agent.sub_agent import AgentState, Message, _make_message
+from agent.base_agent import AgentState, Message, _make_message
 from agent.event_bus import (
     EventBus,
     AGENT_STATE_CHANGE,

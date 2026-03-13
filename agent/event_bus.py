@@ -3,7 +3,7 @@ Structured EventBus — single source of truth for all session activity.
 
 Replaces five parallel recording mechanisms:
 1. Python logger (scattered logger.debug/info/warning/error calls)
-2. OperationsLog (structured JSON for pipeline replay)
+2. PipelineDAG (networkx DAG for pipeline tracking)
 3. Chat history (adapter-specific LLM conversation turns)
 4. _emit_event() callback (SSE bridge for frontend)
 5. _session_events (ephemeral dicts for MemoryAgent)
@@ -12,7 +12,7 @@ Architecture:
     bus.emit() → SessionEvent → listeners[]
       ├── DebugLogListener     → Python logger FileHandler + ConsoleHandler
       ├── SSEEventListener     → SSE bridge for frontend live-log
-      ├── OperationsLogListener → OperationsLog.record() for pipeline replay
+      ├── PipelineDAGListener  → PipelineDAG.add_node() for pipeline tracking
       └── DisplayLogBuilder    → display_log.json for chat replay
 
     bus.span() → context manager that collects sub-events into a parent event
@@ -55,14 +55,12 @@ PLOT_ACTION = "plot_action"
 # Routing
 DELEGATION = "delegation"
 DELEGATION_DONE = "delegation_done"
-SUB_AGENT_TOOL = "sub_agent_tool"
 SUB_AGENT_ERROR = "sub_agent_error"
 
-# Planning
-PLAN_CREATED = "plan_created"
-PLAN_TASK = "plan_task"
-PLAN_COMPLETED = "plan_completed"
 PROGRESS = "progress"
+
+# Plan lifecycle
+PLAN_UPDATE = "plan_update"
 
 # LLM
 THINKING = "thinking"
@@ -72,15 +70,7 @@ LLM_RESPONSE = "llm_response"
 # Token usage
 TOKEN_USAGE = "token_usage"
 
-# Data source access
-CDF_FILE_QUERY = "cdf_file_query"
-CDF_CACHE_HIT = "cdf_cache_hit"
-CDF_DOWNLOAD = "cdf_download"
-CDF_METADATA_SYNC = "cdf_metadata_sync"
-PPI_FETCH = "ppi_fetch"
-
 # Errors
-FETCH_ERROR = "fetch_error"
 HIGH_NAN = "high_nan"
 CUSTOM_OP_FAILURE = "custom_op_failure"
 RECOVERY = "recovery"
@@ -97,6 +87,7 @@ MEMORY_EXTRACTION_DONE = "memory_extraction_done"
 MEMORY_EXTRACTION_ERROR = "memory_extraction_error"
 MEMORY_ACTION = "memory_action"
 MEMORY_SUMMARY = "memory_summary"
+MEMORY_INJECTED = "memory_injected"
 
 # Eureka (scientific findings + suggestions)
 EUREKA_EXTRACTION_START = "eureka_extraction_start"
@@ -111,7 +102,6 @@ EUREKA_CHAT_RESPONSE = "eureka_chat_response"
 PIPELINE_REGISTERED = "pipeline_registered"
 
 # Insight (multimodal plot analysis)
-INSIGHT_RESULT = "insight_result"
 INSIGHT_FEEDBACK = "insight_feedback"
 
 # Async delegation
@@ -139,11 +129,6 @@ CYCLE_START = ROUND_START
 CYCLE_END = ROUND_END
 SESSION_TITLE = "session_title"
 
-# Knowledge/Bootstrap
-CATALOG_SEARCH = "catalog_search"
-METADATA_FETCH = "metadata_fetch"
-BOOTSTRAP_PROGRESS = "bootstrap_progress"
-
 # Agent lifecycle
 AGENT_STATE_CHANGE = "agent_state_change"
 
@@ -156,12 +141,6 @@ TOOL_RESULT_LOG = "tool_result_log"  # Console-only tool result log (secondary p
 TOOL_ERROR_LOG = "tool_error_log"  # Console-only tool error from sub-agent loops
 ERROR_LOG = "error_log"  # General error log (console+memory, not display)
 
-# Data source access (user-facing variant)
-CDF_DOWNLOAD_WARN = (
-    "cdf_download_warn"  # Large CDF download warning (surfaces to display)
-)
-
-
 # ---- Default tags registry ----
 # Tags are split into two layers:
 #   1. INFRASTRUCTURE_TAGS — WHERE events go (display, memory, console, pipeline, token)
@@ -169,17 +148,21 @@ CDF_DOWNLOAD_WARN = (
 # Context tags are computed from AGENT_INFORMED_REGISTRY (agent_registry.py)
 # based on which tools link to each event type.
 
-from .agent_registry import AGENT_INFORMED_REGISTRY
+from .agent_registry import (
+    AGENT_INFORMED_REGISTRY,
+    CTX_ORCHESTRATOR, CTX_ENVOY,
+    CTX_VIZ_PLOTLY, CTX_VIZ_MPL, CTX_VIZ_JSX,
+    CTX_DATAOPS,
+)
 
 ALL_CTX_TAGS = frozenset(
     {
-        "ctx:envoy",
-        "ctx:viz_plotly",
-        "ctx:viz_mpl",
-        "ctx:viz_jsx",
-        "ctx:dataops",
-        "ctx:planner",
-        "ctx:orchestrator",
+        CTX_ENVOY,
+        CTX_VIZ_PLOTLY,
+        CTX_VIZ_MPL,
+        CTX_VIZ_JSX,
+        CTX_DATAOPS,
+        CTX_ORCHESTRATOR,
     }
 )
 
@@ -218,13 +201,9 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     USER_AMENDMENT: frozenset({"display", "memory", "console"}),
     PERMISSION_REQUEST: frozenset({"display", "console"}),
     PERMISSION_RESPONSE: frozenset({"console"}),
-    SUB_AGENT_TOOL: frozenset({"console"}),
     SUB_AGENT_ERROR: frozenset({"memory", "console"}),
-    # Planning
-    PLAN_CREATED: frozenset({"display", "console"}),
-    PLAN_TASK: frozenset({"display", "console"}),
-    PLAN_COMPLETED: frozenset({"display", "console"}),
     PROGRESS: frozenset({"display", "console"}),
+    PLAN_UPDATE: frozenset({"display", "console"}),
     # LLM
     THINKING: frozenset({"display", "console"}),
     LLM_CALL: frozenset({"console"}),
@@ -240,9 +219,9 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     MEMORY_EXTRACTION_ERROR: frozenset({"display", "console"}),
     MEMORY_ACTION: frozenset({"console"}),
     MEMORY_SUMMARY: frozenset({"display", "console"}),
+    MEMORY_INJECTED: frozenset({"display", "console"}),
     PIPELINE_REGISTERED: frozenset({"display", "console"}),
     # Insight
-    INSIGHT_RESULT: frozenset({"display", "console"}),
     INSIGHT_FEEDBACK: frozenset({"display", "memory", "console"}),
     # Eureka
     EUREKA_EXTRACTION_START: frozenset({"console"}),
@@ -260,7 +239,6 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     ROUND_END: frozenset({"display"}),
     SESSION_TITLE: frozenset({"display"}),
     # Errors
-    FETCH_ERROR: frozenset({"display", "memory", "console"}),
     HIGH_NAN: frozenset({"display", "console"}),
     RECOVERY: frozenset({"console"}),
     RENDER_ERROR: frozenset({"display", "memory", "console"}),
@@ -268,16 +246,6 @@ INFRASTRUCTURE_TAGS: dict[str, frozenset[str]] = {
     AGENT_STATE_CHANGE: frozenset({"console"}),
     # Debug
     DEBUG: frozenset({"console"}),
-    # Data source access
-    CDF_FILE_QUERY: frozenset(),
-    CDF_CACHE_HIT: frozenset(),
-    CDF_DOWNLOAD: frozenset({"console"}),
-    CDF_DOWNLOAD_WARN: frozenset({"display", "console"}),
-    CDF_METADATA_SYNC: frozenset(),
-    PPI_FETCH: frozenset(),
-    CATALOG_SEARCH: frozenset(),
-    METADATA_FETCH: frozenset(),
-    BOOTSTRAP_PROGRESS: frozenset(),
 }
 
 
@@ -309,7 +277,8 @@ UNIVERSAL_CTX_EVENTS: frozenset[str] = frozenset(
     {
         USER_MESSAGE,
         AGENT_RESPONSE,
-        SUB_AGENT_TOOL,
+        TOOL_CALL,
+        TOOL_RESULT,
         SUB_AGENT_ERROR,
         CUSTOM_OP_FAILURE,
         CONTEXT_COMPACTION,
@@ -317,14 +286,13 @@ UNIVERSAL_CTX_EVENTS: frozenset[str] = frozenset(
     }
 )
 
-# Events only orchestrator/planner should see
+# Events only orchestrator should see
 ROUTING_ONLY_EVENTS: frozenset[str] = frozenset(
     {
         DELEGATION,
         DELEGATION_DONE,
         DELEGATION_ASYNC_STARTED,
         DELEGATION_ASYNC_COMPLETED,
-        INSIGHT_RESULT,
         INSIGHT_FEEDBACK,
         WORK_REGISTERED,
         WORK_CANCELLED,
@@ -341,15 +309,14 @@ ROUTING_ONLY_EVENTS: frozenset[str] = frozenset(
 # Used by _tool_linked_ctx_tags() to derive which agents see these events.
 
 _EVENT_TOOL_LINKS: dict[str, frozenset[str]] = {
-    DATA_FETCHED: frozenset({"fetch_data", "list_fetched_data"}),
-    FETCH_ERROR: frozenset({"fetch_data", "list_fetched_data"}),
-    DATA_COMPUTED: frozenset({"run_code", "list_fetched_data"}),
-    DATA_CREATED: frozenset({"run_code", "list_fetched_data"}),
-    RENDER_EXECUTED: frozenset({"render_plotly_json", "manage_plot"}),
-    MPL_RENDER_EXECUTED: frozenset({"generate_mpl_script", "manage_mpl_output"}),
-    JSX_RENDER_EXECUTED: frozenset({"generate_jsx_component", "manage_jsx_output"}),
-    RENDER_ERROR: frozenset({"render_plotly_json", "manage_plot"}),
-    PLOT_ACTION: frozenset({"manage_plot", "render_plotly_json"}),
+    DATA_FETCHED: frozenset({"xhelio__assets"}),
+    DATA_COMPUTED: frozenset({"xhelio__run_code", "xhelio__assets"}),
+    DATA_CREATED: frozenset({"xhelio__run_code", "xhelio__assets"}),
+    RENDER_EXECUTED: frozenset({"xhelio__render_plotly_json", "xhelio__manage_plot"}),
+    MPL_RENDER_EXECUTED: frozenset({"xhelio__generate_mpl_script", "xhelio__manage_mpl_output"}),
+    JSX_RENDER_EXECUTED: frozenset({"xhelio__generate_jsx_component", "xhelio__manage_jsx_output"}),
+    RENDER_ERROR: frozenset({"xhelio__render_plotly_json", "xhelio__manage_plot"}),
+    PLOT_ACTION: frozenset({"xhelio__manage_plot", "xhelio__render_plotly_json"}),
 }
 
 
@@ -374,7 +341,7 @@ def _resolve_tags(event_type: str) -> frozenset[str]:
     if event_type in UNIVERSAL_CTX_EVENTS:
         ctx = ALL_CTX_TAGS
     elif event_type in ROUTING_ONLY_EVENTS:
-        ctx = frozenset({"ctx:planner", "ctx:orchestrator"})
+        ctx = frozenset({"ctx:orchestrator"})
     else:
         ctx = _tool_linked_ctx_tags(event_type)
     return infra | ctx
@@ -603,7 +570,7 @@ class EventBus:
 
         Usage:
             with bus.span(DATA_FETCHED, agent="orchestrator", data={...}) as span_id:
-                # ... emit sub-events (CDF_FILE_QUERY, CDF_DOWNLOAD, etc.)
+                # ... emit sub-events
                 # They will be captured and also streamed live to console.
 
         Yields:
@@ -763,16 +730,12 @@ class DebugLogListener:
         AGENT_RESPONSE: "agent_response",
         DELEGATION: "delegation",
         DELEGATION_DONE: "delegation_done",
-        PLAN_CREATED: "plan_event",
-        PLAN_COMPLETED: "plan_event",
-        PLAN_TASK: "plan_task",
         PROGRESS: "progress",
         DATA_FETCHED: "data_fetched",
         THINKING: "thinking",
         TOOL_ERROR: "error",
         TOOL_ERROR_LOG: "error",
         ERROR_LOG: "error",
-        FETCH_ERROR: "error",
         RENDER_ERROR: "error",
         CUSTOM_OP_FAILURE: "error",
         SUB_AGENT_ERROR: "error",
@@ -780,6 +743,7 @@ class DebugLogListener:
         MEMORY_EXTRACTION_DONE: "memory",
         MEMORY_EXTRACTION_ERROR: "memory",
         MEMORY_ACTION: "memory",
+        MEMORY_INJECTED: "memory",
         TOKEN_USAGE: "",
     }
 
@@ -940,27 +904,6 @@ class SSEEventListener:
                         "command": event.data.get("command", ""),
                     })
                     sent_typed = True
-                elif event.type in (PLAN_CREATED, PLAN_TASK, PLAN_COMPLETED):
-                    from agent.planner import format_plan_structured
-
-                    plan_data = event.data.get("plan")
-                    if plan_data is not None:
-                        self._callback(
-                            {
-                                "type": "plan_update",
-                                "plan": format_plan_structured(plan_data),
-                            }
-                        )
-                        sent_typed = True
-                elif event.type == INSIGHT_RESULT:
-                    self._callback(
-                        {
-                            "type": "insight_result",
-                            "text": event.data.get("text", event.summary),
-                            "level": event.level,
-                        }
-                    )
-                    sent_typed = True
                 elif event.type == INSIGHT_FEEDBACK:
                     self._callback(
                         {
@@ -981,6 +924,8 @@ class SSEEventListener:
                         payload["agent"] = event.agent
                     if event.data.get("generated"):
                         payload["generated"] = True
+                    if "message_seq" in event.data:
+                        payload["message_seq"] = event.data["message_seq"]
                     self._callback(payload)
                     sent_typed = True
                 elif event.type == ROUND_START:
@@ -1004,16 +949,12 @@ class SSEEventListener:
                     )
                     sent_typed = True
                 elif event.type == USER_MESSAGE:
-                    # Forward synthetic user messages (e.g. Eureka Mode injections)
-                    # to the chat UI. Regular user messages are added client-side
-                    # by sendMessage(), so only forward server-injected ones.
-                    text = event.data.get("text", event.msg)
+                    text = event.data.get("text", "")
                     if text.startswith("[eureka]") or text.startswith("[Eureka Mode]"):
                         self._callback(
                             {
-                                "type": "user_message",
+                                "type": "eureka_inject",
                                 "text": text,
-                                "level": event.level,
                             }
                         )
                         sent_typed = True
@@ -1025,20 +966,35 @@ class SSEEventListener:
                         }
                     )
                     sent_typed = True
+                elif event.type == AGENT_RESPONSE:
+                    text = event.data.get("text", "")
+                    if text:
+                        payload = {
+                            "type": "agent_response",
+                            "text": text,
+                        }
+                        if event.data.get("generated"):
+                            payload["generated"] = True
+                        self._callback(payload)
+                    sent_typed = True
+                elif event.type == PLAN_UPDATE:
+                    self._callback(
+                        {
+                            "type": "plan_update",
+                            "action": event.data.get("action", ""),
+                            "plan": event.data.get("plan"),
+                        }
+                    )
+                    sent_typed = True
 
-            # Send token_usage update for live frontend token counter
-            if "token" in event.tags and event.type == TOKEN_USAGE:
-                self._callback(
-                    {
-                        "type": "token_usage",
-                        "data": event.data,
-                    }
-                )
+            # Per-agent token_usage events are not forwarded to the session-level
+            # token counter — aggregate totals come from round_end events and
+            # the polling GET /sessions/{id} endpoint instead.
 
             # Send as log_line for the Console tab (requires "console" tag).
-            # Skip if a typed payload was already sent for this event to
-            # avoid duplicate callbacks for the same event.
-            if "console" in event.tags and not sent_typed:
+            # Always send even if a typed payload was already sent — the
+            # Activity panel and Console tab are independent channels.
+            if "console" in event.tags:
                 payload: dict = {
                     "type": "log_line",
                     "text": event.summary,
@@ -1051,80 +1007,30 @@ class SSEEventListener:
             pass
 
 
-class OperationsLogListener:
-    """Populates OperationsLog from pipeline-tagged events.
 
-    Replaces the inline get_operations_log().record() calls scattered
-    throughout core.py.
+class PipelineDAGListener:
+    """Routes pipeline-tagged events to PipelineDAG.add_node()."""
 
-    Uses a callable to resolve the OperationsLog at event time
-    (supports ContextVar-based per-session instances).
-    """
-
-    def __init__(self, ops_log_getter: Callable):
-        self._get_ops_log = ops_log_getter
+    def __init__(self, get_dag):
+        self._get_dag = get_dag
 
     def __call__(self, event: SessionEvent) -> None:
         if "pipeline" not in event.tags:
             return
+        dag = self._get_dag()
+        if dag is None:
+            return
         d = event.data
-        try:
-            ops_log = self._get_ops_log()
-            if event.type == DATA_FETCHED:
-                ops_log.record(
-                    tool="fetch_data",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-            elif event.type == DATA_COMPUTED:
-                ops_log.record(
-                    tool="run_code",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    inputs=d.get("inputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-            elif event.type == DATA_CREATED:
-                ops_log.record(
-                    tool="run_code",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-            # RENDER_EXECUTED recording is now done inline in core.py
-            # (so the op_id can be included in the event data)
-            elif event.type == MPL_RENDER_EXECUTED:
-                ops_log.record(
-                    tool="generate_mpl_script",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    inputs=d.get("inputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-            elif event.type == JSX_RENDER_EXECUTED:
-                ops_log.record(
-                    tool="generate_jsx_component",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    inputs=d.get("inputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-            elif event.type == PLOT_ACTION:
-                ops_log.record(
-                    tool="manage_plot",
-                    args=d.get("args", {}),
-                    outputs=d.get("outputs", []),
-                    status=d.get("status", "success"),
-                    error=d.get("error"),
-                )
-        except Exception:
-            pass
+        dag.add_node_auto(
+            tool=d.get("tool", event.type),
+            agent=event.agent or "unknown",
+            args=d.get("args", {}),
+            inputs=d.get("inputs", []),
+            outputs=d.get("outputs", {}),
+            status=d.get("status", "success"),
+            error=d.get("error"),
+        )
+        dag.save()
 
 
 class TokenLogListener:
@@ -1177,14 +1083,6 @@ class DisplayLogBuilder:
             self.entries.append(
                 {
                     "role": "agent",
-                    "content": event.data.get("text", event.summary),
-                    "timestamp": event.ts,
-                }
-            )
-        elif event.type == INSIGHT_RESULT:
-            self.entries.append(
-                {
-                    "role": "insight",
                     "content": event.data.get("text", event.summary),
                     "timestamp": event.ts,
                 }

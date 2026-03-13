@@ -134,12 +134,9 @@ OrchestratorAgent (configurable LLM provider)
     +---> DataIOAgent                         Converts search results, PDFs,
     |                                          event catalogs into DataFrames;
     |                                          loads local files (CSV, JSON, etc.)
-    +---> VizPlotlyAgent                      Interactive Plotly figures with
-    |                                          domain-appropriate defaults
-    +---> VizMplAgent                         Publication-quality matplotlib plots
-    |                                          with script generation
-    +---> VizJsxAgent                         React/Recharts JSX dashboard
-    |                                          components
+    +---> VizAgent                            Unified visualization specialist:
+    |                                          Plotly (interactive), matplotlib
+    |                                          (publication-quality), JSX (dashboard)
     +---> InsightAgent                        Analyzes rendered plots via
     |                                          LLM vision (multimodal)
     +---> PlannerAgent                        Decomposes, executes, observes,
@@ -166,9 +163,7 @@ agent/                  Core agent layer (11 agents + 41 tools)
   envoy_agent.py          EnvoyAgent — per-spacecraft data fetching
   data_ops_agent.py       DataOpsAgent — pandas/numpy/scipy/pywt computation
   data_io_agent.py        DataIOAgent — text/PDF to DataFrames, local file import
-  viz_plotly_agent.py     VizPlotlyAgent — interactive Plotly rendering
-  viz_mpl_agent.py        VizMplAgent — matplotlib script generation
-  viz_jsx_agent.py        VizJsxAgent — React/Recharts JSX components
+  viz_agent.py            VizAgent — unified visualization (Plotly, matplotlib, JSX)
   insight_agent.py        InsightAgent — multimodal plot analysis via LLM vision
   eureka_agent.py         EurekaAgent — automated discovery and follow-ups
   planner.py              PlannerAgent — plan-execute-replan loop
@@ -240,7 +235,6 @@ All other settings are in `~/.xhelio/config.json` (see `config.template.json` fo
 | `providers.<name>.sub_agent_model` | varies | Model for sub-agents |
 | `providers.<name>.insight_model` | varies | Model for InsightAgent (multimodal) |
 | `providers.<name>.inline_model` | varies | Model for follow-ups, autocomplete |
-| `providers.<name>.planner_model` | varies | Model for PlannerAgent |
 
 ## Memory System
 
@@ -265,7 +259,7 @@ Each memory belongs to one or more scopes: `generic`, `mission:<ID>` (e.g., `mis
 
 ```
 EnvoyAgent[PSP]        <- receives memories scoped to "mission:PSP" + "generic"
-VizPlotlyAgent         <- receives memories scoped to "visualization" + "generic"
+VizAgent               <- receives memories scoped to "visualization" + "generic"
 DataOpsAgent           <- receives memories scoped to "data_ops" + "generic"
 OrchestratorAgent      <- receives all "generic" memories + session summaries
 ```
@@ -288,7 +282,7 @@ After completing a task, each consuming agent is required to review the memories
 
 Most AI memory systems use **write-time importance scoring** (the creator rates a memory when it's created, e.g., [Generative Agents, Park et al. 2023](https://arxiv.org/abs/2304.03442)) or **passive decay signals** (access frequency and recency, e.g., [FadeMem](https://arxiv.org/abs/2601.18642), [Mem0](https://arxiv.org/html/2504.19413v1)). XHelio's approach is different:
 
-1. **Read-time evaluation** — the agent that *uses* a memory rates it after the task, not the agent that *created* it. A pitfall about NaN handling might be rated 5 stars by DataOpsAgent but 1 star by VizPlotlyAgent.
+1. **Read-time evaluation** — the agent that *uses* a memory rates it after the task, not the agent that *created* it. A pitfall about NaN handling might be rated 5 stars by DataOpsAgent but 1 star by VizAgent.
 
 2. **Per-agent reviews** — each agent type gets its own review for the same memory. An EnvoyAgent and a DataOpsAgent can independently rate the same pitfall, and both reviews coexist.
 

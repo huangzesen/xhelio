@@ -4,10 +4,11 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from agent.core import OrchestratorAgent
+    from agent.tool_caller import ToolCaller
+    from agent.tool_context import ToolContext
 
 
-def handle_ask_clarification(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_ask_clarification(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     return {
         "status": "clarification_needed",
         "question": tool_args.get("question", ""),
@@ -16,26 +17,23 @@ def handle_ask_clarification(orch: "OrchestratorAgent", tool_args: dict) -> dict
     }
 
 
-def handle_manage_session_assets(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    action = tool_args.get("action", "status")
-    if action == "restore_plot":
-        return orch._handle_restore_plot()
-    return orch._handle_get_session_assets()
 
-
-def handle_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_events(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     action = tool_args.get("action", "")
 
     if action == "check":
-        return _handle_check_events(orch, tool_args)
+        return _handle_check_events(ctx, tool_args)
     elif action == "details":
-        return _handle_event_details(orch, tool_args)
+        return _handle_event_details(ctx, tool_args)
     else:
         return {"status": "error", "message": f"Unknown action: {action}"}
 
 
-def _handle_check_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    feed = getattr(orch._tls, "active_sub_agent_feed", None) or orch._event_feed
+def _handle_check_events(ctx: "ToolContext", tool_args: dict) -> dict:
+    _orch_state = ctx.agent_state.get("orchestrator")
+    feed = _orch_state.event_feed if _orch_state else None
+    if feed is None:
+        return {"status": "error", "message": "Event feed not available"}
     from agent.truncation import get_item_limit
 
     max_events = min(tool_args.get("max_events", 50), get_item_limit("items.events"))
@@ -43,28 +41,34 @@ def _handle_check_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     return feed.check(max_events=max_events, event_types=event_types)
 
 
-def _handle_event_details(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    feed = getattr(orch._tls, "active_sub_agent_feed", None) or orch._event_feed
+def _handle_event_details(ctx: "ToolContext", tool_args: dict) -> dict:
+    _orch_state = ctx.agent_state.get("orchestrator")
+    feed = _orch_state.event_feed if _orch_state else None
+    if feed is None:
+        return {"status": "error", "message": "Event feed not available"}
     return feed.get_details(tool_args.get("event_ids", []))
 
 
-def handle_events_admin(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_events_admin(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     action = tool_args.get("action", "")
 
     if action == "check":
-        return _handle_check_events(orch, tool_args)
+        return _handle_check_events(ctx, tool_args)
     elif action == "details":
-        return _handle_event_details(orch, tool_args)
+        return _handle_event_details(ctx, tool_args)
     elif action == "peek":
-        return _handle_peek_events(orch, tool_args)
+        return _handle_peek_events(ctx, tool_args)
     elif action == "peek_details":
-        return _handle_peek_details(orch, tool_args)
+        return _handle_peek_details(ctx, tool_args)
     else:
         return {"status": "error", "message": f"Unknown action: {action}"}
 
 
-def _handle_peek_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    feed = getattr(orch._tls, "active_sub_agent_feed", None) or orch._event_feed
+def _handle_peek_events(ctx: "ToolContext", tool_args: dict) -> dict:
+    _orch_state = ctx.agent_state.get("orchestrator")
+    feed = _orch_state.event_feed if _orch_state else None
+    if feed is None:
+        return {"status": "error", "message": "Event feed not available"}
     from agent.truncation import get_item_limit
 
     max_events = min(tool_args.get("max_events", 50), get_item_limit("items.events"))
@@ -79,13 +83,26 @@ def _handle_peek_events(orch: "OrchestratorAgent", tool_args: dict) -> dict:
     )
 
 
-def _handle_peek_details(orch: "OrchestratorAgent", tool_args: dict) -> dict:
-    feed = getattr(orch._tls, "active_sub_agent_feed", None) or orch._event_feed
+def _handle_peek_details(ctx: "ToolContext", tool_args: dict) -> dict:
+    _orch_state = ctx.agent_state.get("orchestrator")
+    feed = _orch_state.event_feed if _orch_state else None
+    if feed is None:
+        return {"status": "error", "message": "Event feed not available"}
     return feed.peek_details(tool_args.get("event_ids", []))
 
 
-def handle_manage_workers(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_manage_workers(ctx: "ToolContext", tool_args: dict, caller: "ToolCaller" = None) -> dict:
     action = tool_args.get("action", "list")
+    if ctx.work_tracker is None:
+        return {"status": "error", "message": "Work tracker not available"}
     if action == "cancel":
-        return orch._handle_cancel_work(tool_args)
-    return orch._handle_list_active_work(tool_args)
+        work_id = tool_args.get("work_id")
+        if work_id:
+            cancelled = ctx.work_tracker.cancel(work_id)
+            return {"status": "success", "cancelled": cancelled}
+        else:
+            count = ctx.work_tracker.cancel_all()
+            return {"status": "success", "cancelled_count": count}
+    # Default: list
+    active = ctx.work_tracker.list_active()
+    return {"status": "success", "active_work": active, "count": len(active)}

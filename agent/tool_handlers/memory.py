@@ -4,10 +4,14 @@ from __future__ import annotations
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
-    from agent.core import OrchestratorAgent
+    from agent.tool_caller import ToolCaller
+    from agent.session_context import SessionContext
 
 
-def handle_review_memory(orch: "OrchestratorAgent", tool_args: dict) -> dict:
+def handle_review_memory(
+    session_ctx: "SessionContext", tool_args: dict, caller: "ToolCaller" = None,
+) -> dict:
+    """Rate and review an injected memory."""
     from datetime import datetime as _dt
     from agent.memory import Memory, generate_tags
     import threading
@@ -44,14 +48,16 @@ def handle_review_memory(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         f"(4) Comment: {comment_text}"
     )
 
-    entry = orch._memory_store.get_by_id(memory_id)
+    memory_store = session_ctx.memory_store
+    entry = memory_store.get_by_id(memory_id)
     if entry is None or entry.archived:
         return {"status": "error", "message": f"Memory {memory_id} not found"}
-    agent_name = reviewer_agent_id or orch._active_agent_name
-    model_name = orch.model_name
+
+    agent_name = reviewer_agent_id or (caller.agent_id if caller else "unknown")
+    model_name = session_ctx.model_name
     content = f"{stars}★ {comment.strip()}"
     tags = [f"review:{memory_id}", agent_name, f"stars:{stars}"]
-    existing_review = orch._memory_store.get_review_for(memory_id, agent=agent_name)
+    existing_review = memory_store.get_review_for(memory_id, agent=agent_name)
     supersedes = ""
     version = 1
     if existing_review:
@@ -63,20 +69,21 @@ def handle_review_memory(orch: "OrchestratorAgent", tool_args: dict) -> dict:
         scopes=list(entry.scopes),
         content=content,
         source="extracted",
-        source_session=orch._session_id or "",
+        source_session=session_ctx.session_id or "",
         tags=tags,
         review_of=memory_id,
         supersedes=supersedes,
         version=version,
     )
-    orch._memory_store.add_no_save(review_memory)
-    threading.Thread(target=orch._memory_store.save, daemon=False).start()
+    memory_store.add_no_save(review_memory)
+    threading.Thread(target=memory_store.save, daemon=False).start()
     from agent.event_bus import DEBUG
-    orch._event_bus.emit(
-        DEBUG,
-        level="debug",
-        msg=f"[Memory] Review {memory_id} by {agent_name}: {stars}★",
-    )
+    if session_ctx.event_bus is not None:
+        session_ctx.event_bus.emit(
+            DEBUG,
+            level="debug",
+            msg=f"[Memory] Review {memory_id} by {agent_name}: {stars}★",
+        )
     return {
         "status": "success",
         "memory_id": memory_id,

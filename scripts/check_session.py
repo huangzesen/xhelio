@@ -232,6 +232,13 @@ def _format_error_detail(line_num: int, event: dict) -> str:
     error_msg = data.get("error") or event.get("msg", "")
     parts.append(f"- **Error**: {error_msg}")
 
+    # Include stderr from tool_result if available (often has the actual traceback)
+    tool_result = data.get("tool_result", {})
+    if isinstance(tool_result, dict):
+        stderr = tool_result.get("stderr", "")
+        if stderr:
+            parts.append(f"- **Stderr**:\n  ```\n  {stderr.rstrip()}\n  ```")
+
     # Show code that caused the error (custom_op_failure)
     args = data.get("args")
     if isinstance(args, dict) and "code" in args:
@@ -506,7 +513,7 @@ def section_data_integrity(
                 except (json.JSONDecodeError, ValueError, AttributeError):
                     pass
 
-    # Check operations.json too
+    # Check pipeline.json too
     if operations:
         for op in operations:
             for label in op.get("outputs", []):
@@ -541,7 +548,7 @@ def section_data_integrity(
             if refs:
                 issues.append(f"- `{label}` — referenced at lines {refs}{match_hint}")
             else:
-                issues.append(f"- `{label}` — referenced in operations.json{match_hint}")
+                issues.append(f"- `{label}` — referenced in pipeline.json{match_hint}")
         lines.extend(issues)
         lines.append("")
 
@@ -1507,7 +1514,7 @@ def check_session(session_id: str) -> str:
 
     events = load_jsonl(events_path)
     metadata = load_json(session_dir / "metadata.json")
-    operations = load_json(session_dir / "operations.json")
+    operations = load_json(session_dir / "pipeline.json")
     data_index = load_json(session_dir / "data" / "_index.json")
 
     # Collect token_usage events for overview

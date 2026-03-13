@@ -283,37 +283,6 @@ def log_tool_result(tool_name: str, result: dict, success: bool) -> None:
                              data={"tool_name": tool_name, "status": "error", "error": error_msg})
 
 
-def log_plan_event(
-    event: str,
-    plan_id: str,
-    details: Optional[str] = None,
-    plan_data: Optional[dict] = None,
-) -> None:
-    """Log a planning/execution event.
-
-    Args:
-        event: Event type (created, executing, completed, failed, etc.)
-        plan_id: ID of the plan
-        details: Optional additional details
-        plan_data: Optional full plan dict (status, reasoning, tasks, summary)
-            from the planner LLM. Included in the event data payload for
-            debugging and log inspection.
-    """
-    from .event_bus import get_event_bus, PLAN_CREATED, PLAN_COMPLETED
-
-    msg = f"Plan {event}: {plan_id[:8]}..."
-    if details:
-        msg += f" - {details}"
-
-    data: dict = {"event": event, "plan_id": plan_id, "details": details}
-    if plan_data is not None:
-        data["plan"] = plan_data
-
-    # Map event string to event type
-    event_type = PLAN_COMPLETED if event in ("completed", "failed", "cancelled") else PLAN_CREATED
-    get_event_bus().emit(event_type, level="info", msg=msg, data=data)
-
-
 def get_recent_errors(days: int = 7, limit: int = 50) -> list[dict]:
     """Retrieve recent errors from log files.
 

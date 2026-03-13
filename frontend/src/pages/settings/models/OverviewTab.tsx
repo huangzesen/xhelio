@@ -36,7 +36,6 @@ const TIER_LABELS: Record<string, string> = {
   sub_agent_model: 'Sub-agent',
   insight_model: 'Insight',
   inline_model: 'Inline',
-  planner_model: 'Planner',
 };
 
 // ---- Thinking level options (Gemini) ----

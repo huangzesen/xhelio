@@ -101,7 +101,7 @@ class TestToolsRoundTrip:
         """Tools survive the full round-trip through ChatInterface serialization."""
         tool_dicts = [
             {"name": "browse_datasets", "description": "Browse datasets", "parameters": {"type": "object", "properties": {"mission": {"type": "string"}}, "required": ["mission"]}},
-            {"name": "list_fetched_data", "description": "List data", "parameters": {"type": "object", "properties": {}}},
+            {"name": "assets", "description": "List data", "parameters": {"type": "object", "properties": {}}},
         ]
 
         # 1. Create interface with tools
@@ -124,5 +124,5 @@ class TestToolsRoundTrip:
         assert schemas is not None
         assert len(schemas) == 2
         assert schemas[0].name == "browse_datasets"
-        assert schemas[1].name == "list_fetched_data"
+        assert schemas[1].name == "assets"
         assert schemas[0].parameters["required"] == ["mission"]

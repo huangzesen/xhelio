@@ -14,18 +14,14 @@ import pytest
 # Every top-level package that must be importable after `pip install -e .`
 REQUIRED_PACKAGES = [
     "agent",
-    "agent.sub_agent",
+    "agent.base_agent",
     "agent.tools",
-    "agent.planner",
     "agent.memory",
     "agent.memory_agent",
     "agent.envoy_agent",
-    "agent.viz_plotly_agent",
-    "agent.viz_mpl_agent",
+    "agent.viz_agent",
     "agent.data_ops_agent",
     "agent.data_io_agent",
-    "agent.insight_agent",
-    "agent.pipeline_store",
     "agent.event_bus",
     "agent.session",
     "agent.llm",
@@ -37,11 +33,9 @@ REQUIRED_PACKAGES = [
     "data_ops",
     "data_ops.store",
     "data_ops.custom_ops",
-    "data_ops.pipeline",
+    "data_ops.dag",
     "knowledge",
-    "knowledge.catalog",
     "knowledge.prompt_builder",
-    "knowledge.metadata_client",
     "rendering",
     "rendering.plotly_renderer",
     "rendering.registry",
@@ -133,9 +127,9 @@ class TestKeyClasses:
         assert OrchestratorAgent is not None
 
     def test_sub_agent_base(self):
-        from agent.sub_agent import SubAgent
+        from agent.base_agent import BaseAgent
 
-        assert SubAgent is not None
+        assert BaseAgent is not None
 
     def test_event_bus(self):
         from agent.event_bus import EventBus, get_event_bus
@@ -152,11 +146,6 @@ class TestKeyClasses:
         from rendering.plotly_renderer import PlotlyRenderer
 
         assert PlotlyRenderer is not None
-
-    def test_planner_agent(self):
-        from agent.planner import PlannerAgent
-
-        assert PlannerAgent is not None
 
     def test_memory_store(self):
         from agent.memory import MemoryStore

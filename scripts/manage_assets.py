@@ -2,7 +2,7 @@
 """
 Disk asset management CLI for xhelio.
 
-Monitor and clean up cached data files, sessions, and SPICE kernels.
+Monitor and clean up cached data files and sessions.
 
 Usage:
   python scripts/manage_assets.py status                       # Overview of all assets
@@ -13,7 +13,6 @@ Usage:
   python scripts/manage_assets.py clean sessions --empty        # Remove 0-turn sessions
   python scripts/manage_assets.py clean sessions --older-than 7
   python scripts/manage_assets.py clean ppi
-  python scripts/manage_assets.py clean spice
   python scripts/manage_assets.py clean all --dry-run          # Preview cleanup
   python scripts/manage_assets.py clean all --yes              # Skip confirmation
   python scripts/manage_assets.py status --json                # Machine-readable output
@@ -36,16 +35,10 @@ if str(_PROJECT_ROOT) not in sys.path:
 from data_ops.asset_manager import (
     AssetCategory,
     AssetOverview,
-    clean_cdf_cache,
-    clean_ppi_cache,
     clean_sessions,
-    clean_spice_kernels,
     format_bytes,
     get_asset_overview,
-    get_cdf_cache_detail,
-    get_ppi_cache_detail,
     get_sessions_detail,
-    get_spice_kernels_detail,
 )
 
 
@@ -54,17 +47,11 @@ from data_ops.asset_manager import (
 # ---------------------------------------------------------------------------
 
 CATEGORY_LABELS = {
-    "cdf_cache": "CDF Cache",
-    "ppi_cache": "PPI Cache",
     "sessions": "Sessions",
-    "spice_kernels": "SPICE Kernels",
 }
 
 CATEGORY_MAP = {
-    "cdf": "cdf_cache",
-    "ppi": "ppi_cache",
     "sessions": "sessions",
-    "spice": "spice_kernels",
 }
 
 
@@ -131,10 +118,7 @@ def cmd_status(args: argparse.Namespace) -> None:
             print(f"Valid categories: {', '.join(CATEGORY_MAP.keys())}", file=sys.stderr)
             sys.exit(1)
         detail_fn = {
-            "cdf_cache": get_cdf_cache_detail,
-            "ppi_cache": get_ppi_cache_detail,
             "sessions": get_sessions_detail,
-            "spice_kernels": get_spice_kernels_detail,
         }[cat_name]
         cat = detail_fn()
         if args.json:
@@ -160,24 +144,10 @@ def cmd_clean(args: argparse.Namespace) -> None:
     yes = args.yes
 
     targets = {
-        "cdf": ("CDF cache", lambda: clean_cdf_cache(
-            missions=args.mission or None,
-            older_than_days=older_than,
-            dry_run=dry_run,
-        )),
-        "ppi": ("PPI cache", lambda: clean_ppi_cache(
-            collections=args.mission or None,
-            older_than_days=older_than,
-            dry_run=dry_run,
-        )),
         "sessions": ("sessions", lambda: clean_sessions(
             session_ids=args.mission or None,
             older_than_days=older_than,
             empty_only=args.empty,
-            dry_run=dry_run,
-        )),
-        "spice": ("SPICE kernels", lambda: clean_spice_kernels(
-            missions=args.mission or None,
             dry_run=dry_run,
         )),
     }
@@ -233,7 +203,7 @@ def main() -> None:
 
     # clean
     sp_clean = subparsers.add_parser("clean", help="Clean up cached data")
-    sp_clean.add_argument("category", choices=["cdf", "ppi", "sessions", "spice", "all"],
+    sp_clean.add_argument("category", choices=["sessions", "all"],
                           help="Category to clean (or 'all')")
     sp_clean.add_argument("--mission", "-m", nargs="+",
                           help="Specific missions/collections/session IDs to clean")

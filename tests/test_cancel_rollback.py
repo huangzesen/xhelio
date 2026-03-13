@@ -178,7 +178,7 @@ class TestSendCancelAware:
         import threading
         import time
         from unittest.mock import MagicMock
-        from agent.sub_agent import SubAgent
+        from agent.base_agent import BaseAgent
 
         cancel = threading.Event()
         adapter = MagicMock()
@@ -188,7 +188,7 @@ class TestSendCancelAware:
         svc.provider = "gemini"
         svc.make_tool_result.side_effect = adapter.make_tool_result_message
 
-        agent = SubAgent(
+        agent = BaseAgent(
             agent_id="TestAgent",
             service=svc,
             agent_type="test",
@@ -216,7 +216,7 @@ class TestSendCancelAware:
         assert "cancel" in result["text"].lower() or "interrupt" in result["text"].lower()
 
 
-class TestSubAgentCancelRollback:
+class TestBaseAgentCancelRollback:
     """Sub-agent should rollback history on cancel, not commit tool results."""
 
     def test_cancel_before_tools_rolls_back_history(self):
@@ -239,7 +239,9 @@ class TestSubAgentCancelRollback:
         svc.provider = "gemini"
         svc.make_tool_result.side_effect = adapter.make_tool_result_message
 
-        with patch("agent.envoy_agent.build_envoy_prompt", return_value="test prompt"):
+        with patch("agent.envoy_agent.build_envoy_prompt", return_value="test prompt"), \
+             patch("agent.envoy_agent.ENVOY_KIND_REGISTRY") as mock_registry:
+            mock_registry.get_function_schemas.return_value = []
             agent = EnvoyAgent(
                 mission_id="TEST",
                 service=svc,

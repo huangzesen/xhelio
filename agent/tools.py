@@ -11,97 +11,7 @@ import config
 
 TOOLS = [
     {
-        "name": "search_datasets",
-        "description": """Search for mission datasets by keyword. Use this when:
-- User mentions a mission (Parker, ACE, Solar Orbiter, OMNI, Wind, DSCOVR, MMS, STEREO, Cassini, Voyager, Juno, MAVEN, Galileo)
-- User mentions a data type (magnetic field, solar wind, plasma, density)
-- User asks what data is available
-
-Covers both CDAWeb and PDS PPI datasets. Returns matching mission, instrument, and dataset information.
-Each dataset includes start_date and stop_date showing the available time coverage.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "Search query (e.g., 'parker magnetic', 'ACE solar wind', 'omni')",
-                }
-            },
-            "required": ["query"],
-        },
-    },
-    {
-        "name": "list_parameters",
-        "description": """List plottable parameters for a specific dataset. Use this after search_datasets to find what parameters can be plotted.
-
-Reads from local metadata cache. Falls back to downloading a Master CDF skeleton from CDAWeb if not cached locally.
-Returns list of 1D numeric parameters with names, units, and descriptions.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "dataset_id": {
-                    "type": "string",
-                    "description": "CDAWeb dataset ID (e.g., 'PSP_FLD_L2_MAG_RTN_1MIN')",
-                }
-            },
-            "required": ["dataset_id"],
-        },
-    },
-    {
-        "name": "browse_datasets",
-        "description": """Browse all available science datasets for a mission. Returns TIME COVERAGE
-(start_date, stop_date) for every dataset — use this to verify data availability before fetching.
-
-Also use when:
-- User asks "what datasets are available?" or "what else can I plot?"
-- You need to find a dataset not in the recommended list
-- User asks about a specific instrument or data type you don't have in your prompt
-
-Returns a filtered list excluding calibration/housekeeping/ephemeris data.
-Each entry has: id, description, start_date, stop_date, parameter_count, instrument.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "mission_id": {
-                    "type": "string",
-                    "description": "Mission ID (e.g., 'PSP', 'ACE', 'SolO', 'OMNI', 'WIND', 'DSCOVR', 'MMS', 'STEREO_A')",
-                }
-            },
-            "required": ["mission_id"],
-        },
-    },
-    {
-        "name": "list_missions",
-        "description": """List all missions with cached metadata. Use this when:
-- User asks "what missions are available?"
-- You need to see which missions have local data before browsing datasets
-- You want a quick overview of the data catalog
-
-Returns mission IDs and dataset counts. No parameters required.""",
-        "parameters": {"type": "object", "properties": {}, "required": []},
-    },
-    {
-        "name": "get_dataset_docs",
-        "description": """Fetch CDAWeb documentation for a dataset. Use this when:
-- User asks about coordinate systems, calibration, or data quality
-- User asks who the PI or data contact is
-- User asks what a parameter measures or how it was derived
-- User asks for full parameter list with descriptions and units
-- You need domain context to interpret or explain data
-Returns: contact info, resource URL, documentation text, full parameter list (name, type, units, description, size), time range, and validation status.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "dataset_id": {
-                    "type": "string",
-                    "description": "CDAWeb dataset ID (e.g., 'AC_H2_MFI')",
-                }
-            },
-            "required": ["dataset_id"],
-        },
-    },
-    {
-        "name": "envoy_query",
+        "name": "xhelio__envoy_query",
         "description": """Query envoy capabilities. Navigate the envoy tree layer by layer, or search across envoys using regex.
 
 Without arguments: lists all available envoys with summaries.
@@ -111,29 +21,30 @@ With search: finds matching entries by regex across all string values in envoy t
 
 Examples:
   envoy_query()                                           → list all envoys
-  envoy_query(envoy="PSP")                                → PSP overview + instruments
-  envoy_query(envoy="PSP", path="instruments.FIELDS/MAG") → FIELDS/MAG datasets
-  envoy_query(search="(?i)magnetic.*1.min")                → find datasets matching regex
-  envoy_query(envoy="PSP", search="(?i)sweap")             → search within PSP only""",
+  envoy_query(envoy="MY_ENVOY")                           → envoy details
+  envoy_query(search="(?i)trajectory")                    → find entries matching regex""",
         "parameters": {
-            "envoy": {
-                "type": "string",
-                "description": "Envoy ID (e.g., 'PSP', 'ACE', 'PFSS', 'CASSINI_PPI'). Omit to list all envoys.",
+            "type": "object",
+            "properties": {
+                "envoy": {
+                    "type": "string",
+                    "description": "Envoy ID. Omit to list all envoys.",
+                },
+                "path": {
+                    "type": "string",
+                    "description": "Dot-separated path into the envoy's JSON tree. Mirrors the JSON structure exactly. Use envoy_query(envoy=X) first to see available paths.",
+                },
+                "search": {
+                    "type": "string",
+                    "description": "Regex pattern to search across all string values. Returns matching envoy + path pairs. Can combine with envoy to scope the search.",
+                },
             },
-            "path": {
-                "type": "string",
-                "description": "Dot-separated path into the envoy's JSON tree. Mirrors the JSON structure exactly. Use envoy_query(envoy=X) first to see available paths.",
-            },
-            "search": {
-                "type": "string",
-                "description": "Regex pattern to search across all string values. Returns matching envoy + path pairs. Can combine with envoy to scope the search.",
-            },
+            "required": [],
         },
-        "required": [],
         "category": "discovery",
     },
     {
-        "name": "manage_envoy",
+        "name": "xhelio__manage_envoy",
         "description": """Create or remove envoy kinds at runtime.
 
 Use 'create' to generate a new envoy kind from a Python package or MCP server.
@@ -168,7 +79,9 @@ design with the user, then call this with finalized tool definitions.""",
                 },
                 "tools": {
                     "type": "array",
-                    "description": "Tool definitions (for create). Each item: {name, description, parameters, handler_code}",
+                    "description": "Tool definitions (for create). Each item: {name, description, parameters, handler_code}. "
+                        "handler_code is a Python snippet defining a function with the SAME name as 'name' "
+                        "(e.g. name='get_today' → 'def get_today(...):'). The function takes keyword args matching the parameters schema.",
                     "items": {"type": "object"},
                 },
             },
@@ -207,7 +120,7 @@ Do NOT guess when the user is unhappy — ask what they want instead.""",
         },
     },
     {
-        "name": "ask_user_permission",
+        "name": "xhelio__ask_user_permission",
         "description": """Ask the user for explicit permission before taking a potentially dangerous or irreversible action.
 This tool BLOCKS until the user responds with approve or deny.
 
@@ -237,33 +150,41 @@ Present clear descriptions of what will happen and why. The user sees the exact 
         },
     },
     {
-        "name": "install_package",
-        "description": """Install a Python package via pip and add it to the computation sandbox.
+        "name": "xhelio__manage_sandbox_packages",
+        "description": """Manage packages in the computation sandbox.
 
-BEFORE calling this tool:
+- action="list": Show all currently available packages in the sandbox.
+- action="install": Install a new package via pip, verify the import, and register it in the sandbox. Requires pip_name, import_path, sandbox_alias, and description.
+- action="add": Add an already-installed package to the sandbox. Requires import_path, sandbox_alias, and description.
+
+BEFORE calling action="install":
 1. Use web_search to research the correct pip package name and import path
 2. Verify the package name, import path, and sandbox alias
 
-This tool automatically asks the user for permission before installing.
-After successful installation, the package becomes available to data_ops and viz agents.""",
+After successful install/add, the package becomes available in run_code.""",
         "parameters": {
             "type": "object",
             "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["list", "install", "add"],
+                    "description": "Action to perform",
+                },
                 "pip_name": {
                     "type": "string",
-                    "description": "Package name for pip install (e.g., 'scikit-learn')",
+                    "description": "Package name for pip install (action='install' only, e.g., 'scikit-learn')",
                 },
                 "import_path": {
                     "type": "string",
-                    "description": "Python import path (e.g., 'sklearn')",
+                    "description": "Python import path (action='install' and 'add', e.g., 'sklearn')",
                 },
                 "sandbox_alias": {
                     "type": "string",
-                    "description": "Alias in the sandbox namespace (e.g., 'sklearn')",
+                    "description": "Alias in the sandbox namespace (action='install' and 'add', e.g., 'sklearn')",
                 },
                 "description": {
                     "type": "string",
-                    "description": "What this package does and why it is needed",
+                    "description": "What this package does and why it is needed (action='install' and 'add')",
                 },
                 "catalog_submodules": {
                     "type": "array",
@@ -271,173 +192,174 @@ After successful installation, the package becomes available to data_ops and viz
                     "description": "Submodules to catalog for function search (e.g., ['sklearn.decomposition'])",
                 },
             },
-            "required": ["pip_name", "import_path", "sandbox_alias", "description"],
-        },
-    },
-    {
-        "name": "manage_sandbox_packages",
-        "description": """Manage packages in the computation sandbox used by data_ops and viz agents.
-
-- action="list": Show all currently available packages in the sandbox.
-- action="add": Add an already-installed package to the sandbox. Requires user permission since it modifies the sandbox configuration on disk.
-
-Use this when a sub-agent reports needing a package that is already installed but not in the sandbox.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "action": {
-                    "type": "string",
-                    "enum": ["add", "list"],
-                    "description": "Action to perform",
-                },
-                "import_path": {
-                    "type": "string",
-                    "description": "Python import path (for 'add' action, e.g., 'sklearn')",
-                },
-                "sandbox_alias": {
-                    "type": "string",
-                    "description": "Alias in sandbox namespace (for 'add' action)",
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Package description (for 'add' action)",
-                },
-                "catalog_submodules": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "Submodules to catalog for function search (for 'add' action)",
-                },
-            },
             "required": ["action"],
         },
     },
     # --- Data Operations Tools ---
     {
-        "name": "fetch_data",
-        "description": """Download and load timeseries data from CDAWeb or PDS archives into memory.
-Downloads CDF files from CDAWeb or PDS PPI archives for the requested time range (requires network), then stores the data in memory for Python-side operations (magnitude, averages, differences, etc.) or plotting.
-Supports CDAWeb datasets (e.g., 'AC_H2_MFI') and PDS PPI datasets (URN IDs like 'urn:nasa:pds:cassini-mag-cal:data-1sec-krtp').
-
-The data is stored in memory with a label like 'AC_H2_MFI.BGSEc' for later reference by compute and plot tools.
-Returns a unique data ID (e.g., 'a3f7c2e1_1') in the response. Use this ID in all subsequent tool calls to reference this data.""",
+        "name": "xhelio__assets",
+        "description": "Read-only overview of all session assets with enriched metadata. "
+        "Returns summary counts, data shapes, file sizes, figure types, and lineage. "
+        "For mutations use manage_data, manage_files, or manage_figure.",
         "parameters": {
             "type": "object",
             "properties": {
-                "dataset_id": {
+                "action": {
                     "type": "string",
-                    "description": "Dataset ID — CDAWeb (e.g., 'AC_H2_MFI') or PDS URN (e.g., 'urn:nasa:pds:cassini-mag-cal:data-1sec-krtp')",
+                    "enum": ["list"],
+                    "description": "Action to perform. Only 'list' is supported.",
                 },
-                "parameter_id": {
-                    "type": "string",
-                    "description": "Parameter name (e.g., 'BGSEc', 'Magnitude', 'BR')",
-                },
-                "time_start": {
-                    "type": "string",
-                    "description": "Start time in ISO 8601 format (e.g., '2024-01-15' or '2024-01-15T06:00:00'). Resolve relative expressions like 'last week' to actual dates yourself using today's date.",
-                },
-                "time_end": {
-                    "type": "string",
-                    "description": "End time in ISO 8601 format (e.g., '2024-01-20' or '2024-01-15T18:00:00'). Resolve relative expressions like 'last week' to actual dates yourself using today's date.",
-                },
-                "force_large_download": {
-                    "type": "boolean",
-                    "description": "Set to true to override the 1 GB download safety limit. Only use when the user explicitly confirms a large download.",
-                },
-            },
-            "required": ["dataset_id", "parameter_id", "time_start", "time_end"],
-        },
-    },
-    {
-        "name": "list_fetched_data",
-        "description": "Show all data currently held in memory. Returns data IDs, labels, shapes, units, and time ranges. This is the ONLY way to discover what data is available before plotting or analysis. Use the returned 'id' field to reference data in describe_data and preview_data.",
-        "parameters": {"type": "object", "properties": {}, "required": []},
-    },
-    {
-        "name": "list_assets",
-        "description": "List all session assets: fetched data, uploaded files, and rendered figures. Filter by kind to narrow results. Use this to discover what's available in the current session.",
-        "parameters": {
-            "type": "object",
-            "properties": {
                 "kind": {
                     "type": "string",
                     "enum": ["data", "file", "figure"],
-                    "description": "Filter by asset kind. Omit to list all kinds.",
+                    "description": "Filter by asset kind. Omit for all.",
                 },
             },
             "required": [],
         },
     },
     {
-        "name": "plan_check",
-        "description": "Load the plan saved by the planner for the current session. Call this after delegate_to_planner completes to retrieve the full task list. Takes no arguments.",
+        "name": "plan",
+        "description": """Manage a multi-step execution plan for complex requests.
+
+Actions:
+- "create": Save a new plan. Provide tasks (array), summary, and reasoning.
+- "update": Update a step's status. Provide step (0-based index) and status ("completed"/"failed"/"skipped") or note.
+- "check": Return the current plan.
+- "drop": Discard the current plan.
+
+Use this when a request involves multiple data fetches, computations, or visualizations.
+Create the plan first, then execute steps via delegation tools, updating each step as you go.""",
         "parameters": {
             "type": "object",
-            "properties": {},
-            "required": []
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["create", "update", "check", "drop"],
+                    "description": "The plan action to perform.",
+                },
+                "tasks": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "description": {"type": "string"},
+                            "instruction": {"type": "string"},
+                            "mission": {"type": "string", "description": "Envoy ID, '__visualization__', '__data_ops__', '__data_io__', or null"},
+                        },
+                        "required": ["description", "instruction"],
+                    },
+                    "description": "Task list (action='create' only).",
+                },
+                "summary": {
+                    "type": "string",
+                    "description": "Brief summary of the plan (action='create' only).",
+                },
+                "reasoning": {
+                    "type": "string",
+                    "description": "Why this plan was chosen (action='create' only).",
+                },
+                "step": {
+                    "type": "integer",
+                    "description": "0-based step index (action='update' only).",
+                },
+                "status": {
+                    "type": "string",
+                    "enum": ["completed", "failed", "skipped"],
+                    "description": "New status for the step (action='update' only).",
+                },
+                "note": {
+                    "type": "string",
+                    "description": "Optional note to attach to the step (action='update' only).",
+                },
+            },
+            "required": ["action"],
         },
     },
     {
-        "name": "run_code",
+        "name": "xhelio__run_code",
         "description": """Execute Python code in a sandboxed environment. This is the universal compute tool — use it for ALL data transformations, analysis, and computation.
+
+The sandbox directory persists between calls within a session — downloaded files remain available in subsequent calls. Previously staged input files and other artifacts from prior calls may also exist.
 
 The sandbox allows:
 - Full imports: pandas, numpy, xarray, scipy, pywt, sklearn, statsmodels, astropy, etc.
+- Network access: requests, urllib, http, aiohttp — for downloading remote data files
 - File I/O within the sandbox directory (read/write parquet, CSV, JSON, text files)
 - Print output (captured and returned)
-- Assigning to `result` variable (optionally stored back to the data store)
 
 The sandbox blocks:
-- os, subprocess, shutil, sys, signal, socket, http, ctypes, threading
-- eval(), exec(), compile(), __import__()
+- subprocess, ctypes, multiprocessing (no process spawning)
+- eval(), exec(), compile() (no dynamic code execution)
 
-Input data from the store is staged as files in the sandbox directory:
+**Inputs from the data store:** Labels listed in `inputs` are staged as files in the sandbox:
 - DataFrames → `<label>.parquet` (read with `pd.read_parquet('<label>.parquet')`)
 - xarray DataArrays → `<label>.nc` (read with `xr.open_dataarray('<label>.nc')`)
 - Dicts → `<label>.json`
 - Strings → `<label>.txt`
 - Bytes → `<label>.bin`
+- File assets (IDs starting with `file_`) → staged under their original filename
 
-**Saving to the data store:** To persist computed results so they can be plotted or used by other tools, assign your output to the `result` variable AND set the `store_as` parameter. The `result` can be any type (DataFrame, dict, string, etc.). The data will be stored under the `store_as` label and available via `list_fetched_data`. Without `store_as`, results are NOT saved.
+**Saving to the data store:** Use the `outputs` parameter to map store labels to variable names. After execution, each named variable is read from the namespace and stored. Supports DataFrames (parquet), xarray objects (netCDF), and JSON-serializable types.
 
-For standalone computations (no input data), omit `inputs`. For fire-and-forget execution (just print output), omit `store_as`.""",
+Example: `outputs={"Bmag": "magnitude", "Bangle": "angle"}` stores the `magnitude` variable as "Bmag" and `angle` as "Bangle".
+
+**Download → Register → Process workflow:**
+1. Use `run_code` to download a file (it persists in the sandbox)
+2. Register it via `manage_files(action="register")` for DAG tracking and session replay
+3. Use `run_code` with `inputs=["file_<id>"]` to process the registered file
+
+For standalone computations (no input data), omit `inputs`. For fire-and-forget execution (just print output), omit `outputs`.""",
         "parameters": {
             "type": "object",
             "properties": {
                 "code": {
                     "type": "string",
-                    "description": "Python code to execute. Assign to `result` if storing output.",
+                    "description": "Python code to execute.",
                 },
                 "inputs": {
                     "type": "array",
                     "items": {"type": "string"},
-                    "description": "Store labels/IDs to stage as files in the sandbox directory.",
+                    "description": "Store labels/IDs or file asset IDs (prefix 'file_') to stage in the sandbox. Data entries are staged as typed files. File assets are staged under their original filename.",
                 },
-                "store_as": {
-                    "type": "string",
-                    "description": "Label to save the `result` variable under in the data store. The stored data becomes available for plotting and other tools via `list_fetched_data`. Required for persisting computed results — without this, nothing is saved.",
+                "outputs": {
+                    "type": "object",
+                    "description": "Mapping of {store_label: variable_name}. After execution, each variable_name is read from the namespace and stored under store_label. Supports DataFrames, xarray objects, and JSON-serializable types.",
+                    "additionalProperties": {"type": "string"},
                 },
                 "description": {
                     "type": "string",
                     "description": "What this code does (human-readable).",
                 },
+                "timeout": {
+                    "type": "integer",
+                    "description": "Execution timeout in seconds. Default 30. Use 120-300 for network downloads.",
+                },
             },
             "required": ["code", "description"],
         },
     },
-    # --- Function Documentation Tools ---
+    # --- Function Documentation Tool ---
     {
-        "name": "search_function_docs",
-        "description": """Search the scientific computing function catalog by keyword. Use this to find functions for signal processing, spectral analysis, filtering, interpolation, wavelets, statistics, etc.
+        "name": "xhelio__function_docs",
+        "description": """Look up scientific computing function documentation.
 
-Returns function names, sandbox call syntax, and one-line summaries.
+Actions:
+  search — keyword search across the function catalog. Returns function names, sandbox call syntax, and one-line summaries.
+  get    — full docstring and signature for a specific function. Use after search to understand parameters, return values, and usage examples before writing code.
 
 Cataloged libraries: scipy.signal, scipy.fft, scipy.interpolate, scipy.stats, scipy.integrate, pywt (PyWavelets).""",
         "parameters": {
             "type": "object",
             "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["search", "get"],
+                    "description": "Action to perform",
+                },
                 "query": {
                     "type": "string",
-                    "description": "Search keyword (e.g., 'bandpass filter', 'spectrogram', 'wavelet', 'interpolate')",
+                    "description": "(search) Search keyword (e.g., 'bandpass filter', 'spectrogram', 'wavelet', 'interpolate')",
                 },
                 "package": {
                     "type": "string",
@@ -449,142 +371,73 @@ Cataloged libraries: scipy.signal, scipy.fft, scipy.interpolate, scipy.stats, sc
                         "scipy.integrate",
                         "pywt",
                     ],
-                    "description": "Optional: restrict search to a specific package",
-                },
-            },
-            "required": ["query"],
-        },
-    },
-    {
-        "name": "get_function_docs",
-        "description": """Get the full docstring and signature for a specific function. Use this after search_function_docs to understand function parameters, return values, and usage examples before writing code.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "package": {
-                    "type": "string",
-                    "description": "Package path (e.g., 'scipy.signal', 'pywt')",
+                    "description": "(search) Restrict search to a specific package. (get) Package path — required.",
                 },
                 "function_name": {
                     "type": "string",
-                    "description": "Function name (e.g., 'butter', 'cwt', 'spectrogram')",
+                    "description": "(get) Function name (e.g., 'butter', 'cwt', 'spectrogram')",
                 },
             },
-            "required": ["package", "function_name"],
+            "required": ["action"],
         },
     },
     # --- Describe & Export Tools ---
     {
-        "name": "describe_data",
-        "description": """Get statistical summary of an in-memory timeseries. Use this when:
-- User asks "what does the data look like?" or "summarize the data"
-- You want to understand the data before deciding what operations to apply
-- User asks about min, max, average, or data quality
+        "name": "xhelio__manage_data",
+        "description": """Inspect, transform, and manage in-memory data.
 
-Returns statistics (min, max, mean, std, percentiles, NaN count) and the LLM can narrate findings.
-Optionally filter to a time sub-range (time_start/time_end) to inspect a specific region.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "data_id": {
-                    "type": "string",
-                    "description": "Data ID (from list_fetched_data) of the data in memory. Use this instead of label for precise reference.",
-                },
-                "label": {
-                    "type": "string",
-                    "description": "Label of the data in memory (e.g., 'AC_H2_MFI.BGSEc'). For backward compatibility — prefer data_id for precise reference.",
-                },
-                "time_start": {
-                    "type": "string",
-                    "description": "Optional start time (ISO 8601, no 'Z' suffix — e.g. '2024-01-15T00:00:00') to filter data before computing stats. Omit for full range.",
-                },
-                "time_end": {
-                    "type": "string",
-                    "description": "Optional end time (ISO 8601, no 'Z' suffix — e.g. '2024-01-20T00:00:00') to filter data before computing stats. Omit for full range.",
-                },
-            },
-            "required": ["data_id"],
-        },
-    },
-    {
-        "name": "preview_data",
-        "description": """Preview actual values (first/last N rows) of an in-memory timeseries. Use this when:
-- You need to see actual data values to diagnose an issue
-- User asks "show me the data" or "what values are in there?"
-- A plot looks wrong and you want to check the underlying data
-- You want to verify a computation produced correct results
-
-Returns timestamps and values for the requested rows. Use describe_data for statistics instead.
-Optionally filter to a time sub-range (time_start/time_end) to inspect a specific region.
-
-Use position='sampled' to get evenly-spaced rows across the full range (~20 rows).
-This is useful for spotting trends, gaps, or anomalies without reading the full dataset.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "data_id": {
-                    "type": "string",
-                    "description": "Data ID (from list_fetched_data) of the data in memory. Use this instead of label for precise reference.",
-                },
-                "label": {
-                    "type": "string",
-                    "description": "Label of the data in memory (e.g., 'AC_H2_MFI.BGSEc'). For backward compatibility — prefer data_id for precise reference.",
-                },
-                "n_rows": {
-                    "type": "integer",
-                    "description": "Number of rows to show from each end (default: 5, max: 50)",
-                },
-                "position": {
-                    "type": "string",
-                    "enum": ["head", "tail", "both", "sampled"],
-                    "description": "Which rows to show: 'head' (first N), 'tail' (last N), 'both' (default), or 'sampled' (evenly spaced across full range)",
-                },
-                "stride": {
-                    "type": "integer",
-                    "description": "Step size for 'sampled' mode (e.g., 10 = every 10th row). Default: auto (~20 rows). Ignored if position is not 'sampled'.",
-                },
-                "time_start": {
-                    "type": "string",
-                    "description": "Optional start time (ISO 8601, no 'Z' suffix — e.g. '2024-01-15T00:00:00') to filter data before previewing. Omit for full range.",
-                },
-                "time_end": {
-                    "type": "string",
-                    "description": "Optional end time (ISO 8601, no 'Z' suffix — e.g. '2024-01-20T00:00:00') to filter data before previewing. Omit for full range.",
-                },
-            },
-            "required": ["data_id"],
-        },
-    },
-    {
-        "name": "manage_data",
-        "description": """Manage in-memory data: merge time ranges or export to file.
-
-action='merge': Merge multiple time ranges of the same data product into one dataset.
-Only works for entries with the same hash prefix. Use list_fetched_data to find datasets
-with the same label but different time ranges.
-
-action='save': Export an in-memory timeseries to CSV (or NetCDF for xarray).
-ONLY use when the user explicitly asks to save/export/download data.""",
+Actions:
+  describe — Statistical summary (min, max, mean, std, percentiles, NaN count, cadence).
+             Use when you need to understand data before operations or the user asks about data quality.
+  preview  — Show actual values (first/last/sampled rows). Use to diagnose issues or verify computations.
+  merge    — Merge multiple time ranges of the same data product into one dataset.
+  save     — Export to CSV (DataFrames) or NetCDF (xarray). Only when user explicitly asks.
+  delete   — Remove a dataset from memory. Only when user explicitly asks.""",
         "parameters": {
             "type": "object",
             "properties": {
                 "action": {
                     "type": "string",
-                    "enum": ["merge", "save"],
+                    "enum": ["describe", "preview", "merge", "save", "delete"],
                     "description": "Action to perform.",
                 },
                 "data_id": {
                     "type": "string",
-                    "description": "For save: data ID to export.",
+                    "description": "Data ID (from assets). Required for describe, preview, save, delete.",
+                },
+                "label": {
+                    "type": "string",
+                    "description": "Label of the data in memory. For backward compatibility — prefer data_id.",
+                },
+                "time_start": {
+                    "type": "string",
+                    "description": "(describe, preview) Optional start time (ISO 8601, no 'Z' suffix) to filter data. Omit for full range.",
+                },
+                "time_end": {
+                    "type": "string",
+                    "description": "(describe, preview) Optional end time (ISO 8601, no 'Z' suffix) to filter data. Omit for full range.",
+                },
+                "n_rows": {
+                    "type": "integer",
+                    "description": "(preview) Number of rows to show from each end (default: 5, max: 50).",
+                },
+                "position": {
+                    "type": "string",
+                    "enum": ["head", "tail", "both", "sampled"],
+                    "description": "(preview) Which rows: 'head', 'tail', 'both' (default), or 'sampled' (evenly spaced).",
+                },
+                "stride": {
+                    "type": "integer",
+                    "description": "(preview) Step size for 'sampled' mode. Default: auto (~20 rows).",
                 },
                 "data_ids": {
                     "type": "array",
                     "items": {"type": "string"},
-                    "description": "For merge: list of data IDs to merge. Must all be the same data product.",
+                    "description": "(merge) List of data IDs to merge. Must all be the same data product.",
                 },
                 "filename": {
                     "type": "string",
-                    "description": "For save: output filename. Auto-generated from label if omitted.",
+                    "description": "(save) Output filename. Auto-generated from label if omitted.",
                 },
             },
             "required": ["action"],
@@ -592,7 +445,7 @@ ONLY use when the user explicitly asks to save/export/download data.""",
     },
     # --- Visualization ---
     {
-        "name": "render_plotly_json",
+        "name": "xhelio__render_plotly_json",
         "description": """Create or update the plot by providing a Plotly figure JSON.
 
 You generate a standard Plotly figure dict with `data` (array of traces) and `layout`.
@@ -602,7 +455,7 @@ trace dict. The system resolves each label to real data from memory and fills in
 ## Trace stubs
 
 Each trace in `data` needs:
-- `data_label` (string, required): label of the data in memory (from list_fetched_data)
+- `data_label` (string, required): label of the data in memory (from assets)
 - `type` (string): Plotly trace type — "scatter" (default), "heatmap", "bar", etc.
 - All other Plotly trace properties are passed through as-is (mode, line, marker, etc.)
 - `xaxis` and `yaxis` (strings): axis references like "x", "x2", "y", "y2" for multi-panel
@@ -631,16 +484,16 @@ The system automatically handles:
 ## Example: single panel
 
 ```json
-{"data": [{"type": "scatter", "data_label": "ACE_Bmag", "mode": "lines", "line": {"color": "red"}}],
- "layout": {"title": {"text": "ACE Magnetic Field"}, "yaxis": {"title": {"text": "nT"}}}}
+{"data": [{"type": "scatter", "data_label": "Bmag", "mode": "lines", "line": {"color": "red"}}],
+ "layout": {"title": {"text": "Magnetic Field"}, "yaxis": {"title": {"text": "nT"}}}}
 ```
 
 ## Example: two panels
 
 ```json
 {"data": [
-    {"type": "scatter", "data_label": "ACE_Bmag", "xaxis": "x", "yaxis": "y"},
-    {"type": "scatter", "data_label": "ACE_density", "xaxis": "x2", "yaxis": "y2"}
+    {"type": "scatter", "data_label": "Bmag", "xaxis": "x", "yaxis": "y"},
+    {"type": "scatter", "data_label": "density", "xaxis": "x2", "yaxis": "y2"}
   ],
  "layout": {
     "xaxis":  {"domain": [0, 1], "anchor": "y"},
@@ -661,106 +514,24 @@ The system automatically handles:
         },
     },
     {
-        "name": "manage_plot",
-        "description": """Imperative operations on the current figure: export, reset, get state.
-Use action parameter to select the operation.""",
+        "name": "xhelio__manage_plot",
+        "description": """Imperative operations on the current Plotly figure: reset or get state.
+Use action parameter to select the operation. For export, use manage_figure(action="export").""",
         "parameters": {
             "type": "object",
             "properties": {
                 "action": {
                     "type": "string",
-                    "enum": ["reset", "get_state", "export"],
+                    "enum": ["reset", "get_state"],
                     "description": "Action to perform",
-                },
-                "filename": {
-                    "type": "string",
-                    "description": "Output filename for export action",
-                },
-                "format": {
-                    "type": "string",
-                    "enum": ["png", "pdf"],
-                    "description": "Export format: 'png' (default) or 'pdf'",
                 },
             },
             "required": ["action"],
         },
     },
-    # --- Session Assets ---
-    {
-        "name": "manage_session_assets",
-        "description": "Manage session assets (plot, data, operations). "
-        "action='status' (default): snapshot of plot state (active/restorable/none), "
-        "data entries (loaded vs deferred), and operation count. "
-        "action='restore_plot': restore a deferred plot from a resumed session — "
-        "call this before delegate_to_insight when session context shows 'restorable'. "
-        "No-op if already active.",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "action": {
-                    "type": "string",
-                    "enum": ["status", "restore_plot"],
-                    "description": "Action to perform. Default: 'status'.",
-                },
-            },
-            "required": [],
-        },
-    },
-    # --- Full Catalog Search ---
-    {
-        "name": "search_full_catalog",
-        "description": """Search the locally cached dataset catalog (CDAWeb + PPI, 2500+ datasets) by keyword. Cache is refreshed from CDAWeb REST API every 24 hours. Use this when:
-- User asks about a mission or instrument NOT in the supported missions table
-- User wants to browse broadly across all available data (e.g., "what magnetospheric data is available?")
-- User asks about a mission you don't have a specialist agent for
-- User wants to search by physical quantity across all missions (e.g., "proton density datasets")
-
-Covers both CDAWeb and PDS PPI datasets. Returns matching dataset IDs and titles.
-
-Datasets found here can be fetched directly with `fetch_data` and plotted via `the active visualization agent` — no mission agent needed.
-
-Do NOT use this for missions already in the routing table (PSP, ACE, etc.) — use delegate_to_envoy instead.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "Search terms (mission name, instrument, physical quantity, e.g., 'cluster magnetic field', 'voyager 2', 'proton density')",
-                },
-                "max_results": {
-                    "type": "integer",
-                    "description": "Maximum results to return (default 20)",
-                },
-            },
-            "required": ["query"],
-        },
-    },
-    # --- Web Search (orchestrator + planner only) ---
-    {
-        "name": "web_search",
-        "description": """Search the web for real-world context. Use this when:
-- User asks about solar events, flares, CMEs, geomagnetic storms, or space weather
-- User asks what happened during a specific time period
-- User wants scientific context or explanations of heliophysics phenomena
-- User asks for an ICME list, event catalog, or recent news
-
-Use for contextual knowledge only. For mission datasets, use `search_datasets` and mission agents instead.
-
-Returns grounded text with source URLs.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "query": {
-                    "type": "string",
-                    "description": "The search query (e.g., 'major solar storms January 2024', 'ICME list 2024', 'X-class flare events')",
-                }
-            },
-            "required": ["query"],
-        },
-    },
     # --- Document Reading ---
     {
-        "name": "read_document",
+        "name": "xhelio__read_document",
         "description": """Read a PDF or image file and extract its text content using Gemini vision.
 Supported formats: PDF (.pdf), PNG (.png), JPEG (.jpg, .jpeg), GIF (.gif), WebP (.webp), BMP (.bmp), TIFF (.tiff).
 Use this when:
@@ -786,7 +557,7 @@ Returns the extracted text content and the saved file path.""",
     },
     # --- Memory review ---
     {
-        "name": "review_memory",
+        "name": "xhelio__review_memory",
         "description": "Rate how useful an injected operational memory was for this task. After completing your main task, pick at most 4 memories worth commenting on from the Operational Knowledge section.",
         "parameters": {
             "type": "object",
@@ -822,10 +593,11 @@ Returns the extracted text content and the saved file path.""",
     # --- Routing ---
     {
         "name": "delegate_to_envoy",
-        "description": """Delegate a data request to a mission-specific specialist agent. Use this when:
-- The user asks about a specific mission's data (e.g., "show me ACE magnetic field data")
-- The user wants to fetch, compute, or describe data from a specific mission
-- You need mission-specific knowledge (dataset IDs, parameter names, analysis patterns)
+        "description": """Delegate a data request to a specialist envoy agent. Use this when:
+- The user needs data or capabilities provided by a registered envoy
+- You need envoy-specific knowledge and tools
+
+Envoys are registered dynamically via manage_envoy. If no envoys are available, use manage_envoy to create one first.
 
 Do NOT delegate:
 - Visualization requests (plotting, zoom, render changes) — use the active visualization agent
@@ -843,7 +615,7 @@ The specialist will search datasets, fetch data, run computations, and report ba
             "properties": {
                 "envoy": {
                     "type": "string",
-                    "description": "Envoy ID (e.g., 'PSP', 'ACE', 'SolO', 'OMNI', 'WIND', 'DSCOVR', 'MMS', 'STEREO_A', 'PFSS').",
+                    "description": "Envoy ID. Must be a registered envoy.",
                 },
                 "request": {
                     "type": "string",
@@ -884,7 +656,7 @@ The specialist has access to all visualization methods and can see what data is 
             "properties": {
                 "request": {
                     "type": "string",
-                    "description": "The visualization request (e.g., 'plot ACE_Bmag and PSP_Bmag together', 'switch to scatter plot', 'set log scale on y-axis', 'create a histogram')",
+                    "description": "The visualization request (e.g., 'plot distance over time', 'switch to scatter plot', 'set log scale on y-axis', 'create a histogram')",
                 },
                 "context": {
                     "type": "string",
@@ -906,7 +678,7 @@ The specialist has access to all visualization methods and can see what data is 
     },
     # --- Matplotlib Visualization Tools ---
     {
-        "name": "generate_mpl_script",
+        "name": "xhelio__generate_mpl_script",
         "description": """Generate and execute a matplotlib script to create a visualization.
 
 Write a standard matplotlib script. Inside the script, these are PRE-IMPORTED (do NOT import them):
@@ -928,13 +700,13 @@ IMPORTANT:
 Example:
 ```python
 df = load_data("AC_H2_MFI.Magnitude")
-meta = load_meta("AC_H2_MFI.Magnitude")
+meta = load_meta("DATASET.Magnitude")
 
 fig, ax = plt.subplots(figsize=(12, 6))
 ax.plot(df.index, df.iloc[:, 0], linewidth=0.5)
 ax.set_xlabel("Time")
 ax.set_ylabel(f"Magnitude ({meta.get('units', '')})")
-ax.set_title("ACE Magnetic Field Magnitude")
+ax.set_title("Magnetic Field Magnitude")
 fig.autofmt_xdate()
 ```""",
         "parameters": {
@@ -953,7 +725,7 @@ fig.autofmt_xdate()
         },
     },
     {
-        "name": "manage_mpl_output",
+        "name": "xhelio__manage_mpl_output",
         "description": """Manage matplotlib outputs and scripts for the current session.
 
 Actions:
@@ -978,7 +750,7 @@ Actions:
         },
     },
     {
-        "name": "generate_jsx_component",
+        "name": "xhelio__generate_jsx_component",
         "description": """Generate and compile a React/Recharts JSX component for interactive visualization.
 
 Write a React component using Recharts. Inside the component, the following are available:
@@ -1053,7 +825,7 @@ export default Dashboard;
         },
     },
     {
-        "name": "manage_jsx_output",
+        "name": "xhelio__manage_jsx_output",
         "description": """Manage JSX component outputs for the current session.
 
 Actions:
@@ -1093,13 +865,13 @@ Do NOT delegate:
 
 Multiple concurrent data_ops delegations are supported — each request goes to a separate agent when the primary is busy.
 
-The DataOps agent can see all data currently in memory via list_fetched_data.""",
+The DataOps agent can see all data currently in memory via assets.""",
         "parameters": {
             "type": "object",
             "properties": {
                 "request": {
                     "type": "string",
-                    "description": "What to compute/analyze (e.g., 'compute magnitude of AC_H2_MFI.BGSEc', 'describe ACE_Bmag')",
+                    "description": "What to compute/analyze (e.g., 'compute magnitude of DATASET.VEC', 'describe label_name')",
                 },
                 "context": {
                     "type": "string",
@@ -1115,41 +887,40 @@ The DataOps agent can see all data currently in memory via list_fetched_data."""
         },
     },
     {
-        "name": "load_file",
-        "description": """Load a local data file (CSV, JSON, Parquet, Excel) into the data store.
+        "name": "xhelio__manage_files",
+        "description": """Manage file assets: register, list, inspect, or delete.
 
-Use this when:
-- The user provides a file path to tabular data
-- A collaborator sent a data file that needs to be loaded for analysis
-- Importing external datasets to combine with archive data
-
-Supports: CSV, TSV, JSON (records or table format), Parquet, Excel (.xlsx/.xls).
-Auto-detects datetime index columns for timeseries data.""",
+Actions:
+  list — List registered file assets.
+  register — Register a file and copy to session storage. Sandbox files are moved; external files are copied. Returns asset_id and session_path.
+  info — File metadata: size, type, path, linked data entries.
+  delete — Remove file registration and session copy.""",
         "parameters": {
             "type": "object",
             "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["list", "register", "info", "delete"],
+                    "description": "The operation to perform.",
+                },
+                "asset_id": {
+                    "type": "string",
+                    "description": "File asset ID (for info, delete).",
+                },
                 "file_path": {
                     "type": "string",
-                    "description": "Absolute path to the data file",
+                    "description": "Absolute file path to register (register only).",
                 },
-                "output_label": {
+                "name": {
                     "type": "string",
-                    "description": "Label for the loaded dataset (e.g., 'psp_fitted_velocities_e22')",
+                    "description": "Human-readable name. Defaults to filename.",
                 },
-                "time_column": {
+                "source_url": {
                     "type": "string",
-                    "description": "Column name to use as datetime index. Auto-detected if omitted.",
-                },
-                "description": {
-                    "type": "string",
-                    "description": "Human-readable description of the data",
-                },
-                "units": {
-                    "type": "string",
-                    "description": "Units string (e.g., 'km/s', 'nT')",
+                    "description": "URL the file was downloaded from (register only). Used for ID generation and provenance.",
                 },
             },
-            "required": ["file_path", "output_label"],
+            "required": ["action"],
         },
     },
     {
@@ -1162,11 +933,11 @@ Auto-detects datetime index columns for timeseries data.""",
 - The user says "load this file", "create a dataset from..." or "make a timeline of..."
 
 Do NOT delegate:
-- Data fetching from CDAWeb (use delegate_to_envoy)
+- Data fetching via envoys (use delegate_to_envoy)
 - Data transformations on existing in-memory data (use delegate_to_data_ops)
 - Visualization requests (use the active visualization agent)
 
-The DataIO agent can load files (load_file), read documents (read_document), create DataFrames (run_code with store_as), and see what data is in memory (list_fetched_data).""",
+The DataIO agent can load files (load_file), read documents (read_document), create DataFrames (run_code with outputs), and see what data is in memory (assets).""",
         "parameters": {
             "type": "object",
             "properties": {
@@ -1187,99 +958,24 @@ The DataIO agent can load files (load_file), read documents (read_document), cre
             "required": ["request"],
         },
     },
-    # --- SPICE Ephemeris Tools ---
-    # NOTE: SPICE tools are discovered dynamically from the heliospice MCP
-    # server at startup and added to both orchestrator and envoy call sets.
-    {
-        "name": "delegate_to_insight",
-        "description": """Delegate a plot analysis request to the Insight specialist. The Insight agent receives a high-resolution PNG of the current figure along with data context (labels, units, time ranges).
-
-Requires an active plot. If the plot is restorable (resumed session), call manage_session_assets(action="restore_plot") first.
-
-The `request` parameter controls what the Insight agent focuses on — phrase it as a specific question or task:
-- Scientific interpretation: "Analyze this figure and identify solar wind features and ICME signatures"
-- Quality check: "Check this figure for issues — wrong labels, missing data, artifacts, scale problems"
-- Specific question: "What's happening around January 15 in the magnetic field panel?"
-- Data validation: "Do the value ranges look physically reasonable? Are there suspicious gaps or spikes?"
-
-Do NOT use for plot modifications (zoom, restyle, add traces) — use the active visualization agent for those.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "request": {
-                    "type": "string",
-                    "description": "Specific question or task for the Insight agent — be precise about what to analyze, check, or interpret",
-                },
-                "context": {
-                    "type": "string",
-                    "description": "Optional additional context about what was plotted or what to focus on",
-                },
-                "wait": {
-                    "type": "boolean",
-                    "description": "If true, wait for result. If false, fire-and-forget (returns null immediately). Default true.",
-                    "default": True
-                },
-            },
-            "required": ["request"],
-        },
-    },
-    # --- delegate_to_planner ---
-    {
-        "name": "delegate_to_planner",
-        "description": """Delegate a complex request to the planning specialist agent. Use this when:
-- The request involves fetching data from multiple missions or datasets
-- The request needs dataset research (checking availability, time coverage)
-- You need a structured plan before executing delegations
-
-The planner will research datasets, verify time coverage, and produce a plan.
-It will respond with a summary. Then use plan_check() (no arguments) to load the full plan
-and execute tasks via delegation tools (delegate_to_envoy, delegate_to_viz, etc.).
-
-Use this as your FIRST action for any request involving fetching mission data.
-Skip this only for: answering questions, modifying existing figures, follow-up
-operations on already-loaded data.""",
-        "parameters": {
-            "type": "object",
-            "properties": {
-                "request": {
-                    "type": "string",
-                    "description": "The full user request to plan",
-                },
-                "context": {
-                    "type": "string",
-                    "description": "Additional context (time range, prior session state, etc.)",
-                },
-                "wait": {
-                    "type": "boolean",
-                    "description": "If true, wait for result. If false, fire-and-forget. Default true.",
-                    "default": True,
-                },
-            },
-            "required": ["request"],
-        },
-    },
     # ── Pipeline tool (consolidated) ─────────────────────────────────────
     {
-        "name": "pipeline",
-        "description": """Unified tool for pipeline operations: inspection, modification, execution, and saved pipelines.
+        "name": "xhelio__pipeline",
+        "description": """Inspect the data pipeline DAG or replay a past session's pipeline.
 
 Actions:
-- "info": Inspect the pipeline DAG. Use node_id for full detail, list_library=true for ops library.
-- "modify": Modify the pipeline DAG (update_params, remove, insert_after, apply_library_op, save_to_library). Uses sub_action parameter.
-- "execute": Re-execute stale/pending nodes. Use use_cache to control data fetching.
-- "save": Save the session pipeline as a reusable saved pipeline.
-- "run": Run a saved pipeline with a new time range, or list available pipelines.
-- "search": Search saved pipelines by query, mission, dataset, or tags.
+- "info": Inspect the pipeline DAG. Use node_id for a single node's detail, list_library=true for the reusable ops library.
+- "replay": Replay a past session's pipeline into the current session. Requires session_id. Optionally specify op_id to replay a subgraph, or time_range to override fetch parameters.
 
 Use this when:
 - User asks about the pipeline, workflow, or what operations were performed
-- User wants to modify, execute, save, run, or search pipelines""",
+- User wants to re-run a pipeline from a previous session""",
         "parameters": {
             "type": "object",
             "properties": {
                 "action": {
                     "type": "string",
-                    "enum": ["info", "modify", "execute", "save", "run", "search"],
+                    "enum": ["info", "replay"],
                     "description": "The pipeline action to perform",
                 },
                 # For action="info"
@@ -1291,94 +987,22 @@ Use this when:
                     "type": "boolean",
                     "description": "For info action: if true, list saved operations from the reusable ops library.",
                 },
-                # For action="modify"
-                "sub_action": {
+                # For action="replay"
+                "session_id": {
                     "type": "string",
-                    "enum": [
-                        "update_params",
-                        "remove",
-                        "insert_after",
-                        "apply_library_op",
-                        "save_to_library",
-                    ],
-                    "description": "For modify action: the mutation to perform.",
+                    "description": "For replay action: the session ID whose pipeline to replay.",
                 },
-                "params": {
+                "op_id": {
+                    "type": "string",
+                    "description": "For replay action: optional node ID to replay only its subgraph. If omitted, replays all leaf pipelines.",
+                },
+                "time_range": {
                     "type": "object",
-                    "description": "For modify action (update_params): new parameter values to merge. For insert_after: parameters for the new node.",
-                },
-                "after_id": {
-                    "type": "string",
-                    "description": "For modify action (insert_after): the node ID to insert after.",
-                },
-                "tool": {
-                    "type": "string",
-                    "description": "For modify action (insert_after): the tool type of the new node.",
-                },
-                "output_label": {
-                    "type": "string",
-                    "description": "For modify action (insert_after): the output label for the new node.",
-                },
-                "library_entry_id": {
-                    "type": "string",
-                    "description": "For modify action (apply_library_op): the library entry ID to apply.",
-                },
-                # For action="execute"
-                "use_cache": {
-                    "type": "boolean",
-                    "description": "For execute action: if true (default), use cached data. If false, re-fetch from remote.",
-                },
-                # For action="save"
-                "name": {
-                    "type": "string",
-                    "description": "For save action: human-readable name for the pipeline.",
-                },
-                "description": {
-                    "type": "string",
-                    "description": "For save action: description of what the pipeline produces.",
-                },
-                "render_op_id": {
-                    "type": "string",
-                    "description": "For save action: optional render op ID to extract pipeline from.",
-                },
-                "tags": {
-                    "type": "array",
-                    "items": {"type": "string"},
-                    "description": "For save action: optional tags for categorization.",
-                },
-                # For action="run"
-                "pipeline_id": {
-                    "type": "string",
-                    "description": "For run action: pipeline ID to execute.",
-                },
-                "time_start": {
-                    "type": "string",
-                    "description": "For run action: start time in ISO 8601 format.",
-                },
-                "time_end": {
-                    "type": "string",
-                    "description": "For run action: end time in ISO 8601 format.",
-                },
-                "list_pipelines": {
-                    "type": "boolean",
-                    "description": "For run action: if true, list all available pipelines.",
-                },
-                # For action="search"
-                "query": {
-                    "type": "string",
-                    "description": "For search action: natural language search query.",
-                },
-                "mission": {
-                    "type": "string",
-                    "description": "For search action: optional mission filter.",
-                },
-                "dataset": {
-                    "type": "string",
-                    "description": "For search action: optional dataset substring filter.",
-                },
-                "limit": {
-                    "type": "integer",
-                    "description": "For search action: max results (default 10).",
+                    "properties": {
+                        "start": {"type": "string", "description": "Start time in ISO 8601 format."},
+                        "end": {"type": "string", "description": "End time in ISO 8601 format."},
+                    },
+                    "description": "For replay action: optional time range override for fetch nodes.",
                 },
             },
             "required": ["action"],
@@ -1386,7 +1010,7 @@ Use this when:
     },
     # --- Event feed (pull-based session context) ---
     {
-        "name": "events",
+        "name": "xhelio__events",
         "description": """Unified tool for session event operations.
 
 Actions:
@@ -1420,9 +1044,9 @@ Actions:
             "required": ["action"],
         },
     },
-    # --- Event feed admin (orchestrator/planner only) ---
+    # --- Event feed admin (orchestrator only) ---
     {
-        "name": "events_admin",
+        "name": "xhelio__events_admin",
         "description": """Extended event feed with cross-agent visibility.
 
 Actions:
@@ -1457,7 +1081,7 @@ Actions:
                 # For action="peek"
                 "agent": {
                     "type": "string",
-                    "description": "For peek: agent name filter (viz_plotly, dataops, envoy:PSP, envoy, planner, etc.). Prefix match for envoy agents — 'envoy' matches 'envoy:PSP', 'envoy:ACE'.",
+                    "description": "For peek: agent name filter (viz_plotly, dataops, envoy, etc.). Prefix match for envoy agents — 'envoy' matches all envoy agents.",
                 },
                 "since_seconds": {
                     "type": "number",
@@ -1471,7 +1095,7 @@ Actions:
     {
         "name": "manage_workers",
         "description": (
-            "Manage running background work units (sub-agent delegations, planner tasks). "
+            "Manage running background work units (sub-agent delegations). "
             "action='list' (default): list all running units with id, kind, agent_type, "
             "agent_name, task_summary, request, elapsed time, and started_at. "
             "action='cancel': cancel work by unit_id, agent_type, or cancel_all."
@@ -1492,7 +1116,7 @@ Actions:
                     "type": "string",
                     "description": (
                         "For cancel: cancel all units of this agent type. "
-                        "One of: mission, data_ops, data_extraction, viz, planner."
+                        "One of: mission, data_ops, data_extraction, viz."
                     ),
                 },
                 "cancel_all": {
@@ -1501,6 +1125,51 @@ Actions:
                 },
             },
             "required": [],
+        },
+    },
+    {
+        "name": "xhelio__manage_figure",
+        "description": """Manage figure assets: list, display, save from URL, export, delete, or restore.
+
+Actions:
+  list — List registered figures. Optional figure_kind filter.
+  show — Re-display a figure in chat by asset_id.
+  save_from_url — Download an external image and register as figure asset.
+  export — Export a figure to file (PNG/PDF).
+  delete — Remove a figure from the registry.
+  restore — Restore deferred Plotly figure from resumed session.""",
+        "parameters": {
+            "type": "object",
+            "properties": {
+                "action": {
+                    "type": "string",
+                    "enum": ["list", "show", "save_from_url", "export", "delete", "restore"],
+                    "description": "The operation to perform.",
+                },
+                "asset_id": {
+                    "type": "string",
+                    "description": "Figure asset ID (for show, export, delete).",
+                },
+                "figure_kind": {
+                    "type": "string",
+                    "enum": ["plotly", "mpl", "jsx", "image"],
+                    "description": "Filter figures by rendering backend (list only).",
+                },
+                "url": {
+                    "type": "string",
+                    "description": "Image URL to download (save_from_url only).",
+                },
+                "name": {
+                    "type": "string",
+                    "description": "Human-readable name (save_from_url only).",
+                },
+                "format": {
+                    "type": "string",
+                    "enum": ["png", "pdf"],
+                    "description": "Export format (export only). Default: png.",
+                },
+            },
+            "required": ["action"],
         },
     },
 ]
@@ -1525,7 +1194,7 @@ COMMENTARY_PROPERTY = {
         "description": (
             "Brief active-voice sentence describing what you are doing and why. "
             "One sentence preferred, two max. Shown to the user in the chat. "
-            "Examples: 'Searching for ACE magnetic field datasets', "
+            "Examples: 'Searching for magnetic field datasets', "
             "'Computing the magnitude of the magnetic field vector', "
             "'Plotting proton density and speed on a two-panel figure'"
         ),
@@ -1548,6 +1217,33 @@ def _inject_commentary(schema: dict) -> dict:
     if "commentary" not in req:
         req.append("commentary")
     params["required"] = req
+    schema["parameters"] = params
+    return schema
+
+
+def _inject_envoy_list(schema: dict) -> dict:
+    """Inject the current envoy list into delegate_to_envoy's schema."""
+    if schema.get("name") != "delegate_to_envoy":
+        return schema
+    from agent.envoy_kinds.registry import MISSION_KINDS
+    envoy_ids = sorted(MISSION_KINDS.keys())
+
+    schema = dict(schema)  # shallow copy
+    params = dict(schema["parameters"])
+    props = dict(params.get("properties", {}))
+
+    if envoy_ids:
+        # Set enum so LLM can only pick valid envoy IDs
+        props["envoy"] = dict(props["envoy"], enum=envoy_ids)
+        envoy_list = ", ".join(envoy_ids)
+        schema["description"] = schema["description"].replace(
+            "Envoys are registered dynamically via manage_envoy. "
+            "If no envoys are available, use manage_envoy to create one first.",
+            f"Available envoys: {envoy_list}",
+        )
+    # else: keep the "no envoys" guidance as-is
+
+    params["properties"] = props
     schema["parameters"] = params
     return schema
 
@@ -1584,6 +1280,7 @@ def get_tool_schemas(names: list[str] | None = None) -> list[dict]:
     """
     base = TOOLS if names is None else [t for t in TOOLS if t["name"] in set(names)]
     base = [_inject_viz_backend_default(t) for t in base]
+    base = [_inject_envoy_list(t) for t in base]
     return [_inject_commentary(t) for t in base]
 
 
@@ -1610,27 +1307,56 @@ def get_function_schemas(names: list[str] | None = None) -> "list[FunctionSchema
     ]
 
 
-def register_dynamic_tools(tools: list[dict]) -> None:
-    """Register dynamically discovered tools (e.g. from MCP server).
 
-    Appends the tool schemas to TOOLS and rebuilds FULL_TOOL_REFERENCE.
-    Skips tools that are already registered (by name).
+def get_tool_schemas_for_agent(
+    names: list[str], agent_ctx: str
+) -> list[dict]:
+    """Return tool schemas filtered by agent permissions.
 
-    Args:
-        tools: List of tool schema dicts with 'name', 'description',
-               and 'parameters' keys.
+    For tools with action-level permissions, the ``enum`` list is filtered
+    to only show actions the agent is allowed to use.
     """
-    global FULL_TOOL_REFERENCE
+    import copy
+    from agent.agent_registry import AGENT_PERMISSIONS
 
-    existing = {t["name"] for t in TOOLS}
-    added = []
-    for t in tools:
-        if t["name"] not in existing:
-            TOOLS.append(t)
-            added.append(t["name"])
+    schemas = get_tool_schemas(names=names)
+    agent_perms = AGENT_PERMISSIONS.get(agent_ctx, {})
+    if not agent_perms:
+        return copy.deepcopy(schemas)
 
-    if added:
-        FULL_TOOL_REFERENCE = _build_full_tool_reference()
+    filtered = []
+    for schema in schemas:
+        tool_name = schema["name"]
+        allowed_actions = agent_perms.get(tool_name)
+        if allowed_actions is None:
+            filtered.append(copy.deepcopy(schema))
+            continue
+
+        schema = copy.deepcopy(schema)
+        props = schema.get("parameters", {}).get("properties", {})
+        action_prop = props.get("action")
+        if action_prop and "enum" in action_prop:
+            action_prop["enum"] = [
+                a for a in action_prop["enum"] if a in allowed_actions
+            ]
+        filtered.append(schema)
+    return filtered
+
+
+def get_function_schemas_for_agent(
+    names: list[str], agent_ctx: str
+) -> "list[FunctionSchema]":
+    """Return tool schemas as FunctionSchema objects, filtered by agent permissions."""
+    from .llm.base import FunctionSchema
+
+    return [
+        FunctionSchema(
+            name=ts["name"],
+            description=ts["description"],
+            parameters=ts["parameters"],
+        )
+        for ts in get_tool_schemas_for_agent(names=names, agent_ctx=agent_ctx)
+    ]
 
 
 # =============================================================================

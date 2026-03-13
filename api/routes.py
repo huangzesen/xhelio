@@ -23,30 +23,31 @@ from .models import (
     CommandResponse,
     CompletionRequest,
     ConfigUpdate,
-    ExecutePipelineRequest,
-    FetchDataRequest,
-    GalleryItemInfo,
-    GallerySaveRequest,
     InputHistoryEntry,
-    MissionInfo,
     PermissionResponse,
-    PipelineFeedbackRequest,
     RenameSessionRequest,
     ReplayRequest,
     ResumeSessionRequest,
     SavedSessionInfo,
     SavedSessionWithOps,
-    SavePipelineRequest,
     SessionInfo,
     SessionDetail,
     ServerStatus,
     ToggleGlobalMemoryRequest,
-    UpdatePipelineRequest,
     AssetOverviewResponse,
     AssetCategoryResponse,
     CleanupRequest,
     CleanupResponse,
     DirStatsResponse,
+)
+from agent.base_agent import _make_message, MSG_USER_INPUT
+from agent.session_persistence import (
+    save_session as _save_session,
+    restore_deferred_figure as _restore_deferred_figure,
+)
+from agent.token_tracking import (
+    get_token_usage as _get_aggregate_token_usage,
+    get_token_usage_breakdown as _get_token_usage_breakdown,
 )
 from .session_manager import APISessionManager
 from .streaming import SSEBridge
@@ -59,11 +60,19 @@ _start_time: float = 0.0
 _thread_pool: ThreadPoolExecutor = None  # type: ignore[assignment]
 
 
+def _get_memory_store(state):
+    """Get memory store from session context, or raise 404."""
+    ms = state.agent.session_ctx.memory_store
+    if ms is None:
+        raise HTTPException(404, "Memory system not available")
+    return ms
+
+
 def _session_info(state) -> dict:
     return SessionInfo(
         session_id=state.session_id,
         model=state.model,
-        viz_backend=getattr(state.agent, "_viz_backend", config.PREFER_VIZ_BACKEND),
+        viz_backend=config.PREFER_VIZ_BACKEND,
         created_at=state.created_at,
         last_active=state.last_active,
         busy=state.busy,
@@ -83,6 +92,21 @@ def _validate_path_component(value: str, name: str = "path component") -> None:
     pattern = _SAFE_OP_ID_RE if name == "op_id" else _SAFE_PATH_RE
     if not pattern.match(value):
         raise HTTPException(status_code=400, detail=f"Invalid {name}: {value!r}")
+
+
+def _dag_node_to_pipeline_record(op_id: str, attrs: dict) -> dict:
+    """Map DAG node attributes to frontend PipelineRecord shape."""
+    outputs = attrs.get("outputs", {})
+    return {
+        "id": op_id,
+        "timestamp": attrs.get("timestamp", ""),
+        "tool": attrs.get("tool", ""),
+        "status": attrs.get("status", ""),
+        "inputs": attrs.get("inputs", []),
+        "outputs": list(outputs.keys()) if isinstance(outputs, dict) else outputs,
+        "args": attrs.get("args", {}),
+        "error": attrs.get("error"),
+    }
 
 
 def _get_session_or_404(session_id: str):
@@ -151,7 +175,7 @@ async def list_saved_sessions():
 
 @router.get("/sessions/saved-with-ops")
 async def list_saved_sessions_with_ops():
-    """List saved sessions that have operations.json."""
+    """List saved sessions that have pipeline.json (DAG-based pipeline)."""
     from agent.session import SessionManager
 
     sm = SessionManager()
@@ -160,16 +184,15 @@ async def list_saved_sessions_with_ops():
     for s in sessions:
         sid = s["id"]
         session_dir = sm.base_dir / sid
-        ops_file = session_dir / "operations.json"
-        if not ops_file.exists():
+        dag_file = session_dir / "pipeline.json"
+        if not dag_file.exists():
             continue
         try:
-            ops = json.loads(ops_file.read_text(encoding="utf-8"))
-            op_count = len(ops) if isinstance(ops, list) else 0
-            has_renders = (
-                any(r.get("tool") in RENDER_TOOL_NAMES for r in ops)
-                if isinstance(ops, list)
-                else False
+            dag_data = json.loads(dag_file.read_text(encoding="utf-8"))
+            nodes = dag_data.get("nodes", [])
+            op_count = len(nodes)
+            has_renders = any(
+                n.get("tool") in RENDER_TOOL_NAMES for n in nodes
             )
         except Exception:
             op_count = 0
@@ -182,6 +205,7 @@ async def list_saved_sessions_with_ops():
                 name=s.get("name"),
                 model=s.get("model"),
                 turn_count=s.get("turn_count", 0),
+                round_count=s.get("round_count", 0),
                 last_message_preview=s.get("last_message_preview", ""),
                 created_at=s.get("created_at"),
                 updated_at=s.get("updated_at"),
@@ -283,24 +307,17 @@ async def list_sessions():
 async def get_session(session_id: str):
     """Get session detail including token usage and data entries."""
     state = _get_session_or_404(session_id)
-    usage = state.agent.get_token_usage()
-    plan_status = None
-    if state.agent._current_plan:
-        plan = state.agent._current_plan
-        if isinstance(plan, dict):
-            plan_status = plan.get("status", "unknown")
-        else:
-            plan_status = plan.status.value
+    # Aggregate token usage across orchestrator + all sub-agents
+    usage = _get_aggregate_token_usage(state.agent)
     return SessionDetail(
         session_id=state.session_id,
         model=state.model,
-        viz_backend=getattr(state.agent, "_viz_backend", config.PREFER_VIZ_BACKEND),
+        viz_backend=config.PREFER_VIZ_BACKEND,
         created_at=state.created_at,
         last_active=state.last_active,
         busy=state.busy,
         token_usage=usage,
         data_entries=len(state.store),
-        plan_status=plan_status,
     ).model_dump(mode="json")
 
 
@@ -332,8 +349,8 @@ async def chat(session_id: str, req: ChatRequest):
         loop = asyncio.get_running_loop()
         session_manager.start_loop(state, loop)
 
-    # Push message into the input queue — run_loop() will process it
-    state.agent.push_input(req.message)
+    # Push message into the input queue — _run_loop() will process it
+    state.agent.inbox.put(_make_message(MSG_USER_INPUT, "user", req.message))
 
     return {"status": "queued"}
 
@@ -404,16 +421,20 @@ async def upload_file(session_id: str, file: UploadFile = FastAPIFile(...)):
     dest.write_bytes(content)
 
     # Register in the session's asset registry (pure I/O, no LLM turn)
-    asset = state.agent._asset_registry.register_file(
-        filename=file.filename or safe_name,
-        path=dest,
-        size_bytes=len(content),
-        mime_type=file.content_type or "",
-    )
+    ar = state.agent.session_ctx.asset_registry
+    asset_id = None
+    if ar:
+        asset = ar.register_file(
+            filename=file.filename or safe_name,
+            path=dest,
+            size_bytes=len(content),
+            mime_type=file.content_type or "",
+        )
+        asset_id = asset.asset_id
 
     return {
         "status": "uploaded",
-        "asset_id": asset.asset_id,
+        "asset_id": asset_id,
         "filename": dest.name,
         "size": len(content),
     }
@@ -426,9 +447,10 @@ async def upload_file(session_id: str, file: UploadFile = FastAPIFile(...)):
 async def get_assets(session_id: str, kind: str | None = None):
     """List session assets (data, files, figures)."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_asset_registry"):
+    ar = state.agent.session_ctx.asset_registry
+    if ar is None:
         return []
-    return state.agent._asset_registry.list_assets(kind=kind)
+    return ar.list_assets_enriched(kind=kind)
 
 
 # ---- Cancel ----
@@ -438,7 +460,9 @@ async def get_assets(session_id: str, kind: str | None = None):
 async def cancel(session_id: str):
     """Signal cancellation — returns immediately."""
     state = _get_session_or_404(session_id)
-    state.agent.request_cancel()
+    cancel_event = state.agent.session_ctx.cancel_event
+    if cancel_event:
+        cancel_event.set()
     return {"status": "cancel_requested"}
 
 
@@ -449,9 +473,13 @@ async def cancel(session_id: str):
 async def permission_response(session_id: str, req: PermissionResponse):
     """Respond to a permission request from the agent."""
     state = _get_session_or_404(session_id)
-    found = state.agent.set_permission_response(req.request_id, req.approved)
-    if not found:
-        raise HTTPException(404, f"Permission request {req.request_id} not found or expired")
+    gate = state.agent.session_ctx.request_permission
+    if gate is None:
+        raise HTTPException(501, "Permission system not available")
+    from agent.permission_gate import PermissionGate
+    if not isinstance(gate, PermissionGate):
+        raise HTTPException(501, "Permission system not available")
+    gate.resolve(req.request_id, approved=req.approved, reason="user response")
     return {"status": "ok"}
 
 
@@ -495,14 +523,16 @@ async def session_events(session_id: str):
 async def list_work(session_id: str):
     """List active work units in the Control Center."""
     state = _get_session_or_404(session_id)
-    return {"work_units": state.agent._control_center.list_active()}
+    wt = state.agent.session_ctx.work_tracker
+    return {"work_units": wt.list_active() if wt else []}
 
 
 @router.post("/sessions/{session_id}/work/{unit_id}/cancel", status_code=202)
 async def cancel_work_unit(session_id: str, unit_id: str):
     """Cancel a specific work unit via the Control Center."""
     state = _get_session_or_404(session_id)
-    ok = state.agent._control_center.cancel(unit_id)
+    wt = state.agent.session_ctx.work_tracker
+    ok = wt.cancel(unit_id) if wt else False
     return {"status": "ok" if ok else "not_found"}
 
 
@@ -548,15 +578,11 @@ async def execute_command(session_id: str, req: CommandRequest):
     state = _get_session_or_404(session_id)
 
     if cmd == "status":
-        usage = state.agent.get_token_usage()
-        plan_status = None
-        if state.agent._current_plan:
-            plan_status = state.agent._current_plan.status.value
+        usage = _get_aggregate_token_usage(state.agent)
         lines = [
             f"**Model:** `{state.model}`",
             f"**Session:** `{state.session_id}`",
             f"**Data entries:** {len(state.store)}",
-            f"**Plan status:** {plan_status or 'none'}",
             f"**Token usage:**",
         ]
         if usage:
@@ -585,7 +611,7 @@ async def execute_command(session_id: str, req: CommandRequest):
         return CommandResponse(command=cmd, content="\n".join(lines)).model_dump()
 
     if cmd == "figure":
-        fig = state.agent._renderer.get_figure()
+        fig = state.agent.session_ctx.renderer.get_figure()
         status = "A figure is available." if fig is not None else "No figure available."
         return CommandResponse(command=cmd, content=status).model_dump()
 
@@ -618,7 +644,7 @@ async def execute_command(session_id: str, req: CommandRequest):
             # Force-save current session to disk
             session_manager.run_in_session_context(
                 state,
-                state.agent.save_session,
+                lambda: _save_session(state.agent),
             )
 
             # Copy session directory to a new ID
@@ -715,16 +741,16 @@ async def get_figure(session_id: str):
     """Get the current Plotly figure JSON (or URL if > 20 MB)."""
     state = _get_session_or_404(session_id)
     # Trigger deferred figure restore if needed (lazy load from session resume)
-    if state.agent._deferred_figure_state is not None:
+    if getattr(state.agent.session_ctx, "deferred_figure_state", None) is not None:
         loop = asyncio.get_running_loop()
         await loop.run_in_executor(
             _thread_pool,
             lambda: session_manager.run_in_session_context(
                 state,
-                state.agent._restore_deferred_figure,
+                lambda: _restore_deferred_figure(state.agent.session_ctx),
             ),
         )
-    fig = state.agent._renderer.get_figure()
+    fig = state.agent.session_ctx.renderer.get_figure()
     return _figure_response(fig, session_id)
 
 
@@ -782,37 +808,39 @@ def _lazy_generate_session_thumbnail(session_dir: Path) -> bool:
 def _lazy_generate_render_thumbnail(session_dir: Path, op_id: str) -> bool:
     """Try to generate a missing per-render thumbnail for a specific operation.
 
-    Loads ``operations.json`` to find the matching render op, loads data
-    pickles (lazy), reconstructs the figure, and exports a PNG thumbnail.
+    Loads ``pipeline.json`` (PipelineDAG format) to find the matching render
+    node, loads data pickles (lazy), reconstructs the figure, and exports a
+    PNG thumbnail.
 
     Returns True if the thumbnail was successfully generated.
     """
-    ops_path = session_dir / "operations.json"
+    dag_path = session_dir / "pipeline.json"
     data_dir = session_dir / "data"
 
-    if not ops_path.exists() or not data_dir.exists():
+    if not dag_path.exists() or not data_dir.exists():
         return False
 
     try:
-        operations = json.loads(ops_path.read_text(encoding="utf-8"))
-        if not isinstance(operations, list):
+        dag_data = json.loads(dag_path.read_text(encoding="utf-8"))
+        nodes = dag_data.get("nodes", [])
+        if not isinstance(nodes, list):
             return False
 
-        # Find the matching render op
-        op = None
-        for record in operations:
+        # Find the matching render node
+        node = None
+        for n in nodes:
             if (
-                record.get("id") == op_id
-                and record.get("tool") == "render_plotly_json"
-                and record.get("status") == "success"
+                n.get("id") == op_id
+                and n.get("tool") == "render_plotly_json"
+                and n.get("status") == "success"
             ):
-                op = record
+                node = n
                 break
-        if op is None:
+        if node is None:
             return False
 
-        fig_json = op.get("args", {}).get("figure_json", {})
-        input_labels = op.get("inputs", [])
+        fig_json = node.get("args", {}).get("figure_json", {})
+        input_labels = node.get("inputs", [])
         if not fig_json or not input_labels:
             return False
 
@@ -890,7 +918,7 @@ async def get_render_thumbnail(session_id: str, op_id: str):
     for each render_plotly_json call in the session history.
 
     If the thumbnail doesn't exist on disk, attempts to regenerate it
-    from operations.json + data pickles before returning 404.
+    from pipeline.json + data pickles before returning 404.
     """
     _validate_path_component(session_id, "session_id")
     _validate_path_component(op_id, "op_id")
@@ -1103,11 +1131,15 @@ async def get_follow_ups(session_id: str):
     """Generate contextual follow-up suggestions."""
     state = _get_session_or_404(session_id)
     loop = asyncio.get_running_loop()
+    _orch = state.agent.session_ctx.agent_state.get("orchestrator")
+    inline = _orch.inline if _orch else None
+    if inline is None:
+        return {"suggestions": []}
     try:
         suggestions = await loop.run_in_executor(
             _thread_pool,
             lambda: session_manager.run_in_session_context(
-                state, state.agent.generate_follow_ups, 2
+                state, lambda: inline.generate_follow_ups(2)
             ),
         )
     except Exception:
@@ -1115,23 +1147,44 @@ async def get_follow_ups(session_id: str):
     return {"suggestions": suggestions}
 
 
+
 # ---- Plan management ----
 
 
 @router.get("/sessions/{session_id}/plan")
-async def get_plan_status(session_id: str):
-    """Get the current plan as structured JSON.
-
-    Only returns the plan that belongs to this session's agent instance,
-    not plans from the global TaskStore (which persist across sessions).
-    """
+async def get_plan(session_id: str):
+    """Get the current in-memory plan as structured JSON."""
     state = _get_session_or_404(session_id)
-    plan = state.agent.get_current_plan()
+    _orch = state.agent.session_ctx.agent_state.get("orchestrator")
+    plan = _orch.current_plan if _orch else None
     if plan is None:
         return {"plan": None}
-    from agent.planner import format_plan_structured
+    return {"plan": _format_plan_structured(plan)}
 
-    return {"plan": format_plan_structured(plan)}
+
+def _format_plan_structured(plan: dict) -> dict:
+    """Format a plan dict for the frontend."""
+    raw_tasks = plan.get("tasks", [])
+    steps = []
+    for task in raw_tasks:
+        step: dict = {
+            "title": task.get("description", ""),
+            "details": task.get("instruction", ""),
+            "status": task.get("status", "pending"),
+            "mission": task.get("mission"),
+        }
+        note = task.get("note")
+        if note:
+            step["note"] = note
+        steps.append(step)
+    done = sum(1 for s in steps if s["status"] == "completed")
+    return {
+        "total_steps": len(raw_tasks),
+        "progress": f"{done}/{len(raw_tasks)} completed",
+        "summary": plan.get("summary", ""),
+        "reasoning": plan.get("reasoning", ""),
+        "steps": steps,
+    }
 
 
 # ---- Memories ----
@@ -1163,187 +1216,12 @@ async def recent_errors(days: int = 7, limit: int = 20):
 # ---- Validation overview (stateless) ----
 
 
-@router.get("/validation/overview")
-async def validation_overview():
-    """Return validation status for all datasets with override files.
-
-    Scans ~/.xhelio/mission_overrides/ and classifies discrepancies
-    (phantom / undocumented) for each dataset, grouped by mission.
-    """
-    from knowledge.mission_loader import _get_overrides_dir
-    from knowledge.catalog import list_missions_catalog
-
-    overrides_dir = _get_overrides_dir()
-    if not overrides_dir.exists():
-        return {"missions": []}
-
-    # Build mission_stem -> display_name mapping
-    stem_to_name: dict[str, str] = {}
-    for sc in list_missions_catalog():
-        stem_to_name[sc["id"]] = sc["name"]
-
-    missions: list[dict] = []
-
-    for mission_dir in sorted(overrides_dir.iterdir()):
-        if not mission_dir.is_dir():
-            continue
-        mission_stem = mission_dir.name
-        display_name = stem_to_name.get(mission_stem, mission_stem)
-
-        datasets: list[dict] = []
-        total_phantom = 0
-        total_undocumented = 0
-        validated_count = 0
-        issue_count = 0
-
-        for json_file in sorted(mission_dir.glob("*.json")):
-            try:
-                data = json.loads(json_file.read_text(encoding="utf-8"))
-            except (json.JSONDecodeError, OSError):
-                continue
-            if not isinstance(data, dict):
-                continue
-
-            dataset_id = json_file.stem
-            validations_raw = data.get("_validations", [])
-            is_validated = bool(data.get("_validated"))
-
-            # Classify discrepancies (same logic as metadata_client.get_dataset_quality_report)
-            if validations_raw:
-                annotations: dict = {}
-                for v in validations_raw:
-                    for param, ann in v.get("discrepancies", {}).items():
-                        if param not in annotations and isinstance(ann, dict):
-                            annotations[param] = ann
-            else:
-                annotations = data.get("parameters_annotations", {})
-
-            phantom_params: list[str] = []
-            undocumented_params: list[str] = []
-            for param, ann in annotations.items():
-                if not isinstance(ann, dict):
-                    continue
-                category = ann.get("_category", "")
-                note = ann.get("_note", "")
-                if category == "phantom" or (
-                    not category
-                    and ("not found in data" in note or "not found in archive" in note)
-                ):
-                    phantom_params.append(param)
-                elif category == "undocumented" or (
-                    not category
-                    and ("found in data" in note or "found in archive" in note)
-                ):
-                    undocumented_params.append(param)
-
-            phantom_params.sort()
-            undocumented_params.sort()
-
-            # Build validation records
-            validation_records: list[dict] = []
-            for i, v in enumerate(validations_raw):
-                disc_count = len(v.get("discrepancies", {}))
-                validation_records.append(
-                    {
-                        "version": v.get("version", i + 1),
-                        "source_file": v.get("source_file", ""),
-                        "validated_at": v.get("validated_at", ""),
-                        "source_url": v.get("source_url", ""),
-                        "discrepancy_count": disc_count,
-                    }
-                )
-
-            has_issues = bool(phantom_params or undocumented_params)
-            if has_issues:
-                issue_count += 1
-            if is_validated:
-                validated_count += 1
-            total_phantom += len(phantom_params)
-            total_undocumented += len(undocumented_params)
-
-            datasets.append(
-                {
-                    "dataset_id": dataset_id,
-                    "validated": is_validated,
-                    "validation_count": len(validations_raw),
-                    "phantom_count": len(phantom_params),
-                    "undocumented_count": len(undocumented_params),
-                    "phantom_params": phantom_params,
-                    "undocumented_params": undocumented_params,
-                    "validations": validation_records,
-                }
-            )
-
-        if datasets:
-            missions.append(
-                {
-                    "mission_stem": mission_stem,
-                    "display_name": display_name,
-                    "dataset_count": len(datasets),
-                    "validated_count": validated_count,
-                    "issue_count": issue_count,
-                    "total_phantom": total_phantom,
-                    "total_undocumented": total_undocumented,
-                    "datasets": datasets,
-                }
-            )
-
-    return {"missions": missions}
-
-
-# ---- Catalog browsing (stateless) ----
-
-
-@router.get("/catalog/missions")
-async def list_missions():
-    """List all supported missions."""
-    from knowledge.catalog import list_missions_catalog
-
-    return [
-        MissionInfo(id=s["id"], name=s["name"]).model_dump()
-        for s in list_missions_catalog()
-    ]
-
-
-@router.get("/catalog/missions/{mission_id}/datasets")
-async def list_mission_datasets(mission_id: str):
-    """List datasets for a mission."""
-    from knowledge.metadata_client import browse_datasets
-
-    datasets = browse_datasets(mission_id)
-    if datasets is None:
-        raise HTTPException(status_code=404, detail=f"Mission '{mission_id}' not found")
-    return datasets
-
-
-@router.get("/catalog/datasets/{dataset_id}/parameters")
-async def list_dataset_parameters(dataset_id: str):
-    """List plottable parameters for a dataset."""
-    from knowledge.metadata_client import list_parameters
-
-    loop = asyncio.get_running_loop()
-    params = await loop.run_in_executor(_thread_pool, list_parameters, dataset_id)
-    return params
-
-
-@router.get("/catalog/datasets/{dataset_id}/time-range")
-async def get_dataset_time_range(dataset_id: str):
-    """Get the time range for a dataset."""
-    from knowledge.metadata_client import get_dataset_time_range as _get_time_range
-
-    loop = asyncio.get_running_loop()
-    result = await loop.run_in_executor(_thread_pool, _get_time_range, dataset_id)
-    if result is None:
-        return {"start": None, "stop": None}
-    return result
-
-
 # ---- Mission data management ----
 
 
 @router.get("/catalog/status")
 async def mission_data_status():
-    """Get mission data status (count, datasets, age) + loading state."""
+    """Get envoy registration status."""
     from knowledge.startup import get_mission_status
     from knowledge.loading_state import get_loading_state
 
@@ -1352,10 +1230,6 @@ async def mission_data_status():
     return {
         "mission_count": status["mission_count"],
         "mission_names": status["mission_names"],
-        "total_datasets": status["total_datasets"],
-        "oldest_date": status["oldest_date"].isoformat()
-        if status["oldest_date"]
-        else None,
         "loading": loading.to_dict(),
     }
 
@@ -1402,142 +1276,7 @@ async def catalog_loading_progress():
     return EventSourceResponse(event_generator())
 
 
-@router.post("/catalog/refresh")
-async def refresh_mission_data():
-    """Refresh dataset time ranges (SSE stream with progress)."""
-    loop = asyncio.get_running_loop()
-    bridge = SSEBridge(loop)
-
-    def _refresh():
-        try:
-            from knowledge.startup import run_refresh
-
-            bridge.callback(
-                {
-                    "type": "progress",
-                    "phase": "refresh",
-                    "step": "start",
-                    "message": "Starting time-range refresh...",
-                }
-            )
-            result = run_refresh(progress_callback=bridge.callback)
-            bridge.finish(
-                {
-                    "type": "done",
-                    "message": f"Refresh complete: {result['datasets_updated']} datasets updated",
-                }
-            )
-        except Exception as e:
-            bridge.error(str(e))
-
-    loop.run_in_executor(_thread_pool, _refresh)
-
-    async def event_generator():
-        async for event in bridge.events():
-            event_type = event.get("type", "message")
-            yield {"event": event_type, "data": json.dumps(event)}
-
-    return EventSourceResponse(event_generator())
-
-
-@router.post("/catalog/rebuild-cdaweb")
-async def rebuild_cdaweb():
-    """Rebuild CDAWeb mission data (SSE stream with progress)."""
-    loop = asyncio.get_running_loop()
-    bridge = SSEBridge(loop)
-
-    def _rebuild():
-        try:
-            from knowledge.startup import run_cdaweb_rebuild
-
-            bridge.callback(
-                {
-                    "type": "progress",
-                    "phase": "cdaweb",
-                    "step": "start",
-                    "message": "Starting CDAWeb rebuild...",
-                }
-            )
-            run_cdaweb_rebuild(progress_callback=bridge.callback)
-            bridge.finish({"type": "done", "message": "CDAWeb rebuild complete"})
-        except Exception as e:
-            bridge.error(str(e))
-
-    loop.run_in_executor(_thread_pool, _rebuild)
-
-    async def event_generator():
-        async for event in bridge.events():
-            event_type = event.get("type", "message")
-            yield {"event": event_type, "data": json.dumps(event)}
-
-    return EventSourceResponse(event_generator())
-
-
-@router.post("/catalog/rebuild-ppi")
-async def rebuild_ppi():
-    """Rebuild PPI mission data (SSE stream with progress)."""
-    loop = asyncio.get_running_loop()
-    bridge = SSEBridge(loop)
-
-    def _rebuild():
-        try:
-            from knowledge.startup import run_ppi_rebuild
-
-            bridge.callback(
-                {
-                    "type": "progress",
-                    "phase": "ppi",
-                    "step": "start",
-                    "message": "Starting PPI rebuild...",
-                }
-            )
-            run_ppi_rebuild(progress_callback=bridge.callback)
-            bridge.finish({"type": "done", "message": "PPI rebuild complete"})
-        except Exception as e:
-            bridge.error(str(e))
-
-    loop.run_in_executor(_thread_pool, _rebuild)
-
-    async def event_generator():
-        async for event in bridge.events():
-            event_type = event.get("type", "message")
-            yield {"event": event_type, "data": json.dumps(event)}
-
-    return EventSourceResponse(event_generator())
-
-
-# ---- Data fetch + preview (session-scoped) ----
-
-
-@router.post("/sessions/{session_id}/fetch-data", status_code=201)
-async def fetch_data_endpoint(session_id: str, req: FetchDataRequest):
-    """Fetch data from CDAWeb/PPI and store in session's DataStore."""
-    state = _get_session_or_404(session_id)
-    from data_ops.fetch import fetch_data
-    from data_ops.store import DataEntry
-
-    loop = asyncio.get_running_loop()
-
-    def _do_fetch():
-        result = fetch_data(
-            req.dataset_id, req.parameter_id, req.time_min, req.time_max
-        )
-        label = f"{req.dataset_id}.{req.parameter_id}"
-        entry = DataEntry(
-            label=label,
-            data=result["data"],
-            units=result.get("units", ""),
-            description=result.get("description", ""),
-            source="cdf",
-        )
-        state.store.put(entry)
-        return entry.summary()
-
-    try:
-        summary = await loop.run_in_executor(_thread_pool, _do_fetch)
-    except Exception as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    return summary
+# ---- Data preview (session-scoped) ----
 
 
 @router.get("/sessions/{session_id}/data/{label}/preview")
@@ -1597,7 +1336,6 @@ async def get_config():
     defaults = {
         "llm_provider": "gemini",
         "providers": _PROVIDER_DEFAULTS,
-        "catalog_search_method": "semantic",
         "parallel_fetch": True,
         "parallel_max_workers": 4,
         "max_plot_points": 10000,
@@ -2013,9 +1751,9 @@ async def delete_api_key(name: str):
 async def list_memories(session_id: str):
     """List all memories for a session with stats."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    ms = state.agent.session_ctx.memory_store
+    if ms is None:
         return {"memories": [], "global_enabled": True, "stats": None}
-    ms = state.agent._memory_store
 
     from agent.memory import estimate_memory_tokens, MEMORY_TOKEN_BUDGET
     import re
@@ -2107,9 +1845,9 @@ async def list_memories(session_id: str):
 async def delete_memory(session_id: str, memory_id: str):
     """Delete a specific memory."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         raise HTTPException(status_code=404, detail="No memory store")
-    if not state.agent._memory_store.remove(memory_id):
+    if not state.agent.session_ctx.memory_store.remove(memory_id):
         raise HTTPException(status_code=404, detail=f"Memory '{memory_id}' not found")
     return {"status": "deleted"}
 
@@ -2118,9 +1856,9 @@ async def delete_memory(session_id: str, memory_id: str):
 async def toggle_global_memory(session_id: str, req: ToggleGlobalMemoryRequest):
     """Toggle global memory enabled/disabled."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         raise HTTPException(status_code=404, detail="No memory store")
-    state.agent._memory_store.toggle_global(req.enabled)
+    state.agent.session_ctx.memory_store.toggle_global(req.enabled)
     return {"global_enabled": req.enabled}
 
 
@@ -2128,9 +1866,9 @@ async def toggle_global_memory(session_id: str, req: ToggleGlobalMemoryRequest):
 async def clear_all_memories(session_id: str):
     """Clear all memories."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         return {"status": "ok"}
-    state.agent._memory_store.replace_all([])
+    state.agent.session_ctx.memory_store.replace_all([])
     return {"status": "cleared"}
 
 
@@ -2138,9 +1876,9 @@ async def clear_all_memories(session_id: str):
 async def refresh_memories(session_id: str):
     """Reload memories from disk."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         return {"status": "no_store"}
-    state.agent._memory_store.load()
+    state.agent.session_ctx.memory_store.load()
     return {"status": "refreshed"}
 
 
@@ -2154,9 +1892,9 @@ async def search_memories(
 ):
     """Search memories by query, type, and/or scope."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         return {"results": []}
-    ms = state.agent._memory_store
+    ms = state.agent.session_ctx.memory_store
     results = ms.search(q, mem_type=type, scope=scope, limit=limit)
     from dataclasses import asdict
 
@@ -2167,9 +1905,9 @@ async def search_memories(
 async def get_archived_memories(session_id: str):
     """Get truly archived (dropped/deleted) memories, excluding versioned predecessors."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         return {"archived": []}
-    ms = state.agent._memory_store
+    ms = state.agent.session_ctx.memory_store
     from dataclasses import asdict
 
     return {"archived": [asdict(m) for m in ms.get_truly_archived()]}
@@ -2179,9 +1917,9 @@ async def get_archived_memories(session_id: str):
 async def get_memory_version_history(session_id: str, memory_id: str):
     """Get version history chain for a specific memory."""
     state = _get_session_or_404(session_id)
-    if not hasattr(state.agent, "_memory_store") or state.agent._memory_store is None:
+    if state.agent.session_ctx.memory_store is None:
         raise HTTPException(status_code=404, detail="No memory store")
-    ms = state.agent._memory_store
+    ms = state.agent.session_ctx.memory_store
     from dataclasses import asdict
 
     versions = ms.get_version_history(memory_id)
@@ -2194,98 +1932,103 @@ async def get_memory_version_history(session_id: str, memory_id: str):
 @router.get("/pipeline/{saved_id}/operations")
 async def get_pipeline_operations(saved_id: str):
     """Get pipeline operations for a saved session."""
+    _validate_path_component(saved_id, "session_id")
     from agent.session import SessionManager
-    from data_ops.operations_log import OperationsLog
+    from data_ops.dag import PipelineDAG
 
-    sm = SessionManager()
-    session_dir = sm.base_dir / saved_id
-    ops_file = session_dir / "operations.json"
-    if not ops_file.exists():
-        raise HTTPException(
-            status_code=404, detail=f"No operations for session '{saved_id}'"
-        )
+    session_dir = SessionManager().base_dir / saved_id
+    pipeline_path = session_dir / "pipeline.json"
+    if not pipeline_path.exists():
+        raise HTTPException(status_code=404, detail=f"No pipeline.json for session {saved_id}")
 
-    log = OperationsLog()
-    log.load_from_file(ops_file)
+    dag = PipelineDAG.load(session_dir)
+    order = dag.topological_order()
 
-    # Build pipeline — pass all successful output labels (same as plot_pipeline.py)
-    records = log.get_records()
-    all_labels = set()
-    for r in records:
-        if r.get("status") == "success":
-            all_labels.update(r.get("outputs", []))
-    pipeline = log.get_pipeline(all_labels) if all_labels else records
-    return {"pipeline": pipeline, "all_records": records}
+    all_records = [_dag_node_to_pipeline_record(op_id, dag.node(op_id)) for op_id in order]
+
+    # Filter to render-relevant records
+    render_op_ids = {
+        r["id"] for r in all_records
+        if r["tool"] in RENDER_TOOL_NAMES and r["status"] == "success"
+    }
+    relevant_ids = set()
+    for rop_id in render_op_ids:
+        relevant_ids |= dag.ancestors(rop_id) | {rop_id}
+    pipeline = [r for r in all_records if r["id"] in relevant_ids]
+
+    return {"pipeline": pipeline, "all_records": all_records}
 
 
 @router.get("/pipeline/{saved_id}/dag")
 async def get_pipeline_dag(saved_id: str, render_op_id: str | None = None):
     """Get Plotly DAG figure for a saved session's pipeline."""
+    _validate_path_component(saved_id, "session_id")
     from agent.session import SessionManager
-    from data_ops.operations_log import OperationsLog
+    from data_ops.dag import PipelineDAG
+    from data_ops.dag_viz import dag_to_plotly
 
-    sm = SessionManager()
-    session_dir = sm.base_dir / saved_id
-    ops_file = session_dir / "operations.json"
-    if not ops_file.exists():
-        raise HTTPException(
-            status_code=404, detail=f"No operations for session '{saved_id}'"
-        )
+    session_dir = SessionManager().base_dir / saved_id
+    pipeline_path = session_dir / "pipeline.json"
+    if not pipeline_path.exists():
+        raise HTTPException(status_code=404, detail=f"No pipeline.json for session {saved_id}")
 
-    log = OperationsLog()
-    log.load_from_file(ops_file)
-
-    records = log.get_records()
-    all_labels = set()
-    for r in records:
-        if r.get("status") == "success":
-            all_labels.update(r.get("outputs", []))
-
-    if render_op_id:
-        pipeline = log.get_state_pipeline(render_op_id, all_labels)
-    else:
-        pipeline = log.get_pipeline(all_labels) if all_labels else records
-
-    loop = asyncio.get_running_loop()
-
-    def _build():
-        from scripts.plot_pipeline import build_figure
-
-        fig = build_figure(pipeline, saved_id)
-        return _figure_response(fig, saved_id)
-
-    return await loop.run_in_executor(_thread_pool, _build)
+    dag = PipelineDAG.load(session_dir)
+    figure = dag_to_plotly(dag, highlight_op_id=render_op_id)
+    return {"figure": figure, "figure_url": None}
 
 
 @router.post("/pipeline/{saved_id}/replay")
 async def replay_pipeline_endpoint(saved_id: str, req: ReplayRequest = ReplayRequest()):
     """Replay a pipeline from a saved session."""
+    _validate_path_component(saved_id, "session_id")
+    from agent.session import SessionManager
+    from data_ops.dag import PipelineDAG
+    from data_ops.replay import ReplayEngine
+    from data_ops.store import DataStore
+    from agent.tool_context import ReplayContext
+
+    session_dir = SessionManager().base_dir / saved_id
+    pipeline_path = session_dir / "pipeline.json"
+    if not pipeline_path.exists():
+        raise HTTPException(status_code=404, detail=f"No pipeline.json for session {saved_id}")
+
+    if not req.render_op_id:
+        raise HTTPException(status_code=400, detail="render_op_id is required")
+    _validate_path_component(req.render_op_id, "op_id")
+
+    dag = PipelineDAG.load(session_dir)
+    if req.render_op_id not in dag:
+        raise HTTPException(status_code=404, detail=f"Operation {req.render_op_id} not in DAG")
+
+    def _run_replay():
+        data_dir = session_dir / "data"
+        store = DataStore(data_dir=data_dir)
+        ctx = ReplayContext(store=store, session_dir=session_dir)
+        engine = ReplayEngine(dag, ctx)
+        return engine.replay(req.render_op_id)
+
+    import asyncio
     loop = asyncio.get_running_loop()
+    result = await loop.run_in_executor(_thread_pool, _run_replay)
 
-    def _replay():
-        from scripts.replay import replay_session, replay_state
-
-        if req.render_op_id:
-            result = replay_state(saved_id, req.render_op_id, use_cache=req.use_cache)
+    # Serialize figure
+    figure_out = None
+    if result.figure is not None:
+        if isinstance(result.figure, dict):
+            figure_out = result.figure
         else:
-            result = replay_session(saved_id, use_cache=req.use_cache)
+            import plotly.graph_objects as go
+            import json as _json
+            if isinstance(result.figure, go.Figure):
+                figure_out = _json.loads(result.figure.to_json())
 
-        fig_resp = _figure_response(result.figure, saved_id)
-        resp = {
-            "steps_completed": result.steps_completed,
-            "steps_total": result.steps_total,
-            "errors": result.errors,
-            **fig_resp,
-        }
-        return resp
-
-    try:
-        result = await loop.run_in_executor(_thread_pool, _replay)
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return result
+    return {
+        "steps_completed": result.steps_completed,
+        "steps_total": result.steps_total,
+        "errors": result.errors,
+        "figure": figure_out,
+        "figure_url": result.figure_url,
+    }
 
 
 # ---- Pipeline Script Generation ----
@@ -2294,22 +2037,25 @@ async def replay_pipeline_endpoint(saved_id: str, req: ReplayRequest = ReplayReq
 @router.get("/pipeline/{saved_id}/script")
 async def generate_session_script(saved_id: str, render_op_id: str | None = None):
     """Generate a self-contained Python script from a session's pipeline."""
-    from data_ops.pipeline import SavedPipeline
-    from data_ops.script_gen import generate_script
+    _validate_path_component(saved_id, "session_id")
+    from agent.session import SessionManager
+    from data_ops.dag import PipelineDAG
+    from data_ops.script_export import export_script
 
-    try:
-        pipeline = SavedPipeline.from_session(saved_id, render_op_id=render_op_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Session '{saved_id}' not found"
-        )
+    session_dir = SessionManager().base_dir / saved_id
+    pipeline_path = session_dir / "pipeline.json"
+    if not pipeline_path.exists():
+        raise HTTPException(status_code=404, detail=f"No pipeline.json for session {saved_id}")
 
-    try:
-        files = generate_script(pipeline.to_dict())
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
+    if not render_op_id:
+        raise HTTPException(status_code=400, detail="render_op_id is required")
 
-    return {"files": files}
+    dag = PipelineDAG.load(session_dir)
+    if render_op_id not in dag:
+        raise HTTPException(status_code=404, detail=f"Operation {render_op_id} not in DAG")
+
+    script = export_script(dag, render_op_id)
+    return {"files": {"pipeline.py": script}}
 
 
 # ---- Autocomplete + Input history + Token breakdown ----
@@ -2322,9 +2068,11 @@ async def get_completions(session_id: str, req: CompletionRequest):
     loop = asyncio.get_running_loop()
 
     def _complete():
-        if hasattr(state.agent, "generate_inline_completions"):
+        _orch = state.agent.session_ctx.agent_state.get("orchestrator")
+        inline = _orch.inline if _orch else None
+        if inline is not None:
             return session_manager.run_in_session_context(
-                state, state.agent.generate_inline_completions, req.partial
+                state, lambda: inline.generate_inline_completions(req.partial)
             )
         return []
 
@@ -2371,11 +2119,9 @@ async def get_token_breakdown(session_id: str):
     import config as app_config
 
     state = _get_session_or_404(session_id)
-    usage = state.agent.get_token_usage()
+    usage = _get_aggregate_token_usage(state.agent)
 
-    breakdown = {}
-    if hasattr(state.agent, "get_token_usage_breakdown"):
-        breakdown = state.agent.get_token_usage_breakdown()
+    breakdown = _get_token_usage_breakdown(state.agent)
 
     memory_bytes = state.store.memory_usage_bytes()
     data_entries = len(state.store)
@@ -2384,8 +2130,6 @@ async def get_token_breakdown(session_id: str):
         "smart": get_context_limit(app_config.SMART_MODEL),
         "sub_agent": get_context_limit(app_config.SUB_AGENT_MODEL),
         "inline": get_context_limit(app_config.INLINE_MODEL),
-        "planner": get_context_limit(app_config.PLANNER_MODEL),
-        "insight": get_context_limit(app_config.INSIGHT_MODEL),
     }
 
     return {
@@ -2395,426 +2139,6 @@ async def get_token_breakdown(session_id: str):
         "data_entries": data_entries,
         "context_limits": context_limits,
     }
-
-
-# ---- Gallery ----
-
-
-def _gallery_dir() -> Path:
-    from config import get_data_dir
-
-    d = get_data_dir() / "gallery"
-    d.mkdir(parents=True, exist_ok=True)
-    return d
-
-
-def _read_gallery_index() -> list[dict]:
-    index_path = _gallery_dir() / "index.json"
-    if not index_path.exists():
-        return []
-    try:
-        return json.loads(index_path.read_text(encoding="utf-8"))
-    except (json.JSONDecodeError, OSError):
-        return []
-
-
-def _write_gallery_index(items: list[dict]) -> None:
-    index_path = _gallery_dir() / "index.json"
-    index_path.write_text(json.dumps(items, indent=2, default=str), encoding="utf-8")
-
-
-@router.get("/gallery")
-async def list_gallery_items():
-    """List all gallery items."""
-    return _read_gallery_index()
-
-
-@router.post("/gallery", status_code=201)
-async def save_to_gallery(req: GallerySaveRequest):
-    """Save a data product to the gallery with a PNG thumbnail."""
-    loop = asyncio.get_running_loop()
-
-    def _save():
-        from scripts.replay import replay_state
-
-        item_id = uuid.uuid4().hex[:12]
-        gallery = _gallery_dir()
-
-        # Replay to get the figure
-        result = replay_state(req.session_id, req.render_op_id, use_cache=True)
-        if result.figure is None:
-            raise ValueError("Replay produced no figure")
-
-        # Export thumbnail PNG
-        png_path = gallery / f"{item_id}.png"
-        result.figure.write_image(str(png_path), scale=1)
-
-        # Build gallery entry
-        from datetime import datetime, timezone
-
-        entry = {
-            "id": item_id,
-            "name": req.name,
-            "session_id": req.session_id,
-            "render_op_id": req.render_op_id,
-            "created_at": datetime.now(timezone.utc).isoformat(),
-            "thumbnail": f"{item_id}.png",
-        }
-
-        # Append to index
-        items = _read_gallery_index()
-        items.append(entry)
-        _write_gallery_index(items)
-
-        return entry
-
-    try:
-        entry = await loop.run_in_executor(_thread_pool, _save)
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return entry
-
-
-@router.delete("/gallery/{item_id}", status_code=204)
-async def delete_gallery_item(item_id: str):
-    """Remove a gallery item and its thumbnail."""
-    _validate_path_component(item_id, "item_id")
-    items = _read_gallery_index()
-    updated = [it for it in items if it["id"] != item_id]
-    if len(updated) == len(items):
-        raise HTTPException(
-            status_code=404, detail=f"Gallery item '{item_id}' not found"
-        )
-    _write_gallery_index(updated)
-    # Delete PNG
-    png_path = _gallery_dir() / f"{item_id}.png"
-    if png_path.exists():
-        png_path.unlink()
-
-
-@router.get("/gallery/{item_id}/thumbnail")
-async def get_gallery_thumbnail(item_id: str):
-    """Serve the PNG thumbnail for a gallery item."""
-    _validate_path_component(item_id, "item_id")
-    png_path = _gallery_dir() / f"{item_id}.png"
-    if not png_path.exists():
-        raise HTTPException(status_code=404, detail="Thumbnail not found")
-    return FileResponse(str(png_path), media_type="image/png")
-
-
-@router.post("/gallery/{item_id}/replay")
-async def replay_gallery_item(item_id: str):
-    """Replay a gallery item's pipeline and return the figure."""
-    items = _read_gallery_index()
-    item = next((it for it in items if it["id"] == item_id), None)
-    if item is None:
-        raise HTTPException(
-            status_code=404, detail=f"Gallery item '{item_id}' not found"
-        )
-
-    loop = asyncio.get_running_loop()
-
-    def _replay():
-        from scripts.replay import replay_state
-
-        result = replay_state(item["session_id"], item["render_op_id"], use_cache=True)
-        fig_resp = _figure_response(result.figure, item["session_id"])
-        return {
-            "steps_completed": result.steps_completed,
-            "steps_total": result.steps_total,
-            "errors": result.errors,
-            **fig_resp,
-        }
-
-    try:
-        result = await loop.run_in_executor(_thread_pool, _replay)
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return result
-
-
-# ---- Saved Pipelines ----
-
-
-@router.get("/pipelines")
-async def list_pipelines():
-    """List all saved pipelines."""
-    from data_ops.pipeline import SavedPipeline
-
-    return SavedPipeline.list_all()
-
-
-@router.get("/pipelines/archived")
-async def list_archived_pipelines():
-    """List all archived pipelines."""
-    from data_ops.pipeline import SavedPipeline
-
-    return SavedPipeline.list_archived()
-
-
-@router.get("/pipelines/{pipeline_id}")
-async def get_pipeline(pipeline_id: str):
-    """Get full pipeline detail."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-    return pipeline.to_dict()
-
-
-@router.post("/pipelines", status_code=201)
-async def create_pipeline(req: SavePipelineRequest):
-    """Create a saved pipeline from a session's pipeline."""
-    from data_ops.pipeline import SavedPipeline
-
-    loop = asyncio.get_running_loop()
-
-    def _create():
-        pipeline = SavedPipeline.from_session(
-            req.session_id,
-            render_op_id=req.render_op_id,
-            name=req.name,
-            description=req.description,
-            tags=req.tags,
-        )
-        issues = pipeline.validate()
-        pipeline.save()
-        result = pipeline.to_dict()
-        if issues:
-            result["validation_warnings"] = issues
-        return result
-
-    try:
-        result = await loop.run_in_executor(_thread_pool, _create)
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return result
-
-
-@router.put("/pipelines/{pipeline_id}")
-async def update_pipeline(pipeline_id: str, req: UpdatePipelineRequest):
-    """Update pipeline metadata or steps."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-
-    if req.name is not None:
-        pipeline.name = req.name
-    if req.description is not None:
-        pipeline.description = req.description
-    if req.tags is not None:
-        pipeline.tags = req.tags
-    if req.steps is not None:
-        pipeline._data["steps"] = req.steps
-
-    pipeline.save()
-    return pipeline.to_dict()
-
-
-@router.delete("/pipelines/{pipeline_id}", status_code=204)
-async def delete_pipeline(pipeline_id: str):
-    """Delete (archive) a saved pipeline."""
-    from data_ops.pipeline import SavedPipeline
-
-    if not SavedPipeline.delete(pipeline_id):
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-
-
-@router.post("/pipelines/{pipeline_id}/restore")
-async def restore_pipeline(pipeline_id: str):
-    """Restore an archived pipeline back to active status."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.restore(pipeline_id)
-        return pipeline.to_dict()
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-
-@router.post("/pipelines/{pipeline_id}/feedback")
-async def add_pipeline_feedback(pipeline_id: str, req: PipelineFeedbackRequest):
-    """Add user feedback to a saved pipeline."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-    entry = pipeline.add_feedback(req.comment)
-    pipeline.save()
-    return entry
-
-
-@router.post("/pipelines/{pipeline_id}/validate")
-async def validate_pipeline(pipeline_id: str):
-    """Validate a saved pipeline and return issues."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-    issues = pipeline.validate()
-    return {"valid": len(issues) == 0, "issues": issues}
-
-
-@router.post("/pipelines/{pipeline_id}/execute")
-async def execute_pipeline_saved(pipeline_id: str, req: ExecutePipelineRequest):
-    """Execute a saved pipeline with a new time range."""
-    from data_ops.pipeline import SavedPipeline
-
-    loop = asyncio.get_running_loop()
-
-    def _execute():
-        pipeline = SavedPipeline.load(pipeline_id)
-        issues = pipeline.validate()
-        if issues:
-            raise ValueError(f"Pipeline validation failed: {'; '.join(issues)}")
-        result = pipeline.execute(req.time_start, req.time_end)
-        fig_resp = _figure_response(result.figure, pipeline_id)
-        return {
-            "steps_completed": result.steps_completed,
-            "steps_total": result.steps_total,
-            "errors": result.errors,
-            "data_labels": [e["label"] for e in result.store.list_entries()],
-            **fig_resp,
-        }
-
-    try:
-        result = await loop.run_in_executor(_thread_pool, _execute)
-    except FileNotFoundError as e:
-        raise HTTPException(status_code=404, detail=str(e))
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-    except Exception as e:
-        raise HTTPException(status_code=500, detail=str(e))
-    return result
-
-
-@router.get("/pipelines/{pipeline_id}/dag")
-async def get_pipeline_dag_saved(pipeline_id: str):
-    """Get a DAG visualization of a saved pipeline's steps."""
-    from data_ops.pipeline import SavedPipeline
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-
-    loop = asyncio.get_running_loop()
-
-    def _build_dag():
-        # Convert pipeline steps to records for plot_pipeline
-        records = []
-        for step in pipeline.steps:
-            records.append(
-                {
-                    "id": step["step_id"],
-                    "tool": step["tool"],
-                    "status": "success",
-                    "inputs": [],  # labels, not step_ids
-                    "outputs": [step["output_label"]]
-                    if step.get("output_label")
-                    else [],
-                    "args": step.get("params", {}),
-                }
-            )
-        # Build input_producers for edges
-        step_to_label = {
-            s["step_id"]: s["output_label"]
-            for s in pipeline.steps
-            if s.get("output_label")
-        }
-        for step, rec in zip(pipeline.steps, records):
-            for inp_step_id in step.get("inputs", []):
-                label = step_to_label.get(inp_step_id)
-                if label:
-                    rec["inputs"].append(label)
-                    rec.setdefault("input_producers", {})[label] = inp_step_id
-
-        # Compute contributes_to via backward BFS from presentation steps
-        rec_by_id = {r["id"]: r for r in records}
-        label_to_step = {
-            s["output_label"]: s["step_id"]
-            for s in pipeline.steps
-            if s.get("output_label")
-        }
-        presentation_ids = [
-            s["step_id"] for s in pipeline.steps if s.get("phase") == "presentation"
-        ]
-        for product_id in presentation_ids:
-            rec_by_id[product_id].setdefault("contributes_to", []).append(product_id)
-            queue = list(rec_by_id[product_id]["inputs"])
-            visited: set[str] = set()
-            while queue:
-                label = queue.pop()
-                if label in visited:
-                    continue
-                visited.add(label)
-                producer_sid = label_to_step.get(label)
-                if producer_sid and producer_sid in rec_by_id:
-                    rec_by_id[producer_sid].setdefault("contributes_to", []).append(
-                        product_id
-                    )
-                    for inp in rec_by_id[producer_sid]["inputs"]:
-                        if inp not in visited:
-                            queue.append(inp)
-
-        from scripts.plot_pipeline import build_figure
-
-        fig = build_figure(records, f"pipeline:{pipeline_id}")
-        return _figure_response(fig, pipeline_id)
-
-    return await loop.run_in_executor(_thread_pool, _build_dag)
-
-
-@router.get("/pipelines/{pipeline_id}/script")
-async def generate_pipeline_script(pipeline_id: str):
-    """Generate a self-contained Python script from a saved pipeline."""
-    from data_ops.pipeline import SavedPipeline
-    from data_ops.script_gen import generate_script
-
-    try:
-        pipeline = SavedPipeline.load(pipeline_id)
-    except FileNotFoundError:
-        raise HTTPException(
-            status_code=404, detail=f"Pipeline '{pipeline_id}' not found"
-        )
-
-    try:
-        files = generate_script(pipeline.to_dict())
-    except ValueError as e:
-        raise HTTPException(status_code=400, detail=str(e))
-
-    return {"files": files}
 
 
 # ---- Asset Management ----
@@ -2856,7 +2180,7 @@ def _category_to_response(cat) -> dict:
 
 @router.get("/assets")
 async def get_assets():
-    """Scan all 4 asset categories and return overview."""
+    """Scan asset categories and return overview."""
     from data_ops.asset_manager import get_asset_overview
 
     loop = asyncio.get_running_loop()
@@ -2868,26 +2192,6 @@ async def get_assets():
     }
 
 
-@router.get("/assets/cdf-cache")
-async def get_cdf_cache():
-    """Per-mission breakdown of CDF cache."""
-    from data_ops.asset_manager import get_cdf_cache_detail
-
-    loop = asyncio.get_running_loop()
-    cat = await loop.run_in_executor(_thread_pool, get_cdf_cache_detail)
-    return _category_to_response(cat)
-
-
-@router.get("/assets/ppi-cache")
-async def get_ppi_cache():
-    """Per-collection breakdown of PPI cache."""
-    from data_ops.asset_manager import get_ppi_cache_detail
-
-    loop = asyncio.get_running_loop()
-    cat = await loop.run_in_executor(_thread_pool, get_ppi_cache_detail)
-    return _category_to_response(cat)
-
-
 @router.get("/assets/sessions")
 async def get_sessions_assets():
     """Per-session breakdown with metadata."""
@@ -2896,50 +2200,6 @@ async def get_sessions_assets():
     loop = asyncio.get_running_loop()
     cat = await loop.run_in_executor(_thread_pool, get_sessions_detail)
     return _category_to_response(cat)
-
-
-@router.get("/assets/spice-kernels")
-async def get_spice_kernels():
-    """Per-mission breakdown of SPICE kernels."""
-    from data_ops.asset_manager import get_spice_kernels_detail
-
-    loop = asyncio.get_running_loop()
-    cat = await loop.run_in_executor(_thread_pool, get_spice_kernels_detail)
-    return _category_to_response(cat)
-
-
-@router.post("/assets/cdf-cache/clean")
-async def clean_cdf_cache(req: CleanupRequest):
-    """Clean CDF cache files."""
-    from data_ops.asset_manager import clean_cdf_cache as _clean
-
-    loop = asyncio.get_running_loop()
-    result = await loop.run_in_executor(
-        _thread_pool,
-        lambda: _clean(
-            missions=req.targets or None,
-            older_than_days=req.older_than_days,
-            dry_run=req.dry_run,
-        ),
-    )
-    return result
-
-
-@router.post("/assets/ppi-cache/clean")
-async def clean_ppi_cache(req: CleanupRequest):
-    """Clean PPI cache files."""
-    from data_ops.asset_manager import clean_ppi_cache as _clean
-
-    loop = asyncio.get_running_loop()
-    result = await loop.run_in_executor(
-        _thread_pool,
-        lambda: _clean(
-            collections=req.targets or None,
-            older_than_days=req.older_than_days,
-            dry_run=req.dry_run,
-        ),
-    )
-    return result
 
 
 @router.post("/assets/sessions/clean")
@@ -2963,20 +2223,40 @@ async def clean_sessions(req: CleanupRequest):
     return result
 
 
-@router.post("/assets/spice-kernels/clean")
-async def clean_spice_kernels(req: CleanupRequest):
-    """Clean SPICE kernel files."""
-    from data_ops.asset_manager import clean_spice_kernels as _clean
+@router.get("/assets/{category}")
+async def get_asset_category(category: str):
+    """Per-category asset breakdown (generic route)."""
+    _validate_path_component(category, "category")
+    if category == "sessions":
+        from data_ops.asset_manager import get_sessions_detail
 
-    loop = asyncio.get_running_loop()
-    result = await loop.run_in_executor(
-        _thread_pool,
-        lambda: _clean(
-            missions=req.targets or None,
-            dry_run=req.dry_run,
-        ),
-    )
-    return result
+        loop = asyncio.get_running_loop()
+        cat = await loop.run_in_executor(_thread_pool, get_sessions_detail)
+        return _category_to_response(cat)
+    raise HTTPException(404, f"Unknown asset category: {category!r}")
+
+
+@router.post("/assets/{category}/clean")
+async def clean_asset_category(category: str, req: CleanupRequest):
+    """Clean assets in a specific category (generic route)."""
+    _validate_path_component(category, "category")
+    if category == "sessions":
+        from data_ops.asset_manager import clean_sessions as _clean
+
+        active_ids = {s["session_id"] for s in session_manager.list_sessions()}
+        loop = asyncio.get_running_loop()
+        result = await loop.run_in_executor(
+            _thread_pool,
+            lambda: _clean(
+                session_ids=req.targets or None,
+                older_than_days=req.older_than_days,
+                empty_only=req.empty_only,
+                exclude_ids=active_ids,
+                dry_run=req.dry_run,
+            ),
+        )
+        return result
+    raise HTTPException(404, f"Unknown asset category: {category!r}")
 
 
 # ---- Server status ----
@@ -3058,13 +2338,16 @@ async def eureka_chat(session_id: str, req: dict):
     """
     from sse_starlette.sse import EventSourceResponse
     from agent.event_bus import EUREKA_CHAT_MESSAGE, EUREKA_CHAT_RESPONSE
-    from agent.sub_agent import AgentState
+    from agent.base_agent import AgentState
 
     state = _get_session_or_404(session_id)
     state.touch()
 
     # Ensure EurekaAgent is created
-    eureka_agent = state.agent._ensure_eureka_agent()
+    eh = state.agent.session_ctx.eureka_hooks
+    if eh is None:
+        raise HTTPException(501, "Eureka system not available")
+    eureka_agent = eh.ensure_eureka_agent()
 
     # Check if EurekaAgent is busy
     if eureka_agent.state == AgentState.ACTIVE:

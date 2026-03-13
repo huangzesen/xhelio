@@ -15,7 +15,7 @@ from unittest.mock import MagicMock
 
 import pytest
 
-from agent.sub_agent import AgentState
+from agent.base_agent import AgentState
 from agent.event_bus import EventBus
 
 

@@ -7,14 +7,17 @@ reason about what happened and what to do next — especially on errors.
 
 from __future__ import annotations
 
-from .truncation import trunc, trunc_items
+from .logging import get_logger
+from .truncation import trunc
+
+logger = get_logger()
 
 
 def generate_observation(tool_name: str, tool_args: dict, result: dict) -> str:
     """Build a concise, human-readable observation for a tool result.
 
     Args:
-        tool_name: The tool that was called (e.g. ``"fetch_data"``).
+        tool_name: The tool that was called (e.g. ``"xhelio__assets"``).
         tool_args: The arguments passed to the tool.
         result: The result dict returned by the tool executor.
 
@@ -32,16 +35,12 @@ def generate_observation(tool_name: str, tool_args: dict, result: dict) -> str:
     if handler:
         try:
             return handler(tool_args, result)
-        except Exception:
-            pass
+        except Exception as e:
+            logger.debug("Observation handler failed for %s: %s", tool_name, e)
 
     # Delegate tools
     if tool_name.startswith("delegate_to_"):
         return _obs_delegation(tool_args, result)
-
-    # SPICE tools
-    if tool_name in _SPICE_TOOLS:
-        return _obs_spice(tool_name, tool_args, result)
 
     # Generic fallback
     return f"{tool_name} completed successfully."
@@ -50,40 +49,6 @@ def generate_observation(tool_name: str, tool_args: dict, result: dict) -> str:
 # ---------------------------------------------------------------------------
 # Tool-specific success handlers
 # ---------------------------------------------------------------------------
-
-def _obs_fetch_data(args: dict, result: dict) -> str:
-    label = result.get("label", args.get("dataset_id", "?"))
-    if result.get("status") == "already_loaded":
-        return f"Already in memory: {label}"
-    num_points = result.get("num_points")
-    columns = result.get("columns", [])
-    units = result.get("units", "")
-    nan_pct = result.get("nan_percentage")
-
-    parts = [f"Fetched {num_points:,} points of {label}" if num_points else f"Fetched {label}"]
-    if columns:
-        shown_cols, _ = trunc_items(columns, "items.columns")
-        parts[0] += f" ({', '.join(shown_cols)}"
-        if units:
-            parts[0] += f"; {units}"
-        parts[0] += ")"
-    elif units:
-        parts[0] += f" ({units})"
-    parts[0] += "."
-    if nan_pct is not None and nan_pct > 0:
-        parts.append(f"{nan_pct:.1f}% NaN.")
-    if result.get("quality_warning"):
-        parts.append(result["quality_warning"])
-    return " ".join(parts)
-
-
-def _obs_search_datasets(args: dict, result: dict) -> str:
-    count = result.get("count", 0)
-    query = args.get("query") or args.get("keywords") or "?"
-    if count == 0:
-        return f"No datasets found for '{query}'."
-    return f"Found {count} matching dataset(s) for '{query}'."
-
 
 def _obs_run_code(args: dict, result: dict) -> str:
     label = result.get("label", "result")
@@ -114,11 +79,27 @@ def _obs_manage_plot(args: dict, result: dict) -> str:
     return f"Plot {action} completed successfully."
 
 
-def _obs_list_fetched_data(args: dict, result: dict) -> str:
-    entries = result.get("entries", [])
-    if not entries:
-        return "No data in memory."
-    return f"{len(entries)} data entries in memory."
+def _obs_assets(args: dict, result: dict) -> str:
+    action = args.get("action", "list")
+    if action == "list":
+        assets = result.get("assets", [])
+        if not assets:
+            return "No assets in session."
+        kinds: dict[str, list[str]] = {}
+        for a in assets:
+            kinds.setdefault(a.get("kind", "unknown"), []).append(
+                a.get("name", a.get("asset_id", "?"))
+            )
+        parts = [f"{k}: {', '.join(v)}" for k, v in kinds.items()]
+        return f"{len(assets)} asset(s) — {'; '.join(parts)}"
+    elif action == "status":
+        plot = result.get("plot", {})
+        data = result.get("data", {})
+        ops = result.get("operations_count", 0)
+        return f"Plot: {plot.get('state', 'none')}, Data: {data.get('total_entries', 0)} entries, Ops: {ops}"
+    elif action == "restore_plot":
+        return result.get("message", "Plot restored.")
+    return f"assets({action}) completed."
 
 
 def _obs_delegation(args: dict, result: dict) -> str:
@@ -156,47 +137,6 @@ def _obs_delegation(args: dict, result: dict) -> str:
     return "Sub-agent completed."
 
 
-def _obs_spice(tool_name: str, args: dict, result: dict) -> str:
-    sc = args.get("spacecraft", "?")
-    if tool_name == "get_spacecraft_position":
-        r_au = result.get("r_au")
-        observer = args.get("observer", "SUN")
-        if r_au is not None:
-            return f"Got {sc} position at {r_au:.3f} AU from {observer}."
-        return f"Got {sc} position."
-    if tool_name == "get_spacecraft_trajectory":
-        n = result.get("num_points", "?")
-        return f"Got {sc} trajectory ({n} points)."
-    if tool_name == "get_spacecraft_velocity":
-        n = result.get("num_points", "?")
-        return f"Got {sc} velocity ({n} points)."
-    if tool_name == "compute_distance":
-        t1 = args.get("target1", "?")
-        t2 = args.get("target2", "?")
-        min_au = result.get("min_distance_au")
-        if min_au is not None:
-            return f"Distance {t1}–{t2}: min {min_au:.3f} AU."
-        return f"Computed distance {t1}–{t2}."
-    if tool_name == "transform_coordinates":
-        return f"Coordinate transform completed ({args.get('from_frame', '?')} → {args.get('to_frame', '?')})."
-    if tool_name == "list_spice_missions":
-        return "Listed available SPICE missions."
-    if tool_name == "list_coordinate_frames":
-        return "Listed available coordinate frames."
-    if tool_name == "manage_kernels":
-        action = args.get("action", "?")
-        return f"Kernel {action} completed."
-    return f"{tool_name} completed successfully."
-
-
-_SPICE_TOOLS: set[str] = set()
-
-
-def register_spice_tool_names(names: list[str]) -> None:
-    """Register dynamically discovered SPICE tool names for observation routing."""
-    _SPICE_TOOLS.update(names)
-
-
 def _obs_manage_workers(args: dict, result: dict) -> str:
     action = args.get("action", "list")
     if action == "cancel":
@@ -220,12 +160,10 @@ def _obs_manage_workers(args: dict, result: dict) -> str:
 
 
 _TOOL_HANDLERS = {
-    "fetch_data": _obs_fetch_data,
-    "search_datasets": _obs_search_datasets,
-    "run_code": _obs_run_code,
-    "render_plotly_json": _obs_render_plotly,
-    "manage_plot": _obs_manage_plot,
-    "list_fetched_data": _obs_list_fetched_data,
+    "xhelio__run_code": _obs_run_code,
+    "xhelio__render_plotly_json": _obs_render_plotly,
+    "xhelio__manage_plot": _obs_manage_plot,
+    "xhelio__assets": _obs_assets,
     "manage_workers": _obs_manage_workers,
 }
 
@@ -235,23 +173,16 @@ _TOOL_HANDLERS = {
 # ---------------------------------------------------------------------------
 
 _ERROR_HINTS = {
-    "fetch_data": (
-        "Try search_datasets to find the correct dataset/parameter ID, "
-        "or check the time range."
-    ),
-    "run_code": (
-        "Check variable names with list_fetched_data. "
+    "xhelio__run_code": (
+        "Check variable names with assets. "
         "Verify the code syntax and ensure referenced columns exist."
     ),
-    "render_plotly_json": (
+    "xhelio__render_plotly_json": (
         "Check that the data_labels reference existing data in memory "
-        "(use list_fetched_data). Verify the Plotly JSON structure."
+        "(use assets). Verify the Plotly JSON structure."
     ),
-    "manage_plot": (
+    "xhelio__manage_plot": (
         "Verify the plot exists and the action parameters are correct."
-    ),
-    "search_datasets": (
-        "Try broader or different keywords."
     ),
 }
 

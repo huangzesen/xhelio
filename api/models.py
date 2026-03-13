@@ -12,10 +12,6 @@ class ChatRequest(BaseModel):
     message: str = Field(..., min_length=1, description="User message to send to the agent")
 
 
-class FollowUpRequest(BaseModel):
-    count: int = Field(default=3, ge=1, le=5, description="Number of suggestions to generate")
-
-
 class PermissionResponse(BaseModel):
     request_id: str
     approved: bool
@@ -35,7 +31,6 @@ class SessionInfo(BaseModel):
 class SessionDetail(SessionInfo):
     token_usage: dict[str, int] = Field(default_factory=dict)
     data_entries: int = 0
-    plan_status: Optional[str] = None
 
 
 class ServerStatus(BaseModel):
@@ -86,23 +81,6 @@ class ErrorResponse(BaseModel):
     detail: str
 
 
-# ---- Catalog ----
-
-class MissionInfo(BaseModel):
-    id: str
-    name: str
-
-
-
-# ---- Data Fetch ----
-
-class FetchDataRequest(BaseModel):
-    dataset_id: str = Field(..., min_length=1)
-    parameter_id: str = Field(..., min_length=1)
-    time_min: str = Field(..., min_length=1)
-    time_max: str = Field(..., min_length=1)
-
-
 # ---- Config ----
 
 class ConfigUpdate(BaseModel):
@@ -145,6 +123,7 @@ class SavedSessionWithOps(BaseModel):
     name: Optional[str] = None
     model: Optional[str] = None
     turn_count: int = 0
+    round_count: int = 0
     last_message_preview: str = ""
     created_at: Optional[str] = None
     updated_at: Optional[str] = None
@@ -176,48 +155,6 @@ class CompletionRequest(BaseModel):
 class InputHistoryEntry(BaseModel):
     text: str = Field(..., min_length=1)
 
-
-# ---- Gallery ----
-
-class GallerySaveRequest(BaseModel):
-    name: str = Field(..., min_length=1, max_length=200)
-    session_id: str
-    render_op_id: str
-
-
-class GalleryItemInfo(BaseModel):
-    id: str
-    name: str
-    session_id: str
-    render_op_id: str
-    created_at: datetime
-    thumbnail: str  # filename, e.g. "abc123.png"
-
-
-# ---- Saved Pipelines ----
-
-class SavePipelineRequest(BaseModel):
-    session_id: str = Field(..., min_length=1)
-    name: str = Field(..., min_length=1, max_length=200)
-    description: str = ""
-    render_op_id: Optional[str] = None
-    tags: list[str] = Field(default_factory=list)
-
-
-class UpdatePipelineRequest(BaseModel):
-    name: Optional[str] = None
-    description: Optional[str] = None
-    tags: Optional[list[str]] = None
-    steps: Optional[list[dict]] = None
-
-
-class PipelineFeedbackRequest(BaseModel):
-    comment: str = Field(..., min_length=1)
-
-
-class ExecutePipelineRequest(BaseModel):
-    time_start: str = Field(..., min_length=1)
-    time_end: str = Field(..., min_length=1)
 
 
 # ---- Asset Management ----

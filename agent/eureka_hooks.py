@@ -1,9 +1,9 @@
-"""Eureka/Insight hooks — extracted from OrchestratorAgent.
+"""Eureka/Insight hooks — manages eureka discovery and insight auto-review.
 
 The ``EurekaHooks`` class owns eureka discovery state (agent, lock,
 counters, pending suggestions) and insight review state (iteration
-counter, latest render PNG).  It receives the orchestrator as ``ctx``
-for access to shared services (store, renderer, event bus, etc.).
+counter, latest render PNG).  It receives a ``SessionContext`` for
+access to shared services (store, renderer, event bus, etc.).
 """
 
 from __future__ import annotations
@@ -11,7 +11,7 @@ from __future__ import annotations
 import json as _json
 import threading
 from pathlib import Path
-from typing import Optional, TYPE_CHECKING
+from typing import Callable, Optional, TYPE_CHECKING
 
 import config
 from .logging import get_logger
@@ -22,20 +22,62 @@ from .event_bus import (
 )
 
 if TYPE_CHECKING:
-    from .core import OrchestratorAgent
+    from .session_context import SessionContext
+
+
+def format_eureka_message(context: dict) -> str:
+    """Serialize an eureka context dict into a string for the EurekaAgent LLM.
+
+    The message gives the agent all session context it needs to decide
+    whether to submit findings or suggestions.
+    """
+    parts = []
+    parts.append(f"Session: {context.get('session_id', 'unknown')}")
+
+    data_keys = context.get("data_store_keys", [])
+    if data_keys:
+        parts.append(f"\nData in memory: {', '.join(data_keys)}")
+    else:
+        parts.append("\nNo data in memory.")
+
+    has_figure = context.get("has_figure", False)
+    parts.append(f"Active figure: {'Yes' if has_figure else 'No'}")
+
+    recent = context.get("recent_messages", [])
+    if recent:
+        parts.append(f"\nRecent user messages ({len(recent)}):")
+        for msg in recent:
+            parts.append(f"  - {msg}")
+
+    parts.append(
+        "\nAnalyze the session state above. If you find scientifically "
+        "interesting patterns, anomalies, or correlations, use submit_finding. "
+        "Then suggest concrete follow-up actions with submit_suggestion. "
+        "If nothing noteworthy is found, simply respond without calling tools."
+    )
+
+    return "\n".join(parts)
 
 
 class EurekaHooks:
     """Manages eureka discovery and insight auto-review lifecycle.
 
     Args:
-        ctx: The OrchestratorAgent instance (used to access service,
-             event_bus, store, renderer, etc.).
+        ctx: The SessionContext instance (shared session resources).
         eureka_mode: Whether eureka mode is initially enabled.
+        inbox_injector: Callback to inject a synthetic user message into
+            the orchestrator's inbox (for eureka mode auto-execution).
     """
 
-    def __init__(self, ctx: "OrchestratorAgent", eureka_mode: bool = False):
+    def __init__(
+        self,
+        ctx: "SessionContext",
+        *,
+        eureka_mode: bool = False,
+        inbox_injector: Callable[[str], None] | None = None,
+    ):
         self._ctx = ctx
+        self._inbox_injector = inbox_injector
         self.logger = get_logger()
 
         # Eureka discovery state
@@ -120,10 +162,11 @@ class EurekaHooks:
         Gathers renderer state (trace labels, panel count) and store entries
         (label, num_points, time range, units, columns) for the context.
         """
+        sctx = self._ctx
         lines = []
 
         # Renderer state
-        state = self._ctx._renderer.get_current_state()
+        state = sctx.renderer.get_current_state()
         if state.get("traces"):
             lines.append(f"Traces on plot: {state['traces']}")
         if state.get("num_panels"):
@@ -132,7 +175,7 @@ class EurekaHooks:
             lines.append("Visualization: matplotlib (static PNG)")
 
         # Store entries
-        entries = self._ctx._store.list_entries()
+        entries = sctx.store.list_entries()
         if entries:
             lines.append("\nData in memory:")
             for e in entries:
@@ -156,15 +199,15 @@ class EurekaHooks:
         return "\n".join(lines) if lines else "No data context available."
 
     def sync_insight_review(self) -> dict | None:
-        """Synchronous InsightAgent figure review after a successful render.
+        """Synchronous vision-based figure review after a successful render.
 
-        Exports the current figure to PNG, gathers context, and dispatches
-        a synchronous review via agent.send(). Blocks until the
-        review completes, then returns the result.
+        Uses LLMService.generate_vision() directly — no InsightAgent needed.
+        Exports the current figure to PNG, sends it with a review prompt,
+        and returns the result.
 
         Returns:
             The review result dict, or None if the review was skipped
-            (disabled, iteration cap, no figure, etc.).
+            (disabled, iteration cap, no figure, no vision provider, etc.).
         """
         if not config.INSIGHT_FEEDBACK:
             return None
@@ -172,14 +215,13 @@ class EurekaHooks:
         if self._insight_review_iter >= config.INSIGHT_FEEDBACK_MAX_ITERS:
             return None
 
-        image_bytes = self._ctx.get_latest_figure_png()
+        from agent.session_persistence import get_latest_figure_png
+        sctx = self._ctx
+        image_bytes = get_latest_figure_png(sctx)
         if image_bytes is None:
             return None
 
-        agent = self._ctx._get_or_create_insight_agent()
-        data_context = self.build_insight_context()
-
-        user_msgs = self._ctx._event_bus.get_events(types={USER_MESSAGE})
+        user_msgs = sctx.event_bus.get_events(types={USER_MESSAGE})
         user_request = (
             user_msgs[-1].data.get("text", user_msgs[-1].msg) if user_msgs else ""
         )
@@ -195,61 +237,56 @@ class EurekaHooks:
             "Start your response with VERDICT: PASS or VERDICT: NEEDS_IMPROVEMENT, "
             "then explain. If NEEDS_IMPROVEMENT, list specific actionable suggestions as bullet points (max 5)."
         )
-        result = agent.send(
-            {
-                "action": "review",
-                "image_bytes": image_bytes,
-                "data_context": data_context,
-                "user_request": review_instruction,
-            },
-            sender="orchestrator",
-            timeout=180,
-        )
 
-        passed = result.get("passed", True)
-        review_text = result.get("text", "")
+        response = sctx.service.generate_vision(review_instruction, image_bytes)
+        if not response.text:
+            return {"failed": True, "text": "Vision review unavailable — no vision provider configured."}
+
+        review_text = response.text
+        passed = "VERDICT: PASS" in review_text.upper()[:50]
+
         verdict = "PASS" if passed else "NEEDS_IMPROVEMENT"
-        self._ctx._event_bus.emit(
+        sctx.event_bus.emit(
             INSIGHT_FEEDBACK,
-            agent="InsightAgent",
+            agent="vision_review",
             msg=f"[Figure Auto-Review — {verdict}]\n{review_text}",
             data={"verdict": verdict, "text": review_text},
         )
-        return result
+        return {"passed": passed, "text": review_text, "suggestions": []}
 
     # ------------------------------------------------------------------
     # Eureka discovery
     # ------------------------------------------------------------------
 
     def ensure_eureka_agent(self):
-        """Lazily create or return the existing EurekaAgent (SubAgent)."""
+        """Lazily create or return the existing EurekaAgent."""
         if self._agent is None:
             from .eureka_agent import EurekaAgent
 
             self._agent = EurekaAgent(
                 service=self._ctx.service,
-                tool_executor=lambda name, args, tc_id=None: (
-                    self._ctx._execute_tool_for_agent(name, args, tc_id, agent_type="eureka")
-                ),
-                event_bus=self._ctx._event_bus,
-                memory_store=self._ctx._memory_store,
-                memory_scope="eureka",
-                orchestrator_ref=self._ctx,
+                session_ctx=self._ctx,
+                event_bus=self._ctx.event_bus,
+                eureka_store=self._ctx.eureka_store,
+                session_id=self._ctx.session_id or "",
             )
             self._agent.start()
-            with self._ctx._sub_agents_lock:
-                self._ctx._sub_agents["EurekaAgent"] = self._agent
+            delegation = self._ctx.delegation
+            if delegation is not None:
+                from .delegation import AGENT_ID_EUREKA
+                delegation.register_agent(AGENT_ID_EUREKA, self._agent)
         return self._agent
 
     def build_eureka_context(self) -> dict:
         """Build context dict for Eureka discovery."""
-        user_msgs = self._ctx._event_bus.get_events(types={USER_MESSAGE})
+        sctx = self._ctx
+        user_msgs = sctx.event_bus.get_events(types={USER_MESSAGE})
         return {
-            "session_id": self._ctx._session_id or "unknown",
-            "data_store_keys": [e["label"] for e in self._ctx._store.list_entries()]
-            if self._ctx._store
+            "session_id": sctx.session_id or "unknown",
+            "data_store_keys": [e["label"] for e in sctx.store.list_entries()]
+            if sctx.store
             else [],
-            "has_figure": self._ctx._renderer.get_figure() is not None,
+            "has_figure": sctx.renderer.get_figure() is not None,
             "recent_messages": [m.msg for m in user_msgs[-5:]],
         }
 
@@ -265,7 +302,7 @@ class EurekaHooks:
     def maybe_extract_eurekas(self) -> None:
         """Trigger async Eureka extraction on a daemon thread.
 
-        Uses EurekaAgent.send() via the SubAgent inbox pattern.
+        Uses EurekaAgent.send() via the BaseAgent inbox pattern.
         Lock prevents concurrent extractions. After the agent returns,
         if Eureka Mode is ON, queues the top suggestion for execution.
         """
@@ -287,19 +324,20 @@ class EurekaHooks:
             set_event_bus,
         )
 
-        bus = self._ctx._event_bus
+        bus = self._ctx.event_bus
+        eureka_store = self._ctx.eureka_store
 
         def _run():
             set_event_bus(bus)
             try:
                 bus.emit(EUREKA_EXTRACTION_START, agent="Eureka", level="info")
-                # Build the context message for the SubAgent
-                msg_content = agent.build_context_message(context)
+                # Build the context message for the EurekaAgent
+                msg_content = format_eureka_message(context)
                 result = agent.send(
                     msg_content, sender="orchestrator", timeout=120.0
                 )
 
-                if result.get("failed"):
+                if result and result.get("failed"):
                     bus.emit(
                         EUREKA_EXTRACTION_ERROR,
                         agent="Eureka",
@@ -309,10 +347,14 @@ class EurekaHooks:
                 else:
                     # Count findings from the store for this session
                     session_id = context.get("session_id", "unknown")
-                    findings = agent.eureka_store.list(session_id=session_id)
-                    suggestions = agent.eureka_store.list_suggestions(
-                        session_id=session_id, status="proposed"
-                    )
+                    if eureka_store is not None:
+                        findings = eureka_store.list(session_id=session_id)
+                        suggestions = eureka_store.list_suggestions(
+                            session_id=session_id, status="proposed"
+                        )
+                    else:
+                        findings = []
+                        suggestions = []
                     bus.emit(
                         EUREKA_EXTRACTION_DONE,
                         agent="Eureka",
@@ -343,23 +385,14 @@ class EurekaHooks:
                                 suggestion
                             )
                             self._round_counter += 1
-                            # Mark suggestion as approved
-                            from .eureka_store import EurekaStore
-
-                            EurekaStore().update_suggestion_status(
-                                suggestion.id, "executed"
-                            )
-                            # Inject into orchestrator inbox if running in turnless mode
-                            ctx = self._ctx
-                            if hasattr(ctx, "_inbox") and ctx._inbox is not None:
-                                from .sub_agent import _make_message
-
-                                ctx._put_message(
-                                    _make_message(
-                                        "user_input", "eureka_mode", synthetic_msg
-                                    ),
-                                    priority=0,
+                            # Mark suggestion as executed via the shared store
+                            if eureka_store is not None:
+                                eureka_store.update_suggestion_status(
+                                    suggestion.id, "executed"
                                 )
+                            # Inject into orchestrator inbox if callback available
+                            if self._inbox_injector is not None:
+                                self._inbox_injector(synthetic_msg)
                             else:
                                 # Fallback: store for process_message to pick up
                                 self._pending_suggestion = suggestion

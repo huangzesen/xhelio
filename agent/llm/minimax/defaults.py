@@ -4,13 +4,10 @@ DEFAULTS = {
     "api_key_env": "MINIMAX_API_KEY",
     "model": "MiniMax-M2.5-highspeed",
     "sub_agent_model": "MiniMax-M2.5-highspeed",
-    "insight_model": "MiniMax-M2.5-highspeed",
     "inline_model": "MiniMax-M2.1",
-    "planner_model": "MiniMax-M2.5-highspeed",
     "web_search_provider": "minimax",
     "vision_provider": "minimax",
     "thinking_model": "high",
     "thinking_sub_agent": "low",
-    "thinking_insight": "low",
     "rate_limit_interval": 2.0,
 }

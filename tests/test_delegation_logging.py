@@ -83,7 +83,7 @@ def test_delegation_message_no_background_when_wait_true():
 def test_fire_and_forget_calls_delegate_to_sub_agent():
     """Test that wait=False flows through to _delegate_to_sub_agent (not early return)."""
     from agent.tool_handlers.delegation import handle_delegate_to_envoy
-    from agent.sub_agent import AgentState
+    from agent.base_agent import AgentState
 
     orch = MagicMock()
     orch._event_bus = MagicMock()

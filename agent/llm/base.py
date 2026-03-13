@@ -357,3 +357,13 @@ class LLMAdapter(ABC):
         Default: returns empty response (search not available).
         """
         return LLMResponse(text="")
+
+    def generate_vision(
+        self, question: str, image_bytes: bytes, *, model: str = "",
+        mime_type: str = "image/png",
+    ) -> "LLMResponse":
+        """One-shot vision: send image + question, get text response.
+
+        Override in adapters that support vision. Default: returns empty response.
+        """
+        return LLMResponse(text="")

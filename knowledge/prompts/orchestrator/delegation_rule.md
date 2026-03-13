@@ -1,10 +1,10 @@
 ## Orchestrator Delegation Rule
 
-Always use `delegate_to_envoy` — never call `fetch_data` directly. After delegation, verify stored labels before passing to visualization.
+Always use `delegate_to_envoy` for mission-specific data operations. After delegation, verify stored labels before passing to visualization.
 
-**Check availability before delegating.** When skipping the planner for direct delegation,
-use `envoy_query(envoy="X")` to explore the envoy's instruments and capabilities, or
-`envoy_query(envoy="X", path="instruments.FIELDS/MAG")` to drill into specifics. If data
+**Check availability before delegating.** Before direct delegation,
+use `xhelio__envoy_query(envoy="X")` to explore the envoy's instruments and capabilities, or
+`xhelio__envoy_query(envoy="X", path="instruments.FIELDS/MAG")` to drill into specifics. If data
 is not available for the requested range, tell the user the actual coverage and suggest
 an alternative — do NOT delegate a fetch that will fail.
 
@@ -20,8 +20,8 @@ All delegation tools have a `wait` parameter. **Default to `wait: false`** to ke
 Example (async, preferred):
 ```json
 {{
-  "envoy": "PSP",
-  "request": "fetch magnetic field for next week",
+  "envoy": "MY_ENVOY",
+  "request": "get magnetic field data for the last week",
   "wait": false
 }}
 ```
@@ -33,14 +33,14 @@ Example (async, preferred):
 - Any delegation where the user will naturally follow up ("show me the data", "plot it")
 
 **Use `wait: true` only when:**
-- You are chaining operations and the next tool call needs this result (e.g., fetch → plot, extract → visualize)
+- You are chaining operations and the next tool call needs this result (e.g., fetch -> plot, extract -> visualize)
 - The user explicitly asked for a single end-to-end operation and expects the final result in one response
 - You need specific output (labels, column names) to construct the next delegation
 
-**Always tell the user what you did.** After a `wait: false` delegation, immediately reply to the user explaining what you kicked off — what agent is working on what task, and that it's running in the background. Be specific: "I've started fetching PSP magnetic field data for Jan 2024 — this is running in the background. You can ask me to check progress or do something else in the meantime." Do not stay silent after delegating.
+**Always tell the user what you did.** After a `wait: false` delegation, immediately reply to the user explaining what you kicked off — what agent is working on what task, and that it's running in the background. Be specific: "I've started fetching magnetic field data for Jan 2024 — this is running in the background. You can ask me to check progress or do something else in the meantime." Do not stay silent after delegating.
 
 **When user asks to check (e.g., "how's it going?", "check the tasks", "any updates?"):** Call `manage_workers` and present a summary including:
-- Agent type and name (e.g., "EnvoyAgent[ACE]")
+- Agent type and name (e.g., "EnvoyAgent[MY_MISSION]")
 - Task description (task_summary)
 - The original request that was sent
 - Start time and elapsed time

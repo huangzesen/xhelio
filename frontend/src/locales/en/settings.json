@@ -46,11 +46,9 @@
       "model": "Main Model (orchestrator + planner)",
       "sub_agent_model": "Sub-agent Model (mission / viz / data)",
       "insight_model": "Insight Model (plot analysis)",
-      "inline_model": "Inline Model (cheapest)",
-      "planner_model": "Planner Model"
+      "inline_model": "Inline Model (cheapest)"
     },
     "placeholders": {
-      "planner_model": "defaults to main model",
       "insight_model": "defaults to sub-agent model"
     },
     "gemini": {
@@ -95,6 +93,9 @@
     "matplotlib": "Matplotlib (static / publication-quality)",
     "jsx": "JSX / Recharts (dashboards)",
     "maxPlotPoints": "Max Plot Points",
+    "sandbox": "Sandbox",
+    "autoInstall": "Auto-Install Packages",
+    "autoInstallDescription": "Skip permission prompts when agents install Python packages",
     "missionData": "Mission Data",
     "catalogStatus": "Catalog Status",
     "noMissionData": "No mission data found. Click \"Rebuild CDAWeb\" or \"Rebuild PPI\" to download.",
@@ -108,7 +109,7 @@
     "rebuildPpi": "Rebuild PPI",
     "diskAssets": "Disk Assets",
     "diskAssetManagement": "Disk Asset Management",
-    "diskAssetDescription": "Monitor and clean up cached data files, sessions, and SPICE kernels"
+    "diskAssetDescription": "Monitor and clean up session data"
   },
   "advanced": {
     "title": "Advanced",
@@ -117,7 +118,6 @@
     "memoryTokenBudget": "Memory Token Budget",
     "opsLibraryMaxEntries": "Ops Library Max Entries",
     "memoryExtractionInterval": "Memory Extraction Interval",
-    "memoryHotReload": "Memory Hot Reload",
     "rounds": "rounds",
     "reasoning": "Reasoning",
     "observationSummaries": "Observation Summaries",

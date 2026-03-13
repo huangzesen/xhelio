@@ -332,39 +332,6 @@ register_fallback(
     }
 )
 
-# --- Tool Catalog Defaults ---
-
-register_fallback(
-    {
-        "name": "tools.default_categories",
-        "description": "Default tool categories enabled for agents",
-        "category": CATEGORY_CONFIG,
-        "default_value": [
-            "delegation",
-            "discovery",
-            "memory",
-            "session",
-            "data_ops",
-            "visualization",
-        ],
-        "trigger_condition": "When no categories specified",
-        "code_location": "(deleted) agent/tool_catalog.py:250",
-        "is_legacy": True,
-    }
-)
-
-register_fallback(
-    {
-        "name": "tools.default_extra",
-        "description": "Default extra tools list (empty)",
-        "category": CATEGORY_CONFIG,
-        "default_value": [],
-        "trigger_condition": "When no extra tools specified",
-        "code_location": "(deleted) agent/tool_catalog.py:252",
-        "is_legacy": True,
-    }
-)
-
 # --- MiniMax API Fallback ---
 
 register_fallback(
@@ -379,59 +346,31 @@ register_fallback(
     }
 )
 
-# --- Operations Log Suffix Fallback ---
+# --- Operations Log Suffix Fallback (LEGACY — OperationsLog removed) ---
 
 register_fallback(
     {
         "name": "dataops.suffix_fallback",
-        "description": "Producer lookup with dedup suffix stripping",
+        "description": "Producer lookup with dedup suffix stripping (removed with OperationsLog)",
         "category": CATEGORY_DATA,
         "default_value": True,
         "trigger_condition": "When label has deduplication suffix (e.g., op_1)",
-        "code_location": "data_ops/operations_log.py:40-81",
-        "is_legacy": False,
+        "code_location": "data_ops/dag.py (label_owners replaces this)",
+        "is_legacy": True,
     }
 )
 
-# --- Metadata Resource URL Fallback ---
-
-register_fallback(
-    {
-        "name": "metadata.resource_url_fallback",
-        "description": "Fallback URL construction for dataset resources",
-        "category": CATEGORY_DATA,
-        "default_value": True,
-        "trigger_condition": "When primary resource URL lookup fails",
-        "code_location": "knowledge/metadata_client.py:941",
-        "is_legacy": False,
-    }
-)
-
-# --- Pipeline Input Producer Fallback ---
+# --- Pipeline Input Producer Fallback (LEGACY — Pipeline removed) ---
 
 register_fallback(
     {
         "name": "pipeline.input_producer_fallback",
-        "description": "Use label_producer when input_producers missing",
+        "description": "Use label_producer when input_producers missing (removed with Pipeline)",
         "category": CATEGORY_DATA,
         "default_value": True,
         "trigger_condition": "When input_producers absent in legacy pipelines",
-        "code_location": "data_ops/pipeline.py:402-412",
-        "is_legacy": False,
-    }
-)
-
-# --- Data Source Priority Fallback ---
-
-register_fallback(
-    {
-        "name": "knowledge.source_priority",
-        "description": "CDAWeb first, PPI as fallback for data sources",
-        "category": CATEGORY_DATA,
-        "default_value": ["cdaweb", "ppi"],
-        "trigger_condition": "When looking up data sources for a mission",
-        "code_location": "knowledge/metadata_client.py:558,565",
-        "is_legacy": False,
+        "code_location": "data_ops/dag.py (edges replace this)",
+        "is_legacy": True,
     }
 )
 
@@ -547,7 +486,7 @@ register_fallback(
         "category": CATEGORY_CONFIG,
         "default_value": 0.8,
         "trigger_condition": "When estimate_context_tokens / context_window >= threshold",
-        "code_location": "agent/sub_agent.py:_check_and_compact, agent/core.py:_check_and_compact",
+        "code_location": "agent/base_agent.py:_check_and_compact",
         "is_legacy": False,
     }
 )
@@ -584,6 +523,23 @@ register_fallback(
         "default_value": "~/.xhelio/model_context_windows.json",
         "trigger_condition": "When litellm registry fetch fails and local cache exists",
         "code_location": "agent/llm_utils.py:_fetch_litellm_registry",
+        "is_legacy": False,
+    }
+)
+
+
+# =============================================================================
+# SANDBOX FALLBACKS
+# =============================================================================
+
+register_fallback(
+    {
+        "name": "sandbox.auto_install",
+        "description": "Auto-approve package installs without user permission prompt",
+        "category": CATEGORY_CONFIG,
+        "default_value": False,
+        "trigger_condition": "When sandbox.auto_install not set in config",
+        "code_location": "agent/tool_handlers/sandbox_packages.py:24",
         "is_legacy": False,
     }
 )

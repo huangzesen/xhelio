@@ -46,7 +46,7 @@ class TimeRange:
         self.end = end
 
     def to_time_range_string(self) -> str:
-        """Format as 'YYYY-MM-DD to YYYY-MM-DD' for CDAWeb queries.
+        """Format as 'YYYY-MM-DD to YYYY-MM-DD'.
 
         Omits the time component when both start and end are at midnight
         (day-precision). Includes T%H:%M:%S otherwise.

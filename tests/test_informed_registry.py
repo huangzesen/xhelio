@@ -21,8 +21,6 @@ from agent.agent_registry import (
     VIZ_PLOTLY_INFORMED_TOOLS,
     DATAOPS_TOOLS,
     DATAOPS_INFORMED_TOOLS,
-    PLANNER_TOOLS,
-    PLANNER_INFORMED_TOOLS,
     _INFORMED_DEFAULTS,
 )
 
@@ -46,8 +44,7 @@ class TestInformedRegistryDefaults:
             "ctx:viz_mpl",
             "ctx:viz_jsx",
             "ctx:dataops",
-            "ctx:planner",
-            "ctx:extraction",
+            "ctx:data_io",
             "ctx:eureka",
         }
         reg = InformedRegistry()
@@ -56,7 +53,7 @@ class TestInformedRegistryDefaults:
     def test_items_returns_all_pairs(self):
         reg = InformedRegistry()
         items = reg.items()
-        assert len(items) == 9
+        assert len(items) == 8
         for ctx, tools in items:
             assert isinstance(tools, frozenset)
             assert len(tools) > 0
@@ -231,7 +228,7 @@ class TestInformedRegistryThreadSafety:
             try:
                 for _ in range(100):
                     items = reg.items()
-                    assert len(items) == 9
+                    assert len(items) == 8
             except Exception as e:
                 errors.append(e)
 
@@ -269,8 +266,7 @@ class TestModuleSingleton:
             "ctx:viz_mpl",
             "ctx:viz_jsx",
             "ctx:dataops",
-            "ctx:planner",
-            "ctx:extraction",
+            "ctx:data_io",
             "ctx:eureka",
         }
         assert set(AGENT_INFORMED_REGISTRY.keys()) == expected_keys

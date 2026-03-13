@@ -164,12 +164,8 @@ def _print_paths():
     sys.path.insert(0, str(PROJECT_ROOT))
     from config import get_data_dir
     data_dir = get_data_dir()
-    cdf_dir = PROJECT_ROOT / "cdaweb_data"
-    ppi_dir = PROJECT_ROOT / "ppi_data"
     print(f"  Data dir:    {data_dir}")
-    print(f"  CDF cache:   {cdf_dir}")
-    print(f"  PPI cache:   {ppi_dir}")
-    print(f"  Use 'xhelio purge' to reset sessions/memory (cached downloads are preserved)")
+    print(f"  Use 'xhelio purge' to reset sessions/memory")
     print()
 
 

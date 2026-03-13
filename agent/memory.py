@@ -36,9 +36,6 @@ from .event_bus import get_event_bus, DEBUG
 # Global token budget for memory injection
 MEMORY_TOKEN_BUDGET = config.get("memory_token_budget", 100000)
 
-# Hot reload interval (rounds between LTM re-injection)
-MEMORY_RELOAD_INTERVAL = config.get("memory_reload_interval", 5)
-
 
 _GITIGNORE_CONTENT = (
     "# Track memory.json and pipelines/\n"

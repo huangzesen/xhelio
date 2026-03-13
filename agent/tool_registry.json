@@ -1,142 +1,207 @@
 {
-  "version": 1,
+  "version": 2,
   "agents": {
     "orchestrator": {
       "call": [
-        "web_search",
-        "ask_clarification",
-        "ask_user_permission",
-        "manage_session_assets",
-        "delegate_to_envoy",
-        "delegate_to_viz",
-        "delegate_to_data_ops",
-        "delegate_to_data_io",
-        "delegate_to_insight",
-        "delegate_to_planner",
-        "review_memory",
-        "pipeline",
-        "list_fetched_data",
-        "list_assets",
-        "preview_data",
-        "manage_data",
-        "manage_workers",
-        "events_admin",
-        "install_package",
-        "manage_sandbox_packages",
-        "plan_check",
-        "envoy_query",
-        "manage_envoy"
+        "xhelio__ask_user_permission",
+        "xhelio__assets",
+        "xhelio__review_memory",
+        "xhelio__pipeline",
+        "xhelio__manage_data",
+        "xhelio__events_admin",
+        "xhelio__envoy_query",
+        "xhelio__manage_figure",
+        "xhelio__manage_files"
       ],
       "informed": [
-        "render_plotly_json",
-        "manage_plot",
-        "generate_mpl_script",
-        "generate_jsx_component",
-        "run_code",
-        "fetch_data"
-      ]
+        "xhelio__render_plotly_json",
+        "xhelio__manage_plot",
+        "xhelio__generate_mpl_script",
+        "xhelio__generate_jsx_component",
+        "xhelio__run_code",
+        "xhelio__manage_sandbox_packages"
+      ],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview",
+          "merge",
+          "save",
+          "delete"
+        ],
+        "xhelio__manage_figure": [
+          "list",
+          "show",
+          "save_from_url",
+          "export",
+          "delete",
+          "restore"
+        ],
+        "xhelio__manage_files": [
+          "list",
+          "register",
+          "info",
+          "delete"
+        ]
+      }
     },
     "viz_plotly": {
       "call": [
-        "render_plotly_json",
-        "manage_plot",
-        "list_fetched_data",
-        "describe_data",
-        "preview_data",
-        "review_memory",
-        "events"
+        "xhelio__render_plotly_json",
+        "xhelio__manage_plot",
+        "xhelio__assets",
+        "xhelio__manage_data",
+        "xhelio__review_memory",
+        "xhelio__events",
+        "xhelio__manage_figure"
       ],
       "informed": [
-        "fetch_data",
-        "run_code"
-      ]
+        "xhelio__run_code"
+      ],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview"
+        ],
+        "xhelio__manage_figure": [
+          "list",
+          "show"
+        ]
+      }
     },
     "viz_mpl": {
       "call": [
-        "generate_mpl_script",
-        "manage_mpl_output",
-        "list_fetched_data",
-        "describe_data",
-        "preview_data",
-        "review_memory",
-        "events"
+        "xhelio__generate_mpl_script",
+        "xhelio__manage_mpl_output",
+        "xhelio__assets",
+        "xhelio__manage_data",
+        "xhelio__review_memory",
+        "xhelio__events",
+        "xhelio__manage_figure"
       ],
       "informed": [
-        "fetch_data",
-        "run_code"
-      ]
+        "xhelio__run_code"
+      ],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview"
+        ],
+        "xhelio__manage_figure": [
+          "list",
+          "show"
+        ]
+      }
     },
     "viz_jsx": {
       "call": [
-        "generate_jsx_component",
-        "manage_jsx_output",
-        "list_fetched_data",
-        "describe_data",
-        "preview_data",
-        "review_memory",
-        "events"
+        "xhelio__generate_jsx_component",
+        "xhelio__manage_jsx_output",
+        "xhelio__assets",
+        "xhelio__manage_data",
+        "xhelio__review_memory",
+        "xhelio__events",
+        "xhelio__manage_figure"
       ],
       "informed": [
-        "fetch_data",
-        "run_code"
-      ]
+        "xhelio__run_code"
+      ],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview"
+        ],
+        "xhelio__manage_figure": [
+          "list",
+          "show"
+        ]
+      }
     },
     "dataops": {
       "call": [
-        "run_code",
-        "describe_data",
-        "preview_data",
-        "manage_data",
-        "ask_clarification",
-        "manage_session_assets",
-        "list_fetched_data",
-        "search_function_docs",
-        "get_function_docs",
-        "review_memory",
-        "events"
+        "xhelio__run_code",
+        "xhelio__manage_data",
+        "xhelio__assets",
+        "xhelio__function_docs",
+        "xhelio__review_memory",
+        "xhelio__events",
+        "xhelio__manage_sandbox_packages"
       ],
-      "informed": [
-        "fetch_data"
-      ]
-    },
-    "planner": {
-      "call": [
-        "web_search",
-        "list_fetched_data",
-        "events_admin",
-        "envoy_query"
-      ],
-      "informed": [
-        "fetch_data",
-        "run_code",
-        "render_plotly_json",
-        "manage_plot",
-        "generate_mpl_script",
-        "manage_mpl_output",
-        "generate_jsx_component",
-        "manage_jsx_output"
-      ]
+      "informed": [],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview",
+          "merge",
+          "save"
+        ]
+      }
     },
     "data_io": {
       "call": [
-        "load_file",
-        "run_code",
-        "read_document",
-        "ask_clarification",
-        "manage_session_assets",
-        "list_fetched_data",
-        "review_memory",
-        "events"
+        "xhelio__manage_files",
+        "xhelio__run_code",
+        "xhelio__read_document",
+        "xhelio__manage_data",
+        "xhelio__assets",
+        "xhelio__function_docs",
+        "xhelio__review_memory",
+        "xhelio__events",
+        "xhelio__manage_sandbox_packages"
       ],
-      "informed": []
+      "informed": [],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview",
+          "merge",
+          "save"
+        ],
+        "xhelio__manage_files": [
+          "list",
+          "info",
+          "register"
+        ]
+      }
     },
     "eureka": {
       "call": [
-        "list_fetched_data",
-        "preview_data",
-        "describe_data",
-        "delegate_to_insight",
-        "events"
+        "xhelio__assets",
+        "xhelio__manage_data",
+        "xhelio__events"
+      ],
+      "informed": [],
+      "permissions": {
+        "xhelio__assets": [
+          "list"
+        ],
+        "xhelio__manage_data": [
+          "describe",
+          "preview"
+        ]
+      }
+    },
+    "memory": {
+      "call": [
+        "xhelio__events"
       ],
       "informed": []
     }
